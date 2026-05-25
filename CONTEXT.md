@@ -40,6 +40,10 @@ _Avoid_: app bundle, binary mirror
 The installed Codex App's Electron user data directory, shared by default with O3 Code when running the Desktop Reconstruction locally.
 _Avoid_: original app folder, app bundle, upstream folder
 
+**Local App Identity**:
+The visible O3 Code name and icon surface used by the Desktop Reconstruction during repo-local runs, without changing Codex App protocol, bundle, or user data identity.
+_Avoid_: rebrand, bundle identity, product identity
+
 ## Example Dialogue
 
 Dev: "Should I change this file in the Codex App?"
@@ -61,3 +65,7 @@ Domain expert: "Put it in a Patch Record, one file per Patch, so refresh agents 
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 
 Domain expert: "No. Use the Codex App User Data Directory by default, and override it only when an isolated or custom profile is needed."
+
+Dev: "Does Local App Identity mean changing bundle IDs or the Codex App User Data Directory?"
+
+Domain expert: "No. Local App Identity only covers the visible name and icon surfaces for repo-local runs."

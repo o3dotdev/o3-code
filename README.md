@@ -27,6 +27,8 @@ pnpm normalize:check
 ## Layout
 
 - `apps/desktop/app/` - extracted `Resources/app.asar` source bundle.
+- `apps/desktop/branding/o3-code-icon/` - source and generated review outputs for O3 Code local identity icons.
+- `apps/desktop/branding/original-codex-icon/` - high-resolution reference export of the original Codex Dock icon.
 - `apps/desktop/resources/` - copied runtime resources from `Codex.app/Contents/Resources`, excluding the original `app.asar`.
 - `apps/desktop/metadata/Info.plist` - original macOS bundle metadata.
 - `packages/` - future shared workspace packages.

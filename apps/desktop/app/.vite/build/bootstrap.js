@@ -142,6 +142,10 @@ var b = process.platform === `darwin`,
 (t.v(),
   t.n(b),
   n.app.setName(e.ft(x)),
+  // o3-code-patch-begin: local-app-identity
+  process.env.O3_CODE_APP_NAME?.trim() &&
+    n.app.setName(process.env.O3_CODE_APP_NAME.trim()),
+  // o3-code-patch-end: local-app-identity
   n.app.setPath(
     `userData`,
     _({

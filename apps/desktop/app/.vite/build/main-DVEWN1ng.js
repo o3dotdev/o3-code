@@ -59640,6 +59640,10 @@ function KY({
 }) {
   let b = (0, i.join)(m, `electron`, `src`, `icons`),
     x = () => {
+      // o3-code-patch-begin: local-app-identity
+      let e = process.env.O3_CODE_APP_ICON_PATH?.trim();
+      if (e && (0, o.existsSync)(e)) return e;
+      // o3-code-patch-end: local-app-identity
       switch (r) {
         case t.O.Dev: {
           let e = (0, i.join)(
@@ -60434,6 +60438,11 @@ function pX() {
 async function mX(e, t) {
   if (process.platform === `darwin`) {
     let e = [
+      // o3-code-patch-begin: local-app-identity
+      ...(process.env.O3_CODE_TRAY_TEMPLATE_PATH?.trim()
+        ? [process.env.O3_CODE_TRAY_TEMPLATE_PATH.trim()]
+        : []),
+      // o3-code-patch-end: local-app-identity
       ...(n.app.isPackaged
         ? [(0, i.join)(process.resourcesPath, `codexTemplate.png`)]
         : []),

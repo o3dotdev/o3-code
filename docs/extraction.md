@@ -21,5 +21,6 @@ Normalization:
 Local runner patch:
 
 - `apps/desktop/app/.vite/build/bootstrap.js` reads `CODEX_ELECTRON_RESOURCES_PATH` before loading the main bundle and points `process.resourcesPath` at repo-local `apps/desktop/resources/`. This keeps native add-on lookups on the copied runtime resources instead of Electron's npm package resources directory.
+- O3 Code applies Local App Identity for repo-local runs through `docs/patches/0002-local-app-identity.md`. When refreshing from a newer Codex App, compare upstream icon resources and icon-loading code before reapplying generated O3 assets, because upstream may introduce new icon surfaces or filenames.
 
 Every Patch to copied source is tracked in `docs/patches/`.
