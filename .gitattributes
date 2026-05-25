@@ -1,4 +1,4 @@
-resources/node filter=lfs diff=lfs merge=lfs -text
-resources/plugins/openai-bundled/plugins/chrome/app-server-runtime/codex filter=lfs diff=lfs merge=lfs -text
-resources/plugins/openai-bundled/plugins/chrome/app-server-runtime/node filter=lfs diff=lfs merge=lfs -text
-resources/codex filter=lfs diff=lfs merge=lfs -text
+apps/desktop/resources/node filter=lfs diff=lfs merge=lfs -text
+apps/desktop/resources/plugins/openai-bundled/plugins/chrome/app-server-runtime/codex filter=lfs diff=lfs merge=lfs -text
+apps/desktop/resources/plugins/openai-bundled/plugins/chrome/app-server-runtime/node filter=lfs diff=lfs merge=lfs -text
+apps/desktop/resources/codex filter=lfs diff=lfs merge=lfs -text
