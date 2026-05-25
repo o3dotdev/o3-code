@@ -36,6 +36,10 @@ _Avoid_: patch, cleanup, refactor
 The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
 _Avoid_: app bundle, binary mirror
 
+**Codex App User Data Directory**:
+The installed Codex App's Electron user data directory, shared by default with O3 Code when running the Desktop Reconstruction locally.
+_Avoid_: original app folder, app bundle, upstream folder
+
 ## Example Dialogue
 
 Dev: "Should I change this file in the Codex App?"
@@ -53,3 +57,7 @@ Domain expert: "Use begin and end Patch Markers around the changed region and ke
 Dev: "Where should the full explanation for a Patch live?"
 
 Domain expert: "Put it in a Patch Record, one file per Patch, so refresh agents can load only the relevant context."
+
+Dev: "Should O3 Code default to its own isolated Electron user data?"
+
+Domain expert: "No. Use the Codex App User Data Directory by default, and override it only when an isolated or custom profile is needed."

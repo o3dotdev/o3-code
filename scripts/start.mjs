@@ -1,5 +1,6 @@
 import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
+import { homedir } from "node:os";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
@@ -41,7 +42,7 @@ if (!existsSync(electronBin)) {
 
 const userDataPath =
   process.env.CODEX_ELECTRON_USER_DATA_PATH?.trim() ||
-  path.join(repoRoot, ".codex-user-data");
+  path.join(homedir(), "Library", "Application Support", "Codex");
 
 const env = {
   ...process.env,

@@ -11,7 +11,7 @@ pnpm start
 
 `pnpm start` runs the extracted Electron app from `apps/desktop/app/` and points it at repo-local runtime resources in `apps/desktop/resources/`.
 
-By default, runtime user data is stored in `.codex-user-data/` so this checkout does not share the installed app's user data directory. Override that with `CODEX_ELECTRON_USER_DATA_PATH` when needed.
+By default, runtime user data is shared with the installed Codex App at `~/Library/Application Support/Codex`, so local runs use the same Electron profile, auth session, and app state as the installed app. Override that with `CODEX_ELECTRON_USER_DATA_PATH` when an isolated or custom profile is needed.
 
 The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `apps/desktop/app/webview/index.html`; without that override, the unpackaged main process tries to load its development server URL.
 
