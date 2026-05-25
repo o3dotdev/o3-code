@@ -21,6 +21,8 @@ Normalization uses Prettier on copied app source files that Prettier can parse:
 - `apps/desktop/app/native-menu-locales`
 - `apps/desktop/app/package.json`
 
+Normalization skips copied source files that already contain Patch Markers. Patch regions are manually maintained so the markers remain close to the scoped local change and do not get moved into less reviewable syntax by a formatter. The Normalization script still validates Patch Marker placement in those files.
+
 The Normalization script applies a deterministic post-process for generated CSS custom properties with empty `!important` values, because raw Prettier output for that bundle shape is not idempotent.
 
 Keep Normalization separate from repo-authored formatting. Use `pnpm normalize` for copied source material and `pnpm format` for repo-authored docs and scripts.
