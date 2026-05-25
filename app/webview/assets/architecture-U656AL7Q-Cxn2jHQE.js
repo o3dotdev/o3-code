@@ -1,1 +1,3 @@
-import"./chunk-FPAJGGOC-MuvkG0Bd.js";import{n as e}from"./chunk-O7ZBX7Z2-BZEIbRUw.js";export{e as createArchitectureServices};
+import "./chunk-FPAJGGOC-MuvkG0Bd.js";
+import { n as e } from "./chunk-O7ZBX7Z2-BZEIbRUw.js";
+export { e as createArchitectureServices };

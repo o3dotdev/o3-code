@@ -1,1 +1,2 @@
-import{t as e}from"./shellscript-bD0aWGd0.js";export{e as default};
+import { t as e } from "./shellscript-bD0aWGd0.js";
+export { e as default };

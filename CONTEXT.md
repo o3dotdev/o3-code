@@ -16,6 +16,18 @@ _Avoid_: clone, fork, extracted app
 A deliberate local change applied to O3 Code after the upstream source material has been preserved.
 _Avoid_: tweak, hack, modification
 
+**Patch Marker**:
+A paired inline boundary placed around a Patch site so the local intent and exact changed region remain discoverable after source refreshes and chunk renames.
+_Avoid_: comment, note, TODO
+
+**Patch Record**:
+The durable explanation of one Patch, stored separately from copied source so future refresh work can load and reason about that Patch in isolation.
+_Avoid_: ledger entry, changelog item, note
+
+**Normalization**:
+A deterministic, broad rewrite of preserved upstream source material that creates a patch-friendly baseline without expressing local product intent.
+_Avoid_: patch, cleanup, refactor
+
 **Runtime Resources**:
 The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
 _Avoid_: app bundle, binary mirror
@@ -25,3 +37,15 @@ _Avoid_: app bundle, binary mirror
 Dev: "Should I change this file in the Codex App?"
 
 Domain expert: "No. Treat the Codex App as source material and make the change as a Patch in O3 Code."
+
+Dev: "Should formatting copied assets be listed as a Patch?"
+
+Domain expert: "No. Formatting preserved upstream material is Normalization; reserve Patch for local intent we need to preserve across refreshes."
+
+Dev: "If chunk filenames change, how will we find our local changes?"
+
+Domain expert: "Use begin and end Patch Markers around the changed region and keep the explanation outside the code."
+
+Dev: "Where should the full explanation for a Patch live?"
+
+Domain expert: "Put it in a Patch Record, one file per Patch, so refresh agents can load only the relevant context."

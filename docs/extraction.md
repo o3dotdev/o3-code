@@ -13,8 +13,13 @@ Copied material:
 
 The signed macOS outer bundle, helper apps, frameworks, and code signature are not copied. Electron is provided by pnpm using the same version declared by the extracted app package.
 
+Normalization:
+
+- `pnpm normalize` runs after copied source material is preserved and before any Patch is applied.
+- Normalization rewrites Prettier-parseable copied app source into a patch-friendly baseline.
+
 Local runner patch:
 
 - `app/.vite/build/bootstrap.js` reads `CODEX_ELECTRON_RESOURCES_PATH` before loading the main bundle and points `process.resourcesPath` at repo-local `resources/`. This keeps native add-on lookups on the copied runtime resources instead of Electron's npm package resources directory.
 
-Every in-place change to copied source is tracked in `docs/local-patches.md`.
+Every Patch to copied source is tracked in `docs/patches/`.

@@ -1,4 +1,6 @@
-import{r as e}from"./src-DXdm7MTq.js";var t=e(()=>`
+import { r as e } from "./src-DXdm7MTq.js";
+var t = e(
+  () => `
   /* Font Awesome icon styling - consolidated */
   .label-icon {
     display: inline-block;
@@ -12,5 +14,8 @@ import{r as e}from"./src-DXdm7MTq.js";var t=e(()=>`
     stroke: revert;
     stroke-width: revert;
   }
-`,`getIconStyles`);export{t};
+`,
+  `getIconStyles`,
+);
+export { t };
 //# sourceMappingURL=chunk-FMBD7UC4-rrmk1FZY.js.map

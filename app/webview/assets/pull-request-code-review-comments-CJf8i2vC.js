@@ -1,4 +1,44 @@
-import{s as e}from"./chunk-Bj-mKKzh.js";import{Cn as t}from"./src-DAzAmbVS.js";import{Di as n,Pi as r}from"./app-server-manager-signals-Csopz8aM.js";import{t as i}from"./jsx-runtime-CiQ1k8xo.js";import{H as a,xt as o}from"./setting-storage-EK1Te68s.js";import{r as s}from"./parse-owner-repo-JzkdGMWP.js";import{t as c}from"./use-stable-callback-D_6XYV-7.js";import{n as l,r as u}from"./file-tree-search-input-Cg1SVtq4.js";import{r as d}from"./right-panel-composer-overlay-scroll-reserve-BKJayTK4.js";var f={hunkLineCount:50,lineHeight:12*1.8,diffHeaderHeight:0,hunkSeparatorHeight:32,fileGap:0};function p(e){let t=window.getComputedStyle(e);return{...f,lineHeight:h(t.lineHeight,f.lineHeight),fileGap:h(t.getPropertyValue(`--diffs-gap-block`),f.fileGap)}}function m(e,t){return e.hunkLineCount===t.hunkLineCount&&e.lineHeight===t.lineHeight&&e.diffHeaderHeight===t.diffHeaderHeight&&e.hunkSeparatorHeight===t.hunkSeparatorHeight&&e.fileGap===t.fileGap}function h(e,t){let n=e.trim();if(n===`0`)return 0;if(!n.endsWith(`px`))return t;let r=Number.parseFloat(n.slice(0,-2));return Number.isFinite(r)?r:t}var g=`<svg
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Cn as t } from "./src-DAzAmbVS.js";
+import { Di as n, Pi as r } from "./app-server-manager-signals-Csopz8aM.js";
+import { t as i } from "./jsx-runtime-CiQ1k8xo.js";
+import { H as a, xt as o } from "./setting-storage-EK1Te68s.js";
+import { r as s } from "./parse-owner-repo-JzkdGMWP.js";
+import { t as c } from "./use-stable-callback-D_6XYV-7.js";
+import { n as l, r as u } from "./file-tree-search-input-Cg1SVtq4.js";
+import { r as d } from "./right-panel-composer-overlay-scroll-reserve-BKJayTK4.js";
+var f = {
+  hunkLineCount: 50,
+  lineHeight: 12 * 1.8,
+  diffHeaderHeight: 0,
+  hunkSeparatorHeight: 32,
+  fileGap: 0,
+};
+function p(e) {
+  let t = window.getComputedStyle(e);
+  return {
+    ...f,
+    lineHeight: h(t.lineHeight, f.lineHeight),
+    fileGap: h(t.getPropertyValue(`--diffs-gap-block`), f.fileGap),
+  };
+}
+function m(e, t) {
+  return (
+    e.hunkLineCount === t.hunkLineCount &&
+    e.lineHeight === t.lineHeight &&
+    e.diffHeaderHeight === t.diffHeaderHeight &&
+    e.hunkSeparatorHeight === t.hunkSeparatorHeight &&
+    e.fileGap === t.fileGap
+  );
+}
+function h(e, t) {
+  let n = e.trim();
+  if (n === `0`) return 0;
+  if (!n.endsWith(`px`)) return t;
+  let r = Number.parseFloat(n.slice(0, -2));
+  return Number.isFinite(r) ? r : t;
+}
+var g = `<svg
   width="21"
   height="21"
   viewBox="0 0 21 21"
@@ -10,7 +50,310 @@ import{s as e}from"./chunk-Bj-mKKzh.js";import{Cn as t}from"./src-DAzAmbVS.js";i
     fill="currentColor"
   />
 </svg>
-`,_=`⁣`;function v(e){let t=new Set;for(let{displayPath:n}of e){let e=n.split(`/`);for(let n=1;n<e.length;n+=1)t.add(e.slice(0,n).join(`/`))}if(!e.some(e=>t.has(e.displayPath)))return e;let n=new Set(e.map(e=>e.displayPath));return e.map(e=>{if(!t.has(e.displayPath))return e;let r=`${e.displayPath}${_}`;for(;n.has(r)||t.has(r);)r=`${r}${_}`;return n.add(r),{...e,displayPath:r}})}var y=o(),b=i();function x(e){let n=(0,y.c)(41),{activePath:r,allowSelectingActivePath:i,cwd:a,hostId:o,onSelectPath:s,commentCountByPath:f,entries:p,reserveBottomPadding:m}=e,h=i===void 0?!1:i,g=m===void 0?!1:m,_;n[0]===a?_=n[1]:(_=a==null?null:t(a),n[0]=a,n[1]=_);let x=_,E;n[2]===p?E=n[3]:(E=v(p),n[2]=p,n[3]=E);let D=E,O;n[4]===D?O=n[5]:(O=D.map(C),n[4]=D,n[5]=O);let k=O,A;n[6]===D?A=n[7]:(A=new Map(D.map(S)),n[6]=D,n[7]=A);let N=A,P;n[8]===k?P=n[9]:(P=T(k),n[8]=k,n[9]=P);let F=P,I;bb0:{if(f==null){I=void 0;break bb0}let e;n[10]===f?e=n[11]:(e=M(f.values()),n[10]=f,n[11]=e),I=e}let L=I,R;n[12]!==f||n[13]!==N?(R=e=>{let{item:t}=e;if(t.kind!==`file`)return null;let n=N.get(t.path),r=n==null?0:f?.get(n.path)??0;return r===0?null:{icon:j(r)}},n[12]=f,n[13]=N,n[14]=R):R=n[14];let z=c(R),B;n[15]!==r||n[16]!==D?(B=r==null?void 0:D.find(e=>e.path===r)?.displayPath,n[15]=r,n[16]=D,n[17]=B):B=n[17];let V=B,H;n[18]!==r||n[19]!==N||n[20]!==s?(H=e=>{let t=e.find(e=>N.get(e)!=null);if(t==null)return;let n=N.get(t)?.path;n!=null&&n!==r&&s(n)},n[18]=r,n[19]=N,n[20]=s,n[21]=H):H=n[21];let U=c(H),W;n[22]!==h||n[23]!==N||n[24]!==s?(W=e=>{if(!h)return;let t=u(e.nativeEvent);if(t==null)return;let n=N.get(t)?.path;n!=null&&s(n)},n[22]=h,n[23]=N,n[24]=s,n[25]=W):W=n[25];let G=W,K;n[26]===g?K=n[27]:(K=g?{paddingBottom:d}:void 0,n[26]=g,n[27]=K);let q;n[28]!==V||n[29]!==L||n[30]!==F||n[31]!==D||n[32]!==x||n[33]!==G||n[34]!==U||n[35]!==o||n[36]!==z?(q=D.length>0?(0,b.jsx)(l,{flattenEmptyDirectories:!0,cwd:x,decorationIcons:L,hostId:o,initialExpandedPaths:F,onClick:G,onSelectionChange:U,paths:D,renderRowDecoration:z,selectedPath:V}):(0,b.jsx)(w,{}),n[28]=V,n[29]=L,n[30]=F,n[31]=D,n[32]=x,n[33]=G,n[34]=U,n[35]=o,n[36]=z,n[37]=q):q=n[37];let J;return n[38]!==K||n[39]!==q?(J=(0,b.jsx)(`div`,{className:`h-full min-h-0 w-full px-2`,style:K,children:q}),n[38]=K,n[39]=q,n[40]=J):J=n[40],J}function S(e){return[e.displayPath,e]}function C(e){return e.displayPath}function w(){let e=(0,y.c)(1),t;return e[0]===Symbol.for(`react.memo_cache_sentinel`)?(t=(0,b.jsx)(`div`,{className:`py-2 ps-2 pe-2 text-left text-base text-token-description-foreground`,children:(0,b.jsx)(a,{id:`codex.review.fileSearch.empty`,defaultMessage:`No matching files`,description:`Empty state shown when the file filter hides all files in review`})}),e[0]=t):t=e[0],t}function T(e){let t=new Set;for(let n of e){let e=(n.endsWith(`/`)?n.slice(0,-1):n).split(`/`);for(let n=1;n<e.length;n+=1)t.add(e.slice(0,n).join(`/`))}return Array.from(t)}var E=g.replace(/<svg[^>]*>/,``).replace(`</svg>`,``),D=18,O=4,k=7,A=D/21;function j(e){let t=N(e);return{height:D,name:`review-file-tree-comment-${e}`,viewBox:`0 0 ${t} ${D}`,width:t}}function M(e){return Array.from(new Set(e)).filter(e=>e>0).map(e=>{let t=D+O,n=D/2;return{...j(e),body:`<g transform="scale(${A})">${E}</g><text x="${t}" y="${n}" fill="currentColor" font-size="12" font-family="system-ui" dominant-baseline="middle">${e}</text>`}})}function N(e){return D+O+String(e).length*k}var P=e(s(),1);function F(e){return e.content.flatMap(e=>e.content_type===`text`?[e.text]:[]).join(`
+`,
+  _ = `⁣`;
+function v(e) {
+  let t = new Set();
+  for (let { displayPath: n } of e) {
+    let e = n.split(`/`);
+    for (let n = 1; n < e.length; n += 1) t.add(e.slice(0, n).join(`/`));
+  }
+  if (!e.some((e) => t.has(e.displayPath))) return e;
+  let n = new Set(e.map((e) => e.displayPath));
+  return e.map((e) => {
+    if (!t.has(e.displayPath)) return e;
+    let r = `${e.displayPath}${_}`;
+    for (; n.has(r) || t.has(r); ) r = `${r}${_}`;
+    return (n.add(r), { ...e, displayPath: r });
+  });
+}
+var y = o(),
+  b = i();
+function x(e) {
+  let n = (0, y.c)(41),
+    {
+      activePath: r,
+      allowSelectingActivePath: i,
+      cwd: a,
+      hostId: o,
+      onSelectPath: s,
+      commentCountByPath: f,
+      entries: p,
+      reserveBottomPadding: m,
+    } = e,
+    h = i === void 0 ? !1 : i,
+    g = m === void 0 ? !1 : m,
+    _;
+  n[0] === a
+    ? (_ = n[1])
+    : ((_ = a == null ? null : t(a)), (n[0] = a), (n[1] = _));
+  let x = _,
+    E;
+  n[2] === p ? (E = n[3]) : ((E = v(p)), (n[2] = p), (n[3] = E));
+  let D = E,
+    O;
+  n[4] === D ? (O = n[5]) : ((O = D.map(C)), (n[4] = D), (n[5] = O));
+  let k = O,
+    A;
+  n[6] === D ? (A = n[7]) : ((A = new Map(D.map(S))), (n[6] = D), (n[7] = A));
+  let N = A,
+    P;
+  n[8] === k ? (P = n[9]) : ((P = T(k)), (n[8] = k), (n[9] = P));
+  let F = P,
+    I;
+  bb0: {
+    if (f == null) {
+      I = void 0;
+      break bb0;
+    }
+    let e;
+    (n[10] === f
+      ? (e = n[11])
+      : ((e = M(f.values())), (n[10] = f), (n[11] = e)),
+      (I = e));
+  }
+  let L = I,
+    R;
+  n[12] !== f || n[13] !== N
+    ? ((R = (e) => {
+        let { item: t } = e;
+        if (t.kind !== `file`) return null;
+        let n = N.get(t.path),
+          r = n == null ? 0 : (f?.get(n.path) ?? 0);
+        return r === 0 ? null : { icon: j(r) };
+      }),
+      (n[12] = f),
+      (n[13] = N),
+      (n[14] = R))
+    : (R = n[14]);
+  let z = c(R),
+    B;
+  n[15] !== r || n[16] !== D
+    ? ((B = r == null ? void 0 : D.find((e) => e.path === r)?.displayPath),
+      (n[15] = r),
+      (n[16] = D),
+      (n[17] = B))
+    : (B = n[17]);
+  let V = B,
+    H;
+  n[18] !== r || n[19] !== N || n[20] !== s
+    ? ((H = (e) => {
+        let t = e.find((e) => N.get(e) != null);
+        if (t == null) return;
+        let n = N.get(t)?.path;
+        n != null && n !== r && s(n);
+      }),
+      (n[18] = r),
+      (n[19] = N),
+      (n[20] = s),
+      (n[21] = H))
+    : (H = n[21]);
+  let U = c(H),
+    W;
+  n[22] !== h || n[23] !== N || n[24] !== s
+    ? ((W = (e) => {
+        if (!h) return;
+        let t = u(e.nativeEvent);
+        if (t == null) return;
+        let n = N.get(t)?.path;
+        n != null && s(n);
+      }),
+      (n[22] = h),
+      (n[23] = N),
+      (n[24] = s),
+      (n[25] = W))
+    : (W = n[25]);
+  let G = W,
+    K;
+  n[26] === g
+    ? (K = n[27])
+    : ((K = g ? { paddingBottom: d } : void 0), (n[26] = g), (n[27] = K));
+  let q;
+  n[28] !== V ||
+  n[29] !== L ||
+  n[30] !== F ||
+  n[31] !== D ||
+  n[32] !== x ||
+  n[33] !== G ||
+  n[34] !== U ||
+  n[35] !== o ||
+  n[36] !== z
+    ? ((q =
+        D.length > 0
+          ? (0, b.jsx)(l, {
+              flattenEmptyDirectories: !0,
+              cwd: x,
+              decorationIcons: L,
+              hostId: o,
+              initialExpandedPaths: F,
+              onClick: G,
+              onSelectionChange: U,
+              paths: D,
+              renderRowDecoration: z,
+              selectedPath: V,
+            })
+          : (0, b.jsx)(w, {})),
+      (n[28] = V),
+      (n[29] = L),
+      (n[30] = F),
+      (n[31] = D),
+      (n[32] = x),
+      (n[33] = G),
+      (n[34] = U),
+      (n[35] = o),
+      (n[36] = z),
+      (n[37] = q))
+    : (q = n[37]);
+  let J;
+  return (
+    n[38] !== K || n[39] !== q
+      ? ((J = (0, b.jsx)(`div`, {
+          className: `h-full min-h-0 w-full px-2`,
+          style: K,
+          children: q,
+        })),
+        (n[38] = K),
+        (n[39] = q),
+        (n[40] = J))
+      : (J = n[40]),
+    J
+  );
+}
+function S(e) {
+  return [e.displayPath, e];
+}
+function C(e) {
+  return e.displayPath;
+}
+function w() {
+  let e = (0, y.c)(1),
+    t;
+  return (
+    e[0] === Symbol.for(`react.memo_cache_sentinel`)
+      ? ((t = (0, b.jsx)(`div`, {
+          className: `py-2 ps-2 pe-2 text-left text-base text-token-description-foreground`,
+          children: (0, b.jsx)(a, {
+            id: `codex.review.fileSearch.empty`,
+            defaultMessage: `No matching files`,
+            description: `Empty state shown when the file filter hides all files in review`,
+          }),
+        })),
+        (e[0] = t))
+      : (t = e[0]),
+    t
+  );
+}
+function T(e) {
+  let t = new Set();
+  for (let n of e) {
+    let e = (n.endsWith(`/`) ? n.slice(0, -1) : n).split(`/`);
+    for (let n = 1; n < e.length; n += 1) t.add(e.slice(0, n).join(`/`));
+  }
+  return Array.from(t);
+}
+var E = g.replace(/<svg[^>]*>/, ``).replace(`</svg>`, ``),
+  D = 18,
+  O = 4,
+  k = 7,
+  A = D / 21;
+function j(e) {
+  let t = N(e);
+  return {
+    height: D,
+    name: `review-file-tree-comment-${e}`,
+    viewBox: `0 0 ${t} ${D}`,
+    width: t,
+  };
+}
+function M(e) {
+  return Array.from(new Set(e))
+    .filter((e) => e > 0)
+    .map((e) => {
+      let t = D + O,
+        n = D / 2;
+      return {
+        ...j(e),
+        body: `<g transform="scale(${A})">${E}</g><text x="${t}" y="${n}" fill="currentColor" font-size="12" font-family="system-ui" dominant-baseline="middle">${e}</text>`,
+      };
+    });
+}
+function N(e) {
+  return D + O + String(e).length * k;
+}
+var P = e(s(), 1);
+function F(e) {
+  return e.content
+    .flatMap((e) => (e.content_type === `text` ? [e.text] : []))
+    .join(
+      `
 
-`).trim()}function I({currentComments:e,nextComments:t}){let r=new Set(e.map(n)),i=t.filter(t=>e.some(e=>B({currentComment:e,nextComment:t}))),a=t.filter(e=>F(e).length>0&&!r.has(n(e)));return(0,P.default)([...i,...a],n)}function L(e){return{line:e.position.line,path:e.position.path,side:e.position.side,...e.position.start_line==null?{}:{startLine:e.position.start_line},...e.position.start_side==null?{}:{startSide:e.position.start_side}}}function R(e){let t=e.inlineComment;return[e.number,e.body,e.replyToReviewThreadId??``,t?.path??``,t?.side??``,t?.startSide??``,t?.startLine??``,t?.line??``].join(`|`)}function z({comments:e,filePaths:t,workspaceRoot:n}){let i=new Map;for(let a of e){let e=t.find(e=>r(a.position.path,e,n??void 0));e!=null&&i.set(e,(i.get(e)??0)+1)}return i}function B({currentComment:e,nextComment:t}){return e.replyToReviewThreadId!=null&&e.replyToReviewThreadId===t.replyToReviewThreadId&&F(e).length===0&&F(t).length>0&&e.position.path===t.position.path&&e.position.side===t.position.side&&e.position.line===t.position.line}export{L as a,f as c,I as i,m as l,F as n,w as o,z as r,x as s,R as t,p as u};
+`,
+    )
+    .trim();
+}
+function I({ currentComments: e, nextComments: t }) {
+  let r = new Set(e.map(n)),
+    i = t.filter((t) =>
+      e.some((e) => B({ currentComment: e, nextComment: t })),
+    ),
+    a = t.filter((e) => F(e).length > 0 && !r.has(n(e)));
+  return (0, P.default)([...i, ...a], n);
+}
+function L(e) {
+  return {
+    line: e.position.line,
+    path: e.position.path,
+    side: e.position.side,
+    ...(e.position.start_line == null
+      ? {}
+      : { startLine: e.position.start_line }),
+    ...(e.position.start_side == null
+      ? {}
+      : { startSide: e.position.start_side }),
+  };
+}
+function R(e) {
+  let t = e.inlineComment;
+  return [
+    e.number,
+    e.body,
+    e.replyToReviewThreadId ?? ``,
+    t?.path ?? ``,
+    t?.side ?? ``,
+    t?.startSide ?? ``,
+    t?.startLine ?? ``,
+    t?.line ?? ``,
+  ].join(`|`);
+}
+function z({ comments: e, filePaths: t, workspaceRoot: n }) {
+  let i = new Map();
+  for (let a of e) {
+    let e = t.find((e) => r(a.position.path, e, n ?? void 0));
+    e != null && i.set(e, (i.get(e) ?? 0) + 1);
+  }
+  return i;
+}
+function B({ currentComment: e, nextComment: t }) {
+  return (
+    e.replyToReviewThreadId != null &&
+    e.replyToReviewThreadId === t.replyToReviewThreadId &&
+    F(e).length === 0 &&
+    F(t).length > 0 &&
+    e.position.path === t.position.path &&
+    e.position.side === t.position.side &&
+    e.position.line === t.position.line
+  );
+}
+export {
+  L as a,
+  f as c,
+  I as i,
+  m as l,
+  F as n,
+  w as o,
+  z as r,
+  x as s,
+  R as t,
+  p as u,
+};
 //# sourceMappingURL=pull-request-code-review-comments-CJf8i2vC.js.map

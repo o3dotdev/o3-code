@@ -1,0 +1,36 @@
+# 0002 Normalize Before Patching
+
+## Status
+
+Accepted
+
+## Context
+
+O3 Code preserves source material copied from bundled Codex App releases. The copied source is optimized for bundling, not for review or local patch maintenance: JavaScript and JSON are often minified, filenames may include content hashes, and future releases may move behavior between chunks.
+
+Local Patches need to survive source refreshes. Applying or reviewing those Patches directly against minified upstream material makes the important local intent hard to find and hard to migrate.
+
+## Decision
+
+Run Normalization immediately after preserving upstream source material and before applying any Patch.
+
+Normalization uses Prettier on copied app source files that Prettier can parse:
+
+- `app/.vite/build`
+- `app/webview`
+- `app/native-menu-locales`
+- `app/package.json`
+
+The Normalization script applies a deterministic post-process for generated CSS custom properties with empty `!important` values, because raw Prettier output for that bundle shape is not idempotent.
+
+Keep Normalization separate from repo-authored formatting. Use `pnpm normalize` for copied source material and `pnpm format` for repo-authored docs and scripts.
+
+## Consequences
+
+Patch diffs are reviewed against a stable, readable baseline instead of bundled/minified source.
+
+Refresh work should preserve this order: extract or copy source material, run Normalization, then apply or migrate Patch Records.
+
+The normalized repository will differ mechanically from the installed Codex App source material. The original installed app remains the read-only upstream reference.
+
+Binary assets, native modules, dependency folders, plists, and other non-Prettier formats are not normalized by this decision.

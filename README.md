@@ -15,6 +15,15 @@ By default, runtime user data is stored in `.codex-user-data/` so this checkout 
 
 The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `app/webview/index.html`; without that override, the unpackaged main process tries to load its development server URL.
 
+## Normalize
+
+```sh
+pnpm normalize
+pnpm normalize:check
+```
+
+`pnpm normalize` rewrites copied app source into a patch-friendly baseline. Run it after refreshing copied Codex App source material and before applying local Patch Records.
+
 ## Layout
 
 - `app/` - extracted `Resources/app.asar` source bundle.
@@ -22,6 +31,7 @@ The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `app/webview/ind
 - `metadata/Info.plist` - original macOS bundle metadata.
 - `docs/agents/` - repo configuration for agent skills.
 - `docs/adr/` - architectural decisions for durable extraction choices.
+- `docs/patches/` - one Patch Record per local Patch.
 
 ## Source
 

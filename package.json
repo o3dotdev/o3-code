@@ -8,8 +8,10 @@
   "scripts": {
     "start": "node scripts/start.mjs",
     "start:electron": "electron app",
-    "format": "prettier --write AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs app/package.json",
-    "format:check": "prettier --check AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs app/package.json"
+    "format": "prettier --write AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs .prettierrc.json",
+    "format:check": "prettier --check AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs .prettierrc.json",
+    "normalize": "node scripts/normalize.mjs",
+    "normalize:check": "node scripts/normalize.mjs --check"
   },
   "devDependencies": {
     "electron": "42.1.0",

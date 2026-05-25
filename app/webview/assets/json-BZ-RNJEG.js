@@ -1,1 +1,2 @@
-import{t as e}from"./json-Dop4XXMI.js";export{e as default};
+import { t as e } from "./json-Dop4XXMI.js";
+export { e as default };

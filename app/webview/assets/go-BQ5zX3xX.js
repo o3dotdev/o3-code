@@ -1,1 +1,2 @@
-import{t as e}from"./go-BowtuYy7.js";export{e as default};
+import { t as e } from "./go-BowtuYy7.js";
+export { e as default };

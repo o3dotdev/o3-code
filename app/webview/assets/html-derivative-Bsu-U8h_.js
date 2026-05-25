@@ -1,1 +1,2 @@
-import{t as e}from"./html-derivative-Bwjdzx91.js";export{e as default};
+import { t as e } from "./html-derivative-Bwjdzx91.js";
+export { e as default };

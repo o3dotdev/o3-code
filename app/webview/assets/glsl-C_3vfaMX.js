@@ -1,1 +1,2 @@
-import{t as e}from"./glsl-C_koLelI.js";export{e as default};
+import { t as e } from "./glsl-C_koLelI.js";
+export { e as default };
