@@ -16,6 +16,10 @@ _Avoid_: clone, fork, extracted app
 A deliberate local change applied to O3 Code after the upstream source material has been preserved.
 _Avoid_: tweak, hack, modification
 
+**Runtime Resources**:
+The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
+_Avoid_: app bundle, binary mirror
+
 ## Example Dialogue
 
 Dev: "Should I change this file in the Codex App?"

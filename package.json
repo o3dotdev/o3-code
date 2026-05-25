@@ -1,0 +1,22 @@
+{
+  "name": "o3-code",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Repo-local reconstruction of the macOS Codex App.",
+  "packageManager": "pnpm@11.1.0",
+  "main": "app/.vite/build/bootstrap.js",
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "start:electron": "electron app",
+    "format": "prettier --write AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs app/package.json",
+    "format:check": "prettier --check AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs app/package.json"
+  },
+  "devDependencies": {
+    "electron": "42.1.0",
+    "prettier": "^3.6.2"
+  },
+  "codexBuildFlavor": "prod",
+  "codexBuildNumber": "3044",
+  "codexSourceApp": "/Applications/Codex.app",
+  "codexSourceVersion": "26.519.41501"
+}
