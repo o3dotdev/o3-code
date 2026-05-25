@@ -9,11 +9,11 @@ pnpm install
 pnpm start
 ```
 
-`pnpm start` runs the extracted Electron app from `app/` and points it at repo-local runtime resources in `resources/`.
+`pnpm start` runs the extracted Electron app from `apps/desktop/app/` and points it at repo-local runtime resources in `apps/desktop/resources/`.
 
 By default, runtime user data is stored in `.codex-user-data/` so this checkout does not share the installed app's user data directory. Override that with `CODEX_ELECTRON_USER_DATA_PATH` when needed.
 
-The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `app/webview/index.html`; without that override, the unpackaged main process tries to load its development server URL.
+The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `apps/desktop/app/webview/index.html`; without that override, the unpackaged main process tries to load its development server URL.
 
 ## Normalize
 
@@ -26,9 +26,10 @@ pnpm normalize:check
 
 ## Layout
 
-- `app/` - extracted `Resources/app.asar` source bundle.
-- `resources/` - copied runtime resources from `Codex.app/Contents/Resources`, excluding the original `app.asar`.
-- `metadata/Info.plist` - original macOS bundle metadata.
+- `apps/desktop/app/` - extracted `Resources/app.asar` source bundle.
+- `apps/desktop/resources/` - copied runtime resources from `Codex.app/Contents/Resources`, excluding the original `app.asar`.
+- `apps/desktop/metadata/Info.plist` - original macOS bundle metadata.
+- `packages/` - future shared workspace packages.
 - `docs/agents/` - repo configuration for agent skills.
 - `docs/adr/` - architectural decisions for durable extraction choices.
 - `docs/patches/` - one Patch Record per local Patch.

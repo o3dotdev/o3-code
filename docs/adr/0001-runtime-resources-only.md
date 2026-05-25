@@ -12,8 +12,8 @@ The installed macOS Codex App contains a signed Electron `.app` bundle. The repo
 
 Copy and extract the runtime resources only:
 
-- extract `Resources/app.asar` into `app/`
-- copy `Resources/app.asar.unpacked`, `Resources/native`, `Resources/plugins`, helper binaries, icons, sounds, notices, asset catalogs, and locale resources into `resources/`
+- extract `Resources/app.asar` into `apps/desktop/app/`
+- copy `Resources/app.asar.unpacked`, `Resources/native`, `Resources/plugins`, helper binaries, icons, sounds, notices, asset catalogs, and locale resources into `apps/desktop/resources/`
 - use the `electron` npm package from pnpm for the Electron runtime
 
 Do not copy `Contents/Frameworks`, helper `.app` bundles, `_CodeSignature`, or the signed outer `.app` bundle.
@@ -22,6 +22,6 @@ Do not copy `Contents/Frameworks`, helper `.app` bundles, `_CodeSignature`, or t
 
 The repo stays focused on patchable source material and runtime assets instead of mirroring a signed binary application bundle.
 
-Running the app requires a launcher that points Electron at the repo-local `resources/` directory.
+Running the app requires a launcher that points Electron at the repo-local `apps/desktop/resources/` directory.
 
 Rebuilding a distributable signed macOS app will be a separate packaging step later.

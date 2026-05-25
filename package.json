@@ -4,12 +4,12 @@
   "private": true,
   "description": "Repo-local reconstruction of the macOS Codex App.",
   "packageManager": "pnpm@11.1.0",
-  "main": "app/.vite/build/bootstrap.js",
+  "main": "apps/desktop/app/.vite/build/bootstrap.js",
   "scripts": {
     "start": "node scripts/start.mjs",
-    "start:electron": "electron app",
-    "format": "prettier --write AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs .prettierrc.json",
-    "format:check": "prettier --check AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json scripts/**/*.mjs .prettierrc.json",
+    "start:electron": "electron apps/desktop/app",
+    "format": "prettier --write AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json pnpm-workspace.yaml scripts/**/*.mjs .prettierrc.json",
+    "format:check": "prettier --check AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json pnpm-workspace.yaml scripts/**/*.mjs .prettierrc.json",
     "normalize": "node scripts/normalize.mjs",
     "normalize:check": "node scripts/normalize.mjs --check"
   },

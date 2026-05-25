@@ -7,9 +7,10 @@ const repoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
 );
-const appPath = path.join(repoRoot, "app");
+const desktopPath = path.join(repoRoot, "apps", "desktop");
+const appPath = path.join(desktopPath, "app");
 const rendererIndexPath = path.join(appPath, "webview", "index.html");
-const resourcesPath = path.join(repoRoot, "resources");
+const resourcesPath = path.join(desktopPath, "resources");
 const electronBin = path.join(
   repoRoot,
   "node_modules",

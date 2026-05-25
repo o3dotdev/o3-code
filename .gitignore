@@ -15,9 +15,9 @@ coverage/
 references/
 .codex-user-data/
 
-!app/.vite/
-!app/.vite/**
-!app/node_modules/
-!app/node_modules/**
-!resources/app.asar.unpacked/node_modules/
-!resources/app.asar.unpacked/node_modules/**
+!apps/desktop/app/.vite/
+!apps/desktop/app/.vite/**
+!apps/desktop/app/node_modules/
+!apps/desktop/app/node_modules/**
+!apps/desktop/resources/app.asar.unpacked/node_modules/
+!apps/desktop/resources/app.asar.unpacked/node_modules/**

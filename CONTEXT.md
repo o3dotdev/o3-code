@@ -12,6 +12,10 @@ _Avoid_: app bundle, desktop app, upstream app
 The repo-local Electron project reconstructed from the Codex App.
 _Avoid_: clone, fork, extracted app
 
+**Desktop Reconstruction**:
+The local app context within O3 Code that preserves and runs the Codex App source material with its companion runtime material.
+_Avoid_: app bundle, desktop clone, extracted app
+
 **Patch**:
 A deliberate local change applied to O3 Code after the upstream source material has been preserved.
 _Avoid_: tweak, hack, modification

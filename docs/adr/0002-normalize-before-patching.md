@@ -16,10 +16,10 @@ Run Normalization immediately after preserving upstream source material and befo
 
 Normalization uses Prettier on copied app source files that Prettier can parse:
 
-- `app/.vite/build`
-- `app/webview`
-- `app/native-menu-locales`
-- `app/package.json`
+- `apps/desktop/app/.vite/build`
+- `apps/desktop/app/webview`
+- `apps/desktop/app/native-menu-locales`
+- `apps/desktop/app/package.json`
 
 The Normalization script applies a deterministic post-process for generated CSS custom properties with empty `!important` values, because raw Prettier output for that bundle shape is not idempotent.
 

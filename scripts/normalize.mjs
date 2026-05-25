@@ -5,10 +5,10 @@ import { format, resolveConfig } from "prettier";
 
 const repoRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const roots = [
-  "app/.vite/build",
-  "app/webview",
-  "app/native-menu-locales",
-  "app/package.json",
+  "apps/desktop/app/.vite/build",
+  "apps/desktop/app/webview",
+  "apps/desktop/app/native-menu-locales",
+  "apps/desktop/app/package.json",
 ];
 
 const prettierExtensions = new Set([".css", ".html", ".js", ".json", ".mjs"]);
