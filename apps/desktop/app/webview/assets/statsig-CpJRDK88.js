@@ -4948,6 +4948,7 @@ var l = t((e) => {
               ),
               o3CodeForceFeatureGate(
                 i.NoopEvaluationsClient.getFeatureGate(e, n),
+                e,
               ))
             : o3CodeGetFeatureGate(o, e, n),
         [e, o, s, ...(n ? Object.values(n) : [])],
@@ -5253,7 +5254,7 @@ var l = t((e) => {
 function Le(e, t) {
   let n = e.get(Y);
   // o3-code-patch-begin: statsig-gates-always-enabled
-  return n == null ? !0 : o3CodeCheckGate(n, t);
+  return n == null ? o3CodeShouldForceFeatureGate(t) : o3CodeCheckGate(n, t);
   // o3-code-patch-end: statsig-gates-always-enabled
 }
 function Re(e, t) {
@@ -5330,28 +5331,37 @@ function Xe(e, t) {
   // o3-code-patch-end: statsig-gates-always-enabled
 }
 // o3-code-patch-begin: statsig-gates-always-enabled
+var o3CodeForcedFeatureGates = new Set([`2380644311`]);
+function o3CodeShouldForceFeatureGate(e) {
+  return o3CodeForcedFeatureGates.has(e);
+}
 function o3CodeCheckGate(e, t, n) {
   try {
-    e?.checkGate?.(t, n);
-  } catch {}
-  return !0;
+    let r = e?.checkGate?.(t, n) === !0;
+    return o3CodeShouldForceFeatureGate(t) ? !0 : r;
+  } catch {
+    return o3CodeShouldForceFeatureGate(t);
+  }
 }
 function o3CodeGetFeatureGate(e, t, n) {
   try {
-    return o3CodeForceFeatureGate(e?.getFeatureGate?.(t, n));
+    return o3CodeForceFeatureGate(e?.getFeatureGate?.(t, n), t);
   } catch {
     return o3CodeForceFeatureGate(null, t);
   }
 }
 function o3CodeForceFeatureGate(e, t) {
+  let n = o3CodeShouldForceFeatureGate(t);
   return e && typeof e == `object`
-    ? { ...e, value: !0 }
+    ? n
+      ? { ...e, value: !0 }
+      : e
     : {
         name: t ?? ``,
-        details: { reason: `O3CodeAlwaysEnabled` },
+        details: { reason: n ? `O3CodeForcedEnabled` : `O3CodeUnavailable` },
         ruleID: ``,
         __evaluation: null,
-        value: !0,
+        value: n,
         idType: null,
       };
 }
