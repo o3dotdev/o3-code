@@ -69,8 +69,12 @@ A scoped O3 Code policy that allows realtime voice setup to use API Key Auth whi
 _Avoid_: hybrid login, mixed auth, realtime key hack
 
 **Realtime API Key**:
-The API key explicitly designated for the Realtime Auth Override.
+The only API key eligible for the Realtime Auth Override, separate from any general OpenAI or Codex API key used by other auth paths.
 _Avoid_: default API key, inherited key, shell key
+
+**Realtime API Base URL**:
+The OpenAI-compatible API origin explicitly designated for the Realtime Auth Override.
+_Avoid_: app server URL, ChatGPT backend URL, general base URL
 
 ## Example Dialogue
 
@@ -117,3 +121,15 @@ Domain expert: "No. Use a Realtime Auth Override so realtime voice can use API K
 Dev: "Can the Realtime Auth Override just pick up whatever OpenAI API key is already in my shell?"
 
 Domain expert: "No. Provide a Realtime API Key explicitly so realtime voice routing and spend are intentional."
+
+Dev: "If O3 Code is already using API Key Auth, can realtime voice borrow that key?"
+
+Domain expert: "No. Realtime voice uses the Realtime API Key or it does not use the Realtime Auth Override."
+
+Dev: "Should realtime voice use the same base URL as the ChatGPT-backed Codex App Server session?"
+
+Domain expert: "No. Use a Realtime API Base URL for realtime voice, while Account Auth continues to use the ChatGPT-backed Codex App Server route."
+
+Dev: "Can WebRTC realtime call creation keep using the ChatGPT-backed Codex App Server route?"
+
+Domain expert: "No. The Realtime Auth Override covers realtime websocket setup, WebRTC call creation, and the WebRTC sideband websocket join."
