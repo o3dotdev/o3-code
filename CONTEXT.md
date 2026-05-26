@@ -28,9 +28,17 @@ _Avoid_: comment, note, TODO
 The durable explanation of one Patch, stored separately from copied source so future refresh work can load and reason about that Patch in isolation.
 _Avoid_: ledger entry, changelog item, note
 
+**Patch Recipe**:
+The executable application and verification artifact for one Patch, stored separately from copied source so source refresh work can fail loudly when the expected upstream anchors no longer match.
+_Avoid_: patch script, replacement script, codemod
+
 **Normalization**:
 A deterministic, broad rewrite of preserved upstream source material that creates a patch-friendly baseline without expressing local product intent.
 _Avoid_: patch, cleanup, refactor
+
+**Source Refresh**:
+The operation that replaces preserved upstream source material from a newer Codex App release before Normalization and Patch Recipes rebuild the local O3 Code state.
+_Avoid_: sync, vendor update, recopy
 
 **Runtime Resources**:
 The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
@@ -61,6 +69,14 @@ Domain expert: "Use begin and end Patch Markers around the changed region and ke
 Dev: "Where should the full explanation for a Patch live?"
 
 Domain expert: "Put it in a Patch Record, one file per Patch, so refresh agents can load only the relevant context."
+
+Dev: "How do we reapply a Patch after refreshing Codex App source material?"
+
+Domain expert: "Run its Patch Recipe after Normalization, and treat a missing or ambiguous upstream anchor as a Patch migration failure."
+
+Dev: "Can I preserve the edited copied files during a newer Codex App update?"
+
+Domain expert: "No. A Source Refresh may replace copied source material, then rebuild O3 Code by running Normalization and Patch Recipes."
 
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 

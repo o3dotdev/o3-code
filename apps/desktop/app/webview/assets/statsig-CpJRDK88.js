@@ -4939,7 +4939,7 @@ var l = t((e) => {
       a = q();
     function o(e, n) {
       let { client: o, renderVersion: s } = (0, t.useContext)(a.default);
-      // o3-code-patch-begin: statsig-gates-always-enabled
+      // o3-code-patch-begin: statsig-gate-overrides
       return (0, t.useMemo)(
         () =>
           (0, i.isNoopClient)(o)
@@ -4953,7 +4953,7 @@ var l = t((e) => {
             : o3CodeGetFeatureGate(o, e, n),
         [e, o, s, ...(n ? Object.values(n) : [])],
       );
-      // o3-code-patch-end: statsig-gates-always-enabled
+      // o3-code-patch-end: statsig-gate-overrides
     }
     e.default = o;
   }),
@@ -4965,7 +4965,7 @@ var l = t((e) => {
       a = q();
     function o(e, n) {
       let { client: o, renderVersion: s } = (0, t.useContext)(a.default);
-      // o3-code-patch-begin: statsig-gates-always-enabled
+      // o3-code-patch-begin: statsig-gate-overrides
       return (0, t.useMemo)(
         () =>
           (0, i.isNoopClient)(o)
@@ -4976,7 +4976,7 @@ var l = t((e) => {
             : o3CodeCheckGate(o, e, n),
         [e, o, s, ...(n ? Object.values(n) : [])],
       );
-      // o3-code-patch-end: statsig-gates-always-enabled
+      // o3-code-patch-end: statsig-gate-overrides
     }
     e.default = o;
   }),
@@ -5046,10 +5046,10 @@ var l = t((e) => {
           [e, n],
         ),
         c = [s, n],
-        // o3-code-patch-begin: statsig-gates-always-enabled
+        // o3-code-patch-begin: statsig-gate-overrides
         l = (0, t.useCallback)((e, t) => o3CodeCheckGate(s, e, t), c),
         u = (0, t.useCallback)((e, t) => o3CodeGetFeatureGate(s, e, t), c),
-        // o3-code-patch-end: statsig-gates-always-enabled
+        // o3-code-patch-end: statsig-gate-overrides
         d = (0, t.useCallback)((e, t) => s.getDynamicConfig(e, t), c),
         f = (0, t.useCallback)((e, t) => s.getExperiment(e, t), c),
         p = (0, t.useCallback)((e, t) => s.getLayer(e, t), c),
@@ -5240,9 +5240,9 @@ var l = t((e) => {
       onMount: (t, n) => {
         let r = n.get(Y);
         return (
-          // o3-code-patch-begin: statsig-gates-always-enabled
+          // o3-code-patch-begin: statsig-gate-overrides
           (r != null && t(o3CodeCheckGate(r, e))),
-          // o3-code-patch-end: statsig-gates-always-enabled
+          // o3-code-patch-end: statsig-gate-overrides
           n.set(X, (t) => (t.includes(e) ? t : [...t, e])),
           () => {
             n.set(X, (t) => t.filter((t) => t !== e));
@@ -5253,16 +5253,16 @@ var l = t((e) => {
   );
 function Le(e, t) {
   let n = e.get(Y);
-  // o3-code-patch-begin: statsig-gates-always-enabled
+  // o3-code-patch-begin: statsig-gate-overrides
   return n == null ? o3CodeShouldForceFeatureGate(t) : o3CodeCheckGate(n, t);
-  // o3-code-patch-end: statsig-gates-always-enabled
+  // o3-code-patch-end: statsig-gate-overrides
 }
 function Re(e, t) {
   let n = () => {
       for (let n of e.get(X)) {
-        // o3-code-patch-begin: statsig-gates-always-enabled
+        // o3-code-patch-begin: statsig-gate-overrides
         let r = o3CodeCheckGate(t, n);
-        // o3-code-patch-end: statsig-gates-always-enabled
+        // o3-code-patch-end: statsig-gate-overrides
         e.set(e.get(Z, n), r);
       }
     },
@@ -5326,12 +5326,12 @@ function Ye(e, t, n) {
   return e.getLayer(t, n);
 }
 function Xe(e, t) {
-  // o3-code-patch-begin: statsig-gates-always-enabled
+  // o3-code-patch-begin: statsig-gate-overrides
   return o3CodeCheckGate(e, t);
-  // o3-code-patch-end: statsig-gates-always-enabled
+  // o3-code-patch-end: statsig-gate-overrides
 }
-// o3-code-patch-begin: statsig-gates-always-enabled
-var o3CodeForcedFeatureGates = new Set([`2380644311`]);
+// o3-code-patch-begin: statsig-gate-overrides
+var o3CodeForcedFeatureGates = new Set();
 function o3CodeShouldForceFeatureGate(e) {
   return o3CodeForcedFeatureGates.has(e);
 }
@@ -5365,7 +5365,10 @@ function o3CodeForceFeatureGate(e, t) {
         idType: null,
       };
 }
-// o3-code-patch-end: statsig-gates-always-enabled
+// o3-code-patch-end: statsig-gate-overrides
+// o3-code-patch-begin: realtime-voice-statsig-override
+o3CodeForcedFeatureGates.add(`2380644311`);
+// o3-code-patch-end: realtime-voice-statsig-override
 function Ze(e) {
   let t = {};
   return (
