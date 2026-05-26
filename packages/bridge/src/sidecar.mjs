@@ -9,6 +9,7 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { CdpClient } from "./cdp-client.mjs";
+import { injectBridgeShell } from "./html-injection.mjs";
 import { BridgeRouter } from "./router.mjs";
 
 const repoRoot = path.resolve(
@@ -140,7 +141,11 @@ async function handleHttpRequest(request, response) {
       "content-type": "text/html; charset=utf-8",
       "cache-control": "no-store",
     });
-    response.end(injectBridgeShim(html));
+    response.end(
+      injectBridgeShell(html, {
+        debug: process.env.O3_CODE_BRIDGE_DEBUG === "1",
+      }),
+    );
     return;
   }
 
@@ -178,22 +183,6 @@ function resolveWebviewPath(urlPathname) {
   }
 
   return candidate;
-}
-
-function injectBridgeShim(html) {
-  const withRelaxedCsp = html.replace(
-    "https://cdn.openai.com;",
-    "https://cdn.openai.com ws: wss:;",
-  );
-  const shimUrl =
-    process.env.O3_CODE_BRIDGE_DEBUG === "1"
-      ? "/bridge-shim.js?debug=1"
-      : "/bridge-shim.js";
-
-  return withRelaxedCsp.replace(
-    /<head>/i,
-    `<head>\n    <script src="${shimUrl}"></script>`,
-  );
 }
 
 async function sendFile(response, filePath) {

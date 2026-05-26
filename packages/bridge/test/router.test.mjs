@@ -61,6 +61,42 @@ test("attachBrowser replaces the previous active session", () => {
   assert.equal(second.sent[0].kind, "bridge-sync-pulse");
 });
 
+test("sync pulse sends a resolved theme variant", () => {
+  const router = new BridgeRouter({ hostTransport: createHostTransport() });
+  const socket = new FakeSocket();
+
+  router.attachBrowser(socket);
+
+  assert.equal(socket.sent[0].payload.systemThemeVariant, "dark");
+});
+
+test("routes resolved host theme updates to the active browser session", () => {
+  const router = new BridgeRouter({ hostTransport: createHostTransport() });
+  const socket = new FakeSocket();
+
+  router.attachBrowser(socket);
+  router.handleHostEvent({
+    type: "system-theme-variant-updated",
+    payload: "light",
+  });
+
+  assert.equal(socket.sent.at(-1).kind, "system-theme-variant-updated");
+  assert.equal(socket.sent.at(-1).payload, "light");
+});
+
+test("ignores unresolved host theme updates", () => {
+  const router = new BridgeRouter({ hostTransport: createHostTransport() });
+  const socket = new FakeSocket();
+
+  router.attachBrowser(socket);
+  router.handleHostEvent({
+    type: "system-theme-variant-updated",
+    payload: "system",
+  });
+
+  assert.equal(socket.sent.at(-1).payload, "dark");
+});
+
 test("routes browser app messages to the host transport", async () => {
   const hostTransport = createHostTransport();
   const router = new BridgeRouter({ hostTransport });
