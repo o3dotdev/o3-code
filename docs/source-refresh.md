@@ -13,7 +13,7 @@ Source Refresh updates O3 Code from a newer installed Codex App release. The ref
 7. Run `pnpm start` and validate the Desktop Reconstruction.
 8. Open a PR that shows the upstream refresh, normalization, reapplied Patches, and evidence updates.
 
-Do not preserve previously patched bundled files during a refresh. A refresh may replace copied source and runtime material wholesale, then rebuild local O3 Code behavior from the Patch SOPs.
+Do not merge refreshed material into the existing copied source tree. Replace copied source and runtime material as upstream input, then rebuild local O3 Code behavior from the Patch SOPs.
 
 ## Commit Shape
 

@@ -41,7 +41,7 @@ During Source Refresh:
 4. Update each Patch's `EVIDENCE.md` with the new release's discovered sites and validation notes.
 5. Commit the final patched source tree so `pnpm start` remains runnable from checkout.
 
-Do not preserve old patched bundled files during a refresh. Rebuild local behavior from SOPs.
+Do not merge refreshed material into the existing copied source tree. Rebuild local behavior from SOPs.
 
 ## Marker Contract
 

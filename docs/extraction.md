@@ -20,7 +20,7 @@ Normalization:
 
 Source Refresh:
 
-- newer Codex App source material may replace the previously copied source tree
+- newer Codex App source material may replace the copied source tree
 - after replacement, run Normalization and then reapply each Patch SOP one by one
 - record fresh Patch Evidence for each reapplied Patch
 - commit the final patched source tree so `pnpm start` remains runnable from checkout

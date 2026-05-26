@@ -26,11 +26,11 @@ _Avoid_: comment, note, TODO
 
 **Patch SOP**:
 The authoritative migration procedure for one Patch, written for an AI refresh agent to rediscover, reapply, and validate the Patch after a Source Refresh.
-_Avoid_: recipe, script, prompt
+_Avoid_: script, prompt
 
 **Patch Evidence**:
 The release-specific notes that record where a Patch was found and how it was validated during one Source Refresh.
-_Avoid_: recipe output, log, scratch notes
+_Avoid_: log, scratch notes
 
 **Normalization**:
 A deterministic, broad rewrite of preserved upstream source material that creates a patch-friendly baseline without expressing local product intent.
