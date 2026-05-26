@@ -185,10 +185,14 @@ function injectBridgeShim(html) {
     "https://cdn.openai.com;",
     "https://cdn.openai.com ws: wss:;",
   );
+  const shimUrl =
+    process.env.O3_CODE_BRIDGE_DEBUG === "1"
+      ? "/bridge-shim.js?debug=1"
+      : "/bridge-shim.js";
 
   return withRelaxedCsp.replace(
     /<head>/i,
-    '<head>\n    <script src="/bridge-shim.js"></script>',
+    `<head>\n    <script src="${shimUrl}"></script>`,
   );
 }
 
@@ -303,16 +307,7 @@ class ServerWebSocket extends EventEmitter {
     }
 
     const payload = Buffer.from(String(message));
-    const header =
-      payload.length < 126
-        ? Buffer.from([0x81, payload.length])
-        : payload.length <= 0xffff
-          ? Buffer.from([0x81, 126, payload.length >> 8, payload.length & 0xff])
-          : null;
-
-    if (header == null) {
-      throw Error("Bridge WebSocket payload is too large.");
-    }
+    const header = createWebSocketHeader(0x81, payload.length);
 
     this.socket.write(Buffer.concat([header, payload]));
   }
@@ -328,7 +323,7 @@ class ServerWebSocket extends EventEmitter {
     payload.writeUInt16BE(code, 0);
     reasonBuffer.copy(payload, 2);
     this.socket.write(
-      Buffer.concat([Buffer.from([0x88, payload.length]), payload]),
+      Buffer.concat([createWebSocketHeader(0x88, payload.length), payload]),
     );
     this.socket.end();
   }
@@ -378,7 +373,16 @@ class ServerWebSocket extends EventEmitter {
       length = this.#buffer.readUInt16BE(offset);
       offset += 2;
     } else if (length === 127) {
-      throw Error("Large Bridge WebSocket frames are not supported.");
+      if (this.#buffer.length < offset + 8) {
+        return null;
+      }
+      const high = this.#buffer.readUInt32BE(offset);
+      const low = this.#buffer.readUInt32BE(offset + 4);
+      offset += 8;
+      if (high !== 0 || low > Number.MAX_SAFE_INTEGER) {
+        throw Error("Bridge WebSocket frame is too large.");
+      }
+      length = low;
     }
 
     const maskLength = masked ? 4 : 0;
@@ -402,7 +406,29 @@ class ServerWebSocket extends EventEmitter {
 
   #sendPong(payload) {
     this.socket.write(
-      Buffer.concat([Buffer.from([0x8a, payload.length]), payload]),
+      Buffer.concat([createWebSocketHeader(0x8a, payload.length), payload]),
     );
   }
+}
+
+function createWebSocketHeader(opcodeByte, payloadLength) {
+  if (payloadLength < 126) {
+    return Buffer.from([opcodeByte, payloadLength]);
+  }
+
+  if (payloadLength <= 0xffff) {
+    return Buffer.from([
+      opcodeByte,
+      126,
+      payloadLength >> 8,
+      payloadLength & 0xff,
+    ]);
+  }
+
+  const header = Buffer.alloc(10);
+  header[0] = opcodeByte;
+  header[1] = 127;
+  header.writeUInt32BE(Math.floor(payloadLength / 2 ** 32), 2);
+  header.writeUInt32BE(payloadLength >>> 0, 6);
+  return header;
 }
