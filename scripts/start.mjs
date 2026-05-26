@@ -1,5 +1,13 @@
 import { execFileSync, spawn } from "node:child_process";
-import { cpSync, existsSync, mkdirSync, renameSync, rmSync } from "node:fs";
+import {
+  chmodSync,
+  cpSync,
+  existsSync,
+  mkdirSync,
+  renameSync,
+  rmSync,
+  statSync,
+} from "node:fs";
 import { createRequire } from "node:module";
 import { homedir } from "node:os";
 import path from "node:path";
@@ -33,6 +41,25 @@ const localElectronApp = path.join(
   `electron-${electronPackage.version}`,
   "O3 Code.app",
 );
+const nativeExecutablePaths = [
+  path.join(
+    appPath,
+    "node_modules",
+    "node-pty",
+    "build",
+    "Release",
+    "spawn-helper",
+  ),
+  path.join(
+    resourcesPath,
+    "app.asar.unpacked",
+    "node_modules",
+    "node-pty",
+    "build",
+    "Release",
+    "spawn-helper",
+  ),
+];
 
 function prepareElectronExecutable() {
   if (process.platform !== "darwin") {
@@ -85,6 +112,23 @@ function prepareElectronExecutable() {
   return localExecutable;
 }
 
+function ensureNativeExecutableBits() {
+  if (process.platform === "win32") {
+    return;
+  }
+
+  for (const nativeExecutablePath of nativeExecutablePaths) {
+    if (!existsSync(nativeExecutablePath)) {
+      continue;
+    }
+
+    const currentMode = statSync(nativeExecutablePath).mode;
+    if ((currentMode & 0o111) === 0) {
+      chmodSync(nativeExecutablePath, (currentMode & 0o777) | 0o755);
+    }
+  }
+}
+
 const requiredPaths = [
   appPath,
   rendererIndexPath,
@@ -105,6 +149,8 @@ if (!existsSync(electronBin)) {
   console.error("Electron is not installed. Run `pnpm install` first.");
   process.exit(1);
 }
+
+ensureNativeExecutableBits();
 
 const userDataPath =
   process.env.CODEX_ELECTRON_USER_DATA_PATH?.trim() ||

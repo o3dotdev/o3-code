@@ -12,6 +12,7 @@ Patch SOPs are authoritative for bundled Electron source changes. A Source Refre
 | [0002 local app identity](./0002-local-app-identity/)                           | Applies the O3 Code visible app name and icon surfaces for repo-local runs.                             |
 | [0003 statsig gate overrides](./0003-statsig-gate-overrides/)                   | Adds a local boolean Statsig gate override mechanism while preserving upstream gate results by default. |
 | [0004 realtime voice statsig override](./0004-realtime-voice-statsig-override/) | Forces only the realtime voice Statsig gate enabled.                                                    |
+| [0005 integrated terminal helper mode](./0005-integrated-terminal-helper-mode/) | Preserves executable mode for the local integrated terminal native spawn helper.                        |
 
 ## SOP Shape
 
