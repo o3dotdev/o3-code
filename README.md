@@ -6,6 +6,7 @@ O3 Code is a repo-local reconstruction of the installed macOS Codex App.
 
 ```sh
 pnpm install
+pnpm codex:setup
 pnpm start
 ```
 
@@ -22,7 +23,16 @@ pnpm normalize
 pnpm normalize:check
 ```
 
-`pnpm normalize` rewrites copied app source into a patch-friendly baseline. During Source Refresh work, run it after preserving copied Codex App source material and before applying Patch Recipes.
+`pnpm normalize` rewrites copied app source into a patch-friendly baseline. During Source Refresh work, run it after replacing copied Codex App source material and before applying Patch SOPs.
+
+## Codex CLI
+
+```sh
+pnpm codex:setup
+pnpm codex:build
+```
+
+The Codex CLI/app-server source is checked out at `upstream/codex/` from `o3dotdev/o3-codex`. `pnpm codex:build` builds the `codex` binary from that checkout and installs it to `apps/desktop/resources/codex`, which is the binary used by `pnpm start`.
 
 ## Layout
 
@@ -34,8 +44,10 @@ pnpm normalize:check
 - `packages/` - future shared workspace packages.
 - `docs/agents/` - repo configuration for agent skills.
 - `docs/adr/` - architectural decisions for durable extraction choices.
-- `docs/patches/` - one Patch Record per local Patch.
-- `scripts/patch-recipes/` - Patch Recipes for replaying and checking local Patches.
+- `docs/patches/` - one Patch SOP folder per local Patch.
+- `docs/source-refresh.md` - Source Refresh procedure for replacing upstream app material and reapplying Patch SOPs.
+- `docs/upstreams/` - source pins and sync notes for non-Electron upstream material.
+- `upstream/codex/` - pinned Codex CLI/app-server source checkout.
 
 ## Source
 

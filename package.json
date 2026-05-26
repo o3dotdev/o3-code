@@ -8,13 +8,13 @@
   "scripts": {
     "start": "node scripts/start.mjs",
     "start:electron": "electron apps/desktop/app",
+    "codex:setup": "node scripts/setup-codex-upstream.mjs",
+    "codex:build": "node scripts/build-codex-cli.mjs",
     "generate:icons": "node scripts/generate-o3-icons.mjs",
     "format": "prettier --write AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json pnpm-workspace.yaml scripts/**/*.mjs .prettierrc.json",
     "format:check": "prettier --check AGENTS.md CLAUDE.md CONTEXT.md README.md docs/**/*.md package.json pnpm-workspace.yaml scripts/**/*.mjs .prettierrc.json",
     "normalize": "node scripts/normalize.mjs",
-    "normalize:check": "node scripts/normalize.mjs --check",
-    "patches:apply": "node scripts/apply-patch-recipes.mjs",
-    "patches:check": "node scripts/apply-patch-recipes.mjs --check"
+    "normalize:check": "node scripts/normalize.mjs --check"
   },
   "devDependencies": {
     "electron": "42.1.0",

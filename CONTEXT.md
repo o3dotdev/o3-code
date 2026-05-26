@@ -24,25 +24,29 @@ _Avoid_: tweak, hack, modification
 A paired inline boundary placed around a Patch site so the local intent and exact changed region remain discoverable after source refreshes and chunk renames.
 _Avoid_: comment, note, TODO
 
-**Patch Record**:
-The durable explanation of one Patch, stored separately from copied source so future refresh work can load and reason about that Patch in isolation.
-_Avoid_: ledger entry, changelog item, note
+**Patch SOP**:
+The authoritative migration procedure for one Patch, written for an AI refresh agent to rediscover, reapply, and validate the Patch after a Source Refresh.
+_Avoid_: script, prompt
 
-**Patch Recipe**:
-The executable application and verification artifact for one Patch, stored separately from copied source so source refresh work can fail loudly when the expected upstream anchors no longer match.
-_Avoid_: patch script, replacement script, codemod
+**Patch Evidence**:
+The release-specific notes that record where a Patch was found and how it was validated during one Source Refresh.
+_Avoid_: log, scratch notes
 
 **Normalization**:
 A deterministic, broad rewrite of preserved upstream source material that creates a patch-friendly baseline without expressing local product intent.
 _Avoid_: patch, cleanup, refactor
 
 **Source Refresh**:
-The operation that replaces preserved upstream source material from a newer Codex App release before Normalization and Patch Recipes rebuild the local O3 Code state.
+The operation that replaces preserved upstream source material from a newer Codex App release before Normalization and Patch SOPs rebuild the local O3 Code state.
 _Avoid_: sync, vendor update, recopy
 
 **Runtime Resources**:
 The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
 _Avoid_: app bundle, binary mirror
+
+**Codex CLI Upstream**:
+The pinned source checkout used to build the `codex` app-server binary consumed by the Desktop Reconstruction.
+_Avoid_: package, loose clone, binary source
 
 **Codex App User Data Directory**:
 The installed Codex App's Electron user data directory, shared by default with O3 Code when running the Desktop Reconstruction locally.
@@ -51,6 +55,22 @@ _Avoid_: original app folder, app bundle, upstream folder
 **Local App Identity**:
 The visible O3 Code name and icon surface used by the Desktop Reconstruction during repo-local runs, without changing Codex App protocol, bundle, or user data identity.
 _Avoid_: rebrand, bundle identity, product identity
+
+**Account Auth**:
+The Codex App authentication mode that uses a user's ChatGPT account session for Codex App Server requests.
+_Avoid_: login, SIWC, user auth
+
+**API Key Auth**:
+The Codex App authentication mode that uses an OpenAI-compatible API key for Codex App Server requests.
+_Avoid_: token auth, key login, env auth
+
+**Realtime Auth Override**:
+A scoped O3 Code policy that allows realtime voice setup to use API Key Auth while the rest of the Codex App Server session remains on Account Auth.
+_Avoid_: hybrid login, mixed auth, realtime key hack
+
+**Realtime API Key**:
+The API key explicitly designated for the Realtime Auth Override.
+_Avoid_: default API key, inherited key, shell key
 
 ## Example Dialogue
 
@@ -64,19 +84,23 @@ Domain expert: "No. Formatting preserved upstream material is Normalization; res
 
 Dev: "If chunk filenames change, how will we find our local changes?"
 
-Domain expert: "Use begin and end Patch Markers around the changed region and keep the explanation outside the code."
+Domain expert: "Follow the Patch SOP. Patch Markers show the last applied site, but the SOP owns rediscovery and validation."
 
-Dev: "Where should the full explanation for a Patch live?"
+Dev: "Where should the full migration procedure for a Patch live?"
 
-Domain expert: "Put it in a Patch Record, one file per Patch, so refresh agents can load only the relevant context."
+Domain expert: "Put it in the Patch SOP, one folder per Patch, so an AI refresh agent can load only the relevant procedure and evidence."
 
 Dev: "How do we reapply a Patch after refreshing Codex App source material?"
 
-Domain expert: "Run its Patch Recipe after Normalization, and treat a missing or ambiguous upstream anchor as a Patch migration failure."
+Domain expert: "Replace upstream material, run Normalization, then reapply each Patch SOP one by one and record fresh Patch Evidence."
 
 Dev: "Can I preserve the edited copied files during a newer Codex App update?"
 
-Domain expert: "No. A Source Refresh may replace copied source material, then rebuild O3 Code by running Normalization and Patch Recipes."
+Domain expert: "No. A Source Refresh may replace copied source material, then rebuild O3 Code by running Normalization and Patch SOPs."
+
+Dev: "Should I patch the compiled `codex` binary directly?"
+
+Domain expert: "No. Edit the Codex CLI Upstream, build a new binary, and install that binary into Runtime Resources."
 
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 
@@ -85,3 +109,11 @@ Domain expert: "No. Use the Codex App User Data Directory by default, and overri
 Dev: "Does Local App Identity mean changing bundle IDs or the Codex App User Data Directory?"
 
 Domain expert: "No. Local App Identity only covers the visible name and icon surfaces for repo-local runs."
+
+Dev: "Should I switch O3 Code entirely to API Key Auth so realtime voice works?"
+
+Domain expert: "No. Use a Realtime Auth Override so realtime voice can use API Key Auth without changing the rest of the Account Auth session."
+
+Dev: "Can the Realtime Auth Override just pick up whatever OpenAI API key is already in my shell?"
+
+Domain expert: "No. Provide a Realtime API Key explicitly so realtime voice routing and spend are intentional."
