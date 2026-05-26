@@ -1,7 +1,7 @@
 import { EventEmitter } from "node:events";
 import { setTimeout as delay } from "node:timers/promises";
 
-const HOST_BINDING_NAME = "__o3BridgeHostBinding";
+const HOST_BINDING_NAME = "__o3CodeBridgeHostBinding";
 
 export class CdpClient extends EventEmitter {
   #nextId = 1;
@@ -45,7 +45,7 @@ export class CdpClient extends EventEmitter {
   async subscribeWorker(workerId) {
     await this.connect();
     return await this.evaluate(
-      (id) => window.__o3BridgeSubscribeWorker?.(id) ?? false,
+      (id) => window.__o3CodeBridgeSubscribeWorker?.(id) ?? false,
       [workerId],
     );
   }
@@ -53,7 +53,7 @@ export class CdpClient extends EventEmitter {
   async unsubscribeWorker(workerId) {
     await this.connect();
     return await this.evaluate(
-      (id) => window.__o3BridgeUnsubscribeWorker?.(id) ?? false,
+      (id) => window.__o3CodeBridgeUnsubscribeWorker?.(id) ?? false,
       [workerId],
     );
   }
@@ -222,7 +222,7 @@ export class CdpClient extends EventEmitter {
   async #installHostHooks() {
     await this.evaluate(
       ({ bindingName }) => {
-        if (window.__o3BridgeHostHooksInstalled === true) {
+        if (window.__o3CodeBridgeHostHooksInstalled === true) {
           return "already-installed";
         }
 
@@ -232,8 +232,8 @@ export class CdpClient extends EventEmitter {
           } catch {}
         };
 
-        window.__o3BridgeHostHooksInstalled = true;
-        window.__o3BridgeWorkerUnsubscribers = new Map();
+        window.__o3CodeBridgeHostHooksInstalled = true;
+        window.__o3CodeBridgeWorkerUnsubscribers = new Map();
 
         window.addEventListener(
           "message",
@@ -243,8 +243,8 @@ export class CdpClient extends EventEmitter {
           true,
         );
 
-        window.__o3BridgeSubscribeWorker = (workerId) => {
-          if (window.__o3BridgeWorkerUnsubscribers.has(workerId)) {
+        window.__o3CodeBridgeSubscribeWorker = (workerId) => {
+          if (window.__o3CodeBridgeWorkerUnsubscribers.has(workerId)) {
             return true;
           }
 
@@ -264,17 +264,17 @@ export class CdpClient extends EventEmitter {
             return false;
           }
 
-          window.__o3BridgeWorkerUnsubscribers.set(workerId, unsubscribe);
+          window.__o3CodeBridgeWorkerUnsubscribers.set(workerId, unsubscribe);
           return true;
         };
 
-        window.__o3BridgeUnsubscribeWorker = (workerId) => {
+        window.__o3CodeBridgeUnsubscribeWorker = (workerId) => {
           const unsubscribe =
-            window.__o3BridgeWorkerUnsubscribers.get(workerId);
+            window.__o3CodeBridgeWorkerUnsubscribers.get(workerId);
           if (typeof unsubscribe === "function") {
             unsubscribe();
           }
-          window.__o3BridgeWorkerUnsubscribers.delete(workerId);
+          window.__o3CodeBridgeWorkerUnsubscribers.delete(workerId);
           return true;
         };
 
