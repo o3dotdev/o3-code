@@ -16,6 +16,10 @@ const svgExtension = ".svg";
 const skippedDirectories = new Set(["node_modules"]);
 const checkMode = process.argv.includes("--check");
 const files = [];
+const patchMarkerPattern = /^\s*\/\/ o3-code-patch-(?:begin|end): /m;
+const patchMarkerLinePattern =
+  /^\s*\/\/ o3-code-patch-(?:begin|end): [a-z0-9-]+\s*$/;
+const invalidPatchMarkers = [];
 
 function collect(path) {
   const absolutePath = resolve(repoRoot, path);
@@ -51,6 +55,24 @@ function postprocess(file, source) {
   return source.replaceAll(/(--[\w-]+:)\s+(!important;)/g, "$1 $2");
 }
 
+function validatePatchMarkers(file, source) {
+  const lines = source.split("\n");
+  lines.forEach((line, index) => {
+    if (
+      line.includes("o3-code-patch-begin:") ||
+      line.includes("o3-code-patch-end:")
+    ) {
+      if (!patchMarkerLinePattern.test(line)) {
+        invalidPatchMarkers.push({
+          file,
+          line: index + 1,
+          text: line,
+        });
+      }
+    }
+  });
+}
+
 for (const root of roots) {
   collect(root);
 }
@@ -62,6 +84,11 @@ const config = (await resolveConfig(repoRoot)) ?? {};
 
 for (const file of files) {
   const source = readFileSync(file, "utf8");
+  validatePatchMarkers(file, source);
+  if (patchMarkerPattern.test(source)) {
+    continue;
+  }
+
   const parserConfig = extname(file) === svgExtension ? { parser: "html" } : {};
   const formatted = postprocess(
     file,
@@ -80,6 +107,18 @@ for (const file of files) {
   if (!checkMode) {
     writeFileSync(file, formatted);
   }
+}
+
+if (invalidPatchMarkers.length > 0) {
+  console.error(
+    `Invalid Patch Marker placement in ${invalidPatchMarkers.length} location(s):`,
+  );
+  for (const marker of invalidPatchMarkers) {
+    console.error(
+      `- ${marker.file.slice(repoRoot.length + 1)}:${marker.line}: ${marker.text.trim()}`,
+    );
+  }
+  process.exit(1);
 }
 
 if (changedFiles.length === 0) {

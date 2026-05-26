@@ -4945,8 +4945,19 @@ var l = t((e) => {
             ? (r.Log.warn(
                 `useFeatureGate hook failed to find a valid StatsigClient for gate '${e}'.`,
               ),
-              i.NoopEvaluationsClient.getFeatureGate(e, n))
-            : o.getFeatureGate(e, n),
+              (
+                // o3-code-patch-begin: statsig-gate-overrides
+                o3CodeForceFeatureGate(
+                  i.NoopEvaluationsClient.getFeatureGate(e, n),
+                  e,
+                )
+                // o3-code-patch-end: statsig-gate-overrides
+              ))
+            : (
+              // o3-code-patch-begin: statsig-gate-overrides
+              o3CodeGetFeatureGate(o, e, n)
+              // o3-code-patch-end: statsig-gate-overrides
+            ),
         [e, o, s, ...(n ? Object.values(n) : [])],
       );
     }
@@ -4966,8 +4977,16 @@ var l = t((e) => {
             ? (r.Log.warn(
                 `useGateValue hook failed to find a valid StatsigClient for gate '${e}'.`,
               ),
-              i.NoopEvaluationsClient.checkGate(e, n))
-            : o.checkGate(e, n),
+              (
+                // o3-code-patch-begin: statsig-gate-overrides
+                o3CodeCheckGate(i.NoopEvaluationsClient, e, n)
+                // o3-code-patch-end: statsig-gate-overrides
+              ))
+            : (
+              // o3-code-patch-begin: statsig-gate-overrides
+              o3CodeCheckGate(o, e, n)
+              // o3-code-patch-end: statsig-gate-overrides
+            ),
         [e, o, s, ...(n ? Object.values(n) : [])],
       );
     }
@@ -5039,8 +5058,10 @@ var l = t((e) => {
           [e, n],
         ),
         c = [s, n],
-        l = (0, t.useCallback)((e, t) => s.checkGate(e, t), c),
-        u = (0, t.useCallback)((e, t) => s.getFeatureGate(e, t), c),
+        // o3-code-patch-begin: statsig-gate-overrides
+        l = (0, t.useCallback)((e, t) => o3CodeCheckGate(s, e, t), c),
+        u = (0, t.useCallback)((e, t) => o3CodeGetFeatureGate(s, e, t), c),
+        // o3-code-patch-end: statsig-gate-overrides
         d = (0, t.useCallback)((e, t) => s.getDynamicConfig(e, t), c),
         f = (0, t.useCallback)((e, t) => s.getExperiment(e, t), c),
         p = (0, t.useCallback)((e, t) => s.getLayer(e, t), c),
@@ -5231,7 +5252,9 @@ var l = t((e) => {
       onMount: (t, n) => {
         let r = n.get(Y);
         return (
-          r != null && t(r.checkGate(e)),
+          // o3-code-patch-begin: statsig-gate-overrides
+          (r != null && t(o3CodeCheckGate(r, e))),
+          // o3-code-patch-end: statsig-gate-overrides
           n.set(X, (t) => (t.includes(e) ? t : [...t, e])),
           () => {
             n.set(X, (t) => t.filter((t) => t !== e));
@@ -5242,12 +5265,16 @@ var l = t((e) => {
   );
 function Le(e, t) {
   let n = e.get(Y);
-  return n == null ? !1 : n.checkGate(t);
+  // o3-code-patch-begin: statsig-gate-overrides
+  return n == null ? o3CodeShouldForceFeatureGate(t) : o3CodeCheckGate(n, t);
+  // o3-code-patch-end: statsig-gate-overrides
 }
 function Re(e, t) {
   let n = () => {
       for (let n of e.get(X)) {
-        let r = t.checkGate(n);
+        // o3-code-patch-begin: statsig-gate-overrides
+        let r = o3CodeCheckGate(t, n);
+        // o3-code-patch-end: statsig-gate-overrides
         e.set(e.get(Z, n), r);
       }
     },
@@ -5311,8 +5338,49 @@ function Ye(e, t, n) {
   return e.getLayer(t, n);
 }
 function Xe(e, t) {
-  return e.checkGate(t);
+  // o3-code-patch-begin: statsig-gate-overrides
+  return o3CodeCheckGate(e, t);
+  // o3-code-patch-end: statsig-gate-overrides
 }
+// o3-code-patch-begin: statsig-gate-overrides
+var o3CodeForcedFeatureGates = new Set();
+function o3CodeShouldForceFeatureGate(e) {
+  return o3CodeForcedFeatureGates.has(e);
+}
+function o3CodeCheckGate(e, t, n) {
+  try {
+    let r = e?.checkGate?.(t, n) === !0;
+    return o3CodeShouldForceFeatureGate(t) ? !0 : r;
+  } catch {
+    return o3CodeShouldForceFeatureGate(t);
+  }
+}
+function o3CodeGetFeatureGate(e, t, n) {
+  try {
+    return o3CodeForceFeatureGate(e?.getFeatureGate?.(t, n), t);
+  } catch {
+    return o3CodeForceFeatureGate(null, t);
+  }
+}
+function o3CodeForceFeatureGate(e, t) {
+  let n = o3CodeShouldForceFeatureGate(t);
+  return e && typeof e == `object`
+    ? n
+      ? { ...e, value: !0 }
+      : e
+    : {
+        name: t ?? ``,
+        details: { reason: n ? `O3CodeForcedEnabled` : `O3CodeUnavailable` },
+        ruleID: ``,
+        __evaluation: null,
+        value: n,
+        idType: null,
+      };
+}
+// o3-code-patch-end: statsig-gate-overrides
+// o3-code-patch-begin: realtime-voice-statsig-override
+o3CodeForcedFeatureGates.add(`2380644311`);
+// o3-code-patch-end: realtime-voice-statsig-override
 function Ze(e) {
   let t = {};
   return (

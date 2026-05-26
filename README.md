@@ -22,7 +22,7 @@ pnpm normalize
 pnpm normalize:check
 ```
 
-`pnpm normalize` rewrites copied app source into a patch-friendly baseline. Run it after refreshing copied Codex App source material and before applying local Patch Records.
+`pnpm normalize` rewrites copied app source into a patch-friendly baseline. During Source Refresh work, run it after preserving copied Codex App source material and before applying Patch Recipes.
 
 ## Layout
 
@@ -35,6 +35,7 @@ pnpm normalize:check
 - `docs/agents/` - repo configuration for agent skills.
 - `docs/adr/` - architectural decisions for durable extraction choices.
 - `docs/patches/` - one Patch Record per local Patch.
+- `scripts/patch-recipes/` - Patch Recipes for replaying and checking local Patches.
 
 ## Source
 
