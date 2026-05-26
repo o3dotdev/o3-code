@@ -109,6 +109,7 @@ export class CdpClient extends EventEmitter {
         await this.send("Runtime.enable");
         await this.send("Runtime.addBinding", { name: HOST_BINDING_NAME });
         await this.#installHostHooks();
+        await this.#publishInitialHostState();
         this.logger.info?.("[bridge] attached CDP target", {
           targetId: target.id,
           url: target.url,
@@ -281,5 +282,23 @@ export class CdpClient extends EventEmitter {
       },
       [{ bindingName: HOST_BINDING_NAME }],
     );
+  }
+
+  async #publishInitialHostState() {
+    const systemThemeVariant = await this.evaluate(() => {
+      const hostVariant = window.electronBridge?.getSystemThemeVariant?.();
+      if (hostVariant === "light" || hostVariant === "dark") {
+        return hostVariant;
+      }
+
+      return window.matchMedia?.("(prefers-color-scheme: light)")?.matches
+        ? "light"
+        : "dark";
+    });
+
+    this.emit("host-event", {
+      type: "system-theme-variant-updated",
+      payload: systemThemeVariant,
+    });
   }
 }

@@ -49,7 +49,7 @@
   const workerListeners = new Map();
   const themeListeners = new Set();
   const stagedFiles = new WeakMap();
-  let systemThemeVariant = "system";
+  let systemThemeVariant = getBrowserThemeVariant();
   let appSessionId = randomId();
 
   const socket = new WebSocket(
@@ -90,7 +90,10 @@
         sharedObjectSnapshot,
         envelope.payload?.sharedObjectSnapshot ?? {},
       );
-      systemThemeVariant = envelope.payload?.systemThemeVariant ?? "system";
+      systemThemeVariant = normalizeThemeVariant(
+        envelope.payload?.systemThemeVariant,
+        systemThemeVariant,
+      );
       appSessionId = envelope.payload?.sessionId ?? appSessionId;
       return;
     }
@@ -119,7 +122,10 @@
     }
 
     if (envelope.kind === "system-theme-variant-updated") {
-      systemThemeVariant = envelope.payload ?? "system";
+      systemThemeVariant = normalizeThemeVariant(
+        envelope.payload,
+        systemThemeVariant,
+      );
       for (const listener of themeListeners) {
         listener();
       }
@@ -192,6 +198,16 @@
     }
 
     return `bridge-${Date.now()}-${Math.random().toString(16).slice(2)}`;
+  }
+
+  function getBrowserThemeVariant() {
+    return window.matchMedia?.("(prefers-color-scheme: light)")?.matches
+      ? "light"
+      : "dark";
+  }
+
+  function normalizeThemeVariant(value, fallback) {
+    return value === "light" || value === "dark" ? value : fallback;
   }
 
   function updateSharedObject(key, value) {

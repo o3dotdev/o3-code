@@ -5,7 +5,7 @@ export const BRIDGE_PROTOCOL_VERSION = 1;
 export class BridgeRouter {
   #activeSession = null;
   #sharedObjectSnapshot = {};
-  #themeVariant = "system";
+  #themeVariant = "dark";
 
   constructor({ hostTransport, logger = console } = {}) {
     this.hostTransport = hostTransport;
@@ -82,7 +82,10 @@ export class BridgeRouter {
     }
 
     if (event?.type === "system-theme-variant-updated") {
-      this.#themeVariant = event.payload ?? "system";
+      this.#themeVariant = normalizeSystemThemeVariant(
+        event.payload,
+        this.#themeVariant,
+      );
       this.#sendToActive({
         kind: "system-theme-variant-updated",
         payload: this.#themeVariant,
@@ -211,4 +214,8 @@ export class BridgeRouter {
       }),
     );
   }
+}
+
+function normalizeSystemThemeVariant(value, fallback) {
+  return value === "light" || value === "dark" ? value : fallback;
 }
