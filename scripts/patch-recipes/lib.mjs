@@ -27,6 +27,15 @@ export function createRecipeContext({ repoRoot, checkMode }) {
     replaceSet(options) {
       return replaceSet({ repoRoot, checkMode, ...options });
     },
+    prependOnce(options) {
+      return prependOnce({ repoRoot, checkMode, ...options });
+    },
+    assertFilesExist(options) {
+      return assertFilesExist({ repoRoot, ...options });
+    },
+    assertContains(options) {
+      return assertContains({ repoRoot, ...options });
+    },
     relativePath(file) {
       return relative(repoRoot, file);
     },
@@ -123,6 +132,45 @@ export function replaceOnce(options) {
   return replaceSet({ ...options, replacements: [options] });
 }
 
+function prependOnce({ repoRoot, checkMode, file, patchId, prefix, anchor }) {
+  const absoluteFile = resolve(repoRoot, file);
+  const source = readFileSync(absoluteFile, "utf8");
+
+  if (source.startsWith(prefix)) {
+    return { changed: false };
+  }
+
+  if (checkMode) {
+    throw new PatchRecipeError(
+      `${patchId} prefix is not fully applied in ${relative(
+        repoRoot,
+        absoluteFile,
+      )}.`,
+    );
+  }
+
+  if (!source.startsWith(anchor)) {
+    throw new PatchRecipeError(
+      `${patchId} cannot be prepended in ${relative(
+        repoRoot,
+        absoluteFile,
+      )}: expected clean file anchor at start.`,
+    );
+  }
+
+  if (countOccurrences(source, prefix) > 0) {
+    throw new PatchRecipeError(
+      `${patchId} has an ambiguous prefix state in ${relative(
+        repoRoot,
+        absoluteFile,
+      )}.`,
+    );
+  }
+
+  writeFileSync(absoluteFile, `${prefix}${source}`);
+  return { changed: true };
+}
+
 function replaceSet({ repoRoot, checkMode, file, patchId, replacements }) {
   const absoluteFile = resolve(repoRoot, file);
   const source = readFileSync(absoluteFile, "utf8");
@@ -178,4 +226,32 @@ function replaceSet({ repoRoot, checkMode, file, patchId, replacements }) {
   }
   writeFileSync(absoluteFile, updated);
   return { changed: true };
+}
+
+function assertFilesExist({ repoRoot, patchId, files }) {
+  const missing = files.filter((file) => !existsSync(resolve(repoRoot, file)));
+  if (missing.length > 0) {
+    throw new PatchRecipeError(
+      [`${patchId} is missing required file(s):`, ...missing].join("\n- "),
+    );
+  }
+  return { changed: false };
+}
+
+function assertContains({ repoRoot, file, patchId, snippets }) {
+  const absoluteFile = resolve(repoRoot, file);
+  const source = readFileSync(absoluteFile, "utf8");
+  const missing = snippets.filter(({ text }) => !source.includes(text));
+  if (missing.length > 0) {
+    throw new PatchRecipeError(
+      [
+        `${patchId} required snippet(s) missing in ${relative(
+          repoRoot,
+          absoluteFile,
+        )}:`,
+        ...missing.map(({ name }) => name),
+      ].join("\n- "),
+    );
+  }
+  return { changed: false };
 }
