@@ -4939,21 +4939,27 @@ var l = t((e) => {
       a = q();
     function o(e, n) {
       let { client: o, renderVersion: s } = (0, t.useContext)(a.default);
-      // o3-code-patch-begin: statsig-gate-overrides
       return (0, t.useMemo)(
         () =>
           (0, i.isNoopClient)(o)
             ? (r.Log.warn(
                 `useFeatureGate hook failed to find a valid StatsigClient for gate '${e}'.`,
               ),
-              o3CodeForceFeatureGate(
-                i.NoopEvaluationsClient.getFeatureGate(e, n),
-                e,
+              (
+                // o3-code-patch-begin: statsig-gate-overrides
+                o3CodeForceFeatureGate(
+                  i.NoopEvaluationsClient.getFeatureGate(e, n),
+                  e,
+                )
+                // o3-code-patch-end: statsig-gate-overrides
               ))
-            : o3CodeGetFeatureGate(o, e, n),
+            : (
+              // o3-code-patch-begin: statsig-gate-overrides
+              o3CodeGetFeatureGate(o, e, n)
+              // o3-code-patch-end: statsig-gate-overrides
+            ),
         [e, o, s, ...(n ? Object.values(n) : [])],
       );
-      // o3-code-patch-end: statsig-gate-overrides
     }
     e.default = o;
   }),
@@ -4965,18 +4971,24 @@ var l = t((e) => {
       a = q();
     function o(e, n) {
       let { client: o, renderVersion: s } = (0, t.useContext)(a.default);
-      // o3-code-patch-begin: statsig-gate-overrides
       return (0, t.useMemo)(
         () =>
           (0, i.isNoopClient)(o)
             ? (r.Log.warn(
                 `useGateValue hook failed to find a valid StatsigClient for gate '${e}'.`,
               ),
-              o3CodeCheckGate(i.NoopEvaluationsClient, e, n))
-            : o3CodeCheckGate(o, e, n),
+              (
+                // o3-code-patch-begin: statsig-gate-overrides
+                o3CodeCheckGate(i.NoopEvaluationsClient, e, n)
+                // o3-code-patch-end: statsig-gate-overrides
+              ))
+            : (
+              // o3-code-patch-begin: statsig-gate-overrides
+              o3CodeCheckGate(o, e, n)
+              // o3-code-patch-end: statsig-gate-overrides
+            ),
         [e, o, s, ...(n ? Object.values(n) : [])],
       );
-      // o3-code-patch-end: statsig-gate-overrides
     }
     e.default = o;
   }),
