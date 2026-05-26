@@ -4,8 +4,13 @@
   }
 
   const protocolVersion = 1;
+  const debug =
+    new URL(
+      document.currentScript?.src ?? window.location.href,
+    ).searchParams.get("debug") === "1";
   const pending = new Map();
   const queued = [];
+  const persistedAtomState = {};
   const sharedObjectSnapshot = {
     host_config: {
       id: "local",
@@ -52,6 +57,7 @@
   );
 
   socket.addEventListener("open", () => {
+    debugLog("socket-open");
     while (queued.length > 0) {
       socket.send(queued.shift());
     }
@@ -59,6 +65,7 @@
 
   socket.addEventListener("message", (event) => {
     const envelope = JSON.parse(event.data);
+    debugEnvelope("from-sidecar", envelope);
 
     if (
       envelope.kind === "bridge-response" ||
@@ -92,8 +99,12 @@
       const payload = envelope.payload;
       if (payload?.type === "shared-object-updated") {
         updateSharedObject(payload.key, payload.value);
+      } else if (payload?.type === "persisted-atom-sync") {
+        replacePersistedAtomState(payload.state ?? {});
+      } else if (payload?.type === "persisted-atom-updated") {
+        updatePersistedAtomState(payload.key, payload.value, payload.deleted);
       }
-      window.dispatchEvent(new MessageEvent("message", { data: payload }));
+      dispatchAppMessage(payload);
       return;
     }
 
@@ -140,12 +151,39 @@
     });
 
     if (socket.readyState === WebSocket.OPEN) {
+      debugEnvelope("to-sidecar", JSON.parse(envelope));
       socket.send(envelope);
     } else {
+      debugEnvelope("queued", JSON.parse(envelope));
       queued.push(envelope);
     }
 
     return await response;
+  }
+
+  function debugLog(message, fields) {
+    if (!debug) {
+      return;
+    }
+
+    console.debug("[bridge-shim]", message, fields ?? {});
+  }
+
+  function debugEnvelope(direction, envelope) {
+    if (!debug) {
+      return;
+    }
+
+    console.debug("[bridge-shim]", direction, {
+      kind: envelope.kind,
+      payloadType: envelope.payload?.type,
+      responseTo: envelope.responseTo,
+      workerId: envelope.workerId,
+    });
+  }
+
+  function dispatchAppMessage(payload) {
+    window.dispatchEvent(new MessageEvent("message", { data: payload }));
   }
 
   function randomId() {
@@ -165,6 +203,45 @@
       delete sharedObjectSnapshot[key];
     } else {
       sharedObjectSnapshot[key] = value;
+    }
+  }
+
+  function replacePersistedAtomState(state) {
+    for (const key of Object.keys(persistedAtomState)) {
+      delete persistedAtomState[key];
+    }
+
+    Object.assign(persistedAtomState, state);
+  }
+
+  function updatePersistedAtomState(key, value, deleted) {
+    if (typeof key !== "string") {
+      return;
+    }
+
+    if (deleted === true || value === undefined) {
+      delete persistedAtomState[key];
+    } else {
+      persistedAtomState[key] = value;
+    }
+  }
+
+  function handleLocalAppMessage(payload) {
+    switch (payload?.type) {
+      case "persisted-atom-sync-request": {
+        queueMicrotask(() => {
+          dispatchAppMessage({
+            type: "persisted-atom-sync",
+            state: { ...persistedAtomState },
+          });
+        });
+        return;
+      }
+
+      case "persisted-atom-update": {
+        updatePersistedAtomState(payload.key, payload.value, payload.deleted);
+        return;
+      }
     }
   }
 
@@ -199,6 +276,7 @@
   const electronBridge = {
     windowType: "electron",
     sendMessageFromView: async (payload) => {
+      handleLocalAppMessage(payload);
       if (payload?.type === "shared-object-set") {
         updateSharedObject(payload.key, payload.value);
       }
