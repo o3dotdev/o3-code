@@ -1,4 +1,4 @@
-(function installO3BridgeShim() {
+(function installO3CodeBridgeShim() {
   if (window.electronBridge != null) {
     return;
   }
