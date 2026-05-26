@@ -16,6 +16,78 @@ _Avoid_: clone, fork, extracted app
 The local app context within O3 Code that preserves and runs the Codex App source material with its companion runtime material.
 _Avoid_: app bundle, desktop clone, extracted app
 
+**Mirrored Web Client**:
+The browser-facing O3 Code experience that presents the same user workflows as the Desktop Reconstruction instead of a separate command-only control panel.
+_Avoid_: web clone, web rewrite, command-only web UI
+
+**Transparent Remote Renderer Bridge**:
+The O3 Code bridge model where a remote browser session receives the Desktop Reconstruction's full renderer capability surface instead of a curated subset of feature adapters.
+_Avoid_: feature bridge, partial API bridge, IPC mirror
+
+**Bridge Host**:
+The local Desktop Reconstruction participant that gives a Mirrored Web Client access to the Codex App capability surface without making the visible desktop window the product surface.
+_Avoid_: remote desktop, visible app controller, pixel stream
+
+**Bridge Mode**:
+The O3 Code run mode where the Desktop Reconstruction exposes a control surface for a Mirrored Web Client while the local app is running.
+_Avoid_: normal app launch, remote desktop mode, web server mode
+
+**Bridge Port**:
+A loopback-only network port dynamically assigned during Bridge Mode for either the sidecar web endpoint or the private Electron control connection.
+_Avoid_: default debugging port, public port, fixed port
+
+**Bridge Shim**:
+Repo-owned browser-side code that lets the Mirrored Web Client talk to Bridge Mode without changing preserved Codex App source material.
+_Avoid_: renderer patch, web rewrite, injected hack
+
+**Webview Assets**:
+The preserved browser-rendered files under `apps/desktop/app/webview` that the Desktop Reconstruction loads as its primary UI.
+_Avoid_: web app source, copied frontend, separate web build
+
+**Bridge Envelope**:
+Sidecar-owned metadata wrapped around an unchanged Codex App renderer message so Bridge Mode can route messages across browser and Electron runtimes without changing the app payload.
+_Avoid_: app message mutation, bridged payload type, IPC wrapper
+
+**Minimal CDP Transport**:
+The Bridge Mode use of Chrome DevTools Protocol only to attach to the Electron renderer, install message hooks, and relay renderer calls.
+_Avoid_: UI automation, pixel streaming, broad CDP control
+
+**Privileged State Boundary**:
+The Bridge Mode rule that privileged app capability execution belongs to the local Desktop Reconstruction, while the Mirrored Web Client owns browser interaction state.
+_Avoid_: browser app-server client, duplicate backend, direct native web access
+
+**Transport Host Renderer**:
+The Desktop Reconstruction renderer used by Bridge Mode to relay capability messages, even if it also visibly renders the desktop UI during the MVP.
+_Avoid_: second user surface, remote-controlled desktop, hidden renderer requirement
+
+**Active Web Session**:
+The single browser connection currently allowed to control a Bridge Mode instance during the MVP.
+_Avoid_: multi-client session, shared web control, rejected reconnect
+
+**Detached Web Session**:
+A former Active Web Session whose browser connection has closed or been replaced while local Desktop Reconstruction work continues.
+_Avoid_: cancelled session, stopped app run, killed browser session
+
+**Bridge Sync Pulse**:
+The initial Bridge Mode notification set that gives a new Active Web Session current host and shared-object status before normal app queries finish.
+_Avoid_: full state snapshot, custom hydration dump, serialized app state
+
+**Bridge-Staged File**:
+A browser-selected file whose bytes have been copied into local Bridge Mode storage so the Desktop Reconstruction can handle it as a local file.
+_Avoid_: fake file path, browser path passthrough, direct filesystem file
+
+**Desktop-Hosted Native UI**:
+Native macOS dialogs, menus, or OS surfaces shown by the local Desktop Reconstruction during Bridge Mode on behalf of the Mirrored Web Client.
+_Avoid_: browser-native menu, remote-rendered dialog, fake native UI
+
+**Local-Only Bridge**:
+The MVP Bridge Mode exposure where the Mirrored Web Client and private Electron control connection are available only on the local machine loopback interface.
+_Avoid_: LAN bridge, public bridge, remote tunnel
+
+**Bridge Sidecar**:
+The repo-owned Node process managed by Bridge Mode that serves the Mirrored Web Client, owns WebSocket routing, and privately connects to the Electron control port.
+_Avoid_: Electron main patch, embedded bridge server, frontend server
+
 **Patch**:
 A deliberate local change applied to O3 Code after the upstream source material has been preserved.
 _Avoid_: tweak, hack, modification
@@ -109,6 +181,78 @@ Domain expert: "No. Edit the Codex CLI Upstream, build a new binary, and install
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 
 Domain expert: "No. Use the Codex App User Data Directory by default, and override it only when an isolated or custom profile is needed."
+
+Dev: "Should the web version be a separate control panel?"
+
+Domain expert: "No. Build a Mirrored Web Client so the browser presents the same user workflows as the Desktop Reconstruction."
+
+Dev: "Should we add a separate bridge endpoint for every desktop feature?"
+
+Domain expert: "No. Use a Transparent Remote Renderer Bridge so new renderer capabilities are mirrored by default instead of needing a new feature adapter."
+
+Dev: "Should the web client just stream or control the visible desktop window?"
+
+Domain expert: "No. The Mirrored Web Client owns the browser UI, while a Bridge Host provides access to the local Desktop Reconstruction capability surface."
+
+Dev: "Does the web bridge work when O3 Code is not running?"
+
+Domain expert: "No. The first implementation requires Bridge Mode so the local Desktop Reconstruction can act as the Bridge Host."
+
+Dev: "Can Bridge Mode just use the default Chrome debugging port?"
+
+Domain expert: "No. Use dynamically assigned loopback-only Bridge Ports so the sidecar and Electron control connection are not predictable public surfaces."
+
+Dev: "Should the first web bridge patch preserved Electron chunks?"
+
+Domain expert: "No. Start with a repo-owned Bridge Shim and sidecar, and add a Patch only when preserved source is missing a necessary hook."
+
+Dev: "Should the Mirrored Web Client have its own frontend build?"
+
+Domain expert: "No. Serve the preserved Webview Assets and inject a Bridge Shim so the browser uses the same UI material as the Desktop Reconstruction."
+
+Dev: "Can the bridge add routing fields directly to app messages?"
+
+Domain expert: "No. Keep Codex App message payloads unchanged and carry routing data in a Bridge Envelope."
+
+Dev: "Should Bridge Mode drive the desktop UI with clicks and screenshots?"
+
+Domain expert: "No. Use Minimal CDP Transport for renderer message relay, not UI automation or pixel streaming."
+
+Dev: "Can the Mirrored Web Client open its own app-server connection?"
+
+Domain expert: "No. Keep privileged app execution behind the Privileged State Boundary in the local Desktop Reconstruction."
+
+Dev: "Are the browser and desktop window both first-class active user surfaces in Bridge Mode?"
+
+Domain expert: "No. In the MVP, the browser is the intended user surface and the local Desktop Reconstruction renderer is the Transport Host Renderer."
+
+Dev: "Can multiple browsers control one Bridge Mode instance at the same time?"
+
+Domain expert: "No. Bridge Mode has one Active Web Session in the MVP, and a newer browser connection replaces the old one."
+
+Dev: "Should replacing the Active Web Session stop local Codex work?"
+
+Domain expert: "No. The old browser becomes a Detached Web Session while local turns, terminals, and app tasks continue in the Desktop Reconstruction."
+
+Dev: "Should Bridge Mode build a custom full-state serializer for reconnects?"
+
+Domain expert: "No. New Active Web Sessions hydrate through normal app queries plus a Bridge Sync Pulse for current host and shared-object status."
+
+Dev: "Can the Mirrored Web Client pretend a browser-selected file has a local path?"
+
+Domain expert: "No. Browser-selected files become Bridge-Staged Files before the Desktop Reconstruction receives local file references."
+
+Dev: "Should the MVP reimplement macOS dialogs and menus in the browser?"
+
+Domain expert: "No. Use Desktop-Hosted Native UI first, then replace specific surfaces with browser-native equivalents when remote ergonomics require it."
+
+Dev: "Can the unauthenticated MVP be reachable from another device or the internet?"
+
+Domain expert: "No. Keep it as a Local-Only Bridge until pairing, authentication, and authorization are designed."
+
+Dev: "Should the MVP bridge server run inside Electron main?"
+
+Domain expert: "No. Use a repo-owned Bridge Sidecar process first, managed by the Bridge Mode launcher."
 
 Dev: "Does Local App Identity mean changing bundle IDs or the Codex App User Data Directory?"
 
