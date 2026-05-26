@@ -24,20 +24,20 @@ _Avoid_: tweak, hack, modification
 A paired inline boundary placed around a Patch site so the local intent and exact changed region remain discoverable after source refreshes and chunk renames.
 _Avoid_: comment, note, TODO
 
-**Patch Record**:
-The durable explanation of one Patch, stored separately from copied source so future refresh work can load and reason about that Patch in isolation.
-_Avoid_: ledger entry, changelog item, note
+**Patch SOP**:
+The authoritative migration procedure for one Patch, written for an AI refresh agent to rediscover, reapply, and validate the Patch after a Source Refresh.
+_Avoid_: recipe, script, prompt
 
-**Patch Recipe**:
-The executable application and verification artifact for one Patch, stored separately from copied source so source refresh work can fail loudly when the expected upstream anchors no longer match.
-_Avoid_: patch script, replacement script, codemod
+**Patch Evidence**:
+The release-specific notes that record where a Patch was found and how it was validated during one Source Refresh.
+_Avoid_: recipe output, log, scratch notes
 
 **Normalization**:
 A deterministic, broad rewrite of preserved upstream source material that creates a patch-friendly baseline without expressing local product intent.
 _Avoid_: patch, cleanup, refactor
 
 **Source Refresh**:
-The operation that replaces preserved upstream source material from a newer Codex App release before Normalization and Patch Recipes rebuild the local O3 Code state.
+The operation that replaces preserved upstream source material from a newer Codex App release before Normalization and Patch SOPs rebuild the local O3 Code state.
 _Avoid_: sync, vendor update, recopy
 
 **Runtime Resources**:
@@ -84,19 +84,19 @@ Domain expert: "No. Formatting preserved upstream material is Normalization; res
 
 Dev: "If chunk filenames change, how will we find our local changes?"
 
-Domain expert: "Use begin and end Patch Markers around the changed region and keep the explanation outside the code."
+Domain expert: "Follow the Patch SOP. Patch Markers show the last applied site, but the SOP owns rediscovery and validation."
 
-Dev: "Where should the full explanation for a Patch live?"
+Dev: "Where should the full migration procedure for a Patch live?"
 
-Domain expert: "Put it in a Patch Record, one file per Patch, so refresh agents can load only the relevant context."
+Domain expert: "Put it in the Patch SOP, one folder per Patch, so an AI refresh agent can load only the relevant procedure and evidence."
 
 Dev: "How do we reapply a Patch after refreshing Codex App source material?"
 
-Domain expert: "Run its Patch Recipe after Normalization, and treat a missing or ambiguous upstream anchor as a Patch migration failure."
+Domain expert: "Replace upstream material, run Normalization, then reapply each Patch SOP one by one and record fresh Patch Evidence."
 
 Dev: "Can I preserve the edited copied files during a newer Codex App update?"
 
-Domain expert: "No. A Source Refresh may replace copied source material, then rebuild O3 Code by running Normalization and Patch Recipes."
+Domain expert: "No. A Source Refresh may replace copied source material, then rebuild O3 Code by running Normalization and Patch SOPs."
 
 Dev: "Should I patch the compiled `codex` binary directly?"
 

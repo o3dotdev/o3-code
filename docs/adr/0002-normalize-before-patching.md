@@ -31,7 +31,7 @@ Keep Normalization separate from repo-authored formatting. Use `pnpm normalize` 
 
 Patch diffs are reviewed against a stable, readable baseline instead of bundled/minified source.
 
-Refresh work should preserve this order: extract or copy source material, run Normalization, then apply or migrate Patch Records.
+Refresh work should preserve this order: extract or copy source material, run Normalization, then apply or migrate Patch SOPs.
 
 The normalized repository will differ mechanically from the installed Codex App source material. The original installed app remains the read-only upstream reference.
 
