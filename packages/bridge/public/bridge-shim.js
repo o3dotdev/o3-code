@@ -49,6 +49,29 @@
   const workerListeners = new Map();
   const themeListeners = new Set();
   const stagedFiles = new WeakMap();
+  const shortcutBindings = [
+    ["CmdOrCtrl+N", { type: "run-command", id: "newThread" }],
+    ["CmdOrCtrl+Shift+O", { type: "run-command", id: "newThread" }],
+    ["CmdOrCtrl+Alt+N", { type: "run-command", id: "quickChat" }],
+    ["CmdOrCtrl+G", { type: "chat-search-command-menu" }],
+    ["CmdOrCtrl+P", { type: "file-search-command-menu" }],
+    ["CmdOrCtrl+K", { type: "command-menu" }],
+    ["CmdOrCtrl+Shift+P", { type: "command-menu" }],
+    ["CmdOrCtrl+O", { type: "run-command", id: "openFolder" }],
+    ["CmdOrCtrl+B", { type: "run-command", id: "toggleSidebar" }],
+    ["CmdOrCtrl+J", { type: "run-command", id: "toggleTerminal" }],
+    ["CmdOrCtrl+T", { type: "run-command", id: "openBrowserTab" }],
+    ["CmdOrCtrl+Shift+B", { type: "run-command", id: "toggleBrowserPanel" }],
+    ["CmdOrCtrl+Alt+B", { type: "run-command", id: "toggleSidePanel" }],
+    ["CmdOrCtrl+F", { type: "run-command", id: "findInThread" }],
+    ["CmdOrCtrl+[", { type: "run-command", id: "navigateBack" }],
+    ["CmdOrCtrl+]", { type: "run-command", id: "navigateForward" }],
+    ["CmdOrCtrl+Shift+A", { type: "run-command", id: "archiveThread" }],
+    ["CmdOrCtrl+Alt+P", { type: "run-command", id: "toggleThreadPin" }],
+  ].map(([accelerator, payload]) => ({
+    payload,
+    shortcut: parseAccelerator(accelerator),
+  }));
   let systemThemeVariant = getBrowserThemeVariant();
   let appSessionId = randomId();
 
@@ -142,6 +165,10 @@
     }
   });
 
+  window.addEventListener("keydown", handleBridgeShortcut, {
+    capture: true,
+  });
+
   async function request(kind, fields) {
     const id = randomId();
     const envelope = JSON.stringify({
@@ -192,6 +219,94 @@
     window.dispatchEvent(new MessageEvent("message", { data: payload }));
   }
 
+  function handleBridgeShortcut(event) {
+    if (event.repeat || isShortcutCaptureTarget(event.target)) {
+      return;
+    }
+
+    const binding = shortcutBindings.find(({ shortcut }) =>
+      matchesShortcut(event, shortcut),
+    );
+    if (binding == null) {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+    dispatchAppMessage(binding.payload);
+  }
+
+  function isShortcutCaptureTarget(target) {
+    return (
+      target instanceof Element &&
+      target.closest("[data-codex-shortcut-capture]") != null
+    );
+  }
+
+  function parseAccelerator(accelerator) {
+    const parts = accelerator.split("+").filter(Boolean);
+    const shortcut = {
+      altKey: false,
+      ctrlKey: false,
+      key: "",
+      metaKey: false,
+      shiftKey: false,
+    };
+
+    for (const part of parts) {
+      switch (part) {
+        case "Alt":
+        case "Option":
+          shortcut.altKey = true;
+          break;
+        case "CmdOrCtrl":
+          if (isMacOS()) {
+            shortcut.metaKey = true;
+          } else {
+            shortcut.ctrlKey = true;
+          }
+          break;
+        case "Command":
+        case "Cmd":
+          shortcut.metaKey = true;
+          break;
+        case "Control":
+        case "Ctrl":
+          shortcut.ctrlKey = true;
+          break;
+        case "Shift":
+          shortcut.shiftKey = true;
+          break;
+        default:
+          shortcut.key = normalizeShortcutKey(part);
+          break;
+      }
+    }
+
+    return shortcut;
+  }
+
+  function matchesShortcut(event, shortcut) {
+    return (
+      event.altKey === shortcut.altKey &&
+      event.ctrlKey === shortcut.ctrlKey &&
+      event.metaKey === shortcut.metaKey &&
+      event.shiftKey === shortcut.shiftKey &&
+      normalizeShortcutKey(event.key) === shortcut.key
+    );
+  }
+
+  function normalizeShortcutKey(key) {
+    switch (key) {
+      case "Space":
+        return " ";
+      case "Plus":
+        return "+";
+      default:
+        return key.length === 1 ? key.toLowerCase() : key;
+    }
+  }
+
   function randomId() {
     if (globalThis.crypto?.randomUUID != null) {
       return globalThis.crypto.randomUUID();
@@ -204,6 +319,10 @@
     return window.matchMedia?.("(prefers-color-scheme: light)")?.matches
       ? "light"
       : "dark";
+  }
+
+  function isMacOS() {
+    return navigator.platform?.startsWith("Mac") === true;
   }
 
   function normalizeThemeVariant(value, fallback) {
