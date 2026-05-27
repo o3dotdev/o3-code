@@ -169,9 +169,13 @@ if (!existsSync(electronBin)) {
 
 ensureNativeExecutableBits();
 
+const defaultUserDataPath =
+  process.env.O3_CODE_USE_CODEX_USER_DATA === "1"
+    ? path.join(homedir(), "Library", "Application Support", "Codex")
+    : path.join(homedir(), "Library", "Application Support", "O3 Code");
+
 const userDataPath =
-  process.env.CODEX_ELECTRON_USER_DATA_PATH?.trim() ||
-  path.join(homedir(), "Library", "Application Support", "Codex");
+  process.env.CODEX_ELECTRON_USER_DATA_PATH?.trim() || defaultUserDataPath;
 
 const env = {
   ...process.env,

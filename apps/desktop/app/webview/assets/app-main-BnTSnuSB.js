@@ -20702,6 +20702,13 @@ var wT = {
       import.meta.url,
     ),
   ),
+  // o3-code-patch-begin: web-access-settings
+  "web-access": (0, Q.lazy)(() =>
+    import(`./web-access-settings-o3code.js`).then((e) => ({
+      default: e.WebAccessSettings,
+    })),
+  ),
+  // o3-code-patch-end: web-access-settings
   "local-environments": (0, Q.lazy)(() =>
     gr(
       () =>

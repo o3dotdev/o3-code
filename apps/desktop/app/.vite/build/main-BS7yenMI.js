@@ -49027,6 +49027,114 @@ function uG({ moduleDir: n }) {
     }
   );
 }
+// o3-code-patch-begin: web-access-settings
+var o3CodeWebAccessChannels = {
+  configChanged: `o3-code:web-access:config-changed`,
+  getConfig: `o3-code:web-access:get-config`,
+  getStatus: `o3-code:web-access:get-status`,
+  openUrl: `o3-code:web-access:open-url`,
+  patchConfig: `o3-code:web-access:patch-config`,
+  resetPort: `o3-code:web-access:reset-port`,
+  retry: `o3-code:web-access:retry`,
+  statusChanged: `o3-code:web-access:status-changed`,
+};
+function o3CodeResolveBridgeRepoRoot({ desktopRoot: e, repoRoot: t }) {
+  for (let n of [
+    process.env.O3_CODE_REPO_ROOT?.trim(),
+    t,
+    process.cwd(),
+    (0, i.join)(e, `..`, `..`, `..`),
+  ])
+    if (
+      n &&
+      (0, o.existsSync)(
+        (0, i.join)(n, `packages`, `bridge`, `src`, `o3-code-config.mjs`),
+      )
+    )
+      return n;
+  throw Error(`Unable to locate repo-owned Web access bridge modules.`);
+}
+async function o3CodeCreateWebAccessController({
+  desktopRoot: e,
+  disposables: t,
+  isTrustedIpcEvent: r,
+  repoRoot: a,
+}) {
+  let _ = o3CodeResolveBridgeRepoRoot({ desktopRoot: e, repoRoot: a }),
+    v = (e) =>
+      (0, g.pathToFileURL)(
+        (0, i.join)(_, `packages`, `bridge`, `src`, e),
+      ).toString(),
+    s = await import(v(`o3-code-config.mjs`)),
+    c = await import(v(`supervisor.mjs`)),
+    l = new s.O3CodeConfigStore(),
+    u = new c.BridgeModeSupervisor({
+      configStore: l,
+      desktopRoot: e,
+      env: process.env,
+      repoRoot: _,
+    }),
+    d = (e, t) => {
+      for (let r of n.BrowserWindow.getAllWindows())
+        r.isDestroyed() || r.webContents.send(e, t);
+    },
+    f = l.subscribe((e) => {
+      d(o3CodeWebAccessChannels.configChanged, e.webAccess);
+    }),
+    p = u.subscribe((e) => {
+      d(o3CodeWebAccessChannels.statusChanged, e);
+    }),
+    m = (e) => {
+      if (!r(e)) throw Error(`Untrusted Web access IPC event.`);
+    };
+  (n.ipcMain.handle(o3CodeWebAccessChannels.getConfig, async (e) => {
+    m(e);
+    return (await l.readConfig()).webAccess;
+  }),
+    n.ipcMain.handle(o3CodeWebAccessChannels.getStatus, async (e) => {
+      m(e);
+      return u.getStatus();
+    }),
+    n.ipcMain.handle(o3CodeWebAccessChannels.patchConfig, async (e, t) => {
+      m(e);
+      let n = await l.patchWebAccess(t ?? {});
+      await u.applyConfig(n);
+      return n.webAccess;
+    }),
+    n.ipcMain.handle(o3CodeWebAccessChannels.retry, async (e) => {
+      m(e);
+      return await u.retry();
+    }),
+    n.ipcMain.handle(o3CodeWebAccessChannels.resetPort, async (e) => {
+      m(e);
+      let t = await u.resetPort();
+      return t.webAccess;
+    }),
+    n.ipcMain.handle(o3CodeWebAccessChannels.openUrl, async (e, t) => {
+      m(e);
+      let r = u.getStatus();
+      if (r.state !== `running` || t !== r.url) return !1;
+      await n.shell.openExternal(t);
+      return !0;
+    }),
+    t.add(() => {
+      (f(),
+        p(),
+        u.dispose().catch(() => {}),
+        Object.values(o3CodeWebAccessChannels).forEach((e) => {
+          e.includes(`:get-`) ||
+          e.includes(`:patch-`) ||
+          e.includes(`:retry`) ||
+          e.includes(`:reset-`) ||
+          e.includes(`:open-`)
+            ? n.ipcMain.removeHandler(e)
+            : void 0;
+        }));
+    }),
+    await u.initialize());
+  return u;
+}
+// o3-code-patch-end: web-access-settings
 var dG = `DoubleCommand`,
   fG = 6e4;
 function pG({ globalState: e, windowManager: n, enabled: r }) {
@@ -60950,18 +61058,26 @@ async function RX() {
       disposables: k,
     }),
     ee = (e) => M.isTrustedIpcSender(e.sender, e.senderFrame ?? null);
-  (jW({
+  jW({
     buildFlavor: a,
     getContextForWebContents: M.getContextForWebContents,
     isTrustedIpcEvent: ee,
-  }),
-    n.ipcMain.on(Ns, (e) => {
-      if (!ee(e)) {
-        e.returnValue = `light`;
-        return;
-      }
-      e.returnValue = n.nativeTheme.shouldUseDarkColors ? `dark` : `light`;
-    }));
+  });
+  // o3-code-patch-begin: web-access-settings
+  await o3CodeCreateWebAccessController({
+    desktopRoot: j.desktopRoot,
+    disposables: k,
+    isTrustedIpcEvent: ee,
+    repoRoot: j.repoRoot,
+  });
+  // o3-code-patch-end: web-access-settings
+  n.ipcMain.on(Ns, (e) => {
+    if (!ee(e)) {
+      e.returnValue = `light`;
+      return;
+    }
+    e.returnValue = n.nativeTheme.shouldUseDarkColors ? `dark` : `light`;
+  });
   let N = () => {
     let e = n.nativeTheme.shouldUseDarkColors ? `dark` : `light`;
     M.windowManager.refreshWindowBackdrops();

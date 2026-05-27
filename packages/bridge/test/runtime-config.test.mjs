@@ -40,31 +40,15 @@ test("resolveBridgeRuntimeConfig keeps the default browser URL local-only", () =
   assert.equal(config.browserUrl, "http://127.0.0.1:49152/");
 });
 
-test("resolveBridgeRuntimeConfig uses HTTPS and loopback CDP in remote mode", () => {
+test("resolveBridgeRuntimeConfig ignores remote environment and stays local-only", () => {
   const config = resolveBridgeRuntimeConfig({
-    env: { O3_CODE_BRIDGE_REMOTE: "1" },
     networkInterfaces,
     sidecarPort: 49152,
   });
 
-  assert.equal(config.remoteEnabled, true);
-  assert.equal(config.protocol, "https");
-  assert.equal(config.sidecarHost, "0.0.0.0");
+  assert.equal(config.remoteEnabled, false);
+  assert.equal(config.protocol, "http");
+  assert.equal(config.sidecarHost, "127.0.0.1");
   assert.equal(config.cdpHost, "127.0.0.1");
-  assert.equal(config.browserUrl, "https://192.168.1.25:49152/");
-});
-
-test("resolveBridgeRuntimeConfig preserves certificate overrides", () => {
-  const config = resolveBridgeRuntimeConfig({
-    env: {
-      O3_CODE_BRIDGE_CERT_PATH: "/tmp/cert.pem",
-      O3_CODE_BRIDGE_KEY_PATH: "/tmp/key.pem",
-      O3_CODE_BRIDGE_REMOTE: "1",
-    },
-    networkInterfaces,
-    sidecarPort: 49152,
-  });
-
-  assert.equal(config.certPath, "/tmp/cert.pem");
-  assert.equal(config.keyPath, "/tmp/key.pem");
+  assert.equal(config.browserUrl, "http://127.0.0.1:49152/");
 });

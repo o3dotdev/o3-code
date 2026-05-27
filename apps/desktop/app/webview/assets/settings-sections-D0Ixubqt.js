@@ -14,6 +14,9 @@ var e = `general-settings`,
     { slug: `appshots` },
     { slug: `git-settings` },
     { slug: `connections` },
+    // o3-code-patch-begin: web-access-settings
+    { slug: `web-access` },
+    // o3-code-patch-end: web-access-settings
     { slug: `local-environments` },
     { slug: `worktrees` },
     { slug: `agent` },

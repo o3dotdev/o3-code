@@ -168,6 +168,9 @@ var X = f(),
     "mcp-settings": G,
     "hooks-settings": le,
     connections: B,
+    // o3-code-patch-begin: web-access-settings
+    "web-access": B,
+    // o3-code-patch-end: web-access-settings
     "plugins-settings": D,
     "skills-settings": z,
   },
@@ -204,6 +207,9 @@ var X = f(),
     `mcp-settings`,
     `hooks-settings`,
     `connections`,
+    // o3-code-patch-begin: web-access-settings
+    `web-access`,
+    // o3-code-patch-end: web-access-settings
     `git-settings`,
     `local-environments`,
     `worktrees`,
@@ -221,6 +227,9 @@ var X = f(),
         `appearance`,
         `appshots`,
         `connections`,
+        // o3-code-patch-begin: web-access-settings
+        `web-access`,
+        // o3-code-patch-end: web-access-settings
         `git-settings`,
         `usage`,
       ],
@@ -632,6 +641,10 @@ function Ce(e, t, r) {
               return !1;
             case `connections`:
               return d && !u;
+            // o3-code-patch-begin: web-access-settings
+            case `web-access`:
+              return true;
+            // o3-code-patch-end: web-access-settings
             case `usage`:
               return S;
             case `profile`:
@@ -727,6 +740,9 @@ function Ce(e, t, r) {
       case `environments`:
       case `mcp-settings`:
       case `connections`:
+      // o3-code-patch-begin: web-access-settings
+      case `web-access`:
+      // o3-code-patch-end: web-access-settings
       case `plugins-settings`:
       case `skills-settings`:
       case `hooks-settings`:

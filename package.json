@@ -7,7 +7,6 @@
   "main": "apps/desktop/app/.vite/build/bootstrap.js",
   "scripts": {
     "start": "node scripts/start.mjs",
-    "start:web": "node scripts/start-web.mjs",
     "start:electron": "electron apps/desktop/app",
     "derive:web": "node scripts/derive-web.mjs",
     "web-patches:check": "node scripts/check-web-patches.mjs",
