@@ -40,7 +40,8 @@
 - `pnpm format:check` passed.
 - `curl --max-time 20 http://127.0.0.1:51304/bridge/browser-page-screenshot?conversationId=new-conversation&url=https%3A%2F%2Fwww.google.com%2F`
   returned `HTTP/1.1 200 OK` with `content-type: image/png`.
-- The captured Google paint was verified as `PNG image data, 2560 x 1800`.
+- After the offscreen debugger fallback update, the captured Google paint was
+  verified as `PNG image data, 1280 x 900`.
 - Browser verification opened `http://127.0.0.1:51304/` and confirmed the
   Mirrored Web Client loaded.
 - `pnpm --dir packages/bridge test` passed: 62 tests.

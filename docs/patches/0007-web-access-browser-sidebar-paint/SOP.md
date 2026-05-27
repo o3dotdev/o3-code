@@ -43,10 +43,13 @@ Apply after Patch 0006 Web Access Settings.
 4. Capture in this order:
    - Guest `webContents.debugger` with `Page.captureScreenshot`.
    - A short-lived offscreen Electron `BrowserWindow` pointed at the same URL
-     for hidden-guest or iframe-blocked pages.
+     for hidden-guest or iframe-blocked pages, preferring
+     `webContents.debugger` `Page.captureScreenshot` before `capturePage()`.
    - Guest `webContents.capturePage()` as the final fallback.
-5. Return `null` for missing, destroyed, or empty page captures and log/report
-   capture failures as non-fatal.
+5. Cache successful captures briefly per conversation and URL so browser-only
+   clients can poll without recreating an offscreen renderer on every tick.
+6. Return `null` for missing, destroyed, or empty page captures and log/report
+   capture failures as non-fatal with the failing capture stage.
 
 ## Validation
 

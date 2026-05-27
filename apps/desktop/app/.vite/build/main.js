@@ -38039,7 +38039,8 @@ var Q = t.ti(`browser-sidebar-manager`),
       let l = (e) => (
         this.webAccessCaptureCache.set(s, { capture: e, timestamp: Date.now() }),
         e
-      );
+      ),
+        u = null;
       try {
         (o || n.debugger.attach(`1.3`),
           await n.debugger.sendCommand(`Page.enable`).catch(() => {}));
@@ -38057,7 +38058,8 @@ var Q = t.ti(`browser-sidebar-manager`),
             url: i,
             width: null,
           });
-      } catch {
+      } catch (e) {
+        u = { error: e, stage: `guest-debugger` };
       } finally {
         !o && n.debugger.isAttached() && n.debugger.detach();
       }
@@ -38066,6 +38068,7 @@ var Q = t.ti(`browser-sidebar-manager`),
           let e = new (require(`electron`).BrowserWindow)({
             backgroundColor: `#ffffff`,
             height: 900,
+            paintWhenInitiallyHidden: !0,
             show: !1,
             webPreferences: {
               backgroundThrottling: !1,
@@ -38073,30 +38076,61 @@ var Q = t.ti(`browser-sidebar-manager`),
               nodeIntegration: !1,
               offscreen: !0,
               sandbox: !0,
+              session: n.session,
             },
             width: 1280,
           });
           try {
+            (typeof n.getUserAgent == `function` &&
+              e.webContents.setUserAgent(n.getUserAgent()),
+              e.webContents.setWindowOpenHandler(() => ({ action: `deny` })));
             (await r(e.webContents.loadURL(i), 8e3).catch(() => {}),
               await r(
                 new Promise((e) => setTimeout(e, 500)),
                 1e3,
               ));
-            let t = await r(e.webContents.capturePage(), 3e3);
-            if (!t.isEmpty()) {
-              let n = t.getSize();
+            let t = e.webContents.debugger.isAttached();
+            try {
+              (t || e.webContents.debugger.attach(`1.3`),
+                await e.webContents.debugger
+                  .sendCommand(`Page.enable`)
+                  .catch(() => {}));
+              let s = await r(
+                e.webContents.debugger.sendCommand(`Page.captureScreenshot`, {
+                  format: `png`,
+                  fromSurface: !0,
+                }),
+              );
+              if (typeof s?.data == `string` && s.data.length > 0)
+                return l({
+                  dataUrl: `data:image/png;base64,${s.data}`,
+                  height: null,
+                  title: e.webContents.getTitle() || a,
+                  url: e.webContents.getURL() || i,
+                  width: null,
+                });
+            } finally {
+              !t &&
+                e.webContents.debugger.isAttached() &&
+                e.webContents.debugger.detach();
+            }
+            let s = await r(e.webContents.capturePage(), 3e3);
+            if (!s.isEmpty()) {
+              let t = s.getSize();
               return l({
-                dataUrl: t.toDataURL(),
-                height: n.height,
+                dataUrl: s.toDataURL(),
+                height: t.height,
                 title: e.webContents.getTitle() || a,
                 url: e.webContents.getURL() || i,
-                width: n.width,
+                width: t.width,
               });
             }
           } finally {
             e.isDestroyed() || e.destroy();
           }
-        } catch {}
+        } catch (e) {
+          u = { error: e, stage: `offscreen-window` };
+        }
       try {
         let e = await r(n.capturePage());
         if (e.isEmpty()) return null;
@@ -38109,14 +38143,15 @@ var Q = t.ti(`browser-sidebar-manager`),
           width: t.width,
         });
       } catch (n) {
+        let r = u ?? { error: n, stage: `guest-capture-page` };
         return (
           Q().warning(`failed to capture browser sidebar paint`, {
-            safe: { conversationId: t },
-            sensitive: { error: n },
+            safe: { conversationId: t, stage: r.stage },
+            sensitive: { error: r.error },
           }),
           this.errorReporter.reportNonFatal(
-            n instanceof Error ? n : Error(String(n)),
-            { kind: `browser-sidebar-web-access-paint` },
+            r.error instanceof Error ? r.error : Error(String(r.error)),
+            { kind: `browser-sidebar-web-access-paint`, stage: r.stage },
           ),
           null
         );
