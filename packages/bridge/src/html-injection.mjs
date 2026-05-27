@@ -56,6 +56,15 @@ body {
     max-width: 100vw !important;
     zoom: 1 !important;
   }
+
+  .o3-code-sidebar-project-menu-action,
+  .o3-code-sidebar-project-new-chat-action {
+    opacity: 1 !important;
+  }
+
+  .o3-code-sidebar-project-status-overlay {
+    display: none !important;
+  }
 }
 
 @media (max-width: 700px), (hover: none) and (pointer: coarse) {

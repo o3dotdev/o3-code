@@ -13600,7 +13600,9 @@ function SC(e) {
     ? ((b =
         s === `local` &&
         (0, $.jsx)(`div`, {
-          className: y,
+          // o3-code-web-patch-begin: mobile-sidebar-project-actions
+          className: Sr(`o3-code-sidebar-project-menu-action`, y),
+          // o3-code-web-patch-end: mobile-sidebar-project-actions
           children: (0, $.jsx)(kC, {
             groupPath: r,
             groupLabel: i,
@@ -13642,7 +13644,9 @@ function SC(e) {
     ? ((x =
         s === `remote` &&
         (0, $.jsx)(`div`, {
-          className: y,
+          // o3-code-web-patch-begin: mobile-sidebar-project-actions
+          className: Sr(`o3-code-sidebar-project-menu-action`, y),
+          // o3-code-web-patch-end: mobile-sidebar-project-actions
           children: (0, $.jsx)(MC, {
             projectId: n,
             remotePath: r,
@@ -13672,10 +13676,12 @@ function SC(e) {
         o == null
           ? null
           : (0, $.jsx)(`div`, {
+              // o3-code-web-patch-begin: mobile-sidebar-project-actions
               className: Sr(
-                `absolute inset-0 flex items-center justify-center group-hover/folder-row:hidden`,
+                `o3-code-sidebar-project-status-overlay absolute inset-0 flex items-center justify-center group-hover/folder-row:hidden`,
                 m && `hidden`,
               ),
+              // o3-code-web-patch-end: mobile-sidebar-project-actions
               children: (0, $.jsx)(Fp, { statusState: o }),
             })),
       (t[24] = o),
@@ -13686,7 +13692,13 @@ function SC(e) {
     w;
   t[27] === y
     ? (w = t[28])
-    : ((w = Sr(`inline-flex`, y)), (t[27] = y), (t[28] = w));
+    : ((
+        // o3-code-web-patch-begin: mobile-sidebar-project-actions
+        w = Sr(`o3-code-sidebar-project-new-chat-action inline-flex`, y),
+        // o3-code-web-patch-end: mobile-sidebar-project-actions
+        (t[27] = y),
+        (t[28] = w)
+      ));
   let T = !f,
     E;
   t[29] === l
