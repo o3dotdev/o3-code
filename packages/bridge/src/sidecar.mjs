@@ -4,7 +4,6 @@ import { EventEmitter } from "node:events";
 import { createReadStream } from "node:fs";
 import { mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import http from "node:http";
-import https from "node:https";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -13,15 +12,16 @@ import { CdpClient } from "./cdp-client.mjs";
 import { injectBridgeShell } from "./html-injection.mjs";
 import { repoRoot, resolveBridgeWebviewDir } from "./paths.mjs";
 import { BridgeRouter } from "./router.mjs";
+import {
+  getWebviewCacheControl,
+  resolveWebviewPath,
+  shouldServeSpaFallback,
+} from "./static-files.mjs";
 
-const host = process.env.O3_CODE_BRIDGE_HOST || "127.0.0.1";
-const cdpHost = process.env.O3_CODE_BRIDGE_CDP_HOST || "127.0.0.1";
+const host = "127.0.0.1";
+const cdpHost = "127.0.0.1";
 const port = Number(process.env.O3_CODE_BRIDGE_PORT || "0");
 const cdpPort = Number(process.env.O3_CODE_BRIDGE_CDP_PORT || "0");
-const httpsEnabled =
-  process.env.O3_CODE_BRIDGE_HTTPS === "1" ||
-  process.env.O3_CODE_BRIDGE_CERT_PATH != null ||
-  process.env.O3_CODE_BRIDGE_KEY_PATH != null;
 const webviewDir = resolveBridgeWebviewDir();
 const targetUrl = process.env.O3_CODE_BRIDGE_TARGET_URL;
 const stageDir =
@@ -48,17 +48,6 @@ if (!targetUrl) {
   process.exit(1);
 }
 
-if (
-  httpsEnabled &&
-  (!process.env.O3_CODE_BRIDGE_CERT_PATH ||
-    !process.env.O3_CODE_BRIDGE_KEY_PATH)
-) {
-  console.error(
-    "O3_CODE_BRIDGE_CERT_PATH and O3_CODE_BRIDGE_KEY_PATH are required when HTTPS is enabled.",
-  );
-  process.exit(1);
-}
-
 await mkdir(stageDir, { recursive: true });
 
 const cdpClient = new CdpClient({ cdpPort, cdpHost, targetUrl });
@@ -68,13 +57,7 @@ cdpClient.connect().catch((error) => {
   console.error("[bridge] initial CDP connection failed", error);
 });
 
-const protocol = httpsEnabled ? "https" : "http";
-const serverOptions = httpsEnabled
-  ? {
-      cert: await readFile(process.env.O3_CODE_BRIDGE_CERT_PATH),
-      key: await readFile(process.env.O3_CODE_BRIDGE_KEY_PATH),
-    }
-  : null;
+const protocol = "http";
 const requestListener = async (request, response) => {
   try {
     await handleHttpRequest(request, response);
@@ -86,9 +69,16 @@ const requestListener = async (request, response) => {
     response.end("Bridge sidecar request failed.");
   }
 };
-const server = httpsEnabled
-  ? https.createServer(serverOptions, requestListener)
-  : http.createServer(requestListener);
+const server = http.createServer(requestListener);
+const activeSockets = new Set();
+const activeWebSockets = new Set();
+
+server.on("connection", (socket) => {
+  activeSockets.add(socket);
+  socket.on("close", () => {
+    activeSockets.delete(socket);
+  });
+});
 
 server.on("upgrade", (request, socket, head) => {
   const url = new URL(
@@ -101,6 +91,14 @@ server.on("upgrade", (request, socket, head) => {
   }
 
   const webSocket = acceptWebSocketUpgrade(request, socket, head);
+  if (webSocket == null) {
+    return;
+  }
+
+  activeWebSockets.add(webSocket);
+  webSocket.on("close", () => {
+    activeWebSockets.delete(webSocket);
+  });
   router.attachBrowser(webSocket);
 });
 
@@ -121,8 +119,20 @@ process.on("exit", () => {
 });
 
 async function cleanup() {
+  closeActiveBridgeSockets();
   await new Promise((resolve) => server.close(resolve));
   await rm(stageDir, { force: true, recursive: true });
+}
+
+function closeActiveBridgeSockets() {
+  for (const webSocket of activeWebSockets) {
+    webSocket.close(1001, "Bridge sidecar stopping.");
+    webSocket.destroy();
+  }
+
+  for (const socket of activeSockets) {
+    socket.destroy();
+  }
 }
 
 async function handleHttpRequest(request, response) {
@@ -155,7 +165,10 @@ async function handleHttpRequest(request, response) {
     return;
   }
 
-  const assetPath = resolveWebviewPath(url.pathname);
+  const assetPath = resolveWebviewPath({
+    urlPathname: url.pathname,
+    webviewDir,
+  });
   if (assetPath == null) {
     response.writeHead(404);
     response.end();
@@ -163,20 +176,28 @@ async function handleHttpRequest(request, response) {
   }
 
   if (assetPath.endsWith("index.html")) {
-    const html = await readFile(assetPath, "utf8");
-    response.writeHead(200, {
-      "content-type": "text/html; charset=utf-8",
-      "cache-control": "no-store",
-    });
-    response.end(
-      injectBridgeShell(html, {
-        debug: process.env.O3_CODE_BRIDGE_DEBUG === "1",
-      }),
-    );
+    await sendInjectedIndex(response, assetPath);
     return;
   }
 
-  await sendFile(response, assetPath);
+  const assetStat = await statFile(assetPath);
+  if (assetStat?.isFile()) {
+    await sendFile(response, assetPath, assetStat);
+    return;
+  }
+
+  if (
+    shouldServeSpaFallback({
+      method: request.method,
+      urlPathname: url.pathname,
+    })
+  ) {
+    await sendInjectedIndex(response, path.join(webviewDir, "index.html"));
+    return;
+  }
+
+  response.writeHead(404);
+  response.end();
 }
 
 async function handleStageFile(request, response) {
@@ -198,44 +219,36 @@ async function handleStageFile(request, response) {
   });
 }
 
-function resolveWebviewPath(urlPathname) {
-  const pathname = decodeURIComponent(urlPathname);
-  const relativePath =
-    pathname === "/" ? "index.html" : pathname.replace(/^\/+/, "");
-  const candidate = path.resolve(webviewDir, relativePath);
-  const relativeToRoot = path.relative(webviewDir, candidate);
-
-  if (relativeToRoot.startsWith("..") || path.isAbsolute(relativeToRoot)) {
+async function statFile(filePath) {
+  try {
+    return await stat(filePath);
+  } catch {
     return null;
   }
-
-  return candidate;
 }
 
-async function sendFile(response, filePath) {
-  let fileStat;
-  try {
-    fileStat = await stat(filePath);
-  } catch {
-    response.writeHead(404);
-    response.end();
-    return;
-  }
-
-  if (!fileStat.isFile()) {
-    response.writeHead(404);
-    response.end();
-    return;
-  }
-
+async function sendFile(response, filePath, fileStat = null) {
+  fileStat ??= await stat(filePath);
   response.writeHead(200, {
     "content-type": getContentType(filePath),
     "content-length": fileStat.size,
-    "cache-control": filePath.endsWith("bridge-shim.js")
-      ? "no-store"
-      : "public, max-age=31536000, immutable",
+    "cache-control": getWebviewCacheControl(filePath),
   });
   createReadStream(filePath).pipe(response);
+}
+
+async function sendInjectedIndex(response, indexPath) {
+  const html = await readFile(indexPath, "utf8");
+  response.writeHead(200, {
+    "content-type": "text/html; charset=utf-8",
+    "cache-control": "no-store",
+    "clear-site-data": '"cache"',
+  });
+  response.end(
+    injectBridgeShell(html, {
+      debug: process.env.O3_CODE_BRIDGE_DEBUG === "1",
+    }),
+  );
 }
 
 function sendJson(response, payload) {
@@ -342,6 +355,13 @@ class ServerWebSocket extends EventEmitter {
       Buffer.concat([createWebSocketHeader(0x88, payload.length), payload]),
     );
     this.socket.end();
+  }
+
+  destroy() {
+    this.#closed = true;
+    if (!this.socket.destroyed) {
+      this.socket.destroy();
+    }
   }
 
   #handleData(chunk) {

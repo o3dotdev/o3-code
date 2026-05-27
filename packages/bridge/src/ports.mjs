@@ -4,6 +4,25 @@ export async function allocateLoopbackPort(host = "127.0.0.1") {
   return await allocateTcpPort(host);
 }
 
+export async function isTcpPortAvailable(port, host = "127.0.0.1") {
+  if (!Number.isInteger(port) || port <= 0 || port > 65535) {
+    return false;
+  }
+
+  return await new Promise((resolve) => {
+    const server = net.createServer();
+    const finish = (available) => {
+      server.removeAllListeners();
+      resolve(available);
+    };
+
+    server.once("error", () => finish(false));
+    server.listen(port, host, () => {
+      server.close((error) => finish(error == null));
+    });
+  });
+}
+
 export async function allocateTcpPort(host = "127.0.0.1") {
   return await new Promise((resolve, reject) => {
     const server = net.createServer();

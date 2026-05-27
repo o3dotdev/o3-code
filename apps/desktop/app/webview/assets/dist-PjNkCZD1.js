@@ -1,5 +1,5 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
-import { n as t, t as n } from "./jsx-runtime-CiQ1k8xo.js";
+import { s as e } from "./chunk.js";
+import { n as t, t as n } from "./jsx-runtime.js";
 import {
   a as r,
   c as i,
@@ -20,7 +20,7 @@ import {
   r as _,
   s as v,
   t as ee,
-} from "./Combination-CmOISuqp.js";
+} from "./Combination.js";
 import { a as y, i as b, n as x, r as te, t as S } from "./dist-Dc9hCHPN.js";
 var C = e(t(), 1),
   w = n();

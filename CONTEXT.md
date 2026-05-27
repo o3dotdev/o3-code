@@ -33,8 +33,12 @@ The O3 Code run mode where the Desktop Reconstruction exposes a control surface 
 _Avoid_: normal app launch, remote desktop mode, web server mode
 
 **Bridge Port**:
-A loopback-only network port dynamically assigned during Bridge Mode for either the sidecar web endpoint or the private Electron control connection.
+A loopback-only network port used by Bridge Mode for either the sidecar web endpoint or the private Electron control connection.
 _Avoid_: default debugging port, public port, fixed port
+
+**Web Access Port**:
+The persistent loopback Bridge Port used for the Mirrored Web Client endpoint across Desktop Reconstruction restarts.
+_Avoid_: CDP port, debugging port, ephemeral browser port
 
 **Bridge Shim**:
 Repo-owned browser-side code that lets the Mirrored Web Client talk to Bridge Mode without changing preserved Codex App source material.
@@ -88,6 +92,10 @@ _Avoid_: browser-native menu, remote-rendered dialog, fake native UI
 The MVP Bridge Mode exposure where the Mirrored Web Client and private Electron control connection are available only on the local machine loopback interface.
 _Avoid_: LAN bridge, public bridge, remote tunnel
 
+**Web Access**:
+The user-facing Desktop Reconstruction setting that controls whether Bridge Mode exposes the Mirrored Web Client on the local machine.
+_Avoid_: browser access, Browser settings, start-web
+
 **Bridge Sidecar**:
 The repo-owned Node process managed by Bridge Mode that serves the Mirrored Web Client, owns WebSocket routing, and privately connects to the Electron control port.
 _Avoid_: Electron main patch, embedded bridge server, frontend server
@@ -135,6 +143,10 @@ _Avoid_: package, loose clone, binary source
 **Codex App User Data Directory**:
 The installed Codex App's Electron user data directory, shared by default with O3 Code when running the Desktop Reconstruction locally.
 _Avoid_: original app folder, app bundle, upstream folder
+
+**O3 Code State Root**:
+The O3 Code-owned filesystem root for persistent local settings and runtime state that are not part of the Codex App user profile.
+_Avoid_: Codex App User Data Directory, Electron profile, repo cache
 
 **Local App Identity**:
 The visible O3 Code name and icon surface used by the Desktop Reconstruction during repo-local runs, without changing Codex App protocol, bundle, or user data identity.
@@ -193,6 +205,10 @@ Domain expert: "No. Edit the Codex CLI Upstream, build a new binary, and install
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 
 Domain expert: "No. Use the Codex App User Data Directory by default, and override it only when an isolated or custom profile is needed."
+
+Dev: "Should an O3 Code-only setting live in the Codex App User Data Directory?"
+
+Domain expert: "No. Put O3 Code-owned settings under the O3 Code State Root so local product intent is separate from the shared Codex App profile."
 
 Dev: "Should the web version be a separate control panel?"
 
@@ -262,9 +278,13 @@ Dev: "Can the unauthenticated MVP be reachable from another device or the intern
 
 Domain expert: "No. Keep it as a Local-Only Bridge until pairing, authentication, and authorization are designed."
 
+Dev: "Should users run a separate start-web command to use Bridge Mode?"
+
+Domain expert: "No. Use Web Access in the Desktop Reconstruction settings so Bridge Mode is app-owned and persistent."
+
 Dev: "Should the MVP bridge server run inside Electron main?"
 
-Domain expert: "No. Use a repo-owned Bridge Sidecar process first, managed by the Bridge Mode launcher."
+Domain expert: "No. Use a repo-owned Bridge Sidecar process first, managed by the Desktop Reconstruction."
 
 Dev: "Does Local App Identity mean changing bundle IDs or the Codex App User Data Directory?"
 

@@ -9,7 +9,7 @@ import {
   un as s,
   yt as c,
 } from "./presentation-CPM6LXA8.js";
-import { zt as l } from "./spreadsheet-C-9bSs37.js";
+import { zt as l } from "./spreadsheet-C.js";
 var u = `oaiproto.coworker.docx`,
   d = (function (e) {
     return (

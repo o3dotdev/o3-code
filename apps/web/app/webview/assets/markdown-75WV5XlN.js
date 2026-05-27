@@ -3,54 +3,54 @@ const __vite__mapDeps = (
   m = __vite__mapDeps,
   d = m.f ||
     (m.f = [
-      "./mermaid-diagram-BMuaYHEk.js",
-      "./chunk-Bj-mKKzh.js",
-      "./preload-helper-I1wKxk_B.js",
-      "./setting-storage-kJblH-wH.js",
+      "./mermaid-diagram.js",
+      "./chunk.js",
+      "./preload-helper.js",
+      "./setting-storage.js",
       "./src-BLHmAhbF.js",
-      "./jsx-runtime-CiQ1k8xo.js",
-      "./tslib.es6-PiNIxp0T.js",
+      "./jsx-runtime.js",
+      "./tslib.es6.js",
       "./dist-Dkaf81wL.js",
-      "./chunk-JA3XYJ7Z-_sm1v70d.js",
+      "./chunk-JA3XYJ7Z.js",
       "./src-DXdm7MTq.js",
-      "./string-CT3OTLdS.js",
-      "./chunk-S3R3BYOJ-5zDRn6nL.js",
-      "./monotone-DCtj1EeW.js",
-      "./math-CRwStGW2.js",
-      "./chunk-ABZYJK2D-DvAKbH5X.js",
-      "./isArrayLikeObject-BkPjYx2p.js",
-      "./marked.esm-B1dI5d9h.js",
-      "./clsx-DDuZWq6Y.js",
-      "./isEmpty-hl33V4on.js",
-      "./chunk-ATLVNIR6-DztwCsKK.js",
-      "./chunk-CVBHYZKI-B0vHREv4.js",
-      "./chunk-EXTU4WIE-CgAipfme.js",
-      "./chunk-HN2XXSSU-BAQ0kSeo.js",
-      "./chunk-JZLCHNYA-BxKQhlWe.js",
-      "./chunk-KS23V3DP-DbvQ0RY3.js",
-      "./chunk-MI3HLSF2-Dp-ZiqxN.js",
-      "./chunk-N4CR4FBY-l_UuU9Uv.js",
-      "./chunk-QXUST7PY-BKTz6l_w.js",
-      "./line-D1C4qLvz.js",
-      "./path-BlFTpnSQ.js",
-      "./array-iYP9fzJp.js",
-      "./react-dom-De86Q4ix.js",
-      "./window-zoom-context-BgcP82Wr.js",
-      "./button-BynxeNRW.js",
-      "./spinner-avFWYgza.js",
-      "./reduced-motion-preference-DnjdGHz7.js",
-      "./copy-button-BHvcmCXa.js",
-      "./tooltip-Bb9X8NK-.js",
-      "./floating-ui.react-dom-n8i6eMZZ.js",
-      "./tooltip-dismiss-DFX6aZnQ.js",
-      "./check-md-I6RRy8DL.js",
-      "./copy-BLEBbe48.js",
-      "./expand-BVUB1pRY.js",
-      "./copy-to-clipboard-DUkEoARe.js",
-      "./use-is-dark-YP6LF-lA.js",
+      "./string.js",
+      "./chunk-S3R3BYOJ.js",
+      "./monotone.js",
+      "./math.js",
+      "./chunk-ABZYJK2D.js",
+      "./isArrayLikeObject.js",
+      "./marked.esm.js",
+      "./clsx.js",
+      "./isEmpty.js",
+      "./chunk-ATLVNIR6.js",
+      "./chunk-CVBHYZKI.js",
+      "./chunk-EXTU4WIE.js",
+      "./chunk-HN2XXSSU.js",
+      "./chunk-JZLCHNYA.js",
+      "./chunk-KS23V3DP.js",
+      "./chunk-MI3HLSF2.js",
+      "./chunk-N4CR4FBY.js",
+      "./chunk-QXUST7PY.js",
+      "./line.js",
+      "./path.js",
+      "./array.js",
+      "./react-dom.js",
+      "./window-zoom-context.js",
+      "./button.js",
+      "./spinner.js",
+      "./reduced-motion-preference.js",
+      "./copy-button.js",
+      "./tooltip.js",
+      "./floating-ui.react-dom.js",
+      "./tooltip-dismiss.js",
+      "./check-md.js",
+      "./copy.js",
+      "./expand.js",
+      "./copy-to-clipboard.js",
+      "./use-is-dark.js",
     ]),
 ) => i.map((i) => d[i]);
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import { Vn as t } from "./src-BLHmAhbF.js";
 import {
   $t as n,
@@ -73,11 +73,11 @@ import {
   nn as y,
   qt as b,
   tn as x,
-} from "./app-server-manager-signals-7MlBpIlX.js";
-import { t as S } from "./preload-helper-I1wKxk_B.js";
-import { n as C, t as w } from "./jsx-runtime-CiQ1k8xo.js";
-import { t as T } from "./clsx-DDuZWq6Y.js";
-import { t as E } from "./react-dom-De86Q4ix.js";
+} from "./app-server-manager-signals.js";
+import { t as S } from "./preload-helper.js";
+import { n as C, t as w } from "./jsx-runtime.js";
+import { t as T } from "./clsx.js";
+import { t as E } from "./react-dom.js";
 import { c as D } from "./katex-BzX-JuVf.js";
 import {
   H as O,
@@ -87,22 +87,22 @@ import {
   Y as M,
   p as N,
   xt as P,
-} from "./setting-storage-kJblH-wH.js";
-import { f as F } from "./chunk-LFPYN7LY-CkfOxD5s.js";
-import { o as ee } from "./statsig-BwN76nAo.js";
-import { t as I } from "./use-is-dark-YP6LF-lA.js";
-import { S as L, b as R, x as te, y as z } from "./mention-item-qEZjEnZz.js";
-import { t as B } from "./button-BynxeNRW.js";
-import { t as ne } from "./spinner-avFWYgza.js";
-import { t as V } from "./mime-types-BwyLizga.js";
-import { t as H } from "./error-boundary-DjHOvo0v.js";
-import { t as U } from "./chevron-right-DcOUsgCQ.js";
-import { t as re } from "./badge-DJ3VoZ_p.js";
-import { t as ie } from "./chat-DM7GVpMz.js";
-import { t as ae } from "./copy-to-clipboard-DUkEoARe.js";
-import { t as oe } from "./external-markdown-link-FX2-4fyk.js";
-import { t as se } from "./image-square-DaLHX1Fp.js";
-import { t as ce } from "./filesystem-media-src-CmokDu12.js";
+} from "./setting-storage.js";
+import { f as F } from "./chunk-LFPYN7LY.js";
+import { o as ee } from "./statsig.js";
+import { t as I } from "./use-is-dark.js";
+import { S as L, b as R, x as te, y as z } from "./mention-item.js";
+import { t as B } from "./button.js";
+import { t as ne } from "./spinner.js";
+import { t as V } from "./mime-types.js";
+import { t as H } from "./error-boundary.js";
+import { t as U } from "./chevron-right.js";
+import { t as re } from "./badge.js";
+import { t as ie } from "./chat.js";
+import { t as ae } from "./copy-to-clipboard.js";
+import { t as oe } from "./external-markdown-link.js";
+import { t as se } from "./image-square.js";
+import { t as ce } from "./filesystem-media-src.js";
 import {
   a as le,
   i as ue,
@@ -111,10 +111,10 @@ import {
   r as fe,
   s as pe,
   t as me,
-} from "./inline-mentions-CbDcUfAO.js";
-import { t as he } from "./code-snippet-DrPKGV4s.js";
-import { t as ge } from "./copy-button-BHvcmCXa.js";
-import { t as _e } from "./image-preview-dialog-DSlWCEr3.js";
+} from "./inline-mentions.js";
+import { t as he } from "./code-snippet.js";
+import { t as ge } from "./copy-button.js";
+import { t as _e } from "./image-preview-dialog.js";
 var G = `.katex`,
   K = `.katex-mathml`,
   ve = `.katex-mathml + .katex-html`,
@@ -649,9 +649,7 @@ var Tt = c(`markdownCodeBlockWordWrap`, !1),
   Et = (0, X.lazy)(async () => {
     let { MermaidDiagram: e } = await S(
       async () => {
-        let { MermaidDiagram: e } = await import(
-          `./mermaid-diagram-BMuaYHEk.js`
-        );
+        let { MermaidDiagram: e } = await import(`./mermaid-diagram.js`);
         return { MermaidDiagram: e };
       },
       __vite__mapDeps([

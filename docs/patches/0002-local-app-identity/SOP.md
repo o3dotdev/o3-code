@@ -26,9 +26,10 @@ Apply the visible O3 Code name and icon surfaces during repo-local runs.
    - `O3_CODE_APP_ICON_PATH`
    - `O3_CODE_TRAY_TEMPLATE_PATH`
 2. On macOS, launch through a repo-local cached copy of the Electron host bundle named `O3 Code.app`.
-3. Override `app.setName(...)` from `O3_CODE_APP_NAME` after upstream sets its build-flavor name.
-4. Let Dock and tray icon lookup prefer explicit O3 Code paths when the corresponding environment variables are present.
-5. Regenerate icons with `pnpm generate:icons` when source icon assets or target runtime filenames change.
+3. Run non-windowed sidecars through the bundled Node executable, not through the Electron host bundle.
+4. Override `app.setName(...)` from `O3_CODE_APP_NAME` after upstream sets its build-flavor name.
+5. Let Dock and tray icon lookup prefer explicit O3 Code paths when the corresponding environment variables are present.
+6. Regenerate icons with `pnpm generate:icons` when source icon assets or target runtime filenames change.
 
 Use Patch Markers with patch id `local-app-identity` around copied-source changes.
 
@@ -36,8 +37,9 @@ Use Patch Markers with patch id `local-app-identity` around copied-source change
 
 - `pnpm generate:icons` succeeds.
 - `pnpm start` shows the O3 Code app name in the macOS host process.
+- Bridge sidecar processes use Node and do not create a second Dock tile.
 - The Dock icon and tray icon use O3 Code assets.
-- The app still uses the Codex App User Data Directory unless explicitly overridden.
+- The app still uses the configured O3 Code User Data Directory unless explicitly overridden.
 
 ## Failure Conditions
 

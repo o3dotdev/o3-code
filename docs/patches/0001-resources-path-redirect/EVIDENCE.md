@@ -10,8 +10,8 @@
 ## Known Sites
 
 - `apps/desktop/app/package.json` declares `.vite/build/bootstrap.js` as `main`.
-- `apps/desktop/app/.vite/build/bootstrap.js` loads first-party chunks before `main-BS7yenMI.js`.
-- `apps/desktop/app/.vite/build/main-BS7yenMI.js` has upstream `CODEX_ELECTRON_RESOURCES_PATH` handling, but too late for bootstrap imports.
+- `apps/desktop/app/.vite/build/bootstrap.js` loads first-party chunks before `main.js`.
+- `apps/desktop/app/.vite/build/main.js` has upstream `CODEX_ELECTRON_RESOURCES_PATH` handling, but too late for bootstrap imports.
 
 ## Patch Shape
 

@@ -6,8 +6,8 @@ if (o3CodeResourcesPath)
     value: o3CodeResourcesPath,
   });
 // o3-code-patch-end: resources-path-redirect
-const e = require(`./app-session-gBTKZRaX.js`),
-  t = require(`./workspace-root-drop-handler-DJwLZgXt.js`);
+const e = require(`./app-session.js`),
+  t = require(`./workspace-root-drop-handler.js`);
 let n = require(`electron`),
   r = require(`node:path`);
 require(`node:crypto`);
@@ -97,6 +97,36 @@ function _({ appDataPath: t, buildFlavor: n, env: i }) {
     s = i.CODEX_ELECTRON_AGENT_RUN_ID?.trim() || null;
   return n === `agent` && s != null ? (0, r.join)(o, `agent`, s) : o;
 }
+// o3-code-patch-begin: web-access-settings
+function o3CodeAllocateBridgeCdpPort() {
+  let e = process.env.O3_CODE_BRIDGE_CDP_PORT?.trim();
+  if (/^[1-9]\d*$/.test(e ?? ``)) return e;
+  let t =
+    process.env.CODEX_BROWSER_USE_NODE_PATH?.trim() ||
+    (process.env.CODEX_ELECTRON_RESOURCES_PATH?.trim()
+      ? (0, r.join)(process.env.CODEX_ELECTRON_RESOURCES_PATH.trim(), `node`)
+      : null);
+  if (!t) return null;
+  try {
+    let e = i
+      .execFileSync(
+        t,
+        [
+          `-e`,
+          `const net=require("node:net");const server=net.createServer();server.listen(0,"127.0.0.1",()=>{console.log(server.address().port);server.close();});`,
+        ],
+        {
+          encoding: `utf8`,
+          env: process.env,
+          stdio: [`ignore`, `pipe`, `ignore`],
+        },
+      )
+      .trim();
+    if (/^[1-9]\d*$/.test(e)) return e;
+  } catch {}
+  return null;
+}
+// o3-code-patch-end: web-access-settings
 var v = {
   "install-update": `Install Update`,
   "check-for-updates": `Check for Updates`,
@@ -156,6 +186,15 @@ var b = process.platform === `darwin`,
       env: process.env,
     }),
   ),
+  // o3-code-patch-begin: web-access-settings
+  (() => {
+    let e = o3CodeAllocateBridgeCdpPort();
+    if (e == null) return;
+    process.env.O3_CODE_BRIDGE_CDP_PORT = e;
+    n.app.commandLine.appendSwitch(`remote-debugging-address`, `127.0.0.1`);
+    n.app.commandLine.appendSwitch(`remote-debugging-port`, e);
+  })(),
+  // o3-code-patch-end: web-access-settings
   process.platform === `win32` && n.app.setAppUserModelId(t.C(x)));
 var S = t.S({ isMacOS: b, isPackaged: n.app.isPackaged });
 if (!(!S || n.app.requestSingleInstanceLock()))
@@ -190,7 +229,7 @@ else {
         await i.initialize();
         try {
           let { runMainAppStartup: e } = await Promise.resolve().then(() =>
-            require(`./main-BS7yenMI.js`),
+            require(`./main.js`),
           );
           await e();
         } catch (e) {

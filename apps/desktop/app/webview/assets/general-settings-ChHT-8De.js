@@ -1,4 +1,4 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import {
   S as t,
   f as n,
@@ -16,10 +16,10 @@ import {
   n as f,
   t as p,
   u as m,
-} from "./gpu-tearing-debug-settings-DCQWSvrr.js";
-import { Eo as h, Ta as g } from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as _, t as v } from "./jsx-runtime-CiQ1k8xo.js";
-import { t as y } from "./clsx-DDuZWq6Y.js";
+} from "./gpu-tearing-debug-settings.js";
+import { Eo as h, Ta as g } from "./app-server-manager-signals.js";
+import { n as _, t as v } from "./jsx-runtime.js";
+import { t as y } from "./clsx.js";
 import {
   B as b,
   H as x,
@@ -36,37 +36,37 @@ import {
   p as M,
   u as N,
   xt as P,
-} from "./setting-storage-kJblH-wH.js";
-import { t as F } from "./useQueries-BQOoTV8H.js";
-import { u as I } from "./chunk-LFPYN7LY-CkfOxD5s.js";
-import { r as L } from "./product-logger-CekQ0CO0.js";
-import { a as R, l as ee, o as z, u as B } from "./statsig-BwN76nAo.js";
-import { t as V } from "./invalidate-queries-and-broadcast-CPrIeBVQ.js";
-import { t as te } from "./thread-context-inputs-D4zJFWk0.js";
-import { t as ne } from "./use-auth-BSv8Pelr.js";
-import { r as H } from "./toast-signal-mlbIRbst.js";
-import { t as re } from "./tooltip-Bb9X8NK-.js";
-import { t as U } from "./button-BynxeNRW.js";
-import { t as ie } from "./spinner-avFWYgza.js";
-import { t as ae } from "./use-codex-home-B1p9XqNi.js";
-import { t as oe } from "./use-os-info-Cetdxuhy.js";
+} from "./setting-storage.js";
+import { t as F } from "./useQueries.js";
+import { u as I } from "./chunk-LFPYN7LY.js";
+import { r as L } from "./product-logger.js";
+import { a as R, l as ee, o as z, u as B } from "./statsig.js";
+import { t as V } from "./invalidate-queries-and-broadcast.js";
+import { t as te } from "./thread-context-inputs.js";
+import { t as ne } from "./use-auth.js";
+import { r as H } from "./toast-signal.js";
+import { t as re } from "./tooltip.js";
+import { t as U } from "./button.js";
+import { t as ie } from "./spinner.js";
+import { t as ae } from "./use-codex-home.js";
+import { t as oe } from "./use-os-info.js";
 import {
   c as W,
   i as se,
   n as ce,
   r as le,
   t as G,
-} from "./thread-detail-level-YcXdYr9E.js";
-import { o as ue, r as de } from "./use-permissions-mode-BBZBxA7Q.js";
-import { t as fe } from "./use-service-tier-settings-DwMtI9wq.js";
-import { t as pe } from "./use-platform-DMNwb8i8.js";
-import { g as me } from "./parsePatchFiles-CgUV3U9g.js";
-import { n as he, t as ge } from "./file-diff-DOe5AmOw.js";
-import { t as _e } from "./terminal-CNbIwMET.js";
-import { t as K } from "./with-window-BCZl6ce7.js";
-import { t as ve } from "./font-settings-D-vhQ1CB.js";
-import { n as ye, t as be } from "./use-resolved-theme-variant-BUW9gTru.js";
-import { t as xe } from "./use-is-fast-mode-enabled-DKlQlvB6.js";
+} from "./thread-detail-level.js";
+import { o as ue, r as de } from "./use-permissions-mode.js";
+import { t as fe } from "./use-service-tier-settings.js";
+import { t as pe } from "./use-platform.js";
+import { g as me } from "./parsePatchFiles.js";
+import { n as he, t as ge } from "./file-diff.js";
+import { t as _e } from "./terminal.js";
+import { t as K } from "./with-window.js";
+import { t as ve } from "./font-settings-D.js";
+import { n as ye, t as be } from "./use-resolved-theme-variant.js";
+import { t as xe } from "./use-is-fast-mode-enabled.js";
 import {
   a as Se,
   d as Ce,
@@ -75,24 +75,24 @@ import {
   n as Ee,
   r as De,
   t as Oe,
-} from "./dialog-layout-DNf4TEex.js";
-import { n as ke } from "./electron-menu-shortcuts-DQYPVyfu.js";
-import { t as Ae } from "./check-md-I6RRy8DL.js";
-import { s as je } from "./links-BkSjb4EC.js";
+} from "./dialog-layout.js";
+import { n as ke } from "./electron-menu-shortcuts.js";
+import { t as Ae } from "./check-md.js";
+import { s as je } from "./links.js";
 import {
   a as Me,
   i as Ne,
   n as Pe,
   t as Fe,
-} from "./external-agent-config-gates-DRKhDg2Y.js";
-import { a as Ie, r as Le, t as Re } from "./dropdown-CLcC-0sa.js";
-import { i as ze, n as Be, t as Ve } from "./popover-CI4rtiLD.js";
-import { t as He } from "./trash-Ml_NiloR.js";
-import { t as Ue } from "./chevron-CEHg0DRl.js";
-import { t as We } from "./copy-to-clipboard-DUkEoARe.js";
-import { t as Ge } from "./copy-BLEBbe48.js";
-import { t as Ke } from "./plus-PQBYSO-0.js";
-import { t as qe } from "./laptop-CNj5k3Wg.js";
+} from "./external-agent-config-gates.js";
+import { a as Ie, r as Le, t as Re } from "./dropdown.js";
+import { i as ze, n as Be, t as Ve } from "./popover.js";
+import { t as He } from "./trash.js";
+import { t as Ue } from "./chevron.js";
+import { t as We } from "./copy-to-clipboard.js";
+import { t as Ge } from "./copy.js";
+import { t as Ke } from "./plus.js";
+import { t as qe } from "./laptop.js";
 import {
   b as Je,
   c as Ye,
@@ -102,36 +102,28 @@ import {
   i as $e,
   m as et,
   y as tt,
-} from "./permissions-mode-helpers-B1ccIiY7.js";
-import { t as nt } from "./use-enter-behavior-BTKw_c2T.js";
-import { t as q } from "./toggle-BXF5Uzow.js";
-import {
-  n as rt,
-  o as it,
-  t as at,
-} from "./permissions-mode-visibility-D0xNYQIz.js";
+} from "./permissions-mode-helpers.js";
+import { t as nt } from "./use-enter-behavior.js";
+import { t as q } from "./toggle.js";
+import { n as rt, o as it, t as at } from "./permissions-mode-visibility.js";
 import {
   a as ot,
   i as st,
   r as ct,
   s as lt,
   t as ut,
-} from "./locale-resolver-CGYelcDT.js";
-import { i as dt, t as ft } from "./settings-shared-buyehiMO.js";
-import { t as pt } from "./settings-content-layout-B4F7ZmxE.js";
-import { t as mt } from "./moon-CyVPFheu.js";
-import { t as ht } from "./sun-BasfYcsi.js";
-import { n as J } from "./settings-row-D-T3_hWW.js";
-import { t as gt } from "./settings-surface-BVAbQNXw.js";
-import { v as _t } from "./external-agent-import-step-e-N5ZjH4.js";
-import { t as Y } from "./settings-group-BXAVZ8Oc.js";
-import { t as vt } from "./segmented-toggle-Dy7On_GB.js";
-import { t as yt } from "./statsig-url-config-J2yP2HxE.js";
-import {
-  n as bt,
-  r as xt,
-  t as St,
-} from "./keyboard-event-accelerator-BjyHBB-R.js";
+} from "./locale-resolver.js";
+import { i as dt, t as ft } from "./settings-shared.js";
+import { t as pt } from "./settings-content-layout.js";
+import { t as mt } from "./moon.js";
+import { t as ht } from "./sun.js";
+import { n as J } from "./settings-row-D.js";
+import { t as gt } from "./settings-surface.js";
+import { v as _t } from "./external-agent-import-step-e.js";
+import { t as Y } from "./settings-group.js";
+import { t as vt } from "./segmented-toggle.js";
+import { t as yt } from "./statsig-url-config.js";
+import { n as bt, r as xt, t as St } from "./keyboard-event-accelerator.js";
 var X = e(_(), 1);
 function Ct() {
   return (Ct =

@@ -1,7 +1,13 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { allocateLoopbackPort, parsePortOverride } from "../src/ports.mjs";
+import net from "node:net";
+
+import {
+  allocateLoopbackPort,
+  isTcpPortAvailable,
+  parsePortOverride,
+} from "../src/ports.mjs";
 
 test("allocateLoopbackPort returns a dynamic loopback TCP port", async () => {
   const port = await allocateLoopbackPort();
@@ -21,4 +27,17 @@ test("parsePortOverride rejects invalid values", () => {
   assert.throws(() => parsePortOverride("0", "PORT"), /PORT/);
   assert.throws(() => parsePortOverride("65536", "PORT"), /PORT/);
   assert.throws(() => parsePortOverride("abc", "PORT"), /PORT/);
+});
+
+test("isTcpPortAvailable detects occupied loopback ports", async () => {
+  const port = await allocateLoopbackPort();
+  assert.equal(await isTcpPortAvailable(port), true);
+
+  const server = net.createServer();
+  await new Promise((resolve) => server.listen(port, "127.0.0.1", resolve));
+  try {
+    assert.equal(await isTcpPortAvailable(port), false);
+  } finally {
+    await new Promise((resolve) => server.close(resolve));
+  }
 });

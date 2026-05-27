@@ -1,4 +1,4 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import {
   P as t,
   W as n,
@@ -18,9 +18,9 @@ import {
   ts as m,
   wa as h,
   zt as g,
-} from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as _, t as v } from "./jsx-runtime-CiQ1k8xo.js";
-import { t as y } from "./clsx-DDuZWq6Y.js";
+} from "./app-server-manager-signals.js";
+import { n as _, t as v } from "./jsx-runtime.js";
+import { t as y } from "./clsx.js";
 import {
   B as b,
   C as x,
@@ -40,34 +40,34 @@ import {
   w as F,
   xt as I,
   y as L,
-} from "./setting-storage-kJblH-wH.js";
-import { f as R, m as z, r as B, u as V } from "./chunk-LFPYN7LY-CkfOxD5s.js";
-import { n as H } from "./known-app-icon-Bs-e4BaZ.js";
-import { t as ee } from "./product-logger-CekQ0CO0.js";
-import { a as U, d as W, o as te } from "./statsig-BwN76nAo.js";
-import { t as ne } from "./invalidate-queries-and-broadcast-CPrIeBVQ.js";
-import { l as re, t as ie } from "./thread-context-inputs-D4zJFWk0.js";
-import { x as ae, y as G } from "./config-queries-2cSUtzNR.js";
-import { t as oe } from "./use-auth-BSv8Pelr.js";
-import { l as se } from "./codex-api-s1Mcln0L.js";
-import { t as ce } from "./use-debounced-value-DzG-dxHX.js";
-import { t as K } from "./connector-logo-BomuubYD.js";
-import { r as le } from "./toast-signal-mlbIRbst.js";
-import { t as ue } from "./tooltip-Bb9X8NK-.js";
-import { r as de, w as fe } from "./mention-item-qEZjEnZz.js";
-import { i as pe, r as me } from "./skill-utils-NmQmVKPF.js";
-import { t as q } from "./button-BynxeNRW.js";
-import { t as he } from "./spinner-avFWYgza.js";
-import { t as ge } from "./use-codex-home-B1p9XqNi.js";
-import { t as _e } from "./link-external-GLfZmEQP.js";
-import { t as ve } from "./open-workspace-file-C38053al.js";
-import { t as ye } from "./proxy-HwxlKevX.js";
-import { t as be } from "./app-shell-DnmC_oyn.js";
-import { t as xe } from "./use-reduced-motion-DwzvbwaT.js";
-import { t as Se } from "./apps-RXjrknWx.js";
-import { t as Ce } from "./chats-81n_Gm7h.js";
-import { t as we } from "./x-DMqExXY8.js";
-import { t as Te } from "./use-is-plugins-enabled-M47TXC7m.js";
+} from "./setting-storage.js";
+import { f as R, m as z, r as B, u as V } from "./chunk-LFPYN7LY.js";
+import { n as H } from "./known-app-icon.js";
+import { t as ee } from "./product-logger.js";
+import { a as U, d as W, o as te } from "./statsig.js";
+import { t as ne } from "./invalidate-queries-and-broadcast.js";
+import { l as re, t as ie } from "./thread-context-inputs.js";
+import { x as ae, y as G } from "./config-queries.js";
+import { t as oe } from "./use-auth.js";
+import { l as se } from "./codex-api.js";
+import { t as ce } from "./use-debounced-value.js";
+import { t as K } from "./connector-logo.js";
+import { r as le } from "./toast-signal.js";
+import { t as ue } from "./tooltip.js";
+import { r as de, w as fe } from "./mention-item.js";
+import { i as pe, r as me } from "./skill-utils.js";
+import { t as q } from "./button.js";
+import { t as he } from "./spinner.js";
+import { t as ge } from "./use-codex-home.js";
+import { t as _e } from "./link-external.js";
+import { t as ve } from "./open-workspace-file.js";
+import { t as ye } from "./proxy.js";
+import { t as be } from "./app-shell.js";
+import { t as xe } from "./use-reduced-motion.js";
+import { t as Se } from "./apps.js";
+import { t as Ce } from "./chats.js";
+import { t as we } from "./x.js";
+import { t as Te } from "./use-is-plugins-enabled.js";
 import {
   c as Ee,
   l as De,
@@ -77,18 +77,18 @@ import {
   s as je,
   t as Me,
   u as Ne,
-} from "./use-plugins-C8ZDLcLG.js";
-import { _ as Pe, a as Fe, i as Ie, s as Le } from "./apps-queries-Bm5YDQ9P.js";
-import { t as Re } from "./info-B8KL--OU.js";
-import { t as ze } from "./with-window-BCZl6ce7.js";
-import { t as Be } from "./plugin-auth-Drbk5jr_.js";
+} from "./use-plugins.js";
+import { _ as Pe, a as Fe, i as Ie, s as Le } from "./apps-queries.js";
+import { t as Re } from "./info.js";
+import { t as ze } from "./with-window.js";
+import { t as Be } from "./plugin-auth.js";
 import {
   i as Ve,
   n as He,
   o as Ue,
   r as We,
   t as Ge,
-} from "./use-plugin-install-flow-BqDhdae4.js";
+} from "./use-plugin-install-flow.js";
 import {
   a as Ke,
   d as qe,
@@ -98,62 +98,62 @@ import {
   r as Ze,
   t as Qe,
   u as $e,
-} from "./dialog-layout-DNf4TEex.js";
-import { t as et } from "./gradient-6kaU8ors.js";
-import { n as J, t as tt } from "./use-skills-CbLuUp1e.js";
-import { r as nt } from "./modal-controller-state--RuEytMA.js";
-import { t as rt } from "./loading-page-DrftO4Dr.js";
-import { n as it } from "./use-resize-observer-DXGSgvEH.js";
-import { t as at } from "./check-md-I6RRy8DL.js";
-import { t as ot } from "./chevron-right-DcOUsgCQ.js";
-import { t as st } from "./use-start-new-conversation-B-ccKQqp.js";
-import { g as ct, m as lt, t as ut } from "./links-BkSjb4EC.js";
-import { t as dt } from "./badge-DJ3VoZ_p.js";
-import { t as ft } from "./skills-DDrC9ydQ.js";
-import { r as pt, t as mt } from "./dropdown-CLcC-0sa.js";
-import { t as ht } from "./trash-Ml_NiloR.js";
-import { t as gt } from "./chevron-CEHg0DRl.js";
-import { t as _t } from "./copy-to-clipboard-DUkEoARe.js";
+} from "./dialog-layout.js";
+import { t as et } from "./gradient.js";
+import { n as J, t as tt } from "./use-skills.js";
+import { r as nt } from "./modal-controller-state-.js";
+import { t as rt } from "./loading-page.js";
+import { n as it } from "./use-resize-observer.js";
+import { t as at } from "./check-md.js";
+import { t as ot } from "./chevron-right.js";
+import { t as st } from "./use-start-new-conversation-B.js";
+import { g as ct, m as lt, t as ut } from "./links.js";
+import { t as dt } from "./badge.js";
+import { t as ft } from "./skills.js";
+import { r as pt, t as mt } from "./dropdown.js";
+import { t as ht } from "./trash.js";
+import { t as gt } from "./chevron.js";
+import { t as _t } from "./copy-to-clipboard.js";
 import { n as vt } from "./markdown-75WV5XlN.js";
-import { o as yt } from "./use-native-apps.electron-BW2g2D_P.js";
-import { t as bt } from "./settings.cog-CViPO9-c.js";
-import { t as xt } from "./mcp-BsWU3xbP.js";
-import { c as St } from "./inline-mentions-CbDcUfAO.js";
+import { o as yt } from "./use-native-apps.electron.js";
+import { t as bt } from "./settings.cog.js";
+import { t as xt } from "./mcp.js";
+import { c as St } from "./inline-mentions.js";
 import {
   i as Ct,
   n as wt,
   r as Tt,
   t as Et,
-} from "./plugin-detail-page-utils-CnNZfIFc.js";
-import { r as Dt, t as Ot } from "./plugin-detail-queries-DNkA1vIs.js";
-import { n as kt, t as At } from "./check-plugin-availability-CKUOqQro.js";
-import { n as jt, t as Mt } from "./plugin-prefill-prompt-Dun8JpdN.js";
-import { n as Nt, t as Pt } from "./link-Bwk9XKXd.js";
-import { t as Ft } from "./building-DqSX1gbv.js";
-import { t as It } from "./toggle-BXF5Uzow.js";
-import { i as Lt } from "./app-connect-oauth-C6TJ4DY6.js";
-import { t as Rt } from "./list-navigation-DSrwO_Tp.js";
-import { t as zt } from "./more-menu-trigger-D1fusVZY.js";
-import { t as Bt } from "./large-empty-state-Eb8Dxq7D.js";
-import { t as Vt } from "./use-recommended-skills-CHxg_-2Q.js";
-import { n as Ht, t as Ut } from "./settings-row-D-T3_hWW.js";
-import { t as Wt } from "./settings-surface-BVAbQNXw.js";
-import { t as Gt } from "./hooks-B5S4lAt0.js";
-import { t as Kt } from "./settings-group-BXAVZ8Oc.js";
-import { n as qt, r as Jt, t as Yt } from "./app-connect-modal-Dr9aX66V.js";
+} from "./plugin-detail-page-utils.js";
+import { r as Dt, t as Ot } from "./plugin-detail-queries.js";
+import { n as kt, t as At } from "./check-plugin-availability.js";
+import { n as jt, t as Mt } from "./plugin-prefill-prompt.js";
+import { n as Nt, t as Pt } from "./link.js";
+import { t as Ft } from "./building.js";
+import { t as It } from "./toggle.js";
+import { i as Lt } from "./app-connect-oauth.js";
+import { t as Rt } from "./list-navigation.js";
+import { t as zt } from "./more-menu-trigger.js";
+import { t as Bt } from "./large-empty-state.js";
+import { t as Vt } from "./use-recommended-skills.js";
+import { n as Ht, t as Ut } from "./settings-row-D.js";
+import { t as Wt } from "./settings-surface.js";
+import { t as Gt } from "./hooks.js";
+import { t as Kt } from "./settings-group.js";
+import { n as qt, r as Jt, t as Yt } from "./app-connect-modal.js";
 import {
   a as Xt,
   c as Zt,
   i as Qt,
   n as $t,
   s as en,
-} from "./plugin-detail-route-utils-Bsq2ujzP.js";
-import { n as tn, r as nn } from "./plugins-availability-DST87EXk.js";
-import { n as rn, t as an } from "./sectioned-page-D2UZg1Oy.js";
-import { t as on } from "./use-home-directory-B3jyQBeT.js";
-import { t as sn } from "./apps-availability-DuFJh-dy.js";
-import { t as cn } from "./lock-nKsRyd28.js";
-import { t as ln } from "./plugin-uninstall-dialog-CUpFQrJ_.js";
+} from "./plugin-detail-route-utils.js";
+import { n as tn, r as nn } from "./plugins-availability.js";
+import { n as rn, t as an } from "./sectioned-page.js";
+import { t as on } from "./use-home-directory.js";
+import { t as sn } from "./apps-availability.js";
+import { t as cn } from "./lock.js";
+import { t as ln } from "./plugin-uninstall-dialog.js";
 var Y = e(_()),
   X = v(),
   un = (e) =>

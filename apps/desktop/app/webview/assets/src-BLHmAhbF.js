@@ -1,4 +1,4 @@
-import { s as e, t } from "./chunk-Bj-mKKzh.js";
+import { s as e, t } from "./chunk.js";
 var n = `https://chatgpt.com/codex`,
   r = Object.freeze({ status: `aborted` });
 function i(e, t, n) {

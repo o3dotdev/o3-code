@@ -1,6 +1,6 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
-import { n as t, t as n } from "./jsx-runtime-CiQ1k8xo.js";
-import { t as r } from "./react-dom-De86Q4ix.js";
+import { s as e } from "./chunk.js";
+import { n as t, t as n } from "./jsx-runtime.js";
+import { t as r } from "./react-dom.js";
 typeof window < `u` && window.document && window.document.createElement;
 function i(e, t, { checkForDefaultPrevented: n = !0 } = {}) {
   return function (r) {

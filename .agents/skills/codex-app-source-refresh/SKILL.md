@@ -34,6 +34,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - If the script stops, inspect the reason and decide; do not work around guardrails casually.
 3. Normalize copied source.
    - Run `pnpm normalize`.
+   - Expect uniquely resolvable generated Vite asset filenames to lose hash suffixes; note any logged collision groups that remain hashed.
    - If normalization fails, fix only normalization/tooling issues needed for the refreshed copied material.
 4. Reapply active Desktop Reconstruction Patch SOPs in numeric order.
    - Load one `SOP.md` at a time, or delegate exactly one SOP at a time through the sequential sub-agent protocol below.
@@ -62,7 +63,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Treat `pnpm web-patches:check` as marker-placement-only until real Web Patch folders exist and folder-to-marker validation can prove useful.
    - Run or add tests beside repo-owned code when Web Patches change `packages/bridge/**`, `scripts/**`, or another support package.
    - Run `pnpm start` and confirm the Desktop Reconstruction reaches renderer mount and app-server handshake.
-   - Run `pnpm start:web` and confirm the Mirrored Web Client loads from `apps/web/app/webview` through Bridge Mode.
+   - Enable Web access from the running desktop app and confirm the Mirrored Web Client loads from `apps/web/app/webview` through Bridge Mode.
    - Validate each Patch SOP and Web Patch SOP's stated checks; do not mark evidence complete from generic app launch alone.
    - For visual, layout, route, scroll, viewport, or interaction Web Patches, require browser evidence in the relevant `EVIDENCE.md`.
    - For mobile-specific Web Patches, PWA evidence may be documented manual verification at first when automation cannot faithfully emulate installed mode.
@@ -142,7 +143,7 @@ For every active patch:
 
 - Start from the SOP goal and non-goals, not from old filenames.
 - Use old Patch Markers only as historical hints.
-- Expect bundled chunk names to change.
+- Prefer normalized canonical chunk names after `pnpm normalize`; expect hashed names only for logged collision groups.
 - Keep Patch Markers as standalone lines with the same patch id.
 - Preserve upstream behavior by default; local behavior must be narrow and explicit.
 - If upstream now provides the same behavior directly, stop and ask before removing the patch.
@@ -152,7 +153,7 @@ For every active Web Patch:
 
 - Start from the SOP goal and non-goals, not from old filenames.
 - Use old Web Patch Markers only as historical hints.
-- Expect bundled browser chunk names to change.
+- Prefer normalized canonical browser chunk names after `pnpm derive:web`; expect hashed names only for collision groups inherited from the Desktop Reconstruction.
 - Keep Web Patch Markers as standalone lines with the same web patch id.
 - Use Web Patch Markers only in copied or derived bundled assets under `apps/web/app/webview`, not in repo-owned support code.
 - Keep changes browser-only in `apps/web/app/webview` by default.

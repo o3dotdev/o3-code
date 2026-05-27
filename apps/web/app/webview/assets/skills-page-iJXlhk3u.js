@@ -1,39 +1,33 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import {
   Ta as t,
   as as n,
   os as r,
   wa as i,
-} from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as a, t as o } from "./jsx-runtime-CiQ1k8xo.js";
-import { t as s } from "./clsx-DDuZWq6Y.js";
-import {
-  H as c,
-  S as l,
-  W as u,
-  Y as d,
-  xt as f,
-} from "./setting-storage-kJblH-wH.js";
-import { u as p } from "./chunk-LFPYN7LY-CkfOxD5s.js";
-import { t as m } from "./product-logger-CekQ0CO0.js";
-import { t as h } from "./use-auth-BSv8Pelr.js";
-import { l as g } from "./codex-api-s1Mcln0L.js";
-import { r as _ } from "./toast-signal-mlbIRbst.js";
-import { w as v } from "./mention-item-qEZjEnZz.js";
-import { r as y } from "./skill-utils-NmQmVKPF.js";
-import { t as b } from "./button-BynxeNRW.js";
-import { t as x } from "./use-is-plugins-enabled-M47TXC7m.js";
-import { t as S } from "./plugin-auth-Drbk5jr_.js";
-import { t as ee } from "./use-start-new-conversation-B-ccKQqp.js";
-import { g as te } from "./links-BkSjb4EC.js";
-import { t as ne } from "./plus-PQBYSO-0.js";
-import { t as re } from "./use-connected-remote-connections-CYxJx8ss.js";
-import { t as ie } from "./regenerate-C3FUHd6G.js";
-import { n as ae, t as oe } from "./format-skill-scope-DQzX7n8O.js";
-import { n as se } from "./settings-host-selection-B8-0dN0N.js";
-import { t as C } from "./large-empty-state-Eb8Dxq7D.js";
-import { t as ce } from "./thread-page-header-CICv9f3-.js";
-import { t as le } from "./settings-host-dropdown-fpeLLLwF.js";
+} from "./app-server-manager-signals.js";
+import { n as a, t as o } from "./jsx-runtime.js";
+import { t as s } from "./clsx.js";
+import { H as c, S as l, W as u, Y as d, xt as f } from "./setting-storage.js";
+import { u as p } from "./chunk-LFPYN7LY.js";
+import { t as m } from "./product-logger.js";
+import { t as h } from "./use-auth.js";
+import { l as g } from "./codex-api.js";
+import { r as _ } from "./toast-signal.js";
+import { w as v } from "./mention-item.js";
+import { r as y } from "./skill-utils.js";
+import { t as b } from "./button.js";
+import { t as x } from "./use-is-plugins-enabled.js";
+import { t as S } from "./plugin-auth.js";
+import { t as ee } from "./use-start-new-conversation-B.js";
+import { g as te } from "./links.js";
+import { t as ne } from "./plus.js";
+import { t as re } from "./use-connected-remote-connections.js";
+import { t as ie } from "./regenerate.js";
+import { n as ae, t as oe } from "./format-skill-scope.js";
+import { n as se } from "./settings-host-selection.js";
+import { t as C } from "./large-empty-state.js";
+import { t as ce } from "./thread-page-header.js";
+import { t as le } from "./settings-host-dropdown.js";
 import {
   C as w,
   N as T,
@@ -50,7 +44,7 @@ import {
   o as ve,
   r as ye,
   t as be,
-} from "./plugins-page-D2hN-W-s.js";
+} from "./plugins-page.js";
 var E = f(),
   D = e(a(), 1);
 function xe(e) {

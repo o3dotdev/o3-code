@@ -9,7 +9,7 @@ The final refresh order is: replace upstream material, normalize Desktop Reconst
 1. Start a refresh branch from the current O3 Code base branch.
 2. Replace copied Codex App material with the newer release material.
 3. Update source metadata such as app version and build number.
-4. Run `pnpm normalize`.
+4. Run `pnpm normalize`. The normalizer removes generated hash suffixes from uniquely resolvable Vite asset filenames and logs collision groups that must remain hashed.
 5. Reapply each active Desktop Reconstruction Patch SOP in numeric order.
 6. Record fresh Patch Evidence for each Desktop Reconstruction Patch.
 7. Run `pnpm derive:web` to rebuild the committed Mirrored Web Client Asset Tree at `apps/web/app/webview` from the patched Desktop Reconstruction Webview Assets.
@@ -17,12 +17,14 @@ The final refresh order is: replace upstream material, normalize Desktop Reconst
 9. Record fresh Patch Evidence for each Web Patch.
 10. Run `pnpm web-patches:check` when available.
 11. Run `pnpm start` and validate the Desktop Reconstruction.
-12. Run `pnpm start:web` and validate the Mirrored Web Client.
+12. Enable Web access in desktop settings and validate the Mirrored Web Client.
 13. Open a PR that shows the upstream refresh, normalization, reapplied Patches, derived web tree, Web Patches, and evidence updates.
 
-Do not merge refreshed material into the existing copied source tree. Replace copied source and runtime material as upstream input, then rebuild local O3 Code behavior from the Patch SOPs. Do not preserve old browser-patched files when rebuilding the Mirrored Web Client Asset Tree; derive the browser baseline from patched desktop assets, then reapply browser-only intent from Web Patch SOPs.
+Do not merge refreshed material into the existing copied source tree. Replace copied source and runtime material as upstream input, then rebuild local O3 Code behavior from the Patch SOPs. Repo-added files that live inside replaced copied source, such as the Web access settings chunk under `apps/desktop/app/webview/assets/`, must be recreated by their owning Patch SOP before derivation. Do not preserve old browser-patched files when rebuilding the Mirrored Web Client Asset Tree; derive the browser baseline from patched desktop assets, then reapply browser-only intent from Web Patch SOPs.
 
-Launcher scripts should derive the default `CODEX_BUILD_NUMBER` from package metadata. Source Refresh should not leave `scripts/start.mjs` or `scripts/start-web.mjs` pinned to an older literal build number.
+After Normalization, most Vite chunk and asset names should be stable canonical filenames. When reviewing Source Refresh diffs, expect remaining hashed names only for logged collision groups where a hash-stripped name would be ambiguous.
+
+Launcher scripts should derive the default `CODEX_BUILD_NUMBER` from package metadata. Source Refresh should not leave `scripts/start.mjs` pinned to an older literal build number.
 
 ## Commit Shape
 
