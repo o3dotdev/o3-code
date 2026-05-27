@@ -13,3 +13,5 @@ The derived tree is committed for the same reason O3 Code commits preserved Desk
 The derivation command, `pnpm derive:web`, should only rebuild the browser asset tree from the already patched Desktop Reconstruction Webview Assets. It is a destructive but scoped rebuild of `apps/web/app/webview`: delete that directory, copy `apps/desktop/app/webview` into it, and stop. It must not preserve old Web Patch Markers, apply Mirrored Web Client Patches, normalize files, or touch `apps/web` files outside `app/webview`; those patches are AI-owned SOP migrations because their targets depend on bundled renderer code that can move or change between Codex App releases.
 
 Mirrored Web Client Patch SOPs live separately under `docs/web-patches/`, using the same `README.md`, `SOP.md`, and `EVIDENCE.md` shape as Desktop Reconstruction patches under `docs/patches/`.
+
+`pnpm start:web` serves `apps/web/app/webview` by default so the browser runs the derived and browser-patched surface. Environment overrides may still point the Bridge Sidecar at another webview directory for debugging, but they are not the default runtime path.

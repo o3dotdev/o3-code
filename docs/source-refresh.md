@@ -2,6 +2,8 @@
 
 Source Refresh updates O3 Code from a newer installed Codex App release. The refresh starts from clean upstream material and rebuilds O3 Code intent through Patch SOPs.
 
+The final refresh order is: replace upstream material, normalize Desktop Reconstruction material, apply Desktop Reconstruction patches, derive the Mirrored Web Client Asset Tree, apply Web Patch SOPs, then validate both desktop and web behavior.
+
 ## Procedure
 
 1. Start a refresh branch from the current O3 Code base branch.

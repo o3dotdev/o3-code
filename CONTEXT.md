@@ -100,6 +100,10 @@ _Avoid_: tweak, hack, modification
 A Patch whose local intent applies only to the browser-facing Mirrored Web Client Asset Tree and must not change the Desktop Reconstruction product surface.
 _Avoid_: frontend rewrite, desktop patch, shared UI patch
 
+**Web Patch Marker**:
+A paired inline boundary placed around a Mirrored Web Client Patch site inside the Mirrored Web Client Asset Tree so browser-only intent remains discoverable after derivation and source refreshes.
+_Avoid_: bridge source marker, desktop patch marker, normal comment
+
 **Patch Marker**:
 A paired inline boundary placed around a Patch site so the local intent and exact changed region remain discoverable after source refreshes and chunk renames.
 _Avoid_: comment, note, TODO
@@ -216,7 +220,7 @@ Domain expert: "No. Start with a repo-owned Bridge Shim and sidecar, and add a P
 
 Dev: "Should the Mirrored Web Client have its own frontend build?"
 
-Domain expert: "No. Serve the preserved Webview Assets and inject a Bridge Shim so the browser uses the same UI material as the Desktop Reconstruction."
+Domain expert: "No. Serve the Mirrored Web Client Asset Tree derived from patched Webview Assets, then apply browser-only Mirrored Web Client Patches there."
 
 Dev: "Can the bridge add routing fields directly to app messages?"
 

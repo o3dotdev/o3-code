@@ -19,6 +19,8 @@ Order:
 
 Do not merge new upstream material into the existing copied tree. Replace it, then rebuild local behavior from SOPs. Do not preserve old browser-patched files when rebuilding `apps/web/app/webview`; derive the browser baseline from patched desktop assets and then reapply Web Patch SOPs.
 
+Do not create placeholder Web Patch SOP folders. Create them only with concrete browser-only fixes, real anchors, non-goals, validation, and evidence. Keep `pnpm web-patches:check` marker-placement-only until real Web Patch folders exist and folder-to-marker validation becomes useful.
+
 Do not update `upstream/codex` during a Codex App Source Refresh. Codex CLI Upstream is a separate boundary.
 
 Sub-agent orchestration:
