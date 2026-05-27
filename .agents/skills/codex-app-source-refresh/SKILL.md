@@ -33,7 +33,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Run `pnpm normalize`.
    - If normalization fails, fix only normalization/tooling issues needed for the refreshed copied material.
 4. Reapply active Patch SOPs in numeric order.
-   - Load one `SOP.md` at a time.
+   - Load one `SOP.md` at a time, or delegate exactly one SOP at a time through the sequential sub-agent protocol below.
    - Rediscover the refreshed upstream site from the SOP anchors.
    - Apply the smallest local patch with required Patch Markers.
    - Update that patch's `EVIDENCE.md` immediately with version/build, discovered sites, patch shape, and validation notes.
@@ -57,6 +57,51 @@ Use scripts as assistants, not decision-makers.
 - `scripts/refresh_codex_app.py`: `uv run --script` helper for guarded replacement of copied Codex App material and mechanical metadata only.
 
 The refresh script intentionally does not run `pnpm normalize`, does not migrate patches, does not update Patch Evidence, does not update `upstream/codex`, and does not commit.
+
+## Sequential Sub-Agent Protocol
+
+Use sub-agents only when the user explicitly asks for delegated patch work and the current environment supports sub-agents. The main session remains the orchestrator.
+
+Main-session responsibilities:
+
+- Perform preflight, upstream replacement, and `pnpm normalize` before delegation.
+- Build the ordered Patch SOP list from `docs/patches/000*/SOP.md`.
+- Start only one patch sub-agent at a time; wait for its final report and inspect marker placement, `git diff --stat`, touched files, and updated `EVIDENCE.md` before starting the next.
+- Pass the next sub-agent a concise carry-forward summary from earlier patch reports, especially dependency completion, changed files, marker ids, validation results, and unresolved risks.
+- Resolve conflicts, decide whether to stop on failure conditions, and run final cross-patch validation.
+
+Patch sub-agent handoff packet:
+
+- patch id and SOP path
+- release metadata: source app path, version, build, and app.asar hash
+- dependencies satisfied or dependency summary needed for this patch
+- goal, non-goals, required anchors, marker id, and failure conditions from the SOP
+- allowed files or surfaces for this patch
+- validation checklist and evidence fields required
+- concise carry-forward context from prior patch reports
+
+Patch sub-agent contract:
+
+- Own exactly one Patch SOP folder and its `EVIDENCE.md`.
+- Read only the repo context needed for that SOP: `CONTEXT.md`, `docs/patches/README.md`, the assigned `README.md`, the assigned `SOP.md`, that patch's `EVIDENCE.md`, relevant prior summary, and refreshed source anchors.
+- Re-discover the patch site in the refreshed source; do not blindly copy old patched code.
+- Apply only the assigned patch and required evidence update.
+- Do not run broad final validation, commit, push, change unrelated patches, or update `upstream/codex`.
+- Stop and report instead of editing when an SOP failure condition is met, when upstream appears to provide the patch behavior directly, or when the patch would need to broaden scope to "make it work."
+
+Each patch sub-agent final report must include:
+
+- status: `applied`, `skipped-human-review`, or `failed`
+- patch id and SOP path
+- files changed
+- discovered refreshed sites and anchors
+- exact patch shape and evidence update summary
+- Patch Marker ids added or preserved
+- validation commands run and outcomes
+- blockers, failure conditions, or risks for the main session
+- dependency impact or context the next patch sub-agent should know
+
+If sub-agents are unavailable, run the same one-SOP-at-a-time protocol locally and keep the same report shape in notes before moving to the next patch.
 
 ## Replacement Scope
 
