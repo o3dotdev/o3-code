@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mirrored Web Client Refresh"
+  short_description: "Rebuild and patch O3 Code's browser asset tree"
+  default_prompt: "Use $mirrored-web-client-refresh to rebuild apps/web/app/webview and reapply Mirrored Web Client Web Patch SOPs."

@@ -1,0 +1,2 @@
+import { t as e } from "./gdshader-DvVx1D6z.js";
+export { e as default };

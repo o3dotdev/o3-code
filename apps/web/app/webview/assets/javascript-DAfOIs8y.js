@@ -1,0 +1,2 @@
+import { t as e } from "./javascript-BecfgTV2.js";
+export { e as default };

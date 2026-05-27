@@ -1,0 +1,187 @@
+import { Y as e, nt as t, tt as n } from "./src-BLHmAhbF.js";
+import "./app-server-manager-signals-7MlBpIlX.js";
+import { t as r } from "./jsx-runtime-CiQ1k8xo.js";
+import "./react-dom-De86Q4ix.js";
+import "./Combination-CmOISuqp.js";
+import "./marked.esm-B1dI5d9h.js";
+import { H as i, p as a, xt as o, y as s } from "./setting-storage-kJblH-wH.js";
+import { m as c, r as l } from "./chunk-LFPYN7LY-CkfOxD5s.js";
+import "./known-app-icon-Bs-e4BaZ.js";
+import "./branch-DGCKHu9Z.js";
+import "./github-mark-BJLszk3j.js";
+import "./google-drive-Btpy1LZU.js";
+import "./notion-C3io6wcI.js";
+import "./product-logger-CekQ0CO0.js";
+import "./statsig-BwN76nAo.js";
+import "./app-server-manager-hooks-BUQb1vpx.js";
+import "./use-global-state-DUocq5mo.js";
+import "./invalidate-queries-and-broadcast-CPrIeBVQ.js";
+import "./thread-context-inputs-D4zJFWk0.js";
+import "./config-queries-2cSUtzNR.js";
+import "./remote-connection-visibility-BqsxCDqm.js";
+import "./sidebar-signals-oDf-ZfE3.js";
+import "./use-auth-BSv8Pelr.js";
+import "./codex-api-s1Mcln0L.js";
+import "./_baseOrderBy-H105Hl5V.js";
+import "./parse-owner-repo-Bz9xN8qO.js";
+import "./use-debounced-value-DzG-dxHX.js";
+import "./use-is-dark-YP6LF-lA.js";
+import "./connector-logo-BomuubYD.js";
+import "./toast-signal-mlbIRbst.js";
+import "./window-zoom-context-BgcP82Wr.js";
+import "./tooltip-Bb9X8NK-.js";
+import "./build-start-conversation-params-DIO1Ymlx.js";
+import "./route-scope-VKCI3pUD.js";
+import "./prompt-text-B7z6_oGa.js";
+import "./mention-item-qEZjEnZz.js";
+import "./button-BynxeNRW.js";
+import "./reduced-motion-preference-DnjdGHz7.js";
+import "./spinner-avFWYgza.js";
+import "./use-codex-home-B1p9XqNi.js";
+import "./use-os-info-Cetdxuhy.js";
+import "./open-workspace-file-C38053al.js";
+import "./send-open-file-request-Bu7p9tqM.js";
+import "./mime-types-BwyLizga.js";
+import "./thread-detail-level-YcXdYr9E.js";
+import "./permissions-mode-defaults-B05U03gA.js";
+import "./use-permissions-mode-BBZBxA7Q.js";
+import "./proxy-HwxlKevX.js";
+import "./apps-RXjrknWx.js";
+import "./x-DMqExXY8.js";
+import "./plugin-install-store-p29AZQX7.js";
+import "./use-platform-DMNwb8i8.js";
+import "./experimental-features-queries-Css_qmsY.js";
+import "./use-is-plugins-enabled-M47TXC7m.js";
+import "./use-plugins-C8ZDLcLG.js";
+import "./apps-queries-Bm5YDQ9P.js";
+import "./startCase-DlqWBRV1.js";
+import "./uniq-ckcXPYOW.js";
+import "./terminal-CNbIwMET.js";
+import "./download-Cf0FyA1Y.js";
+import "./with-window-BCZl6ce7.js";
+import "./window-app-action-helpers-B7Tx2lfM.js";
+import "./dialog-layout-DNf4TEex.js";
+import "./run-command-Ddybecyf.js";
+import "./initial-route-atom-D23GXwGj.js";
+import "./use-stable-callback-Csm0_jZ8.js";
+import "./use-skills-CbLuUp1e.js";
+import "./modal-controller-state--RuEytMA.js";
+import "./open-project-setup-dialog-CAfG73Jf.js";
+import "./use-resize-observer-DXGSgvEH.js";
+import "./check-md-I6RRy8DL.js";
+import "./chevron-right-DcOUsgCQ.js";
+import "./context-menu-BCAQgMeT.js";
+import "./arrow-left-NB8jxLlJ.js";
+import "./app-shell-bottom-panel-scroll-sync-6LSVEVV8.js";
+import "./use-start-new-conversation-B-ccKQqp.js";
+import "./_defineProperty-pXG_Oy_k.js";
+import "./bug-CW5XFoH5.js";
+import "./skills-DDrC9ydQ.js";
+import "./globe-D1xFoTfu.js";
+import "./set-pinned-thread-DNrmszao.js";
+import "./chevron-CEHg0DRl.js";
+import "./folder-DnqvPFV1.js";
+import "./external-markdown-link-FX2-4fyk.js";
+import "./use-native-apps.electron-BW2g2D_P.js";
+import "./get-file-icon-BhUOAJbT.js";
+import "./code-CyPGA_lW.js";
+import "./json-DAjHKBV7.js";
+import "./image-square-DaLHX1Fp.js";
+import "./notebook-CT245P4p.js";
+import "./settings.cog-CViPO9-c.js";
+import "./mcp-BsWU3xbP.js";
+import "./chrome-joSxUo6t.js";
+import "./codex-1JQAUibh.js";
+import "./openai-blossom-BF9MooFr.js";
+import "./pencil-BZadhLrp.js";
+import "./filesystem-media-src-CmokDu12.js";
+import "./inline-mentions-CbDcUfAO.js";
+import "./tailwind-styled-components.esm-Ck5todVw.js";
+import "./copy-BLEBbe48.js";
+import "./minus-D-AnULF0.js";
+import "./plus-PQBYSO-0.js";
+import "./image-preview-dialog-DSlWCEr3.js";
+import "./pull-request-open-JbGOZydD.js";
+import "./use-is-background-subagents-enabled-CLgoAMEO.js";
+import "./pending-worktree-store-3W4y-QmE.js";
+import "./sortBy-B7Ruh_AG.js";
+import "./prompt-editor-BWKtaJLQ.js";
+/* empty css                    */ import "./attachment-remove-button-TBBrbp6d.js";
+import "./mention-metadata-syncer-BbuEr1tU.js";
+import "./use-enter-behavior-BTKw_c2T.js";
+import "./use-at-mention-sections-DSU4l8kU.js";
+import "./use-composer-controller-CHz4Zlxm.js";
+import "./format-skill-scope-DQzX7n8O.js";
+import "./list-navigation-DSrwO_Tp.js";
+import "./use-workspace-file-search-CxYYOaJ1.js";
+import "./anchored-autocomplete-overlay-Caas7CK-.js";
+import "./use-autocomplete-overlay-placement-COoxk9kE.js";
+import "./use-measured-text-collapse-vr-z8Ual.js";
+import "./thread-layout-Ckap5Mqw.js";
+import "./hooks-B5S4lAt0.js";
+import "./pending-worktree-conversation-BZStwTWO.js";
+import "./reply-C6Y4VAcX.js";
+import { n as u } from "./use-hotkey-window-detail-layout-E7Gw-w1y.js";
+import "./thread-scroll-layout-DttpRt0e.js";
+import "./user-message-attachments-kyOBGjTl.js";
+import { t as d } from "./worktree-init-v2-page-DC0RDxaQ.js";
+var f = o(),
+  p = r();
+function m() {
+  let r = (0, f.c)(8),
+    { pendingWorktreeId: o } = c(),
+    { data: s } = a(`hotkey-window-hotkey-state`),
+    m = s == null || s.configuredHotkey != null,
+    g;
+  r[0] === m ? (g = r[1]) : ((g = t(m)), (r[0] = m), (r[1] = g));
+  let _ = g,
+    v;
+  if (
+    (r[2] === o
+      ? (v = r[3])
+      : ((v =
+          o == null
+            ? null
+            : {
+                title: (0, p.jsx)(`span`, {
+                  className: `max-w-full truncate`,
+                  children: (0, p.jsx)(i, {
+                    id: `worktreeInitV2.title`,
+                    defaultMessage: `Creating worktree`,
+                    description: `Title for the worktree init v2 page`,
+                  }),
+                }),
+                mainWindowPath: n(o),
+              }),
+        (r[2] = o),
+        (r[3] = v)),
+    u(v),
+    !o)
+  ) {
+    let e;
+    return (
+      r[4] === _
+        ? (e = r[5])
+        : ((e = (0, p.jsx)(l, { to: _, replace: !0 })), (r[4] = _), (r[5] = e)),
+      e
+    );
+  }
+  let y;
+  return (
+    r[6] === _
+      ? (y = r[7])
+      : ((y = (0, p.jsx)(d, {
+          homePath: _,
+          conversationPathBuilder: e,
+          onConversationReady: h,
+        })),
+        (r[6] = _),
+        (r[7] = y)),
+    y
+  );
+}
+function h(t) {
+  s.dispatchMessage(`open-in-hotkey-window`, { path: e(t) });
+}
+export { m as HotkeyWindowWorktreeInitPage };
+//# sourceMappingURL=hotkey-window-worktree-init-page-BXIF50Vg.js.map

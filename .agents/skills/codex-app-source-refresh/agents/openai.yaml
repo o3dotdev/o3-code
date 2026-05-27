@@ -1,4 +1,4 @@
 interface:
   display_name: "Codex App Source Refresh"
-  short_description: "Refresh O3 Code from installed Codex App"
-  default_prompt: "Use $codex-app-source-refresh to refresh O3 Code from a newer installed Codex App release."
+  short_description: "Refresh desktop source, derived web assets, and patch evidence"
+  default_prompt: "Use $codex-app-source-refresh to refresh O3 Code from a newer installed Codex App release, then reapply desktop and web patch SOPs."

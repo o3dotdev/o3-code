@@ -2,26 +2,24 @@
 
 ## Current Release
 
-- Codex App version: `26.519.41501`
-- Build: `3044`
+- Source app: `/Applications/Codex.app`
+- Codex App version: `26.519.81530`
+- Build: `3178`
+- `app.asar` SHA-256: `bf4c3f09b2cbab0714e23f0e9f7f9ce89146b5d47f4462ca77fc2c41394fceaa`
 
 ## Known Sites
 
-- `apps/desktop/app/.vite/build/bootstrap.js`
+- `apps/desktop/app/package.json` declares `.vite/build/bootstrap.js` as `main`.
+- `apps/desktop/app/.vite/build/bootstrap.js` loads first-party chunks before `main-BS7yenMI.js`.
+- `apps/desktop/app/.vite/build/main-BS7yenMI.js` has upstream `CODEX_ELECTRON_RESOURCES_PATH` handling, but too late for bootstrap imports.
 
-## Known Patch Shape
+## Patch Shape
 
-```js
-// o3-code-patch-begin: resources-path-redirect
-const localResourcesPath = process.env.CODEX_ELECTRON_RESOURCES_PATH?.trim();
-localResourcesPath &&
-  Object.defineProperty(process, `resourcesPath`, {
-    value: localResourcesPath,
-    configurable: !0,
-  });
-// o3-code-patch-end: resources-path-redirect
-```
+- `bootstrap.js` reads `CODEX_ELECTRON_RESOURCES_PATH`, trims it, and redefines `process.resourcesPath` before first-party `require(...)` calls.
+- Patch Marker id: `resources-path-redirect`.
 
 ## Validation Notes
 
-The current patched tree has reached renderer mount, app-server handshake, appshot hotkey registration, and browser-use native pipe startup using repo-local helper binaries and native resources.
+- `scripts/start.mjs` still sets `CODEX_ELECTRON_RESOURCES_PATH` to repo-local `apps/desktop/resources`.
+- `node --check apps/desktop/app/.vite/build/bootstrap.js` passed.
+- `pnpm start` reached app-server handshake, renderer route mount, appshot hotkey registration, and browser-use native pipe startup using repo-local runtime resources.

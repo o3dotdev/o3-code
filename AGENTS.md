@@ -5,6 +5,7 @@
 Repo-local skills live under `.agents/skills/`. Use these before global copies when the task matches the skill.
 
 - `codex-app-source-refresh`: refresh O3 Code from a newer installed Codex App release while preserving the Source Refresh, Normalization, Patch SOP, and Patch Evidence workflow.
+- `mirrored-web-client-refresh`: rebuild the Mirrored Web Client Asset Tree and reapply browser-only Web Patch SOPs after Desktop Reconstruction patches are applied.
 
 ### Issue tracker
 

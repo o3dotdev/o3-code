@@ -44,6 +44,10 @@ _Avoid_: renderer patch, web rewrite, injected hack
 The preserved browser-rendered files under `apps/desktop/app/webview` that the Desktop Reconstruction loads as its primary UI.
 _Avoid_: web app source, copied frontend, separate web build
 
+**Mirrored Web Client Asset Tree**:
+The browser-owned UI asset tree derived from the patched Desktop Reconstruction Webview Assets before Mirrored Web Client Patches are applied.
+_Avoid_: separate frontend product, hand-authored web app, web fork
+
 **Bridge Envelope**:
 Sidecar-owned metadata wrapped around an unchanged Codex App renderer message so Bridge Mode can route messages across browser and Electron runtimes without changing the app payload.
 _Avoid_: app message mutation, bridged payload type, IPC wrapper
@@ -91,6 +95,10 @@ _Avoid_: Electron main patch, embedded bridge server, frontend server
 **Patch**:
 A deliberate local change applied to O3 Code after the upstream source material has been preserved.
 _Avoid_: tweak, hack, modification
+
+**Mirrored Web Client Patch**:
+A Patch whose local intent applies only to the browser-facing Mirrored Web Client Asset Tree and must not change the Desktop Reconstruction product surface.
+_Avoid_: frontend rewrite, desktop patch, shared UI patch
 
 **Patch Marker**:
 A paired inline boundary placed around a Patch site so the local intent and exact changed region remain discoverable after source refreshes and chunk renames.

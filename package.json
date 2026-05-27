@@ -9,6 +9,8 @@
     "start": "node scripts/start.mjs",
     "start:web": "node scripts/start-web.mjs",
     "start:electron": "electron apps/desktop/app",
+    "derive:web": "node scripts/derive-web.mjs",
+    "web-patches:check": "node scripts/check-web-patches.mjs",
     "codex:setup": "node scripts/setup-codex-upstream.mjs",
     "codex:build": "node scripts/build-codex-cli.mjs",
     "generate:icons": "node scripts/generate-o3-icons.mjs",
@@ -22,7 +24,7 @@
     "prettier": "^3.6.2"
   },
   "codexBuildFlavor": "prod",
-  "codexBuildNumber": "3044",
+  "codexBuildNumber": "3178",
   "codexSourceApp": "/Applications/Codex.app",
-  "codexSourceVersion": "26.519.41501"
+  "codexSourceVersion": "26.519.81530"
 }

@@ -24,11 +24,16 @@ const repoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
 );
+const rootPackage = require("../package.json");
+const desktopAppPackage = require("../apps/desktop/app/package.json");
 const electronPackage = require("electron/package.json");
 const desktopPath = path.join(repoRoot, "apps", "desktop");
 const appPath = path.join(desktopPath, "app");
 const rendererIndexPath = path.join(appPath, "webview", "index.html");
-const webviewDir = path.join(appPath, "webview");
+const webviewDir =
+  process.env.O3_CODE_BRIDGE_WEBVIEW_DIR ||
+  path.join(repoRoot, "apps", "web", "app", "webview");
+const webviewIndexPath = path.join(webviewDir, "index.html");
 const resourcesPath = path.join(desktopPath, "resources");
 const sidecarPath = path.join(
   repoRoot,
@@ -149,6 +154,7 @@ function ensureRequiredPaths() {
   const requiredPaths = [
     appPath,
     rendererIndexPath,
+    webviewIndexPath,
     resourcesPath,
     path.join(resourcesPath, "codex"),
     path.join(resourcesPath, "node"),
@@ -167,6 +173,21 @@ function ensureRequiredPaths() {
     console.error("Electron is not installed. Run `pnpm install` first.");
     process.exit(1);
   }
+}
+
+function resolveCodexBuildNumber() {
+  for (const value of [
+    process.env.CODEX_BUILD_NUMBER,
+    rootPackage.codexBuildNumber,
+    desktopAppPackage.codexBuildNumber,
+  ]) {
+    const trimmed = String(value ?? "").trim();
+    if (trimmed) {
+      return trimmed;
+    }
+  }
+
+  throw Error("Missing codexBuildNumber package metadata.");
 }
 
 function openBrowser(url) {
@@ -229,7 +250,7 @@ const userDataPath =
 const sharedEnv = {
   ...process.env,
   NODE_ENV: process.env.NODE_ENV || "production",
-  CODEX_BUILD_NUMBER: process.env.CODEX_BUILD_NUMBER || "3044",
+  CODEX_BUILD_NUMBER: resolveCodexBuildNumber(),
   CODEX_ELECTRON_RESOURCES_PATH:
     process.env.CODEX_ELECTRON_RESOURCES_PATH || resourcesPath,
   CODEX_ELECTRON_USER_DATA_PATH: userDataPath,

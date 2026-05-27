@@ -52,5 +52,5 @@ The Codex CLI/app-server source is checked out at `upstream/codex/` from `o3dotd
 ## Source
 
 - Source app: `/Applications/Codex.app`
-- Version: `26.519.41501`
-- Build: `3044`
+- Version: `26.519.81530`
+- Build: `3178`

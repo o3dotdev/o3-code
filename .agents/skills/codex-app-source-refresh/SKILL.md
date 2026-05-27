@@ -1,11 +1,11 @@
 ---
 name: codex-app-source-refresh
-description: Refresh O3 Code from a newer installed macOS Codex App release. Use when asked to update, bump, sync, or source-refresh the repo-local Desktop Reconstruction from /Applications/Codex.app or another installed Codex App, then normalize, reapply Patch SOPs with AI judgment, record Patch Evidence, and validate pnpm-run app behavior.
+description: Refresh O3 Code from a newer installed macOS Codex App release. Use when asked to update, bump, sync, or source-refresh the repo-local Desktop Reconstruction from /Applications/Codex.app or another installed Codex App, then normalize, reapply Desktop Reconstruction Patch SOPs, rebuild the Mirrored Web Client Asset Tree, reapply Web Patch SOPs, record evidence, and validate pnpm-run desktop and web behavior.
 ---
 
 # Codex App Source Refresh
 
-Refresh O3 Code from a newer installed Codex App by treating the installed app as read-only upstream material. The helper scripts can inventory and replace copied upstream material, but patch migration is always AI-owned through the repo's Patch SOPs.
+Refresh O3 Code from a newer installed Codex App by treating the installed app as read-only upstream material. The helper scripts can inventory and replace copied upstream material, but patch migration is always AI-owned through the repo's Desktop Reconstruction Patch SOPs and Mirrored Web Client Web Patch SOPs.
 
 ## Language Guardrails
 
@@ -13,10 +13,12 @@ Refresh O3 Code from a newer installed Codex App by treating the installed app a
 - Treat `Codex App` as the installed macOS app used as upstream source material.
 - Treat `O3 Code` as the repo-local Electron reconstruction.
 - Treat copied app source and runtime files as replaceable upstream input.
-- Treat `Patch SOPs` as the authority for local behavior that must survive refreshes.
+- Treat `Patch SOPs` as the authority for Desktop Reconstruction behavior that must survive refreshes.
+- Treat `Web Patch SOPs` as the authority for Mirrored Web Client behavior that must survive refreshes.
+- Treat `apps/web/app/webview` as a derived, committed Mirrored Web Client Asset Tree rebuilt from the patched Desktop Reconstruction Webview Assets.
 - Do not update `Codex CLI Upstream` unless the user explicitly asks; it is a separate upstream boundary.
 
-Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`, and active `docs/patches/*/SOP.md` files before changing source material.
+Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`, `docs/web-patches/README.md`, active `docs/patches/*/SOP.md`, and active `docs/web-patches/*/SOP.md` files before changing source material.
 
 ## Workflow
 
@@ -32,7 +34,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
 3. Normalize copied source.
    - Run `pnpm normalize`.
    - If normalization fails, fix only normalization/tooling issues needed for the refreshed copied material.
-4. Reapply active Patch SOPs in numeric order.
+4. Reapply active Desktop Reconstruction Patch SOPs in numeric order.
    - Load one `SOP.md` at a time, or delegate exactly one SOP at a time through the sequential sub-agent protocol below.
    - Rediscover the refreshed upstream site from the SOP anchors.
    - Apply the smallest local patch with required Patch Markers.
@@ -40,14 +42,26 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Stop for human review when an SOP failure condition is met.
 5. Regenerate repo-owned local assets when the SOP says so.
    - For Local App Identity, run `pnpm generate:icons` after upstream replacement if icon resources were removed or refreshed.
-6. Validate.
+6. Rebuild the Mirrored Web Client Asset Tree.
+   - Run `pnpm derive:web`.
+   - The derivation step deletes only `apps/web/app/webview`, copies the already patched Desktop Reconstruction Webview Assets into `apps/web/app/webview`, and stops.
+   - Do not preserve browser-patched files from the previous web tree during derivation.
+7. Reapply active Web Patch SOPs in numeric order.
+   - Load one `docs/web-patches/000*/SOP.md` at a time, or delegate exactly one Web Patch SOP at a time through the sequential sub-agent protocol below.
+   - Rediscover the refreshed browser asset site from the SOP anchors.
+   - Apply the smallest browser-only patch with required Web Patch Markers.
+   - Update that web patch's `EVIDENCE.md` immediately with version/build, discovered sites, patch shape, and validation notes.
+   - Stop for human review when an SOP failure condition is met.
+8. Validate.
    - Run `pnpm normalize:check`.
    - Run focused static checks such as `node --check` for changed JavaScript chunks when useful.
+   - Run `pnpm web-patches:check` when the command exists.
    - Run `pnpm start` and confirm the Desktop Reconstruction reaches renderer mount and app-server handshake.
-   - Validate each Patch SOP's stated checks; do not mark evidence complete from generic app launch alone.
-7. Review and commit shape.
+   - Run `pnpm start:web` and confirm the Mirrored Web Client loads from `apps/web/app/webview` through Bridge Mode.
+   - Validate each Patch SOP and Web Patch SOP's stated checks; do not mark evidence complete from generic app launch alone.
+9. Review and commit shape.
    - Inspect `git diff --stat` and key changed files.
-   - Prefer separated commits for upstream replacement, normalization, patch reapplication, evidence/docs, and generated local assets when the diff is large.
+   - Prefer separated commits for upstream replacement, normalization, desktop patch reapplication, web tree derivation, web patch reapplication, evidence/docs, and generated local assets when the diff is large.
 
 ## Helper Scripts
 
@@ -66,6 +80,7 @@ Main-session responsibilities:
 
 - Perform preflight, upstream replacement, and `pnpm normalize` before delegation.
 - Build the ordered Patch SOP list from `docs/patches/000*/SOP.md`.
+- Build the ordered Web Patch SOP list from `docs/web-patches/000*/SOP.md` after rebuilding `apps/web/app/webview`.
 - Start only one patch sub-agent at a time; wait for its final report and inspect marker placement, `git diff --stat`, touched files, and updated `EVIDENCE.md` before starting the next.
 - Pass the next sub-agent a concise carry-forward summary from earlier patch reports, especially dependency completion, changed files, marker ids, validation results, and unresolved risks.
 - Resolve conflicts, decide whether to stop on failure conditions, and run final cross-patch validation.
@@ -82,8 +97,8 @@ Patch sub-agent handoff packet:
 
 Patch sub-agent contract:
 
-- Own exactly one Patch SOP folder and its `EVIDENCE.md`.
-- Read only the repo context needed for that SOP: `CONTEXT.md`, `docs/patches/README.md`, the assigned `README.md`, the assigned `SOP.md`, that patch's `EVIDENCE.md`, relevant prior summary, and refreshed source anchors.
+- Own exactly one Patch SOP or Web Patch SOP folder and its `EVIDENCE.md`.
+- Read only the repo context needed for that SOP: `CONTEXT.md`, the relevant patch index (`docs/patches/README.md` or `docs/web-patches/README.md`), the assigned `README.md`, the assigned `SOP.md`, that patch's `EVIDENCE.md`, relevant prior summary, and refreshed source anchors.
 - Re-discover the patch site in the refreshed source; do not blindly copy old patched code.
 - Apply only the assigned patch and required evidence update.
 - Do not run broad final validation, commit, push, change unrelated patches, or update `upstream/codex`.
@@ -125,6 +140,16 @@ For every active patch:
 - Preserve upstream behavior by default; local behavior must be narrow and explicit.
 - If upstream now provides the same behavior directly, stop and ask before removing the patch.
 - If a patch goal no longer maps to identifiable upstream behavior, stop and ask.
+
+For every active Web Patch:
+
+- Start from the SOP goal and non-goals, not from old filenames.
+- Use old Web Patch Markers only as historical hints.
+- Expect bundled browser chunk names to change.
+- Keep Web Patch Markers as standalone lines with the same web patch id.
+- Keep changes browser-only in `apps/web/app/webview` or repo-owned bridge support files named by the SOP.
+- If the Desktop Reconstruction now directly supports the browser behavior before derivation, stop and ask before removing the Web Patch.
+- If a Web Patch goal no longer maps to identifiable browser asset behavior, stop and ask.
 
 ## Evidence Standard
 

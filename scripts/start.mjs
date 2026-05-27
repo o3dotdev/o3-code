@@ -18,6 +18,8 @@ const repoRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
 );
+const rootPackage = require("../package.json");
+const desktopAppPackage = require("../apps/desktop/app/package.json");
 const electronPackage = require("electron/package.json");
 const desktopPath = path.join(repoRoot, "apps", "desktop");
 const appPath = path.join(desktopPath, "app");
@@ -129,6 +131,21 @@ function ensureNativeExecutableBits() {
   }
 }
 
+function resolveCodexBuildNumber() {
+  for (const value of [
+    process.env.CODEX_BUILD_NUMBER,
+    rootPackage.codexBuildNumber,
+    desktopAppPackage.codexBuildNumber,
+  ]) {
+    const trimmed = String(value ?? "").trim();
+    if (trimmed) {
+      return trimmed;
+    }
+  }
+
+  throw Error("Missing codexBuildNumber package metadata.");
+}
+
 const requiredPaths = [
   appPath,
   rendererIndexPath,
@@ -159,7 +176,7 @@ const userDataPath =
 const env = {
   ...process.env,
   NODE_ENV: process.env.NODE_ENV || "production",
-  CODEX_BUILD_NUMBER: process.env.CODEX_BUILD_NUMBER || "3044",
+  CODEX_BUILD_NUMBER: resolveCodexBuildNumber(),
   CODEX_ELECTRON_RESOURCES_PATH:
     process.env.CODEX_ELECTRON_RESOURCES_PATH || resourcesPath,
   CODEX_ELECTRON_USER_DATA_PATH: userDataPath,

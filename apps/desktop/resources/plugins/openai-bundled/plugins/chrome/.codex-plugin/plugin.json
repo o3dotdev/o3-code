@@ -1,6 +1,6 @@
 {
   "name": "chrome",
-  "version": "26.519.41501",
+  "version": "26.519.81530",
   "description": "Chrome automation for remote URLs, authenticated/profile-dependent pages, existing Chrome tabs, cookies, extensions, and Codex Chrome Extension setup.",
   "author": {
     "name": "OpenAI"

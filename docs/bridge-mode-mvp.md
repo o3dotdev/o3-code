@@ -12,7 +12,7 @@ The MVP proves that a normal local thread can be started from the browser and st
 
 ```txt
 Browser
-  Mirrored Web Client from apps/desktop/app/webview
+  Mirrored Web Client from apps/web/app/webview
   Bridge Shim
   WSS to Bridge Sidecar
 
@@ -34,7 +34,7 @@ Desktop Reconstruction in Bridge Mode
 - Bridge Mode uses dynamic loopback-only Bridge Ports.
 - The Bridge Sidecar is a separate repo-owned Node process.
 - Bridge code uses plain Node ESM `.mjs` for MVP.
-- The browser loads preserved Webview Assets with an injected Bridge Shim.
+- The browser loads the derived Mirrored Web Client Asset Tree with an injected Bridge Shim.
 - The sidecar uses Minimal CDP Transport to attach to the primary renderer and install hooks.
 - The visible Desktop Reconstruction renderer is the Transport Host Renderer for MVP.
 - One Active Web Session is allowed; a newer browser connection replaces the old one.
@@ -84,7 +84,7 @@ Debug-only environment overrides may exist for the sidecar and CDP ports, but fi
 
 ## Sidecar Responsibilities
 
-- Serve `apps/desktop/app/webview/index.html` and assets.
+- Serve the Mirrored Web Client Asset Tree from `apps/web/app/webview`.
 - Inject or preload `bridge-shim.js`.
 - Accept one Active Web Session over WSS.
 - Replace the old Active Web Session when a new browser connects.
