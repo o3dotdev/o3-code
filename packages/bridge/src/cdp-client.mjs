@@ -90,6 +90,52 @@ export class CdpClient extends EventEmitter {
     });
   }
 
+  async captureBrowserPageScreenshot({ url }) {
+    await this.connect();
+    const target = pickBrowserPageTarget({
+      targetUrl: this.targetUrl,
+      targets: await this.#fetchTargets(),
+      url,
+    });
+
+    if (target?.webSocketDebuggerUrl == null) {
+      return null;
+    }
+
+    const page = new EphemeralCdpPage(target.webSocketDebuggerUrl);
+    try {
+      await page.connect();
+      await page.send("Page.enable").catch(() => {});
+      const screenshot = await page.send("Page.captureScreenshot", {
+        format: "png",
+        fromSurface: true,
+      });
+      if (typeof screenshot.data !== "string" || screenshot.data.length === 0) {
+        return null;
+      }
+
+      return {
+        data: screenshot.data,
+        mimeType: "image/png",
+        targetUrl: target.url ?? null,
+        title: target.title ?? null,
+      };
+    } finally {
+      page.close();
+    }
+  }
+
+  async #fetchTargets() {
+    const response = await fetch(
+      `http://${this.cdpHost}:${this.cdpPort}/json/list`,
+    );
+    if (!response.ok) {
+      throw Error(`CDP target list failed with HTTP ${response.status}.`);
+    }
+
+    return await response.json();
+  }
+
   async #ensureSocket() {
     if (this.socket == null || this.socket.readyState !== WebSocket.OPEN) {
       await this.connect();
@@ -129,14 +175,7 @@ export class CdpClient extends EventEmitter {
   }
 
   async #findTarget() {
-    const response = await fetch(
-      `http://${this.cdpHost}:${this.cdpPort}/json/list`,
-    );
-    if (!response.ok) {
-      throw Error(`CDP target list failed with HTTP ${response.status}.`);
-    }
-
-    const targets = await response.json();
+    const targets = await this.#fetchTargets();
     const pageTargets = targets.filter((target) => target.type === "page");
     const target =
       pageTargets.find((candidate) => candidate.url === this.targetUrl) ??
@@ -300,5 +339,165 @@ export class CdpClient extends EventEmitter {
       type: "system-theme-variant-updated",
       payload: systemThemeVariant,
     });
+  }
+}
+
+export function pickBrowserPageTarget({ targets, targetUrl, url }) {
+  const requestedUrl = normalizePageUrl(url);
+  if (requestedUrl == null) {
+    return null;
+  }
+
+  const scored = targets
+    .filter((target) => {
+      return (
+        target?.type === "page" &&
+        typeof target.webSocketDebuggerUrl === "string" &&
+        typeof target.url === "string" &&
+        target.url !== targetUrl
+      );
+    })
+    .map((target) => ({
+      score: scoreTargetUrl(normalizePageUrl(target.url), requestedUrl),
+      target,
+    }))
+    .filter(({ score }) => score > 0)
+    .sort((left, right) => right.score - left.score);
+
+  return scored[0]?.target ?? null;
+}
+
+function normalizePageUrl(value) {
+  if (typeof value !== "string" || value.length === 0) {
+    return null;
+  }
+
+  try {
+    const url = new URL(value);
+    if (url.protocol !== "http:" && url.protocol !== "https:") {
+      return null;
+    }
+
+    url.hash = "";
+    return url;
+  } catch {
+    return null;
+  }
+}
+
+function scoreTargetUrl(target, requested) {
+  if (target == null || requested == null) {
+    return 0;
+  }
+
+  if (target.href === requested.href) {
+    return 100;
+  }
+
+  if (
+    target.origin === requested.origin &&
+    trimTrailingSlash(target.pathname) === trimTrailingSlash(requested.pathname)
+  ) {
+    return 80;
+  }
+
+  if (target.hostname === requested.hostname) {
+    return 40;
+  }
+
+  if (stripWww(target.hostname) === stripWww(requested.hostname)) {
+    return 30;
+  }
+
+  return 0;
+}
+
+function stripWww(hostname) {
+  return hostname.startsWith("www.") ? hostname.slice(4) : hostname;
+}
+
+function trimTrailingSlash(value) {
+  return value.length > 1 ? value.replace(/\/+$/, "") : value;
+}
+
+class EphemeralCdpPage {
+  #nextId = 1;
+  #pending = new Map();
+  #socket = null;
+
+  constructor(url) {
+    this.url = url;
+  }
+
+  async connect() {
+    this.#socket = new WebSocket(this.url);
+    await new Promise((resolve, reject) => {
+      const cleanup = () => {
+        this.#socket.removeEventListener("open", handleOpen);
+        this.#socket.removeEventListener("error", handleError);
+      };
+      const handleOpen = () => {
+        cleanup();
+        resolve();
+      };
+      const handleError = (event) => {
+        cleanup();
+        reject(Error(`CDP page WebSocket failed: ${event.message ?? "error"}`));
+      };
+
+      this.#socket.addEventListener("open", handleOpen, { once: true });
+      this.#socket.addEventListener("error", handleError, { once: true });
+    });
+
+    this.#socket.addEventListener("message", (event) => {
+      this.#handleMessage(event.data);
+    });
+    this.#socket.addEventListener("close", () => {
+      for (const pending of this.#pending.values()) {
+        pending.reject(Error("CDP page WebSocket closed."));
+      }
+      this.#pending.clear();
+    });
+  }
+
+  async send(method, params = {}) {
+    if (this.#socket == null || this.#socket.readyState !== WebSocket.OPEN) {
+      throw Error("CDP page WebSocket is not open.");
+    }
+
+    const id = this.#nextId++;
+    const message = { id, method, params };
+    return await new Promise((resolve, reject) => {
+      this.#pending.set(id, { resolve, reject });
+      this.#socket.send(JSON.stringify(message));
+    });
+  }
+
+  close() {
+    this.#socket?.close();
+  }
+
+  #handleMessage(data) {
+    const message = JSON.parse(String(data));
+    if (message.id == null) {
+      return;
+    }
+
+    const pending = this.#pending.get(message.id);
+    if (pending == null) {
+      return;
+    }
+
+    this.#pending.delete(message.id);
+    if (message.error != null) {
+      pending.reject(
+        Error(
+          message.error.message ?? `CDP page command ${message.id} failed.`,
+        ),
+      );
+      return;
+    }
+
+    pending.resolve(message.result ?? {});
   }
 }

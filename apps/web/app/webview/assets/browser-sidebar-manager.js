@@ -426,6 +426,7 @@ var D = `persist:codex-browser-app-route:`,
     container = document.createElement(`div`);
     // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
     webview = document.createElement(`iframe`);
+    paint = document.createElement(`img`);
     // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     browserUseCaptureSurfaceSize;
     browserUseViewportSize;
@@ -434,6 +435,10 @@ var D = `persist:codex-browser-app-route:`,
     isAttached = !1;
     state = { bounds: null, isVisible: !1, scale: 1, windowZoom: 1 };
     lastVisibleBounds = null;
+    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+    currentUrl = O;
+    captureTimerId = null;
+    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     constructor({
       conversationId: e,
       initialUrl: t,
@@ -469,14 +474,38 @@ var D = `persist:codex-browser-app-route:`,
         (this.webview.referrerPolicy = `strict-origin-when-cross-origin`),
         (this.webview.title = `Browser sidebar`),
         (this.webview.allowFullscreen = !0),
+        Object.assign(this.paint.style, {
+          border: `0`,
+          height: `100%`,
+          inset: `0`,
+          objectFit: `fill`,
+          opacity: `0`,
+          pointerEvents: `none`,
+          position: `absolute`,
+          transition: `opacity 120ms linear`,
+          width: `100%`,
+        }),
+        (this.paint.alt = ``),
+        (this.paint.decoding = `async`),
+        (this.paint.referrerPolicy = `no-referrer`),
+        (this.paint.onload = () => {
+          this.paint.style.opacity = `1`;
+        }),
+        (this.paint.onerror = () => {
+          this.paint.style.opacity = `0`;
+        }),
         // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.webview.setAttribute(k, e),
         // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
         this.webview.setAttribute(`data-o3-code-browser-sidebar-frame`, `true`),
+        this.paint.setAttribute(`data-o3-code-browser-sidebar-paint`, `true`),
         // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.webview.setAttribute(`partition`, G(e)),
         this.setUrl(t),
         this.container.append(this.webview),
+        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+        this.container.append(this.paint),
+        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         document.body.append(this.container));
     }
     detach(e) {
@@ -517,9 +546,13 @@ var D = `persist:codex-browser-app-route:`,
     }
     // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
     setUrl(e) {
-      let t = q(e.length === 0 ? O : e);
+      let n = this.currentUrl;
+      this.currentUrl = e.length === 0 ? O : e;
+      n !== this.currentUrl && (this.paint.style.opacity = `0`);
+      let t = q(this.currentUrl);
       this.webview.getAttribute(`src`) !== t &&
         this.webview.setAttribute(`src`, t);
+      this.queueCapture();
     }
     // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     resync() {
@@ -535,6 +568,9 @@ var D = `persist:codex-browser-app-route:`,
       (n.info(`IAB_LIFECYCLE renderer disposed browser sidebar webview`, {
         safe: { conversationId: this.conversationId },
       }),
+        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+        this.stopCapture(),
+        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.container.remove());
     }
     syncContainerStyle() {
@@ -554,10 +590,17 @@ var D = `persist:codex-browser-app-route:`,
           this.browserUseViewportSize,
           this.isBrowserUseActive || this.browserUseViewportSize != null,
         );
+        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+        this.stopCapture();
+        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         return;
       }
       if (this.browserUseCaptureSurfaceSize != null) {
         H(this.container, this.webview, e);
+        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+        this.syncPaintStyle(e);
+        this.queueCapture();
+        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         return;
       }
       if (this.state.isVisible) {
@@ -569,10 +612,69 @@ var D = `persist:codex-browser-app-route:`,
             this.state.scale,
             this.state.windowZoom ?? 1,
           ));
+        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+        this.syncPaintStyle(e);
+        this.queueCapture();
+        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         return;
       }
       H(this.container, this.webview, e);
+      // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+      this.stopCapture();
+      // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     }
+    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+    syncPaintStyle(e) {
+      Object.assign(this.paint.style, {
+        height: `${e.height}px`,
+        transform: this.webview.style.transform,
+        transformOrigin: this.webview.style.transformOrigin,
+        width: `${e.width}px`,
+      });
+    }
+    queueCapture() {
+      if (
+        !this.state.isVisible ||
+        !Z(this.currentUrl) ||
+        typeof window > `u`
+      ) {
+        this.stopCapture();
+        return;
+      }
+
+      if (this.captureTimerId != null) return;
+      this.captureTimerId = window.setTimeout(() => {
+        this.captureTimerId = null;
+        this.capture();
+      }, 120);
+    }
+    capture() {
+      if (
+        !this.state.isVisible ||
+        !Z(this.currentUrl) ||
+        typeof window > `u`
+      ) {
+        this.stopCapture();
+        return;
+      }
+
+      let e = new URL(`/bridge/browser-page-screenshot`, window.location.href);
+      e.searchParams.set(`conversationId`, this.conversationId);
+      e.searchParams.set(`url`, this.currentUrl);
+      e.searchParams.set(`t`, String(Date.now()));
+      this.paint.src = e.toString();
+      this.captureTimerId = window.setTimeout(() => {
+        this.captureTimerId = null;
+        this.capture();
+      }, 1e3);
+    }
+    stopCapture() {
+      if (this.captureTimerId != null && typeof window < `u`) {
+        window.clearTimeout(this.captureTimerId);
+      }
+      this.captureTimerId = null;
+    }
+    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
   },
   R = new I();
 function z({
@@ -685,6 +787,14 @@ function J(e) {
     e === `[::1]` ||
     e === `::1`
   );
+}
+function Z(e) {
+  try {
+    let t = new URL(e);
+    return t.protocol === `http:` || t.protocol === `https:`;
+  } catch {
+    return !1;
+  }
 }
 // o3-code-web-patch-end: browser-sidebar-iframe-renderer
 function K(e, t, n) {

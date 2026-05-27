@@ -154,6 +154,14 @@ async function handleHttpRequest(request, response) {
     return;
   }
 
+  if (
+    request.method === "GET" &&
+    url.pathname === "/bridge/browser-page-screenshot"
+  ) {
+    await handleBrowserPageScreenshot(url, response);
+    return;
+  }
+
   if (request.method !== "GET" && request.method !== "HEAD") {
     response.writeHead(405, { allow: "GET, HEAD, POST" });
     response.end();
@@ -217,6 +225,38 @@ async function handleStageFile(request, response) {
     path: stagedPath,
     name: originalName,
   });
+}
+
+async function handleBrowserPageScreenshot(url, response) {
+  const pageUrl = url.searchParams.get("url");
+  if (pageUrl == null) {
+    response.writeHead(400, { "content-type": "text/plain; charset=utf-8" });
+    response.end("Missing url.");
+    return;
+  }
+
+  const screenshot = await cdpClient.captureBrowserPageScreenshot({
+    url: pageUrl,
+  });
+  if (screenshot == null) {
+    response.writeHead(404, {
+      "cache-control": "no-store",
+      "content-type": "text/plain; charset=utf-8",
+    });
+    response.end("Browser page target not available.");
+    return;
+  }
+
+  const body = Buffer.from(screenshot.data, "base64");
+  response.writeHead(200, {
+    "cache-control": "no-store",
+    "content-length": body.length,
+    "content-type": screenshot.mimeType,
+    "x-o3-code-browser-target-url": encodeURIComponent(
+      screenshot.targetUrl ?? "",
+    ),
+  });
+  response.end(body);
 }
 
 async function statFile(filePath) {
