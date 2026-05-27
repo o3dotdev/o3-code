@@ -12,7 +12,9 @@ pnpm start
 
 `pnpm start` runs the extracted Electron app from `apps/desktop/app/` and points it at repo-local runtime resources in `apps/desktop/resources/`.
 
-By default, runtime user data is stored under `~/Library/Application Support/O3 Code`, so local O3 Code runs do not collide with the installed Codex App. Override that with `CODEX_ELECTRON_USER_DATA_PATH` for a custom profile, or set `O3_CODE_USE_CODEX_USER_DATA=1` when you intentionally need to reuse the installed Codex profile.
+By default, `pnpm start` refuses to open a second visible desktop app when the installed Codex app or another O3 Code dev app is already running. Quit the running desktop app first, or set `O3_CODE_ALLOW_PARALLEL_DESKTOP=1` when you intentionally need a parallel local app.
+
+Runtime user data is stored under `~/Library/Application Support/O3 Code`, so local O3 Code runs do not collide with the installed Codex App. Override that with `CODEX_ELECTRON_USER_DATA_PATH` for a custom profile, or set `O3_CODE_USE_CODEX_USER_DATA=1` when you intentionally need to reuse the installed Codex profile.
 
 The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `apps/desktop/app/webview/index.html`; without that override, the unpackaged main process tries to load its development server URL.
 
