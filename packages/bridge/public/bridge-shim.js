@@ -4,6 +4,8 @@
   }
 
   const protocolVersion = 1;
+  const shellRecoveryMaxFrames = 8;
+  const shellRecoveryTimeoutsMs = [50, 150, 350, 800, 1600, 3000];
   const debug =
     new URL(
       document.currentScript?.src ?? window.location.href,
@@ -168,6 +170,7 @@
   window.addEventListener("keydown", handleBridgeShortcut, {
     capture: true,
   });
+  safeInstallOptionalFeature("mobile shell guards", installMobileShellGuards);
 
   async function request(kind, fields) {
     const id = randomId();
@@ -241,6 +244,527 @@
       target instanceof Element &&
       target.closest("[data-codex-shortcut-capture]") != null
     );
+  }
+
+  function safeInstallOptionalFeature(name, install) {
+    try {
+      install();
+    } catch (error) {
+      console.warn("[bridge-shim] Optional feature failed: " + name, error);
+    }
+  }
+
+  function installMobileShellGuards() {
+    const root = document.documentElement;
+    const body = document.body;
+    if (root == null || body == null) {
+      return;
+    }
+
+    const touchState = {
+      lastY: 0,
+      scrollers: [],
+    };
+    let shellRecoveryFrameCount = 0;
+    let shellRecoveryQueued = false;
+    let shellRecoveryTimerIds = [];
+    let touchViewportBaseline = {
+      height: 0,
+      key: "",
+    };
+
+    const updateViewportMetrics = () => {
+      const viewport = window.visualViewport;
+      const rawViewportHeight = viewport?.height || window.innerHeight || 0;
+      const viewportOffsetTop = viewport?.offsetTop || 0;
+      const layoutViewportHeight = Math.max(
+        root.clientHeight || 0,
+        window.innerHeight || 0,
+        viewport ? rawViewportHeight + viewportOffsetTop : 0,
+      );
+      const bottomOcclusion =
+        rawViewportHeight > 0
+          ? layoutViewportHeight - rawViewportHeight - viewportOffsetTop
+          : 0;
+      const rawBottomOffset = Number.isFinite(bottomOcclusion)
+        ? Math.ceil(bottomOcclusion)
+        : 0;
+      const keyboardOcclusionThreshold = Math.max(
+        120,
+        layoutViewportHeight * 0.25,
+      );
+      const keyboardLikely = rawBottomOffset > keyboardOcclusionThreshold;
+      const touchShell = isTouchShell();
+      const standaloneShell =
+        touchShell &&
+        (window.navigator?.standalone === true ||
+          window.matchMedia?.("(display-mode: standalone)")?.matches === true ||
+          window.matchMedia?.("(display-mode: fullscreen)")?.matches === true);
+      const nonKeyboardViewportHeight = standaloneShell
+        ? layoutViewportHeight
+        : rawViewportHeight;
+      const stableTouchViewportHeight =
+        touchShell && !keyboardLikely
+          ? stableNonKeyboardTouchViewportHeight({
+              currentHeight: nonKeyboardViewportHeight,
+              layoutViewportHeight,
+              rawViewportHeight,
+              standaloneShell,
+              touchViewportBaseline,
+              updateBaseline: (nextBaseline) => {
+                touchViewportBaseline = nextBaseline;
+              },
+            })
+          : layoutViewportHeight;
+      const viewportHeight = keyboardLikely
+        ? rawViewportHeight
+        : stableTouchViewportHeight;
+      const bottomOffset = keyboardLikely ? rawBottomOffset : 0;
+      const zoomValue = Number.parseFloat(
+        window
+          .getComputedStyle?.(root)
+          ?.getPropertyValue("--codex-window-zoom") ?? "1",
+      );
+      const zoom =
+        !touchShell && Number.isFinite(zoomValue) && zoomValue > 0
+          ? zoomValue
+          : 1;
+      const shellHeight = viewportHeight / zoom;
+
+      if (Number.isFinite(viewportHeight) && viewportHeight > 0) {
+        root.style.setProperty(
+          "--o3-code-viewport-height",
+          `${Math.ceil(viewportHeight)}px`,
+        );
+        root.style.setProperty(
+          "--o3-code-shell-height",
+          `${Math.ceil(shellHeight)}px`,
+        );
+        root.style.setProperty("--o3-code-measured-viewport-top-offset", "0px");
+        root.style.setProperty(
+          "--o3-code-viewport-bottom-offset",
+          `${Math.max(0, bottomOffset)}px`,
+        );
+        root.style.setProperty(
+          "--o3-code-viewport-bottom-inset",
+          `calc(env(safe-area-inset-bottom, 0px) + ${Math.max(
+            0,
+            bottomOffset,
+          )}px)`,
+        );
+      }
+    };
+
+    const recoverShellViewportDrift = () => {
+      const touchShell = isTouchShell();
+      const viewportOffsetLeft = window.visualViewport?.offsetLeft || 0;
+      const currentScrollX = Number.isFinite(window.scrollX)
+        ? window.scrollX
+        : 0;
+      const currentScrollY = Number.isFinite(window.scrollY)
+        ? window.scrollY
+        : 0;
+      const documentScrollY = Number.isFinite(root.scrollTop)
+        ? root.scrollTop
+        : 0;
+      const scrollingElementScrollY = Number.isFinite(
+        document.scrollingElement?.scrollTop,
+      )
+        ? document.scrollingElement.scrollTop
+        : 0;
+      const bodyScrollY = Number.isFinite(body.scrollTop) ? body.scrollTop : 0;
+      const needsHorizontalReset =
+        currentScrollX !== 0 ||
+        horizontalViewportOffset(viewportOffsetLeft, touchShell) !== 0;
+      const needsVerticalReset =
+        touchShell &&
+        (currentScrollY !== 0 ||
+          documentScrollY !== 0 ||
+          scrollingElementScrollY !== 0 ||
+          bodyScrollY !== 0);
+
+      if (!needsHorizontalReset && !needsVerticalReset) {
+        return;
+      }
+
+      window.scrollTo(0, needsVerticalReset ? 0 : currentScrollY);
+      if (needsVerticalReset) {
+        if (document.scrollingElement) {
+          document.scrollingElement.scrollTop = 0;
+        }
+        root.scrollTop = 0;
+        body.scrollTop = 0;
+      }
+    };
+
+    const updateViewportMetricsAndRecoverShell = () => {
+      updateViewportMetrics();
+      recoverShellViewportDrift();
+    };
+
+    const clearShellViewportRecoveryTimers = () => {
+      for (const timerId of shellRecoveryTimerIds) {
+        clearTimeout(timerId);
+      }
+      shellRecoveryTimerIds = [];
+    };
+
+    const scheduleShellViewportRecovery = (reason) => {
+      shellRecoveryFrameCount = 0;
+      clearShellViewportRecoveryTimers();
+      shellRecoveryTimerIds = shellRecoveryTimeoutsMs.map((delay) =>
+        setTimeout(updateViewportMetricsAndRecoverShell, delay),
+      );
+      if (shellRecoveryQueued) {
+        debugLog("mobile-shell-recovery-extended", { reason });
+        return;
+      }
+
+      const runShellViewportRecovery = () => {
+        shellRecoveryQueued = false;
+        shellRecoveryFrameCount += 1;
+        updateViewportMetricsAndRecoverShell();
+        if (shellRecoveryFrameCount < shellRecoveryMaxFrames) {
+          shellRecoveryQueued = true;
+          requestAnimationFrameSafe(runShellViewportRecovery);
+        }
+      };
+
+      shellRecoveryQueued = true;
+      requestAnimationFrameSafe(runShellViewportRecovery);
+      debugLog("mobile-shell-recovery-scheduled", { reason });
+    };
+
+    const preventDefault = (event) => {
+      event.preventDefault();
+    };
+
+    for (const eventName of ["gesturestart", "gesturechange", "gestureend"]) {
+      window.addEventListener(eventName, preventDefault, { passive: false });
+      document.addEventListener(eventName, preventDefault, { passive: false });
+    }
+
+    document.addEventListener(
+      "touchstart",
+      (event) => {
+        if (event.touches.length !== 1) {
+          touchState.scrollers = [];
+          return;
+        }
+
+        const touch = event.touches[0];
+        touchState.lastY = touch ? touch.clientY : 0;
+        touchState.scrollers = findScrollableAncestors(event.target);
+      },
+      { passive: true },
+    );
+
+    document.addEventListener(
+      "touchmove",
+      (event) => {
+        if (event.touches.length > 1) {
+          event.preventDefault();
+          return;
+        }
+
+        if (event.touches.length !== 1) {
+          return;
+        }
+
+        const touch = event.touches[0];
+        if (!touch) {
+          return;
+        }
+
+        const currentY = touch.clientY;
+        const deltaY = currentY - touchState.lastY;
+        touchState.lastY = currentY;
+        const cachedScrollerChain = touchState.scrollers.filter((scroller) =>
+          document.contains(scroller),
+        );
+        touchState.scrollers =
+          cachedScrollerChain.length > 0
+            ? cachedScrollerChain
+            : findScrollableAncestors(event.target);
+
+        if (shouldPreventOneFingerOverscroll(touchState.scrollers, deltaY)) {
+          event.preventDefault();
+        }
+      },
+      { passive: false },
+    );
+
+    updateViewportMetricsAndRecoverShell();
+    window.visualViewport?.addEventListener(
+      "resize",
+      () => scheduleShellViewportRecovery("visual-viewport-resize"),
+      { passive: true },
+    );
+    window.visualViewport?.addEventListener(
+      "scroll",
+      () => scheduleShellViewportRecovery("visual-viewport-scroll"),
+      { passive: true },
+    );
+    window.addEventListener(
+      "resize",
+      () => scheduleShellViewportRecovery("window-resize"),
+      { passive: true },
+    );
+    window.addEventListener(
+      "orientationchange",
+      () => {
+        touchViewportBaseline = { height: 0, key: "" };
+        scheduleShellViewportRecovery("orientationchange");
+      },
+      { passive: true },
+    );
+    window.addEventListener(
+      "focus",
+      () => scheduleShellViewportRecovery("window-focus"),
+      { passive: true },
+    );
+    window.addEventListener(
+      "blur",
+      () => scheduleShellViewportRecovery("window-blur"),
+      { passive: true },
+    );
+    window.addEventListener(
+      "scroll",
+      () => scheduleShellViewportRecovery("window-scroll"),
+      { passive: true },
+    );
+
+    for (const eventName of [
+      "pointerdown",
+      "pointerup",
+      "pointercancel",
+      "click",
+      "contextmenu",
+      "touchstart",
+      "touchend",
+      "touchcancel",
+    ]) {
+      document.addEventListener(
+        eventName,
+        () => scheduleShellViewportRecovery(`document-${eventName}`),
+        { passive: true, capture: true },
+      );
+    }
+
+    document.addEventListener(
+      "focusout",
+      () => scheduleShellViewportRecovery("document-focusout"),
+      { passive: true },
+    );
+    document.addEventListener(
+      "selectionchange",
+      () => scheduleShellViewportRecovery("document-selectionchange"),
+      { passive: true },
+    );
+    window.addEventListener(
+      "pageshow",
+      () => scheduleShellViewportRecovery("window-pageshow"),
+      { passive: true },
+    );
+    observeBodyShellMutations(scheduleShellViewportRecovery);
+    scheduleShellViewportRecovery("initial");
+  }
+
+  function stableNonKeyboardTouchViewportHeight({
+    currentHeight,
+    layoutViewportHeight,
+    rawViewportHeight,
+    standaloneShell,
+    touchViewportBaseline,
+    updateBaseline,
+  }) {
+    const bucketKey = touchViewportBucketKey(layoutViewportHeight);
+    const nextHeight =
+      Number.isFinite(currentHeight) && currentHeight > 0
+        ? currentHeight
+        : layoutViewportHeight;
+
+    if (
+      touchViewportBaseline.key !== bucketKey ||
+      !Number.isFinite(touchViewportBaseline.height) ||
+      touchViewportBaseline.height <= 0
+    ) {
+      const baselineHeight = standaloneShell
+        ? layoutViewportHeight
+        : Math.max(
+            nextHeight,
+            Math.min(layoutViewportHeight, rawViewportHeight),
+          );
+      updateBaseline({ height: baselineHeight, key: bucketKey });
+      return baselineHeight;
+    }
+
+    if (nextHeight > touchViewportBaseline.height) {
+      updateBaseline({ height: nextHeight, key: bucketKey });
+      return nextHeight;
+    }
+
+    return touchViewportBaseline.height;
+  }
+
+  function touchViewportBucketKey(layoutViewportHeight) {
+    const width = Math.max(
+      0,
+      window.innerWidth || 0,
+      document.documentElement?.clientWidth || 0,
+      window.visualViewport?.width || 0,
+    );
+    const height = Math.max(0, layoutViewportHeight || 0);
+    const orientation =
+      window.screen?.orientation?.type ??
+      (width > height ? "landscape" : "portrait");
+    return `${Math.round(width)}x${Math.round(height)}:${orientation}`;
+  }
+
+  function observeBodyShellMutations(scheduleShellViewportRecovery) {
+    if (document.body == null || typeof MutationObserver !== "function") {
+      return;
+    }
+
+    const scrollLockObserver = new MutationObserver(() => {
+      scheduleShellViewportRecovery("body-scroll-lock-mutation");
+    });
+    scrollLockObserver.observe(document.body, {
+      attributes: true,
+      attributeFilter: ["class", "style", "data-scroll-locked"],
+    });
+
+    const shellPortalSelector = [
+      "[data-radix-popper-content-wrapper]",
+      "[data-radix-portal]",
+      "[aria-modal='true']",
+      "[role='dialog']",
+      "[role='alertdialog']",
+      "[role='menu']",
+      "[role='listbox']",
+      "dialog",
+    ].join(", ");
+    const isShellPortalNode = (node) => {
+      if (!(node instanceof Element)) {
+        return false;
+      }
+
+      return (
+        node.matches?.(shellPortalSelector) === true ||
+        node.querySelector?.(shellPortalSelector) != null
+      );
+    };
+    const isShellPortalMutation = (mutation) => {
+      if (mutation.target === document.body) {
+        return true;
+      }
+
+      for (const node of [
+        ...(mutation.addedNodes || []),
+        ...(mutation.removedNodes || []),
+      ]) {
+        if (isShellPortalNode(node)) {
+          return true;
+        }
+      }
+
+      return false;
+    };
+    const portalObserver = new MutationObserver((mutations) => {
+      if (!Array.from(mutations || []).some(isShellPortalMutation)) {
+        return;
+      }
+
+      scheduleShellViewportRecovery("body-childlist-mutation");
+    });
+    portalObserver.observe(document.body, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
+  function isTouchShell() {
+    return (
+      window.matchMedia?.("(hover: none) and (pointer: coarse)")?.matches ===
+      true
+    );
+  }
+
+  function horizontalViewportOffset(viewportOffsetLeft, touchShell) {
+    if (!Number.isFinite(viewportOffsetLeft)) {
+      return 0;
+    }
+
+    return touchShell ? Math.round(viewportOffsetLeft) : 0;
+  }
+
+  function requestAnimationFrameSafe(callback) {
+    if (typeof window.requestAnimationFrame === "function") {
+      window.requestAnimationFrame(callback);
+    } else {
+      setTimeout(callback, 16);
+    }
+  }
+
+  function findScrollableAncestors(target) {
+    const scrollers = [];
+    let current = target instanceof Element ? target : target?.parentElement;
+
+    while (current != null && current !== document.body) {
+      if (isScrollableElement(current)) {
+        scrollers.push(current);
+      }
+      current = current.parentElement;
+    }
+
+    return scrollers;
+  }
+
+  function isScrollableElement(element) {
+    if (!(element instanceof Element)) {
+      return false;
+    }
+
+    const style = window.getComputedStyle?.(element);
+    const overflowY = style?.overflowY ?? element.style?.overflowY ?? "";
+    const canScrollY = /(auto|scroll|overlay)/.test(overflowY);
+    return canScrollY && element.scrollHeight > element.clientHeight;
+  }
+
+  function shouldPreventOneFingerOverscroll(scrollers, deltaY) {
+    if (deltaY === 0) {
+      return false;
+    }
+
+    if (scrollers.length === 0) {
+      return true;
+    }
+
+    return !scrollers.some((scroller) =>
+      canScrollInGestureDirection(scroller, deltaY),
+    );
+  }
+
+  function canScrollInGestureDirection(scroller, deltaY) {
+    const flexDirection =
+      window.getComputedStyle?.(scroller)?.flexDirection ??
+      scroller.style?.flexDirection ??
+      "";
+    const reversed = flexDirection === "column-reverse";
+    const maxScroll = Math.max(
+      0,
+      scroller.scrollHeight - scroller.clientHeight,
+    );
+    const scrollTop = Number.isFinite(scroller.scrollTop)
+      ? scroller.scrollTop
+      : 0;
+
+    if (reversed) {
+      const minScroll = -maxScroll;
+      return deltaY > 0 ? scrollTop > minScroll : scrollTop < 0;
+    }
+
+    return deltaY > 0 ? scrollTop > 0 : scrollTop < maxScroll;
   }
 
   function parseAccelerator(accelerator) {
