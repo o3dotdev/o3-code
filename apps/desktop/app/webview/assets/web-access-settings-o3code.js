@@ -99,10 +99,25 @@ function s() {
                       f(e instanceof Error ? e.message : String(e));
                     }
                   },
-                  className: `relative h-6 w-11 rounded-full transition ${t.enabled ? `bg-token-main-surface-primary` : `bg-token-border-default`} disabled:opacity-50`,
+                  role: `switch`,
+                  className: `relative h-6 w-11 shrink-0 rounded-full border transition-colors focus-visible:ring-2 focus-visible:ring-token-focus-border focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
+                  style: {
+                    backgroundColor: t.enabled
+                      ? `var(--color-token-text-primary)`
+                      : `color-mix(in srgb, var(--color-token-foreground) 15%, transparent)`,
+                    borderColor: t.enabled
+                      ? `var(--color-token-text-primary)`
+                      : `var(--color-token-border-default)`,
+                  },
+                  "aria-checked": t.enabled,
                   "aria-pressed": t.enabled,
                   children: (0, i.jsx)(`span`, {
-                    className: `absolute top-0.5 h-5 w-5 rounded-full bg-white shadow transition ${t.enabled ? `left-5` : `left-0.5`}`,
+                    className: `absolute h-5 w-5 rounded-full bg-token-main-surface-primary shadow`,
+                    style: {
+                      left: t.enabled ? `22px` : `2px`,
+                      top: `2px`,
+                      transition: `left 160ms ease`,
+                    },
                   }),
                 }),
               ],
