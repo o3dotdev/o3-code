@@ -19,8 +19,10 @@
 - `apps/desktop/resources/codexTemplate.png`
 - `apps/desktop/resources/codexTemplate@2x.png`
 
-## Current Environment Inputs
+## Opt-In Environment Inputs
 
+- `O3_CODE_USE_LOCAL_APP_IDENTITY=1`
+- `O3_CODE_USE_LOCAL_APP_BUNDLE=1`
 - `O3_CODE_APP_NAME=O3 Code`
 - `O3_CODE_APP_ICON_PATH=<resources>/o3-code-icon.png`
 - `O3_CODE_TRAY_TEMPLATE_PATH=<resources>/codexTemplate.png`
@@ -36,5 +38,6 @@
 
 - `pnpm generate:icons` succeeded and regenerated O3 Code icon assets.
 - `node --check apps/desktop/app/.vite/build/main-BS7yenMI.js` passed.
-- `pnpm start` launched the cached macOS Electron host as `O3 Code.app`; the Crashpad annotation reported `_productName=O3 Code` and `_version=26.519.81530`.
-- The app still used the Codex App User Data Directory by default: `/Users/maksimzayats/Library/Application Support/Codex`.
+- `pnpm start` uses the normal Electron host by default and does not inject O3 Code name/icon overrides.
+- `O3_CODE_USE_LOCAL_APP_BUNDLE=1 pnpm start` launches the cached macOS Electron host as `O3 Code.app`.
+- The app uses the O3 Code user data directory by default: `/Users/maksimzayats/Library/Application Support/O3 Code`.

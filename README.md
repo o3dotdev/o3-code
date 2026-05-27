@@ -14,6 +14,8 @@ pnpm start
 
 Runtime user data is stored under `~/Library/Application Support/O3 Code`, so local O3 Code runs do not collide with the installed Codex App. Override that with `CODEX_ELECTRON_USER_DATA_PATH` for a custom profile, or set `O3_CODE_USE_CODEX_USER_DATA=1` when you intentionally need to reuse the installed Codex profile.
 
+On macOS, the default launcher uses the normal Electron host and does not inject O3 Code name/icon overrides, so it does not add a second O3/Codex-looking Dock tile while the installed Codex app is running. Set `O3_CODE_USE_LOCAL_APP_IDENTITY=1` to test runtime name/icon overrides, or `O3_CODE_USE_LOCAL_APP_BUNDLE=1` when you explicitly need to test the repo-local O3 Code host bundle identity.
+
 The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `apps/desktop/app/webview/index.html`; without that override, the unpackaged main process tries to load its development server URL.
 
 ## Normalize
