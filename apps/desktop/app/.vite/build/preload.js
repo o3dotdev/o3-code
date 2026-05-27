@@ -128,10 +128,6 @@ var w = {
     getSentryInitOptions: () => h,
     getAppSessionId: () => h.codexAppSessionId,
     getBuildFlavor: () => g,
-    // o3-code-patch-begin: web-access-browser-sidebar-paint
-    captureBrowserSidebarPaint: (t) =>
-      e.ipcRenderer.invoke(`o3-code:browser-sidebar:capture-paint`, t),
-    // o3-code-patch-end: web-access-browser-sidebar-paint
     // o3-code-patch-begin: web-access-settings
     webAccess: o3CodeWebAccessBridge,
     // o3-code-patch-end: web-access-settings

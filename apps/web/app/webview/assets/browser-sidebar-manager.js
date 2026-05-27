@@ -237,10 +237,7 @@ var D = `persist:codex-browser-app-route:`,
     setSnapshot(t, r) {
       (this.snapshots.set(t, r),
         r.tabType === e.WEB
-          // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-          ? typeof document < `u` &&
-            this.getWebview(t, r.url).setUrl(r.url)
-          // o3-code-web-patch-end: browser-sidebar-iframe-renderer
+          ? typeof document < `u` && this.getWebview(t, r.url)
           : (this.browserUseActiveStates.delete(t),
             this.browserUseCursorStates.delete(t),
             this.browserUseCaptureSurfaceSizes.delete(t),
@@ -424,10 +421,7 @@ var D = `persist:codex-browser-app-route:`,
   L = class {
     conversationId;
     container = document.createElement(`div`);
-    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-    webview = document.createElement(`iframe`);
-    paint = document.createElement(`img`);
-    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
+    webview = document.createElement(`webview`);
     browserUseCaptureSurfaceSize;
     browserUseViewportSize;
     hasBrowserUsePaintHost;
@@ -435,11 +429,6 @@ var D = `persist:codex-browser-app-route:`,
     isAttached = !1;
     state = { bounds: null, isVisible: !1, scale: 1, windowZoom: 1 };
     lastVisibleBounds = null;
-    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-    currentUrl = O;
-    captureTimerId = null;
-    paintFallbackEnabled = !1;
-    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     constructor({
       conversationId: e,
       initialUrl: t,
@@ -462,54 +451,10 @@ var D = `persist:codex-browser-app-route:`,
         ),
         (this.webview.className = `h-full w-full`),
         (this.webview.style.backgroundColor = N),
-        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-        (this.webview.style.border = `0`),
-        (this.webview.allow = [
-          `camera`,
-          `clipboard-read`,
-          `clipboard-write`,
-          `fullscreen`,
-          `geolocation`,
-          `microphone`,
-        ].join(`; `)),
-        (this.webview.referrerPolicy = `strict-origin-when-cross-origin`),
-        (this.webview.title = `Browser sidebar`),
-        (this.webview.allowFullscreen = !0),
-        (this.webview.onload = () => {
-          this.paintFallbackEnabled || (this.paint.style.opacity = `0`);
-        }),
-        Object.assign(this.paint.style, {
-          border: `0`,
-          height: `100%`,
-          inset: `0`,
-          objectFit: `fill`,
-          opacity: `0`,
-          pointerEvents: `none`,
-          position: `absolute`,
-          transition: `opacity 120ms linear`,
-          width: `100%`,
-        }),
-        (this.paint.alt = ``),
-        (this.paint.decoding = `async`),
-        (this.paint.referrerPolicy = `no-referrer`),
-        (this.paint.onload = () => {
-          this.paint.style.opacity = this.paintFallbackEnabled ? `1` : `0`;
-        }),
-        (this.paint.onerror = () => {
-          this.paint.style.opacity = `0`;
-        }),
-        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.webview.setAttribute(k, e),
-        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-        this.webview.setAttribute(`data-o3-code-browser-sidebar-frame`, `true`),
-        this.paint.setAttribute(`data-o3-code-browser-sidebar-paint`, `true`),
-        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.webview.setAttribute(`partition`, G(e)),
-        this.setUrl(t),
+        this.webview.setAttribute(`src`, t),
         this.container.append(this.webview),
-        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-        this.container.append(this.paint),
-        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         document.body.append(this.container));
     }
     detach(e) {
@@ -548,21 +493,6 @@ var D = `persist:codex-browser-app-route:`,
     setBrowserUseCaptureSurfaceSize(e) {
       ((this.browserUseCaptureSurfaceSize = e), this.syncContainerStyle());
     }
-    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-    setUrl(e) {
-      let n = this.currentUrl;
-      this.currentUrl = e.length === 0 ? O : e;
-      if (n !== this.currentUrl) {
-        ((this.paint.style.opacity = `0`),
-          (this.paintFallbackEnabled = X(this.currentUrl)));
-        this.paintFallbackEnabled || this.paint.removeAttribute(`src`);
-      }
-      let t = q(this.currentUrl);
-      this.webview.getAttribute(`src`) !== t &&
-        this.webview.setAttribute(`src`, t);
-      this.queueCapture();
-    }
-    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     resync() {
       this.isAttached && this.syncContainerStyle();
     }
@@ -576,9 +506,6 @@ var D = `persist:codex-browser-app-route:`,
       (n.info(`IAB_LIFECYCLE renderer disposed browser sidebar webview`, {
         safe: { conversationId: this.conversationId },
       }),
-        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-        this.stopCapture(),
-        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.container.remove());
     }
     syncContainerStyle() {
@@ -598,17 +525,10 @@ var D = `persist:codex-browser-app-route:`,
           this.browserUseViewportSize,
           this.isBrowserUseActive || this.browserUseViewportSize != null,
         );
-        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-        this.stopCapture();
-        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         return;
       }
       if (this.browserUseCaptureSurfaceSize != null) {
         H(this.container, this.webview, e);
-        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-        this.syncPaintStyle(e);
-        this.queueCapture();
-        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         return;
       }
       if (this.state.isVisible) {
@@ -620,71 +540,10 @@ var D = `persist:codex-browser-app-route:`,
             this.state.scale,
             this.state.windowZoom ?? 1,
           ));
-        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-        this.syncPaintStyle(e);
-        this.queueCapture();
-        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         return;
       }
       H(this.container, this.webview, e);
-      // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-      this.stopCapture();
-      // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     }
-    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-    syncPaintStyle(e) {
-      Object.assign(this.paint.style, {
-        height: `${e.height}px`,
-        transform: this.webview.style.transform,
-        transformOrigin: this.webview.style.transformOrigin,
-        width: `${e.width}px`,
-      });
-    }
-    queueCapture() {
-      if (
-        !this.state.isVisible ||
-        !Z(this.currentUrl) ||
-        !this.paintFallbackEnabled ||
-        typeof window > `u`
-      ) {
-        this.stopCapture();
-        return;
-      }
-
-      if (this.captureTimerId != null) return;
-      this.captureTimerId = window.setTimeout(() => {
-        this.captureTimerId = null;
-        this.capture();
-      }, 120);
-    }
-    capture() {
-      if (
-        !this.state.isVisible ||
-        !Z(this.currentUrl) ||
-        !this.paintFallbackEnabled ||
-        typeof window > `u`
-      ) {
-        this.stopCapture();
-        return;
-      }
-
-      let e = new URL(`/bridge/browser-page-screenshot`, window.location.href);
-      e.searchParams.set(`conversationId`, this.conversationId);
-      e.searchParams.set(`url`, this.currentUrl);
-      e.searchParams.set(`t`, String(Date.now()));
-      this.paint.src = e.toString();
-      this.captureTimerId = window.setTimeout(() => {
-        this.captureTimerId = null;
-        this.capture();
-      }, 2500);
-    }
-    stopCapture() {
-      if (this.captureTimerId != null && typeof window < `u`) {
-        window.clearTimeout(this.captureTimerId);
-      }
-      this.captureTimerId = null;
-    }
-    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
   },
   R = new I();
 function z({
@@ -774,52 +633,6 @@ function W(e) {
 function G(e) {
   return `${D}${encodeURIComponent(e)}`;
 }
-// o3-code-web-patch-begin: browser-sidebar-iframe-renderer
-function q(e) {
-  if (typeof window > `u`) return e;
-  try {
-    let t = new URL(e);
-    if (!J(t.hostname)) return e;
-    let n = window.location.hostname;
-    return n == null || n.length === 0 || J(n)
-      ? e
-      : ((t.hostname = n), t.toString());
-  } catch {
-    return e;
-  }
-}
-function J(e) {
-  return (
-    e === `localhost` ||
-    e.endsWith(`.localhost`) ||
-    e === `127.0.0.1` ||
-    e === `0.0.0.0` ||
-    e === `[::1]` ||
-    e === `::1`
-  );
-}
-function Z(e) {
-  try {
-    let t = new URL(e);
-    return t.protocol === `http:` || t.protocol === `https:`;
-  } catch {
-    return !1;
-  }
-}
-function X(e) {
-  try {
-    let t = new URL(e).hostname.replace(/^www\./, ``);
-    return (
-      t === `google.com` ||
-      t.endsWith(`.google.com`) ||
-      t === `youtube.com` ||
-      t.endsWith(`.youtube.com`)
-    );
-  } catch {
-    return !1;
-  }
-}
-// o3-code-web-patch-end: browser-sidebar-iframe-renderer
 function K(e, t, n) {
   (n != null && e.current === n && (e.current = null),
     t != null && (e.current = t));

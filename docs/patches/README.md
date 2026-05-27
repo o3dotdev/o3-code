@@ -6,15 +6,14 @@ Patch SOPs are authoritative for bundled Electron source changes. A Source Refre
 
 ## Active Patches
 
-| Patch                                                                             | Summary                                                                                                 |
-| --------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| [0001 resources path redirect](./0001-resources-path-redirect/)                   | Redirects `process.resourcesPath` to repo-local runtime resources when running through pnpm Electron.   |
-| [0002 local app identity](./0002-local-app-identity/)                             | Applies the O3 Code visible app name and icon surfaces for repo-local runs.                             |
-| [0003 statsig gate overrides](./0003-statsig-gate-overrides/)                     | Adds a local boolean Statsig gate override mechanism while preserving upstream gate results by default. |
-| [0004 realtime voice statsig override](./0004-realtime-voice-statsig-override/)   | Forces only the realtime voice Statsig gate enabled.                                                    |
-| [0005 integrated terminal helper mode](./0005-integrated-terminal-helper-mode/)   | Preserves executable mode for the local integrated terminal native spawn helper.                        |
-| [0006 web access settings](./0006-web-access-settings/)                           | Adds desktop-owned localhost Web access settings and Bridge Mode lifecycle control.                     |
-| [0007 web access browser sidebar paint](./0007-web-access-browser-sidebar-paint/) | Captures real Electron browser sidebar pixels for the Mirrored Web Client.                              |
+| Patch                                                                           | Summary                                                                                                 |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
+| [0001 resources path redirect](./0001-resources-path-redirect/)                 | Redirects `process.resourcesPath` to repo-local runtime resources when running through pnpm Electron.   |
+| [0002 local app identity](./0002-local-app-identity/)                           | Applies the O3 Code visible app name and icon surfaces for repo-local runs.                             |
+| [0003 statsig gate overrides](./0003-statsig-gate-overrides/)                   | Adds a local boolean Statsig gate override mechanism while preserving upstream gate results by default. |
+| [0004 realtime voice statsig override](./0004-realtime-voice-statsig-override/) | Forces only the realtime voice Statsig gate enabled.                                                    |
+| [0005 integrated terminal helper mode](./0005-integrated-terminal-helper-mode/) | Preserves executable mode for the local integrated terminal native spawn helper.                        |
+| [0006 web access settings](./0006-web-access-settings/)                         | Adds desktop-owned localhost Web access settings and Bridge Mode lifecycle control.                     |
 
 ## SOP Shape
 
