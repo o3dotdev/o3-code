@@ -1,0 +1,10 @@
+import { gi as e } from "./src-BLHmAhbF.js";
+var t = e()
+  .url()
+  .refine((e) => e.startsWith(`https://`));
+function n(e, n) {
+  let r = t.safeParse(e.url);
+  return r.success ? r.data : n;
+}
+export { n as t };
+//# sourceMappingURL=statsig-url-config-J2yP2HxE.js.map

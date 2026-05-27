@@ -1,13 +1,13 @@
 // o3-code-patch-begin: resources-path-redirect
-const localResourcesPath = process.env.CODEX_ELECTRON_RESOURCES_PATH?.trim();
-localResourcesPath &&
+let o3CodeResourcesPath = process.env.CODEX_ELECTRON_RESOURCES_PATH?.trim();
+if (o3CodeResourcesPath)
   Object.defineProperty(process, `resourcesPath`, {
-    value: localResourcesPath,
-    configurable: !0,
+    configurable: true,
+    value: o3CodeResourcesPath,
   });
 // o3-code-patch-end: resources-path-redirect
-const e = require(`./app-session-DpDFpgD2.js`),
-  t = require(`./workspace-root-drop-handler-Bom6Z7sW.js`);
+const e = require(`./app-session-gBTKZRaX.js`),
+  t = require(`./workspace-root-drop-handler-DJwLZgXt.js`);
 let n = require(`electron`),
   r = require(`node:path`);
 require(`node:crypto`);
@@ -57,9 +57,11 @@ async function m({
     );
   } catch (e) {
     return (
-      t.$r().warning(`Failed to show Intel-on-Apple-Silicon launch warning`, {
-        safe: { errorName: e instanceof Error ? e.name : null },
-      }),
+      t
+        .$r()
+        .warning(`Failed to show Intel-on-Apple-Silicon launch warning`, {
+          safe: { errorName: e instanceof Error ? e.name : null },
+        }),
       !0
     );
   }
@@ -157,9 +159,11 @@ var b = process.platform === `darwin`,
   process.platform === `win32` && n.app.setAppUserModelId(t.C(x)));
 var S = t.S({ isMacOS: b, isPackaged: n.app.isPackaged });
 if (!(!S || n.app.requestSingleInstanceLock()))
-  (t.$r().info(`Exiting second desktop instance`, {
-    safe: { packaged: n.app.isPackaged, platform: process.platform },
-  }),
+  (t
+    .$r()
+    .info(`Exiting second desktop instance`, {
+      safe: { packaged: n.app.isPackaged, platform: process.platform },
+    }),
     n.app.exit(0));
 else {
   let e = t.w(x);
@@ -186,15 +190,17 @@ else {
         await i.initialize();
         try {
           let { runMainAppStartup: e } = await Promise.resolve().then(() =>
-            require(`./main-DVEWN1ng.js`),
+            require(`./main-BS7yenMI.js`),
           );
           await e();
         } catch (e) {
           for (let e of n.BrowserWindow.getAllWindows())
             e.isDestroyed() || e.destroy();
-          (t.$r().error(`Desktop bootstrap failed to start the main app`, {
-            safe: { phase: `bootstrap-import-main` },
-          }),
+          (t
+            .$r()
+            .error(`Desktop bootstrap failed to start the main app`, {
+              safe: { phase: `bootstrap-import-main` },
+            }),
             r.captureException(e, { tags: { phase: `bootstrap-import-main` } }),
             await y(e));
         }

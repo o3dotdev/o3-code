@@ -2,27 +2,31 @@
 
 ## Current Release
 
-- Codex App version: `26.519.41501`
-- Build: `3044`
+- Source app: `/Applications/Codex.app`
+- Codex App version: `26.519.81530`
+- Build: `3178`
+- `app.asar` SHA-256: `bf4c3f09b2cbab0714e23f0e9f7f9ce89146b5d47f4462ca77fc2c41394fceaa`
 
 ## Known Sites
 
-- `apps/desktop/app/webview/assets/statsig-CpJRDK88.js`
-- `apps/desktop/app/webview/assets/use-is-thread-realtime-enabled-CIkhHWOc.js`
-- `apps/desktop/app/webview/assets/debug-modal-DvczLWeq.js`
+- `apps/desktop/app/webview/assets/statsig-BwN76nAo.js`
+- `apps/desktop/app/webview/assets/use-is-thread-realtime-enabled-CVhnQsxB.js`
+- `apps/desktop/app/webview/assets/debug-modal-B8xDbX-9.js`
+- `apps/desktop/app/webview/assets/app-server-manager-signals-7MlBpIlX.js`
 
 ## Known Gate
 
 - `2380644311`
 
-## Known Patch Shape
+## Patch Shape
 
-```js
-// o3-code-patch-begin: realtime-voice-statsig-override
-o3CodeForcedFeatureGates.add(`2380644311`);
-// o3-code-patch-end: realtime-voice-statsig-override
-```
+- Patch `0003` installs the forced boolean gate set.
+- This Patch adds only `2380644311` to that set.
+- Patch Marker id: `realtime-voice-statsig-override`.
 
 ## Validation Notes
 
-Realtime voice debug should report `Statsig gate: Enabled` and `Effective voice mode: Enabled` unless the `realtime-voice-mode-debug-disabled` override is set.
+- `use-is-thread-realtime-enabled-CVhnQsxB.js` still gates positive realtime availability with `2380644311` and keeps `REALTIME_VOICE_MODE_DEBUG_DISABLED` upstream-driven.
+- `debug-modal-B8xDbX-9.js` still reports `Statsig gate` and `Effective voice mode` from the same gate plus the debug disabled override.
+- `node --check apps/desktop/app/webview/assets/statsig-BwN76nAo.js` passed.
+- `pnpm start` logged `realtime_conversation` in enabled features after app-server initialization.
