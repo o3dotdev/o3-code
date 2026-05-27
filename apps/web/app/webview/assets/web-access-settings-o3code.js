@@ -1,183 +1,191 @@
-import { s as e } from "./chunk.js";
-import { n as t, t as n } from "./jsx-runtime.js";
+import { s as wrapReactModule } from "./chunk.js";
+import { n as reactModule, t as jsxRuntime } from "./jsx-runtime.js";
+import { t as SettingsButton } from "./button.js";
+import { t as SettingsContentLayout } from "./settings-content-layout.js";
+import { t as SettingsGroup } from "./settings-group.js";
+import { n as SettingsRow, t as SettingsValueRow } from "./settings-row-D.js";
+import { t as SettingsSurface } from "./settings-surface.js";
+import { t as Toggle } from "./toggle.js";
 
-var r = e(t()),
-  i = n(),
-  a = {
+var React = wrapReactModule(reactModule()),
+  jsx = jsxRuntime(),
+  DEFAULT_CONFIG = {
     enabled: false,
     exposure: "localhost",
     port: null,
   },
-  o = { state: "off" };
+  DEFAULT_STATUS = { state: "off" };
 
-function s() {
-  let e = window.electronBridge?.webAccess,
-    [t, n] = r.useState(a),
-    [s, setStatus] = r.useState(o),
-    [l, u] = r.useState(true),
-    [d, f] = r.useState(null);
+function WebAccessSettingsPage() {
+  let bridge = window.electronBridge?.webAccess,
+    [config, setConfig] = React.useState(DEFAULT_CONFIG),
+    [status, setStatus] = React.useState(DEFAULT_STATUS),
+    [loading, setLoading] = React.useState(true),
+    [error, setError] = React.useState(null);
   return (
-    r.useEffect(() => {
-      if (e == null) {
-        u(false);
-        f(`Web access is unavailable in this runtime.`);
+    React.useEffect(() => {
+      if (bridge == null) {
+        setLoading(false);
+        setError(`Web access is unavailable in this runtime.`);
         return;
       }
-      let t = true,
-        r = e.subscribeConfig((e) => {
-          t && n(e);
+      let mounted = true,
+        unsubscribeConfig = bridge.subscribeConfig((config) => {
+          mounted && setConfig(config);
         }),
-        i = e.subscribeStatus((e) => {
-          t && setStatus(e);
+        unsubscribeStatus = bridge.subscribeStatus((status) => {
+          mounted && setStatus(status);
         });
       return (
-        Promise.all([e.getConfig(), e.getStatus()])
-          .then(([e, r]) => {
-            t && (n(e), setStatus(r));
+        Promise.all([bridge.getConfig(), bridge.getStatus()])
+          .then(([config, status]) => {
+            mounted && (setConfig(config), setStatus(status));
           })
-          .catch((e) => {
-            t && f(e instanceof Error ? e.message : String(e));
+          .catch((error) => {
+            mounted &&
+              setError(error instanceof Error ? error.message : String(error));
           })
           .finally(() => {
-            t && u(false);
+            mounted && setLoading(false);
           }),
         () => {
-          ((t = false), r(), i());
+          ((mounted = false), unsubscribeConfig(), unsubscribeStatus());
         }
       );
-    }, [e]),
-    (0, i.jsxs)(`div`, {
-      className: `mx-auto flex w-full max-w-3xl flex-col gap-6 p-6`,
+    }, [bridge]),
+    jsx.jsxs(SettingsContentLayout, {
+      title: `Web access`,
+      subtitle: `Expose the Mirrored Web Client on localhost while O3 Code is running.`,
+      subtitleClassName: `text-pretty`,
       children: [
-        (0, i.jsxs)(`header`, {
-          className: `flex flex-col gap-1`,
-          children: [
-            (0, i.jsx)(`h1`, {
-              className: `text-xl font-semibold text-token-text-primary`,
-              children: `Web access`,
-            }),
-            (0, i.jsx)(`p`, {
-              className: `text-sm text-token-text-secondary`,
-              children: `Expose the Mirrored Web Client on localhost while O3 Code is running.`,
-            }),
-          ],
-        }),
-        d == null
+        error == null
           ? null
-          : (0, i.jsx)(`div`, {
-              className: `rounded-md border border-red-500/30 bg-red-500/10 px-3 py-2 text-sm text-red-200`,
-              children: d,
+          : jsx.jsx(`div`, {
+              className: `rounded-lg border border-token-border-error px-3 py-2 text-sm text-token-error-foreground`,
+              children: error,
             }),
-        (0, i.jsxs)(`section`, {
-          className: `flex flex-col gap-4 rounded-lg border border-token-border-default bg-token-bg-primary p-4`,
+        jsx.jsxs(SettingsGroup, {
           children: [
-            (0, i.jsxs)(`div`, {
-              className: `flex items-center justify-between gap-4`,
-              children: [
-                (0, i.jsxs)(`div`, {
-                  className: `min-w-0`,
-                  children: [
-                    (0, i.jsx)(`div`, {
-                      className: `font-medium text-token-text-primary`,
-                      children: `Enable Web access`,
+            jsx.jsx(SettingsGroup.Header, { title: `Local server` }),
+            jsx.jsx(SettingsGroup.Content, {
+              children: jsx.jsxs(SettingsSurface, {
+                children: [
+                  jsx.jsx(SettingsRow, {
+                    label: `Enable Web access`,
+                    description: `Serve the web client at 127.0.0.1 only.`,
+                    control: jsx.jsx(Toggle, {
+                      checked: config.enabled,
+                      disabled: loading || bridge == null,
+                      onChange: async (enabled) => {
+                        if (bridge == null) return;
+                        setError(null);
+                        try {
+                          setConfig(await bridge.updateConfig({ enabled }));
+                        } catch (error) {
+                          setError(
+                            error instanceof Error
+                              ? error.message
+                              : String(error),
+                          );
+                        }
+                      },
+                      ariaLabel: `Enable Web access`,
                     }),
-                    (0, i.jsx)(`div`, {
-                      className: `text-sm text-token-text-secondary`,
-                      children: `Serve the web client at 127.0.0.1 only.`,
-                    }),
-                  ],
-                }),
-                (0, i.jsx)(`button`, {
-                  type: `button`,
-                  disabled: l || e == null,
-                  onClick: async () => {
-                    if (e == null) return;
-                    f(null);
-                    try {
-                      n(await e.updateConfig({ enabled: !t.enabled }));
-                    } catch (e) {
-                      f(e instanceof Error ? e.message : String(e));
-                    }
-                  },
-                  role: `switch`,
-                  className: `relative h-6 w-11 shrink-0 rounded-full border transition-colors focus-visible:ring-2 focus-visible:ring-token-focus-border focus-visible:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
-                  style: {
-                    backgroundColor: t.enabled
-                      ? `var(--color-token-text-primary)`
-                      : `color-mix(in srgb, var(--color-token-foreground) 15%, transparent)`,
-                    borderColor: t.enabled
-                      ? `var(--color-token-text-primary)`
-                      : `var(--color-token-border-default)`,
-                  },
-                  "aria-checked": t.enabled,
-                  "aria-pressed": t.enabled,
-                  children: (0, i.jsx)(`span`, {
-                    className: `absolute h-5 w-5 rounded-full bg-token-main-surface-primary shadow`,
-                    style: {
-                      left: t.enabled ? `22px` : `2px`,
-                      top: `2px`,
-                      transition: `left 160ms ease`,
-                    },
                   }),
-                }),
-              ],
-            }),
-            (0, i.jsx)(p, { label: `Exposure`, value: `Localhost` }),
-            (0, i.jsx)(p, {
-              label: `Status`,
-              value: m(s),
-              detail: s.state === `failed` ? s.reason : null,
-            }),
-            (0, i.jsx)(p, {
-              label: `Port`,
-              value:
-                t.port == null ? `Assigned on first enable` : String(t.port),
-            }),
-            s.state === `running`
-              ? (0, i.jsx)(p, {
-                  label: `URL`,
-                  value: s.url,
-                  monospace: true,
-                })
-              : null,
-            (0, i.jsxs)(`div`, {
-              className: `flex flex-wrap gap-2 pt-2`,
-              children: [
-                (0, i.jsx)(w, {
-                  disabled: s.state !== `running`,
-                  onClick: async () => {
-                    s.state === `running` &&
-                      (await navigator.clipboard.writeText(s.url));
-                  },
-                  children: `Copy URL`,
-                }),
-                (0, i.jsx)(w, {
-                  disabled: s.state !== `running` || e == null,
-                  onClick: async () => {
-                    s.state === `running` &&
-                      e != null &&
-                      (await e.openUrl(s.url));
-                  },
-                  children: `Open`,
-                }),
-                (0, i.jsx)(w, {
-                  disabled: s.state !== `failed` || e == null,
-                  onClick: async () => {
-                    e != null && setStatus(await e.retry());
-                  },
-                  children: `Retry`,
-                }),
-                (0, i.jsx)(w, {
-                  disabled:
-                    e == null ||
-                    s.state === `running` ||
-                    s.state === `starting`,
-                  onClick: async () => {
-                    e != null && n(await e.resetPort());
-                  },
-                  children: `Reset port`,
-                }),
-              ],
+                  jsx.jsx(ValueRow, {
+                    label: `Exposure`,
+                    children: `Localhost`,
+                  }),
+                  jsx.jsx(ValueRow, {
+                    label: `Status`,
+                    children: jsx.jsxs(`div`, {
+                      className: `flex min-w-0 flex-col gap-1`,
+                      children: [
+                        jsx.jsx(`span`, { children: getStatusLabel(status) }),
+                        status.state === `failed` && status.reason != null
+                          ? jsx.jsx(`span`, {
+                              className: `text-token-error-foreground`,
+                              children: status.reason,
+                            })
+                          : null,
+                      ],
+                    }),
+                  }),
+                  jsx.jsx(ValueRow, {
+                    label: `Port`,
+                    children:
+                      config.port == null
+                        ? `Assigned on first enable`
+                        : String(config.port),
+                  }),
+                  status.state === `running`
+                    ? jsx.jsx(ValueRow, {
+                        label: `URL`,
+                        children: jsx.jsx(`span`, {
+                          className: `break-all font-mono`,
+                          children: status.url,
+                        }),
+                      })
+                    : null,
+                  jsx.jsx(SettingsRow, {
+                    label: `Open client`,
+                    description:
+                      status.state === `running`
+                        ? `Use the current localhost URL.`
+                        : `Available when Web access is running.`,
+                    control: jsx.jsxs(`div`, {
+                      className: `flex flex-wrap justify-end gap-2`,
+                      children: [
+                        jsx.jsx(ActionButton, {
+                          disabled: status.state !== `running`,
+                          onClick: async () => {
+                            status.state === `running` &&
+                              (await navigator.clipboard.writeText(status.url));
+                          },
+                          children: `Copy URL`,
+                        }),
+                        jsx.jsx(ActionButton, {
+                          disabled:
+                            status.state !== `running` || bridge == null,
+                          onClick: async () => {
+                            status.state === `running` &&
+                              bridge != null &&
+                              (await bridge.openUrl(status.url));
+                          },
+                          children: `Open`,
+                        }),
+                      ],
+                    }),
+                  }),
+                  jsx.jsx(SettingsRow, {
+                    label: `Recovery`,
+                    description: `Retry after a failure, or reset the saved port while stopped.`,
+                    control: jsx.jsxs(`div`, {
+                      className: `flex flex-wrap justify-end gap-2`,
+                      children: [
+                        jsx.jsx(ActionButton, {
+                          disabled: status.state !== `failed` || bridge == null,
+                          onClick: async () => {
+                            bridge != null && setStatus(await bridge.retry());
+                          },
+                          children: `Retry`,
+                        }),
+                        jsx.jsx(ActionButton, {
+                          disabled:
+                            bridge == null ||
+                            status.state === `running` ||
+                            status.state === `starting`,
+                          onClick: async () => {
+                            bridge != null &&
+                              setConfig(await bridge.resetPort());
+                          },
+                          children: `Reset port`,
+                        }),
+                      ],
+                    }),
+                  }),
+                ],
+              }),
             }),
           ],
         }),
@@ -186,47 +194,27 @@ function s() {
   );
 }
 
-function w(e) {
-  let { children: t, disabled: n, onClick: r } = e;
-  return (0, i.jsx)(`button`, {
-    type: `button`,
-    disabled: n,
-    onClick: r,
-    className: `rounded-md border border-token-border-default px-3 py-1.5 text-sm font-medium text-token-text-primary hover:bg-token-main-surface-secondary disabled:cursor-not-allowed disabled:opacity-50`,
-    children: t,
+function ActionButton(props) {
+  let { children, disabled, onClick } = props;
+  return jsx.jsx(SettingsButton, {
+    color: `secondary`,
+    size: `toolbar`,
+    disabled,
+    onClick,
+    children,
   });
 }
 
-function p(e) {
-  let { detail: t, label: n, monospace: r = false, value: a } = e;
-  return (0, i.jsxs)(`div`, {
-    className: `grid gap-1 border-t border-token-border-default pt-3 sm:grid-cols-[160px_1fr] sm:gap-4`,
-    children: [
-      (0, i.jsx)(`div`, {
-        className: `text-sm text-token-text-secondary`,
-        children: n,
-      }),
-      (0, i.jsxs)(`div`, {
-        className: `min-w-0`,
-        children: [
-          (0, i.jsx)(`div`, {
-            className: `${r ? `font-mono` : ``} break-words text-sm text-token-text-primary`,
-            children: a,
-          }),
-          t == null
-            ? null
-            : (0, i.jsx)(`div`, {
-                className: `mt-1 text-sm text-token-text-secondary`,
-                children: t,
-              }),
-        ],
-      }),
-    ],
+function ValueRow(props) {
+  let { children, label } = props;
+  return jsx.jsx(SettingsValueRow, {
+    label,
+    children,
   });
 }
 
-function m(e) {
-  switch (e.state) {
+function getStatusLabel(status) {
+  switch (status.state) {
     case "off":
       return "Off";
     case "starting":
@@ -234,10 +222,10 @@ function m(e) {
     case "running":
       return "Running";
     case "failed":
-      return e.code == null ? "Failed" : `Failed (${e.code})`;
+      return status.code == null ? "Failed" : `Failed (${status.code})`;
     default:
       return "Unknown";
   }
 }
 
-export { s as WebAccessSettings };
+export { WebAccessSettingsPage as WebAccessSettings };
