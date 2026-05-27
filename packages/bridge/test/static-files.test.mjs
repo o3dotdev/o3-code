@@ -3,6 +3,7 @@ import path from "node:path";
 import test from "node:test";
 
 import {
+  getWebviewCacheControl,
   resolveWebviewPath,
   shouldServeSpaFallback,
 } from "../src/static-files.mjs";
@@ -49,5 +50,16 @@ test("shouldServeSpaFallback rejects asset-like and non-GET routes", () => {
       urlPathname: "/settings/web-access",
     }),
     false,
+  );
+});
+
+test("getWebviewCacheControl avoids immutable caching for stable asset names", () => {
+  assert.equal(
+    getWebviewCacheControl("/tmp/webview/assets/app-main.js"),
+    "no-cache",
+  );
+  assert.equal(
+    getWebviewCacheControl("/tmp/webview/bridge-shim.js"),
+    "no-store",
   );
 });

@@ -1,4 +1,4 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import { Cn as t, Rn as n } from "./src-BLHmAhbF.js";
 import {
   $ as r,
@@ -9,16 +9,16 @@ import {
   fr as c,
   qi as l,
   yt as u,
-} from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as d, t as f } from "./jsx-runtime-CiQ1k8xo.js";
+} from "./app-server-manager-signals.js";
+import { n as d, t as f } from "./jsx-runtime.js";
 import {
   b as p,
   f as m,
   g as h,
   n as g,
   y as _,
-} from "./local-conversation-thread-Kn0WAsVa.js";
-import { t as v } from "./clsx-DDuZWq6Y.js";
+} from "./local-conversation-thread.js";
+import { t as v } from "./clsx.js";
 import {
   B as y,
   C as b,
@@ -33,43 +33,34 @@ import {
   xt as k,
   y as A,
   z as j,
-} from "./setting-storage-kJblH-wH.js";
-import { t as M } from "./thread-context-inputs-D4zJFWk0.js";
-import { r as N } from "./toast-signal-mlbIRbst.js";
-import { t as ee } from "./tooltip-Bb9X8NK-.js";
-import { r as P, t as F } from "./route-scope-VKCI3pUD.js";
-import { t as I } from "./button-BynxeNRW.js";
-import { t as L } from "./open-workspace-file-C38053al.js";
-import { t as R } from "./proxy-HwxlKevX.js";
-import {
-  a as z,
-  n as B,
-  p as te,
-  r as ne,
-} from "./app-shell-state-SfLRxSEg.js";
-import { a as re } from "./app-shell-panel-animation-wSWOHVvY.js";
-import { o as ie, s as V, t as H } from "./app-shell-DnmC_oyn.js";
-import { t as ae } from "./x-DMqExXY8.js";
-import { r as oe } from "./use-is-plugins-enabled-M47TXC7m.js";
-import {
-  a as se,
-  n as ce,
-  t as le,
-} from "./app-shell-tab-controller-BpCuB_Nz.js";
-import { Ot as ue } from "./review-navigation-model-WMoHh_PB.js";
-import { t as de } from "./review-file-source-tab-dLAJK8RD.js";
-import { i as fe, r as pe } from "./thread-context-qjluNZCo.js";
-import { t as me } from "./terminal-CNbIwMET.js";
+} from "./setting-storage.js";
+import { t as M } from "./thread-context-inputs.js";
+import { r as N } from "./toast-signal.js";
+import { t as ee } from "./tooltip.js";
+import { r as P, t as F } from "./route-scope.js";
+import { t as I } from "./button.js";
+import { t as L } from "./open-workspace-file.js";
+import { t as R } from "./proxy.js";
+import { a as z, n as B, p as te, r as ne } from "./app-shell-state.js";
+import { a as re } from "./app-shell-panel-animation.js";
+import { o as ie, s as V, t as H } from "./app-shell.js";
+import { t as ae } from "./x.js";
+import { r as oe } from "./use-is-plugins-enabled.js";
+import { a as se, n as ce, t as le } from "./app-shell-tab-controller.js";
+import { Ot as ue } from "./review-navigation-model.js";
+import { t as de } from "./review-file-source-tab.js";
+import { i as fe, r as pe } from "./thread-context.js";
+import { t as me } from "./terminal.js";
 import { a as he, t as ge } from "./thread-page-bottom-panel-state-DZYvoqqn.js";
-import { a as _e, r as ve, t as ye } from "./thread-panel-state-DHCQ3R55.js";
-import { f as be } from "./local-remote-selection-COyVTG02.js";
-import { E as xe } from "./composer-EYkAbDY0.js";
-import { r as Se } from "./use-skills-CbLuUp1e.js";
-import { n as Ce, t as we } from "./use-resize-observer-DXGSgvEH.js";
-import { t as U } from "./thread-side-panel-browser-tab-state-CTvjen3H.js";
-import { i as Te } from "./command-keybindings-B9IgRGSI.js";
-import { t as Ee } from "./clock-BdccdK2N.js";
-import { r as De } from "./dropdown-CLcC-0sa.js";
+import { a as _e, r as ve, t as ye } from "./thread-panel-state.js";
+import { f as be } from "./local-remote-selection.js";
+import { E as xe } from "./composer.js";
+import { r as Se } from "./use-skills.js";
+import { n as Ce, t as we } from "./use-resize-observer.js";
+import { t as U } from "./thread-side-panel-browser-tab-state.js";
+import { i as Te } from "./command-keybindings.js";
+import { t as Ee } from "./clock.js";
+import { r as De } from "./dropdown.js";
 import {
   c as Oe,
   d as ke,
@@ -78,14 +69,14 @@ import {
   u as Me,
   y as Ne,
 } from "./thread-side-panel-tabs-BL2fcy4d.js";
-import { t as Pe } from "./globe-D1xFoTfu.js";
-import { d as Fe } from "./review-header-toolbar-Bp48IyPK.js";
-import { d as Ie } from "./inline-mentions-CbDcUfAO.js";
-import { n as Le, r as Re } from "./open-target-selection-Cijq0StV.js";
-import { t as ze } from "./plus-PQBYSO-0.js";
-import { n as Be, t as Ve } from "./use-target-apps-CgDTczOj.js";
-import { t as He } from "./folders-BO-L3yo5.js";
-import { t as Ue } from "./compound-button-BOCoh2fO.js";
+import { t as Pe } from "./globe.js";
+import { d as Fe } from "./review-header-toolbar.js";
+import { d as Ie } from "./inline-mentions.js";
+import { n as Le, r as Re } from "./open-target-selection.js";
+import { t as ze } from "./plus.js";
+import { n as Be, t as Ve } from "./use-target-apps.js";
+import { t as He } from "./folders.js";
+import { t as Ue } from "./compound-button.js";
 var We = e(d()),
   W = f(),
   Ge = (e) =>

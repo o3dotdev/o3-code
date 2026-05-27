@@ -10,22 +10,22 @@
 - `apps/desktop/app/.vite/build/bootstrap.js`
   - Patch ID: `web-access-settings`
   - Allocates a per-run loopback CDP port before app readiness.
-- `apps/desktop/app/.vite/build/main-BS7yenMI.js`
+- `apps/desktop/app/.vite/build/main.js`
   - Patch ID: `web-access-settings`
   - Registers Web access IPC and starts the Bridge Mode supervisor.
 - `apps/desktop/app/.vite/build/preload.js`
   - Patch ID: `web-access-settings`
   - Exposes `electronBridge.webAccess`.
-- `apps/desktop/app/webview/assets/app-main-BnTSnuSB.js`
+- `apps/desktop/app/webview/assets/app-main.js`
   - Patch ID: `web-access-settings`
   - Adds the `web-access` settings route.
-- `apps/desktop/app/webview/assets/settings-sections-D0Ixubqt.js`
+- `apps/desktop/app/webview/assets/settings-sections.js`
   - Patch ID: `web-access-settings`
   - Adds the Web access navigation section.
-- `apps/desktop/app/webview/assets/settings-shared-buyehiMO.js`
+- `apps/desktop/app/webview/assets/settings-shared.js`
   - Patch ID: `web-access-settings`
   - Adds Web access navigation and section labels.
-- `apps/desktop/app/webview/assets/settings-page-DQKw-JsA.js`
+- `apps/desktop/app/webview/assets/settings-page.js`
   - Patch ID: `web-access-settings`
   - Places Web access under App settings near Connections.
 - `apps/desktop/app/webview/assets/web-access-settings-o3code.js`

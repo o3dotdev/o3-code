@@ -1,5 +1,5 @@
-import { t as e } from "./chunk-Bj-mKKzh.js";
-import { i as t, n, r, t as i } from "./tslib.es6-PiNIxp0T.js";
+import { t as e } from "./chunk.js";
+import { i as t, n, r, t as i } from "./tslib.es6.js";
 function a(e, t, n) {
   t.split && (t = t.split(`.`));
   for (

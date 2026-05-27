@@ -1,4 +1,4 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import {
   Cn as t,
   P as n,
@@ -35,9 +35,9 @@ import {
   tt as j,
   u as M,
   wa as N,
-} from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as P, t as ee } from "./jsx-runtime-CiQ1k8xo.js";
-import { t as F } from "./clsx-DDuZWq6Y.js";
+} from "./app-server-manager-signals.js";
+import { n as P, t as ee } from "./jsx-runtime.js";
+import { t as F } from "./clsx.js";
 import {
   C as I,
   J as L,
@@ -54,13 +54,13 @@ import {
   u as ae,
   xt as oe,
   y as se,
-} from "./setting-storage-kJblH-wH.js";
-import { f as ce } from "./chunk-LFPYN7LY-CkfOxD5s.js";
-import { o as le, s as ue } from "./statsig-BwN76nAo.js";
-import { t as de } from "./use-global-state-DUocq5mo.js";
-import { t as fe } from "./use-auth-BSv8Pelr.js";
-import { t as pe } from "./spinner-avFWYgza.js";
-import { t as me } from "./link-external-GLfZmEQP.js";
+} from "./setting-storage.js";
+import { f as ce } from "./chunk-LFPYN7LY.js";
+import { o as le, s as ue } from "./statsig.js";
+import { t as de } from "./use-global-state.js";
+import { t as fe } from "./use-auth.js";
+import { t as pe } from "./spinner.js";
+import { t as me } from "./link-external.js";
 import {
   a as he,
   d as ge,
@@ -70,53 +70,50 @@ import {
   m as be,
   o as xe,
   p as Se,
-} from "./onboarding-state-DuF4N2Rv.js";
-import { t as Ce } from "./x-DMqExXY8.js";
-import { t as we } from "./get-build-flavor-DDOtCsji.js";
-import { t as Te } from "./info-B8KL--OU.js";
-import { t as Ee } from "./with-window-BCZl6ce7.js";
+} from "./onboarding-state.js";
+import { t as Ce } from "./x.js";
+import { t as we } from "./get-build-flavor.js";
+import { t as Te } from "./info.js";
+import { t as Ee } from "./with-window.js";
 import {
   d as De,
   i as Oe,
   l as ke,
   n as Ae,
   u as je,
-} from "./dialog-layout-DNf4TEex.js";
-import { t as Me } from "./use-stable-callback-Csm0_jZ8.js";
-import { t as Ne } from "./use-navigate-to-local-conversation-OOKB619E.js";
-import { n as Pe } from "./electron-menu-shortcuts-DQYPVyfu.js";
-import { r as Fe } from "./modal-controller-state--RuEytMA.js";
-import { t as Ie } from "./chevron-right-DcOUsgCQ.js";
+} from "./dialog-layout.js";
+import { t as Me } from "./use-stable-callback.js";
+import { t as Ne } from "./use-navigate-to-local-conversation.js";
+import { n as Pe } from "./electron-menu-shortcuts.js";
+import { r as Fe } from "./modal-controller-state-.js";
+import { t as Ie } from "./chevron-right.js";
 import {
   i as Le,
   o as Re,
   s as ze,
   t as Be,
-} from "./mcp-capability-signals-BUV2uBl-.js";
-import { t as Ve } from "./remote-connections-onboarding-signals-C-ETKEqO.js";
-import { r as He, t as Ue } from "./dropdown-CLcC-0sa.js";
-import { t as We } from "./chevron-CEHg0DRl.js";
-import { t as Ge } from "./code-snippet-DrPKGV4s.js";
-import { t as Ke } from "./copy-button-BHvcmCXa.js";
-import { t as qe } from "./image-preview-dialog-DSlWCEr3.js";
-import { t as Je } from "./toggle-BXF5Uzow.js";
-import { t as Ye } from "./use-is-thread-realtime-enabled-CVhnQsxB.js";
-import { t as Xe } from "./arrow-up-right-lg-kBlQP-86.js";
-import { t as Ze } from "./browser-sidebar-comment-mode-coachmark-state-BRiLW6cX.js";
-import { t as Qe } from "./workspace-directory-tree-DIfQGgr-.js";
-import {
-  a as $e,
-  i as et,
-} from "./workspace-onboarding-experiment-CYMS5raV.js";
+} from "./mcp-capability-signals.js";
+import { t as Ve } from "./remote-connections-onboarding-signals-C.js";
+import { r as He, t as Ue } from "./dropdown.js";
+import { t as We } from "./chevron.js";
+import { t as Ge } from "./code-snippet.js";
+import { t as Ke } from "./copy-button.js";
+import { t as qe } from "./image-preview-dialog.js";
+import { t as Je } from "./toggle.js";
+import { t as Ye } from "./use-is-thread-realtime-enabled.js";
+import { t as Xe } from "./arrow-up-right-lg.js";
+import { t as Ze } from "./browser-sidebar-comment-mode-coachmark-state.js";
+import { t as Qe } from "./workspace-directory-tree.js";
+import { a as $e, i as et } from "./workspace-onboarding-experiment.js";
 import {
   a as tt,
   n as nt,
   t as rt,
-} from "./app-server-notification-debug-signals-CCi4K5Sh.js";
-import { i as it, r as at } from "./primary-runtime-install-state-DAatBRD5.js";
-import { o as ot, t as st } from "./codex-mobile-setup-dialog-Cu6qXlqh.js";
-import { a as ct, o as lt, s as ut } from "./use-debug-panel-C3dp4qiT.js";
-import { i as dt, r as ft, t as pt } from "./virtualized-turns-KhmgxbxN.js";
+} from "./app-server-notification-debug-signals.js";
+import { i as it, r as at } from "./primary-runtime-install-state.js";
+import { o as ot, t as st } from "./codex-mobile-setup-dialog.js";
+import { a as ct, o as lt, s as ut } from "./use-debug-panel.js";
+import { i as dt, r as ft, t as pt } from "./virtualized-turns.js";
 function mt({
   labels: e,
   projectlessThreadCwd: t,

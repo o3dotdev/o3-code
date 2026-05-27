@@ -1,7 +1,7 @@
-import { s as e, t } from "./chunk-Bj-mKKzh.js";
+import { s as e, t } from "./chunk.js";
 import { x as n } from "./src-BLHmAhbF.js";
-import { qi as r } from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as i, t as a } from "./jsx-runtime-CiQ1k8xo.js";
+import { qi as r } from "./app-server-manager-signals.js";
+import { n as i, t as a } from "./jsx-runtime.js";
 import {
   H as o,
   Y as s,
@@ -9,24 +9,24 @@ import {
   a as l,
   xt as u,
   y as d,
-} from "./setting-storage-kJblH-wH.js";
-import { t as f } from "./route-scope-VKCI3pUD.js";
-import { t as p } from "./button-BynxeNRW.js";
-import { n as m, o as h, r as g } from "./app-shell-state-SfLRxSEg.js";
-import { t as _ } from "./use-platform-DMNwb8i8.js";
-import { n as v, r as y } from "./chrome-theme-C3NmvE0H.js";
-import { n as b, t as x } from "./app-shell-tab-controller-BpCuB_Nz.js";
-import { t as S } from "./local-conversation-title-signals-Djs4uIji.js";
-import { i as C, n as w } from "./thread-context-qjluNZCo.js";
-import { n as T, t as E } from "./focus-composer-C5T4PQQ-.js";
-import { t as D } from "./terminal-CNbIwMET.js";
-import { t as O } from "./app-intl-signal-D9zjNves.js";
-import { t as k } from "./terminal-service-Bp-7B5CU.js";
-import { t as A } from "./error-boundary-DjHOvo0v.js";
-import { n as j } from "./check-git-index-for-changes-Cr4dfcAI.js";
-import { t as M } from "./font-settings-D-vhQ1CB.js";
-import { n as N, r as P } from "./use-resolved-theme-variant-BUW9gTru.js";
-import { n as F, r as I, t as L } from "./thread-panel-state-DHCQ3R55.js";
+} from "./setting-storage.js";
+import { t as f } from "./route-scope.js";
+import { t as p } from "./button.js";
+import { n as m, o as h, r as g } from "./app-shell-state.js";
+import { t as _ } from "./use-platform.js";
+import { n as v, r as y } from "./chrome-theme.js";
+import { n as b, t as x } from "./app-shell-tab-controller.js";
+import { t as S } from "./local-conversation-title-signals.js";
+import { i as C, n as w } from "./thread-context.js";
+import { n as T, t as E } from "./focus-composer.js";
+import { t as D } from "./terminal.js";
+import { t as O } from "./app-intl-signal.js";
+import { t as k } from "./terminal-service.js";
+import { t as A } from "./error-boundary.js";
+import { n as j } from "./check-git-index-for-changes.js";
+import { t as M } from "./font-settings-D.js";
+import { n as N, r as P } from "./use-resolved-theme-variant.js";
+import { n as F, r as I, t as L } from "./thread-panel-state.js";
 function R(e, t, n, i, a) {
   let o = e?.trim();
   if (o != null && o.length > 0) return o;

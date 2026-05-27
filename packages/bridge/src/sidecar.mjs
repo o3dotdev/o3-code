@@ -12,7 +12,11 @@ import { CdpClient } from "./cdp-client.mjs";
 import { injectBridgeShell } from "./html-injection.mjs";
 import { repoRoot, resolveBridgeWebviewDir } from "./paths.mjs";
 import { BridgeRouter } from "./router.mjs";
-import { resolveWebviewPath, shouldServeSpaFallback } from "./static-files.mjs";
+import {
+  getWebviewCacheControl,
+  resolveWebviewPath,
+  shouldServeSpaFallback,
+} from "./static-files.mjs";
 
 const host = "127.0.0.1";
 const cdpHost = "127.0.0.1";
@@ -199,9 +203,7 @@ async function sendFile(response, filePath, fileStat = null) {
   response.writeHead(200, {
     "content-type": getContentType(filePath),
     "content-length": fileStat.size,
-    "cache-control": filePath.endsWith("bridge-shim.js")
-      ? "no-store"
-      : "public, max-age=31536000, immutable",
+    "cache-control": getWebviewCacheControl(filePath),
   });
   createReadStream(filePath).pipe(response);
 }
@@ -211,6 +213,7 @@ async function sendInjectedIndex(response, indexPath) {
   response.writeHead(200, {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-store",
+    "clear-site-data": '"cache"',
   });
   response.end(
     injectBridgeShell(html, {

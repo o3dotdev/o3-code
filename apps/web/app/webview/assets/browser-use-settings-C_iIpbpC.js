@@ -1,8 +1,8 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import { Qn as t, Zn as n, b as r, er as i } from "./src-BLHmAhbF.js";
-import { Ca as a } from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as o, t as s } from "./jsx-runtime-CiQ1k8xo.js";
-import { t as c } from "./clsx-DDuZWq6Y.js";
+import { Ca as a } from "./app-server-manager-signals.js";
+import { n as o, t as s } from "./jsx-runtime.js";
+import { t as c } from "./clsx.js";
 import {
   H as l,
   S as u,
@@ -12,42 +12,36 @@ import {
   i as m,
   xt as h,
   y as g,
-} from "./setting-storage-kJblH-wH.js";
-import { f as _, t as v } from "./chunk-LFPYN7LY-CkfOxD5s.js";
-import { a as y } from "./statsig-BwN76nAo.js";
-import { t as b } from "./connector-logo-BomuubYD.js";
-import { r as x } from "./toast-signal-mlbIRbst.js";
-import { t as S } from "./tooltip-Bb9X8NK-.js";
-import { T as C } from "./mention-item-qEZjEnZz.js";
-import { t as w } from "./button-BynxeNRW.js";
-import { t as T } from "./spinner-avFWYgza.js";
-import { t as E } from "./apps-RXjrknWx.js";
-import { t as D } from "./chats-81n_Gm7h.js";
-import { i as O, n as k, o as A } from "./use-is-plugins-enabled-M47TXC7m.js";
-import { t as j } from "./get-build-flavor-DDOtCsji.js";
-import { c as M, m as N } from "./use-plugins-C8ZDLcLG.js";
-import { n as P, t as F } from "./use-plugin-install-flow-BqDhdae4.js";
-import {
-  a as I,
-  i as L,
-  l as R,
-  n as z,
-  r as B,
-} from "./dialog-layout-DNf4TEex.js";
-import { t as V } from "./check-md-I6RRy8DL.js";
-import { t as ee } from "./use-start-new-conversation-B-ccKQqp.js";
-import { r as H, t as U } from "./dropdown-CLcC-0sa.js";
-import { t as te } from "./trash-Ml_NiloR.js";
-import { t as ne } from "./chevron-CEHg0DRl.js";
-import { t as re } from "./plus-PQBYSO-0.js";
-import { i as ie } from "./plugin-detail-page-utils-CnNZfIFc.js";
-import { n as ae, t as oe } from "./plugin-prefill-prompt-Dun8JpdN.js";
-import { t as se } from "./toggle-BXF5Uzow.js";
-import { n as W } from "./bundled-plugin-auto-install-preference-DTY_dF8v.js";
-import { t as ce } from "./shield-exclamation-B4AFaoZv.js";
-import { t as G } from "./settings-shared-buyehiMO.js";
-import { t as le } from "./settings-host-context-BX1MON7_.js";
-import { t as ue } from "./more-menu-trigger-D1fusVZY.js";
+} from "./setting-storage.js";
+import { f as _, t as v } from "./chunk-LFPYN7LY.js";
+import { a as y } from "./statsig.js";
+import { t as b } from "./connector-logo.js";
+import { r as x } from "./toast-signal.js";
+import { t as S } from "./tooltip.js";
+import { T as C } from "./mention-item.js";
+import { t as w } from "./button.js";
+import { t as T } from "./spinner.js";
+import { t as E } from "./apps.js";
+import { t as D } from "./chats.js";
+import { i as O, n as k, o as A } from "./use-is-plugins-enabled.js";
+import { t as j } from "./get-build-flavor.js";
+import { c as M, m as N } from "./use-plugins.js";
+import { n as P, t as F } from "./use-plugin-install-flow.js";
+import { a as I, i as L, l as R, n as z, r as B } from "./dialog-layout.js";
+import { t as V } from "./check-md.js";
+import { t as ee } from "./use-start-new-conversation-B.js";
+import { r as H, t as U } from "./dropdown.js";
+import { t as te } from "./trash.js";
+import { t as ne } from "./chevron.js";
+import { t as re } from "./plus.js";
+import { i as ie } from "./plugin-detail-page-utils.js";
+import { n as ae, t as oe } from "./plugin-prefill-prompt.js";
+import { t as se } from "./toggle.js";
+import { n as W } from "./bundled-plugin-auto-install-preference.js";
+import { t as ce } from "./shield-exclamation.js";
+import { t as G } from "./settings-shared.js";
+import { t as le } from "./settings-host-context.js";
+import { t as ue } from "./more-menu-trigger.js";
 import {
   a as de,
   c as fe,
@@ -57,21 +51,21 @@ import {
   r as he,
   s as ge,
   u as _e,
-} from "./browser-use-origin-state-queries-PjqMaF9f.js";
-import { t as ve } from "./settings-content-layout-B4F7ZmxE.js";
-import { n as q } from "./settings-row-D-T3_hWW.js";
-import { t as J } from "./settings-surface-BVAbQNXw.js";
-import { t as Y } from "./settings-group-BXAVZ8Oc.js";
-import { o as ye } from "./plugin-detail-route-utils-Bsq2ujzP.js";
-import { n as be, r as xe } from "./plugins-availability-DST87EXk.js";
-import { t as Se } from "./use-home-directory-B3jyQBeT.js";
+} from "./browser-use-origin-state-queries.js";
+import { t as ve } from "./settings-content-layout.js";
+import { n as q } from "./settings-row-D.js";
+import { t as J } from "./settings-surface.js";
+import { t as Y } from "./settings-group.js";
+import { o as ye } from "./plugin-detail-route-utils.js";
+import { n as be, r as xe } from "./plugins-availability.js";
+import { t as Se } from "./use-home-directory.js";
 import {
   n as Ce,
   r as we,
   t as Te,
-} from "./browser-use-elevated-risk-learn-more-url-CPtkOX6i.js";
-import { t as Ee } from "./plugin-uninstall-dialog-CUpFQrJ_.js";
-import { t as De } from "./settings-empty-state-B1lI4mlq.js";
+} from "./browser-use-elevated-risk-learn-more-url.js";
+import { t as Ee } from "./plugin-uninstall-dialog.js";
+import { t as De } from "./settings-empty-state.js";
 var X = s();
 function Oe(e, t) {
   switch (e) {

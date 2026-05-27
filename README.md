@@ -23,7 +23,7 @@ pnpm normalize
 pnpm normalize:check
 ```
 
-`pnpm normalize` rewrites copied app source into a patch-friendly baseline. During Source Refresh work, run it after replacing copied Codex App source material and before applying Patch SOPs.
+`pnpm normalize` rewrites copied app source into a patch-friendly baseline. It also canonicalizes uniquely resolvable Vite asset filenames by removing generated hash suffixes and rewriting references, while leaving collision groups hashed. During Source Refresh work, run it after replacing copied Codex App source material and before applying Patch SOPs.
 
 ## Codex CLI
 

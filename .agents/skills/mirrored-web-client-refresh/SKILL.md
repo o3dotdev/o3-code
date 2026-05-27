@@ -45,7 +45,7 @@ Read `CONTEXT.md`, `docs/web-patches/README.md`, `docs/adr/0024-derived-mirrored
    - Treat `pnpm web-patches:check` as marker-placement-only until real Web Patch folders exist and folder-to-marker validation can prove useful.
    - Run or add tests beside repo-owned code when the Web Patch changes `packages/bridge/**`, `scripts/**`, or another support package.
    - Run any validation listed by each Web Patch SOP.
-   - Run `pnpm start:web` and confirm the Bridge Sidecar serves the Mirrored Web Client from `apps/web/app/webview`.
+   - Enable Web access from the running desktop app and confirm the Bridge Sidecar serves the Mirrored Web Client from `apps/web/app/webview`.
    - For visual, layout, route, scroll, viewport, or interaction Web Patches, collect browser evidence such as screenshots or explicit viewport inspection and record it in `EVIDENCE.md`.
    - For mobile-specific Web Patches, prioritize installed PWA or home-screen mode evidence; ordinary mobile browser tab evidence is optional unless the SOP explicitly requires it.
    - PWA evidence may be documented manual verification at first when automation cannot faithfully emulate installed mode.
@@ -57,7 +57,7 @@ Read `CONTEXT.md`, `docs/web-patches/README.md`, `docs/adr/0024-derived-mirrored
 
 - Start from the SOP goal and non-goals, not from old filenames.
 - Use old Web Patch Markers only as historical hints.
-- Expect bundled chunk names to change.
+- Prefer normalized canonical chunk names inherited from `apps/desktop/app/webview`; expect hashed names only for collision groups that Normalization could not safely canonicalize.
 - Keep Web Patch Markers as standalone lines with the same web patch id:
 
 ```js

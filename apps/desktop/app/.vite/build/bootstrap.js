@@ -6,8 +6,8 @@ if (o3CodeResourcesPath)
     value: o3CodeResourcesPath,
   });
 // o3-code-patch-end: resources-path-redirect
-const e = require(`./app-session-gBTKZRaX.js`),
-  t = require(`./workspace-root-drop-handler-DJwLZgXt.js`);
+const e = require(`./app-session.js`),
+  t = require(`./workspace-root-drop-handler.js`);
 let n = require(`electron`),
   r = require(`node:path`);
 require(`node:crypto`);
@@ -229,7 +229,7 @@ else {
         await i.initialize();
         try {
           let { runMainAppStartup: e } = await Promise.resolve().then(() =>
-            require(`./main-BS7yenMI.js`),
+            require(`./main.js`),
           );
           await e();
         } catch (e) {

@@ -1,4 +1,4 @@
-import { s as e } from "./chunk-Bj-mKKzh.js";
+import { s as e } from "./chunk.js";
 import {
   Cn as t,
   Cr as n,
@@ -54,11 +54,11 @@ import {
   vi as oe,
   yi as se,
   zo as ce,
-} from "./app-server-manager-signals-7MlBpIlX.js";
-import { n as le, t as ue } from "./jsx-runtime-CiQ1k8xo.js";
-import { m as de, s as fe } from "./codex-diff-css-CKGwDjQ7.js";
-import { t as W } from "./clsx-DDuZWq6Y.js";
-import { t as pe } from "./react-dom-De86Q4ix.js";
+} from "./app-server-manager-signals.js";
+import { n as le, t as ue } from "./jsx-runtime.js";
+import { m as de, s as fe } from "./codex-diff-css.js";
+import { t as W } from "./clsx.js";
+import { t as pe } from "./react-dom.js";
 import {
   B as me,
   H as G,
@@ -79,25 +79,25 @@ import {
   rt as Oe,
   xt as ke,
   y as Ae,
-} from "./setting-storage-kJblH-wH.js";
-import { f as je } from "./chunk-LFPYN7LY-CkfOxD5s.js";
-import { t as Me } from "./branch-DGCKHu9Z.js";
-import { t as Ne } from "./github-mark-BJLszk3j.js";
-import { t as Pe } from "./product-logger-CekQ0CO0.js";
-import { o as Fe } from "./statsig-BwN76nAo.js";
-import { u as Ie } from "./thread-context-inputs-D4zJFWk0.js";
-import { t as Le } from "./connector-logo-BomuubYD.js";
-import { r as Re } from "./toast-signal-mlbIRbst.js";
-import { n as ze } from "./window-zoom-context-BgcP82Wr.js";
-import { t as Be } from "./tooltip-Bb9X8NK-.js";
-import { r as Ve, t as He } from "./route-scope-VKCI3pUD.js";
-import { o as Ue } from "./prompt-text-B7z6_oGa.js";
-import { b as We, x as Ge } from "./composer-view-state-BrB9cHZx.js";
-import { i as Ke } from "./use-model-settings-CyjEC7n3.js";
-import { t as qe } from "./button-BynxeNRW.js";
-import { r as Je, t as Ye } from "./spinner-avFWYgza.js";
-import { t as Xe } from "./use-codex-home-B1p9XqNi.js";
-import { t as Ze } from "./proxy-HwxlKevX.js";
+} from "./setting-storage.js";
+import { f as je } from "./chunk-LFPYN7LY.js";
+import { t as Me } from "./branch.js";
+import { t as Ne } from "./github-mark.js";
+import { t as Pe } from "./product-logger.js";
+import { o as Fe } from "./statsig.js";
+import { u as Ie } from "./thread-context-inputs.js";
+import { t as Le } from "./connector-logo.js";
+import { r as Re } from "./toast-signal.js";
+import { n as ze } from "./window-zoom-context.js";
+import { t as Be } from "./tooltip.js";
+import { r as Ve, t as He } from "./route-scope.js";
+import { o as Ue } from "./prompt-text.js";
+import { b as We, x as Ge } from "./composer-view-state.js";
+import { i as Ke } from "./use-model-settings.js";
+import { t as qe } from "./button.js";
+import { r as Je, t as Ye } from "./spinner.js";
+import { t as Xe } from "./use-codex-home.js";
+import { t as Ze } from "./proxy.js";
 import {
   L as Qe,
   P as $e,
@@ -108,11 +108,11 @@ import {
   tt as it,
   u as at,
   v as ot,
-} from "./app-shell-state-SfLRxSEg.js";
-import { t as st } from "./AnimatePresence-BMR_rf2Q.js";
-import { t as ct } from "./apps-RXjrknWx.js";
-import { t as lt } from "./x-DMqExXY8.js";
-import { t as ut } from "./uniq-ckcXPYOW.js";
+} from "./app-shell-state.js";
+import { t as st } from "./AnimatePresence.js";
+import { t as ct } from "./apps.js";
+import { t as lt } from "./x.js";
+import { t as ut } from "./uniq.js";
 import {
   a as dt,
   c as ft,
@@ -128,13 +128,13 @@ import {
   s as St,
   t as Ct,
   u as wt,
-} from "./browser-sidebar-manager-DjV9_67c.js";
+} from "./browser-sidebar-manager.js";
 import {
   a as Tt,
   i as Et,
   n as Dt,
   r as Ot,
-} from "./app-shell-tab-controller-BpCuB_Nz.js";
+} from "./app-shell-tab-controller.js";
 import {
   $ as kt,
   At,
@@ -182,28 +182,23 @@ import {
   y as yn,
   yt as bn,
   z as xn,
-} from "./review-navigation-model-WMoHh_PB.js";
-import { t as Sn } from "./parse-diff-Dz2d_bqB.js";
-import { i as Cn, n as wn, r as Tn } from "./thread-context-qjluNZCo.js";
+} from "./review-navigation-model.js";
+import { t as Sn } from "./parse-diff.js";
+import { i as Cn, n as wn, r as Tn } from "./thread-context.js";
 import {
   c as En,
   i as Dn,
   r as On,
   s as kn,
   t as An,
-} from "./diff-view-mode-CX3llj32.js";
-import { t as jn } from "./focus-composer-C5T4PQQ-.js";
-import { t as Mn } from "./app-intl-signal-D9zjNves.js";
-import { t as Nn } from "./with-window-BCZl6ce7.js";
-import { n as Pn } from "./check-git-index-for-changes-Cr4dfcAI.js";
-import { n as Fn, r as In } from "./use-resolved-theme-variant-BUW9gTru.js";
-import {
-  i as Ln,
-  n as Rn,
-  r as zn,
-  t as Bn,
-} from "./thread-panel-state-DHCQ3R55.js";
-import { h as Vn } from "./window-app-action-helpers-B7Tx2lfM.js";
+} from "./diff-view-mode.js";
+import { t as jn } from "./focus-composer.js";
+import { t as Mn } from "./app-intl-signal.js";
+import { t as Nn } from "./with-window.js";
+import { n as Pn } from "./check-git-index-for-changes.js";
+import { n as Fn, r as In } from "./use-resolved-theme-variant.js";
+import { i as Ln, n as Rn, r as zn, t as Bn } from "./thread-panel-state.js";
+import { h as Vn } from "./window-app-action-helpers.js";
 import {
   a as Hn,
   d as Un,
@@ -212,31 +207,31 @@ import {
   n as Kn,
   r as qn,
   u as Jn,
-} from "./dialog-layout-DNf4TEex.js";
-import { n as Yn } from "./electron-menu-shortcuts-DQYPVyfu.js";
-import { r as Xn } from "./use-skills-CbLuUp1e.js";
-import { r as Zn } from "./modal-controller-state--RuEytMA.js";
-import { t as Qn } from "./loading-page-DrftO4Dr.js";
-import { n as $n } from "./use-resize-observer-DXGSgvEH.js";
-import { t as er } from "./check-md-I6RRy8DL.js";
-import { n as tr, r as nr } from "./keyboard-modifier-state-C7y94ST-.js";
+} from "./dialog-layout.js";
+import { n as Yn } from "./electron-menu-shortcuts.js";
+import { r as Xn } from "./use-skills.js";
+import { r as Zn } from "./modal-controller-state-.js";
+import { t as Qn } from "./loading-page.js";
+import { n as $n } from "./use-resize-observer.js";
+import { t as er } from "./check-md.js";
+import { n as tr, r as nr } from "./keyboard-modifier-state.js";
 import {
   i as rr,
   n as ir,
   t as ar,
-} from "./thread-side-panel-browser-tab-state-CTvjen3H.js";
-import { t as or } from "./arrow-left-NB8jxLlJ.js";
-import { t as sr } from "./git-origins-query-Bnh9MF5i.js";
-import { t as cr } from "./badge-DJ3VoZ_p.js";
-import { t as lr } from "./clock-BdccdK2N.js";
-import { t as ur } from "./search-CEAmgNrg.js";
-import { r as dr, t as fr } from "./dropdown-CLcC-0sa.js";
-import { t as pr } from "./globe-D1xFoTfu.js";
-import { t as mr } from "./three-dots-CSCWkqFa.js";
-import { t as hr } from "./trash-Ml_NiloR.js";
-import { t as gr } from "./chevron-CEHg0DRl.js";
-import { t as _r } from "./format-relative-date-time-DUnZZMJU.js";
-import { t as vr } from "./cloud-XlqwzjAf.js";
+} from "./thread-side-panel-browser-tab-state.js";
+import { t as or } from "./arrow-left.js";
+import { t as sr } from "./git-origins-query.js";
+import { t as cr } from "./badge.js";
+import { t as lr } from "./clock.js";
+import { t as ur } from "./search.js";
+import { r as dr, t as fr } from "./dropdown.js";
+import { t as pr } from "./globe.js";
+import { t as mr } from "./three-dots.js";
+import { t as hr } from "./trash.js";
+import { t as gr } from "./chevron.js";
+import { t as _r } from "./format-relative-date-time.js";
+import { t as vr } from "./cloud.js";
 import {
   a as yr,
   b as br,
@@ -252,14 +247,14 @@ import {
   v as Ar,
   x as jr,
   y as Mr,
-} from "./review-header-toolbar-Bp48IyPK.js";
-import { i as Nr, r as Pr } from "./external-markdown-link-FX2-4fyk.js";
-import { t as Fr } from "./minus-D-AnULF0.js";
-import { t as Ir } from "./plus-PQBYSO-0.js";
-import { t as Lr } from "./pull-request-open-JbGOZydD.js";
-import { t as Rr } from "./use-git-current-branch-DDdUA-cN.js";
-import { r as zr, t as Br } from "./annotation-comment-editor-card-B1cyUkU2.js";
-import { t as Vr } from "./arrow-up-jZdXvEtu.js";
+} from "./review-header-toolbar.js";
+import { i as Nr, r as Pr } from "./external-markdown-link.js";
+import { t as Fr } from "./minus-D.js";
+import { t as Ir } from "./plus.js";
+import { t as Lr } from "./pull-request-open.js";
+import { t as Rr } from "./use-git-current-branch.js";
+import { r as zr, t as Br } from "./annotation-comment-editor-card.js";
+import { t as Vr } from "./arrow-up.js";
 import {
   a as Hr,
   c as Ur,
@@ -267,12 +262,12 @@ import {
   l as Gr,
   n as Kr,
   s as qr,
-} from "./browser-sidebar-open-source-BsfzziCZ.js";
-import { n as Jr, t as Yr } from "./browser-sidebar-state-k_iKyVMa.js";
-import { n as Xr } from "./diff-stats--s59a0mL.js";
-import { t as Zr } from "./send-to-cloud-Dsp6S3ev.js";
-import { t as Qr } from "./undo-CSaAPxES.js";
-import { t as $r } from "./regenerate-C3FUHd6G.js";
+} from "./browser-sidebar-open-source.js";
+import { n as Jr, t as Yr } from "./browser-sidebar-state.js";
+import { n as Xr } from "./diff-stats-.js";
+import { t as Zr } from "./send-to-cloud.js";
+import { t as Qr } from "./undo.js";
+import { t as $r } from "./regenerate.js";
 import {
   A as ei,
   B as ti,
@@ -315,43 +310,43 @@ import {
   x as Ri,
   y as zi,
   z as Bi,
-} from "./git-branch-picker-dropdown-content-Ckd-uEk3.js";
-import { t as Vi } from "./use-hotkey-BtzpyVol.js";
-import { t as Hi } from "./use-diff-comments-DCYqZUEf.js";
-import { n as Ui, t as Wi } from "./use-diff-comment-sources-CeGDd4qM.js";
-import { t as Gi } from "./arrow-up-right-lg-kBlQP-86.js";
+} from "./git-branch-picker-dropdown-content.js";
+import { t as Vi } from "./use-hotkey.js";
+import { t as Hi } from "./use-diff-comments.js";
+import { n as Ui, t as Wi } from "./use-diff-comment-sources.js";
+import { t as Gi } from "./arrow-up-right-lg.js";
 import {
   d as Ki,
   l as qi,
   r as Ji,
   s as Yi,
   t as Xi,
-} from "./right-panel-composer-overlay-scroll-reserve-nizgLH0x.js";
+} from "./right-panel-composer-overlay-scroll-reserve.js";
 import {
   n as Zi,
   t as Qi,
-} from "./browser-sidebar-comment-mode-coachmark-state-BRiLW6cX.js";
-import { t as $i } from "./more-menu-trigger-D1fusVZY.js";
-import { t as ea } from "./browser-use-origin-state-queries-PjqMaF9f.js";
-import { t as ta } from "./large-empty-state-Eb8Dxq7D.js";
+} from "./browser-sidebar-comment-mode-coachmark-state.js";
+import { t as $i } from "./more-menu-trigger.js";
+import { t as ea } from "./browser-use-origin-state-queries.js";
+import { t as ta } from "./large-empty-state.js";
 import {
   c as na,
   l as ra,
   o as ia,
   u as aa,
-} from "./pull-request-code-review-comments-DoDLY6mJ.js";
+} from "./pull-request-code-review-comments.js";
 import {
   a as oa,
   i as sa,
   n as ca,
   t as la,
-} from "./review-file-tree-side-pane-wk5udXBk.js";
-import { i as ua, o as da, r as fa, s as pa } from "./diff-unified-CQyosSrm.js";
-import { t as ma } from "./folders-BO-L3yo5.js";
-import { t as ha } from "./use-git-synced-branch-ekPcFJat.js";
-import { t as ga } from "./compound-button-BOCoh2fO.js";
-import { n as _a, t as va } from "./summary-panel-row-DBjx4wrT.js";
-import { t as ya } from "./checkbox-DwnO99Gj.js";
+} from "./review-file-tree-side-pane.js";
+import { i as ua, o as da, r as fa, s as pa } from "./diff-unified.js";
+import { t as ma } from "./folders.js";
+import { t as ha } from "./use-git-synced-branch.js";
+import { t as ga } from "./compound-button.js";
+import { n as _a, t as va } from "./summary-panel-row.js";
+import { t as ya } from "./checkbox.js";
 var q = ke(),
   J = e(le(), 1),
   Y = ue(),

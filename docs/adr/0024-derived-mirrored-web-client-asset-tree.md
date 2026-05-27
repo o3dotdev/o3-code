@@ -15,3 +15,5 @@ The derivation command, `pnpm derive:web`, should only rebuild the browser asset
 Mirrored Web Client Patch SOPs live separately under `docs/web-patches/`, using the same `README.md`, `SOP.md`, and `EVIDENCE.md` shape as Desktop Reconstruction patches under `docs/patches/`.
 
 Desktop-owned Bridge Mode serves `apps/web/app/webview` by default so the browser runs the derived and browser-patched surface. Environment overrides may still point the Bridge Sidecar at another webview directory for debugging, but they are not the default runtime path.
+
+Because Normalization canonicalizes uniquely resolvable generated asset filenames, the Bridge Sidecar must not serve Mirrored Web Client assets with immutable long-lived browser caching. Stable filenames such as `app-main.js` should revalidate so local refreshes cannot mix stale browser-cached chunks with newly derived assets.

@@ -9,7 +9,7 @@
 
 ## Known Sites
 
-- `apps/desktop/app/webview/assets/statsig-BwN76nAo.js`
+- `apps/desktop/app/webview/assets/statsig.js`
 
 ## Known Anchors
 
@@ -29,6 +29,6 @@
 
 ## Validation Notes
 
-- `node --check apps/desktop/app/webview/assets/statsig-BwN76nAo.js` passed.
+- `node --check apps/desktop/app/webview/assets/statsig.js` passed.
 - `pnpm normalize:check` passed.
 - The app sunset gate `2929582856` remains outside the forced-gate set.

@@ -1,4 +1,4 @@
-import { t as e } from "./chunk-Bj-mKKzh.js";
+import { t as e } from "./chunk.js";
 var t = e((e) => {
     (Object.defineProperty(e, `__esModule`, { value: !0 }),
       (e.BLANK_URL =

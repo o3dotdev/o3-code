@@ -1,0 +1,32 @@
+import { Mt as e } from "./app-server-manager-signals.js";
+import { Z as t } from "./setting-storage.js";
+import { r as n, t as r } from "./route-scope.js";
+var i = {},
+  a = `editorDiffViewMode`,
+  o = `hideDiffWhitespace`,
+  s = `wrapCodeDiff.2`,
+  c = `fileSourceGitBlame`,
+  l = `wordDiffsEnabled.2`,
+  u = `diffRichPreview`,
+  d = `diffViewThreadSettings`,
+  f = e(a, `unified`),
+  p = e(s, !1),
+  m = e(c, !1),
+  h = e(o, !1),
+  g = e(l, !1),
+  _ = e(u, !1),
+  v = e(d, {}),
+  y = t(
+    r,
+    ({ get: e, scope: t }) => (e(v) ?? i)[x(t.value)]?.richPreviewEnabled ?? !0,
+  );
+function b(e, t) {
+  let n = e.get(v) ?? i,
+    r = x(e.value);
+  e.set(v, { ...n, [r]: { ...n[r], richPreviewEnabled: t } });
+}
+function x(e) {
+  return n(e) ?? e.pathname;
+}
+export { y as a, p as c, _ as i, m as n, b as o, h as r, g as s, f as t };
+//# sourceMappingURL=diff-view-mode.js.map

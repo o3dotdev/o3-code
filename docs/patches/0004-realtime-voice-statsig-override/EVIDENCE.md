@@ -9,10 +9,10 @@
 
 ## Known Sites
 
-- `apps/desktop/app/webview/assets/statsig-BwN76nAo.js`
-- `apps/desktop/app/webview/assets/use-is-thread-realtime-enabled-CVhnQsxB.js`
+- `apps/desktop/app/webview/assets/statsig.js`
+- `apps/desktop/app/webview/assets/use-is-thread-realtime-enabled.js`
 - `apps/desktop/app/webview/assets/debug-modal-B8xDbX-9.js`
-- `apps/desktop/app/webview/assets/app-server-manager-signals-7MlBpIlX.js`
+- `apps/desktop/app/webview/assets/app-server-manager-signals.js`
 
 ## Known Gate
 
@@ -26,7 +26,7 @@
 
 ## Validation Notes
 
-- `use-is-thread-realtime-enabled-CVhnQsxB.js` still gates positive realtime availability with `2380644311` and keeps `REALTIME_VOICE_MODE_DEBUG_DISABLED` upstream-driven.
+- `use-is-thread-realtime-enabled.js` still gates positive realtime availability with `2380644311` and keeps `REALTIME_VOICE_MODE_DEBUG_DISABLED` upstream-driven.
 - `debug-modal-B8xDbX-9.js` still reports `Statsig gate` and `Effective voice mode` from the same gate plus the debug disabled override.
-- `node --check apps/desktop/app/webview/assets/statsig-BwN76nAo.js` passed.
+- `node --check apps/desktop/app/webview/assets/statsig.js` passed.
 - `pnpm start` logged `realtime_conversation` in enabled features after app-server initialization.
