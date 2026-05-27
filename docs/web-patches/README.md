@@ -6,7 +6,11 @@ The Mirrored Web Client Asset Tree is rebuilt from the patched Desktop Reconstru
 
 ## Active Patches
 
-No active Mirrored Web Client Patches have been defined yet. Create Web Patch SOP folders only when implementing concrete browser-only fixes; do not create placeholder SOP folders without real anchors, non-goals, validation, and evidence.
+- `0001-mobile-shell-viewport-and-scroll`: lock and recover the browser-hosted mobile shell so top-level page scroll drift cannot hide the chat transcript.
+- `0002-mobile-request-input-option-descriptions`: show request-input option descriptions inline on narrow or touch browser layouts instead of requiring hover tooltips.
+- `0003-mobile-sidebar-project-actions`: keep project row action icons visible on touch browser layouts without relying on hover.
+
+Create Web Patch SOP folders only when implementing concrete browser-only fixes; do not create placeholder SOP folders without real anchors, non-goals, validation, and evidence.
 
 Web Patches use an independent numeric sequence under `docs/web-patches/`. A Web Patch ID is ordered only relative to other Web Patches, after all Desktop Reconstruction patches have already been applied and after the Mirrored Web Client Asset Tree has been rebuilt.
 
