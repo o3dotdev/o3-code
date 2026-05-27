@@ -16,9 +16,9 @@
 
 - Replaced served viewport metadata with strict mobile viewport metadata.
 - Added shell-lock CSS for top-level browser page containers.
-- Added bridge shim recovery for top-level page scroll drift after viewport, pointer/click/touch, context menu, selection, focus, page show, orientation, scroll-lock, and popover changes.
+- Added bridge shim recovery for top-level page scroll drift after viewport, pointer/click/touch, context menu, selection, focus, page show, orientation, scroll-lock, popover, and `thread-stream-state-changed` changes.
 - Added stable touch viewport baseline handling so iOS accessory/formatting bars and small visual viewport decreases do not resize the shell, while keyboard-sized occlusion still shrinks the shell.
-- Added tests proving reversed transcript scrollers are preserved while top-level page drift is reset.
+- Added tests proving reversed transcript scrollers are preserved while top-level page drift is reset, including outbound and inbound thread stream state updates.
 
 ## Validation
 

@@ -32,7 +32,7 @@ Preserve the visible chat shell in the Mirrored Web Client by locking the browse
    - cache stable non-keyboard touch viewport height and ignore small transient visual viewport decreases;
    - shrink the shell only for keyboard-sized bottom occlusion;
    - recover `window`, `documentElement`, `scrollingElement`, and `body` scroll drift;
-   - run recovery across visual viewport, focus, scroll, pointer/click/touch, context menu, selection, page show, orientation, focusout, and scroll-lock/popover mutation triggers;
+   - run recovery across visual viewport, focus, scroll, pointer/click/touch, context menu, selection, page show, orientation, focusout, scroll-lock/popover mutation, and `thread-stream-state-changed` triggers;
    - prevent pinch/gesture zoom and page rubber-band without consuming valid internal scroller movement.
 
 ## Validation

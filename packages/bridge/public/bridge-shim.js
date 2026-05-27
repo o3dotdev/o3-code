@@ -51,6 +51,7 @@
   const workerListeners = new Map();
   const themeListeners = new Set();
   const stagedFiles = new WeakMap();
+  let scheduleMobileShellViewportRecovery = () => {};
   const shortcutBindings = [
     ["CmdOrCtrl+N", { type: "run-command", id: "newThread" }],
     ["CmdOrCtrl+Shift+O", { type: "run-command", id: "newThread" }],
@@ -132,6 +133,7 @@
       } else if (payload?.type === "persisted-atom-updated") {
         updatePersistedAtomState(payload.key, payload.value, payload.deleted);
       }
+      scheduleRecoveryForThreadStreamStateChanged(payload);
       dispatchAppMessage(payload);
       return;
     }
@@ -434,6 +436,7 @@
       requestAnimationFrameSafe(runShellViewportRecovery);
       debugLog("mobile-shell-recovery-scheduled", { reason });
     };
+    scheduleMobileShellViewportRecovery = scheduleShellViewportRecovery;
 
     const preventDefault = (event) => {
       event.preventDefault();
@@ -885,6 +888,15 @@
     }
   }
 
+  function scheduleRecoveryForThreadStreamStateChanged(payload) {
+    if (
+      payload?.type === "ipc-broadcast" &&
+      payload.method === "thread-stream-state-changed"
+    ) {
+      scheduleMobileShellViewportRecovery("thread-stream-state-changed");
+    }
+  }
+
   function handleLocalAppMessage(payload) {
     switch (payload?.type) {
       case "persisted-atom-sync-request": {
@@ -936,6 +948,7 @@
     windowType: "electron",
     sendMessageFromView: async (payload) => {
       handleLocalAppMessage(payload);
+      scheduleRecoveryForThreadStreamStateChanged(payload);
       if (payload?.type === "shared-object-set") {
         updateSharedObject(payload.key, payload.value);
       }

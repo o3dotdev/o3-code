@@ -247,14 +247,7 @@ test("bridge shim preserves reversed transcript scroller while recovering page d
     body: true,
     coarsePointer: true,
   });
-  const scroller = harness.document.createElement("div");
-  scroller.className = "thread-scroll-container";
-  scroller.style.overflowY = "auto";
-  scroller.style.flexDirection = "column-reverse";
-  scroller.clientHeight = 300;
-  scroller.scrollHeight = 900;
-  scroller.scrollTop = -320;
-  harness.document.body.append(scroller);
+  const scroller = appendReversedThreadScroller(harness);
   harness.window.scrollY = 88;
 
   harness.dispatchDocumentEvent("click", scroller);
@@ -262,6 +255,51 @@ test("bridge shim preserves reversed transcript scroller while recovering page d
   assert.equal(scroller.scrollTop, -320);
   assert.equal(harness.window.scrollY, 0);
   assert.deepEqual(scroller.scrollToCalls, []);
+});
+
+test("bridge shim recovers mobile page drift after outbound thread stream state changes", async () => {
+  const harness = await loadBridgeShim({
+    body: true,
+    coarsePointer: true,
+  });
+  const scroller = appendReversedThreadScroller(harness);
+  harness.window.scrollY = 112;
+  harness.document.documentElement.scrollTop = 56;
+  harness.document.body.scrollTop = 28;
+
+  await harness.electronBridge.sendMessageFromView(threadStreamStateChanged());
+
+  assert.equal(harness.window.scrollY, 0);
+  assert.equal(harness.document.documentElement.scrollTop, 0);
+  assert.equal(harness.document.body.scrollTop, 0);
+  assert.deepEqual(harness.scrollToCalls.at(-1), { x: 0, y: 0 });
+  assert.equal(scroller.scrollTop, -320);
+  assert.deepEqual(scroller.scrollToCalls, []);
+});
+
+test("bridge shim recovers mobile page drift after inbound thread stream state changes", async () => {
+  const harness = await loadBridgeShim({
+    body: true,
+    coarsePointer: true,
+  });
+  const scroller = appendReversedThreadScroller(harness);
+  harness.window.scrollY = 126;
+  harness.document.documentElement.scrollTop = 63;
+  harness.document.body.scrollTop = 31;
+
+  harness.emitAppMessageForView(threadStreamStateChanged());
+
+  assert.equal(harness.window.scrollY, 0);
+  assert.equal(harness.document.documentElement.scrollTop, 0);
+  assert.equal(harness.document.body.scrollTop, 0);
+  assert.deepEqual(harness.scrollToCalls.at(-1), { x: 0, y: 0 });
+  assert.equal(scroller.scrollTop, -320);
+  assert.deepEqual(scroller.scrollToCalls, []);
+  assert.deepEqual(normalize(harness.dispatchedMessages.at(-1)), {
+    type: "ipc-broadcast",
+    method: "thread-stream-state-changed",
+    params: { change: { type: "patches", patches: [] } },
+  });
 });
 
 test("bridge shim keeps desktop vertical page scroll while recovering horizontal drift", async () => {
@@ -598,10 +636,38 @@ async function loadBridgeShim(options = {}) {
     },
     document: documentObject,
     electronBridge: windowObject.electronBridge,
+    emitAppMessageForView(payload) {
+      listeners.get("websocket:message")?.({
+        data: JSON.stringify({
+          kind: "app-message-for-view",
+          payload,
+        }),
+      });
+    },
     keydownListener: listeners.get("window:keydown")[0].listener,
     scrollToCalls,
     sentEnvelopes,
     window: windowObject,
+  };
+}
+
+function appendReversedThreadScroller(harness) {
+  const scroller = harness.document.createElement("div");
+  scroller.className = "thread-scroll-container";
+  scroller.style.overflowY = "auto";
+  scroller.style.flexDirection = "column-reverse";
+  scroller.clientHeight = 300;
+  scroller.scrollHeight = 900;
+  scroller.scrollTop = -320;
+  harness.document.body.append(scroller);
+  return scroller;
+}
+
+function threadStreamStateChanged() {
+  return {
+    type: "ipc-broadcast",
+    method: "thread-stream-state-changed",
+    params: { change: { type: "patches", patches: [] } },
   };
 }
 
