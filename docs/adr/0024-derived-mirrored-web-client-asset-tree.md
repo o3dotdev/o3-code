@@ -14,4 +14,4 @@ The derivation command, `pnpm derive:web`, should only rebuild the browser asset
 
 Mirrored Web Client Patch SOPs live separately under `docs/web-patches/`, using the same `README.md`, `SOP.md`, and `EVIDENCE.md` shape as Desktop Reconstruction patches under `docs/patches/`.
 
-`pnpm start:web` serves `apps/web/app/webview` by default so the browser runs the derived and browser-patched surface. Environment overrides may still point the Bridge Sidecar at another webview directory for debugging, but they are not the default runtime path.
+Desktop-owned Bridge Mode serves `apps/web/app/webview` by default so the browser runs the derived and browser-patched surface. Environment overrides may still point the Bridge Sidecar at another webview directory for debugging, but they are not the default runtime path.

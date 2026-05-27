@@ -17,12 +17,12 @@ The final refresh order is: replace upstream material, normalize Desktop Reconst
 9. Record fresh Patch Evidence for each Web Patch.
 10. Run `pnpm web-patches:check` when available.
 11. Run `pnpm start` and validate the Desktop Reconstruction.
-12. Run `pnpm start:web` and validate the Mirrored Web Client.
+12. Enable Web access in desktop settings and validate the Mirrored Web Client.
 13. Open a PR that shows the upstream refresh, normalization, reapplied Patches, derived web tree, Web Patches, and evidence updates.
 
 Do not merge refreshed material into the existing copied source tree. Replace copied source and runtime material as upstream input, then rebuild local O3 Code behavior from the Patch SOPs. Do not preserve old browser-patched files when rebuilding the Mirrored Web Client Asset Tree; derive the browser baseline from patched desktop assets, then reapply browser-only intent from Web Patch SOPs.
 
-Launcher scripts should derive the default `CODEX_BUILD_NUMBER` from package metadata. Source Refresh should not leave `scripts/start.mjs` or `scripts/start-web.mjs` pinned to an older literal build number.
+Launcher scripts should derive the default `CODEX_BUILD_NUMBER` from package metadata. Source Refresh should not leave `scripts/start.mjs` pinned to an older literal build number.
 
 ## Commit Shape
 
