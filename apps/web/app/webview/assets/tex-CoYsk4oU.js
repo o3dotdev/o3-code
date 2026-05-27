@@ -1,0 +1,2 @@
+import { t as e } from "./tex-Dkd6eMs-.js";
+export { e as default };
