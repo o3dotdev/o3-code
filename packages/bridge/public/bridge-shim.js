@@ -172,7 +172,10 @@
   window.addEventListener("keydown", handleBridgeShortcut, {
     capture: true,
   });
-  safeInstallOptionalFeature("mobile shell guards", installMobileShellGuards);
+  safeInstallOptionalFeature(
+    "mobile shell guards",
+    installMobileShellGuardsWhenReady,
+  );
 
   async function request(kind, fields) {
     const id = randomId();
@@ -254,6 +257,35 @@
     } catch (error) {
       console.warn("[bridge-shim] Optional feature failed: " + name, error);
     }
+  }
+
+  function installMobileShellGuardsWhenReady() {
+    let installed = false;
+    const tryInstall = () => {
+      if (
+        installed ||
+        document.documentElement == null ||
+        document.body == null
+      ) {
+        return;
+      }
+
+      installed = true;
+      installMobileShellGuards();
+    };
+
+    tryInstall();
+    if (installed) {
+      return;
+    }
+
+    const installAfterBodyParsed = () => {
+      safeInstallOptionalFeature("mobile shell guards", tryInstall);
+    };
+    document.addEventListener("DOMContentLoaded", installAfterBodyParsed, {
+      once: true,
+    });
+    window.addEventListener("load", installAfterBodyParsed, { once: true });
   }
 
   function installMobileShellGuards() {

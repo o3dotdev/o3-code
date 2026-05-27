@@ -73,6 +73,34 @@ test("bridge shim still forwards normal app messages", async () => {
   assert.deepEqual(sentEnvelopes[0].payload, { type: "composer-submitted" });
 });
 
+test("bridge shim installs mobile shell guards after the body is parsed", async () => {
+  const harness = await loadBridgeShim({
+    coarsePointer: true,
+    documentElement: true,
+    innerHeight: 760,
+    visualViewportHeight: 640,
+  });
+  const rootStyle = harness.document.documentElement.style;
+
+  assert.equal(harness.document.body, null);
+  assert.equal(rootStyle.getPropertyValue("--o3-code-viewport-height"), "");
+
+  const body = harness.attachBody();
+  harness.window.scrollY = 96;
+  harness.document.documentElement.scrollTop = 48;
+  body.scrollTop = 24;
+  harness.dispatchDocumentEvent("DOMContentLoaded", harness.document);
+
+  assert.equal(
+    rootStyle.getPropertyValue("--o3-code-viewport-height"),
+    "640px",
+  );
+  assert.equal(harness.window.scrollY, 0);
+  assert.equal(harness.document.documentElement.scrollTop, 0);
+  assert.equal(body.scrollTop, 0);
+  assert.deepEqual(harness.scrollToCalls.at(-1), { x: 0, y: 0 });
+});
+
 test("bridge shim recovers mobile page drift after blank-area pointer and click events", async () => {
   const harness = await loadBridgeShim({
     body: true,
@@ -496,10 +524,13 @@ async function loadBridgeShim(options = {}) {
     }
   }
 
-  const root = options.body ? new FakeElement("html") : null;
+  const root =
+    options.body || options.documentElement ? new FakeElement("html") : null;
   const body = options.body ? new FakeElement("body") : null;
-  if (root != null && body != null) {
+  if (root != null) {
     root.clientHeight = options.layoutHeight ?? options.innerHeight ?? 760;
+  }
+  if (root != null && body != null) {
     root.append(body);
   }
 
@@ -616,6 +647,16 @@ async function loadBridgeShim(options = {}) {
   });
 
   return {
+    attachBody() {
+      if (documentObject.body != null) {
+        return documentObject.body;
+      }
+
+      const nextBody = new FakeElement("body");
+      documentObject.body = nextBody;
+      documentObject.documentElement?.append(nextBody);
+      return nextBody;
+    },
     dispatchedMessages,
     dispatchDocumentEvent(type, target = body) {
       dispatchEntries(listeners.get(`document:${type}`), {
