@@ -2,6 +2,10 @@
 
 ## Agent skills
 
+Repo-local skills live under `.agents/skills/`. Use these before global copies when the task matches the skill.
+
+- `codex-app-source-refresh`: refresh O3 Code from a newer installed Codex App release while preserving the Source Refresh, Normalization, Patch SOP, and Patch Evidence workflow.
+
 ### Issue tracker
 
 Issues and PRDs for this repo are tracked in GitHub Issues for `o3dotdev/o3-code`. See `docs/agents/issue-tracker.md`.
