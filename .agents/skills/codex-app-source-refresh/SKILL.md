@@ -16,9 +16,10 @@ Refresh O3 Code from a newer installed Codex App by treating the installed app a
 - Treat `Patch SOPs` as the authority for Desktop Reconstruction behavior that must survive refreshes.
 - Treat `Web Patch SOPs` as the authority for Mirrored Web Client behavior that must survive refreshes.
 - Treat `apps/web/app/webview` as a derived, committed Mirrored Web Client Asset Tree rebuilt from the patched Desktop Reconstruction Webview Assets.
+- Treat installed PWA or home-screen mode as the primary supported mobile target for mobile-specific Web Patches.
 - Do not update `Codex CLI Upstream` unless the user explicitly asks; it is a separate upstream boundary.
 
-Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`, `docs/web-patches/README.md`, active `docs/patches/*/SOP.md`, and active `docs/web-patches/*/SOP.md` files before changing source material.
+Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`, `docs/web-patches/README.md`, `docs/adr/0024-derived-mirrored-web-client-asset-tree.md`, `docs/adr/0025-mobile-pwa-primary-web-target.md`, active `docs/patches/*/SOP.md`, and active `docs/web-patches/*/SOP.md` files before changing source material.
 
 ## Workflow
 
@@ -46,8 +47,10 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Run `pnpm derive:web`.
    - The derivation step deletes only `apps/web/app/webview`, copies the already patched Desktop Reconstruction Webview Assets into `apps/web/app/webview`, and stops.
    - Do not preserve browser-patched files from the previous web tree during derivation.
+   - Do not run `pnpm normalize` over `apps/web/app/webview`.
 7. Reapply active Web Patch SOPs in numeric order.
    - Load one `docs/web-patches/000*/SOP.md` at a time, or delegate exactly one Web Patch SOP at a time through the sequential sub-agent protocol below.
+   - Do not create placeholder Web Patch SOP folders; create a SOP only when implementing a concrete browser-only fix with real anchors, non-goals, validation, and evidence.
    - Rediscover the refreshed browser asset site from the SOP anchors.
    - Apply the smallest browser-only patch with required Web Patch Markers.
    - Update that web patch's `EVIDENCE.md` immediately with version/build, discovered sites, patch shape, and validation notes.
@@ -56,9 +59,13 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Run `pnpm normalize:check`.
    - Run focused static checks such as `node --check` for changed JavaScript chunks when useful.
    - Run `pnpm web-patches:check` when the command exists.
+   - Treat `pnpm web-patches:check` as marker-placement-only until real Web Patch folders exist and folder-to-marker validation can prove useful.
+   - Run or add tests beside repo-owned code when Web Patches change `packages/bridge/**`, `scripts/**`, or another support package.
    - Run `pnpm start` and confirm the Desktop Reconstruction reaches renderer mount and app-server handshake.
    - Run `pnpm start:web` and confirm the Mirrored Web Client loads from `apps/web/app/webview` through Bridge Mode.
    - Validate each Patch SOP and Web Patch SOP's stated checks; do not mark evidence complete from generic app launch alone.
+   - For visual, layout, route, scroll, viewport, or interaction Web Patches, require browser evidence in the relevant `EVIDENCE.md`.
+   - For mobile-specific Web Patches, PWA evidence may be documented manual verification at first when automation cannot faithfully emulate installed mode.
 9. Review and commit shape.
    - Inspect `git diff --stat` and key changed files.
    - Prefer separated commits for upstream replacement, normalization, desktop patch reapplication, web tree derivation, web patch reapplication, evidence/docs, and generated local assets when the diff is large.
@@ -147,7 +154,9 @@ For every active Web Patch:
 - Use old Web Patch Markers only as historical hints.
 - Expect bundled browser chunk names to change.
 - Keep Web Patch Markers as standalone lines with the same web patch id.
-- Keep changes browser-only in `apps/web/app/webview` or repo-owned bridge support files named by the SOP.
+- Use Web Patch Markers only in copied or derived bundled assets under `apps/web/app/webview`, not in repo-owned support code.
+- Keep changes browser-only in `apps/web/app/webview` by default.
+- Change repo-owned support files such as `packages/bridge/**` or `scripts/**` only when the SOP explicitly names those allowed surfaces.
 - If the Desktop Reconstruction now directly supports the browser behavior before derivation, stop and ask before removing the Web Patch.
 - If a Web Patch goal no longer maps to identifiable browser asset behavior, stop and ask.
 

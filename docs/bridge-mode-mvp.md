@@ -4,7 +4,7 @@ This plan captures the agreed MVP path for exposing O3 Code through a browser wh
 
 ## Goal
 
-Build a Local-Only Bridge that lets a browser run the Mirrored Web Client from preserved Webview Assets and use the local Desktop Reconstruction as the Bridge Host for privileged capabilities.
+Build a Local-Only Bridge that lets a browser run the Mirrored Web Client from the derived Mirrored Web Client Asset Tree and use the local Desktop Reconstruction as the Bridge Host for privileged capabilities.
 
 The MVP proves that a normal local thread can be started from the browser and streamed back through the existing app-server path.
 
@@ -17,7 +17,7 @@ Browser
   WSS to Bridge Sidecar
 
 Bridge Sidecar
-  serves Webview Assets with Bridge Shim
+  serves Mirrored Web Client Asset Tree with Bridge Shim
   owns Active Web Session
   routes Bridge Envelopes
   privately connects to Electron CDP
@@ -121,7 +121,7 @@ Do not use CDP for MVP DOM clicking, keyboard automation, screenshot streaming, 
 The first successful slice is:
 
 1. Run `pnpm start:web`.
-2. Browser loads the O3 Code UI from preserved Webview Assets.
+2. Browser loads the O3 Code UI from the Mirrored Web Client Asset Tree.
 3. Start a normal local thread from the browser.
 4. The request travels through the Bridge Sidecar into the Electron Bridge Host.
 5. Existing app-server logic starts the thread.
