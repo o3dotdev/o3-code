@@ -1,6 +1,10 @@
 import net from "node:net";
 
 export async function allocateLoopbackPort(host = "127.0.0.1") {
+  return await allocateTcpPort(host);
+}
+
+export async function allocateTcpPort(host = "127.0.0.1") {
   return await new Promise((resolve, reject) => {
     const server = net.createServer();
 
@@ -16,7 +20,7 @@ export async function allocateLoopbackPort(host = "127.0.0.1") {
         }
 
         if (port == null) {
-          reject(Error("Failed to allocate a loopback port."));
+          reject(Error("Failed to allocate a TCP port."));
           return;
         }
 

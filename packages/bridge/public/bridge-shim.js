@@ -416,6 +416,10 @@
         updateSharedObject(payload.key, payload.value);
       }
 
+      if (payload?.type === "electron-request-microphone-permission") {
+        return { ok: true, source: "o3-code-bridge-shim" };
+      }
+
       await request("app-message-from-view", { payload });
     },
     getPathForFile: (file) => stagedFiles.get(file) ?? null,

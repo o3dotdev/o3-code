@@ -9,6 +9,8 @@ import {
   rmSync,
   statSync,
 } from "node:fs";
+import http from "node:http";
+import https from "node:https";
 import { createRequire } from "node:module";
 import { homedir, tmpdir } from "node:os";
 import path from "node:path";
@@ -16,9 +18,12 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 
 import {
   allocateLoopbackPort,
+  allocateTcpPort,
   parsePortOverride,
 } from "../packages/bridge/src/ports.mjs";
 import { resolveBridgeWebviewDir } from "../packages/bridge/src/paths.mjs";
+import { resolveBridgeRuntimeConfig } from "../packages/bridge/src/runtime-config.mjs";
+import { ensureBridgeTlsCredentials } from "../packages/bridge/src/tls.mjs";
 
 const require = createRequire(import.meta.url);
 const repoRoot = path.resolve(
@@ -78,8 +83,6 @@ const nativeExecutablePaths = [
     "spawn-helper",
   ),
 ];
-
-const bridgeHost = "127.0.0.1";
 
 function prepareElectronExecutable() {
   if (process.platform !== "darwin") {
@@ -211,12 +214,9 @@ function openBrowser(url) {
 async function waitForSidecar(url) {
   const deadline = Date.now() + 10_000;
   while (Date.now() < deadline) {
-    try {
-      const response = await fetch(`${url}healthz`);
-      if (response.ok) {
-        return;
-      }
-    } catch {}
+    if (await requestHealthz(url)) {
+      return;
+    }
 
     await new Promise((resolve) => setTimeout(resolve, 100));
   }
@@ -224,23 +224,61 @@ async function waitForSidecar(url) {
   throw Error("Bridge Sidecar did not become ready within 10 seconds.");
 }
 
+async function requestHealthz(url) {
+  const healthUrl = new URL("healthz", url);
+  const client = healthUrl.protocol === "https:" ? https : http;
+
+  return await new Promise((resolve) => {
+    let settled = false;
+    const finish = (value) => {
+      if (settled) {
+        return;
+      }
+
+      settled = true;
+      resolve(value);
+    };
+    const request = client.get(
+      healthUrl,
+      { rejectUnauthorized: false },
+      (response) => {
+        response.resume();
+        finish(response.statusCode >= 200 && response.statusCode < 300);
+      },
+    );
+
+    request.on("error", () => finish(false));
+    request.setTimeout(1_000, () => {
+      request.destroy();
+      finish(false);
+    });
+  });
+}
+
 ensureRequiredPaths();
 ensureNativeExecutableBits();
 
+const initialRuntimeConfig = resolveBridgeRuntimeConfig();
 const sidecarPort =
   parsePortOverride(process.env.O3_CODE_BRIDGE_PORT, "O3_CODE_BRIDGE_PORT") ??
-  (await allocateLoopbackPort(bridgeHost));
+  (await allocateTcpPort(initialRuntimeConfig.sidecarHost));
 const cdpPort =
   parsePortOverride(
     process.env.O3_CODE_BRIDGE_CDP_PORT,
     "O3_CODE_BRIDGE_CDP_PORT",
-  ) ?? (await allocateLoopbackPort(bridgeHost));
+  ) ?? (await allocateLoopbackPort(initialRuntimeConfig.cdpHost));
+const runtimeConfig = resolveBridgeRuntimeConfig({ cdpPort, sidecarPort });
 const targetUrl = pathToFileURL(rendererIndexPath).toString();
-const browserUrl = `http://${bridgeHost}:${sidecarPort}/`;
+const browserUrl = runtimeConfig.browserUrl;
 const stageDir = path.join(
   tmpdir(),
   `o3-code-bridge-${process.pid}-${Date.now()}`,
 );
+const tlsCredentials = runtimeConfig.remoteEnabled
+  ? await ensureBridgeTlsCredentials({
+      lanAddresses: runtimeConfig.lanAddresses,
+    })
+  : null;
 
 const userDataPath =
   process.env.CODEX_ELECTRON_USER_DATA_PATH?.trim() ||
@@ -274,12 +312,20 @@ const sidecar = spawn(process.execPath, [sidecarPath], {
   cwd: repoRoot,
   env: {
     ...sharedEnv,
-    O3_CODE_BRIDGE_HOST: bridgeHost,
+    O3_CODE_BRIDGE_HOST: runtimeConfig.sidecarHost,
+    O3_CODE_BRIDGE_CDP_HOST: runtimeConfig.cdpHost,
     O3_CODE_BRIDGE_PORT: String(sidecarPort),
     O3_CODE_BRIDGE_CDP_PORT: String(cdpPort),
     O3_CODE_BRIDGE_WEBVIEW_DIR: webviewDir,
     O3_CODE_BRIDGE_TARGET_URL: sharedEnv.ELECTRON_RENDERER_URL,
     O3_CODE_BRIDGE_STAGE_DIR: stageDir,
+    ...(tlsCredentials == null
+      ? {}
+      : {
+          O3_CODE_BRIDGE_CERT_PATH: tlsCredentials.certPath,
+          O3_CODE_BRIDGE_HTTPS: "1",
+          O3_CODE_BRIDGE_KEY_PATH: tlsCredentials.keyPath,
+        }),
   },
   stdio: "inherit",
 });
@@ -317,7 +363,7 @@ await waitForSidecar(browserUrl);
 electron = spawn(
   prepareElectronExecutable(),
   [
-    `--remote-debugging-address=${bridgeHost}`,
+    `--remote-debugging-address=${runtimeConfig.cdpHost}`,
     `--remote-debugging-port=${cdpPort}`,
     appPath,
     ...process.argv.slice(2),
@@ -346,5 +392,23 @@ for (const signal of ["SIGINT", "SIGTERM"]) {
   process.on(signal, () => terminateChildren(signal === "SIGINT" ? 130 : 143));
 }
 
+if (runtimeConfig.remoteEnabled) {
+  console.warn(
+    "WARNING: O3_CODE_BRIDGE_REMOTE=1 exposes the unauthenticated Bridge Sidecar on your network.",
+  );
+  console.warn(
+    "Use this prototype mode only on trusted networks and stop it when finished.",
+  );
+  if (runtimeConfig.lanAddresses.length === 0) {
+    console.warn(
+      "No LAN IPv4 address was detected; mobile devices may not connect.",
+    );
+  }
+  if (tlsCredentials?.generated) {
+    console.log(
+      `Generated Bridge HTTPS certificate: ${tlsCredentials.certPath}`,
+    );
+  }
+}
 console.log(`Bridge Mode URL: ${browserUrl}`);
 openBrowser(browserUrl);

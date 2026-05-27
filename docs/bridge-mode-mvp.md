@@ -42,7 +42,9 @@ Desktop Reconstruction in Bridge Mode
 - New browser sessions hydrate through normal app queries plus a Bridge Sync Pulse.
 - Browser-selected files become Bridge-Staged Files before the Desktop Reconstruction receives local file references.
 - Desktop-Hosted Native UI is acceptable for MVP.
-- Remote access, pairing, authentication, and authorization are out of scope for MVP.
+- Remote access remains out of the default MVP path. `O3_CODE_BRIDGE_REMOTE=1`
+  enables an unauthenticated HTTPS LAN prototype for browser/mobile microphone
+  testing only.
 
 ## Repo Layout
 
@@ -82,11 +84,23 @@ Root script:
 
 Debug-only environment overrides may exist for the sidecar and CDP ports, but fixed ports are not defaults.
 
+Prototype mobile mode:
+
+- `O3_CODE_BRIDGE_REMOTE=1 pnpm start:web` binds the sidecar to `0.0.0.0`,
+  serves the browser URL over HTTPS, and prints a LAN URL.
+- Electron CDP remains bound to `127.0.0.1` unless `O3_CODE_BRIDGE_CDP_HOST`
+  is explicitly overridden.
+- `O3_CODE_BRIDGE_CERT_PATH` and `O3_CODE_BRIDGE_KEY_PATH` may provide a custom
+  certificate. Without them, the launcher generates a reusable local self-signed
+  certificate for localhost, loopback, and detected LAN IPv4 addresses.
+- This mode has no pairing, authentication, authorization, or E2EE. Use it only
+  on trusted networks.
+
 ## Sidecar Responsibilities
 
 - Serve the Mirrored Web Client Asset Tree from `apps/web/app/webview`.
 - Inject or preload `bridge-shim.js`.
-- Accept one Active Web Session over WSS.
+- Accept one Active Web Session over WS locally or WSS in prototype mobile mode.
 - Replace the old Active Web Session when a new browser connects.
 - Route Bridge Envelopes without mutating Codex App renderer payloads.
 - Suppress message echoes by source/session/message identity.
@@ -131,8 +145,8 @@ Terminal, browser-sidebar, native dialogs, uploads, and reconnect behavior shoul
 
 ## Later Work
 
-- Pairing, authentication, and authorization.
-- LAN, mobile, tunnel, or relay access.
+- Pairing, authentication, and authorization for remote Bridge Mode.
+- Hardened LAN, mobile, tunnel, or relay access.
 - Dedicated hidden Bridge Host renderer.
 - Concurrent web sessions.
 - Browser-native replacements for selected native dialogs and menus.
