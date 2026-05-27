@@ -29,7 +29,8 @@
   `0007-web-access-browser-sidebar-paint`, then falls back to CDP target
   capture when Electron exposes a separate page target.
 - Added a non-interactive image paint overlay that polls the screenshot endpoint
-  while the browser panel is visible.
+  only for known iframe-blocking hosts. Frameable pages stay on the live iframe
+  surface.
 
 ## Validation
 
@@ -42,6 +43,9 @@
   returned `HTTP/1.1 200 OK` with `content-type: image/png`.
 - After the offscreen debugger fallback update, the captured Google paint was
   verified as `PNG image data, 1280 x 900`.
+- `curl -I -L https://t3.codes` showed no `X-Frame-Options` or
+  `frame-ancestors` response header, so this host should render through the live
+  iframe path rather than screenshot paint.
 - Browser verification opened `http://127.0.0.1:51304/` and confirmed the
   Mirrored Web Client loaded.
 - `pnpm --dir packages/bridge test` passed: 62 tests.
@@ -52,8 +56,9 @@
 
 ## Known Limits
 
-- Pages that deny framing with `X-Frame-Options` or CSP `frame-ancestors` render
-  through the screenshot paint layer, not through the iframe.
+- Known pages that deny framing with `X-Frame-Options` or CSP `frame-ancestors`
+  render through the screenshot paint layer, not through the iframe. Other pages
+  keep live iframe rendering as the primary path.
 - The screenshot paint layer is observational. Direct page interaction still
   depends on the underlying iframe for frameable pages or future CDP input
   forwarding work for iframe-blocking pages.

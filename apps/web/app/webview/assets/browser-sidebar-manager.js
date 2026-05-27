@@ -438,6 +438,7 @@ var D = `persist:codex-browser-app-route:`,
     // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
     currentUrl = O;
     captureTimerId = null;
+    paintFallbackEnabled = !1;
     // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     constructor({
       conversationId: e,
@@ -474,6 +475,9 @@ var D = `persist:codex-browser-app-route:`,
         (this.webview.referrerPolicy = `strict-origin-when-cross-origin`),
         (this.webview.title = `Browser sidebar`),
         (this.webview.allowFullscreen = !0),
+        (this.webview.onload = () => {
+          this.paintFallbackEnabled || (this.paint.style.opacity = `0`);
+        }),
         Object.assign(this.paint.style, {
           border: `0`,
           height: `100%`,
@@ -489,7 +493,7 @@ var D = `persist:codex-browser-app-route:`,
         (this.paint.decoding = `async`),
         (this.paint.referrerPolicy = `no-referrer`),
         (this.paint.onload = () => {
-          this.paint.style.opacity = `1`;
+          this.paint.style.opacity = this.paintFallbackEnabled ? `1` : `0`;
         }),
         (this.paint.onerror = () => {
           this.paint.style.opacity = `0`;
@@ -548,7 +552,11 @@ var D = `persist:codex-browser-app-route:`,
     setUrl(e) {
       let n = this.currentUrl;
       this.currentUrl = e.length === 0 ? O : e;
-      n !== this.currentUrl && (this.paint.style.opacity = `0`);
+      if (n !== this.currentUrl) {
+        ((this.paint.style.opacity = `0`),
+          (this.paintFallbackEnabled = X(this.currentUrl)));
+        this.paintFallbackEnabled || this.paint.removeAttribute(`src`);
+      }
       let t = q(this.currentUrl);
       this.webview.getAttribute(`src`) !== t &&
         this.webview.setAttribute(`src`, t);
@@ -636,6 +644,7 @@ var D = `persist:codex-browser-app-route:`,
       if (
         !this.state.isVisible ||
         !Z(this.currentUrl) ||
+        !this.paintFallbackEnabled ||
         typeof window > `u`
       ) {
         this.stopCapture();
@@ -652,6 +661,7 @@ var D = `persist:codex-browser-app-route:`,
       if (
         !this.state.isVisible ||
         !Z(this.currentUrl) ||
+        !this.paintFallbackEnabled ||
         typeof window > `u`
       ) {
         this.stopCapture();
@@ -792,6 +802,19 @@ function Z(e) {
   try {
     let t = new URL(e);
     return t.protocol === `http:` || t.protocol === `https:`;
+  } catch {
+    return !1;
+  }
+}
+function X(e) {
+  try {
+    let t = new URL(e).hostname.replace(/^www\./, ``);
+    return (
+      t === `google.com` ||
+      t.endsWith(`.google.com`) ||
+      t === `youtube.com` ||
+      t.endsWith(`.youtube.com`)
+    );
   } catch {
     return !1;
   }

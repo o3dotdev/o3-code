@@ -60,14 +60,17 @@ from the real Electron sidebar guest for pages that cannot be embedded.
    `window.location.hostname`. This lets an iPad that reached the Mac through an
    already-approved tunnel try the same target port on that Mac instead of
    resolving `localhost` on the iPad.
-6. In the repo-owned bridge, add a same-origin screenshot endpoint that asks the
+6. Keep iframe rendering as the primary surface. Do not cover frameable pages
+   with screenshot paint; enable paint fallback only for known frame-blocked
+   hosts where iPad Safari cannot legally embed the page.
+7. In the repo-owned bridge, add a same-origin screenshot endpoint that asks the
    Desktop Reconstruction for `captureBrowserSidebarPaint`, returns `image/png`
    with `no-store`, and only uses direct CDP page target capture as a best-effort
    fallback.
-7. Overlay an image paint layer above the iframe, poll the screenshot endpoint
-   while the browser panel is visible, and leave pointer events on the image
-   disabled so frameable pages remain interactive through the iframe.
-8. Wrap all copied asset changes with
+8. Overlay an image paint layer above the iframe only while fallback is enabled,
+   poll the screenshot endpoint while the browser panel is visible, and leave
+   pointer events on the image disabled.
+9. Wrap all copied asset changes with
    `browser-sidebar-iframe-renderer` Web Patch markers.
 
 ## Validation
