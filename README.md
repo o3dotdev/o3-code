@@ -1,56 +1,65 @@
+<picture>
+  <img src="docs/assets/o3-code-readme-banner.svg" alt="O3 Code desktop app with a companion phone view" width="100%">
+</picture>
+
 # O3 Code
 
-O3 Code is a repo-local reconstruction of the installed macOS Codex App.
+**Codex as a local app, with realtime voice and a browser view.**
 
-## Run
+O3 Code turns the Codex desktop experience into an open local project you can
+install, inspect, and shape. It keeps the native macOS workflow, enables
+realtime voice for local runs, adds an O3 Code identity, and serves a browser
+companion for using the same experience from your phone, tablet, or side screen.
+
+[Install](#install) ·
+[macOS releases](https://github.com/o3dotdev/o3-code/releases) ·
+[Contribute](CONTRIBUTING.md)
+
+## Key Features
+
+- **Realtime voice runtime.** O3 Code enables the realtime voice gate for local
+  runs, so voice workflows can be exercised without waiting on upstream rollout
+  state.
+- **Browser view for O3 Code.** Web access serves a Mirrored Web Client on
+  localhost, giving phone, tablet, and desktop browsers a companion view into
+  the same local O3 Code workflow.
+- **Voice mode where the browser is.** The voice runtime and browser view are
+  designed to meet: keep the desktop app as the local capability host, then use
+  the browser view when you want voice on a mobile or side-screen surface.
+- **Local app identity.** O3 Code runs as its own branded local app with isolated
+  state by default.
+
+## Install
 
 ```sh
-pnpm install
-pnpm codex:setup
-pnpm start
+npx @o3dotdev/o3-code
 ```
 
-`pnpm start` runs the extracted Electron app from `apps/desktop/app/` and points it at repo-local runtime resources in `apps/desktop/resources/`.
+Prefer an app bundle? macOS downloads are published on
+[GitHub Releases](https://github.com/o3dotdev/o3-code/releases).
 
-Runtime user data is stored under `~/Library/Application Support/O3 Code`, so local O3 Code runs do not collide with the installed Codex App. Override that with `CODEX_ELECTRON_USER_DATA_PATH` for a custom profile, or set `O3_CODE_USE_CODEX_USER_DATA=1` when you intentionally need to reuse the installed Codex profile.
+## What You Get
 
-The launcher also sets `ELECTRON_RENDERER_URL` to the extracted `apps/desktop/app/webview/index.html`; without that override, the unpackaged main process tries to load its development server URL.
+- A native macOS Codex surface, branded and run locally as O3 Code.
+- Realtime voice enabled for the local runtime.
+- Local Web access for a mirrored browser experience.
+- Isolated O3 Code app state by default, with opt-in reuse of an existing Codex
+  profile when you need it.
+- A refreshable foundation for carrying local O3 Code improvements forward as
+  Codex App releases move.
 
-## Normalize
+## Why O3 Code
 
-```sh
-pnpm normalize
-pnpm normalize:check
-```
+Codex is most useful when it feels close to the work: native terminal support,
+local files, project context, and a UI that stays out of the way. O3 Code keeps
+that desktop feel while giving the project a public place to package releases,
+document decisions, and grow a polished app experience.
 
-`pnpm normalize` rewrites copied app source into a patch-friendly baseline. It also canonicalizes uniquely resolvable Vite asset filenames by removing generated hash suffixes and rewriting references, while leaving collision groups hashed. During Source Refresh work, run it after replacing copied Codex App source material and before applying Patch SOPs.
+## Contributing
 
-## Codex CLI
+Developer setup, architecture notes, source refresh flow, and patch guidance
+live in [CONTRIBUTING.md](CONTRIBUTING.md).
 
-```sh
-pnpm codex:setup
-pnpm codex:build
-```
+## License
 
-The Codex CLI/app-server source is checked out at `upstream/codex/` from `o3dotdev/o3-codex`. `pnpm codex:build` builds the `codex` binary from that checkout and installs it to `apps/desktop/resources/codex`, which is the binary used by `pnpm start`.
-
-## Layout
-
-- `apps/desktop/app/` - extracted `Resources/app.asar` source bundle.
-- `apps/desktop/branding/o3-code-icon/` - source and generated review outputs for O3 Code local identity icons.
-- `apps/desktop/branding/original-codex-icon/` - high-resolution reference export of the original Codex Dock icon.
-- `apps/desktop/resources/` - copied runtime resources from `Codex.app/Contents/Resources`, excluding the original `app.asar`.
-- `apps/desktop/metadata/Info.plist` - original macOS bundle metadata.
-- `packages/` - future shared workspace packages.
-- `docs/agents/` - repo configuration for agent skills.
-- `docs/adr/` - architectural decisions for durable extraction choices.
-- `docs/patches/` - one Patch SOP folder per local Patch.
-- `docs/source-refresh.md` - Source Refresh procedure for replacing upstream app material and reapplying Patch SOPs.
-- `docs/upstreams/` - source pins and sync notes for non-Electron upstream material.
-- `upstream/codex/` - pinned Codex CLI/app-server source checkout.
-
-## Source
-
-- Source app: `/Applications/Codex.app`
-- Version: `26.519.81530`
-- Build: `3178`
+O3 Code is released under the [MIT License](LICENSE).
