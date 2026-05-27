@@ -131,61 +131,6 @@ function ensureNativeExecutableBits() {
   }
 }
 
-function getDarwinProcessList() {
-  if (process.platform !== "darwin") {
-    return "";
-  }
-
-  try {
-    return execFileSync("ps", ["-axo", "command"], {
-      encoding: "utf8",
-      stdio: ["ignore", "pipe", "ignore"],
-    });
-  } catch {
-    return "";
-  }
-}
-
-function enforceSingleVisibleDesktopApp() {
-  if (
-    process.platform !== "darwin" ||
-    process.env.O3_CODE_ALLOW_PARALLEL_DESKTOP === "1"
-  ) {
-    return;
-  }
-
-  const processLines = getDarwinProcessList().split("\n");
-  const runningApps = [];
-  if (
-    processLines.some((line) =>
-      line.includes("/Applications/Codex.app/Contents/MacOS/Codex"),
-    )
-  ) {
-    runningApps.push("Codex");
-  }
-  if (
-    processLines.some((line) =>
-      line.includes(
-        path.join(localElectronApp, "Contents", "MacOS", "O3 Code"),
-      ),
-    )
-  ) {
-    runningApps.push("O3 Code");
-  }
-
-  if (runningApps.length === 0) {
-    return;
-  }
-
-  console.error(
-    [
-      `Refusing to start O3 Code because ${runningApps.join(" and ")} is already running.`,
-      "Quit the running desktop app first, or set O3_CODE_ALLOW_PARALLEL_DESKTOP=1 to intentionally run a parallel local app.",
-    ].join("\n"),
-  );
-  process.exit(1);
-}
-
 function resolveCodexBuildNumber() {
   for (const value of [
     process.env.CODEX_BUILD_NUMBER,
@@ -222,7 +167,6 @@ if (!existsSync(electronBin)) {
   process.exit(1);
 }
 
-enforceSingleVisibleDesktopApp();
 ensureNativeExecutableBits();
 
 const defaultUserDataPath =
