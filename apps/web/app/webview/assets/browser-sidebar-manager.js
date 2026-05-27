@@ -237,7 +237,10 @@ var D = `persist:codex-browser-app-route:`,
     setSnapshot(t, r) {
       (this.snapshots.set(t, r),
         r.tabType === e.WEB
-          ? typeof document < `u` && this.getWebview(t, r.url)
+          // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+          ? typeof document < `u` &&
+            this.getWebview(t, r.url).setUrl(r.url)
+          // o3-code-web-patch-end: browser-sidebar-iframe-renderer
           : (this.browserUseActiveStates.delete(t),
             this.browserUseCursorStates.delete(t),
             this.browserUseCaptureSurfaceSizes.delete(t),
@@ -421,7 +424,9 @@ var D = `persist:codex-browser-app-route:`,
   L = class {
     conversationId;
     container = document.createElement(`div`);
-    webview = document.createElement(`webview`);
+    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+    webview = document.createElement(`iframe`);
+    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     browserUseCaptureSurfaceSize;
     browserUseViewportSize;
     hasBrowserUsePaintHost;
@@ -451,9 +456,26 @@ var D = `persist:codex-browser-app-route:`,
         ),
         (this.webview.className = `h-full w-full`),
         (this.webview.style.backgroundColor = N),
+        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+        (this.webview.style.border = `0`),
+        (this.webview.allow = [
+          `camera`,
+          `clipboard-read`,
+          `clipboard-write`,
+          `fullscreen`,
+          `geolocation`,
+          `microphone`,
+        ].join(`; `)),
+        (this.webview.referrerPolicy = `strict-origin-when-cross-origin`),
+        (this.webview.title = `Browser sidebar`),
+        (this.webview.allowFullscreen = !0),
+        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.webview.setAttribute(k, e),
+        // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+        this.webview.setAttribute(`data-o3-code-browser-sidebar-frame`, `true`),
+        // o3-code-web-patch-end: browser-sidebar-iframe-renderer
         this.webview.setAttribute(`partition`, G(e)),
-        this.webview.setAttribute(`src`, t),
+        this.setUrl(t),
         this.container.append(this.webview),
         document.body.append(this.container));
     }
@@ -493,6 +515,13 @@ var D = `persist:codex-browser-app-route:`,
     setBrowserUseCaptureSurfaceSize(e) {
       ((this.browserUseCaptureSurfaceSize = e), this.syncContainerStyle());
     }
+    // o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+    setUrl(e) {
+      let t = q(e.length === 0 ? O : e);
+      this.webview.getAttribute(`src`) !== t &&
+        this.webview.setAttribute(`src`, t);
+    }
+    // o3-code-web-patch-end: browser-sidebar-iframe-renderer
     resync() {
       this.isAttached && this.syncContainerStyle();
     }
@@ -633,6 +662,31 @@ function W(e) {
 function G(e) {
   return `${D}${encodeURIComponent(e)}`;
 }
+// o3-code-web-patch-begin: browser-sidebar-iframe-renderer
+function q(e) {
+  if (typeof window > `u`) return e;
+  try {
+    let t = new URL(e);
+    if (!J(t.hostname)) return e;
+    let n = window.location.hostname;
+    return n == null || n.length === 0 || J(n)
+      ? e
+      : ((t.hostname = n), t.toString());
+  } catch {
+    return e;
+  }
+}
+function J(e) {
+  return (
+    e === `localhost` ||
+    e.endsWith(`.localhost`) ||
+    e === `127.0.0.1` ||
+    e === `0.0.0.0` ||
+    e === `[::1]` ||
+    e === `::1`
+  );
+}
+// o3-code-web-patch-end: browser-sidebar-iframe-renderer
 function K(e, t, n) {
   (n != null && e.current === n && (e.current = null),
     t != null && (e.current = t));
