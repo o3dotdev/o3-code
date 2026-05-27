@@ -19,10 +19,8 @@
 - `apps/desktop/resources/codexTemplate.png`
 - `apps/desktop/resources/codexTemplate@2x.png`
 
-## Opt-In Environment Inputs
+## Current Environment Inputs
 
-- `O3_CODE_USE_LOCAL_APP_IDENTITY=1`
-- `O3_CODE_USE_LOCAL_APP_BUNDLE=1`
 - `O3_CODE_APP_NAME=O3 Code`
 - `O3_CODE_APP_ICON_PATH=<resources>/o3-code-icon.png`
 - `O3_CODE_TRAY_TEMPLATE_PATH=<resources>/codexTemplate.png`
@@ -38,6 +36,6 @@
 
 - `pnpm generate:icons` succeeded and regenerated O3 Code icon assets.
 - `node --check apps/desktop/app/.vite/build/main-BS7yenMI.js` passed.
-- `pnpm start` uses the normal Electron host by default and does not inject O3 Code name/icon overrides.
-- `O3_CODE_USE_LOCAL_APP_BUNDLE=1 pnpm start` launches the cached macOS Electron host as `O3 Code.app`.
+- `pnpm start` launches the cached macOS Electron host as `O3 Code.app`.
+- Bridge sidecars are spawned with the bundled Node executable instead of the Electron host, so they do not create a second Dock tile.
 - The app uses the O3 Code user data directory by default: `/Users/maksimzayats/Library/Application Support/O3 Code`.

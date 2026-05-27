@@ -187,10 +187,14 @@ export class BridgeModeSupervisor extends EventEmitter {
       this.tmpDir,
       `o3-code-bridge-${process.pid}-${Date.now()}`,
     );
+    const sidecarExecutable =
+      this.env.O3_CODE_BRIDGE_NODE_PATH?.trim() ||
+      this.env.CODEX_BROWSER_USE_NODE_PATH?.trim() ||
+      process.execPath;
 
     this.#stageDir = stageDir;
     this.#stopping = false;
-    this.#child = this.spawn(process.execPath, [sidecarPath], {
+    this.#child = this.spawn(sidecarExecutable, [sidecarPath], {
       cwd: this.repoRoot,
       env: {
         ...this.env,

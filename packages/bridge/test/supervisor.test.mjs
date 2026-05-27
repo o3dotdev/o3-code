@@ -26,6 +26,7 @@ test("BridgeModeSupervisor starts with an allocated persisted localhost port", a
   });
   assert.equal((await store.readConfig()).webAccess.port, 49152);
   assert.equal(spawned.length, 1);
+  assert.equal(spawned[0].command, "/tmp/o3-node");
   assert.equal(spawned[0].options.env.O3_CODE_BRIDGE_HOST, "127.0.0.1");
   assert.equal(spawned[0].options.env.O3_CODE_BRIDGE_CDP_HOST, "127.0.0.1");
 });
@@ -118,7 +119,10 @@ test("BridgeModeSupervisor resetPort is only allowed while stopped or failed", a
 async function createSupervisor({
   config,
   allocatePort = async () => 60000,
-  env = { O3_CODE_BRIDGE_CDP_PORT: "60001" },
+  env = {
+    CODEX_BROWSER_USE_NODE_PATH: "/tmp/o3-node",
+    O3_CODE_BRIDGE_CDP_PORT: "60001",
+  },
   isPortAvailable = async () => true,
 } = {}) {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "o3-supervisor-"));

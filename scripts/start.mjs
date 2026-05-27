@@ -64,10 +64,6 @@ const nativeExecutablePaths = [
 ];
 
 function prepareElectronExecutable() {
-  if (process.env.O3_CODE_USE_LOCAL_APP_BUNDLE !== "1") {
-    return electronBin;
-  }
-
   if (process.platform !== "darwin") {
     return electronBin;
   }
@@ -181,25 +177,8 @@ const defaultUserDataPath =
 const userDataPath =
   process.env.CODEX_ELECTRON_USER_DATA_PATH?.trim() || defaultUserDataPath;
 
-const useLocalAppIdentity =
-  process.env.O3_CODE_USE_LOCAL_APP_IDENTITY === "1" ||
-  process.env.O3_CODE_USE_LOCAL_APP_BUNDLE === "1";
-
-const localAppIdentityEnv = useLocalAppIdentity
-  ? {
-      O3_CODE_APP_NAME: process.env.O3_CODE_APP_NAME || "O3 Code",
-      O3_CODE_APP_ICON_PATH:
-        process.env.O3_CODE_APP_ICON_PATH ||
-        path.join(resourcesPath, "o3-code-icon.png"),
-      O3_CODE_TRAY_TEMPLATE_PATH:
-        process.env.O3_CODE_TRAY_TEMPLATE_PATH ||
-        path.join(resourcesPath, "codexTemplate.png"),
-    }
-  : {};
-
 const env = {
   ...process.env,
-  ...localAppIdentityEnv,
   NODE_ENV: process.env.NODE_ENV || "production",
   CODEX_BUILD_NUMBER: resolveCodexBuildNumber(),
   CODEX_ELECTRON_RESOURCES_PATH:
@@ -214,6 +193,13 @@ const env = {
     process.env.CODEX_BROWSER_USE_NODE_PATH || path.join(resourcesPath, "node"),
   CODEX_NODE_REPL_PATH:
     process.env.CODEX_NODE_REPL_PATH || path.join(resourcesPath, "node_repl"),
+  O3_CODE_APP_NAME: process.env.O3_CODE_APP_NAME || "O3 Code",
+  O3_CODE_APP_ICON_PATH:
+    process.env.O3_CODE_APP_ICON_PATH ||
+    path.join(resourcesPath, "o3-code-icon.png"),
+  O3_CODE_TRAY_TEMPLATE_PATH:
+    process.env.O3_CODE_TRAY_TEMPLATE_PATH ||
+    path.join(resourcesPath, "codexTemplate.png"),
   PATH: [resourcesPath, process.env.PATH].filter(Boolean).join(path.delimiter),
 };
 
