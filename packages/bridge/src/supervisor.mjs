@@ -16,6 +16,7 @@ import { resolveBridgeRuntimeConfig } from "./runtime-config.mjs";
 
 const SIDE_CAR_READY_TIMEOUT_MS = 10_000;
 const CDP_READY_TIMEOUT_MS = 5_000;
+const SIDECAR_GRACEFUL_SHUTDOWN_TIMEOUT_MS = 1_000;
 const LOOPBACK_HOST = "127.0.0.1";
 
 export const WEB_ACCESS_STATUS_CODES = Object.freeze({
@@ -42,6 +43,7 @@ export class BridgeModeSupervisor extends EventEmitter {
     isPortAvailable = isTcpPortAvailable,
     waitForCdp = waitForCdpEndpoint,
     waitForSidecar = waitForSidecarHealth,
+    gracefulShutdownTimeoutMs = SIDECAR_GRACEFUL_SHUTDOWN_TIMEOUT_MS,
     rm = fs.rm,
     tmpDir = os.tmpdir(),
   } = {}) {
@@ -56,6 +58,7 @@ export class BridgeModeSupervisor extends EventEmitter {
     this.isPortAvailable = isPortAvailable;
     this.waitForCdp = waitForCdp;
     this.waitForSidecar = waitForSidecar;
+    this.gracefulShutdownTimeoutMs = gracefulShutdownTimeoutMs;
     this.rm = rm;
     this.tmpDir = tmpDir;
   }
@@ -245,17 +248,34 @@ export class BridgeModeSupervisor extends EventEmitter {
   async #stopChild() {
     const child = this.#child;
     const stageDir = this.#stageDir;
-    this.#child = null;
-    this.#stageDir = null;
 
     if (child != null) {
       this.#stopping = true;
-      await new Promise((resolve) => {
-        child.once("exit", resolve);
-        child.kill();
-        setTimeout(resolve, 1_000).unref?.();
-      });
-      this.#stopping = false;
+      const exitPromise = onceChildExit(child);
+      try {
+        child.kill("SIGTERM");
+        const exitedGracefully = await promiseWithTimeout(
+          exitPromise,
+          this.gracefulShutdownTimeoutMs,
+        );
+        if (!exitedGracefully) {
+          this.logger.warning?.(
+            "Bridge Sidecar did not exit after SIGTERM; sending SIGKILL.",
+          );
+          child.kill("SIGKILL");
+          await exitPromise;
+        }
+      } finally {
+        if (this.#child === child) {
+          this.#child = null;
+        }
+        if (this.#stageDir === stageDir) {
+          this.#stageDir = null;
+        }
+        this.#stopping = false;
+      }
+    } else {
+      this.#stageDir = null;
     }
 
     if (stageDir != null) {
@@ -330,6 +350,24 @@ async function requestOk(url) {
 
 async function delay(ms) {
   await new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function onceChildExit(child) {
+  return new Promise((resolve) => {
+    child.once("exit", resolve);
+  });
+}
+
+async function promiseWithTimeout(promise, timeoutMs) {
+  let timeoutId;
+  const timeoutPromise = new Promise((resolve) => {
+    timeoutId = setTimeout(() => resolve(false), timeoutMs);
+    timeoutId.unref?.();
+  });
+
+  const result = await Promise.race([promise.then(() => true), timeoutPromise]);
+  clearTimeout(timeoutId);
+  return result;
 }
 
 function clone(value) {

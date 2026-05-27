@@ -99,6 +99,27 @@ test("BridgeModeSupervisor stops sidecar while keeping persisted port", async ()
   assert.deepEqual(supervisor.getStatus(), { state: "off" });
   assert.equal((await store.readConfig()).webAccess.port, 49156);
   assert.equal(spawned[0].child.killed, true);
+  assert.deepEqual(spawned[0].child.killSignals, ["SIGTERM"]);
+});
+
+test("BridgeModeSupervisor force kills a sidecar that ignores SIGTERM", async () => {
+  const { supervisor, store, spawned } = await createSupervisor({
+    config: {
+      webAccess: { enabled: true, exposure: "localhost", port: 49158 },
+    },
+    createChild: () =>
+      new FakeChild({
+        exitOnSignals: new Set(["SIGKILL"]),
+      }),
+    gracefulShutdownTimeoutMs: 1,
+  });
+
+  await supervisor.initialize();
+  const config = await store.patchWebAccess({ enabled: false });
+  await supervisor.applyConfig(config);
+
+  assert.deepEqual(supervisor.getStatus(), { state: "off" });
+  assert.deepEqual(spawned[0].child.killSignals, ["SIGTERM", "SIGKILL"]);
 });
 
 test("BridgeModeSupervisor resetPort is only allowed while stopped or failed", async () => {
@@ -119,10 +140,12 @@ test("BridgeModeSupervisor resetPort is only allowed while stopped or failed", a
 async function createSupervisor({
   config,
   allocatePort = async () => 60000,
+  createChild = () => new FakeChild(),
   env = {
     CODEX_BROWSER_USE_NODE_PATH: "/tmp/o3-node",
     O3_CODE_BRIDGE_CDP_PORT: "60001",
   },
+  gracefulShutdownTimeoutMs,
   isPortAvailable = async () => true,
 } = {}) {
   const root = await fs.mkdtemp(path.join(os.tmpdir(), "o3-supervisor-"));
@@ -137,11 +160,12 @@ async function createSupervisor({
     configStore: store,
     desktopRoot: path.join(root, "apps", "desktop"),
     env,
+    gracefulShutdownTimeoutMs,
     isPortAvailable,
     repoRoot: root,
     rm: async () => {},
     spawn(command, args, options) {
-      const child = new FakeChild();
+      const child = createChild();
       spawned.push({ args, child, command, options });
       return child;
     },
@@ -156,11 +180,20 @@ async function createSupervisor({
 
 class FakeChild extends EventEmitter {
   killed = false;
+  killSignals = [];
 
-  kill() {
+  constructor({ exitOnSignals = new Set(["SIGTERM"]) } = {}) {
+    super();
+    this.exitOnSignals = exitOnSignals;
+  }
+
+  kill(signal = "SIGTERM") {
     this.killed = true;
-    queueMicrotask(() => {
-      this.emit("exit", 0, null);
-    });
+    this.killSignals.push(signal);
+    if (this.exitOnSignals.has(signal)) {
+      queueMicrotask(() => {
+        this.emit("exit", null, signal);
+      });
+    }
   }
 }

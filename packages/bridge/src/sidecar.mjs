@@ -70,6 +70,15 @@ const requestListener = async (request, response) => {
   }
 };
 const server = http.createServer(requestListener);
+const activeSockets = new Set();
+const activeWebSockets = new Set();
+
+server.on("connection", (socket) => {
+  activeSockets.add(socket);
+  socket.on("close", () => {
+    activeSockets.delete(socket);
+  });
+});
 
 server.on("upgrade", (request, socket, head) => {
   const url = new URL(
@@ -82,6 +91,14 @@ server.on("upgrade", (request, socket, head) => {
   }
 
   const webSocket = acceptWebSocketUpgrade(request, socket, head);
+  if (webSocket == null) {
+    return;
+  }
+
+  activeWebSockets.add(webSocket);
+  webSocket.on("close", () => {
+    activeWebSockets.delete(webSocket);
+  });
   router.attachBrowser(webSocket);
 });
 
@@ -102,8 +119,20 @@ process.on("exit", () => {
 });
 
 async function cleanup() {
+  closeActiveBridgeSockets();
   await new Promise((resolve) => server.close(resolve));
   await rm(stageDir, { force: true, recursive: true });
+}
+
+function closeActiveBridgeSockets() {
+  for (const webSocket of activeWebSockets) {
+    webSocket.close(1001, "Bridge sidecar stopping.");
+    webSocket.destroy();
+  }
+
+  for (const socket of activeSockets) {
+    socket.destroy();
+  }
 }
 
 async function handleHttpRequest(request, response) {
@@ -326,6 +355,13 @@ class ServerWebSocket extends EventEmitter {
       Buffer.concat([createWebSocketHeader(0x88, payload.length), payload]),
     );
     this.socket.end();
+  }
+
+  destroy() {
+    this.#closed = true;
+    if (!this.socket.destroyed) {
+      this.socket.destroy();
+    }
   }
 
   #handleData(chunk) {
