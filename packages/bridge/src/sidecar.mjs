@@ -10,21 +10,13 @@ import { fileURLToPath } from "node:url";
 
 import { CdpClient } from "./cdp-client.mjs";
 import { injectBridgeShell } from "./html-injection.mjs";
+import { repoRoot, resolveBridgeWebviewDir } from "./paths.mjs";
 import { BridgeRouter } from "./router.mjs";
-
-const repoRoot = path.resolve(
-  path.dirname(fileURLToPath(import.meta.url)),
-  "..",
-  "..",
-  "..",
-);
 
 const host = process.env.O3_CODE_BRIDGE_HOST || "127.0.0.1";
 const port = Number(process.env.O3_CODE_BRIDGE_PORT || "0");
 const cdpPort = Number(process.env.O3_CODE_BRIDGE_CDP_PORT || "0");
-const webviewDir =
-  process.env.O3_CODE_BRIDGE_WEBVIEW_DIR ||
-  path.join(repoRoot, "apps", "desktop", "app", "webview");
+const webviewDir = resolveBridgeWebviewDir();
 const targetUrl = process.env.O3_CODE_BRIDGE_TARGET_URL;
 const stageDir =
   process.env.O3_CODE_BRIDGE_STAGE_DIR ||
@@ -84,6 +76,7 @@ server.on("upgrade", (request, socket, head) => {
 
 server.listen(port, host, () => {
   console.log(`[bridge] listening at http://${host}:${port}/`);
+  console.log(`[bridge] serving webview from ${webviewDir}`);
 });
 
 for (const signal of ["SIGINT", "SIGTERM"]) {

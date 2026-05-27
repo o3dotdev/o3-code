@@ -18,6 +18,7 @@ import {
   allocateLoopbackPort,
   parsePortOverride,
 } from "../packages/bridge/src/ports.mjs";
+import { resolveBridgeWebviewDir } from "../packages/bridge/src/paths.mjs";
 
 const require = createRequire(import.meta.url);
 const repoRoot = path.resolve(
@@ -30,9 +31,7 @@ const electronPackage = require("electron/package.json");
 const desktopPath = path.join(repoRoot, "apps", "desktop");
 const appPath = path.join(desktopPath, "app");
 const rendererIndexPath = path.join(appPath, "webview", "index.html");
-const webviewDir =
-  process.env.O3_CODE_BRIDGE_WEBVIEW_DIR ||
-  path.join(repoRoot, "apps", "web", "app", "webview");
+const webviewDir = resolveBridgeWebviewDir();
 const webviewIndexPath = path.join(webviewDir, "index.html");
 const resourcesPath = path.join(desktopPath, "resources");
 const sidecarPath = path.join(
