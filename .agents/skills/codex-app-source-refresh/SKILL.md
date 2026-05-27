@@ -62,7 +62,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Treat `pnpm web-patches:check` as marker-placement-only until real Web Patch folders exist and folder-to-marker validation can prove useful.
    - Run or add tests beside repo-owned code when Web Patches change `packages/bridge/**`, `scripts/**`, or another support package.
    - Run `pnpm start` and confirm the Desktop Reconstruction reaches renderer mount and app-server handshake.
-   - Run `pnpm start:web` and confirm the Mirrored Web Client loads from `apps/web/app/webview` through Bridge Mode.
+   - Enable Web access from the running desktop app and confirm the Mirrored Web Client loads from `apps/web/app/webview` through Bridge Mode.
    - Validate each Patch SOP and Web Patch SOP's stated checks; do not mark evidence complete from generic app launch alone.
    - For visual, layout, route, scroll, viewport, or interaction Web Patches, require browser evidence in the relevant `EVIDENCE.md`.
    - For mobile-specific Web Patches, PWA evidence may be documented manual verification at first when automation cannot faithfully emulate installed mode.

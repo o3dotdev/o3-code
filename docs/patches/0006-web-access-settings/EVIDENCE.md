@@ -28,6 +28,10 @@
 - `apps/desktop/app/webview/assets/settings-page-DQKw-JsA.js`
   - Patch ID: `web-access-settings`
   - Places Web access under App settings near Connections.
+- `apps/desktop/app/webview/assets/web-access-settings-o3code.js`
+  - Patch-owned settings page chunk.
+  - Source Refresh can delete this repo-added file when replacing
+    `apps/desktop/app`; Patch 0006 recreates it before `pnpm derive:web`.
 
 ## Repo-Owned Support
 

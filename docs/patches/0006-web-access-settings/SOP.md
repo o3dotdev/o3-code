@@ -33,6 +33,10 @@ present under `packages/bridge/src`.
    - `settings-sections-*.js`
    - `settings-shared-*.js`
    - `settings-page-*.js`
+6. Treat `apps/desktop/app/webview/assets/web-access-settings-o3code.js` as a
+   repo-added settings chunk owned by this Patch. Source Refresh replacement of
+   `apps/desktop/app` can delete it, so recreate it from this SOP instead of
+   expecting upstream to provide it.
 
 ## Application
 
@@ -53,8 +57,11 @@ present under `packages/bridge/src`.
    access config/status/update/retry/reset/open IPC methods.
 6. Patch preserved settings assets with `web-access-settings` markers to add a
    `web-access` route and App-level navigation entry near Connections.
-7. Keep the Web access page in the Desktop Reconstruction Webview Assets so
-   `pnpm derive:web` copies it to the Mirrored Web Client Asset Tree.
+7. Create or restore
+   `apps/desktop/app/webview/assets/web-access-settings-o3code.js` as the Web
+   access settings page chunk imported by the patched route map. Keep it in the
+   Desktop Reconstruction Webview Assets so `pnpm derive:web` copies it to the
+   Mirrored Web Client Asset Tree.
 8. Remove `start:web` from `package.json` and keep `scripts/start-web.mjs`
    deleted.
 
