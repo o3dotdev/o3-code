@@ -26,6 +26,22 @@ const BRIDGE_SHELL_STYLE = `
   background: inherit !important;
 }
 
+/* Browser-hosted windows do not need space reserved for macOS traffic lights. */
+:root[data-codex-window-type="electron"] #root > * {
+  --spacing-token-safe-header-left: 0px !important;
+  --spacing-token-safe-header-right: 0px !important;
+}
+
+:root[data-codex-window-type="electron"]
+  header[data-app-shell-header-edge-scroll]
+  > [aria-hidden="true"].invisible:first-child,
+:root[data-codex-window-type="electron"]
+  header[data-app-shell-header-edge-scroll]
+  > [aria-hidden="true"].invisible:first-child
+  + [data-test-id="header-shell-slot"] {
+  padding-inline-start: 0.625rem !important;
+}
+
 /* Native drag regions swallow pointer events in browser-hosted app windows. */
 .startup-loader,
 .draggable {
