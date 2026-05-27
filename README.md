@@ -32,7 +32,7 @@ companion for using the same experience from your phone, tablet, or side screen.
 ## Install
 
 ```sh
-npx @o3dotdev/o3-code@latest
+npx @o3dotdev/o3-code
 ```
 
 Prefer an app bundle? macOS downloads will be published on
