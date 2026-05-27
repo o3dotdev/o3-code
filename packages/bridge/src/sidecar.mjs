@@ -4,6 +4,7 @@ import { EventEmitter } from "node:events";
 import { createReadStream } from "node:fs";
 import { mkdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import http from "node:http";
+import https from "node:https";
 import os from "node:os";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -14,8 +15,13 @@ import { repoRoot, resolveBridgeWebviewDir } from "./paths.mjs";
 import { BridgeRouter } from "./router.mjs";
 
 const host = process.env.O3_CODE_BRIDGE_HOST || "127.0.0.1";
+const cdpHost = process.env.O3_CODE_BRIDGE_CDP_HOST || "127.0.0.1";
 const port = Number(process.env.O3_CODE_BRIDGE_PORT || "0");
 const cdpPort = Number(process.env.O3_CODE_BRIDGE_CDP_PORT || "0");
+const httpsEnabled =
+  process.env.O3_CODE_BRIDGE_HTTPS === "1" ||
+  process.env.O3_CODE_BRIDGE_CERT_PATH != null ||
+  process.env.O3_CODE_BRIDGE_KEY_PATH != null;
 const webviewDir = resolveBridgeWebviewDir();
 const targetUrl = process.env.O3_CODE_BRIDGE_TARGET_URL;
 const stageDir =
@@ -42,16 +48,34 @@ if (!targetUrl) {
   process.exit(1);
 }
 
+if (
+  httpsEnabled &&
+  (!process.env.O3_CODE_BRIDGE_CERT_PATH ||
+    !process.env.O3_CODE_BRIDGE_KEY_PATH)
+) {
+  console.error(
+    "O3_CODE_BRIDGE_CERT_PATH and O3_CODE_BRIDGE_KEY_PATH are required when HTTPS is enabled.",
+  );
+  process.exit(1);
+}
+
 await mkdir(stageDir, { recursive: true });
 
-const cdpClient = new CdpClient({ cdpPort, cdpHost: host, targetUrl });
+const cdpClient = new CdpClient({ cdpPort, cdpHost, targetUrl });
 const router = new BridgeRouter({ hostTransport: cdpClient });
 cdpClient.on("host-event", (event) => router.handleHostEvent(event));
 cdpClient.connect().catch((error) => {
   console.error("[bridge] initial CDP connection failed", error);
 });
 
-const server = http.createServer(async (request, response) => {
+const protocol = httpsEnabled ? "https" : "http";
+const serverOptions = httpsEnabled
+  ? {
+      cert: await readFile(process.env.O3_CODE_BRIDGE_CERT_PATH),
+      key: await readFile(process.env.O3_CODE_BRIDGE_KEY_PATH),
+    }
+  : null;
+const requestListener = async (request, response) => {
   try {
     await handleHttpRequest(request, response);
   } catch (error) {
@@ -61,10 +85,16 @@ const server = http.createServer(async (request, response) => {
     }
     response.end("Bridge sidecar request failed.");
   }
-});
+};
+const server = httpsEnabled
+  ? https.createServer(serverOptions, requestListener)
+  : http.createServer(requestListener);
 
 server.on("upgrade", (request, socket, head) => {
-  const url = new URL(request.url ?? "/", `http://${request.headers.host}`);
+  const url = new URL(
+    request.url ?? "/",
+    `${protocol}://${request.headers.host}`,
+  );
   if (url.pathname !== "/bridge") {
     socket.destroy();
     return;
@@ -75,7 +105,8 @@ server.on("upgrade", (request, socket, head) => {
 });
 
 server.listen(port, host, () => {
-  console.log(`[bridge] listening at http://${host}:${port}/`);
+  console.log(`[bridge] listening at ${protocol}://${host}:${port}/`);
+  console.log(`[bridge] connecting to Electron CDP at ${cdpHost}:${cdpPort}`);
   console.log(`[bridge] serving webview from ${webviewDir}`);
 });
 
@@ -95,7 +126,10 @@ async function cleanup() {
 }
 
 async function handleHttpRequest(request, response) {
-  const url = new URL(request.url ?? "/", `http://${request.headers.host}`);
+  const url = new URL(
+    request.url ?? "/",
+    `${protocol}://${request.headers.host}`,
+  );
 
   if (url.pathname === "/healthz") {
     sendJson(response, {

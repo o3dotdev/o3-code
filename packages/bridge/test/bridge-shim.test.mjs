@@ -49,9 +49,34 @@ test("bridge shim dispatches command menu messages for command menu shortcuts", 
   assert.deepEqual(normalize(dispatchedMessages), [{ type: "command-menu" }]);
 });
 
+test("bridge shim handles microphone permission requests locally", async () => {
+  const { electronBridge, sentEnvelopes } = await loadBridgeShim();
+
+  const response = await electronBridge.sendMessageFromView({
+    type: "electron-request-microphone-permission",
+  });
+
+  assert.deepEqual(normalize(response), {
+    ok: true,
+    source: "o3-code-bridge-shim",
+  });
+  assert.deepEqual(sentEnvelopes, []);
+});
+
+test("bridge shim still forwards normal app messages", async () => {
+  const { electronBridge, sentEnvelopes } = await loadBridgeShim();
+
+  await electronBridge.sendMessageFromView({ type: "composer-submitted" });
+
+  assert.equal(sentEnvelopes.length, 1);
+  assert.equal(sentEnvelopes[0].kind, "app-message-from-view");
+  assert.deepEqual(sentEnvelopes[0].payload, { type: "composer-submitted" });
+});
+
 async function loadBridgeShim() {
   const listeners = new Map();
   const dispatchedMessages = [];
+  const sentEnvelopes = [];
   const script = await readFile(
     new URL("../public/bridge-shim.js", import.meta.url),
     "utf8",
@@ -65,7 +90,19 @@ async function loadBridgeShim() {
       listeners.set(`websocket:${type}`, listener);
     }
 
-    send() {}
+    send(data) {
+      const envelope = JSON.parse(data);
+      sentEnvelopes.push(envelope);
+      queueMicrotask(() => {
+        listeners.get("websocket:message")?.({
+          data: JSON.stringify({
+            kind: "bridge-response",
+            payload: { ok: true },
+            responseTo: envelope.id,
+          }),
+        });
+      });
+    }
   }
 
   class FakeMessageEvent {
@@ -117,7 +154,9 @@ async function loadBridgeShim() {
 
   return {
     dispatchedMessages,
+    electronBridge: window.electronBridge,
     keydownListener: listeners.get("window:keydown"),
+    sentEnvelopes,
   };
 }
 
