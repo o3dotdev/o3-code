@@ -1,4 +1,7 @@
-#!/usr/bin/env python3
+#!/usr/bin/env -S uv run --script
+# /// script
+# requires-python = ">=3.11"
+# ///
 """Inventory an installed Codex.app and an O3 Code checkout."""
 
 from __future__ import annotations

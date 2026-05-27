@@ -21,12 +21,12 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
 ## Workflow
 
 1. Preflight the repo and installed app.
-   - Run `scripts/inventory_codex_app.py --repo <repo> --source <Codex.app>`.
+   - Run `uv run --script scripts/inventory_codex_app.py --repo <repo> --source <Codex.app>`.
    - Confirm the installed app version/build is newer or intentionally selected.
    - Confirm the current branch is an intentional refresh branch and the repo is clean before replacement.
    - Inspect `git status --short --branch` yourself; do not rely only on script output.
 2. Replace upstream material.
-   - Run `scripts/refresh_codex_app.py --repo <repo> --source <Codex.app> --yes`.
+   - Run `uv run --script scripts/refresh_codex_app.py --repo <repo> --source <Codex.app> --yes`.
    - The script extracts `Resources/app.asar`, overlays unpacked app files, copies runtime resources, copies `Info.plist`, and updates mechanical source metadata.
    - If the script stops, inspect the reason and decide; do not work around guardrails casually.
 3. Normalize copied source.
@@ -53,8 +53,8 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
 
 Use scripts as assistants, not decision-makers.
 
-- `scripts/inventory_codex_app.py`: reads the installed app plist, app.asar metadata, repo metadata, current branch, dirty state, and active Patch SOPs.
-- `scripts/refresh_codex_app.py`: guarded replacement of copied Codex App material and mechanical metadata only.
+- `scripts/inventory_codex_app.py`: `uv run --script` helper that reads the installed app plist, app.asar metadata, repo metadata, current branch, dirty state, and active Patch SOPs.
+- `scripts/refresh_codex_app.py`: `uv run --script` helper for guarded replacement of copied Codex App material and mechanical metadata only.
 
 The refresh script intentionally does not run `pnpm normalize`, does not migrate patches, does not update Patch Evidence, does not update `upstream/codex`, and does not commit.
 
