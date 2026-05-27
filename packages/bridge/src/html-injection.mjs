@@ -58,6 +58,23 @@ body {
   }
 }
 
+@media (max-width: 700px), (hover: none) and (pointer: coarse) {
+  .o3-code-request-input-option-description {
+    display: block !important;
+  }
+
+  .o3-code-request-input-option-info,
+  .o3-code-request-input-option-shortcuts {
+    display: none !important;
+  }
+
+  .o3-code-request-input-option-label {
+    overflow: visible !important;
+    text-overflow: clip !important;
+    white-space: normal !important;
+  }
+}
+
 html body[data-scroll-locked] {
   --removed-body-scroll-bar-size: 0px !important;
   position: fixed !important;

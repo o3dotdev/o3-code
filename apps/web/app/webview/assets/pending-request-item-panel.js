@@ -4030,49 +4030,58 @@ function en(e) {
                         values: { index: t + 1 },
                       }),
                     }),
-                    (0, $.jsx)(`span`, {
-                      className: `flex min-w-0 flex-1 flex-col gap-1`,
-                      children: (0, $.jsxs)(`span`, {
-                        className: `flex min-w-0 flex-1 items-center gap-2 text-sm font-medium`,
-                        children: [
-                          (0, $.jsxs)(`span`, {
-                            className: `flex min-w-0 items-center gap-2`,
-                            children: [
-                              (0, $.jsx)(`span`, {
-                                className: `min-w-0 truncate`,
-                                children: e.value,
-                              }),
-                              e.description != null &&
-                                (0, $.jsx)(k, {
-                                  tooltipContent: (0, $.jsx)(`div`, {
-                                    className: `max-w-xs text-center text-sm`,
-                                    children: e.description,
-                                  }),
-                                  children: (0, $.jsx)(`span`, {
-                                    className: `flex shrink-0 items-center text-token-description-foreground`,
-                                    children: (0, $.jsx)(ee, {
-                                      className: `icon-2xs`,
+                    // o3-code-web-patch-begin: mobile-request-input-option-descriptions
+                    (0, $.jsxs)(`span`, {
+                      className: `o3-code-request-input-option-body flex min-w-0 flex-1 flex-col gap-1`,
+                      children: [
+                        (0, $.jsxs)(`span`, {
+                          className: `flex min-w-0 flex-1 items-center gap-2 text-sm font-medium`,
+                          children: [
+                            (0, $.jsxs)(`span`, {
+                              className: `flex min-w-0 items-center gap-2`,
+                              children: [
+                                (0, $.jsx)(`span`, {
+                                  className: `o3-code-request-input-option-label min-w-0 truncate`,
+                                  children: e.value,
+                                }),
+                                e.description != null &&
+                                  (0, $.jsx)(k, {
+                                    tooltipContent: (0, $.jsx)(`div`, {
+                                      className: `max-w-xs text-center text-sm`,
+                                      children: e.description,
+                                    }),
+                                    children: (0, $.jsx)(`span`, {
+                                      className: `o3-code-request-input-option-info flex shrink-0 items-center text-token-description-foreground`,
+                                      children: (0, $.jsx)(ee, {
+                                        className: `icon-2xs`,
+                                      }),
                                     }),
                                   }),
-                                }),
-                            ],
-                          }),
-                          n && C.includes(y)
-                            ? (0, $.jsx)(ie, {
-                                className: `px-1.5 py-0 text-xs leading-none`,
-                                children: (0, $.jsx)(f, {
-                                  id: `requestInputPanel.selectedBadge`,
-                                  defaultMessage: `Selected`,
-                                  description: `Badge shown for a selected option when revisiting a question`,
-                                }),
-                              })
-                            : null,
-                        ],
-                      }),
+                              ],
+                            }),
+                            n && C.includes(y)
+                              ? (0, $.jsx)(ie, {
+                                  className: `px-1.5 py-0 text-xs leading-none`,
+                                  children: (0, $.jsx)(f, {
+                                    id: `requestInputPanel.selectedBadge`,
+                                    defaultMessage: `Selected`,
+                                    description: `Badge shown for a selected option when revisiting a question`,
+                                  }),
+                                })
+                              : null,
+                          ],
+                        }),
+                        e.description != null
+                          ? (0, $.jsx)(`span`, {
+                              className: `o3-code-request-input-option-description hidden text-sm leading-5 text-token-description-foreground`,
+                              children: e.description,
+                            })
+                          : null,
+                      ],
                     }),
                     (0, $.jsx)(`div`, {
                       className: l(
-                        `text-token-description-foreground ml-auto flex items-center gap-2 text-xs`,
+                        `o3-code-request-input-option-shortcuts text-token-description-foreground ml-auto flex items-center gap-2 text-xs`,
                         !n && `invisible`,
                       ),
                       "aria-hidden": !n,
@@ -4094,6 +4103,7 @@ function en(e) {
                         ],
                       }),
                     }),
+                    // o3-code-web-patch-end: mobile-request-input-option-descriptions
                   ],
                 },
                 e.id,

@@ -49,6 +49,15 @@ test("injectBridgeShell makes mac Electron chrome opaque in Bridge Mode", () => 
   assert.match(injected, /width: 100vw !important/);
   assert.match(injected, /max-width: 100vw !important/);
   assert.match(injected, /zoom: 1 !important/);
+  assert.match(
+    injected,
+    /@media \(max-width: 700px\), \(hover: none\) and \(pointer: coarse\)/,
+  );
+  assert.match(injected, /o3-code-request-input-option-description/);
+  assert.match(injected, /o3-code-request-input-option-info/);
+  assert.match(injected, /o3-code-request-input-option-shortcuts/);
+  assert.match(injected, /o3-code-request-input-option-label/);
+  assert.match(injected, /white-space: normal !important/);
   assert.match(injected, /app-shell-left-panel/);
   assert.match(injected, /color-token-editor-background/);
   assert.match(injected, /background: inherit !important/);

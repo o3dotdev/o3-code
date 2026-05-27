@@ -7,6 +7,7 @@ The Mirrored Web Client Asset Tree is rebuilt from the patched Desktop Reconstru
 ## Active Patches
 
 - `0001-mobile-shell-viewport-and-scroll`: lock and recover the browser-hosted mobile shell so top-level page scroll drift cannot hide the chat transcript.
+- `0002-mobile-request-input-option-descriptions`: show request-input option descriptions inline on narrow or touch browser layouts instead of requiring hover tooltips.
 
 Create Web Patch SOP folders only when implementing concrete browser-only fixes; do not create placeholder SOP folders without real anchors, non-goals, validation, and evidence.
 
