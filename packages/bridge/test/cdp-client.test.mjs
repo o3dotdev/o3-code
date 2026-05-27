@@ -1,7 +1,11 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import { pickBrowserPageTarget } from "../src/cdp-client.mjs";
+import {
+  parseImageDataUrl,
+  pickBrowserPageTarget,
+  withTimeout,
+} from "../src/cdp-client.mjs";
 
 test("pickBrowserPageTarget ignores the bridge host renderer", () => {
   const target = pickBrowserPageTarget({
@@ -68,4 +72,23 @@ test("pickBrowserPageTarget rejects unsupported urls", () => {
   });
 
   assert.equal(target, null);
+});
+
+test("parseImageDataUrl extracts png payloads", () => {
+  assert.deepEqual(parseImageDataUrl("data:image/png;base64,aGVsbG8="), {
+    data: "aGVsbG8=",
+    mimeType: "image/png",
+  });
+});
+
+test("parseImageDataUrl rejects non-base64 image urls", () => {
+  assert.equal(parseImageDataUrl("https://example.test/image.png"), null);
+  assert.equal(parseImageDataUrl("data:image/png,not-base64"), null);
+});
+
+test("withTimeout rejects stalled promises", async () => {
+  await assert.rejects(
+    withTimeout(new Promise(() => {}), 1, "timed out"),
+    /timed out/,
+  );
 });

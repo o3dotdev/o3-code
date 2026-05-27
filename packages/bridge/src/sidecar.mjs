@@ -236,6 +236,7 @@ async function handleBrowserPageScreenshot(url, response) {
   }
 
   const screenshot = await cdpClient.captureBrowserPageScreenshot({
+    conversationId: url.searchParams.get("conversationId"),
     url: pageUrl,
   });
   if (screenshot == null) {

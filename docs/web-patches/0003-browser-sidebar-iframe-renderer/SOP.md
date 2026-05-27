@@ -4,8 +4,8 @@
 
 Render browser sidebar content inside the Mirrored Web Client on ordinary
 browsers, including iPad Safari/PWA mode, by using an iframe instead of
-Electron's `<webview>` tag and by overlaying a CDP screenshot paint layer from
-the real Electron browser target for sites that block iframe embedding.
+Electron's `<webview>` tag and by overlaying a screenshot paint layer from the
+real Electron browser sidebar guest for sites that block iframe embedding.
 
 ## Non-Goals
 
@@ -16,6 +16,13 @@ the real Electron browser target for sites that block iframe embedding.
 - Do not add a generic HTTP proxy, rewrite arbitrary page content, or remove
   site security headers.
 - Do not expose Web Access over LAN, Tailscale, or public interfaces.
+
+## Dependencies
+
+Depends on Desktop Reconstruction Patch
+`0007-web-access-browser-sidebar-paint` for iframe-blocked page rendering. The
+iframe still covers frameable local pages; the desktop patch supplies pixels
+from the real Electron sidebar guest for pages that cannot be embedded.
 
 ## Allowed Surfaces
 
@@ -36,7 +43,8 @@ the real Electron browser target for sites that block iframe embedding.
 3. Confirm the visible browser tab still attaches the manager's element through
    `thread-side-panel-tabs-*.js` and sends browser commands to the desktop host.
 4. Confirm `packages/bridge/src/sidecar.mjs` has CDP access through
-   `CdpClient`, and that `/json/list` exposes the real browser page target.
+   `CdpClient`, and that the visible Desktop Reconstruction renderer exposes
+   `electronBridge.captureBrowserSidebarPaint`.
 
 ## Application
 
@@ -52,9 +60,10 @@ the real Electron browser target for sites that block iframe embedding.
    `window.location.hostname`. This lets an iPad that reached the Mac through an
    already-approved tunnel try the same target port on that Mac instead of
    resolving `localhost` on the iPad.
-6. In the repo-owned bridge, add a same-origin screenshot endpoint that selects
-   the real Electron browser page target from CDP `/json/list`, captures it with
-   `Page.captureScreenshot`, and returns `image/png` with `no-store`.
+6. In the repo-owned bridge, add a same-origin screenshot endpoint that asks the
+   Desktop Reconstruction for `captureBrowserSidebarPaint`, returns `image/png`
+   with `no-store`, and only uses direct CDP page target capture as a best-effort
+   fallback.
 7. Overlay an image paint layer above the iframe, poll the screenshot endpoint
    while the browser panel is visible, and leave pointer events on the image
    disabled so frameable pages remain interactive through the iframe.
@@ -76,6 +85,6 @@ the real Electron browser target for sites that block iframe embedding.
 ## Failure Conditions
 
 - Stop if upstream replaces the browser sidebar with a browser-native renderer.
-- Stop if the CDP browser page target is not visible in `/json/list`; that would
-  require a Desktop Reconstruction patch instead of bridge-only support.
+- Stop if Patch `0007-web-access-browser-sidebar-paint` cannot resolve the
+  Electron sidebar guest for the current conversation.
 - Stop if iPad access requires changing Web Access from loopback-only serving.

@@ -666,7 +666,7 @@ var D = `persist:codex-browser-app-route:`,
       this.captureTimerId = window.setTimeout(() => {
         this.captureTimerId = null;
         this.capture();
-      }, 1e3);
+      }, 2500);
     }
     stopCapture() {
       if (this.captureTimerId != null && typeof window < `u`) {

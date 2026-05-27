@@ -90,8 +90,16 @@ export class CdpClient extends EventEmitter {
     });
   }
 
-  async captureBrowserPageScreenshot({ url }) {
+  async captureBrowserPageScreenshot({ conversationId, url }) {
     await this.connect();
+    const mirroredCapture = await this.#captureMirroredBrowserPage({
+      conversationId,
+      url,
+    });
+    if (mirroredCapture != null) {
+      return mirroredCapture;
+    }
+
     const target = pickBrowserPageTarget({
       targetUrl: this.targetUrl,
       targets: await this.#fetchTargets(),
@@ -122,6 +130,32 @@ export class CdpClient extends EventEmitter {
       };
     } finally {
       page.close();
+    }
+  }
+
+  async #captureMirroredBrowserPage({ conversationId, url }) {
+    try {
+      const capture = await withTimeout(
+        this.call("captureBrowserSidebarPaint", [{ conversationId, url }]),
+        12000,
+        "Browser sidebar paint capture timed out.",
+      );
+      const parsed = parseImageDataUrl(capture?.dataUrl);
+      if (parsed == null) {
+        return null;
+      }
+
+      return {
+        data: parsed.data,
+        mimeType: parsed.mimeType,
+        targetUrl: capture.url ?? url ?? null,
+        title: capture.title ?? null,
+      };
+    } catch (error) {
+      this.logger.debug?.("[bridge] browser sidebar paint capture failed", {
+        error: String(error?.message ?? error),
+      });
+      return null;
     }
   }
 
@@ -365,6 +399,36 @@ export function pickBrowserPageTarget({ targets, targetUrl, url }) {
     .sort((left, right) => right.score - left.score);
 
   return scored[0]?.target ?? null;
+}
+
+export function parseImageDataUrl(value) {
+  if (typeof value !== "string") {
+    return null;
+  }
+
+  const match = /^data:([^;,]+);base64,([A-Za-z0-9+/=]+)$/.exec(value);
+  if (match == null) {
+    return null;
+  }
+
+  return {
+    data: match[2],
+    mimeType: match[1],
+  };
+}
+
+export async function withTimeout(promise, timeoutMs, message) {
+  let timer = null;
+  try {
+    return await Promise.race([
+      promise,
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(Error(message)), timeoutMs);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 function normalizePageUrl(value) {

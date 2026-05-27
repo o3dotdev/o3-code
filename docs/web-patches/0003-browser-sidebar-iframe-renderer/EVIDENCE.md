@@ -24,8 +24,10 @@
 - Added `setUrl` so snapshot URL changes update the displayed frame.
 - Added loopback-host rewrite for remote browser clients that are already
   loading the Mirrored Web Client through a non-loopback host.
-- Added a bridge-side `/bridge/browser-page-screenshot` endpoint backed by CDP
-  `Page.captureScreenshot` against the real Electron browser page target.
+- Added a bridge-side `/bridge/browser-page-screenshot` endpoint that first
+  asks the Desktop process for browser-sidebar paint through patch
+  `0007-web-access-browser-sidebar-paint`, then falls back to CDP target
+  capture when Electron exposes a separate page target.
 - Added a non-interactive image paint overlay that polls the screenshot endpoint
   while the browser panel is visible.
 
@@ -36,7 +38,16 @@
 - `node --check packages/bridge/src/sidecar.mjs` passed.
 - `pnpm web-patches:check` passed.
 - `pnpm format:check` passed.
-- `pnpm --dir packages/bridge test` passed: 59 tests.
+- `curl --max-time 20 http://127.0.0.1:51304/bridge/browser-page-screenshot?conversationId=new-conversation&url=https%3A%2F%2Fwww.google.com%2F`
+  returned `HTTP/1.1 200 OK` with `content-type: image/png`.
+- The captured Google paint was verified as `PNG image data, 2560 x 1800`.
+- Browser verification opened `http://127.0.0.1:51304/` and confirmed the
+  Mirrored Web Client loaded.
+- `pnpm --dir packages/bridge test` passed: 62 tests.
+- `pnpm web-patches:check` passed: 1182 web asset files, 19 Web Patch regions.
+- `pnpm normalize:check` passed: 1260 files, no changes needed.
+- `pnpm format:check` passed.
+- `git diff --check` passed.
 
 ## Known Limits
 

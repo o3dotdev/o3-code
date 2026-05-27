@@ -38011,6 +38011,118 @@ var Q = t.ti(`browser-sidebar-manager`),
           }));
       }
     }
+    // o3-code-patch-begin: web-access-browser-sidebar-paint
+    async capturePageForWebAccess(e, t) {
+      let n = tA(this.windows, e, t)?.view.webContents;
+      if (n == null || n.isDestroyed()) return null;
+      let r = (e, t = 3e3) =>
+        new Promise((n, r) => {
+          let i = setTimeout(
+            () => r(Error(`browser sidebar paint capture timed out`)),
+            t,
+          );
+          Promise.resolve(e).then(
+            (e) => {
+              (clearTimeout(i), n(e));
+            },
+            (e) => {
+              (clearTimeout(i), r(e));
+            },
+          );
+        });
+      let i = n.getURL(),
+        a = n.getTitle(),
+        o = n.debugger.isAttached();
+      let s = `${t}:${i}`,
+        c = ((this.webAccessCaptureCache ??= new Map()), this.webAccessCaptureCache.get(s));
+      if (c != null && Date.now() - c.timestamp < 5e3) return c.capture;
+      let l = (e) => (
+        this.webAccessCaptureCache.set(s, { capture: e, timestamp: Date.now() }),
+        e
+      );
+      try {
+        (o || n.debugger.attach(`1.3`),
+          await n.debugger.sendCommand(`Page.enable`).catch(() => {}));
+        let e = await r(
+          n.debugger.sendCommand(`Page.captureScreenshot`, {
+            format: `png`,
+            fromSurface: !0,
+          }),
+        );
+        if (typeof e?.data == `string` && e.data.length > 0)
+          return l({
+            dataUrl: `data:image/png;base64,${e.data}`,
+            height: null,
+            title: a,
+            url: i,
+            width: null,
+          });
+      } catch {
+      } finally {
+        !o && n.debugger.isAttached() && n.debugger.detach();
+      }
+      if (i.startsWith(`http://`) || i.startsWith(`https://`))
+        try {
+          let e = new (require(`electron`).BrowserWindow)({
+            backgroundColor: `#ffffff`,
+            height: 900,
+            show: !1,
+            webPreferences: {
+              backgroundThrottling: !1,
+              contextIsolation: !0,
+              nodeIntegration: !1,
+              offscreen: !0,
+              sandbox: !0,
+            },
+            width: 1280,
+          });
+          try {
+            (await r(e.webContents.loadURL(i), 8e3).catch(() => {}),
+              await r(
+                new Promise((e) => setTimeout(e, 500)),
+                1e3,
+              ));
+            let t = await r(e.webContents.capturePage(), 3e3);
+            if (!t.isEmpty()) {
+              let n = t.getSize();
+              return l({
+                dataUrl: t.toDataURL(),
+                height: n.height,
+                title: e.webContents.getTitle() || a,
+                url: e.webContents.getURL() || i,
+                width: n.width,
+              });
+            }
+          } finally {
+            e.isDestroyed() || e.destroy();
+          }
+        } catch {}
+      try {
+        let e = await r(n.capturePage());
+        if (e.isEmpty()) return null;
+        let t = e.getSize();
+        return l({
+          dataUrl: e.toDataURL(),
+          height: t.height,
+          title: a,
+          url: i,
+          width: t.width,
+        });
+      } catch (n) {
+        return (
+          Q().warning(`failed to capture browser sidebar paint`, {
+            safe: { conversationId: t },
+            sensitive: { error: n },
+          }),
+          this.errorReporter.reportNonFatal(
+            n instanceof Error ? n : Error(String(n)),
+            { kind: `browser-sidebar-web-access-paint` },
+          ),
+          null
+        );
+      }
+    }
+    // o3-code-patch-end: web-access-browser-sidebar-paint
     refreshCursor(e, t) {
       let n = nA(this.windows, e, t);
       n != null &&
@@ -47539,6 +47651,20 @@ function AW({
 }) {
   (iW(s, y), eW(y));
   let b = !1;
+  // o3-code-patch-begin: web-access-browser-sidebar-paint
+  n.ipcMain.handle(
+    `o3-code:browser-sidebar:capture-paint`,
+    async (e, t) => {
+      if (!y(e)) return null;
+      let n = c(e.sender);
+      return n == null
+        ? null
+        : await n
+            .getBrowserSidebarManager()
+            .capturePageForWebAccess(e.sender, t?.conversationId ?? t);
+    },
+  );
+  // o3-code-patch-end: web-access-browser-sidebar-paint
   (n.ipcMain.handle(Ts, async (r, o) => {
     if (!y(r)) return;
     if (o.type === `electron-avatar-overlay-restore-ready`) {
