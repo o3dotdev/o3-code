@@ -35,7 +35,7 @@ companion for using the same experience from your phone, tablet, or side screen.
 npx @o3dotdev/o3-code
 ```
 
-Prefer an app bundle? macOS downloads will be published on
+Prefer an app bundle? macOS downloads are published on
 [GitHub Releases](https://github.com/o3dotdev/o3-code/releases).
 
 ## What You Get
