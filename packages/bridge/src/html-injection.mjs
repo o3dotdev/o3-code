@@ -5,6 +5,7 @@ const VIEWPORT_META_RE = /<meta\b(?=[^>]*\bname=["']viewport["'])[^>]*>/i;
 
 const BRIDGE_SHELL_STYLE = `
 /* Bridge Mode runs Electron renderer chrome in an ordinary browser surface. */
+/* Mobile shell viewport and scroll recovery. */
 :root {
   --o3-code-viewport-height: 100vh;
   --o3-code-measured-viewport-top-offset: 0px;
@@ -57,6 +58,7 @@ body {
     zoom: 1 !important;
   }
 
+  /* Mobile sidebar project actions. */
   .o3-code-sidebar-project-menu-action,
   .o3-code-sidebar-project-new-chat-action {
     opacity: 1 !important;
@@ -67,6 +69,7 @@ body {
   }
 }
 
+/* Mobile request-input option descriptions. */
 @media (max-width: 700px), (hover: none) and (pointer: coarse) {
   .o3-code-request-input-option-description {
     display: block !important;

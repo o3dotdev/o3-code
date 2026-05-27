@@ -5,6 +5,7 @@
 - Source app: `/Applications/Codex.app`
 - Source version: `26.519.81530`
 - Source build: `3178`
+- `app.asar` SHA-256: `bf4c3f09b2cbab0714e23f0e9f7f9ce89146b5d47f4462ca77fc2c41394fceaa`
 
 ## Discovered Sites
 
@@ -24,7 +25,7 @@
 
 - `pnpm --dir packages/bridge test` passed.
 - `node --check packages/bridge/public/bridge-shim.js` passed.
-- `pnpm web-patches:check` passed with 0 copied-asset marker regions, as this patch is implemented in repo-owned bridge code.
+- `pnpm web-patches:check` passed with 5 total copied-asset Web Patch regions; this patch adds no copied-asset marker region because it is implemented in repo-owned bridge code.
 - `pnpm format:check` passed.
 - `git diff --check` passed.
 

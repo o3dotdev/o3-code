@@ -20,7 +20,7 @@ Keep project row action icons visible in the Mirrored Web Client on touch browse
 - `apps/web/app/webview/assets/app-main.js`
 - `packages/bridge/src/html-injection.mjs`
 - `packages/bridge/test/html-injection.test.mjs`
-- `docs/web-patches/0004-mobile-sidebar-project-actions/**`
+- `docs/web-patches/0003-mobile-sidebar-project-actions/**`
 - `docs/web-patches/README.md`
 
 ## Discovery

@@ -5,6 +5,7 @@
 - Source app: `/Applications/Codex.app`
 - Source version: `26.519.81530`
 - Source build: `3178`
+- `app.asar` SHA-256: `bf4c3f09b2cbab0714e23f0e9f7f9ce89146b5d47f4462ca77fc2c41394fceaa`
 
 ## Discovered Sites
 
@@ -25,7 +26,7 @@
 - `node --check apps/web/app/webview/assets/pending-request-item-panel.js` passed.
 - `node --check packages/bridge/src/html-injection.mjs` passed.
 - `pnpm --dir packages/bridge test` passed.
-- `pnpm web-patches:check` passed with 1 copied-asset Web Patch region.
+- `pnpm web-patches:check` passed with 5 total copied-asset Web Patch regions, including this patch's request-input option row region.
 - `pnpm format:check` passed.
 - Browser fixture validation through a temporary loopback server passed at a mobile viewport: inline description computed as `display: block`, info icon and shortcut arrows computed as `display: none`, and label whitespace computed as `normal`.
 

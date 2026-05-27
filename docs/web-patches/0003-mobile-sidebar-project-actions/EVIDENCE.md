@@ -2,8 +2,10 @@
 
 ## Current Release
 
-- Source app: Codex `26.519.81530`
-- Build number: `3178`
+- Source app: `/Applications/Codex.app`
+- Source version: `26.519.81530`
+- Source build: `3178`
+- `app.asar` SHA-256: `bf4c3f09b2cbab0714e23f0e9f7f9ce89146b5d47f4462ca77fc2c41394fceaa`
 - Mirrored Web Client asset: `apps/web/app/webview/assets/app-main.js`
 
 ## Discovered Sites
@@ -28,7 +30,7 @@
 - `node --check apps/web/app/webview/assets/app-main.js` passed.
 - `node --check packages/bridge/src/html-injection.mjs` passed.
 - `pnpm --dir packages/bridge test` passed.
-- `pnpm web-patches:check` passed.
+- `pnpm web-patches:check` passed with 5 total copied-asset Web Patch regions, including this patch's four project action class regions.
 - `pnpm format:check` passed.
 - Web Access CSS smoke passed through a temporary Bridge Sidecar at `http://127.0.0.1:51741/`: the served page contained `#o3-code-bridge-shell-style`, the coarse-pointer media query, the project menu/new-chat opacity rules, and the status-overlay `display: none` rule.
 
