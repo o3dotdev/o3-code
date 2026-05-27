@@ -36,6 +36,8 @@ Desktop Reconstruction in Bridge Mode
   sidecar web endpoint.
 - The private Electron CDP Bridge Port remains dynamic per app run.
 - The Bridge Sidecar is a separate repo-owned Node process.
+- Desktop startup uses the bundled Node executable for the Bridge Sidecar, not
+  Electron's `process.execPath`, so the sidecar cannot create a Dock app.
 - Bridge code uses plain Node ESM `.mjs` for MVP.
 - The browser loads the derived Mirrored Web Client Asset Tree with an injected Bridge Shim.
 - The sidecar uses Minimal CDP Transport to attach to the primary renderer and install hooks.

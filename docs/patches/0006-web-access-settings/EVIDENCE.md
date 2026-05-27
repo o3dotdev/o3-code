@@ -55,3 +55,6 @@
   - `http://127.0.0.1:51304/settings/web-access` returned the injected
     mirrored client shell with `200 OK`.
   - Missing asset requests under `/assets/` still returned `404`.
+- Follow-up cleanup confirmed Bridge sidecars are spawned with the bundled Node
+  executable instead of Electron's `process.execPath`, preventing a second Dock
+  app while Web access is running.

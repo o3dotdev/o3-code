@@ -41,6 +41,8 @@ present under `packages/bridge/src`.
 2. Ensure `packages/bridge/src/supervisor.mjs` starts/stops the sidecar, keeps
    status in memory, preserves the Web Access Port, and emits `off`, `starting`,
    `running`, and `failed` states with stable failure codes.
+   The sidecar process must use the bundled Node executable, not Electron's
+   `process.execPath`, so it cannot create an extra Dock app.
 3. Patch `bootstrap.js` with `web-access-settings` markers to allocate a private
    loopback CDP port per app run and append Electron remote-debugging switches
    before app readiness.
@@ -71,4 +73,3 @@ present under `packages/bridge/src`.
 Stop for human review if upstream removes the preserved settings route model,
 preload no longer exposes `electronBridge`, Electron CDP cannot be configured
 before app readiness, or Web access would require non-localhost exposure.
-
