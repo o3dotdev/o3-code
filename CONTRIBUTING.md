@@ -45,7 +45,6 @@ pnpm normalize:check
 pnpm derive:web
 pnpm web-patches:check
 pnpm app-server-router:test
-pnpm codex:setup
 ```
 
 - `pnpm normalize` rewrites preserved Codex App source into the patch-friendly
@@ -53,8 +52,6 @@ pnpm codex:setup
 - `pnpm derive:web` rebuilds the Mirrored Web Client Asset Tree from the patched
   Desktop Reconstruction webview assets.
 - `pnpm app-server-router:test` runs the App Server Router package tests.
-- `pnpm codex:setup` prepares the optional Codex CLI Upstream checkout for
-  source reference work.
 
 ## Project Architecture
 
@@ -69,7 +66,6 @@ scripts/                   repo maintenance, normalization, and launcher tools
 docs/adr/                  durable architectural decisions
 docs/patches/              Desktop Reconstruction Patch SOPs and evidence
 docs/web-patches/          Mirrored Web Client Patch SOPs and evidence
-upstream/codex/            pinned Codex CLI/app-server source checkout
 ```
 
 The installed Codex App is read-only upstream material. O3 Code preserves copied
@@ -107,9 +103,10 @@ When changing preserved Codex App source or derived webview assets:
    source.
 5. Run the relevant checks before opening a PR.
 
-Do not patch the compiled `codex` binary directly. Edit `upstream/codex/`, run
-its local tests, and point `O3_CODE_UPSTREAM_CODEX_PATH` at the resulting
-external CLI only when you intentionally need to exercise that source checkout.
+Do not patch the compiled `codex` binary directly. Put O3 Code-specific
+app-server behavior in `packages/app-server-router/`, and use
+`O3_CODE_UPSTREAM_CODEX_PATH` only to point at an explicit external `codex`
+executable when `PATH` selection is not enough.
 
 ## Source Refresh Workflow
 

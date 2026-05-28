@@ -136,13 +136,9 @@ _Avoid_: sync, vendor update, recopy
 The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
 _Avoid_: app bundle, binary mirror
 
-**Codex CLI Upstream**:
-The pinned source checkout used only when O3 Code needs source-level reference or patches for Codex CLI behavior.
-_Avoid_: bundled runtime, shipped binary, app-server launch target
-
 **External Codex CLI**:
 The user-installed official `codex` command that O3 Code expects to find outside its Runtime Resources.
-_Avoid_: bundled codex, repo-built codex, router binary
+_Avoid_: bundled codex, repo-built codex, source checkout, router binary
 
 **App Server Router**:
 The O3 Code-owned participant that stands in the Desktop Reconstruction's Codex app-server launch position while preserving the existing app-server protocol boundary and delegating to the External Codex CLI.
@@ -209,6 +205,10 @@ Domain expert: "No. A Source Refresh may replace copied source material, then re
 Dev: "Should I patch the compiled `codex` binary directly?"
 
 Domain expert: "No. Keep the External Codex CLI outside Runtime Resources and put O3 Code-specific app-server behavior behind the App Server Router."
+
+Dev: "Should O3 Code keep a local Codex CLI source checkout for reference or CLI patches?"
+
+Domain expert: "No. Treat Codex CLI/app-server behavior as an external dependency selected through `PATH` or `O3_CODE_UPSTREAM_CODEX_PATH`."
 
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 
