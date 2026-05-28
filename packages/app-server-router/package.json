@@ -12,5 +12,8 @@
   ],
   "scripts": {
     "test": "node --test test/*.test.mjs"
+  },
+  "dependencies": {
+    "mockttp": "^4.4.2"
   }
 }
