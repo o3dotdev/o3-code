@@ -67,7 +67,16 @@ export function renderFailurePanel({
     rows: [
       { label: "Status", value: "Failed", tone: "fail" },
       { label: "Reason", value: error, tone: "fail" },
-      { label: "Logs", value: state?.logs.desktop ?? "No logs yet", tone: "info" },
+      {
+        label: "Launcher",
+        value: state?.logs.launcher ?? "No launcher log yet",
+        tone: "info",
+      },
+      {
+        label: "Desktop",
+        value: state?.logs.desktop ?? "No desktop log yet",
+        tone: "info",
+      },
     ],
     commands: ["o3-code logs", "o3-code restart"],
   });

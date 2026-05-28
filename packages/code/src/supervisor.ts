@@ -27,6 +27,7 @@ import {
 } from "./state.js";
 
 const START_TIMEOUT_MS = 45_000;
+const SUPERVISOR_START_TIMEOUT_MS = 180_000;
 const DESKTOP_STABLE_AFTER_BRIDGE_MS = 3_000;
 
 export async function runSupervisor(paths: O3CodePaths): Promise<void> {
@@ -138,7 +139,7 @@ export async function waitForSupervisorStart(paths: O3CodePaths): Promise<Launch
   const completed = await waitFor(() => {
     lastState = readLauncherState(paths);
     return lastState?.status === "running" || lastState?.status === "failed";
-  }, { timeoutMs: START_TIMEOUT_MS + 5_000 });
+  }, { timeoutMs: SUPERVISOR_START_TIMEOUT_MS });
 
   const state = lastState ?? readLauncherState(paths);
   if (!state) {
@@ -148,7 +149,8 @@ export async function waitForSupervisorStart(paths: O3CodePaths): Promise<Launch
     return {
       ...state,
       status: "failed",
-      error: "Timed out waiting for O3 Code supervisor startup.",
+      error:
+        "Timed out waiting for O3 Code supervisor startup. First launch may still be preparing the runtime; check launcher logs and retry status.",
     };
   }
   return state;
