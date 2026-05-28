@@ -15,9 +15,14 @@ export {
   DEFAULT_COMMAND_PREFIX,
   NPX_COMMAND_PREFIX,
   renderStartPanel,
+  renderStatusPanel,
   renderStartupProgressBar,
   resolveLifecycleCommandPrefix,
 } from "./ui.js";
+export {
+  MAC_APP_STORE_TAILSCALE_PATH,
+  resolveTailscaleMobileAccessHelp,
+} from "./tailscale.js";
 
 if (isDirectRun()) {
   await runCli();

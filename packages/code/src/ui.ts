@@ -8,6 +8,10 @@ import {
 import React from "react";
 
 import type { LauncherState } from "./state.js";
+import {
+  resolveTailscaleMobileAccessHelp,
+  type TailscaleMobileAccessHelp,
+} from "./tailscale.js";
 
 type StatusTone = "ok" | "warn" | "fail" | "info";
 
@@ -28,12 +32,17 @@ export const NPX_COMMAND_PREFIX = "npx @o3dotdev/code";
 export function renderStartPanel({
   commandPrefix = DEFAULT_COMMAND_PREFIX,
   state,
+  mobileAccessHelp = resolveTailscaleMobileAccessHelp({
+    webAccessUrl: state.url,
+  }),
   title = "O3 Code is running",
 }: {
   readonly commandPrefix?: string;
+  readonly mobileAccessHelp?: TailscaleMobileAccessHelp;
   readonly state: LauncherState;
   readonly title?: string;
 }): string {
+  const mobileAccessRows = createMobileAccessRows(state, mobileAccessHelp);
   return renderPanel({
     title,
     subtitle: "Local O3 Code",
@@ -48,6 +57,7 @@ export function renderStartPanel({
         value: state.url ?? "Waiting for local web access",
         tone: state.url ? "ok" : "warn",
       },
+      ...mobileAccessRows,
       {
         label: "Desktop",
         value: state.desktopPid ? `pid ${state.desktopPid}` : "Starting",
@@ -66,7 +76,7 @@ export function renderStartPanel({
       "restart",
       "stop",
       "status",
-    ]),
+    ]).concat(mobileAccessCommands(mobileAccessHelp)),
   });
 }
 
@@ -132,11 +142,15 @@ export function renderStatusPanel(
   state: LauncherState | null,
   running: boolean,
   commandPrefix = DEFAULT_COMMAND_PREFIX,
+  mobileAccessHelp = resolveTailscaleMobileAccessHelp({
+    webAccessUrl: state?.url ?? null,
+  }),
 ): string {
   if (!state || !running) {
     return renderStoppedPanel(state, commandPrefix);
   }
 
+  const mobileAccessRows = createMobileAccessRows(state, mobileAccessHelp);
   return renderPanel({
     title: "O3 Code status",
     subtitle: "Local O3 Code",
@@ -151,6 +165,7 @@ export function renderStatusPanel(
         value: state.url ?? "Unavailable",
         tone: state.url ? "ok" : "warn",
       },
+      ...mobileAccessRows,
       { label: "Launcher", value: `pid ${state.pid}`, tone: "info" },
       {
         label: "Desktop",
@@ -173,8 +188,59 @@ export function renderStatusPanel(
       "logs --follow",
       "restart",
       "stop",
-    ]),
+    ]).concat(mobileAccessCommands(mobileAccessHelp)),
   });
+}
+
+function createMobileAccessRows(
+  state: LauncherState,
+  mobileAccessHelp: TailscaleMobileAccessHelp,
+): readonly Row[] {
+  if (!state.url) {
+    return [
+      {
+        label: "Mobile",
+        value: "Available after local web access is running",
+        tone: "warn",
+      },
+    ];
+  }
+
+  if (!mobileAccessHelp.available) {
+    return [
+      {
+        label: "Mobile",
+        value: "Install Tailscale to enable private mobile access",
+        tone: "warn",
+      },
+      {
+        label: "Install",
+        value: mobileAccessHelp.installHint ?? "Install Tailscale for macOS.",
+        tone: "info",
+      },
+    ];
+  }
+
+  return [
+    {
+      label: "Mobile",
+      value:
+        mobileAccessHelp.variant === "mac-app-store"
+          ? "Run Tailscale Serve with the bundled macOS app CLI"
+          : "Run Tailscale Serve to use this from mobile",
+      tone: "info",
+    },
+  ];
+}
+
+function mobileAccessCommands(
+  mobileAccessHelp: TailscaleMobileAccessHelp,
+): readonly string[] {
+  return [
+    mobileAccessHelp.serveCommand,
+    mobileAccessHelp.statusCommand,
+    mobileAccessHelp.resetCommand,
+  ].filter((command): command is string => command != null);
 }
 
 function warningRows(state: LauncherState): readonly Row[] {

@@ -49048,6 +49048,7 @@ function uG({ moduleDir: n }) {
 var o3CodeWebAccessChannels = {
   configChanged: `o3-code:web-access:config-changed`,
   getConfig: `o3-code:web-access:get-config`,
+  getMobileAccessHelp: `o3-code:web-access:get-mobile-access-help`,
   getStatus: `o3-code:web-access:get-status`,
   openUrl: `o3-code:web-access:open-url`,
   patchConfig: `o3-code:web-access:patch-config`,
@@ -49070,6 +49071,44 @@ function o3CodeResolveBridgeRepoRoot({ desktopRoot: e, repoRoot: t }) {
     )
       return n;
   throw Error(`Unable to locate repo-owned Web access bridge modules.`);
+}
+var o3CodeMacAppStoreTailscalePath = `/Applications/Tailscale.app/Contents/MacOS/Tailscale`;
+function o3CodeCreateTailscaleMobileAccessHelp(e) {
+  let t = e?.state === `running` ? e.url : null,
+    n = o3CodeResolveTailscaleCommandPrefix();
+  return n == null
+    ? {
+        available: !1,
+        variant: `missing`,
+        serveCommand: null,
+        statusCommand: null,
+        resetCommand: null,
+        installHint: `Install Tailscale for macOS, sign in on this Mac and your mobile device, then run the serve command.`,
+      }
+    : {
+        available: !0,
+        variant: n.variant,
+        serveCommand: t == null ? null : `${n.commandPrefix} serve --bg ${t}`,
+        statusCommand: `${n.commandPrefix} serve status`,
+        resetCommand: `${n.commandPrefix} serve reset`,
+        installHint: null,
+      };
+}
+function o3CodeResolveTailscaleCommandPrefix() {
+  return o3CodeHasTailscalePathCli()
+    ? { variant: `path`, commandPrefix: `tailscale` }
+    : (0, o.existsSync)(o3CodeMacAppStoreTailscalePath)
+      ? {
+          variant: `mac-app-store`,
+          commandPrefix: `TAILSCALE_BE_CLI=1 ${o3CodeMacAppStoreTailscalePath}`,
+        }
+      : null;
+}
+function o3CodeHasTailscalePathCli() {
+  for (let e of (process.env.PATH || ``).split(i.delimiter)) {
+    if (e && (0, o.existsSync)((0, i.join)(e, `tailscale`))) return !0;
+  }
+  return !1;
 }
 async function o3CodeCreateWebAccessController({
   desktopRoot: e,
@@ -49112,6 +49151,13 @@ async function o3CodeCreateWebAccessController({
       m(e);
       return u.getStatus();
     }),
+    n.ipcMain.handle(
+      o3CodeWebAccessChannels.getMobileAccessHelp,
+      async (e) => {
+        m(e);
+        return o3CodeCreateTailscaleMobileAccessHelp(u.getStatus());
+      },
+    ),
     n.ipcMain.handle(o3CodeWebAccessChannels.patchConfig, async (e, t) => {
       m(e);
       let n = await l.patchWebAccess(t ?? {});

@@ -42,6 +42,7 @@ var S = new Map(),
 var o3CodeWebAccessChannels = {
     configChanged: `o3-code:web-access:config-changed`,
     getConfig: `o3-code:web-access:get-config`,
+    getMobileAccessHelp: `o3-code:web-access:get-mobile-access-help`,
     getStatus: `o3-code:web-access:get-status`,
     openUrl: `o3-code:web-access:open-url`,
     patchConfig: `o3-code:web-access:patch-config`,
@@ -61,6 +62,8 @@ var o3CodeWebAccessChannels = {
   o3CodeWebAccessBridge = {
     getConfig: () =>
       e.ipcRenderer.invoke(o3CodeWebAccessChannels.getConfig),
+    getMobileAccessHelp: () =>
+      e.ipcRenderer.invoke(o3CodeWebAccessChannels.getMobileAccessHelp),
     getStatus: () =>
       e.ipcRenderer.invoke(o3CodeWebAccessChannels.getStatus),
     updateConfig: (t) =>

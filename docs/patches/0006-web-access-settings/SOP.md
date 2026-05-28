@@ -9,7 +9,10 @@ must be distinct from Browser/browser-use settings, default off, persist under
 ## Non-Goals
 
 - Do not restore `pnpm start:web`.
-- Do not restore `O3_CODE_BRIDGE_REMOTE` or any LAN/Tailscale/public exposure.
+- Do not restore `O3_CODE_BRIDGE_REMOTE` or any LAN/public Bridge exposure.
+- Do not make Web access itself non-localhost. Tailscale guidance may only
+  produce user-run `tailscale serve` commands that privately proxy the
+  localhost URL inside the user's tailnet.
 - Do not add manual port editing.
 - Do not create a Mirrored Web Client Patch unless browser-only behavior
   diverges from the Desktop Reconstruction.
@@ -54,14 +57,17 @@ present under `packages/bridge/src`.
    config and supervisor modules, register narrow Web access IPC handlers, and
    start the sidecar automatically when persisted config is enabled.
 5. Patch `preload.js` with `web-access-settings` markers to expose only Web
-   access config/status/update/retry/reset/open IPC methods.
+   access config/status/update/retry/reset/open IPC methods plus read-only
+   mobile access command guidance.
 6. Patch preserved settings assets with `web-access-settings` markers to add a
    `web-access` route and App-level navigation entry near Connections.
 7. Create or restore
    `apps/desktop/app/webview/assets/web-access-settings-o3code.js` as the Web
    access settings page chunk imported by the patched route map. Keep it in the
    Desktop Reconstruction Webview Assets so `pnpm derive:web` copies it to the
-   Mirrored Web Client Asset Tree.
+   Mirrored Web Client Asset Tree. Include a Mobile access section that keeps
+   the canonical URL localhost-only and offers copyable Tailscale Serve commands
+   for the user's own tailnet.
 8. Remove `start:web` from `package.json` and keep `scripts/start-web.mjs`
    deleted.
 
