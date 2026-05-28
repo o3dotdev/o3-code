@@ -6,7 +6,7 @@ Active.
 
 ## Intent
 
-Identify the browser-served O3 Code shell as O3 Code before the renderer loads. This patch owns browser title, install metadata, favicon links, and the startup splash mark served through Bridge Mode.
+Identify the browser-served O3 Code shell as O3 Code before the renderer loads. This patch owns browser title, install metadata, favicon links, and the startup splash mark served through Bridge Mode. The startup mark is injected as inline SVG so first paint does not depend on a CSS background image.
 
 ## Scope
 

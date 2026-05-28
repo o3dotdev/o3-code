@@ -32,8 +32,9 @@ Keep the browser-served shell branded as O3 Code by rewriting served HTML metada
 1. Rewrite or inject `<title>O3 Code</title>` in served browser HTML.
 2. Rewrite or inject browser install metadata for `application-name` and `apple-mobile-web-app-title`.
 3. Rewrite or inject favicon and Apple touch icon links using the O3 Code icon.
-4. Add Bridge-injected CSS that replaces the pre-React startup loader's Codex mark with the O3 Code mark.
-5. Preserve all in-app renderer strings and behavior.
+4. Replace the pre-React startup loader's inline Codex mark with an inline O3 Code SVG so the first visible shell does not rely on a CSS background image.
+5. Add Bridge-injected CSS for the O3 Code startup mark and delayed startup status fallback text.
+6. Preserve all in-app renderer strings and behavior.
 
 ## Validation
 
@@ -41,7 +42,7 @@ Keep the browser-served shell branded as O3 Code by rewriting served HTML metada
 - Run `pnpm --filter @o3dotdev/code-bridge test`.
 - Run `pnpm web-patches:check`.
 - Run `pnpm format:check`.
-- Validate Web Access in a browser: the tab title reads O3 Code, favicon uses the O3 Code mark, and the loading splash does not show the Codex mark.
+- Validate Web Access in a browser: the tab title reads O3 Code, favicon uses the O3 Code mark, and the first visible loading splash shows an O3 Code mark immediately.
 
 ## Failure Conditions
 

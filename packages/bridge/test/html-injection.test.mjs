@@ -45,7 +45,14 @@ test("injectBridgeShell brands the browser shell as O3 Code", () => {
     <link rel="apple-touch-icon" href="/codex-touch.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
-  <body></body>
+  <body>
+    <div class="startup-loader">
+      <div class="startup-loader__logo">
+        <svg class="startup-loader__base"><path d="codex" /></svg>
+        <div class="startup-loader__overlay"></div>
+      </div>
+    </div>
+  </body>
 </html>`);
 
   assert.match(injected, /<title>O3 Code<\/title>/);
@@ -66,9 +73,18 @@ test("injectBridgeShell brands the browser shell as O3 Code", () => {
   assert.doesNotMatch(injected, /codex(?:-touch)?\.png/);
   assert.match(injected, /Browser shell branding/);
   assert.match(injected, /\.startup-loader__logo/);
-  assert.match(injected, /background-image: url\("data:image\/svg\+xml,/);
-  assert.match(injected, /\.startup-loader__base,\n\.startup-loader__overlay/);
-  assert.match(injected, /display: none !important/);
+  assert.match(injected, /o3-code-startup-loader__glyph/);
+  assert.match(injected, /<rect x="64" y="64" width="896"/);
+  assert.match(injected, /o3-code-startup-status/);
+  assert.match(injected, /data-visible="true"/);
+  assert.doesNotMatch(
+    injected,
+    /background-image: url\("data:image\/svg\+xml,/,
+  );
+  assert.doesNotMatch(
+    injected,
+    /\.startup-loader__base,\n\.startup-loader__overlay/,
+  );
 });
 
 test("injectBridgeShell makes mac Electron chrome opaque in Bridge Mode", () => {

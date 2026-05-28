@@ -16,8 +16,10 @@
 ## Patch Shape
 
 - Added Bridge injection for O3 Code browser title, app metadata, favicon, and Apple touch icon.
-- Added Bridge-injected startup loader CSS that uses the O3 Code mark and hides the upstream Codex startup mark before React loads.
-- Added bridge test assertions for title, metadata, icon links, and startup branding CSS.
+- Added Bridge injection that replaces the upstream pre-React startup mark with inline O3 Code SVG before React loads.
+- Added Bridge Shell CSS and Bridge Shim fallback text for long pre-React startup waits.
+- Added Bridge Sidecar startup request diagnostics for the first browser shell, shim, and app asset requests.
+- Added bridge test assertions for title, metadata, icon links, inline startup branding, fallback text, and request diagnostics.
 - Added no copied-asset Web Patch markers because this patch is implemented in repo-owned Bridge code.
 
 ## Validation
@@ -30,3 +32,4 @@
 ## Unresolved Risk
 
 - Manual Web Access validation is still required to confirm the browser tab favicon and startup splash appearance in the real sidecar-served page.
+- Future blank-start reports should include the new Bridge timing lines from `desktop.log` for the first browser shell, bridge shim, and app asset requests.

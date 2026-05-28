@@ -11,6 +11,7 @@ import { fileURLToPath } from "node:url";
 import { CdpClient } from "./cdp-client.mjs";
 import { injectBridgeShell } from "./html-injection.mjs";
 import { repoRoot, resolveBridgeWebviewDir } from "./paths.mjs";
+import { createBridgeRequestDiagnostics } from "./request-diagnostics.mjs";
 import { BridgeRouter } from "./router.mjs";
 import {
   getWebviewCacheControl,
@@ -52,6 +53,10 @@ await mkdir(stageDir, { recursive: true });
 
 const cdpClient = new CdpClient({ cdpPort, cdpHost, targetUrl });
 const router = new BridgeRouter({ hostTransport: cdpClient });
+const requestDiagnostics = createBridgeRequestDiagnostics({
+  debug: process.env.O3_CODE_BRIDGE_DEBUG === "1",
+  logger: console,
+});
 cdpClient.on("host-event", (event) => router.handleHostEvent(event));
 cdpClient.connect().catch((error) => {
   console.error("[bridge] initial CDP connection failed", error);
@@ -140,28 +145,37 @@ async function handleHttpRequest(request, response) {
     request.url ?? "/",
     `${protocol}://${request.headers.host}`,
   );
+  const diagnostic = requestDiagnostics.start({
+    method: request.method,
+    urlPathname: url.pathname,
+  });
 
   if (url.pathname === "/healthz") {
     sendJson(response, {
       ok: true,
       activeSessionId: router.activeSessionId,
     });
+    diagnostic.finish({ statusCode: 200 });
     return;
   }
 
   if (request.method === "POST" && url.pathname === "/bridge/stage-file") {
     await handleStageFile(request, response);
+    diagnostic.finish({ statusCode: 200 });
     return;
   }
 
   if (request.method !== "GET" && request.method !== "HEAD") {
     response.writeHead(405, { allow: "GET, HEAD, POST" });
     response.end();
+    diagnostic.finish({ statusCode: 405 });
     return;
   }
 
   if (url.pathname === "/bridge-shim.js") {
-    await sendFile(response, path.join(publicDir, "bridge-shim.js"));
+    await sendFile(response, path.join(publicDir, "bridge-shim.js"), null, {
+      diagnostic,
+    });
     return;
   }
 
@@ -172,17 +186,18 @@ async function handleHttpRequest(request, response) {
   if (assetPath == null) {
     response.writeHead(404);
     response.end();
+    diagnostic.finish({ statusCode: 404 });
     return;
   }
 
   if (assetPath.endsWith("index.html")) {
-    await sendInjectedIndex(response, assetPath);
+    await sendInjectedIndex(response, assetPath, { diagnostic });
     return;
   }
 
   const assetStat = await statFile(assetPath);
   if (assetStat?.isFile()) {
-    await sendFile(response, assetPath, assetStat);
+    await sendFile(response, assetPath, assetStat, { diagnostic });
     return;
   }
 
@@ -192,12 +207,15 @@ async function handleHttpRequest(request, response) {
       urlPathname: url.pathname,
     })
   ) {
-    await sendInjectedIndex(response, path.join(webviewDir, "index.html"));
+    await sendInjectedIndex(response, path.join(webviewDir, "index.html"), {
+      diagnostic,
+    });
     return;
   }
 
   response.writeHead(404);
   response.end();
+  diagnostic.finish({ statusCode: 404 });
 }
 
 async function handleStageFile(request, response) {
@@ -227,8 +245,19 @@ async function statFile(filePath) {
   }
 }
 
-async function sendFile(response, filePath, fileStat = null) {
+async function sendFile(
+  response,
+  filePath,
+  fileStat = null,
+  { diagnostic = null } = {},
+) {
   fileStat ??= await stat(filePath);
+  response.once("finish", () => {
+    diagnostic?.finish({
+      bytes: fileStat.size,
+      statusCode: response.statusCode,
+    });
+  });
   response.writeHead(200, {
     "content-type": getContentType(filePath),
     "content-length": fileStat.size,
@@ -237,18 +266,31 @@ async function sendFile(response, filePath, fileStat = null) {
   createReadStream(filePath).pipe(response);
 }
 
-async function sendInjectedIndex(response, indexPath) {
+async function sendInjectedIndex(
+  response,
+  indexPath,
+  { diagnostic = null } = {},
+) {
+  const readStartedAt = performance.now();
   const html = await readFile(indexPath, "utf8");
+  const htmlReadMs = Math.round(performance.now() - readStartedAt);
+  const injectStartedAt = performance.now();
+  const injectedHtml = injectBridgeShell(html, {
+    debug: process.env.O3_CODE_BRIDGE_DEBUG === "1",
+  });
+  const htmlInjectMs = Math.round(performance.now() - injectStartedAt);
   response.writeHead(200, {
     "content-type": "text/html; charset=utf-8",
     "cache-control": "no-store",
     "clear-site-data": '"cache"',
   });
-  response.end(
-    injectBridgeShell(html, {
-      debug: process.env.O3_CODE_BRIDGE_DEBUG === "1",
-    }),
-  );
+  response.end(injectedHtml);
+  diagnostic?.finish({
+    bytes: Buffer.byteLength(injectedHtml),
+    htmlInjectMs,
+    htmlReadMs,
+    statusCode: 200,
+  });
 }
 
 function sendJson(response, payload) {
