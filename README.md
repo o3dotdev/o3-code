@@ -1,5 +1,5 @@
 <picture>
-  <img src="docs/assets/o3-code-readme-banner.svg" alt="O3 Code desktop app with a companion phone view" width="100%">
+  <img src="docs/assets/o3-code-readme-banner.jpeg" alt="O3 Code desktop app with a companion phone view" width="100%">
 </picture>
 
 # O3 Code
