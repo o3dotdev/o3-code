@@ -168,6 +168,18 @@ _Avoid_: bundled codex, repo-built codex, source checkout, router binary
 The O3 Code-owned participant that stands in the Desktop Reconstruction's Codex app-server launch position while preserving the existing app-server protocol boundary and delegating to the External Codex CLI.
 _Avoid_: Codex fork, browser app-server client, alternate backend
 
+**Agent Runtime**:
+The selected execution surface for a local thread, such as the Codex App chat runtime or a terminal-backed external CLI runtime.
+_Avoid_: agent mode, model, provider
+
+**Terminal Agent Runtime**:
+An Agent Runtime that represents an interactive CLI process in a thread-owned terminal instead of Codex App chat history.
+_Avoid_: terminal thread type, CLI chat, shell mode
+
+**External Agent Session**:
+The conversation identity owned by a Terminal Agent Runtime and associated with one O3 Code local conversation so the external CLI can resume its own history across launches.
+_Avoid_: terminal session, thread id, process id
+
 **Codex App User Data Directory**:
 The installed Codex App's Electron user data directory, shared by default with O3 Code when running the Desktop Reconstruction locally.
 _Avoid_: original app folder, app bundle, upstream folder
