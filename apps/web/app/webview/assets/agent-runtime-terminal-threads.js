@@ -4,6 +4,8 @@ import { t as terminalService } from "./terminal-service.js";
 const STORAGE_KEY = `o3-code.agent-runtime-terminal-threads.v1`;
 const DEFAULT_RUNTIME_ID = `codex-app`;
 const TERMINAL_SESSION_PREFIX = `terminal-agent:`;
+const DEFAULT_REASONING_EFFORT = `high`;
+const TERMINAL_REASONING_EFFORTS = [`low`, `medium`, `high`, `xhigh`];
 
 const registry = {
   "codex-app": {
@@ -19,6 +21,8 @@ const registry = {
     kind: `terminal`,
     command: `claude`,
     defaultModel: `opus`,
+    defaultReasoningEffort: DEFAULT_REASONING_EFFORT,
+    reasoningEfforts: [...TERMINAL_REASONING_EFFORTS, `max`],
     models: [
       { label: `Opus`, value: `opus` },
       { label: `Sonnet`, value: `sonnet` },
@@ -31,11 +35,15 @@ const registry = {
     kind: `terminal`,
     command: `codex`,
     defaultModel: `gpt-5.5`,
+    defaultReasoningEffort: DEFAULT_REASONING_EFFORT,
+    reasoningEfforts: TERMINAL_REASONING_EFFORTS,
     models: [
-      { label: `5.5`, value: `gpt-5.5` },
+      { label: `GPT-5.5`, value: `gpt-5.5` },
+      { label: `GPT-5.4`, value: `gpt-5.4` },
+      { label: `GPT-5.4-Mini`, value: `gpt-5.4-mini` },
+      { label: `GPT-5.3-Codex`, value: `gpt-5.3-codex` },
+      { label: `GPT-5.3-Codex-Spark`, value: `gpt-5.3-codex-spark` },
       { label: `GPT-5.2`, value: `gpt-5.2` },
-      { label: `GPT-5.1`, value: `gpt-5.1` },
-      { label: `GPT-5`, value: `gpt-5` },
     ],
   },
 };
@@ -70,6 +78,14 @@ function normalizeState(value) {
       ? value.selectedModels
       : {}),
   };
+  let selectedReasoningEfforts = {
+    "claude-code": registry["claude-code"].defaultReasoningEffort,
+    "codex-cli": registry["codex-cli"].defaultReasoningEffort,
+    ...(value?.selectedReasoningEfforts &&
+    typeof value.selectedReasoningEfforts == `object`
+      ? value.selectedReasoningEfforts
+      : {}),
+  };
   let threads = {};
   if (value?.threads && typeof value.threads == `object`) {
     for (let [conversationId, metadata] of Object.entries(value.threads)) {
@@ -86,7 +102,11 @@ function normalizeState(value) {
           metadata.externalSessionId ?? createExternalSessionId(),
         cwd: metadata.cwd ?? null,
         hostId: metadata.hostId ?? null,
-        model: metadata.model ?? runtime.defaultModel ?? null,
+        model: normalizeModel(runtime.id, metadata.model) ?? null,
+        reasoningEffort:
+          normalizeReasoningEffort(runtime.id, metadata.reasoningEffort) ??
+          runtime.defaultReasoningEffort ??
+          null,
         permissionMode: metadata.permissionMode ?? null,
         collaborationMode: metadata.collaborationMode ?? null,
         title: metadata.title ?? null,
@@ -94,7 +114,17 @@ function normalizeState(value) {
       };
     }
   }
-  return { version: 1, selectedAgentRuntimeId, selectedModels, threads };
+  selectedModels = normalizeSelectedModels(selectedModels);
+  selectedReasoningEfforts = normalizeSelectedReasoningEfforts(
+    selectedReasoningEfforts,
+  );
+  return {
+    version: 1,
+    selectedAgentRuntimeId,
+    selectedModels,
+    selectedReasoningEfforts,
+    threads,
+  };
 }
 
 function emit() {
@@ -130,9 +160,26 @@ function getRuntime(runtimeId) {
   return registry[runtimeId] ?? registry[DEFAULT_RUNTIME_ID];
 }
 
+function normalizeModel(runtimeId, model) {
+  let runtime = getRuntime(runtimeId);
+  if (runtime.kind !== `terminal`) return null;
+  return runtime.models.some((entry) => entry.value === model)
+    ? model
+    : runtime.defaultModel;
+}
+
+function normalizeSelectedModels(selectedModels) {
+  let next = { ...selectedModels };
+  for (let runtime of Object.values(registry)) {
+    if (runtime.kind !== `terminal`) continue;
+    next[runtime.id] = normalizeModel(runtime.id, next[runtime.id]);
+  }
+  return next;
+}
+
 function getSelectedModel(runtimeId) {
   let runtime = getRuntime(runtimeId);
-  return state.selectedModels[runtime.id] ?? runtime.defaultModel ?? null;
+  return normalizeModel(runtime.id, state.selectedModels[runtime.id]);
 }
 
 function getModelLabel(runtimeId, model) {
@@ -161,6 +208,46 @@ function setSelectedRuntimeModel(runtimeId, model) {
     selectedModels: {
       ...current.selectedModels,
       [runtime.id]: model || runtime.defaultModel,
+    },
+  }));
+}
+
+function normalizeReasoningEffort(runtimeId, reasoningEffort) {
+  let runtime = getRuntime(runtimeId);
+  if (runtime.kind !== `terminal`) return null;
+  return runtime.reasoningEfforts?.includes(reasoningEffort)
+    ? reasoningEffort
+    : runtime.defaultReasoningEffort;
+}
+
+function normalizeSelectedReasoningEfforts(selectedReasoningEfforts) {
+  let next = { ...selectedReasoningEfforts };
+  for (let runtime of Object.values(registry)) {
+    if (runtime.kind !== `terminal`) continue;
+    next[runtime.id] = normalizeReasoningEffort(
+      runtime.id,
+      next[runtime.id],
+    );
+  }
+  return next;
+}
+
+function getSelectedReasoningEffort(runtimeId) {
+  let runtime = getRuntime(runtimeId);
+  return normalizeReasoningEffort(
+    runtime.id,
+    state.selectedReasoningEfforts[runtime.id],
+  );
+}
+
+function setSelectedRuntimeReasoningEffort(runtimeId, reasoningEffort) {
+  let runtime = getRuntime(runtimeId);
+  if (runtime.kind !== `terminal`) return;
+  updateState((current) => ({
+    ...current,
+    selectedReasoningEfforts: {
+      ...current.selectedReasoningEfforts,
+      [runtime.id]: normalizeReasoningEffort(runtime.id, reasoningEffort),
     },
   }));
 }
@@ -205,6 +292,7 @@ function createThreadMetadata({
   cwd,
   hostId,
   model,
+  reasoningEffort,
   permissionMode,
   collaborationMode,
   title,
@@ -221,6 +309,9 @@ function createThreadMetadata({
     cwd: cwd ?? null,
     hostId: hostId ?? null,
     model: model ?? getSelectedModel(runtime.id),
+    reasoningEffort:
+      normalizeReasoningEffort(runtime.id, reasoningEffort) ??
+      getSelectedReasoningEffort(runtime.id),
     permissionMode: permissionMode ?? null,
     collaborationMode: collaborationMode ?? null,
     title: title ?? null,
@@ -253,6 +344,21 @@ function codexPermissionArgs(permissionMode) {
   }
 }
 
+function claudePermissionArgs(permissionMode) {
+  switch (permissionMode) {
+    case `full-access`:
+      return [`--permission-mode`, `bypassPermissions`];
+    case `read-only`:
+      return [`--permission-mode`, `plan`];
+    case `auto`:
+      return [`--permission-mode`, `auto`];
+    case `guardian-approvals`:
+      return [`--permission-mode`, `default`];
+    default:
+      return [];
+  }
+}
+
 function colorTerminalEnvArgs() {
   return [
     `env`,
@@ -269,14 +375,21 @@ function colorTerminalEnvArgs() {
 function buildLaunchArgs(metadata, { resume = false, prompt = `` } = {}) {
   let runtime = getRuntime(metadata.agentRuntimeId),
     model = metadata.model ?? runtime.defaultModel,
+    reasoningEffort =
+      normalizeReasoningEffort(runtime.id, metadata.reasoningEffort) ??
+      runtime.defaultReasoningEffort,
     args = [...colorTerminalEnvArgs(), metadata.command ?? runtime.command];
   if (runtime.id === `claude-code`) {
     args.push(`--allow-dangerously-skip-permissions`);
     args.push(resume ? `--resume` : `--session-id`, metadata.externalSessionId);
     if (model) args.push(`--model`, model);
+    if (reasoningEffort) args.push(`--effort`, reasoningEffort);
+    args.push(...claudePermissionArgs(metadata.permissionMode));
   } else if (runtime.id === `codex-cli`) {
     if (resume) args.push(`resume`);
     if (model) args.push(`--model`, model);
+    if (reasoningEffort)
+      args.push(`--config`, `model_reasoning_effort="${reasoningEffort}"`);
     args.push(...codexPermissionArgs(metadata.permissionMode));
     if (resume) args.push(metadata.externalSessionId);
   }
@@ -359,5 +472,7 @@ export {
   setSelectedAgentRuntimeId as s,
   setSelectedRuntimeModel as t,
   subscribe as u,
+  getSelectedReasoningEffort as v,
+  setSelectedRuntimeReasoningEffort as w,
 };
 // o3-code-patch-end: agent-runtime-terminal-threads

@@ -17,11 +17,13 @@
 - Relaunch after process loss or app restart uses the runtime resume command with the stored External Agent Session UUID.
 - Claude Code resume is first-class because initial launch supports `--session-id <uuid>` and later launch supports `--resume <uuid>`.
 - Codex CLI resume is best effort until implementation can discover the Codex-created session id or verify `codex resume <uuid> "PROMPT"` can create a new session.
-- Runtime/model/permission identity is disabled after initial start; in-session changes belong in the CLI TUI.
+- Runtime/model/reasoning/permission identity is disabled after initial start; in-session changes belong in the CLI TUI.
 - Attachments are out of scope for terminal runtimes in the first pass.
 - The feature should ship directly once implemented, without a local feature flag.
 - Claude Code default model is `opus`.
-- Codex CLI model label is `5.5`; launch value is `gpt-5.5`.
+- Codex CLI default model label is `GPT-5.5`; launch value is `gpt-5.5`.
+- Terminal runtime reasoning is selected at launch. Codex CLI supports
+  `low`, `medium`, `high`, and `xhigh`; Claude Code also supports `max`.
 
 ## Known Sites
 
@@ -52,9 +54,10 @@
 
 - Added a static Agent Runtime registry for `Codex App`, `Claude Code`, and
   `Codex CLI`, plus in-window metadata persistence keyed by `conversationId`.
-- Added an `Agent` selector beside the composer footer controls. Terminal
-  runtimes get their own model selector and the normal Codex App model picker is
-  hidden while a terminal runtime is selected.
+- Added an OG-style `Agent` selector before the composer intelligence selector.
+  The normal Codex App model/reasoning picker stays unchanged for `Codex App`.
+  Terminal runtimes use a matching intelligence menu for launch-time model and
+  reasoning selection instead of native browser selects.
 - Terminal runtime first submit creates an empty local conversation, stores
   Agent Runtime metadata, sets a readable thread title, navigates to the local
   thread, and launches the CLI in `terminal-agent:${conversationId}`.
@@ -66,6 +69,8 @@
 - Terminal agent launch commands force `TERM=xterm-256color`,
   `COLORTERM=truecolor`, and color-enabling environment variables so CLI TUIs
   keep ANSI color when started through the app terminal service.
+- Claude Code launches with `--model` and `--effort`; Codex CLI launches with
+  `--model` and `--config model_reasoning_effort="..."`.
 - Follow-up text in a terminal-agent thread writes to stdin while live, or
   relaunches with the runtime resume command and the submitted prompt when the
   process is no longer live.
@@ -116,6 +121,10 @@
   `data-thread-find-composer` at `104px` high instead of the previous collapsed
   strip, the terminal panel reserved space above it, and xterm span colors
   included Claude/ANSI color values rather than only the default foreground.
+- `pnpm start` Agent selector parity smoke passed: CDP inspection found zero
+  native `<select>` elements, the new-chat footer rendered `Agent` before the
+  intelligence selector, `Claude Code` rendered `Opus` + `Max`, and terminal
+  runtime selection hid dictation/realtime controls before launch.
 
 ## Unresolved Risk
 
