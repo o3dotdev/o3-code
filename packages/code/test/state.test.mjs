@@ -1,0 +1,102 @@
+import assert from "node:assert/strict";
+import { mkdtempSync, rmSync } from "node:fs";
+import { tmpdir } from "node:os";
+import path from "node:path";
+import test from "node:test";
+
+import {
+  createBaseState,
+  readLauncherState,
+  removeLauncherState,
+  writeLauncherState,
+} from "../dist/bin.mjs";
+
+test("launcher state round trips through disk", () => {
+  const root = mkdtempSync(path.join(tmpdir(), "o3-code-state-"));
+  const paths = {
+    runDir: path.join(root, "run"),
+    statePath: path.join(root, "run", "launcher.json"),
+    launcherLogPath: path.join(root, "logs", "launcher.log"),
+    desktopLogPath: path.join(root, "logs", "desktop.log"),
+    bridgeLogPath: path.join(root, "logs", "bridge.log"),
+  };
+
+  try {
+    const state = {
+      ...createBaseState(paths),
+      status: "running",
+      startup: {
+        detail: "runtime",
+        label: "Preparing runtime",
+        phaseId: "preparing-runtime",
+        startedAt: "2026-05-28T12:00:00.000Z",
+        step: 1,
+        total: 7,
+        updatedAt: "2026-05-28T12:00:01.000Z",
+      },
+      url: "http://127.0.0.1:1234/",
+    };
+    writeLauncherState(paths, state);
+
+    const actual = readLauncherState(paths);
+    assert.equal(actual.status, "running");
+    assert.equal(actual.url, "http://127.0.0.1:1234/");
+    assert.equal(actual.logs.desktop, paths.desktopLogPath);
+    assert.deepEqual(actual.startup, state.startup);
+
+    removeLauncherState(paths);
+    assert.equal(readLauncherState(paths), null);
+  } finally {
+    rmSync(root, { force: true, recursive: true });
+  }
+});
+
+test("launcher state warns when realtime API key is missing", () => {
+  const originalKey = process.env.O3_CODE_REALTIME_API_KEY;
+  const originalDisable = process.env.O3_CODE_DISABLE_REALTIME_OVERRIDE;
+  delete process.env.O3_CODE_REALTIME_API_KEY;
+  delete process.env.O3_CODE_DISABLE_REALTIME_OVERRIDE;
+
+  try {
+    const state = createBaseState({
+      bridgeLogPath: "/tmp/bridge.log",
+      desktopLogPath: "/tmp/desktop.log",
+      launcherLogPath: "/tmp/launcher.log",
+    });
+
+    assert.deepEqual(state.warnings, [
+      "Realtime features might not be enabled for your account. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key to enable access to realtime models.",
+    ]);
+  } finally {
+    restoreEnv("O3_CODE_REALTIME_API_KEY", originalKey);
+    restoreEnv("O3_CODE_DISABLE_REALTIME_OVERRIDE", originalDisable);
+  }
+});
+
+test("launcher state does not warn when realtime API key is set", () => {
+  const originalKey = process.env.O3_CODE_REALTIME_API_KEY;
+  const originalDisable = process.env.O3_CODE_DISABLE_REALTIME_OVERRIDE;
+  process.env.O3_CODE_REALTIME_API_KEY = "rt-secret";
+  delete process.env.O3_CODE_DISABLE_REALTIME_OVERRIDE;
+
+  try {
+    const state = createBaseState({
+      bridgeLogPath: "/tmp/bridge.log",
+      desktopLogPath: "/tmp/desktop.log",
+      launcherLogPath: "/tmp/launcher.log",
+    });
+
+    assert.deepEqual(state.warnings, []);
+  } finally {
+    restoreEnv("O3_CODE_REALTIME_API_KEY", originalKey);
+    restoreEnv("O3_CODE_DISABLE_REALTIME_OVERRIDE", originalDisable);
+  }
+});
+
+function restoreEnv(name, value) {
+  if (value === undefined) {
+    delete process.env[name];
+    return;
+  }
+  process.env[name] = value;
+}

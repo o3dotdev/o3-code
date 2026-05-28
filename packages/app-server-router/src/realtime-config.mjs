@@ -1,11 +1,17 @@
 export const REALTIME_API_KEY_ENV = "O3_CODE_REALTIME_API_KEY";
 export const REALTIME_BASE_URL_ENV = "O3_CODE_REALTIME_BASE_URL";
+export const DISABLE_REALTIME_OVERRIDE_ENV =
+  "O3_CODE_DISABLE_REALTIME_OVERRIDE";
 
 const DEFAULT_REALTIME_BASE_URL = "https://api.openai.com/v1";
 const SUPPORTED_SCHEMES = new Set(["http:", "https:", "ws:", "wss:"]);
 const SUPPORTED_CALL_SCHEMES = new Set(["http:", "https:"]);
 
 export function resolveRealtimeOverride({ env = process.env } = {}) {
+  if (env[DISABLE_REALTIME_OVERRIDE_ENV] === "1") {
+    return null;
+  }
+
   const apiKey = env[REALTIME_API_KEY_ENV]?.trim();
   if (!apiKey) {
     return null;

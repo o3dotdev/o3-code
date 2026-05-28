@@ -13,8 +13,10 @@ export const DEFAULT_O3_CODE_CONFIG = Object.freeze({
   webAccess: DEFAULT_WEB_ACCESS_CONFIG,
 });
 
-export function getDefaultO3CodeStateRoot() {
-  return path.join(os.homedir(), ".o3", "code");
+export function getDefaultO3CodeStateRoot(env = process.env) {
+  return path.resolve(
+    env.O3_CODE_STATE_ROOT?.trim() || path.join(os.homedir(), ".o3", "code"),
+  );
 }
 
 export function normalizeWebAccessConfig(value) {

@@ -1,0 +1,74 @@
+{
+  "name": "@o3dotdev/code",
+  "version": "0.0.0-alpha.6",
+  "private": false,
+  "description": "Run O3 Code locally from npm using an installed Codex Desktop app as the native resource provider.",
+  "type": "module",
+  "license": "MIT",
+  "homepage": "https://github.com/o3dotdev/o3-code#readme",
+  "bugs": {
+    "url": "https://github.com/o3dotdev/o3-code/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/o3dotdev/o3-code.git",
+    "directory": "packages/code"
+  },
+  "keywords": [
+    "o3-code",
+    "codex",
+    "agent",
+    "desktop",
+    "launcher"
+  ],
+  "bin": {
+    "o3-code": "./dist/bin.mjs"
+  },
+  "files": [
+    "dist/",
+    "runtime/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "typecheck": "tsc --noEmit",
+    "prepare:runtime": "node scripts/prepare-runtime.mjs",
+    "check:payload": "node scripts/check-runtime-payload.mjs",
+    "test": "pnpm build && node --test test/*.test.mjs",
+    "smoke": "pnpm prepare:runtime && pnpm build && node dist/bin.mjs --help",
+    "prepack": "pnpm prepare:runtime && pnpm build && pnpm check:payload"
+  },
+  "engines": {
+    "node": ">=22.14.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "dependencies": {
+    "commander": "^14.0.2",
+    "electron": "42.1.0",
+    "ink": "^7.0.2",
+    "mockttp": "^4.4.2",
+    "react": "^19.2.6"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "@types/react": "^19.2.14",
+    "tsdown": "^0.16.7",
+    "typescript": "^5.9.3"
+  },
+  "overrides": {
+    "@peculiar/asn1-cms": "2.6.1",
+    "@peculiar/asn1-csr": "2.6.1",
+    "@peculiar/asn1-ecc": "2.6.1",
+    "@peculiar/asn1-pfx": "2.6.1",
+    "@peculiar/asn1-pkcs8": "2.6.1",
+    "@peculiar/asn1-pkcs9": "2.6.1",
+    "@peculiar/asn1-rsa": "2.6.1",
+    "@peculiar/asn1-schema": "2.6.0",
+    "@peculiar/asn1-x509": "2.6.1",
+    "@peculiar/asn1-x509-attr": "2.6.1"
+  }
+}

@@ -12,10 +12,11 @@
   - Allocates a per-run loopback CDP port before app readiness.
 - `apps/desktop/app/.vite/build/main.js`
   - Patch ID: `web-access-settings`
-  - Registers Web access IPC and starts the Bridge Mode supervisor.
+  - Registers Web access IPC, starts the Bridge Mode supervisor, and returns
+    read-only Tailscale Serve command guidance.
 - `apps/desktop/app/.vite/build/preload.js`
   - Patch ID: `web-access-settings`
-  - Exposes `electronBridge.webAccess`.
+  - Exposes `electronBridge.webAccess`, including mobile access guidance.
 - `apps/desktop/app/webview/assets/app-main.js`
   - Patch ID: `web-access-settings`
   - Adds the `web-access` settings route.
@@ -30,6 +31,8 @@
   - Places Web access under App settings near Connections.
 - `apps/desktop/app/webview/assets/web-access-settings-o3code.js`
   - Patch-owned settings page chunk.
+  - Shows localhost Web access status plus user-run Tailscale Serve commands
+    for private tailnet mobile access.
   - Source Refresh can delete this repo-added file when replacing
     `apps/desktop/app`; Patch 0006 recreates it before `pnpm derive:web`.
 

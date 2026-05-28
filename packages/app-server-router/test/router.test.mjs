@@ -140,6 +140,38 @@ test("proxyToExternalCodex scopes realtime MITM env to child when realtime key i
   );
 });
 
+test("proxyToExternalCodex skips realtime override when disabled", async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "o3-router-"));
+  const binDir = path.join(root, "bin");
+  await writeExecutable(binDir, "codex", "#!/bin/sh\nexit 0\n");
+
+  let capturedSpawn;
+  const result = await proxyToExternalCodex({
+    argv: ["app-server"],
+    env: {
+      ...withoutRealtimeEnv({ PATH: binDir }),
+      O3_CODE_DISABLE_REALTIME_OVERRIDE: "1",
+      O3_CODE_REALTIME_API_KEY: "rt-secret",
+    },
+    spawn(command, args, options) {
+      capturedSpawn = { args, command, options };
+      const child = createFakeChild();
+      queueMicrotask(() => child.emit("exit", 0, null));
+      return child;
+    },
+    stdin: Readable.from([]),
+    stdout: createCollectingWritable(),
+    stderr: createCollectingWritable(),
+    routerExecutablePath: path.join(root, "o3-app-server-router"),
+  });
+
+  assert.deepEqual(result, { code: 0, signal: null });
+  assert.equal(capturedSpawn.options.env.O3_CODE_REALTIME_API_KEY, "rt-secret");
+  assert.equal(capturedSpawn.options.env.CODEX_CA_CERTIFICATE, undefined);
+  assert.equal(capturedSpawn.options.env.HTTP_PROXY, undefined);
+  assert.equal(capturedSpawn.options.env.HTTPS_PROXY, undefined);
+});
+
 test("normalizeRealtimeBaseUrl accepts origin, /v1, and websocket schemes", () => {
   assert.equal(
     normalizeRealtimeBaseUrl("https://api.openai.com").toString(),
@@ -391,6 +423,43 @@ test("Realtime MITM Proxy rewrites sideband websocket joins with realtime auth",
     assert.equal(
       upstream.records[0].url,
       "/v1/realtime/calls/rtc_test/sideband?session=abc",
+    );
+    assert.equal(upstream.records[0].headers.authorization, "Bearer rt-secret");
+    assert.notEqual(
+      upstream.records[0].headers.authorization,
+      "Bearer inbound-secret",
+    );
+  } finally {
+    await proxy.close();
+    await upstream.close();
+  }
+});
+
+test("Realtime MITM Proxy rewrites official call_id sideband websocket joins with realtime auth", async () => {
+  const upstream = await startFakeRealtimeUpstream();
+  const proxy = await startRealtimeMitmProxy({
+    apiKey: "rt-secret",
+    stderr: createCollectingWritable(),
+    upstreamCallsBaseUrl: new URL(`http://127.0.0.1:${upstream.port}/v1`),
+  });
+
+  try {
+    const client = await openProxyWebSocket(
+      proxy.port,
+      "http://api.openai.com/v1/realtime?call_id=rtc_test",
+      {
+        Authorization: "Bearer inbound-secret",
+      },
+    );
+    client.socket.on("error", () => {});
+    client.socket.end();
+
+    assert.match(client.response, /^HTTP\/1\.1 101 Switching Protocols\r\n/u);
+    assert.equal(upstream.records.length, 1);
+    assert.equal(upstream.records[0].url, "/v1/realtime?call_id=rtc_test");
+    assert.equal(
+      upstream.records[0].headers.host,
+      `127.0.0.1:${upstream.port}`,
     );
     assert.equal(upstream.records[0].headers.authorization, "Bearer rt-secret");
     assert.notEqual(

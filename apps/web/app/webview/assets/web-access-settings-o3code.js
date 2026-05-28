@@ -14,12 +14,23 @@ var React = wrapReactModule(reactModule()),
     exposure: "localhost",
     port: null,
   },
-  DEFAULT_STATUS = { state: "off" };
+  DEFAULT_STATUS = { state: "off" },
+  DEFAULT_MOBILE_ACCESS_HELP = {
+    available: false,
+    variant: "missing",
+    serveCommand: null,
+    statusCommand: null,
+    resetCommand: null,
+    installHint: `Install Tailscale for macOS, sign in on this Mac and your mobile device, then run the serve command.`,
+  };
 
 function WebAccessSettingsPage() {
   let bridge = window.electronBridge?.webAccess,
     [config, setConfig] = React.useState(DEFAULT_CONFIG),
     [status, setStatus] = React.useState(DEFAULT_STATUS),
+    [mobileAccessHelp, setMobileAccessHelp] = React.useState(
+      DEFAULT_MOBILE_ACCESS_HELP,
+    ),
     [loading, setLoading] = React.useState(true),
     [error, setError] = React.useState(null);
   return (
@@ -34,12 +45,21 @@ function WebAccessSettingsPage() {
           mounted && setConfig(config);
         }),
         unsubscribeStatus = bridge.subscribeStatus((status) => {
-          mounted && setStatus(status);
+          if (!mounted) return;
+          setStatus(status);
+          refreshMobileAccessHelp(bridge, setMobileAccessHelp);
         });
       return (
-        Promise.all([bridge.getConfig(), bridge.getStatus()])
-          .then(([config, status]) => {
-            mounted && (setConfig(config), setStatus(status));
+        Promise.all([
+          bridge.getConfig(),
+          bridge.getStatus(),
+          getMobileAccessHelp(bridge),
+        ])
+          .then(([config, status, mobileAccessHelp]) => {
+            mounted &&
+              (setConfig(config),
+              setStatus(status),
+              setMobileAccessHelp(mobileAccessHelp));
           })
           .catch((error) => {
             mounted &&
@@ -189,6 +209,79 @@ function WebAccessSettingsPage() {
             }),
           ],
         }),
+        jsx.jsxs(SettingsGroup, {
+          children: [
+            jsx.jsx(SettingsGroup.Header, { title: `Mobile access` }),
+            jsx.jsx(SettingsGroup.Content, {
+              children: jsx.jsxs(SettingsSurface, {
+                children: [
+                  jsx.jsx(ValueRow, {
+                    label: `Local URL`,
+                    children:
+                      status.state === `running`
+                        ? jsx.jsx(`span`, {
+                            className: `break-all font-mono`,
+                            children: status.url,
+                          })
+                        : `Available when Web access is running`,
+                  }),
+                  jsx.jsx(SettingsRow, {
+                    label: `Tailscale Serve`,
+                    description: getMobileAccessDescription(mobileAccessHelp),
+                    control: jsx.jsxs(`div`, {
+                      className: `flex flex-wrap justify-end gap-2`,
+                      children: [
+                        jsx.jsx(ActionButton, {
+                          disabled: mobileAccessHelp.serveCommand == null,
+                          onClick: async () => {
+                            mobileAccessHelp.serveCommand != null &&
+                              (await navigator.clipboard.writeText(
+                                mobileAccessHelp.serveCommand,
+                              ));
+                          },
+                          children: `Copy serve`,
+                        }),
+                        jsx.jsx(ActionButton, {
+                          disabled: mobileAccessHelp.statusCommand == null,
+                          onClick: async () => {
+                            mobileAccessHelp.statusCommand != null &&
+                              (await navigator.clipboard.writeText(
+                                mobileAccessHelp.statusCommand,
+                              ));
+                          },
+                          children: `Copy status`,
+                        }),
+                      ],
+                    }),
+                  }),
+                  jsx.jsx(CommandValueRow, {
+                    label: `Serve`,
+                    value:
+                      mobileAccessHelp.serveCommand ??
+                      `Enable Web access and install Tailscale first`,
+                  }),
+                  jsx.jsx(CommandValueRow, {
+                    label: `Status`,
+                    value:
+                      mobileAccessHelp.statusCommand ??
+                      `tailscale serve status`,
+                  }),
+                  jsx.jsx(CommandValueRow, {
+                    label: `Reset`,
+                    value:
+                      mobileAccessHelp.resetCommand ?? `tailscale serve reset`,
+                  }),
+                  mobileAccessHelp.installHint == null
+                    ? null
+                    : jsx.jsx(ValueRow, {
+                        label: `Install`,
+                        children: mobileAccessHelp.installHint,
+                      }),
+                ],
+              }),
+            }),
+          ],
+        }),
       ],
     })
   );
@@ -211,6 +304,44 @@ function ValueRow(props) {
     label,
     children,
   });
+}
+
+function CommandValueRow(props) {
+  let { label, value } = props;
+  return jsx.jsx(ValueRow, {
+    label,
+    children: jsx.jsx(`span`, {
+      className: `break-all font-mono text-xs`,
+      children: value,
+    }),
+  });
+}
+
+function getMobileAccessHelp(bridge) {
+  return typeof bridge.getMobileAccessHelp === `function`
+    ? bridge.getMobileAccessHelp()
+    : Promise.resolve(createFallbackMobileAccessHelp());
+}
+
+function refreshMobileAccessHelp(bridge, setMobileAccessHelp) {
+  getMobileAccessHelp(bridge)
+    .then(setMobileAccessHelp)
+    .catch(() => {
+      setMobileAccessHelp(createFallbackMobileAccessHelp());
+    });
+}
+
+function createFallbackMobileAccessHelp() {
+  return DEFAULT_MOBILE_ACCESS_HELP;
+}
+
+function getMobileAccessDescription(mobileAccessHelp) {
+  if (!mobileAccessHelp.available) {
+    return `Tailscale is not installed. Install it, sign in on this Mac and your mobile device, then run the serve command.`;
+  }
+  return mobileAccessHelp.variant === `mac-app-store`
+    ? `Private tailnet access is available through the bundled Tailscale macOS app CLI.`
+    : `Private tailnet access is available through the Tailscale CLI on your PATH.`;
 }
 
 function getStatusLabel(status) {

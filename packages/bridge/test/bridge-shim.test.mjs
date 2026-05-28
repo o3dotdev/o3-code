@@ -63,6 +63,23 @@ test("bridge shim handles microphone permission requests locally", async () => {
   assert.deepEqual(sentEnvelopes, []);
 });
 
+test("bridge shim shows startup status fallback while shell loader remains mounted", async () => {
+  const harness = await loadBridgeShim({
+    body: true,
+    startupLoader: true,
+  });
+
+  const status = harness.document.body.querySelector(".o3-code-startup-status");
+
+  assert.notEqual(status, null);
+  assert.equal(status.getAttribute("aria-live"), "polite");
+  assert.equal(status.getAttribute("data-visible"), "true");
+  assert.equal(
+    status.textContent,
+    "Still starting. Check O3 Code on your desktop if this continues.",
+  );
+});
+
 test("bridge shim still forwards normal app messages", async () => {
   const { electronBridge, sentEnvelopes } = await loadBridgeShim();
 
@@ -532,6 +549,14 @@ async function loadBridgeShim(options = {}) {
   }
   if (root != null && body != null) {
     root.append(body);
+  }
+  if (body != null && options.startupLoader === true) {
+    const startupLoader = new FakeElement("div");
+    startupLoader.className = "startup-loader";
+    const startupLogo = new FakeElement("div");
+    startupLogo.className = "startup-loader__logo";
+    startupLoader.append(startupLogo);
+    body.append(startupLoader);
   }
 
   const documentObject = {

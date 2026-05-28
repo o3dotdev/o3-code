@@ -173,6 +173,10 @@
     capture: true,
   });
   safeInstallOptionalFeature(
+    "startup status fallback",
+    installStartupStatusFallback,
+  );
+  safeInstallOptionalFeature(
     "mobile shell guards",
     installMobileShellGuardsWhenReady,
   );
@@ -257,6 +261,50 @@
     } catch (error) {
       console.warn("[bridge-shim] Optional feature failed: " + name, error);
     }
+  }
+
+  function installStartupStatusFallback() {
+    let scheduled = false;
+    const schedule = () => {
+      if (scheduled) {
+        return;
+      }
+      scheduled = true;
+      setTimeout(() => {
+        showStartupStatus("Starting O3 Code...");
+      }, 2000);
+      setTimeout(() => {
+        showStartupStatus(
+          "Still starting. Check O3 Code on your desktop if this continues.",
+        );
+      }, 10000);
+    };
+
+    if (document.body == null) {
+      document.addEventListener("DOMContentLoaded", schedule, { once: true });
+      window.addEventListener("load", schedule, { once: true });
+      return;
+    }
+
+    schedule();
+  }
+
+  function showStartupStatus(message) {
+    const loader = document.body?.querySelector?.(".startup-loader");
+    if (loader == null) {
+      return;
+    }
+
+    let status = loader.querySelector(".o3-code-startup-status");
+    if (status == null) {
+      status = document.createElement("div");
+      status.className = "o3-code-startup-status";
+      status.setAttribute("aria-live", "polite");
+      loader.append(status);
+    }
+
+    status.textContent = message;
+    status.setAttribute("data-visible", "true");
   }
 
   function installMobileShellGuardsWhenReady() {
