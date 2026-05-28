@@ -17,7 +17,7 @@ from pathlib import Path
 
 
 REFRESH_BRANCH_HINTS = ("refresh", "upstream", "source")
-RESOURCE_SKIP = {"app.asar"}
+RESOURCE_SKIP = {"app.asar", "codex"}
 
 
 def run(repo: Path, command: list[str]) -> str:

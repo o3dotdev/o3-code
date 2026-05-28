@@ -137,8 +137,16 @@ The files copied from the Codex App that O3 Code needs at runtime, excluding the
 _Avoid_: app bundle, binary mirror
 
 **Codex CLI Upstream**:
-The pinned source checkout used to build the `codex` app-server binary consumed by the Desktop Reconstruction.
-_Avoid_: package, loose clone, binary source
+The pinned source checkout used only when O3 Code needs source-level reference or patches for Codex CLI behavior.
+_Avoid_: bundled runtime, shipped binary, app-server launch target
+
+**External Codex CLI**:
+The user-installed official `codex` command that O3 Code expects to find outside its Runtime Resources.
+_Avoid_: bundled codex, repo-built codex, router binary
+
+**App Server Router**:
+The O3 Code-owned participant that stands in the Desktop Reconstruction's Codex app-server launch position while preserving the existing app-server protocol boundary and delegating to the External Codex CLI.
+_Avoid_: Codex fork, browser app-server client, alternate backend
 
 **Codex App User Data Directory**:
 The installed Codex App's Electron user data directory, shared by default with O3 Code when running the Desktop Reconstruction locally.
@@ -200,7 +208,7 @@ Domain expert: "No. A Source Refresh may replace copied source material, then re
 
 Dev: "Should I patch the compiled `codex` binary directly?"
 
-Domain expert: "No. Edit the Codex CLI Upstream, build a new binary, and install that binary into Runtime Resources."
+Domain expert: "No. Keep the External Codex CLI outside Runtime Resources and put O3 Code-specific app-server behavior behind the App Server Router."
 
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 

@@ -30,7 +30,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Inspect `git status --short --branch` yourself; do not rely only on script output.
 2. Replace upstream material.
    - Run `uv run --script scripts/refresh_codex_app.py --repo <repo> --source <Codex.app> --yes`.
-   - The script extracts `Resources/app.asar`, overlays unpacked app files, copies runtime resources, copies `Info.plist`, and updates mechanical source metadata.
+   - The script extracts `Resources/app.asar`, overlays unpacked app files, copies runtime resources except the externalized `codex` app-server binary, copies `Info.plist`, and updates mechanical source metadata.
    - If the script stops, inspect the reason and decide; do not work around guardrails casually.
 3. Normalize copied source.
    - Run `pnpm normalize`.
@@ -131,7 +131,7 @@ If sub-agents are unavailable, run the same one-SOP-at-a-time protocol locally a
 Replace only these upstream-owned targets:
 
 - `apps/desktop/app/` from extracted `Contents/Resources/app.asar`, plus unpacked app files overlaid from `app.asar.unpacked`
-- `apps/desktop/resources/` from `Contents/Resources/` except raw `app.asar`
+- `apps/desktop/resources/` from `Contents/Resources/` except raw `app.asar` and the externalized `codex` app-server binary
 - `apps/desktop/metadata/Info.plist`
 - mechanical source metadata in root `package.json`, `apps/desktop/app/package.json`, and `docs/extraction.md`
 

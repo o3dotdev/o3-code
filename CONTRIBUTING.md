@@ -14,18 +14,20 @@ Requirements:
 - macOS
 - Node.js with Corepack
 - `pnpm` 11.1.0, as declared in `package.json`
-- Rust and Cargo only when rebuilding the Codex CLI binary
+- The official `codex` CLI installed outside this repo and available on `PATH`,
+  or an explicit `O3_CODE_UPSTREAM_CODEX_PATH`
 
 Start the local app:
 
 ```sh
 pnpm install
-pnpm codex:setup
 pnpm start
 ```
 
 `pnpm start` runs the extracted Electron app from `apps/desktop/app/` and points
-it at repo-local runtime resources in `apps/desktop/resources/`.
+it at repo-local runtime resources in `apps/desktop/resources/`. App-server
+traffic starts through `@o3dotdev/app-server-router`, which delegates to the
+external `codex` CLI.
 
 Local Electron runs use `~/Library/Application Support/O3 Code` by default so
 they do not collide with the installed Codex App profile. Set
@@ -42,15 +44,17 @@ pnpm normalize
 pnpm normalize:check
 pnpm derive:web
 pnpm web-patches:check
-pnpm codex:build
+pnpm app-server-router:test
+pnpm codex:setup
 ```
 
 - `pnpm normalize` rewrites preserved Codex App source into the patch-friendly
   baseline.
 - `pnpm derive:web` rebuilds the Mirrored Web Client Asset Tree from the patched
   Desktop Reconstruction webview assets.
-- `pnpm codex:build` builds `upstream/codex` and installs the resulting `codex`
-  binary into `apps/desktop/resources/codex`.
+- `pnpm app-server-router:test` runs the App Server Router package tests.
+- `pnpm codex:setup` prepares the optional Codex CLI Upstream checkout for
+  source reference work.
 
 ## Project Architecture
 
@@ -59,6 +63,7 @@ apps/desktop/app/          preserved Electron app source from the Codex App
 apps/desktop/resources/    runtime resources used by repo-local app runs
 apps/desktop/metadata/     copied macOS bundle metadata
 apps/web/app/webview/      derived Mirrored Web Client asset tree
+packages/app-server-router/ App-server launch facade for the external Codex CLI
 packages/bridge/           Bridge Sidecar, Bridge Shim, and Web access support
 scripts/                   repo maintenance, normalization, and launcher tools
 docs/adr/                  durable architectural decisions
@@ -103,8 +108,8 @@ When changing preserved Codex App source or derived webview assets:
 5. Run the relevant checks before opening a PR.
 
 Do not patch the compiled `codex` binary directly. Edit `upstream/codex/`, run
-`pnpm codex:build`, and commit the installed runtime binary only when that is
-part of the intended change.
+its local tests, and point `O3_CODE_UPSTREAM_CODEX_PATH` at the resulting
+external CLI only when you intentionally need to exercise that source checkout.
 
 ## Source Refresh Workflow
 

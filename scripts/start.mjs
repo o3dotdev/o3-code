@@ -25,6 +25,13 @@ const desktopPath = path.join(repoRoot, "apps", "desktop");
 const appPath = path.join(desktopPath, "app");
 const rendererIndexPath = path.join(appPath, "webview", "index.html");
 const resourcesPath = path.join(desktopPath, "resources");
+const appServerRouterPath = path.join(
+  repoRoot,
+  "packages",
+  "app-server-router",
+  "bin",
+  "o3-app-server-router.mjs",
+);
 const electronBin = path.join(
   repoRoot,
   "node_modules",
@@ -150,7 +157,7 @@ const requiredPaths = [
   appPath,
   rendererIndexPath,
   resourcesPath,
-  path.join(resourcesPath, "codex"),
+  appServerRouterPath,
   path.join(resourcesPath, "node"),
   path.join(resourcesPath, "node_repl"),
 ];
@@ -187,8 +194,7 @@ const env = {
   ELECTRON_RENDERER_URL:
     process.env.ELECTRON_RENDERER_URL ||
     pathToFileURL(rendererIndexPath).toString(),
-  CODEX_CLI_PATH:
-    process.env.CODEX_CLI_PATH || path.join(resourcesPath, "codex"),
+  CODEX_CLI_PATH: process.env.CODEX_CLI_PATH || appServerRouterPath,
   CODEX_BROWSER_USE_NODE_PATH:
     process.env.CODEX_BROWSER_USE_NODE_PATH || path.join(resourcesPath, "node"),
   CODEX_NODE_REPL_PATH:
