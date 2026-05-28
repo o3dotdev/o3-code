@@ -11,6 +11,7 @@ export {
   removeLauncherState,
   writeLauncherState,
 } from "./state.js";
+export { renderStartupProgressBar } from "./ui.js";
 
 if (isDirectRun()) {
   await runCli();

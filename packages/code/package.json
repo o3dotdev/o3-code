@@ -1,6 +1,6 @@
 {
   "name": "@o3dotdev/code",
-  "version": "0.0.0-alpha.4",
+  "version": "0.0.0-alpha.5",
   "private": false,
   "description": "Launch and manage a local O3 Code run.",
   "type": "module",

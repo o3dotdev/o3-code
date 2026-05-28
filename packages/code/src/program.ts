@@ -13,6 +13,7 @@ import {
   renderStartPanel,
   renderStatusPanel,
   renderStopPanel,
+  startStartupProgressRenderer,
 } from "./ui.js";
 
 export interface ProgramDependencies {
@@ -40,7 +41,7 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
         await runSupervisor(paths);
         return;
       }
-      const state = await startBackground(paths);
+      const state = await startBackground(paths, { stdout });
       if (state.status === "failed") {
         stdout.write(`${renderFailurePanel({ error: state.error ?? "Startup failed.", state })}\n`);
         process.exitCode = 1;
@@ -71,7 +72,7 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
     .description("Stop and then start O3 Code.")
     .action(async () => {
       await stopRunningState(paths);
-      const state = await startBackground(paths);
+      const state = await startBackground(paths, { stdout });
       if (state.status === "failed") {
         stdout.write(`${renderFailurePanel({ error: state.error ?? "Restart failed.", state })}\n`);
         process.exitCode = 1;
@@ -117,7 +118,14 @@ function isRootOption(value: string): boolean {
   return value === "--help" || value === "-h" || value === "--version" || value === "-V";
 }
 
-async function startBackground(paths: ReturnType<typeof resolveO3CodePaths>) {
+async function startBackground(
+  paths: ReturnType<typeof resolveO3CodePaths>,
+  {
+    stdout,
+  }: {
+    readonly stdout: Pick<NodeJS.WriteStream, "write">;
+  },
+) {
   fs.mkdirSync(paths.logsDir, { recursive: true, mode: 0o700 });
   fs.mkdirSync(paths.runDir, { recursive: true, mode: 0o700 });
 
@@ -137,7 +145,26 @@ async function startBackground(paths: ReturnType<typeof resolveO3CodePaths>) {
     stdio: ["ignore", launcherOut, launcherErr],
   });
   child.unref();
-  return await waitForSupervisorStart(paths);
+
+  const progress = shouldRenderInteractiveProgress(stdout)
+    ? startStartupProgressRenderer({
+        initialState: readLauncherState(paths),
+        stdout: process.stdout,
+      })
+    : null;
+  try {
+    return await waitForSupervisorStart(paths, {
+      onState: (state) => {
+        progress?.update(state);
+      },
+    });
+  } finally {
+    await progress?.stop();
+  }
+}
+
+function shouldRenderInteractiveProgress(stdout: Pick<NodeJS.WriteStream, "write">): boolean {
+  return stdout === process.stdout && process.stdout.isTTY === true;
 }
 
 async function stopRunningState(paths: ReturnType<typeof resolveO3CodePaths>): Promise<boolean> {

@@ -25,6 +25,15 @@ test("launcher state round trips through disk", () => {
     const state = {
       ...createBaseState(paths),
       status: "running",
+      startup: {
+        detail: "runtime",
+        label: "Preparing runtime",
+        phaseId: "preparing-runtime",
+        startedAt: "2026-05-28T12:00:00.000Z",
+        step: 1,
+        total: 7,
+        updatedAt: "2026-05-28T12:00:01.000Z",
+      },
       url: "http://127.0.0.1:1234/",
     };
     writeLauncherState(paths, state);
@@ -33,6 +42,7 @@ test("launcher state round trips through disk", () => {
     assert.equal(actual.status, "running");
     assert.equal(actual.url, "http://127.0.0.1:1234/");
     assert.equal(actual.logs.desktop, paths.desktopLogPath);
+    assert.deepEqual(actual.startup, state.startup);
 
     removeLauncherState(paths);
     assert.equal(readLauncherState(paths), null);

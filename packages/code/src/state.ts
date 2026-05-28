@@ -5,6 +5,16 @@ import type { O3CodePaths } from "./paths.js";
 
 export type LauncherStatus = "starting" | "running" | "failed" | "stopped";
 
+export interface LauncherStartupState {
+  readonly phaseId: string;
+  readonly label: string;
+  readonly step: number;
+  readonly total: number;
+  readonly detail: string | null;
+  readonly startedAt: string;
+  readonly updatedAt: string;
+}
+
 export interface LauncherState {
   readonly status: LauncherStatus;
   readonly pid: number;
@@ -20,6 +30,7 @@ export interface LauncherState {
   };
   readonly warnings: readonly string[];
   readonly error?: string;
+  readonly startup?: LauncherStartupState;
 }
 
 export function createBaseState(paths: O3CodePaths): LauncherState {
@@ -101,6 +112,34 @@ function normalizeLauncherState(value: unknown): LauncherState | null {
       ? candidate.warnings.filter((warning) => typeof warning === "string")
       : [],
     error: typeof candidate.error === "string" ? candidate.error : undefined,
+    startup: normalizeStartupState(candidate.startup),
+  };
+}
+
+function normalizeStartupState(value: unknown): LauncherStartupState | undefined {
+  if (!value || typeof value !== "object") {
+    return undefined;
+  }
+  const candidate = value as Partial<LauncherStartupState>;
+  if (
+    typeof candidate.phaseId !== "string" ||
+    typeof candidate.label !== "string" ||
+    typeof candidate.step !== "number" ||
+    typeof candidate.total !== "number" ||
+    typeof candidate.startedAt !== "string" ||
+    typeof candidate.updatedAt !== "string"
+  ) {
+    return undefined;
+  }
+
+  return {
+    phaseId: candidate.phaseId,
+    label: candidate.label,
+    step: candidate.step,
+    total: candidate.total,
+    detail: typeof candidate.detail === "string" ? candidate.detail : null,
+    startedAt: candidate.startedAt,
+    updatedAt: candidate.updatedAt,
   };
 }
 

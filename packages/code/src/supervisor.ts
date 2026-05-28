@@ -29,6 +29,15 @@ import {
 const START_TIMEOUT_MS = 45_000;
 const SUPERVISOR_START_TIMEOUT_MS = 180_000;
 const DESKTOP_STABLE_AFTER_BRIDGE_MS = 3_000;
+const STARTUP_PHASES = [
+  ["preparing-runtime", "Preparing runtime"],
+  ["resolving-codex-resources", "Resolving Codex resources"],
+  ["linking-native-resources", "Linking native resources"],
+  ["enabling-web-access", "Enabling web access"],
+  ["preparing-electron", "Preparing Electron"],
+  ["launching-desktop", "Launching desktop"],
+  ["waiting-for-web-access", "Waiting for web access"],
+] as const;
 
 export async function runSupervisor(paths: O3CodePaths): Promise<void> {
   fs.mkdirSync(paths.logsDir, { recursive: true, mode: 0o700 });
@@ -57,26 +66,33 @@ export async function runSupervisor(paths: O3CodePaths): Promise<void> {
   process.once("SIGINT", () => shutdown(130));
 
   try {
+    state = writeStartupPhase(paths, state, "preparing-runtime", paths.activeRuntimeRoot);
     installRuntimePayload(paths);
     const launchPaths = resolveDesktopLaunchPaths(paths.activeRuntimeRoot);
+
+    state = writeStartupPhase(paths, state, "resolving-codex-resources", null);
     const resourcesModule = await resolveCodexAppResourceModule(paths.activeRuntimeRoot);
     const codexResources = resourcesModule.resolveCodexAppResources();
     resourcesModule.assertCodexAppExecutableResources(codexResources);
 
     assertDesktopRuntime(launchPaths, codexResources);
+    state = writeStartupPhase(paths, state, "linking-native-resources", codexResources.nativeNodeModulesPath);
     ensureExternalNativePayloadLinks({
       appPath: launchPaths.appPath,
       resources: codexResources,
     });
+    state = writeStartupPhase(paths, state, "enabling-web-access", null);
     enableWebAccess(paths);
 
     const desktopOut = fs.openSync(paths.desktopLogPath, "a", 0o600);
     const desktopErr = fs.openSync(paths.desktopLogPath, "a", 0o600);
+    state = writeStartupPhase(paths, state, "preparing-electron", null);
     const electronExecutable = prepareElectronExecutable({
       electronCacheRoot: path.join(paths.stateRoot, "electron"),
       resourcesPath: launchPaths.resourcesPath,
     });
 
+    state = writeStartupPhase(paths, state, "launching-desktop", electronExecutable);
     desktop = spawn(electronExecutable, [launchPaths.appPath], {
       cwd: paths.activeRuntimeRoot,
       env: createDesktopEnv({
@@ -107,12 +123,14 @@ export async function runSupervisor(paths: O3CodePaths): Promise<void> {
       process.exit(code ?? 1);
     });
 
+    state = writeStartupPhase(paths, state, "waiting-for-web-access", paths.bridgeLogPath);
     const url = await waitForBridgeReady({ paths, timeoutMs: START_TIMEOUT_MS });
     await ensureDesktopRemainsAlive(desktop, DESKTOP_STABLE_AFTER_BRIDGE_MS);
     state = {
       ...state,
       status: "running",
       url,
+      startup: undefined,
     };
     writeLauncherState(paths, state);
 
@@ -134,10 +152,28 @@ export async function runSupervisor(paths: O3CodePaths): Promise<void> {
   }
 }
 
-export async function waitForSupervisorStart(paths: O3CodePaths): Promise<LauncherState> {
+export async function waitForSupervisorStart(
+  paths: O3CodePaths,
+  {
+    onState,
+  }: {
+    readonly onState?: (state: LauncherState) => void;
+  } = {},
+): Promise<LauncherState> {
   let lastState = readLauncherState(paths);
+  let lastStateSignature = lastState ? JSON.stringify(lastState) : "";
+  if (lastState) {
+    onState?.(lastState);
+  }
   const completed = await waitFor(() => {
     lastState = readLauncherState(paths);
+    if (lastState) {
+      const signature = JSON.stringify(lastState);
+      if (signature !== lastStateSignature) {
+        lastStateSignature = signature;
+        onState?.(lastState);
+      }
+    }
     return lastState?.status === "running" || lastState?.status === "failed";
   }, { timeoutMs: SUPERVISOR_START_TIMEOUT_MS });
 
@@ -154,6 +190,34 @@ export async function waitForSupervisorStart(paths: O3CodePaths): Promise<Launch
     };
   }
   return state;
+}
+
+function writeStartupPhase(
+  paths: O3CodePaths,
+  state: LauncherState,
+  phaseId: (typeof STARTUP_PHASES)[number][0],
+  detail: string | null,
+): LauncherState {
+  const phaseIndex = STARTUP_PHASES.findIndex(([candidate]) => candidate === phaseId);
+  const phase = STARTUP_PHASES[phaseIndex];
+  if (!phase) {
+    throw new Error(`Unknown O3 Code startup phase: ${phaseId}`);
+  }
+  const now = new Date().toISOString();
+  const nextState = {
+    ...state,
+    startup: {
+      phaseId,
+      label: phase[1],
+      step: phaseIndex + 1,
+      total: STARTUP_PHASES.length,
+      detail,
+      startedAt: state.startup?.startedAt ?? now,
+      updatedAt: now,
+    },
+  };
+  writeLauncherState(paths, nextState);
+  return nextState;
 }
 
 function createDesktopEnv({

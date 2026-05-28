@@ -1,4 +1,4 @@
-import { Box, renderToString, Text } from "ink";
+import { Box, render as renderInk, renderToString, Text, type Instance } from "ink";
 import React from "react";
 
 import type { LauncherState } from "./state.js";
@@ -9,6 +9,11 @@ interface Row {
   readonly label: string;
   readonly value: string;
   readonly tone?: StatusTone;
+}
+
+interface StartupProgressRenderer {
+  readonly update: (state: LauncherState) => void;
+  readonly stop: () => Promise<void>;
 }
 
 export function renderStartPanel({
@@ -77,6 +82,15 @@ export function renderFailurePanel({
         value: state?.logs.desktop ?? "No desktop log yet",
         tone: "info",
       },
+      ...(state?.startup
+        ? [
+            {
+              label: "Phase",
+              value: state.startup.label,
+              tone: "warn" as const,
+            },
+          ]
+        : []),
     ],
     commands: ["o3-code logs", "o3-code restart"],
   });
@@ -95,6 +109,15 @@ export function renderStatusPanel(state: LauncherState | null, running: boolean)
       { label: "Web", value: state.url ?? "Unavailable", tone: state.url ? "ok" : "warn" },
       { label: "Launcher", value: `pid ${state.pid}`, tone: "info" },
       { label: "Desktop", value: state.desktopPid ? `pid ${state.desktopPid}` : "Unavailable", tone: "info" },
+      ...(state.status === "starting" && state.startup
+        ? [
+            {
+              label: "Phase",
+              value: state.startup.label,
+              tone: "warn" as const,
+            },
+          ]
+        : []),
       { label: "Logs", value: state.logs.desktop, tone: "info" },
       ...warningRows(state),
     ],
@@ -124,6 +147,106 @@ export function renderStopPanel(stopped: boolean, state: LauncherState | null): 
     ],
     commands: ["o3-code start", "o3-code logs"],
   });
+}
+
+export function startStartupProgressRenderer({
+  initialState,
+  stdout,
+}: {
+  readonly initialState: LauncherState | null;
+  readonly stdout: NodeJS.WriteStream;
+}): StartupProgressRenderer {
+  let state = initialState;
+  let tick = 0;
+  let instance: Instance | null = renderInk(
+    React.createElement(StartupProgressView, { state, tick }),
+    {
+      exitOnCtrlC: false,
+      patchConsole: false,
+      stdout,
+    },
+  );
+  const interval = setInterval(() => {
+    tick += 1;
+    instance?.rerender(React.createElement(StartupProgressView, { state, tick }));
+  }, 120);
+  interval.unref();
+
+  return {
+    update: (nextState) => {
+      state = nextState;
+      tick += 1;
+      instance?.rerender(React.createElement(StartupProgressView, { state, tick }));
+    },
+    stop: async () => {
+      clearInterval(interval);
+      if (!instance) {
+        return;
+      }
+      const currentInstance = instance;
+      instance = null;
+      currentInstance.unmount();
+      try {
+        await currentInstance.waitUntilExit();
+      } catch {
+        // The final success/failure panel is printed by the caller.
+      }
+    },
+  };
+}
+
+export function renderStartupProgressBar(step: number, total: number, width = 24): string {
+  const normalizedTotal = Math.max(1, Math.trunc(total));
+  const normalizedStep = Math.min(Math.max(0, Math.trunc(step)), normalizedTotal);
+  const normalizedWidth = Math.max(1, Math.trunc(width));
+  const filled = Math.round((normalizedStep / normalizedTotal) * normalizedWidth);
+  return `[${"#".repeat(filled)}${"-".repeat(normalizedWidth - filled)}]`;
+}
+
+function StartupProgressView({
+  state,
+  tick,
+}: {
+  readonly state: LauncherState | null;
+  readonly tick: number;
+}) {
+  const startup = state?.startup;
+  const phaseLabel = startup?.label ?? "Starting supervisor";
+  const step = startup?.step ?? 0;
+  const total = startup?.total ?? 7;
+  const elapsedMs = Date.now() - parseTimestampMs(startup?.startedAt ?? state?.startedAt);
+  const elapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
+  const spinner = ["|", "/", "-", "\\"][tick % 4];
+
+  return React.createElement(
+    Box,
+    { flexDirection: "column" },
+    React.createElement(
+      Text,
+      null,
+      React.createElement(Text, { color: "cyan" }, spinner),
+      " Starting O3 Code",
+    ),
+    React.createElement(
+      Text,
+      null,
+      renderStartupProgressBar(step, total),
+      ` ${step}/${total} `,
+      React.createElement(Text, { color: "yellow" }, phaseLabel),
+      React.createElement(Text, { color: "gray" }, ` ${elapsedSeconds}s`),
+    ),
+    startup?.detail
+      ? React.createElement(Text, { color: "gray" }, startup.detail)
+      : React.createElement(Text, { color: "gray" }, "Preparing local app state"),
+  );
+}
+
+function parseTimestampMs(value: string | undefined): number {
+  if (!value) {
+    return Date.now();
+  }
+  const parsed = Date.parse(value);
+  return Number.isFinite(parsed) ? parsed : Date.now();
 }
 
 function renderPanel({
