@@ -50,9 +50,17 @@ debugging upstream updater behavior.
 Realtime voice can use a scoped realtime API-key route during local O3 Code
 runs. Set `O3_CODE_REALTIME_API_KEY` to opt in; the App Server Router keeps
 ordinary Codex app-server traffic on the external Codex CLI's normal auth path
-and routes only websocket realtime setup through the loopback Realtime Proxy.
+and uses a process-scoped Mockttp HTTPS MITM proxy for realtime voice setup.
 Set `O3_CODE_REALTIME_BASE_URL` to target an OpenAI-compatible realtime API
-base URL; when unset it defaults to `https://api.openai.com/v1`.
+origin or `/v1` base URL; when unset it defaults to
+`https://api.openai.com/v1`.
+
+The current Desktop Reconstruction voice UI starts through WebRTC, so the
+no-fork External Codex CLI path rewrites WebRTC call creation and sideband
+websocket joins through that child-process-only proxy. The router sets
+`HTTP_PROXY`, `HTTPS_PROXY`, and `CODEX_CA_CERTIFICATE` only in the delegated
+`codex` process environment; the generated CA is not installed into the system
+trust store, and non-realtime traffic passes through unchanged.
 
 ## Useful Commands
 

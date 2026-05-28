@@ -184,17 +184,25 @@ _Avoid_: token auth, key login, env auth
 A scoped O3 Code policy that allows realtime voice setup to use API Key Auth while the rest of the Codex App Server session remains on Account Auth.
 _Avoid_: hybrid login, mixed auth, realtime key hack
 
-**Realtime Proxy**:
-The O3 Code-owned realtime-only forwarding participant used by the Realtime Auth Override when direct changes to the External Codex CLI are out of scope.
-_Avoid_: app-server router, general proxy, Codex fork
+**Realtime WebSocket Proxy**:
+The O3 Code-owned realtime-only forwarding participant for direct realtime websocket setup.
+_Avoid_: Realtime Proxy, general proxy, Codex fork
+
+**Realtime MITM Proxy**:
+The O3 Code-owned, process-scoped HTTPS interception participant for applying the Realtime Auth Override to delegated External Codex CLI realtime setup.
+_Avoid_: Realtime WebSocket Proxy, general proxy, account proxy
 
 **Realtime API Key**:
 The only API key eligible for the Realtime Auth Override, separate from any general OpenAI or Codex API key used by other auth paths.
 _Avoid_: default API key, inherited key, shell key
 
 **Realtime API Base URL**:
-The OpenAI-compatible API origin explicitly designated for the Realtime Auth Override.
+The OpenAI-compatible API origin or `/v1` base URL explicitly designated for the Realtime Auth Override.
 _Avoid_: app server URL, ChatGPT backend URL, general base URL
+
+**Realtime MITM CA**:
+The O3 Code-generated private certificate authority trusted only by the delegated External Codex CLI process when the Realtime MITM Proxy is active.
+_Avoid_: system CA, user-installed root, shared trust material
 
 ## Example Dialogue
 
@@ -342,6 +350,10 @@ Dev: "Can WebRTC realtime call creation keep using the ChatGPT-backed Codex App 
 
 Domain expert: "No. The Realtime Auth Override covers realtime websocket setup, WebRTC call creation, and the WebRTC sideband websocket join."
 
-Dev: "Can the External Codex CLI implementation use the Realtime Proxy for WebRTC?"
+Dev: "Can the External Codex CLI implementation use the Realtime WebSocket Proxy for WebRTC?"
 
-Domain expert: "No. The first no-fork implementation uses the Realtime Proxy only for websocket realtime transport; WebRTC needs Codex-owned realtime call routing knobs or a deeper app-server realtime implementation."
+Domain expert: "No. The Realtime WebSocket Proxy only covers direct websocket setup. Use a process-scoped Realtime MITM Proxy for WebRTC while O3 Code still delegates to an External Codex CLI without native realtime routing knobs."
+
+Dev: "Should the Realtime MITM CA be installed into the system trust store?"
+
+Domain expert: "No. Generate trust material for the Realtime MITM Proxy and expose it only to the delegated External Codex CLI process."
