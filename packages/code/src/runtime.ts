@@ -231,7 +231,7 @@ export function prepareElectronExecutable({
     return electronExecutable;
   }
 
-  const electronPackageRoot = path.dirname(require.resolve("electron/package.json"));
+  const electronPackageRoot = resolveDependencyPackageRoot("electron");
   const electronPackage = JSON.parse(
     readFileSync(path.join(electronPackageRoot, "package.json"), "utf8"),
   ) as { readonly version?: string };
@@ -309,9 +309,14 @@ function getOptionalLinkStat(candidate: string) {
   }
 }
 
-function readOptionalPackageMetadata(packagePath: string): { readonly codexBuildNumber?: string } | null {
+function readOptionalPackageMetadata(
+  packagePath: string,
+): { readonly codexBuildNumber?: string; readonly name?: string } | null {
   try {
-    return JSON.parse(readFileSync(packagePath, "utf8")) as { readonly codexBuildNumber?: string };
+    return JSON.parse(readFileSync(packagePath, "utf8")) as {
+      readonly codexBuildNumber?: string;
+      readonly name?: string;
+    };
   } catch {
     return null;
   }
@@ -323,8 +328,7 @@ function resolvePackageNodeModulesRoot(packageRoot: string): string {
     return packageLocalNodeModules;
   }
 
-  const mockttpPackagePath = require.resolve("mockttp/package.json");
-  let current = path.dirname(mockttpPackagePath);
+  let current = resolveDependencyPackageRoot("mockttp");
   while (current !== path.dirname(current)) {
     if (path.basename(current) === "node_modules") {
       return current;
@@ -333,4 +337,18 @@ function resolvePackageNodeModulesRoot(packageRoot: string): string {
   }
 
   throw new Error("Unable to locate installed package dependencies for the O3 Code runtime.");
+}
+
+function resolveDependencyPackageRoot(packageName: string): string {
+  let current = path.dirname(require.resolve(packageName));
+  while (current !== path.dirname(current)) {
+    const packageJsonPath = path.join(current, "package.json");
+    const packageMetadata = readOptionalPackageMetadata(packageJsonPath);
+    if (packageMetadata?.name === packageName) {
+      return current;
+    }
+    current = path.dirname(current);
+  }
+
+  throw new Error(`Unable to locate ${packageName} package root.`);
 }
