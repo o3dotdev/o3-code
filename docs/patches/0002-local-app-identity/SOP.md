@@ -17,7 +17,7 @@ Apply the visible O3 Code name and icon surfaces during repo-local runs.
 2. Locate startup code that calls `app.setName(...)`.
 3. Locate main-process Dock icon handling, usually around `app.dock?.setIcon(...)`.
 4. Locate tray template icon handling, usually around `new Tray`, `codexTemplate`, or `nativeImage.createFromPath`.
-5. Inspect copied non-native resources for new icon filenames or icon-loading behavior introduced by upstream.
+5. Inspect the installed Codex App resources and icon-loading code for new icon filenames or icon surfaces introduced by upstream.
 
 ## Application
 

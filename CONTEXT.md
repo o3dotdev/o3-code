@@ -133,19 +133,23 @@ The operation that replaces preserved upstream source material from a newer Code
 _Avoid_: sync, vendor update, recopy
 
 **Runtime Resources**:
-The non-native files and acceptable assets preserved from the Codex App that O3 Code needs alongside the extracted source.
-_Avoid_: native binary mirror, app bundle
+Codex App resource material needed by the Desktop Reconstruction at runtime and supplied by the Official Codex App Runtime unless explicitly owned by O3 Code.
+_Avoid_: repo resource mirror, bundled runtime, app bundle
+
+**O3-Owned Assets**:
+O3 Code identity or product assets that are intentionally local to O3 Code rather than preserved from the Codex App.
+_Avoid_: copied upstream resources, runtime resource mirror, preserved assets
 
 **Official Codex App Runtime**:
-The installed Codex Desktop app on the user's machine, used as the source for native runtime executables, helper apps, native add-ons, and plugin binary payloads.
+The installed Codex Desktop app on the user's machine, used as the source for Codex App runtime resource material.
 _Avoid_: bundled runtime, checked-in binary set, repo resource mirror
 
 **Native Resource Provider**:
-The resolved Codex.app resources directory that supplies host-native runtime material for a local O3 Code launch.
+The resolved Codex.app resources directory that supplies Codex App runtime resource material for a local O3 Code launch.
 _Avoid_: vendored binaries, repo resources, npm payload
 
 **JS-Only O3 Code Package**:
-The packaging boundary where O3 Code owns JavaScript, UI assets, router code, docs, and patch metadata while excluding host-native compiled runtime payloads.
+The packaging boundary where O3 Code owns JavaScript, O3-Owned Assets, UI assets, router code, docs, and patch metadata while excluding Codex-owned runtime resource material.
 _Avoid_: native app distribution, binary bundle, full Codex repack
 
 **External Codex CLI**:
@@ -218,9 +222,9 @@ Dev: "Should I patch the compiled `codex` binary directly?"
 
 Domain expert: "No. Keep the External Codex CLI outside Runtime Resources and put O3 Code-specific app-server behavior behind the App Server Router."
 
-Dev: "Should O3 Code commit native add-ons, helper apps, `node`, `node_repl`, or plugin prebuilds?"
+Dev: "Should O3 Code commit native add-ons, helper apps, `node`, `node_repl`, plugins, notices, asset catalogs, sounds, or locale folders from the Codex App?"
 
-Domain expert: "No. Use the installed Codex App as the Native Resource Provider and keep host-native compiled payloads out of the repo."
+Domain expert: "No. Use the installed Codex App as the Native Resource Provider for Codex-owned Runtime Resources, and keep only O3-Owned Assets in the repo."
 
 Dev: "Should O3 Code keep a local Codex CLI source checkout for reference or CLI patches?"
 

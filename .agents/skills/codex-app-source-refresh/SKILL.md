@@ -12,8 +12,8 @@ Refresh O3 Code from a newer installed Codex App by treating the installed app a
 - Call the work a `Source Refresh`, not a version bump or sync.
 - Treat `Codex App` as the installed macOS app used as upstream source material.
 - Treat `O3 Code` as the repo-local Electron reconstruction.
-- Treat copied app source and allowed non-native files as replaceable upstream input.
-- Treat host-native runtime binaries as external material supplied by the installed Codex App Native Resource Provider.
+- Treat copied app source as replaceable upstream input.
+- Treat Codex-owned runtime resources as external material supplied by the installed Codex App Native Resource Provider.
 - Treat `Patch SOPs` as the authority for Desktop Reconstruction behavior that must survive refreshes.
 - Treat `Web Patch SOPs` as the authority for Mirrored Web Client behavior that must survive refreshes.
 - Treat `apps/web/app/webview` as a derived, committed Mirrored Web Client Asset Tree rebuilt from the patched Desktop Reconstruction Webview Assets.
@@ -31,7 +31,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Inspect `git status --short --branch` yourself; do not rely only on script output.
 2. Replace upstream material.
    - Run `uv run --script scripts/refresh_codex_app.py --repo <repo> --source <Codex.app> --yes`.
-   - The script extracts `Resources/app.asar`, overlays allowed unpacked app files, copies allowed non-native resources, skips host-native compiled runtime payloads, copies `Info.plist`, and updates mechanical source metadata.
+   - The script extracts `Resources/app.asar`, overlays allowed unpacked app files, leaves repo-owned resources alone, copies `Info.plist`, and updates mechanical source metadata.
    - If the script stops, inspect the reason and decide; do not work around guardrails casually.
 3. Normalize copied source.
    - Run `pnpm normalize`.
@@ -133,11 +133,10 @@ If sub-agents are unavailable, run the same one-SOP-at-a-time protocol locally a
 Replace only these upstream-owned targets:
 
 - `apps/desktop/app/` from extracted `Contents/Resources/app.asar`, plus allowed unpacked app files overlaid from `app.asar.unpacked`
-- `apps/desktop/resources/` from `Contents/Resources/` except raw `app.asar` and host-native compiled runtime payloads
 - `apps/desktop/metadata/Info.plist`
 - mechanical source metadata in root `package.json`, `apps/desktop/app/package.json`, and `docs/extraction.md`
 
-Do not delete repo-owned folders such as `apps/desktop/branding`, `packages`, or `docs`. Do not reintroduce `upstream/codex` or checked-in native runtime binaries.
+Do not replace `apps/desktop/resources/`; it is reserved for O3-owned local identity assets. Do not delete repo-owned folders such as `apps/desktop/branding`, `packages`, or `docs`. Do not reintroduce `upstream/codex` or checked-in Codex-owned runtime resources.
 
 ## AI-Owned Patch Migration
 

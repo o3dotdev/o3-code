@@ -29,8 +29,8 @@ pnpm start
 
 `pnpm start` runs the extracted Electron app from `apps/desktop/app/` and points
 native runtime lookups at the installed Codex app's `Contents/Resources`.
-Repo-local resources in `apps/desktop/resources/` are kept for O3-owned assets
-and preserved non-native material. App-server traffic starts through
+Repo-local resources in `apps/desktop/resources/` are limited to O3-owned
+identity assets. App-server traffic starts through
 `@o3dotdev/app-server-router`, which delegates to the external `codex` CLI or
 the installed Codex app's `codex` executable.
 
@@ -74,7 +74,7 @@ pnpm native-binaries:check
 
 ```txt
 apps/desktop/app/          preserved Electron app source from the Codex App
-apps/desktop/resources/    O3-owned assets and preserved non-native resources
+apps/desktop/resources/    O3-owned local identity assets
 apps/desktop/metadata/     copied macOS bundle metadata
 apps/web/app/webview/      derived Mirrored Web Client asset tree
 packages/codex-app-resources/ Codex.app native resource resolver
@@ -87,9 +87,9 @@ docs/web-patches/          Mirrored Web Client Patch SOPs and evidence
 ```
 
 The installed Codex App is read-only upstream material and the Native Resource
-Provider for host-native binaries. O3 Code preserves copied source and
-acceptable assets, then layers local intent through documented Patches that can
-be rediscovered and reapplied during future refreshes.
+Provider for Codex-owned runtime resources. O3 Code preserves copied source and
+O3-owned assets, then layers local intent through documented Patches that can be
+rediscovered and reapplied during future refreshes.
 
 ## Core Concepts
 
@@ -127,18 +127,18 @@ app-server behavior in `packages/app-server-router/`, and use
 `O3_CODE_UPSTREAM_CODEX_PATH` only to point at an explicit external `codex`
 executable when `PATH` selection is not enough.
 
-Do not commit host-native compiled runtime payloads such as `.node` add-ons,
-Mach-O/ELF/PE executables, helper `.app` bundles, `node`, `node_repl`, `rg`, or
-plugin prebuilds. Use `pnpm native-binaries:check` before opening a PR that
-touches copied app material.
+Do not commit Codex-owned runtime resources such as `.node` add-ons,
+Mach-O/ELF/PE executables, helper `.app` bundles, `node`, `node_repl`, `rg`,
+plugins, notices, asset catalogs, sounds, or locale folders. Use
+`pnpm native-binaries:check` before opening a PR that touches copied app
+material.
 
 ## Source Refresh Workflow
 
 For a Codex App refresh, follow [docs/source-refresh.md](docs/source-refresh.md).
 The short version is:
 
-1. Replace copied Codex App source and allowed non-native material from the new
-   release.
+1. Replace copied Codex App source from the new release.
 2. Update source metadata such as app version and build number.
 3. Run `pnpm normalize`.
 4. Reapply active Desktop Reconstruction Patch SOPs in numeric order.

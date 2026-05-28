@@ -20,8 +20,8 @@ Do not copy `Contents/Frameworks`, helper `.app` bundles, `_CodeSignature`, or t
 
 ## Consequences
 
-This decision is superseded. O3 Code still does not mirror the signed binary application bundle, but it also no longer keeps host-native compiled runtime binaries in `apps/desktop/resources/`. Native runtime material now comes from the installed Codex App.
+This decision is superseded. O3 Code still does not mirror the signed binary application bundle, and it no longer keeps Codex-owned runtime resources in `apps/desktop/resources/`. Codex App runtime material now comes from the installed Codex App.
 
-Running the app requires a launcher that points Electron at the repo-local `apps/desktop/resources/` directory.
+Running the app requires a launcher that points Electron at the installed Codex App resources while keeping repo-local O3-owned identity assets available.
 
 Rebuilding a distributable signed macOS app will be a separate packaging step later.

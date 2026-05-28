@@ -5,15 +5,13 @@ The current extraction came from `/Applications/Codex.app`, version `26.519.8153
 Copied material:
 
 - `Resources/app.asar` extracted into `apps/desktop/app/`
-- non-native plugin metadata, scripts, icons, sounds, notices, asset catalogs,
-  and locale folders copied into `apps/desktop/resources/`
 - `Contents/Info.plist` copied into `apps/desktop/metadata/Info.plist`
 
-The signed macOS outer bundle, helper apps, frameworks, code signature, native
-add-ons, helper executables, and plugin prebuilds are not copied. Electron is
-provided by pnpm using the same version declared by the extracted app package.
-Host-native Codex App runtime material is resolved from the installed Codex App
-at launch.
+Codex-owned runtime resources such as plugins, sounds, notices, asset catalogs,
+locale folders, helper apps, frameworks, code signatures, native add-ons,
+helper executables, and plugin prebuilds are not copied. Electron is provided by
+pnpm using the same version declared by the extracted app package. Codex App
+runtime material is resolved from the installed Codex App at launch.
 
 Normalization:
 

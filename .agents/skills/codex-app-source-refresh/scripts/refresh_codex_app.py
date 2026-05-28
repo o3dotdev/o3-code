@@ -17,16 +17,6 @@ from pathlib import Path
 
 
 REFRESH_BRANCH_HINTS = ("refresh", "upstream", "source")
-RESOURCE_SKIP = {
-    "app.asar",
-    "app.asar.unpacked",
-    "codex",
-    "codex_chronicle",
-    "native",
-    "node",
-    "node_repl",
-    "rg",
-}
 EXTERNAL_NATIVE_NODE_MODULES = {"better-sqlite3", "node-pty", "objc-js"}
 NATIVE_BINARY_SUFFIXES = {".dll", ".dylib", ".exe", ".node", ".so"}
 
@@ -183,34 +173,14 @@ def skip_unpacked_app_entry(relative: Path, source: Path) -> bool:
     return False
 
 
-def skip_resource_entry(relative: Path, source: Path) -> bool:
-    parts = relative.parts
-    if not parts:
-        return False
-    if len(parts) == 1 and parts[0] in RESOURCE_SKIP:
-        return True
-    if source.suffix in NATIVE_BINARY_SUFFIXES:
-        return True
-    if "prebuilds" in parts:
-        return True
-    if parts[-1].endswith(".app"):
-        return True
-    if parts[-2:] == ("bin", "tectonic"):
-        return True
-    return "app-server-runtime" in parts or "extension-host" in parts
-
-
 def replace_material(
     repo: Path, resources: Path, app_asar: Path, info_plist: Path
 ) -> None:
     app_target = repo / "apps" / "desktop" / "app"
-    resources_target = repo / "apps" / "desktop" / "resources"
     metadata_target = repo / "apps" / "desktop" / "metadata" / "Info.plist"
 
     shutil.rmtree(app_target, ignore_errors=True)
-    shutil.rmtree(resources_target, ignore_errors=True)
     app_target.mkdir(parents=True, exist_ok=True)
-    resources_target.mkdir(parents=True, exist_ok=True)
     metadata_target.parent.mkdir(parents=True, exist_ok=True)
 
     extract_asar(app_asar, app_target)
@@ -219,17 +189,6 @@ def replace_material(
         app_target,
         skip=skip_unpacked_app_entry,
     )
-
-    for entry in resources.iterdir():
-        if entry.name in RESOURCE_SKIP:
-            continue
-        target = resources_target / entry.name
-        if entry.is_dir() and not entry.is_symlink():
-            copy_tree_contents(entry, target, skip=skip_resource_entry)
-        else:
-            if skip_resource_entry(Path(entry.name), entry):
-                continue
-            shutil.copy2(entry, target, follow_symlinks=False)
 
     shutil.copy2(info_plist, metadata_target)
 

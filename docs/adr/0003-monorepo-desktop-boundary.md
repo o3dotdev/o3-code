@@ -10,7 +10,7 @@ O3 Code needs room for future workspace packages without mixing repo-authored pa
 
 ## Decision
 
-Use a pnpm monorepo with `apps/` and `packages/`. Keep the desktop reconstruction together under `apps/desktop/`: extracted app source in `apps/desktop/app/`, runtime resources in `apps/desktop/resources/`, and copied bundle metadata in `apps/desktop/metadata/`.
+Use a pnpm monorepo with `apps/` and `packages/`. Keep the desktop reconstruction together under `apps/desktop/`: extracted app source in `apps/desktop/app/`, O3-owned local identity assets in `apps/desktop/resources/`, and copied bundle metadata in `apps/desktop/metadata/`.
 
 Keep `packages/` present with `.gitkeep` until shared packages are introduced.
 
