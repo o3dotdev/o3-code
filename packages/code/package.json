@@ -1,6 +1,6 @@
 {
   "name": "@o3dotdev/code",
-  "version": "0.0.0-alpha.6",
+  "version": "0.0.0",
   "private": false,
   "description": "Run O3 Code locally from npm using an installed Codex Desktop app as the native resource provider.",
   "type": "module",

@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
     inputs:
       release_tag:
-        description: "Existing git tag to publish, for example v0.0.0-alpha.7"
+        description: "Existing git tag to publish, for example v0.0.1"
         required: true
         type: string
       npm_tag:
@@ -54,8 +54,16 @@ jobs:
             npm_tag="${{ inputs.npm_tag }}"
           fi
 
+          if [[ "${tag_name}" != v* || "${tag_name}" == "v" ]]; then
+            echo "Release tag must be v<semver>; received '${tag_name}'." >&2
+            exit 1
+          fi
+
+          release_version="${tag_name#v}"
+
           {
             echo "tag_name=${tag_name}"
+            echo "release_version=${release_version}"
             echo "npm_tag=${npm_tag}"
           } >> "${GITHUB_OUTPUT}"
 
@@ -77,19 +85,24 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Validate release tag
+      - name: Set package release version
+        shell: bash
+        working-directory: packages/code
+        run: |
+          npm version "${{ steps.release.outputs.release_version }}" --no-git-tag-version --workspaces=false
+
+      - name: Validate release version
         shell: bash
         run: |
           package_version="$(node -p "require('./${PACKAGE_DIR}/package.json').version")"
-          expected_tag="v${package_version}"
 
-          if [[ "${{ steps.release.outputs.tag_name }}" != "${expected_tag}" ]]; then
-            echo "Release tag must be ${expected_tag} for ${PACKAGE_NAME}@${package_version}." >&2
+          if [[ "${package_version}" != "${{ steps.release.outputs.release_version }}" ]]; then
+            echo "Release tag must be v<semver> and will publish that version; package rewrite produced ${package_version}." >&2
             exit 1
           fi
 
-          if npm view "${PACKAGE_NAME}@${package_version}" version >/dev/null 2>&1; then
-            echo "${PACKAGE_NAME}@${package_version} is already published." >&2
+          if npm view "${PACKAGE_NAME}@${{ steps.release.outputs.release_version }}" version >/dev/null 2>&1; then
+            echo "${PACKAGE_NAME}@${{ steps.release.outputs.release_version }} is already published." >&2
             exit 1
           fi
 
