@@ -13,6 +13,7 @@ import {
   renderStartPanel,
   renderStatusPanel,
   renderStopPanel,
+  resolveLifecycleCommandPrefix,
   startStartupProgressRenderer,
 } from "./ui.js";
 
@@ -24,7 +25,10 @@ export interface ProgramDependencies {
 
 export function createProgram(dependencies: ProgramDependencies = {}): Command {
   const program = new Command();
-  const paths = resolveO3CodePaths({ env: dependencies.env ?? process.env });
+  const argv = dependencies.argv ?? process.argv;
+  const env = dependencies.env ?? process.env;
+  const paths = resolveO3CodePaths({ env });
+  const commandPrefix = resolveLifecycleCommandPrefix({ argv, env });
   const stdout = dependencies.stdout ?? process.stdout;
 
   program
@@ -35,7 +39,10 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
   program
     .command("start")
     .description("Start O3 Code in the background and print the local web URL.")
-    .option("--foreground", "Run the supervisor in the foreground for debugging.")
+    .option(
+      "--foreground",
+      "Run the supervisor in the foreground for debugging.",
+    )
     .action(async (options: { readonly foreground?: boolean }) => {
       if (options.foreground) {
         await runSupervisor(paths);
@@ -43,11 +50,17 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
       }
       const state = await startBackground(paths, { stdout });
       if (state.status === "failed") {
-        stdout.write(`${renderFailurePanel({ error: state.error ?? "Startup failed.", state })}\n`);
+        stdout.write(
+          `${renderFailurePanel({
+            commandPrefix,
+            error: state.error ?? "Startup failed.",
+            state,
+          })}\n`,
+        );
         process.exitCode = 1;
         return;
       }
-      stdout.write(`${renderStartPanel({ state })}\n`);
+      stdout.write(`${renderStartPanel({ commandPrefix, state })}\n`);
     });
 
   program
@@ -55,7 +68,9 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
     .description("Show local O3 Code process and URL status.")
     .action(() => {
       const state = readLauncherState(paths);
-      stdout.write(`${renderStatusPanel(state, state ? isPidRunning(state.pid) : false)}\n`);
+      stdout.write(
+        `${renderStatusPanel(state, state ? isPidRunning(state.pid) : false, commandPrefix)}\n`,
+      );
     });
 
   program
@@ -64,7 +79,7 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
     .action(async () => {
       const state = readLauncherState(paths);
       const stopped = await stopRunningState(paths);
-      stdout.write(`${renderStopPanel(stopped, state)}\n`);
+      stdout.write(`${renderStopPanel(stopped, state, commandPrefix)}\n`);
     });
 
   program
@@ -74,11 +89,19 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
       await stopRunningState(paths);
       const state = await startBackground(paths, { stdout });
       if (state.status === "failed") {
-        stdout.write(`${renderFailurePanel({ error: state.error ?? "Restart failed.", state })}\n`);
+        stdout.write(
+          `${renderFailurePanel({
+            commandPrefix,
+            error: state.error ?? "Restart failed.",
+            state,
+          })}\n`,
+        );
         process.exitCode = 1;
         return;
       }
-      stdout.write(`${renderStartPanel({ state, title: "O3 Code restarted" })}\n`);
+      stdout.write(
+        `${renderStartPanel({ commandPrefix, state, title: "O3 Code restarted" })}\n`,
+      );
     });
 
   program
@@ -99,8 +122,10 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
   return program;
 }
 
-export async function runCli(argv: readonly string[] = process.argv): Promise<void> {
-  await createProgram().parseAsync(normalizeDefaultStartArgv(argv));
+export async function runCli(
+  argv: readonly string[] = process.argv,
+): Promise<void> {
+  await createProgram({ argv }).parseAsync(normalizeDefaultStartArgv(argv));
 }
 
 export function normalizeDefaultStartArgv(argv: readonly string[]): string[] {
@@ -115,7 +140,12 @@ export function normalizeDefaultStartArgv(argv: readonly string[]): string[] {
 }
 
 function isRootOption(value: string): boolean {
-  return value === "--help" || value === "-h" || value === "--version" || value === "-V";
+  return (
+    value === "--help" ||
+    value === "-h" ||
+    value === "--version" ||
+    value === "-V"
+  );
 }
 
 async function startBackground(
@@ -139,11 +169,15 @@ async function startBackground(
 
   const launcherOut = fs.openSync(paths.launcherLogPath, "a", 0o600);
   const launcherErr = fs.openSync(paths.launcherLogPath, "a", 0o600);
-  const child = spawn(process.execPath, [process.argv[1] ?? "o3-code", "__supervisor"], {
-    detached: true,
-    env: process.env,
-    stdio: ["ignore", launcherOut, launcherErr],
-  });
+  const child = spawn(
+    process.execPath,
+    [process.argv[1] ?? "o3-code", "__supervisor"],
+    {
+      detached: true,
+      env: process.env,
+      stdio: ["ignore", launcherOut, launcherErr],
+    },
+  );
   child.unref();
 
   const progress = shouldRenderInteractiveProgress(stdout)
@@ -163,11 +197,15 @@ async function startBackground(
   }
 }
 
-function shouldRenderInteractiveProgress(stdout: Pick<NodeJS.WriteStream, "write">): boolean {
+function shouldRenderInteractiveProgress(
+  stdout: Pick<NodeJS.WriteStream, "write">,
+): boolean {
   return stdout === process.stdout && process.stdout.isTTY === true;
 }
 
-async function stopRunningState(paths: ReturnType<typeof resolveO3CodePaths>): Promise<boolean> {
+async function stopRunningState(
+  paths: ReturnType<typeof resolveO3CodePaths>,
+): Promise<boolean> {
   const state = readLauncherState(paths);
   if (!state) {
     return false;
@@ -209,7 +247,10 @@ async function cleanupRuntimeProcesses(
     timeoutMs: 3_000,
   });
   if (!stopped) {
-    signalPids(pids.filter((pid) => isPidRunning(pid)), "SIGKILL");
+    signalPids(
+      pids.filter((pid) => isPidRunning(pid)),
+      "SIGKILL",
+    );
   }
 }
 

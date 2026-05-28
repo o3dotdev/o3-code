@@ -11,7 +11,13 @@ export {
   removeLauncherState,
   writeLauncherState,
 } from "./state.js";
-export { renderStartupProgressBar } from "./ui.js";
+export {
+  DEFAULT_COMMAND_PREFIX,
+  NPX_COMMAND_PREFIX,
+  renderStartPanel,
+  renderStartupProgressBar,
+  resolveLifecycleCommandPrefix,
+} from "./ui.js";
 
 if (isDirectRun()) {
   await runCli();

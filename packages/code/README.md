@@ -1,6 +1,15 @@
 # @o3dotdev/code
 
-Run O3 Code from npm:
+Install and start O3 Code:
+
+```sh
+npm install -g @o3dotdev/code && o3-code
+```
+
+Global install makes `o3-code status`, `o3-code logs`, `o3-code restart`, and
+`o3-code stop` available from your shell.
+
+Try without installing:
 
 ```sh
 npx @o3dotdev/code

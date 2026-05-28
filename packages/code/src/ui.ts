@@ -1,4 +1,10 @@
-import { Box, render as renderInk, renderToString, Text, type Instance } from "ink";
+import {
+  Box,
+  render as renderInk,
+  renderToString,
+  Text,
+  type Instance,
+} from "ink";
 import React from "react";
 
 import type { LauncherState } from "./state.js";
@@ -16,10 +22,15 @@ interface StartupProgressRenderer {
   readonly stop: () => Promise<void>;
 }
 
+export const DEFAULT_COMMAND_PREFIX = "o3-code";
+export const NPX_COMMAND_PREFIX = "npx @o3dotdev/code";
+
 export function renderStartPanel({
+  commandPrefix = DEFAULT_COMMAND_PREFIX,
   state,
   title = "O3 Code is running",
 }: {
+  readonly commandPrefix?: string;
   readonly state: LauncherState;
   readonly title?: string;
 }): string {
@@ -27,23 +38,42 @@ export function renderStartPanel({
     title,
     subtitle: "Local O3 Code",
     rows: [
-      { label: "Status", value: statusText(state), tone: toneForStatus(state.status) },
-      { label: "Web", value: state.url ?? "Waiting for local web access", tone: state.url ? "ok" : "warn" },
-      { label: "Desktop", value: state.desktopPid ? `pid ${state.desktopPid}` : "Starting", tone: "info" },
+      {
+        label: "Status",
+        value: statusText(state),
+        tone: toneForStatus(state.status),
+      },
+      {
+        label: "Web",
+        value: state.url ?? "Waiting for local web access",
+        tone: state.url ? "ok" : "warn",
+      },
+      {
+        label: "Desktop",
+        value: state.desktopPid ? `pid ${state.desktopPid}` : "Starting",
+        tone: "info",
+      },
       { label: "Logs", value: state.logs.desktop, tone: "info" },
-      { label: "State", value: state.activeRuntimeRoot ?? "Preparing runtime", tone: "info" },
+      {
+        label: "State",
+        value: state.activeRuntimeRoot ?? "Preparing runtime",
+        tone: "info",
+      },
       ...warningRows(state),
     ],
-    commands: [
-      "o3-code logs --follow",
-      "o3-code restart",
-      "o3-code stop",
-      "o3-code status",
-    ],
+    commands: lifecycleCommands(commandPrefix, [
+      "logs --follow",
+      "restart",
+      "stop",
+      "status",
+    ]),
   });
 }
 
-export function renderStoppedPanel(state: LauncherState | null): string {
+export function renderStoppedPanel(
+  state: LauncherState | null,
+  commandPrefix = DEFAULT_COMMAND_PREFIX,
+): string {
   return renderPanel({
     title: "O3 Code is stopped",
     subtitle: "Local O3 Code",
@@ -55,14 +85,16 @@ export function renderStoppedPanel(state: LauncherState | null): string {
         tone: state ? "info" : "warn",
       },
     ],
-    commands: ["o3-code start", "o3-code logs"],
+    commands: lifecycleCommands(commandPrefix, ["start", "logs"]),
   });
 }
 
 export function renderFailurePanel({
+  commandPrefix = DEFAULT_COMMAND_PREFIX,
   error,
   state,
 }: {
+  readonly commandPrefix?: string;
   readonly error: string;
   readonly state?: LauncherState | null;
 }): string {
@@ -92,23 +124,39 @@ export function renderFailurePanel({
           ]
         : []),
     ],
-    commands: ["o3-code logs", "o3-code restart"],
+    commands: lifecycleCommands(commandPrefix, ["logs", "restart"]),
   });
 }
 
-export function renderStatusPanel(state: LauncherState | null, running: boolean): string {
+export function renderStatusPanel(
+  state: LauncherState | null,
+  running: boolean,
+  commandPrefix = DEFAULT_COMMAND_PREFIX,
+): string {
   if (!state || !running) {
-    return renderStoppedPanel(state);
+    return renderStoppedPanel(state, commandPrefix);
   }
 
   return renderPanel({
     title: "O3 Code status",
     subtitle: "Local O3 Code",
     rows: [
-      { label: "Status", value: statusText(state), tone: toneForStatus(state.status) },
-      { label: "Web", value: state.url ?? "Unavailable", tone: state.url ? "ok" : "warn" },
+      {
+        label: "Status",
+        value: statusText(state),
+        tone: toneForStatus(state.status),
+      },
+      {
+        label: "Web",
+        value: state.url ?? "Unavailable",
+        tone: state.url ? "ok" : "warn",
+      },
       { label: "Launcher", value: `pid ${state.pid}`, tone: "info" },
-      { label: "Desktop", value: state.desktopPid ? `pid ${state.desktopPid}` : "Unavailable", tone: "info" },
+      {
+        label: "Desktop",
+        value: state.desktopPid ? `pid ${state.desktopPid}` : "Unavailable",
+        tone: "info",
+      },
       ...(state.status === "starting" && state.startup
         ? [
             {
@@ -121,7 +169,11 @@ export function renderStatusPanel(state: LauncherState | null, running: boolean)
       { label: "Logs", value: state.logs.desktop, tone: "info" },
       ...warningRows(state),
     ],
-    commands: ["o3-code logs --follow", "o3-code restart", "o3-code stop"],
+    commands: lifecycleCommands(commandPrefix, [
+      "logs --follow",
+      "restart",
+      "stop",
+    ]),
   });
 }
 
@@ -133,7 +185,11 @@ function warningRows(state: LauncherState): readonly Row[] {
   }));
 }
 
-export function renderStopPanel(stopped: boolean, state: LauncherState | null): string {
+export function renderStopPanel(
+  stopped: boolean,
+  state: LauncherState | null,
+  commandPrefix = DEFAULT_COMMAND_PREFIX,
+): string {
   return renderPanel({
     title: "O3 Code stop",
     subtitle: "Local O3 Code",
@@ -143,10 +199,53 @@ export function renderStopPanel(stopped: boolean, state: LauncherState | null): 
         value: stopped ? "Stopped" : "Not running",
         tone: stopped ? "ok" : "warn",
       },
-      { label: "Logs", value: state?.logs.desktop ?? "No logs yet", tone: "info" },
+      {
+        label: "Logs",
+        value: state?.logs.desktop ?? "No logs yet",
+        tone: "info",
+      },
     ],
-    commands: ["o3-code start", "o3-code logs"],
+    commands: lifecycleCommands(commandPrefix, ["start", "logs"]),
   });
+}
+
+export function resolveLifecycleCommandPrefix({
+  argv = process.argv,
+  env = process.env,
+}: {
+  readonly argv?: readonly string[];
+  readonly env?: NodeJS.ProcessEnv;
+} = {}): string {
+  if (isNpxInvocation({ argv, env })) {
+    return NPX_COMMAND_PREFIX;
+  }
+  return DEFAULT_COMMAND_PREFIX;
+}
+
+function isNpxInvocation({
+  argv,
+  env,
+}: {
+  readonly argv: readonly string[];
+  readonly env: NodeJS.ProcessEnv;
+}): boolean {
+  if (env.npm_command === "exec") {
+    return true;
+  }
+  return argv.some((value) =>
+    value.includes(`${pathSeparator()}_npx${pathSeparator()}`),
+  );
+}
+
+function pathSeparator(): string {
+  return process.platform === "win32" ? "\\" : "/";
+}
+
+function lifecycleCommands(
+  commandPrefix: string,
+  suffixes: readonly string[],
+): readonly string[] {
+  return suffixes.map((suffix) => `${commandPrefix} ${suffix}`);
 }
 
 export function startStartupProgressRenderer({
@@ -168,7 +267,9 @@ export function startStartupProgressRenderer({
   );
   const interval = setInterval(() => {
     tick += 1;
-    instance?.rerender(React.createElement(StartupProgressView, { state, tick }));
+    instance?.rerender(
+      React.createElement(StartupProgressView, { state, tick }),
+    );
   }, 120);
   interval.unref();
 
@@ -176,7 +277,9 @@ export function startStartupProgressRenderer({
     update: (nextState) => {
       state = nextState;
       tick += 1;
-      instance?.rerender(React.createElement(StartupProgressView, { state, tick }));
+      instance?.rerender(
+        React.createElement(StartupProgressView, { state, tick }),
+      );
     },
     stop: async () => {
       clearInterval(interval);
@@ -195,11 +298,20 @@ export function startStartupProgressRenderer({
   };
 }
 
-export function renderStartupProgressBar(step: number, total: number, width = 24): string {
+export function renderStartupProgressBar(
+  step: number,
+  total: number,
+  width = 24,
+): string {
   const normalizedTotal = Math.max(1, Math.trunc(total));
-  const normalizedStep = Math.min(Math.max(0, Math.trunc(step)), normalizedTotal);
+  const normalizedStep = Math.min(
+    Math.max(0, Math.trunc(step)),
+    normalizedTotal,
+  );
   const normalizedWidth = Math.max(1, Math.trunc(width));
-  const filled = Math.round((normalizedStep / normalizedTotal) * normalizedWidth);
+  const filled = Math.round(
+    (normalizedStep / normalizedTotal) * normalizedWidth,
+  );
   return `[${"#".repeat(filled)}${"-".repeat(normalizedWidth - filled)}]`;
 }
 
@@ -214,7 +326,8 @@ function StartupProgressView({
   const phaseLabel = startup?.label ?? "Starting supervisor";
   const step = startup?.step ?? 0;
   const total = startup?.total ?? 7;
-  const elapsedMs = Date.now() - parseTimestampMs(startup?.startedAt ?? state?.startedAt);
+  const elapsedMs =
+    Date.now() - parseTimestampMs(startup?.startedAt ?? state?.startedAt);
   const elapsedSeconds = Math.max(0, Math.floor(elapsedMs / 1000));
   const spinner = ["|", "/", "-", "\\"][tick % 4];
 
@@ -237,7 +350,11 @@ function StartupProgressView({
     ),
     startup?.detail
       ? React.createElement(Text, { color: "gray" }, startup.detail)
-      : React.createElement(Text, { color: "gray" }, "Preparing local app state"),
+      : React.createElement(
+          Text,
+          { color: "gray" },
+          "Preparing local app state",
+        ),
   );
 }
 
@@ -263,7 +380,12 @@ function renderPanel({
   return renderToString(
     React.createElement(
       Box,
-      { borderStyle: "round", borderColor: "cyan", flexDirection: "column", paddingX: 1 },
+      {
+        borderStyle: "round",
+        borderColor: "cyan",
+        flexDirection: "column",
+        paddingX: 1,
+      },
       React.createElement(Text, { bold: true }, title),
       React.createElement(Text, { color: "gray" }, subtitle),
       React.createElement(Text, null, ""),
@@ -271,8 +393,16 @@ function renderPanel({
         React.createElement(
           Text,
           { key: row.label },
-          React.createElement(Text, { color: "gray" }, `${row.label.padEnd(8)} `),
-          React.createElement(Text, { color: colorForTone(row.tone ?? "info") }, row.value),
+          React.createElement(
+            Text,
+            { color: "gray" },
+            `${row.label.padEnd(8)} `,
+          ),
+          React.createElement(
+            Text,
+            { color: colorForTone(row.tone ?? "info") },
+            row.value,
+          ),
         ),
       ),
       React.createElement(Text, null, ""),

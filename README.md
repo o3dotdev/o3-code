@@ -28,6 +28,17 @@ experience from your phone, tablet, or side screen.
 
 ## Install
 
+Install and start O3 Code:
+
+```sh
+npm install -g @o3dotdev/code && o3-code
+```
+
+Global install makes `o3-code status`, `o3-code logs`, `o3-code restart`, and
+`o3-code stop` available from your shell.
+
+Try without installing:
+
 ```sh
 npx @o3dotdev/code
 ```
