@@ -20,6 +20,6 @@
 
 ## Validation Notes
 
-- `scripts/start.mjs` still sets `CODEX_ELECTRON_RESOURCES_PATH` to repo-local `apps/desktop/resources`.
+- `scripts/start.mjs` sets `CODEX_ELECTRON_RESOURCES_PATH` to resolved Codex App resources through `packages/codex-app-resources`.
 - `node --check apps/desktop/app/.vite/build/bootstrap.js` passed.
-- `pnpm start` reached app-server handshake, renderer route mount, appshot hotkey registration, and browser-use native pipe startup using repo-local runtime resources.
+- `node --check scripts/start.mjs` passed after the launcher moved native runtime resource lookup to the installed Codex App.

@@ -9,13 +9,11 @@
 
 ## Findings
 
-- The installed app stores `app.asar.unpacked/node_modules/node-pty/build/Release/spawn-helper` with mode `755`.
-- The refreshed app-local copy at `apps/desktop/app/node_modules/node-pty/build/Release/spawn-helper` has mode `755`.
-- The refreshed resources copy at `apps/desktop/resources/app.asar.unpacked/node_modules/node-pty/build/Release/spawn-helper` has mode `755`.
-- `scripts/start.mjs` still repairs missing executable bits for local `spawn-helper` copies before Electron starts.
+- The installed app stores `app.asar.unpacked/node_modules/node-pty/build/Release/spawn-helper`.
+- O3 Code no longer keeps repo-local `node-pty` native payloads.
+- `scripts/start.mjs` creates an ignored symlink from `apps/desktop/app/node_modules/node-pty` to the installed Codex App unpacked `node_modules/node-pty`.
 
 ## Validation
 
-- `git ls-files --stage` reports `100755` for both refreshed repo-local `spawn-helper` copies.
-- Electron-runtime `node-pty` smoke test spawned the user's shell, printed `READY`, and exited cleanly.
-- `pnpm start` reached renderer mount and app-server handshake without a `node-pty` helper spawn error.
+- `pnpm native-binaries:check` passes.
+- Electron-runtime `node-pty` smoke test still needs to be rerun after a full desktop launch validation.

@@ -6,7 +6,7 @@ Active
 
 ## Intent
 
-When O3 Code runs through pnpm Electron, Electron sets `process.resourcesPath` to its own package resources directory. The extracted Codex App source expects native add-ons and helper assets to resolve from copied app resources, so O3 Code needs to point `process.resourcesPath` at repo-local `apps/desktop/resources/` before the main bundle loads.
+When O3 Code runs through pnpm Electron, Electron sets `process.resourcesPath` to its own package resources directory. The extracted Codex App source expects native add-ons and helper assets to resolve from Codex App resources, so O3 Code needs to point `process.resourcesPath` at the installed Codex App's `Contents/Resources` before the main bundle loads.
 
 ## Files
 

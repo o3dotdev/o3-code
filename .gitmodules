@@ -1,4 +1,0 @@
-[submodule "upstream/codex"]
-	path = upstream/codex
-	url = https://github.com/o3dotdev/o3-codex.git
-	branch = o3/main

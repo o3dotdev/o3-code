@@ -35,6 +35,9 @@ companion for using the same experience from your phone, tablet, or side screen.
 npx @o3dotdev/o3-code
 ```
 
+O3 Code expects the official Codex Desktop app to be installed on the same Mac
+so native runtime resources can be resolved from it.
+
 Prefer an app bundle? macOS downloads are published on
 [GitHub Releases](https://github.com/o3dotdev/o3-code/releases).
 

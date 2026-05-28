@@ -2,13 +2,13 @@
 
 ## Status
 
-Active
+Retired
 
 ## Intent
 
-O3 Code local Electron runs should preserve the executable bit on the `node-pty` `spawn-helper` binary used by the integrated terminal.
+O3 Code local Electron runs previously preserved the executable bit on the repo-local `node-pty` `spawn-helper` binary used by the integrated terminal.
 
-Without this mode bit, `node-pty` fails with `posix_spawnp failed`, the terminal session never attaches, and the renderer closes the bottom panel because the session mapping disappears.
+This patch is retired because O3 Code no longer keeps checked-in native `node-pty` payloads. The launcher links `node-pty` from the installed Codex App Native Resource Provider instead.
 
 ## Files
 

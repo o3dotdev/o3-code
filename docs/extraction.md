@@ -5,13 +5,13 @@ The current extraction came from `/Applications/Codex.app`, version `26.519.8153
 Copied material:
 
 - `Resources/app.asar` extracted into `apps/desktop/app/`
-- `Resources/app.asar.unpacked/` copied into `apps/desktop/resources/app.asar.unpacked/`
-- `Resources/native/` copied into `apps/desktop/resources/native/`
-- `Resources/plugins/` copied into `apps/desktop/resources/plugins/`
-- top-level helper binaries, icons, sounds, notices, asset catalogs, and locale folders copied into `apps/desktop/resources/`
 - `Contents/Info.plist` copied into `apps/desktop/metadata/Info.plist`
 
-The signed macOS outer bundle, helper apps, frameworks, and code signature are not copied. Electron is provided by pnpm using the same version declared by the extracted app package.
+Codex-owned runtime resources such as plugins, sounds, notices, asset catalogs,
+locale folders, helper apps, frameworks, code signatures, native add-ons,
+helper executables, and plugin prebuilds are not copied. Electron is provided by
+pnpm using the same version declared by the extracted app package. Codex App
+runtime material is resolved from the installed Codex App at launch.
 
 Normalization:
 
@@ -27,7 +27,8 @@ Source Refresh:
 
 Local runner patch:
 
-- `apps/desktop/app/.vite/build/bootstrap.js` reads `CODEX_ELECTRON_RESOURCES_PATH` before loading the main bundle and points `process.resourcesPath` at repo-local `apps/desktop/resources/`. This keeps native add-on lookups on the copied runtime resources instead of Electron's npm package resources directory.
+- `apps/desktop/app/.vite/build/bootstrap.js` reads `CODEX_ELECTRON_RESOURCES_PATH` before loading the main bundle and points `process.resourcesPath` at the installed Codex App's `Contents/Resources`. This keeps native add-on and helper lookups on the official Codex App runtime instead of Electron's npm package resources directory or checked-in O3 Code files.
+- `scripts/start.mjs` creates ignored `apps/desktop/app/node_modules` symlinks for native Node packages so Node package resolution reaches the installed Codex App copies without committing their compiled payloads.
 - O3 Code applies Local App Identity for repo-local runs through `docs/patches/0002-local-app-identity/`. When refreshing from a newer Codex App, compare upstream icon resources and icon-loading code before reapplying generated O3 assets, because upstream may introduce new icon surfaces or filenames.
 
 Every Patch to copied source is tracked in `docs/patches/` and should have a Patch SOP.

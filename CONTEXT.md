@@ -133,12 +133,32 @@ The operation that replaces preserved upstream source material from a newer Code
 _Avoid_: sync, vendor update, recopy
 
 **Runtime Resources**:
-The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
-_Avoid_: app bundle, binary mirror
+Codex App resource material needed by the Desktop Reconstruction at runtime and supplied by the Official Codex App Runtime unless explicitly owned by O3 Code.
+_Avoid_: repo resource mirror, bundled runtime, app bundle
 
-**Codex CLI Upstream**:
-The pinned source checkout used to build the `codex` app-server binary consumed by the Desktop Reconstruction.
-_Avoid_: package, loose clone, binary source
+**O3-Owned Assets**:
+O3 Code identity or product assets that are intentionally local to O3 Code rather than preserved from the Codex App.
+_Avoid_: copied upstream resources, runtime resource mirror, preserved assets
+
+**Official Codex App Runtime**:
+The installed Codex Desktop app on the user's machine, used as the source for Codex App runtime resource material.
+_Avoid_: bundled runtime, checked-in binary set, repo resource mirror
+
+**Native Resource Provider**:
+The resolved Codex.app resources directory that supplies Codex App runtime resource material for a local O3 Code launch.
+_Avoid_: vendored binaries, repo resources, npm payload
+
+**JS-Only O3 Code Package**:
+The packaging boundary where O3 Code owns JavaScript, O3-Owned Assets, UI assets, router code, docs, and patch metadata while excluding Codex-owned runtime resource material.
+_Avoid_: native app distribution, binary bundle, full Codex repack
+
+**External Codex CLI**:
+The user-installed official `codex` command that O3 Code expects to find outside its Runtime Resources.
+_Avoid_: bundled codex, repo-built codex, source checkout, router binary
+
+**App Server Router**:
+The O3 Code-owned participant that stands in the Desktop Reconstruction's Codex app-server launch position while preserving the existing app-server protocol boundary and delegating to the External Codex CLI.
+_Avoid_: Codex fork, browser app-server client, alternate backend
 
 **Codex App User Data Directory**:
 The installed Codex App's Electron user data directory, shared by default with O3 Code when running the Desktop Reconstruction locally.
@@ -200,7 +220,15 @@ Domain expert: "No. A Source Refresh may replace copied source material, then re
 
 Dev: "Should I patch the compiled `codex` binary directly?"
 
-Domain expert: "No. Edit the Codex CLI Upstream, build a new binary, and install that binary into Runtime Resources."
+Domain expert: "No. Keep the External Codex CLI outside Runtime Resources and put O3 Code-specific app-server behavior behind the App Server Router."
+
+Dev: "Should O3 Code commit native add-ons, helper apps, `node`, `node_repl`, plugins, notices, asset catalogs, sounds, or locale folders from the Codex App?"
+
+Domain expert: "No. Use the installed Codex App as the Native Resource Provider for Codex-owned Runtime Resources, and keep only O3-Owned Assets in the repo."
+
+Dev: "Should O3 Code keep a local Codex CLI source checkout for reference or CLI patches?"
+
+Domain expert: "No. Treat Codex CLI/app-server behavior as an external dependency selected through `PATH` or `O3_CODE_UPSTREAM_CODEX_PATH`."
 
 Dev: "Should O3 Code default to its own isolated Electron user data?"
 

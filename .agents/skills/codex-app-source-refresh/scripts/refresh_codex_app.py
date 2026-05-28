@@ -17,7 +17,8 @@ from pathlib import Path
 
 
 REFRESH_BRANCH_HINTS = ("refresh", "upstream", "source")
-RESOURCE_SKIP = {"app.asar"}
+EXTERNAL_NATIVE_NODE_MODULES = {"better-sqlite3", "node-pty", "objc-js"}
+NATIVE_BINARY_SUFFIXES = {".dll", ".dylib", ".exe", ".node", ".so"}
 
 
 def run(repo: Path, command: list[str]) -> str:
@@ -132,42 +133,62 @@ def extract_asar(archive: Path, destination: Path) -> None:
         walk(header)
 
 
-def copy_tree_contents(source: Path, destination: Path) -> None:
+def copy_tree_contents(source: Path, destination: Path, *, skip=None) -> None:
     if not source.exists():
         return
     destination.mkdir(parents=True, exist_ok=True)
     for entry in source.iterdir():
-        target = destination / entry.name
-        if entry.is_dir() and not entry.is_symlink():
-            shutil.copytree(entry, target, symlinks=True, dirs_exist_ok=True)
-        else:
-            shutil.copy2(entry, target, follow_symlinks=False)
+        copy_tree_entry(entry, destination / entry.name, Path(entry.name), skip=skip)
+
+
+def copy_tree_entry(source: Path, destination: Path, relative: Path, *, skip=None) -> None:
+    if skip is not None and skip(relative, source):
+        return
+
+    if source.is_dir() and not source.is_symlink():
+        destination.mkdir(parents=True, exist_ok=True)
+        for entry in source.iterdir():
+            copy_tree_entry(entry, destination / entry.name, relative / entry.name, skip=skip)
+    else:
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination, follow_symlinks=False)
+
+
+def skip_unpacked_app_entry(relative: Path, source: Path) -> bool:
+    parts = relative.parts
+    if len(parts) < 2 or parts[0] != "node_modules":
+        return False
+    if parts[1] not in EXTERNAL_NATIVE_NODE_MODULES:
+        return False
+    if parts[-1] == "binding.gyp":
+        return True
+    if parts[1] == "objc-js" and len(parts) >= 4 and parts[2:4] == ("src", "native"):
+        return True
+    if source.suffix in NATIVE_BINARY_SUFFIXES:
+        return True
+    if ".dSYM" in parts:
+        return True
+    if parts[-2:] == ("Release", "spawn-helper"):
+        return True
+    return False
 
 
 def replace_material(
     repo: Path, resources: Path, app_asar: Path, info_plist: Path
 ) -> None:
     app_target = repo / "apps" / "desktop" / "app"
-    resources_target = repo / "apps" / "desktop" / "resources"
     metadata_target = repo / "apps" / "desktop" / "metadata" / "Info.plist"
 
     shutil.rmtree(app_target, ignore_errors=True)
-    shutil.rmtree(resources_target, ignore_errors=True)
     app_target.mkdir(parents=True, exist_ok=True)
-    resources_target.mkdir(parents=True, exist_ok=True)
     metadata_target.parent.mkdir(parents=True, exist_ok=True)
 
     extract_asar(app_asar, app_target)
-    copy_tree_contents(resources / "app.asar.unpacked", app_target)
-
-    for entry in resources.iterdir():
-        if entry.name in RESOURCE_SKIP:
-            continue
-        target = resources_target / entry.name
-        if entry.is_dir() and not entry.is_symlink():
-            shutil.copytree(entry, target, symlinks=True)
-        else:
-            shutil.copy2(entry, target, follow_symlinks=False)
+    copy_tree_contents(
+        resources / "app.asar.unpacked",
+        app_target,
+        skip=skip_unpacked_app_entry,
+    )
 
     shutil.copy2(info_plist, metadata_target)
 

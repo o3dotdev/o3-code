@@ -15,7 +15,11 @@ importers:
         specifier: ^3.6.2
         version: 3.8.3
 
+  packages/app-server-router: {}
+
   packages/bridge: {}
+
+  packages/codex-app-resources: {}
 
 packages:
 
