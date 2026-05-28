@@ -184,6 +184,10 @@ _Avoid_: token auth, key login, env auth
 A scoped O3 Code policy that allows realtime voice setup to use API Key Auth while the rest of the Codex App Server session remains on Account Auth.
 _Avoid_: hybrid login, mixed auth, realtime key hack
 
+**Realtime Proxy**:
+The O3 Code-owned realtime-only forwarding participant used by the Realtime Auth Override when direct changes to the External Codex CLI are out of scope.
+_Avoid_: app-server router, general proxy, Codex fork
+
 **Realtime API Key**:
 The only API key eligible for the Realtime Auth Override, separate from any general OpenAI or Codex API key used by other auth paths.
 _Avoid_: default API key, inherited key, shell key
@@ -337,3 +341,7 @@ Domain expert: "No. Use a Realtime API Base URL for realtime voice, while Accoun
 Dev: "Can WebRTC realtime call creation keep using the ChatGPT-backed Codex App Server route?"
 
 Domain expert: "No. The Realtime Auth Override covers realtime websocket setup, WebRTC call creation, and the WebRTC sideband websocket join."
+
+Dev: "Can the External Codex CLI implementation use the Realtime Proxy for WebRTC?"
+
+Domain expert: "No. The first no-fork implementation uses the Realtime Proxy only for websocket realtime transport; WebRTC needs Codex-owned realtime call routing knobs or a deeper app-server realtime implementation."

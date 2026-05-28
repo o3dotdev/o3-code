@@ -47,6 +47,13 @@ the installed Codex App metadata, so upstream update UI is not meaningful for
 local O3 Code runs. Set `O3_CODE_DISABLE_APP_UPDATES=0` only when intentionally
 debugging upstream updater behavior.
 
+Realtime voice can use a scoped realtime API-key route during local O3 Code
+runs. Set `O3_CODE_REALTIME_API_KEY` to opt in; the App Server Router keeps
+ordinary Codex app-server traffic on the external Codex CLI's normal auth path
+and routes only websocket realtime setup through the loopback Realtime Proxy.
+Set `O3_CODE_REALTIME_BASE_URL` to target an OpenAI-compatible realtime API
+base URL; when unset it defaults to `https://api.openai.com/v1`.
+
 ## Useful Commands
 
 ```sh
