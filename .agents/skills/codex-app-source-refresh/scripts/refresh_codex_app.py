@@ -17,7 +17,18 @@ from pathlib import Path
 
 
 REFRESH_BRANCH_HINTS = ("refresh", "upstream", "source")
-RESOURCE_SKIP = {"app.asar", "codex"}
+RESOURCE_SKIP = {
+    "app.asar",
+    "app.asar.unpacked",
+    "codex",
+    "codex_chronicle",
+    "native",
+    "node",
+    "node_repl",
+    "rg",
+}
+EXTERNAL_NATIVE_NODE_MODULES = {"better-sqlite3", "node-pty", "objc-js"}
+NATIVE_BINARY_SUFFIXES = {".dll", ".dylib", ".exe", ".node", ".so"}
 
 
 def run(repo: Path, command: list[str]) -> str:
@@ -132,16 +143,51 @@ def extract_asar(archive: Path, destination: Path) -> None:
         walk(header)
 
 
-def copy_tree_contents(source: Path, destination: Path) -> None:
+def copy_tree_contents(source: Path, destination: Path, *, skip=None) -> None:
     if not source.exists():
         return
     destination.mkdir(parents=True, exist_ok=True)
     for entry in source.iterdir():
-        target = destination / entry.name
-        if entry.is_dir() and not entry.is_symlink():
-            shutil.copytree(entry, target, symlinks=True, dirs_exist_ok=True)
-        else:
-            shutil.copy2(entry, target, follow_symlinks=False)
+        copy_tree_entry(entry, destination / entry.name, Path(entry.name), skip=skip)
+
+
+def copy_tree_entry(source: Path, destination: Path, relative: Path, *, skip=None) -> None:
+    if skip is not None and skip(relative, source):
+        return
+
+    if source.is_dir() and not source.is_symlink():
+        destination.mkdir(parents=True, exist_ok=True)
+        for entry in source.iterdir():
+            copy_tree_entry(entry, destination / entry.name, relative / entry.name, skip=skip)
+    else:
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copy2(source, destination, follow_symlinks=False)
+
+
+def skip_unpacked_app_entry(relative: Path, source: Path) -> bool:
+    parts = relative.parts
+    return (
+        len(parts) >= 2
+        and parts[0] == "node_modules"
+        and parts[1] in EXTERNAL_NATIVE_NODE_MODULES
+    )
+
+
+def skip_resource_entry(relative: Path, source: Path) -> bool:
+    parts = relative.parts
+    if not parts:
+        return False
+    if len(parts) == 1 and parts[0] in RESOURCE_SKIP:
+        return True
+    if source.suffix in NATIVE_BINARY_SUFFIXES:
+        return True
+    if "prebuilds" in parts:
+        return True
+    if parts[-1].endswith(".app"):
+        return True
+    if parts[-2:] == ("bin", "tectonic"):
+        return True
+    return "app-server-runtime" in parts or "extension-host" in parts
 
 
 def replace_material(
@@ -158,15 +204,21 @@ def replace_material(
     metadata_target.parent.mkdir(parents=True, exist_ok=True)
 
     extract_asar(app_asar, app_target)
-    copy_tree_contents(resources / "app.asar.unpacked", app_target)
+    copy_tree_contents(
+        resources / "app.asar.unpacked",
+        app_target,
+        skip=skip_unpacked_app_entry,
+    )
 
     for entry in resources.iterdir():
         if entry.name in RESOURCE_SKIP:
             continue
         target = resources_target / entry.name
         if entry.is_dir() and not entry.is_symlink():
-            shutil.copytree(entry, target, symlinks=True)
+            copy_tree_contents(entry, target, skip=skip_resource_entry)
         else:
+            if skip_resource_entry(Path(entry.name), entry):
+                continue
             shutil.copy2(entry, target, follow_symlinks=False)
 
     shutil.copy2(info_plist, metadata_target)

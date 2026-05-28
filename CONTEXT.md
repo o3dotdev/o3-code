@@ -133,8 +133,20 @@ The operation that replaces preserved upstream source material from a newer Code
 _Avoid_: sync, vendor update, recopy
 
 **Runtime Resources**:
-The files copied from the Codex App that O3 Code needs at runtime, excluding the signed macOS outer bundle and Electron frameworks.
-_Avoid_: app bundle, binary mirror
+The non-native files and acceptable assets preserved from the Codex App that O3 Code needs alongside the extracted source.
+_Avoid_: native binary mirror, app bundle
+
+**Official Codex App Runtime**:
+The installed Codex Desktop app on the user's machine, used as the source for native runtime executables, helper apps, native add-ons, and plugin binary payloads.
+_Avoid_: bundled runtime, checked-in binary set, repo resource mirror
+
+**Native Resource Provider**:
+The resolved Codex.app resources directory that supplies host-native runtime material for a local O3 Code launch.
+_Avoid_: vendored binaries, repo resources, npm payload
+
+**JS-Only O3 Code Package**:
+The packaging boundary where O3 Code owns JavaScript, UI assets, router code, docs, and patch metadata while excluding host-native compiled runtime payloads.
+_Avoid_: native app distribution, binary bundle, full Codex repack
 
 **External Codex CLI**:
 The user-installed official `codex` command that O3 Code expects to find outside its Runtime Resources.
@@ -205,6 +217,10 @@ Domain expert: "No. A Source Refresh may replace copied source material, then re
 Dev: "Should I patch the compiled `codex` binary directly?"
 
 Domain expert: "No. Keep the External Codex CLI outside Runtime Resources and put O3 Code-specific app-server behavior behind the App Server Router."
+
+Dev: "Should O3 Code commit native add-ons, helper apps, `node`, `node_repl`, or plugin prebuilds?"
+
+Domain expert: "No. Use the installed Codex App as the Native Resource Provider and keep host-native compiled payloads out of the repo."
 
 Dev: "Should O3 Code keep a local Codex CLI source checkout for reference or CLI patches?"
 

@@ -14,8 +14,11 @@ Requirements:
 - macOS
 - Node.js with Corepack
 - `pnpm` 11.1.0, as declared in `package.json`
+- Official Codex Desktop app installed at `/Applications/Codex.app`, or an
+  explicit `O3_CODE_CODEX_APP_PATH`
 - The official `codex` CLI installed outside this repo and available on `PATH`,
-  or an explicit `O3_CODE_UPSTREAM_CODEX_PATH`
+  or an explicit `O3_CODE_UPSTREAM_CODEX_PATH`. If neither is present, the App
+  Server Router falls back to `Codex.app/Contents/Resources/codex`.
 
 Start the local app:
 
@@ -25,9 +28,11 @@ pnpm start
 ```
 
 `pnpm start` runs the extracted Electron app from `apps/desktop/app/` and points
-it at repo-local runtime resources in `apps/desktop/resources/`. App-server
-traffic starts through `@o3dotdev/app-server-router`, which delegates to the
-external `codex` CLI.
+native runtime lookups at the installed Codex app's `Contents/Resources`.
+Repo-local resources in `apps/desktop/resources/` are kept for O3-owned assets
+and preserved non-native material. App-server traffic starts through
+`@o3dotdev/app-server-router`, which delegates to the external `codex` CLI or
+the installed Codex app's `codex` executable.
 
 Local Electron runs use `~/Library/Application Support/O3 Code` by default so
 they do not collide with the installed Codex App profile. Set
@@ -45,6 +50,8 @@ pnpm normalize:check
 pnpm derive:web
 pnpm web-patches:check
 pnpm app-server-router:test
+pnpm codex-app-resources:test
+pnpm native-binaries:check
 ```
 
 - `pnpm normalize` rewrites preserved Codex App source into the patch-friendly
@@ -52,14 +59,18 @@ pnpm app-server-router:test
 - `pnpm derive:web` rebuilds the Mirrored Web Client Asset Tree from the patched
   Desktop Reconstruction webview assets.
 - `pnpm app-server-router:test` runs the App Server Router package tests.
+- `pnpm codex-app-resources:test` runs the Codex.app resource resolver tests.
+- `pnpm native-binaries:check` verifies host-native compiled payloads are not
+  present in publishable O3 Code paths.
 
 ## Project Architecture
 
 ```txt
 apps/desktop/app/          preserved Electron app source from the Codex App
-apps/desktop/resources/    runtime resources used by repo-local app runs
+apps/desktop/resources/    O3-owned assets and preserved non-native resources
 apps/desktop/metadata/     copied macOS bundle metadata
 apps/web/app/webview/      derived Mirrored Web Client asset tree
+packages/codex-app-resources/ Codex.app native resource resolver
 packages/app-server-router/ App-server launch facade for the external Codex CLI
 packages/bridge/           Bridge Sidecar, Bridge Shim, and Web access support
 scripts/                   repo maintenance, normalization, and launcher tools
@@ -68,9 +79,10 @@ docs/patches/              Desktop Reconstruction Patch SOPs and evidence
 docs/web-patches/          Mirrored Web Client Patch SOPs and evidence
 ```
 
-The installed Codex App is read-only upstream material. O3 Code preserves copied
-source and runtime assets, then layers local intent through documented Patches
-that can be rediscovered and reapplied during future refreshes.
+The installed Codex App is read-only upstream material and the Native Resource
+Provider for host-native binaries. O3 Code preserves copied source and
+acceptable assets, then layers local intent through documented Patches that can
+be rediscovered and reapplied during future refreshes.
 
 ## Core Concepts
 
@@ -108,12 +120,18 @@ app-server behavior in `packages/app-server-router/`, and use
 `O3_CODE_UPSTREAM_CODEX_PATH` only to point at an explicit external `codex`
 executable when `PATH` selection is not enough.
 
+Do not commit host-native compiled runtime payloads such as `.node` add-ons,
+Mach-O/ELF/PE executables, helper `.app` bundles, `node`, `node_repl`, `rg`, or
+plugin prebuilds. Use `pnpm native-binaries:check` before opening a PR that
+touches copied app material.
+
 ## Source Refresh Workflow
 
 For a Codex App refresh, follow [docs/source-refresh.md](docs/source-refresh.md).
 The short version is:
 
-1. Replace copied Codex App source and runtime material from the new release.
+1. Replace copied Codex App source and allowed non-native material from the new
+   release.
 2. Update source metadata such as app version and build number.
 3. Run `pnpm normalize`.
 4. Reapply active Desktop Reconstruction Patch SOPs in numeric order.
@@ -148,5 +166,6 @@ Before opening a PR:
 - Run `pnpm normalize:check` when copied Desktop Reconstruction source is
   touched.
 - Run `pnpm web-patches:check` when Mirrored Web Client assets are touched.
+- Run `pnpm native-binaries:check` when copied app material is touched.
 - Update Patch SOPs, Patch Evidence, ADRs, or `CONTEXT.md` when the change
   alters durable project behavior.

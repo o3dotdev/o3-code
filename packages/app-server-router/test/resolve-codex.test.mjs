@@ -42,11 +42,28 @@ test("resolveExternalCodex finds codex on PATH", async () => {
   );
 });
 
+test("resolveExternalCodex falls back to installed Codex.app resources", async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "o3-router-"));
+  const codex = await writeExecutable(root, "codex");
+
+  assert.equal(
+    resolveExternalCodex({
+      env: { PATH: "" },
+      resolveCodexApp: () => ({ codexPath: codex }),
+      routerExecutablePath: path.join(root, "router"),
+    }),
+    codex,
+  );
+});
+
 test("resolveExternalCodex fails when no external codex is available", () => {
   assert.throws(
     () =>
       resolveExternalCodex({
         env: { PATH: "" },
+        resolveCodexApp: () => {
+          throw Error("missing app");
+        },
         routerExecutablePath: "/tmp/o3-app-server-router",
       }),
     /Unable to locate external Codex CLI/,

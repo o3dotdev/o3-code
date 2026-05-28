@@ -19,6 +19,8 @@ importers:
 
   packages/bridge: {}
 
+  packages/codex-app-resources: {}
+
 packages:
 
   '@electron/get@5.0.0':

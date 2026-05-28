@@ -2,13 +2,13 @@
 
 ## Status
 
-Accepted
+Superseded by [0031 Native Resources Come From Installed Codex App](./0031-native-resources-come-from-installed-codex-app.md)
 
 ## Context
 
 The installed macOS Codex App contains a signed Electron `.app` bundle. The repo needs to preserve the app source material and assets while making the app runnable and patchable through pnpm.
 
-## Decision
+## Original Decision
 
 Copy and extract the runtime resources only:
 
@@ -20,7 +20,7 @@ Do not copy `Contents/Frameworks`, helper `.app` bundles, `_CodeSignature`, or t
 
 ## Consequences
 
-The repo stays focused on patchable source material and runtime assets instead of mirroring a signed binary application bundle.
+This decision is superseded. O3 Code still does not mirror the signed binary application bundle, but it also no longer keeps host-native compiled runtime binaries in `apps/desktop/resources/`. Native runtime material now comes from the installed Codex App.
 
 Running the app requires a launcher that points Electron at the repo-local `apps/desktop/resources/` directory.
 

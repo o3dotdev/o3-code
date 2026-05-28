@@ -2,12 +2,13 @@
 
 ## Goal
 
-Keep the integrated terminal native `spawn-helper` executable in repo-local Electron runs.
+Retired. Integrated terminal native `spawn-helper` now comes from the installed Codex App Native Resource Provider instead of a checked-in repo-local copy.
 
 ## Non-Goals
 
 - Do not modify the installed macOS app.
 - Do not replace `node-pty` binaries.
+- Do not reintroduce checked-in native `node-pty` payloads.
 - Do not change terminal UI toggle behavior unless backend startup is already healthy.
 
 ## Dependencies
@@ -16,20 +17,17 @@ None.
 
 ## Discovery
 
-1. Locate all `node-pty/build/Release/spawn-helper` copies in the refreshed tree.
-2. Compare file mode with the installed app's unpacked helper.
-3. Confirm the app-resolved helper path used by local Electron startup is executable.
-4. Reproduce with an Electron-runtime `node-pty` smoke test if terminal startup still fails.
+1. Confirm `scripts/start.mjs` links `apps/desktop/app/node_modules/node-pty` to the installed Codex App unpacked `node_modules/node-pty`.
+2. Confirm `pnpm native-binaries:check` does not find repo-local `node-pty` native payloads.
+3. Reproduce with an Electron-runtime `node-pty` smoke test if terminal startup fails.
 
 ## Application
 
-1. Set executable mode on `apps/desktop/app/node_modules/node-pty/build/Release/spawn-helper`.
-2. Keep `scripts/start.mjs` repairing missing executable bits for local `spawn-helper` copies before Electron starts.
-3. If a future refresh moves the app-resolved `node-pty` path, update the launcher helper path list to include the new location.
+No app-source patch should be applied. Keep this patch retired unless O3 Code intentionally changes the Native Resource Provider boundary.
 
 ## Validation
 
-- `git ls-files --stage` reports mode `100755` for the app-local `spawn-helper`.
+- `pnpm native-binaries:check` passes.
 - An Electron-runtime `node-pty` smoke test can spawn the user's shell and keep it alive.
 - `pnpm start` can open an integrated terminal from Cmd+J or the bottom panel without immediately closing.
 

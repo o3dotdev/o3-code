@@ -7,7 +7,7 @@ The final refresh order is: replace upstream material, normalize Desktop Reconst
 ## Procedure
 
 1. Start a refresh branch from the current O3 Code base branch.
-2. Replace copied Codex App material with the newer release material.
+2. Replace copied Codex App source and allowed non-native material with the newer release material.
 3. Update source metadata such as app version and build number.
 4. Run `pnpm normalize`. The normalizer removes generated hash suffixes from uniquely resolvable Vite asset filenames and logs collision groups that must remain hashed.
 5. Reapply each active Desktop Reconstruction Patch SOP in numeric order.
@@ -16,11 +16,12 @@ The final refresh order is: replace upstream material, normalize Desktop Reconst
 8. Reapply each active Web Patch SOP in numeric order.
 9. Record fresh Patch Evidence for each Web Patch.
 10. Run `pnpm web-patches:check` when available.
-11. Run `pnpm start` and validate the Desktop Reconstruction.
-12. Enable Web access in desktop settings and validate the Mirrored Web Client.
-13. Open a PR that shows the upstream refresh, normalization, reapplied Patches, derived web tree, Web Patches, and evidence updates.
+11. Run `pnpm native-binaries:check` to verify the refresh did not copy host-native runtime payloads into the repo.
+12. Run `pnpm start` and validate the Desktop Reconstruction against the installed Codex App Native Resource Provider.
+13. Enable Web access in desktop settings and validate the Mirrored Web Client.
+14. Open a PR that shows the upstream refresh, normalization, reapplied Patches, derived web tree, Web Patches, and evidence updates.
 
-Do not merge refreshed material into the existing copied source tree. Replace copied source and runtime material as upstream input, excluding the externalized Codex app-server binary, then rebuild local O3 Code behavior from the Patch SOPs. Repo-added files that live inside replaced copied source, such as the Web access settings chunk under `apps/desktop/app/webview/assets/`, must be recreated by their owning Patch SOP before derivation. Do not preserve old browser-patched files when rebuilding the Mirrored Web Client Asset Tree; derive the browser baseline from patched desktop assets, then reapply browser-only intent from Web Patch SOPs.
+Do not merge refreshed material into the existing copied source tree. Replace copied source and allowed non-native material as upstream input, excluding host-native compiled runtime payloads such as `codex`, `node`, `node_repl`, native add-ons, helper `.app` bundles, plugin prebuilds, and native helper executables. Runtime launch resolves those payloads from the installed Codex App instead. Repo-added files that live inside replaced copied source, such as the Web access settings chunk under `apps/desktop/app/webview/assets/`, must be recreated by their owning Patch SOP before derivation. Do not preserve old browser-patched files when rebuilding the Mirrored Web Client Asset Tree; derive the browser baseline from patched desktop assets, then reapply browser-only intent from Web Patch SOPs.
 
 After Normalization, most Vite chunk and asset names should be stable canonical filenames. When reviewing Source Refresh diffs, expect remaining hashed names only for logged collision groups where a hash-stripped name would be ambiguous.
 

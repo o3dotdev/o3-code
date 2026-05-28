@@ -3,6 +3,12 @@ import { constants } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
+import {
+  CODEX_APP_PATH_ENV,
+  getCodexAppInstallHelp,
+  resolveCodexAppResources,
+} from "../../codex-app-resources/src/codex-app.mjs";
+
 const packageRoot = path.resolve(
   path.dirname(fileURLToPath(import.meta.url)),
   "..",
@@ -20,6 +26,7 @@ export const UPSTREAM_CODEX_PATH_ENV = "O3_CODE_UPSTREAM_CODEX_PATH";
 
 export function resolveExternalCodex({
   env = process.env,
+  resolveCodexApp = resolveCodexAppResources,
   routerExecutablePath = process.argv[1],
   platform = process.platform,
 } = {}) {
@@ -62,8 +69,15 @@ export function resolveExternalCodex({
     }
   }
 
+  try {
+    const codexAppResources = resolveCodexApp({ env });
+    if (isExecutableFile(codexAppResources.codexPath)) {
+      return codexAppResources.codexPath;
+    }
+  } catch {}
+
   throw Error(
-    `Unable to locate external Codex CLI. Set ${UPSTREAM_CODEX_PATH_ENV} or ensure an official codex command is available on PATH.`,
+    `Unable to locate external Codex CLI. Set ${UPSTREAM_CODEX_PATH_ENV}, ensure an official codex command is available on PATH, or set ${CODEX_APP_PATH_ENV} to an installed Codex.app. ${getCodexAppInstallHelp()}`,
   );
 }
 

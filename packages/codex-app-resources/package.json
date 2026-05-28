@@ -1,13 +1,9 @@
 {
-  "name": "@o3dotdev/app-server-router",
+  "name": "@o3dotdev/codex-app-resources",
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "bin": {
-    "o3-app-server-router": "./bin/o3-app-server-router.mjs"
-  },
   "files": [
-    "bin/",
     "src/"
   ],
   "scripts": {

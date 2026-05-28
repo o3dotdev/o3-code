@@ -12,7 +12,8 @@ Refresh O3 Code from a newer installed Codex App by treating the installed app a
 - Call the work a `Source Refresh`, not a version bump or sync.
 - Treat `Codex App` as the installed macOS app used as upstream source material.
 - Treat `O3 Code` as the repo-local Electron reconstruction.
-- Treat copied app source and runtime files as replaceable upstream input.
+- Treat copied app source and allowed non-native files as replaceable upstream input.
+- Treat host-native runtime binaries as external material supplied by the installed Codex App Native Resource Provider.
 - Treat `Patch SOPs` as the authority for Desktop Reconstruction behavior that must survive refreshes.
 - Treat `Web Patch SOPs` as the authority for Mirrored Web Client behavior that must survive refreshes.
 - Treat `apps/web/app/webview` as a derived, committed Mirrored Web Client Asset Tree rebuilt from the patched Desktop Reconstruction Webview Assets.
@@ -30,7 +31,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Inspect `git status --short --branch` yourself; do not rely only on script output.
 2. Replace upstream material.
    - Run `uv run --script scripts/refresh_codex_app.py --repo <repo> --source <Codex.app> --yes`.
-   - The script extracts `Resources/app.asar`, overlays unpacked app files, copies runtime resources except the externalized `codex` app-server binary, copies `Info.plist`, and updates mechanical source metadata.
+   - The script extracts `Resources/app.asar`, overlays allowed unpacked app files, copies allowed non-native resources, skips host-native compiled runtime payloads, copies `Info.plist`, and updates mechanical source metadata.
    - If the script stops, inspect the reason and decide; do not work around guardrails casually.
 3. Normalize copied source.
    - Run `pnpm normalize`.
@@ -60,6 +61,7 @@ Read the repo's `CONTEXT.md`, `docs/source-refresh.md`, `docs/patches/README.md`
    - Run `pnpm normalize:check`.
    - Run focused static checks such as `node --check` for changed JavaScript chunks when useful.
    - Run `pnpm web-patches:check` when the command exists.
+   - Run `pnpm native-binaries:check` after replacement and before final review.
    - Treat `pnpm web-patches:check` as marker-placement-only until real Web Patch folders exist and folder-to-marker validation can prove useful.
    - Run or add tests beside repo-owned code when Web Patches change `packages/bridge/**`, `scripts/**`, or another support package.
    - Run `pnpm start` and confirm the Desktop Reconstruction reaches renderer mount and app-server handshake.
@@ -130,12 +132,12 @@ If sub-agents are unavailable, run the same one-SOP-at-a-time protocol locally a
 
 Replace only these upstream-owned targets:
 
-- `apps/desktop/app/` from extracted `Contents/Resources/app.asar`, plus unpacked app files overlaid from `app.asar.unpacked`
-- `apps/desktop/resources/` from `Contents/Resources/` except raw `app.asar` and the externalized `codex` app-server binary
+- `apps/desktop/app/` from extracted `Contents/Resources/app.asar`, plus allowed unpacked app files overlaid from `app.asar.unpacked`
+- `apps/desktop/resources/` from `Contents/Resources/` except raw `app.asar` and host-native compiled runtime payloads
 - `apps/desktop/metadata/Info.plist`
 - mechanical source metadata in root `package.json`, `apps/desktop/app/package.json`, and `docs/extraction.md`
 
-Do not delete repo-owned folders such as `apps/desktop/branding`, `packages`, `scripts`, `docs`, or `upstream/codex`.
+Do not delete repo-owned folders such as `apps/desktop/branding`, `packages`, or `docs`. Do not reintroduce `upstream/codex` or checked-in native runtime binaries.
 
 ## AI-Owned Patch Migration
 

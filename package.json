@@ -9,6 +9,8 @@
     "start": "node scripts/start.mjs",
     "start:electron": "electron apps/desktop/app",
     "app-server-router:test": "pnpm --filter @o3dotdev/app-server-router test",
+    "codex-app-resources:test": "pnpm --filter @o3dotdev/codex-app-resources test",
+    "native-binaries:check": "node scripts/check-no-native-binaries.mjs",
     "derive:web": "node scripts/derive-web.mjs",
     "web-patches:check": "node scripts/check-web-patches.mjs",
     "generate:icons": "node scripts/generate-o3-icons.mjs",

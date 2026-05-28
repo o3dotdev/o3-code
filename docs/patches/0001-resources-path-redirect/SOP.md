@@ -2,13 +2,14 @@
 
 ## Goal
 
-Ensure the Desktop Reconstruction resolves runtime resources from repo-local `apps/desktop/resources/` when launched through `pnpm start`.
+Ensure the Desktop Reconstruction resolves native runtime resources from the installed Codex App when launched through `pnpm start`.
 
 ## Non-Goals
 
 - Do not change the signed Codex App bundle.
 - Do not change Electron's installed package resources.
 - Do not redirect arbitrary user data or config paths.
+- Do not reintroduce checked-in native runtime binaries.
 
 ## Discovery
 
@@ -24,9 +25,9 @@ Use Patch Markers with patch id `resources-path-redirect` around the local sourc
 
 ## Validation
 
-- `scripts/start.mjs` sets `CODEX_ELECTRON_RESOURCES_PATH` to `<repo>/apps/desktop/resources`.
+- `scripts/start.mjs` sets `CODEX_ELECTRON_RESOURCES_PATH` to the resolved Codex App `Contents/Resources`.
 - `pnpm start` reaches renderer mount and app-server handshake.
-- Native helper and asset lookups use repo-local runtime resources.
+- Native helper lookups use the installed Codex App Native Resource Provider.
 
 ## Failure Conditions
 

@@ -21,3 +21,20 @@ references/
 !apps/desktop/app/node_modules/**
 !apps/desktop/resources/app.asar.unpacked/node_modules/
 !apps/desktop/resources/app.asar.unpacked/node_modules/**
+
+# Native runtime material is resolved from the installed Codex.app at launch.
+apps/desktop/app/node_modules/better-sqlite3
+apps/desktop/app/node_modules/node-pty
+apps/desktop/app/node_modules/objc-js
+apps/desktop/resources/app.asar.unpacked/
+apps/desktop/resources/codex
+apps/desktop/resources/codex_chronicle
+apps/desktop/resources/native/
+apps/desktop/resources/node
+apps/desktop/resources/node_repl
+apps/desktop/resources/rg
+apps/desktop/resources/plugins/**/app-server-runtime/
+apps/desktop/resources/plugins/**/bin/tectonic
+apps/desktop/resources/plugins/**/extension-host/
+apps/desktop/resources/plugins/**/*.app/
+apps/desktop/resources/plugins/**/prebuilds/
