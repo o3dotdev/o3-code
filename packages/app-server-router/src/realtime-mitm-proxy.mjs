@@ -26,6 +26,8 @@ const HOP_BY_HOP_HEADERS = new Set([
 ]);
 const CHATGPT_REALTIME_SIDEBAND_URL = /^\/backend-api\/codex\/realtime\/.+/u;
 const CHATGPT_REALTIME_PATH_PREFIX = "/backend-api/codex/realtime/";
+const OPENAI_REALTIME_SIDEBAND_URL = /^\/v1\/realtime(?:[?#]|$)/u;
+const OPENAI_REALTIME_PATH = "/v1/realtime";
 
 export async function startRealtimeMitmProxy({
   apiKey,
@@ -108,6 +110,10 @@ async function configureRules({
   await server
     .forAnyWebSocket(CHATGPT_REALTIME_SIDEBAND_URL)
     .forHostname("chatgpt.com")
+    .thenForwardTo(sidebandProxy.forwardUrl);
+  await server
+    .forAnyWebSocket(OPENAI_REALTIME_SIDEBAND_URL)
+    .forHostname("api.openai.com")
     .thenForwardTo(sidebandProxy.forwardUrl);
   await server.forGet("/health").thenReply(404, "");
   await server.forAnyRequest().thenPassThrough();
@@ -217,18 +223,36 @@ function createSidebandTargetUrl(rawRequestUrl, upstreamCallsBaseUrl) {
   } catch {
     return null;
   }
-  if (!requestUrl.pathname.startsWith(CHATGPT_REALTIME_PATH_PREFIX)) {
-    return null;
+
+  if (requestUrl.pathname.startsWith(CHATGPT_REALTIME_PATH_PREFIX)) {
+    const suffix = requestUrl.pathname.slice(
+      CHATGPT_REALTIME_PATH_PREFIX.length,
+    );
+    const targetUrl = createRealtimeWebSocketBaseUrl(upstreamCallsBaseUrl);
+    targetUrl.pathname = `${targetUrl.pathname.replace(
+      /\/+$/u,
+      "",
+    )}/realtime/${suffix}`;
+    targetUrl.search = requestUrl.search;
+    return targetUrl;
   }
 
-  const suffix = requestUrl.pathname.slice(CHATGPT_REALTIME_PATH_PREFIX.length);
+  if (
+    requestUrl.pathname === OPENAI_REALTIME_PATH &&
+    requestUrl.searchParams.has("call_id")
+  ) {
+    const targetUrl = createRealtimeWebSocketBaseUrl(upstreamCallsBaseUrl);
+    targetUrl.pathname = `${targetUrl.pathname.replace(/\/+$/u, "")}/realtime`;
+    targetUrl.search = requestUrl.search;
+    return targetUrl;
+  }
+
+  return null;
+}
+
+function createRealtimeWebSocketBaseUrl(upstreamCallsBaseUrl) {
   const targetUrl = new URL(upstreamCallsBaseUrl);
   targetUrl.protocol = targetUrl.protocol === "https:" ? "wss:" : "ws:";
-  targetUrl.pathname = `${targetUrl.pathname.replace(
-    /\/+$/u,
-    "",
-  )}/realtime/${suffix}`;
-  targetUrl.search = requestUrl.search;
   return targetUrl;
 }
 

@@ -435,6 +435,43 @@ test("Realtime MITM Proxy rewrites sideband websocket joins with realtime auth",
   }
 });
 
+test("Realtime MITM Proxy rewrites official call_id sideband websocket joins with realtime auth", async () => {
+  const upstream = await startFakeRealtimeUpstream();
+  const proxy = await startRealtimeMitmProxy({
+    apiKey: "rt-secret",
+    stderr: createCollectingWritable(),
+    upstreamCallsBaseUrl: new URL(`http://127.0.0.1:${upstream.port}/v1`),
+  });
+
+  try {
+    const client = await openProxyWebSocket(
+      proxy.port,
+      "http://api.openai.com/v1/realtime?call_id=rtc_test",
+      {
+        Authorization: "Bearer inbound-secret",
+      },
+    );
+    client.socket.on("error", () => {});
+    client.socket.end();
+
+    assert.match(client.response, /^HTTP\/1\.1 101 Switching Protocols\r\n/u);
+    assert.equal(upstream.records.length, 1);
+    assert.equal(upstream.records[0].url, "/v1/realtime?call_id=rtc_test");
+    assert.equal(
+      upstream.records[0].headers.host,
+      `127.0.0.1:${upstream.port}`,
+    );
+    assert.equal(upstream.records[0].headers.authorization, "Bearer rt-secret");
+    assert.notEqual(
+      upstream.records[0].headers.authorization,
+      "Bearer inbound-secret",
+    );
+  } finally {
+    await proxy.close();
+    await upstream.close();
+  }
+});
+
 test("Realtime Proxy injects realtime key, strips inbound auth, and preserves query", async () => {
   const upstream = await startFakeRealtimeUpstream();
   const stderr = createCollectingWritable();
