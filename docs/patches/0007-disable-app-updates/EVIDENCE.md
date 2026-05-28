@@ -23,6 +23,22 @@
 - `O3_CODE_DISABLE_APP_UPDATES=0` allows upstream updater behavior for explicit
   debugging.
 
+## Observed Trigger
+
+- Installed Codex App metadata:
+  - `CFBundleShortVersionString=26.519.81530`
+  - `CFBundleVersion=3178`
+- Current Codex appcast latest item:
+  - `sparkle:shortVersionString=26.519.81530`
+  - `sparkle:version=3178`
+- Repo-local O3 Code host bundle metadata:
+  - `CFBundleShortVersionString=42.1.0`
+  - `CFBundleVersion=42.1.0`
+
+The installed Codex App did not appear outdated relative to the appcast. The
+repo-local host bundle did. This explains why the upstream `Update` control
+could appear in O3 Code while the real Codex App did not show it.
+
 ## Patch Shape
 
 - Copied-source Patch Marker id: `disable-app-updates`.

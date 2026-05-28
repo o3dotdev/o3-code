@@ -42,7 +42,9 @@ they do not collide with the installed Codex App profile. Set
 
 Local runs also disable upstream Codex App updates by default with
 `O3_CODE_DISABLE_APP_UPDATES=1`, even though they use installed Codex App
-resources. Set `O3_CODE_DISABLE_APP_UPDATES=0` only when intentionally
+resources. Sparkle compares the repo-local O3 Code host bundle metadata, not
+the installed Codex App metadata, so upstream update UI is not meaningful for
+local O3 Code runs. Set `O3_CODE_DISABLE_APP_UPDATES=0` only when intentionally
 debugging upstream updater behavior.
 
 ## Useful Commands
