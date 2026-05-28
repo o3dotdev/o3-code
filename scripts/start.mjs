@@ -57,7 +57,6 @@ const localElectronApp = path.join(
   `electron-${electronPackage.version}`,
   "O3 Code.app",
 );
-const externalNativeModuleNames = ["better-sqlite3", "node-pty", "objc-js"];
 
 let codexAppResources;
 try {
@@ -139,20 +138,23 @@ function resolveCodexBuildNumber() {
   throw Error("Missing codexBuildNumber package metadata.");
 }
 
-function ensureExternalNativeModuleLinks() {
-  const nodeModulesPath = path.join(appPath, "node_modules");
-  mkdirSync(nodeModulesPath, { recursive: true });
-
-  for (const moduleName of externalNativeModuleNames) {
+function ensureExternalNativePayloadLinks() {
+  for (const relativePath of [
+    path.join("better-sqlite3", "build", "Release", "better_sqlite3.node"),
+    path.join("node-pty", "build", "Release", "pty.node"),
+    path.join("node-pty", "build", "Release", "spawn-helper"),
+    path.join("objc-js", "prebuilds", "darwin-arm64", "node.napi.armv8.node"),
+    path.join("objc-js", "prebuilds", "darwin-x64", "node.napi.node"),
+  ]) {
     const targetPath = path.join(
       codexAppResources.nativeNodeModulesPath,
-      moduleName,
+      relativePath,
     );
-    const linkPath = path.join(nodeModulesPath, moduleName);
+    const linkPath = path.join(appPath, "node_modules", relativePath);
 
     if (!existsSync(targetPath)) {
       console.error(
-        `Missing native module in Codex.app resources: ${targetPath}`,
+        `Missing native payload in Codex.app resources: ${targetPath}`,
       );
       process.exit(1);
     }
@@ -163,16 +165,17 @@ function ensureExternalNativeModuleLinks() {
         rmSync(linkPath, { force: true });
       } else {
         console.error(
-          `Refusing to replace non-symlink native module path: ${linkPath}`,
+          `Refusing to replace non-symlink native payload path: ${linkPath}`,
         );
         console.error(
-          "Remove the checked-in native module copy so the launcher can link to Codex.app resources.",
+          "Remove the checked-in native payload so the launcher can link to Codex.app resources.",
         );
         process.exit(1);
       }
     }
 
-    symlinkSync(targetPath, linkPath, "dir");
+    mkdirSync(path.dirname(linkPath), { recursive: true });
+    symlinkSync(targetPath, linkPath);
   }
 }
 
@@ -199,7 +202,7 @@ if (!existsSync(electronBin)) {
   process.exit(1);
 }
 
-ensureExternalNativeModuleLinks();
+ensureExternalNativePayloadLinks();
 
 const defaultUserDataPath =
   process.env.O3_CODE_USE_CODEX_USER_DATA === "1"

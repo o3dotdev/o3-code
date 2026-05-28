@@ -166,11 +166,21 @@ def copy_tree_entry(source: Path, destination: Path, relative: Path, *, skip=Non
 
 def skip_unpacked_app_entry(relative: Path, source: Path) -> bool:
     parts = relative.parts
-    return (
-        len(parts) >= 2
-        and parts[0] == "node_modules"
-        and parts[1] in EXTERNAL_NATIVE_NODE_MODULES
-    )
+    if len(parts) < 2 or parts[0] != "node_modules":
+        return False
+    if parts[1] not in EXTERNAL_NATIVE_NODE_MODULES:
+        return False
+    if parts[-1] == "binding.gyp":
+        return True
+    if parts[1] == "objc-js" and len(parts) >= 4 and parts[2:4] == ("src", "native"):
+        return True
+    if source.suffix in NATIVE_BINARY_SUFFIXES:
+        return True
+    if ".dSYM" in parts:
+        return True
+    if parts[-2:] == ("Release", "spawn-helper"):
+        return True
+    return False
 
 
 def skip_resource_entry(relative: Path, source: Path) -> bool:
