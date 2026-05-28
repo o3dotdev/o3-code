@@ -398,7 +398,10 @@ test("Realtime MITM Proxy converts ChatGPT realtime calls to public multipart AP
     assert.equal(firstResponse.headers.location, "/v1/realtime/calls/rtc_test");
     assert.equal(firstResponse.body, "answer-sdp");
     assert.equal(secondResponse.statusCode, 201);
-    assert.equal(secondResponse.headers.location, "/v1/realtime/calls/rtc_test");
+    assert.equal(
+      secondResponse.headers.location,
+      "/v1/realtime/calls/rtc_test",
+    );
     assert.equal(secondResponse.body, "answer-sdp");
     assert.equal(upstream.records.length, 2);
     assert.equal(upstream.records[0].method, "POST");

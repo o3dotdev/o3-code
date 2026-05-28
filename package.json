@@ -6,6 +6,9 @@
   "packageManager": "pnpm@11.1.0",
   "main": "apps/desktop/app/.vite/build/bootstrap.js",
   "scripts": {
+    "check": "pnpm lint && pnpm --filter @o3dotdev/code typecheck && pnpm test && pnpm --filter @o3dotdev/code smoke",
+    "lint": "pnpm format:check && pnpm normalize:check && pnpm native-binaries:check && pnpm web-patches:check",
+    "test": "node --test scripts/*.test.mjs && pnpm app-server-router:test && pnpm codex-app-resources:test && pnpm --filter @o3dotdev/code-bridge test && pnpm code:test",
     "start": "node scripts/start.mjs",
     "start:electron": "electron apps/desktop/app",
     "app-server-router:test": "pnpm --filter @o3dotdev/app-server-router test",
