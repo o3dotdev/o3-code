@@ -7,7 +7,11 @@ import { Command } from "commander";
 import { printLogs } from "./logs.js";
 import { resolveO3CodePaths } from "./paths.js";
 import { isPidRunning, waitFor } from "./process.js";
-import { readLauncherState, removeLauncherState } from "./state.js";
+import {
+  createLauncherWarnings,
+  readLauncherState,
+  removeLauncherState,
+} from "./state.js";
 import { runSupervisor, waitForSupervisorStart } from "./supervisor.js";
 import {
   renderFailurePanel,
@@ -52,7 +56,7 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
         await runSupervisor(paths);
         return;
       }
-      const state = await startBackground(paths, { stdout });
+      const state = await startBackground(paths, { env, stdout });
       if (state.status === "failed") {
         stdout.write(
           `${renderFailurePanel({
@@ -91,7 +95,7 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
     .description("Stop and then start O3 Code.")
     .action(async () => {
       await stopRunningState(paths);
-      const state = await startBackground(paths, { stdout });
+      const state = await startBackground(paths, { env, stdout });
       if (state.status === "failed") {
         stdout.write(
           `${renderFailurePanel({
@@ -165,8 +169,10 @@ function readPackageVersion(): string {
 async function startBackground(
   paths: ReturnType<typeof resolveO3CodePaths>,
   {
+    env,
     stdout,
   }: {
+    readonly env: NodeJS.ProcessEnv;
     readonly stdout: Pick<NodeJS.WriteStream, "write">;
   },
 ) {
@@ -188,7 +194,7 @@ async function startBackground(
     [process.argv[1] ?? "o3-code", "__supervisor"],
     {
       detached: true,
-      env: process.env,
+      env,
       stdio: ["ignore", launcherOut, launcherErr],
     },
   );
@@ -197,6 +203,7 @@ async function startBackground(
   const progress = shouldRenderInteractiveProgress(stdout)
     ? startStartupProgressRenderer({
         initialState: readLauncherState(paths),
+        startupWarnings: createLauncherWarnings(env),
         stdout: process.stdout,
       })
     : null;

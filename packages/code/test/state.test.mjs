@@ -65,7 +65,7 @@ test("launcher state warns when realtime API key is missing", () => {
     });
 
     assert.deepEqual(state.warnings, [
-      "Realtime features might not be enabled for your account. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key to enable access to realtime models.",
+      "Realtime voice may be unavailable because O3_CODE_REALTIME_API_KEY is not set. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key and restart O3 Code to enable realtime models.",
     ]);
   } finally {
     restoreEnv("O3_CODE_REALTIME_API_KEY", originalKey);

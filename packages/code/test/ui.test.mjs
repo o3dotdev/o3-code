@@ -8,6 +8,7 @@ import {
   renderStartPanel,
   renderStatusPanel,
   renderStartupProgressBar,
+  renderStartupProgressFrame,
   resolveLifecycleCommandPrefix,
   resolveTailscaleMobileAccessHelp,
 } from "../dist/bin.mjs";
@@ -33,6 +34,20 @@ test("startup progress bar renders bounded phase progress", () => {
   assert.equal(renderStartupProgressBar(3, 7, 10), "[####------]");
   assert.equal(renderStartupProgressBar(7, 7, 10), "[##########]");
   assert.equal(renderStartupProgressBar(9, 7, 10), "[##########]");
+});
+
+test("startup progress frame renders warnings before spinner", () => {
+  const warning =
+    "Realtime voice may be unavailable because O3_CODE_REALTIME_API_KEY is not set. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key and restart O3 Code to enable realtime models.";
+  const output = renderStartupProgressFrame({
+    state: null,
+    startupWarnings: [warning],
+    tick: 0,
+  });
+  const normalizedOutput = output.replace(/\s+/gu, " ");
+
+  assert.match(normalizedOutput, new RegExp(warning));
+  assert.ok(output.indexOf("Warning") < output.indexOf("| Starting O3 Code"));
 });
 
 test("global-style invocation renders bare lifecycle commands", () => {

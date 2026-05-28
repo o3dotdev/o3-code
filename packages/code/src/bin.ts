@@ -6,6 +6,7 @@ import { runCli } from "./program.js";
 
 export { normalizeDefaultStartArgv } from "./program.js";
 export {
+  createLauncherWarnings,
   createBaseState,
   readLauncherState,
   removeLauncherState,
@@ -16,6 +17,7 @@ export {
   NPX_COMMAND_PREFIX,
   renderStartPanel,
   renderStatusPanel,
+  renderStartupProgressFrame,
   renderStartupProgressBar,
   resolveLifecycleCommandPrefix,
 } from "./ui.js";

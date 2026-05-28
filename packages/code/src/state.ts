@@ -52,27 +52,41 @@ export function createBaseState(paths: O3CodePaths): LauncherState {
   };
 }
 
-export function readLauncherState(paths: Pick<O3CodePaths, "statePath">): LauncherState | null {
+export function readLauncherState(
+  paths: Pick<O3CodePaths, "statePath">,
+): LauncherState | null {
   try {
-    return normalizeLauncherState(JSON.parse(fs.readFileSync(paths.statePath, "utf8")));
+    return normalizeLauncherState(
+      JSON.parse(fs.readFileSync(paths.statePath, "utf8")),
+    );
   } catch {
     return null;
   }
 }
 
-export function writeLauncherState(paths: Pick<O3CodePaths, "runDir" | "statePath">, state: LauncherState): void {
+export function writeLauncherState(
+  paths: Pick<O3CodePaths, "runDir" | "statePath">,
+  state: LauncherState,
+): void {
   fs.mkdirSync(paths.runDir, { recursive: true, mode: 0o700 });
   const nextState = {
     ...state,
     updatedAt: new Date().toISOString(),
   };
-  const tempPath = path.join(paths.runDir, `.launcher.${process.pid}.${Date.now()}.tmp`);
-  fs.writeFileSync(tempPath, `${JSON.stringify(nextState, null, 2)}\n`, { mode: 0o600 });
+  const tempPath = path.join(
+    paths.runDir,
+    `.launcher.${process.pid}.${Date.now()}.tmp`,
+  );
+  fs.writeFileSync(tempPath, `${JSON.stringify(nextState, null, 2)}\n`, {
+    mode: 0o600,
+  });
   fs.renameSync(tempPath, paths.statePath);
   fs.chmodSync(paths.statePath, 0o600);
 }
 
-export function removeLauncherState(paths: Pick<O3CodePaths, "statePath">): void {
+export function removeLauncherState(
+  paths: Pick<O3CodePaths, "statePath">,
+): void {
   try {
     fs.unlinkSync(paths.statePath);
   } catch {
@@ -86,7 +100,9 @@ function normalizeLauncherState(value: unknown): LauncherState | null {
   }
   const candidate = value as Partial<LauncherState>;
   if (
-    !["starting", "running", "failed", "stopped"].includes(String(candidate.status)) ||
+    !["starting", "running", "failed", "stopped"].includes(
+      String(candidate.status),
+    ) ||
     typeof candidate.pid !== "number" ||
     typeof candidate.startedAt !== "string" ||
     typeof candidate.updatedAt !== "string" ||
@@ -101,12 +117,15 @@ function normalizeLauncherState(value: unknown): LauncherState | null {
   return {
     status: candidate.status as LauncherStatus,
     pid: candidate.pid,
-    desktopPid: typeof candidate.desktopPid === "number" ? candidate.desktopPid : null,
+    desktopPid:
+      typeof candidate.desktopPid === "number" ? candidate.desktopPid : null,
     startedAt: candidate.startedAt,
     updatedAt: candidate.updatedAt,
     url: typeof candidate.url === "string" ? candidate.url : null,
     activeRuntimeRoot:
-      typeof candidate.activeRuntimeRoot === "string" ? candidate.activeRuntimeRoot : null,
+      typeof candidate.activeRuntimeRoot === "string"
+        ? candidate.activeRuntimeRoot
+        : null,
     logs: candidate.logs,
     warnings: Array.isArray(candidate.warnings)
       ? candidate.warnings.filter((warning) => typeof warning === "string")
@@ -116,7 +135,9 @@ function normalizeLauncherState(value: unknown): LauncherState | null {
   };
 }
 
-function normalizeStartupState(value: unknown): LauncherStartupState | undefined {
+function normalizeStartupState(
+  value: unknown,
+): LauncherStartupState | undefined {
   if (!value || typeof value !== "object") {
     return undefined;
   }
@@ -143,13 +164,17 @@ function normalizeStartupState(value: unknown): LauncherStartupState | undefined
   };
 }
 
-function createLauncherWarnings(env: NodeJS.ProcessEnv): readonly string[] {
+export function createLauncherWarnings(
+  env: NodeJS.ProcessEnv,
+): readonly string[] {
   if (env.O3_CODE_DISABLE_REALTIME_OVERRIDE === "1") {
-    return ["Realtime MITM override is disabled by O3_CODE_DISABLE_REALTIME_OVERRIDE=1."];
+    return [
+      "Realtime MITM override is disabled by O3_CODE_DISABLE_REALTIME_OVERRIDE=1.",
+    ];
   }
   if (!env.O3_CODE_REALTIME_API_KEY?.trim()) {
     return [
-      "Realtime features might not be enabled for your account. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key to enable access to realtime models.",
+      "Realtime voice may be unavailable because O3_CODE_REALTIME_API_KEY is not set. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key and restart O3 Code to enable realtime models.",
     ];
   }
   return [];

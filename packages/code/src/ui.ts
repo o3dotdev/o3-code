@@ -316,15 +316,17 @@ function lifecycleCommands(
 
 export function startStartupProgressRenderer({
   initialState,
+  startupWarnings = [],
   stdout,
 }: {
   readonly initialState: LauncherState | null;
+  readonly startupWarnings?: readonly string[];
   readonly stdout: NodeJS.WriteStream;
 }): StartupProgressRenderer {
   let state = initialState;
   let tick = 0;
   let instance: Instance | null = renderInk(
-    React.createElement(StartupProgressView, { state, tick }),
+    React.createElement(StartupProgressView, { state, startupWarnings, tick }),
     {
       exitOnCtrlC: false,
       patchConsole: false,
@@ -334,7 +336,11 @@ export function startStartupProgressRenderer({
   const interval = setInterval(() => {
     tick += 1;
     instance?.rerender(
-      React.createElement(StartupProgressView, { state, tick }),
+      React.createElement(StartupProgressView, {
+        state,
+        startupWarnings,
+        tick,
+      }),
     );
   }, 120);
   interval.unref();
@@ -344,7 +350,11 @@ export function startStartupProgressRenderer({
       state = nextState;
       tick += 1;
       instance?.rerender(
-        React.createElement(StartupProgressView, { state, tick }),
+        React.createElement(StartupProgressView, {
+          state,
+          startupWarnings,
+          tick,
+        }),
       );
     },
     stop: async () => {
@@ -362,6 +372,20 @@ export function startStartupProgressRenderer({
       }
     },
   };
+}
+
+export function renderStartupProgressFrame({
+  state,
+  startupWarnings = [],
+  tick,
+}: {
+  readonly state: LauncherState | null;
+  readonly startupWarnings?: readonly string[];
+  readonly tick: number;
+}): string {
+  return renderToString(
+    React.createElement(StartupProgressView, { state, startupWarnings, tick }),
+  );
 }
 
 export function renderStartupProgressBar(
@@ -383,12 +407,15 @@ export function renderStartupProgressBar(
 
 function StartupProgressView({
   state,
+  startupWarnings,
   tick,
 }: {
   readonly state: LauncherState | null;
+  readonly startupWarnings: readonly string[];
   readonly tick: number;
 }) {
   const startup = state?.startup;
+  const warnings = state ? state.warnings : startupWarnings;
   const phaseLabel = startup?.label ?? "Starting supervisor";
   const step = startup?.step ?? 0;
   const total = startup?.total ?? 7;
@@ -400,6 +427,13 @@ function StartupProgressView({
   return React.createElement(
     Box,
     { flexDirection: "column" },
+    ...warnings.map((warning, index) =>
+      React.createElement(
+        Text,
+        { color: "yellow", key: `warning-${index}` },
+        index === 0 ? `Warning ${warning}` : `        ${warning}`,
+      ),
+    ),
     React.createElement(
       Text,
       null,
