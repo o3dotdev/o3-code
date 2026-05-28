@@ -159,8 +159,8 @@ function ensureExternalNativePayloadLinks() {
       process.exit(1);
     }
 
-    if (existsSync(linkPath)) {
-      const linkStat = lstatSync(linkPath);
+    const linkStat = getOptionalLinkStat(linkPath);
+    if (linkStat) {
       if (linkStat.isSymbolicLink()) {
         rmSync(linkPath, { force: true });
       } else {
@@ -176,6 +176,17 @@ function ensureExternalNativePayloadLinks() {
 
     mkdirSync(path.dirname(linkPath), { recursive: true });
     symlinkSync(targetPath, linkPath);
+  }
+}
+
+function getOptionalLinkStat(candidate) {
+  try {
+    return lstatSync(candidate);
+  } catch (error) {
+    if (error && error.code === "ENOENT") {
+      return null;
+    }
+    throw error;
   }
 }
 
@@ -245,7 +256,7 @@ const env = {
     process.env.O3_CODE_TRAY_TEMPLATE_PATH ||
     path.join(repoResourcesPath, "codexTemplate.png"),
   [CODEX_APP_PATH_ENV]: codexAppResources.appPath,
-  PATH: [codexAppResources.resourcesPath, process.env.PATH]
+  PATH: [process.env.PATH, codexAppResources.resourcesPath]
     .filter(Boolean)
     .join(path.delimiter),
 };
