@@ -17,6 +17,9 @@ import { a as _, l as v } from "./sidebar-thread-keys.js";
 import { t as y } from "./pinned-threads-query.js";
 import { n as b } from "./set-pinned-thread.js";
 import { t as x } from "./copy-to-clipboard.js";
+// o3-code-patch-begin: agent-runtime-terminal-threads
+import { b as O3CloseTerminalAgentThread } from "./agent-runtime-terminal-threads.js";
+// o3-code-patch-end: agent-runtime-terminal-threads
 function S({ threadIds: e, visibleThreadIds: t, nextVisibleThreadIds: n }) {
   let r = new Set(t),
     i = 0,
@@ -636,6 +639,9 @@ function Se() {
         let { conversationId: r, onArchiveSuccess: i, onArchiveError: a } = e;
         o(`archive-conversation`, { conversationId: r })
           .then(() => {
+            // o3-code-patch-begin: agent-runtime-terminal-threads
+            O3CloseTerminalAgentThread(r, { forget: !0 });
+            // o3-code-patch-end: agent-runtime-terminal-threads
             i?.();
           })
           .catch(() => {

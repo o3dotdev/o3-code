@@ -33,3 +33,14 @@
 ## Unresolved Risk
 
 - Manual Web Access validation against a freshly restarted Bridge Sidecar is still required to confirm real plan-mode prompt layout at desktop and mobile/coarse browser sizes. The currently running Web Access sidecar on port `51304` was started before this patch, so it did not include the updated bridge-injected stylesheet.
+
+## Refresh Validation 2026-05-28
+
+- `pnpm derive:web` rebuilt the Mirrored Web Client Asset Tree and the
+  `mobile-request-input-option-descriptions` generated-asset region was
+  reapplied in `apps/web/app/webview/assets/pending-request-item-panel.js`.
+- `node --check apps/web/app/webview/assets/pending-request-item-panel.js`
+  passed.
+- `pnpm --dir packages/bridge test` passed: 63 tests.
+- `pnpm web-patches:check` passed with 5 total Web Patch regions.
+- `pnpm format:check` passed.

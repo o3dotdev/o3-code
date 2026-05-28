@@ -180,6 +180,17 @@ import "./terminal.js";
 import "./app-intl-signal.js";
 import "./terminal-service.js";
 import { c as Me } from "./thread-page-bottom-panel-state-DZYvoqqn.js";
+// o3-code-patch-begin: agent-runtime-terminal-threads
+import { g as O3TerminalPanel } from "./thread-page-bottom-panel-state-DZYvoqqn.js";
+import {
+  k as O3GetTerminalSessionId,
+  l as O3GetTerminalAgentMetadata,
+  n as O3IsTerminalAgentSessionLive,
+  o as O3LaunchTerminalAgentThread,
+  u as O3SubscribeAgentRuntimeState,
+  j as O3GetAgentRuntimeSnapshot,
+} from "./agent-runtime-terminal-threads.js";
+// o3-code-patch-end: agent-runtime-terminal-threads
 import { t as G } from "./info.js";
 import "./error-boundary.js";
 import "./download.js";
@@ -1849,8 +1860,93 @@ function sn(e) {
   let { conversationId: t } = e;
   return (O(t, H(r, t) ?? !1), null);
 }
+// o3-code-patch-begin: agent-runtime-terminal-threads
+function O3UseTerminalAgentMetadata(e) {
+  (0, Z.useSyncExternalStore)(
+    O3SubscribeAgentRuntimeState,
+    O3GetAgentRuntimeSnapshot,
+    O3GetAgentRuntimeSnapshot,
+  );
+  return O3GetTerminalAgentMetadata(e);
+}
+function O3TerminalAgentBody({ metadata: e }) {
+  let t = e.conversationId,
+    n = O3GetTerminalSessionId(t);
+  (0, Z.useLayoutEffect)(() => {
+    if (!O3IsTerminalAgentSessionLive(t))
+      O3LaunchTerminalAgentThread(e, { resume: !0 });
+  }, [
+    t,
+    e.agentRuntimeId,
+    e.command,
+    e.cwd,
+    e.externalSessionId,
+    e.hostId,
+    e.model,
+    e.permissionMode,
+  ]);
+  return (0, Q.jsx)(`div`, {
+    className: `h-full min-h-0 bg-[var(--vscode-terminal-background)]`,
+    children: (0, Q.jsx)(O3TerminalPanel, {
+      conversationId: t,
+      conversationTitle: e.title ?? e.label,
+      cwd: e.cwd ?? `.`,
+      hostId: e.hostId,
+      sessionId: n,
+    }),
+  });
+}
+function O3TerminalAgentComposer({ conversationId: e }) {
+  let n =
+    H(C, e) === `projectless`
+      ? {
+          fallbackMode: `local`,
+          isAvailabilityLoading: !1,
+          isCloudAvailable: !1,
+          isLocalAvailable: !0,
+          isWorktreeAvailable: !1,
+        }
+      : void 0;
+  return (0, Q.jsx)(`div`, {
+    className: `flex flex-col pb-2`,
+    "data-thread-find-composer": `true`,
+    children: (0, Q.jsx)(ze, {
+      isResponseInProgress: !1,
+      showFooterBranchWhen: `always`,
+      showExternalFooter: !1,
+      composerModeAvailability: n,
+      canStartRealtimeConversation: !1,
+      startRealtimeOnMount: !1,
+      disableRealtimeVoiceControls: !0,
+    }),
+  });
+}
+function O3TerminalAgentThreadSurface({ metadata: e, conversationId: t }) {
+  return (0, Q.jsxs)(`div`, {
+    className: `flex h-full min-h-0 flex-col`,
+    children: [
+      (0, Q.jsx)(`div`, {
+        className: `min-h-0 flex-1 pt-(--thread-content-top-inset)`,
+        children: (0, Q.jsx)(`div`, {
+          className: `mx-auto h-full min-h-0 w-full max-w-(--thread-content-max-width) px-toolbar`,
+          children: (0, Q.jsx)(O3TerminalAgentBody, { metadata: e }),
+        }),
+      }),
+      (0, Q.jsx)(`div`, {
+        className: `z-10 w-full shrink-0 pb-2`,
+        children: (0, Q.jsx)(`div`, {
+          className: `mx-auto w-full max-w-(--thread-content-max-width) px-toolbar`,
+          children: (0, Q.jsx)(O3TerminalAgentComposer, {
+            conversationId: t,
+          }),
+        }),
+      }),
+    ],
+  });
+}
+// o3-code-patch-end: agent-runtime-terminal-threads
 function cn(e) {
-  let t = (0, X.c)(46),
+  let t = (0, X.c)(48),
     { conversationId: r, startRealtime: a } = e,
     o = se(be),
     s = H(n, r),
@@ -1859,6 +1955,7 @@ function cn(e) {
     u = U(ke.activeTab$),
     d = U(we),
     f = U(Ce),
+    O3terminalMetadata = O3UseTerminalAgentMetadata(r),
     p;
   (t[0] === o ? (p = t[1]) : ((p = (e) => at(o, e)), (t[0] = o), (t[1] = p)),
     xt(p));
@@ -1916,19 +2013,26 @@ function cn(e) {
       (t[18] = r),
       (t[19] = k));
   let A;
-  t[20] !== r || t[21] !== v || t[22] !== a
+  t[20] !== r || t[21] !== v || t[22] !== a || t[46] !== O3terminalMetadata
     ? ((A = (0, Q.jsx)(`div`, {
         className: `h-full min-h-0`,
-        children: (0, Q.jsx)(L, {
-          conversationId: r,
-          showExternalFooter: !1,
-          showComposer: v,
-          startRealtime: a,
-        }),
+        children:
+          O3terminalMetadata == null
+            ? (0, Q.jsx)(L, {
+                conversationId: r,
+                showExternalFooter: !1,
+                showComposer: v,
+                startRealtime: a,
+              })
+            : (0, Q.jsx)(O3TerminalAgentThreadSurface, {
+                conversationId: r,
+                metadata: O3terminalMetadata,
+              }),
       })),
       (t[20] = r),
       (t[21] = v),
       (t[22] = a),
+      (t[46] = O3terminalMetadata),
       (t[23] = A))
     : (A = t[23]);
   let j;
@@ -1956,13 +2060,14 @@ function cn(e) {
       (t[30] = M))
     : (M = t[30]);
   let N;
-  t[31] !== r || t[32] !== b || t[33] !== a
-    ? ((N = b
+  t[31] !== r || t[32] !== b || t[33] !== a || t[47] !== O3terminalMetadata
+    ? ((N = b && O3terminalMetadata == null
         ? (0, Q.jsx)(pn, { conversationId: r, startRealtime: a }, r)
         : null),
       (t[31] = r),
       (t[32] = b),
       (t[33] = a),
+      (t[47] = O3terminalMetadata),
       (t[34] = N))
     : (N = t[34]);
   let P;

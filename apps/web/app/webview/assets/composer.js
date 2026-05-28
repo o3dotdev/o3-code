@@ -530,6 +530,25 @@ import { r as wn } from "./toast-signal.js";
 import { n as Tn } from "./window-zoom-context.js";
 import { r as En, t as Dn } from "./tooltip.js";
 import { t as On } from "./build-start-conversation-params.js";
+// o3-code-patch-begin: agent-runtime-terminal-threads
+import {
+  c as O3CreateTerminalAgentMetadata,
+  d as O3GetEffectiveAgentRuntimeId,
+  g as O3GetAgentRuntime,
+  h as O3GetSelectedAgentRuntimeModel,
+  i as O3GetSelectedAgentRuntimeForNewThread,
+  j as O3GetAgentRuntimeSnapshot,
+  l as O3GetTerminalAgentMetadata,
+  m as O3IsTerminalAgentRuntimeId,
+  o as O3LaunchTerminalAgentThread,
+  p as O3MakeTerminalAgentTitle,
+  q as O3AgentRuntimeRegistry,
+  r as O3SendTerminalAgentText,
+  s as O3SetSelectedAgentRuntimeId,
+  t as O3SetSelectedAgentRuntimeModel,
+  u as O3SubscribeAgentRuntimeState,
+} from "./agent-runtime-terminal-threads.js";
+// o3-code-patch-end: agent-runtime-terminal-threads
 import { t as kn } from "./route-scope.js";
 import { l as An, n as jn, o as Mn, t as Nn } from "./prompt-text.js";
 import { i as Pn, r as Fn } from "./use-environment.js";
@@ -9763,6 +9782,100 @@ function sm() {
     document.querySelector(`[data-reasoning-selected="true"]`)?.focus();
   });
 }
+// o3-code-patch-begin: agent-runtime-terminal-threads
+function O3UseAgentRuntimeState() {
+  return (0, Z.useSyncExternalStore)(
+    O3SubscribeAgentRuntimeState,
+    O3GetAgentRuntimeSnapshot,
+    O3GetAgentRuntimeSnapshot,
+  );
+}
+function O3AgentRuntimeControls({
+  composerMode: e,
+  conversationId: t,
+  executionTargetHostId: n,
+}) {
+  let r = O3UseAgentRuntimeState(),
+    i = O3GetTerminalAgentMetadata(t),
+    a = i?.agentRuntimeId ?? (t == null ? r.selectedAgentRuntimeId : `codex-app`),
+    s = t != null,
+    c = e === `cloud` || n !== me,
+    O3displayRuntimeId = c && !s ? `codex-app` : a,
+    o = O3GetAgentRuntime(O3displayRuntimeId),
+    l = s || c,
+    u = o.kind === `terminal`,
+    d = i?.model ?? O3GetSelectedAgentRuntimeModel(O3displayRuntimeId),
+    f = i != null
+      ? `Agent, model, and permissions are locked for this thread. Change them inside the CLI TUI.`
+      : s
+        ? `Agent is fixed for this thread.`
+        : c
+          ? `Terminal agents are available for local projects only.`
+          : `Agent`,
+    p = (e) => {
+      O3SetSelectedAgentRuntimeId(e.target.value);
+    },
+    h = (e) => {
+      O3SetSelectedAgentRuntimeModel(O3displayRuntimeId, e.target.value);
+    };
+  return (0, Q.jsxs)(`div`, {
+    className: `flex min-w-0 items-center gap-1`,
+    title: f,
+    children: [
+      (0, Q.jsx)(`label`, {
+        className: `sr-only`,
+        htmlFor: `o3-agent-runtime-picker`,
+        children: `Agent`,
+      }),
+      (0, Q.jsxs)(`select`, {
+        id: `o3-agent-runtime-picker`,
+        className: `h-token-button-composer max-w-36 rounded-full border border-token-border bg-token-input-background px-2 text-sm text-token-foreground disabled:opacity-60`,
+        value: O3displayRuntimeId,
+        disabled: l,
+        onChange: p,
+        children: Object.values(O3AgentRuntimeRegistry).map((e) =>
+          (0, Q.jsx)(
+            `option`,
+            { value: e.id, disabled: c && e.kind === `terminal`, children: e.label },
+            e.id,
+          ),
+        ),
+      }),
+      u
+        ? (0, Q.jsxs)(Q.Fragment, {
+            children: [
+              (0, Q.jsx)(`label`, {
+                className: `sr-only`,
+                htmlFor: `o3-agent-runtime-model-picker`,
+                children: `Model`,
+              }),
+              (0, Q.jsx)(`select`, {
+                id: `o3-agent-runtime-model-picker`,
+                className: `h-token-button-composer max-w-28 rounded-full border border-token-border bg-token-input-background px-2 text-sm text-token-foreground disabled:opacity-60`,
+                value: d ?? ``,
+                disabled: l,
+                onChange: h,
+                children: o.models.map((e) =>
+                  (0, Q.jsx)(
+                    `option`,
+                    { value: e.value, children: e.label },
+                    e.value,
+                  ),
+                ),
+              }),
+            ],
+          })
+        : null,
+    ],
+  });
+}
+function O3UseEffectiveAgentRuntimeId(e) {
+  O3UseAgentRuntimeState();
+  return e == null
+    ? O3GetSelectedAgentRuntimeForNewThread().id
+    : O3GetEffectiveAgentRuntimeId(e);
+}
+// o3-code-patch-end: agent-runtime-terminal-threads
 function cm(e) {
   let t = (0, $.c)(60),
     { conversationId: n, hideLabel: r } = e,
@@ -12378,7 +12491,7 @@ function Im(e) {
   return e.view.state.doc.childCount > 1;
 }
 function Lm(e) {
-  let t = (0, $.c)(34),
+  let t = (0, $.c)(35),
     {
       onAddImageDataUrls: n,
       onAddAppshotContext: r,
@@ -12406,7 +12519,10 @@ function Lm(e) {
       showPermissions: T,
     } = e,
     E = T === void 0 ? !0 : T,
-    D = d !== `cloud` || (!h && m === `local`),
+    O3effectiveRuntimeId = O3UseEffectiveAgentRuntimeId(f),
+    O3terminalRuntime =
+      d !== `cloud` && m === me && O3IsTerminalAgentRuntimeId(O3effectiveRuntimeId),
+    D = !O3terminalRuntime && (d !== `cloud` || (!h && m === `local`)),
     O = d !== `cloud` && m !== `local`,
     k;
   t[0] !== f ||
@@ -12429,7 +12545,8 @@ function Lm(e) {
   t[17] !== l ||
   t[18] !== _ ||
   t[19] !== D ||
-  t[20] !== O
+  t[20] !== O ||
+  t[34] !== O3terminalRuntime
     ? ((k = (0, Q.jsx)(Co, {
         onAddImageDataUrls: n,
         onAddAppshotContext: r,
@@ -12474,6 +12591,7 @@ function Lm(e) {
       (t[18] = _),
       (t[19] = D),
       (t[20] = O),
+      (t[34] = O3terminalRuntime),
       (t[21] = k))
     : (k = t[21]);
   let A;
@@ -12874,7 +12992,7 @@ function Hm(e) {
   );
 }
 function Um(e) {
-  let t = (0, $.c)(37),
+  let t = (0, $.c)(49),
     {
       composerMode: n,
       hotkeyWindowHomeFooterControls: r,
@@ -12893,6 +13011,9 @@ function Um(e) {
   t[3] === u ? (d = t[4]) : ((d = _m(u)), (t[3] = u), (t[4] = d));
   let f = d,
     p = c.status === `connected`,
+    O3effectiveRuntimeId = O3UseEffectiveAgentRuntimeId(i),
+    O3terminalRuntime =
+      n !== `cloud` && a === me && O3IsTerminalAgentRuntimeId(O3effectiveRuntimeId),
     m;
   t[5] !== c.isAutoContextOn || t[6] !== p
     ? ((m = Em(c.isAutoContextOn, p)),
@@ -12974,9 +13095,10 @@ function Um(e) {
       (t[23] = P))
     : (P = t[23]);
   let F;
-  t[24] !== i || t[25] !== k || t[26] !== A
+  t[24] !== i || t[25] !== k || t[26] !== A || t[42] !== O3terminalRuntime
     ? ((F =
         !k &&
+        !O3terminalRuntime &&
         (0, Q.jsx)(`span`, {
           ref: v,
           children: (0, Q.jsx)(cm, { conversationId: i, hideLabel: A }),
@@ -12984,6 +13106,7 @@ function Um(e) {
       (t[24] = i),
       (t[25] = k),
       (t[26] = A),
+      (t[42] = O3terminalRuntime),
       (t[27] = F))
     : (F = t[27]);
   let I;
@@ -13003,20 +13126,34 @@ function Um(e) {
       (t[30] = N),
       (t[31] = I))
     : (I = t[31]);
+  let O3agentControls;
+  t[43] !== n || t[44] !== i || t[45] !== a || t[46] !== o
+    ? ((O3agentControls = (0, Q.jsx)(O3AgentRuntimeControls, {
+        composerMode: n,
+        conversationId: i,
+        executionTargetHostId: a,
+      })),
+      (t[43] = n),
+      (t[44] = i),
+      (t[45] = a),
+      (t[46] = o),
+      (t[47] = O3agentControls))
+    : (O3agentControls = t[47]);
   let ee;
   return (
-    t[32] !== r || t[33] !== P || t[34] !== F || t[35] !== I
+    t[32] !== r || t[33] !== P || t[34] !== F || t[35] !== I || t[36] !== O3agentControls
       ? ((ee = (0, Q.jsxs)(`div`, {
           className: `flex min-w-0 items-center gap-1`,
           ref: g,
-          children: [P, F, r, I],
+          children: [P, F, O3agentControls, r, I],
         })),
         (t[32] = r),
         (t[33] = P),
         (t[34] = F),
         (t[35] = I),
-        (t[36] = ee))
-      : (ee = t[36]),
+        (t[36] = O3agentControls),
+        (t[48] = ee))
+      : (ee = t[48]),
     ee
   );
 }
@@ -17787,11 +17924,14 @@ function h_({
   onRealtimeComposerTextChange: l,
   startRealtimeOnMount: u,
   isDictationInputDisabled: d = !1,
+  // o3-code-patch-begin: agent-runtime-terminal-threads
+  isRealtimeInputDisabled: O3disableRealtimeInput = !1,
+  // o3-code-patch-end: agent-runtime-terminal-threads
 }) {
   let f = At(J),
     p = kt(),
     m = Nc(),
-    h = m && !0,
+    h = m && !O3disableRealtimeInput,
     { capabilityNames: g } = f_({ enabled: h, hostId: n, root: t }),
     _ = al(g),
     v = Y(zl),
@@ -20694,6 +20834,9 @@ function Xv({
   onLocalConversationCreated: L,
   canStartRealtimeConversation: te,
   startRealtimeOnMount: ne,
+  // o3-code-patch-begin: agent-runtime-terminal-threads
+  disableRealtimeVoiceControls: O3disableRealtimeVoiceControls,
+  // o3-code-patch-end: agent-runtime-terminal-threads
   onCreateSideConversation: R,
   hideRunLocationDropdownOverride: z,
 }) {
@@ -22069,10 +22212,15 @@ function Xv({
           isComposerFocused: X.view.hasFocus(),
           isPrimaryComposer: !ue,
         }),
-      onStartNewRealtimeConversation: Vs,
-      onRealtimeComposerTextChange: Qr,
-      startRealtimeOnMount: ne,
-      isDictationInputDisabled: !1,
+      // o3-code-patch-begin: agent-runtime-terminal-threads
+      onStartNewRealtimeConversation: O3disableRealtimeVoiceControls ? null : Vs,
+      onRealtimeComposerTextChange: O3disableRealtimeVoiceControls
+        ? void 0
+        : Qr,
+      startRealtimeOnMount: O3disableRealtimeVoiceControls ? !1 : ne,
+      isDictationInputDisabled: O3disableRealtimeVoiceControls === !0,
+      isRealtimeInputDisabled: O3disableRealtimeVoiceControls === !0,
+      // o3-code-patch-end: agent-runtime-terminal-threads
     }),
     {
       abortDictation: Cc,
@@ -22948,7 +23096,86 @@ function Zv({
           scope: g,
         }));
     },
+    // o3-code-patch-begin: agent-runtime-terminal-threads
+    R = async (n, r, i, a) => {
+      let s = O3GetSelectedAgentRuntimeForNewThread();
+      if (s.kind !== `terminal`) return !1;
+      let c = a?.workspaceRoots ?? n.workspaceRoots ?? [`~`],
+        l = $r(c),
+        f = a?.hostId ?? m,
+        p = g.get(ng),
+        h = A(n);
+      if (f !== me) {
+        g.get(wn).danger(
+          `Claude Code and Codex CLI are available for local projects only.`,
+          { id: `composer.terminalAgentRemoteUnsupported` },
+        );
+        return !0;
+      }
+      try {
+        let o = await ei(c, { prompt: h }),
+          m = o.cwd ?? r,
+          C = await N_({
+            context: n,
+            prompt: ``,
+            workspaceRoots: o.workspaceRoots,
+            cwd: m,
+            hostId: f,
+            agentMode: a?.agentMode ?? t,
+            serviceTier: _,
+            collaborationMode: e,
+            threadDetailLevel: x,
+            memoryPreferences: p ?? void 0,
+            workspaceKind: l ? `projectless` : `project`,
+            projectlessOutputDirectory: o.projectlessOutputDirectory,
+          }),
+          w = On({
+            ...C,
+            input: [],
+            commentAttachments: [],
+            fileAttachments: [],
+            addedFiles: [],
+          }),
+          T = O3MakeTerminalAgentTitle(s.id, h),
+          E = await G(`start-conversation`, {
+            hostId: f,
+            ...w,
+            attachments: [],
+          }),
+          O = O3CreateTerminalAgentMetadata({
+            conversationId: E,
+            runtimeId: s.id,
+            cwd: m,
+            hostId: f,
+            model: O3GetSelectedAgentRuntimeModel(s.id),
+            permissionMode: a?.agentMode ?? t,
+            collaborationMode: e,
+            title: T,
+          });
+        if (O == null) return !0;
+        (await G(`set-thread-title`, { conversationId: E, title: T }),
+          ig(g, E, p, C.config),
+          kr(b, E, f, C.agentMode),
+          Qv(),
+          v(null),
+          i || (d ? await d(E) : u(`/local/${E}`)),
+          O3LaunchTerminalAgentThread(O, { prompt: h, resume: !1 }),
+          S(E, f, n.threadGoalObjective));
+      } catch (e) {
+        Tt.error(`Error creating terminal agent task`, {
+          safe: {},
+          sensitive: { error: e },
+        });
+        let t = a_(e, o);
+        g.get(wn).danger(t, { id: `composer.terminalAgentTaskError` });
+      }
+      return !0;
+    },
+    // o3-code-patch-end: agent-runtime-terminal-threads
     C = async (n, r, i, a) => {
+      // o3-code-patch-begin: agent-runtime-terminal-threads
+      if (await R(n, r, i, a)) return;
+      // o3-code-patch-end: agent-runtime-terminal-threads
       let s = a?.workspaceRoots ?? n.workspaceRoots ?? [`~`],
         c = $r(s),
         l = a?.hostId ?? m,
@@ -23136,6 +23363,15 @@ function Zv({
   return {
     handleNewWorktreeConversation: w,
     handleSubmitLocal: async (e, t, n, r, i) => {
+      // o3-code-patch-begin: agent-runtime-terminal-threads
+      if (a?.type === `local`) {
+        let t = O3GetTerminalAgentMetadata(a.localConversationId);
+        if (t != null) {
+          O3SendTerminalAgentText(a.localConversationId, A(e));
+          return;
+        }
+      }
+      // o3-code-patch-end: agent-runtime-terminal-threads
       let o = a?.type === `local` && !c;
       o && p?.();
       try {
@@ -23194,7 +23430,7 @@ function $v(e) {
   );
 }
 function ey(e) {
-  let t = (0, $.c)(91),
+  let t = (0, $.c)(92),
     {
       browserConversationId: n,
       className: r,
@@ -23212,6 +23448,9 @@ function ey(e) {
       onLocalSubmitError: h,
       canStartRealtimeConversation: g,
       startRealtimeOnMount: _,
+      // o3-code-patch-begin: agent-runtime-terminal-threads
+      disableRealtimeVoiceControls: O3disableRealtimeVoiceControls,
+      // o3-code-patch-end: agent-runtime-terminal-threads
       showPlanKeywordSuggestion: v,
       hideRunLocationDropdownOverride: y,
       composerModeAvailability: b,
@@ -23229,6 +23468,9 @@ function ey(e) {
     M = d === void 0 ? `local` : d,
     N = g === void 0 ? !1 : g,
     P = _ === void 0 ? !1 : _,
+    // o3-code-patch-begin: agent-runtime-terminal-threads
+    O3disableRealtimeControls = O3disableRealtimeVoiceControls === !0,
+    // o3-code-patch-end: agent-runtime-terminal-threads
     F = v === void 0 ? !0 : v,
     I = y === void 0 ? !1 : y,
     ee = S === void 0 ? `multiline` : S,
@@ -23459,7 +23701,8 @@ function ey(e) {
   t[74] !== u ||
   t[75] !== Le ||
   t[76] !== Re ||
-  t[77] !== ze
+  t[77] !== ze ||
+  t[91] !== O3disableRealtimeControls
     ? ((Be = (0, Q.jsx)(Xv, {
         aboveComposerHeaderContent: Le,
         activeCollaborationMode: ge,
@@ -23489,6 +23732,9 @@ function ey(e) {
         onLocalConversationCreated: p,
         canStartRealtimeConversation: N,
         startRealtimeOnMount: P,
+        // o3-code-patch-begin: agent-runtime-terminal-threads
+        disableRealtimeVoiceControls: O3disableRealtimeControls,
+        // o3-code-patch-end: agent-runtime-terminal-threads
         onCreateSideConversation: E,
       })),
       (t[49] = ge),
@@ -23520,6 +23766,7 @@ function ey(e) {
       (t[75] = Le),
       (t[76] = Re),
       (t[77] = ze),
+      (t[91] = O3disableRealtimeControls),
       (t[78] = Be))
     : (Be = t[78]);
   let Ve;

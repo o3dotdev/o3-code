@@ -32,3 +32,13 @@
 ## Unresolved Risk
 
 - Manual iPad Safari or installed PWA validation is still required because automated unit tests cannot reproduce Safari text selection/copy and accessory-bar viewport drift exactly.
+
+## Refresh Validation 2026-05-28
+
+- `pnpm derive:web` rebuilt the Mirrored Web Client Asset Tree from the patched
+  Desktop Reconstruction Webview Assets.
+- This patch still has no copied-asset Web Patch region; the bridge-owned shell
+  lock and viewport recovery code remained in `packages/bridge`.
+- `pnpm --dir packages/bridge test` passed: 63 tests.
+- `pnpm web-patches:check` passed with 5 total Web Patch regions.
+- `pnpm format:check` passed.

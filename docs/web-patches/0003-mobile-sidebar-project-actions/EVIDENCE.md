@@ -37,3 +37,13 @@
 ## Unresolved Risk
 
 - Manual Web Access validation in an installed iPad PWA or equivalent coarse-pointer browser session with real sidebar data is still needed to confirm project row actions are visible at rest in the real sidebar state.
+
+## Refresh Validation 2026-05-28
+
+- `pnpm derive:web` rebuilt the Mirrored Web Client Asset Tree and the
+  `mobile-sidebar-project-actions` generated-asset regions were reapplied in
+  `apps/web/app/webview/assets/app-main.js`.
+- `node --check apps/web/app/webview/assets/app-main.js` passed.
+- `pnpm --dir packages/bridge test` passed: 63 tests.
+- `pnpm web-patches:check` passed with 5 total Web Patch regions.
+- `pnpm format:check` passed.

@@ -33,3 +33,12 @@
 
 - Manual Web Access validation is still required to confirm the browser tab favicon and startup splash appearance in the real sidecar-served page.
 - Future blank-start reports should include the new Bridge timing lines from `desktop.log` for the first browser shell, bridge shim, and app asset requests.
+
+## Refresh Validation 2026-05-28
+
+- `pnpm derive:web` rebuilt the Mirrored Web Client Asset Tree.
+- This patch still has no copied-asset Web Patch region; browser shell branding
+  remained implemented through `packages/bridge/src/html-injection.mjs`.
+- `pnpm --dir packages/bridge test` passed: 63 tests.
+- `pnpm web-patches:check` passed with 5 total Web Patch regions.
+- `pnpm format:check` passed.

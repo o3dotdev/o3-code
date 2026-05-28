@@ -17084,6 +17084,9 @@ export {
   Re as c,
   le as d,
   se as f,
+  // o3-code-patch-begin: agent-runtime-terminal-threads
+  he as g,
+  // o3-code-patch-end: agent-runtime-terminal-threads
   B as h,
   Pe as i,
   oe as l,
