@@ -18,3 +18,9 @@ o3-code stop
 The package ships the JS-only O3 Code runtime payload. Native Codex runtime resources are resolved from an installed Codex Desktop app.
 
 Realtime MITM override is enabled by default when `O3_CODE_REALTIME_API_KEY` is set. If the key is missing, the launcher shows a warning and starts without the override.
+
+From a repo checkout, generate the ignored runtime payload before local package smoke tests:
+
+```sh
+pnpm --filter @o3dotdev/code prepare:runtime
+```
