@@ -1,4 +1,5 @@
 import { execFileSync, spawn } from "node:child_process";
+import { createRequire } from "node:module";
 import fs from "node:fs";
 import path from "node:path";
 import { Command } from "commander";
@@ -17,6 +18,9 @@ import {
   startStartupProgressRenderer,
 } from "./ui.js";
 
+const require = createRequire(import.meta.url);
+const packageVersion = readPackageVersion();
+
 export interface ProgramDependencies {
   readonly argv?: readonly string[];
   readonly env?: NodeJS.ProcessEnv;
@@ -34,7 +38,7 @@ export function createProgram(dependencies: ProgramDependencies = {}): Command {
   program
     .name("o3-code")
     .description("Start and manage a local O3 Code run.")
-    .version("0.0.0");
+    .version(packageVersion);
 
   program
     .command("start")
@@ -146,6 +150,16 @@ function isRootOption(value: string): boolean {
     value === "--version" ||
     value === "-V"
   );
+}
+
+function readPackageVersion(): string {
+  const packageJson = require("../package.json") as {
+    readonly version?: string;
+  };
+  if (!packageJson.version) {
+    throw new Error("Missing @o3dotdev/code package version.");
+  }
+  return packageJson.version;
 }
 
 async function startBackground(

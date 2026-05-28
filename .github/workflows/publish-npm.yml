@@ -1,0 +1,110 @@
+name: Publish npm
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Existing git tag to publish, for example v0.0.0-alpha.7"
+        required: true
+        type: string
+      npm_tag:
+        description: "npm dist-tag to publish"
+        required: true
+        default: next
+        type: choice
+        options:
+          - next
+          - latest
+          - alpha
+          - beta
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-npm
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    name: Publish @o3dotdev/code
+    runs-on: ubuntu-latest
+    environment: npm-publish
+    env:
+      PACKAGE_DIR: packages/code
+      PACKAGE_NAME: "@o3dotdev/code"
+    steps:
+      - name: Resolve release inputs
+        id: release
+        shell: bash
+        run: |
+          if [[ "${GITHUB_EVENT_NAME}" == "release" ]]; then
+            tag_name="$(node -p "require(process.env.GITHUB_EVENT_PATH).release.tag_name")"
+            is_prerelease="$(node -p "require(process.env.GITHUB_EVENT_PATH).release.prerelease")"
+            if [[ "${is_prerelease}" == "true" ]]; then
+              npm_tag="next"
+            else
+              npm_tag="latest"
+            fi
+          else
+            tag_name="${{ inputs.release_tag }}"
+            npm_tag="${{ inputs.npm_tag }}"
+          fi
+
+          {
+            echo "tag_name=${tag_name}"
+            echo "npm_tag=${npm_tag}"
+          } >> "${GITHUB_OUTPUT}"
+
+      - name: Checkout release tag
+        uses: actions/checkout@v6
+        with:
+          ref: ${{ steps.release.outputs.tag_name }}
+
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+          package-manager-cache: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate release tag
+        shell: bash
+        run: |
+          package_version="$(node -p "require('./${PACKAGE_DIR}/package.json').version")"
+          expected_tag="v${package_version}"
+
+          if [[ "${{ steps.release.outputs.tag_name }}" != "${expected_tag}" ]]; then
+            echo "Release tag must be ${expected_tag} for ${PACKAGE_NAME}@${package_version}." >&2
+            exit 1
+          fi
+
+          if npm view "${PACKAGE_NAME}@${package_version}" version >/dev/null 2>&1; then
+            echo "${PACKAGE_NAME}@${package_version} is already published." >&2
+            exit 1
+          fi
+
+      - name: Check formatting
+        run: pnpm format:check
+
+      - name: Check runtime payload boundaries
+        run: pnpm native-binaries:check
+
+      - name: Test package
+        run: pnpm --filter @o3dotdev/code test
+
+      - name: Smoke package launcher
+        run: pnpm --filter @o3dotdev/code smoke
+
+      - name: Publish to npm
+        working-directory: packages/code
+        run: npm publish --access public --tag "${{ steps.release.outputs.npm_tag }}"
