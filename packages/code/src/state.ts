@@ -109,7 +109,9 @@ function createLauncherWarnings(env: NodeJS.ProcessEnv): readonly string[] {
     return ["Realtime MITM override is disabled by O3_CODE_DISABLE_REALTIME_OVERRIDE=1."];
   }
   if (!env.O3_CODE_REALTIME_API_KEY?.trim()) {
-    return ["Realtime API key is missing; realtime MITM override is inactive."];
+    return [
+      "Realtime features might not be enabled for your account. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key to enable access to realtime models.",
+    ];
   }
   return [];
 }

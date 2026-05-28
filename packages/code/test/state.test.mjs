@@ -55,7 +55,7 @@ test("launcher state warns when realtime API key is missing", () => {
     });
 
     assert.deepEqual(state.warnings, [
-      "Realtime API key is missing; realtime MITM override is inactive.",
+      "Realtime features might not be enabled for your account. Set O3_CODE_REALTIME_API_KEY to your OpenAI API key to enable access to realtime models.",
     ]);
   } finally {
     restoreEnv("O3_CODE_REALTIME_API_KEY", originalKey);
