@@ -34,6 +34,43 @@ test("injectBridgeShell relaxes CSP for bridge websocket traffic", () => {
   assert.match(injected, /https:\/\/cdn\.openai\.com ws: wss:;/);
 });
 
+test("injectBridgeShell brands the browser shell as O3 Code", () => {
+  const injected = injectBridgeShell(`<!doctype html>
+<html>
+  <head>
+    <title>Codex</title>
+    <meta name="application-name" content="Codex" />
+    <meta name="apple-mobile-web-app-title" content="Codex" />
+    <link rel="icon" href="/codex.png" />
+    <link rel="apple-touch-icon" href="/codex-touch.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body></body>
+</html>`);
+
+  assert.match(injected, /<title>O3 Code<\/title>/);
+  assert.match(injected, /<meta name="application-name" content="O3 Code" \/>/);
+  assert.match(
+    injected,
+    /<meta name="apple-mobile-web-app-title" content="O3 Code" \/>/,
+  );
+  assert.match(
+    injected,
+    /<link rel="icon" type="image\/svg\+xml" href="data:image\/svg\+xml,/,
+  );
+  assert.match(
+    injected,
+    /<link rel="apple-touch-icon" href="data:image\/svg\+xml,/,
+  );
+  assert.doesNotMatch(injected, /<title>Codex<\/title>/);
+  assert.doesNotMatch(injected, /codex(?:-touch)?\.png/);
+  assert.match(injected, /Browser shell branding/);
+  assert.match(injected, /\.startup-loader__logo/);
+  assert.match(injected, /background-image: url\("data:image\/svg\+xml,/);
+  assert.match(injected, /\.startup-loader__base,\n\.startup-loader__overlay/);
+  assert.match(injected, /display: none !important/);
+});
+
 test("injectBridgeShell makes mac Electron chrome opaque in Bridge Mode", () => {
   const injected = injectBridgeShell(html);
 
