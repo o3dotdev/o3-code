@@ -314,7 +314,14 @@ test("Realtime MITM Proxy passes through non-realtime HTTP traffic", async () =>
   });
 
   try {
-    const response = await proxyHttpRequest({
+    const firstResponse = await proxyHttpRequest({
+      body: "payload",
+      headers: { "content-type": "text/plain" },
+      method: "POST",
+      port: proxy.port,
+      url: new URL("/not-realtime", upstream.baseUrl),
+    });
+    const secondResponse = await proxyHttpRequest({
       body: "payload",
       headers: { "content-type": "text/plain" },
       method: "POST",
@@ -322,11 +329,15 @@ test("Realtime MITM Proxy passes through non-realtime HTTP traffic", async () =>
       url: new URL("/not-realtime", upstream.baseUrl),
     });
 
-    assert.equal(response.statusCode, 200);
-    assert.equal(response.body, "passed through");
-    assert.equal(upstream.records.length, 1);
+    assert.equal(firstResponse.statusCode, 200);
+    assert.equal(firstResponse.body, "passed through");
+    assert.equal(secondResponse.statusCode, 200);
+    assert.equal(secondResponse.body, "passed through");
+    assert.equal(upstream.records.length, 2);
     assert.equal(upstream.records[0].method, "POST");
     assert.equal(upstream.records[0].url, "/not-realtime");
+    assert.equal(upstream.records[1].method, "POST");
+    assert.equal(upstream.records[1].url, "/not-realtime");
   } finally {
     await proxy.close();
     await upstream.close();
@@ -356,7 +367,7 @@ test("Realtime MITM Proxy converts ChatGPT realtime calls to public multipart AP
   });
 
   try {
-    const response = await proxyHttpRequest({
+    const firstResponse = await proxyHttpRequest({
       body: JSON.stringify({
         sdp: "offer-sdp",
         session: { model: "gpt-realtime", voice: "marin" },
@@ -369,13 +380,31 @@ test("Realtime MITM Proxy converts ChatGPT realtime calls to public multipart AP
       port: proxy.port,
       url: new URL("https://chatgpt.com/backend-api/codex/realtime/calls"),
     });
+    const secondResponse = await proxyHttpRequest({
+      body: JSON.stringify({
+        sdp: "second-offer-sdp",
+        session: { model: "gpt-realtime", voice: "marin" },
+      }),
+      headers: {
+        authorization: "Bearer inbound-secret",
+        "content-type": "application/json",
+      },
+      method: "POST",
+      port: proxy.port,
+      url: new URL("https://chatgpt.com/backend-api/codex/realtime/calls"),
+    });
 
-    assert.equal(response.statusCode, 201);
-    assert.equal(response.headers.location, "/v1/realtime/calls/rtc_test");
-    assert.equal(response.body, "answer-sdp");
-    assert.equal(upstream.records.length, 1);
+    assert.equal(firstResponse.statusCode, 201);
+    assert.equal(firstResponse.headers.location, "/v1/realtime/calls/rtc_test");
+    assert.equal(firstResponse.body, "answer-sdp");
+    assert.equal(secondResponse.statusCode, 201);
+    assert.equal(secondResponse.headers.location, "/v1/realtime/calls/rtc_test");
+    assert.equal(secondResponse.body, "answer-sdp");
+    assert.equal(upstream.records.length, 2);
     assert.equal(upstream.records[0].method, "POST");
     assert.equal(upstream.records[0].url, "/v1/realtime/calls");
+    assert.equal(upstream.records[1].method, "POST");
+    assert.equal(upstream.records[1].url, "/v1/realtime/calls");
     assert.equal(upstream.records[0].headers.authorization, "Bearer rt-secret");
     assert.notEqual(
       upstream.records[0].headers.authorization,
@@ -390,6 +419,8 @@ test("Realtime MITM Proxy converts ChatGPT realtime calls to public multipart AP
     assert.match(upstream.records[0].body, /offer-sdp/u);
     assert.match(upstream.records[0].body, /name="session"/u);
     assert.match(upstream.records[0].body, /"model":"gpt-realtime"/u);
+    assert.equal(upstream.records[1].headers.authorization, "Bearer rt-secret");
+    assert.match(upstream.records[1].body, /second-offer-sdp/u);
     assert.equal(stderr.body.includes("rt-secret"), false);
     assert.equal(stderr.body.includes("inbound-secret"), false);
     assert.equal(stderr.body.includes(proxy.caCertPath), false);
@@ -415,16 +446,34 @@ test("Realtime MITM Proxy rewrites sideband websocket joins with realtime auth",
         Authorization: "Bearer inbound-secret",
       },
     );
+    const secondClient = await openProxyWebSocket(
+      proxy.port,
+      "http://chatgpt.com/backend-api/codex/realtime/calls/rtc_second/sideband?session=def",
+      {
+        Authorization: "Bearer inbound-secret",
+      },
+    );
     client.socket.on("error", () => {});
+    secondClient.socket.on("error", () => {});
     client.socket.end();
+    secondClient.socket.end();
 
     assert.match(client.response, /^HTTP\/1\.1 101 Switching Protocols\r\n/u);
-    assert.equal(upstream.records.length, 1);
+    assert.match(
+      secondClient.response,
+      /^HTTP\/1\.1 101 Switching Protocols\r\n/u,
+    );
+    assert.equal(upstream.records.length, 2);
     assert.equal(
       upstream.records[0].url,
       "/v1/realtime/calls/rtc_test/sideband?session=abc",
     );
+    assert.equal(
+      upstream.records[1].url,
+      "/v1/realtime/calls/rtc_second/sideband?session=def",
+    );
     assert.equal(upstream.records[0].headers.authorization, "Bearer rt-secret");
+    assert.equal(upstream.records[1].headers.authorization, "Bearer rt-secret");
     assert.notEqual(
       upstream.records[0].headers.authorization,
       "Bearer inbound-secret",
@@ -622,6 +671,9 @@ function createCollectingWritable() {
 
 function withoutRealtimeEnv(overrides = {}) {
   const env = { ...process.env, ...overrides };
+  delete env.CODEX_CA_CERTIFICATE;
+  delete env.HTTP_PROXY;
+  delete env.HTTPS_PROXY;
   delete env.O3_CODE_REALTIME_API_KEY;
   delete env.O3_CODE_REALTIME_BASE_URL;
   return env;

@@ -103,6 +103,7 @@ async function configureRules({
 }) {
   await server
     .forPost(CHATGPT_REALTIME_CALLS_URL)
+    .always()
     .thenCallback((request) =>
       handleRealtimeCallRequest({ apiKey, request, upstreamCallsBaseUrl }),
     );
@@ -110,14 +111,16 @@ async function configureRules({
   await server
     .forAnyWebSocket(CHATGPT_REALTIME_SIDEBAND_URL)
     .forHostname("chatgpt.com")
+    .always()
     .thenForwardTo(sidebandProxy.forwardUrl);
   await server
     .forAnyWebSocket(OPENAI_REALTIME_SIDEBAND_URL)
     .forHostname("api.openai.com")
+    .always()
     .thenForwardTo(sidebandProxy.forwardUrl);
-  await server.forGet("/health").thenReply(404, "");
-  await server.forAnyRequest().thenPassThrough();
-  await server.forAnyWebSocket().thenPassThrough();
+  await server.forGet("/health").always().thenReply(404, "");
+  await server.forAnyRequest().always().thenPassThrough();
+  await server.forAnyWebSocket().always().thenPassThrough();
 }
 
 async function startRealtimeSidebandProxy({ apiKey, upstreamCallsBaseUrl }) {
