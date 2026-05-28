@@ -40,6 +40,11 @@ they do not collide with the installed Codex App profile. Set
 `O3_CODE_USE_CODEX_USER_DATA=1` only when you intentionally need to reuse
 `~/Library/Application Support/Codex`.
 
+Local runs also disable upstream Codex App updates by default with
+`O3_CODE_DISABLE_APP_UPDATES=1`, even though they use installed Codex App
+resources. Set `O3_CODE_DISABLE_APP_UPDATES=0` only when intentionally
+debugging upstream updater behavior.
+
 ## Useful Commands
 
 ```sh

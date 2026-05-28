@@ -231,6 +231,7 @@ const env = {
   O3_CODE_NATIVE_NODE_MODULES_PATH:
     process.env.O3_CODE_NATIVE_NODE_MODULES_PATH ||
     codexAppResources.nativeNodeModulesPath,
+  O3_CODE_DISABLE_APP_UPDATES: process.env.O3_CODE_DISABLE_APP_UPDATES || "1",
   O3_CODE_APP_NAME: process.env.O3_CODE_APP_NAME || "O3 Code",
   O3_CODE_APP_ICON_PATH:
     process.env.O3_CODE_APP_ICON_PATH ||

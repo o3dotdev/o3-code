@@ -13,6 +13,7 @@ Patch SOPs are authoritative for bundled Electron source changes. A Source Refre
 | [0003 statsig gate overrides](./0003-statsig-gate-overrides/)                   | Adds a local boolean Statsig gate override mechanism while preserving upstream gate results by default.       |
 | [0004 realtime voice statsig override](./0004-realtime-voice-statsig-override/) | Forces only the realtime voice Statsig gate enabled.                                                          |
 | [0006 web access settings](./0006-web-access-settings/)                         | Adds desktop-owned localhost Web access settings and Bridge Mode lifecycle control.                           |
+| [0007 disable app updates](./0007-disable-app-updates/)                         | Disables upstream Codex App update checks and install prompts during O3 Code repo-local runs.                 |
 
 ## SOP Shape
 

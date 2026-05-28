@@ -41204,17 +41204,28 @@ var YV = {
             this.sendPersistedAtomState(r),
             r.send(F, {
               type: `app-update-ready-changed`,
-              isUpdateReady: this.sparkleManager.getIsUpdateReady(),
+              // o3-code-patch-begin: disable-app-updates
+              isUpdateReady: o3CodeAppUpdatesDisabled()
+                ? !1
+                : this.sparkleManager.getIsUpdateReady(),
+              // o3-code-patch-end: disable-app-updates
             }),
             r.send(F, {
               type: `app-update-lifecycle-state-changed`,
-              lifecycleState: this.sparkleManager.getUpdateLifecycleState(),
+              // o3-code-patch-begin: disable-app-updates
+              lifecycleState: o3CodeAppUpdatesDisabled()
+                ? `idle`
+                : this.sparkleManager.getUpdateLifecycleState(),
+              // o3-code-patch-end: disable-app-updates
             }),
             process.platform === `win32` &&
               r.send(F, {
                 type: `app-update-install-progress-changed`,
-                installProgressPercent:
-                  this.sparkleManager.getInstallProgressPercent(),
+                // o3-code-patch-begin: disable-app-updates
+                installProgressPercent: o3CodeAppUpdatesDisabled()
+                  ? null
+                  : this.sparkleManager.getInstallProgressPercent(),
+                // o3-code-patch-end: disable-app-updates
               }),
             this.samplerManager.handleRendererReady(r),
             $().info(`Handled 'ready' message, sent ide-context-updated`));
@@ -41775,9 +41786,15 @@ var YV = {
             $().info(`Codex app-server restart requested`));
           break;
         case `check-app-update`:
+          // o3-code-patch-begin: disable-app-updates
+          if (o3CodeAppUpdatesDisabled()) break;
+          // o3-code-patch-end: disable-app-updates
           this.sparkleManager.checkForUpdates();
           break;
         case `install-app-update`:
+          // o3-code-patch-begin: disable-app-updates
+          if (o3CodeAppUpdatesDisabled()) break;
+          // o3-code-patch-end: disable-app-updates
           if (process.platform === `darwin` && UB()) {
             let e =
                 n.BrowserWindow.fromWebContents(r) ??
@@ -60941,6 +60958,11 @@ function FX(e) {
   c.length !== s.length && t.d(e, c);
 }
 var IX = { enabled: !1, running: !1, state: `disabled` };
+// o3-code-patch-begin: disable-app-updates
+function o3CodeAppUpdatesDisabled() {
+  return process.env.O3_CODE_DISABLE_APP_UPDATES?.trim() !== `0`;
+}
+// o3-code-patch-end: disable-app-updates
 function LX(e) {
   let t = (e instanceof Error ? e.message : String(e)).toLowerCase();
   return (
@@ -60998,6 +61020,12 @@ async function RX() {
         safe: { phaseElapsedMs: i - t, startupElapsedMs: i - r, ...n },
       });
     };
+  // o3-code-patch-begin: disable-app-updates
+  if (o3CodeAppUpdatesDisabled()) {
+    d = !1;
+    f = !1;
+  }
+  // o3-code-patch-end: disable-app-updates
   w(`bootstrap handoff complete`, r, { appWhenReadyResolved: n.app.isReady() });
   let T = process.platform === `darwin`,
     E = process.platform === `win32`,
@@ -61099,6 +61127,9 @@ async function RX() {
     };
   c({
     onInstallProgressChanged: (e) => {
+      // o3-code-patch-begin: disable-app-updates
+      if (o3CodeAppUpdatesDisabled()) return;
+      // o3-code-patch-end: disable-app-updates
       E &&
         M.sendMessageToAllRegisteredWindows({
           type: `app-update-install-progress-changed`,
@@ -61108,16 +61139,23 @@ async function RX() {
     onUpdateReadyChanged: (e) => {
       M.sendMessageToAllRegisteredWindows({
         type: `app-update-ready-changed`,
-        isUpdateReady: e,
+        // o3-code-patch-begin: disable-app-updates
+        isUpdateReady: o3CodeAppUpdatesDisabled() ? !1 : e,
+        // o3-code-patch-end: disable-app-updates
       });
     },
     onUpdateLifecycleStateChanged: (e) => {
       M.sendMessageToAllRegisteredWindows({
         type: `app-update-lifecycle-state-changed`,
-        lifecycleState: e,
+        // o3-code-patch-begin: disable-app-updates
+        lifecycleState: o3CodeAppUpdatesDisabled() ? `idle` : e,
+        // o3-code-patch-end: disable-app-updates
       });
     },
     onInstallUpdatesRequested: (e) => {
+      // o3-code-patch-begin: disable-app-updates
+      if (o3CodeAppUpdatesDisabled()) return;
+      // o3-code-patch-end: disable-app-updates
       re(e);
     },
     isTrustedIpcEvent: ee,
