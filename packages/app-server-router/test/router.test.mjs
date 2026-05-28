@@ -140,6 +140,38 @@ test("proxyToExternalCodex scopes realtime MITM env to child when realtime key i
   );
 });
 
+test("proxyToExternalCodex skips realtime override when disabled", async () => {
+  const root = await mkdtemp(path.join(os.tmpdir(), "o3-router-"));
+  const binDir = path.join(root, "bin");
+  await writeExecutable(binDir, "codex", "#!/bin/sh\nexit 0\n");
+
+  let capturedSpawn;
+  const result = await proxyToExternalCodex({
+    argv: ["app-server"],
+    env: {
+      ...withoutRealtimeEnv({ PATH: binDir }),
+      O3_CODE_DISABLE_REALTIME_OVERRIDE: "1",
+      O3_CODE_REALTIME_API_KEY: "rt-secret",
+    },
+    spawn(command, args, options) {
+      capturedSpawn = { args, command, options };
+      const child = createFakeChild();
+      queueMicrotask(() => child.emit("exit", 0, null));
+      return child;
+    },
+    stdin: Readable.from([]),
+    stdout: createCollectingWritable(),
+    stderr: createCollectingWritable(),
+    routerExecutablePath: path.join(root, "o3-app-server-router"),
+  });
+
+  assert.deepEqual(result, { code: 0, signal: null });
+  assert.equal(capturedSpawn.options.env.O3_CODE_REALTIME_API_KEY, "rt-secret");
+  assert.equal(capturedSpawn.options.env.CODEX_CA_CERTIFICATE, undefined);
+  assert.equal(capturedSpawn.options.env.HTTP_PROXY, undefined);
+  assert.equal(capturedSpawn.options.env.HTTPS_PROXY, undefined);
+});
+
 test("normalizeRealtimeBaseUrl accepts origin, /v1, and websocket schemes", () => {
   assert.equal(
     normalizeRealtimeBaseUrl("https://api.openai.com").toString(),

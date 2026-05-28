@@ -7,6 +7,7 @@ import test from "node:test";
 import {
   DEFAULT_O3_CODE_CONFIG,
   O3CodeConfigStore,
+  getDefaultO3CodeStateRoot,
   normalizeO3CodeConfig,
 } from "../src/o3-code-config.mjs";
 
@@ -29,6 +30,13 @@ test("normalizeO3CodeConfig defaults missing and invalid Web access fields", () 
         port: null,
       },
     },
+  );
+});
+
+test("getDefaultO3CodeStateRoot accepts launcher override", () => {
+  assert.equal(
+    getDefaultO3CodeStateRoot({ O3_CODE_STATE_ROOT: "/tmp/o3-code-test" }),
+    "/tmp/o3-code-test",
   );
 });
 

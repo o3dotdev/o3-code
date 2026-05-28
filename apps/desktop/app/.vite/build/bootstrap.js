@@ -133,6 +133,15 @@ var v = {
   quit: `Quit`,
 };
 async function y(e) {
+  // o3-code-patch-begin: suppress-startup-error-dialog
+  if (process.env.O3_CODE_SUPPRESS_STARTUP_ERROR_DIALOG === `1`) {
+    console.error(
+      `O3 Code failed to start: ${e instanceof Error ? e.message : String(e)}`,
+    );
+    n.app.quit();
+    return;
+  }
+  // o3-code-patch-end: suppress-startup-error-dialog
   let { sparkleManager: r } = t.w(),
     i = r.getIsUpdateReady()
       ? [`install-update`, `quit`]

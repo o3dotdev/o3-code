@@ -152,6 +152,14 @@ _Avoid_: vendored binaries, repo resources, npm payload
 The packaging boundary where O3 Code owns JavaScript, O3-Owned Assets, UI assets, router code, docs, and patch metadata while excluding Codex-owned runtime resource material.
 _Avoid_: native app distribution, binary bundle, full Codex repack
 
+**Package Launcher**:
+The npm-distributed O3 Code command surface that starts and manages a local O3 Code run while preserving the JS-Only O3 Code Package boundary.
+_Avoid_: app bundle launcher, native installer, bundled runtime launcher
+
+**Package Runtime Payload**:
+The JS-only O3 Code material included with the Package Launcher so it can run locally without a repo checkout while still relying on the Native Resource Provider for Codex-owned runtime resources.
+_Avoid_: bundled app, native runtime payload, full Codex package
+
 **External Codex CLI**:
 The user-installed official `codex` command that O3 Code expects to find outside its Runtime Resources.
 _Avoid_: bundled codex, repo-built codex, source checkout, router binary
