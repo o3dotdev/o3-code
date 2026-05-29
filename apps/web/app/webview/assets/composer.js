@@ -23238,6 +23238,9 @@ function ey(e) {
     re = kt(),
     ie = Yt(),
     R = Y($n),
+    // o3-code-patch-begin: composer-hidden-when-right-panel-full-width
+    isRightPanelFullWidthHidden = Y(Sl),
+    // o3-code-patch-end: composer-hidden-when-right-panel-full-width
     z;
   t[0] === ne.value
     ? (z = t[1])
@@ -23552,7 +23555,9 @@ function ey(e) {
         (t[89] = Ve),
         (t[90] = He))
       : (He = t[90]),
-    He
+    // o3-code-patch-begin: composer-hidden-when-right-panel-full-width
+    isRightPanelFullWidthHidden ? null : He
+    // o3-code-patch-end: composer-hidden-when-right-panel-full-width
   );
 }
 export {

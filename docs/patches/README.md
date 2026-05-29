@@ -6,15 +6,16 @@ Patch SOPs are authoritative for bundled Electron source changes. A Source Refre
 
 ## Active Patches
 
-| Patch                                                                           | Summary                                                                                                       |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
-| [0001 resources path redirect](./0001-resources-path-redirect/)                 | Redirects `process.resourcesPath` to installed Codex App native resources when running through pnpm Electron. |
-| [0002 local app identity](./0002-local-app-identity/)                           | Applies the O3 Code visible app name and icon surfaces for repo-local runs.                                   |
-| [0003 statsig gate overrides](./0003-statsig-gate-overrides/)                   | Adds a local boolean Statsig gate override mechanism while preserving upstream gate results by default.       |
-| [0004 realtime voice statsig override](./0004-realtime-voice-statsig-override/) | Forces only the realtime voice Statsig gate enabled.                                                          |
-| [0006 web access settings](./0006-web-access-settings/)                         | Adds desktop-owned localhost Web access settings and Bridge Mode lifecycle control.                           |
-| [0007 disable app updates](./0007-disable-app-updates/)                         | Disables upstream Codex App update checks and install prompts during O3 Code repo-local runs.                 |
-| [0008 realtime missing key message](./0008-realtime-missing-key-message/)       | Shows a clear realtime setup toast when the O3 Code realtime API key is missing.                              |
+| Patch                                                                                                   | Summary                                                                                                       |
+| ------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| [0001 resources path redirect](./0001-resources-path-redirect/)                                         | Redirects `process.resourcesPath` to installed Codex App native resources when running through pnpm Electron. |
+| [0002 local app identity](./0002-local-app-identity/)                                                   | Applies the O3 Code visible app name and icon surfaces for repo-local runs.                                   |
+| [0003 statsig gate overrides](./0003-statsig-gate-overrides/)                                           | Adds a local boolean Statsig gate override mechanism while preserving upstream gate results by default.       |
+| [0004 realtime voice statsig override](./0004-realtime-voice-statsig-override/)                         | Forces only the realtime voice Statsig gate enabled.                                                          |
+| [0006 web access settings](./0006-web-access-settings/)                                                 | Adds desktop-owned localhost Web access settings and Bridge Mode lifecycle control.                           |
+| [0007 disable app updates](./0007-disable-app-updates/)                                                 | Disables upstream Codex App update checks and install prompts during O3 Code repo-local runs.                 |
+| [0008 realtime missing key message](./0008-realtime-missing-key-message/)                               | Shows a clear realtime setup toast when the O3 Code realtime API key is missing.                              |
+| [0009 composer hidden when right panel full width](./0009-composer-hidden-when-right-panel-full-width/) | Hides the floating bottom composer while the right side panel is expanded to full width.                      |
 
 ## SOP Shape
 
