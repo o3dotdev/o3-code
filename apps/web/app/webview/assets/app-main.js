@@ -12022,7 +12022,9 @@ function Nw(e) {
     ? ((v =
         a === `local` &&
         (0, Q.jsx)(`div`, {
-          className: _,
+          // o3-code-web-patch-begin: mobile-sidebar-project-actions
+          className: ei(`o3-code-sidebar-project-menu-action`, _),
+          // o3-code-web-patch-end: mobile-sidebar-project-actions
           children: (0, Q.jsx)(Bw, {
             project: n,
             threadKeys: r,
@@ -12061,7 +12063,9 @@ function Nw(e) {
         a === `remote` &&
         n.path != null &&
         (0, Q.jsx)(`div`, {
-          className: _,
+          // o3-code-web-patch-begin: mobile-sidebar-project-actions
+          className: ei(`o3-code-sidebar-project-menu-action`, _),
+          // o3-code-web-patch-end: mobile-sidebar-project-actions
           children: (0, Q.jsx)(Uw, {
             projectId: n.projectId,
             remotePath: n.path,
@@ -12089,10 +12093,12 @@ function Nw(e) {
         i == null
           ? null
           : (0, Q.jsx)(`div`, {
+              // o3-code-web-patch-begin: mobile-sidebar-project-actions
               className: ei(
-                `absolute inset-0 flex items-center justify-center group-hover/folder-row:hidden`,
+                `o3-code-sidebar-project-status-overlay absolute inset-0 flex items-center justify-center group-hover/folder-row:hidden`,
                 f && `hidden`,
               ),
+              // o3-code-web-patch-end: mobile-sidebar-project-actions
               children: (0, Q.jsx)(nh, { statusState: i }),
             })),
       (t[21] = i),
@@ -12103,7 +12109,13 @@ function Nw(e) {
     S;
   t[24] === _
     ? (S = t[25])
-    : ((S = ei(`inline-flex`, _)), (t[24] = _), (t[25] = S));
+    : ((
+        // o3-code-web-patch-begin: mobile-sidebar-project-actions
+        S = ei(`o3-code-sidebar-project-new-chat-action inline-flex`, _),
+        // o3-code-web-patch-end: mobile-sidebar-project-actions
+        (t[24] = _),
+        (t[25] = S)
+      ));
   let C = !u,
     w;
   t[26] === s

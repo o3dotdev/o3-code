@@ -3,9 +3,9 @@
 ## Current Release
 
 - Source app: `/Applications/Codex.app`
-- Source version: `26.519.81530`
-- Source build: `3178`
-- `app.asar` SHA-256: `bf4c3f09b2cbab0714e23f0e9f7f9ce89146b5d47f4462ca77fc2c41394fceaa`
+- Source version: `26.527.30818`
+- Source build: `3370`
+- `app.asar` SHA-256: `99ed8cd195ac4b651c76632469ef5c2d1f32f234c81ec33fd5fc08be7c2b4b13`
 
 ## Discovered Sites
 
@@ -13,22 +13,28 @@
 - Browser bridge shim: `packages/bridge/public/bridge-shim.js`
 - Sidecar serving path: `packages/bridge/src/sidecar.mjs`
 
+These are repo-owned support files, so the patch survives `pnpm derive:web`
+without a marked region in the derived asset tree.
+
 ## Patch Shape
 
-- Replaced served viewport metadata with strict mobile viewport metadata.
-- Added shell-lock CSS for top-level browser page containers.
-- Added bridge shim recovery for top-level page scroll drift after viewport, pointer/click/touch, context menu, selection, focus, page show, orientation, scroll-lock, popover, and `thread-stream-state-changed` changes.
-- Added stable touch viewport baseline handling so iOS accessory/formatting bars and small visual viewport decreases do not resize the shell, while keyboard-sized occlusion still shrinks the shell.
-- Added tests proving reversed transcript scrollers are preserved while top-level page drift is reset, including outbound and inbound thread stream state updates.
+- Replaces served viewport metadata with strict mobile viewport metadata.
+- Adds shell-lock CSS for top-level browser page containers.
+- Bridge shim recovers top-level page scroll drift; reversed thread transcript
+  scrollers are preserved.
 
 ## Validation
 
-- `pnpm --dir packages/bridge test` passed.
+- The viewport injection regex `VIEWPORT_META_RE` still matches the refreshed
+  derived `apps/web/app/webview/index.html` `<meta name="viewport" ...>` tag.
+- `pnpm --filter @o3dotdev/code-bridge test` passed (63 tests).
 - `node --check packages/bridge/public/bridge-shim.js` passed.
-- `pnpm web-patches:check` passed with 5 total copied-asset Web Patch regions; this patch adds no copied-asset marker region because it is implemented in repo-owned bridge code.
+- `pnpm web-patches:check` passed (5 copied-asset Web Patch regions; this patch
+  adds none because it lives in repo-owned bridge code).
 - `pnpm format:check` passed.
-- `git diff --check` passed.
 
 ## Unresolved Risk
 
-- Manual iPad Safari or installed PWA validation is still required because automated unit tests cannot reproduce Safari text selection/copy and accessory-bar viewport drift exactly.
+- Manual iPad Safari / installed PWA validation of selection/copy and accessory
+  bar viewport drift is still recommended; automated tests cannot reproduce
+  Safari gesture behavior exactly.
