@@ -48,7 +48,6 @@
   },
   "dependencies": {
     "commander": "^14.0.2",
-    "electron": "42.1.0",
     "ink": "^7.0.2",
     "mockttp": "^4.4.2",
     "react": "^19.2.6"

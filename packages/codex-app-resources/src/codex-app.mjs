@@ -48,6 +48,26 @@ export function resolveCodexAppPath({
   return path.resolve(override || defaultAppPath);
 }
 
+// O3 Code runs under the installed Codex App's own Electron framework rather
+// than an npm `electron` package. The Codex App ships a custom Electron build
+// whose native add-ons (notably the raw-V8 `better-sqlite3` add-on) are
+// compiled against that framework's exact V8. The framework's ABI
+// (NODE_MODULE_VERSION) and its Chromium/V8 version are decoupled, so no public
+// npm Electron release matches both: matching the ABI loads a mismatched V8
+// (the add-on then calls a null V8 vtable slot and the renderer segfaults),
+// while matching the V8 fails the ABI load check. Launching the installed
+// framework in place is the only host that satisfies the add-on, and it
+// preserves the app's hardened-runtime code signature (its library validation
+// only loads native code signed by the Codex team). See docs/adr/0033.
+export function resolveCodexAppElectronExecutable({
+  env = process.env,
+  defaultAppPath = DEFAULT_CODEX_APP_PATH,
+} = {}) {
+  const appPath = resolveCodexAppPath({ env, defaultAppPath });
+  const executableName = path.basename(appPath).replace(/\.app$/i, "");
+  return path.join(appPath, "Contents", "MacOS", executableName);
+}
+
 export function assertCodexAppExecutableResources(resources) {
   assertExecutableFile(resources.codexPath, "Codex.app codex executable");
   assertExecutableFile(resources.nodePath, "Codex.app node executable");

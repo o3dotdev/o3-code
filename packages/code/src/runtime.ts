@@ -1,4 +1,3 @@
-import { execFileSync } from "node:child_process";
 import { createRequire } from "node:module";
 import {
   cpSync,
@@ -6,7 +5,6 @@ import {
   lstatSync,
   mkdirSync,
   readFileSync,
-  renameSync,
   rmSync,
   symlinkSync,
   writeFileSync,
@@ -52,6 +50,7 @@ export async function resolveCodexAppResourceModule(runtimeRoot: string): Promis
   readonly CODEX_APP_PATH_ENV: string;
   readonly assertCodexAppExecutableResources: (resources: CodexAppResources) => void;
   readonly getCodexAppInstallHelp: () => string;
+  readonly resolveCodexAppElectronExecutable: () => string;
   readonly resolveCodexAppResources: () => CodexAppResources;
 }> {
   const modulePath = path.join(
@@ -219,61 +218,16 @@ export function ensureExternalNativePayloadLinks({
   }
 }
 
-export function prepareElectronExecutable({
-  electronCacheRoot,
-  resourcesPath,
-}: {
-  readonly electronCacheRoot: string;
-  readonly resourcesPath: string;
-}): string {
-  const electronExecutable = String(require("electron"));
-  if (process.platform !== "darwin") {
-    return electronExecutable;
+export function assertCodexAppElectronExecutable(executable: string): string {
+  // The Desktop Reconstruction runs under the installed Codex App's own
+  // Electron framework (resolved by the codex-app-resources module). The
+  // framework is the only host whose V8/ABI matches the app's native add-ons;
+  // no npm `electron` release matches the Codex App's decoupled
+  // Chromium/ABI build. See docs/adr/0033.
+  if (!existsSync(executable)) {
+    throw new Error(`Codex App Electron executable not found: ${executable}`);
   }
-
-  const electronPackageRoot = resolveDependencyPackageRoot("electron");
-  const electronPackage = JSON.parse(
-    readFileSync(path.join(electronPackageRoot, "package.json"), "utf8"),
-  ) as { readonly version?: string };
-  const electronDistApp = path.join(electronPackageRoot, "dist", "Electron.app");
-  if (!existsSync(electronDistApp)) {
-    return electronExecutable;
-  }
-
-  const localElectronApp = path.join(
-    electronCacheRoot,
-    `electron-${electronPackage.version ?? "unknown"}`,
-    "O3 Code.app",
-  );
-  const localExecutable = path.join(localElectronApp, "Contents", "MacOS", "O3 Code");
-
-  if (!existsSync(localExecutable)) {
-    rmSync(localElectronApp, { force: true, recursive: true });
-    mkdirSync(path.dirname(localElectronApp), { recursive: true });
-    execFileSync("ditto", [electronDistApp, localElectronApp]);
-    renameSync(path.join(localElectronApp, "Contents", "MacOS", "Electron"), localExecutable);
-  }
-
-  for (const [key, value] of [
-    ["CFBundleName", "O3 Code"],
-    ["CFBundleDisplayName", "O3 Code"],
-    ["CFBundleExecutable", "O3 Code"],
-    ["CFBundleIdentifier", "dev.o3.code.npm"],
-  ]) {
-    execFileSync("plutil", [
-      "-replace",
-      key,
-      "-string",
-      value,
-      path.join(localElectronApp, "Contents", "Info.plist"),
-    ]);
-  }
-
-  for (const name of ["electron.icns", "icon.icns"]) {
-    cpSync(path.join(resourcesPath, name), path.join(localElectronApp, "Contents", "Resources", name));
-  }
-
-  return localExecutable;
+  return executable;
 }
 
 export function defaultElectronUserDataPath(env: NodeJS.ProcessEnv = process.env): string {

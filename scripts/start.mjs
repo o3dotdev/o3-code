@@ -1,13 +1,5 @@
-import { execFileSync, spawn } from "node:child_process";
-import {
-  cpSync,
-  existsSync,
-  lstatSync,
-  mkdirSync,
-  renameSync,
-  rmSync,
-  symlinkSync,
-} from "node:fs";
+import { spawn } from "node:child_process";
+import { existsSync, lstatSync, mkdirSync, rmSync, symlinkSync } from "node:fs";
 import { createRequire } from "node:module";
 import { homedir } from "node:os";
 import path from "node:path";
@@ -17,6 +9,7 @@ import {
   assertCodexAppExecutableResources,
   CODEX_APP_PATH_ENV,
   getCodexAppInstallHelp,
+  resolveCodexAppElectronExecutable,
   resolveCodexAppResources,
 } from "../packages/codex-app-resources/src/codex-app.mjs";
 
@@ -27,7 +20,6 @@ const repoRoot = path.resolve(
 );
 const rootPackage = require("../package.json");
 const desktopAppPackage = require("../apps/desktop/app/package.json");
-const electronPackage = require("electron/package.json");
 const desktopPath = path.join(repoRoot, "apps", "desktop");
 const appPath = path.join(desktopPath, "app");
 const rendererIndexPath = path.join(appPath, "webview", "index.html");
@@ -38,24 +30,6 @@ const appServerRouterPath = path.join(
   "app-server-router",
   "bin",
   "o3-app-server-router.mjs",
-);
-const electronBin = path.join(
-  repoRoot,
-  "node_modules",
-  ".bin",
-  process.platform === "win32" ? "electron.cmd" : "electron",
-);
-const electronPackageRoot = path.dirname(
-  require.resolve("electron/package.json"),
-);
-const electronDistApp = path.join(electronPackageRoot, "dist", "Electron.app");
-const localElectronApp = path.join(
-  repoRoot,
-  "node_modules",
-  ".cache",
-  "o3-code-electron",
-  `electron-${electronPackage.version}`,
-  "O3 Code.app",
 );
 
 let codexAppResources;
@@ -72,55 +46,20 @@ try {
   process.exit(1);
 }
 
-function prepareElectronExecutable() {
-  if (process.platform !== "darwin") {
-    return electronBin;
+function resolveDesktopElectronExecutable() {
+  // Run the Desktop Reconstruction under the installed Codex App's own Electron
+  // framework instead of an npm `electron` package. The framework is the only
+  // host whose V8/ABI matches the app's native add-ons (see
+  // resolveCodexAppElectronExecutable and docs/adr/0033). Local app identity
+  // (name, dock icon, user data) is applied at runtime by patch 0002, so the
+  // signed Codex bundle launches in place without modification.
+  const executable = resolveCodexAppElectronExecutable();
+  if (!existsSync(executable)) {
+    console.error(`Codex App Electron executable not found: ${executable}`);
+    console.error(getCodexAppInstallHelp());
+    process.exit(1);
   }
-
-  if (!existsSync(electronDistApp)) {
-    return electronBin;
-  }
-
-  const localExecutable = path.join(
-    localElectronApp,
-    "Contents",
-    "MacOS",
-    "O3 Code",
-  );
-
-  if (!existsSync(localExecutable)) {
-    rmSync(localElectronApp, { force: true, recursive: true });
-    mkdirSync(path.dirname(localElectronApp), { recursive: true });
-    execFileSync("ditto", [electronDistApp, localElectronApp]);
-    renameSync(
-      path.join(localElectronApp, "Contents", "MacOS", "Electron"),
-      localExecutable,
-    );
-  }
-
-  for (const [key, value] of [
-    ["CFBundleName", "O3 Code"],
-    ["CFBundleDisplayName", "O3 Code"],
-    ["CFBundleExecutable", "O3 Code"],
-    ["CFBundleIdentifier", "dev.o3.code.local-electron"],
-  ]) {
-    execFileSync("plutil", [
-      "-replace",
-      key,
-      "-string",
-      value,
-      path.join(localElectronApp, "Contents", "Info.plist"),
-    ]);
-  }
-
-  for (const name of ["electron.icns", "icon.icns"]) {
-    cpSync(
-      path.join(repoResourcesPath, name),
-      path.join(localElectronApp, "Contents", "Resources", name),
-    );
-  }
-
-  return localExecutable;
+  return executable;
 }
 
 function resolveCodexBuildNumber() {
@@ -252,11 +191,6 @@ for (const requiredPath of requiredPaths) {
   }
 }
 
-if (!existsSync(electronBin)) {
-  console.error("Electron is not installed. Run `pnpm install` first.");
-  process.exit(1);
-}
-
 ensureExternalNativePayloadLinks();
 ensureExternalNativeModuleLinks();
 
@@ -301,9 +235,15 @@ const env = {
     .join(path.delimiter),
 };
 
+// Pass the user data directory as an early Chromium switch. Running the
+// installed Codex bundle in place means native startup picks the bundle's
+// default profile ("Codex") before patch 0002 can redirect it from JS (the
+// Codex framework ignores that "late" userData change), which would make O3
+// Code share and lock the real Codex profile. The switch is read at native
+// startup, isolating the O3 Code profile.
 const child = spawn(
-  prepareElectronExecutable(),
-  [appPath, ...process.argv.slice(2)],
+  resolveDesktopElectronExecutable(),
+  [`--user-data-dir=${userDataPath}`, appPath, ...process.argv.slice(2)],
   {
     cwd: repoRoot,
     env,

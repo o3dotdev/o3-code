@@ -8,11 +8,11 @@ import { waitForBridgeReady } from "./health.js";
 import type { O3CodePaths } from "./paths.js";
 import { messageFromError, waitFor } from "./process.js";
 import {
+  assertCodexAppElectronExecutable,
   assertDesktopRuntime,
   defaultElectronUserDataPath,
   ensureExternalNativePayloadLinks,
   installRuntimePayload,
-  prepareElectronExecutable,
   resolveCodexAppResourceModule,
   resolveCodexBuildNumber,
   resolveDesktopLaunchPaths,
@@ -87,21 +87,29 @@ export async function runSupervisor(paths: O3CodePaths): Promise<void> {
     const desktopOut = fs.openSync(paths.desktopLogPath, "a", 0o600);
     const desktopErr = fs.openSync(paths.desktopLogPath, "a", 0o600);
     state = writeStartupPhase(paths, state, "preparing-electron", null);
-    const electronExecutable = prepareElectronExecutable({
-      electronCacheRoot: path.join(paths.stateRoot, "electron"),
-      resourcesPath: launchPaths.resourcesPath,
-    });
+    const electronExecutable = assertCodexAppElectronExecutable(
+      resourcesModule.resolveCodexAppElectronExecutable(),
+    );
 
     state = writeStartupPhase(paths, state, "launching-desktop", electronExecutable);
-    desktop = spawn(electronExecutable, [launchPaths.appPath], {
-      cwd: paths.activeRuntimeRoot,
-      env: createDesktopEnv({
-        codexAppPathEnv: resourcesModule.CODEX_APP_PATH_ENV,
-        codexResources,
-        launchPaths,
-      }),
-      stdio: ["ignore", desktopOut, desktopErr],
-    });
+    // Isolate the O3 Code profile via an early Chromium switch. The installed
+    // Codex bundle launches in place, so native startup would otherwise pick
+    // the real Codex profile before patch 0002 can redirect userData from JS.
+    const desktopUserDataPath =
+      process.env.CODEX_ELECTRON_USER_DATA_PATH || defaultElectronUserDataPath();
+    desktop = spawn(
+      electronExecutable,
+      [`--user-data-dir=${desktopUserDataPath}`, launchPaths.appPath],
+      {
+        cwd: paths.activeRuntimeRoot,
+        env: createDesktopEnv({
+          codexAppPathEnv: resourcesModule.CODEX_APP_PATH_ENV,
+          codexResources,
+          launchPaths,
+        }),
+        stdio: ["ignore", desktopOut, desktopErr],
+      },
+    );
 
     state = {
       ...state,

@@ -7,6 +7,7 @@ import test from "node:test";
 import {
   assertCodexAppExecutableResources,
   CODEX_APP_PATH_ENV,
+  resolveCodexAppElectronExecutable,
   resolveCodexAppPath,
   resolveCodexAppResources,
 } from "../src/codex-app.mjs";
@@ -18,6 +19,23 @@ test("resolveCodexAppPath prefers O3_CODE_CODEX_APP_PATH", () => {
       defaultAppPath: "/Applications/Codex.app",
     }),
     "/tmp/Custom Codex.app",
+  );
+});
+
+test("resolveCodexAppElectronExecutable points at the installed app's binary", () => {
+  assert.equal(
+    resolveCodexAppElectronExecutable({
+      env: { [CODEX_APP_PATH_ENV]: "/tmp/Custom Codex.app" },
+      defaultAppPath: "/Applications/Codex.app",
+    }),
+    "/tmp/Custom Codex.app/Contents/MacOS/Custom Codex",
+  );
+});
+
+test("resolveCodexAppElectronExecutable falls back to the default app path", () => {
+  assert.equal(
+    resolveCodexAppElectronExecutable({ env: {} }),
+    "/Applications/Codex.app/Contents/MacOS/Codex",
   );
 });
 
