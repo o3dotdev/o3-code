@@ -82,12 +82,20 @@
     `${window.location.protocol === "https:" ? "wss" : "ws"}://${window.location.host}/bridge`,
   );
 
+  const MAX_BUFFERED_DIAGNOSTICS = 200;
+  const bufferedDiagnostics = [];
+
   socket.addEventListener("open", () => {
     debugLog("socket-open");
     while (queued.length > 0) {
       socket.send(queued.shift());
     }
+    while (bufferedDiagnostics.length > 0) {
+      sendDiagnosticEnvelope(bufferedDiagnostics.shift());
+    }
   });
+
+  installBrowserDiagnosticCapture();
 
   socket.addEventListener("message", (event) => {
     const envelope = JSON.parse(event.data);
@@ -204,6 +212,138 @@
     }
 
     return await response;
+  }
+
+  function installBrowserDiagnosticCapture() {
+    try {
+      window.addEventListener("error", (event) => {
+        reportBrowserDiagnostic("error", {
+          message: stringFromErrorEvent(event),
+          filename: event?.filename ?? null,
+          lineno: event?.lineno ?? null,
+          colno: event?.colno ?? null,
+          name: event?.error?.name ?? null,
+          stack: event?.error?.stack ?? null,
+        });
+      });
+    } catch {}
+
+    try {
+      window.addEventListener("unhandledrejection", (event) => {
+        const reason = event?.reason;
+        const isError = reason instanceof Error;
+        reportBrowserDiagnostic("unhandled-rejection", {
+          message: isError
+            ? (reason.message ?? String(reason))
+            : safeDiagnosticStringify(reason),
+          name: isError ? reason.name : null,
+          stack: isError ? reason.stack : null,
+        });
+      });
+    } catch {}
+
+    wrapConsoleMethod("error", "console-error");
+    wrapConsoleMethod("warn", "console-warn");
+  }
+
+  function wrapConsoleMethod(methodName, level) {
+    try {
+      if (
+        typeof console === "undefined" ||
+        typeof console[methodName] !== "function"
+      ) {
+        return;
+      }
+      const existing = console[methodName];
+      if (existing.__o3CodeBridgeShimWrapped === true) {
+        return;
+      }
+      const wrapped = function (...args) {
+        try {
+          reportBrowserDiagnostic(level, {
+            message: args.map(formatConsoleArg).join(" "),
+          });
+        } catch {}
+        return existing.apply(this, args);
+      };
+      try {
+        Object.defineProperty(wrapped, "__o3CodeBridgeShimWrapped", {
+          value: true,
+        });
+      } catch {
+        wrapped.__o3CodeBridgeShimWrapped = true;
+      }
+      console[methodName] = wrapped;
+    } catch {}
+  }
+
+  function reportBrowserDiagnostic(level, fields) {
+    let envelope;
+    try {
+      envelope = JSON.stringify({
+        id: randomId(),
+        protocolVersion,
+        source: "browser",
+        kind: "browser-diagnostic",
+        payload: {
+          level,
+          timestamp: new Date().toISOString(),
+          userAgent: navigator?.userAgent ?? null,
+          url: window.location?.href ?? null,
+          ...fields,
+        },
+      });
+    } catch {
+      return;
+    }
+
+    if (socket.readyState === WebSocket.OPEN) {
+      sendDiagnosticEnvelope(envelope);
+    } else if (bufferedDiagnostics.length < MAX_BUFFERED_DIAGNOSTICS) {
+      bufferedDiagnostics.push(envelope);
+    }
+  }
+
+  function sendDiagnosticEnvelope(envelope) {
+    try {
+      socket.send(envelope);
+    } catch {}
+  }
+
+  function stringFromErrorEvent(event) {
+    if (event == null) {
+      return "Uncaught error";
+    }
+    if (typeof event.message === "string" && event.message.length > 0) {
+      return event.message;
+    }
+    if (event.error instanceof Error) {
+      return event.error.message ?? event.error.name ?? "Uncaught error";
+    }
+    return "Uncaught error";
+  }
+
+  function formatConsoleArg(arg) {
+    if (arg instanceof Error) {
+      return `${arg.name ?? "Error"}: ${arg.message ?? ""}${
+        arg.stack ? `\n${arg.stack}` : ""
+      }`;
+    }
+    if (typeof arg === "string") {
+      return arg;
+    }
+    return safeDiagnosticStringify(arg);
+  }
+
+  function safeDiagnosticStringify(value) {
+    if (value == null) {
+      return String(value);
+    }
+    try {
+      return JSON.stringify(value);
+    } catch {
+      return String(value);
+    }
   }
 
   function debugLog(message, fields) {

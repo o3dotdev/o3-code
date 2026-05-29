@@ -96,6 +96,7 @@ export async function runSupervisor(paths: O3CodePaths): Promise<void> {
     desktop = spawn(electronExecutable, [launchPaths.appPath], {
       cwd: paths.activeRuntimeRoot,
       env: createDesktopEnv({
+        bridgeLogPath: paths.bridgeLogPath,
         codexAppPathEnv: resourcesModule.CODEX_APP_PATH_ENV,
         codexResources,
         launchPaths,
@@ -221,10 +222,12 @@ function writeStartupPhase(
 }
 
 function createDesktopEnv({
+  bridgeLogPath,
   codexAppPathEnv,
   codexResources,
   launchPaths,
 }: {
+  readonly bridgeLogPath: string;
   readonly codexAppPathEnv: string;
   readonly codexResources: {
     readonly appPath: string;
@@ -262,6 +265,8 @@ function createDesktopEnv({
     O3_CODE_BRIDGE_WEBVIEW_DIR: launchPaths.webviewDir,
     O3_CODE_BRIDGE_NODE_PATH:
       process.env.O3_CODE_BRIDGE_NODE_PATH || codexResources.nodePath,
+    O3_CODE_BRIDGE_LOG_PATH:
+      process.env.O3_CODE_BRIDGE_LOG_PATH || bridgeLogPath,
     [codexAppPathEnv]: codexResources.appPath,
     PATH: [process.env.PATH, codexResources.resourcesPath].filter(Boolean).join(path.delimiter),
   };

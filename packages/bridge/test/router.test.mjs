@@ -157,3 +157,142 @@ test("routes worker subscriptions and worker messages", async () => {
   ]);
   assert.equal(socket.sent.at(-1).kind, "worker-message-for-view");
 });
+
+function createRecordingEventLog({ verbose = false } = {}) {
+  return {
+    records: [],
+    verbose,
+    write(event, fields) {
+      this.records.push({ event, fields });
+    },
+    truncateDetail(value) {
+      if (value == null) {
+        return null;
+      }
+      return typeof value === "string" ? value : JSON.stringify(value);
+    },
+    close() {},
+  };
+}
+
+test("logs every envelope direction with summary fields", async () => {
+  const eventLog = createRecordingEventLog();
+  const router = new BridgeRouter({
+    hostTransport: createHostTransport(),
+    eventLog,
+  });
+  const socket = new FakeSocket();
+  router.attachBrowser(socket);
+
+  socket.receive({
+    kind: "app-message-from-view",
+    payload: { type: "composer-submitted" },
+  });
+  await new Promise((resolve) => setImmediate(resolve));
+
+  const inbound = eventLog.records.filter((r) => r.event === "envelope-in");
+  const outbound = eventLog.records.filter((r) => r.event === "envelope-out");
+  assert.ok(inbound.length >= 1, "expected at least one inbound envelope log");
+  assert.ok(outbound.length >= 1, "expected at least one outbound envelope log");
+
+  const lastInbound = inbound.at(-1);
+  assert.equal(lastInbound.fields.kind, "app-message-from-view");
+  assert.equal(lastInbound.fields.payloadType, "composer-submitted");
+  assert.equal(
+    lastInbound.fields.payload,
+    null,
+    "non-verbose log must omit payload contents",
+  );
+  assert.ok(lastInbound.fields.bytes > 0);
+
+  const syncPulse = outbound.find((r) => r.fields.kind === "bridge-sync-pulse");
+  assert.ok(syncPulse, "expected sync pulse envelope to be logged");
+});
+
+test("verbose event log captures truncated payload contents", async () => {
+  const eventLog = createRecordingEventLog({ verbose: true });
+  const router = new BridgeRouter({
+    hostTransport: createHostTransport(),
+    eventLog,
+  });
+  const socket = new FakeSocket();
+  router.attachBrowser(socket);
+
+  socket.receive({
+    kind: "app-message-from-view",
+    payload: { type: "composer-submitted", text: "hello" },
+  });
+  await new Promise((resolve) => setImmediate(resolve));
+
+  const inbound = eventLog.records.findLast((r) => r.event === "envelope-in");
+  assert.ok(inbound);
+  assert.ok(inbound.fields.payload?.includes("composer-submitted"));
+  assert.ok(inbound.fields.payload?.includes("hello"));
+});
+
+test("browser-diagnostic envelopes are logged and acknowledged", async () => {
+  const eventLog = createRecordingEventLog();
+  const router = new BridgeRouter({
+    hostTransport: createHostTransport(),
+    eventLog,
+  });
+  const socket = new FakeSocket();
+  router.attachBrowser(socket);
+
+  socket.receive({
+    kind: "browser-diagnostic",
+    payload: {
+      level: "error",
+      message: "Boom",
+      stack: "Error: Boom\n  at app-main.js:24622:19",
+      name: "TypeError",
+      userAgent: "Mozilla/5.0 (iPad)",
+      url: "https://example.ts.net/",
+      timestamp: "2026-05-29T12:00:00.000Z",
+    },
+  });
+  await new Promise((resolve) => setImmediate(resolve));
+
+  const diagnostic = eventLog.records.find(
+    (r) => r.event === "browser-diagnostic",
+  );
+  assert.ok(diagnostic, "expected a browser-diagnostic record");
+  assert.equal(diagnostic.fields.level, "error");
+  assert.equal(diagnostic.fields.message, "Boom");
+  assert.equal(diagnostic.fields.name, "TypeError");
+  assert.equal(diagnostic.fields.userAgent, "Mozilla/5.0 (iPad)");
+  assert.equal(diagnostic.fields.url, "https://example.ts.net/");
+  assert.ok(diagnostic.fields.stack?.includes("app-main.js:24622:19"));
+
+  const response = socket.sent.findLast((m) => m.kind === "bridge-response");
+  assert.ok(response, "expected a bridge-response acknowledgement");
+});
+
+test("event log records browser-diagnostic for unhandled rejections without a stack", async () => {
+  const eventLog = createRecordingEventLog();
+  const router = new BridgeRouter({
+    hostTransport: createHostTransport(),
+    eventLog,
+  });
+  const socket = new FakeSocket();
+  router.attachBrowser(socket);
+
+  socket.receive({
+    kind: "browser-diagnostic",
+    payload: {
+      level: "unhandled-rejection",
+      message: "Some non-error reason",
+      stack: null,
+      name: null,
+    },
+  });
+  await new Promise((resolve) => setImmediate(resolve));
+
+  const diagnostic = eventLog.records.find(
+    (r) => r.event === "browser-diagnostic",
+  );
+  assert.ok(diagnostic);
+  assert.equal(diagnostic.fields.level, "unhandled-rejection");
+  assert.equal(diagnostic.fields.message, "Some non-error reason");
+  assert.equal(diagnostic.fields.stack, null);
+});

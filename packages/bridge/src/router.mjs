@@ -1,5 +1,7 @@
 import { randomUUID } from "node:crypto";
 
+import { NULL_BRIDGE_EVENT_LOG } from "./event-log.mjs";
+
 export const BRIDGE_PROTOCOL_VERSION = 1;
 
 export class BridgeRouter {
@@ -7,9 +9,14 @@ export class BridgeRouter {
   #sharedObjectSnapshot = {};
   #themeVariant = "dark";
 
-  constructor({ hostTransport, logger = console } = {}) {
+  constructor({
+    hostTransport,
+    logger = console,
+    eventLog = NULL_BRIDGE_EVENT_LOG,
+  } = {}) {
     this.hostTransport = hostTransport;
     this.logger = logger;
+    this.eventLog = eventLog;
   }
 
   get activeSessionId() {
@@ -115,8 +122,16 @@ export class BridgeRouter {
       return;
     }
 
+    this.#logEnvelopeIn(session, envelope, rawMessage);
+
     try {
       switch (envelope.kind) {
+        case "browser-diagnostic": {
+          this.#logBrowserDiagnostic(session, envelope.payload);
+          this.#sendResponse(session, envelope.id, null);
+          break;
+        }
+
         case "app-message-from-view": {
           if (envelope.payload?.type === "shared-object-set") {
             this.#setSharedObject(envelope.payload.key, envelope.payload.value);
@@ -204,15 +219,78 @@ export class BridgeRouter {
   }
 
   #sendToSession(session, message) {
-    session.socket.send(
-      JSON.stringify({
-        id: randomUUID(),
-        protocolVersion: BRIDGE_PROTOCOL_VERSION,
-        sessionId: session.sessionId,
-        source: "sidecar",
-        ...message,
-      }),
-    );
+    const envelope = {
+      id: randomUUID(),
+      protocolVersion: BRIDGE_PROTOCOL_VERSION,
+      sessionId: session.sessionId,
+      source: "sidecar",
+      ...message,
+    };
+    const serialized = JSON.stringify(envelope);
+    this.#logEnvelopeOut(session, envelope, serialized);
+    session.socket.send(serialized);
+  }
+
+  #logEnvelopeIn(session, envelope, rawMessage) {
+    const bytes =
+      typeof rawMessage === "string"
+        ? Buffer.byteLength(rawMessage)
+        : rawMessage?.length ?? 0;
+    this.eventLog.write("envelope-in", {
+      sessionId: session.sessionId,
+      kind: envelope.kind ?? null,
+      payloadType: envelope.payload?.type ?? null,
+      method: envelope.method ?? null,
+      workerId: envelope.workerId ?? null,
+      envelopeId: envelope.id ?? null,
+      bytes,
+      payload: this.eventLog.verbose
+        ? this.eventLog.truncateDetail(envelope.payload ?? envelope.args)
+        : null,
+    });
+  }
+
+  #logEnvelopeOut(session, envelope, serialized) {
+    this.eventLog.write("envelope-out", {
+      sessionId: session.sessionId,
+      kind: envelope.kind ?? null,
+      payloadType: envelope.payload?.type ?? null,
+      workerId: envelope.workerId ?? null,
+      responseTo: envelope.responseTo ?? null,
+      envelopeId: envelope.id ?? null,
+      bytes: Buffer.byteLength(serialized),
+      payload: this.eventLog.verbose
+        ? this.eventLog.truncateDetail(envelope.payload)
+        : null,
+    });
+  }
+
+  #logBrowserDiagnostic(session, payload) {
+    const fields = {
+      sessionId: session.sessionId,
+      level: payload?.level ?? "info",
+      message: payload?.message ?? null,
+      name: payload?.name ?? null,
+      stack: payload?.stack ?? null,
+      filename: payload?.filename ?? null,
+      lineno: payload?.lineno ?? null,
+      colno: payload?.colno ?? null,
+      url: payload?.url ?? null,
+      userAgent: payload?.userAgent ?? null,
+      browserTimestamp: payload?.timestamp ?? null,
+      context: payload?.context ?? null,
+    };
+    this.eventLog.write("browser-diagnostic", fields);
+    const summary = `[bridge] browser-diagnostic level=${fields.level} session=${
+      fields.sessionId
+    } msg=${JSON.stringify(fields.message ?? "")}`;
+    if (fields.level === "error" || fields.level === "unhandled-rejection") {
+      this.logger.error?.(summary);
+    } else if (fields.level === "console-warn") {
+      this.logger.warn?.(summary);
+    } else {
+      this.logger.log?.(summary);
+    }
   }
 }
 

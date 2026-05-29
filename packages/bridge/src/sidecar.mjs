@@ -9,6 +9,11 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { CdpClient } from "./cdp-client.mjs";
+import {
+  BridgeEventLog,
+  NULL_BRIDGE_EVENT_LOG,
+  resolveBridgeLogPath,
+} from "./event-log.mjs";
 import { injectBridgeShell } from "./html-injection.mjs";
 import { repoRoot, resolveBridgeWebviewDir } from "./paths.mjs";
 import { createBridgeRequestDiagnostics } from "./request-diagnostics.mjs";
@@ -51,10 +56,24 @@ if (!targetUrl) {
 
 await mkdir(stageDir, { recursive: true });
 
+const debugEnabled = process.env.O3_CODE_BRIDGE_DEBUG === "1";
+const bridgeLogPath = resolveBridgeLogPath();
+const eventLog = bridgeLogPath
+  ? new BridgeEventLog({ filePath: bridgeLogPath, verbose: debugEnabled })
+  : NULL_BRIDGE_EVENT_LOG;
+eventLog.write("sidecar-start", {
+  pid: process.pid,
+  port,
+  cdpPort,
+  webviewDir,
+  targetUrl,
+  debug: debugEnabled,
+});
+
 const cdpClient = new CdpClient({ cdpPort, cdpHost, targetUrl });
-const router = new BridgeRouter({ hostTransport: cdpClient });
+const router = new BridgeRouter({ hostTransport: cdpClient, eventLog });
 const requestDiagnostics = createBridgeRequestDiagnostics({
-  debug: process.env.O3_CODE_BRIDGE_DEBUG === "1",
+  debug: debugEnabled,
   logger: console,
 });
 cdpClient.on("host-event", (event) => router.handleHostEvent(event));
@@ -100,11 +119,34 @@ server.on("upgrade", (request, socket, head) => {
     return;
   }
 
+  const userAgent = headerToString(request.headers["user-agent"]);
+  const forwardedFor = headerToString(request.headers["x-forwarded-for"]);
+  const remoteAddress = socket.remoteAddress ?? null;
+  const connectedAt = Date.now();
+
   activeWebSockets.add(webSocket);
+  const sessionId = router.attachBrowser(webSocket);
+  eventLog.write("browser-connect", {
+    sessionId,
+    userAgent,
+    forwardedFor,
+    remoteAddress,
+    host: request.headers.host ?? null,
+  });
+  console.log(
+    `[bridge] browser connected session=${sessionId} userAgent=${JSON.stringify(
+      userAgent ?? "",
+    )}`,
+  );
+
   webSocket.on("close", () => {
     activeWebSockets.delete(webSocket);
+    eventLog.write("browser-disconnect", {
+      sessionId,
+      durationMs: Date.now() - connectedAt,
+    });
+    console.log(`[bridge] browser disconnected session=${sessionId}`);
   });
-  router.attachBrowser(webSocket);
 });
 
 server.listen(port, host, () => {
@@ -126,7 +168,16 @@ process.on("exit", () => {
 async function cleanup() {
   closeActiveBridgeSockets();
   await new Promise((resolve) => server.close(resolve));
+  eventLog.write("sidecar-stop", { pid: process.pid });
+  await eventLog.close();
   await rm(stageDir, { force: true, recursive: true });
+}
+
+function headerToString(value) {
+  if (value == null) {
+    return null;
+  }
+  return Array.isArray(value) ? value.join(", ") : String(value);
 }
 
 function closeActiveBridgeSockets() {
