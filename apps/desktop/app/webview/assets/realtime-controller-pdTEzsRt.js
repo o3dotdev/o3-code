@@ -15,6 +15,17 @@ import { a as f } from "./statsig--EYRNU53.js";
 import { r as p } from "./toast-signal.js";
 import { t as m } from "./app-intl-signal.js";
 import { i as ne } from "./plugins-page-selectors.js";
+// o3-code-patch-begin: realtime-missing-key-message
+const o3CodeRealtimeMissingKeyMessage = `Realtime voice requires O3_CODE_REALTIME_API_KEY. Restart O3 Code with O3_CODE_REALTIME_API_KEY set to your OpenAI API key to enable realtime models.`;
+function o3CodeNormalizeRealtimeErrorMessage(e) {
+  let t = String(e ?? ``);
+  return t.includes(`unexpected status 404`) &&
+    t.includes(`https://chatgpt.com/backend-api/codex/realtime/calls`) &&
+    t.includes(`"Not Found"`)
+    ? o3CodeRealtimeMissingKeyMessage
+    : e;
+}
+// o3-code-patch-end: realtime-missing-key-message
 e(a());
 var h = o(),
   g = (e) =>
@@ -848,7 +859,9 @@ var fe = class {
               defaultMessage: `Realtime voice error: {message}`,
               description: `Toast shown when a realtime voice session reports an error`,
             },
-            { message: t },
+            // o3-code-patch-begin: realtime-missing-key-message
+            { message: o3CodeNormalizeRealtimeErrorMessage(t) },
+            // o3-code-patch-end: realtime-missing-key-message
           ),
         ),
         r != null && i(`discard-conversation-if-empty`, { conversationId: n }));

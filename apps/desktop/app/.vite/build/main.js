@@ -47312,17 +47312,28 @@ var vK = {
             this.sendPersistedAtomState(r),
             r.send(I, {
               type: `app-update-ready-changed`,
-              isUpdateReady: this.sparkleManager.getIsUpdateReady(),
+              // o3-code-patch-begin: disable-app-updates
+              isUpdateReady: o3CodeAppUpdatesDisabled()
+                ? !1
+                : this.sparkleManager.getIsUpdateReady(),
+              // o3-code-patch-end: disable-app-updates
             }),
             r.send(I, {
               type: `app-update-lifecycle-state-changed`,
-              lifecycleState: this.sparkleManager.getUpdateLifecycleState(),
+              // o3-code-patch-begin: disable-app-updates
+              lifecycleState: o3CodeAppUpdatesDisabled()
+                ? `idle`
+                : this.sparkleManager.getUpdateLifecycleState(),
+              // o3-code-patch-end: disable-app-updates
             }),
             process.platform === `win32` &&
               r.send(I, {
                 type: `app-update-install-progress-changed`,
-                installProgressPercent:
-                  this.sparkleManager.getInstallProgressPercent(),
+                // o3-code-patch-begin: disable-app-updates
+                installProgressPercent: o3CodeAppUpdatesDisabled()
+                  ? null
+                  : this.sparkleManager.getInstallProgressPercent(),
+                // o3-code-patch-end: disable-app-updates
               }),
             this.samplerManager.handleRendererReady(r),
             $().info(`Handled 'ready' message, sent ide-context-updated`));
@@ -48006,9 +48017,15 @@ var vK = {
             $().info(`Codex app-server restart requested`));
           break;
         case `check-app-update`:
+          // o3-code-patch-begin: disable-app-updates
+          if (o3CodeAppUpdatesDisabled()) break;
+          // o3-code-patch-end: disable-app-updates
           this.sparkleManager.checkForUpdates();
           break;
         case `install-app-update`:
+          // o3-code-patch-begin: disable-app-updates
+          if (o3CodeAppUpdatesDisabled()) break;
+          // o3-code-patch-end: disable-app-updates
           if (process.platform === `darwin` && iG()) {
             let e =
                 i.BrowserWindow.fromWebContents(r) ??
@@ -56352,6 +56369,157 @@ function yX({ moduleDir: n }) {
     }
   );
 }
+// o3-code-patch-begin: web-access-settings
+var o3CodeWebAccessChannels = {
+  configChanged: `o3-code:web-access:config-changed`,
+  getConfig: `o3-code:web-access:get-config`,
+  getMobileAccessHelp: `o3-code:web-access:get-mobile-access-help`,
+  getStatus: `o3-code:web-access:get-status`,
+  openUrl: `o3-code:web-access:open-url`,
+  patchConfig: `o3-code:web-access:patch-config`,
+  resetPort: `o3-code:web-access:reset-port`,
+  retry: `o3-code:web-access:retry`,
+  statusChanged: `o3-code:web-access:status-changed`,
+};
+function o3CodeResolveBridgeRepoRoot({ desktopRoot: e, repoRoot: t }) {
+  for (let n of [
+    process.env.O3_CODE_REPO_ROOT?.trim(),
+    t,
+    process.cwd(),
+    (0, o.join)(e, `..`, `..`, `..`),
+  ])
+    if (
+      n &&
+      (0, c.existsSync)(
+        (0, o.join)(n, `packages`, `bridge`, `src`, `o3-code-config.mjs`),
+      )
+    )
+      return n;
+  throw Error(`Unable to locate repo-owned Web access bridge modules.`);
+}
+var o3CodeMacAppStoreTailscalePath = `/Applications/Tailscale.app/Contents/MacOS/Tailscale`;
+function o3CodeCreateTailscaleMobileAccessHelp(e) {
+  let t = e?.state === `running` ? e.url : null,
+    n = o3CodeResolveTailscaleCommandPrefix();
+  return n == null
+    ? {
+        available: !1,
+        variant: `missing`,
+        serveCommand: null,
+        statusCommand: null,
+        resetCommand: null,
+        installHint: `Install Tailscale for macOS, sign in on this Mac and your mobile device, then run the serve command.`,
+      }
+    : {
+        available: !0,
+        variant: n.variant,
+        serveCommand: t == null ? null : `${n.commandPrefix} serve --bg ${t}`,
+        statusCommand: `${n.commandPrefix} serve status`,
+        resetCommand: `${n.commandPrefix} serve reset`,
+        installHint: null,
+      };
+}
+function o3CodeResolveTailscaleCommandPrefix() {
+  return o3CodeHasTailscalePathCli()
+    ? { variant: `path`, commandPrefix: `tailscale` }
+    : (0, c.existsSync)(o3CodeMacAppStoreTailscalePath)
+      ? {
+          variant: `mac-app-store`,
+          commandPrefix: `TAILSCALE_BE_CLI=1 ${o3CodeMacAppStoreTailscalePath}`,
+        }
+      : null;
+}
+function o3CodeHasTailscalePathCli() {
+  for (let e of (process.env.PATH || ``).split(o.delimiter)) {
+    if (e && (0, c.existsSync)((0, o.join)(e, `tailscale`))) return !0;
+  }
+  return !1;
+}
+async function o3CodeCreateWebAccessController({
+  desktopRoot: e,
+  disposables: t,
+  isTrustedIpcEvent: r,
+  repoRoot: a,
+}) {
+  let _ = o3CodeResolveBridgeRepoRoot({ desktopRoot: e, repoRoot: a }),
+    v = (e) =>
+      (0, b.pathToFileURL)(
+        (0, o.join)(_, `packages`, `bridge`, `src`, e),
+      ).toString(),
+    s = await import(v(`o3-code-config.mjs`)),
+    c = await import(v(`supervisor.mjs`)),
+    l = new s.O3CodeConfigStore(),
+    u = new c.BridgeModeSupervisor({
+      configStore: l,
+      desktopRoot: e,
+      env: process.env,
+      repoRoot: _,
+    }),
+    d = (e, t) => {
+      for (let r of i.BrowserWindow.getAllWindows())
+        r.isDestroyed() || r.webContents.send(e, t);
+    },
+    f = l.subscribe((e) => {
+      d(o3CodeWebAccessChannels.configChanged, e.webAccess);
+    }),
+    p = u.subscribe((e) => {
+      d(o3CodeWebAccessChannels.statusChanged, e);
+    }),
+    m = (e) => {
+      if (!r(e)) throw Error(`Untrusted Web access IPC event.`);
+    };
+  (i.ipcMain.handle(o3CodeWebAccessChannels.getConfig, async (e) => {
+    m(e);
+    return (await l.readConfig()).webAccess;
+  }),
+    i.ipcMain.handle(o3CodeWebAccessChannels.getStatus, async (e) => {
+      m(e);
+      return u.getStatus();
+    }),
+    i.ipcMain.handle(o3CodeWebAccessChannels.getMobileAccessHelp, async (e) => {
+      m(e);
+      return o3CodeCreateTailscaleMobileAccessHelp(u.getStatus());
+    }),
+    i.ipcMain.handle(o3CodeWebAccessChannels.patchConfig, async (e, t) => {
+      m(e);
+      let n = await l.patchWebAccess(t ?? {});
+      await u.applyConfig(n);
+      return n.webAccess;
+    }),
+    i.ipcMain.handle(o3CodeWebAccessChannels.retry, async (e) => {
+      m(e);
+      return await u.retry();
+    }),
+    i.ipcMain.handle(o3CodeWebAccessChannels.resetPort, async (e) => {
+      m(e);
+      let t = await u.resetPort();
+      return t.webAccess;
+    }),
+    i.ipcMain.handle(o3CodeWebAccessChannels.openUrl, async (e, t) => {
+      m(e);
+      let r = u.getStatus();
+      if (r.state !== `running` || t !== r.url) return !1;
+      await i.shell.openExternal(t);
+      return !0;
+    }),
+    t.add(() => {
+      (f(),
+        p(),
+        u.dispose().catch(() => {}),
+        Object.values(o3CodeWebAccessChannels).forEach((e) => {
+          e.includes(`:get-`) ||
+          e.includes(`:patch-`) ||
+          e.includes(`:retry`) ||
+          e.includes(`:reset-`) ||
+          e.includes(`:open-`)
+            ? i.ipcMain.removeHandler(e)
+            : void 0;
+        }));
+    }),
+    await u.initialize());
+  return u;
+}
+// o3-code-patch-end: web-access-settings
 var bX = `DoubleCommand`,
   xX = 6e4;
 function SX({ globalState: e, windowManager: n, enabled: r }) {
@@ -67234,6 +67402,10 @@ function c0({
 }) {
   let b = (0, o.join)(m, `electron`, `src`, `icons`),
     x = () => {
+      // o3-code-patch-begin: local-app-identity
+      let e = process.env.O3_CODE_APP_ICON_PATH?.trim();
+      if (e && (0, c.existsSync)(e)) return e;
+      // o3-code-patch-end: local-app-identity
       switch (t) {
         case n.j.Dev: {
           let e = (0, o.join)(
@@ -68031,7 +68203,14 @@ function k0() {
 }
 async function A0(e, t) {
   if (process.platform === `darwin`) {
-    let e = [
+    // o3-code-patch-begin: local-app-identity
+    let o3CodeTrayTemplatePath = process.env.O3_CODE_TRAY_TEMPLATE_PATH?.trim(),
+      o3CodeTrayTemplateCandidates = o3CodeTrayTemplatePath
+        ? [o3CodeTrayTemplatePath]
+        : [],
+      e = [
+        ...o3CodeTrayTemplateCandidates,
+        // o3-code-patch-end: local-app-identity
       ...(i.app.isPackaged
         ? [(0, o.join)(process.resourcesPath, `codexTemplate.png`)]
         : []),
@@ -68387,6 +68566,11 @@ function X0(e) {
   l.length !== c.length && n.d(e, l);
 }
 var Z0 = { enabled: !1, running: !1, state: `disabled` };
+// o3-code-patch-begin: disable-app-updates
+function o3CodeAppUpdatesDisabled() {
+  return process.env.O3_CODE_DISABLE_APP_UPDATES?.trim() !== `0`;
+}
+// o3-code-patch-end: disable-app-updates
 function Q0(e) {
   let t = (e instanceof Error ? e.message : String(e)).toLowerCase();
   return (
@@ -68445,6 +68629,12 @@ async function $0() {
         safe: { phaseElapsedMs: r - t, startupElapsedMs: r - a, ...n },
       });
     };
+  // o3-code-patch-begin: disable-app-updates
+  if (o3CodeAppUpdatesDisabled()) {
+    p = !1;
+    m = !1;
+  }
+  // o3-code-patch-end: disable-app-updates
   D(`bootstrap handoff complete`, a, { appWhenReadyResolved: i.app.isReady() });
   let O = process.platform === `darwin`,
     k = process.platform === `win32`,
@@ -68516,6 +68706,14 @@ async function $0() {
       }
       e.returnValue = i.nativeTheme.shouldUseDarkColors ? `dark` : `light`;
     }));
+  // o3-code-patch-begin: web-access-settings
+  await o3CodeCreateWebAccessController({
+    desktopRoot: N.desktopRoot,
+    disposables: j,
+    isTrustedIpcEvent: F,
+    repoRoot: N.repoRoot,
+  });
+  // o3-code-patch-end: web-access-settings
   let te = () => {
     let e = i.nativeTheme.shouldUseDarkColors ? `dark` : `light`;
     P.windowManager.refreshWindowBackdrops();
@@ -68537,6 +68735,9 @@ async function $0() {
     };
   u({
     onInstallProgressChanged: (e) => {
+      // o3-code-patch-begin: disable-app-updates
+      if (o3CodeAppUpdatesDisabled()) return;
+      // o3-code-patch-end: disable-app-updates
       k &&
         P.sendMessageToAllRegisteredWindows({
           type: `app-update-install-progress-changed`,
@@ -68546,16 +68747,23 @@ async function $0() {
     onUpdateReadyChanged: (e) => {
       P.sendMessageToAllRegisteredWindows({
         type: `app-update-ready-changed`,
-        isUpdateReady: e,
+        // o3-code-patch-begin: disable-app-updates
+        isUpdateReady: o3CodeAppUpdatesDisabled() ? !1 : e,
+        // o3-code-patch-end: disable-app-updates
       });
     },
     onUpdateLifecycleStateChanged: (e) => {
       P.sendMessageToAllRegisteredWindows({
         type: `app-update-lifecycle-state-changed`,
-        lifecycleState: e,
+        // o3-code-patch-begin: disable-app-updates
+        lifecycleState: o3CodeAppUpdatesDisabled() ? `idle` : e,
+        // o3-code-patch-end: disable-app-updates
       });
     },
     onInstallUpdatesRequested: (e) => {
+      // o3-code-patch-begin: disable-app-updates
+      if (o3CodeAppUpdatesDisabled()) return;
+      // o3-code-patch-end: disable-app-updates
       ie(e);
     },
     isTrustedIpcEvent: F,

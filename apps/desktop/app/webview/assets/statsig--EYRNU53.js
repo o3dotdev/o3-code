@@ -7,6 +7,18 @@ import {
   ot as s,
   wt as c,
 } from "./setting-storage.js";
+// o3-code-patch-begin: statsig-gate-overrides
+let o3CodeForcedBooleanStatsigGates = new Set();
+function o3CodeMaybeForceFeatureGate(e, t) {
+  if (!o3CodeForcedBooleanStatsigGates.has(String(e))) return t;
+  return Object.assign(Object.create(Object.getPrototypeOf(t)), t, {
+    value: !0,
+  });
+}
+// o3-code-patch-end: statsig-gate-overrides
+// o3-code-patch-begin: realtime-voice-statsig-override
+o3CodeForcedBooleanStatsigGates.add(`2380644311`);
+// o3-code-patch-end: realtime-voice-statsig-override
 var l = t((e) => {
     (Object.defineProperty(e, `__esModule`, { value: !0 }),
       (e.Log = e.LogLevel = void 0));
@@ -4574,7 +4586,9 @@ var l = t((e) => {
             t,
           ),
           this.$emt({ name: `gate_evaluation`, gate: s }),
-          s
+          // o3-code-patch-begin: statsig-gate-overrides
+          o3CodeMaybeForceFeatureGate(e, s)
+          // o3-code-patch-end: statsig-gate-overrides
         );
       }
       _getDynamicConfigImpl(e, t) {

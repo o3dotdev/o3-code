@@ -1,3 +1,11 @@
+// o3-code-patch-begin: resources-path-redirect
+let o3CodeResourcesPath = process.env.CODEX_ELECTRON_RESOURCES_PATH?.trim();
+if (o3CodeResourcesPath)
+  Object.defineProperty(process, `resourcesPath`, {
+    configurable: true,
+    value: o3CodeResourcesPath,
+  });
+// o3-code-patch-end: resources-path-redirect
 const e = require(`./src-B5wXNbcV.js`),
   t = require(`./src-DJzHq3CP.js`),
   n = require(`./workspace-root-drop-handler.js`);
@@ -88,12 +96,51 @@ function v({ appDataPath: t, buildFlavor: n, env: r }) {
     s = r.CODEX_ELECTRON_AGENT_RUN_ID?.trim() || null;
   return n === `agent` && s != null ? (0, i.join)(o, `agent`, s) : o;
 }
+// o3-code-patch-begin: web-access-settings
+function o3CodeAllocateBridgeCdpPort() {
+  let e = process.env.O3_CODE_BRIDGE_CDP_PORT?.trim();
+  if (/^[1-9]\d*$/.test(e ?? ``)) return e;
+  let t =
+    process.env.CODEX_BROWSER_USE_NODE_PATH?.trim() ||
+    (process.env.CODEX_ELECTRON_RESOURCES_PATH?.trim()
+      ? (0, i.join)(process.env.CODEX_ELECTRON_RESOURCES_PATH.trim(), `node`)
+      : null);
+  if (!t) return null;
+  try {
+    let e = a
+      .execFileSync(
+        t,
+        [
+          `-e`,
+          `const net=require("node:net");const server=net.createServer();server.listen(0,"127.0.0.1",()=>{console.log(server.address().port);server.close();});`,
+        ],
+        {
+          encoding: `utf8`,
+          env: process.env,
+          stdio: [`ignore`, `pipe`, `ignore`],
+        },
+      )
+      .trim();
+    if (/^[1-9]\d*$/.test(e)) return e;
+  } catch {}
+  return null;
+}
+// o3-code-patch-end: web-access-settings
 var y = {
   "install-update": `Install Update`,
   "check-for-updates": `Check for Updates`,
   quit: `Quit`,
 };
 async function b(e) {
+  // o3-code-patch-begin: suppress-startup-error-dialog
+  if (process.env.O3_CODE_SUPPRESS_STARTUP_ERROR_DIALOG === `1`) {
+    console.error(
+      `O3 Code failed to start: ${e instanceof Error ? e.message : String(e)}`,
+    );
+    r.app.quit();
+    return;
+  }
+  // o3-code-patch-end: suppress-startup-error-dialog
   let { sparkleManager: t } = n.D(),
     i = t.getIsUpdateReady()
       ? [`install-update`, `quit`]
@@ -135,6 +182,10 @@ var x = process.platform === `darwin`,
 (n.v(),
   n.n(x),
   r.app.setName(e.dt(S)),
+  // o3-code-patch-begin: local-app-identity
+  process.env.O3_CODE_APP_NAME?.trim() &&
+    r.app.setName(process.env.O3_CODE_APP_NAME.trim()),
+  // o3-code-patch-end: local-app-identity
   r.app.setPath(
     `userData`,
     v({
@@ -143,6 +194,15 @@ var x = process.platform === `darwin`,
       env: process.env,
     }),
   ),
+  // o3-code-patch-begin: web-access-settings
+  (() => {
+    let e = o3CodeAllocateBridgeCdpPort();
+    if (e == null) return;
+    process.env.O3_CODE_BRIDGE_CDP_PORT = e;
+    r.app.commandLine.appendSwitch(`remote-debugging-address`, `127.0.0.1`);
+    r.app.commandLine.appendSwitch(`remote-debugging-port`, e);
+  })(),
+  // o3-code-patch-end: web-access-settings
   n.C(S),
   process.platform === `win32` && r.app.setAppUserModelId(n.E(S)));
 var C = n.T({ isMacOS: x, isPackaged: r.app.isPackaged });

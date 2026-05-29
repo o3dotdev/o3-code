@@ -100,6 +100,13 @@ var c = r({
     defaultMessage: `Connections`,
     description: `Title for connections settings section`,
   },
+  // o3-code-patch-begin: web-access-settings
+  "web-access": {
+    id: `settings.nav.web-access`,
+    defaultMessage: `Web access`,
+    description: `Title for Web access settings section`,
+  },
+  // o3-code-patch-end: web-access-settings
   "plugins-settings": {
     id: `settings.nav.plugins-settings`,
     defaultMessage: `Plugins`,
@@ -472,6 +479,14 @@ function m(e) {
         e
       );
     }
+    // o3-code-patch-begin: web-access-settings
+    case `web-access`:
+      return (0, d.jsx)(n, {
+        id: `settings.section.web-access`,
+        defaultMessage: `Web access`,
+        description: `Title for Web access settings section`,
+      });
+    // o3-code-patch-end: web-access-settings
     case `plugins-settings`: {
       let e;
       return (

@@ -39,6 +39,43 @@ function w(e, t) {
   }
   b[e] = t;
 }
+// o3-code-patch-begin: web-access-settings
+var o3CodeWebAccessChannels = {
+    configChanged: `o3-code:web-access:config-changed`,
+    getConfig: `o3-code:web-access:get-config`,
+    getMobileAccessHelp: `o3-code:web-access:get-mobile-access-help`,
+    getStatus: `o3-code:web-access:get-status`,
+    openUrl: `o3-code:web-access:open-url`,
+    patchConfig: `o3-code:web-access:patch-config`,
+    resetPort: `o3-code:web-access:reset-port`,
+    retry: `o3-code:web-access:retry`,
+    statusChanged: `o3-code:web-access:status-changed`,
+  },
+  o3CodeSubscribe = (t, n) => {
+    let r = (e, t) => n(t);
+    return (
+      e.ipcRenderer.on(t, r),
+      () => {
+        e.ipcRenderer.removeListener(t, r);
+      }
+    );
+  },
+  o3CodeWebAccessBridge = {
+    getConfig: () => e.ipcRenderer.invoke(o3CodeWebAccessChannels.getConfig),
+    getMobileAccessHelp: () =>
+      e.ipcRenderer.invoke(o3CodeWebAccessChannels.getMobileAccessHelp),
+    getStatus: () => e.ipcRenderer.invoke(o3CodeWebAccessChannels.getStatus),
+    updateConfig: (t) =>
+      e.ipcRenderer.invoke(o3CodeWebAccessChannels.patchConfig, t),
+    retry: () => e.ipcRenderer.invoke(o3CodeWebAccessChannels.retry),
+    resetPort: () => e.ipcRenderer.invoke(o3CodeWebAccessChannels.resetPort),
+    openUrl: (t) => e.ipcRenderer.invoke(o3CodeWebAccessChannels.openUrl, t),
+    subscribeConfig: (e) =>
+      o3CodeSubscribe(o3CodeWebAccessChannels.configChanged, e),
+    subscribeStatus: (e) =>
+      o3CodeSubscribe(o3CodeWebAccessChannels.statusChanged, e),
+  };
+// o3-code-patch-end: web-access-settings
 var T = new Map(),
   E = new Map(),
   D = {
@@ -98,6 +135,9 @@ var T = new Map(),
     isIntelMacBuild: () =>
       process.platform === `darwin` && process.arch === `x64`,
     usesOwlAppShell: () => y,
+    // o3-code-patch-begin: web-access-settings
+    webAccess: o3CodeWebAccessBridge,
+    // o3-code-patch-end: web-access-settings
   };
 (e.ipcRenderer.on(g, (e, t) => {
   let n = t;
