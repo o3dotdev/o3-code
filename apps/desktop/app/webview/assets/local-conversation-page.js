@@ -1922,8 +1922,10 @@ function O3TerminalAgentComposer({ conversationId: e }) {
   });
 }
 function O3TerminalAgentThreadSurface({ metadata: e, conversationId: t }) {
+  let n = U(Te);
   return (0, Q.jsxs)(`div`, {
-    className: `flex h-full min-h-0 flex-col`,
+    className: `flex h-full min-h-0 flex-col transition-[padding-right] duration-200 ease-out`,
+    style: { paddingRight: n ? `348px` : 0 },
     children: [
       (0, Q.jsx)(`div`, {
         className: `min-h-0 flex-1 pt-(--thread-content-top-inset)`,
@@ -1946,7 +1948,7 @@ function O3TerminalAgentThreadSurface({ metadata: e, conversationId: t }) {
 }
 // o3-code-patch-end: agent-runtime-terminal-threads
 function cn(e) {
-  let t = (0, X.c)(48),
+  let t = (0, X.c)(50),
     { conversationId: r, startRealtime: a } = e,
     o = se(be),
     s = H(n, r),
@@ -2048,26 +2050,41 @@ function cn(e) {
       (t[26] = j))
     : (j = t[26]);
   let M;
-  t[27] !== T || t[28] !== d || t[29] !== C
+  t[27] !== T ||
+  t[28] !== d ||
+  t[29] !== C ||
+  t[48] !== O3terminalMetadata
     ? ((M = (0, Q.jsx)($, {
         displayMode: C,
+        forcePinnedSummary: O3terminalMetadata != null,
         isRightPanelOpen: d,
         onOpenBackgroundAgent: T,
       })),
       (t[27] = T),
       (t[28] = d),
       (t[29] = C),
+      (t[48] = O3terminalMetadata),
       (t[30] = M))
     : (M = t[30]);
   let N;
-  t[31] !== r || t[32] !== b || t[33] !== a || t[47] !== O3terminalMetadata
-    ? ((N = b && O3terminalMetadata == null
-        ? (0, Q.jsx)(pn, { conversationId: r, startRealtime: a }, r)
-        : null),
+  t[31] !== r ||
+  t[32] !== b ||
+  t[33] !== a ||
+  t[47] !== O3terminalMetadata ||
+  t[49] !== T
+    ? ((N =
+        O3terminalMetadata == null
+          ? b
+            ? (0, Q.jsx)(pn, { conversationId: r, startRealtime: a }, r)
+            : null
+          : (0, Q.jsx)(O3TerminalAgentPinnedSummaryPanel, {
+              onOpenBackgroundAgent: T,
+            })),
       (t[31] = r),
       (t[32] = b),
       (t[33] = a),
       (t[47] = O3terminalMetadata),
+      (t[49] = T),
       (t[34] = N))
     : (N = t[34]);
   let P;
@@ -2104,67 +2121,111 @@ function cn(e) {
   );
 }
 function $(e) {
-  let t = (0, X.c)(12),
-    { displayMode: n, isRightPanelOpen: r, onOpenBackgroundAgent: i } = e,
-    a = se(ae),
-    o = oe(),
-    s = U(Te),
-    c;
-  t[0] === o
-    ? (c = t[1])
-    : ((c = o.formatMessage({
+  let t = (0, X.c)(13),
+    {
+      displayMode: n,
+      forcePinnedSummary: r,
+      isRightPanelOpen: i,
+      onOpenBackgroundAgent: a,
+    } = e,
+    o = se(ae),
+    s = oe(),
+    c = U(Te),
+    l;
+  t[0] === s
+    ? (l = t[1])
+    : ((l = s.formatMessage({
         id: `localConversation.summaryPanel.toggle`,
         defaultMessage: `Toggle summary`,
         description: `Button label for toggling the local thread summary panel`,
       })),
-      (t[0] = o),
-      (t[1] = c));
-  let l = c,
-    u;
-  t[2] === o
-    ? (u = t[3])
-    : ((u = o.formatMessage({
+      (t[0] = s),
+      (t[1] = l));
+  let u = l,
+    d;
+  t[2] === s
+    ? (d = t[3])
+    : ((d = s.formatMessage({
         id: `localConversation.summaryPanel.togglePinned`,
         defaultMessage: `Toggle pinned summary`,
         description: `Button label for toggling whether the local thread summary panel reserves layout space`,
       })),
-      (t[2] = o),
-      (t[3] = u));
-  let d = u,
-    f;
+      (t[2] = s),
+      (t[3] = d));
+  let f = d,
+    p;
   return (
     t[4] !== n ||
-    t[5] !== s ||
-    t[6] !== r ||
-    t[7] !== i ||
-    t[8] !== a ||
-    t[9] !== d ||
-    t[10] !== l
-      ? ((f = (0, Q.jsx)(Ee.HeaderAction, {
+    t[5] !== c ||
+    t[6] !== i ||
+    t[7] !== a ||
+    t[8] !== r ||
+    t[9] !== o ||
+    t[10] !== f ||
+    t[11] !== u
+      ? ((p = (0, Q.jsx)(Ee.HeaderAction, {
           actionId: `local-thread-summary-panel-toggle`,
           align: `end`,
           order: 250,
           children:
-            n === `overlay` || r
-              ? (0, Q.jsx)(ln, { label: l, onOpenBackgroundAgent: i })
-              : (0, Q.jsx)(un, {
-                  label: d,
-                  pressed: s,
+            r
+              ? (0, Q.jsx)(un, {
+                  label: f,
+                  pressed: c,
                   onClick: () => {
-                    a.set(Te, !s);
+                    o.set(Te, !c);
+                  },
+                })
+              : n === `overlay` || i
+              ? (0, Q.jsx)(ln, { label: u, onOpenBackgroundAgent: a })
+              : (0, Q.jsx)(un, {
+                  label: f,
+                  pressed: c,
+                  onClick: () => {
+                    o.set(Te, !c);
                   },
                 }),
         })),
         (t[4] = n),
-        (t[5] = s),
-        (t[6] = r),
-        (t[7] = i),
-        (t[8] = a),
-        (t[9] = d),
-        (t[10] = l),
-        (t[11] = f))
-      : (f = t[11]),
-    f
+        (t[5] = c),
+        (t[6] = i),
+        (t[7] = a),
+        (t[8] = r),
+        (t[9] = o),
+        (t[10] = f),
+        (t[11] = u),
+        (t[12] = p))
+      : (p = t[12]),
+    p
+  );
+}
+function O3TerminalAgentPinnedSummaryPanel(e) {
+  let t = (0, X.c)(6),
+    { onOpenBackgroundAgent: n } = e,
+    r = U(Te),
+    i = M();
+  if (!r) return null;
+  let a;
+  t[0] !== i || t[1] !== n
+    ? ((a = (0, Q.jsx)(D, { ...i, onOpenBackgroundAgent: n })),
+      (t[0] = i),
+      (t[1] = n),
+      (t[2] = a))
+    : (a = t[2]);
+  let o;
+  return (
+    t[3] !== a
+      ? ((o = (0, Q.jsx)(`div`, {
+          className: `pointer-events-none absolute bottom-4 right-6 top-4 z-30 flex max-w-full justify-end`,
+          children: (0, Q.jsx)(`div`, {
+            className: `pointer-events-auto max-h-full`,
+            children: a,
+          }),
+        })),
+        (t[3] = a),
+        (t[4] = o))
+      : (o = t[4]),
+    o
   );
 }
 function ln(e) {
