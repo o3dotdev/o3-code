@@ -246,6 +246,7 @@ Implementation validation should cover:
 - Stage browser-uploaded files in a local Bridge Mode temp directory.
 - Clean staged temp files on Bridge Mode shutdown.
 - Log lifecycle, CDP attach, session replacement, message type counts, and errors without logging sensitive payloads by default.
+- Write structured Bridge Event Log records to the path passed in `O3_CODE_BRIDGE_LOG_PATH` when the launcher provides one (`~/.o3/code/logs/bridge.log` by default).
 
 ## CDP Scope
 
@@ -266,6 +267,17 @@ Do not use CDP for MVP DOM clicking, keyboard automation, screenshot streaming, 
 - Dispatch inbound app messages as normal renderer `message` events.
 - Handle browser file selection by staging files through the sidecar.
 - Return `null` for local file paths unless a file has been Bridge-staged.
+- Forward Browser Diagnostic envelopes for `window` `error` events, unhandled promise rejections, and `console.error` / `console.warn` calls so the original message and stack reach the Bridge Event Log.
+
+## Diagnostics
+
+The Bridge Sidecar writes structured JSON-line records to a Bridge Event Log file so a Mirrored Web Client session is debuggable after the fact.
+
+- `O3_CODE_BRIDGE_LOG_PATH` selects the file. The launcher sets it to `~/.o3/code/logs/bridge.log`; dev runs can set it manually.
+- `O3_CODE_BRIDGE_DEBUG=1` enables verbose entries: every Bridge Envelope direction includes a truncated payload preview (capped at 2KB per envelope).
+- Default entries record envelope direction, kind, payload type, byte size, session identity, plus `browser-connect` and `browser-disconnect` events with the browser `User-Agent` and `Host` header so an Active Web Session can be told apart from a Detached Web Session at a glance.
+- Browser Diagnostic envelopes are always logged in full (`message`, `stack`, `name`, `filename`, `lineno`, `colno`, `userAgent`, `url`) regardless of the verbose flag, and error-level diagnostics also mirror to the sidecar's stderr so they remain greppable in the desktop log.
+- `o3-code logs` tails the Bridge Event Log along with the launcher and desktop logs.
 
 ## Smoke Test
 

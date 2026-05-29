@@ -62,6 +62,21 @@ websocket joins through that child-process-only proxy. The router sets
 `codex` process environment; the generated CA is not installed into the system
 trust store, and non-realtime traffic passes through unchanged.
 
+## Debugging a Mirrored Web Client Session
+
+When the browser surface misbehaves, the Bridge Sidecar writes a structured
+JSON-line Bridge Event Log to `~/.o3/code/logs/bridge.log` for one local run.
+The launcher always sets `O3_CODE_BRIDGE_LOG_PATH` automatically; dev runs can
+point it at any writable file. The log records `sidecar-start`,
+`browser-connect` (with `User-Agent`), `browser-disconnect`,
+`envelope-in`/`envelope-out` summaries, and Browser Diagnostic entries for
+window `error` events, unhandled rejections, and `console.error` /
+`console.warn` calls forwarded from the Bridge Shim.
+
+Set `O3_CODE_BRIDGE_DEBUG=1` before launch to enrich envelope entries with
+truncated payload previews (capped at 2KB) when chasing a hard-to-pin issue.
+`o3-code logs` tails this file alongside the launcher and desktop logs.
+
 ## Useful Commands
 
 ```sh

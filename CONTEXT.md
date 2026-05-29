@@ -100,6 +100,14 @@ _Avoid_: browser access, Browser settings, start-web
 The repo-owned Node process managed by Bridge Mode that serves the Mirrored Web Client, owns WebSocket routing, and privately connects to the Electron control port.
 _Avoid_: Electron main patch, embedded bridge server, frontend server
 
+**Bridge Event Log**:
+The append-only JSON-line log file the Bridge Sidecar writes for one local O3 Code run so that a Mirrored Web Client session's lifecycle, envelopes, and browser-side errors stay debuggable after the fact without depending on a live console.
+_Avoid_: app-server log, raw payload archive, telemetry pipeline
+
+**Browser Diagnostic**:
+A Bridge Envelope kind that carries a Mirrored Web Client uncaught error, unhandled rejection, or browser console error to the Bridge Sidecar so the original message and stack reach the Bridge Event Log instead of being lost to Codex App ErrorBoundary serialization.
+_Avoid_: telemetry event, analytics payload, generic browser log
+
 **Patch**:
 A deliberate local change applied to O3 Code after the upstream source material has been preserved.
 _Avoid_: tweak, hack, modification
@@ -365,3 +373,11 @@ Domain expert: "No. The Realtime WebSocket Proxy only covers direct websocket se
 Dev: "Should the Realtime MITM CA be installed into the system trust store?"
 
 Domain expert: "No. Generate trust material for the Realtime MITM Proxy and expose it only to the delegated External Codex CLI process."
+
+Dev: "Should the Bridge Sidecar log Bridge Envelope payload contents to the Bridge Event Log by default?"
+
+Domain expert: "No. Default Bridge Event Log entries record envelope direction, kind, payload type, byte size, and session identity only. Reserve truncated payload contents for an explicit verbose flag so user prompts and file contents are not written to disk by accident."
+
+Dev: "Should Mirrored Web Client errors rely on the Codex App ErrorBoundary report for debugging?"
+
+Domain expert: "No. Send a Browser Diagnostic over the Bridge Envelope channel so the original error message, stack, user agent, and URL reach the Bridge Event Log even when the Codex App ErrorBoundary report strips the underlying message."
