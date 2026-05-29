@@ -15,6 +15,7 @@ Patch SOPs are authoritative for bundled Electron source changes. A Source Refre
 | [0006 web access settings](./0006-web-access-settings/)                         | Adds desktop-owned localhost Web access settings and Bridge Mode lifecycle control.                           |
 | [0007 disable app updates](./0007-disable-app-updates/)                         | Disables upstream Codex App update checks and install prompts during O3 Code repo-local runs.                 |
 | [0008 realtime missing key message](./0008-realtime-missing-key-message/)       | Shows a clear realtime setup toast when the O3 Code realtime API key is missing.                              |
+| [0009 suppress startup error dialog](./0009-suppress-startup-error-dialog/)     | Quits cleanly instead of showing the native startup-error dialog when the Package Launcher manages the run.   |
 
 ## SOP Shape
 

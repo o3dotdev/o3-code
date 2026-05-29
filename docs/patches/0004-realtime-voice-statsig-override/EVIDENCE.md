@@ -3,16 +3,16 @@
 ## Current Release
 
 - Source app: `/Applications/Codex.app`
-- Codex App version: `26.519.81530`
-- Build: `3178`
-- `app.asar` SHA-256: `bf4c3f09b2cbab0714e23f0e9f7f9ce89146b5d47f4462ca77fc2c41394fceaa`
+- Codex App version: `26.527.30818`
+- Build: `3370`
+- `app.asar` SHA-256: `99ed8cd195ac4b651c76632469ef5c2d1f32f234c81ec33fd5fc08be7c2b4b13`
 
 ## Known Sites
 
-- `apps/desktop/app/webview/assets/statsig.js`
-- `apps/desktop/app/webview/assets/use-is-thread-realtime-enabled.js`
-- `apps/desktop/app/webview/assets/debug-modal-B8xDbX-9.js`
-- `apps/desktop/app/webview/assets/app-server-manager-signals.js`
+- `apps/desktop/app/webview/assets/statsig--EYRNU53.js`
+- `apps/desktop/app/webview/assets/use-is-thread-realtime-enabled-DgNYbuij.js`
+- `apps/desktop/app/webview/assets/debug-modal-T4gHjvtL.js`
+- `apps/desktop/app/webview/assets/app-server-manager-signals-DkRDRgNB.js`
 
 ## Known Gate
 
@@ -26,7 +26,14 @@
 
 ## Validation Notes
 
-- `use-is-thread-realtime-enabled.js` still gates positive realtime availability with `2380644311` and keeps `REALTIME_VOICE_MODE_DEBUG_DISABLED` upstream-driven.
-- `debug-modal-B8xDbX-9.js` still reports `Statsig gate` and `Effective voice mode` from the same gate plus the debug disabled override.
-- `node --check apps/desktop/app/webview/assets/statsig.js` passed.
-- `pnpm start` logged `realtime_conversation` in enabled features after app-server initialization.
+- `use-is-thread-realtime-enabled-DgNYbuij.js` still gates positive realtime
+  availability with `2380644311` and keeps `REALTIME_VOICE_MODE_DEBUG_DISABLED`
+  upstream-driven: the hook returns `t("2380644311") && data !== true`, so the
+  forced gate enables availability without bypassing the debug kill switch.
+- `debug-modal-T4gHjvtL.js` still reports the realtime gate and effective voice
+  mode from `2380644311` plus the debug disabled override.
+- `app-server-manager-signals-DkRDRgNB.js` still reads `2380644311` for the
+  realtime conversation feature flag.
+- `node --check apps/desktop/app/webview/assets/statsig--EYRNU53.js` passed.
+- `pnpm start` is expected to log `realtime_conversation` in enabled features
+  after app-server initialization.
