@@ -54,8 +54,10 @@
 
 - Added a static Agent Runtime registry for `Codex App`, `Claude Code`, and
   `Codex CLI`, plus in-window metadata persistence keyed by `conversationId`.
-- Added an OG-style `Agent` selector before the composer intelligence selector.
-  The normal Codex App model/reasoning picker stays unchanged for `Codex App`.
+- Merged Agent Runtime selection into the OG composer intelligence selector:
+  the dropdown starts with an `Agent` section, followed by reasoning/model
+  controls. The separate footer `Agent` pill was removed.
+- The normal Codex App model/reasoning trigger stays unchanged for `Codex App`.
   Terminal runtimes use a matching intelligence menu for launch-time model and
   reasoning selection instead of native browser selects.
 - Terminal runtime first submit creates an empty local conversation, stores
@@ -122,9 +124,10 @@
   strip, the terminal panel reserved space above it, and xterm span colors
   included Claude/ANSI color values rather than only the default foreground.
 - `pnpm start` Agent selector parity smoke passed: CDP inspection found zero
-  native `<select>` elements, the new-chat footer rendered `Agent` before the
-  intelligence selector, `Claude Code` rendered `Opus` + `Max`, and terminal
-  runtime selection hid dictation/realtime controls before launch.
+  native `<select>` elements, the new-chat footer used one merged intelligence
+  selector, its dropdown rendered `Agent` above reasoning/model options,
+  `Claude Code` rendered `Opus` + `Max`, and terminal runtime selection hid
+  dictation/realtime controls before launch.
 
 ## Unresolved Risk
 

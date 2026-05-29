@@ -9795,6 +9795,42 @@ function O3UseAgentRuntimeState() {
 function O3ReasoningEffortLabel({ effort: e }) {
   return e === `max` ? `Max` : (0, Q.jsx)(qi, { effort: e });
 }
+function O3AgentRuntimeMenuSection({
+  conversationId: e,
+  hostId: t,
+  selectedRuntimeId: n,
+  onSelectComplete: r,
+}) {
+  let i = O3UseAgentRuntimeState(),
+    a = O3GetTerminalAgentMetadata(e),
+    o = a?.agentRuntimeId ?? n ?? (e == null ? i.selectedAgentRuntimeId : `codex-app`),
+    s = e != null || t !== me,
+    c = t !== me;
+  return (0, Q.jsxs)(Q.Fragment, {
+    children: [
+      (0, Q.jsx)(Fa.Title, { children: `Agent` }),
+      (0, Q.jsx)(`div`, {
+        className: `flex flex-col`,
+        children: Object.values(O3AgentRuntimeRegistry).map((e) =>
+          (0, Q.jsx)(
+            Fa.Item,
+            {
+              disabled: s || (c && e.kind === `terminal`),
+              RightIcon: e.id === o ? oa : void 0,
+              onSelect: () => {
+                if (s || (c && e.kind === `terminal`)) return;
+                (O3SetSelectedAgentRuntimeId(e.id), r?.());
+              },
+              children: e.label,
+            },
+            e.id,
+          ),
+        ),
+      }),
+      (0, Q.jsx)(Fa.Separator, {}),
+    ],
+  });
+}
 function O3AgentRuntimeControls({
   composerMode: e,
   conversationId: t,
@@ -9864,40 +9900,44 @@ function O3AgentRuntimeControls({
     ],
   });
 }
-function O3TerminalRuntimeIntelligenceControl({ conversationId: e, hideLabel: t }) {
+function O3TerminalRuntimeIntelligenceControl({
+  conversationId: e,
+  hideLabel: t,
+  hostId: n,
+}) {
   O3UseAgentRuntimeState();
-  let n = O3GetTerminalAgentMetadata(e),
-    r = n?.agentRuntimeId ?? O3GetSelectedAgentRuntimeForNewThread().id,
-    i = O3GetAgentRuntime(r);
-  if (i.kind !== `terminal`) return null;
-  let a = n != null,
-    o = n?.model ?? O3GetSelectedAgentRuntimeModel(r),
-    s = n?.reasoningEffort ?? O3GetSelectedAgentRuntimeReasoningEffort(r),
-    c = i.models.find((e) => e.value === o)?.label ?? o,
-    [l, u] = (0, Z.useState)(!1),
-    d = a
+  let r = O3GetTerminalAgentMetadata(e),
+    i = r?.agentRuntimeId ?? O3GetSelectedAgentRuntimeForNewThread().id,
+    a = O3GetAgentRuntime(i);
+  if (a.kind !== `terminal`) return null;
+  let o = r != null,
+    s = r?.model ?? O3GetSelectedAgentRuntimeModel(i),
+    c = r?.reasoningEffort ?? O3GetSelectedAgentRuntimeReasoningEffort(i),
+    l = a.models.find((e) => e.value === s)?.label ?? s,
+    [u, d] = (0, Z.useState)(!1),
+    f = o
       ? `Agent, model, reasoning, and permissions are locked for this thread. Change them inside the CLI TUI.`
       : `Select model`,
-    f = (e) => {
-      a ? u(!1) : u(e);
-    },
     p = (e) => {
-      (O3SetSelectedAgentRuntimeReasoningEffort(r, e), u(!1));
+      o ? d(!1) : d(e);
     },
     m = (e) => {
-      (O3SetSelectedAgentRuntimeModel(r, e), u(!1));
+      (O3SetSelectedAgentRuntimeReasoningEffort(i, e), d(!1));
     },
-    h = (0, Q.jsx)(Ga, {
+    h = (e) => {
+      (O3SetSelectedAgentRuntimeModel(i, e), d(!1));
+    },
+    g = (0, Q.jsx)(Ga, {
       className: `icon-2xs text-token-input-placeholder-foreground`,
     }),
-    g = (0, Q.jsx)(Dn, {
-      tooltipContent: d,
+    _ = (0, Q.jsx)(Dn, {
+      tooltipContent: f,
       children: (0, Q.jsxs)(pr, {
         size: `composer`,
         color: `ghost`,
         className: `min-w-0`,
         "data-codex-intelligence-trigger": !0,
-        "data-selected-reasoning-effort": s,
+        "data-selected-reasoning-effort": c,
         children: [
           t
             ? null
@@ -9905,36 +9945,46 @@ function O3TerminalRuntimeIntelligenceControl({ conversationId: e, hideLabel: t 
                 className: `flex max-w-40 min-w-0 items-center gap-1.5`,
                 children: [
                   (0, Q.jsx)(`span`, {
+                    className: `truncate whitespace-nowrap text-token-description-foreground`,
+                    children: a.label,
+                  }),
+                  (0, Q.jsx)(`span`, {
                     className: `truncate whitespace-nowrap text-token-foreground`,
-                    children: c,
+                    children: l,
                   }),
                   (0, Q.jsx)(`span`, {
                     className: `composer-footer__label--sm shrink-0 text-token-description-foreground`,
-                    children: (0, Q.jsx)(O3ReasoningEffortLabel, { effort: s }),
+                    children: (0, Q.jsx)(O3ReasoningEffortLabel, { effort: c }),
                   }),
                 ],
               }),
-          h,
+          g,
         ],
       }),
     });
   return (0, Q.jsxs)(Ia, {
     side: `top`,
-    open: l,
-    onOpenChange: f,
+    open: u,
+    onOpenChange: p,
     contentWidth: `menuNarrow`,
-    triggerButton: g,
+    triggerButton: _,
     children: [
+      (0, Q.jsx)(O3AgentRuntimeMenuSection, {
+        conversationId: e,
+        hostId: n,
+        selectedRuntimeId: i,
+        onSelectComplete: () => d(!1),
+      }),
       (0, Q.jsx)(Fa.Title, { children: `Reasoning` }),
       (0, Q.jsx)(`div`, {
         className: `flex max-h-[250px] flex-col overflow-y-auto`,
-        children: (i.reasoningEfforts ?? []).map((e) =>
+        children: (a.reasoningEfforts ?? []).map((e) =>
           (0, Q.jsx)(
             Fa.Item,
             {
-              "data-reasoning-selected": e === s ? `true` : void 0,
-              RightIcon: e === s ? oa : void 0,
-              onSelect: () => p(e),
+              "data-reasoning-selected": e === c ? `true` : void 0,
+              RightIcon: e === c ? oa : void 0,
+              onSelect: () => m(e),
               children: (0, Q.jsx)(O3ReasoningEffortLabel, { effort: e }),
             },
             e,
@@ -9947,7 +9997,7 @@ function O3TerminalRuntimeIntelligenceControl({ conversationId: e, hideLabel: t 
           className: `flex min-w-0 items-center gap-1 tabular-nums`,
           children: (0, Q.jsx)(`span`, {
             className: `truncate whitespace-nowrap`,
-            children: c,
+            children: l,
           }),
         }),
         contentClassName: `min-w-[200px]`,
@@ -9955,13 +10005,13 @@ function O3TerminalRuntimeIntelligenceControl({ conversationId: e, hideLabel: t 
           (0, Q.jsx)(Fa.Title, { children: `Model` }),
           (0, Q.jsx)(`div`, {
             className: `vertical-scroll-fade-mask flex max-h-[250px] flex-col overflow-y-auto`,
-            children: i.models.map((e) =>
+            children: a.models.map((e) =>
               (0, Q.jsx)(
                 Fa.Item,
                 {
-                  "data-model-selected": e.value === o ? `true` : void 0,
-                  RightIcon: e.value === o ? oa : void 0,
-                  onSelect: () => m(e.value),
+                  "data-model-selected": e.value === s ? `true` : void 0,
+                  RightIcon: e.value === s ? oa : void 0,
+                  onSelect: () => h(e.value),
                   children: e.label,
                 },
                 e.value,
@@ -10268,6 +10318,12 @@ function cm(e) {
         }),
       }),
       children: [
+        (0, Q.jsx)(O3AgentRuntimeMenuSection, {
+          conversationId: n,
+          hostId: a.hostId,
+          selectedRuntimeId: `codex-app`,
+          onSelectComplete: R,
+        }),
         ue,
         (0, Q.jsxs)(Q.Fragment, {
           children: [
@@ -13216,6 +13272,7 @@ function Um(e) {
               ? (0, Q.jsx)(O3TerminalRuntimeIntelligenceControl, {
                   conversationId: i,
                   hideLabel: A,
+                  hostId: a,
                 })
               : (0, Q.jsx)(cm, { conversationId: i, hideLabel: A }),
           })
@@ -13243,32 +13300,18 @@ function Um(e) {
       (t[30] = N),
       (t[31] = I))
     : (I = t[31]);
-  let O3agentControls;
-  t[43] !== n || t[44] !== i || t[45] !== a || t[46] !== o
-    ? ((O3agentControls = (0, Q.jsx)(O3AgentRuntimeControls, {
-        composerMode: n,
-        conversationId: i,
-        executionTargetHostId: a,
-      })),
-      (t[43] = n),
-      (t[44] = i),
-      (t[45] = a),
-      (t[46] = o),
-      (t[47] = O3agentControls))
-    : (O3agentControls = t[47]);
   let ee;
   return (
-    t[32] !== r || t[33] !== P || t[34] !== F || t[35] !== I || t[36] !== O3agentControls
+    t[32] !== r || t[33] !== P || t[34] !== F || t[35] !== I
       ? ((ee = (0, Q.jsxs)(`div`, {
           className: `flex min-w-0 items-center gap-1`,
           ref: g,
-          children: [P, O3agentControls, F, r, I],
+          children: [P, F, r, I],
         })),
         (t[32] = r),
         (t[33] = P),
         (t[34] = F),
         (t[35] = I),
-        (t[36] = O3agentControls),
         (t[48] = ee))
       : (ee = t[48]),
     ee
