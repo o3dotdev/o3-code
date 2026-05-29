@@ -27,6 +27,8 @@ After Normalization, most Vite chunk and asset names should be stable canonical 
 
 Launcher scripts should derive the default `CODEX_BUILD_NUMBER` from package metadata. Source Refresh should not leave `scripts/start.mjs` pinned to an older literal build number.
 
+Pin the repo `electron` dependency to the installed app's native-module ABI, not to the `electron` devDependency in the extracted app `package.json`. O3 Code runs its own Electron host but loads the installed Codex App's native modules, so the host Electron major must match the `NODE_MODULE_VERSION` of the app's `better-sqlite3.node` (and `pnpm-workspace.yaml` must allow Electron's build script so the binary installs). The app's framework Electron version and its native-module ABI can diverge across releases; verify with `pnpm start` reaching renderer mount with the SQLite database accessible, not just static checks.
+
 ## Commit Shape
 
 Prefer separate commits when the diff is large enough to benefit from review separation:

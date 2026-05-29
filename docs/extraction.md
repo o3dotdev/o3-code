@@ -10,8 +10,19 @@ Copied material:
 Codex-owned runtime resources such as plugins, sounds, notices, asset catalogs,
 locale folders, helper apps, frameworks, code signatures, native add-ons,
 helper executables, and plugin prebuilds are not copied. Electron is provided by
-pnpm using the same version declared by the extracted app package. Codex App
-runtime material is resolved from the installed Codex App at launch.
+pnpm. Codex App runtime material is resolved from the installed Codex App at
+launch.
+
+Electron host version: because O3 Code runs its own Electron but loads the
+installed Codex App's native modules (`better-sqlite3`, `node-pty`, `objc-js`)
+through `scripts/start.mjs`, the repo's `electron` dependency must match the
+installed app's native-module ABI (`NODE_MODULE_VERSION`), not the `electron`
+devDependency declared in the extracted app `package.json`. These can diverge:
+in `26.527.30818` the app framework is Electron 42 (Chromium 148) but its native
+modules are built for `NODE_MODULE_VERSION 143` (Electron 40), so the repo pins
+`electron` to `40.x`. Determine the target each refresh from the app's
+`app.asar.unpacked/node_modules/better-sqlite3/build/Release/better_sqlite3.node`
+(its `NODE_MODULE_VERSION`) and pick the matching Electron major.
 
 Normalization:
 
