@@ -179,6 +179,45 @@ function ensureExternalNativePayloadLinks() {
   }
 }
 
+function ensureExternalNativeModuleLinks() {
+  // Whole-module native packages (large, self-contained, loaded lazily through
+  // createRequire) are resolved from the installed Codex App instead of being
+  // checked in. Link the module directory so resolution and native payloads
+  // both come from the Native Resource Provider.
+  for (const relativeModule of [path.join("@worklouder", "device-kit-oai")]) {
+    const targetPath = path.join(
+      codexAppResources.nativeNodeModulesPath,
+      relativeModule,
+    );
+    const linkPath = path.join(appPath, "node_modules", relativeModule);
+
+    if (!existsSync(targetPath)) {
+      console.error(
+        `Missing native module in Codex.app resources: ${targetPath}`,
+      );
+      process.exit(1);
+    }
+
+    const linkStat = getOptionalLinkStat(linkPath);
+    if (linkStat) {
+      if (linkStat.isSymbolicLink()) {
+        rmSync(linkPath, { force: true });
+      } else {
+        console.error(
+          `Refusing to replace non-symlink native module path: ${linkPath}`,
+        );
+        console.error(
+          "Remove the checked-in native module so the launcher can link to Codex.app resources.",
+        );
+        process.exit(1);
+      }
+    }
+
+    mkdirSync(path.dirname(linkPath), { recursive: true });
+    symlinkSync(targetPath, linkPath);
+  }
+}
+
 function getOptionalLinkStat(candidate) {
   try {
     return lstatSync(candidate);
@@ -219,6 +258,7 @@ if (!existsSync(electronBin)) {
 }
 
 ensureExternalNativePayloadLinks();
+ensureExternalNativeModuleLinks();
 
 const defaultUserDataPath =
   process.env.O3_CODE_USE_CODEX_USER_DATA === "1"

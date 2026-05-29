@@ -24,6 +24,7 @@ packages/code/runtime/
 !apps/desktop/resources/app.asar.unpacked/node_modules/**
 
 # Native runtime payloads are resolved from the installed Codex.app at launch.
+apps/desktop/app/node_modules/@worklouder/
 apps/desktop/app/node_modules/better-sqlite3/build/Release/better_sqlite3.node
 apps/desktop/app/node_modules/node-pty/build/Release/pty.node
 apps/desktop/app/node_modules/node-pty/build/Release/spawn-helper
