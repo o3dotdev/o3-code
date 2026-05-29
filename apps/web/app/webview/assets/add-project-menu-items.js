@@ -1,8 +1,8 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { H as r, xt as i } from "./setting-storage.js";
-import { r as a, t as o } from "./dropdown.js";
-import { t as s } from "./folder.js";
+import { U as r, wt as i } from "./setting-storage.js";
+import { t as a } from "./folder.js";
+import { r as o, t as s } from "./dropdown-DtQxMoJw.js";
 import { t as c } from "./plus.js";
 var l = e(t()),
   u = n(),
@@ -21,78 +21,92 @@ var l = e(t()),
     }),
   f = i();
 function p(e) {
-  let t = (0, f.c)(13),
+  let t = (0, f.c)(12),
     {
       children: n,
-      onOpenChange: i,
-      onStartFromScratch: d,
-      onUseExistingFolder: p,
-      open: m,
-      triggerButton: h,
+      localProjectSourcesEnabled: i,
+      onOpenChange: d,
+      onStartFromScratch: p,
+      onUseExistingFolder: m,
+      open: h,
+      triggerButton: g,
     } = e,
-    g = (0, l.useRef)(!1),
-    _;
-  t[0] === d
-    ? (_ = t[1])
-    : ((_ = (e) => {
-        g.current && ((g.current = !1), e.preventDefault(), d());
+    _ = i === void 0 ? !1 : i,
+    v = (0, l.useRef)(!1),
+    y;
+  t[0] === p
+    ? (y = t[1])
+    : ((y = (e) => {
+        v.current && ((v.current = !1), e.preventDefault(), p());
       }),
-      (t[0] = d),
-      (t[1] = _));
-  let v;
-  t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, u.jsx)(a.Item, {
-        LeftIcon: c,
-        onSelect: () => {
-          g.current = !0;
-        },
-        children: (0, u.jsx)(r, {
-          id: `projectSetup.addProjectMenu.startFromScratch`,
-          defaultMessage: `Start from scratch`,
-          description: `Menu item that creates a new local project folder`,
-        }),
-      })),
-      (t[2] = v))
-    : (v = t[2]);
-  let y;
-  t[3] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((y = (0, u.jsx)(r, {
-        id: `projectSetup.addProjectMenu.useExistingFolder`,
-        defaultMessage: `Use an existing folder`,
-        description: `Menu item that opens the existing folder picker`,
-      })),
-      (t[3] = y))
-    : (y = t[3]);
+      (t[0] = p),
+      (t[1] = y));
   let b;
-  t[4] === p
-    ? (b = t[5])
-    : ((b = (0, u.jsx)(a.Item, { LeftIcon: s, onSelect: p, children: y })),
-      (t[4] = p),
-      (t[5] = b));
+  t[2] !== _ || t[3] !== m
+    ? ((b = _
+        ? (0, u.jsx)(o.Item, {
+            LeftIcon: a,
+            onSelect: () => {
+              v.current = !0;
+            },
+            children: (0, u.jsx)(r, {
+              id: `projectSetup.addProjectMenu.localProject`,
+              defaultMessage: `Local project`,
+              description: `Menu item that opens the local project creation flow`,
+            }),
+          })
+        : (0, u.jsxs)(u.Fragment, {
+            children: [
+              (0, u.jsx)(o.Item, {
+                LeftIcon: c,
+                onSelect: () => {
+                  v.current = !0;
+                },
+                children: (0, u.jsx)(r, {
+                  id: `projectSetup.addProjectMenu.startFromScratch`,
+                  defaultMessage: `Start from scratch`,
+                  description: `Menu item that creates a new local project folder`,
+                }),
+              }),
+              (0, u.jsx)(o.Item, {
+                LeftIcon: a,
+                onSelect: m,
+                children: (0, u.jsx)(r, {
+                  id: `projectSetup.addProjectMenu.useExistingFolder`,
+                  defaultMessage: `Use an existing folder`,
+                  description: `Menu item that opens the existing folder picker`,
+                }),
+              }),
+            ],
+          })),
+      (t[2] = _),
+      (t[3] = m),
+      (t[4] = b))
+    : (b = t[4]);
   let x;
   return (
-    t[6] !== n ||
-    t[7] !== i ||
-    t[8] !== m ||
-    t[9] !== _ ||
-    t[10] !== b ||
-    t[11] !== h
-      ? ((x = (0, u.jsxs)(o, {
-          triggerButton: h,
+    t[5] !== n ||
+    t[6] !== d ||
+    t[7] !== h ||
+    t[8] !== y ||
+    t[9] !== b ||
+    t[10] !== g
+      ? ((x = (0, u.jsxs)(s, {
+          triggerButton: g,
           contentWidth: `menu`,
-          onOpenChange: i,
-          onCloseAutoFocus: _,
-          open: m,
-          children: [v, b, n],
+          onOpenChange: d,
+          onCloseAutoFocus: y,
+          open: h,
+          children: [b, n],
         })),
-        (t[6] = n),
-        (t[7] = i),
-        (t[8] = m),
-        (t[9] = _),
-        (t[10] = b),
-        (t[11] = h),
-        (t[12] = x))
-      : (x = t[12]),
+        (t[5] = n),
+        (t[6] = d),
+        (t[7] = h),
+        (t[8] = y),
+        (t[9] = b),
+        (t[10] = g),
+        (t[11] = x))
+      : (x = t[11]),
     x
   );
 }

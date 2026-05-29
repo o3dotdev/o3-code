@@ -1,45 +1,44 @@
-import { St as e, Tt as t, wt as n, xt as r, yt as i } from "./src-BLHmAhbF.js";
+import { Bt as e, Ft as t, It as n, Nt as r, zt as i } from "./src-C.js";
 import {
-  Yo as a,
-  g as o,
-  is as s,
-  mt as c,
-  wa as l,
-} from "./app-server-manager-signals.js";
+  $s as a,
+  Ws as o,
+  fo as s,
+  g as c,
+  ht as l,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import {
-  J as u,
-  Q as d,
-  S as f,
-  X as p,
-  Z as m,
-  _t as h,
-  xt as g,
+  $ as u,
+  S as d,
+  Y as f,
+  Z as p,
+  bt as m,
+  wt as h,
 } from "./setting-storage.js";
-import { o as _ } from "./statsig.js";
-import { t as v } from "./thread-context-inputs.js";
-import { c as y, v as b } from "./config-queries.js";
-import { s as x } from "./thread-detail-level.js";
-import { i as S, n as C, r as w } from "./permissions-mode-defaults.js";
-var T = g(),
-  E = { isSet: !1, value: null },
-  D = h(null),
-  O = h(!1),
-  k = h(E),
-  A = a((e) => h(null)),
-  j = a((e) => h(!1)),
-  M = a((e) => h(E)),
-  N = d(f, (e) => m(f, ({ get: t }) => t(t(c, e))?.at(-1)?.params ?? null));
-function P(t, { requirements: n, resolvedConfig: i }) {
-  switch (t) {
+import { o as g } from "./statsig--EYRNU53.js";
+import { t as _ } from "./thread-context-inputs-DBrOekVr.js";
+import { c as v, v as y } from "./config-queries-BBeTQbuo.js";
+import { i as b } from "./thread-detail-level.js";
+import { i as x, n as S, r as C } from "./permissions-mode-defaults.js";
+var w = h(),
+  T = { isSet: !1, value: null },
+  E = m(null),
+  D = m(!1),
+  O = m(T),
+  k = o((e) => m(null)),
+  A = o((e) => m(!1)),
+  j = o((e) => m(T)),
+  M = u(d, (e, { get: t }) => t(l, e)?.at(-1)?.params ?? null);
+function N(e, { requirements: r, resolvedConfig: i }) {
+  switch (e) {
     case `STEPS_PROSE`:
-      return e(`granular`, n) && r(i ?? void 0, `granular`) === `granular`
+      return n(`granular`, r) && t(i ?? void 0, `granular`) === `granular`
         ? `granular`
         : `auto`;
     case `STEPS_COMMANDS`:
       return `auto`;
   }
 }
-function F(e) {
+function P(e) {
   if (e == null) return !0;
   let t =
       e.allowedSandboxModes == null ||
@@ -53,34 +52,34 @@ function F(e) {
       e.allowedApprovalsReviewers.includes(`auto_review`);
   return t && n && r;
 }
-function ee(e, n) {
-  let r = P(e, n);
-  if (F(n.requirements)) return r;
-  let i = t(n.requirements);
+function F(t, n) {
+  let r = N(t, n);
+  if (P(n.requirements)) return r;
+  let i = e(n.requirements);
   return (
     i.find((e) => e !== `full-access`) ??
     (i.includes(`full-access`) ? `full-access` : r)
   );
 }
-function te(e, t, n) {
+function ee(e, t, n) {
   let r = t[e];
   return r === `auto` || r === `granular` ? n : (r ?? n);
 }
-function I(e) {
+function te(e) {
   let { conversationId: t, stateScope: n } = e,
     r = n === void 0 ? `composer` : n;
-  return !R() || r === `global-default` ? `global-default` : (t ?? `draft`);
+  return !L() || r === `global-default` ? `global-default` : (t ?? `draft`);
 }
-function L(e) {
-  let t = (0, T.c)(8),
-    n = u(N, e),
-    r = n?.approvalPolicy ?? void 0,
+function I(e) {
+  let t = (0, w.c)(8),
+    n = f(M, e),
+    i = n?.approvalPolicy ?? void 0,
     a = n?.approvalsReviewer ?? void 0,
     o = n?.sandboxPolicy ?? void 0,
     s;
-  t[0] !== r || t[1] !== a || t[2] !== o
-    ? ((s = i({ approvalPolicy: r, approvalsReviewer: a, sandboxPolicy: o })),
-      (t[0] = r),
+  t[0] !== i || t[1] !== a || t[2] !== o
+    ? ((s = r({ approvalPolicy: i, approvalsReviewer: a, sandboxPolicy: o })),
+      (t[0] = i),
       (t[1] = a),
       (t[2] = o),
       (t[3] = s))
@@ -88,290 +87,296 @@ function L(e) {
   let c = s,
     l = null;
   c != null && c !== `full-access` && c !== `custom` && (l = c);
-  let d = c != null,
-    f;
+  let u = c != null,
+    d;
   return (
-    t[4] !== c || t[5] !== l || t[6] !== d
-      ? ((f = {
-          hasLatestTurnSelection: d,
+    t[4] !== c || t[5] !== l || t[6] !== u
+      ? ((d = {
+          hasLatestTurnSelection: u,
           latestTurnMode: c,
           latestTurnPreferredNonFullAccessMode: l,
         }),
         (t[4] = c),
         (t[5] = l),
-        (t[6] = d),
-        (t[7] = f))
-      : (f = t[7]),
-    f
+        (t[6] = u),
+        (t[7] = d))
+      : (d = t[7]),
+    d
   );
 }
+function L() {
+  return g(`3736891373`);
+}
 function R() {
-  return _(`3736891373`);
+  return g(`2846336681`);
 }
-function z() {
-  return _(`2846336681`);
-}
-function ne(t) {
-  let r = (0, T.c)(16),
-    { conversationId: i, hostId: a, cwdOverride: s } = t,
-    c = u(o, i),
-    { data: d } = p(v),
-    f = s !== void 0,
-    m = f ? (s ?? null) : (c ?? d?.roots?.[0] ?? null),
-    h = f && m == null,
-    [g] = l(`statsig_default_enable_features`),
-    _ = f ? `preserve-null` : `fallback-to-workspace`,
+function ne(e) {
+  let t = (0, w.c)(16),
+    { conversationId: r, hostId: a, cwdOverride: o } = e,
+    l = f(c, r),
+    { data: u } = p(_),
+    d = o !== void 0,
+    m = d ? (o ?? null) : (l ?? u?.roots?.[0] ?? null),
+    h = d && m == null,
+    [g] = s(`statsig_default_enable_features`),
+    b = d ? `preserve-null` : `fallback-to-workspace`,
     x = !h,
     S;
-  r[0] !== a || r[1] !== _ || r[2] !== x
-    ? ((S = { hostId: a, cwdMode: _, enabled: x }),
-      (r[0] = a),
-      (r[1] = _),
-      (r[2] = x),
-      (r[3] = S))
-    : (S = r[3]);
-  let { data: C, isPending: w } = b(m, S),
-    { data: E, isPending: D } = u(y, a),
+  t[0] !== a || t[1] !== b || t[2] !== x
+    ? ((S = { hostId: a, cwdMode: b, enabled: x }),
+      (t[0] = a),
+      (t[1] = b),
+      (t[2] = x),
+      (t[3] = S))
+    : (S = t[3]);
+  let { data: C, isPending: T } = y(m, S),
+    { data: E, isPending: D } = f(v, a),
     O = E?.requirements ?? null,
     k = C?.config ?? null,
     A;
-  r[4] !== D || r[5] !== O
-    ? ((A = D || e(`auto`, O) || e(`guardian-approvals`, O)),
-      (r[4] = D),
-      (r[5] = O),
-      (r[6] = A))
-    : (A = r[6]);
+  t[4] !== D || t[5] !== O
+    ? ((A = D || n(`auto`, O) || n(`guardian-approvals`, O)),
+      (t[4] = D),
+      (t[5] = O),
+      (t[6] = A))
+    : (A = t[6]);
   let j = A,
     M;
-  r[7] !== g || r[8] !== j || r[9] !== k
-    ? ((M = j && n(k ?? void 0) !== !1 && g === void 0),
-      (r[7] = g),
-      (r[8] = j),
-      (r[9] = k),
-      (r[10] = M))
-    : (M = r[10]);
-  let N = h || D || w || M,
+  t[7] !== g || t[8] !== j || t[9] !== k
+    ? ((M = j && i(k ?? void 0) !== !1 && g === void 0),
+      (t[7] = g),
+      (t[8] = j),
+      (t[9] = k),
+      (t[10] = M))
+    : (M = t[10]);
+  let N = h || D || T || M,
     P = g?.guardian_approval === !0,
     F;
   return (
-    r[11] !== O || r[12] !== k || r[13] !== N || r[14] !== P
+    t[11] !== O || t[12] !== k || t[13] !== N || t[14] !== P
       ? ((F = {
           isConfigDataPending: N,
           isGuardianApprovalEnabledByStatsig: P,
           requirements: O,
           resolvedConfig: k,
         }),
-        (r[11] = O),
-        (r[12] = k),
-        (r[13] = N),
-        (r[14] = P),
-        (r[15] = F))
-      : (F = r[15]),
+        (t[11] = O),
+        (t[12] = k),
+        (t[13] = N),
+        (t[14] = P),
+        (t[15] = F))
+      : (F = t[15]),
     F
   );
 }
-function B(e) {
-  let t = (0, T.c)(49),
-    { conversationId: n, cwdOverride: r, hostId: i, stateScope: a } = e,
-    c = a === void 0 ? `composer` : a,
-    l = u(o, n),
-    { data: d } = p(v),
-    f = r !== void 0,
-    m = f ? (r ?? null) : (l ?? d?.roots?.[0] ?? null),
-    h = f && m == null,
-    g;
-  t[0] === n
-    ? (g = t[1])
-    : ((g = { conversationId: n }), (t[0] = n), (t[1] = g));
-  let _ = x(g),
-    y;
-  t[2] !== n || t[3] !== r || t[4] !== i
-    ? ((y = { conversationId: n, cwdOverride: r, hostId: i }),
-      (t[2] = n),
-      (t[3] = r),
-      (t[4] = i),
-      (t[5] = y))
-    : (y = t[5]);
-  let b = ne(y),
-    S = ee(_, b),
-    w;
-  t[6] !== n || t[7] !== c
-    ? ((w = { conversationId: n, stateScope: c }),
-      (t[6] = n),
-      (t[7] = c),
-      (t[8] = w))
-    : (w = t[8]);
-  let E = I(w),
-    [k, M] = s(C),
-    [N, P] = s(D),
-    [F, R] = s(O),
-    z;
+function z(e) {
+  let t = (0, w.c)(48),
+    { conversationId: n, cwdOverride: r, hostId: i, stateScope: o } = e,
+    s = o === void 0 ? `composer` : o,
+    l = f(c, n),
+    { data: u } = p(_),
+    d = r !== void 0,
+    m = d ? (r ?? null) : (l ?? u?.roots?.[0] ?? null),
+    h = d && m == null,
+    g = b(),
+    v;
+  t[0] !== n || t[1] !== r || t[2] !== i
+    ? ((v = { conversationId: n, cwdOverride: r, hostId: i }),
+      (t[0] = n),
+      (t[1] = r),
+      (t[2] = i),
+      (t[3] = v))
+    : (v = t[3]);
+  let y = ne(v),
+    x = F(g, y),
+    C;
+  t[4] !== n || t[5] !== s
+    ? ((C = { conversationId: n, stateScope: s }),
+      (t[4] = n),
+      (t[5] = s),
+      (t[6] = C))
+    : (C = t[6]);
+  let T = te(C),
+    [O, j] = a(S),
+    [M, N] = a(E),
+    [P, L] = a(D),
+    R;
+  t[7] === n
+    ? (R = t[8])
+    : ((R = n == null ? E : k(n)), (t[7] = n), (t[8] = R));
+  let [z, B] = a(R),
+    V;
   t[9] === n
-    ? (z = t[10])
-    : ((z = n == null ? D : A(n)), (t[9] = n), (t[10] = z));
-  let [B, V] = s(z),
-    H;
-  t[11] === n
-    ? (H = t[12])
-    : ((H = n == null ? O : j(n)), (t[11] = n), (t[12] = H));
-  let [re, U] = s(H),
-    { hasLatestTurnSelection: ie, latestTurnMode: ae } = L(n),
-    W = te(i, k, S),
-    G = k[i],
-    K =
-      (h || b.isConfigDataPending) &&
-      (G == null || G === `auto` || G === `granular`),
-    q;
-  t[13] !== k || t[14] !== i
-    ? ((q = Object.hasOwn(k, i)), (t[13] = k), (t[14] = i), (t[15] = q))
-    : (q = t[15]);
-  let J = q;
-  if (E === `draft`) {
-    let e = N ?? W,
-      n = F || J,
-      r = N == null && K,
+    ? (V = t[10])
+    : ((V = n == null ? D : A(n)), (t[9] = n), (t[10] = V));
+  let [re, H] = a(V),
+    { hasLatestTurnSelection: ie, latestTurnMode: ae } = I(n),
+    U = ee(i, O, x),
+    W = O[i],
+    G =
+      (h || y.isConfigDataPending) &&
+      (W == null || W === `auto` || W === `granular`),
+    K;
+  t[11] !== O || t[12] !== i
+    ? ((K = Object.hasOwn(O, i)), (t[11] = O), (t[12] = i), (t[13] = K))
+    : (K = t[13]);
+  let q = K;
+  if (T === `draft`) {
+    let e = M ?? U,
+      n = P || q,
+      r = M == null && G,
       i;
-    t[16] !== P || t[17] !== R
+    t[14] !== N || t[15] !== L
       ? ((i = (e) => {
-          (P(e), R(!0));
+          (N(e), L(!0));
         }),
-        (t[16] = P),
-        (t[17] = R),
-        (t[18] = i))
-      : (i = t[18]);
+        (t[14] = N),
+        (t[15] = L),
+        (t[16] = i))
+      : (i = t[16]);
     let a;
     return (
-      t[19] !== R || t[20] !== r || t[21] !== i || t[22] !== e || t[23] !== n
+      t[17] !== L || t[18] !== i || t[19] !== e || t[20] !== n || t[21] !== r
         ? ((a = {
             agentMode: e,
             hasSetInitialAgentMode: n,
             isAgentModePending: r,
+            shouldSendPermissionOverrides: !0,
             setAgentMode: i,
-            setHasSetInitialAgentMode: R,
+            setHasSetInitialAgentMode: L,
           }),
-          (t[19] = R),
-          (t[20] = r),
-          (t[21] = i),
-          (t[22] = e),
-          (t[23] = n),
-          (t[24] = a))
-        : (a = t[24]),
+          (t[17] = L),
+          (t[18] = i),
+          (t[19] = e),
+          (t[20] = n),
+          (t[21] = r),
+          (t[22] = a))
+        : (a = t[22]),
       a
     );
   }
-  if (E === `global-default`) {
+  if (T === `global-default`) {
     let e;
-    t[25] !== k || t[26] !== i || t[27] !== M
+    t[23] !== O || t[24] !== i || t[25] !== j
       ? ((e = (e) => {
-          k[i] !== e && M({ ...k, [i]: e });
+          O[i] !== e && j({ ...O, [i]: e });
         }),
-        (t[25] = k),
-        (t[26] = i),
-        (t[27] = M),
-        (t[28] = e))
-      : (e = t[28]);
+        (t[23] = O),
+        (t[24] = i),
+        (t[25] = j),
+        (t[26] = e))
+      : (e = t[26]);
     let n;
-    t[29] !== k || t[30] !== W || t[31] !== i || t[32] !== M
+    t[27] !== O || t[28] !== U || t[29] !== i || t[30] !== j
       ? ((n = (e) => {
-          e && M({ ...k, [i]: W });
+          e && j({ ...O, [i]: U });
         }),
-        (t[29] = k),
-        (t[30] = W),
-        (t[31] = i),
-        (t[32] = M),
-        (t[33] = n))
-      : (n = t[33]);
+        (t[27] = O),
+        (t[28] = U),
+        (t[29] = i),
+        (t[30] = j),
+        (t[31] = n))
+      : (n = t[31]);
     let r;
     return (
-      t[34] !== J || t[35] !== W || t[36] !== K || t[37] !== e || t[38] !== n
+      t[32] !== q || t[33] !== U || t[34] !== G || t[35] !== e || t[36] !== n
         ? ((r = {
-            agentMode: W,
-            hasSetInitialAgentMode: J,
-            isAgentModePending: K,
+            agentMode: U,
+            hasSetInitialAgentMode: q,
+            isAgentModePending: G,
+            shouldSendPermissionOverrides: !0,
             setAgentMode: e,
             setHasSetInitialAgentMode: n,
           }),
-          (t[34] = J),
-          (t[35] = W),
-          (t[36] = K),
-          (t[37] = e),
-          (t[38] = n),
-          (t[39] = r))
-        : (r = t[39]),
+          (t[32] = q),
+          (t[33] = U),
+          (t[34] = G),
+          (t[35] = e),
+          (t[36] = n),
+          (t[37] = r))
+        : (r = t[37]),
       r
     );
   }
-  let Y = B ?? ae ?? S,
-    X = re || ie,
-    Z = B == null && ae == null && (h || b.isConfigDataPending),
+  let J = z ?? ae ?? x,
+    Y = re || ie,
+    X = z == null && ae == null && (h || y.isConfigDataPending),
+    Z = z != null,
     Q;
-  t[40] !== U || t[41] !== V
+  t[38] !== H || t[39] !== B
     ? ((Q = (e) => {
-        (V(e), U(!0));
+        (B(e), H(!0));
       }),
-      (t[40] = U),
-      (t[41] = V),
-      (t[42] = Q))
-    : (Q = t[42]);
+      (t[38] = H),
+      (t[39] = B),
+      (t[40] = Q))
+    : (Q = t[40]);
   let $;
   return (
-    t[43] !== U || t[44] !== Z || t[45] !== Q || t[46] !== Y || t[47] !== X
+    t[41] !== H ||
+    t[42] !== Z ||
+    t[43] !== Q ||
+    t[44] !== J ||
+    t[45] !== Y ||
+    t[46] !== X
       ? (($ = {
-          agentMode: Y,
-          hasSetInitialAgentMode: X,
-          isAgentModePending: Z,
+          agentMode: J,
+          hasSetInitialAgentMode: Y,
+          isAgentModePending: X,
+          shouldSendPermissionOverrides: Z,
           setAgentMode: Q,
-          setHasSetInitialAgentMode: U,
+          setHasSetInitialAgentMode: H,
         }),
-        (t[43] = U),
-        (t[44] = Z),
-        (t[45] = Q),
-        (t[46] = Y),
-        (t[47] = X),
-        (t[48] = $))
-      : ($ = t[48]),
+        (t[41] = H),
+        (t[42] = Z),
+        (t[43] = Q),
+        (t[44] = J),
+        (t[45] = Y),
+        (t[46] = X),
+        (t[47] = $))
+      : ($ = t[47]),
     $
   );
 }
-function V(e) {
-  let t = (0, T.c)(30),
-    { conversationId: n, cwdOverride: r, hostId: i, stateScope: a } = e,
-    o = a === void 0 ? `composer` : a,
+function B(e) {
+  let t = (0, w.c)(30),
+    { conversationId: n, cwdOverride: r, hostId: i, stateScope: o } = e,
+    s = o === void 0 ? `composer` : o,
     c;
-  t[0] !== n || t[1] !== o
-    ? ((c = { conversationId: n, stateScope: o }),
+  t[0] !== n || t[1] !== s
+    ? ((c = { conversationId: n, stateScope: s }),
       (t[0] = n),
-      (t[1] = o),
+      (t[1] = s),
       (t[2] = c))
     : (c = t[2]);
-  let l = I(c),
-    [u, d] = s(w),
-    [f, p] = s(k),
+  let l = te(c),
+    [u, d] = a(C),
+    [f, p] = a(O),
     m;
   t[3] === n
     ? (m = t[4])
-    : ((m = n == null ? k : M(n)), (t[3] = n), (t[4] = m));
-  let [h, g] = s(m),
+    : ((m = n == null ? O : j(n)), (t[3] = n), (t[4] = m));
+  let [h, g] = a(m),
     {
       hasLatestTurnSelection: _,
       latestTurnMode: v,
       latestTurnPreferredNonFullAccessMode: y,
-    } = L(n),
+    } = I(n),
     b;
-  t[5] !== n || t[6] !== r || t[7] !== i || t[8] !== o
-    ? ((b = { conversationId: n, cwdOverride: r, hostId: i, stateScope: o }),
+  t[5] !== n || t[6] !== r || t[7] !== i || t[8] !== s
+    ? ((b = { conversationId: n, cwdOverride: r, hostId: i, stateScope: s }),
       (t[5] = n),
       (t[6] = r),
       (t[7] = i),
-      (t[8] = o),
+      (t[8] = s),
       (t[9] = b))
     : (b = t[9]);
-  let { agentMode: x } = B(b),
-    C;
+  let { agentMode: S } = z(b),
+    T;
   t[10] !== i || t[11] !== u
-    ? ((C = S(i, u)), (t[10] = i), (t[11] = u), (t[12] = C))
-    : (C = t[12]);
-  let E = C;
+    ? ((T = x(i, u)), (t[10] = i), (t[11] = u), (t[12] = T))
+    : (T = t[12]);
+  let E = T;
   if (l === `draft`) {
     let e = f.isSet ? f.value : E,
       n;
@@ -421,40 +426,40 @@ function V(e) {
       n
     );
   }
-  let D = h.isSet ? h.value : _ && x === v ? y : null,
-    O;
+  let D = h.isSet ? h.value : _ && S === v ? y : null,
+    k;
   t[25] === g
-    ? (O = t[26])
-    : ((O = (e) => {
+    ? (k = t[26])
+    : ((k = (e) => {
         g({ isSet: !0, value: e });
       }),
       (t[25] = g),
-      (t[26] = O));
+      (t[26] = k));
   let A;
   return (
-    t[27] !== D || t[28] !== O
+    t[27] !== D || t[28] !== k
       ? ((A = {
           preferredNonFullAccessMode: D,
-          setPreferredNonFullAccessMode: O,
+          setPreferredNonFullAccessMode: k,
         }),
         (t[27] = D),
-        (t[28] = O),
+        (t[28] = k),
         (t[29] = A))
       : (A = t[29]),
     A
   );
 }
-function H(e) {
-  (e.set(D, null), e.set(k, E), e.set(O, !1));
+function V(e) {
+  (e.set(E, null), e.set(O, T), e.set(D, !1));
 }
 function re(e, t, n, r) {
-  (e.set(A(t), e.get(D) ?? r),
-    e.set(M(t), { isSet: !0, value: U(e, n) }),
-    e.set(j(t), !0));
+  (e.set(k(t), e.get(E) ?? r),
+    e.set(j(t), { isSet: !0, value: H(e, n) }),
+    e.set(A(t), !0));
 }
-function U(e, t) {
-  let n = e.get(k);
-  return n.isSet ? n.value : S(t, e.get(w));
+function H(e, t) {
+  let n = e.get(O);
+  return n.isSet ? n.value : x(t, e.get(C));
 }
-export { z as a, B as c, H as i, re as n, ne as o, P as r, V as s, F as t };
+export { R as a, z as c, V as i, re as n, ne as o, N as r, B as s, P as t };
 //# sourceMappingURL=use-permissions-mode.js.map

@@ -1,64 +1,125 @@
-import { xt as e } from "./setting-storage.js";
-import { t } from "./useQueries.js";
-import { f as n, o as r } from "./apps-queries.js";
-import { r as i } from "./plugin-detail-queries.js";
-var a = e(),
-  o = `DISABLED_BY_ADMIN`,
-  s = `DISABLED_BY_ADMIN`;
-function c(e) {
-  return e === s;
+import {
+  Ba as e,
+  Va as t,
+  za as n,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { wt as r } from "./setting-storage.js";
+import { t as i } from "./useQueries-tUeWkfvR.js";
+import { o as a, p as o } from "./apps-queries-CmwRqoKz.js";
+import { r as s } from "./plugin-detail-queries.js";
+var c = `.agents/plugins/marketplace.json`;
+function l({ directoryApps: e, pluginApps: t }) {
+  let n = new Map(e.map((e) => [e.id, e]));
+  return t.map((e) => n.get(e.id)).filter((e) => e != null);
 }
-function l(e) {
-  return c(e?.availability);
+function u(e, t, n) {
+  return !d(e, t) || n.type !== `local` ? null : n.path;
 }
-function u(e) {
-  let n = (0, a.c)(14),
+function d(r, i) {
+  return r == null || i == null ? !1 : e(i) === e(n(t(r), c));
+}
+function f({ installedSkills: e, pluginSkills: t }) {
+  let n = p(e),
+    r = [],
+    i = [];
+  for (let e of t) {
+    let t = m(e, n);
+    if (t != null) {
+      r.push(t);
+      continue;
+    }
+    i.push(e);
+  }
+  return { installedSkills: r, unavailableSkills: i };
+}
+function p(e) {
+  let t = new Map(),
+    n = new Map(),
+    r = new Map();
+  for (let { skill: i } of e) {
+    (r.set(i.path, i), n.set(i.name, i));
+    let e = h(i.name),
+      a = t.get(e);
+    if (a == null) {
+      t.set(e, [i]);
+      continue;
+    }
+    a.push(i);
+  }
+  return { byComparableKey: t, byName: n, byPath: r };
+}
+function m(e, t) {
+  let n =
+    (e.path == null ? void 0 : t.byPath.get(e.path)) ?? t.byName.get(e.name);
+  if (n != null) return n;
+  let r = t.byComparableKey.get(h(e.name));
+  return r?.length === 1 ? r[0] : null;
+}
+function h(e) {
+  return (e ?? ``)
+    .trim()
+    .toLowerCase()
+    .split(`:`)
+    .map((e) => e.replace(/[\s_-]+/g, ``))
+    .join(`:`);
+}
+var g = r(),
+  _ = `DISABLED_BY_ADMIN`,
+  v = `DISABLED_BY_ADMIN`;
+function y(e) {
+  return e === v;
+}
+function b(e) {
+  return y(e?.availability);
+}
+function x(e) {
+  let t = (0, g.c)(14),
     {
-      hostId: s,
-      pluginApps: c,
-      marketplacePath: l,
-      pluginName: u,
-      remoteMarketplaceName: h,
+      hostId: n,
+      pluginApps: r,
+      marketplacePath: o,
+      pluginName: c,
+      remoteMarketplaceName: l,
     } = e,
-    g = c == null && (l != null || h != null) && u != null,
-    _ = l ?? null,
-    v = u ?? null,
-    y = h ?? null,
-    b;
-  n[0] !== s || n[1] !== g || n[2] !== _ || n[3] !== v || n[4] !== y
-    ? ((b = {
-        hostId: s,
-        marketplacePath: _,
-        pluginName: v,
-        remoteMarketplaceName: y,
-        enabled: g,
+    u = r == null && (o != null || l != null) && c != null,
+    d = o ?? null,
+    f = c ?? null,
+    p = l ?? null,
+    m;
+  t[0] !== n || t[1] !== u || t[2] !== d || t[3] !== f || t[4] !== p
+    ? ((m = {
+        hostId: n,
+        marketplacePath: d,
+        pluginName: f,
+        remoteMarketplaceName: p,
+        enabled: u,
       }),
-      (n[0] = s),
-      (n[1] = g),
-      (n[2] = _),
-      (n[3] = v),
-      (n[4] = y),
-      (n[5] = b))
-    : (b = n[5]);
-  let { isLoading: x, plugin: S } = i(b),
-    C = c ?? S?.apps ?? [],
-    w = Array.from(new Set(C.map(m).filter(p))),
-    T = w.length > 0,
+      (t[0] = n),
+      (t[1] = u),
+      (t[2] = d),
+      (t[3] = f),
+      (t[4] = p),
+      (t[5] = m))
+    : (m = t[5]);
+  let { isLoading: h, plugin: v } = s(m),
+    y = r ?? v?.apps ?? [],
+    b = Array.from(new Set(y.map(T).filter(w))),
+    x = b.length > 0,
     E;
-  n[6] !== s || n[7] !== T
-    ? ((E = { enabled: T, hostId: s }), (n[6] = s), (n[7] = T), (n[8] = E))
-    : (E = n[8]);
-  let { data: D, isLoading: O, loadError: k } = r(E),
+  t[6] !== n || t[7] !== x
+    ? ((E = { enabled: x, hostId: n }), (t[6] = n), (t[7] = x), (t[8] = E))
+    : (E = t[8]);
+  let { data: D, isLoading: O, loadError: k } = a(E),
     A = D === void 0 ? [] : D,
-    j = t({ queries: w.map(f) }),
+    j = i({ queries: b.map(C) }),
     M = !0,
     N = 0,
     P = {};
-  for (let [e, t] of w.entries()) {
+  for (let [e, t] of b.entries()) {
     let n = j[e],
       r = !O && k == null && !A.some((e) => e.id === t),
       i = null;
-    (n?.data?.status === o
+    (n?.data?.status === _
       ? (i = `disabled-by-admin`)
       : (r ||
           (n != null && !n.isPending && n.error == null && n.data == null)) &&
@@ -68,35 +129,35 @@ function u(e) {
       i !== `disabled-by-admin` && (M = !1));
   }
   let F =
-      w.length > 0 && N === w.length
+      b.length > 0 && N === b.length
         ? M
           ? `disabled-by-admin`
           : `connector-unavailable`
         : null,
     I;
   return (
-    n[9] !== j || n[10] !== O || n[11] !== x || n[12] !== g
-      ? ((I = (g && x) || O || j.some(d)),
-        (n[9] = j),
-        (n[10] = O),
-        (n[11] = x),
-        (n[12] = g),
-        (n[13] = I))
-      : (I = n[13]),
+    t[9] !== j || t[10] !== O || t[11] !== h || t[12] !== u
+      ? ((I = (u && h) || O || j.some(S)),
+        (t[9] = j),
+        (t[10] = O),
+        (t[11] = h),
+        (t[12] = u),
+        (t[13] = I))
+      : (I = t[13]),
     { blockedReasonsByConnectorId: P, isLoading: I, blockedReason: F }
   );
 }
-function d(e) {
+function S(e) {
   return e.isPending;
 }
-function f(e) {
-  return n(e);
+function C(e) {
+  return o(e);
 }
-function p(e) {
+function w(e) {
   return e.length > 0;
 }
-function m(e) {
+function T(e) {
   return e.id;
 }
-export { u as n, l as t };
+export { u as a, f as i, x as n, d as o, l as r, b as t };
 //# sourceMappingURL=check-plugin-availability.js.map

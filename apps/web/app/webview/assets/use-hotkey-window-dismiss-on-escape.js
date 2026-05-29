@@ -1,6 +1,7 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t } from "./jsx-runtime.js";
-import { xt as n, y as r } from "./setting-storage.js";
+import { wt as n } from "./setting-storage.js";
+import { n as r } from "./rpc-DqwD0euc.js";
 var i = n(),
   a = e(t(), 1);
 function o() {
@@ -27,9 +28,7 @@ function c(e) {
     e.ctrlKey ||
     e.altKey ||
     e.shiftKey ||
-    (e.preventDefault(),
-    e.stopPropagation(),
-    r.dispatchMessage(`hotkey-window-dismiss`, {}));
+    (e.preventDefault(), e.stopPropagation(), r.hotkeyWindowHotkeys?.dismiss());
 }
 export { o as t };
 //# sourceMappingURL=use-hotkey-window-dismiss-on-escape.js.map

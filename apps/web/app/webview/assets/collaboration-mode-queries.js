@@ -1,5 +1,5 @@
-import { ts as e, v as t } from "./app-server-manager-signals.js";
-import { Q as n, S as r, _ as i, et as a } from "./setting-storage.js";
+import { Xs as e, v as t } from "./app-server-manager-signals-DkRDRgNB.js";
+import { S as n, _ as r, nt as i, rt as a } from "./setting-storage.js";
 var o = [`plan`, `default`];
 function s(e) {
   let t = e.mode;
@@ -23,12 +23,12 @@ function c(e, t) {
 function l(t) {
   return {
     queryKey: [`collaboration-modes`, `list`, t],
-    staleTime: i.INFINITE,
+    staleTime: r.INFINITE,
     queryFn: async () =>
       c((await e(`list-collaboration-modes`, { hostId: t })).data, o),
   };
 }
-var u = n(r, (e) => a(r, () => l(e))),
-  d = a(r, ({ get: e }) => l(e(t)));
+var u = i(n, (e) => l(e)),
+  d = a(n, ({ get: e }) => l(e(t)));
 export { d as n, u as t };
 //# sourceMappingURL=collaboration-mode-queries.js.map

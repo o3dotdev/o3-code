@@ -1,10 +1,10 @@
-import { s as e } from "./chunk.js";
-import { is as t, zo as n } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { $s as t, Ps as n } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as r } from "./jsx-runtime.js";
-import { B as i, W as a, l as o } from "./setting-storage.js";
-import { t as s } from "./use-is-remote-host.js";
+import { G as i, V as a, l as o } from "./setting-storage.js";
+import { t as s } from "./use-is-remote-host-DScyzh-e.js";
 var c = e(r(), 1),
-  l = i({
+  l = a({
     bodyPersonalized: {
       id: `codex.fastModeHomeBanner.body.personalized`,
       defaultMessage: `Based on your work last week across {threadCountLabel}, Fast could have saved about {duration}. Increased plan usage.`,
@@ -51,15 +51,15 @@ function y(e = Date.now()) {
   return Math.floor(e / p);
 }
 function b(e) {
-  let n = a(),
+  let n = i(),
     r = s(),
-    [i, l] = t(g),
+    [a, l] = t(g),
     [p, h] = (0, c.useState)(null),
     [b, C] = (0, c.useState)(`idle`),
-    w = (0, c.useRef)(i);
+    w = (0, c.useRef)(a);
   ((0, c.useEffect)(() => {
-    w.current = i;
-  }, [i]),
+    w.current = a;
+  }, [a]),
     (0, c.useEffect)(() => {
       if (!e || r) {
         (h(null), C(`idle`));

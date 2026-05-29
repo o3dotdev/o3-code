@@ -1,722 +1,24 @@
-import { s as e } from "./chunk.js";
-import { Ot as t, wn as n } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Bn as t, Ut as n } from "./src-C.js";
 import { n as r, t as i } from "./jsx-runtime.js";
-import { t as a } from "./clsx.js";
-import { i as o, l as s } from "./dist-BzssiQ2D.js";
-import { i as c } from "./Combination.js";
-import { C as l, J as u, l as d, xt as f } from "./setting-storage.js";
-import { n as p } from "./parse-owner-repo.js";
-import { t as m } from "./tooltip.js";
-import { i as h, r as g } from "./use-environment.js";
-import { f as _, h as v, m as y, p as b } from "./dialog-layout.js";
-import { t as x } from "./git-origins-query.js";
-var S = 1,
-  C = 0.9,
-  w = 0.8,
-  T = 0.17,
-  E = 0.1,
-  D = 0.999,
-  O = 0.9999,
-  k = 0.99,
-  A = /[\\\/_+.#"@\[\(\{&]/,
-  j = /[\\\/_+.#"@\[\(\{&]/g,
-  M = /[\s-]/,
-  N = /[\s-]/g;
-function P(e, t, n, r, i, a, o) {
-  if (a === t.length) return i === e.length ? S : k;
-  var s = `${i},${a}`;
-  if (o[s] !== void 0) return o[s];
-  for (var c = r.charAt(a), l = n.indexOf(c, i), u = 0, d, f, p, m; l >= 0; )
-    ((d = P(e, t, n, r, l + 1, a + 1, o)),
-      d > u &&
-        (l === i
-          ? (d *= S)
-          : A.test(e.charAt(l - 1))
-            ? ((d *= w),
-              (p = e.slice(i, l - 1).match(j)),
-              p && i > 0 && (d *= D ** +p.length))
-            : M.test(e.charAt(l - 1))
-              ? ((d *= C),
-                (m = e.slice(i, l - 1).match(N)),
-                m && i > 0 && (d *= D ** +m.length))
-              : ((d *= T), i > 0 && (d *= D ** +(l - i))),
-        e.charAt(l) !== t.charAt(a) && (d *= O)),
-      ((d < E && n.charAt(l - 1) === r.charAt(a + 1)) ||
-        (r.charAt(a + 1) === r.charAt(a) && n.charAt(l - 1) !== r.charAt(a))) &&
-        ((f = P(e, t, n, r, l + 1, a + 2, o)), f * E > d && (d = f * E)),
-      d > u && (u = d),
-      (l = n.indexOf(c, l + 1)));
-  return ((o[s] = u), u);
+import { t as a } from "./clsx-BcPLHiun.js";
+import { C as o, Y as s, l as c, wt as l } from "./setting-storage.js";
+import { n as u } from "./parse-owner-repo.js";
+import { t as d } from "./tooltip-CDzchJxN.js";
+import { i as f, r as p } from "./use-environment.js";
+import { p as m } from "./sidebar-project-groups.js";
+import { n as h, t as g } from "./dist-wT0ygyN1.js";
+var _ = l(),
+  v = e(n(), 1),
+  y = e(r(), 1);
+function b() {
+  let e = f(),
+    t = p(e);
+  return x(t == null ? void 0 : e?.repo_map?.[t]?.clone_url);
 }
-function F(e) {
-  return e.toLowerCase().replace(N, ` `);
-}
-function I(e, t, n) {
-  return (
-    (e = n && n.length > 0 ? `${e + ` ` + n.join(` `)}` : e),
-    P(e, t, F(e), F(t), 0, 0, {})
-  );
-}
-var L = e(r(), 1),
-  R = `[cmdk-group=""]`,
-  z = `[cmdk-group-items=""]`,
-  B = `[cmdk-group-heading=""]`,
-  ee = `[cmdk-item=""]`,
-  te = `${ee}:not([aria-disabled="true"])`,
-  V = `cmdk-item-select`,
-  H = `data-value`,
-  ne = (e, t, n) => I(e, t, n),
-  re = L.createContext(void 0),
-  U = () => L.useContext(re),
-  ie = L.createContext(void 0),
-  W = () => L.useContext(ie),
-  G = L.createContext(void 0),
-  K = L.forwardRef((e, t) => {
-    let n = J(() => ({
-        search: ``,
-        value: e.value ?? e.defaultValue ?? ``,
-        selectedItemId: void 0,
-        filtered: { count: 0, items: new Map(), groups: new Set() },
-      })),
-      r = J(() => new Set()),
-      i = J(() => new Map()),
-      a = J(() => new Map()),
-      s = J(() => new Set()),
-      l = ge(e),
-      {
-        label: u,
-        children: d,
-        value: f,
-        onValueChange: p,
-        filter: m,
-        shouldFilter: h,
-        loop: g,
-        disablePointerSelection: _ = !1,
-        vimBindings: v = !0,
-        ...y
-      } = e,
-      b = c(),
-      x = c(),
-      S = c(),
-      C = L.useRef(null),
-      w = ve();
-    (q(() => {
-      if (f !== void 0) {
-        let e = f.trim();
-        ((n.current.value = e), T.emit());
-      }
-    }, [f]),
-      q(() => {
-        w(6, j);
-      }, []));
-    let T = L.useMemo(
-        () => ({
-          subscribe: (e) => (s.current.add(e), () => s.current.delete(e)),
-          snapshot: () => n.current,
-          setState: (e, t, r) => {
-            var i, a, o;
-            if (!Object.is(n.current[e], t)) {
-              if (((n.current[e] = t), e === `search`)) (A(), O(), w(1, k));
-              else if (e === `value`) {
-                if (
-                  document.activeElement.hasAttribute(`cmdk-input`) ||
-                  document.activeElement.hasAttribute(`cmdk-root`)
-                ) {
-                  let e = document.getElementById(S);
-                  e
-                    ? e.focus()
-                    : (i = document.getElementById(b)) == null || i.focus();
-                }
-                if (
-                  (w(7, () => {
-                    ((n.current.selectedItemId = M()?.id), T.emit());
-                  }),
-                  r || w(5, j),
-                  l.current?.value !== void 0)
-                ) {
-                  let e = t ?? ``;
-                  (o = (a = l.current).onValueChange) == null || o.call(a, e);
-                  return;
-                }
-              }
-              T.emit();
-            }
-          },
-          emit: () => {
-            s.current.forEach((e) => e());
-          },
-        }),
-        [],
-      ),
-      E = L.useMemo(
-        () => ({
-          value: (e, t, r) => {
-            t !== a.current.get(e)?.value &&
-              (a.current.set(e, { value: t, keywords: r }),
-              n.current.filtered.items.set(e, D(t, r)),
-              w(2, () => {
-                (O(), T.emit());
-              }));
-          },
-          item: (e, t) => (
-            r.current.add(e),
-            t &&
-              (i.current.has(t)
-                ? i.current.get(t).add(e)
-                : i.current.set(t, new Set([e]))),
-            w(3, () => {
-              (A(), O(), n.current.value || k(), T.emit());
-            }),
-            () => {
-              (a.current.delete(e),
-                r.current.delete(e),
-                n.current.filtered.items.delete(e));
-              let t = M();
-              w(4, () => {
-                (A(), t?.getAttribute(`id`) === e && k(), T.emit());
-              });
-            }
-          ),
-          group: (e) => (
-            i.current.has(e) || i.current.set(e, new Set()),
-            () => {
-              (a.current.delete(e), i.current.delete(e));
-            }
-          ),
-          filter: () => l.current.shouldFilter,
-          label: u || e[`aria-label`],
-          getDisablePointerSelection: () => l.current.disablePointerSelection,
-          listId: b,
-          inputId: S,
-          labelId: x,
-          listInnerRef: C,
-        }),
-        [],
-      );
-    function D(e, t) {
-      let r = l.current?.filter ?? ne;
-      return e ? r(e, n.current.search, t) : 0;
-    }
-    function O() {
-      if (!n.current.search || l.current.shouldFilter === !1) return;
-      let e = n.current.filtered.items,
-        t = [];
-      n.current.filtered.groups.forEach((n) => {
-        let r = i.current.get(n),
-          a = 0;
-        (r.forEach((t) => {
-          let n = e.get(t);
-          a = Math.max(n, a);
-        }),
-          t.push([n, a]));
-      });
-      let r = C.current;
-      (N()
-        .sort((t, n) => {
-          let r = t.getAttribute(`id`),
-            i = n.getAttribute(`id`);
-          return (e.get(i) ?? 0) - (e.get(r) ?? 0);
-        })
-        .forEach((e) => {
-          let t = e.closest(z);
-          t
-            ? t.appendChild(e.parentElement === t ? e : e.closest(`${z} > *`))
-            : r.appendChild(e.parentElement === r ? e : e.closest(`${z} > *`));
-        }),
-        t
-          .sort((e, t) => t[1] - e[1])
-          .forEach((e) => {
-            let t = C.current?.querySelector(
-              `${R}[${H}="${encodeURIComponent(e[0])}"]`,
-            );
-            t?.parentElement.appendChild(t);
-          }));
-    }
-    function k() {
-      let e = N()
-        .find((e) => e.getAttribute(`aria-disabled`) !== `true`)
-        ?.getAttribute(H);
-      T.setState(`value`, e || void 0);
-    }
-    function A() {
-      if (!n.current.search || l.current.shouldFilter === !1) {
-        n.current.filtered.count = r.current.size;
-        return;
-      }
-      n.current.filtered.groups = new Set();
-      let e = 0;
-      for (let t of r.current) {
-        let r = D(
-          a.current.get(t)?.value ?? ``,
-          a.current.get(t)?.keywords ?? [],
-        );
-        (n.current.filtered.items.set(t, r), r > 0 && e++);
-      }
-      for (let [e, t] of i.current)
-        for (let r of t)
-          if (n.current.filtered.items.get(r) > 0) {
-            n.current.filtered.groups.add(e);
-            break;
-          }
-      n.current.filtered.count = e;
-    }
-    function j() {
-      var e;
-      let t = M();
-      t &&
-        (t.parentElement?.firstChild === t &&
-          ((e = t.closest(R)?.querySelector(B)) == null ||
-            e.scrollIntoView({ block: `nearest` })),
-        t.scrollIntoView({ block: `nearest` }));
-    }
-    function M() {
-      return C.current?.querySelector(`${ee}[aria-selected="true"]`);
-    }
-    function N() {
-      return Array.from(C.current?.querySelectorAll(te) || []);
-    }
-    function P(e) {
-      let t = N()[e];
-      t && T.setState(`value`, t.getAttribute(H));
-    }
-    function F(e) {
-      var t;
-      let n = M(),
-        r = N(),
-        i = r.findIndex((e) => e === n),
-        a = r[i + e];
-      ((t = l.current) != null &&
-        t.loop &&
-        (a =
-          i + e < 0 ? r[r.length - 1] : i + e === r.length ? r[0] : r[i + e]),
-        a && T.setState(`value`, a.getAttribute(H)));
-    }
-    function I(e) {
-      let t = M()?.closest(R),
-        n;
-      for (; t && !n; )
-        ((t = e > 0 ? me(t, R) : he(t, R)), (n = t?.querySelector(te)));
-      n ? T.setState(`value`, n.getAttribute(H)) : F(e);
-    }
-    let U = () => P(N().length - 1),
-      W = (e) => {
-        (e.preventDefault(), e.metaKey ? U() : e.altKey ? I(1) : F(1));
-      },
-      G = (e) => {
-        (e.preventDefault(), e.metaKey ? P(0) : e.altKey ? I(-1) : F(-1));
-      };
-    return L.createElement(
-      o.div,
-      {
-        ref: t,
-        tabIndex: -1,
-        ...y,
-        "cmdk-root": ``,
-        onKeyDown: (e) => {
-          var t;
-          (t = y.onKeyDown) == null || t.call(y, e);
-          let n = e.nativeEvent.isComposing || e.keyCode === 229;
-          if (!(e.defaultPrevented || n))
-            switch (e.key) {
-              case `n`:
-              case `j`:
-                v && e.ctrlKey && W(e);
-                break;
-              case `ArrowDown`:
-                W(e);
-                break;
-              case `p`:
-              case `k`:
-                v && e.ctrlKey && G(e);
-                break;
-              case `ArrowUp`:
-                G(e);
-                break;
-              case `Home`:
-                (e.preventDefault(), P(0));
-                break;
-              case `End`:
-                (e.preventDefault(), U());
-                break;
-              case `Enter`: {
-                e.preventDefault();
-                let t = M();
-                if (t) {
-                  let e = new Event(V);
-                  t.dispatchEvent(e);
-                }
-              }
-            }
-        },
-      },
-      L.createElement(
-        `label`,
-        { "cmdk-label": ``, htmlFor: E.inputId, id: E.labelId, style: be },
-        u,
-      ),
-      X(e, (e) =>
-        L.createElement(
-          ie.Provider,
-          { value: T },
-          L.createElement(re.Provider, { value: E }, e),
-        ),
-      ),
-    );
-  }),
-  ae = L.forwardRef((e, t) => {
-    let n = c(),
-      r = L.useRef(null),
-      i = L.useContext(G),
-      a = U(),
-      l = ge(e),
-      u = l.current?.forceMount ?? i?.forceMount;
-    q(() => {
-      if (!u) return a.item(n, i?.id);
-    }, [u]);
-    let d = _e(n, r, [e.value, e.children, r], e.keywords),
-      f = W(),
-      p = Y((e) => e.value && e.value === d.current),
-      m = Y((e) =>
-        u || a.filter() === !1
-          ? !0
-          : e.search
-            ? e.filtered.items.get(n) > 0
-            : !0,
-      );
-    L.useEffect(() => {
-      let t = r.current;
-      if (!(!t || e.disabled))
-        return (t.addEventListener(V, h), () => t.removeEventListener(V, h));
-    }, [m, e.onSelect, e.disabled]);
-    function h() {
-      var e, t;
-      (g(), (t = (e = l.current).onSelect) == null || t.call(e, d.current));
-    }
-    function g() {
-      f.setState(`value`, d.current, !0);
-    }
-    if (!m) return null;
-    let {
-      disabled: _,
-      value: v,
-      onSelect: y,
-      forceMount: b,
-      keywords: x,
-      ...S
-    } = e;
-    return L.createElement(
-      o.div,
-      {
-        ref: s(r, t),
-        ...S,
-        id: n,
-        "cmdk-item": ``,
-        role: `option`,
-        "aria-disabled": !!_,
-        "aria-selected": !!p,
-        "data-disabled": !!_,
-        "data-selected": !!p,
-        onPointerMove: _ || a.getDisablePointerSelection() ? void 0 : g,
-        onClick: _ ? void 0 : h,
-      },
-      e.children,
-    );
-  }),
-  oe = L.forwardRef((e, t) => {
-    let { heading: n, children: r, forceMount: i, ...a } = e,
-      l = c(),
-      u = L.useRef(null),
-      d = L.useRef(null),
-      f = c(),
-      p = U(),
-      m = Y((e) =>
-        i || p.filter() === !1 ? !0 : e.search ? e.filtered.groups.has(l) : !0,
-      );
-    (q(() => p.group(l), []), _e(l, u, [e.value, e.heading, d]));
-    let h = L.useMemo(() => ({ id: l, forceMount: i }), [i]);
-    return L.createElement(
-      o.div,
-      {
-        ref: s(u, t),
-        ...a,
-        "cmdk-group": ``,
-        role: `presentation`,
-        hidden: m ? void 0 : !0,
-      },
-      n &&
-        L.createElement(
-          `div`,
-          { ref: d, "cmdk-group-heading": ``, "aria-hidden": !0, id: f },
-          n,
-        ),
-      X(e, (e) =>
-        L.createElement(
-          `div`,
-          {
-            "cmdk-group-items": ``,
-            role: `group`,
-            "aria-labelledby": n ? f : void 0,
-          },
-          L.createElement(G.Provider, { value: h }, e),
-        ),
-      ),
-    );
-  }),
-  se = L.forwardRef((e, t) => {
-    let { alwaysRender: n, ...r } = e,
-      i = L.useRef(null),
-      a = Y((e) => !e.search);
-    return !n && !a
-      ? null
-      : L.createElement(o.div, {
-          ref: s(i, t),
-          ...r,
-          "cmdk-separator": ``,
-          role: `separator`,
-        });
-  }),
-  ce = L.forwardRef((e, t) => {
-    let { onValueChange: n, ...r } = e,
-      i = e.value != null,
-      a = W(),
-      s = Y((e) => e.search),
-      c = Y((e) => e.selectedItemId),
-      l = U();
-    return (
-      L.useEffect(() => {
-        e.value != null && a.setState(`search`, e.value);
-      }, [e.value]),
-      L.createElement(o.input, {
-        ref: t,
-        ...r,
-        "cmdk-input": ``,
-        autoComplete: `off`,
-        autoCorrect: `off`,
-        spellCheck: !1,
-        "aria-autocomplete": `list`,
-        role: `combobox`,
-        "aria-expanded": !0,
-        "aria-controls": l.listId,
-        "aria-labelledby": l.labelId,
-        "aria-activedescendant": c,
-        id: l.inputId,
-        type: `text`,
-        value: i ? e.value : s,
-        onChange: (e) => {
-          (i || a.setState(`search`, e.target.value), n?.(e.target.value));
-        },
-      })
-    );
-  }),
-  le = L.forwardRef((e, t) => {
-    let { children: n, label: r = `Suggestions`, ...i } = e,
-      a = L.useRef(null),
-      c = L.useRef(null),
-      l = Y((e) => e.selectedItemId),
-      u = U();
-    return (
-      L.useEffect(() => {
-        if (c.current && a.current) {
-          let e = c.current,
-            t = a.current,
-            n,
-            r = new ResizeObserver(() => {
-              n = requestAnimationFrame(() => {
-                let n = e.offsetHeight;
-                t.style.setProperty(`--cmdk-list-height`, n.toFixed(1) + `px`);
-              });
-            });
-          return (
-            r.observe(e),
-            () => {
-              (cancelAnimationFrame(n), r.unobserve(e));
-            }
-          );
-        }
-      }, []),
-      L.createElement(
-        o.div,
-        {
-          ref: s(a, t),
-          ...i,
-          "cmdk-list": ``,
-          role: `listbox`,
-          tabIndex: -1,
-          "aria-activedescendant": l,
-          "aria-label": r,
-          id: u.listId,
-        },
-        X(e, (e) =>
-          L.createElement(
-            `div`,
-            { ref: s(c, u.listInnerRef), "cmdk-list-sizer": `` },
-            e,
-          ),
-        ),
-      )
-    );
-  }),
-  ue = L.forwardRef((e, t) => {
-    let {
-      open: n,
-      onOpenChange: r,
-      overlayClassName: i,
-      contentClassName: a,
-      container: o,
-      ...s
-    } = e;
-    return L.createElement(
-      v,
-      { open: n, onOpenChange: r },
-      L.createElement(
-        y,
-        { container: o },
-        L.createElement(b, { "cmdk-overlay": ``, className: i }),
-        L.createElement(
-          _,
-          { "aria-label": e.label, "cmdk-dialog": ``, className: a },
-          L.createElement(K, { ref: t, ...s }),
-        ),
-      ),
-    );
-  }),
-  de = L.forwardRef((e, t) =>
-    Y((e) => e.filtered.count === 0)
-      ? L.createElement(o.div, {
-          ref: t,
-          ...e,
-          "cmdk-empty": ``,
-          role: `presentation`,
-        })
-      : null,
-  ),
-  fe = L.forwardRef((e, t) => {
-    let { progress: n, children: r, label: i = `Loading...`, ...a } = e;
-    return L.createElement(
-      o.div,
-      {
-        ref: t,
-        ...a,
-        "cmdk-loading": ``,
-        role: `progressbar`,
-        "aria-valuenow": n,
-        "aria-valuemin": 0,
-        "aria-valuemax": 100,
-        "aria-label": i,
-      },
-      X(e, (e) => L.createElement(`div`, { "aria-hidden": !0 }, e)),
-    );
-  }),
-  pe = Object.assign(K, {
-    List: le,
-    Item: ae,
-    Input: ce,
-    Group: oe,
-    Separator: se,
-    Dialog: ue,
-    Empty: de,
-    Loading: fe,
-  });
-function me(e, t) {
-  let n = e.nextElementSibling;
-  for (; n; ) {
-    if (n.matches(t)) return n;
-    n = n.nextElementSibling;
-  }
-}
-function he(e, t) {
-  let n = e.previousElementSibling;
-  for (; n; ) {
-    if (n.matches(t)) return n;
-    n = n.previousElementSibling;
-  }
-}
-function ge(e) {
-  let t = L.useRef(e);
-  return (
-    q(() => {
-      t.current = e;
-    }),
-    t
-  );
-}
-var q = typeof window > `u` ? L.useEffect : L.useLayoutEffect;
-function J(e) {
-  let t = L.useRef();
-  return (t.current === void 0 && (t.current = e()), t);
-}
-function Y(e) {
-  let t = W(),
-    n = () => e(t.snapshot());
-  return L.useSyncExternalStore(t.subscribe, n, n);
-}
-function _e(e, t, n, r = []) {
-  let i = L.useRef(),
-    a = U();
-  return (
-    q(() => {
-      var o;
-      let s = (() => {
-          for (let e of n) {
-            if (typeof e == `string`) return e.trim();
-            if (typeof e == `object` && `current` in e)
-              return e.current ? e.current.textContent?.trim() : i.current;
-          }
-        })(),
-        c = r.map((e) => e.trim());
-      (a.value(e, s, c),
-        (o = t.current) == null || o.setAttribute(H, s),
-        (i.current = s));
-    }),
-    i
-  );
-}
-var ve = () => {
-  let [e, t] = L.useState(),
-    n = J(() => new Map());
-  return (
-    q(() => {
-      (n.current.forEach((e) => e()), (n.current = new Map()));
-    }, [e]),
-    (e, r) => {
-      (n.current.set(e, r), t({}));
-    }
-  );
-};
-function ye(e) {
-  let t = e.type;
-  return typeof t == `function`
-    ? t(e.props)
-    : `render` in t
-      ? t.render(e.props)
-      : e;
-}
-function X({ asChild: e, children: t }, n) {
-  return e && L.isValidElement(t)
-    ? L.cloneElement(ye(t), { ref: t.ref }, n(t.props.children))
-    : n(t);
-}
-var be = {
-    position: `absolute`,
-    width: `1px`,
-    height: `1px`,
-    padding: `0`,
-    margin: `-1px`,
-    overflow: `hidden`,
-    clip: `rect(0, 0, 0, 0)`,
-    whiteSpace: `nowrap`,
-    borderWidth: `0`,
-  },
-  Z = f(),
-  xe = e(t(), 1);
-function Se() {
-  let e = h(),
-    t = g(e);
-  return Ce(t == null ? void 0 : e?.repo_map?.[t]?.clone_url);
-}
-function Ce(e) {
-  let t = (0, Z.c)(6),
-    [n, r] = (0, L.useState)(null),
+function x(e) {
+  let t = (0, _.c)(6),
+    [n, r] = (0, y.useState)(null),
     i;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((i = async (e) => {
@@ -724,11 +26,11 @@ function Ce(e) {
           r(null);
           return;
         }
-        r(await we(e));
+        r(await S(e));
       }),
       (t[0] = i))
     : (i = t[0]);
-  let a = (0, L.useEffectEvent)(i),
+  let a = (0, y.useEffectEvent)(i),
     o;
   t[1] !== e || t[2] !== a
     ? ((o = () => {
@@ -741,79 +43,79 @@ function Ce(e) {
   let s;
   return (
     t[4] === e ? (s = t[5]) : ((s = [e]), (t[4] = e), (t[5] = s)),
-    (0, L.useEffect)(o, s),
+    (0, y.useEffect)(o, s),
     n
   );
 }
-async function we(e) {
-  let t = await d(`active-workspace-roots`);
+async function S(e) {
+  let t = await c(`active-workspace-roots`);
   if (!e || !t) return null;
-  let n = await d(`git-origins`, { source: `git_root_lookup` });
-  return Te(e, t.roots, n.origins);
+  let n = await c(`git-origins`, { source: `git_root_lookup` });
+  return C(e, t.roots, n.origins);
 }
-async function Te(e, t, n) {
-  let r = p(e),
+async function C(e, t, n) {
+  let r = u(e),
     i = (n ?? []).find((e) =>
-      e.originUrl ? (0, xe.default)(p(e.originUrl), r) : !1,
+      e.originUrl ? (0, v.default)(u(e.originUrl), r) : !1,
     );
   return i
     ? i.root
-    : (l.warning(`No matching origin found`, {
+    : (o.warning(`No matching origin found`, {
         safe: {},
         sensitive: { originUrl: e },
       }),
       t[0] ?? null);
 }
-function Ee(e, t) {
-  let r = (0, Z.c)(15),
-    i = !!e && (t?.enabled ?? !0),
+function w(e, n) {
+  let r = (0, _.c)(15),
+    i = !!e && (n?.enabled ?? !0),
     a;
-  r[0] !== e || r[1] !== i || r[2] !== t.hostId
+  r[0] !== e || r[1] !== i || r[2] !== n.hostId
     ? ((a =
         !i || e == null
           ? { dirs: [] }
-          : t?.hostId == null
+          : n?.hostId == null
             ? { dirs: [e] }
-            : { dirs: [e], hostId: t.hostId }),
+            : { dirs: [e], hostId: n.hostId }),
       (r[0] = e),
       (r[1] = i),
-      (r[2] = t.hostId),
+      (r[2] = n.hostId),
       (r[3] = a))
     : (a = r[3]);
   let o = a,
-    s;
-  r[4] !== t.source || r[5] !== o
-    ? ((s = { params: o, source: t.source }),
-      (r[4] = t.source),
+    c;
+  r[4] !== n.source || r[5] !== o
+    ? ((c = { params: o, source: n.source }),
+      (r[4] = n.source),
       (r[5] = o),
-      (r[6] = s))
-    : (s = r[6]);
-  let { data: c, isLoading: l } = u(x, s),
+      (r[6] = c))
+    : (c = r[6]);
+  let { data: l, isLoading: u } = s(m, c),
     d;
-  r[7] !== e || r[8] !== c?.origins
+  r[7] !== e || r[8] !== l?.origins
     ? ((d =
-        c?.origins.find((t) => t.dir === e)?.root ??
-        c?.origins[0]?.root ??
+        l?.origins.find((t) => t.dir === e)?.root ??
+        l?.origins[0]?.root ??
         null),
       (r[7] = e),
-      (r[8] = c?.origins),
+      (r[8] = l?.origins),
       (r[9] = d))
     : (d = r[9]);
   let f = d,
     p;
-  r[10] === f ? (p = r[11]) : ((p = f ? n(f) : null), (r[10] = f), (r[11] = p));
-  let m;
+  r[10] === f ? (p = r[11]) : ((p = f ? t(f) : null), (r[10] = f), (r[11] = p));
+  let h;
   return (
-    r[12] !== l || r[13] !== p
-      ? ((m = { gitRoot: p, isLoading: l }),
-        (r[12] = l),
+    r[12] !== u || r[13] !== p
+      ? ((h = { gitRoot: p, isLoading: u }),
+        (r[12] = u),
         (r[13] = p),
-        (r[14] = m))
-      : (m = r[14]),
-    m
+        (r[14] = h))
+      : (h = r[14]),
+    h
   );
 }
-function De(e, t) {
+function T(e, t) {
   let n = Array.from(e),
     r = t.trim();
   if (r.length === 0) return n.map((e) => ({ text: e, isMatch: !0 }));
@@ -831,10 +133,10 @@ function De(e, t) {
     return (t && (s += 1), { text: e, isMatch: t });
   });
 }
-var Q = i(),
-  Oe = 100;
-function ke(e) {
-  let t = (0, Z.c)(53),
+var E = i(),
+  D = 100;
+function O(e) {
+  let t = (0, _.c)(64),
     n,
     r,
     i,
@@ -845,7 +147,8 @@ function ke(e) {
     u,
     d,
     f,
-    p;
+    p,
+    m;
   t[0] === e
     ? ((n = t[1]),
       (r = t[2]),
@@ -857,17 +160,19 @@ function ke(e) {
       (u = t[8]),
       (d = t[9]),
       (f = t[10]),
-      (p = t[11]))
+      (p = t[11]),
+      (m = t[12]))
     : (({
-        title: d,
+        title: f,
         description: i,
         leftAccessory: c,
         LeftIcon: n,
         RightIcon: r,
-        titleTooltipContent: f,
+        titleTooltipContent: p,
         descriptionTooltipContent: s,
         descriptionClassName: o,
-        tooltipDelayDuration: p,
+        secondaryContent: d,
+        tooltipDelayDuration: m,
         rightAccessory: u,
         ...l
       } = e),
@@ -882,162 +187,197 @@ function ke(e) {
       (t[8] = u),
       (t[9] = d),
       (t[10] = f),
-      (t[11] = p));
-  let m = (0, L.useRef)(null),
-    h;
-  t[12] === d ? (h = t[13]) : ((h = $(d)), (t[12] = d), (t[13] = h));
-  let g = h,
-    _;
-  t[14] === i
-    ? (_ = t[15])
-    : ((_ = i == null ? void 0 : $(i)), (t[14] = i), (t[15] = _));
-  let v = _,
-    y;
-  t[16] === f ? (y = t[17]) : ((y = Pe(f)), (t[16] = f), (t[17] = y));
-  let b = y,
-    x;
-  t[18] === s ? (x = t[19]) : ((x = Pe(s)), (t[18] = s), (t[19] = x));
-  let S = x,
-    C = Y(Me),
-    w = Y(je),
-    T;
-  t[20] !== C || t[21] !== g
-    ? ((T = De(g, C)), (t[20] = C), (t[21] = g), (t[22] = T))
-    : (T = t[22]);
-  let E = T,
-    D = E.some(Ae),
+      (t[11] = p),
+      (t[12] = m));
+  let v = (0, y.useRef)(null),
+    b;
+  t[13] === f ? (b = t[14]) : ((b = A(f)), (t[13] = f), (t[14] = b));
+  let x = b,
+    S;
+  t[15] === i
+    ? (S = t[16])
+    : ((S = i == null ? void 0 : A(i)), (t[15] = i), (t[16] = S));
+  let C = S,
+    w;
+  t[17] === p ? (w = t[18]) : ((w = j(p)), (t[17] = p), (t[18] = w));
+  let D = w,
     O;
-  t[23] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((O = () => {
-        m.current?.dataset.selected === `true` &&
-          m.current.scrollIntoView({ block: `nearest` });
+  t[19] === s ? (O = t[20]) : ((O = j(s)), (t[19] = s), (t[20] = O));
+  let M = O,
+    N = g(ne),
+    P = g(te),
+    F;
+  t[21] !== N || t[22] !== x
+    ? ((F = T(x, N)), (t[21] = N), (t[22] = x), (t[23] = F))
+    : (F = t[23]);
+  let I = F,
+    re = I.some(ee),
+    L;
+  t[24] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((L = () => {
+        v.current?.dataset.selected === `true` &&
+          v.current.scrollIntoView({ block: `nearest` });
       }),
-      (t[23] = O))
-    : (O = t[23]);
-  let k;
-  (t[24] === w ? (k = t[25]) : ((k = [w]), (t[24] = w), (t[25] = k)),
-    (0, L.useEffect)(O, k));
-  let A = pe,
-    j;
-  t[26] !== n || t[27] !== c
-    ? ((j = c ?? (n ? (0, Q.jsx)(n, { className: `icon-xs shrink-0` }) : null)),
-      (t[26] = n),
-      (t[27] = c),
-      (t[28] = j))
-    : (j = t[28]);
-  let M = Ne,
-    N = i ? (o ? `min-w-0 flex-1` : `max-w-[60%] flex-none`) : `min-w-0 flex-1`,
-    P;
-  t[29] === N
-    ? (P = t[30])
-    : ((P = a(`truncate`, N)), (t[29] = N), (t[30] = P));
-  let F = E.map((e, t) =>
-      (0, Q.jsx)(
+      (t[24] = L))
+    : (L = t[24]);
+  let R;
+  (t[25] === P ? (R = t[26]) : ((R = [P]), (t[25] = P), (t[26] = R)),
+    (0, y.useEffect)(L, R));
+  let z = h,
+    B = d == null ? `items-center` : `items-start`,
+    V;
+  t[27] === B
+    ? (V = t[28])
+    : ((V = a(`flex w-full min-w-0 gap-2`, B)), (t[27] = B), (t[28] = V));
+  let H;
+  t[29] !== n || t[30] !== c
+    ? ((H = c ?? (n ? (0, E.jsx)(n, { className: `icon-xs shrink-0` }) : null)),
+      (t[29] = n),
+      (t[30] = c),
+      (t[31] = H))
+    : (H = t[31]);
+  let U = k,
+    W = i ? (o ? `min-w-0 flex-1` : `max-w-[60%] flex-none`) : `min-w-0 flex-1`,
+    G;
+  t[32] === W
+    ? (G = t[33])
+    : ((G = a(`truncate`, W)), (t[32] = W), (t[33] = G));
+  let K = I.map((e, t) =>
+      (0, E.jsx)(
         `span`,
         {
-          className: a(!e.isMatch && D && `text-token-description-foreground`),
+          className: a(!e.isMatch && re && `text-token-description-foreground`),
           children: e.text,
         },
         t,
       ),
     ),
-    I;
-  t[31] !== M || t[32] !== P || t[33] !== F || t[34] !== p || t[35] !== b
-    ? ((I = (0, Q.jsx)(M, {
-        tooltipContent: b,
-        delayDuration: p,
-        className: P,
-        children: F,
+    q;
+  t[34] !== U || t[35] !== G || t[36] !== K || t[37] !== m || t[38] !== D
+    ? ((q = (0, E.jsx)(U, {
+        tooltipContent: D,
+        delayDuration: m,
+        className: G,
+        children: K,
       })),
-      (t[31] = M),
-      (t[32] = P),
-      (t[33] = F),
-      (t[34] = p),
-      (t[35] = b),
-      (t[36] = I))
-    : (I = t[36]);
-  let R;
-  t[37] !== r ||
-  t[38] !== i ||
-  t[39] !== o ||
-  t[40] !== u ||
-  t[41] !== p ||
-  t[42] !== v ||
-  t[43] !== S
-    ? ((R =
+      (t[34] = U),
+      (t[35] = G),
+      (t[36] = K),
+      (t[37] = m),
+      (t[38] = D),
+      (t[39] = q))
+    : (q = t[39]);
+  let J;
+  t[40] !== r ||
+  t[41] !== i ||
+  t[42] !== o ||
+  t[43] !== u ||
+  t[44] !== m ||
+  t[45] !== C ||
+  t[46] !== M
+    ? ((J =
         i || u || r
-          ? (0, Q.jsxs)(`div`, {
+          ? (0, E.jsxs)(`div`, {
               className: `ml-auto flex min-w-0 items-center gap-2`,
               children: [
                 i
-                  ? (0, Q.jsx)(Ne, {
-                      tooltipContent: S,
-                      delayDuration: p,
+                  ? (0, E.jsx)(k, {
+                      tooltipContent: M,
+                      delayDuration: m,
                       className: a(
                         `truncate text-sm text-token-description-foreground`,
                         o ?? `min-w-0 flex-1`,
                       ),
-                      children: v,
+                      children: C,
                     })
                   : null,
                 u
-                  ? (0, Q.jsx)(`span`, {
+                  ? (0, E.jsx)(`span`, {
                       className: `shrink-0 opacity-80`,
                       children: u,
                     })
                   : null,
-                r ? (0, Q.jsx)(r, { className: `icon-xs shrink-0` }) : null,
+                r ? (0, E.jsx)(r, { className: `icon-xs shrink-0` }) : null,
               ],
             })
           : null),
-      (t[37] = r),
-      (t[38] = i),
-      (t[39] = o),
-      (t[40] = u),
-      (t[41] = p),
-      (t[42] = v),
-      (t[43] = S),
-      (t[44] = R))
-    : (R = t[44]);
-  let z;
-  t[45] !== j || t[46] !== I || t[47] !== R
-    ? ((z = (0, Q.jsxs)(`div`, {
+      (t[40] = r),
+      (t[41] = i),
+      (t[42] = o),
+      (t[43] = u),
+      (t[44] = m),
+      (t[45] = C),
+      (t[46] = M),
+      (t[47] = J))
+    : (J = t[47]);
+  let Y;
+  t[48] !== q || t[49] !== J
+    ? ((Y = (0, E.jsxs)(`div`, {
         className: `flex w-full min-w-0 items-center gap-2`,
-        children: [j, I, R],
+        children: [q, J],
       })),
-      (t[45] = j),
-      (t[46] = I),
-      (t[47] = R),
-      (t[48] = z))
-    : (z = t[48]);
-  let B;
+      (t[48] = q),
+      (t[49] = J),
+      (t[50] = Y))
+    : (Y = t[50]);
+  let X;
+  t[51] === d
+    ? (X = t[52])
+    : ((X =
+        d == null
+          ? null
+          : (0, E.jsx)(`div`, {
+              className: `truncate pt-0.5 text-xs text-token-description-foreground`,
+              children: d,
+            })),
+      (t[51] = d),
+      (t[52] = X));
+  let Z;
+  t[53] !== Y || t[54] !== X
+    ? ((Z = (0, E.jsxs)(`div`, {
+        className: `min-w-0 flex-1`,
+        children: [Y, X],
+      })),
+      (t[53] = Y),
+      (t[54] = X),
+      (t[55] = Z))
+    : (Z = t[55]);
+  let Q;
+  t[56] !== V || t[57] !== H || t[58] !== Z
+    ? ((Q = (0, E.jsxs)(`div`, { className: V, children: [H, Z] })),
+      (t[56] = V),
+      (t[57] = H),
+      (t[58] = Z),
+      (t[59] = Q))
+    : (Q = t[59]);
+  let $;
   return (
-    t[49] !== l || t[50] !== z || t[51] !== A.Item
-      ? ((B = (0, Q.jsx)(A.Item, { ref: m, ...l, children: z })),
-        (t[49] = l),
-        (t[50] = z),
-        (t[51] = A.Item),
-        (t[52] = B))
-      : (B = t[52]),
-    B
+    t[60] !== l || t[61] !== Q || t[62] !== z.Item
+      ? (($ = (0, E.jsx)(z.Item, { ref: v, ...l, children: Q })),
+        (t[60] = l),
+        (t[61] = Q),
+        (t[62] = z.Item),
+        (t[63] = $))
+      : ($ = t[63]),
+    $
   );
 }
-function Ae(e) {
+function ee(e) {
   return e.isMatch;
 }
-function je(e) {
+function te(e) {
   return e.value;
 }
-function Me(e) {
+function ne(e) {
   return e.search;
 }
-function Ne(e) {
-  let t = (0, Z.c)(8),
+function k(e) {
+  let t = (0, _.c)(8),
     { children: n, className: r, tooltipContent: i, delayDuration: a } = e,
     o = i == null,
     s;
   t[0] !== n || t[1] !== r
-    ? ((s = (0, Q.jsx)(`div`, { className: r, children: n })),
+    ? ((s = (0, E.jsx)(`div`, { className: r, children: n })),
       (t[0] = n),
       (t[1] = r),
       (t[2] = s))
@@ -1045,7 +385,7 @@ function Ne(e) {
   let c;
   return (
     t[3] !== a || t[4] !== o || t[5] !== s || t[6] !== i
-      ? ((c = (0, Q.jsx)(m, {
+      ? ((c = (0, E.jsx)(d, {
           tooltipContent: i,
           delayDuration: a,
           disabled: o,
@@ -1061,20 +401,11 @@ function Ne(e) {
     c
   );
 }
-function $(e) {
-  return e.length <= Oe ? e : `${e.slice(0, Oe - 1).trimEnd()}…`;
+function A(e) {
+  return e.length <= D ? e : `${e.slice(0, D - 1).trimEnd()}…`;
 }
-function Pe(e) {
-  return typeof e == `string` ? $(e) : e;
+function j(e) {
+  return typeof e == `string` ? A(e) : e;
 }
-export {
-  Ee as a,
-  pe as c,
-  Ce as i,
-  De as n,
-  Se as o,
-  we as r,
-  Y as s,
-  ke as t,
-};
+export { w as a, x as i, T as n, b as o, S as r, O as t };
 //# sourceMappingURL=slash-command-item.js.map

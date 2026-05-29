@@ -1,22 +1,24 @@
-import { t as e } from "./dagre.js";
-import { C as t, h as n } from "./chunk-S3R3BYOJ.js";
-import { t as r } from "./graphlib.js";
-import { i, r as a, t as o } from "./src-DXdm7MTq.js";
-import { t as s } from "./line.js";
-import { E as c, b as l, c as u, s as d } from "./chunk-ABZYJK2D.js";
-import "./dist-Dkaf81wL.js";
+import { t as e } from "./dagre-CuOwcp8Z.js";
+import { h as t } from "./chunk-S3R3BYOJ.js";
+import { t as n } from "./graphlib-BZvYK9y8.js";
+import { t as r } from "./src-BHeH9bp0.js";
+import { t as i } from "./line-DcJPiuto.js";
+import { h as a } from "./step.js";
+import { n as o, r as s } from "./chunk-AGHRB4JF-CwjJfTB_.js";
+import { E as c, b as l, c as u, s as d } from "./chunk-ABZYJK2D-DSLQAJWr.js";
+import "./dist-OQR0lEt7.js";
+import "./marked.esm-BR-H6018.js";
 import "./chunk-JA3XYJ7Z.js";
-import "./marked.esm.js";
-import "./chunk-HN2XXSSU.js";
+import "./chunk-HN2XXSSU-J1M-o__Q.js";
 import "./chunk-CVBHYZKI.js";
-import "./chunk-55IACEB6.js";
+import "./chunk-55IACEB6-Dw4U87tB.js";
 import "./chunk-QN33PNHL.js";
 import "./chunk-ATLVNIR6.js";
 import "./chunk-JZLCHNYA.js";
 import "./chunk-QXUST7PY.js";
-import "./chunk-N4CR4FBY.js";
-import { i as f, n as p, t as m } from "./chunk-DI55MBZ5.js";
-var h = a(
+import "./chunk-N4CR4FBY-BeIHswHY.js";
+import { i as f, n as p, t as m } from "./chunk-DI55MBZ5-CcmymovX.js";
+var h = o(
     (e) =>
       e
         .append(`circle`)
@@ -26,7 +28,7 @@ var h = a(
         .attr(`cy`, l().state.padding + l().state.sizeUnit),
     `drawStartState`,
   ),
-  g = a(
+  g = o(
     (e) =>
       e
         .append(`line`)
@@ -39,7 +41,7 @@ var h = a(
         .attr(`y2`, 0),
     `drawDivider`,
   ),
-  _ = a((e, t) => {
+  _ = o((e, t) => {
     let n = e
         .append(`text`)
         .attr(`x`, 2 * l().state.padding)
@@ -59,8 +61,8 @@ var h = a(
       n
     );
   }, `drawSimpleState`),
-  v = a((e, t) => {
-    let n = a(function (e, t, n) {
+  v = o((e, t) => {
+    let n = o(function (e, t, n) {
         let r = e
           .append(`tspan`)
           .attr(`x`, 2 * l().state.padding)
@@ -77,7 +79,7 @@ var h = a(
         .node()
         .getBBox(),
       i = r.height,
-      o = e
+      a = e
         .append(`text`)
         .attr(`x`, l().state.padding)
         .attr(
@@ -91,7 +93,7 @@ var h = a(
       s = !0,
       c = !0;
     t.descriptions.forEach(function (e) {
-      (s || (n(o, e, c), (c = !1)), (s = !1));
+      (s || (n(a, e, c), (c = !1)), (s = !1));
     });
     let u = e
         .append(`line`)
@@ -99,7 +101,7 @@ var h = a(
         .attr(`y1`, l().state.padding + i + l().state.dividerMargin / 2)
         .attr(`y2`, l().state.padding + i + l().state.dividerMargin / 2)
         .attr(`class`, `descr-divider`),
-      d = o.node().getBBox(),
+      d = a.node().getBBox(),
       f = Math.max(d.width, r.width);
     return (
       u.attr(`x2`, f + 3 * l().state.padding),
@@ -113,7 +115,7 @@ var h = a(
       e
     );
   }, `drawDescrState`),
-  y = a((e, t, n) => {
+  y = o((e, t, n) => {
     let r = l().state.padding,
       i = 2 * l().state.padding,
       a = e.node().getBBox(),
@@ -173,7 +175,7 @@ var h = a(
       e
     );
   }, `addTitleAndBox`),
-  b = a(
+  b = o(
     (e) => (
       e
         .append(`circle`)
@@ -196,7 +198,7 @@ var h = a(
     ),
     `drawEndState`,
   ),
-  x = a((e, t) => {
+  x = o((e, t) => {
     let n = l().state.forkWidth,
       r = l().state.forkHeight;
     if (t.parentId) {
@@ -212,7 +214,7 @@ var h = a(
       .attr(`x`, l().state.padding)
       .attr(`y`, l().state.padding);
   }, `drawForkJoinState`),
-  S = a((e, t, n, r) => {
+  S = o((e, t, n, r) => {
     let i = 0,
       a = r.append(`text`);
     (a.style(`text-anchor`, `start`), a.attr(`class`, `noteText`));
@@ -235,7 +237,7 @@ var h = a(
     }
     return { textWidth: a.node().getBBox().width, textHeight: i };
   }, `_drawLongText`),
-  C = a((e, t) => {
+  C = o((e, t) => {
     t.attr(`class`, `state-note`);
     let n = t.append(`rect`).attr(`x`, 0).attr(`y`, l().state.padding),
       { textWidth: r, textHeight: i } = S(e, 0, 0, t.append(`g`));
@@ -245,7 +247,7 @@ var h = a(
       n
     );
   }, `drawNote`),
-  w = a(function (e, t) {
+  w = o(function (e, t) {
     let n = t.id,
       r = { id: n, label: t.id, width: 0, height: 0 },
       i = e.append(`g`).attr(`id`, n).attr(`class`, `stateGroup`);
@@ -264,8 +266,8 @@ var h = a(
     );
   }, `drawState`),
   T = 0,
-  E = a(function (e, r, o) {
-    let u = a(function (e) {
+  E = o(function (e, n, r) {
+    let u = o(function (e) {
       switch (e) {
         case m.relationType.AGGREGATION:
           return `aggregation`;
@@ -277,16 +279,16 @@ var h = a(
           return `dependency`;
       }
     }, `getRelationType`);
-    r.points = r.points.filter((e) => !Number.isNaN(e.y));
-    let f = r.points,
-      p = s()
+    n.points = n.points.filter((e) => !Number.isNaN(e.y));
+    let f = n.points,
+      p = i()
         .x(function (e) {
           return e.x;
         })
         .y(function (e) {
           return e.y;
         })
-        .curve(t),
+        .curve(a),
       h = e
         .append(`path`)
         .attr(`d`, p(f))
@@ -299,51 +301,51 @@ var h = a(
         `marker-end`,
         `url(` + g + `#` + u(m.relationType.DEPENDENCY) + `End)`,
       ),
-      o.title !== void 0)
+      r.title !== void 0)
     ) {
-      let t = e.append(`g`).attr(`class`, `stateLabel`),
-        { x: a, y: s } = n.calcLabelPosition(r.points),
-        c = d.getRows(o.title),
+      let i = e.append(`g`).attr(`class`, `stateLabel`),
+        { x: a, y: o } = t.calcLabelPosition(n.points),
+        c = d.getRows(r.title),
         u = 0,
         f = [],
         p = 0,
         m = 0;
       for (let e = 0; e <= c.length; e++) {
-        let n = t
+        let t = i
             .append(`text`)
             .attr(`text-anchor`, `middle`)
             .text(c[e])
             .attr(`x`, a)
-            .attr(`y`, s + u),
-          r = n.node().getBBox();
-        ((p = Math.max(p, r.width)),
-          (m = Math.min(m, r.x)),
-          i.info(r.x, a, s + u),
+            .attr(`y`, o + u),
+          n = t.node().getBBox();
+        ((p = Math.max(p, n.width)),
+          (m = Math.min(m, n.x)),
+          s.info(n.x, a, o + u),
           u === 0 &&
-            ((u = n.node().getBBox().height), i.info(`Title height`, u, s)),
-          f.push(n));
+            ((u = t.node().getBBox().height), s.info(`Title height`, u, o)),
+          f.push(t));
       }
       let h = u * c.length;
       if (c.length > 1) {
         let e = (c.length - 1) * u * 0.5;
-        (f.forEach((t, n) => t.attr(`y`, s + n * u - e)), (h = u * c.length));
+        (f.forEach((t, n) => t.attr(`y`, o + n * u - e)), (h = u * c.length));
       }
-      let g = t.node().getBBox();
-      (t
+      let g = i.node().getBBox();
+      (i
         .insert(`rect`, `:first-child`)
         .attr(`class`, `box`)
         .attr(`x`, a - p / 2 - l().state.padding / 2)
-        .attr(`y`, s - h / 2 - l().state.padding / 2 - 3.5)
+        .attr(`y`, o - h / 2 - l().state.padding / 2 - 3.5)
         .attr(`width`, p + l().state.padding)
         .attr(`height`, h + l().state.padding),
-        i.info(g));
+        s.info(g));
     }
     T++;
   }, `drawEdge`),
   D,
   O = {},
-  k = a(function () {}, `setConf`),
-  A = a(function (e) {
+  k = o(function () {}, `setConf`),
+  A = o(function (e) {
     e.append(`defs`)
       .append(`marker`)
       .attr(`id`, `dependencyEnd`)
@@ -355,16 +357,16 @@ var h = a(
       .append(`path`)
       .attr(`d`, `M 19,7 L9,13 L14,7 L9,1 Z`);
   }, `insertMarkers`),
-  j = a(function (e, t, n, r) {
+  j = o(function (e, t, n, i) {
     D = l().state;
     let a = l().securityLevel,
-      s;
-    a === `sandbox` && (s = o(`#i` + t));
-    let c = o(a === `sandbox` ? s.nodes()[0].contentDocument.body : `body`),
-      d = a === `sandbox` ? s.nodes()[0].contentDocument : document;
-    i.debug(`Rendering diagram ` + e);
+      o;
+    a === `sandbox` && (o = r(`#i` + t));
+    let c = r(a === `sandbox` ? o.nodes()[0].contentDocument.body : `body`),
+      d = a === `sandbox` ? o.nodes()[0].contentDocument : document;
+    s.debug(`Rendering diagram ` + e);
     let f = c.select(`[id='${t}']`);
-    (A(f), N(r.db.getRootDoc(), f, void 0, !1, c, d, r));
+    (A(f), N(i.db.getRootDoc(), f, void 0, !1, c, d, i));
     let p = D.padding,
       m = f.node().getBBox(),
       h = m.width + p * 2,
@@ -375,9 +377,9 @@ var h = a(
         `${m.x - D.padding}  ${m.y - D.padding} ` + h + ` ` + g,
       ));
   }, `draw`),
-  M = a((e) => (e ? e.length * D.fontSizeFactor : 1), `getLabelWidth`),
-  N = a((t, n, a, o, s, c, l) => {
-    let u = new r({ compound: !0, multigraph: !0 }),
+  M = o((e) => (e ? e.length * D.fontSizeFactor : 1), `getLabelWidth`),
+  N = o((t, r, i, a, o, c, l) => {
+    let u = new n({ compound: !0, multigraph: !0 }),
       f,
       p = !0;
     for (f = 0; f < t.length; f++)
@@ -385,7 +387,7 @@ var h = a(
         p = !1;
         break;
       }
-    (a
+    (i
       ? u.setGraph({
           rankdir: `LR`,
           multigraph: !0,
@@ -412,37 +414,37 @@ var h = a(
       g = Object.keys(m);
     for (let e of g) {
       let t = m[e];
-      a && (t.parentId = a);
-      let r;
+      i && (t.parentId = i);
+      let n;
       if (t.doc) {
-        let e = n.append(`g`).attr(`id`, t.id).attr(`class`, `stateGroup`);
-        r = N(t.doc, e, t.id, !o, s, c, l);
+        let e = r.append(`g`).attr(`id`, t.id).attr(`class`, `stateGroup`);
+        n = N(t.doc, e, t.id, !a, o, c, l);
         {
-          e = y(e, t, o);
-          let n = e.node().getBBox();
-          ((r.width = n.width),
-            (r.height = n.height + D.padding / 2),
+          e = y(e, t, a);
+          let r = e.node().getBBox();
+          ((n.width = r.width),
+            (n.height = r.height + D.padding / 2),
             (O[t.id] = { y: D.compositTitleSize }));
         }
-      } else r = w(n, t, u);
+      } else n = w(r, t, u);
       if (t.note) {
         let e = w(
-          n,
+          r,
           { descriptions: [], id: t.id + `-note`, note: t.note, type: `note` },
           u,
         );
         (t.note.position === `left of`
-          ? (u.setNode(r.id + `-note`, e), u.setNode(r.id, r))
-          : (u.setNode(r.id, r), u.setNode(r.id + `-note`, e)),
-          u.setParent(r.id, r.id + `-group`),
-          u.setParent(r.id + `-note`, r.id + `-group`));
-      } else u.setNode(r.id, r);
+          ? (u.setNode(n.id + `-note`, e), u.setNode(n.id, n))
+          : (u.setNode(n.id, n), u.setNode(n.id + `-note`, e)),
+          u.setParent(n.id, n.id + `-group`),
+          u.setParent(n.id + `-note`, n.id + `-group`));
+      } else u.setNode(n.id, n);
     }
-    i.debug(`Count=`, u.nodeCount(), u);
+    s.debug(`Count=`, u.nodeCount(), u);
     let _ = 0;
     (h.forEach(function (e) {
       (_++,
-        i.debug(`Setting edge`, e),
+        s.debug(`Setting edge`, e),
         u.setEdge(
           e.id1,
           e.id2,
@@ -456,12 +458,12 @@ var h = a(
         ));
     }),
       e(u),
-      i.debug(`Graph after layout`, u.nodes()));
-    let v = n.node();
+      s.debug(`Graph after layout`, u.nodes()));
+    let v = r.node();
     u.nodes().forEach(function (e) {
       e !== void 0 && u.node(e) !== void 0
-        ? (i.warn(`Node ` + e + `: ` + JSON.stringify(u.node(e))),
-          s
+        ? (s.warn(`Node ` + e + `: ` + JSON.stringify(u.node(e))),
+          o
             .select(`#` + v.id + ` #` + e)
             .attr(
               `transform`,
@@ -471,7 +473,7 @@ var h = a(
                 (u.node(e).y + (O[e] ? O[e].y : 0) - u.node(e).height / 2) +
                 ` )`,
             ),
-          s
+          o
             .select(`#` + v.id + ` #` + e)
             .attr(`data-x-shift`, u.node(e).x - u.node(e).width / 2),
           c
@@ -487,23 +489,23 @@ var h = a(
                 e.setAttribute(`x1`, 0 - r + 8),
                 e.setAttribute(`x2`, n - r - 8));
             }))
-        : i.debug(`No Node ` + e + `: ` + JSON.stringify(u.node(e)));
+        : s.debug(`No Node ` + e + `: ` + JSON.stringify(u.node(e)));
     });
     let b = v.getBBox();
     (u.edges().forEach(function (e) {
       e !== void 0 &&
         u.edge(e) !== void 0 &&
-        (i.debug(
+        (s.debug(
           `Edge ` + e.v + ` -> ` + e.w + `: ` + JSON.stringify(u.edge(e)),
         ),
-        E(n, u.edge(e), u.edge(e).relation));
+        E(r, u.edge(e), u.edge(e).relation));
     }),
       (b = v.getBBox()));
-    let x = { id: a || `root`, label: a || `root`, width: 0, height: 0 };
+    let x = { id: i || `root`, label: i || `root`, width: 0, height: 0 };
     return (
       (x.width = b.width + 2 * D.padding),
       (x.height = b.height + 2 * D.padding),
-      i.debug(`Doc rendered`, x, u),
+      s.debug(`Doc rendered`, x, u),
       x
     );
   }, `renderDoc`),
@@ -514,7 +516,7 @@ var h = a(
     },
     renderer: { setConf: k, draw: j },
     styles: f,
-    init: a((e) => {
+    init: o((e) => {
       ((e.state ||= {}), (e.state.arrowMarkerAbsolute = e.arrowMarkerAbsolute));
     }, `init`),
   };

@@ -1,31 +1,48 @@
-import { s as e } from "./chunk.js";
-import "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./src-C.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { H as i, W as a, b as o, xt as s, y as c } from "./setting-storage.js";
-import { o as l } from "./statsig.js";
-import "./reduced-motion-preference.js";
-import { t as ee } from "./spinner.js";
-import { t as te } from "./x.js";
-import "./codex-api-error.js";
-import { t as ne } from "./regenerate.js";
-import { n as u, r as d, t as f } from "./use-recording-waveform.js";
-import { t as p } from "./dictation-error-message.js";
-var m = s(),
-  h = e(t(), 1),
-  g = 250,
-  _ = null,
-  v = null,
-  y = null,
-  b = null,
-  x = null;
-async function re(e, t, n) {
-  if (_?.sessionId === e || y === e) return;
-  ((v = null), _ != null && S(_.sessionId));
+import { t as r } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
+import "./Combination.js";
+import {
+  B as i,
+  G as a,
+  U as ee,
+  b as te,
+  wt as o,
+  y as s,
+} from "./setting-storage.js";
+import { n as c } from "./rpc-DqwD0euc.js";
+import { o as ne } from "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
+import "./window-zoom-context.js";
+import "./tooltip-CDzchJxN.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
+import { t as re } from "./spinner.js";
+import { t as ie } from "./x-C_RDKBp5.js";
+import "./use-stable-callback.js";
+import "./check-md.js";
+import "./chevron-right.js";
+import { t as ae } from "./context-menu.js";
+import "./codex-api-error-CsUcWied.js";
+import { t as oe } from "./regenerate.js";
+import { n as l, r as u, t as se } from "./use-recording-waveform.js";
+import { t as ce } from "./dictation-error-message.js";
+var le = o(),
+  d = e(t(), 1),
+  f = 250,
+  p = null,
+  m = null,
+  h = null,
+  g = null,
+  _ = null;
+async function ue(e, t, n) {
+  if (p?.sessionId === e || h === e) return;
+  ((m = null), p != null && v(p.sessionId));
   let r = null;
   try {
-    ((y = e),
-      c.dispatchMessage(`electron-request-microphone-permission`, {}),
+    ((h = e),
+      c.systemPermissions?.requestMicrophoneAccess().catch(() => {}),
       (r = await navigator.mediaDevices.getUserMedia({
         audio: { channelCount: 1 },
       })),
@@ -45,9 +62,9 @@ async function re(e, t, n) {
       e.data.size > 0 && a.chunks.push(e.data);
     }),
       i.start(),
-      (_ = a),
-      y === e && (y = null),
-      b === e && ((b = null), S(e)));
+      (p = a),
+      h === e && (h = null),
+      g === e && ((g = null), v(e)));
   } catch (n) {
     throw (
       r?.getTracks().forEach((e) => {
@@ -55,9 +72,9 @@ async function re(e, t, n) {
       }),
       t.stopWaveformCapture(),
       t.resetWaveformDisplay(),
-      y === e && (y = null),
-      b === e && (b = null),
-      c.dispatchMessage(`global-dictation-failed`, {
+      h === e && (h = null),
+      g === e && (g = null),
+      s.dispatchMessage(`global-dictation-failed`, {
         sessionId: e,
         stage: `recording`,
       }),
@@ -65,32 +82,32 @@ async function re(e, t, n) {
     );
   }
 }
-function S(e) {
-  let t = _;
+function v(e) {
+  let t = p;
   if (t == null || t.sessionId !== e) {
-    b = e;
+    g = e;
     return;
   }
   t.isStopping ||
     ((t.isStopping = !0),
-    c.dispatchMessage(`global-dictation-recording-stopped`, { sessionId: e }),
-    C(t));
+    s.dispatchMessage(`global-dictation-recording-stopped`, { sessionId: e }),
+    y(t));
 }
-async function C(e) {
+async function y(e) {
   let t = null;
   try {
     try {
-      await D(e.recorder);
+      await S(e.recorder);
     } finally {
       (e.stream.getTracks().forEach((e) => {
         e.stop();
       }),
         e.controls.stopWaveformCapture(),
         e.controls.resetWaveformDisplay(),
-        _ === e && (_ = null));
+        p === e && (p = null));
     }
-    if (e.chunks.length === 0 || Date.now() - e.startedAtMs < g) {
-      c.dispatchMessage(`global-dictation-completed`, {
+    if (e.chunks.length === 0 || Date.now() - e.startedAtMs < f) {
+      s.dispatchMessage(`global-dictation-completed`, {
         sessionId: e.sessionId,
         text: ``,
       });
@@ -101,42 +118,42 @@ async function C(e) {
       audio: new Blob(e.chunks),
       onTranscriptionFailed: e.controls.onTranscriptionFailed,
     }),
-      await T(t, e.cleanupEnabled));
+      await b(t, e.cleanupEnabled));
   } catch (n) {
-    E(e.sessionId, e.controls.onTranscriptionFailed, n, t);
+    x(e.sessionId, e.controls.onTranscriptionFailed, n, t);
   }
 }
-async function w(e, t) {
-  if (x === e) return;
-  let n = v;
+async function de(e, t) {
+  if (_ === e) return;
+  let n = m;
   if (n == null || n.sessionId !== e)
     throw Error(`No dictation audio to retry`);
-  x = e;
+  _ = e;
   try {
-    await T(n, t);
+    await b(n, t);
   } catch (t) {
-    throw (E(e, n.onTranscriptionFailed, t, n), t);
+    throw (x(e, n.onTranscriptionFailed, t, n), t);
   } finally {
-    x === e && (x = null);
+    _ === e && (_ = null);
   }
 }
-async function T(e, t) {
-  let n = await d({ transcript: await u(e.audio), cleanupEnabled: t });
-  (v === e && (v = null),
-    c.dispatchMessage(`global-dictation-completed`, {
+async function b(e, t) {
+  let n = await u({ transcript: await l(e.audio), cleanupEnabled: t });
+  (m === e && (m = null),
+    s.dispatchMessage(`global-dictation-completed`, {
       sessionId: e.sessionId,
       text: n,
     }));
 }
-function E(e, t, n, r) {
-  ((v = r),
+function x(e, t, n, r) {
+  ((m = r),
     t(n),
-    c.dispatchMessage(`global-dictation-failed`, {
+    s.dispatchMessage(`global-dictation-failed`, {
       sessionId: e,
       stage: `transcription`,
     }));
 }
-function D(e) {
+function S(e) {
   return e.state === `inactive`
     ? Promise.resolve()
     : new Promise((t) => {
@@ -150,179 +167,207 @@ function D(e) {
           e.stop());
       });
 }
-var O = n();
-function k() {
-  let e = (0, m.c)(54),
+var C = n();
+function w() {
+  let e = (0, le.c)(63),
     t = a(),
-    n = l(`1025755912`),
-    [s, u] = (0, h.useState)(null),
-    [d, g] = (0, h.useState)(`starting`),
-    [_, v] = (0, h.useState)(null),
-    [y, b] = (0, h.useState)(!1),
-    x;
+    n = ne(`1025755912`),
+    [o, c] = (0, d.useState)(null),
+    [l, u] = (0, d.useState)(`starting`),
+    [f, p] = (0, d.useState)(null),
+    [m, h] = (0, d.useState)(!1),
+    g;
   e[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((x = { variant: `compact` }), (e[0] = x))
-    : (x = e[0]);
+    ? ((g = { variant: `compact` }), (e[0] = g))
+    : (g = e[0]);
   let {
-      waveformCanvasRef: C,
-      startWaveformCapture: T,
-      stopWaveformCapture: E,
-      resetWaveformDisplay: D,
-    } = f(x),
-    k;
+      waveformCanvasRef: _,
+      startWaveformCapture: y,
+      stopWaveformCapture: b,
+      resetWaveformDisplay: x,
+    } = se(g),
+    S;
   e[1] === t
-    ? (k = e[2])
-    : ((k = (e, n, r) => {
-        let i = p(t, n, r);
-        (v(i.message),
-          b(i.canRetry),
-          g(`error`),
-          c.dispatchMessage(`global-dictation-window-layout`, {
+    ? (S = e[2])
+    : ((S = (e, n, r) => {
+        let i = ce(t, n, r);
+        (p(i.message),
+          h(i.canRetry),
+          u(`error`),
+          s.dispatchMessage(`global-dictation-window-layout`, {
             sessionId: e,
             layout: `error`,
           }));
       }),
       (e[1] = t),
-      (e[2] = k));
-  let A = k,
-    j = ie,
-    M;
-  e[3] !== s || e[4] !== n || e[5] !== A
-    ? ((M = () => {
-        s != null &&
-          (g(`transcribing`),
-          v(null),
-          b(!1),
-          j(s),
-          w(s, n).catch((e) => {
-            A(s, `transcription`, e);
+      (e[2] = S));
+  let w = S,
+    T = fe,
+    E;
+  e[3] !== o || e[4] !== n || e[5] !== w
+    ? ((E = () => {
+        o != null &&
+          (u(`transcribing`),
+          p(null),
+          h(!1),
+          T(o),
+          de(o, n).catch((e) => {
+            w(o, `transcription`, e);
           }));
       }),
-      (e[3] = s),
+      (e[3] = o),
       (e[4] = n),
-      (e[5] = A),
-      (e[6] = M))
-    : (M = e[6]);
+      (e[5] = w),
+      (e[6] = E))
+    : (E = e[6]);
+  let D = E,
+    O;
+  e[7] === o
+    ? (O = e[8])
+    : ((O = () => {
+        o != null &&
+          (s.dispatchMessage(`global-dictation-dismiss`, { sessionId: o }),
+          c(null),
+          p(null),
+          h(!1));
+      }),
+      (e[7] = o),
+      (e[8] = O));
+  let k = O,
+    A;
+  e[9] === o
+    ? (A = e[10])
+    : ((A = () => {
+        o != null &&
+          s.dispatchMessage(`global-dictation-close`, { sessionId: o });
+      }),
+      (e[9] = o),
+      (e[10] = A));
+  let j = A,
+    M;
+  e[11] !== o || e[12] !== l
+    ? ((M = () => {
+        o == null ||
+          l !== `listening` ||
+          (u(`transcribing`), p(null), h(!1), T(o), v(o));
+      }),
+      (e[11] = o),
+      (e[12] = l),
+      (e[13] = M))
+    : (M = e[13]);
   let N = M,
     P;
-  e[7] === s
-    ? (P = e[8])
-    : ((P = () => {
-        s != null &&
-          (c.dispatchMessage(`global-dictation-dismiss`, { sessionId: s }),
-          u(null),
-          v(null),
-          b(!1));
-      }),
-      (e[7] = s),
-      (e[8] = P));
-  let F = P,
-    I;
-  e[9] !== s || e[10] !== d
-    ? ((I = () => {
-        s == null ||
-          d !== `listening` ||
-          (g(`transcribing`), v(null), b(!1), j(s), S(s));
-      }),
-      (e[9] = s),
-      (e[10] = d),
-      (e[11] = I))
-    : (I = e[11]);
-  let L = I,
-    R;
-  e[12] !== n || e[13] !== D || e[14] !== A || e[15] !== T || e[16] !== E
-    ? ((R = (e) => {
-        (u(e.sessionId),
-          v(null),
-          b(!1),
-          g(`listening`),
-          j(e.sessionId),
-          re(
+  e[14] !== n || e[15] !== x || e[16] !== w || e[17] !== y || e[18] !== b
+    ? ((P = (e) => {
+        (c(e.sessionId),
+          p(null),
+          h(!1),
+          u(`listening`),
+          T(e.sessionId),
+          ue(
             e.sessionId,
             {
-              startWaveformCapture: T,
-              stopWaveformCapture: E,
-              resetWaveformDisplay: D,
+              startWaveformCapture: y,
+              stopWaveformCapture: b,
+              resetWaveformDisplay: x,
               onTranscriptionFailed: (t) => {
-                A(e.sessionId, `transcription`, t);
+                w(e.sessionId, `transcription`, t);
               },
             },
             n,
           ).catch((t) => {
-            A(e.sessionId, `start`, t);
+            w(e.sessionId, `start`, t);
           }));
       }),
-      (e[12] = n),
-      (e[13] = D),
-      (e[14] = A),
-      (e[15] = T),
-      (e[16] = E),
-      (e[17] = R))
-    : (R = e[17]);
-  let z;
-  (e[18] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((z = []), (e[18] = z))
-    : (z = e[18]),
-    o(`global-dictation-start`, R, z));
-  let B, V;
-  (e[19] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((B = (e) => {
-        (g(`transcribing`), v(null), b(!1), j(e.sessionId), S(e.sessionId));
+      (e[14] = n),
+      (e[15] = x),
+      (e[16] = w),
+      (e[17] = y),
+      (e[18] = b),
+      (e[19] = P))
+    : (P = e[19]);
+  let F;
+  (e[20] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((F = []), (e[20] = F))
+    : (F = e[20]),
+    te(`global-dictation-start`, P, F));
+  let I, L;
+  (e[21] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((I = (e) => {
+        (u(`transcribing`), p(null), h(!1), T(e.sessionId), v(e.sessionId));
       }),
-      (V = []),
-      (e[19] = B),
-      (e[20] = V))
-    : ((B = e[19]), (V = e[20])),
-    o(`global-dictation-stop`, B, V));
-  let H;
-  e[21] === t
-    ? (H = e[22])
-    : ((H = t.formatMessage({
+      (L = []),
+      (e[21] = I),
+      (e[22] = L))
+    : ((I = e[21]), (L = e[22])),
+    te(`global-dictation-stop`, I, L));
+  let R;
+  e[23] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((R = i({
+        id: `globalDictation.closeWindow`,
+        defaultMessage: `Close window`,
+        description: `Context menu item that closes the global dictation floating window`,
+      })),
+      (e[23] = R))
+    : (R = e[23]);
+  let z;
+  e[24] === j
+    ? (z = e[25])
+    : ((z = [{ id: `close-window`, message: R, onSelect: j }]),
+      (e[24] = j),
+      (e[25] = z));
+  let B;
+  e[26] === t
+    ? (B = e[27])
+    : ((B = t.formatMessage({
         id: `globalDictation.waveformAriaLabel`,
         defaultMessage: `Global dictation waveform`,
         description: `Accessible label for the minimal global dictation waveform`,
       })),
-      (e[21] = t),
-      (e[22] = H));
-  let U = d === `listening` ? `no-drag cursor-interaction` : `draggable`,
-    W = d === `error` ? `w-fit max-w-[304px] gap-2` : `w-16 justify-center`,
-    G;
-  e[23] !== U || e[24] !== W
-    ? ((G = r(
+      (e[26] = t),
+      (e[27] = B));
+  let V = l === `error` ? `draggable` : `no-drag`,
+    H = l === `listening` && `cursor-interaction`,
+    U = l === `error` ? `w-fit max-w-[304px] gap-2` : `w-16 justify-center`,
+    W;
+  e[28] !== V || e[29] !== H || e[30] !== U
+    ? ((W = r(
         `flex h-8 items-center rounded-full border border-token-border-default/80 bg-token-bg-primary/95 px-2 shadow-lg shadow-black/20 backdrop-blur-sm forced-colors:bg-[Canvas] forced-colors:backdrop-blur-none [@media(prefers-reduced-transparency:reduce)]:bg-token-bg-primary [@media(prefers-reduced-transparency:reduce)]:backdrop-blur-none`,
+        V,
+        H,
         U,
-        W,
       )),
-      (e[23] = U),
-      (e[24] = W),
-      (e[25] = G))
-    : (G = e[25]);
-  let K;
-  e[26] === d
-    ? (K = e[27])
-    : ((K =
-        d === `transcribing`
-          ? (0, O.jsx)(ee, { className: `icon-xs text-token-text-secondary` })
+      (e[28] = V),
+      (e[29] = H),
+      (e[30] = U),
+      (e[31] = W))
+    : (W = e[31]);
+  let G;
+  e[32] === l
+    ? (G = e[33])
+    : ((G =
+        l === `transcribing`
+          ? (0, C.jsx)(re, { className: `icon-xs text-token-text-secondary` })
           : null),
-      (e[26] = d),
-      (e[27] = K));
-  let q;
-  e[28] !== y ||
-  e[29] !== _ ||
-  e[30] !== F ||
-  e[31] !== N ||
-  e[32] !== t ||
-  e[33] !== d
-    ? ((q =
-        d === `error`
-          ? (0, O.jsxs)(O.Fragment, {
+      (e[32] = l),
+      (e[33] = G));
+  let K;
+  e[34] !== m ||
+  e[35] !== f ||
+  e[36] !== k ||
+  e[37] !== D ||
+  e[38] !== t ||
+  e[39] !== l
+    ? ((K =
+        l === `error`
+          ? (0, C.jsxs)(C.Fragment, {
               children: [
-                (0, O.jsx)(`span`, {
+                (0, C.jsx)(`span`, {
                   className: `max-w-[252px] min-w-0 truncate text-xs font-medium text-token-error-foreground`,
-                  children: _,
+                  children: f,
                 }),
-                y
-                  ? (0, O.jsx)(`button`, {
+                m
+                  ? (0, C.jsx)(`button`, {
                       type: `button`,
                       className: `no-drag flex size-5 shrink-0 cursor-interaction items-center justify-center rounded-full text-token-text-secondary hover:bg-token-list-hover-background hover:text-token-text-primary focus:outline-none`,
                       "aria-label": t.formatMessage({
@@ -330,11 +375,11 @@ function k() {
                         defaultMessage: `Retry`,
                         description: `Accessible label for the button that retries global dictation transcription`,
                       }),
-                      onClick: N,
-                      children: (0, O.jsx)(ne, { className: `icon-2xs` }),
+                      onClick: D,
+                      children: (0, C.jsx)(oe, { className: `icon-2xs` }),
                     })
                   : null,
-                (0, O.jsx)(`button`, {
+                (0, C.jsx)(`button`, {
                   type: `button`,
                   className: `no-drag flex size-5 shrink-0 cursor-interaction items-center justify-center rounded-full text-token-text-secondary hover:bg-token-list-hover-background hover:text-token-text-primary focus:outline-none`,
                   "aria-label": t.formatMessage({
@@ -342,105 +387,112 @@ function k() {
                     defaultMessage: `Dismiss`,
                     description: `Accessible label for the button that dismisses the global dictation error window`,
                   }),
-                  onClick: F,
-                  children: (0, O.jsx)(te, { className: `icon-2xs` }),
+                  onClick: k,
+                  children: (0, C.jsx)(ie, { className: `icon-2xs` }),
                 }),
               ],
             })
           : null),
-      (e[28] = y),
-      (e[29] = _),
-      (e[30] = F),
-      (e[31] = N),
-      (e[32] = t),
-      (e[33] = d),
-      (e[34] = q))
-    : (q = e[34]);
-  let J;
-  e[35] !== d || e[36] !== C
-    ? ((J =
-        d === `starting` || d === `listening`
-          ? (0, O.jsx)(`canvas`, {
-              ref: C,
+      (e[34] = m),
+      (e[35] = f),
+      (e[36] = k),
+      (e[37] = D),
+      (e[38] = t),
+      (e[39] = l),
+      (e[40] = K))
+    : (K = e[40]);
+  let q;
+  e[41] !== l || e[42] !== _
+    ? ((q =
+        l === `starting` || l === `listening`
+          ? (0, C.jsx)(`canvas`, {
+              ref: _,
               className: `h-4 min-w-0 flex-1 text-token-text-primary`,
               "aria-hidden": `true`,
             })
           : null),
-      (e[35] = d),
-      (e[36] = C),
-      (e[37] = J))
-    : (J = e[37]);
-  let Y;
-  e[38] === d
-    ? (Y = e[39])
-    : ((Y =
-        d === `starting` || d === `listening`
-          ? (0, O.jsx)(i, {
+      (e[41] = l),
+      (e[42] = _),
+      (e[43] = q))
+    : (q = e[43]);
+  let J;
+  e[44] === l
+    ? (J = e[45])
+    : ((J =
+        l === `starting` || l === `listening`
+          ? (0, C.jsx)(ee, {
               id: `globalDictation.listening`,
               defaultMessage: `Listening`,
               description: `Status text shown in the global dictation window while recording`,
             })
           : null),
-      (e[38] = d),
-      (e[39] = Y));
-  let X;
-  e[40] === d
-    ? (X = e[41])
-    : ((X =
-        d === `transcribing`
-          ? (0, O.jsx)(i, {
+      (e[44] = l),
+      (e[45] = J));
+  let Y;
+  e[46] === l
+    ? (Y = e[47])
+    : ((Y =
+        l === `transcribing`
+          ? (0, C.jsx)(ee, {
               id: `globalDictation.transcribing`,
               defaultMessage: `Transcribing…`,
               description: `Status text shown in the global dictation window while audio is being transcribed`,
             })
           : null),
-      (e[40] = d),
-      (e[41] = X));
-  let Z = d === `error` ? _ : null,
-    Q;
-  e[42] !== Y || e[43] !== X || e[44] !== Z
-    ? ((Q = (0, O.jsxs)(`span`, { className: `sr-only`, children: [Y, X, Z] })),
-      (e[42] = Y),
-      (e[43] = X),
-      (e[44] = Z),
-      (e[45] = Q))
-    : (Q = e[45]);
+      (e[46] = l),
+      (e[47] = Y));
+  let X = l === `error` ? f : null,
+    Z;
+  e[48] !== J || e[49] !== Y || e[50] !== X
+    ? ((Z = (0, C.jsxs)(`span`, { className: `sr-only`, children: [J, Y, X] })),
+      (e[48] = J),
+      (e[49] = Y),
+      (e[50] = X),
+      (e[51] = Z))
+    : (Z = e[51]);
+  let Q;
+  e[52] !== N ||
+  e[53] !== B ||
+  e[54] !== W ||
+  e[55] !== G ||
+  e[56] !== K ||
+  e[57] !== q ||
+  e[58] !== Z
+    ? ((Q = (0, C.jsxs)(`section`, {
+        "aria-live": `polite`,
+        "aria-label": B,
+        className: W,
+        onClick: N,
+        children: [G, K, q, Z],
+      })),
+      (e[52] = N),
+      (e[53] = B),
+      (e[54] = W),
+      (e[55] = G),
+      (e[56] = K),
+      (e[57] = q),
+      (e[58] = Z),
+      (e[59] = Q))
+    : (Q = e[59]);
   let $;
   return (
-    e[46] !== L ||
-    e[47] !== G ||
-    e[48] !== K ||
-    e[49] !== q ||
-    e[50] !== J ||
-    e[51] !== Q ||
-    e[52] !== H
-      ? (($ = (0, O.jsx)(`main`, {
+    e[60] !== z || e[61] !== Q
+      ? (($ = (0, C.jsx)(`main`, {
           className: `flex h-screen w-screen items-center justify-center overflow-hidden bg-transparent p-1 text-token-text-primary`,
-          children: (0, O.jsxs)(`section`, {
-            "aria-live": `polite`,
-            "aria-label": H,
-            className: G,
-            onClick: L,
-            children: [K, q, J, Q],
-          }),
+          children: (0, C.jsx)(ae, { items: z, children: Q }),
         })),
-        (e[46] = L),
-        (e[47] = G),
-        (e[48] = K),
-        (e[49] = q),
-        (e[50] = J),
-        (e[51] = Q),
-        (e[52] = H),
-        (e[53] = $))
-      : ($ = e[53]),
+        (e[60] = z),
+        (e[61] = Q),
+        (e[62] = $))
+      : ($ = e[62]),
     $
   );
 }
-function ie(e) {
-  c.dispatchMessage(`global-dictation-window-layout`, {
+function fe(e) {
+  s.dispatchMessage(`global-dictation-window-layout`, {
     sessionId: e,
     layout: `compact`,
   });
 }
-export { k as GlobalDictationPage };
+export { w as GlobalDictationPage };
 //# sourceMappingURL=global-dictation-page.js.map

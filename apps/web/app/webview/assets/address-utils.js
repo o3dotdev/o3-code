@@ -3,44 +3,35 @@ var e = 8.43,
   n = 0.1,
   r = 0,
   i = 2,
-  a = 0;
+  a = 4 / 3;
 function o(e) {
   return e && e > 0 ? e : t;
 }
-function s(e, t) {
-  if (e == null || e <= 0) return 64;
-  let n = e,
-    r = o(t);
-  if (n >= 1)
-    return Math.floor(((n * 256 + Math.floor(128 / r)) / 256) * r) + 5;
-  let i = Math.floor(n * (r + 5)) + 5;
-  return Math.max(0, i);
+function s(e) {
+  return Math.ceil(o(e));
 }
 function c(e, t) {
-  if (!Number.isFinite(e) || e <= 0) return 0;
-  let n = o(t),
-    r = Math.max((e - 5) / n, 0),
-    i = Math.abs(s(r, n) - e);
-  for (let t = 0; t <= 150; t += 0.05) {
-    let a = Math.abs(s(t, n) - e);
-    a < i && ((i = a), (r = t));
-  }
-  return Math.round(r * 100) / 100;
+  return e == null || e <= 0 ? 64 : e * s(t);
 }
-function l(e) {
-  return ((e == null || e === 0 ? 15 : e) * 96) / 72;
+function l(e, t) {
+  if (!Number.isFinite(e) || e <= 0) return 0;
+  let n = e / s(t);
+  return Math.round(n * 100) / 100;
 }
 function u(e) {
-  return Number.isFinite(e ?? 0) ? ((e ?? 0) * 72) / 96 : 15;
+  return ((e == null || e === 0 ? 15 : e) * 96) / 72;
 }
 function d(e) {
+  return Number.isFinite(e ?? 0) ? ((e ?? 0) * 72) / 96 : 15;
+}
+function f(e) {
   let t = e > 0 ? e : 11;
   return {
     padLr: Math.max(i, Math.floor(t * n)),
     padTb: Math.max(a, Math.floor(t * r)),
   };
 }
-function f(e) {
+function p(e) {
   let t = ``;
   for (e += 1; e; ) {
     let n = (e - 1) % 26;
@@ -48,18 +39,18 @@ function f(e) {
   }
   return t;
 }
-function p(e) {
+function m(e) {
   let t = e.match(/[A-Z]+/);
   if (!t) return 0;
   let n = 0;
   for (let e of t[0]) n = n * 26 + (e.charCodeAt(0) - 64);
   return n - 1;
 }
-function m(e) {
+function h(e) {
   let t = e.match(/\d+/);
   return t ? parseInt(t[0], 10) - 1 : 0;
 }
-function h(e) {
+function g(e) {
   let t = e.replace(/^0x/i, ``);
   return t.length === 8
     ? `rgba(${parseInt(t.slice(2, 4), 16)}, ${parseInt(t.slice(4, 6), 16)}, ${parseInt(t.slice(6, 8), 16)}, ${(1).toFixed(3)})`
@@ -67,7 +58,7 @@ function h(e) {
       ? `#${t}`
       : `#ffffff`;
 }
-function g(e) {
+function _(e) {
   if (e != null)
     return e === 64
       ? `#000000`
@@ -75,34 +66,34 @@ function g(e) {
           `.`,
         )[e];
 }
-function _(e) {
-  let t = b(e);
+function v(e) {
+  let t = x(e);
   if (!t) return null;
   let n = t.split(`:`),
     r = n[0];
   if (!r) return null;
   let i = n[1] ?? r,
-    a = m(r),
-    o = p(r),
-    s = m(i),
-    c = p(i),
+    a = h(r),
+    o = m(r),
+    s = h(i),
+    c = m(i),
     l = {
       startRow: Math.min(a, s),
       startCol: Math.min(o, c),
       endRow: Math.max(a, s),
       endCol: Math.max(o, c),
     };
-  return { ref: v(l), bounds: l };
+  return { ref: y(l), bounds: l };
 }
-function v(e) {
-  let t = y(e.startRow, e.startCol),
-    n = y(e.endRow, e.endCol);
+function y(e) {
+  let t = b(e.startRow, e.startCol),
+    n = b(e.endRow, e.endCol);
   return t === n ? t : `${t}:${n}`;
 }
-function y(e, t) {
-  return `${f(t)}${e + 1}`;
+function b(e, t) {
+  return `${p(t)}${e + 1}`;
 }
-function b(e) {
+function x(e) {
   let t = e.trim();
   return t
     ? (t.includes(`!`) ? t.slice(t.indexOf(`!`) + 1) : t)
@@ -110,40 +101,49 @@ function b(e) {
         .toUpperCase()
     : null;
 }
-function x(e) {
+function S(e) {
   return { rows: e.endRow - e.startRow + 1, cols: e.endCol - e.startCol + 1 };
 }
-function S(e) {
+function C(e, t) {
+  return (
+    e.startRow <= t.endRow &&
+    e.endRow >= t.startRow &&
+    e.startCol <= t.endCol &&
+    e.endCol >= t.startCol
+  );
+}
+function w(e) {
   let t = e.startsWith(`=`) ? e.slice(1) : e,
     n = t.indexOf(`!`);
-  if (n === -1) return { ref: _(t)?.ref ?? t };
+  if (n === -1) return { ref: v(t)?.ref ?? t };
   let r = t.slice(0, n),
     i = t.slice(n + 1),
-    a = _(i);
-  return { sheetName: C(r), ref: a?.ref ?? i };
+    a = v(i);
+  return { sheetName: T(r), ref: a?.ref ?? i };
 }
-function C(e) {
+function T(e) {
   return e.startsWith(`'`) && e.endsWith(`'`) && e.length >= 2
     ? e.slice(1, -1).replace(/''/g, `'`)
     : e;
 }
 export {
-  m as _,
-  _ as a,
-  h as c,
-  f as d,
-  g as f,
+  f as _,
+  v as a,
+  e as c,
+  m as d,
+  p as f,
   d as g,
-  u as h,
-  b as i,
-  s as l,
-  c as m,
-  v as n,
-  S as o,
-  l as p,
-  y as r,
-  e as s,
-  x as t,
-  p as u,
+  l as h,
+  x as i,
+  g as l,
+  u as m,
+  y as n,
+  C as o,
+  _ as p,
+  b as r,
+  w as s,
+  S as t,
+  c as u,
+  h as v,
 };
 //# sourceMappingURL=address-utils.js.map

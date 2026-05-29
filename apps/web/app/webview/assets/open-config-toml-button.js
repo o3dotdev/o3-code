@@ -1,13 +1,13 @@
-import { s as e } from "./chunk.js";
-import { P as t, v as n } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { C as t, Dr as n } from "./src-C.js";
 import { t as r } from "./jsx-runtime.js";
-import { B as i, H as a, a as o, l as s, xt as c } from "./setting-storage.js";
+import { U as i, V as a, a as o, l as s, wt as c } from "./setting-storage.js";
 import { t as l } from "./button.js";
 import { t as u } from "./use-codex-home.js";
-import { t as d } from "./use-os-info.js";
-import { t as f } from "./link-external.js";
-import { t as p } from "./open-workspace-file.js";
-var m = i({
+import { t as d } from "./use-os-info-CpFtQpVC.js";
+import { t as f } from "./link-external-BPZREBQk.js";
+import { t as p } from "./open-workspace-file-WgoEFjrv.js";
+var m = a({
   openConfigToml: {
     id: `codex.profileDropdown.openConfigToml`,
     defaultMessage: `Open config.toml`,
@@ -39,7 +39,7 @@ async function g(e) {
   }
 }
 var _ = c(),
-  v = e(t(), 1),
+  v = e(n(), 1),
   y = r();
 function b(e) {
   let t = (0, _.c)(7),
@@ -115,32 +115,32 @@ function x(e) {
   );
 }
 function S(e) {
-  let t = (0, _.c)(7),
+  let n = (0, _.c)(7),
     { data: r } = d(),
-    i = o(n.runCodexInWsl),
+    a = o(t.runCodexInWsl),
     s = u(e),
-    c = r?.platform === `win32` && r?.hasWsl && i,
+    c = r?.platform === `win32` && r?.hasWsl && a,
     l;
-  t[0] === s
-    ? (l = t[1])
+  n[0] === s
+    ? (l = n[1])
     : ((l = s == null ? null : v.default.join(s, `config.toml`)),
-      (t[0] = s),
-      (t[1] = l));
+      (n[0] = s),
+      (n[1] = l));
   let f = l,
     p;
-  t[2] === c
-    ? (p = t[3])
+  n[2] === c
+    ? (p = n[3])
     : ((p = c
-        ? (0, y.jsx)(a, { ...m.openConfigTomlWsl })
-        : (0, y.jsx)(a, { ...m.openConfigToml })),
-      (t[2] = c),
-      (t[3] = p));
+        ? (0, y.jsx)(i, { ...m.openConfigTomlWsl })
+        : (0, y.jsx)(i, { ...m.openConfigToml })),
+      (n[2] = c),
+      (n[3] = p));
   let h = p,
     g;
   return (
-    t[4] !== f || t[5] !== h
-      ? ((g = { configPath: f, label: h }), (t[4] = f), (t[5] = h), (t[6] = g))
-      : (g = t[6]),
+    n[4] !== f || n[5] !== h
+      ? ((g = { configPath: f, label: h }), (n[4] = f), (n[5] = h), (n[6] = g))
+      : (g = n[6]),
     g
   );
 }

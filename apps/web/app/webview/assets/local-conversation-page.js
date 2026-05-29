@@ -5,1509 +5,847 @@ const __vite__mapDeps = (
     (m.f = [
       "./conversation-markdown.js",
       "./setting-storage.js",
-      "./chunk.js",
-      "./src-BLHmAhbF.js",
+      "./chunk-Bj-mKKzh.js",
+      "./src-C.js",
       "./jsx-runtime.js",
       "./tslib.es6.js",
-      "./app-server-manager-signals.js",
+      "./app-server-manager-signals-DkRDRgNB.js",
       "./preload-helper.js",
-      "./statsig.js",
-      "./lib.js",
-      "./marked.esm.js",
+      "./statsig--EYRNU53.js",
+      "./rpc-DqwD0euc.js",
+      "./lib-DHgYfVJN.js",
+      "./marked.esm-BR-H6018.js",
       "./v4.js",
+      "./product-logger-DusapRyT.js",
+      "./request-DWZTrEAr.js",
+      "./app-server-dynamic-tools-BARsY_O-.js",
+      "./workspace-dependencies-feature-DTe1S-zC.js",
+      "./build-worktree-label-from-input.js",
+      "./permissions-mode-defaults.js",
       "./score-query-match.js",
-      "./product-logger.js",
-      "./split-items-into-render-groups.js",
+      "./models-and-reasoning-efforts-qLdGz-ul.js",
+      "./projectless-thread.js",
+      "./local-projects.js",
+      "./remote-projects.js",
+      "./use-global-state.js",
+      "./thread-context-inputs-DBrOekVr.js",
+      "./pending-worktree-store-COXB8WW0.js",
+      "./codex-BjFeJtxQ.js",
+      "./settings.cog.js",
+      "./split-items-into-render-groups-TGUHLoXy.js",
+      "./clsx-BcPLHiun.js",
       "./mcp-tool-item-content-utils.js",
       "./hash-code.js",
+      "./thinking-shimmer.js",
+      "./thinking-shimmer.css",
       "./thread-detail-level.js",
     ]),
 ) => i.map((i) => d[i]);
-import { s as e } from "./chunk.js";
-import { Cn as t } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { zn as t } from "./src-C.js";
 import {
-  $ as n,
-  C as r,
-  Ca as i,
-  F as a,
-  I as o,
-  L as s,
-  M as c,
-  N as l,
-  O as u,
-  Q as d,
-  V as f,
-  as as p,
-  at as m,
-  et as h,
-  g,
-  la as _,
-  mt as v,
-  os as y,
-  pa as b,
-  qn as x,
-  tt as S,
-  yt as C,
-} from "./app-server-manager-signals.js";
-import { t as w } from "./preload-helper.js";
-import { n as T, t as E } from "./jsx-runtime.js";
-import "./codex-diff-css.js";
+  B as n,
+  Cr as r,
+  I as i,
+  L as a,
+  O as o,
+  U as s,
+  bt as c,
+  do as l,
+  eo as u,
+  et as d,
+  g as f,
+  ht as p,
+  j as m,
+  nt as h,
+  q as g,
+  rt as _,
+  st as v,
+  tc as y,
+  tt as b,
+  w as x,
+  z as S,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { t as C } from "./preload-helper.js";
+import { n as w, t as T } from "./jsx-runtime.js";
+import "./shiki-highlight-provider-gate-BIldj-yk.js";
 import {
-  _ as D,
-  a as O,
-  c as k,
-  d as A,
+  C as E,
+  S as D,
+  _ as O,
+  a as k,
+  b as A,
+  c as ee,
   f as j,
-  h as M,
-  i as N,
-  l as P,
-  m as F,
-  n as ee,
-  o as I,
-  r as L,
-  s as R,
-  t as z,
-  u as te,
-  v as B,
-} from "./local-conversation-thread.js";
-import { t as ne } from "./clsx.js";
-import "./react-dom.js";
+  i as M,
+  l as N,
+  m as P,
+  n as te,
+  o as ne,
+  p as F,
+  r as I,
+  s as re,
+  t as L,
+  u as R,
+  v as z,
+  x as B,
+} from "./local-conversation-thread-DAwsPWah.js";
+import { t as ie } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
 import "./core.esm.js";
-import "./katex-BzX-JuVf.js";
-import "./marked.esm.js";
-import "./pdf-DbRVTnv1.js";
+import "./katex-C2KDRoso.js";
+import "./marked.esm-BR-H6018.js";
+import "./pdf-DDdRP0ey.js";
 import {
-  C as re,
-  H as V,
-  J as H,
-  L as ie,
-  S as ae,
-  W as oe,
-  X as U,
-  Y as se,
-  Z as ce,
-  b as W,
-  l as le,
-  rt as ue,
-  u as de,
-  xt as fe,
+  G as V,
+  L as ae,
+  Q as H,
+  S as oe,
+  U,
+  X as W,
+  Y as G,
+  Z as K,
+  u as se,
+  wt as q,
 } from "./setting-storage.js";
-import { f as pe, m as me, r as he, u as ge } from "./chunk-LFPYN7LY.js";
+import { a as J, f as Y, g as ce } from "./chunk-LFPYN7LY.js";
 import "./known-app-icon.js";
-import { t as _e } from "./branch.js";
-import "./github-mark.js";
+import "./branch.js";
+import "./github-mark-BbpRNXQM.js";
 import "./google-drive.js";
-import "./notion.js";
-import "./product-logger.js";
-import "./statsig.js";
+import "./notion-hFEWPyiF.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./codex-api.js";
-import "./_baseOrderBy.js";
-import "./parse-owner-repo.js";
-import "./use-debounced-value.js";
-import "./use-is-dark.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
+import { s as le } from "./apps-queries-CmwRqoKz.js";
+import "./startCase.js";
+import "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
 import "./connector-logo.js";
-import { r as ve } from "./toast-signal.js";
+import "./toast-signal.js";
 import "./window-zoom-context.js";
-import { t as ye } from "./tooltip.js";
-import "./build-start-conversation-params.js";
-import { t as be } from "./route-scope.js";
-import "./prompt-text.js";
+import { t as ue } from "./tooltip-CDzchJxN.js";
+import "./build-start-conversation-params-DHCgiUKY.js";
+import { t as X } from "./route-scope.js";
+import "./prompt-text-DuAhtLDu.js";
 import "./use-environment.js";
-import "./composer-view-state.js";
+import "./composer-view-state-JRNwOfub.js";
 import "./mention-item.js";
-import "./use-collaboration-mode.js";
-import "./use-model-settings.js";
-import { t as xe } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./use-collaboration-mode-CQFe-Ilp.js";
+import "./use-model-settings-BGTYyORt.js";
+import { t as de } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
-import "./link-external.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./link-external-BPZREBQk.js";
 import "./open-config-toml-button.js";
-import "./open-workspace-file.js";
+import "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
-import "./model-queries.js";
+import "./model-queries-CVdTsyPv.js";
 import "./use-webview-execution-target.js";
 import "./remote-projects.js";
 import "./collaboration-mode-queries.js";
 import "./thread-detail-level.js";
 import "./permissions-mode-defaults.js";
 import "./use-permissions-mode.js";
-import { t as Se } from "./proxy.js";
-import { P as Ce, a as we, y as Te } from "./app-shell-state.js";
-import "./app-shell-panel-animation.js";
-import { t as Ee } from "./app-shell.js";
+import "./composer-footer-C_v29uwU.js";
+import { t as fe } from "./proxy.js";
+import { S as pe, V as me, a as he } from "./app-shell-state.js";
+import { t as ge } from "./app-shell-D4HBgUPf.js";
 import "./onboarding-state.js";
 import "./use-service-tier-settings.js";
-import "./apps.js";
-import "./chats.js";
-import "./x.js";
+import "./apps-DwfMzB5Q.js";
+import "./chats-DoviPPWc.js";
+import "./x-C_RDKBp5.js";
 import "./projectless-thread.js";
-import "./plugin-install-store.js";
+import "./plugin-install-store-Daxzgjai.js";
 import "./use-platform.js";
-import "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
-import { s as De } from "./apps-queries.js";
-import "./startCase.js";
-import "./uniq.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
 import "./check-circle-filled.js";
-import "./chrome-theme.js";
-import "./parsePatchFiles.js";
-import "./browser-sidebar-manager.js";
-import { a as Oe, n as ke } from "./app-shell-tab-controller.js";
-import { t as Ae } from "./local-conversation-title-signals.js";
-import { Ot as je } from "./review-navigation-model.js";
-import "./parse-diff.js";
-import "./review-file-source-tab.js";
-import "./file-diff.js";
-import "./sumBy.js";
-import "./thread-context.js";
 import "./diff-view-mode.js";
-import "./git-current-branch-query.js";
+import "./browser-sidebar-manager.js";
+import { l as _e, n as ve } from "./app-shell-tab-controller-BTWycTBb.js";
+import { t as ye } from "./local-conversation-title-signals-bVA-f9H8.js";
+import { At as be } from "./review-navigation-model-DMRVNxCn.js";
 import "./focus-composer.js";
+import "./review-file-source-tab.js";
+import "./file-diff-DOHfgomY.js";
+import "./sumBy-zUPwGmzt.js";
+import "./thread-context-CaET2O8s.js";
+import "./git-current-branch-query.js";
 import "./terminal.js";
 import "./app-intl-signal.js";
-import "./terminal-service.js";
-import { c as Me } from "./thread-page-bottom-panel-state-DZYvoqqn.js";
-import { t as G } from "./info.js";
+import "./thread-page-bottom-panel-state.js";
+import "./xterm-display-helpers.js";
+import "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import "./download.js";
 import "./with-window.js";
 import "./use-resolved-theme-variant.js";
 import "./thread-panel-state.js";
 import "./window-app-action-helpers.js";
-import "./plugin-config-edits.js";
-import "./sidebar-thread-keys.js";
-import { f as Ne } from "./local-remote-selection.js";
-import "./use-is-remote-host.js";
+import "./locale-resolver-CfTzWTiS.js";
+import "./use-is-remote-host-DScyzh-e.js";
 import "./use-is-fast-mode-enabled.js";
+import "./plugin-detail-route-utils.js";
 import "./use-plugin-install-flow.js";
 import "./dialog-layout.js";
 import "./lightning-bolt.js";
-import { o as Pe, u as K } from "./reasoning-minimal.js";
+import { o as xe, u as Se } from "./reasoning-minimal-DZ-l40pu.js";
+import "./plugins-availability-txQMPSuC.js";
+import "./plugin-config-edits-DUMiyKty.js";
+import "./build-worktree-label-from-input.js";
+import "./local-projects.js";
+import "./pending-worktree-store-COXB8WW0.js";
+import "./app-server-dynamic-tools-BARsY_O-.js";
 import "./run-command.js";
-import {
-  B as Fe,
-  E as Ie,
-  c as Le,
-  g as Re,
-  t as ze,
-  u as Be,
-  z as Ve,
-} from "./composer.js";
-import "./thread-management-dynamic-tools.js";
+import { t as Ce, u as we } from "./composer-07OrsRiq.js";
+import "./process-manager-target.js";
+import { l as Te } from "./thread-side-panel-tabs-BAdsmGgF.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
+import { u as Ee } from "./local-conversation-background-terminals-model.js";
 import "./initial-route-atom.js";
-import { t as He } from "./use-stable-callback.js";
+import { t as De } from "./use-stable-callback.js";
 import "./use-navigate-to-local-conversation.js";
 import "./electron-menu-shortcuts.js";
-import { r as Ue } from "./use-skills.js";
-import "./modal-controller-state-.js";
-import { i as We } from "./open-project-setup-dialog.js";
+import "./local-task-row-signals-BzazYVei.js";
+import "./sidebar-project-group-signals-CEQTKcIf.js";
+import "./pinned-threads-query-DYArLI-i.js";
+import "./sidebar-thread-list-signals.js";
+import "./sidebar-project-groups.js";
+import "./_defineProperty.js";
+import { t as Oe } from "./use-register-command.js";
 import "./homepage-logo.js";
-import { t as Ge } from "./loading-page.js";
-import "./sortable.esm.js";
-import "./use-resize-observer.js";
+import { t as ke } from "./loading-page.js";
+import "./sortable.esm-BRPfvPzy.js";
+import "./use-resize-observer-DCpyQHos.js";
 import "./check-md.js";
-import { t as Ke } from "./chevron-right.js";
+import { t as Ae } from "./chevron-right.js";
 import "./context-menu.js";
+import "./command-keybindings-C3NM9T-L.js";
 import "./expand.js";
-import "./keyboard-modifier-state.js";
-import "./thread-side-panel-browser-tab-state.js";
-import { i as q } from "./command-keybindings.js";
+import "./keyboard-modifier-state-BKqcycjV.js";
 import "./arrow-left.js";
 import "./use-window-controls-safe-area.js";
 import "./app-shell-bottom-panel-scroll-sync.js";
-import "./use-start-new-conversation-B.js";
+import "./select-project.js";
+import "./use-start-new-conversation.js";
 import "./compose.js";
+import "./codex-api-error-CsUcWied.js";
 import "./use-rate-limit.js";
+import "./checkbox-DtuSNXXy.js";
+import "./minus.js";
+import "./rate-limit-rows.js";
+import "./links.js";
 import "./conversation-starter-card.js";
-import { a as qe, i as Je, r as J } from "./thread-actions.js";
 import {
-  c as Ye,
-  s as Xe,
-  t as Ze,
-  u as Qe,
-  v as $e,
-} from "./workspace-file-command-menu-bridge.js";
-import "./local-task-row-signals.js";
-import "./sidebar-project-group-signals-.js";
-import "./pinned-threads-query.js";
-import "./sidebar-thread-list-signals.js";
-import "./git-origins-query.js";
-import "./sidebar-project-groups.js";
-import "./_defineProperty.js";
-import "./check-circle.js";
+  C as je,
+  O as Me,
+  a as Ne,
+  k as Pe,
+  n as Fe,
+  o as Ie,
+} from "./sidebar-task-pr-chip-signals.js";
+import "./check-circle-hJ_ggIqT.js";
 import "./x-circle.js";
 import "./thinking-shimmer.js";
-import { h as et } from "./automation-schedule.js";
 import "./badge.js";
-import "./bug.js";
+import "./bug-B5-GWt65.js";
 import "./chat.js";
-import { t as tt } from "./clock.js";
+import { t as Le } from "./clock-BflmlnpZ.js";
 import "./search.js";
-import "./skills.js";
-import "./types.js";
-import { t as nt } from "./edit.js";
-import { r as Y, t as rt } from "./dropdown.js";
-import { t as it } from "./animations.js";
-import { u as at } from "./thread-side-panel-tabs-BL2fcy4d.js";
-import "./globe.js";
-import "./set-pinned-thread.js";
-import { i as ot, n as st, t as ct } from "./popover.js";
+import "./skills-BUMAZe_D.js";
+import "./mcp-capability-signals-DAPblgpG.js";
+import "./edit-CWssO-QK.js";
+import { r as Re, t as ze } from "./dropdown-DtQxMoJw.js";
+import { t as Be } from "./animations.js";
+import "./globe-CnvlclXd.js";
+import "./set-pinned-thread-CqaOWPwd.js";
+import { i as Ve } from "./thread-actions.js";
+import { i as He, n as Ue, t as We } from "./popover.js";
 import "./face.js";
-import { t as lt } from "./archive.js";
-import { t as ut } from "./three-dots.js";
+import "./archive-DxqnmQgI.js";
+import "./three-dots.js";
 import "./trash.js";
-import "./chevron.js";
+import "./chevron-NmAOI_v1.js";
 import "./use-app-server-connection-state.js";
+import "./use-relative-now.js";
 import "./format-relative-date-time.js";
-import { a as dt, o as ft } from "./profile-dropdown.js";
-import "./remote-host-globe-icon.js";
-import "./cloud.js";
-import { t as pt } from "./macbook.js";
-import { t as mt } from "./worktree.js";
+import { n as Ge, r as Ke } from "./local-task-row-BShx8eqa.js";
+import "./remote-host-globe-icon-DwUovbza.js";
+import "./cloud-BOSNAJnX.js";
+import "./macbook.js";
+import "./worktree-D_6WAQVb.js";
 import "./thread-env-icon.js";
 import "./workspace-root-icon.js";
-import "./folder.js";
 import "./warning.js";
-import { t as ht } from "./pin.js";
-import {
-  a as gt,
-  c as _t,
-  i as vt,
-  l as yt,
-  n as bt,
-  r as xt,
-  t as St,
-} from "./review-runtime-bridge.js";
-import {
-  C as Ct,
-  a as wt,
-  d as Tt,
-  i as Et,
-  o as Dt,
-} from "./automation-shared.js";
-import "./review-header-toolbar.js";
-import "./markdown-75WV5XlN.js";
-import "./external-markdown-link.js";
+import { t as qe } from "./format-automation-next-run-label.js";
+import "./pull-request-status-DcVXKzZN.js";
+import "./markdown-46SswYUq.js";
+import "./external-markdown-link-DVRKkYqo.js";
 import "./use-native-apps.electron.js";
 import "./get-file-icon.js";
-import "./code.js";
-import "./json-DAjHKBV7.js";
-import "./image-square.js";
-import "./notebook.js";
+import "./code-s3Scfd05.js";
+import "./json-CRHyc9De.js";
+import "./image-square-CGEtcnWp.js";
+import "./notebook-MImpo36y.js";
 import "./settings.cog.js";
-import "./mcp.js";
-import "./chrome.js";
-import "./codex.js";
-import "./openai-blossom.js";
+import "./mcp-D_m7bYb5.js";
+import "./chrome-ZI-wJE1V.js";
+import "./codex-BjFeJtxQ.js";
+import "./openai-blossom-CXnPbecc.js";
 import "./pencil.js";
 import "./filesystem-media-src.js";
 import "./inline-mentions.js";
-import "./code-snippet.js";
-import "./tailwind-styled-components.esm.js";
-import { t as Ot } from "./copy.js";
+import "./workspace-file-context-menu.js";
+import "./use-skills.js";
+import "./code-snippet-hioibDaj.js";
+import "./copy-Cen6nDnP.js";
 import "./copy-button.js";
-import "./minus-D.js";
 import "./plus.js";
 import "./image-preview-dialog.js";
-import "./use-diff-annotations.js";
+import "./pull-request-readonly-comment.js";
 import "./pull-request-open.js";
-import { l as kt } from "./use-is-pull-request-merge-helper-enabled.js";
-import { t as At } from "./use-is-background-subagents-enabled.js";
+import "./gh-cli-status-query-DoYMwBhd.js";
+import "./automation-queries-DCiNISnO.js";
+import { t as Je } from "./get-attached-heartbeat-automation-for-thread.js";
+import { t as Ye } from "./use-is-background-subagents-enabled-B.js";
 import "./use-git-current-branch.js";
-import "./annotation-comment-editor-card.js";
-import "./local-environments.js";
-import { t as jt } from "./local-environment-selection.js";
-import "./plugin-detail-page-utils.js";
-import "./plugin-detail-queries.js";
+import "./stop.js";
+import "./realtime-controller-pdTEzsRt.js";
+import "./local-environments-DcKJ5oGa.js";
+import "./local-environment-selection-DyGLYKsj.js";
+import "./fork-conversation-actions-BTbUVcRb.js";
 import "./check-plugin-availability.js";
+import "./plugin-detail-queries.js";
 import "./plugin-prefill-prompt.js";
-import "./link.js";
-import { r as Mt } from "./pending-worktree-store.js";
-import "./arrow-up.js";
+import "./plugins-page-selectors.js";
+import "./arrow-up-fq4d26GH.js";
 import "./use-active-conversation-id.js";
+import "./avatar-Cr2UdTU9.js";
 import "./building.js";
+import "./keyboard-BdirdM4I.js";
 import "./log-out.js";
-import "./profile-visibility.js";
-import "./bullet-separator.js";
+import "./profile-dropdown-CNm7g-4O.js";
+import "./referral-invite-modal-CeoKsCTr.js";
+import "./bullet-separator-DZkwhKzs.js";
 import "./speedometer.js";
-import "./rate-limit-summary.js";
-import "./slash-command-item.js";
-import "./sortBy.js";
-import "./prompt-editor.js";
-/* empty css                    */ import "./use-connected-remote-connections.js";
-import "./use-is-appshot-available.js";
-import "./attachment-remove-button.js";
-import "./mention-metadata-syncer.js";
-import "./browser-sidebar-state.js";
-import { l as Nt } from "./above-composer-panel-row.js";
-import "./permissions-mode-helpers.js";
-import "./banner.js";
+import "./rate-limit-summary-BDTPCTJm.js";
 import "./check-lg.js";
-import "./use-git-default-branch.js";
+import "./profile-queries.js";
+import "./profile-visibility.js";
+import "./sortBy.js";
+import "./prompt-editor-.js";
+import "./workspace-dependencies-feature-DTe1S-zC.js";
+/* empty css                    */ import "./use-connected-remote-connections.js";
+import "./browser-sidebar-comment-light-dismiss.js";
+import "./use-is-appshot-available-BuzGfUqU.js";
+import "./attachment-remove-button-BPMNqRUa.js";
+import "./mention-metadata-syncer.js";
+import "./local-remote-selection-DqDRxu-D.js";
+import "./composer-top-menu-chrome.js";
+import { l as Xe } from "./above-composer-panel-row.js";
+import "./permissions-mode-helpers-CfjXuDYv.js";
+import "./banner.js";
+import "./browser-sidebar-state-BftrCPEH.js";
+import "./use-git-default-branch-gyzefibF.js";
 import "./use-enter-behavior.js";
 import "./toggle.js";
+import "./app-connect-oauth-Cy-gX8IV.js";
 import "./computer-use-app-approvals-query.js";
-import "./bundled-plugin-auto-install-preference.js";
-import "./app-connect-oauth.js";
-import "./codex-api-error.js";
-import "./hooks-settings-queries.js";
-import "./file-tree-search-input.js";
-import "./use-at-mention-sections.js";
-import "./diff-stats-.js";
+import "./hooks-settings-queries-BUP-44jb.js";
+import "./slash-command-item.js";
+import "./review-header-toolbar.js";
+import { f as Ze } from "./at-mention-list-C6rdlW9Y.js";
+import "./diff-stats.js";
 import "./permissions-mode-visibility.js";
+import "./connected-apps.js";
 import "./use-composer-controller.js";
-import "./plan.js";
+import "./plan-Bf1LT-JR.js";
 import "./send-to-cloud.js";
 import "./appshot-window.js";
 import "./undo.js";
 import "./regenerate.js";
 import "./use-recording-waveform.js";
-import "./locale-resolver.js";
+import "./git-branch-picker-dropdown-content-116YOJSU.js";
 import "./shield-code.js";
 import "./shield-exclamation.js";
-import "./settings-shared.js";
-import "./is-subagent-conversation.js";
+import "./settings-shared-BTHmEeQY.js";
+import "./is-subagent-conversation-BDD-JXTj.js";
 import "./format-skill-scope.js";
-import "./git-branch-picker-dropdown-content.js";
 import "./use-personality.js";
-import "./use-is-thread-realtime-enabled.js";
+import "./use-is-thread-realtime-enabled-DgNYbuij.js";
 import "./dictation-error-message.js";
-import "./use-hotkey.js";
-import "./settings-host-selection.js";
-import "./settings-host-context.js";
-import "./list-navigation.js";
-import "./use-diff-comments.js";
-import "./build-worktree-label-from-input.js";
+import "./use-hotkey-yGPn4uDB.js";
+import "./hooks-settings-navigation-BWOkRsTX.js";
+import "./settings-host-context-ILiCQlCE.js";
+import "./list-navigation-DnxNfoPi.js";
+import "./arrow-rotate-ccw.js";
+import "./mcp-capability-view-frame-BVZUfJnz.js";
 import "./use-diff-comment-sources.js";
-import "./arrow-up-right-lg.js";
+import "./arrow-up-right-lg-C37BA3DV.js";
 import "./right-panel-composer-overlay-scroll-reserve.js";
+import "./annotation-mode-button.js";
 import "./browser-sidebar-comment-mode-coachmark-state.js";
-import "./drag.js";
-import "./use-workspace-file-search.js";
-import "./more-menu-trigger.js";
-import "./browser-use-origin-state-queries.js";
-import "./large-empty-state.js";
-import "./pull-request-code-review-comments.js";
+import "./drag-DztkEAnS.js";
+import "./link-Cym8GZvE.js";
+import "./mcp-capability-client.js";
+import "./use-workspace-file-search-KLsQKyAb.js";
+import "./more-menu-trigger-DgGAgPrg.js";
+import "./browser-use-origin-state-queries-CGA9Am-q.js";
+import "./large-empty-state-C2F-IvSK.js";
+import "./pull-request-code-review-comments-qcxIGUtE.js";
+import "./file-tree-search-input.js";
 import "./codex-analytics-attribution.js";
 import "./use-target-apps.js";
-import "./review-file-tree-side-pane.js";
-import "./diff-unified.js";
+import "./diff-unified-BETzamPI.js";
+import "./use-diff-annotations.js";
 import "./rich-preview-primitives.js";
-import "./markdown-surface.js";
+import "./markdown-surface-vWOcyIeh.js";
 import "./anchored-autocomplete-overlay.js";
-import "./use-autocomplete-overlay-placement.js";
+import "./use-autocomplete-overlay-placement-uVAiOuYR.js";
+import "./gh-pull-request-status-query.js";
+import "./open-artifact-side-panel-tab.js";
+import "./app-connect-modal.js";
+import "./compound-button-BQclBs-H.js";
+import "./artifact-preview-header.js";
+import "./arrow-top-right.js";
+import "./folders-DmG-RYpY.js";
+import "./history-BwxRjoaE.js";
+import "./mcp-capability-file-viewer-frame-DKPiqjwC.js";
+import "./project-dropdown-options.js";
+import "./alert-CoBPbdcu.js";
+import "./mcp-tool-item-content-utils.js";
 import "./workspace-directory-tree.js";
-import "./folders.js";
 import "./use-git-synced-branch.js";
-import "./compound-button.js";
 import "./summary-panel-row.js";
 import "./middle-truncated-text.js";
 import "./use-measured-text-collapse.js";
-import "./document-search.js";
-import "./checkbox.js";
+import "./document-search-bccqfQcB.js";
+import {
+  i as Qe,
+  n as $e,
+  r as et,
+  t as tt,
+} from "./review-runtime-bridge-BFL70H2Z.js";
 import "./use-command-hotkey.js";
-import "./thread-layout.js";
-import "./project-dropdown-options.js";
-import { t as Pt } from "./heartbeat-automation-eligibility.js";
-import "./heartbeat-automation-permissions.js";
-import { t as Ft } from "./pop-in-mac.js";
+import "./thread-layout-DxVAHgCj.js";
+import { t as nt } from "./workspace-file-command-menu-bridge-CBYEddRc.js";
+import "./automation-schedule-CNorTxWd.js";
+import {
+  a as rt,
+  d as it,
+  i as at,
+  o as ot,
+} from "./automation-shared-BaYmxTav.js";
+import "./heartbeat-automation-permissions-DKKzssYc.js";
+import "./pop-in-mac.js";
 import "./primary-runtime-install-state.js";
-import "./alert-C_qI2eAS.js";
-import "./settings-row-D.js";
-import "./scroll-to-bottom-buton.js";
-import "./arrow-top-right.js";
-import "./hooks.js";
+import "./settings-row.js";
+import "./scroll-to-bottom-buton-DATGE4ZU.js";
+import "./hooks-Cw0VrjI0.js";
 import "./feedback-form-dialog.js";
 import "./thread-handoff-store.js";
-import "./open-artifact-side-panel-tab.js";
-import "./history.js";
+import "./use-is-pull-request-merge-helper-enabled-BEgcRHJE.js";
+import "./hotkey-window-state-VEDcKqNF.js";
+import "./mcp-capability-thread-side-panel-tab.js";
 import "./use-git-config-value.js";
 import "./git-submodule-paths-query.js";
-import "./open-in-google-drive-menu-item.js";
-import "./app-connect-modal.js";
-import "./plugin-detail-route-utils.js";
-import "./plugins-availability.js";
+import "./appgen-url-DZWguk-Q.js";
+import "./lock.js";
+import "./members.js";
+import "./appgen-access-mode-CTtzZwIv.js";
 import "./use-automation-history-items.js";
-import "./tasks.js";
+import "./tasks-DNCFvQEW.js";
 import "./star.js";
-import "./play-outline-C-zmd4eu.js";
+import "./play-outline.js";
 import "./segmented-toggle.js";
 import "./git-branch-switcher.js";
 import "./local-remote-dropdown.js";
-import "./dock.js";
+import "./dock-CDRDKrMD.js";
 import "./use-codex-worktrees.js";
 import "./patch-item-content.js";
-import "./reply.js";
-import "./use-git-base-branch.js";
+import "./browser-use-DS7v_bwd.js";
+import "./user-formatted-text.js";
 import {
-  i as It,
-  n as Lt,
-  o as Rt,
-  r as zt,
-  s as Bt,
-  t as Vt,
+  i as st,
+  n as ct,
+  o as lt,
+  r as ut,
+  s as dt,
+  t as ft,
 } from "./use-debug-panel.js";
-import "./header-BOkDHtMc.js";
+import "./header-Bgvtt60z.js";
 import "./thread-scroll-layout.js";
-import { t as Ht } from "./heartbeat-automation-thread-bridge.js";
-import "./user-message-attachments.js";
+import { t as pt } from "./heartbeat-automation-thread-bridge.js";
+import "./hooks-settings-copy.js";
+import "./user-message-attachments-C-Jxxwpp.js";
+import "./app-window.js";
 import "./local-environments-utils.js";
 import "./pull-request-board-model.js";
-import { n as Ut, r as Wt, t as Gt } from "./split-items-into-render-groups.js";
+import {
+  n as mt,
+  r as ht,
+  t as gt,
+} from "./split-items-into-render-groups-TGUHLoXy.js";
 import "./worktree-paths.js";
-import "./mcp-app-resource-content.js";
-import "./mcp-tool-item-content-utils.js";
 import "./primary-runtime-install-status-message.js";
 import "./plan-summary-item-content.js";
-import "./app-window.js";
-import { t as Kt } from "./thread-app-shell-chrome-D6sTw290.js";
-import { t as qt } from "./pin-filled.js";
-var X = fe(),
-  Z = e(T(), 1),
-  Q = E();
-function Jt(e) {
-  let t = (0, X.c)(179),
+import { t as _t } from "./thread-app-shell-chrome-D0krCRGl.js";
+var Z = q(),
+  Q = e(w()),
+  $ = T(),
+  vt = (e) =>
+    (0, $.jsx)(`svg`, {
+      xmlns: `http://www.w3.org/2000/svg`,
+      width: 20,
+      height: 20,
+      fill: `currentColor`,
+      viewBox: `0 0 20 20`,
+      ...e,
+      children: (0, $.jsx)(`path`, {
+        d: `M5.693 11.056a2.71 2.71 0 0 1 2.432 2.694l-.015.277a2.71 2.71 0 0 1-2.694 2.432l-.276-.015a2.71 2.71 0 0 1-2.418-2.417l-.014-.277a2.709 2.709 0 0 1 2.708-2.708l.277.014Zm-.277 1.316a1.378 1.378 0 1 0 0 2.757 1.378 1.378 0 0 0 0-2.757Zm11.384.727a.665.665 0 0 1 0 1.302l-.134.014h-5.833a.665.665 0 0 1 0-1.33h5.833l.135.014ZM5.693 3.556A2.71 2.71 0 0 1 8.125 6.25l-.015.277A2.71 2.71 0 0 1 5.416 8.96l-.276-.015a2.71 2.71 0 0 1-2.418-2.417l-.014-.277a2.709 2.709 0 0 1 2.708-2.708l.277.014Zm-.277 1.316a1.378 1.378 0 1 0 .001 2.757 1.378 1.378 0 0 0-.001-2.757Zm11.384.727a.665.665 0 0 1 0 1.302l-.134.014h-5.833a.665.665 0 0 1 0-1.33h5.833l.135.014Z`,
+      }),
+    });
+function yt(e) {
+  let n = (0, Z.c)(46),
     {
       conversationId: r,
       getConversationMarkdown: i,
-      cwd: o,
-      title: s,
+      title: a,
+      titleSuffix: o,
+      cwd: s,
       canPin: c,
-      hideForkActions: l,
-      isWorktreeThread: d,
-      onArchiveSuccess: f,
+      hideProjectMetadata: u,
+      hideForkActions: d,
     } = e,
-    m = c === void 0 ? !0 : c,
-    h = d === void 0 ? !1 : d,
-    g = se(ae),
-    _ = se(be),
-    v = oe(),
-    {
-      archiveThread: b,
-      renameThread: x,
-      copyAppLink: S,
-      copyConversationMarkdown: C,
-      copySessionId: w,
-      copyWorkingDirectory: T,
-    } = qe(),
-    E = pe(),
-    [D, O] = (0, Z.useState)(!1),
-    [k, A] = (0, Z.useState)(null),
-    [M, N] = (0, Z.useState)(null),
-    [P, F] = (0, Z.useState)(!1),
-    I = y(Et),
-    L = y(wt),
-    R = y(Dt),
-    z;
-  t[0] === m ? (z = t[1]) : ((z = { canPin: m }), (t[0] = m), (t[1] = z));
-  let { isPinned: te, togglePin: B } = Je(r, z),
-    ne = H(q, `toggleThreadPin`),
-    ie = m ? ne : null,
-    U = H(q, `renameThread`),
-    ce = H(q, `archiveThread`),
-    ue = H(q, `copyWorkingDirectory`),
-    de = H(q, `copySessionId`),
-    fe = H(q, `copyDeeplink`),
-    me = H(q, `copyConversationMarkdown`),
-    he = H(q, `openSideChat`),
-    ge;
-  t[2] === r
-    ? (ge = t[3])
-    : ((ge = { conversationId: r }), (t[2] = r), (t[3] = ge));
-  let { canOpenThreadInNewWindow: ye, openThreadInNewWindow: Se } = Xe(ge),
-    Ce = H(Pt, r),
-    we = Ce.isEligible,
-    Te;
-  t[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Te = !Ne()), (t[4] = Te))
-    : (Te = t[4]);
-  let Ee = Te,
-    De = H(n, r),
-    Oe = H(a, r),
-    ke = H(u, r) ?? !1,
-    Ae = p(jt),
-    { createPendingWorktree: je } = Mt(),
-    Me;
-  t[5] !== b || t[6] !== r || t[7] !== f
-    ? ((Me = () => {
-        r != null && b({ conversationId: r, onArchiveSuccess: f });
-      }),
-      (t[5] = b),
-      (t[6] = r),
-      (t[7] = f),
-      (t[8] = Me))
-    : (Me = t[8]);
-  let G = Me,
-    Pe;
-  t[9] !== r || t[10] !== G
-    ? ((Pe = () => {
-        (async () => {
-          let e = null;
-          try {
-            e = kt({
-              automations: (await le(`list-automations`)).items,
-              conversationId: r,
-              includePausedAutomations: !0,
-            });
-          } catch (e) {
-            let t = e;
-            re.error(`Error checking heartbeat automation before archive`, {
-              safe: {},
-              sensitive: { error: t },
-            });
-          }
-          if (e == null) {
-            G();
-            return;
-          }
-          (N(e.name), O(!0));
-        })();
-      }),
-      (t[9] = r),
-      (t[10] = G),
-      (t[11] = Pe))
-    : (Pe = t[11]);
-  let K = Pe,
-    Le;
-  t[12] !== r || t[13] !== I || t[14] !== L || t[15] !== R || t[16] !== s
-    ? ((Le = (e) => {
-        if ((L(null), e != null)) {
-          (R(Tt({ directiveKey: `thread-overflow-${r}`, automation: e })),
-            I(!0));
-          return;
-        }
-        (R({
-          directiveKey: `thread-overflow-${r}`,
-          mode: null,
-          id: null,
-          kind: `heartbeat`,
-          name: s ?? ``,
-          prompt: ``,
-          rrule: ``,
-          cwds: [],
-          executionEnvironment: null,
-          localEnvironmentConfigPath: null,
-          model: null,
-          reasoningEffort: null,
-          targetThreadId: r,
-          status: `ACTIVE`,
-        }),
-          I(!0));
-      }),
-      (t[12] = r),
-      (t[13] = I),
-      (t[14] = L),
-      (t[15] = R),
-      (t[16] = s),
-      (t[17] = Le))
-    : (Le = t[17]);
-  let Re = Le,
-    ze;
-  t[18] !== Oe ||
-  t[19] !== r ||
-  t[20] !== o ||
-  t[21] !== De ||
-  t[22] !== v ||
-  t[23] !== _
-    ? ((ze = () => {
-        r != null &&
-          j(_, ee, {
-            sourceConversationId: r,
-            cwd: o,
-            hostId: De,
-            collaborationMode: Oe,
-            intl: v,
-          }).catch((e) => {
-            (re.error(`Error opening side chat`, {
-              safe: {},
-              sensitive: { error: e },
-            }),
-              _.get(ve).danger(
-                v.formatMessage({
-                  id: `threadHeader.openSideChatError`,
-                  defaultMessage: `Failed to open side chat`,
-                  description: `Error message shown when opening a side chat fails`,
-                }),
-              ));
-          });
-      }),
-      (t[18] = Oe),
-      (t[19] = r),
-      (t[20] = o),
-      (t[21] = De),
-      (t[22] = v),
-      (t[23] = _),
-      (t[24] = ze))
-    : (ze = t[24]);
-  let Be = ze,
-    He;
-  t[25] !== C || t[26] !== i
-    ? ((He = () => C(i)), (t[25] = C), (t[26] = i), (t[27] = He))
-    : (He = t[27]);
-  let Ge = r != null,
-    Ke;
-  (t[28] === Ge
-    ? (Ke = t[29])
-    : ((Ke = { enabled: Ge }), (t[28] = Ge), (t[29] = Ke)),
-    Ue(`copyConversationMarkdown`, He, Ke));
-  let Ze = r != null && Ee,
-    Qe;
-  (t[30] === Ze
-    ? (Qe = t[31])
-    : ((Qe = { enabled: Ze }), (t[30] = Ze), (t[31] = Qe)),
-    Ue(`openSideChat`, Be, Qe));
-  let $e, et;
-  (t[32] !== m || t[33] !== B
-    ? (($e = () => {
-        m && B();
-      }),
-      (et = [m, B]),
-      (t[32] = m),
-      (t[33] = B),
-      (t[34] = $e),
-      (t[35] = et))
-    : (($e = t[34]), (et = t[35])),
-    W(`toggle-thread-pin`, $e, et));
-  let tt, it;
-  (t[36] !== r || t[37] !== s
-    ? ((tt = () => {
-        r && A(s ?? ``);
-      }),
-      (it = [r, s]),
-      (t[36] = r),
-      (t[37] = s),
-      (t[38] = tt),
-      (t[39] = it))
-    : ((tt = t[38]), (it = t[39])),
-    W(`rename-thread`, tt, it));
-  let at, ot;
-  (t[40] === K
-    ? ((at = t[41]), (ot = t[42]))
-    : ((at = () => {
-        K();
-      }),
-      (ot = [K]),
-      (t[40] = K),
-      (t[41] = at),
-      (t[42] = ot)),
-    W(`archive-thread`, at, ot));
-  let st;
-  t[43] !== T || t[44] !== o
-    ? ((st = () => {
-        T(o);
-      }),
-      (t[43] = T),
-      (t[44] = o),
-      (t[45] = st))
-    : (st = t[45]);
-  let ct;
-  (t[46] === o ? (ct = t[47]) : ((ct = [o]), (t[46] = o), (t[47] = ct)),
-    W(`copy-conversation-path`, st, ct));
-  let dt;
-  t[48] !== T || t[49] !== o
-    ? ((dt = () => {
-        T(o);
-      }),
-      (t[48] = T),
-      (t[49] = o),
-      (t[50] = dt))
-    : (dt = t[50]);
-  let ft;
-  (t[51] === o ? (ft = t[52]) : ((ft = [o]), (t[51] = o), (t[52] = ft)),
-    W(`copy-working-directory`, dt, ft));
-  let gt;
-  t[53] !== r || t[54] !== w
-    ? ((gt = () => {
-        r && w(r);
-      }),
-      (t[53] = r),
-      (t[54] = w),
-      (t[55] = gt))
-    : (gt = t[55]);
-  let vt;
-  (t[56] === r ? (vt = t[57]) : ((vt = [r]), (t[56] = r), (t[57] = vt)),
-    W(`copy-session-id`, gt, vt));
-  let bt;
-  t[58] !== r || t[59] !== S
-    ? ((bt = () => {
-        r && S(r);
-      }),
-      (t[58] = r),
-      (t[59] = S),
-      (t[60] = bt))
-    : (bt = t[60]);
-  let xt;
-  if (
-    (t[61] === r ? (xt = t[62]) : ((xt = [r]), (t[61] = r), (t[62] = xt)),
-    W(`copy-deeplink`, bt, xt),
-    !r)
-  )
-    return null;
-  let St = o != null,
-    Ct;
-  t[63] !== g || t[64] !== r || t[65] !== o || t[66] !== E
-    ? ((Ct = async () => {
-        let e = await Ve(g, {
-          sourceConversationId: r,
-          sourceWorkspaceRoot: o,
-        });
-        e != null && E(`/local/${e}`);
-      }),
-      (t[63] = g),
-      (t[64] = r),
-      (t[65] = o),
-      (t[66] = E),
-      (t[67] = Ct))
-    : (Ct = t[67]);
-  let At = Ct,
-    Nt;
-  t[68] !== g ||
-  t[69] !== r ||
-  t[70] !== je ||
-  t[71] !== o ||
-  t[72] !== Ae ||
-  t[73] !== E
-    ? ((Nt = async () => {
-        let e = await Fe(g, {
-          createPendingWorktree: je,
-          localEnvironmentSelectionsByWorkspace: Ae,
-          sourceConversationId: r,
-          sourceWorkspaceRoot: o,
-        });
-        e != null && E(`/worktree-init-v2/${e}`);
-      }),
-      (t[68] = g),
-      (t[69] = r),
-      (t[70] = je),
-      (t[71] = o),
-      (t[72] = Ae),
-      (t[73] = E),
-      (t[74] = Nt))
-    : (Nt = t[74]);
-  let It = Nt,
-    Lt;
-  t[75] === G
-    ? (Lt = t[76])
-    : ((Lt = () => {
-        (O(!1), G());
-      }),
-      (t[75] = G),
-      (t[76] = Lt));
-  let Rt = Lt,
-    zt = te ? yt : _t,
-    Bt = te ? qt : ht,
-    Vt;
-  t[77] === v
-    ? (Vt = t[78])
-    : ((Vt = v.formatMessage(J.moreActions)), (t[77] = v), (t[78] = Vt));
-  let Ht = Vt,
-    Ut = !l,
-    Wt = ye,
-    Gt = Ce.reason === `turn_in_progress`,
-    Kt;
-  t[79] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Kt = (0, Q.jsx)(ut, { className: `icon-sm` })), (t[79] = Kt))
-    : (Kt = t[79]);
-  let Jt;
-  t[80] === Ht
-    ? (Jt = t[81])
-    : ((Jt = (0, Q.jsx)(xe, {
-        size: `icon`,
-        color: `ghost`,
-        className: `no-drag`,
-        "aria-label": Ht,
-        children: Kt,
-      })),
-      (t[80] = Ht),
-      (t[81] = Jt));
-  let Xt;
-  t[82] !== m || t[83] !== Bt || t[84] !== zt || t[85] !== B || t[86] !== ie
-    ? ((Xt = m
-        ? (0, Q.jsx)(Y.Item, {
-            onSelect: B,
-            LeftIcon: Bt,
-            keyboardShortcut: ie,
-            children: (0, Q.jsx)(V, { ...zt }),
-          })
-        : null),
-      (t[82] = m),
-      (t[83] = Bt),
-      (t[84] = zt),
-      (t[85] = B),
-      (t[86] = ie),
-      (t[87] = Xt))
-    : (Xt = t[87]);
-  let Zt;
-  t[88] === s
-    ? (Zt = t[89])
-    : ((Zt = () => A(s ?? ``)), (t[88] = s), (t[89] = Zt));
-  let Qt;
-  t[90] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Qt = (0, Q.jsx)(V, { ...J.renameThread })), (t[90] = Qt))
-    : (Qt = t[90]);
-  let $t;
-  t[91] !== U || t[92] !== Zt
-    ? (($t = (0, Q.jsx)(Y.Item, {
-        onSelect: Zt,
-        LeftIcon: nt,
-        keyboardShortcut: U,
-        children: Qt,
-      })),
-      (t[91] = U),
-      (t[92] = Zt),
-      (t[93] = $t))
-    : ($t = t[93]);
-  let en;
-  t[94] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((en = (0, Q.jsx)(V, { ...J.archiveThread })), (t[94] = en))
-    : (en = t[94]);
-  let tn;
-  t[95] !== ce || t[96] !== K
-    ? ((tn = (0, Q.jsx)(Y.Item, {
-        onSelect: K,
-        LeftIcon: lt,
-        keyboardShortcut: ce,
-        children: en,
-      })),
-      (t[95] = ce),
-      (t[96] = K),
-      (t[97] = tn))
-    : (tn = t[97]);
-  let nn;
-  t[98] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((nn = (0, Q.jsx)(Y.Separator, {})), (t[98] = nn))
-    : (nn = t[98]);
-  let rn;
-  t[99] !== Be || t[100] !== he
-    ? ((rn = Ee
-        ? (0, Q.jsx)(Y.Item, {
-            onSelect: Be,
-            LeftIcon: Ie,
-            keyboardShortcut: he,
-            children: (0, Q.jsx)(V, {
-              id: `threadHeader.openSideChat`,
-              defaultMessage: `Open side chat`,
-              description: `Menu item to fork a local thread into an ephemeral right panel side chat`,
-            }),
-          })
-        : null),
-      (t[99] = Be),
-      (t[100] = he),
-      (t[101] = rn))
-    : (rn = t[101]);
-  let an;
-  t[102] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((an = (0, Q.jsx)(V, {
-        id: `threadHeader.copyActions`,
-        defaultMessage: `Copy`,
-        description: `Menu item that opens chat copy actions`,
-      })),
-      (t[102] = an))
-    : (an = t[102]);
-  let on;
-  t[103] !== T || t[104] !== o
-    ? ((on = () => T(o)), (t[103] = T), (t[104] = o), (t[105] = on))
-    : (on = t[105]);
-  let sn = !o,
-    cn;
-  t[106] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((cn = (0, Q.jsx)(V, { ...J.copyWorkingDirectory })), (t[106] = cn))
-    : (cn = t[106]);
-  let $;
-  t[107] !== ue || t[108] !== on || t[109] !== sn
-    ? (($ = (0, Q.jsx)(Y.Item, {
-        onSelect: on,
-        LeftIcon: Ot,
-        keyboardShortcut: ue,
-        disabled: sn,
-        children: cn,
-      })),
-      (t[107] = ue),
-      (t[108] = on),
-      (t[109] = sn),
-      (t[110] = $))
-    : ($ = t[110]);
-  let ln;
-  t[111] !== r || t[112] !== w
-    ? ((ln = () => w(r)), (t[111] = r), (t[112] = w), (t[113] = ln))
-    : (ln = t[113]);
-  let un;
-  t[114] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((un = (0, Q.jsx)(V, { ...J.copySessionId })), (t[114] = un))
-    : (un = t[114]);
-  let dn;
-  t[115] !== de || t[116] !== ln
-    ? ((dn = (0, Q.jsx)(Y.Item, {
-        onSelect: ln,
-        LeftIcon: Ot,
-        keyboardShortcut: de,
-        children: un,
-      })),
-      (t[115] = de),
-      (t[116] = ln),
-      (t[117] = dn))
-    : (dn = t[117]);
-  let fn;
-  t[118] !== r || t[119] !== S
-    ? ((fn = () => S(r)), (t[118] = r), (t[119] = S), (t[120] = fn))
-    : (fn = t[120]);
-  let pn;
-  t[121] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((pn = (0, Q.jsx)(V, { ...J.copyAppLink })), (t[121] = pn))
-    : (pn = t[121]);
-  let mn;
-  t[122] !== fe || t[123] !== fn
-    ? ((mn = (0, Q.jsx)(Y.Item, {
-        onSelect: fn,
-        LeftIcon: Ot,
-        keyboardShortcut: fe,
-        children: pn,
-      })),
-      (t[122] = fe),
-      (t[123] = fn),
-      (t[124] = mn))
-    : (mn = t[124]);
-  let hn;
-  t[125] !== C || t[126] !== i
-    ? ((hn = () => C(i)), (t[125] = C), (t[126] = i), (t[127] = hn))
-    : (hn = t[127]);
-  let gn;
-  t[128] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((gn = (0, Q.jsx)(V, { ...J.copyConversationMarkdown })), (t[128] = gn))
-    : (gn = t[128]);
-  let _n;
-  t[129] !== me || t[130] !== hn
-    ? ((_n = (0, Q.jsx)(Y.Item, {
-        onSelect: hn,
-        LeftIcon: Ot,
-        keyboardShortcut: me,
-        children: gn,
-      })),
-      (t[129] = me),
-      (t[130] = hn),
-      (t[131] = _n))
-    : (_n = t[131]);
-  let vn;
-  t[132] !== $ || t[133] !== dn || t[134] !== mn || t[135] !== _n
-    ? ((vn = (0, Q.jsxs)(Y.FlyoutSubmenuItem, {
-        LeftIcon: Ot,
-        label: an,
-        children: [$, dn, mn, _n],
-      })),
-      (t[132] = $),
-      (t[133] = dn),
-      (t[134] = mn),
-      (t[135] = _n),
-      (t[136] = vn))
-    : (vn = t[136]);
-  let yn;
-  t[137] !== St ||
-  t[138] !== At ||
-  t[139] !== It ||
-  t[140] !== ke ||
-  t[141] !== h ||
-  t[142] !== Ut
-    ? ((yn = Ut
-        ? (0, Q.jsxs)(Y.FlyoutSubmenuItem, {
-            LeftIcon: _e,
-            label: (0, Q.jsx)(V, {
-              id: `threadHeader.forkActions`,
-              defaultMessage: `Fork`,
-              description: `Menu item that opens chat fork actions`,
-            }),
-            children: [
-              (0, Q.jsx)(Y.Item, {
-                onSelect: () => {
-                  At();
-                },
-                LeftIcon: h ? mt : pt,
-                disabled: ke,
-                children: (0, Q.jsx)(V, {
-                  ...(h ? J.forkIntoSameWorktree : J.forkIntoLocal),
-                }),
-              }),
-              (0, Q.jsx)(Y.Item, {
-                onSelect: () => {
-                  It();
-                },
-                LeftIcon: mt,
-                disabled: ke || !St,
-                children: (0, Q.jsx)(V, { ...J.forkIntoWorktree }),
-              }),
-            ],
-          })
-        : null),
-      (t[137] = St),
-      (t[138] = At),
-      (t[139] = It),
-      (t[140] = ke),
-      (t[141] = h),
-      (t[142] = Ut),
-      (t[143] = yn))
-    : (yn = t[143]);
-  let bn;
-  t[144] !== we ||
-  t[145] !== r ||
-  t[146] !== Re ||
-  t[147] !== P ||
-  t[148] !== Gt
-    ? ((bn = P
-        ? (0, Q.jsx)(Yt, {
-            canAddHeartbeatAutomation: we,
-            conversationId: r,
-            onSelect: Re,
-            showDisabledAddHeartbeatAutomation: Gt,
-          })
-        : null),
-      (t[144] = we),
-      (t[145] = r),
-      (t[146] = Re),
-      (t[147] = P),
-      (t[148] = Gt),
-      (t[149] = bn))
-    : (bn = t[149]);
-  let xn;
-  t[150] === Wt
-    ? (xn = t[151])
-    : ((xn = Wt ? (0, Q.jsx)(Y.Separator, {}) : null),
-      (t[150] = Wt),
-      (t[151] = xn));
-  let Sn;
-  t[152] !== ye || t[153] !== Se
-    ? ((Sn = ye
-        ? (0, Q.jsx)(Y.Item, {
-            onSelect: Se,
-            LeftIcon: Ft,
-            children: (0, Q.jsx)(V, { ...J.openInNewWindow }),
-          })
-        : null),
-      (t[152] = ye),
-      (t[153] = Se),
-      (t[154] = Sn))
-    : (Sn = t[154]);
-  let Cn;
-  t[155] !== P ||
-  t[156] !== Jt ||
-  t[157] !== Xt ||
-  t[158] !== $t ||
-  t[159] !== tn ||
-  t[160] !== rn ||
-  t[161] !== vn ||
-  t[162] !== yn ||
-  t[163] !== bn ||
-  t[164] !== xn ||
-  t[165] !== Sn
-    ? ((Cn = (0, Q.jsxs)(rt, {
-        open: P,
-        onOpenChange: F,
-        triggerButton: Jt,
-        align: `start`,
-        contentWidth: `menu`,
-        children: [Xt, $t, tn, nn, rn, vn, yn, bn, xn, Sn],
-      })),
-      (t[155] = P),
-      (t[156] = Jt),
-      (t[157] = Xt),
-      (t[158] = $t),
-      (t[159] = tn),
-      (t[160] = rn),
-      (t[161] = vn),
-      (t[162] = yn),
-      (t[163] = bn),
-      (t[164] = xn),
-      (t[165] = Sn),
-      (t[166] = Cn))
-    : (Cn = t[166]);
-  let wn;
-  t[167] !== r || t[168] !== k || t[169] !== x
-    ? ((wn =
-        k == null
-          ? null
-          : (0, Q.jsx)(We, {
-              initialValue: k,
-              onClose: () => A(null),
-              onSave: (e) => {
-                x({ conversationId: r, title: e });
-              },
-            })),
-      (t[167] = r),
-      (t[168] = k),
-      (t[169] = x),
-      (t[170] = wn))
-    : (wn = t[170]);
-  let Tn;
-  t[171] !== M || t[172] !== Rt || t[173] !== D
-    ? ((Tn = (0, Q.jsx)(Ye, {
-        heartbeatAutomationName: M,
-        open: D,
-        onOpenChange: O,
-        onConfirm: Rt,
-      })),
-      (t[171] = M),
-      (t[172] = Rt),
-      (t[173] = D),
-      (t[174] = Tn))
-    : (Tn = t[174]);
-  let En;
-  return (
-    t[175] !== Cn || t[176] !== wn || t[177] !== Tn
-      ? ((En = (0, Q.jsxs)(Q.Fragment, { children: [Cn, wn, Tn] })),
-        (t[175] = Cn),
-        (t[176] = wn),
-        (t[177] = Tn),
-        (t[178] = En))
-      : (En = t[178]),
-    En
-  );
-}
-function Yt(e) {
-  let t = (0, X.c)(12),
-    {
-      canAddHeartbeatAutomation: n,
-      conversationId: r,
-      onSelect: i,
-      showDisabledAddHeartbeatAutomation: a,
-    } = e,
-    { data: o } = U(et),
-    s;
-  t[0] !== o?.items || t[1] !== r
-    ? ((s = kt({
-        automations: o?.items ?? [],
-        conversationId: r,
-        includePausedAutomations: !0,
-      })),
-      (t[0] = o?.items),
-      (t[1] = r),
-      (t[2] = s))
-    : (s = t[2]);
-  let c = s,
-    l = c != null;
-  if (!(l || n || a)) return null;
-  let u;
-  t[3] !== c || t[4] !== i
-    ? ((u = () => i(c)), (t[3] = c), (t[4] = i), (t[5] = u))
-    : (u = t[5]);
-  let d = !l && !n,
-    f = l ? J.editAutomation : J.addAutomation,
-    p;
-  t[6] === f
-    ? (p = t[7])
-    : ((p = (0, Q.jsx)(V, { ...f })), (t[6] = f), (t[7] = p));
-  let m;
-  return (
-    t[8] !== u || t[9] !== d || t[10] !== p
-      ? ((m = (0, Q.jsx)(Y.Item, {
-          onSelect: u,
-          LeftIcon: tt,
-          disabled: d,
-          children: p,
-        })),
-        (t[8] = u),
-        (t[9] = d),
-        (t[10] = p),
-        (t[11] = m))
-      : (m = t[11]),
-    m
-  );
-}
-function Xt(e) {
-  let r = (0, X.c)(46),
-    {
-      conversationId: a,
-      getConversationMarkdown: o,
-      title: s,
-      titleSuffix: c,
-      cwd: l,
-      canPin: u,
-      hideProjectMetadata: d,
-      hideForkActions: f,
-    } = e,
-    p = u === void 0 ? !0 : u,
-    m = d === void 0 ? !1 : d,
-    h = oe(),
-    g = ie(),
+    f = c === void 0 ? !0 : c,
+    p = u === void 0 ? !1 : u,
+    m = W(oe),
+    h = V(),
+    g = ae(),
     _;
-  r[0] === l ? (_ = r[1]) : ((_ = l ? t(l) : null), (r[0] = l), (r[1] = _));
-  let v = B(_, i(H(n, a)).id),
+  n[0] === s ? (_ = n[1]) : ((_ = s ? t(s) : null), (n[0] = s), (n[1] = _));
+  let v = E(_, l(G(b, r)).id),
     y;
-  r[2] === p ? (y = r[3]) : ((y = { canPin: p }), (r[2] = p), (r[3] = y));
-  let { isPinned: b } = Je(a, y),
-    x = U($e),
-    S;
-  r[4] !== p || r[5] !== a || r[6] !== x
-    ? ((S =
-        !p || a == null
+  n[2] === f ? (y = n[3]) : ((y = { canPin: f }), (n[2] = f), (n[3] = y));
+  let { isPinned: x } = Ve(r, y),
+    S = K(Me),
+    C = K(Pe),
+    w = K(je),
+    T;
+  n[4] !== f || n[5] !== r || n[6] !== w
+    ? ((T =
+        !f || r == null
           ? null
-          : x.find((e) => e.threadIds.includes(a))?.emoji || null),
-      (r[4] = p),
-      (r[5] = a),
-      (r[6] = x),
-      (r[7] = S))
-    : (S = r[7]);
-  let C = S,
-    w;
-  r[8] !== C || r[9] !== b
-    ? ((w = b ? (0, Q.jsx)(qt, { className: `icon-xs` }) : C),
-      (r[8] = C),
-      (r[9] = b),
-      (r[10] = w))
-    : (w = r[10]);
-  let T = w,
-    E = g.getQueryData(de(`list-automations`)),
-    D = E == null ? null : kt({ automations: E.items, conversationId: a }),
-    O = H(Qe, a),
-    k =
-      D == null
+          : w.find((e) => e.threadIds.includes(r))?.emoji || null),
+      (n[4] = f),
+      (n[5] = r),
+      (n[6] = w),
+      (n[7] = T))
+    : (T = n[7]);
+  let D = T,
+    O;
+  n[8] !== D || n[9] !== x
+    ? ((O = x ? (0, $.jsx)(re, { className: `icon-xs` }) : D),
+      (n[8] = D),
+      (n[9] = x),
+      (n[10] = O))
+    : (O = n[10]);
+  let k = O,
+    A =
+      r != null && S && C
+        ? Ne(m, { threadId: r, isPinned: x, sections: w })[0]?.submenu
+        : null,
+    ee = ie(
+      `flex h-5 shrink-0 items-center justify-center text-sm leading-none`,
+      x
+        ? `text-token-description-foreground`
+        : `text-[var(--vscode-foreground)]`,
+    ),
+    j;
+  if (n[11] !== r || n[12] !== g) {
+    let e = g.getQueryData(se(`list-automations`));
+    ((j = e == null ? null : Je({ automations: e.items, conversationId: r })),
+      (n[11] = r),
+      (n[12] = g),
+      (n[13] = j));
+  } else j = n[13];
+  let M = j,
+    N = G(Fe, r),
+    [P, F] = (0, Q.useState)(!1),
+    I;
+  n[14] !== M || n[15] !== r || n[16] !== p || n[17] !== N || n[18] !== P
+    ? ((I =
+        r == null
+          ? null
+          : (0, $.jsx)(Ge, {
+              conversationId: r,
+              hasAttachedHeartbeatAutomation: M != null,
+              heartbeatAutomationTooltipContent:
+                M == null ? null : (0, $.jsx)(St, { automation: M }),
+              hideProjectMetadata: p,
+              hoverCardSections: N == null ? void 0 : [N.hoverCardSection],
+              shouldFetchHoverBranch: P,
+            })),
+      (n[14] = M),
+      (n[15] = r),
+      (n[16] = p),
+      (n[17] = N),
+      (n[18] = P),
+      (n[19] = I))
+    : (I = n[19]);
+  let L = I,
+    R =
+      k == null
         ? null
-        : h.formatMessage(
-            {
-              id: `localConversation.header.heartbeatAutomationNextRun`,
-              defaultMessage: `Next run: {nextRunLabel}`,
-              description: `Tooltip shown on the thread header heartbeat automation button`,
-            },
-            {
-              nextRunLabel: Ct({
-                intl: h,
-                nextRunAt: D.nextRunAt,
-                status: D.status,
-              }),
-            },
-          ),
-    [A, j] = (0, Z.useState)(!1),
-    M;
-  r[11] !== D ||
-  r[12] !== a ||
-  r[13] !== k ||
-  r[14] !== m ||
-  r[15] !== O ||
-  r[16] !== A
-    ? ((M =
-        a == null
-          ? null
-          : (0, Q.jsx)(dt, {
-              conversationId: a,
-              hasAttachedHeartbeatAutomation: D != null,
-              heartbeatAutomationTooltipContent: k,
-              hideProjectMetadata: m,
-              hoverCardSections: O == null ? void 0 : [O.hoverCardSection],
-              shouldFetchHoverBranch: A,
-            })),
-      (r[11] = D),
-      (r[12] = a),
-      (r[13] = k),
-      (r[14] = m),
-      (r[15] = O),
-      (r[16] = A),
-      (r[17] = M))
-    : (M = r[17]);
-  let N = M,
-    P;
-  r[18] !== b || r[19] !== T
-    ? ((P =
-        T == null
-          ? null
-          : (0, Q.jsx)(`span`, {
+        : A == null
+          ? (0, $.jsx)(`span`, {
               "aria-hidden": !0,
-              className: ne(
-                `flex h-5 shrink-0 items-center justify-center text-sm leading-none`,
-                b
-                  ? `text-token-description-foreground`
-                  : `text-[var(--vscode-foreground)]`,
-              ),
-              children: T,
-            })),
-      (r[18] = b),
-      (r[19] = T),
-      (r[20] = P))
-    : (P = r[20]);
-  let F;
-  r[21] === s
-    ? (F = r[22])
-    : ((F = (0, Q.jsx)(`span`, { className: `min-w-0 truncate`, children: s })),
-      (r[21] = s),
-      (r[22] = F));
-  let ee;
-  r[23] !== P || r[24] !== F
-    ? ((ee = (0, Q.jsxs)(`span`, {
-        className: `inline-flex min-w-0 items-center gap-2 overflow-hidden`,
-        children: [P, F],
-      })),
-      (r[23] = P),
-      (r[24] = F),
-      (r[25] = ee))
-    : (ee = r[25]);
-  let I;
-  r[26] !== ee || r[27] !== c
-    ? ((I = (0, Q.jsxs)(`span`, {
-        className: `no-drag pointer-events-auto inline-flex max-w-[320px] min-w-[2ch] cursor-interaction items-center overflow-hidden text-token-foreground`,
-        children: [ee, c],
-      })),
-      (r[26] = ee),
-      (r[27] = c),
-      (r[28] = I))
-    : (I = r[28]);
-  let L;
-  r[29] !== N || r[30] !== I
-    ? ((L = (0, Q.jsx)(ft, {
+              className: ee,
+              children: k,
+            })
+          : (0, $.jsx)(ze, {
+              triggerButton: (0, $.jsx)(`button`, {
+                type: `button`,
+                "aria-label": h.formatMessage(Ie.moveTo),
+                className: ie(
+                  ee,
+                  `cursor-interaction hover:text-token-foreground`,
+                ),
+                children: k,
+              }),
+              align: `start`,
+              contentWidth: `menuBounded`,
+              children: A.map(bt),
+            }),
+    z;
+  n[20] === a
+    ? (z = n[21])
+    : ((z = (0, $.jsx)(`span`, { className: `min-w-0 truncate`, children: a })),
+      (n[20] = a),
+      (n[21] = z));
+  let B;
+  n[22] !== L || n[23] !== F || n[24] !== z
+    ? ((B = (0, $.jsx)(Ke, {
         align: `start`,
-        hoverCardContent: N,
-        onOpenChange: j,
+        hoverCardContent: L,
+        onOpenChange: F,
         side: `bottom`,
         sideOffset: 6,
-        children: I,
+        children: z,
       })),
-      (r[29] = N),
-      (r[30] = I),
-      (r[31] = L))
-    : (L = r[31]);
-  let R;
-  r[32] === D
-    ? (R = r[33])
-    : ((R = (0, Q.jsx)(Zt, { automation: D })), (r[32] = D), (r[33] = R));
-  let z;
-  r[34] !== p ||
-  r[35] !== v ||
-  r[36] !== a ||
-  r[37] !== l ||
-  r[38] !== o ||
-  r[39] !== f ||
-  r[40] !== s
-    ? ((z = (0, Q.jsx)(`div`, {
+      (n[22] = L),
+      (n[23] = F),
+      (n[24] = z),
+      (n[25] = B))
+    : (B = n[25]);
+  let H;
+  n[26] !== R || n[27] !== B
+    ? ((H = (0, $.jsxs)(`span`, {
+        className: `inline-flex min-w-0 items-center gap-2 overflow-hidden`,
+        children: [R, B],
+      })),
+      (n[26] = R),
+      (n[27] = B),
+      (n[28] = H))
+    : (H = n[28]);
+  let U;
+  n[29] !== H || n[30] !== o
+    ? ((U = (0, $.jsxs)(`span`, {
+        className: `no-drag pointer-events-auto inline-flex max-w-[320px] min-w-[2ch] cursor-interaction items-center overflow-hidden text-token-foreground`,
+        children: [H, o],
+      })),
+      (n[29] = H),
+      (n[30] = o),
+      (n[31] = U))
+    : (U = n[31]);
+  let q;
+  n[32] === M
+    ? (q = n[33])
+    : ((q = (0, $.jsx)(xt, { automation: M })), (n[32] = M), (n[33] = q));
+  let J;
+  n[34] !== f ||
+  n[35] !== v ||
+  n[36] !== r ||
+  n[37] !== s ||
+  n[38] !== i ||
+  n[39] !== d ||
+  n[40] !== a
+    ? ((J = (0, $.jsx)(`div`, {
         className: `no-drag flex items-center gap-2`,
-        children: (0, Q.jsx)(Jt, {
-          conversationId: a,
-          getConversationMarkdown: o,
-          cwd: l,
-          title: s,
-          canPin: p,
-          hideForkActions: f,
+        children: (0, $.jsx)(ne, {
+          conversationId: r,
+          getConversationMarkdown: i,
+          sideChatTab: te,
+          cwd: s,
+          title: a,
+          canPin: f,
+          hideForkActions: d,
           isWorktreeThread: v,
         }),
       })),
-      (r[34] = p),
-      (r[35] = v),
-      (r[36] = a),
-      (r[37] = l),
-      (r[38] = o),
-      (r[39] = f),
-      (r[40] = s),
-      (r[41] = z))
-    : (z = r[41]);
-  let te;
+      (n[34] = f),
+      (n[35] = v),
+      (n[36] = r),
+      (n[37] = s),
+      (n[38] = i),
+      (n[39] = d),
+      (n[40] = a),
+      (n[41] = J))
+    : (J = n[41]);
+  let Y;
   return (
-    r[42] !== L || r[43] !== R || r[44] !== z
-      ? ((te = (0, Q.jsx)(`div`, {
+    n[42] !== U || n[43] !== q || n[44] !== J
+      ? ((Y = (0, $.jsx)(`div`, {
           className: `draggable grid w-full min-w-0 grid-cols-[minmax(0,1fr)] items-center gap-x-4 electron:h-toolbar extension:py-row-y`,
-          children: (0, Q.jsxs)(`div`, {
+          children: (0, $.jsxs)(`div`, {
             className: `flex min-w-0 items-center gap-2 truncate text-base electron:font-medium`,
-            children: [L, R, z],
+            children: [U, q, J],
           }),
         })),
-        (r[42] = L),
-        (r[43] = R),
-        (r[44] = z),
-        (r[45] = te))
-      : (te = r[45]),
-    te
+        (n[42] = U),
+        (n[43] = q),
+        (n[44] = J),
+        (n[45] = Y))
+      : (Y = n[45]),
+    Y
   );
 }
-function Zt(e) {
-  let t = (0, X.c)(18),
+function bt(e) {
+  return e.type === `separator`
+    ? (0, $.jsx)(Re.Separator, {}, e.id)
+    : (0, $.jsx)(
+        Re.Item,
+        {
+          disabled: e.enabled === !1,
+          onSelect: e.onSelect,
+          children: e.message
+            ? (0, $.jsx)(U, { ...e.message, values: e.messageValues })
+            : e.id,
+        },
+        e.id,
+      );
+}
+function xt(e) {
+  let t = (0, Z.c)(16),
     { automation: n } = e,
-    r = oe(),
-    i = y(Et),
-    a = y(wt),
-    o = y(Dt);
+    r = V(),
+    i = y(at),
+    a = y(rt),
+    o = y(ot);
   if (n == null) return null;
   let s;
-  if (t[0] !== n.nextRunAt || t[1] !== n.status || t[2] !== r) {
-    let e = Ct({ intl: r, nextRunAt: n.nextRunAt, status: n.status });
-    ((s = r.formatMessage(
-      {
-        id: `localConversation.header.heartbeatAutomationNextRun`,
-        defaultMessage: `Next run: {nextRunLabel}`,
-        description: `Tooltip shown on the thread header heartbeat automation button`,
-      },
-      { nextRunLabel: e },
-    )),
-      (t[0] = n.nextRunAt),
-      (t[1] = n.status),
-      (t[2] = r),
-      (t[3] = s));
-  } else s = t[3];
-  let c = s,
-    l;
-  t[4] !== n || t[5] !== i || t[6] !== a || t[7] !== o
-    ? ((l = () => {
+  t[0] !== n || t[1] !== i || t[2] !== a || t[3] !== o
+    ? ((s = () => {
         (a(null),
-          o(Tt({ directiveKey: `thread-header-${n.id}`, automation: n })),
+          o(it({ directiveKey: `thread-header-${n.id}`, automation: n })),
           i(!0));
       }),
-      (t[4] = n),
-      (t[5] = i),
-      (t[6] = a),
-      (t[7] = o),
-      (t[8] = l))
-    : (l = t[8]);
-  let u = l,
-    d;
-  t[9] === r
-    ? (d = t[10])
-    : ((d = r.formatMessage({
+      (t[0] = n),
+      (t[1] = i),
+      (t[2] = a),
+      (t[3] = o),
+      (t[4] = s))
+    : (s = t[4]);
+  let c = s,
+    l;
+  t[5] === n
+    ? (l = t[6])
+    : ((l = (0, $.jsx)(St, { automation: n })), (t[5] = n), (t[6] = l));
+  let u;
+  t[7] === r
+    ? (u = t[8])
+    : ((u = r.formatMessage({
         id: `localConversation.header.openHeartbeatAutomation`,
         defaultMessage: `Open heartbeat automation`,
         description: `Accessible label for opening the heartbeat automation attached to the current thread`,
       })),
-      (t[9] = r),
-      (t[10] = d));
+      (t[7] = r),
+      (t[8] = u));
+  let d;
+  t[9] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((d = (0, $.jsx)(Le, { className: `icon-xs` })), (t[9] = d))
+    : (d = t[9]);
   let f;
-  t[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((f = (0, Q.jsx)(tt, { className: `icon-xs` })), (t[11] = f))
-    : (f = t[11]);
-  let p;
-  t[12] !== u || t[13] !== d
-    ? ((p = (0, Q.jsx)(xe, {
+  t[10] !== c || t[11] !== u
+    ? ((f = (0, $.jsx)(de, {
         size: `icon`,
         color: `ghost`,
         className: `no-drag h-6 w-6 shrink-0 rounded-md !p-1 text-token-description-foreground hover:text-token-foreground`,
-        "aria-label": d,
-        onClick: u,
-        children: f,
+        "aria-label": u,
+        onClick: c,
+        children: d,
       })),
-      (t[12] = u),
-      (t[13] = d),
-      (t[14] = p))
-    : (p = t[14]);
-  let m;
+      (t[10] = c),
+      (t[11] = u),
+      (t[12] = f))
+    : (f = t[12]);
+  let p;
   return (
-    t[15] !== p || t[16] !== c
-      ? ((m = (0, Q.jsx)(ye, {
-          tooltipContent: c,
+    t[13] !== l || t[14] !== f
+      ? ((p = (0, $.jsx)(ue, {
+          tooltipContent: l,
           delayOpen: !0,
-          children: p,
+          children: f,
         })),
-        (t[15] = p),
-        (t[16] = c),
-        (t[17] = m))
-      : (m = t[17]),
-    m
+        (t[13] = l),
+        (t[14] = f),
+        (t[15] = p))
+      : (p = t[15]),
+    p
   );
 }
-function Qt(e) {
-  let t = (0, X.c)(37),
+function St(e) {
+  let t = (0, Z.c)(6),
+    { automation: n } = e,
+    r = V(),
+    i;
+  t[0] !== n.nextRunAt || t[1] !== n.status || t[2] !== r
+    ? ((i = qe({ intl: r, nextRunAt: n.nextRunAt, status: n.status })),
+      (t[0] = n.nextRunAt),
+      (t[1] = n.status),
+      (t[2] = r),
+      (t[3] = i))
+    : (i = t[3]);
+  let a;
+  return (
+    t[4] === i
+      ? (a = t[5])
+      : ((a = (0, $.jsx)(U, {
+          id: `localConversation.header.heartbeatAutomationNextRun`,
+          defaultMessage: `Next run: {nextRunLabel}`,
+          description: `Tooltip shown on the thread header heartbeat automation button`,
+          values: { nextRunLabel: i },
+        })),
+        (t[4] = i),
+        (t[5] = a)),
+    a
+  );
+}
+function Ct(e) {
+  let t = (0, Z.c)(37),
     {
       expanded: n,
       headerLabel: r,
@@ -1524,12 +862,12 @@ function Qt(e) {
     ? ((c =
         r ??
         (i
-          ? (0, Q.jsx)(V, {
+          ? (0, $.jsx)(U, {
               id: `composer.latestTurn.working`,
               defaultMessage: `Working`,
               description: `Heading shown above the composer when the latest thread turn is still in progress`,
             })
-          : (0, Q.jsx)(V, {
+          : (0, $.jsx)(U, {
               id: `composer.latestTurn`,
               defaultMessage: `Latest turn`,
               description: `Heading shown above the latest thread turn preview above the composer`,
@@ -1541,7 +879,7 @@ function Qt(e) {
   let l;
   t[6] === c
     ? (l = t[7])
-    : ((l = (0, Q.jsx)(`span`, {
+    : ((l = (0, $.jsx)(`span`, {
         className: `text-size-chat min-w-0 truncate leading-4 text-token-description-foreground`,
         children: c,
       })),
@@ -1551,21 +889,21 @@ function Qt(e) {
     d;
   t[8] === u
     ? (d = t[9])
-    : ((d = ne(`icon-2xs text-current transition-transform duration-300`, u)),
+    : ((d = ie(`icon-2xs text-current transition-transform duration-300`, u)),
       (t[8] = u),
       (t[9] = d));
   let f;
   t[10] === d
     ? (f = t[11])
-    : ((f = (0, Q.jsx)(`span`, {
+    : ((f = (0, $.jsx)(`span`, {
         className: `user-select-none no-drag flex items-center justify-center gap-1 rounded-full border border-token-border border-transparent p-0.5 whitespace-nowrap text-token-description-foreground electron:rounded-md electron:p-1`,
-        children: (0, Q.jsx)(Ke, { className: d, "aria-hidden": !0 }),
+        children: (0, $.jsx)(Ae, { className: d, "aria-hidden": !0 }),
       })),
       (t[10] = d),
       (t[11] = f));
   let p;
   t[12] !== n || t[13] !== s || t[14] !== l || t[15] !== f
-    ? ((p = (0, Q.jsxs)(`button`, {
+    ? ((p = (0, $.jsxs)(`button`, {
         type: `button`,
         className: `flex w-full cursor-interaction items-center justify-between gap-2 px-3 py-row-y text-left focus:outline-none focus-visible:ring-1 focus-visible:ring-token-focus-border focus-visible:ring-inset`,
         "aria-expanded": n,
@@ -1604,10 +942,9 @@ function Qt(e) {
   let S = n ? `expanded` : `collapsed`,
     C;
   t[25] !== n || t[26] !== b || t[27] !== S
-    ? ((C = (0, Q.jsx)(P, {
+    ? ((C = (0, $.jsx)(j, {
         items: b,
         autoScrollToBottom: n,
-        autoScrollOnContentResize: !0,
         className: `px-3 pt-0.5 pb-3 [--edge-fade-distance:1rem]`,
         contentClassName: `gap-0`,
         maxHeightByState: x,
@@ -1620,10 +957,10 @@ function Qt(e) {
     : (C = t[28]);
   let w;
   t[29] !== g || t[30] !== _ || t[31] !== y || t[32] !== C
-    ? ((w = (0, Q.jsx)(Se.div, {
+    ? ((w = (0, $.jsx)(fe.div, {
         initial: !1,
         animate: g,
-        transition: it,
+        transition: Be,
         className: _,
         style: y,
         children: C,
@@ -1637,7 +974,7 @@ function Qt(e) {
   let T;
   return (
     t[34] !== w || t[35] !== p
-      ? ((T = (0, Q.jsxs)(Nt, { children: [p, w] })),
+      ? ((T = (0, $.jsxs)(Xe, { children: [p, w] })),
         (t[34] = w),
         (t[35] = p),
         (t[36] = T))
@@ -1645,138 +982,137 @@ function Qt(e) {
     T
   );
 }
-var $t = [],
-  en = [];
-function tn(e) {
-  let t = (0, X.c)(30),
+var wt = [],
+  Tt = [];
+function Et(e) {
+  let t = (0, Z.c)(30),
     {
       conversationId: n,
-      cwd: r,
-      expanded: i,
-      hostId: a,
-      isInProgress: o,
-      onExpandedChange: s,
+      cwd: i,
+      expanded: a,
+      hostId: o,
+      isInProgress: c,
+      onExpandedChange: l,
     } = e,
-    c = At(),
-    l = H(f, n),
-    u = H(d, n),
-    p;
-  t[0] === a ? (p = t[1]) : ((p = { hostId: a }), (t[0] = a), (t[1] = p));
-  let { data: m } = De(p),
-    h = m === void 0 ? en : m,
-    g = l?.turnId ?? null,
-    _;
+    u = Ye(),
+    f = G(s, n),
+    p = G(d, n),
+    m;
+  t[0] === o ? (m = t[1]) : ((m = { hostId: o }), (t[0] = o), (t[1] = m));
+  let { data: h } = le(m),
+    g = h === void 0 ? Tt : h,
+    _ = f?.turnId ?? null,
+    v;
   bb0: {
-    if (u == null || g == null) {
-      _ = $t;
+    if (p == null || _ == null) {
+      v = wt;
       break bb0;
     }
     let e;
-    if (t[2] !== u || t[3] !== g) {
+    if (t[2] !== p || t[3] !== _) {
       let n;
-      (t[5] === g
+      (t[5] === _
         ? (n = t[6])
-        : ((n = (e) => `turnId` in e.params && e.params.turnId === g),
-          (t[5] = g),
+        : ((n = (e) => `turnId` in e.params && e.params.turnId === _),
+          (t[5] = _),
           (t[6] = n)),
-        (e = u.filter(n)),
-        (t[2] = u),
-        (t[3] = g),
+        (e = p.filter(n)),
+        (t[2] = p),
+        (t[3] = _),
         (t[4] = e));
     } else e = t[4];
-    _ = e;
+    v = e;
   }
-  let v = _,
-    y;
+  let y = v,
+    b;
   bb1: {
-    if (l == null) {
-      y = null;
+    if (f == null) {
+      b = null;
       break bb1;
     }
     let e;
-    (t[7] !== c || t[8] !== l || t[9] !== v
-      ? ((e = x(l, v, { isBackgroundSubagentsEnabled: c })),
-        (t[7] = c),
-        (t[8] = l),
-        (t[9] = v),
+    (t[7] !== u || t[8] !== f || t[9] !== y
+      ? ((e = r(f, y, { isBackgroundSubagentsEnabled: u })),
+        (t[7] = u),
+        (t[8] = f),
+        (t[9] = y),
         (t[10] = e))
       : (e = t[10]),
-      (y = e));
+      (b = e));
   }
-  let b = y,
+  let x = b,
     S;
   bb2: {
-    if (b == null) {
+    if (x == null) {
       S = null;
       break bb2;
     }
     let e;
-    (t[11] !== o || t[12] !== b
-      ? ((e = nn({ isInProgress: o, latestTurnState: b })),
-        (t[11] = o),
-        (t[12] = b),
+    (t[11] !== c || t[12] !== x
+      ? ((e = Dt({ isInProgress: c, latestTurnState: x })),
+        (t[11] = c),
+        (t[12] = x),
         (t[13] = e))
       : (e = t[13]),
       (S = e));
   }
   let C = S;
-  if (l == null || b == null) return null;
+  if (f == null || x == null) return null;
   let w;
-  t[14] !== l || t[15] !== C
+  t[14] !== f || t[15] !== C
     ? ((w =
         C == null
           ? void 0
-          : (0, Q.jsx)(te, {
+          : (0, $.jsx)(F, {
               collapsedMessageCount: C.collapsedMessageCount,
-              workedDurationMs: l.durationMs ?? null,
+              workedDurationMs: f.durationMs ?? null,
               workedForItem: C.workedForItem,
               className: `text-token-description-foreground`,
             })),
-      (t[14] = l),
+      (t[14] = f),
       (t[15] = C),
       (t[16] = w))
     : (w = t[16]);
   let T;
   t[17] !== n ||
-  t[18] !== r ||
-  t[19] !== a ||
-  t[20] !== l ||
-  t[21] !== b ||
-  t[22] !== h
-    ? ((T = (0, Q.jsx)(R, {
+  t[18] !== i ||
+  t[19] !== o ||
+  t[20] !== f ||
+  t[21] !== x ||
+  t[22] !== g
+    ? ((T = (0, $.jsx)(N, {
         conversationId: n,
-        hostId: a,
+        hostId: o,
         turnSearchKey: `expanded-review-composer-preview`,
-        turn: l,
-        turnState: b,
-        cwd: r,
+        turn: f,
+        turnState: x,
+        cwd: i,
         isMostRecentTurn: !0,
-        renderMcpApps: !1,
-        resolvedApps: h,
+        resolvedApps: g,
         startAfterTurnIntro: !0,
         showInProgressFixedContent: !1,
       })),
       (t[17] = n),
-      (t[18] = r),
-      (t[19] = a),
-      (t[20] = l),
-      (t[21] = b),
-      (t[22] = h),
+      (t[18] = i),
+      (t[19] = o),
+      (t[20] = f),
+      (t[21] = x),
+      (t[22] = g),
       (t[23] = T))
     : (T = t[23]);
   let E;
   return (
-    t[24] !== i || t[25] !== o || t[26] !== s || t[27] !== w || t[28] !== T
-      ? ((E = (0, Q.jsx)(Qt, {
-          expanded: i,
+    t[24] !== a || t[25] !== c || t[26] !== l || t[27] !== w || t[28] !== T
+      ? ((E = (0, $.jsx)(Ct, {
+          expanded: a,
           headerLabel: w,
-          isTurnInProgress: o,
-          onExpandedChange: s,
+          isTurnInProgress: c,
+          onExpandedChange: l,
           threadPreview: T,
         })),
-        (t[24] = i),
-        (t[25] = o),
-        (t[26] = s),
+        (t[24] = a),
+        (t[25] = c),
+        (t[26] = l),
         (t[27] = w),
         (t[28] = T),
         (t[29] = E))
@@ -1784,19 +1120,19 @@ function tn(e) {
     E
   );
 }
-function nn({ isInProgress: e, latestTurnState: t }) {
-  let n = an(t.items),
+function Dt({ isInProgress: e, latestTurnState: t }) {
+  let n = kt(t.items),
     {
       agentItems: r,
       assistantItem: i,
       proposedPlanItem: a,
-    } = Gt(k(t.items), t.status),
-    { renderableAgentItems: o } = Ut({
+    } = gt(R(t.items), t.status),
+    { renderableAgentItems: o } = mt({
       agentItems: r,
       isTurnInProgress: e,
-      isAnyNonAgentItemInProgress: Wt(i) || Wt(a),
+      isAnyNonAgentItemInProgress: ht(i) || ht(a),
     }),
-    s = rn(o);
+    s = Ot(o);
   return e && n != null
     ? {
         collapsedMessageCount: s,
@@ -1811,319 +1147,299 @@ function nn({ isInProgress: e, latestTurnState: t }) {
       ? null
       : { collapsedMessageCount: s, workedForItem: null };
 }
-function rn(e) {
+function Ot(e) {
   return e.filter((e) => e.kind !== `item` || e.item.type !== `worked-for`)
     .length;
 }
-function an(e) {
+function kt(e) {
   for (let t of e) if (t.type === `worked-for`) return t;
   return null;
 }
-function on(e) {
-  let n = (0, X.c)(6),
-    { conversationId: r } = e,
-    i = H(c, r) ?? null,
-    a = H(l, r),
-    o = H(u, r) ?? !1,
+function At(e) {
+  let t = (0, Z.c)(3),
+    { conversationId: n } = e,
+    r = G(i, n) ?? null,
+    o = G(a, n) ?? null,
     s;
-  n[0] === a
-    ? (s = n[1])
-    : ((s = a == null ? null : t(a)), (n[0] = a), (n[1] = s));
-  let d;
   return (
-    n[2] !== o || n[3] !== i || n[4] !== s
-      ? ((d = (0, Q.jsx)(St, {
-          isAgentWorking: o,
-          lastTurnCwd: s,
-          lastTurnDiff: i,
-        })),
-        (n[2] = o),
-        (n[3] = i),
-        (n[4] = s),
-        (n[5] = d))
-      : (d = n[5]),
-    d
+    t[0] !== r || t[1] !== o
+      ? ((s = (0, $.jsx)(tt, { lastTurnCwd: o, lastTurnDiff: r })),
+        (t[0] = r),
+        (t[1] = o),
+        (t[2] = s))
+      : (s = t[2]),
+    s
   );
 }
-function sn(e) {
+function jt(e) {
   let { conversationId: t } = e;
-  return (O(t, H(r, t) ?? !1), null);
+  return (k(t, G(x, t) ?? !1), null);
 }
-function cn(e) {
-  let t = (0, X.c)(46),
-    { conversationId: r, startRealtime: a } = e,
-    o = se(be),
-    s = H(n, r),
-    c = i(s),
-    l = U(je),
-    u = U(ke.activeTab$),
-    d = U(we),
-    f = U(Ce),
-    p;
-  (t[0] === o ? (p = t[1]) : ((p = (e) => at(o, e)), (t[0] = o), (t[1] = p)),
-    xt(p));
-  let m;
-  (t[2] === o ? (m = t[3]) : ((m = () => Me(o)), (t[2] = o), (t[3] = m)),
-    vt(m));
-  let h;
-  (t[4] === o ? (h = t[5]) : ((h = () => Me(o)), (t[4] = o), (t[5] = h)),
-    Ue(`toggleTerminal`, h));
-  let g = d && f,
-    _ = g && u?.tabId === Oe.DIFF && l.kind === `git`,
-    v = !g,
-    y;
-  t[6] !== u?.tabId || t[7] !== g
-    ? ((y = g && u?.tabId.startsWith(`sidechat:`) !== !0),
-      (t[6] = u?.tabId),
-      (t[7] = g),
-      (t[8] = y))
-    : (y = t[8]);
-  let b = y,
-    [x, S] = (0, Z.useState)(null),
-    C = Le(),
-    w;
-  t[9] !== s || t[10] !== o
-    ? ((w = (e) => {
-        I(o, { backgroundAgent: e, hostId: s, TabComponent: z });
+function Mt(e) {
+  let t = (0, Z.c)(40),
+    { conversationId: n, startRealtime: r } = e,
+    i = W(X),
+    a = G(b, n),
+    o = l(a),
+    s = K(be),
+    c = K(ve.activeTab$),
+    u = K(he),
+    d = K(me),
+    f;
+  (t[0] === i ? (f = t[1]) : ((f = (e) => Te(i, e)), (t[0] = i), (t[1] = f)),
+    et(f));
+  let p = u && d,
+    m = p && c?.tabId === _e.DIFF && s.kind === `git`,
+    h = !p,
+    g;
+  t[2] !== c?.tabId || t[3] !== p
+    ? ((g = p && c?.tabId.startsWith(`sidechat:`) !== !0),
+      (t[2] = c?.tabId),
+      (t[3] = p),
+      (t[4] = g))
+    : (g = t[4]);
+  let _ = g,
+    [v, y] = (0, Q.useState)(null),
+    x;
+  t[5] !== a || t[6] !== i
+    ? ((x = (e) => {
+        ee(i, { backgroundAgent: e, hostId: a, TabComponent: L });
       }),
-      (t[9] = s),
-      (t[10] = o),
-      (t[11] = w))
-    : (w = t[11]);
-  let T = He(w),
-    E;
-  t[12] !== r || t[13] !== _
-    ? ((E = _ ? (0, Q.jsx)(sn, { conversationId: r }) : null),
-      (t[12] = r),
-      (t[13] = _),
-      (t[14] = E))
-    : (E = t[14]);
-  let D;
-  t[15] === r
-    ? (D = t[16])
-    : ((D = (0, Q.jsx)(on, { conversationId: r })), (t[15] = r), (t[16] = D));
-  let O;
-  t[17] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((O = (0, Q.jsx)(Ee.MainContentLayout, { layout: `thread-edge-scroll` })),
-      (t[17] = O))
-    : (O = t[17]);
-  let k;
-  t[18] === r
-    ? (k = t[19])
-    : ((k = (0, Q.jsx)(Ee.Header, {
-        children: (0, Q.jsx)(fn, { conversationId: r }),
+      (t[5] = a),
+      (t[6] = i),
+      (t[7] = x))
+    : (x = t[7]);
+  let S = De(x),
+    C;
+  t[8] !== n || t[9] !== m
+    ? ((C = m ? (0, $.jsx)(jt, { conversationId: n }) : null),
+      (t[8] = n),
+      (t[9] = m),
+      (t[10] = C))
+    : (C = t[10]);
+  let w;
+  t[11] === n
+    ? (w = t[12])
+    : ((w = (0, $.jsx)(At, { conversationId: n })), (t[11] = n), (t[12] = w));
+  let T;
+  t[13] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((T = (0, $.jsx)(ge.MainContentLayout, { layout: `thread-edge-scroll` })),
+      (t[13] = T))
+    : (T = t[13]);
+  let E;
+  t[14] === n
+    ? (E = t[15])
+    : ((E = (0, $.jsx)(ge.Header, {
+        children: (0, $.jsx)(Lt, { conversationId: n }),
       })),
-      (t[18] = r),
-      (t[19] = k));
-  let A;
-  t[20] !== r || t[21] !== v || t[22] !== a
-    ? ((A = (0, Q.jsx)(`div`, {
+      (t[14] = n),
+      (t[15] = E));
+  let D;
+  t[16] !== n || t[17] !== h || t[18] !== r
+    ? ((D = (0, $.jsx)(`div`, {
         className: `h-full min-h-0`,
-        children: (0, Q.jsx)(L, {
-          conversationId: r,
+        children: (0, $.jsx)(I, {
+          conversationId: n,
           showExternalFooter: !1,
-          showComposer: v,
-          startRealtime: a,
+          showComposer: h,
+          startRealtime: r,
         }),
       })),
-      (t[20] = r),
-      (t[21] = v),
-      (t[22] = a),
-      (t[23] = A))
-    : (A = t[23]);
-  let j;
-  t[24] !== r || t[25] !== c.display_name
-    ? ((j = (0, Q.jsx)(Kt, {
-        browserConversationId: r,
-        browserHostDisplayName: c.display_name,
-        conversationId: r,
+      (t[16] = n),
+      (t[17] = h),
+      (t[18] = r),
+      (t[19] = D))
+    : (D = t[19]);
+  let O;
+  t[20] !== n || t[21] !== o.display_name
+    ? ((O = (0, $.jsx)(_t, {
+        browserConversationId: n,
+        browserHostDisplayName: o.display_name,
+        conversationId: n,
         threadType: `local`,
       })),
-      (t[24] = r),
-      (t[25] = c.display_name),
-      (t[26] = j))
-    : (j = t[26]);
-  let M;
-  t[27] !== T || t[28] !== d || t[29] !== C
-    ? ((M = (0, Q.jsx)($, {
-        displayMode: C,
-        isRightPanelOpen: d,
-        onOpenBackgroundAgent: T,
-      })),
-      (t[27] = T),
-      (t[28] = d),
-      (t[29] = C),
-      (t[30] = M))
-    : (M = t[30]);
-  let N;
-  t[31] !== r || t[32] !== b || t[33] !== a
-    ? ((N = b
-        ? (0, Q.jsx)(pn, { conversationId: r, startRealtime: a }, r)
+      (t[20] = n),
+      (t[21] = o.display_name),
+      (t[22] = O))
+    : (O = t[22]);
+  let k;
+  t[23] === S
+    ? (k = t[24])
+    : ((k = (0, $.jsx)(Nt, { onOpenBackgroundAgent: S })),
+      (t[23] = S),
+      (t[24] = k));
+  let A;
+  t[25] !== n || t[26] !== _ || t[27] !== r
+    ? ((A = _
+        ? (0, $.jsx)(Rt, { conversationId: n, startRealtime: r }, n)
         : null),
-      (t[31] = r),
-      (t[32] = b),
-      (t[33] = a),
-      (t[34] = N))
-    : (N = t[34]);
-  let P;
-  t[35] !== A ||
-  t[36] !== j ||
-  t[37] !== M ||
-  t[38] !== N ||
-  t[39] !== E ||
-  t[40] !== D ||
-  t[41] !== k
-    ? ((P = (0, Q.jsxs)(`div`, {
-        ref: S,
+      (t[25] = n),
+      (t[26] = _),
+      (t[27] = r),
+      (t[28] = A))
+    : (A = t[28]);
+  let j;
+  t[29] !== k ||
+  t[30] !== A ||
+  t[31] !== C ||
+  t[32] !== w ||
+  t[33] !== E ||
+  t[34] !== D ||
+  t[35] !== O
+    ? ((j = (0, $.jsxs)(`div`, {
+        ref: y,
         className: `relative h-full min-h-0`,
-        children: [E, D, O, k, A, j, M, N],
+        children: [C, w, T, E, D, O, k, A],
       })),
-      (t[35] = A),
-      (t[36] = j),
-      (t[37] = M),
-      (t[38] = N),
-      (t[39] = E),
-      (t[40] = D),
-      (t[41] = k),
-      (t[42] = P))
-    : (P = t[42]);
-  let F;
+      (t[29] = k),
+      (t[30] = A),
+      (t[31] = C),
+      (t[32] = w),
+      (t[33] = E),
+      (t[34] = D),
+      (t[35] = O),
+      (t[36] = j))
+    : (j = t[36]);
+  let M;
   return (
-    t[43] !== x || t[44] !== P
-      ? ((F = (0, Q.jsx)(Re, { value: x, children: P })),
-        (t[43] = x),
-        (t[44] = P),
-        (t[45] = F))
-      : (F = t[45]),
-    F
+    t[37] !== v || t[38] !== j
+      ? ((M = (0, $.jsx)(we, { value: v, children: j })),
+        (t[37] = v),
+        (t[38] = j),
+        (t[39] = M))
+      : (M = t[39]),
+    M
   );
 }
-function $(e) {
-  let t = (0, X.c)(12),
-    { displayMode: n, isRightPanelOpen: r, onOpenBackgroundAgent: i } = e,
-    a = se(ae),
-    o = oe(),
-    s = U(Te),
-    c;
-  t[0] === o
-    ? (c = t[1])
-    : ((c = o.formatMessage({
+function Nt(e) {
+  let t = (0, Z.c)(12),
+    { onOpenBackgroundAgent: n } = e,
+    r = W(X);
+  A(r);
+  let i = V(),
+    a = K(pe),
+    o = K(B),
+    s;
+  t[0] === i
+    ? (s = t[1])
+    : ((s = i.formatMessage({
         id: `localConversation.summaryPanel.toggle`,
         defaultMessage: `Toggle summary`,
         description: `Button label for toggling the local thread summary panel`,
       })),
-      (t[0] = o),
-      (t[1] = c));
-  let l = c,
-    u;
-  t[2] === o
-    ? (u = t[3])
-    : ((u = o.formatMessage({
+      (t[0] = i),
+      (t[1] = s));
+  let c = s,
+    l;
+  t[2] === i
+    ? (l = t[3])
+    : ((l = i.formatMessage({
         id: `localConversation.summaryPanel.togglePinned`,
         defaultMessage: `Toggle pinned summary`,
         description: `Button label for toggling whether the local thread summary panel reserves layout space`,
       })),
-      (t[2] = o),
-      (t[3] = u));
-  let d = u,
-    f;
+      (t[2] = i),
+      (t[3] = l));
+  let u = l,
+    d;
   return (
-    t[4] !== n ||
-    t[5] !== s ||
-    t[6] !== r ||
-    t[7] !== i ||
-    t[8] !== a ||
-    t[9] !== d ||
-    t[10] !== l
-      ? ((f = (0, Q.jsx)(Ee.HeaderAction, {
+    t[4] !== a ||
+    t[5] !== n ||
+    t[6] !== o.displayMode ||
+    t[7] !== o.isPopoverOpen ||
+    t[8] !== r ||
+    t[9] !== u ||
+    t[10] !== c
+      ? ((d = (0, $.jsx)(ge.HeaderAction, {
           actionId: `local-thread-summary-panel-toggle`,
           align: `end`,
           order: 250,
           children:
-            n === `overlay` || r
-              ? (0, Q.jsx)(ln, { label: l, onOpenBackgroundAgent: i })
-              : (0, Q.jsx)(un, {
-                  label: d,
-                  pressed: s,
+            o.displayMode === `overlay`
+              ? (0, $.jsx)(Pt, {
+                  isOpen: o.isPopoverOpen,
+                  label: c,
+                  onOpenChange: (e) => {
+                    r.set(B, (t) =>
+                      t.displayMode !== `overlay` || t.isPopoverOpen === e
+                        ? t
+                        : { ...t, isPopoverOpen: e },
+                    );
+                  },
+                  onOpenBackgroundAgent: n,
+                })
+              : (0, $.jsx)(Ft, {
+                  label: u,
+                  pressed: a,
                   onClick: () => {
-                    a.set(Te, !s);
+                    r.set(pe, !a);
                   },
                 }),
         })),
-        (t[4] = n),
-        (t[5] = s),
-        (t[6] = r),
-        (t[7] = i),
-        (t[8] = a),
-        (t[9] = d),
-        (t[10] = l),
-        (t[11] = f))
-      : (f = t[11]),
-    f
+        (t[4] = a),
+        (t[5] = n),
+        (t[6] = o.displayMode),
+        (t[7] = o.isPopoverOpen),
+        (t[8] = r),
+        (t[9] = u),
+        (t[10] = c),
+        (t[11] = d))
+      : (d = t[11]),
+    d
   );
 }
-function ln(e) {
-  let t = (0, X.c)(16),
-    { label: n, onOpenBackgroundAgent: r } = e,
-    i = se(ae),
-    a = U(Be),
+function Pt(e) {
+  let t = (0, Z.c)(14),
+    { isOpen: n, label: r, onOpenChange: i, onOpenBackgroundAgent: a } = e,
     o;
-  t[0] === i
-    ? (o = t[1])
-    : ((o = (e) => {
-        i.set(Be, e);
-      }),
-      (t[0] = i),
-      (t[1] = o));
-  let s;
-  t[2] !== a || t[3] !== n
-    ? ((s = (0, Q.jsx)(ot, {
+  t[0] !== n || t[1] !== r
+    ? ((o = (0, $.jsx)(He, {
         asChild: !0,
-        children: (0, Q.jsx)(un, { label: n, pressed: a }),
+        children: (0, $.jsx)(Ft, { label: r, pressed: n }),
       })),
-      (t[2] = a),
-      (t[3] = n),
-      (t[4] = s))
-    : (s = t[4]);
+      (t[0] = n),
+      (t[1] = r),
+      (t[2] = o))
+    : (o = t[2]);
+  let s;
+  t[3] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((s = { maxHeight: `none`, maxWidth: `none` }), (t[3] = s))
+    : (s = t[3]);
   let c;
-  t[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = { maxHeight: `none`, maxWidth: `none` }), (t[5] = c))
-    : (c = t[5]);
+  t[4] !== n || t[5] !== a
+    ? ((c = n ? (0, $.jsx)(It, { onOpenBackgroundAgent: a }) : null),
+      (t[4] = n),
+      (t[5] = a),
+      (t[6] = c))
+    : (c = t[6]);
   let l;
-  t[6] !== a || t[7] !== r
-    ? ((l = a ? (0, Q.jsx)(dn, { onOpenBackgroundAgent: r }) : null),
-      (t[6] = a),
-      (t[7] = r),
-      (t[8] = l))
-    : (l = t[8]);
-  let u;
-  t[9] === l
-    ? (u = t[10])
-    : ((u = (0, Q.jsx)(st, {
+  t[7] === c
+    ? (l = t[8])
+    : ((l = (0, $.jsx)(Ue, {
         align: `end`,
         side: `bottom`,
         sideOffset: 8,
         className: `!w-auto !overflow-visible !rounded-3xl !bg-transparent !p-0 !shadow-none !ring-0 !backdrop-blur-none`,
-        style: c,
-        children: l,
+        style: s,
+        children: c,
       })),
-      (t[9] = l),
-      (t[10] = u));
-  let d;
+      (t[7] = c),
+      (t[8] = l));
+  let u;
   return (
-    t[11] !== a || t[12] !== o || t[13] !== s || t[14] !== u
-      ? ((d = (0, Q.jsxs)(ct, { open: a, onOpenChange: o, children: [s, u] })),
-        (t[11] = a),
-        (t[12] = o),
-        (t[13] = s),
-        (t[14] = u),
-        (t[15] = d))
-      : (d = t[15]),
-    d
+    t[9] !== n || t[10] !== i || t[11] !== o || t[12] !== l
+      ? ((u = (0, $.jsxs)(We, { open: n, onOpenChange: i, children: [o, l] })),
+        (t[9] = n),
+        (t[10] = i),
+        (t[11] = o),
+        (t[12] = l),
+        (t[13] = u))
+      : (u = t[13]),
+    u
   );
 }
-function un(e) {
-  let t = (0, X.c)(16),
+function Ft(e) {
+  let t = (0, Z.c)(12),
     n,
     r,
     i,
@@ -2137,22 +1453,14 @@ function un(e) {
       (t[3] = i),
       (t[4] = a));
   let o = a ? `secondary` : `ghost`,
-    s = a ? `text-token-foreground` : `text-token-text-secondary`,
-    c;
-  t[5] === s ? (c = t[6]) : ((c = ne(`icon-sm`, s)), (t[5] = s), (t[6] = c));
-  let l;
-  t[7] === c
-    ? (l = t[8])
-    : ((l = (0, Q.jsx)(G, { className: c })), (t[7] = c), (t[8] = l));
-  let u;
+    s;
+  t[5] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((s = (0, $.jsx)(vt, { className: `icon-sm` })), (t[5] = s))
+    : (s = t[5]);
+  let c;
   return (
-    t[9] !== n ||
-    t[10] !== r ||
-    t[11] !== i ||
-    t[12] !== a ||
-    t[13] !== o ||
-    t[14] !== l
-      ? ((u = (0, Q.jsx)(xe, {
+    t[6] !== n || t[7] !== r || t[8] !== i || t[9] !== a || t[10] !== o
+      ? ((c = (0, $.jsx)(de, {
           size: `toolbar`,
           color: o,
           "aria-label": r,
@@ -2161,27 +1469,26 @@ function un(e) {
           onClick: i,
           uniform: !0,
           ...n,
-          children: l,
+          children: s,
         })),
-        (t[9] = n),
-        (t[10] = r),
-        (t[11] = i),
-        (t[12] = a),
-        (t[13] = o),
-        (t[14] = l),
-        (t[15] = u))
-      : (u = t[15]),
-    u
+        (t[6] = n),
+        (t[7] = r),
+        (t[8] = i),
+        (t[9] = a),
+        (t[10] = o),
+        (t[11] = c))
+      : (c = t[11]),
+    c
   );
 }
-function dn(e) {
-  let t = (0, X.c)(3),
+function It(e) {
+  let t = (0, Z.c)(3),
     { onOpenBackgroundAgent: n } = e,
-    r = M(),
+    r = z(),
     i;
   return (
     t[0] !== r || t[1] !== n
-      ? ((i = (0, Q.jsx)(D, { ...r, onOpenBackgroundAgent: n })),
+      ? ((i = (0, $.jsx)(D, { ...r, onOpenBackgroundAgent: n })),
         (t[0] = r),
         (t[1] = n),
         (t[2] = i))
@@ -2189,74 +1496,81 @@ function dn(e) {
     i
   );
 }
-function fn({ conversationId: e }) {
-  let t = se(ae),
-    n = At(),
-    i = H(r, e),
-    a = H(Ae, e),
-    c = H(o, e),
-    l = H(s, e),
-    u = b(H(m, e)),
-    d = u?.parentThreadId == null,
-    f = n ? u : null,
-    p = H(C, e) === `projectless`,
-    h = f?.parentThreadId ?? null,
-    v =
-      h == null
+function Lt({ conversationId: e }) {
+  let t = W(oe),
+    i = Ye(),
+    a = G(x, e),
+    o = G(ye, e),
+    s = G(S, e),
+    l = G(n, e),
+    d = u(G(v, e)),
+    p = d?.parentThreadId == null,
+    m = i ? d : null,
+    h = G(c, e) === `projectless`,
+    g = m?.parentThreadId ?? null,
+    _ =
+      m == null
         ? null
-        : (0, Q.jsx)(`span`, {
-            className: `ml-1 shrink-0 font-medium`,
-            style: { color: _(e) },
-            children: F({
-              agentNickname: f?.agentNickname ?? null,
-              conversationId: e,
-            }),
-          }),
+        : O({ agentNickname: m.agentNickname, conversationId: e }),
     y =
-      f?.agentRole == null || f.agentRole === `default`
+      g != null && _ != null
+        ? (0, $.jsxs)(`span`, {
+            className: `ml-1 flex shrink-0 items-center gap-1 font-medium`,
+            children: [
+              (0, $.jsx)(Ze, {
+                className: `icon-2xs`,
+                seed: e,
+                "aria-hidden": !0,
+              }),
+              (0, $.jsx)(`span`, { children: _ }),
+            ],
+          })
+        : null,
+    b =
+      m?.agentRole == null || m.agentRole === `default`
         ? null
-        : `(${f.agentRole})`,
-    S =
-      y == null
+        : `(${m.agentRole})`,
+    w =
+      b == null
         ? null
-        : (0, Q.jsx)(`span`, {
+        : (0, $.jsx)(`span`, {
             className: `ml-1 shrink-0 text-token-description-foreground`,
-            children: y,
+            children: b,
           }),
     T =
-      h == null || c == null
+      g == null || s == null
         ? null
-        : (0, Q.jsxs)(`span`, {
+        : (0, $.jsxs)(`span`, {
             className: `ml-1 shrink-0 text-token-description-foreground`,
             children: [
-              K(c),
+              Se(s),
               l == null
                 ? null
-                : (0, Q.jsxs)(Q.Fragment, {
-                    children: [` (`, (0, Q.jsx)(Pe, { effort: l }), `)`],
+                : (0, $.jsxs)($.Fragment, {
+                    children: [` (`, (0, $.jsx)(xe, { effort: l }), `)`],
                   }),
             ],
           }),
-    E = H(g, e);
-  return (0, Q.jsx)(Xt, {
-    conversationId: i ? e : null,
-    title: a,
+    E = G(f, e);
+  return (0, $.jsx)(yt, {
+    conversationId: a ? e : null,
+    title: o,
     titleSuffix:
-      v == null && S == null && T == null
+      y == null && w == null && T == null
         ? null
-        : (0, Q.jsxs)(Q.Fragment, { children: [v, S, T] }),
+        : (0, $.jsxs)($.Fragment, { children: [y, w, T] }),
     cwd: E,
     getConversationMarkdown: async () => {
-      if (!i) return null;
-      let { visibleTurnEntries: r } = ue(t, A, {
+      if (!a) return null;
+      let { visibleTurnEntries: n } = t.get(P, {
           conversationId: e,
-          isBackgroundSubagentsEnabled: n,
+          isBackgroundSubagentsEnabled: i,
         }),
-        o = r.map(({ requests: e, turn: t }) =>
-          x(t, e, { isBackgroundSubagentsEnabled: n }),
+        s = n.map(({ requests: e, turn: t }) =>
+          r(t, e, { isBackgroundSubagentsEnabled: i }),
         );
-      if (o.length === 0) return null;
-      let { renderConversationMarkdown: s } = await w(
+      if (s.length === 0) return null;
+      let { renderConversationMarkdown: c } = await C(
         async () => {
           let { renderConversationMarkdown: e } = await import(
             `./conversation-markdown.js`
@@ -2264,165 +1578,168 @@ function fn({ conversationId: e }) {
           return { renderConversationMarkdown: e };
         },
         __vite__mapDeps([
-          0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,
+          0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19,
+          20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35,
         ]),
         import.meta.url,
       );
-      return s({ cwd: E, title: a, turns: o });
+      return c({ cwd: E, title: o, turns: s });
     },
-    canPin: d,
-    hideProjectMetadata: p,
-    hideForkActions: p,
+    canPin: p,
+    hideProjectMetadata: h,
+    hideForkActions: h,
   });
 }
-function pn(e) {
-  let i = (0, X.c)(13),
-    { conversationId: a, startRealtime: o } = e,
-    s = H(n, a),
-    c = H(g, a),
-    l;
-  i[0] === c ? (l = i[1]) : ((l = c ? t(c) : null), (i[0] = c), (i[1] = l));
-  let d = l,
-    f = H(u, a) ?? !1,
-    p = H(r, a),
-    [m, h] = (0, Z.useState)(!1);
+function Rt(e) {
+  let n = (0, Z.c)(13),
+    { conversationId: r, startRealtime: i } = e,
+    a = G(b, r),
+    s = G(f, r),
+    c;
+  n[0] === s ? (c = n[1]) : ((c = s ? t(s) : null), (n[0] = s), (n[1] = c));
+  let l = c,
+    u = G(m, r) ?? !1;
+  (G(o, r), G(g, r));
+  let d = u || !1,
+    p = G(x, r),
+    [h, _] = (0, Q.useState)(!1);
   if (!p) return null;
-  let _;
-  i[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((_ = () => h(!1)), (i[2] = _))
-    : (_ = i[2]);
   let v;
-  i[3] !== a || i[4] !== d || i[5] !== s || i[6] !== f || i[7] !== m
-    ? ((v = (0, Q.jsx)(tn, {
-        conversationId: a,
-        cwd: d,
-        expanded: m,
-        hostId: s,
-        isInProgress: f,
-        onExpandedChange: h,
-      })),
-      (i[3] = a),
-      (i[4] = d),
-      (i[5] = s),
-      (i[6] = f),
-      (i[7] = m),
-      (i[8] = v))
-    : (v = i[8]);
+  n[2] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((v = () => _(!1)), (n[2] = v))
+    : (v = n[2]);
   let y;
+  n[3] !== r || n[4] !== l || n[5] !== a || n[6] !== d || n[7] !== h
+    ? ((y = (0, $.jsx)(Et, {
+        conversationId: r,
+        cwd: l,
+        expanded: h,
+        hostId: a,
+        isInProgress: d,
+        onExpandedChange: _,
+      })),
+      (n[3] = r),
+      (n[4] = l),
+      (n[5] = a),
+      (n[6] = d),
+      (n[7] = h),
+      (n[8] = y))
+    : (y = n[8]);
+  let S;
   return (
-    i[9] !== f || i[10] !== o || i[11] !== v
-      ? ((y = (0, Q.jsx)(bt, {
-          onPointerDownOutside: _,
-          children: (0, Q.jsx)(ze, {
+    n[9] !== d || n[10] !== i || n[11] !== y
+      ? ((S = (0, $.jsx)($e, {
+          onPointerDownOutside: v,
+          children: (0, $.jsx)(Ce, {
             aboveComposerContentLayout: `header`,
-            aboveComposerContent: v,
-            isResponseInProgress: f,
+            aboveComposerContent: y,
+            isResponseInProgress: d,
             composerLayoutMode: `auto-single-line`,
             showFooterBranchWhen: `always`,
-            startRealtimeOnMount: o,
+            startRealtimeOnMount: i,
           }),
         })),
-        (i[9] = f),
-        (i[10] = o),
-        (i[11] = v),
-        (i[12] = y))
-      : (y = i[12]),
-    y
+        (n[9] = d),
+        (n[10] = i),
+        (n[11] = y),
+        (n[12] = S))
+      : (S = n[12]),
+    S
   );
 }
-var mn = [],
-  hn = ce(be, ({ get: e, scope: t }) => {
-    let n =
+var zt = [],
+  Bt = H(X, ({ get: e, scope: t }) => {
+    let r =
         t.value.routeKind === `local-thread` ? t.value.conversationId : null,
-      r = e(e(v, n)) ?? mn,
-      i = Rt(r),
-      a = Bt(r);
+      i = e(p, r) ?? zt,
+      a = lt(i),
+      o = dt(i);
     return {
       title: `Local conversation`,
       lines: [
-        { label: `id`, value: n ?? `none` },
-        { label: `model`, value: e(e(o, n)) ?? `unknown` },
-        { label: `reasoning`, value: e(e(s, n)) ?? `unknown` },
-        { label: `rolloutPath`, value: e(e(S, n)) ?? `unknown` },
-        { label: `resumeState`, value: e(e(h, n)) ?? `unknown` },
-        { label: `cwd`, value: e(e(g, n)) ?? `unknown` },
-        { label: `editedFileCount`, value: String(i.length) },
-        ...i.map((e, t) => ({ label: `editedFile[${t}]`, value: e })),
-        { label: `referencedFileCount`, value: String(a.length) },
-        ...a.map((e, t) => ({ label: `referencedFile[${t}]`, value: e })),
+        { label: `id`, value: r ?? `none` },
+        { label: `model`, value: e(S, r) ?? `unknown` },
+        { label: `reasoning`, value: e(n, r) ?? `unknown` },
+        { label: `rolloutPath`, value: e(_, r) ?? `unknown` },
+        { label: `resumeState`, value: e(h, r) ?? `unknown` },
+        { label: `cwd`, value: e(f, r) ?? `unknown` },
+        { label: `editedFileCount`, value: String(a.length) },
+        ...a.map((e, t) => ({ label: `editedFile[${t}]`, value: e })),
+        { label: `referencedFileCount`, value: String(o.length) },
+        ...o.map((e, t) => ({ label: `referencedFile[${t}]`, value: e })),
       ],
     };
   });
-function gn() {
-  let { conversationId: e } = me(),
-    { state: t } = ge(),
-    n = H(r, e ?? null),
-    i = H(g, e ?? null),
-    a = It(),
-    { isResuming: o } = N(null),
-    { canOpenThreadInNewWindow: s, openThreadInNewWindow: c } = Xe({
+function Vt() {
+  let { conversationId: e } = ce(),
+    { state: t } = Y(),
+    n = G(x, e ?? null),
+    r = G(f, e ?? null),
+    i = st(),
+    { isResuming: a } = M(null),
+    { canOpenThreadInNewWindow: o, openThreadInNewWindow: s } = Ee({
       conversationId: e ?? null,
     }),
-    l = (0, Z.useRef)(e ?? null),
-    u = (0, Z.useRef)(!1),
-    d = (0, Z.useRef)(null);
+    c = (0, Q.useRef)(e ?? null),
+    l = (0, Q.useRef)(!1),
+    u = (0, Q.useRef)(null);
   if (
-    (l.current !== (e ?? null) &&
-      ((l.current = e ?? null), (u.current = !1), (d.current = null)),
-    n && (u.current = !0),
-    i != null && (d.current = i),
-    Ue(`openThreadInNewWindow`, c, { enabled: s }),
+    (c.current !== (e ?? null) &&
+      ((c.current = e ?? null), (l.current = !1), (u.current = null)),
+    n && (l.current = !0),
+    r != null && (u.current = r),
+    Oe(`openThreadInNewWindow`, s, { enabled: o }),
     !e)
   )
-    return (0, Q.jsx)(he, { to: `/` });
-  if (u.current && !n && !o)
-    return (0, Q.jsx)(he, {
+    return (0, $.jsx)(J, { to: `/` });
+  if (l.current && !n && !a)
+    return (0, $.jsx)(J, {
       to: `/`,
       replace: !0,
-      state: { focusComposerNonce: Date.now(), prefillCwd: d.current },
+      state: { focusComposerNonce: Date.now(), prefillCwd: u.current },
     });
-  let f =
-    o || !n
-      ? (0, Q.jsx)(Ge, { debugName: `LocalConversationPage` })
-      : (0, Q.jsx)(cn, {
+  let d =
+    a || !n
+      ? (0, $.jsx)(ke, { debugName: `LocalConversationPage` })
+      : (0, $.jsx)(Mt, {
           conversationId: e,
           startRealtime: t?.startRealtime === !0,
         });
-  return (0, Q.jsxs)(Q.Fragment, {
+  return (0, $.jsxs)($.Fragment, {
     children: [
-      a ? (0, Q.jsx)(_n, {}) : null,
-      (0, Q.jsx)(Ht, { conversationId: e }),
-      (0, Q.jsx)(Ze, {}),
-      (0, Q.jsx)(gt.Surface, {}),
-      f,
+      i ? (0, $.jsx)(Ht, {}) : null,
+      (0, $.jsx)(pt, { conversationId: e }),
+      (0, $.jsx)(nt, {}),
+      (0, $.jsx)(Qe.Surface, {}),
+      d,
     ],
   });
 }
-function _n() {
-  let e = (0, X.c)(3),
-    t = se(be),
+function Ht() {
+  let e = (0, Z.c)(3),
+    t = W(X),
     n,
     r;
   return (
     e[0] === t
       ? ((n = e[1]), (r = e[2]))
       : ((n = () => {
-          let e = Vt(),
+          let e = ft(),
             n = t.watch((n) => {
               let { get: r } = n;
-              zt(t, e, r(hn));
+              ut(t, e, r(Bt));
             });
           return () => {
-            (n(), Lt(t, e));
+            (n(), ct(t, e));
           };
         }),
         (r = [t]),
         (e[0] = t),
         (e[1] = n),
         (e[2] = r)),
-    (0, Z.useEffect)(n, r),
+    (0, Q.useEffect)(n, r),
     null
   );
 }
-export { gn as LocalConversationPage };
+export { Vt as LocalConversationPage };
 //# sourceMappingURL=local-conversation-page.js.map

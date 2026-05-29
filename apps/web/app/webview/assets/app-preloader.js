@@ -1,5 +1,5 @@
 import { t as e } from "./jsx-runtime.js";
-import { xt as t } from "./setting-storage.js";
+import { wt as t } from "./setting-storage.js";
 import { t as n } from "./loading-page.js";
 var r = t(),
   i = e();

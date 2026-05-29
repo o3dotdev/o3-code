@@ -1,29 +1,29 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
+import { t as r } from "./clsx-BcPLHiun.js";
 import {
-  B as i,
-  H as a,
-  S as o,
-  W as s,
+  G as i,
+  S as a,
+  U as o,
+  V as s,
   X as c,
-  Y as l,
-  xt as u,
+  Z as l,
+  wt as u,
   y as d,
 } from "./setting-storage.js";
-import { r as f } from "./product-logger.js";
-import { t as p } from "./tooltip.js";
+import { r as f } from "./product-logger-DusapRyT.js";
+import { t as p } from "./tooltip-CDzchJxN.js";
 import { t as m } from "./button.js";
 import { t as h } from "./proxy.js";
 import { t as g } from "./download.js";
 import { t as _ } from "./with-window.js";
-import { r as ee } from "./modal-controller-state-.js";
+import { r as ee } from "./modal-controller-state.js";
 import { t as te } from "./thinking-shimmer.js";
 import { t as ne } from "./animations.js";
-import { t as re } from "./chevron.js";
-import { t as ie } from "./copy-to-clipboard.js";
+import { t as re } from "./chevron-NmAOI_v1.js";
+import { t as ie } from "./copy-to-clipboard-C2Mq2hN-.js";
 import { t as ae } from "./copy-button.js";
-import { n as oe, t as se } from "./markdown-surface.js";
+import { n as oe, t as se } from "./markdown-surface-vWOcyIeh.js";
 import { t as ce } from "./arrow-top-right.js";
 import { t as le } from "./feedback-form-dialog.js";
 var ue = e(t()),
@@ -62,7 +62,7 @@ var ue = e(t()),
     }),
   de = u(),
   fe = `https://help.openai.com/en/articles/5722486-how-your-data-is-used-to-improve-model-performance`,
-  x = i({
+  x = s({
     wrongPresentationLength: {
       id: `turnRatingControls.artifactFeedback.wrongPresentationLength`,
       defaultMessage: `Wrong presentation length`,
@@ -223,9 +223,9 @@ function me(e) {
   let t = (0, de.c)(10),
     { hasArtifacts: n, threadId: r, turnId: i } = e,
     s = n === void 0 ? !1 : n,
-    u = l(o),
+    u = c(a),
     [d, p] = (0, ue.useState)(null),
-    m = c(f),
+    m = l(f),
     h;
   t[0] !== s ||
   t[1] !== m ||
@@ -248,7 +248,7 @@ function me(e) {
           ee(u, le, {
             belowFreeformContent: (0, v.jsx)(`div`, {
               className: `text-sm text-token-description-foreground`,
-              children: (0, v.jsx)(a, {
+              children: (0, v.jsx)(o, {
                 id: `turnRatingControls.feedbackLegalNotice`,
                 defaultMessage: `Your feedback can be used to improve Codex. <link>Learn more</link>.`,
                 description: `Legal notice shown below turn rating feedback details`,
@@ -317,35 +317,35 @@ function C(e) {
 }
 function w(e) {
   let t = (0, de.c)(17),
-    { rating: n, selectedRating: r, onClick: i } = e,
-    a = s(),
-    o;
-  t[0] !== a || t[1] !== n
-    ? ((o =
+    { rating: n, selectedRating: r, onClick: a } = e,
+    o = i(),
+    s;
+  t[0] !== o || t[1] !== n
+    ? ((s =
         n === `thumbs_up`
-          ? a.formatMessage({
+          ? o.formatMessage({
               id: `assistantMessageContent.thumbsUp`,
               defaultMessage: `Good response`,
               description: `Tooltip and aria label for rating an assistant response positively`,
             })
-          : a.formatMessage({
+          : o.formatMessage({
               id: `assistantMessageContent.thumbsDown`,
               defaultMessage: `Bad response`,
               description: `Tooltip and aria label for rating an assistant response negatively`,
             })),
-      (t[0] = a),
+      (t[0] = o),
       (t[1] = n),
-      (t[2] = o))
-    : (o = t[2]);
-  let c = o,
+      (t[2] = s))
+    : (s = t[2]);
+  let c = s,
     l = r === n ? y : b,
     u = r === n,
     d;
-  t[3] !== i || t[4] !== n
+  t[3] !== a || t[4] !== n
     ? ((d = (e) => {
-        (e.stopPropagation(), i(n));
+        (e.stopPropagation(), a(n));
       }),
-      (t[3] = i),
+      (t[3] = a),
       (t[4] = n),
       (t[5] = d))
     : (d = t[5]);
@@ -390,21 +390,21 @@ function ve(e) {
   let t = (0, de.c)(90),
     {
       item: n,
-      conversationId: i,
-      cwd: o,
-      hideCodeBlocks: l,
+      conversationId: a,
+      cwd: s,
+      hideCodeBlocks: c,
       defaultCollapsed: u,
       hasArtifacts: ee,
       showOpenButton: le,
       turnId: y,
     } = e,
-    b = l === void 0 ? !1 : l,
+    b = c === void 0 ? !1 : c,
     fe = u === void 0 ? !1 : u,
     x = ee === void 0 ? !1 : ee,
     pe = le === void 0 ? !0 : le,
     [S, he] = (0, ue.useState)(fe),
-    C = s(),
-    w = c(f),
+    C = i(),
+    w = l(f),
     ve = pe && n.completed,
     be;
   t[0] !== n.completed || t[1] !== n.content
@@ -457,14 +457,14 @@ function ve(e) {
     : (A = t[10]);
   let Ee = A,
     j;
-  t[11] !== i || t[12] !== n.content
+  t[11] !== a || t[12] !== n.content
     ? ((j = () => {
         d.dispatchMessage(`show-plan-summary`, {
           planContent: n.content,
-          conversationId: i,
+          conversationId: a,
         });
       }),
-      (t[11] = i),
+      (t[11] = a),
       (t[12] = n.content),
       (t[13] = j))
     : (j = t[13]);
@@ -482,19 +482,19 @@ function ve(e) {
       (t[15] = M));
   let N = M,
     P;
-  t[16] !== i || t[17] !== n.content || t[18] !== w || t[19] !== y
+  t[16] !== a || t[17] !== n.content || t[18] !== w || t[19] !== y
     ? ((P = (e) => {
         (y != null &&
           w.submitCodexAnalyticsEvent?.({
             action: `copy`,
             eventKind: `action`,
             metadata: { surface: `plan_summary` },
-            threadId: i,
+            threadId: a,
             turnId: y,
           }),
           ie(n.content, e));
       }),
-      (t[16] = i),
+      (t[16] = a),
       (t[17] = n.content),
       (t[18] = w),
       (t[19] = y),
@@ -511,12 +511,12 @@ function ve(e) {
   t[22] === n.completed
     ? (L = t[23])
     : ((L = n.completed
-        ? (0, v.jsx)(a, {
+        ? (0, v.jsx)(o, {
             id: `localConversation.planSummary.title`,
             defaultMessage: `Plan`,
             description: `Title for the plan summary card header`,
           })
-        : (0, v.jsx)(a, {
+        : (0, v.jsx)(o, {
             id: `localConversation.planSummary.titleWriting`,
             defaultMessage: `Writing plan`,
             description: `Title for the plan summary card header while the plan is still being written`,
@@ -533,7 +533,7 @@ function ve(e) {
   let z;
   t[27] !== T ||
   t[28] !== D ||
-  t[29] !== i ||
+  t[29] !== a ||
   t[30] !== k ||
   t[31] !== F ||
   t[32] !== N ||
@@ -570,10 +570,10 @@ function ve(e) {
                     })
                   : null,
                 we
-                  ? (0, v.jsx)(me, { hasArtifacts: x, threadId: i, turnId: y })
+                  ? (0, v.jsx)(me, { hasArtifacts: x, threadId: a, turnId: y })
                   : null,
                 (0, v.jsx)(p, {
-                  tooltipContent: (0, v.jsx)(a, {
+                  tooltipContent: (0, v.jsx)(o, {
                     id: `localConversation.planSummary.openInNewWindow.tooltip`,
                     defaultMessage: `Open in new window`,
                     description: `Tooltip text for button that opens the plan summary in a new window`,
@@ -583,7 +583,7 @@ function ve(e) {
                     color: `outline`,
                     onClick: De,
                     children: [
-                      (0, v.jsx)(a, {
+                      (0, v.jsx)(o, {
                         id: `localConversation.planSummary.openInNewWindow`,
                         defaultMessage: `Open`,
                         description: `Button label to open the plan summary in a new window`,
@@ -598,7 +598,7 @@ function ve(e) {
         : null),
       (t[27] = T),
       (t[28] = D),
-      (t[29] = i),
+      (t[29] = a),
       (t[30] = k),
       (t[31] = F),
       (t[32] = N),
@@ -640,11 +640,11 @@ function ve(e) {
       (t[45] = V))
     : (V = t[45]);
   let H;
-  t[46] !== i || t[47] !== x || t[48] !== Te || t[49] !== y
+  t[46] !== a || t[47] !== x || t[48] !== Te || t[49] !== y
     ? ((H = Te
-        ? (0, v.jsx)(me, { hasArtifacts: x, threadId: i, turnId: y })
+        ? (0, v.jsx)(me, { hasArtifacts: x, threadId: a, turnId: y })
         : null),
-      (t[46] = i),
+      (t[46] = a),
       (t[47] = x),
       (t[48] = Te),
       (t[49] = y),
@@ -654,12 +654,12 @@ function ve(e) {
   t[51] === S
     ? (U = t[52])
     : ((U = S
-        ? (0, v.jsx)(a, {
+        ? (0, v.jsx)(o, {
             id: `localConversation.planSummary.expandTooltip`,
             defaultMessage: `Expand`,
             description: `Tooltip text for button that expands a collapsed plan summary`,
           })
-        : (0, v.jsx)(a, {
+        : (0, v.jsx)(o, {
             id: `localConversation.planSummary.collapseTooltip`,
             defaultMessage: `Collapse`,
             description: `Tooltip text for button that collapses the plan summary content`,
@@ -732,20 +732,20 @@ function ve(e) {
     : ((X = { height: je }), (t[73] = je), (t[74] = X));
   let Me = !n.completed,
     Z;
-  t[75] !== i ||
-  t[76] !== o ||
+  t[75] !== a ||
+  t[76] !== s ||
   t[77] !== b ||
   t[78] !== n.content ||
   t[79] !== Me
     ? ((Z = (0, v.jsx)(oe, {
         markdown: n.content,
-        conversationId: i,
+        conversationId: a,
         hideCodeBlocks: b,
         isStreaming: Me,
-        cwd: o,
+        cwd: s,
       })),
-      (t[75] = i),
-      (t[76] = o),
+      (t[75] = a),
+      (t[76] = s),
       (t[77] = b),
       (t[78] = n.content),
       (t[79] = Me),
@@ -768,7 +768,7 @@ function ve(e) {
                   onClick: () => {
                     he(!1);
                   },
-                  children: (0, v.jsx)(a, {
+                  children: (0, v.jsx)(o, {
                     id: `localConversation.planSummary.viewPlan`,
                     defaultMessage: `Expand plan`,
                     description: `Button label to expand a collapsed plan summary`,

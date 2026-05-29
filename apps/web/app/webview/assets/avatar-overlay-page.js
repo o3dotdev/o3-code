@@ -1,93 +1,96 @@
-import { s as e } from "./chunk.js";
-import "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./src-C.js";
 import {
-  Cr as t,
-  Fr as n,
-  Ja as r,
-  Rr as i,
-  Tr as a,
-  V as o,
-  Wo as s,
-  Za as c,
-  aa as l,
-  ci as u,
-  is as d,
-  qa as f,
-  qo as p,
-  ts as m,
-  zo as h,
-} from "./app-server-manager-signals.js";
+  $s as t,
+  Ea as n,
+  Fo as r,
+  Hs as i,
+  Io as a,
+  Ps as o,
+  Ri as s,
+  U as c,
+  Xs as l,
+  fi as u,
+  ii as d,
+  li as f,
+  ni as p,
+  zo as m,
+  zs as h,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as g, t as _ } from "./jsx-runtime.js";
-import { t as v } from "./clsx.js";
-import "./react-dom.js";
+import { t as v } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import {
   B as y,
-  J as b,
-  W as ee,
-  X as x,
+  G as ee,
+  V as b,
+  Y as x,
+  Z as S,
   b as te,
-  xt as S,
-  y as C,
-  z as ne,
+  wt as C,
+  y as w,
 } from "./setting-storage.js";
-import { n as w, r as T } from "./product-logger.js";
-import { o as re } from "./statsig.js";
-import { c as E } from "./app-server-manager-hooks.js";
+import { n as T, r as E } from "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import { o as ne } from "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
+import { c as D } from "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import { b as ie } from "./codex-api.js";
-import "./_baseOrderBy.js";
-import "./parse-owner-repo.js";
-import "./use-debounced-value.js";
+import { E as re } from "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
 import "./toast-signal.js";
 import "./window-zoom-context.js";
-import { t as ae } from "./tooltip.js";
-import { t as D } from "./use-collaboration-mode.js";
-import "./use-model-settings.js";
-import { t as O } from "./button.js";
-import "./reduced-motion-preference.js";
-import { t as k } from "./spinner.js";
+import { t as ie } from "./tooltip-CDzchJxN.js";
+import { t as O } from "./use-collaboration-mode-CQFe-Ilp.js";
+import "./use-model-settings-BGTYyORt.js";
+import { t as k } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
+import { t as A } from "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
-import "./link-external.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./link-external-BPZREBQk.js";
 import "./open-config-toml-button.js";
-import "./open-workspace-file.js";
+import "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
-import "./model-queries.js";
+import "./model-queries-CVdTsyPv.js";
 import "./use-webview-execution-target.js";
 import "./remote-projects.js";
 import "./collaboration-mode-queries.js";
-import { t as A } from "./proxy.js";
-import { t as oe } from "./AnimatePresence.js";
-import { t as j } from "./use-reduced-motion.js";
-import { t as se } from "./x.js";
+import { t as j } from "./proxy.js";
+import { t as ae } from "./AnimatePresence-Dsr-oiZk.js";
+import { t as oe } from "./use-reduced-motion.js";
+import { t as se } from "./x-C_RDKBp5.js";
 import { t as M } from "./check-circle-filled.js";
 import "./use-stable-callback.js";
-import { t as N } from "./get-resize-observer-entry-size.js";
+import { t as N } from "./get-resize-observer-entry-size-Bj-GuBki.js";
 import "./check-md.js";
 import { t as ce } from "./chevron-right.js";
 import { t as le } from "./context-menu.js";
-import { t as ue } from "./clock.js";
-import { t as de } from "./chevron.js";
+import { t as ue } from "./clock-BflmlnpZ.js";
+import { t as de } from "./chevron-NmAOI_v1.js";
 import { t as fe } from "./warning.js";
-import { t as P } from "./bullet-separator.js";
-import { t as F } from "./is-subagent-conversation.js";
-import { t as pe } from "./avatar-overlay-analytics.js";
-import { n as me } from "./codex-avatar.js";
-import { t as I } from "./avatar-mascot-button.js";
-import { t as he } from "./use-avatar-options.js";
-import { t as ge } from "./use-floating-window-pointer-interactivity.js";
-import { t as _e } from "./question-mark-circle.js";
-import { t as L } from "./permission-request-model-.js";
-var R = S(),
+import { t as pe } from "./bullet-separator-DZkwhKzs.js";
+import { t as P } from "./is-subagent-conversation-BDD-JXTj.js";
+import { t as me } from "./avatar-overlay-analytics-qWZkfIni.js";
+import { i as he } from "./codex-avatar.js";
+import { t as F } from "./avatar-mascot-button-CiqVdgpN.js";
+import { t as I } from "./use-avatar-options.js";
+import { t as ge } from "./use-floating-window-pointer-interactivity-CBdzwbea.js";
+import { t as _e } from "./question-mark-circle-DK-zln_X.js";
+import { t as L } from "./permission-request-model.js";
+var R = C(),
   z = e(g(), 1),
   B = 1600,
   ve = 100,
@@ -166,7 +169,7 @@ function H({
   }
   return (l.observe(i), u);
 }
-var U = y({
+var U = b({
   allow: {
     id: `avatarOverlay.waitingRequest.allow`,
     defaultMessage: `Allow`,
@@ -211,6 +214,21 @@ var U = y({
     id: `avatarOverlay.waitingRequest.connector`,
     defaultMessage: `Connector`,
     description: `Compact label for a suggested connector waiting request`,
+  },
+  connectTarget: {
+    id: `avatarOverlay.waitingRequest.connectTarget`,
+    defaultMessage: `Connect {target}`,
+    description: `Compact title for connecting a named connector`,
+  },
+  connect: {
+    id: `avatarOverlay.waitingRequest.connect`,
+    defaultMessage: `Connect`,
+    description: `Compact action button label for connecting a connector`,
+  },
+  continue: {
+    id: `avatarOverlay.waitingRequest.continue`,
+    defaultMessage: `Continue`,
+    description: `Compact action button label for continuing a connector flow`,
   },
   deny: {
     id: `avatarOverlay.waitingRequest.deny`,
@@ -282,10 +300,20 @@ var U = y({
     defaultMessage: `Review command`,
     description: `Compact title for a waiting command approval request`,
   },
+  additionalAccessTarget: {
+    id: `avatarOverlay.waitingRequest.moreAccessTarget`,
+    defaultMessage: `Codex needs more {target} access`,
+    description: `Compact title for granting additional access to a named connector`,
+  },
   reconnectTarget: {
     id: `avatarOverlay.waitingRequest.reconnectTarget`,
     defaultMessage: `Reconnect {target}`,
     description: `Compact title or action label for reconnecting a named connector`,
+  },
+  reconnect: {
+    id: `avatarOverlay.waitingRequest.reconnect`,
+    defaultMessage: `Reconnect`,
+    description: `Compact action button label for reconnecting expired connector credentials`,
   },
   runCommand: {
     id: `avatarOverlay.waitingRequest.runCommand`,
@@ -297,10 +325,10 @@ var U = y({
     defaultMessage: `Run once`,
     description: `Compact action button label for running a command once`,
   },
-  signInTarget: {
-    id: `avatarOverlay.waitingRequest.signInTarget`,
-    defaultMessage: `Sign in {target}`,
-    description: `Compact title or action label for signing in to a named connector`,
+  updateAccess: {
+    id: `avatarOverlay.waitingRequest.updateAccess`,
+    defaultMessage: `Update access`,
+    description: `Compact action button label for updating connector permissions`,
   },
   tool: {
     id: `avatarOverlay.waitingRequest.tool`,
@@ -316,7 +344,7 @@ var U = y({
 function W(e, t) {
   switch (e?.type) {
     case `userInput`:
-      return we(e, t);
+      return e.isOnboardingDynamicInput === !0 ? null : we(e, t);
     case `approval`:
       return e.item.type === `exec` ? Te(e.item, t) : Ee(e.item, t);
     case `permissionRequest`:
@@ -325,6 +353,8 @@ function W(e, t) {
       return Oe(e, t);
     case `mcpServerElicitation`:
       return ke(e, t);
+    case `optionPicker`:
+    case `setupCodexContextPicker`:
     case void 0:
       return null;
   }
@@ -552,14 +582,28 @@ function ke(e, t) {
     }
     case `connectorAuth`: {
       let e =
-        q(n.connector.connector_name) ?? Re(n.connector.connector_id) ?? a;
+          q(n.connector.connector_name) ?? Re(n.connector.connector_id) ?? a,
+        r = n.connector.auth_reason;
       ((o =
-        n.connector.auth_reason === `missing_link`
-          ? t.formatMessage(U.signInTarget, { target: e })
-          : t.formatMessage(U.reconnectTarget, { target: e })),
+        r === `missing_link`
+          ? t.formatMessage(U.connectTarget, { target: e })
+          : r === `oauth_upgrade_required`
+            ? t.formatMessage(U.additionalAccessTarget, { target: e })
+            : t.formatMessage(U.reconnectTarget, { target: e })),
         (s = e),
         (c = q(n.subtitle) ?? q(n.message) ?? K(n.url)),
-        (l = [{ intent: `open`, label: o, tone: `primary` }]));
+        (l = [
+          {
+            intent: `open`,
+            label:
+              r === `missing_link`
+                ? t.formatMessage(U.connect)
+                : r === `oauth_upgrade_required`
+                  ? t.formatMessage(U.updateAccess)
+                  : t.formatMessage(U.reconnect),
+            tone: `primary`,
+          },
+        ]));
       break;
     }
     case `urlAction`:
@@ -720,7 +764,7 @@ function He(e, t) {
     )
     .join(`\0`);
 }
-var J = y({
+var J = b({
     running: {
       id: `avatarOverlay.statusRunning`,
       defaultMessage: `Running`,
@@ -810,7 +854,7 @@ function Ge(e) {
       return Ue;
   }
 }
-var Y = y({
+var Y = b({
   calledTool: {
     id: `avatarOverlay.session.calledTool`,
     defaultMessage: `Called tool`,
@@ -920,24 +964,24 @@ function Ke({
   }
   return i;
 }
-function qe({ conversation: e, includeCompactWaitingRequests: r, intl: i }) {
-  if (F(e)) return null;
-  let a = e.hostId ?? `local`,
-    o = a === `local` ? `local` : `remote-host`,
-    s = $e(e),
-    c = r && s === `waiting` ? n(e) : null;
+function qe({ conversation: e, includeCompactWaitingRequests: t, intl: n }) {
+  if (P(e)) return null;
+  let r = e.hostId ?? `local`,
+    i = r === `local` ? `local` : `remote-host`,
+    a = $e(e),
+    o = t && a === `waiting` ? f(e) : null;
   return {
     actionPath: `/local/` + e.id,
-    hostId: a,
-    key: o + `:` + a + `:` + e.id,
+    hostId: r,
+    key: i + `:` + r + `:` + e.id,
     localConversationId: e.id,
-    source: o,
-    status: s,
-    subtitle: Ye(e, i),
-    title: t(e) ?? i.formatMessage(Y.newThread),
+    source: i,
+    status: a,
+    subtitle: Ye(e, n),
+    title: p(e) ?? n.formatMessage(Y.newThread),
     turnKey: String(e.turns.length),
     updatedAtMs: e.updatedAt,
-    waitingRequest: W(c, i),
+    waitingRequest: W(o, n),
   };
 }
 function Je(e, t) {
@@ -1038,7 +1082,7 @@ function Ze(e, t) {
   return null;
 }
 function Qe(e) {
-  let t = a(e)
+  let t = d(e)
     .replace(/^\s{0,3}#{1,6}\s+/g, ``)
     .replace(/\*\*([^*]+)\*\*/g, `$1`)
     .replace(/__([^_]+)__/g, `$1`)
@@ -1060,16 +1104,16 @@ function $e(e) {
       e.resumeState === `needs_resume`
         ? t?.type === `active` && t.activeFlags.includes(`waitingOnUserInput`)
         : e.requests.some((e) => e.method === `item/tool/requestUserInput`),
-    a = e.turns.some((e) =>
+    i = e.turns.some((e) =>
       e.items.some((e) => e.type === `planImplementation` && !e.isCompleted),
     ),
-    o =
+    a =
       e.resumeState === `needs_resume`
         ? t?.type === `systemError`
         : e.turns.at(-1)?.status === `failed`;
-  return i(e) || r || a
+  return u(e) || r || i
     ? `waiting`
-    : o
+    : a
       ? `failed`
       : n
         ? `running`
@@ -1089,7 +1133,7 @@ function X(e) {
         : `idle`;
 }
 var Z = _(),
-  Q = y({
+  Q = b({
     mascotLabel: {
       id: `petOverlay.mascotLabel`,
       defaultMessage: `{petName} pet`,
@@ -1247,33 +1291,33 @@ function ct({
   onRunNotificationAction: y,
   onSubmitQuestionOption: b,
   onNotificationReplyEditorActiveChange: x,
-  onOpenNotificationReply: te,
-  onSubmitNotificationReply: S,
+  onOpenNotificationReply: S,
+  onSubmitNotificationReply: te,
   onOpenNotificationTray: C,
 }) {
-  let ne = ee(),
-    w = j(),
-    T = Ge(u[0]),
-    re = u.length > 0,
-    E = re && i,
-    ie = a.placement.startsWith(`top`),
-    ae = a.placement.endsWith(`end`),
-    D = a.tray == null ? void 0 : Math.max(0, a.tray.height),
-    O = `${ie ? `bottom` : `top`} ${ae ? `right` : `left`}`,
-    k;
+  let w = ee(),
+    T = oe(),
+    E = Ge(u[0]),
+    ne = u.length > 0,
+    D = ne && i,
+    re = a.placement.startsWith(`top`),
+    ie = a.placement.endsWith(`end`),
+    O = a.tray == null ? void 0 : Math.max(0, a.tray.height),
+    k = `${re ? `bottom` : `top`} ${ie ? `right` : `left`}`,
+    A;
   return (
-    E
-      ? (k = {
-          ariaLabel: ne.formatMessage(Q.collapseNotificationTray),
+    D
+      ? (A = {
+          ariaLabel: w.formatMessage(Q.collapseNotificationTray),
           backgroundColor: `var(--color-token-bg-primary)`,
           content: (0, Z.jsx)(de, { className: `icon-xs opacity-80` }),
           foregroundColor: `var(--color-token-text-secondary)`,
           isIconOnly: !0,
           onClick: f,
         })
-      : re &&
-        (k = {
-          ariaLabel: ne.formatMessage(
+      : ne &&
+        (A = {
+          ariaLabel: w.formatMessage(
             {
               id: `avatarOverlay.toggleNotificationTray`,
               defaultMessage: `Open activity tray, {count, plural, one {# item} other {# items}}`,
@@ -1281,9 +1325,9 @@ function ct({
             },
             { count: u.length },
           ),
-          backgroundColor: T.badgeBackgroundColor,
+          backgroundColor: E.badgeBackgroundColor,
           content: u.length,
-          foregroundColor: T.badgeForegroundColor,
+          foregroundColor: E.badgeForegroundColor,
           onClick: C,
         }),
     (0, Z.jsx)(`main`, {
@@ -1298,31 +1342,31 @@ function ct({
         onPointerMove: h,
         onPointerUp: g,
         children: [
-          re
+          ne
             ? (0, Z.jsx)(`div`, {
-                "aria-hidden": E ? void 0 : !0,
+                "aria-hidden": D ? void 0 : !0,
                 "data-avatar-overlay-hit-region": `notification-tray`,
-                inert: !E,
+                inert: !D,
                 className: `absolute cursor-interaction text-sm text-token-foreground`,
                 style: {
                   height: a.tray?.height,
                   left: a.tray?.left,
-                  pointerEvents: E ? void 0 : `none`,
+                  pointerEvents: D ? void 0 : `none`,
                   top: a.tray?.top,
                   visibility: a.tray == null ? `hidden` : void 0,
                   width: a.tray?.width,
                 },
-                children: (0, Z.jsxs)(A.div, {
+                children: (0, Z.jsxs)(j.div, {
                   animate: {
-                    opacity: E ? 1 : 0,
-                    scale: E || w ? 1 : 0.97,
-                    y: E || w ? 0 : 8,
+                    opacity: D ? 1 : 0,
+                    scale: D || T ? 1 : 0.97,
+                    y: D || T ? 0 : 8,
                   },
                   className: `relative overflow-hidden [corner-shape:superellipse(1.5)]`,
                   "data-avatar-overlay-size": `notification-tray`,
                   initial: !1,
-                  style: { maxHeight: D, transformOrigin: O },
-                  transition: w
+                  style: { maxHeight: O, transformOrigin: k },
+                  transition: T
                     ? { duration: 0 }
                     : {
                         damping: 26,
@@ -1337,16 +1381,16 @@ function ct({
                     }),
                     (0, Z.jsx)(`div`, {
                       children: (0, Z.jsx)(lt, {
-                        isNotificationTrayVisible: E,
+                        isNotificationTrayVisible: D,
                         notifications: u,
-                        prefersReducedMotion: !!w,
-                        trayMaxHeight: D,
+                        prefersReducedMotion: !!T,
+                        trayMaxHeight: O,
                         onDismissNotification: _,
                         onRunNotificationAction: y,
                         onSubmitQuestionOption: b,
                         onNotificationReplyEditorActiveChange: x,
-                        onOpenNotificationReply: te,
-                        onSubmitNotificationReply: S,
+                        onOpenNotificationReply: S,
+                        onSubmitNotificationReply: te,
                       }),
                     }),
                   ],
@@ -1367,18 +1411,18 @@ function ct({
                 top: o.top,
                 width: o.width,
               },
-              children: (0, Z.jsx)(I, {
-                ariaLabel: ne.formatMessage(Q.mascotLabel, {
+              children: (0, Z.jsx)(F, {
+                ariaLabel: w.formatMessage(Q.mascotLabel, {
                   petName: e.displayName,
                 }),
                 assetRef: e.assetRef,
                 spritesheetUrl: e.spritesheetUrl,
-                notificationBadge: k,
+                notificationBadge: A,
                 resizeHandle:
                   l == null
                     ? void 0
-                    : { ariaLabel: ne.formatMessage(Q.resizeMascot), ...l },
-                state: T.mascotState,
+                    : { ariaLabel: w.formatMessage(Q.resizeMascot), ...l },
+                state: E.mascotState,
                 style: s,
                 transientState: c,
               }),
@@ -1423,21 +1467,21 @@ function lt(e) {
     : (y = t[3]);
   let [b, x] = (0, z.useState)(y),
     [S, C] = (0, z.useState)(null),
-    ne = (0, z.useRef)(null),
-    w;
+    w = (0, z.useRef)(null),
+    T;
   t[4] !== r || t[5] !== S
-    ? ((w = r.some((e) => e.id === S) ? S : null),
+    ? ((T = r.some((e) => e.id === S) ? S : null),
       (t[4] = r),
       (t[5] = S),
-      (t[6] = w))
-    : (w = t[6]);
-  let T = w,
-    re = T != null && n,
-    E,
-    ie;
-  (t[7] !== re || t[8] !== a
-    ? ((E = () => {
-        if (re)
+      (t[6] = T))
+    : (T = t[6]);
+  let E = T,
+    ne = E != null && n,
+    D,
+    re;
+  (t[7] !== ne || t[8] !== a
+    ? ((D = () => {
+        if (ne)
           return (
             a?.(!0),
             () => {
@@ -1445,28 +1489,28 @@ function lt(e) {
             }
           );
       }),
-      (ie = [re, a]),
-      (t[7] = re),
+      (re = [ne, a]),
+      (t[7] = ne),
       (t[8] = a),
-      (t[9] = E),
-      (t[10] = ie))
-    : ((E = t[9]), (ie = t[10])),
-    (0, z.useEffect)(E, ie));
-  let ae, D;
+      (t[9] = D),
+      (t[10] = re))
+    : ((D = t[9]), (re = t[10])),
+    (0, z.useEffect)(D, re));
+  let ie, O;
   (t[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((ae = () => {
-        ne.current?.focus();
+    ? ((ie = () => {
+        w.current?.focus();
       }),
-      (D = []),
-      (t[11] = ae),
-      (t[12] = D))
-    : ((ae = t[11]), (D = t[12])),
-    te(`avatar-overlay-keyboard-interaction-ready`, ae, D));
-  let O = Math.min(b.hiddenOlderNotificationCount, _),
-    k = b.hasScrollableContent,
-    j = k && g && b.hasLatestNotificationsAbove,
-    se = k && g && O > 0,
-    M = k && g,
+      (O = []),
+      (t[11] = ie),
+      (t[12] = O))
+    : ((ie = t[11]), (O = t[12])),
+    te(`avatar-overlay-keyboard-interaction-ready`, ie, O));
+  let k = Math.min(b.hiddenOlderNotificationCount, _),
+    A = b.hasScrollableContent,
+    oe = A && g && b.hasLatestNotificationsAbove,
+    se = A && g && k > 0,
+    M = A && g,
     N;
   t[13] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((N = (e) => {
@@ -1499,45 +1543,45 @@ function lt(e) {
     ? ((fe = [h, d, ce]), (t[16] = h), (t[17] = d), (t[18] = fe))
     : (fe = t[18]),
     (0, z.useLayoutEffect)(de, fe));
-  let P;
+  let pe;
   t[19] === u
-    ? (P = t[20])
-    : ((P = () => {
+    ? (pe = t[20])
+    : ((pe = () => {
         let e = p.current;
         e != null &&
           (e.scrollTo({ behavior: u ? `auto` : `smooth`, top: 0 }),
           x(Ct(e, 0)));
       }),
       (t[19] = u),
-      (t[20] = P));
-  let F = P,
-    pe;
-  t[21] !== O || t[22] !== u
-    ? ((pe = () => {
+      (t[20] = pe));
+  let P = pe,
+    me;
+  t[21] !== k || t[22] !== u
+    ? ((me = () => {
         let e = p.current;
         if (e == null) return;
-        let t = ft(e, O);
+        let t = ft(e, k);
         (e.scrollTo({ behavior: u ? `auto` : `smooth`, top: t }), x(Ct(e, t)));
       }),
-      (t[21] = O),
+      (t[21] = k),
       (t[22] = u),
-      (t[23] = pe))
-    : (pe = t[23]);
-  let me = pe,
-    I;
-  t[24] !== j || t[25] !== u || t[26] !== F
-    ? ((I = j
-        ? (0, Z.jsx)(ut, { prefersReducedMotion: u, onClick: F }, `latest`)
+      (t[23] = me))
+    : (me = t[23]);
+  let he = me,
+    F;
+  t[24] !== oe || t[25] !== u || t[26] !== P
+    ? ((F = oe
+        ? (0, Z.jsx)(ut, { prefersReducedMotion: u, onClick: P }, `latest`)
         : null),
-      (t[24] = j),
+      (t[24] = oe),
       (t[25] = u),
-      (t[26] = F),
-      (t[27] = I))
-    : (I = t[27]);
-  let he;
-  t[28] === I
-    ? (he = t[29])
-    : ((he = (0, Z.jsx)(oe, { children: I })), (t[28] = I), (t[29] = he));
+      (t[26] = P),
+      (t[27] = F))
+    : (F = t[27]);
+  let I;
+  t[28] === F
+    ? (I = t[29])
+    : ((I = (0, Z.jsx)(ae, { children: F })), (t[28] = F), (t[29] = I));
   let ge = n ? 1 : 0,
     _e = n || u ? 0 : 3,
     L;
@@ -1577,7 +1621,7 @@ function lt(e) {
       (t[41] = Se))
     : (Se = t[41]);
   let V;
-  t[42] !== T ||
+  t[42] !== E ||
   t[43] !== r ||
   t[44] !== i ||
   t[45] !== o ||
@@ -1589,7 +1633,7 @@ function lt(e) {
         (0, Z.jsx)(
           pt,
           {
-            isReplying: T === e.id,
+            isReplying: E === e.id,
             notification: e,
             notificationIndex: t,
             onCloseReply: () => {
@@ -1603,12 +1647,12 @@ function lt(e) {
             onSubmitQuestionOption: c,
             onSubmitNotificationReply: l,
             prefersReducedMotion: u,
-            replyInputRef: ne,
+            replyInputRef: w,
           },
           e.id,
         ),
       )),
-      (t[42] = T),
+      (t[42] = E),
       (t[43] = r),
       (t[44] = i),
       (t[45] = o),
@@ -1625,7 +1669,7 @@ function lt(e) {
   t[54] !== be ||
   t[55] !== xe ||
   t[56] !== V
-    ? ((H = (0, Z.jsx)(A.div, {
+    ? ((H = (0, Z.jsx)(j.div, {
         ref: ue,
         animate: L,
         "aria-label": B,
@@ -1647,32 +1691,32 @@ function lt(e) {
       (t[57] = H))
     : (H = t[57]);
   let U;
-  t[58] !== se || t[59] !== O || t[60] !== u || t[61] !== me
+  t[58] !== se || t[59] !== k || t[60] !== u || t[61] !== he
     ? ((U = se
         ? (0, Z.jsx)(
             dt,
-            { count: O, prefersReducedMotion: u, onClick: me },
+            { count: k, prefersReducedMotion: u, onClick: he },
             `older`,
           )
         : null),
       (t[58] = se),
-      (t[59] = O),
+      (t[59] = k),
       (t[60] = u),
-      (t[61] = me),
+      (t[61] = he),
       (t[62] = U))
     : (U = t[62]);
   let W;
   t[63] === U
     ? (W = t[64])
-    : ((W = (0, Z.jsx)(oe, { children: U })), (t[63] = U), (t[64] = W));
+    : ((W = (0, Z.jsx)(ae, { children: U })), (t[63] = U), (t[64] = W));
   let G;
   return (
-    t[65] !== he || t[66] !== H || t[67] !== W
+    t[65] !== I || t[66] !== H || t[67] !== W
       ? ((G = (0, Z.jsxs)(`div`, {
           className: `relative`,
-          children: [he, H, W],
+          children: [I, H, W],
         })),
-        (t[65] = he),
+        (t[65] = I),
         (t[66] = H),
         (t[67] = W),
         (t[68] = G))
@@ -1747,7 +1791,7 @@ function ut(e) {
     t[24] !== u ||
     t[25] !== d ||
     t[26] !== p
-      ? ((y = (0, Z.jsxs)(A.button, {
+      ? ((y = (0, Z.jsxs)(j.button, {
           type: `button`,
           "aria-label": a,
           "data-avatar-overlay-hit-region": `notification-scroll-control`,
@@ -1856,7 +1900,7 @@ function dt(e) {
       })),
       (t[25] = x))
     : (x = t[25]);
-  let te;
+  let S;
   return (
     t[26] !== r ||
     t[27] !== o ||
@@ -1867,7 +1911,7 @@ function dt(e) {
     t[32] !== d ||
     t[33] !== f ||
     t[34] !== m
-      ? ((te = (0, Z.jsxs)(A.button, {
+      ? ((S = (0, Z.jsxs)(j.button, {
           type: `button`,
           "aria-label": o,
           "data-avatar-overlay-hit-region": `notification-scroll-control`,
@@ -1890,9 +1934,9 @@ function dt(e) {
         (t[32] = d),
         (t[33] = f),
         (t[34] = m),
-        (t[35] = te))
-      : (te = t[35]),
-    te
+        (t[35] = S))
+      : (S = t[35]),
+    S
   );
 }
 function ft(e, t) {
@@ -1907,76 +1951,76 @@ function pt({
   onDismissNotification: r,
   onCloseReply: i,
   onOpenReply: a,
-  onRunNotificationAction: s,
-  onSubmitQuestionOption: c,
+  onRunNotificationAction: o,
+  onSubmitQuestionOption: s,
   onSubmitNotificationReply: l,
   prefersReducedMotion: u,
   replyInputRef: d,
 }) {
   let f = ee(),
     p = t.source === `local` ? t.localConversationId : null,
-    m = b(o, p),
+    m = x(c, p),
     h = m == null ? null : Xe(m.items, f),
     g = Ge(t),
     _ = f.formatMessage(g.labelMessage),
     y = h ?? t.body ?? f.formatMessage(g.fallbackBodyMessage),
-    x = t.waitingRequest,
-    te = x == null ? y : G(x, f),
-    S = te.replace(/[.?!]+$/, ``),
-    C = te === _ ? _ : `${_}. ${S}`,
-    ne =
+    b = t.waitingRequest,
+    S = b == null ? y : G(b, f),
+    te = S.replace(/[.?!]+$/, ``),
+    C = S === _ ? _ : `${_}. ${te}`,
+    w =
       t.action == null
         ? `${t.title}. ${C}`
         : `${t.title}. ${C}. ${f.formatMessage(Q.openNotification)}`,
-    w = t.action != null,
-    [T, re] = (0, z.useState)(!1),
-    [E, ie] = (0, z.useState)(!1),
-    [D, k] = (0, z.useState)(``),
-    [oe, j] = (0, z.useState)(null),
+    T = t.action != null,
+    [E, ne] = (0, z.useState)(!1),
+    [D, re] = (0, z.useState)(!1),
+    [O, A] = (0, z.useState)(``),
+    [ae, oe] = (0, z.useState)(null),
     [M, N] = (0, z.useState)(!1),
     [le, ue] = (0, z.useState)(0),
     [de, fe] = (0, z.useState)(!1),
-    P = (0, z.useRef)(T),
-    F = (0, z.useRef)(void 0),
-    pe = x == null ? nt : rt,
-    me = (0, z.useCallback)((e) => {
-      if ((F.current?.(), (F.current = void 0), e == null)) return;
+    pe = (0, z.useRef)(E),
+    P = (0, z.useRef)(void 0),
+    me = b == null ? nt : rt,
+    he = (0, z.useCallback)((e) => {
+      if ((P.current?.(), (P.current = void 0), e == null)) return;
       let t = () => {
         let t = e.scrollHeight;
         ue((e) => (e === t ? e : t));
         let n = Dt(e);
         fe((e) => {
-          let t = (P.current && e) || n;
+          let t = (pe.current && e) || n;
           return e === t ? e : t;
         });
       };
-      (t(), (F.current = H({ axis: `both`, target: e, onChange: t })));
+      (t(), (P.current = H({ axis: `both`, target: e, onChange: t })));
     }, []);
   (0, z.useLayoutEffect)(() => {
-    P.current = T;
-  }, [T]);
-  let I = le > pe + at || de,
-    he = I && T && !e,
+    pe.current = E;
+  }, [E]);
+  let F = le > me + at || de,
+    I = F && E && !e,
     ge = t.replyTarget != null && l != null,
-    L = D.trim(),
+    L = O.trim(),
     R = u
       ? { duration: 0 }
       : { duration: M ? 0.2 : 0.28, ease: [0.16, 1, 0.3, 1] },
     B = async (e) => {
       if (
-        (e.preventDefault(), e.stopPropagation(), !(!ge || L.length === 0 || E))
+        (e.preventDefault(), e.stopPropagation(), !(!ge || L.length === 0 || D))
       ) {
-        (ie(!0), j(null));
+        (re(!0), oe(null));
         try {
-          (await l(t, L), k(``), i());
+          (await l(t, L), A(``), i());
         } catch {
-          j(f.formatMessage(Q.notificationReplyError));
+          oe(f.formatMessage(Q.notificationReplyError));
         } finally {
-          ie(!1);
+          re(!1);
         }
       }
     };
-  return (0, Z.jsx)(A.div, {
+  return (0, Z.jsx)(j.div, {
     animate: { opacity: 1, y: 0 },
     initial: { opacity: 0, y: u ? 0 : 4 },
     role: `listitem`,
@@ -2001,27 +2045,27 @@ function pt({
     children: (0, Z.jsxs)(`div`, {
       className: v(
         `relative z-[1] overflow-hidden rounded-[18px] border border-token-border/60 bg-token-main-surface-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.42),inset_0_-1px_0_rgba(0,0,0,0.08)] backdrop-blur-xl forced-colors:bg-[Canvas]`,
-        w &&
+        T &&
           `transition-[background-color,border-color,box-shadow] duration-200 ease-[cubic-bezier(0.16,1,0.3,1)] hover:border-token-border/80 hover:bg-token-main-surface-primary hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.52),inset_0_-1px_0_rgba(0,0,0,0.1)] motion-reduce:transition-none`,
       ),
       children: [
-        (0, Z.jsxs)(A.div, {
-          role: w ? `button` : void 0,
+        (0, Z.jsxs)(j.div, {
+          role: T ? `button` : void 0,
           className: v(
             `block w-full min-w-0 px-3 py-1.5 text-left focus-visible:outline-token-focus focus-visible:outline focus-visible:outline-offset-[-2px]`,
-            w ? `cursor-interaction` : `cursor-default`,
+            T ? `cursor-interaction` : `cursor-default`,
           ),
-          tabIndex: w ? 0 : void 0,
+          tabIndex: T ? 0 : void 0,
           transition: u ? { duration: 0 } : { duration: 0.12, ease: `easeOut` },
-          whileTap: w && !u ? { scale: 0.995 } : void 0,
-          "aria-label": w ? ne : void 0,
+          whileTap: T && !u ? { scale: 0.995 } : void 0,
+          "aria-label": T ? w : void 0,
           onClick: () => {
-            w && s?.(t);
+            T && o?.(t);
           },
           onKeyDown: (e) => {
-            !w ||
+            !T ||
               (e.key !== `Enter` && e.key !== ` `) ||
-              (e.preventDefault(), s?.(t));
+              (e.preventDefault(), o?.(t));
           },
           children: [
             (0, Z.jsx)(`span`, {
@@ -2031,16 +2075,12 @@ function pt({
                 children: t.title,
               }),
             }),
-            (0, Z.jsx)(A.div, {
-              ref: me,
-              animate: { maxHeight: he ? it : pe },
+            (0, Z.jsx)(j.div, {
+              ref: he,
+              animate: { maxHeight: I ? it : me },
               className: v(
                 `text-size-chat-sm mt-0.5 overflow-hidden leading-4 text-token-foreground`,
-                he
-                  ? `whitespace-pre-wrap`
-                  : x == null
-                    ? `line-clamp-2`
-                    : void 0,
+                I ? `whitespace-pre-wrap` : b == null ? `line-clamp-2` : void 0,
               ),
               "data-avatar-overlay-measure-body": `true`,
               initial: !1,
@@ -2048,17 +2088,17 @@ function pt({
                 ? { duration: 0 }
                 : { duration: 0.18, ease: `easeOut` },
               children:
-                x == null
+                b == null
                   ? y
                   : (0, Z.jsx)(mt, {
-                      isExpanded: he,
+                      isExpanded: I,
                       localConversationId: p,
-                      request: x,
+                      request: b,
                       onRunNotificationAction: (e) => {
-                        s?.(t, e);
+                        o?.(t, e);
                       },
                       onSubmitQuestionOption: (e) => {
-                        c?.(t, e);
+                        s?.(t, e);
                       },
                     }),
             }),
@@ -2067,20 +2107,20 @@ function pt({
         (0, Z.jsx)(`span`, {
           role: `img`,
           "aria-label":
-            x?.kind === `question` ? f.formatMessage(Q.questionStatusIcon) : _,
+            b?.kind === `question` ? f.formatMessage(Q.questionStatusIcon) : _,
           className: v(
             `pointer-events-none absolute top-1 right-1 z-0 flex size-6 items-center justify-center opacity-100`,
-            I &&
+            F &&
               M &&
               `opacity-0 transition-opacity duration-150 motion-reduce:transition-none`,
           ),
           children:
-            x?.kind === `question`
+            b?.kind === `question`
               ? (0, Z.jsx)(_e, { className: g.iconClassName })
               : Mt(g),
         }),
-        I
-          ? (0, Z.jsx)(A.div, {
+        F
+          ? (0, Z.jsx)(j.div, {
               animate: { opacity: M ? 1 : 0, x: M ? 0 : 6 },
               className: v(
                 `absolute top-1 right-1 z-10`,
@@ -2089,28 +2129,28 @@ function pt({
               "data-avatar-overlay-control": `expand`,
               initial: !1,
               transition: R,
-              children: (0, Z.jsx)(ae, {
+              children: (0, Z.jsx)(ie, {
                 align: `end`,
                 side: `top`,
                 tooltipContent: f.formatMessage(
-                  T
+                  E
                     ? Q.collapseNotificationTooltip
                     : Q.expandNotificationTooltip,
                 ),
-                children: (0, Z.jsx)(O, {
+                children: (0, Z.jsx)(k, {
                   className: v(`size-6`, st),
                   color: `ghost`,
                   size: `icon`,
-                  "aria-expanded": T,
+                  "aria-expanded": E,
                   "aria-label": f.formatMessage(
-                    T ? Q.collapseNotification : Q.expandNotification,
+                    E ? Q.collapseNotification : Q.expandNotification,
                     { title: t.title },
                   ),
                   onClick: () => {
-                    re((e) => !e);
+                    ne((e) => !e);
                   },
-                  children: (0, Z.jsx)(A.span, {
-                    animate: { rotate: T ? 90 : 0 },
+                  children: (0, Z.jsx)(j.span, {
+                    animate: { rotate: E ? 90 : 0 },
                     transition: u
                       ? { duration: 0 }
                       : { duration: 0.12, ease: `easeOut` },
@@ -2121,7 +2161,7 @@ function pt({
             })
           : null,
         ge && !e
-          ? (0, Z.jsx)(A.div, {
+          ? (0, Z.jsx)(j.div, {
               animate: { opacity: M ? 1 : 0, x: M ? 0 : 6 },
               className: v(
                 `no-drag absolute right-2 bottom-1 z-10`,
@@ -2132,7 +2172,7 @@ function pt({
               transition: R,
               children: (0, Z.jsx)(`div`, {
                 className: `flex justify-end pb-1`,
-                children: (0, Z.jsx)(O, {
+                children: (0, Z.jsx)(k, {
                   className: v(
                     `h-5 px-2 text-xs leading-none text-token-foreground shadow-[0px_5px_10px_-7px_rgba(0,0,0,0.22)]`,
                     st,
@@ -2143,7 +2183,7 @@ function pt({
                     title: t.title,
                   }),
                   onClick: (e) => {
-                    (e.stopPropagation(), j(null), k(``), a(), N(!0));
+                    (e.stopPropagation(), oe(null), A(``), a(), N(!0));
                   },
                   onPointerDown: (e) => {
                     e.stopPropagation();
@@ -2154,7 +2194,7 @@ function pt({
             })
           : null,
         e
-          ? (0, Z.jsxs)(A.form, {
+          ? (0, Z.jsxs)(j.form, {
               className: `no-drag mx-3 mb-2 border-t border-token-border/60 pt-2`,
               animate: { opacity: 1, y: 0 },
               initial: { opacity: 0, y: u ? 0 : -2 },
@@ -2184,17 +2224,17 @@ function pt({
                       placeholder: f.formatMessage(
                         Q.notificationReplyPlaceholder,
                       ),
-                      value: D,
+                      value: O,
                       onChange: (e) => {
-                        (k(e.currentTarget.value), j(null));
+                        (A(e.currentTarget.value), oe(null));
                       },
                       onKeyDown: (e) => {
                         e.key !== `Escape` ||
-                          E ||
-                          (e.stopPropagation(), i(), j(null));
+                          D ||
+                          (e.stopPropagation(), i(), oe(null));
                       },
                     }),
-                    (0, Z.jsx)(O, {
+                    (0, Z.jsx)(k, {
                       className: `h-6 px-2 text-xs`,
                       color: `primary`,
                       size: `default`,
@@ -2202,24 +2242,24 @@ function pt({
                       "aria-label": f.formatMessage(Q.sendNotificationReply, {
                         title: t.title,
                       }),
-                      disabled: L.length === 0 || E,
-                      loading: E,
+                      disabled: L.length === 0 || D,
+                      loading: D,
                       children: f.formatMessage(Q.replyNotificationButton),
                     }),
                   ],
                 }),
-                oe == null
+                ae == null
                   ? null
                   : (0, Z.jsx)(`div`, {
                       className: `mt-1 text-[11px] leading-4 text-token-error-foreground`,
                       role: `alert`,
-                      children: oe,
+                      children: ae,
                     }),
               ],
             })
           : null,
         r
-          ? (0, Z.jsx)(A.div, {
+          ? (0, Z.jsx)(j.div, {
               animate: { opacity: M ? 1 : 0, x: M ? 0 : -6 },
               className: v(
                 `absolute top-1 left-1 z-20`,
@@ -2228,11 +2268,11 @@ function pt({
               "data-avatar-overlay-control": `dismiss`,
               initial: !1,
               transition: R,
-              children: (0, Z.jsx)(ae, {
+              children: (0, Z.jsx)(ie, {
                 align: `start`,
                 side: `top`,
                 tooltipContent: f.formatMessage(Q.dismissNotificationTooltip),
-                children: (0, Z.jsx)(O, {
+                children: (0, Z.jsx)(k, {
                   className: v(
                     `[&>svg]:!icon-xs size-6 shadow-[0px_5px_10px_-7px_rgba(0,0,0,0.22)] enabled:hover:!text-token-foreground`,
                     st,
@@ -2535,7 +2575,7 @@ function gt(e) {
       onRunNotificationAction: i,
       request: a,
     } = e,
-    { getModeForSelection: o } = D(r),
+    { getModeForSelection: o } = O(r),
     s,
     c,
     l,
@@ -2683,7 +2723,7 @@ function vt(e) {
         (t[14] = r));
     let i;
     t[15] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((i = (0, Z.jsx)(P, { className: `mx-1.5 text-token-text-tertiary` })),
+      ? ((i = (0, Z.jsx)(pe, { className: `mx-1.5 text-token-text-tertiary` })),
         (t[15] = i))
       : (i = t[15]);
     let a;
@@ -2793,7 +2833,7 @@ function bt(e) {
       ? (e = t[4])
       : ((e = (e) =>
           (0, Z.jsx)(
-            O,
+            k,
             {
               className: `max-w-full min-w-0`,
               color: St(e.tone),
@@ -2906,7 +2946,7 @@ function Mt(e) {
     case `clock`:
       return (0, Z.jsx)(ue, { className: e.iconClassName });
     case `spinner`:
-      return (0, Z.jsx)(k, { className: e.iconClassName });
+      return (0, Z.jsx)(A, { className: e.iconClassName });
     case `warning`:
       return (0, Z.jsx)(fe, { className: e.iconClassName });
   }
@@ -2915,31 +2955,31 @@ var Nt = 192 / 208,
   Pt = `--codex-avatar-width`,
   Ft = 80,
   It = 224,
-  Lt = h(`avatar-overlay-mascot-width-px`, null);
+  Lt = o(`avatar-overlay-mascot-width-px`, null);
 function Rt() {
   let e = (0, R.c)(7),
-    [t, n] = d(Lt),
-    r;
-  e[0] === t
-    ? (r = e[1])
-    : ((r = t == null ? null : Bt(t)), (e[0] = t), (e[1] = r));
-  let i;
-  e[2] === n
-    ? (i = e[3])
-    : ((i = (e) => {
-        n(Bt(e));
-      }),
-      (e[2] = n),
-      (e[3] = i));
+    [n, r] = t(Lt),
+    i;
+  e[0] === n
+    ? (i = e[1])
+    : ((i = n == null ? null : Bt(n)), (e[0] = n), (e[1] = i));
   let a;
+  e[2] === r
+    ? (a = e[3])
+    : ((a = (e) => {
+        r(Bt(e));
+      }),
+      (e[2] = r),
+      (e[3] = a));
+  let o;
   return (
-    e[4] !== r || e[5] !== i
-      ? ((a = { mascotWidthPx: r, setMascotWidthPx: i }),
-        (e[4] = r),
-        (e[5] = i),
-        (e[6] = a))
-      : (a = e[6]),
-    a
+    e[4] !== i || e[5] !== a
+      ? ((o = { mascotWidthPx: i, setMascotWidthPx: a }),
+        (e[4] = i),
+        (e[5] = a),
+        (e[6] = o))
+      : (o = e[6]),
+    o
   );
 }
 function zt(e) {
@@ -3121,8 +3161,8 @@ var en = 15e3,
   };
 function pn() {
   let e = (0, R.c)(9),
-    { avatarOptions: t, isLoading: n, refetch: r } = he(),
-    { selectedAvatar: i, selectedAvatarId: a } = me(t),
+    { avatarOptions: t, isLoading: n, refetch: r } = I(),
+    { selectedAvatar: i, selectedAvatarId: a } = he(t),
     o;
   e[0] !== i || e[1] !== a
     ? ((o = En(i, a)), (e[0] = i), (e[1] = a), (e[2] = o))
@@ -3147,49 +3187,49 @@ function pn() {
 }
 function mn(e) {
   let t = (0, R.c)(146),
-    { isLoading: n, refetch: i, selectedAvatar: a, selectedAvatarId: o } = e,
-    d = ee(),
-    h = re(`451951815`),
-    g = x(T),
+    { isLoading: o, refetch: c, selectedAvatar: u, selectedAvatarId: d } = e,
+    f = ee(),
+    p = ne(`451951815`),
+    g = S(E),
     [_, v] = (0, z.useState)(fn),
-    [y, b] = (0, z.useState)(null),
-    [S, ae] = (0, z.useState)(!0),
-    [D, O] = (0, z.useState)(!1),
-    [k, A] = (0, z.useState)(!1),
-    [oe, j] = (0, z.useState)(!1),
+    [b, x] = (0, z.useState)(null),
+    [C, ie] = (0, z.useState)(!0),
+    [O, k] = (0, z.useState)(!1),
+    [A, j] = (0, z.useState)(!1),
+    [ae, oe] = (0, z.useState)(!1),
     [se, M] = (0, z.useState)(null),
     { mascotWidthPx: N, setMascotWidthPx: ce } = Rt(),
     [le, ue] = (0, z.useState)(Cn),
     [de, fe] = (0, z.useState)(Sn),
-    P;
-  t[0] !== a || t[1] !== o
-    ? ((P = () => Tn(a, o)), (t[0] = a), (t[1] = o), (t[2] = P))
-    : (P = t[2]);
-  let [F] = (0, z.useState)(P),
-    { data: me, refetch: I } = E(),
-    he = me === void 0 ? [] : me,
+    pe;
+  t[0] !== u || t[1] !== d
+    ? ((pe = () => Tn(u, d)), (t[0] = u), (t[1] = d), (t[2] = pe))
+    : (pe = t[2]);
+  let [P] = (0, z.useState)(pe),
+    { data: he, refetch: F } = D(),
+    I = he === void 0 ? [] : he,
     _e;
   t[3] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((_e = { taskFilter: `current`, limit: 20 }), (t[3] = _e))
     : (_e = t[3]);
-  let { data: L, refetch: B } = ie(_e),
+  let { data: L, refetch: B } = re(_e),
     ve = Ke({
-      includeCompactWaitingRequests: h,
-      intl: d,
-      localConversations: he,
+      includeCompactWaitingRequests: p,
+      intl: f,
+      localConversations: I,
       remoteTasks: L === void 0 ? [] : L,
     }),
     ye =
-      F == null
+      P == null
         ? null
-        : qt({ intl: d, petName: F.petName, startedAtMs: F.startedAtMs }),
+        : qt({ intl: f, petName: P.petName, startedAtMs: P.startedAtMs }),
     { nextNotificationExpiresAtMs: V, notifications: H } = Kt({
       dismissedNotificationTurnKeys: le,
       extraNotifications: ye == null ? [] : [ye],
       nowMs: de,
       sessions: ve,
     }),
-    U = He(H, d),
+    U = He(H, f),
     W = ve.some(xn),
     G = ve.some(bn),
     Ce = (0, z.useRef)(null),
@@ -3204,59 +3244,59 @@ function mn(e) {
     Me;
   t[4] !== W ||
   t[5] !== G ||
-  t[6] !== S ||
+  t[6] !== C ||
   t[7] !== H.length ||
   t[8] !== g ||
-  t[9] !== a
-    ? ((Me = (e, t, n, i) => {
-        let o = i === void 0 ? S : i;
+  t[9] !== u
+    ? ((Me = (e, t, n, r) => {
+        let i = r === void 0 ? C : r;
         g.trackStructuredEvent(
-          r,
-          pe({
+          a,
+          me({
             action: e,
             hasRunningCloudSession: G,
             hasRunningLocalSession: W,
-            isNotificationTrayOpen: o,
+            isNotificationTrayOpen: i,
             notification: n,
             notificationCount: H.length,
-            selectedAvatar: a,
+            selectedAvatar: u,
             source: t,
           }),
         );
       }),
       (t[4] = W),
       (t[5] = G),
-      (t[6] = S),
+      (t[6] = C),
       (t[7] = H.length),
       (t[8] = g),
-      (t[9] = a),
+      (t[9] = u),
       (t[10] = Me))
     : (Me = t[10]);
   let K = Me,
     Ne,
     Pe;
-  (t[11] === F
+  (t[11] === P
     ? ((Ne = t[12]), (Pe = t[13]))
     : ((Ne = () => {
-        if (F == null) return;
-        let e = s(tn, []);
-        e.includes(F.avatarId) || p(tn, [...e, F.avatarId]);
+        if (P == null) return;
+        let e = h(tn, []);
+        e.includes(P.avatarId) || i(tn, [...e, P.avatarId]);
       }),
-      (Pe = [F]),
-      (t[11] = F),
+      (Pe = [P]),
+      (t[11] = P),
       (t[12] = Ne),
       (t[13] = Pe)),
     (0, z.useEffect)(Ne, Pe));
   let Fe, Ie;
-  (t[14] !== n || t[15] !== i || t[16] !== a.id || t[17] !== o
+  (t[14] !== o || t[15] !== c || t[16] !== u.id || t[17] !== d
     ? ((Fe = () => {
-        !n && o?.startsWith(`custom:`) && a.id !== o && i();
+        !o && d?.startsWith(`custom:`) && u.id !== d && c();
       }),
-      (Ie = [n, i, a.id, o]),
-      (t[14] = n),
-      (t[15] = i),
-      (t[16] = a.id),
-      (t[17] = o),
+      (Ie = [o, c, u.id, d]),
+      (t[14] = o),
+      (t[15] = c),
+      (t[16] = u.id),
+      (t[17] = d),
       (t[18] = Fe),
       (t[19] = Ie))
     : ((Fe = t[18]), (Ie = t[19])),
@@ -3265,11 +3305,11 @@ function mn(e) {
   (t[20] !== g || t[21] !== K
     ? ((Le = () => {
         je.current ||
-          (g !== w &&
+          (g !== T &&
             ((je.current = !0),
             K(
-              f.CODEX_AVATAR_OVERLAY_ACTION_OPENED,
-              c.CODEX_AVATAR_OVERLAY_SOURCE_UNSPECIFIED,
+              r.CODEX_AVATAR_OVERLAY_ACTION_OPENED,
+              m.CODEX_AVATAR_OVERLAY_SOURCE_UNSPECIFIED,
             )));
       }),
       (Re = [g, K]),
@@ -3291,21 +3331,21 @@ function mn(e) {
     : (ze = t[24]),
     ge(ze));
   let Be;
-  t[25] !== S || t[26] !== H.length
+  t[25] !== C || t[26] !== H.length
     ? ((Be = () => {
         if (we.current != null || De.current != null) return;
         let e = kn(ke.current);
         if (e == null) return;
-        let t = { ...e, isTrayVisible: S && H.length > 0 };
+        let t = { ...e, isTrayVisible: C && H.length > 0 };
         Nn(Ae.current, t) ||
           ((Ae.current = t),
-          C.dispatchMessage(`avatar-overlay-element-size-changed`, {
+          w.dispatchMessage(`avatar-overlay-element-size-changed`, {
             isTrayVisible: t.isTrayVisible,
             mascot: t.mascot,
             tray: t.tray,
           }));
       }),
-      (t[25] = S),
+      (t[25] = C),
       (t[26] = H.length),
       (t[27] = Be))
     : (Be = t[27]);
@@ -3338,7 +3378,7 @@ function mn(e) {
             let e = Ee.current;
             ((Ee.current = null),
               !(e == null || we.current == null) &&
-                C.dispatchMessage(`avatar-overlay-mascot-resize-move`, {
+                w.dispatchMessage(`avatar-overlay-mascot-resize-move`, {
                   width: e,
                 }));
           })));
@@ -3374,7 +3414,7 @@ function mn(e) {
         n == null ||
           n.pointerId !== e ||
           ((we.current = null),
-          A(!1),
+          j(!1),
           t?.hasPointerCapture?.(e) && t.releasePointerCapture?.(e));
       }),
       (t[35] = Ze))
@@ -3391,7 +3431,7 @@ function mn(e) {
           M(r),
           ce(r),
           Je(r),
-          C.dispatchMessage(`avatar-overlay-mascot-resize-end`, { width: r }));
+          w.dispatchMessage(`avatar-overlay-mascot-resize-end`, { width: r }));
       }),
       (t[36] = ce),
       (t[37] = Je),
@@ -3402,31 +3442,31 @@ function mn(e) {
   t[39] === K
     ? (Q = t[40])
     : ((Q = (e, t) => {
-        let { releaseSample: n, shouldOpenMainWindow: r } = t,
-          i = Ce.current;
-        if (i == null || i.pointerId !== e) return;
-        ((Ce.current = null), O(!1), b(null));
-        let a = n == null ? null : xe(i, n);
+        let { releaseSample: n, shouldOpenMainWindow: i } = t,
+          a = Ce.current;
+        if (a == null || a.pointerId !== e) return;
+        ((Ce.current = null), k(!1), x(null));
+        let o = n == null ? null : xe(a, n);
         (ke.current?.hasPointerCapture?.(e) &&
           ke.current.releasePointerCapture?.(e),
-          r &&
-            i.startedOnMascot &&
-            !i.hasMoved &&
+          i &&
+            a.startedOnMascot &&
+            !a.hasMoved &&
             (K(
-              f.CODEX_AVATAR_OVERLAY_ACTION_MASCOT_CLICKED,
-              c.CODEX_AVATAR_OVERLAY_SOURCE_MASCOT,
+              r.CODEX_AVATAR_OVERLAY_ACTION_MASCOT_CLICKED,
+              m.CODEX_AVATAR_OVERLAY_SOURCE_MASCOT,
             ),
-            C.dispatchMessage(`open-current-main-window`, {})),
-          C.dispatchMessage(`avatar-overlay-drag-end`, {}),
-          i.hasMoved &&
+            w.dispatchMessage(`open-current-main-window`, {})),
+          w.dispatchMessage(`avatar-overlay-drag-end`, {}),
+          a.hasMoved &&
             K(
-              f.CODEX_AVATAR_OVERLAY_ACTION_DRAG_COMPLETED,
-              c.CODEX_AVATAR_OVERLAY_SOURCE_MASCOT,
+              r.CODEX_AVATAR_OVERLAY_ACTION_DRAG_COMPLETED,
+              m.CODEX_AVATAR_OVERLAY_SOURCE_MASCOT,
             ),
-          a != null &&
-            C.dispatchMessage(`avatar-overlay-drag-release`, {
-              velocityX: a.x,
-              velocityY: a.y,
+          o != null &&
+            w.dispatchMessage(`avatar-overlay-drag-release`, {
+              velocityX: o.x,
+              velocityY: o.y,
             }));
       }),
       (t[39] = K),
@@ -3449,12 +3489,12 @@ function mn(e) {
             screenX: e.screenX,
             screenY: e.screenY,
           }),
-          C.dispatchMessage(`avatar-overlay-drag-start`, {
+          w.dispatchMessage(`avatar-overlay-drag-start`, {
             pointerWindowX: e.clientX,
             pointerWindowY: e.clientY,
           }),
-          O(!0),
-          b(null));
+          k(!0),
+          x(null));
       }),
       (t[41] = et))
     : (et = t[41]);
@@ -3472,8 +3512,8 @@ function mn(e) {
           ((t.hasMoved = !0),
           (t.screenX = n.screenX),
           (t.screenY = n.screenY),
-          b((e) => On({ currentDragState: e, deltaX: r })),
-          C.dispatchMessage(`avatar-overlay-drag-move`, {}));
+          x((e) => On({ currentDragState: e, deltaX: r })),
+          w.dispatchMessage(`avatar-overlay-drag-move`, {}));
       }),
       (t[42] = nt))
     : (nt = t[42]);
@@ -3524,8 +3564,8 @@ function mn(e) {
             startWidthPx: t,
           }),
           M(t),
-          A(!0),
-          C.dispatchMessage(`avatar-overlay-mascot-resize-start`, {
+          j(!0),
+          w.dispatchMessage(`avatar-overlay-mascot-resize-start`, {
             width: t,
           }));
       }),
@@ -3572,83 +3612,83 @@ function mn(e) {
       (t[57] = yt));
   let bt = yt,
     xt;
-  t[58] !== I || t[59] !== K
+  t[58] !== F || t[59] !== K
     ? ((xt = (e, t) => {
-        let n = e.waitingRequest;
+        let i = e.waitingRequest;
         if (e.localConversationId != null && t != null) {
           let r = e.localConversationId;
           bb273: switch (t.intent) {
             case `command-approval`:
               if (
                 t.commandDecision != null &&
-                (n?.kind === `exec` || n?.kind === `network`)
+                (i?.kind === `exec` || i?.kind === `network`)
               ) {
-                m(`reply-with-command-execution-approval-decision`, {
+                l(`reply-with-command-execution-approval-decision`, {
                   conversationId: r,
-                  requestId: n.requestId,
+                  requestId: i.requestId,
                   decision: t.commandDecision,
                 }).then(() => {
-                  I();
+                  F();
                 });
                 return;
               }
               break bb273;
             case `file-approval`:
-              if (t.fileDecision != null && n?.kind === `patch`) {
-                m(`reply-with-file-change-approval-decision`, {
+              if (t.fileDecision != null && i?.kind === `patch`) {
+                l(`reply-with-file-change-approval-decision`, {
                   conversationId: r,
-                  requestId: n.requestId,
+                  requestId: i.requestId,
                   decision: t.fileDecision,
                 }).then(() => {
-                  I();
+                  F();
                 });
                 return;
               }
               break bb273;
             case `permission-response`:
-              if (t.permissionResponse != null && n?.kind === `permission`) {
-                m(`reply-with-permissions-request-approval-response`, {
+              if (t.permissionResponse != null && i?.kind === `permission`) {
+                l(`reply-with-permissions-request-approval-response`, {
                   conversationId: r,
-                  requestId: n.requestId,
+                  requestId: i.requestId,
                   response: t.permissionResponse,
                 }).then(() => {
-                  I();
+                  F();
                 });
                 return;
               }
               break bb273;
             case `mcp-elicitation`:
-              if (t.mcpElicitationAction != null && n?.kind === `tool`) {
-                m(`reply-with-mcp-server-elicitation-response`, {
+              if (t.mcpElicitationAction != null && i?.kind === `tool`) {
+                l(`reply-with-mcp-server-elicitation-response`, {
                   conversationId: r,
-                  requestId: n.requestId,
-                  response: l(t.mcpElicitationAction),
+                  requestId: i.requestId,
+                  response: n(t.mcpElicitationAction),
                 }).then(() => {
-                  I();
+                  F();
                 });
                 return;
               }
               break bb273;
             case `plan-start`:
-              if (n?.kind === `plan` && t.planStartCollaborationMode != null) {
-                m(`set-latest-collaboration-mode-for-conversation`, {
+              if (i?.kind === `plan` && t.planStartCollaborationMode != null) {
+                l(`set-latest-collaboration-mode-for-conversation`, {
                   conversationId: r,
                   collaborationMode: t.planStartCollaborationMode,
                 })
                   .then(() =>
-                    m(`remove-plan-implementation-request`, {
+                    l(`remove-plan-implementation-request`, {
                       conversationId: r,
-                      turnId: n.turnId,
+                      turnId: i.turnId,
                     }),
                   )
                   .then(() =>
-                    m(`send-follow-up-message`, {
+                    l(`send-follow-up-message`, {
                       conversationId: r,
-                      prompt: `${u}\n${n.planContent}`,
+                      prompt: `${s}\n${i.planContent}`,
                     }),
                   )
                   .then(() => {
-                    I();
+                    F();
                   });
                 return;
               }
@@ -3659,33 +3699,33 @@ function mn(e) {
         (t != null && t.intent !== `open`) ||
           (e.action != null &&
             (K(
-              f.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_OPENED,
-              c.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_ROW,
+              r.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_OPENED,
+              m.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_ROW,
               e,
             ),
-            C.dispatchMessage(`open-in-main-window`, { path: e.action.path })));
+            w.dispatchMessage(`open-in-main-window`, { path: e.action.path })));
       }),
-      (t[58] = I),
+      (t[58] = F),
       (t[59] = K),
       (t[60] = xt))
     : (xt = t[60]);
   let St = xt,
     Ct;
-  t[61] === I
+  t[61] === F
     ? (Ct = t[62])
     : ((Ct = (e, t) => {
         let n = e.waitingRequest;
         e.localConversationId == null ||
           n?.kind !== `question` ||
-          m(`reply-with-user-input-response`, {
+          l(`reply-with-user-input-response`, {
             conversationId: e.localConversationId,
             requestId: n.requestId,
             response: { answers: { [t.questionId]: { answers: [t.label] } } },
           }).then(() => {
-            I();
+            F();
           });
       }),
-      (t[61] = I),
+      (t[61] = F),
       (t[62] = Ct));
   let wt = Ct,
     Tt;
@@ -3693,8 +3733,8 @@ function mn(e) {
     ? (Tt = t[64])
     : ((Tt = (e) => {
         (K(
-          f.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_DISMISSED,
-          c.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_ROW,
+          r.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_DISMISSED,
+          m.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_ROW,
           e,
         ),
           ue((t) => {
@@ -3714,11 +3754,11 @@ function mn(e) {
         let n = t.trim();
         n.length !== 0 &&
           (K(
-            f.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_REPLY_SUBMITTED,
-            c.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_REPLY,
+            r.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_REPLY_SUBMITTED,
+            m.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_REPLY,
             e,
           ),
-          await m(`send-follow-up-message`, {
+          await l(`send-follow-up-message`, {
             conversationId: e.replyTarget.conversationId,
             prompt: n,
           }));
@@ -3746,18 +3786,18 @@ function mn(e) {
       (t[69] = jt)),
     te(`avatar-overlay-layout-changed`, At, jt));
   let Mt, Pt;
-  (t[70] !== oe || t[71] !== k
+  (t[70] !== ae || t[71] !== A
     ? ((Mt = () => {
-        let e = oe || k;
+        let e = ae || A;
         return (
           document.documentElement.classList.toggle(un, e),
           document.body.classList.toggle(un, e),
           _n
         );
       }),
-      (Pt = [oe, k]),
-      (t[70] = oe),
-      (t[71] = k),
+      (Pt = [ae, A]),
+      (t[70] = ae),
+      (t[71] = A),
       (t[72] = Mt),
       (t[73] = Pt))
     : ((Mt = t[72]), (Pt = t[73])),
@@ -3830,11 +3870,11 @@ function mn(e) {
       (t[80] = q),
       (t[81] = Vt));
   let Ht;
-  (t[82] !== U || t[83] !== q || t[84] !== a.id
-    ? ((Ht = [q, a.id, U]),
+  (t[82] !== U || t[83] !== q || t[84] !== u.id
+    ? ((Ht = [q, u.id, U]),
       (t[82] = U),
       (t[83] = q),
-      (t[84] = a.id),
+      (t[84] = u.id),
       (t[85] = Ht))
     : (Ht = t[85]),
     (0, z.useLayoutEffect)(Vt, Ht));
@@ -3847,13 +3887,13 @@ function mn(e) {
       (t[86] = q),
       (t[87] = Ut));
   let Wt;
-  (t[88] !== S || t[89] !== N || t[90] !== U || t[91] !== q || t[92] !== a.id
-    ? ((Wt = [S, q, a.id, U, N]),
-      (t[88] = S),
+  (t[88] !== C || t[89] !== N || t[90] !== U || t[91] !== q || t[92] !== u.id
+    ? ((Wt = [C, q, u.id, U, N]),
+      (t[88] = C),
       (t[89] = N),
       (t[90] = U),
       (t[91] = q),
-      (t[92] = a.id),
+      (t[92] = u.id),
       (t[93] = Wt))
     : (Wt = t[93]),
     (0, z.useLayoutEffect)(Ut, Wt));
@@ -3876,20 +3916,20 @@ function mn(e) {
       (t[96] = Jt)),
     (0, z.useEffect)(Gt, Jt));
   let Yt, Xt;
-  (t[97] !== W || t[98] !== G || t[99] !== I || t[100] !== B
+  (t[97] !== W || t[98] !== G || t[99] !== F || t[100] !== B
     ? ((Yt = () => {
         if (!W && !G) return;
         let e = window.setTimeout(() => {
-          (fe(hn), W && I(), G && B());
+          (fe(hn), W && F(), G && B());
         }, en);
         return () => {
           window.clearTimeout(e);
         };
       }),
-      (Xt = [W, G, I, B]),
+      (Xt = [W, G, F, B]),
       (t[97] = W),
       (t[98] = G),
-      (t[99] = I),
+      (t[99] = F),
       (t[100] = B),
       (t[101] = Yt),
       (t[102] = Xt))
@@ -3897,7 +3937,7 @@ function mn(e) {
     (0, z.useEffect)(Yt, Xt));
   let Zt;
   t[103] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Zt = ne({
+    ? ((Zt = y({
         id: `petOverlay.closePet`,
         defaultMessage: `Close pet`,
         description: `Context menu item that closes the floating Codex pet`,
@@ -3913,22 +3953,22 @@ function mn(e) {
           message: Zt,
           onSelect: () => {
             (K(
-              f.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED,
-              c.CODEX_AVATAR_OVERLAY_SOURCE_CONTEXT_MENU,
+              r.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED,
+              m.CODEX_AVATAR_OVERLAY_SOURCE_CONTEXT_MENU,
             ),
-              C.dispatchMessage(`avatar-overlay-open`, {}));
+              w.dispatchMessage(`avatar-overlay-open`, {}));
           },
         },
       ]),
       (t[104] = K),
       (t[105] = Qt));
   let $t;
-  t[106] !== k || t[107] !== _.mascot || t[108] !== se
+  t[106] !== A || t[107] !== _.mascot || t[108] !== se
     ? (($t =
-        k && se != null
+        A && se != null
           ? { ..._.mascot, height: Math.ceil(se / Nt), width: se }
           : _.mascot),
-      (t[106] = k),
+      (t[106] = A),
       (t[107] = _.mascot),
       (t[108] = se),
       (t[109] = $t))
@@ -3936,10 +3976,10 @@ function mn(e) {
   let on, sn;
   t[110] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((on = () => {
-        j(!0);
+        oe(!0);
       }),
       (sn = () => {
-        j(!1);
+        oe(!1);
       }),
       (t[110] = on),
       (t[111] = sn))
@@ -3969,12 +4009,12 @@ function mn(e) {
     ? (pn = t[120])
     : ((pn = () => {
         (K(
-          f.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_TRAY_CLOSED,
-          c.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_BADGE,
+          r.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_TRAY_CLOSED,
+          m.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_BADGE,
           void 0,
           !1,
         ),
-          ae(!1));
+          ie(!1));
       }),
       (t[119] = K),
       (t[120] = pn));
@@ -3983,8 +4023,8 @@ function mn(e) {
     ? (mn = t[122])
     : ((mn = (e) => {
         K(
-          f.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_REPLY_OPENED,
-          c.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_REPLY,
+          r.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_REPLY_OPENED,
+          m.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_REPLY,
           e,
         );
       }),
@@ -3995,12 +4035,12 @@ function mn(e) {
     ? (En = t[124])
     : ((En = () => {
         (K(
-          f.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_TRAY_OPENED,
-          c.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_BADGE,
+          r.CODEX_AVATAR_OVERLAY_ACTION_NOTIFICATION_TRAY_OPENED,
+          m.CODEX_AVATAR_OVERLAY_SOURCE_NOTIFICATION_BADGE,
           void 0,
           !0,
         ),
-          ae(!0));
+          ie(!0));
       }),
       (t[123] = K),
       (t[124] = En));
@@ -4013,12 +4053,12 @@ function mn(e) {
     t[129] !== St ||
     t[130] !== Ot ||
     t[131] !== wt ||
-    t[132] !== D ||
-    t[133] !== S ||
+    t[132] !== O ||
+    t[133] !== C ||
     t[134] !== _ ||
-    t[135] !== y ||
+    t[135] !== b ||
     t[136] !== H ||
-    t[137] !== a ||
+    t[137] !== u ||
     t[138] !== Qt ||
     t[139] !== $t ||
     t[140] !== cn ||
@@ -4027,13 +4067,13 @@ function mn(e) {
     t[143] !== mn ||
     t[144] !== En
       ? ((Dn = (0, Z.jsx)(ct, {
-          avatar: a,
+          avatar: u,
           avatarMenuItems: Qt,
           interactiveRegionRef: ke,
-          isDragging: D,
-          isNotificationTrayOpen: S,
+          isDragging: O,
+          isNotificationTrayOpen: C,
           layout: _,
-          mascotDragState: y,
+          mascotDragState: b,
           mascotLayout: $t,
           mascotResizeHandle: cn,
           mascotStyle: dn,
@@ -4059,12 +4099,12 @@ function mn(e) {
         (t[129] = St),
         (t[130] = Ot),
         (t[131] = wt),
-        (t[132] = D),
-        (t[133] = S),
+        (t[132] = O),
+        (t[133] = C),
         (t[134] = _),
-        (t[135] = y),
+        (t[135] = b),
         (t[136] = H),
-        (t[137] = a),
+        (t[137] = u),
         (t[138] = Qt),
         (t[139] = $t),
         (t[140] = cn),
@@ -4088,12 +4128,12 @@ function _n() {
     document.body.classList.remove(un));
 }
 function vn(e) {
-  C.dispatchMessage(`avatar-overlay-keyboard-interaction-changed`, {
+  w.dispatchMessage(`avatar-overlay-keyboard-interaction-changed`, {
     isInteractive: e,
   });
 }
 function yn(e) {
-  C.dispatchMessage(`avatar-overlay-pointer-interaction-changed`, {
+  w.dispatchMessage(`avatar-overlay-pointer-interaction-changed`, {
     isInteractive: e,
   });
 }
@@ -4113,7 +4153,7 @@ function wn(e, t) {
   return Bt(e.startWidthPx + t - e.startScreenX);
 }
 function Tn(e, t) {
-  return Dn(e, t) || s(tn, []).includes(e.id)
+  return Dn(e, t) || h(tn, []).includes(e.id)
     ? null
     : { avatarId: e.id, petName: e.displayName, startedAtMs: Date.now() };
 }

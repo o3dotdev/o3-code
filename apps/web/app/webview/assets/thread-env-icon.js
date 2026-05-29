@@ -1,12 +1,12 @@
-import { Ca as e, wa as t } from "./app-server-manager-signals.js";
+import { do as e, fo as t } from "./app-server-manager-signals-DkRDRgNB.js";
 import { t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { H as i, xt as a } from "./setting-storage.js";
-import { t as o } from "./tooltip.js";
-import { t as s } from "./remote-host-globe-icon.js";
-import { t as c } from "./cloud.js";
+import { t as r } from "./clsx-BcPLHiun.js";
+import { U as i, wt as a } from "./setting-storage.js";
+import { t as o } from "./tooltip-CDzchJxN.js";
+import { t as s } from "./remote-host-globe-icon-DwUovbza.js";
+import { t as c } from "./cloud-BOSNAJnX.js";
 import { t as l } from "./macbook.js";
-import { t as u } from "./worktree.js";
+import { t as u } from "./worktree-D_6WAQVb.js";
 var d = a(),
   f = n();
 function p(n) {
@@ -115,7 +115,7 @@ function h(n) {
   let D;
   i[19] !== C || i[20] !== E
     ? ((D = (0, f.jsxs)(`span`, {
-        className: `inline-flex shrink-0 items-center gap-0.5`,
+        className: `inline-flex shrink-0 items-center gap-1.5`,
         children: [C, E],
       })),
       (i[19] = C),

@@ -1,63 +1,64 @@
-import { s as e } from "./chunk.js";
-import { pr as t } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { zr as t } from "./src-C.js";
 import {
-  C as n,
-  Ta as r,
-  Tr as i,
-  ts as a,
-  zt as o,
-} from "./app-server-manager-signals.js";
-import { n as s, t as c } from "./jsx-runtime.js";
-import "./react-dom.js";
+  Xs as n,
+  ii as r,
+  po as i,
+  w as a,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { n as o, t as s } from "./jsx-runtime.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import {
-  B as l,
-  H as u,
-  L as d,
-  S as f,
-  T as p,
-  W as m,
-  Y as h,
-  _ as g,
-  h as _,
-  w as v,
-  xt as y,
+  G as c,
+  L as l,
+  S as u,
+  T as d,
+  U as f,
+  V as p,
+  X as m,
+  _ as h,
+  h as g,
+  w as _,
+  wt as v,
 } from "./setting-storage.js";
-import { t as b } from "./useInfiniteQuery.js";
-import { f as x } from "./chunk-LFPYN7LY.js";
-import "./product-logger.js";
-import "./statsig.js";
-import "./_baseOrderBy.js";
+import { t as y } from "./useInfiniteQuery.js";
+import { m as b } from "./chunk-LFPYN7LY.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import { t as x } from "./request-DWZTrEAr.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
 import { r as S } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import { t as C } from "./tooltip.js";
+import { t as C } from "./tooltip-CDzchJxN.js";
 import { t as ee } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import { t as w } from "./spinner.js";
-import "./x.js";
+import "./x-C_RDKBp5.js";
 import "./with-window.js";
 import { a as T, i as E, l as D, n as O, r as k } from "./dialog-layout.js";
 import "./initial-route-atom.js";
 import "./use-stable-callback.js";
 import { t as A } from "./use-navigate-to-local-conversation.js";
 import "./_defineProperty.js";
+import "./links.js";
 import { t as j } from "./trash.js";
-import "./chevron.js";
-import { t as M } from "./cloud.js";
+import "./chevron-NmAOI_v1.js";
+import { t as M } from "./cloud-BOSNAJnX.js";
 import { t as N } from "./get-project-name.js";
 import "./sortBy.js";
 import "./use-connected-remote-connections.js";
-import { i as P } from "./settings-shared.js";
-import "./settings-host-selection.js";
-import { t as F } from "./settings-host-context.js";
+import { i as P } from "./settings-shared-BTHmEeQY.js";
+import { t as F } from "./settings-host-context-ILiCQlCE.js";
 import { t as I } from "./settings-content-layout.js";
-import { n as L } from "./settings-row-D.js";
-import { t as R } from "./settings-surface.js";
-import { t as z } from "./settings-group.js";
-var B = y(),
-  V = e(s(), 1),
-  H = l({
+import { n as L } from "./settings-row.js";
+import { n as R, t as z } from "./settings-group.js";
+var B = v(),
+  V = e(o(), 1),
+  H = p({
     delete: {
       id: `settings.dataControls.archivedChats.delete`,
       defaultMessage: `Delete`,
@@ -135,38 +136,38 @@ function W(e, t) {
       ? t
       : 0;
 }
-var G = c();
+var G = s();
 function te(e) {
   let t = (0, B.c)(53),
     { archivedTask: n } = e,
-    r = h(f),
-    a = d(),
-    s = m(),
-    c = x(),
-    l,
+    i = m(u),
+    a = l(),
+    o = c(),
+    s = b(),
+    d,
     p;
   t[0] === n.id
-    ? ((l = t[1]), (p = t[2]))
-    : ((l = [`recover-cloud-task`, n.id]),
+    ? ((d = t[1]), (p = t[2]))
+    : ((d = [`recover-cloud-task`, n.id]),
       (p = () =>
-        o.safePost(`/wham/tasks/{task_id}/recover`, {
+        x.safePost(`/wham/tasks/{task_id}/recover`, {
           parameters: { path: { task_id: n.id } },
         })),
       (t[0] = n.id),
-      (t[1] = l),
+      (t[1] = d),
       (t[2] = p));
-  let g;
-  t[3] !== s || t[4] !== r
-    ? ((g = () => {
-        r.get(S).danger(s.formatMessage(H.unarchiveError));
+  let h;
+  t[3] !== o || t[4] !== i
+    ? ((h = () => {
+        i.get(S).danger(o.formatMessage(H.unarchiveError));
       }),
-      (t[3] = s),
-      (t[4] = r),
-      (t[5] = g))
-    : (g = t[5]);
-  let _;
-  t[6] !== n.id || t[7] !== c || t[8] !== a || t[9] !== r
-    ? ((_ = () => {
+      (t[3] = o),
+      (t[4] = i),
+      (t[5] = h))
+    : (h = t[5]);
+  let g;
+  t[6] !== n.id || t[7] !== s || t[8] !== a || t[9] !== i
+    ? ((g = () => {
         (a.setQueryData([`tasks`, `archived`], (e) =>
           e == null
             ? e
@@ -178,17 +179,17 @@ function te(e) {
                 })),
               },
         ),
-          r.get(S).info(
+          i.get(S).info(
             (0, G.jsxs)(`span`, {
               children: [
-                (0, G.jsx)(u, { ...H.unarchiveSuccessPlain }),
+                (0, G.jsx)(f, { ...H.unarchiveSuccessPlain }),
                 (0, G.jsx)(`button`, {
                   className: `pointer-events-auto ml-1 cursor-interaction text-token-link underline-offset-2 hover:underline`,
                   type: `button`,
                   onClick: () => {
-                    c(`/remote/${n.id}`);
+                    s(`/remote/${n.id}`);
                   },
-                  children: (0, G.jsx)(u, { ...H.viewNow }),
+                  children: (0, G.jsx)(f, { ...H.viewNow }),
                 }),
               ],
             }),
@@ -196,46 +197,46 @@ function te(e) {
           ));
       }),
       (t[6] = n.id),
-      (t[7] = c),
+      (t[7] = s),
       (t[8] = a),
-      (t[9] = r),
-      (t[10] = _))
-    : (_ = t[10]);
-  let y;
+      (t[9] = i),
+      (t[10] = g))
+    : (g = t[10]);
+  let v;
   t[11] === a
-    ? (y = t[12])
-    : ((y = () => {
+    ? (v = t[12])
+    : ((v = () => {
         a.invalidateQueries({ queryKey: [`tasks`] });
       }),
       (t[11] = a),
-      (t[12] = y));
-  let b;
-  t[13] !== l || t[14] !== p || t[15] !== g || t[16] !== _ || t[17] !== y
-    ? ((b = {
-        mutationKey: l,
+      (t[12] = v));
+  let y;
+  t[13] !== d || t[14] !== p || t[15] !== h || t[16] !== g || t[17] !== v
+    ? ((y = {
+        mutationKey: d,
         mutationFn: p,
-        onError: g,
-        onSuccess: _,
-        onSettled: y,
+        onError: h,
+        onSuccess: g,
+        onSettled: v,
       }),
-      (t[13] = l),
+      (t[13] = d),
       (t[14] = p),
-      (t[15] = g),
-      (t[16] = _),
-      (t[17] = y),
-      (t[18] = b))
-    : (b = t[18]);
-  let C = v(b),
+      (t[15] = h),
+      (t[16] = g),
+      (t[17] = v),
+      (t[18] = y))
+    : (y = t[18]);
+  let C = _(y),
     w;
   t[19] === n.title
     ? (w = t[20])
-    : ((w = i(n.title ?? ``).trim()), (t[19] = n.title), (t[20] = w));
+    : ((w = r(n.title ?? ``).trim()), (t[19] = n.title), (t[20] = w));
   let T = w,
     E,
     D,
     O,
     k;
-  if (t[21] !== n || t[22] !== s) {
+  if (t[21] !== n || t[22] !== o) {
     let e = ne(n),
       r;
     (t[27] === n.task_status_display?.environment_label
@@ -246,11 +247,11 @@ function te(e) {
       (D = r),
       (O = e != null),
       (E = O
-        ? s.formatDate(e, { year: `numeric`, month: `short`, day: `numeric` })
+        ? o.formatDate(e, { year: `numeric`, month: `short`, day: `numeric` })
         : ``),
-      (k = O ? s.formatTime(e, { hour: `numeric`, minute: `2-digit` }) : ``),
+      (k = O ? o.formatTime(e, { hour: `numeric`, minute: `2-digit` }) : ``),
       (t[21] = n),
-      (t[22] = s),
+      (t[22] = o),
       (t[23] = E),
       (t[24] = D),
       (t[25] = O),
@@ -267,7 +268,7 @@ function te(e) {
     : ((N =
         T.length > 0
           ? T
-          : (0, G.jsx)(u, {
+          : (0, G.jsx)(f, {
               id: `settings.dataControls.archivedChats.untitled`,
               defaultMessage: `Untitled chat`,
               description: `Fallback title for an archived chat`,
@@ -290,13 +291,13 @@ function te(e) {
   t[34] !== E || t[35] !== D || t[36] !== O || t[37] !== A
     ? ((F = O
         ? D
-          ? (0, G.jsx)(u, {
+          ? (0, G.jsx)(f, {
               id: `settings.dataControls.archivedChats.dateTimeWithEnvironment`,
               defaultMessage: `{date}, {time} • {environment}`,
               description: `Date, time, and environment name for an archived cloud chat`,
               values: { date: E, time: A, environment: D },
             })
-          : (0, G.jsx)(u, {
+          : (0, G.jsx)(f, {
               id: `settings.dataControls.archivedChats.dateTime`,
               defaultMessage: `{date}, {time}`,
               description: `Date and time for an archived chat`,
@@ -341,7 +342,7 @@ function te(e) {
       (t[45] = R));
   let z;
   t[46] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((z = (0, G.jsx)(u, { ...H.unarchive })), (t[46] = z))
+    ? ((z = (0, G.jsx)(f, { ...H.unarchive })), (t[46] = z))
     : (z = t[46]);
   let V;
   t[47] !== R || t[48] !== C.isPending
@@ -393,11 +394,11 @@ function K() {
           queryFn: X,
           getNextPageParam: Y,
           select: q,
-          staleTime: g.FIVE_SECONDS,
+          staleTime: h.FIVE_SECONDS,
         }),
         (e[1] = n))
       : (n = e[1]),
-    b(n)
+    y(n)
   );
 }
 function q(e) {
@@ -415,12 +416,12 @@ function X(e) {
 }
 async function Z(e) {
   try {
-    return await o.safeGet(`/wham/tasks/list`, {
+    return await x.safeGet(`/wham/tasks/list`, {
       parameters: { query: { limit: 20, cursor: e, task_filter: `archived` } },
     });
   } catch (e) {
     if (
-      e instanceof _ &&
+      e instanceof g &&
       (e.status === 401 || e.status === 403 || e.status === 404)
     )
       return { items: [], cursor: null };
@@ -430,40 +431,40 @@ async function Z(e) {
 function Q() {
   let e = (0, B.c)(16),
     { selectedHostId: t } = F(),
-    n;
+    r;
   e[0] === t
-    ? (n = e[1])
-    : ((n = {
+    ? (r = e[1])
+    : ((r = {
         queryKey: [`archived-threads`, t],
-        queryFn: () => a(`list-archived-threads`, { hostId: t }),
+        queryFn: () => n(`list-archived-threads`, { hostId: t }),
         enabled: !0,
-        staleTime: g.FIVE_SECONDS,
+        staleTime: h.FIVE_SECONDS,
       }),
       (e[0] = t),
-      (e[1] = n));
-  let { data: r, isLoading: i, isError: o } = p(n),
+      (e[1] = r));
+  let { data: i, isLoading: a, isError: o } = d(r),
     {
       data: s,
       fetchNextPage: c,
       hasNextPage: l,
       isLoading: u,
-      isFetchingNextPage: d,
-      isError: f,
+      isFetchingNextPage: f,
+      isError: p,
     } = K(),
     m;
-  e[2] !== s || e[3] !== r
-    ? ((m = U({ cloudTasks: s, localThreads: r })),
+  e[2] !== s || e[3] !== i
+    ? ((m = U({ cloudTasks: s, localThreads: i })),
       (e[2] = s),
-      (e[3] = r),
+      (e[3] = i),
       (e[4] = m))
     : (m = e[4]);
-  let h = m,
+  let g = m,
     _;
   e[5] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((_ = (0, G.jsx)(P, { slug: `data-controls` })), (e[5] = _))
     : (_ = e[5]);
-  let v = i || u,
-    y = o || (s == null && f),
+  let v = a || u,
+    y = o || (s == null && p),
     b;
   e[6] === c
     ? (b = e[7])
@@ -474,9 +475,9 @@ function Q() {
       (e[7] = b));
   let x;
   return (
-    e[8] !== h ||
+    e[8] !== g ||
     e[9] !== l ||
-    e[10] !== d ||
+    e[10] !== f ||
     e[11] !== t ||
     e[12] !== v ||
     e[13] !== y ||
@@ -487,20 +488,20 @@ function Q() {
             className: `gap-2`,
             children: (0, G.jsx)(z.Content, {
               children: (0, G.jsx)(re, {
-                archivedChats: h,
+                archivedChats: g,
                 hostId: t,
                 hasNextPage: l,
                 isLoading: v,
-                isFetchingNextPage: d,
+                isFetchingNextPage: f,
                 isError: y,
                 onLoadNextPage: b,
               }),
             }),
           }),
         })),
-        (e[8] = h),
+        (e[8] = g),
         (e[9] = l),
-        (e[10] = d),
+        (e[10] = f),
         (e[11] = t),
         (e[12] = v),
         (e[13] = y),
@@ -511,28 +512,28 @@ function Q() {
   );
 }
 function re(e) {
-  let i = (0, B.c)(91),
+  let r = (0, B.c)(91),
     {
       archivedChats: o,
       hostId: s,
-      hasNextPage: c,
-      isLoading: l,
-      isFetchingNextPage: p,
+      hasNextPage: d,
+      isLoading: p,
+      isFetchingNextPage: h,
       isError: g,
-      onLoadNextPage: _,
+      onLoadNextPage: v,
     } = e,
-    y = h(f),
-    b = d(),
-    C = m(),
-    w = x(),
+    y = m(u),
+    x = l(),
+    C = c(),
+    w = b(),
     T = A(),
     [E, D] = (0, V.useState)(null),
     O;
-  i[0] === o ? (O = i[1]) : ((O = o.flatMap(oe)), (i[0] = o), (i[1] = O));
+  r[0] === o ? (O = r[1]) : ((O = o.flatMap(oe)), (r[0] = o), (r[1] = O));
   let k = O,
     j = s === `local` && k.length > 0,
     M;
-  i[2] !== s || i[3] !== w || i[4] !== T
+  r[2] !== s || r[3] !== w || r[4] !== T
     ? ((M = (e) => {
         if (s !== `local`) {
           w(`/remote/${e}`);
@@ -540,116 +541,116 @@ function re(e) {
         }
         T(e);
       }),
-      (i[2] = s),
-      (i[3] = w),
-      (i[4] = T),
-      (i[5] = M))
-    : (M = i[5]);
+      (r[2] = s),
+      (r[3] = w),
+      (r[4] = T),
+      (r[5] = M))
+    : (M = r[5]);
   let N = M,
     P,
     F;
-  i[6] === s
-    ? ((P = i[7]), (F = i[8]))
+  r[6] === s
+    ? ((P = r[7]), (F = r[8]))
     : ((P = [`unarchive-thread`, s]),
       (F = async (e) => (
-        await a(`unarchive-conversation`, {
+        await n(`unarchive-conversation`, {
           hostId: s,
           conversationId: t(e.id),
         }),
         e
       )),
-      (i[6] = s),
-      (i[7] = P),
-      (i[8] = F));
+      (r[6] = s),
+      (r[7] = P),
+      (r[8] = F));
   let I;
-  i[9] !== s || i[10] !== b || i[11] !== y
+  r[9] !== s || r[10] !== x || r[11] !== y
     ? ((I = async (e) => {
         (y.get(S).info(
-          (0, G.jsx)(u, {
+          (0, G.jsx)(f, {
             id: `settings.dataControls.archivedChats.unarchiving`,
             defaultMessage: `Unarchiving chat…`,
             description: `Toast shown while unarchiving a chat`,
           }),
           { id: `unarchive-thread-${e.id}`, duration: 0, hasCloseButton: !1 },
         ),
-          await b.cancelQueries({ queryKey: [`archived-threads`, s] }));
-        let t = b.getQueryData([`archived-threads`, s]) ?? [];
+          await x.cancelQueries({ queryKey: [`archived-threads`, s] }));
+        let t = x.getQueryData([`archived-threads`, s]) ?? [];
         return (
-          b.setQueryData(
+          x.setQueryData(
             [`archived-threads`, s],
             t.filter((t) => t.id !== e.id),
           ),
           { previousThreads: t }
         );
       }),
-      (i[9] = s),
-      (i[10] = b),
-      (i[11] = y),
-      (i[12] = I))
-    : (I = i[12]);
+      (r[9] = s),
+      (r[10] = x),
+      (r[11] = y),
+      (r[12] = I))
+    : (I = r[12]);
   let z;
-  i[13] !== s || i[14] !== C || i[15] !== b || i[16] !== y
+  r[13] !== s || r[14] !== C || r[15] !== x || r[16] !== y
     ? ((z = (e, t, n) => {
         (n?.previousThreads &&
-          b.setQueryData([`archived-threads`, s], n.previousThreads),
+          x.setQueryData([`archived-threads`, s], n.previousThreads),
           y.get(S).danger(C.formatMessage(H.unarchiveError), {
             id: `unarchive-thread-${t.id}`,
           }));
       }),
-      (i[13] = s),
-      (i[14] = C),
-      (i[15] = b),
-      (i[16] = y),
-      (i[17] = z))
-    : (z = i[17]);
+      (r[13] = s),
+      (r[14] = C),
+      (r[15] = x),
+      (r[16] = y),
+      (r[17] = z))
+    : (z = r[17]);
   let U;
-  i[18] !== s || i[19] !== N || i[20] !== y
+  r[18] !== s || r[19] !== N || r[20] !== y
     ? ((U = async (e) => {
         let r = t(e.id),
-          i = await a(`hydrate-pinned-threads`, {
+          i = await n(`hydrate-pinned-threads`, {
             hostId: s,
             threadIds: [e.id],
-          }).then(() => y.get(n, r), ae);
+          }).then(() => y.get(a, r), ae);
         y.get(S).info(
           i
             ? (0, G.jsxs)(`span`, {
                 children: [
-                  (0, G.jsx)(u, { ...H.unarchiveSuccessPlain }),
+                  (0, G.jsx)(f, { ...H.unarchiveSuccessPlain }),
                   (0, G.jsx)(`button`, {
                     className: `pointer-events-auto ml-1 cursor-interaction text-token-link underline-offset-2 hover:underline`,
                     type: `button`,
                     onClick: () => {
                       N(e.id);
                     },
-                    children: (0, G.jsx)(u, { ...H.viewNow }),
+                    children: (0, G.jsx)(f, { ...H.viewNow }),
                   }),
                 ],
               })
-            : (0, G.jsx)(u, { ...H.unarchiveSuccessPlain }),
+            : (0, G.jsx)(f, { ...H.unarchiveSuccessPlain }),
           { id: `unarchive-thread-${e.id}` },
         );
       }),
-      (i[18] = s),
-      (i[19] = N),
-      (i[20] = y),
-      (i[21] = U))
-    : (U = i[21]);
+      (r[18] = s),
+      (r[19] = N),
+      (r[20] = y),
+      (r[21] = U))
+    : (U = r[21]);
   let W;
-  i[22] !== s || i[23] !== b
+  r[22] !== s || r[23] !== x
     ? ((W = () => {
-        b.invalidateQueries({ queryKey: [`archived-threads`, s] });
+        x.invalidateQueries({ queryKey: [`archived-threads`, s] });
       }),
-      (i[22] = s),
-      (i[23] = b),
-      (i[24] = W))
-    : (W = i[24]);
+      (r[22] = s),
+      (r[23] = x),
+      (r[24] = W))
+    : (W = r[24]);
   let ne;
-  i[25] !== P ||
-  i[26] !== F ||
-  i[27] !== I ||
-  i[28] !== z ||
-  i[29] !== U ||
-  i[30] !== W
+  r[25] !== P ||
+  r[26] !== F ||
+  r[27] !== I ||
+  r[28] !== z ||
+  r[29] !== U ||
+  r[30] !== W
     ? ((ne = {
         mutationKey: P,
         mutationFn: F,
@@ -658,62 +659,62 @@ function re(e) {
         onSuccess: U,
         onSettled: W,
       }),
-      (i[25] = P),
-      (i[26] = F),
-      (i[27] = I),
-      (i[28] = z),
-      (i[29] = U),
-      (i[30] = W),
-      (i[31] = ne))
-    : (ne = i[31]);
-  let K = v(ne),
+      (r[25] = P),
+      (r[26] = F),
+      (r[27] = I),
+      (r[28] = z),
+      (r[29] = U),
+      (r[30] = W),
+      (r[31] = ne))
+    : (ne = r[31]);
+  let K = _(ne),
     q,
     J;
-  i[32] === s
-    ? ((q = i[33]), (J = i[34]))
+  r[32] === s
+    ? ((q = r[33]), (J = r[34]))
     : ((q = [`delete-archived-conversations`, s]),
       (J = async (e) =>
         e.kind === `all`
-          ? a(`delete-all-archived-conversations`, { hostId: s })
-          : a(`delete-archived-conversation`, {
+          ? n(`delete-all-archived-conversations`, { hostId: s })
+          : n(`delete-archived-conversation`, {
               hostId: s,
               conversationId: t(e.thread.id),
             })),
-      (i[32] = s),
-      (i[33] = q),
-      (i[34] = J));
+      (r[32] = s),
+      (r[33] = q),
+      (r[34] = J));
   let Y;
-  i[35] !== s || i[36] !== b || i[37] !== y
+  r[35] !== s || r[36] !== x || r[37] !== y
     ? ((Y = async (e) => {
         let t = e.kind === `all` ? e.threadIds : [e.thread.id];
         (y
           .get(S)
           .info(
             e.kind === `all`
-              ? (0, G.jsx)(u, { ...H.deletingAll })
-              : (0, G.jsx)(u, { ...H.deleting }),
+              ? (0, G.jsx)(f, { ...H.deletingAll })
+              : (0, G.jsx)(f, { ...H.deleting }),
             { id: de(e), duration: 0, hasCloseButton: !1 },
           ),
-          await b.cancelQueries({ queryKey: [`archived-threads`, s] }));
-        let n = b.getQueryData([`archived-threads`, s]) ?? [];
+          await x.cancelQueries({ queryKey: [`archived-threads`, s] }));
+        let n = x.getQueryData([`archived-threads`, s]) ?? [];
         return (
-          b.setQueryData(
+          x.setQueryData(
             [`archived-threads`, s],
             n.filter((e) => !t.includes(e.id)),
           ),
           { deletingThreadIds: t, previousThreads: n }
         );
       }),
-      (i[35] = s),
-      (i[36] = b),
-      (i[37] = y),
-      (i[38] = Y))
-    : (Y = i[38]);
+      (r[35] = s),
+      (r[36] = x),
+      (r[37] = y),
+      (r[38] = Y))
+    : (Y = r[38]);
   let X;
-  i[39] !== s || i[40] !== C || i[41] !== b || i[42] !== y
+  r[39] !== s || r[40] !== C || r[41] !== x || r[42] !== y
     ? ((X = (e, t, n) => {
         (n?.previousThreads &&
-          b.setQueryData([`archived-threads`, s], n.previousThreads),
+          x.setQueryData([`archived-threads`, s], n.previousThreads),
           y
             .get(S)
             .danger(
@@ -723,14 +724,14 @@ function re(e) {
               { id: de(t) },
             ));
       }),
-      (i[39] = s),
-      (i[40] = C),
-      (i[41] = b),
-      (i[42] = y),
-      (i[43] = X))
-    : (X = i[43]);
+      (r[39] = s),
+      (r[40] = C),
+      (r[41] = x),
+      (r[42] = y),
+      (r[43] = X))
+    : (X = r[43]);
   let Z;
-  i[44] !== C || i[45] !== y
+  r[44] !== C || r[45] !== y
     ? ((Z = (e, t) => {
         if (t.kind === `all`) {
           y.get(S).success(
@@ -748,26 +749,26 @@ function re(e) {
         }
         y.get(S).success(C.formatMessage(H.deleteSuccessPlain), { id: de(t) });
       }),
-      (i[44] = C),
-      (i[45] = y),
-      (i[46] = Z))
-    : (Z = i[46]);
+      (r[44] = C),
+      (r[45] = y),
+      (r[46] = Z))
+    : (Z = r[46]);
   let Q;
-  i[47] !== s || i[48] !== b
+  r[47] !== s || r[48] !== x
     ? ((Q = () => {
-        b.invalidateQueries({ queryKey: [`archived-threads`, s] });
+        x.invalidateQueries({ queryKey: [`archived-threads`, s] });
       }),
-      (i[47] = s),
-      (i[48] = b),
-      (i[49] = Q))
-    : (Q = i[49]);
+      (r[47] = s),
+      (r[48] = x),
+      (r[49] = Q))
+    : (Q = r[49]);
   let re;
-  i[50] !== q ||
-  i[51] !== J ||
-  i[52] !== Y ||
-  i[53] !== X ||
-  i[54] !== Z ||
-  i[55] !== Q
+  r[50] !== q ||
+  r[51] !== J ||
+  r[52] !== Y ||
+  r[53] !== X ||
+  r[54] !== Z ||
+  r[55] !== Q
     ? ((re = {
         mutationKey: q,
         mutationFn: J,
@@ -776,23 +777,23 @@ function re(e) {
         onSuccess: Z,
         onSettled: Q,
       }),
-      (i[50] = q),
-      (i[51] = J),
-      (i[52] = Y),
-      (i[53] = X),
-      (i[54] = Z),
-      (i[55] = Q),
-      (i[56] = re))
-    : (re = i[56]);
-  let ce = v(re),
+      (r[50] = q),
+      (r[51] = J),
+      (r[52] = Y),
+      (r[53] = X),
+      (r[54] = Z),
+      (r[55] = Q),
+      (r[56] = re))
+    : (re = r[56]);
+  let ce = _(re),
     $ = K.isPending || ce.isPending;
-  if (l) {
+  if (p) {
     let e;
     return (
-      i[57] === Symbol.for(`react.memo_cache_sentinel`)
+      r[57] === Symbol.for(`react.memo_cache_sentinel`)
         ? ((e = (0, G.jsx)(R, {
             children: (0, G.jsx)(L, {
-              label: (0, G.jsx)(u, {
+              label: (0, G.jsx)(f, {
                 id: `settings.dataControls.archivedChats.loading`,
                 defaultMessage: `Loading archived chats…`,
                 description: `Loading state label for archived chats list`,
@@ -800,18 +801,18 @@ function re(e) {
               control: null,
             }),
           })),
-          (i[57] = e))
-        : (e = i[57]),
+          (r[57] = e))
+        : (e = r[57]),
       e
     );
   }
   if (g) {
     let e;
     return (
-      i[58] === Symbol.for(`react.memo_cache_sentinel`)
+      r[58] === Symbol.for(`react.memo_cache_sentinel`)
         ? ((e = (0, G.jsx)(R, {
             children: (0, G.jsx)(L, {
-              label: (0, G.jsx)(u, {
+              label: (0, G.jsx)(f, {
                 id: `settings.dataControls.archivedChats.error`,
                 defaultMessage: `Could not load archived chats.`,
                 description: `Error state label for archived chats list`,
@@ -819,18 +820,18 @@ function re(e) {
               control: null,
             }),
           })),
-          (i[58] = e))
-        : (e = i[58]),
+          (r[58] = e))
+        : (e = r[58]),
       e
     );
   }
   if (o.length === 0) {
     let e;
     return (
-      i[59] === Symbol.for(`react.memo_cache_sentinel`)
+      r[59] === Symbol.for(`react.memo_cache_sentinel`)
         ? ((e = (0, G.jsx)(R, {
             children: (0, G.jsx)(L, {
-              label: (0, G.jsx)(u, {
+              label: (0, G.jsx)(f, {
                 id: `settings.dataControls.archivedChats.empty`,
                 defaultMessage: `No archived chats.`,
                 description: `Empty state label for archived chats list`,
@@ -838,13 +839,13 @@ function re(e) {
               control: null,
             }),
           })),
-          (i[59] = e))
-        : (e = i[59]),
+          (r[59] = e))
+        : (e = r[59]),
       e
     );
   }
   let fe;
-  i[60] !== $ || i[61] !== j
+  r[60] !== $ || r[61] !== j
     ? ((fe = j
         ? (0, G.jsx)(`div`, {
             className: `flex justify-end`,
@@ -855,18 +856,18 @@ function re(e) {
               onClick: () => {
                 D({ kind: `all` });
               },
-              children: (0, G.jsx)(u, { ...H.deleteAll }),
+              children: (0, G.jsx)(f, { ...H.deleteAll }),
             }),
           })
         : null),
-      (i[60] = $),
-      (i[61] = j),
-      (i[62] = fe))
-    : (fe = i[62]);
+      (r[60] = $),
+      (r[61] = j),
+      (r[62] = fe))
+    : (fe = r[62]);
   let pe;
-  if (i[63] !== o || i[64] !== $ || i[65] !== s || i[66] !== K) {
+  if (r[63] !== o || r[64] !== $ || r[65] !== s || r[66] !== K) {
     let e;
-    (i[68] !== $ || i[69] !== s || i[70] !== K
+    (r[68] !== $ || r[69] !== s || r[70] !== K
       ? ((e = (e) => {
           switch (e.kind) {
             case `cloud`:
@@ -882,7 +883,7 @@ function re(e) {
                   archivedThread: e.thread,
                   isDeleteDisabled: $,
                   isUnarchiving: K.isPending && K.variables?.id === e.thread.id,
-                  showDeleteButton: s === r,
+                  showDeleteButton: s === i,
                   onDelete: () => {
                     D({ kind: `single`, thread: e.thread });
                   },
@@ -894,42 +895,42 @@ function re(e) {
               );
           }
         }),
-        (i[68] = $),
-        (i[69] = s),
-        (i[70] = K),
-        (i[71] = e))
-      : (e = i[71]),
+        (r[68] = $),
+        (r[69] = s),
+        (r[70] = K),
+        (r[71] = e))
+      : (e = r[71]),
       (pe = o.map(e)),
-      (i[63] = o),
-      (i[64] = $),
-      (i[65] = s),
-      (i[66] = K),
-      (i[67] = pe));
-  } else pe = i[67];
+      (r[63] = o),
+      (r[64] = $),
+      (r[65] = s),
+      (r[66] = K),
+      (r[67] = pe));
+  } else pe = r[67];
   let me;
-  i[72] !== c || i[73] !== p || i[74] !== _
+  r[72] !== d || r[73] !== h || r[74] !== v
     ? ((me = (0, G.jsx)(se, {
-        hasNextPage: c,
-        isFetchingNextPage: p,
-        onLoadNextPage: _,
+        hasNextPage: d,
+        isFetchingNextPage: h,
+        onLoadNextPage: v,
       })),
-      (i[72] = c),
-      (i[73] = p),
-      (i[74] = _),
-      (i[75] = me))
-    : (me = i[75]);
+      (r[72] = d),
+      (r[73] = h),
+      (r[74] = v),
+      (r[75] = me))
+    : (me = r[75]);
   let he;
-  i[76] !== pe || i[77] !== me
+  r[76] !== pe || r[77] !== me
     ? ((he = (0, G.jsxs)(R, {
         className: `max-h-[min(80vh)] overflow-y-auto`,
         children: [pe, me],
       })),
-      (i[76] = pe),
-      (i[77] = me),
-      (i[78] = he))
-    : (he = i[78]);
+      (r[76] = pe),
+      (r[77] = me),
+      (r[78] = he))
+    : (he = r[78]);
   let ge;
-  i[79] !== ce || i[80] !== E || i[81] !== k
+  r[79] !== ce || r[80] !== E || r[81] !== k
     ? ((ge = () => {
         if (E != null) {
           if ((D(null), E.kind === `all`)) {
@@ -939,34 +940,34 @@ function re(e) {
           ce.mutate({ kind: `single`, thread: E.thread });
         }
       }),
-      (i[79] = ce),
-      (i[80] = E),
-      (i[81] = k),
-      (i[82] = ge))
-    : (ge = i[82]);
+      (r[79] = ce),
+      (r[80] = E),
+      (r[81] = k),
+      (r[82] = ge))
+    : (ge = r[82]);
   let _e;
-  i[83] === Symbol.for(`react.memo_cache_sentinel`)
+  r[83] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((_e = (e) => {
         e || D(null);
       }),
-      (i[83] = _e))
-    : (_e = i[83]);
+      (r[83] = _e))
+    : (_e = r[83]);
   let ve;
-  i[84] !== E || i[85] !== ge
+  r[84] !== E || r[85] !== ge
     ? ((ve = (0, G.jsx)(ue, { state: E, onConfirm: ge, onOpenChange: _e })),
-      (i[84] = E),
-      (i[85] = ge),
-      (i[86] = ve))
-    : (ve = i[86]);
+      (r[84] = E),
+      (r[85] = ge),
+      (r[86] = ve))
+    : (ve = r[86]);
   let ye;
   return (
-    i[87] !== fe || i[88] !== he || i[89] !== ve
+    r[87] !== fe || r[88] !== he || r[89] !== ve
       ? ((ye = (0, G.jsxs)(G.Fragment, { children: [fe, he, ve] })),
-        (i[87] = fe),
-        (i[88] = he),
-        (i[89] = ve),
-        (i[90] = ye))
-      : (ye = i[90]),
+        (r[87] = fe),
+        (r[88] = he),
+        (r[89] = ve),
+        (r[90] = ye))
+      : (ye = r[90]),
     ye
   );
 }
@@ -1049,22 +1050,22 @@ function le(e) {
   let t = (0, B.c)(50),
     {
       archivedThread: n,
-      isDeleteDisabled: r,
+      isDeleteDisabled: i,
       isUnarchiving: a,
       showDeleteButton: o,
       onDelete: s,
-      onUnarchive: c,
+      onUnarchive: l,
     } = e,
-    l = m(),
+    u = c(),
     d;
   t[0] !== n.name || t[1] !== n.preview
-    ? ((d = i(n.name?.trim() || n.preview).trim()),
+    ? ((d = r(n.name?.trim() || n.preview).trim()),
       (t[0] = n.name),
       (t[1] = n.preview),
       (t[2] = d))
     : (d = t[2]);
-  let f = d,
-    p,
+  let p = d,
+    m,
     h,
     g,
     _;
@@ -1073,7 +1074,7 @@ function le(e) {
     t[4] !== n.cwd ||
     t[5] !== n.path ||
     t[6] !== n.updatedAt ||
-    t[7] !== l
+    t[7] !== u
   ) {
     let e = new Date(Number(n.updatedAt) * 1e3),
       r = new Date(Number(n.createdAt) * 1e3),
@@ -1091,44 +1092,44 @@ function le(e) {
       : (a = t[14]),
       (g = a),
       (h = i != null),
-      (p = h
-        ? l.formatDate(i, { year: `numeric`, month: `short`, day: `numeric` })
+      (m = h
+        ? u.formatDate(i, { year: `numeric`, month: `short`, day: `numeric` })
         : ``),
-      (_ = h ? l.formatTime(i, { hour: `numeric`, minute: `2-digit` }) : ``),
+      (_ = h ? u.formatTime(i, { hour: `numeric`, minute: `2-digit` }) : ``),
       (t[3] = n.createdAt),
       (t[4] = n.cwd),
       (t[5] = n.path),
       (t[6] = n.updatedAt),
-      (t[7] = l),
-      (t[8] = p),
+      (t[7] = u),
+      (t[8] = m),
       (t[9] = h),
       (t[10] = g),
       (t[11] = _));
-  } else ((p = t[8]), (h = t[9]), (g = t[10]), (_ = t[11]));
+  } else ((m = t[8]), (h = t[9]), (g = t[10]), (_ = t[11]));
   let v = _,
     y;
-  t[15] === l
+  t[15] === u
     ? (y = t[16])
-    : ((y = l.formatMessage({
+    : ((y = u.formatMessage({
         id: `settings.dataControls.archivedChats.deleteAriaLabel`,
         defaultMessage: `Delete archived chat`,
         description: `Aria label for deleting an archived chat`,
       })),
-      (t[15] = l),
+      (t[15] = u),
       (t[16] = y));
   let b = y,
     x;
-  t[17] === f
+  t[17] === p
     ? (x = t[18])
     : ((x =
-        f.length > 0
-          ? f
-          : (0, G.jsx)(u, {
+        p.length > 0
+          ? p
+          : (0, G.jsx)(f, {
               id: `settings.dataControls.archivedChats.untitled`,
               defaultMessage: `Untitled chat`,
               description: `Fallback title for an archived chat`,
             })),
-      (t[17] = f),
+      (t[17] = p),
       (t[18] = x));
   let S;
   t[19] === x
@@ -1140,23 +1141,23 @@ function le(e) {
       (t[19] = x),
       (t[20] = S));
   let w;
-  t[21] !== p || t[22] !== h || t[23] !== g || t[24] !== v
+  t[21] !== m || t[22] !== h || t[23] !== g || t[24] !== v
     ? ((w = h
         ? g
-          ? (0, G.jsx)(u, {
+          ? (0, G.jsx)(f, {
               id: `settings.dataControls.archivedChats.dateTimeWithRepo`,
               defaultMessage: `{date}, {time} • {repo}`,
               description: `Date, time, and repo name for an archived chat`,
-              values: { date: p, time: v, repo: g },
+              values: { date: m, time: v, repo: g },
             })
-          : (0, G.jsx)(u, {
+          : (0, G.jsx)(f, {
               id: `settings.dataControls.archivedChats.dateTime`,
               defaultMessage: `{date}, {time}`,
               description: `Date and time for an archived chat`,
-              values: { date: p, time: v },
+              values: { date: m, time: v },
             })
         : null),
-      (t[21] = p),
+      (t[21] = m),
       (t[22] = h),
       (t[23] = g),
       (t[24] = v),
@@ -1185,7 +1186,7 @@ function le(e) {
       (t[30] = E))
     : (E = t[30]);
   let D;
-  t[31] !== b || t[32] !== r || t[33] !== s || t[34] !== o
+  t[31] !== b || t[32] !== i || t[33] !== s || t[34] !== o
     ? ((D = o
         ? (0, G.jsx)(C, {
             tooltipContent: b,
@@ -1195,43 +1196,43 @@ function le(e) {
               color: `ghost`,
               size: `toolbar`,
               uniform: !0,
-              disabled: r,
+              disabled: i,
               onClick: s,
               children: (0, G.jsx)(j, { className: `icon-xs` }),
             }),
           })
         : null),
       (t[31] = b),
-      (t[32] = r),
+      (t[32] = i),
       (t[33] = s),
       (t[34] = o),
       (t[35] = D))
     : (D = t[35]);
   let O;
-  t[36] !== r || t[37] !== c
+  t[36] !== i || t[37] !== l
     ? ((O = () => {
-        r || c();
+        i || l();
       }),
-      (t[36] = r),
-      (t[37] = c),
+      (t[36] = i),
+      (t[37] = l),
       (t[38] = O))
     : (O = t[38]);
   let k;
   t[39] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((k = (0, G.jsx)(u, { ...H.unarchive })), (t[39] = k))
+    ? ((k = (0, G.jsx)(f, { ...H.unarchive })), (t[39] = k))
     : (k = t[39]);
   let A;
-  t[40] !== r || t[41] !== a || t[42] !== O
+  t[40] !== i || t[41] !== a || t[42] !== O
     ? ((A = (0, G.jsx)(ee, {
         className: `shrink-0`,
         color: `secondary`,
         size: `toolbar`,
-        disabled: r,
+        disabled: i,
         loading: a,
         onClick: O,
         children: k,
       })),
-      (t[40] = r),
+      (t[40] = i),
       (t[41] = a),
       (t[42] = O),
       (t[43] = A))
@@ -1271,12 +1272,12 @@ function ue(e) {
         children: (0, G.jsx)(E, {
           title:
             n.kind === `all`
-              ? (0, G.jsx)(u, {
+              ? (0, G.jsx)(f, {
                   id: `settings.dataControls.archivedChats.deleteAllConfirm.title`,
                   defaultMessage: `Delete all archived local chats?`,
                   description: `Title for confirming deletion of all archived local chats`,
                 })
-              : (0, G.jsx)(u, {
+              : (0, G.jsx)(f, {
                   id: `settings.dataControls.archivedChats.deleteConfirm.title`,
                   defaultMessage: `Delete archived chat?`,
                   description: `Title for confirming deletion of an archived chat`,
@@ -1293,12 +1294,12 @@ function ue(e) {
         children: (0, G.jsx)(`p`, {
           children:
             n.kind === `all`
-              ? (0, G.jsx)(u, {
+              ? (0, G.jsx)(f, {
                   id: `settings.dataControls.archivedChats.deleteAllConfirm.body`,
                   defaultMessage: `This permanently deletes all archived chats`,
                   description: `Body copy in the delete all archived local chats confirmation dialog`,
                 })
-              : (0, G.jsx)(u, {
+              : (0, G.jsx)(f, {
                   id: `settings.dataControls.archivedChats.deleteConfirm.body`,
                   defaultMessage: `This permanently deletes the archived chat`,
                   description: `Body copy in the delete archived chat confirmation dialog`,
@@ -1317,7 +1318,7 @@ function ue(e) {
       (t[5] = s));
   let c;
   t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = (0, G.jsx)(u, {
+    ? ((c = (0, G.jsx)(f, {
         id: `settings.dataControls.archivedChats.deleteConfirm.cancel`,
         defaultMessage: `Cancel`,
         description: `Cancel button label for deleting archived chats`,
@@ -1330,21 +1331,21 @@ function ue(e) {
     : ((l = (0, G.jsx)(ee, { color: `ghost`, onClick: s, children: c })),
       (t[7] = s),
       (t[8] = l));
-  let d;
+  let u;
   t[9] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((d = (0, G.jsx)(u, { ...H.delete })), (t[9] = d))
-    : (d = t[9]);
-  let f;
+    ? ((u = (0, G.jsx)(f, { ...H.delete })), (t[9] = u))
+    : (u = t[9]);
+  let d;
   t[10] === r
-    ? (f = t[11])
-    : ((f = (0, G.jsx)(ee, { color: `danger`, onClick: r, children: d })),
+    ? (d = t[11])
+    : ((d = (0, G.jsx)(ee, { color: `danger`, onClick: r, children: u })),
       (t[10] = r),
-      (t[11] = f));
+      (t[11] = d));
   let p;
-  t[12] !== l || t[13] !== f
-    ? ((p = (0, G.jsx)(T, { children: (0, G.jsxs)(k, { children: [l, f] }) })),
+  t[12] !== l || t[13] !== d
+    ? ((p = (0, G.jsx)(T, { children: (0, G.jsxs)(k, { children: [l, d] }) })),
       (t[12] = l),
-      (t[13] = f),
+      (t[13] = d),
       (t[14] = p))
     : (p = t[14]);
   let m;

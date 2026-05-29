@@ -1,4 +1,4 @@
-import { Xr as e, di as t, gi as n } from "./src-BLHmAhbF.js";
+import { Di as e, Hi as t, qi as n } from "./src-C.js";
 var r = e([
   `free`,
   `go`,

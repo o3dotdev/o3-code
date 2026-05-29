@@ -1,4 +1,4 @@
-import { Q as e, S as t, nt as n } from "./setting-storage.js";
+import { S as e, at as t, ot as n } from "./setting-storage.js";
 var r = 5,
   i = 1,
   a = {
@@ -18,23 +18,23 @@ var r = 5,
     closeAll: () => {},
   },
   c = new Map(),
-  l = n(t, s),
-  u = n(t, []),
-  d = n(t, i),
-  f = e(t, (e, { signal: t }) => t(a));
+  l = t(e, s),
+  u = t(e, []),
+  d = t(e, i),
+  f = n(e, (e) => a);
 function p(e, t) {
   let n = e.get(u);
   if (t.customId != null) {
     let r = `${t.customId}-`;
     for (let t of n)
-      t.startsWith(r) && e.get(f, t).set((e) => ({ ...e, isShown: !1 }));
+      t.startsWith(r) && e.set(f, t, (e) => ({ ...e, isShown: !1 }));
   }
   (e.set(d, (e) => e + 1),
-    e.get(f, t.id).set(t.toast),
+    e.set(f, t.id, t.toast),
     e.set(u, [t.id, ...n.filter((e) => e !== t.id)]));
 }
 function m(e, t) {
-  e.get(f, t).set((e) => ({ ...e, isShown: !1 }));
+  e.set(f, t, (e) => ({ ...e, isShown: !1 }));
 }
 function h(e, t) {
   (c.get(t)?.(), c.delete(t), e.set(u, (e) => e.filter((e) => e !== t)));

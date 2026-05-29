@@ -1,31 +1,31 @@
-import { s as e } from "./chunk.js";
-import { _i as t, di as n, ei as r, gi as i, v as a } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { C as t, Hi as n, Ji as r, ji as i, qi as a } from "./src-C.js";
 import { n as o } from "./jsx-runtime.js";
-import { g as s, n as c, xt as l } from "./setting-storage.js";
-import { n as u } from "./base64.js";
-var d = 0.0025,
+import { g as s, n as c, wt as l } from "./setting-storage.js";
+import { a as u, n as d } from "./request-DWZTrEAr.js";
+var f = 0.0025,
   ee = 48e3;
-function f(e) {
+function p(e) {
   let t = Math.max(0, Math.floor(e / 1e3));
   return `${Math.floor(t / 60)}:${(t % 60).toString().padStart(2, `0`)}`;
 }
-var p = `gpt-5.4-mini`,
-  m = n({
-    output: r(
+var m = `gpt-5.4-mini`,
+  h = n({
+    output: i(
       n({
-        type: i(),
-        content: r(n({ type: i(), text: i().optional() })).optional(),
+        type: a(),
+        content: i(n({ type: a(), text: a().optional() })).optional(),
       }),
     ),
   }),
-  h = n({
-    type: i().optional(),
-    delta: i().optional(),
-    text: i().optional(),
-    response: m.optional(),
-    error: t([i(), n({ message: i().optional() })]).optional(),
+  g = n({
+    type: a().optional(),
+    delta: a().optional(),
+    text: a().optional(),
+    response: h.optional(),
+    error: r([a(), n({ message: a().optional() })]).optional(),
   }).passthrough();
-async function g({ instructions: e, input: t, model: n = p }) {
+async function _({ instructions: e, input: t, model: n = m }) {
   let r = t.trim();
   if (r.length === 0) return null;
   let i = {
@@ -46,9 +46,9 @@ async function g({ instructions: e, input: t, model: n = p }) {
     stream: !0,
     include: [],
   };
-  return _(JSON.stringify(i));
+  return v(JSON.stringify(i));
 }
-function _(e) {
+function v(e) {
   return new Promise((t, n) => {
     let r = [],
       i = null,
@@ -62,8 +62,9 @@ function _(e) {
     }
     a = s.getInstance().stream(`POST`, `/codex/responses`, {
       body: e,
+      headers: d(),
       onEvent: (e) => {
-        let t = v(e);
+        let t = y(e);
         if (t.error != null) {
           l(Error(t.error));
           return;
@@ -75,14 +76,14 @@ function _(e) {
         l(Error(e.error));
       },
       onComplete: () => {
-        c(i ?? b(r));
+        c(i ?? x(r));
       },
     });
   });
 }
-function v(e) {
-  let t = h.parse(e.data),
-    n = y(t.error);
+function y(e) {
+  let t = g.parse(e.data),
+    n = b(t.error);
   return n == null
     ? t.response == null
       ? t.type === `response.output_text.delta` && t.delta != null
@@ -90,17 +91,17 @@ function v(e) {
         : t.type === `response.output_text.done` && t.text != null
           ? { delta: null, completedText: t.text, error: null }
           : { delta: null, completedText: null, error: null }
-      : { delta: null, completedText: x(t.response), error: null }
+      : { delta: null, completedText: S(t.response), error: null }
     : { delta: null, completedText: null, error: n };
 }
-function y(e) {
+function b(e) {
   return typeof e == `string` ? e : (e?.message ?? null);
 }
-function b(e) {
+function x(e) {
   let t = e.join(``).trim();
   return t.length === 0 ? null : t;
 }
-function x(e) {
+function S(e) {
   let t = e.output
     .flatMap((e) => e.content ?? [])
     .map((e) => e.text?.trim() ?? ``)
@@ -112,28 +113,28 @@ function x(e) {
     .trim();
   return t.length === 0 ? null : t;
 }
-var S = 4e3,
-  C = 2e3,
-  w = r(i()),
-  T = `Clean up dictation transcripts. Fix likely speech recognition mistakes, punctuation, capitalization, and formatting. Remove filler words and disfluencies when they do not add meaning. When the user clearly self-corrects or backtracks, keep the corrected intent. Use surrounding text only as context. Dictionary entries are canonical spellings, names, file paths, and code symbols; when the transcript likely refers to one, copy the dictionary entry exactly, including casing and punctuation. Preserve the user's meaning, wording, and flow unless a small cleanup makes the transcript more coherent. Do not answer the user or add new content. Return only the cleaned transcript.`;
-async function E({ transcript: e, surroundingText: t, cleanupEnabled: n }) {
+var C = 4e3,
+  w = 2e3,
+  T = i(a()),
+  E = `Clean up dictation transcripts. Fix likely speech recognition mistakes, punctuation, capitalization, and formatting. Remove filler words and disfluencies when they do not add meaning. When the user clearly self-corrects or backtracks, keep the corrected intent. Use surrounding text only as context. Dictionary entries are canonical spellings, names, file paths, and code symbols; when the transcript likely refers to one, copy the dictionary entry exactly, including casing and punctuation. Preserve the user's meaning, wording, and flow unless a small cleanup makes the transcript more coherent. Do not answer the user or add new content. Return only the cleaned transcript.`;
+async function D({ transcript: e, surroundingText: t, cleanupEnabled: n }) {
   let r = e.trim();
   if (r.length === 0) return ``;
   if (!n) return r;
   try {
-    let e = await O();
+    let e = await k();
     return (
-      (await g({
-        instructions: T,
-        input: D({ transcript: r, surroundingText: t ?? null, dictionary: e }),
+      (await _({
+        instructions: E,
+        input: O({ transcript: r, surroundingText: t ?? null, dictionary: e }),
       })) ?? r
     );
   } catch {
     return r;
   }
 }
-function D({ transcript: e, surroundingText: t, dictionary: n }) {
-  let r = t?.trim().slice(0, C);
+function O({ transcript: e, surroundingText: t, dictionary: n }) {
+  let r = t?.trim().slice(0, w);
   return `${r == null || r.length === 0 ? `` : `Surrounding text:\n${r}\n\n`}Dictionary (canonical entries; use exact spelling, casing, and punctuation when they match):
 ${
   n.length === 0
@@ -143,10 +144,10 @@ ${
 }
 
 Transcript:
-${e.slice(0, S)}`;
+${e.slice(0, C)}`;
 }
-async function O() {
-  let e = w.safeParse(await c(a.dictationDictionary));
+async function k() {
+  let e = T.safeParse(await c(t.dictationDictionary));
   return e.success
     ? e.data
         .map((e) => e.trim())
@@ -154,15 +155,15 @@ async function O() {
         .slice(0, 100)
     : [];
 }
-async function k(e, t = {}) {
+async function A(e, t = {}) {
   let n =
       t.contentType ??
       (e.type && e.type.trim().length > 0 ? e.type : `audio/webm`),
     r = n.split(/[/;]/)[1] ?? `webm`,
-    i = j(t.filename ?? `codex.${r}`),
-    a = M(),
+    i = M(t.filename ?? `codex.${r}`),
+    a = N(),
     o = u(
-      await A({
+      await j({
         blob: e,
         boundary: a,
         filename: i,
@@ -173,10 +174,11 @@ async function k(e, t = {}) {
     c = {
       "Content-Type": `multipart/form-data; boundary=${a}`,
       "X-Codex-Base64": `1`,
+      ...d(),
     };
   return (await s.getInstance().post(`/transcribe`, o, c)).body.text;
 }
-async function A({
+async function j({
   blob: e,
   boundary: t,
   filename: n,
@@ -208,18 +210,18 @@ async function A({
       ),
       o.push(a.encode(`${i}\r\n`))),
     o.push(a.encode(`--${t}--\r\n`)),
-    N(o)
+    P(o)
   );
 }
-function j(e) {
+function M(e) {
   return e.replace(/"/g, ``);
 }
-function M() {
+function N() {
   return typeof crypto < `u` && `randomUUID` in crypto
     ? `----codex-transcribe-${crypto.randomUUID()}`
     : `----codex-transcribe-${Math.random().toString(36).slice(2)}`;
 }
-function N(e) {
+function P(e) {
   let t = 0;
   for (let n of e) t += n.byteLength;
   let n = new Uint8Array(t),
@@ -227,24 +229,24 @@ function N(e) {
   for (let t of e) (n.set(t, r), (r += t.byteLength));
   return n;
 }
-var te = l(),
-  P = e(o(), 1),
-  ne = 0.8,
-  F = 0.16,
-  I = 0.1,
-  L = 0.006,
-  re = 0.32,
-  R = 32,
-  z = 0.36,
-  B = 4,
-  V = 0.5,
-  H = 0.48,
-  U = 0.28,
-  W = 0.085,
-  G = 0.05,
-  K = 0.1;
-function q(e) {
-  let t = (0, te.c)(25),
+var F = l(),
+  I = e(o(), 1),
+  te = 0.8,
+  L = 0.16,
+  R = 0.1,
+  z = 0.006,
+  ne = 0.32,
+  B = 32,
+  V = 0.36,
+  H = 4,
+  U = 0.5,
+  W = 0.48,
+  G = 0.28,
+  K = 0.085,
+  q = 0.05,
+  re = 0.1;
+function J(e) {
+  let t = (0, F.c)(25),
     n;
   t[0] === e
     ? (n = t[1])
@@ -252,34 +254,34 @@ function q(e) {
   let { bufferDurationSecs: r, variant: i } = n,
     a = r === void 0 ? 10 : r,
     o = i === void 0 ? `scrolling` : i,
-    [s, c] = (0, P.useState)(0),
-    l = (0, P.useRef)(null),
-    u = (0, P.useRef)(null),
-    f = (0, P.useRef)(null),
-    p = (0, P.useRef)(null),
-    m = (0, P.useRef)(null),
+    [s, c] = (0, I.useState)(0),
+    l = (0, I.useRef)(null),
+    u = (0, I.useRef)(null),
+    d = (0, I.useRef)(null),
+    p = (0, I.useRef)(null),
+    m = (0, I.useRef)(null),
     h;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((h = []), (t[2] = h))
     : (h = t[2]);
-  let g = (0, P.useRef)(h),
-    _ = (0, P.useRef)(0),
-    v = (0, P.useRef)(0),
-    y = (0, P.useRef)(0),
+  let g = (0, I.useRef)(h),
+    _ = (0, I.useRef)(0),
+    v = (0, I.useRef)(0),
+    y = (0, I.useRef)(0),
     b;
   t[3] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((b = new Float32Array()), (t[3] = b))
     : (b = t[3]);
-  let x = (0, P.useRef)(b),
-    S = (0, P.useRef)(1),
-    C = (0, P.useRef)(-1),
+  let x = (0, I.useRef)(b),
+    S = (0, I.useRef)(1),
+    C = (0, I.useRef)(-1),
     w;
   t[4] !== a || t[5] !== o
     ? ((w = (e) => {
         if (e == null) return !1;
         let t = Math.max(
           1,
-          o === `compact` ? B : Math.floor(e.clientWidth / 4),
+          o === `compact` ? H : Math.floor(e.clientWidth / 4),
         );
         return (
           (g.current = Array.from({ length: t }, ie)),
@@ -305,10 +307,10 @@ function q(e) {
     O;
   t[8] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((O = () => {
-        (f.current != null &&
-          ((f.current.onaudioprocess = null),
-          f.current.disconnect(),
-          (f.current = null)),
+        (d.current != null &&
+          ((d.current.onaudioprocess = null),
+          d.current.disconnect(),
+          (d.current = null)),
           u.current != null && (u.current.disconnect(), (u.current = null)),
           l.current != null && l.current.close(),
           (l.current = null),
@@ -349,7 +351,7 @@ function q(e) {
         if (t == null) return;
         let { clientHeight: n, clientWidth: r } = e;
         if (r === 0 || n === 0) return;
-        let i = o === `compact` ? B : Math.max(1, Math.floor(r / 4));
+        let i = o === `compact` ? H : Math.max(1, Math.floor(r / 4));
         g.current.length !== i && T(e);
         let a = g.current;
         if (a.length === 0) return;
@@ -365,8 +367,8 @@ function q(e) {
         if (
           ((t.fillStyle = getComputedStyle(e).color || `#000`), o === `compact`)
         ) {
-          let n = l * H,
-            r = l * U,
+          let n = l * W,
+            r = l * G,
             i = n * a.length + r * (a.length - 1),
             o = (e.width - i) / 2;
           for (let e = 0; e < a.length; e += 1) {
@@ -386,7 +388,7 @@ function q(e) {
           let e = l / 2;
           for (let n = 0; n < a.length; n += 1) {
             let r = a[n] ?? 0,
-              i = J(n, a.length),
+              i = Y(n, a.length),
               o = r * 10 * c;
             ((t.globalAlpha = r <= 0.0025 ? 0.2 : Math.min(1, 0.35 + i * 0.45)),
               t.fillRect(n * l, -o, e, o * 2));
@@ -415,52 +417,52 @@ function q(e) {
       (t[12] = M))
     : (M = t[12]);
   let N = M,
-    R;
+    P;
   t[13] !== N || t[14] !== T || t[15] !== o
-    ? ((R = (e) => {
+    ? ((P = (e) => {
         if ((k(), j(), T(m.current), N(), typeof AudioContext > `u`)) return;
         let t = new AudioContext();
         l.current = t;
         let n = t.createMediaStreamSource(e);
         u.current = n;
         let r = t.createScriptProcessor(2048, 1, 1);
-        ((f.current = r),
+        ((d.current = r),
           (p.current = performance.now()),
           (r.onaudioprocess = (e) => {
             let t = e.inputBuffer.getChannelData(0),
               n = 0;
             for (let e = 0; e < t.length; e += 1) {
               let r = Math.abs(t[e] ?? 0);
-              ((n += r * r), (t[e] = r < 0.0025 ? d : r));
+              ((n += r * r), (t[e] = r < 0.0025 ? f : r));
             }
             g.current.length === 0 && T(m.current);
             let r = g.current.length,
               i = Math.sqrt(n / Math.max(1, t.length));
             if (o === `compact`) {
-              let e = Math.max(0, i - L),
-                n = Math.min(1, e / (F - L)) ** 0.6 * W,
+              let e = Math.max(0, i - z),
+                n = Math.min(1, e / (L - z)) ** 0.6 * K,
                 a = v.current,
-                o = n > a ? z : K,
+                o = n > a ? V : re,
                 s = a * (1 - o) + n * o;
-              ((v.current = s), (y.current += G));
+              ((v.current = s), (y.current += q));
               for (let e = 0; e < r; e += 1) {
                 let n = 0.9 + ((Math.sin(y.current - e * 0.8) + 1) / 2) * 0.1,
                   a = ae(t, e, r, i),
-                  o = Math.min(W, d + s * n * a),
+                  o = Math.min(K, f + s * n * a),
                   c = g.current[e] ?? 0.0025;
-                g.current[e] = c * (1 - V) + o * V;
+                g.current[e] = c * (1 - U) + o * U;
               }
               N();
             } else if (o === `centered`) {
-              let e = Math.max(0, i - L),
-                n = Math.min(1, e / (F - L)) ** 0.6 * I,
+              let e = Math.max(0, i - z),
+                n = Math.min(1, e / (L - z)) ** 0.6 * R,
                 a = _.current,
-                o = n > a ? ne : re,
+                o = n > a ? te : ne,
                 s = a * (1 - o) + n * o;
               _.current = s;
               for (let e = 0; e < r; e += 1) {
                 let n = oe(t, Math.round(Math.abs(e - (r - 1) / 2)), i);
-                g.current[e] = Math.min(I, d + s * J(e, r) * n);
+                g.current[e] = Math.min(R, f + s * Y(e, r) * n);
               }
               N();
             } else {
@@ -497,17 +499,17 @@ function q(e) {
       (t[13] = N),
       (t[14] = T),
       (t[15] = o),
-      (t[16] = R))
-    : (R = t[16]);
-  let q = R,
-    Y;
+      (t[16] = P))
+    : (P = t[16]);
+  let B = P,
+    J;
   t[17] === s
-    ? (Y = t[18])
-    : ((Y = () =>
+    ? (J = t[18])
+    : ((J = () =>
         p.current == null ? s : Math.max(0, performance.now() - p.current)),
       (t[17] = s),
-      (t[18] = Y));
-  let X = Y,
+      (t[18] = J));
+  let X = J,
     Z,
     Q;
   (t[19] === Symbol.for(`react.memo_cache_sentinel`)
@@ -518,30 +520,30 @@ function q(e) {
       (t[19] = Z),
       (t[20] = Q))
     : ((Z = t[19]), (Q = t[20])),
-    (0, P.useEffect)(Z, Q));
+    (0, I.useEffect)(Z, Q));
   let $;
   return (
-    t[21] !== X || t[22] !== s || t[23] !== q
+    t[21] !== X || t[22] !== s || t[23] !== B
       ? (($ = {
           getCurrentRecordingDurationMs: X,
           recordingDurationMs: s,
           waveformCanvasRef: m,
-          startWaveformCapture: q,
+          startWaveformCapture: B,
           stopWaveformCapture: k,
           resetWaveformDisplay: j,
         }),
         (t[21] = X),
         (t[22] = s),
-        (t[23] = q),
+        (t[23] = B),
         (t[24] = $))
       : ($ = t[24]),
     $
   );
 }
 function ie() {
-  return d;
+  return f;
 }
-function J(e, t) {
+function Y(e, t) {
   let n = (t - 1) / 2;
   return 0.18 + (1 - (n === 0 ? 0 : Math.abs(e - n) / n)) ** 2 * 1.45;
 }
@@ -558,8 +560,8 @@ function ae(e, t, n, r) {
   return Math.min(1.14, Math.max(0.86, c));
 }
 function oe(e, t, n) {
-  let r = Math.min(R, e.length),
-    i = Y(t, Math.max(1, e.length - r)),
+  let r = Math.min(B, e.length),
+    i = X(t, Math.max(1, e.length - r)),
     a = 0;
   for (let t = i; t < i + r; t += 1) {
     let n = e[t] ?? 0.0025;
@@ -569,9 +571,9 @@ function oe(e, t, n) {
     s = n <= 0.0025 ? 1 : o / n;
   return Math.min(1.45, Math.max(0.45, 0.35 + s * 0.75));
 }
-function Y(e, t) {
+function X(e, t) {
   let n = Math.sin((e + 1) * 12.9898) * 43758.5453;
   return Math.floor((n - Math.floor(n)) * t);
 }
-export { f as i, k as n, E as r, q as t };
+export { p as i, A as n, D as r, J as t };
 //# sourceMappingURL=use-recording-waveform.js.map

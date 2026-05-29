@@ -1,10 +1,10 @@
-import { t as e } from "./javascript-BecfgTV2.js";
-import { t } from "./css-DdsxusIZ.js";
-import { t as n } from "./html-Ffq6H920.js";
-import { t as r } from "./xml-Q8on9Bjl.js";
-import { t as i } from "./typescript-BuP_7fIy.js";
-import { t as a } from "./sql-BP2t4lqy.js";
-import { t as o } from "./glsl-C_koLelI.js";
+import { t as e } from "./javascript-DEyk7zFy.js";
+import { t } from "./css-DM5j2n-T.js";
+import { t as n } from "./html-Date26Gw.js";
+import { t as r } from "./xml-BR0GeArl.js";
+import { t as i } from "./typescript-DmF0PpHj.js";
+import { t as a } from "./sql-CI7thTb1.js";
+import { t as o } from "./glsl-DvpHeli7.js";
 var s = Object.freeze(
     JSON.parse(
       '{"fileTypes":["js","jsx","ts","tsx","html","vue","svelte","php","res"],"injectTo":["source.ts","source.js"],"injectionSelector":"L:source.js -comment -string, L:source.js -comment -string, L:source.jsx -comment -string,  L:source.js.jsx -comment -string, L:source.ts -comment -string, L:source.tsx -comment -string, L:source.rescript -comment -string, L:source.vue -comment -string, L:source.svelte -comment -string, L:source.php -comment -string, L:source.rescript -comment -string","injections":{"L:source":{"patterns":[{"match":"<","name":"invalid.illegal.bad-angle-bracket.html"}]}},"name":"es-tag-css","patterns":[{"begin":"(?i)(\\\\s?/\\\\*\\\\s?((?:|inline-)css)\\\\s?\\\\*/\\\\s?)(`)","beginCaptures":{"1":{"name":"comment.block"}},"end":"(`)","patterns":[{"include":"source.ts#template-substitution-element"},{"include":"source.css"},{"include":"inline.es6-htmlx#template"}]},{"begin":"(?i)(\\\\s*((?:|inline-)css))(`)","beginCaptures":{"1":{"name":"comment.block"}},"end":"(`)","patterns":[{"include":"source.ts#template-substitution-element"},{"include":"source.css"},{"include":"inline.es6-htmlx#template"},{"include":"string.quoted.other.template.js"}]},{"begin":"(?i)(?<=[(,:=\\\\s]|\\\\$\\\\()\\\\s*(((/\\\\*)|(//))\\\\s?((?:|inline-)css) {0,1000}\\\\*?/?) {0,1000}$","beginCaptures":{"1":{"name":"comment.line"}},"end":"(`).*","patterns":[{"begin":"\\\\G()","end":"(`)"},{"include":"source.ts#template-substitution-element"},{"include":"source.css"}]},{"begin":"(\\\\$\\\\{)","beginCaptures":{"1":{"name":"entity.name.tag"}},"end":"(})","endCaptures":{"1":{"name":"entity.name.tag"}},"patterns":[{"include":"source.ts#template-substitution-element"},{"include":"source.js"}]}],"scopeName":"inline.es6-css","embeddedLangs":["typescript","css","javascript"]}',

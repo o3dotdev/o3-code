@@ -1,81 +1,78 @@
-import { s as e } from "./chunk.js";
-import { Ln as t, _n as n, rt as r } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Nn as t, ft as n, sr as r } from "./src-C.js";
 import {
-  Bn as i,
-  Ca as a,
-  Gn as o,
-  Hn as s,
-  Un as c,
-  Vn as l,
-  Wn as u,
-  Zi as d,
-  la as f,
-  zn as p,
-} from "./app-server-manager-signals.js";
-import { n as m, t as h } from "./jsx-runtime.js";
-import { t as g } from "./clsx.js";
+  Ba as i,
+  _r as a,
+  br as o,
+  do as s,
+  gr as c,
+  hr as l,
+  vr as u,
+  xr as d,
+  yr as f,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { n as p, t as m } from "./jsx-runtime.js";
+import { t as h } from "./clsx-BcPLHiun.js";
 import {
-  B as _,
-  L as v,
-  W as y,
-  X as b,
-  Y as x,
-  _ as S,
-  l as C,
-  m as w,
-  p as T,
-  u as E,
-  xt as D,
+  G as g,
+  V as _,
+  X as v,
+  Z as y,
+  _ as b,
+  m as x,
+  p as S,
+  wt as C,
 } from "./setting-storage.js";
-import { o as O } from "./statsig.js";
-import { t as ee } from "./tooltip.js";
-import { t as te } from "./route-scope.js";
+import { o as w } from "./statsig--EYRNU53.js";
+import { s as T } from "./apps-queries-CmwRqoKz.js";
+import { t as E } from "./tooltip-CDzchJxN.js";
+import { t as ee } from "./route-scope.js";
 import {
-  S as k,
-  _ as A,
-  a as ne,
-  b as j,
-  h as M,
-  p as N,
-  s as P,
-  v as F,
-  w as re,
+  E as D,
+  S as O,
+  _ as k,
+  a as A,
+  b as te,
+  h as j,
+  l as M,
+  o as ne,
+  w as N,
+  y as P,
 } from "./mention-item.js";
-import { r as I } from "./skill-utils.js";
-import { t as ie } from "./use-os-info.js";
-import { t as ae } from "./open-workspace-file.js";
-import { t as L } from "./apps.js";
-import { t as oe } from "./use-platform.js";
-import { r as se, t as ce } from "./use-is-plugins-enabled.js";
-import { m as R } from "./use-plugins.js";
-import { s as le } from "./apps-queries.js";
-import { n as z } from "./use-skills.js";
-import { t as ue } from "./context-menu.js";
-import { t as de } from "./copy-to-clipboard.js";
-import { n as fe } from "./external-markdown-link.js";
+import { r as F } from "./skill-utils.js";
+import { t as re } from "./open-workspace-file-WgoEFjrv.js";
+import { t as I } from "./apps-DwfMzB5Q.js";
+import { t as L } from "./use-platform.js";
+import { t as R } from "./use-is-plugins-enabled.js";
+import { i as ie } from "./browser-sidebar-availability.js";
+import { m as z } from "./use-plugins-jIZrcuZQ.js";
+import { t as ae } from "./context-menu.js";
+import { n as oe } from "./external-markdown-link-DVRKkYqo.js";
 import {
-  a as pe,
-  i as me,
-  n as he,
-  o as ge,
-  s as _e,
-  t as B,
+  a as se,
+  i as B,
+  n as ce,
+  o as le,
+  s as ue,
+  t as de,
 } from "./inline-mention-style.js";
 import {
   c as V,
   d as H,
-  h as ve,
-  n as U,
-  o as ye,
-  t as be,
+  h as U,
+  i as W,
+  n as G,
+  o as K,
+  t as fe,
 } from "./use-native-apps.electron.js";
-import { n as xe } from "./get-file-icon.js";
-import { n as Se, r as Ce } from "./open-target-selection.js";
-var W = D();
-function we(e) {
-  let t = (0, W.c)(10),
+import { n as q } from "./get-file-icon.js";
+import { i as pe, n as me, r as he } from "./workspace-file-context-menu.js";
+import { n as J } from "./use-skills.js";
+var Y = C();
+function X(e) {
+  let t = (0, Y.c)(10),
     { appPath: n } = e,
-    { platform: r, isLoading: i } = oe(),
+    { platform: r, isLoading: i } = L(),
     a = (r === `macOS` || r === `windows`) && n != null && n !== ``,
     o = n ?? ``,
     s;
@@ -83,14 +80,14 @@ function we(e) {
   let c;
   t[2] === a
     ? (c = t[3])
-    : ((c = { enabled: a, staleTime: S.INFINITE, refetchOnWindowFocus: !1 }),
+    : ((c = { enabled: a, staleTime: b.INFINITE, refetchOnWindowFocus: !1 }),
       (t[2] = a),
       (t[3] = c));
   let l;
   t[4] !== s || t[5] !== c
     ? ((l = { params: s, queryConfig: c }), (t[4] = s), (t[5] = c), (t[6] = l))
     : (l = t[6]);
-  let u = T(`computer-use-native-desktop-app-icon`, l),
+  let u = S(`computer-use-native-desktop-app-icon`, l),
     d = a ? (u.data?.iconSmall ?? null) : null,
     f = i || (a && u.isLoading),
     p;
@@ -104,225 +101,234 @@ function we(e) {
     p
   );
 }
-function Te() {
-  return O(`1063250567`);
+function ge() {
+  return w(`1063250567`);
 }
-var G = e(m(), 1),
-  K = (0, G.createContext)(null),
-  q = `_wideBlock_x0d1c_19`,
-  J = `_mediaWideBlock_x0d1c_20`,
-  Ee = `_markdownContent_x0d1c_43`,
-  Y = `_tableCellFileLink_x0d1c_53`,
-  X = `_headingInlineCode_x0d1c_75`,
-  Z = `_inlineMarkdown_x0d1c_75`,
-  De = `_markdownRoot_x0d1c_80`,
-  Oe = `_fadeIn_x0d1c_80`,
-  ke = `_imageEnter_x0d1c_90`,
-  Ae = {
-    wideBlock: q,
-    mediaWideBlock: J,
-    markdownContent: Ee,
-    tableCellFileLink: Y,
-    headingInlineCode: X,
-    inlineMarkdown: Z,
-    markdownRoot: De,
-    fadeIn: Oe,
-    "fade-in": `_fade-in_x0d1c_1`,
-    imageEnter: ke,
-    "image-enter": `_image-enter_x0d1c_1`,
+var Z = e(p(), 1),
+  _e = (0, Z.createContext)(null),
+  ve = `_wideBlock_n9ah0_19`,
+  ye = `_mediaWideBlock_n9ah0_20`,
+  be = `_markdownContent_n9ah0_43`,
+  xe = `_paragraph_n9ah0_65`,
+  Se = `_markdownText_n9ah0_69`,
+  Ce = `_markdownTextSmall_n9ah0_74`,
+  we = `_mediaParagraph_n9ah0_79`,
+  Te = `_mediaGridParagraph_n9ah0_83`,
+  Ee = `_heading_n9ah0_90`,
+  De = `_heading1_n9ah0_96`,
+  Oe = `_heading2_n9ah0_100`,
+  ke = `_heading3_n9ah0_104`,
+  Ae = `_heading4_n9ah0_105`,
+  je = `_heading5_n9ah0_110`,
+  Me = `_heading6_n9ah0_111`,
+  Ne = `_list_n9ah0_116`,
+  Pe = `_unorderedList_n9ah0_130`,
+  Fe = `_orderedList_n9ah0_142`,
+  Ie = `_taskList_n9ah0_146`,
+  Le = `_listItem_n9ah0_151`,
+  Re = `_taskListItem_n9ah0_182`,
+  ze = `_blockquote_n9ah0_192`,
+  Be = `_horizontalRule_n9ah0_233`,
+  Ve = `_tableContainer_n9ah0_245`,
+  He = `_tableWrapper_n9ah0_252`,
+  Ue = `_table_n9ah0_245`,
+  We = `_tableRow_n9ah0_292`,
+  Ge = `_tableCell_n9ah0_292`,
+  Ke = `_tableHeaderCell_n9ah0_296`,
+  qe = `_tableBody_n9ah0_322`,
+  Je = `_codeBlock_n9ah0_326`,
+  Ye = `_codeBlockPlaceholder_n9ah0_330`,
+  Xe = `_inlineMarkdown_n9ah0_344`,
+  Ze = `_tableCellFileLink_n9ah0_374`,
+  Qe = `_markdownRoot_n9ah0_397`,
+  $e = `_fadeIn_n9ah0_397`,
+  et = `_imageEnter_n9ah0_407`,
+  tt = {
+    wideBlock: ve,
+    mediaWideBlock: ye,
+    markdownContent: be,
+    paragraph: xe,
+    markdownText: Se,
+    markdownTextSmall: Ce,
+    mediaParagraph: we,
+    mediaGridParagraph: Te,
+    heading: Ee,
+    heading1: De,
+    heading2: Oe,
+    heading3: ke,
+    heading4: Ae,
+    heading5: je,
+    heading6: Me,
+    list: Ne,
+    unorderedList: Pe,
+    orderedList: Fe,
+    taskList: Ie,
+    listItem: Le,
+    taskListItem: Re,
+    blockquote: ze,
+    horizontalRule: Be,
+    tableContainer: Ve,
+    tableWrapper: He,
+    table: Ue,
+    tableRow: We,
+    tableCell: Ge,
+    tableHeaderCell: Ke,
+    tableBody: qe,
+    codeBlock: Je,
+    codeBlockPlaceholder: Ye,
+    inlineMarkdown: Xe,
+    tableCellFileLink: Ze,
+    markdownRoot: Qe,
+    fadeIn: $e,
+    "fade-in": `_fade-in_n9ah0_1`,
+    imageEnter: et,
+    "image-enter": `_image-enter_n9ah0_1`,
   },
-  Q = h(),
-  $ = _({
+  Q = m(),
+  nt = _({
     controlDesktopAppsFromCodex: {
       id: `markdown.pluginMention.controlDesktopAppsFromCodex`,
       defaultMessage: `Control desktop apps from Codex`,
       description: `Tooltip text shown when hovering a generic Computer Use plugin mention.`,
     },
-    openInTarget: {
-      id: `markdown.fileReference.openInTarget`,
-      defaultMessage: `Open in {target}`,
-      description: `Context menu action to open a referenced file in the preferred app`,
-    },
-    viewInCodexBrowser: {
-      id: `markdown.fileReference.viewInCodexBrowser`,
-      defaultMessage: `View in browser`,
-      description: `Context menu action to open a referenced local HTML file in the Codex browser`,
-    },
-    viewFile: {
-      id: `markdown.fileReference.viewFile`,
-      defaultMessage: `Open file`,
-      description: `Context menu action to open a referenced local HTML file in the file viewer`,
-    },
-    openWith: {
-      id: `markdown.fileReference.openWith`,
-      defaultMessage: `Open with`,
-      description: `Context menu submenu label for choosing an app to open a referenced file`,
-    },
-    openWithTarget: {
-      id: `markdown.fileReference.openWithTarget`,
-      defaultMessage: `{target}`,
-      description: `Context menu action to open a referenced file in a specific app`,
-    },
-    copyPath: {
-      id: `markdown.fileReference.copyPath`,
-      defaultMessage: `Copy path`,
-      description: `Context menu item to copy a referenced file path`,
-    },
-    openInFinder: {
-      id: `markdown.fileReference.openInFinder`,
-      defaultMessage: `Open in Finder`,
-      description: `Context menu item to reveal a referenced file in Finder`,
-    },
-    openInExplorer: {
-      id: `markdown.fileReference.openInExplorer`,
-      defaultMessage: `Open in Explorer`,
-      description: `Context menu item to reveal a referenced file in File Explorer`,
-    },
-    openInFileManager: {
-      id: `markdown.fileReference.openInFileManager`,
-      defaultMessage: `Open in File Manager`,
-      description: `Context menu item to reveal a referenced file in the system file manager`,
-    },
   });
-function je(e) {
-  let t = (0, W.c)(27),
+function rt(e) {
+  let t = (0, Y.c)(25),
     {
       reference: n,
       ariaLabel: r,
-      className: a,
-      children: o,
-      label: s,
-      tooltipText: c,
-      cwd: l,
-      hostId: u,
-      onOpen: d,
-      openInSidePanel: f,
+      className: i,
+      children: a,
+      label: o,
+      tooltipText: s,
+      cwd: u,
+      hostId: d,
+      onOpen: f,
+      openInSidePanel: p,
     } = e,
-    m = f === void 0 ? !1 : f,
-    { path: h, line: _, column: v, endLine: y } = n,
-    b;
-  t[0] !== s || t[1] !== n
-    ? ((b = s ?? p(n)), (t[0] = s), (t[1] = n), (t[2] = b))
-    : (b = t[2]);
-  let x = b,
-    S;
-  t[3] !== n || t[4] !== c
-    ? ((S = c ?? i(n)), (t[3] = n), (t[4] = c), (t[5] = S))
-    : (S = t[5]);
-  let C = S,
-    w;
-  t[6] === h ? (w = t[7]) : ((w = xe(h)), (t[6] = h), (t[7] = w));
-  let T = w,
-    E;
-  t[8] === a ? (E = t[9]) : ((E = g(ge, a)), (t[8] = a), (t[9] = E));
-  let D;
-  t[10] !== T || t[11] !== o || t[12] !== x
-    ? ((D =
-        o ??
-        (0, Q.jsx)(Ve, {
+    m = p === void 0 ? !1 : p,
+    { path: h, line: g, column: _, endLine: v } = n,
+    y;
+  t[0] !== o || t[1] !== n
+    ? ((y = o ?? l(n)), (t[0] = o), (t[1] = n), (t[2] = y))
+    : (y = t[2]);
+  let b = y,
+    x;
+  t[3] !== n || t[4] !== s
+    ? ((x = s ?? c(n)), (t[3] = n), (t[4] = s), (t[5] = x))
+    : (x = t[5]);
+  let S = x,
+    C;
+  t[6] === h ? (C = t[7]) : ((C = q(h)), (t[6] = h), (t[7] = C));
+  let w = C,
+    T;
+  t[8] !== w || t[9] !== a || t[10] !== b
+    ? ((T =
+        a ??
+        (0, Q.jsx)(pt, {
           underlineOnHover: !0,
-          className: Ae.tableCellFileLink,
-          icon: T,
-          text: x,
+          className: tt.tableCellFileLink,
+          icon: w,
+          text: b,
         })),
-      (t[10] = T),
-      (t[11] = o),
-      (t[12] = x),
-      (t[13] = D))
-    : (D = t[13]);
-  let O;
+      (t[8] = w),
+      (t[9] = a),
+      (t[10] = b),
+      (t[11] = T))
+    : (T = t[11]);
+  let E;
   return (
-    t[14] !== r ||
-    t[15] !== v ||
-    t[16] !== l ||
-    t[17] !== y ||
-    t[18] !== C ||
-    t[19] !== u ||
-    t[20] !== _ ||
-    t[21] !== d ||
-    t[22] !== m ||
-    t[23] !== h ||
-    t[24] !== E ||
-    t[25] !== D
-      ? ((O = (0, Q.jsx)(Re, {
+    t[12] !== r ||
+    t[13] !== i ||
+    t[14] !== _ ||
+    t[15] !== u ||
+    t[16] !== v ||
+    t[17] !== S ||
+    t[18] !== d ||
+    t[19] !== g ||
+    t[20] !== f ||
+    t[21] !== m ||
+    t[22] !== h ||
+    t[23] !== T
+      ? ((E = (0, Q.jsx)(dt, {
           ariaLabel: r,
-          className: E,
-          title: C,
+          className: i,
+          title: S,
           path: h,
-          line: _,
-          column: v,
-          endLine: y,
-          cwd: l,
-          hostId: u,
-          onOpen: d,
+          line: g,
+          column: _,
+          endLine: v,
+          cwd: u,
+          hostId: d,
+          onOpen: f,
           openInSidePanel: m,
-          children: D,
+          children: T,
         })),
-        (t[14] = r),
-        (t[15] = v),
-        (t[16] = l),
-        (t[17] = y),
-        (t[18] = C),
-        (t[19] = u),
-        (t[20] = _),
-        (t[21] = d),
-        (t[22] = m),
-        (t[23] = h),
-        (t[24] = E),
-        (t[25] = D),
-        (t[26] = O))
-      : (O = t[26]),
-    O
+        (t[12] = r),
+        (t[13] = i),
+        (t[14] = _),
+        (t[15] = u),
+        (t[16] = v),
+        (t[17] = S),
+        (t[18] = d),
+        (t[19] = g),
+        (t[20] = f),
+        (t[21] = m),
+        (t[22] = h),
+        (t[23] = T),
+        (t[24] = E))
+      : (E = t[24]),
+    E
   );
 }
-function Me(e) {
-  let t = (0, W.c)(28),
+function it(e) {
+  let t = (0, Y.c)(28),
     {
       cwd: n,
       hostId: r,
-      label: i,
-      href: a,
-      openInSidePanel: o,
-      tooltipText: s,
+      label: a,
+      href: o,
+      openInSidePanel: s,
+      tooltipText: c,
     } = e,
-    c = n === void 0 ? null : n,
-    l = o === void 0 ? !1 : o,
-    { skills: u } = z(void 0, r),
+    l = n === void 0 ? null : n,
+    u = s === void 0 ? !1 : s,
+    { skills: d } = J(void 0, r),
     f;
-  t[0] === i
+  t[0] === a
     ? (f = t[1])
-    : ((f = i.split(`:`).at(-1)?.trim() ?? i), (t[0] = i), (t[1] = f));
+    : ((f = a.split(`:`).at(-1)?.trim() ?? a), (t[0] = a), (t[1] = f));
   let p = f,
     m;
-  t[2] === a ? (m = t[3]) : ((m = a ? d(a) : null), (t[2] = a), (t[3] = m));
+  t[2] === o ? (m = t[3]) : ((m = o ? i(o) : null), (t[2] = o), (t[3] = m));
   let h = m,
     g,
     _,
     v;
-  if (t[4] !== i || t[5] !== h || t[6] !== p || t[7] !== u || t[8] !== s) {
+  if (t[4] !== a || t[5] !== h || t[6] !== p || t[7] !== d || t[8] !== c) {
     v = Symbol.for(`react.early_return_sentinel`);
     bb0: {
       let e =
-        (h ? u.find((e) => d(e.path) === h) : null) ??
-        u.find((e) => e.name === p) ??
-        u.find((e) => I(e) === p);
+        (h ? d.find((e) => i(e.path) === h) : null) ??
+        d.find((e) => e.name === p) ??
+        d.find((e) => F(e) === p);
       if (e == null) {
         let e;
-        (t[12] === i
+        (t[12] === a
           ? (e = t[13])
-          : ((e = (0, Q.jsxs)(Q.Fragment, { children: [`$`, i] })),
-            (t[12] = i),
+          : ((e = (0, Q.jsxs)(Q.Fragment, { children: [`$`, a] })),
+            (t[12] = a),
             (t[13] = e)),
           (v = e));
         break bb0;
       }
-      ((g = I(e)), (_ = re(e) ?? s));
+      ((g = F(e)), (_ = D(e) ?? c));
     }
-    ((t[4] = i),
+    ((t[4] = a),
       (t[5] = h),
       (t[6] = p),
-      (t[7] = u),
-      (t[8] = s),
+      (t[7] = d),
+      (t[8] = c),
       (t[9] = g),
       (t[10] = _),
       (t[11] = v));
@@ -336,11 +342,11 @@ function Me(e) {
   let x;
   t[15] === g
     ? (x = t[16])
-    : ((x = (0, Q.jsx)(Ve, { underlineOnHover: !0, icon: b, text: g })),
+    : ((x = (0, Q.jsx)(pt, { underlineOnHover: !0, icon: b, text: g })),
       (t[15] = g),
       (t[16] = x));
   let S = x;
-  if (a == null) {
+  if (o == null) {
     let e;
     t[17] === Symbol.for(`react.memo_cache_sentinel`)
       ? ((e = V()), (t[17] = e))
@@ -348,7 +354,7 @@ function Me(e) {
     let n;
     return (
       t[18] !== g || t[19] !== y
-        ? ((n = (0, Q.jsx)(Be, { icon: e, text: g, tooltipText: y })),
+        ? ((n = (0, Q.jsx)(ft, { icon: e, text: g, tooltipText: y })),
           (t[18] = g),
           (t[19] = y),
           (t[20] = n))
@@ -356,41 +362,41 @@ function Me(e) {
       n
     );
   }
-  let C = y ?? a,
+  let C = y ?? o,
     w;
   return (
     t[21] !== S ||
-    t[22] !== c ||
+    t[22] !== l ||
     t[23] !== r ||
-    t[24] !== a ||
-    t[25] !== l ||
+    t[24] !== o ||
+    t[25] !== u ||
     t[26] !== C
-      ? ((w = (0, Q.jsx)(Re, {
+      ? ((w = (0, Q.jsx)(dt, {
           className: `cursor-pointer`,
           title: C,
-          path: a,
-          cwd: c,
+          path: o,
+          cwd: l,
           hostId: r,
-          openInSidePanel: l,
+          openInSidePanel: u,
           children: S,
         })),
         (t[21] = S),
-        (t[22] = c),
+        (t[22] = l),
         (t[23] = r),
-        (t[24] = a),
-        (t[25] = l),
+        (t[24] = o),
+        (t[25] = u),
         (t[26] = C),
         (t[27] = w))
       : (w = t[27]),
     w
   );
 }
-function Ne(e) {
-  let t = (0, W.c)(19),
+function at(e) {
+  let t = (0, Y.c)(19),
     { hostId: n, label: r, href: i, tooltipText: a } = e,
     o;
   t[0] === n ? (o = t[1]) : ((o = { hostId: n }), (t[0] = n), (t[1] = o));
-  let { data: s } = le(o),
+  let { data: s } = T(o),
     c;
   t[2] === s
     ? (c = t[3])
@@ -399,7 +405,7 @@ function Ne(e) {
     u;
   t[4] === i
     ? (u = t[5])
-    : ((u = i && j(i) ? i.slice(6) : ``), (t[4] = i), (t[5] = u));
+    : ((u = i && O(i) ? i.slice(6) : ``), (t[4] = i), (t[5] = u));
   let d = u,
     f;
   t[6] !== d || t[7] !== l || t[8] !== r
@@ -433,7 +439,7 @@ function Ne(e) {
     t[15] !== m ||
     t[16] !== h ||
     t[17] !== a
-      ? ((g = (0, Q.jsx)(ze, {
+      ? ((g = (0, Q.jsx)($, {
           displayName: p.name,
           description: m,
           iconSmall: h,
@@ -452,50 +458,50 @@ function Ne(e) {
     g
   );
 }
-function Pe(e) {
-  let t = (0, W.c)(14),
+function ot(e) {
+  let t = (0, Y.c)(14),
     { hostId: n, label: r, href: i, tooltipText: a } = e,
-    o = y(),
+    o = g(),
     s;
   t[0] === n ? (s = t[1]) : ((s = { hostId: n }), (t[0] = n), (t[1] = s));
-  let c = ce(s),
-    l = i && k(i) ? i : ``,
+  let c = R(s),
+    l = i && N(i) ? i : ``,
     u;
   t[2] === l
     ? (u = t[3])
-    : ((u = Fe(l)
+    : ((u = ct(l)
         ? { additionalMarketplaceKinds: [`shared-with-me`] }
         : void 0),
       (t[2] = l),
       (t[3] = u));
-  let { availablePlugins: d } = R(n, void 0, u),
-    f = M(o),
+  let { availablePlugins: d } = z(n, void 0, u),
+    f = k(o),
     p = H(d),
     m = p != null,
     h;
   t[4] === m ? (h = t[5]) : ((h = { enabled: m }), (t[4] = m), (t[5] = h));
-  let { nativeApps: g } = be(h),
-    _ = ve({
+  let { nativeApps: _ } = fe(h),
+    v = U({
       mentionPath: l,
       mentionDisplayName: r,
-      nativeApps: g,
+      nativeApps: _,
       computerPlugin: p,
     }),
-    { iconSmall: v } = we({ appPath: _.nativeApp?.appPath ?? null });
+    { iconSmall: y } = X({ appPath: v.nativeApp?.appPath ?? null });
   if (!c) return (0, Q.jsxs)(Q.Fragment, { children: [`@`, r] });
-  let b = Ie({
+  let b = lt({
     computerUsePlugin: p,
     href: i,
-    iconSmall: v,
+    iconSmall: y,
     intl: o,
     label: r,
     pluginMentionLabels: f,
-    resolvedComputerUseMention: _,
+    resolvedComputerUseMention: v,
   });
   if (b != null) return b;
-  let x = U({ label: r, path: l, plugins: d });
+  let x = G({ label: r, path: l, plugins: d });
   if (x == null) return (0, Q.jsxs)(Q.Fragment, { children: [`@`, r] });
-  let S = P(x, f),
+  let S = M(x, f),
     C;
   return (
     t[6] !== i ||
@@ -505,11 +511,11 @@ function Pe(e) {
     t[10] !== S.iconSmall ||
     t[11] !== x.plugin.id ||
     t[12] !== a
-      ? ((C = (0, Q.jsx)(ze, {
+      ? ((C = (0, Q.jsx)($, {
           brandColor: S.brandColor,
           displayName: S.displayName,
           description: S.description,
-          fallbackIcon: L,
+          fallbackIcon: I,
           iconSmall: S.iconSmall,
           fallbackName: x.plugin.id,
           href: i,
@@ -527,15 +533,52 @@ function Pe(e) {
     C
   );
 }
-function Fe(e) {
-  let t = r(e.slice(9));
+function st(e) {
+  let t = (0, Y.c)(11),
+    { hostId: n, label: r, mention: i, tooltipText: a } = e,
+    { availablePlugins: o } = z(n),
+    s,
+    c;
+  if (t[0] !== o || t[1] !== i) {
+    let e;
+    t[4] === i
+      ? (e = t[5])
+      : ((e = (e) => {
+          let { plugin: t } = e;
+          return t.id === i.pluginId;
+        }),
+        (t[4] = i),
+        (t[5] = e));
+    let n = o.find(e);
+    ((s = ft),
+      (c = n == null ? I : W(n)),
+      (t[0] = o),
+      (t[1] = i),
+      (t[2] = s),
+      (t[3] = c));
+  } else ((s = t[2]), (c = t[3]));
+  let l;
+  return (
+    t[6] !== s || t[7] !== r || t[8] !== c || t[9] !== a
+      ? ((l = (0, Q.jsx)(s, { icon: c, text: r, tooltipText: a })),
+        (t[6] = s),
+        (t[7] = r),
+        (t[8] = c),
+        (t[9] = a),
+        (t[10] = l))
+      : (l = t[10]),
+    l
+  );
+}
+function ct(e) {
+  let t = n(e.slice(9));
   return (
     t === `workspace-shared-with-me` ||
     t === `workspace-shared-with-me-private` ||
     t === `workspace-shared-with-me-unlisted`
   );
 }
-function Ie({
+function lt({
   computerUsePlugin: e,
   href: t,
   iconSmall: n,
@@ -552,66 +595,56 @@ function Ie({
         defaultMessage: `Computer use`,
         description: `Label for the Computer Use feature`,
       });
-    return (0, Q.jsx)(ze, {
+    return (0, Q.jsx)($, {
       displayName: e.displayName,
       description: i,
-      fallbackIcon: L,
+      fallbackIcon: I,
       iconSmall: n ?? ``,
       fallbackName: e.bundleId,
       href: t,
       tooltipText: i,
     });
   }
-  let s = e?.description ?? r.formatMessage($.controlDesktopAppsFromCodex),
-    c = e == null ? null : P(e, a);
-  return (0, Q.jsx)(ze, {
+  let s = e?.description ?? r.formatMessage(nt.controlDesktopAppsFromCodex),
+    c = e == null ? null : M(e, a);
+  return (0, Q.jsx)($, {
     brandColor: c?.brandColor,
     displayName: c?.displayName ?? i,
     description: s,
-    fallbackIcon: L,
+    fallbackIcon: I,
     iconSmall: c?.iconSmall ?? ``,
     fallbackName: e?.plugin.id ?? `computer-use`,
     href: t,
     tooltipText: s,
   });
 }
-function Le(e) {
-  let t = (0, W.c)(17),
+function ut(e) {
+  let t = (0, Y.c)(12),
     { conversationId: n, label: r, tooltipText: i } = e,
-    a = (0, G.useContext)(K),
-    o;
-  t[0] === n
-    ? (o = t[1])
-    : ((o = n == null ? null : f(n)), (t[0] = n), (t[1] = o));
-  let s = o,
-    c = n != null && a != null,
-    l = r.startsWith(`@`) ? r : `@${r}`,
-    u = c ? void 0 : `cursor-default`,
-    d;
-  t[2] === s
-    ? (d = t[3])
-    : ((d = s == null ? void 0 : { color: s }), (t[2] = s), (t[3] = d));
-  let p;
-  t[4] !== c || t[5] !== u || t[6] !== d || t[7] !== l || t[8] !== i
-    ? ((p = (0, Q.jsx)(Be, {
-        className: u,
-        interactive: c,
-        style: d,
-        text: l,
+    a = (0, Z.useContext)(_e),
+    o = n != null && a != null,
+    s = r.startsWith(`@`) ? r : `@${r}`,
+    c = o ? void 0 : `cursor-default`,
+    l;
+  t[0] !== o || t[1] !== c || t[2] !== s || t[3] !== i
+    ? ((l = (0, Q.jsx)(ft, {
+        className: c,
+        interactive: o,
+        text: s,
+        textClassName: `text-token-foreground`,
         tooltipText: i,
       })),
-      (t[4] = c),
-      (t[5] = u),
-      (t[6] = d),
-      (t[7] = l),
-      (t[8] = i),
-      (t[9] = p))
-    : (p = t[9]);
-  let m = p;
-  if (n == null || a == null) return m;
-  let h;
-  t[10] !== n || t[11] !== r || t[12] !== a
-    ? ((h = () => {
+      (t[0] = o),
+      (t[1] = c),
+      (t[2] = s),
+      (t[3] = i),
+      (t[4] = l))
+    : (l = t[4]);
+  let u = l;
+  if (n == null || a == null) return u;
+  let d;
+  t[5] !== n || t[6] !== r || t[7] !== a
+    ? ((d = () => {
         a({
           agentRole: null,
           conversationId: n,
@@ -622,33 +655,33 @@ function Le(e) {
           statusSummary: null,
         });
       }),
-      (t[10] = n),
-      (t[11] = r),
-      (t[12] = a),
-      (t[13] = h))
-    : (h = t[13]);
-  let g;
+      (t[5] = n),
+      (t[6] = r),
+      (t[7] = a),
+      (t[8] = d))
+    : (d = t[8]);
+  let f;
   return (
-    t[14] !== m || t[15] !== h
-      ? ((g = (0, Q.jsx)(`button`, {
+    t[9] !== u || t[10] !== d
+      ? ((f = (0, Q.jsx)(`button`, {
           type: `button`,
           className: `inline cursor-interaction bg-transparent p-0 text-left align-baseline`,
-          onClick: h,
-          children: m,
+          onClick: d,
+          children: u,
         })),
-        (t[14] = m),
-        (t[15] = h),
-        (t[16] = g))
-      : (g = t[16]),
-    g
+        (t[9] = u),
+        (t[10] = d),
+        (t[11] = f))
+      : (f = t[11]),
+    f
   );
 }
-function Re(e) {
-  let r = (0, W.c)(112),
+function dt(e) {
+  let n = (0, Y.c)(94),
     {
       ariaLabel: i,
-      className: o,
-      title: s,
+      className: a,
+      title: o,
       children: c,
       path: l,
       line: u,
@@ -656,484 +689,344 @@ function Re(e) {
       endLine: f,
       cwd: p,
       hostId: m,
-      onOpen: h,
+      onOpen: g,
       openInSidePanel: _,
     } = e,
-    y = _ === void 0 ? !1 : _,
-    T = x(te),
-    D = w(`open-file`),
-    O = Te(),
-    k = b(se),
-    A = v(),
-    ne = ie(),
-    j = a(m ?? `local`),
-    M = u == null ? void 0 : (d ?? 1),
-    N;
-  r[0] !== p ||
-  r[1] !== j ||
-  r[2] !== m ||
-  r[3] !== u ||
-  r[4] !== D.mutate ||
-  r[5] !== l ||
-  r[6] !== M
-    ? ((N = (e, t) => {
-        ae({
-          path: l,
-          line: u,
-          column: M,
-          cwd: p,
-          hostConfig: j,
-          ...(m == null ? {} : { hostId: m }),
-          target: e,
-          appPath: t,
-          openFile: D.mutate,
-        });
-      }),
-      (r[0] = p),
-      (r[1] = j),
-      (r[2] = m),
-      (r[3] = u),
-      (r[4] = D.mutate),
-      (r[5] = l),
-      (r[6] = M),
-      (r[7] = N))
-    : (N = r[7]);
-  let P = N,
-    F = y,
-    re;
-  r[8] !== p ||
-  r[9] !== f ||
-  r[10] !== j ||
-  r[11] !== m ||
-  r[12] !== O ||
-  r[13] !== u ||
-  r[14] !== D.mutate ||
-  r[15] !== y ||
-  r[16] !== l ||
-  r[17] !== M ||
-  r[18] !== T
-    ? ((re = (e) => {
+    b = _ === void 0 ? !1 : _,
+    S = v(ee),
+    C = x(`open-file`),
+    w = ge(),
+    T = y(ie),
+    D = s(m ?? `local`),
+    O = u == null ? void 0 : (d ?? 1),
+    k = b,
+    A;
+  n[0] !== p ||
+  n[1] !== f ||
+  n[2] !== D ||
+  n[3] !== m ||
+  n[4] !== w ||
+  n[5] !== u ||
+  n[6] !== C.mutate ||
+  n[7] !== b ||
+  n[8] !== l ||
+  n[9] !== O ||
+  n[10] !== S
+    ? ((A = (e) => {
         let { isPreview: t } = e === void 0 ? {} : e;
-        ae({
+        re({
+          scope: S,
           path: l,
           line: u,
-          column: M,
+          column: O,
           cwd: p,
-          hostConfig: j,
+          hostConfig: D,
           ...(m == null ? {} : { hostId: m }),
-          artifactTabsEnabled: O,
+          artifactTabsEnabled: w,
           endLine: f,
           isPreview: t,
-          openFile: D.mutate,
-          openInSidePanel: y,
-          scope: T,
+          openFile: C.mutate,
+          openInSidePanel: b,
         });
       }),
-      (r[8] = p),
-      (r[9] = f),
-      (r[10] = j),
-      (r[11] = m),
-      (r[12] = O),
-      (r[13] = u),
-      (r[14] = D.mutate),
-      (r[15] = y),
-      (r[16] = l),
-      (r[17] = M),
-      (r[18] = T),
-      (r[19] = re))
-    : (re = r[19]);
-  let I = re,
-    L;
-  r[20] !== p ||
-  r[21] !== j ||
-  r[22] !== m ||
-  r[23] !== k ||
-  r[24] !== D.mutate ||
-  r[25] !== l
-    ? ((L = () => {
-        ae({
-          path: l,
-          cwd: p,
-          hostConfig: j,
-          ...(m == null ? {} : { hostId: m }),
-          browserSidebarEnabled: k,
-          modifiedClick: !0,
-          openFile: D.mutate,
-        });
-      }),
-      (r[20] = p),
-      (r[21] = j),
-      (r[22] = m),
-      (r[23] = k),
-      (r[24] = D.mutate),
-      (r[25] = l),
-      (r[26] = L))
-    : (L = r[26]);
-  let oe = L,
-    ce;
-  r[27] !== j || r[28] !== k || r[29] !== l
-    ? ((ce = k && !n(j) && t(l)),
-      (r[27] = j),
-      (r[28] = k),
-      (r[29] = l),
-      (r[30] = ce))
-    : (ce = r[30]);
-  let R = ce,
-    le;
-  r[31] !== p || r[32] !== m || r[33] !== l
-    ? ((le = () => ({
-        gcTime: S.INFINITE,
-        queryKey: E(`open-in-targets`, { cwd: p, hostId: m, path: l }),
-        queryFn: () =>
-          C(`open-in-targets`, { params: { cwd: p, hostId: m, path: l } }),
-        staleTime: S.ONE_MINUTE,
-      })),
-      (r[31] = p),
-      (r[32] = m),
-      (r[33] = l),
-      (r[34] = le))
-    : (le = r[34]);
-  let z = le,
-    pe;
-  r[35] !== p ||
-  r[36] !== f ||
-  r[37] !== z ||
-  r[38] !== j ||
-  r[39] !== m ||
-  r[40] !== O ||
-  r[41] !== k ||
-  r[42] !== u ||
-  r[43] !== D.mutate ||
-  r[44] !== y ||
-  r[45] !== l ||
-  r[46] !== A ||
-  r[47] !== M ||
-  r[48] !== T
-    ? ((pe = async () => {
-        let e = await A.fetchQuery(z()),
-          t = Ce({
-            preferredTarget: e.preferredTarget ?? null,
-            targets: e.targets,
-            availableTargets: e.availableTargets,
-            mode: e.mode,
-          });
-        ae({
+      (n[0] = p),
+      (n[1] = f),
+      (n[2] = D),
+      (n[3] = m),
+      (n[4] = w),
+      (n[5] = u),
+      (n[6] = C.mutate),
+      (n[7] = b),
+      (n[8] = l),
+      (n[9] = O),
+      (n[10] = S),
+      (n[11] = A))
+    : (A = n[11]);
+  let te = A,
+    j;
+  n[12] !== D || n[13] !== T || n[14] !== l
+    ? ((j = T && !t(D) && r(l)),
+      (n[12] = D),
+      (n[13] = T),
+      (n[14] = l),
+      (n[15] = j))
+    : (j = n[15]);
+  let M = j,
+    ne;
+  n[16] !== p || n[17] !== m || n[18] !== l
+    ? ((ne = he({ cwd: p, hostId: m, path: l })),
+      (n[16] = p),
+      (n[17] = m),
+      (n[18] = l),
+      (n[19] = ne))
+    : (ne = n[19]);
+  let N = ne,
+    P;
+  n[20] !== p ||
+  n[21] !== f ||
+  n[22] !== D ||
+  n[23] !== m ||
+  n[24] !== w ||
+  n[25] !== T ||
+  n[26] !== u ||
+  n[27] !== C.mutate ||
+  n[28] !== b ||
+  n[29] !== N ||
+  n[30] !== l ||
+  n[31] !== O ||
+  n[32] !== S
+    ? ((P = async () => {
+        let { primaryTarget: e } = pe(await S.queryClient.fetchQuery(N));
+        re({
+          scope: S,
           path: l,
           line: u,
-          column: M,
+          column: O,
           cwd: p,
-          hostConfig: j,
+          hostConfig: D,
           ...(m == null ? {} : { hostId: m }),
-          artifactTabsEnabled: O,
-          browserSidebarEnabled: k,
+          artifactTabsEnabled: w,
+          browserSidebarEnabled: T,
           endLine: f,
           modifiedClick: !0,
-          openFile: D.mutate,
-          openInSidePanel: y,
-          scope: T,
-          target: t?.target,
-          appPath: t?.appPath,
+          openFile: C.mutate,
+          openInSidePanel: b,
+          target: e?.target,
+          appPath: e?.appPath,
         });
       }),
-      (r[35] = p),
-      (r[36] = f),
-      (r[37] = z),
-      (r[38] = j),
-      (r[39] = m),
-      (r[40] = O),
-      (r[41] = k),
-      (r[42] = u),
-      (r[43] = D.mutate),
-      (r[44] = y),
-      (r[45] = l),
-      (r[46] = A),
-      (r[47] = M),
-      (r[48] = T),
-      (r[49] = pe))
-    : (pe = r[49]);
-  let me = pe,
-    he;
-  r[50] !== F ||
-  r[51] !== R ||
-  r[52] !== p ||
-  r[53] !== f ||
-  r[54] !== j ||
-  r[55] !== m ||
-  r[56] !== O ||
-  r[57] !== k ||
-  r[58] !== u ||
-  r[59] !== h ||
-  r[60] !== D.mutate ||
-  r[61] !== y ||
-  r[62] !== me ||
-  r[63] !== l ||
-  r[64] !== M ||
-  r[65] !== T ||
-  r[66] !== I
-    ? ((he = (e, n) => {
-        let r = n === void 0 ? !0 : n;
-        if ((h?.(l), F && !R && !e)) {
-          I({ isPreview: r });
+      (n[20] = p),
+      (n[21] = f),
+      (n[22] = D),
+      (n[23] = m),
+      (n[24] = w),
+      (n[25] = T),
+      (n[26] = u),
+      (n[27] = C.mutate),
+      (n[28] = b),
+      (n[29] = N),
+      (n[30] = l),
+      (n[31] = O),
+      (n[32] = S),
+      (n[33] = P))
+    : (P = n[33]);
+  let F = P,
+    I;
+  n[34] !== k ||
+  n[35] !== M ||
+  n[36] !== p ||
+  n[37] !== f ||
+  n[38] !== D ||
+  n[39] !== m ||
+  n[40] !== w ||
+  n[41] !== T ||
+  n[42] !== u ||
+  n[43] !== g ||
+  n[44] !== C.mutate ||
+  n[45] !== b ||
+  n[46] !== F ||
+  n[47] !== l ||
+  n[48] !== O ||
+  n[49] !== S ||
+  n[50] !== te
+    ? ((I = (e, t) => {
+        let n = t === void 0 ? !0 : t;
+        if ((g?.(l), k && !M && !e)) {
+          te({ isPreview: n });
           return;
         }
-        if (e && (!t(l) || !F)) {
-          me();
+        if (e && (!r(l) || !k)) {
+          F();
           return;
         }
-        ae({
+        re({
+          scope: S,
           path: l,
           line: u,
-          column: M,
+          column: O,
           cwd: p,
-          hostConfig: j,
+          hostConfig: D,
           ...(m == null ? {} : { hostId: m }),
-          artifactTabsEnabled: O,
-          browserSidebarEnabled: k,
+          artifactTabsEnabled: w,
+          browserSidebarEnabled: T,
           endLine: f,
-          ...(y && !e ? { isPreview: r } : {}),
+          ...(b && !e ? { isPreview: n } : {}),
           modifiedClick: e,
-          openFile: D.mutate,
-          openInSidePanel: y,
-          scope: T,
+          openFile: C.mutate,
+          openInSidePanel: b,
         });
       }),
-      (r[50] = F),
-      (r[51] = R),
-      (r[52] = p),
-      (r[53] = f),
-      (r[54] = j),
-      (r[55] = m),
-      (r[56] = O),
-      (r[57] = k),
-      (r[58] = u),
-      (r[59] = h),
-      (r[60] = D.mutate),
-      (r[61] = y),
-      (r[62] = me),
-      (r[63] = l),
-      (r[64] = M),
-      (r[65] = T),
-      (r[66] = I),
-      (r[67] = he))
-    : (he = r[67]);
-  let _e = he,
-    B;
-  r[68] === ne.data?.platform
-    ? (B = r[69])
-    : ((B = $.openInFileManager),
-      ne.data?.platform === `darwin`
-        ? (B = $.openInFinder)
-        : ne.data?.platform === `win32` && (B = $.openInExplorer),
-      (r[68] = ne.data?.platform),
-      (r[69] = B));
-  let V;
-  r[70] !== z || r[71] !== A
-    ? ((V = async () => {
-        await A.prefetchQuery(z());
+      (n[34] = k),
+      (n[35] = M),
+      (n[36] = p),
+      (n[37] = f),
+      (n[38] = D),
+      (n[39] = m),
+      (n[40] = w),
+      (n[41] = T),
+      (n[42] = u),
+      (n[43] = g),
+      (n[44] = C.mutate),
+      (n[45] = b),
+      (n[46] = F),
+      (n[47] = l),
+      (n[48] = O),
+      (n[49] = S),
+      (n[50] = te),
+      (n[51] = I))
+    : (I = n[51]);
+  let L = I,
+    R;
+  n[52] !== N || n[53] !== S.queryClient
+    ? ((R = async () => {
+        await S.queryClient.prefetchQuery(N);
       }),
-      (r[70] = z),
-      (r[71] = A),
-      (r[72] = V))
-    : (V = r[72]);
-  let H = V,
-    ve;
-  r[73] === H
-    ? (ve = r[74])
-    : ((ve = () => {
-        H();
+      (n[52] = N),
+      (n[53] = S.queryClient),
+      (n[54] = R))
+    : (R = n[54]);
+  let z = R,
+    se;
+  n[55] === z
+    ? (se = n[56])
+    : ((se = () => {
+        z();
       }),
-      (r[73] = H),
-      (r[74] = ve));
-  let U = ve,
-    ye;
-  r[75] === U
-    ? (ye = r[76])
-    : ((ye = (e) => {
-        (e.button !== 2 && !fe(e)) || U();
+      (n[55] = z),
+      (n[56] = se));
+  let B = se,
+    ce;
+  n[57] === B
+    ? (ce = n[58])
+    : ((ce = (e) => {
+        (e.button !== 2 && !oe(e)) || B();
       }),
-      (r[75] = U),
-      (r[76] = ye));
-  let be = ye,
-    xe;
-  r[77] !== F ||
-  r[78] !== R ||
-  r[79] !== p ||
-  r[80] !== j ||
-  r[81] !== m ||
-  r[82] !== P ||
-  r[83] !== l ||
-  r[84] !== A ||
-  r[85] !== B ||
-  r[86] !== I ||
-  r[87] !== oe
-    ? ((xe = () => {
-        let e = A.getQueryData(
-            E(`open-in-targets`, { cwd: p, hostId: m, path: l }),
-          ),
-          t = Ce({
-            preferredTarget: e?.preferredTarget ?? null,
-            targets: e?.targets ?? [],
-            availableTargets: e?.availableTargets ?? [],
-            mode: e?.mode,
-          }),
-          r = Se({
-            targets: e?.targets ?? [],
-            availableTargets: e?.availableTargets ?? [],
-            includeHiddenTargets: !0,
-            mode: e?.mode,
-          }),
-          i = [];
-        return (
-          R &&
-            i.push({
-              id: F ? `view-file` : `view-in-codex-browser`,
-              message: F ? $.viewFile : $.viewInCodexBrowser,
-              onSelect: F ? () => I() : oe,
-            }),
-          t != null &&
-            (R ||
-              i.push({
-                id: `open-primary`,
-                message: $.openInTarget,
-                messageValues: { target: t.label },
-                icon: t.icon,
-                onSelect: () => P(t.target, t.appPath),
-              }),
-            i.push(
-              {
-                id: `open-with`,
-                message: $.openWith,
-                submenu: r.map((e) => ({
-                  id: e.id,
-                  message: $.openWithTarget,
-                  messageValues: { target: e.label },
-                  icon: e.icon,
-                  onSelect: () => P(e.target, e.appPath),
-                })),
-              },
-              { id: `open-target-separator`, type: `separator` },
-            )),
-          i.push({
-            id: `copy-path`,
-            message: $.copyPath,
-            onSelect: () => {
-              de(l);
-            },
-          }),
-          n(j) ||
-            i.push({
-              id: `reveal-path`,
-              message: B,
-              onSelect: () => P(`fileManager`),
-            }),
-          i
-        );
+      (n[57] = B),
+      (n[58] = ce));
+  let ue = ce,
+    de;
+  n[59] !== p ||
+  n[60] !== f ||
+  n[61] !== m ||
+  n[62] !== u ||
+  n[63] !== b ||
+  n[64] !== l ||
+  n[65] !== O ||
+  n[66] !== S
+    ? ((de = () =>
+        me(S, {
+          column: O,
+          cwd: p,
+          endLine: f,
+          hostId: m,
+          line: u,
+          openInSidePanel: b,
+          path: l,
+        })),
+      (n[59] = p),
+      (n[60] = f),
+      (n[61] = m),
+      (n[62] = u),
+      (n[63] = b),
+      (n[64] = l),
+      (n[65] = O),
+      (n[66] = S),
+      (n[67] = de))
+    : (de = n[67]);
+  let V = de,
+    H;
+  n[68] === a ? (H = n[69]) : ((H = h(le, a)), (n[68] = a), (n[69] = H));
+  let U, W, G, K;
+  n[70] === L
+    ? ((U = n[71]), (W = n[72]), (G = n[73]), (K = n[74]))
+    : ((U = (e) => {
+        L(oe(e));
       }),
-      (r[77] = F),
-      (r[78] = R),
-      (r[79] = p),
-      (r[80] = j),
-      (r[81] = m),
-      (r[82] = P),
-      (r[83] = l),
-      (r[84] = A),
-      (r[85] = B),
-      (r[86] = I),
-      (r[87] = oe),
-      (r[88] = xe))
-    : (xe = r[88]);
-  let we = xe,
-    G;
-  r[89] === o
-    ? (G = r[90])
-    : ((G = g(
-        ge,
-        `inline appearance-none border-0 bg-transparent p-0 text-left align-baseline whitespace-normal`,
-        o,
-      )),
-      (r[89] = o),
-      (r[90] = G));
-  let K;
-  r[91] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((K = {
-        fontFamily: `inherit`,
-        fontSize: `inherit`,
-        lineHeight: `inherit`,
+      (W = (e) => {
+        L(oe(e), !1);
       }),
-      (r[91] = K))
-    : (K = r[91]);
-  let q, J;
-  r[92] === _e
-    ? ((q = r[93]), (J = r[94]))
-    : ((q = (e) => {
-        _e(fe(e));
+      (G = (e) => {
+        if (e.key === `Enter`) {
+          (e.preventDefault(), L(oe(e)));
+          return;
+        }
+        e.key === ` ` && e.preventDefault();
       }),
-      (J = (e) => {
-        _e(fe(e), !1);
+      (K = (e) => {
+        e.key === ` ` && (e.preventDefault(), L(oe(e)));
       }),
-      (r[92] = _e),
-      (r[93] = q),
-      (r[94] = J));
-  let Ee = s ?? l,
-    Y;
-  r[95] === c
-    ? (Y = r[96])
-    : ((Y = (0, Q.jsx)(`span`, {
+      (n[70] = L),
+      (n[71] = U),
+      (n[72] = W),
+      (n[73] = G),
+      (n[74] = K));
+  let fe = o ?? l,
+    q;
+  n[75] === c
+    ? (q = n[76])
+    : ((q = (0, Q.jsx)(`span`, {
         className: `break-words whitespace-normal`,
         children: c,
       })),
-      (r[95] = c),
-      (r[96] = Y));
+      (n[75] = c),
+      (n[76] = q));
+  let J;
+  n[77] !== fe || n[78] !== q
+    ? ((J = (0, Q.jsx)(E, { tooltipContent: fe, children: q })),
+      (n[77] = fe),
+      (n[78] = q),
+      (n[79] = J))
+    : (J = n[79]);
   let X;
-  r[97] !== Ee || r[98] !== Y
-    ? ((X = (0, Q.jsx)(ee, { tooltipContent: Ee, children: Y })),
-      (r[97] = Ee),
-      (r[98] = Y),
-      (r[99] = X))
-    : (X = r[99]);
-  let Z;
-  r[100] !== i ||
-  r[101] !== be ||
-  r[102] !== G ||
-  r[103] !== q ||
-  r[104] !== J ||
-  r[105] !== X ||
-  r[106] !== U
-    ? ((Z = (0, Q.jsx)(`button`, {
-        type: `button`,
+  n[80] !== i ||
+  n[81] !== ue ||
+  n[82] !== H ||
+  n[83] !== U ||
+  n[84] !== W ||
+  n[85] !== G ||
+  n[86] !== K ||
+  n[87] !== J ||
+  n[88] !== B
+    ? ((X = (0, Q.jsx)(`span`, {
+        "data-file-reference": !0,
+        role: `button`,
+        tabIndex: 0,
         "aria-label": i,
-        className: G,
-        style: K,
-        onClick: q,
-        onDoubleClick: J,
-        onFocus: U,
-        onMouseEnter: U,
-        onPointerDown: be,
-        children: X,
+        className: H,
+        onClick: U,
+        onDoubleClick: W,
+        onKeyDown: G,
+        onKeyUp: K,
+        onFocus: B,
+        onMouseEnter: B,
+        onPointerDown: ue,
+        children: J,
       })),
-      (r[100] = i),
-      (r[101] = be),
-      (r[102] = G),
-      (r[103] = q),
-      (r[104] = J),
-      (r[105] = X),
-      (r[106] = U),
-      (r[107] = Z))
-    : (Z = r[107]);
-  let De;
+      (n[80] = i),
+      (n[81] = ue),
+      (n[82] = H),
+      (n[83] = U),
+      (n[84] = W),
+      (n[85] = G),
+      (n[86] = K),
+      (n[87] = J),
+      (n[88] = B),
+      (n[89] = X))
+    : (X = n[89]);
+  let Z;
   return (
-    r[108] !== we || r[109] !== H || r[110] !== Z
-      ? ((De = (0, Q.jsx)(ue, { getItems: we, onBeforeOpen: H, children: Z })),
-        (r[108] = we),
-        (r[109] = H),
-        (r[110] = Z),
-        (r[111] = De))
-      : (De = r[111]),
-    De
+    n[90] !== V || n[91] !== z || n[92] !== X
+      ? ((Z = (0, Q.jsx)(ae, { getItems: V, onBeforeOpen: z, children: X })),
+        (n[90] = V),
+        (n[91] = z),
+        (n[92] = X),
+        (n[93] = Z))
+      : (Z = n[93]),
+    Z
   );
 }
-function ze(e) {
-  let t = (0, W.c)(12),
+function $(e) {
+  let t = (0, Y.c)(12),
     {
       brandColor: n,
       description: r,
@@ -1152,7 +1045,7 @@ function ze(e) {
   t[3] !== o ||
   t[4] !== c ||
   t[5] !== u
-    ? ((d = ye(null, {
+    ? ((d = K(null, {
         size: `small`,
         smallOnly: !0,
         alt: i,
@@ -1174,7 +1067,7 @@ function ze(e) {
     p;
   return (
     t[7] !== n || t[8] !== i || t[9] !== d || t[10] !== f
-      ? ((p = (0, Q.jsx)(Be, {
+      ? ((p = (0, Q.jsx)(ft, {
           brandColor: n,
           icon: d,
           text: i,
@@ -1189,8 +1082,8 @@ function ze(e) {
     p
   );
 }
-function Be(e) {
-  let t = (0, W.c)(12),
+function ft(e) {
+  let t = (0, Y.c)(12),
     {
       brandColor: n,
       className: r,
@@ -1212,7 +1105,7 @@ function Be(e) {
   t[5] !== s ||
   t[6] !== c ||
   t[7] !== l
-    ? ((f = (0, Q.jsx)(Ve, {
+    ? ((f = (0, Q.jsx)(pt, {
         brandColor: n,
         className: r,
         dataAttributes: i,
@@ -1237,7 +1130,7 @@ function Be(e) {
   let m;
   return (
     t[9] !== p || t[10] !== u
-      ? ((m = (0, Q.jsx)(ee, { tooltipContent: u, children: p })),
+      ? ((m = (0, Q.jsx)(E, { tooltipContent: u, children: p })),
         (t[9] = p),
         (t[10] = u),
         (t[11] = m))
@@ -1245,8 +1138,8 @@ function Be(e) {
     m
   );
 }
-function Ve(e) {
-  let t = (0, W.c)(23),
+function pt(e) {
+  let t = (0, Y.c)(23),
     {
       brandColor: n,
       className: r,
@@ -1267,35 +1160,38 @@ function Ve(e) {
     : ((m =
         o == null
           ? null
-          : (0, G.isValidElement)(o)
-            ? (0, G.cloneElement)(o, { className: g(me, o.props.className) })
-            : (0, G.createElement)(o, { className: me })),
+          : (0, Z.isValidElement)(o)
+            ? (0, Z.cloneElement)(o, { className: h(B, o.props.className) })
+            : (0, Z.createElement)(o, { className: B })),
       (t[0] = o),
       (t[1] = m));
-  let h = m,
+  let g = m,
     _ =
       f &&
       `group-hover/inline-mention:underline group-hover/inline-mention:decoration-current group-hover/inline-mention:decoration-dashed group-hover/inline-mention:decoration-[0.5px] group-hover/inline-mention:underline-offset-2`,
     v = p && `cursor-interaction`,
     y;
   t[2] !== r || t[3] !== _ || t[4] !== v
-    ? ((y = g(he, _e, _, v, r)), (t[2] = r), (t[3] = _), (t[4] = v), (t[5] = y))
+    ? ((y = h(ce, ue, _, v, r)), (t[2] = r), (t[3] = _), (t[4] = v), (t[5] = y))
     : (y = t[5]);
   let b;
   t[6] !== n || t[7] !== c
-    ? ((b = B({ brandColor: n, style: c })), (t[6] = n), (t[7] = c), (t[8] = b))
+    ? ((b = de({ brandColor: n, style: c })),
+      (t[6] = n),
+      (t[7] = c),
+      (t[8] = b))
     : (b = t[8]);
   let x;
-  t[9] === h
+  t[9] === g
     ? (x = t[10])
     : ((x =
-        h == null ? null : (0, Q.jsx)(`span`, { className: pe, children: h })),
-      (t[9] = h),
+        g == null ? null : (0, Q.jsx)(`span`, { className: se, children: g })),
+      (t[9] = g),
       (t[10] = x));
   let S;
   t[11] === u
     ? (S = t[12])
-    : ((S = g(`min-w-0 break-words`, u)), (t[11] = u), (t[12] = S));
+    : ((S = h(`min-w-0 break-words`, u)), (t[11] = u), (t[12] = S));
   let C;
   t[13] !== S || t[14] !== l
     ? ((C = (0, Q.jsx)(`span`, { className: S, children: l })),
@@ -1329,98 +1225,108 @@ function Ve(e) {
     w
   );
 }
-function He({
+function mt({
   className: e,
   cwd: t,
   elementKey: n,
   hostId: r,
-  href: a,
-  label: s,
-  onFileLinkOpen: c,
-  openFileLinksInSidePanel: l = !1,
+  href: i,
+  label: a,
+  onFileLinkOpen: o,
+  openFileLinksInSidePanel: s = !1,
 }) {
-  let u = s.trim();
-  switch (A({ href: a, label: u })) {
+  let u = a.trim();
+  switch (P({ href: i, label: u })) {
     case `app`:
       return (0, Q.jsx)(
-        Ne,
-        { hostId: r, label: N(u), href: a, tooltipText: a },
+        at,
+        { hostId: r, label: j(u), href: i, tooltipText: i },
         n,
       );
     case `plugin`:
       return (0, Q.jsx)(
-        Pe,
-        { hostId: r, label: N(u), href: a, tooltipText: a },
+        ot,
+        { hostId: r, label: j(u), href: i, tooltipText: i },
         n,
       );
     case `agent`: {
-      let e = ne(a),
-        t = F(a);
+      let e = A(i),
+        t = te(i);
       return e == null && t == null
         ? null
         : (0, Q.jsx)(
-            Le,
-            { conversationId: e ?? void 0, label: N(u), tooltipText: a },
+            ut,
+            { conversationId: e ?? void 0, label: j(u), tooltipText: i },
+            n,
+          );
+    }
+    case `mcp-resource`: {
+      let e = ne(i);
+      return e == null
+        ? null
+        : (0, Q.jsx)(
+            st,
+            { hostId: r, label: u, mention: e, tooltipText: e.resourceUri },
             n,
           );
     }
     case `skill`:
       return (0, Q.jsx)(
-        Me,
+        it,
         {
           cwd: t,
           hostId: r,
-          label: N(
-            N(u) || a.split(`/`).slice(-2, -1)[0]?.replace(/-/g, ` `) || a,
+          label: j(
+            j(u) || i.split(`/`).slice(-2, -1)[0]?.replace(/-/g, ` `) || i,
           ),
-          href: a,
-          openInSidePanel: l,
-          tooltipText: a,
+          href: i,
+          openInSidePanel: s,
+          tooltipText: i,
         },
         n,
       );
     case `text`:
       break;
   }
-  let d = Ue(a);
-  if (d != null) {
-    let a = o(d),
-      s = i(a);
+  let f = ht(i);
+  if (f != null) {
+    let i = d(f),
+      a = c(i);
     return (0, Q.jsx)(
-      je,
+      rt,
       {
         className: e,
-        reference: a,
-        label: qe({
+        reference: i,
+        label: yt({
           trimmedChildText: u,
-          href: d,
-          parsedReference: a,
-          displayLabel: p(a),
-          formattedLabel: s,
+          href: f,
+          parsedReference: i,
+          displayLabel: l(i),
+          formattedLabel: a,
         }),
-        tooltipText: s,
+        tooltipText: a,
         cwd: t,
         hostId: r,
-        onOpen: c,
-        openInSidePanel: l,
+        onOpen: o,
+        openInSidePanel: s,
       },
       n,
     );
   }
   return null;
 }
-function Ue(e) {
-  let t = We(e);
-  return u(t) || c(t) || Ge(t) ? t : l(t);
+function ht(e) {
+  let t = gt(e);
+  return o(t) || f(t) || _t(t) ? t : a(t);
 }
-function We(e) {
+function gt(e) {
   try {
     return decodeURI(e);
   } catch {
     return e;
   }
 }
-function Ge(e) {
+function _t(e) {
   return (
     /[\\/]$/.test(e) &&
     !e.startsWith(`//`) &&
@@ -1429,70 +1335,70 @@ function Ge(e) {
     !/^(mailto|tel):/i.test(e)
   );
 }
-function Ke(e) {
-  return N(e);
+function vt(e) {
+  return j(e);
 }
-function qe({
+function yt({
   trimmedChildText: e,
   href: t,
   parsedReference: n,
   displayLabel: r,
   formattedLabel: i,
 }) {
-  return e.length === 0 || e === t || e === i ? r : Je(e, n, i);
+  return e.length === 0 || e === t || e === i ? r : bt(e, n, i);
 }
-function Je(e, t, n) {
-  if (!s(t)) return e;
+function bt(e, t, n) {
+  if (!u(t)) return e;
   let r = n.slice(t.path.length);
   if (r.length === 0) return e;
-  if (u(e)) {
-    let n = o(e);
-    if (Ye(n.path, t.path)) return `${n.path}${r}`;
+  if (o(e)) {
+    let n = d(e);
+    if (xt(n.path, t.path)) return `${n.path}${r}`;
   }
   return e.endsWith(r) ? e : `${e}${r}`;
 }
-function Ye(e, t) {
-  let n = d(e).replace(/\/+$/, ``),
-    r = d(t).replace(/\/+$/, ``);
+function xt(e, t) {
+  let n = i(e).replace(/\/+$/, ``),
+    r = i(t).replace(/\/+$/, ``);
   if (
     n === r ||
     (n.length > 0 && r.endsWith(`/${n}`)) ||
     (r.length > 0 && n.endsWith(`/${r}`))
   )
     return !0;
-  let i = n.split(`/`).pop(),
-    a = r.split(`/`).pop();
-  return !i || !a || i !== a ? !1 : n === i || r === a;
+  let a = n.split(`/`).pop(),
+    o = r.split(`/`).pop();
+  return !a || !o || a !== o ? !1 : n === a || r === o;
 }
-var Xe = String.raw`\$(?:\[[^\]\n]+\]|[A-Za-z][\w-]*)`,
-  Ze = String.raw`@[A-Za-z0-9][\w.-]*[\\/][\w./-]*`,
-  Qe = RegExp(`${Xe}|${Ze}`, `g`),
-  $e = RegExp(`^${Xe}$`);
-function et(e) {
+var St = String.raw`\$(?:\[[^\]\n]+\]|[A-Za-z][\w-]*)`,
+  Ct = String.raw`@[A-Za-z0-9][\w.-]*[\\/][\w./-]*`,
+  wt = RegExp(`${St}|${Ct}`, `g`),
+  Tt = RegExp(`^${St}$`);
+function Et(e) {
   if (e.indexOf(`$`) === -1 && e.indexOf(`@`) === -1) return null;
   let t = [];
-  for (Qe.lastIndex = 0; ; ) {
-    let n = Qe.exec(e);
+  for (wt.lastIndex = 0; ; ) {
+    let n = wt.exec(e);
     if (n == null) break;
     t.push({ content: n[0], index: n.index });
   }
   return t.length === 0 ? null : t;
 }
-function tt(e) {
-  return e[0] === `$` && $e.test(e);
+function Dt(e) {
+  return e[0] === `$` && Tt.test(e);
 }
 export {
-  je as a,
-  ze as c,
-  Te as d,
-  we as f,
-  He as i,
-  Ae as l,
-  tt as n,
-  Be as o,
-  Ke as r,
-  Me as s,
-  et as t,
-  K as u,
+  rt as a,
+  $ as c,
+  ge as d,
+  X as f,
+  mt as i,
+  tt as l,
+  Dt as n,
+  ft as o,
+  vt as r,
+  it as s,
+  Et as t,
+  _e as u,
 };
 //# sourceMappingURL=inline-mentions.js.map

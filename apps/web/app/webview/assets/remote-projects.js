@@ -1,79 +1,77 @@
-import { s as e } from "./chunk.js";
-import { ir as t, o as n } from "./src-BLHmAhbF.js";
-import { Ct as r } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { d as t, kr as n } from "./src-C.js";
+import { Li as r } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as i } from "./jsx-runtime.js";
-import { S as a, Y as o, xt as s } from "./setting-storage.js";
+import { S as a, X as o, wt as s } from "./setting-storage.js";
 import { t as c } from "./use-global-state.js";
 var l = s(),
   u = e(i(), 1);
-function d(e, t, r) {
-  if (t == null || e == null) return null;
-  let i = n(r);
-  return e.find((e) => e.hostId === t && n(e.remotePath) === i) ?? null;
+function d(e, n, r) {
+  if (n == null || e == null) return null;
+  let i = t(r);
+  return e.find((e) => e.hostId === n && t(e.remotePath) === i) ?? null;
 }
-function f() {
+function f(e, t) {
+  r(e, n.ACTIVE_REMOTE_PROJECT_ID, t ?? void 0);
+}
+function p(e, t) {
+  return r(e, n.REMOTE_PROJECTS, t);
+}
+function m() {
   let e = (0, l.c)(21),
-    n = o(a),
-    { data: i, isLoading: s } = c(t.REMOTE_PROJECTS),
-    { data: d } = c(t.ACTIVE_REMOTE_PROJECT_ID),
-    f;
-  e[0] === i ? (f = e[1]) : ((f = i ?? []), (e[0] = i), (e[1] = f));
-  let p = f,
+    t = o(a),
+    { data: i, isLoading: s } = c(n.REMOTE_PROJECTS),
+    { data: d } = c(n.ACTIVE_REMOTE_PROJECT_ID),
     m;
-  e[2] !== p || e[3] !== d
-    ? ((m = p.find((e) => e.id === d) ?? null),
-      (e[2] = p),
-      (e[3] = d),
-      (e[4] = m))
-    : (m = e[4]);
+  e[0] === i ? (m = e[1]) : ((m = i ?? []), (e[0] = i), (e[1] = m));
   let h = m,
-    g,
-    _;
-  (e[5] !== s || e[6] !== n || e[7] !== h || e[8] !== d
-    ? ((g = () => {
-        s || d == null || h != null || r(n, t.ACTIVE_REMOTE_PROJECT_ID, void 0);
-      }),
-      (_ = [s, n, h, d]),
-      (e[5] = s),
-      (e[6] = n),
-      (e[7] = h),
-      (e[8] = d),
-      (e[9] = g),
-      (e[10] = _))
-    : ((g = e[9]), (_ = e[10])),
-    (0, u.useEffect)(g, _));
-  let v = d ?? null,
+    g;
+  e[2] !== h || e[3] !== d
+    ? ((g = h.find((e) => e.id === d) ?? null),
+      (e[2] = h),
+      (e[3] = d),
+      (e[4] = g))
+    : (g = e[4]);
+  let _ = g,
+    v,
     y;
-  e[11] === n
-    ? (y = e[12])
-    : ((y = (e) => {
-        r(n, t.ACTIVE_REMOTE_PROJECT_ID, e ?? void 0);
+  (e[5] !== s || e[6] !== t || e[7] !== _ || e[8] !== d
+    ? ((v = () => {
+        s || d == null || _ != null || r(t, n.ACTIVE_REMOTE_PROJECT_ID, void 0);
       }),
-      (e[11] = n),
-      (e[12] = y));
-  let b;
-  e[13] === n
-    ? (b = e[14])
-    : ((b = (e) => r(n, t.REMOTE_PROJECTS, e)), (e[13] = n), (e[14] = b));
-  let x;
+      (y = [s, t, _, d]),
+      (e[5] = s),
+      (e[6] = t),
+      (e[7] = _),
+      (e[8] = d),
+      (e[9] = v),
+      (e[10] = y))
+    : ((v = e[9]), (y = e[10])),
+    (0, u.useEffect)(v, y));
+  let b = d ?? null,
+    x;
+  e[11] === t ? (x = e[12]) : ((x = (e) => f(t, e)), (e[11] = t), (e[12] = x));
+  let S;
+  e[13] === t ? (S = e[14]) : ((S = (e) => p(t, e)), (e[13] = t), (e[14] = S));
+  let C;
   return (
-    e[15] !== p || e[16] !== h || e[17] !== v || e[18] !== y || e[19] !== b
-      ? ((x = {
-          selectedRemoteProject: h,
-          selectedRemoteProjectId: v,
-          setSelectedRemoteProjectId: y,
-          remoteProjects: p,
-          setRemoteProjects: b,
+    e[15] !== h || e[16] !== _ || e[17] !== b || e[18] !== x || e[19] !== S
+      ? ((C = {
+          selectedRemoteProject: _,
+          selectedRemoteProjectId: b,
+          setSelectedRemoteProjectId: x,
+          remoteProjects: h,
+          setRemoteProjects: S,
         }),
-        (e[15] = p),
-        (e[16] = h),
-        (e[17] = v),
-        (e[18] = y),
-        (e[19] = b),
-        (e[20] = x))
-      : (x = e[20]),
-    x
+        (e[15] = h),
+        (e[16] = _),
+        (e[17] = b),
+        (e[18] = x),
+        (e[19] = S),
+        (e[20] = C))
+      : (C = e[20]),
+    C
   );
 }
-export { f as n, d as t };
+export { f as n, m as r, d as t };
 //# sourceMappingURL=remote-projects.js.map

@@ -1,72 +1,61 @@
-import { r as e } from "./statsig.js";
+import { r as e } from "./statsig--EYRNU53.js";
 var t = `Playground`,
   n = `93537254`,
-  r = `3760797255`,
-  i = `3979170498`,
-  a = `1482884768`,
-  o = `3150044490`,
-  s = `t5_onboarding_v2`,
-  c = `arm`;
-function l(e) {
+  r = `1482884768`,
+  i = `3150044490`,
+  a = `t5_onboarding_v2`,
+  o = `arm`;
+function s(e) {
   switch (e) {
     case `control`:
     case `t2_direct_folder_picker`:
     case `t3_auto_playground`:
     case `t4_modal_copy_cta_playground`:
-    case s:
+    case a:
       return e;
     default:
       return `control`;
   }
 }
-function u(e) {
-  let t = l(e);
+function c(e) {
+  let t = s(e);
   return t === `t5_onboarding_v2` ? `control` : t;
 }
-function d(t) {
+function l(t) {
   let r = e(t, n),
-    i = u(r.get(c, null));
+    i = c(r.get(o, null));
   return i === `control`
     ? `getGroupName` in r && typeof r.getGroupName == `function`
-      ? u(r.getGroupName())
+      ? c(r.getGroupName())
       : `control`
     : i;
 }
-function f(e) {
+function u(e) {
   return e?.experimentName === n;
 }
-function p(e) {
+function d(e) {
   return e === `t2_direct_folder_picker`;
 }
-function m(e) {
+function f(e) {
   return e === `t3_auto_playground`;
 }
-function h(e) {
+function p(e) {
   return e === `t4_modal_copy_cta_playground`;
 }
-function g(e) {
-  return e === s;
-}
-function _({ experimentArm: e, welcomeV2DefaultFlowEnabled: t }) {
-  return t || g(e);
-}
-function v(e) {
-  return p(e) || m(e) || h(e);
+function m(e) {
+  return d(e) || f(e) || p(e);
 }
 export {
-  s as a,
-  d as c,
-  p as d,
-  h as f,
+  a,
+  f as c,
+  m as d,
   n as i,
-  f as l,
-  _ as m,
-  a as n,
-  r as o,
-  v as p,
+  d as l,
+  r as n,
+  l as o,
   t as r,
-  i as s,
-  o as t,
-  m as u,
+  u as s,
+  i as t,
+  p as u,
 };
 //# sourceMappingURL=workspace-onboarding-experiment.js.map

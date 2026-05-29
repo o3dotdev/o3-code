@@ -1,7 +1,8 @@
 import { t as e } from "./jsx-runtime.js";
-import { B as t, W as n, xt as r } from "./setting-storage.js";
-import { o as i } from "./electron-menu-shortcuts.js";
-var a = t({
+import { t } from "./clsx-BcPLHiun.js";
+import { G as n, V as r, wt as i } from "./setting-storage.js";
+import { o as a } from "./electron-menu-shortcuts.js";
+var o = r({
     "codex.command.newThread": {
       id: `codex.command.newThread`,
       defaultMessage: `New chat`,
@@ -57,6 +58,36 @@ var a = t({
       defaultMessage: `Start dictation`,
       description: `Shortcut settings row for starting dictation`,
     },
+    "codex.command.composer.submit": {
+      id: `codex.command.composer.submit`,
+      defaultMessage: `Send message`,
+      description: `Shortcut settings row for sending the current composer message`,
+    },
+    "codex.command.composer.toggleFastMode": {
+      id: `codex.command.composer.toggleFastMode`,
+      defaultMessage: `Toggle Fast mode`,
+      description: `Shortcut settings row for toggling Fast mode`,
+    },
+    "codex.command.composer.increaseReasoningEffort": {
+      id: `codex.command.composer.increaseReasoningEffort`,
+      defaultMessage: `Increase reasoning effort`,
+      description: `Shortcut settings row for increasing reasoning effort`,
+    },
+    "codex.command.composer.decreaseReasoningEffort": {
+      id: `codex.command.composer.decreaseReasoningEffort`,
+      defaultMessage: `Decrease reasoning effort`,
+      description: `Shortcut settings row for decreasing reasoning effort`,
+    },
+    "codex.command.composer.cycleReasoningEffort": {
+      id: `codex.command.composer.cycleReasoningEffort`,
+      defaultMessage: `Cycle reasoning effort`,
+      description: `Shortcut settings row for cycling reasoning effort`,
+    },
+    "codex.command.composer.togglePlanMode": {
+      id: `codex.command.composer.togglePlanMode`,
+      defaultMessage: `Toggle plan mode`,
+      description: `Shortcut settings row for toggling plan mode`,
+    },
     "codex.command.approval.approve": {
       id: `codex.command.approval.approve`,
       defaultMessage: `Approve request`,
@@ -67,6 +98,21 @@ var a = t({
       defaultMessage: `Decline request`,
       description: `Shortcut settings row for declining the active request`,
     },
+    "codex.command.git.commit": {
+      id: `codex.command.git.commit`,
+      defaultMessage: `Commit or push`,
+      description: `Command menu item for committing or pushing local changes`,
+    },
+    "codex.command.git.createPullRequest": {
+      id: `codex.command.git.createPullRequest`,
+      defaultMessage: `Create PR`,
+      description: `Command menu item for creating a pull request`,
+    },
+    "codex.command.forkThread": {
+      id: `codex.command.forkThread`,
+      defaultMessage: `Fork chat`,
+      description: `Shortcut settings row for forking the current chat`,
+    },
     "codex.command.openPetOverlay": {
       id: `codex.command.openPetOverlay`,
       defaultMessage: `Wake Pet`,
@@ -74,8 +120,8 @@ var a = t({
     },
     "codex.command.previousThread": {
       id: `codex.command.previousThread`,
-      defaultMessage: `Previous chat`,
-      description: `Command menu item to go to the previous thread`,
+      defaultMessage: `Previous chat or tab`,
+      description: `Command menu item to go to the previous chat or tab`,
     },
     "codex.command.previousRecentThread": {
       id: `codex.command.previousRecentThread`,
@@ -84,8 +130,8 @@ var a = t({
     },
     "codex.command.nextThread": {
       id: `codex.command.nextThread`,
-      defaultMessage: `Next chat`,
-      description: `Command menu item to go to the next thread`,
+      defaultMessage: `Next chat or tab`,
+      description: `Command menu item to go to the next chat or tab`,
     },
     "codex.command.nextRecentThread": {
       id: `codex.command.nextRecentThread`,
@@ -122,6 +168,11 @@ var a = t({
       defaultMessage: `Manage automations`,
       description: `Command menu item to manage automations`,
     },
+    "codex.command.openProcessManager": {
+      id: `codex.command.openProcessManager`,
+      defaultMessage: `Process Manager`,
+      description: `Command menu item to open the process manager`,
+    },
     "codex.command.forceReloadSkills": {
       id: `codex.command.forceReloadSkills`,
       defaultMessage: `Force reload skills`,
@@ -147,10 +198,15 @@ var a = t({
       defaultMessage: `Toggle sidebar`,
       description: `Command menu item to toggle the sidebar`,
     },
+    "codex.command.toggleBottomPanel": {
+      id: `codex.command.toggleBottomPanel`,
+      defaultMessage: `Toggle bottom panel`,
+      description: `Command menu item to toggle the bottom panel`,
+    },
     "codex.command.toggleTerminal": {
       id: `codex.command.toggleTerminal`,
-      defaultMessage: `Toggle terminal`,
-      description: `Command menu item to toggle the terminal panel`,
+      defaultMessage: `Open terminal`,
+      description: `Command menu item to open the terminal panel`,
     },
     "codex.command.openBrowserTab": {
       id: `codex.command.openBrowserTab`,
@@ -171,6 +227,11 @@ var a = t({
       id: `codex.command.toggleSidePanel`,
       defaultMessage: `Toggle side panel`,
       description: `Command menu item to toggle the side panel`,
+    },
+    "codex.command.toggleSidePanelFullWidth": {
+      id: `codex.command.toggleSidePanelFullWidth`,
+      defaultMessage: `Toggle side panel width`,
+      description: `Shortcut settings row for expanding or restoring the side panel`,
     },
     "codex.command.findInThread": {
       id: `codex.command.findInThread`,
@@ -201,6 +262,51 @@ var a = t({
       id: `codex.command.feedback`,
       defaultMessage: `Feedback`,
       description: `Command menu item to open the feedback dialog`,
+    },
+    "codex.command.environmentAction1": {
+      id: `codex.command.environmentAction1`,
+      defaultMessage: `Environment action 1`,
+      description: `Shortcut settings row for the first environment action`,
+    },
+    "codex.command.environmentAction2": {
+      id: `codex.command.environmentAction2`,
+      defaultMessage: `Environment action 2`,
+      description: `Shortcut settings row for the second environment action`,
+    },
+    "codex.command.environmentAction3": {
+      id: `codex.command.environmentAction3`,
+      defaultMessage: `Environment action 3`,
+      description: `Shortcut settings row for the third environment action`,
+    },
+    "codex.command.environmentAction4": {
+      id: `codex.command.environmentAction4`,
+      defaultMessage: `Environment action 4`,
+      description: `Shortcut settings row for the fourth environment action`,
+    },
+    "codex.command.environmentAction5": {
+      id: `codex.command.environmentAction5`,
+      defaultMessage: `Environment action 5`,
+      description: `Shortcut settings row for the fifth environment action`,
+    },
+    "codex.command.environmentAction6": {
+      id: `codex.command.environmentAction6`,
+      defaultMessage: `Environment action 6`,
+      description: `Shortcut settings row for the sixth environment action`,
+    },
+    "codex.command.environmentAction7": {
+      id: `codex.command.environmentAction7`,
+      defaultMessage: `Environment action 7`,
+      description: `Shortcut settings row for the seventh environment action`,
+    },
+    "codex.command.environmentAction8": {
+      id: `codex.command.environmentAction8`,
+      defaultMessage: `Environment action 8`,
+      description: `Shortcut settings row for the eighth environment action`,
+    },
+    "codex.command.environmentAction9": {
+      id: `codex.command.environmentAction9`,
+      defaultMessage: `Environment action 9`,
+      description: `Shortcut settings row for the ninth environment action`,
     },
     "codex.command.hotkeyWindow": {
       id: `codex.command.hotkeyWindow`,
@@ -263,7 +369,7 @@ var a = t({
       description: `Command menu item to go to the ninth visible chat`,
     },
   }),
-  o = t({
+  s = r({
     "codex.commandMenuTitle.newThread": {
       id: `codex.commandMenuTitle.newThread`,
       defaultMessage: `New Chat`,
@@ -301,13 +407,13 @@ var a = t({
     },
     "codex.commandMenuTitle.previousThread": {
       id: `codex.commandMenuTitle.previousThread`,
-      defaultMessage: `Previous Chat`,
-      description: `Native menu item to go to the previous chat`,
+      defaultMessage: `Previous Chat or Tab`,
+      description: `Native menu item to go to the previous chat or tab`,
     },
     "codex.commandMenuTitle.nextThread": {
       id: `codex.commandMenuTitle.nextThread`,
-      defaultMessage: `Next Chat`,
-      description: `Native menu item to go to the next chat`,
+      defaultMessage: `Next Chat or Tab`,
+      description: `Native menu item to go to the next chat or tab`,
     },
     "codex.commandMenuTitle.settings": {
       id: `codex.commandMenuTitle.settings`,
@@ -319,6 +425,11 @@ var a = t({
       defaultMessage: `Keyboard Shortcuts`,
       description: `Native menu item to show active keyboard shortcuts`,
     },
+    "codex.commandMenuTitle.openProcessManager": {
+      id: `codex.commandMenuTitle.openProcessManager`,
+      defaultMessage: `Process Manager`,
+      description: `Native menu item to open the process manager`,
+    },
     "codex.commandMenuTitle.openFolder": {
       id: `codex.commandMenuTitle.openFolder`,
       defaultMessage: `Open Folder…`,
@@ -329,10 +440,15 @@ var a = t({
       defaultMessage: `Toggle Sidebar`,
       description: `Native menu item to toggle the sidebar`,
     },
+    "codex.commandMenuTitle.toggleBottomPanel": {
+      id: `codex.commandMenuTitle.toggleBottomPanel`,
+      defaultMessage: `Toggle Bottom Panel`,
+      description: `Native menu item to toggle the bottom panel`,
+    },
     "codex.commandMenuTitle.toggleTerminal": {
       id: `codex.commandMenuTitle.toggleTerminal`,
-      defaultMessage: `Toggle Terminal`,
-      description: `Native menu item to toggle the terminal`,
+      defaultMessage: `Open Terminal`,
+      description: `Native menu item to open the terminal`,
     },
     "codex.commandMenuTitle.openBrowserTab": {
       id: `codex.commandMenuTitle.openBrowserTab`,
@@ -485,7 +601,7 @@ var a = t({
       description: `Native menu item to start trace recording`,
     },
   }),
-  s = t({
+  c = r({
     "codex.commandDescription.newThread": {
       id: `codex.commandDescription.newThread`,
       defaultMessage: `Start a new chat`,
@@ -541,6 +657,36 @@ var a = t({
       defaultMessage: `Start dictation in the current composer`,
       description: `Description for the Start dictation shortcut`,
     },
+    "codex.commandDescription.composer.submit": {
+      id: `codex.commandDescription.composer.submit`,
+      defaultMessage: `Send the current composer message`,
+      description: `Description for the Send message shortcut`,
+    },
+    "codex.commandDescription.composer.toggleFastMode": {
+      id: `codex.commandDescription.composer.toggleFastMode`,
+      defaultMessage: `Turn Fast mode on or off in the current composer`,
+      description: `Description for the Toggle Fast mode shortcut`,
+    },
+    "codex.commandDescription.composer.increaseReasoningEffort": {
+      id: `codex.commandDescription.composer.increaseReasoningEffort`,
+      defaultMessage: `Increase the current composer reasoning effort`,
+      description: `Description for the Increase reasoning effort shortcut`,
+    },
+    "codex.commandDescription.composer.decreaseReasoningEffort": {
+      id: `codex.commandDescription.composer.decreaseReasoningEffort`,
+      defaultMessage: `Decrease the current composer reasoning effort`,
+      description: `Description for the Decrease reasoning effort shortcut`,
+    },
+    "codex.commandDescription.composer.cycleReasoningEffort": {
+      id: `codex.commandDescription.composer.cycleReasoningEffort`,
+      defaultMessage: `Cycle through composer reasoning effort options`,
+      description: `Description for the Cycle reasoning effort shortcut`,
+    },
+    "codex.commandDescription.composer.togglePlanMode": {
+      id: `codex.commandDescription.composer.togglePlanMode`,
+      defaultMessage: `Turn plan mode on or off in the current composer`,
+      description: `Description for the Toggle plan mode shortcut`,
+    },
     "codex.commandDescription.approval.approve": {
       id: `codex.commandDescription.approval.approve`,
       defaultMessage: `Approve the active request`,
@@ -551,6 +697,21 @@ var a = t({
       defaultMessage: `Decline the active request`,
       description: `Description for the Decline request shortcut`,
     },
+    "codex.commandDescription.git.commit": {
+      id: `codex.commandDescription.git.commit`,
+      defaultMessage: `Open commit or push options`,
+      description: `Description for the Commit or push command`,
+    },
+    "codex.commandDescription.git.createPullRequest": {
+      id: `codex.commandDescription.git.createPullRequest`,
+      defaultMessage: `Open pull request creation options`,
+      description: `Description for the Create PR command`,
+    },
+    "codex.commandDescription.forkThread": {
+      id: `codex.commandDescription.forkThread`,
+      defaultMessage: `Fork the current chat`,
+      description: `Description for the Fork chat shortcut`,
+    },
     "codex.commandDescription.openPetOverlay": {
       id: `codex.commandDescription.openPetOverlay`,
       defaultMessage: `Open the pet overlay`,
@@ -558,8 +719,8 @@ var a = t({
     },
     "codex.commandDescription.previousThread": {
       id: `codex.commandDescription.previousThread`,
-      defaultMessage: `Switch to the previous chat`,
-      description: `Description for the Previous chat command`,
+      defaultMessage: `Switch to the previous chat or tab`,
+      description: `Description for the Previous chat or tab command`,
     },
     "codex.commandDescription.previousRecentThread": {
       id: `codex.commandDescription.previousRecentThread`,
@@ -568,8 +729,8 @@ var a = t({
     },
     "codex.commandDescription.nextThread": {
       id: `codex.commandDescription.nextThread`,
-      defaultMessage: `Switch to the next chat`,
-      description: `Description for the Next chat command`,
+      defaultMessage: `Switch to the next chat or tab`,
+      description: `Description for the Next chat or tab command`,
     },
     "codex.commandDescription.nextRecentThread": {
       id: `codex.commandDescription.nextRecentThread`,
@@ -606,6 +767,11 @@ var a = t({
       defaultMessage: `Create or manage automations from the current page`,
       description: `Description for the Manage automations command`,
     },
+    "codex.commandDescription.openProcessManager": {
+      id: `codex.commandDescription.openProcessManager`,
+      defaultMessage: `View and manage chat-started processes`,
+      description: `Description for the Process Manager command`,
+    },
     "codex.commandDescription.forceReloadSkills": {
       id: `codex.commandDescription.forceReloadSkills`,
       defaultMessage: `Refresh the skill catalog for the current context`,
@@ -631,10 +797,15 @@ var a = t({
       defaultMessage: `Show or hide the sidebar`,
       description: `Description for the Toggle sidebar command`,
     },
+    "codex.commandDescription.toggleBottomPanel": {
+      id: `codex.commandDescription.toggleBottomPanel`,
+      defaultMessage: `Show or hide the bottom panel`,
+      description: `Description for the Toggle bottom panel command`,
+    },
     "codex.commandDescription.toggleTerminal": {
       id: `codex.commandDescription.toggleTerminal`,
-      defaultMessage: `Show or hide the terminal panel`,
-      description: `Description for the Toggle terminal command`,
+      defaultMessage: `Open the terminal panel`,
+      description: `Description for the Open terminal command`,
     },
     "codex.commandDescription.openBrowserTab": {
       id: `codex.commandDescription.openBrowserTab`,
@@ -655,6 +826,11 @@ var a = t({
       id: `codex.commandDescription.toggleSidePanel`,
       defaultMessage: `Show or hide the side panel`,
       description: `Description for the Toggle side panel command`,
+    },
+    "codex.commandDescription.toggleSidePanelFullWidth": {
+      id: `codex.commandDescription.toggleSidePanelFullWidth`,
+      defaultMessage: `Expand or restore the side panel`,
+      description: `Description for the Toggle side panel width command`,
     },
     "codex.commandDescription.findInThread": {
       id: `codex.commandDescription.findInThread`,
@@ -685,6 +861,11 @@ var a = t({
       id: `codex.commandDescription.feedback`,
       defaultMessage: `Send product feedback to the Codex team`,
       description: `Description for the Feedback command`,
+    },
+    "codex.commandDescription.environmentActionSlot": {
+      id: `codex.commandDescription.environmentActionSlot`,
+      defaultMessage: `Run the environment action in this shortcut slot`,
+      description: `Description for environment action shortcut slots`,
     },
     "codex.commandDescription.hotkeyWindow": {
       id: `codex.commandDescription.hotkeyWindow`,
@@ -777,24 +958,25 @@ var a = t({
       description: `Description for the thread slot commands`,
     },
   });
-function c(e, t) {
+function l(e, t) {
   return `titleIntlId` in e
-    ? t.formatMessage(a[e.titleIntlId])
-    : t.formatMessage(o[e.electron.menuTitleIntlId]);
+    ? t.formatMessage(o[e.titleIntlId])
+    : t.formatMessage(s[e.electron.menuTitleIntlId]);
 }
-function l(
+function u(
   e,
   {
     browserSidebarEnabled: t,
     isGlobalDictationEnabled: n,
     isHotkeyWindowEnabled: r,
-    isVoiceInputEnabled: i,
-    platform: a,
+    isProcessManagerEnabled: i,
+    isVoiceInputEnabled: a,
+    platform: o,
   },
 ) {
-  return u(e, n, r, i)
+  return d(e, n, r, a, i)
     ? e === `copyConversationPath`
-      ? a === `macOS`
+      ? o === `macOS`
       : e === `hardReloadBrowserPage` ||
           e === `openBrowserTab` ||
           e === `reloadBrowserPage` ||
@@ -803,76 +985,152 @@ function l(
         : e !== `toggleTraceRecording`
     : !1;
 }
-function u(e, t, n, r) {
+function d(e, t, n, r, i) {
   return e === `hotkeyWindow`
     ? n
-    : e === `globalDictationHold` || e === `globalDictationToggle`
-      ? t && r
-      : !0;
+    : e === `openProcessManager`
+      ? i
+      : e === `globalDictationHold` || e === `globalDictationToggle`
+        ? t && r
+        : !0;
 }
-function d(e, t) {
-  let n = f(e) - f(t);
+function f(e, t) {
+  let n = p(e) - p(t);
   return n === 0 ? e.id.localeCompare(t.id) : n;
 }
-function f(e) {
+function p(e) {
   return e.kind !== `webview` || e.commandMenuGroupKey == null
-    ? i.length
-    : i.indexOf(e.commandMenuGroupKey);
+    ? a.length
+    : a.indexOf(e.commandMenuGroupKey);
 }
-var p = r(),
-  m = e();
-function h(e) {
-  let t = (0, p.c)(12),
-    { autoFocus: r, value: i, onValueChange: a } = e,
-    o = n(),
-    s;
-  t[0] === o
-    ? (s = t[1])
-    : ((s = o.formatMessage({
-        id: `settings.keyboardShortcuts.search.ariaLabel`,
-        defaultMessage: `Search keyboard shortcuts`,
-        description: `Accessible label for the keyboard shortcuts search input`,
-      })),
-      (t[0] = o),
-      (t[1] = s));
-  let c;
-  t[2] === o
-    ? (c = t[3])
-    : ((c = o.formatMessage({
-        id: `settings.keyboardShortcuts.search.placeholder`,
-        defaultMessage: `Search shortcuts`,
-        description: `Placeholder for the keyboard shortcuts search input`,
-      })),
-      (t[2] = o),
-      (t[3] = c));
-  let l;
-  t[4] === a
-    ? (l = t[5])
-    : ((l = (e) => {
-        a(e.currentTarget.value);
+var m = i(),
+  h = e();
+function g(e) {
+  let r = (0, m.c)(26),
+    {
+      autoFocus: i,
+      isSearchingByKeystrokes: a,
+      trailingContent: o,
+      onKeyDown: s,
+      value: c,
+      onValueChange: l,
+    } = e,
+    u = a === void 0 ? !1 : a,
+    d = n(),
+    f = u ? `keystrokes` : `text`,
+    p = u || void 0,
+    g = o == null ? null : `pe-11`,
+    _;
+  r[0] === g
+    ? (_ = r[1])
+    : ((_ = t(
+        `w-full rounded-md border border-token-border bg-transparent px-3 py-2 text-sm text-token-text-primary outline-none placeholder:text-token-text-tertiary`,
+        g,
+      )),
+      (r[0] = g),
+      (r[1] = _));
+  let v;
+  r[2] !== d || r[3] !== u
+    ? ((v = u
+        ? d.formatMessage({
+            id: `settings.keyboardShortcuts.keystrokeSearch.ariaLabel`,
+            defaultMessage: `Keystroke search capture`,
+            description: `Accessible label for the input that captures keyboard shortcuts to search`,
+          })
+        : d.formatMessage({
+            id: `settings.keyboardShortcuts.search.ariaLabel`,
+            defaultMessage: `Search keyboard shortcuts`,
+            description: `Accessible label for the keyboard shortcuts search input`,
+          })),
+      (r[2] = d),
+      (r[3] = u),
+      (r[4] = v))
+    : (v = r[4]);
+  let y;
+  r[5] !== d || r[6] !== u
+    ? ((y = u
+        ? d.formatMessage({
+            id: `settings.keyboardShortcuts.keystrokeSearch.placeholder`,
+            defaultMessage: `Press shortcut to search`,
+            description: `Placeholder shown while capturing a keyboard shortcut to search`,
+          })
+        : d.formatMessage({
+            id: `settings.keyboardShortcuts.search.placeholder`,
+            defaultMessage: `Search shortcuts`,
+            description: `Placeholder for the keyboard shortcuts search input`,
+          })),
+      (r[5] = d),
+      (r[6] = u),
+      (r[7] = y))
+    : (y = r[7]);
+  let b;
+  r[8] === l
+    ? (b = r[9])
+    : ((b = (e) => {
+        l(e.currentTarget.value);
       }),
-      (t[4] = a),
-      (t[5] = l));
-  let u;
+      (r[8] = l),
+      (r[9] = b));
+  let x;
+  r[10] !== i ||
+  r[11] !== u ||
+  r[12] !== s ||
+  r[13] !== f ||
+  r[14] !== p ||
+  r[15] !== _ ||
+  r[16] !== v ||
+  r[17] !== y ||
+  r[18] !== b ||
+  r[19] !== c
+    ? ((x = (0, h.jsx)(
+        `input`,
+        {
+          "data-codex-shortcut-capture": p,
+          autoFocus: i,
+          readOnly: u,
+          className: _,
+          "aria-label": v,
+          placeholder: y,
+          value: c,
+          onKeyDown: s,
+          onChange: b,
+        },
+        f,
+      )),
+      (r[10] = i),
+      (r[11] = u),
+      (r[12] = s),
+      (r[13] = f),
+      (r[14] = p),
+      (r[15] = _),
+      (r[16] = v),
+      (r[17] = y),
+      (r[18] = b),
+      (r[19] = c),
+      (r[20] = x))
+    : (x = r[20]);
+  let S;
+  r[21] === o
+    ? (S = r[22])
+    : ((S =
+        o == null
+          ? null
+          : (0, h.jsx)(`div`, {
+              className: `absolute inset-y-0 end-1 flex items-center`,
+              children: o,
+            })),
+      (r[21] = o),
+      (r[22] = S));
+  let C;
   return (
-    t[6] !== r || t[7] !== s || t[8] !== c || t[9] !== l || t[10] !== i
-      ? ((u = (0, m.jsx)(`input`, {
-          autoFocus: r,
-          className: `w-full rounded-md border border-token-border bg-transparent px-3 py-2 text-sm text-token-text-primary outline-none placeholder:text-token-text-tertiary`,
-          "aria-label": s,
-          placeholder: c,
-          value: i,
-          onChange: l,
-        })),
-        (t[6] = r),
-        (t[7] = s),
-        (t[8] = c),
-        (t[9] = l),
-        (t[10] = i),
-        (t[11] = u))
-      : (u = t[11]),
-    u
+    r[23] !== S || r[24] !== x
+      ? ((C = (0, h.jsxs)(`div`, { className: `relative`, children: [x, S] })),
+        (r[23] = S),
+        (r[24] = x),
+        (r[25] = C))
+      : (C = r[25]),
+    C
   );
 }
-export { s as a, u as i, d as n, a as o, l as r, c as s, h as t };
+export { c as a, d as i, f as n, o, u as r, l as s, g as t };
 //# sourceMappingURL=keyboard-shortcuts-search-input.js.map

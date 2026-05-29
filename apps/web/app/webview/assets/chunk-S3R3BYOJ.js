@@ -22,40 +22,65 @@ import {
   u as h,
   y as ae,
 } from "./isArrayLikeObject.js";
-import { i as g, r as _, t as v } from "./src-DXdm7MTq.js";
-import "./math.js";
-import { n as y, r as oe, t as se } from "./monotone.js";
-import { F as ce, f as le, m as b, r as ue, s as x } from "./chunk-ABZYJK2D.js";
-import { t as de } from "./dist-Dkaf81wL.js";
-var fe = `[object Object]`,
-  pe = Function.prototype,
-  me = Object.prototype,
-  he = pe.toString,
-  ge = me.hasOwnProperty,
-  _e = he.call(Object);
-function ve(e) {
-  if (!r(e) || s(e) != fe) return !1;
+import { t as g } from "./src-BHeH9bp0.js";
+import { n as _, r as v, t as y } from "./monotone.js";
+import {
+  _ as oe,
+  a as se,
+  c as ce,
+  d as le,
+  f as ue,
+  g as de,
+  h as fe,
+  i as pe,
+  l as me,
+  m as he,
+  n as ge,
+  o as _e,
+  p as ve,
+  r as ye,
+  s as be,
+  t as xe,
+  u as Se,
+} from "./step.js";
+import { n as b, r as x } from "./chunk-AGHRB4JF-CwjJfTB_.js";
+import {
+  F as Ce,
+  f as we,
+  m as S,
+  r as C,
+  s as w,
+} from "./chunk-ABZYJK2D-DSLQAJWr.js";
+import { t as Te } from "./dist-OQR0lEt7.js";
+var Ee = `[object Object]`,
+  De = Function.prototype,
+  Oe = Object.prototype,
+  T = De.toString,
+  ke = Oe.hasOwnProperty,
+  Ae = T.call(Object);
+function je(e) {
+  if (!r(e) || s(e) != Ee) return !1;
   var t = f(e);
   if (t === null) return !0;
-  var n = ge.call(t, `constructor`) && t.constructor;
-  return typeof n == `function` && n instanceof n && he.call(n) == _e;
+  var n = ke.call(t, `constructor`) && t.constructor;
+  return typeof n == `function` && n instanceof n && T.call(n) == Ae;
 }
-function S(t, n, r) {
+function E(t, n, r) {
   ((r !== void 0 && !e(t[n], r)) || (r === void 0 && !(n in t))) && d(t, n, r);
 }
-function C(e, t) {
+function D(e, t) {
   if (!(t === `constructor` && typeof e[t] == `function`) && t != `__proto__`)
     return e[t];
 }
-function ye(e) {
+function Me(e) {
   return i(e, m(e));
 }
-function be(e, r, i, o, s, u, d) {
-  var f = C(e, i),
-    p = C(r, i),
+function Ne(e, r, i, o, s, u, d) {
+  var f = D(e, i),
+    p = D(r, i),
     m = d.get(p);
   if (m) {
-    S(e, i, m);
+    E(e, i, m);
     return;
   }
   var h = u ? u(f, p, i + ``, e, r, d) : void 0,
@@ -75,943 +100,63 @@ function be(e, r, i, o, s, u, d) {
               : y
                 ? ((g = !1), (h = te(p, !0)))
                 : (h = [])
-        : ve(p) || l(p)
-          ? ((h = f), l(f) ? (h = ye(f)) : (!t(f) || a(f)) && (h = ne(p)))
+        : je(p) || l(p)
+          ? ((h = f), l(f) ? (h = Me(f)) : (!t(f) || a(f)) && (h = ne(p)))
           : (g = !1));
   }
-  (g && (d.set(p, h), s(h, p, o, u, d), d.delete(p)), S(e, i, h));
+  (g && (d.set(p, h), s(h, p, o, u, d), d.delete(p)), E(e, i, h));
 }
-function w(e, n, r, i, a) {
+function O(e, n, r, i, a) {
   e !== n &&
     p(
       n,
       function (o, s) {
-        if (((a ||= new u()), t(o))) be(e, n, s, r, w, i, a);
+        if (((a ||= new u()), t(o))) Ne(e, n, s, r, O, i, a);
         else {
-          var c = i ? i(C(e, s), o, s + ``, e, n, a) : void 0;
-          (c === void 0 && (c = o), S(e, s, c));
+          var c = i ? i(D(e, s), o, s + ``, e, n, a) : void 0;
+          (c === void 0 && (c = o), E(e, s, c));
         }
       },
       m,
     );
 }
-var T = o(function (e, t, n) {
-    w(e, t, n);
+var k = o(function (e, t, n) {
+    O(e, t, n);
   }),
-  xe = class {
-    constructor(e, t) {
-      ((this._context = e), (this._x = t));
-    }
-    areaStart() {
-      this._line = 0;
-    }
-    areaEnd() {
-      this._line = NaN;
-    }
-    lineStart() {
-      this._point = 0;
-    }
-    lineEnd() {
-      ((this._line || (this._line !== 0 && this._point === 1)) &&
-        this._context.closePath(),
-        (this._line = 1 - this._line));
-    }
-    point(e, t) {
-      switch (((e = +e), (t = +t), this._point)) {
-        case 0:
-          ((this._point = 1),
-            this._line
-              ? this._context.lineTo(e, t)
-              : this._context.moveTo(e, t));
-          break;
-        case 1:
-          this._point = 2;
-        default:
-          this._x
-            ? this._context.bezierCurveTo(
-                (this._x0 = (this._x0 + e) / 2),
-                this._y0,
-                this._x0,
-                t,
-                e,
-                t,
-              )
-            : this._context.bezierCurveTo(
-                this._x0,
-                (this._y0 = (this._y0 + t) / 2),
-                e,
-                this._y0,
-                e,
-                t,
-              );
-          break;
-      }
-      ((this._x0 = e), (this._y0 = t));
-    }
-  };
-function Se(e) {
-  return new xe(e, !0);
-}
-function Ce(e) {
-  return new xe(e, !1);
-}
-function E() {}
-function D(e, t, n) {
-  e._context.bezierCurveTo(
-    (2 * e._x0 + e._x1) / 3,
-    (2 * e._y0 + e._y1) / 3,
-    (e._x0 + 2 * e._x1) / 3,
-    (e._y0 + 2 * e._y1) / 3,
-    (e._x0 + 4 * e._x1 + t) / 6,
-    (e._y0 + 4 * e._y1 + n) / 6,
-  );
-}
-function O(e) {
-  this._context = e;
-}
-O.prototype = {
-  areaStart: function () {
-    this._line = 0;
+  Pe = Te(),
+  Fe = {
+    curveBasis: fe,
+    curveBasisClosed: he,
+    curveBasisOpen: ve,
+    curveBumpX: de,
+    curveBumpY: oe,
+    curveBundle: ue,
+    curveCardinalClosed: Se,
+    curveCardinalOpen: me,
+    curveCardinal: le,
+    curveCatmullRomClosed: be,
+    curveCatmullRomOpen: _e,
+    curveCatmullRom: ce,
+    curveLinear: v,
+    curveLinearClosed: se,
+    curveMonotoneX: y,
+    curveMonotoneY: _,
+    curveNatural: pe,
+    curveStep: ye,
+    curveStepAfter: xe,
+    curveStepBefore: ge,
   },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x0 = this._x1 = this._y0 = this._y1 = NaN), (this._point = 0));
-  },
-  lineEnd: function () {
-    switch (this._point) {
-      case 3:
-        D(this, this._x1, this._y1);
-      case 2:
-        this._context.lineTo(this._x1, this._y1);
-        break;
-    }
-    ((this._line || (this._line !== 0 && this._point === 1)) &&
-      this._context.closePath(),
-      (this._line = 1 - this._line));
-  },
-  point: function (e, t) {
-    switch (((e = +e), (t = +t), this._point)) {
-      case 0:
-        ((this._point = 1),
-          this._line ? this._context.lineTo(e, t) : this._context.moveTo(e, t));
-        break;
-      case 1:
-        this._point = 2;
-        break;
-      case 2:
-        ((this._point = 3),
-          this._context.lineTo(
-            (5 * this._x0 + this._x1) / 6,
-            (5 * this._y0 + this._y1) / 6,
-          ));
-      default:
-        D(this, e, t);
-        break;
-    }
-    ((this._x0 = this._x1),
-      (this._x1 = e),
-      (this._y0 = this._y1),
-      (this._y1 = t));
-  },
-};
-function we(e) {
-  return new O(e);
-}
-function Te(e) {
-  this._context = e;
-}
-Te.prototype = {
-  areaStart: E,
-  areaEnd: E,
-  lineStart: function () {
-    ((this._x0 =
-      this._x1 =
-      this._x2 =
-      this._x3 =
-      this._x4 =
-      this._y0 =
-      this._y1 =
-      this._y2 =
-      this._y3 =
-      this._y4 =
-        NaN),
-      (this._point = 0));
-  },
-  lineEnd: function () {
-    switch (this._point) {
-      case 1:
-        (this._context.moveTo(this._x2, this._y2), this._context.closePath());
-        break;
-      case 2:
-        (this._context.moveTo(
-          (this._x2 + 2 * this._x3) / 3,
-          (this._y2 + 2 * this._y3) / 3,
-        ),
-          this._context.lineTo(
-            (this._x3 + 2 * this._x2) / 3,
-            (this._y3 + 2 * this._y2) / 3,
-          ),
-          this._context.closePath());
-        break;
-      case 3:
-        (this.point(this._x2, this._y2),
-          this.point(this._x3, this._y3),
-          this.point(this._x4, this._y4));
-        break;
-    }
-  },
-  point: function (e, t) {
-    switch (((e = +e), (t = +t), this._point)) {
-      case 0:
-        ((this._point = 1), (this._x2 = e), (this._y2 = t));
-        break;
-      case 1:
-        ((this._point = 2), (this._x3 = e), (this._y3 = t));
-        break;
-      case 2:
-        ((this._point = 3),
-          (this._x4 = e),
-          (this._y4 = t),
-          this._context.moveTo(
-            (this._x0 + 4 * this._x1 + e) / 6,
-            (this._y0 + 4 * this._y1 + t) / 6,
-          ));
-        break;
-      default:
-        D(this, e, t);
-        break;
-    }
-    ((this._x0 = this._x1),
-      (this._x1 = e),
-      (this._y0 = this._y1),
-      (this._y1 = t));
-  },
-};
-function Ee(e) {
-  return new Te(e);
-}
-function De(e) {
-  this._context = e;
-}
-De.prototype = {
-  areaStart: function () {
-    this._line = 0;
-  },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x0 = this._x1 = this._y0 = this._y1 = NaN), (this._point = 0));
-  },
-  lineEnd: function () {
-    ((this._line || (this._line !== 0 && this._point === 3)) &&
-      this._context.closePath(),
-      (this._line = 1 - this._line));
-  },
-  point: function (e, t) {
-    switch (((e = +e), (t = +t), this._point)) {
-      case 0:
-        this._point = 1;
-        break;
-      case 1:
-        this._point = 2;
-        break;
-      case 2:
-        this._point = 3;
-        var n = (this._x0 + 4 * this._x1 + e) / 6,
-          r = (this._y0 + 4 * this._y1 + t) / 6;
-        this._line ? this._context.lineTo(n, r) : this._context.moveTo(n, r);
-        break;
-      case 3:
-        this._point = 4;
-      default:
-        D(this, e, t);
-        break;
-    }
-    ((this._x0 = this._x1),
-      (this._x1 = e),
-      (this._y0 = this._y1),
-      (this._y1 = t));
-  },
-};
-function Oe(e) {
-  return new De(e);
-}
-function ke(e, t) {
-  ((this._basis = new O(e)), (this._beta = t));
-}
-ke.prototype = {
-  lineStart: function () {
-    ((this._x = []), (this._y = []), this._basis.lineStart());
-  },
-  lineEnd: function () {
-    var e = this._x,
-      t = this._y,
-      n = e.length - 1;
-    if (n > 0)
-      for (
-        var r = e[0], i = t[0], a = e[n] - r, o = t[n] - i, s = -1, c;
-        ++s <= n;
-      )
-        ((c = s / n),
-          this._basis.point(
-            this._beta * e[s] + (1 - this._beta) * (r + c * a),
-            this._beta * t[s] + (1 - this._beta) * (i + c * o),
-          ));
-    ((this._x = this._y = null), this._basis.lineEnd());
-  },
-  point: function (e, t) {
-    (this._x.push(+e), this._y.push(+t));
-  },
-};
-var Ae = (function e(t) {
-  function n(e) {
-    return t === 1 ? new O(e) : new ke(e, t);
-  }
-  return (
-    (n.beta = function (t) {
-      return e(+t);
-    }),
-    n
-  );
-})(0.85);
-function k(e, t, n) {
-  e._context.bezierCurveTo(
-    e._x1 + e._k * (e._x2 - e._x0),
-    e._y1 + e._k * (e._y2 - e._y0),
-    e._x2 + e._k * (e._x1 - t),
-    e._y2 + e._k * (e._y1 - n),
-    e._x2,
-    e._y2,
-  );
-}
-function A(e, t) {
-  ((this._context = e), (this._k = (1 - t) / 6));
-}
-A.prototype = {
-  areaStart: function () {
-    this._line = 0;
-  },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN),
-      (this._point = 0));
-  },
-  lineEnd: function () {
-    switch (this._point) {
-      case 2:
-        this._context.lineTo(this._x2, this._y2);
-        break;
-      case 3:
-        k(this, this._x1, this._y1);
-        break;
-    }
-    ((this._line || (this._line !== 0 && this._point === 1)) &&
-      this._context.closePath(),
-      (this._line = 1 - this._line));
-  },
-  point: function (e, t) {
-    switch (((e = +e), (t = +t), this._point)) {
-      case 0:
-        ((this._point = 1),
-          this._line ? this._context.lineTo(e, t) : this._context.moveTo(e, t));
-        break;
-      case 1:
-        ((this._point = 2), (this._x1 = e), (this._y1 = t));
-        break;
-      case 2:
-        this._point = 3;
-      default:
-        k(this, e, t);
-        break;
-    }
-    ((this._x0 = this._x1),
-      (this._x1 = this._x2),
-      (this._x2 = e),
-      (this._y0 = this._y1),
-      (this._y1 = this._y2),
-      (this._y2 = t));
-  },
-};
-var je = (function e(t) {
-  function n(e) {
-    return new A(e, t);
-  }
-  return (
-    (n.tension = function (t) {
-      return e(+t);
-    }),
-    n
-  );
-})(0);
-function j(e, t) {
-  ((this._context = e), (this._k = (1 - t) / 6));
-}
-j.prototype = {
-  areaStart: E,
-  areaEnd: E,
-  lineStart: function () {
-    ((this._x0 =
-      this._x1 =
-      this._x2 =
-      this._x3 =
-      this._x4 =
-      this._x5 =
-      this._y0 =
-      this._y1 =
-      this._y2 =
-      this._y3 =
-      this._y4 =
-      this._y5 =
-        NaN),
-      (this._point = 0));
-  },
-  lineEnd: function () {
-    switch (this._point) {
-      case 1:
-        (this._context.moveTo(this._x3, this._y3), this._context.closePath());
-        break;
-      case 2:
-        (this._context.lineTo(this._x3, this._y3), this._context.closePath());
-        break;
-      case 3:
-        (this.point(this._x3, this._y3),
-          this.point(this._x4, this._y4),
-          this.point(this._x5, this._y5));
-        break;
-    }
-  },
-  point: function (e, t) {
-    switch (((e = +e), (t = +t), this._point)) {
-      case 0:
-        ((this._point = 1), (this._x3 = e), (this._y3 = t));
-        break;
-      case 1:
-        ((this._point = 2),
-          this._context.moveTo((this._x4 = e), (this._y4 = t)));
-        break;
-      case 2:
-        ((this._point = 3), (this._x5 = e), (this._y5 = t));
-        break;
-      default:
-        k(this, e, t);
-        break;
-    }
-    ((this._x0 = this._x1),
-      (this._x1 = this._x2),
-      (this._x2 = e),
-      (this._y0 = this._y1),
-      (this._y1 = this._y2),
-      (this._y2 = t));
-  },
-};
-var Me = (function e(t) {
-  function n(e) {
-    return new j(e, t);
-  }
-  return (
-    (n.tension = function (t) {
-      return e(+t);
-    }),
-    n
-  );
-})(0);
-function M(e, t) {
-  ((this._context = e), (this._k = (1 - t) / 6));
-}
-M.prototype = {
-  areaStart: function () {
-    this._line = 0;
-  },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN),
-      (this._point = 0));
-  },
-  lineEnd: function () {
-    ((this._line || (this._line !== 0 && this._point === 3)) &&
-      this._context.closePath(),
-      (this._line = 1 - this._line));
-  },
-  point: function (e, t) {
-    switch (((e = +e), (t = +t), this._point)) {
-      case 0:
-        this._point = 1;
-        break;
-      case 1:
-        this._point = 2;
-        break;
-      case 2:
-        ((this._point = 3),
-          this._line
-            ? this._context.lineTo(this._x2, this._y2)
-            : this._context.moveTo(this._x2, this._y2));
-        break;
-      case 3:
-        this._point = 4;
-      default:
-        k(this, e, t);
-        break;
-    }
-    ((this._x0 = this._x1),
-      (this._x1 = this._x2),
-      (this._x2 = e),
-      (this._y0 = this._y1),
-      (this._y1 = this._y2),
-      (this._y2 = t));
-  },
-};
-var Ne = (function e(t) {
-  function n(e) {
-    return new M(e, t);
-  }
-  return (
-    (n.tension = function (t) {
-      return e(+t);
-    }),
-    n
-  );
-})(0);
-function N(e, t, n) {
-  var r = e._x1,
-    i = e._y1,
-    a = e._x2,
-    o = e._y2;
-  if (e._l01_a > 1e-12) {
-    var s = 2 * e._l01_2a + 3 * e._l01_a * e._l12_a + e._l12_2a,
-      c = 3 * e._l01_a * (e._l01_a + e._l12_a);
-    ((r = (r * s - e._x0 * e._l12_2a + e._x2 * e._l01_2a) / c),
-      (i = (i * s - e._y0 * e._l12_2a + e._y2 * e._l01_2a) / c));
-  }
-  if (e._l23_a > 1e-12) {
-    var l = 2 * e._l23_2a + 3 * e._l23_a * e._l12_a + e._l12_2a,
-      u = 3 * e._l23_a * (e._l23_a + e._l12_a);
-    ((a = (a * l + e._x1 * e._l23_2a - t * e._l12_2a) / u),
-      (o = (o * l + e._y1 * e._l23_2a - n * e._l12_2a) / u));
-  }
-  e._context.bezierCurveTo(r, i, a, o, e._x2, e._y2);
-}
-function P(e, t) {
-  ((this._context = e), (this._alpha = t));
-}
-P.prototype = {
-  areaStart: function () {
-    this._line = 0;
-  },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN),
-      (this._l01_a =
-        this._l12_a =
-        this._l23_a =
-        this._l01_2a =
-        this._l12_2a =
-        this._l23_2a =
-        this._point =
-          0));
-  },
-  lineEnd: function () {
-    switch (this._point) {
-      case 2:
-        this._context.lineTo(this._x2, this._y2);
-        break;
-      case 3:
-        this.point(this._x2, this._y2);
-        break;
-    }
-    ((this._line || (this._line !== 0 && this._point === 1)) &&
-      this._context.closePath(),
-      (this._line = 1 - this._line));
-  },
-  point: function (e, t) {
-    if (((e = +e), (t = +t), this._point)) {
-      var n = this._x2 - e,
-        r = this._y2 - t;
-      this._l23_a = Math.sqrt((this._l23_2a = (n * n + r * r) ** +this._alpha));
-    }
-    switch (this._point) {
-      case 0:
-        ((this._point = 1),
-          this._line ? this._context.lineTo(e, t) : this._context.moveTo(e, t));
-        break;
-      case 1:
-        this._point = 2;
-        break;
-      case 2:
-        this._point = 3;
-      default:
-        N(this, e, t);
-        break;
-    }
-    ((this._l01_a = this._l12_a),
-      (this._l12_a = this._l23_a),
-      (this._l01_2a = this._l12_2a),
-      (this._l12_2a = this._l23_2a),
-      (this._x0 = this._x1),
-      (this._x1 = this._x2),
-      (this._x2 = e),
-      (this._y0 = this._y1),
-      (this._y1 = this._y2),
-      (this._y2 = t));
-  },
-};
-var F = (function e(t) {
-  function n(e) {
-    return t ? new P(e, t) : new A(e, 0);
-  }
-  return (
-    (n.alpha = function (t) {
-      return e(+t);
-    }),
-    n
-  );
-})(0.5);
-function I(e, t) {
-  ((this._context = e), (this._alpha = t));
-}
-I.prototype = {
-  areaStart: E,
-  areaEnd: E,
-  lineStart: function () {
-    ((this._x0 =
-      this._x1 =
-      this._x2 =
-      this._x3 =
-      this._x4 =
-      this._x5 =
-      this._y0 =
-      this._y1 =
-      this._y2 =
-      this._y3 =
-      this._y4 =
-      this._y5 =
-        NaN),
-      (this._l01_a =
-        this._l12_a =
-        this._l23_a =
-        this._l01_2a =
-        this._l12_2a =
-        this._l23_2a =
-        this._point =
-          0));
-  },
-  lineEnd: function () {
-    switch (this._point) {
-      case 1:
-        (this._context.moveTo(this._x3, this._y3), this._context.closePath());
-        break;
-      case 2:
-        (this._context.lineTo(this._x3, this._y3), this._context.closePath());
-        break;
-      case 3:
-        (this.point(this._x3, this._y3),
-          this.point(this._x4, this._y4),
-          this.point(this._x5, this._y5));
-        break;
-    }
-  },
-  point: function (e, t) {
-    if (((e = +e), (t = +t), this._point)) {
-      var n = this._x2 - e,
-        r = this._y2 - t;
-      this._l23_a = Math.sqrt((this._l23_2a = (n * n + r * r) ** +this._alpha));
-    }
-    switch (this._point) {
-      case 0:
-        ((this._point = 1), (this._x3 = e), (this._y3 = t));
-        break;
-      case 1:
-        ((this._point = 2),
-          this._context.moveTo((this._x4 = e), (this._y4 = t)));
-        break;
-      case 2:
-        ((this._point = 3), (this._x5 = e), (this._y5 = t));
-        break;
-      default:
-        N(this, e, t);
-        break;
-    }
-    ((this._l01_a = this._l12_a),
-      (this._l12_a = this._l23_a),
-      (this._l01_2a = this._l12_2a),
-      (this._l12_2a = this._l23_2a),
-      (this._x0 = this._x1),
-      (this._x1 = this._x2),
-      (this._x2 = e),
-      (this._y0 = this._y1),
-      (this._y1 = this._y2),
-      (this._y2 = t));
-  },
-};
-var Pe = (function e(t) {
-  function n(e) {
-    return t ? new I(e, t) : new j(e, 0);
-  }
-  return (
-    (n.alpha = function (t) {
-      return e(+t);
-    }),
-    n
-  );
-})(0.5);
-function L(e, t) {
-  ((this._context = e), (this._alpha = t));
-}
-L.prototype = {
-  areaStart: function () {
-    this._line = 0;
-  },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x0 = this._x1 = this._x2 = this._y0 = this._y1 = this._y2 = NaN),
-      (this._l01_a =
-        this._l12_a =
-        this._l23_a =
-        this._l01_2a =
-        this._l12_2a =
-        this._l23_2a =
-        this._point =
-          0));
-  },
-  lineEnd: function () {
-    ((this._line || (this._line !== 0 && this._point === 3)) &&
-      this._context.closePath(),
-      (this._line = 1 - this._line));
-  },
-  point: function (e, t) {
-    if (((e = +e), (t = +t), this._point)) {
-      var n = this._x2 - e,
-        r = this._y2 - t;
-      this._l23_a = Math.sqrt((this._l23_2a = (n * n + r * r) ** +this._alpha));
-    }
-    switch (this._point) {
-      case 0:
-        this._point = 1;
-        break;
-      case 1:
-        this._point = 2;
-        break;
-      case 2:
-        ((this._point = 3),
-          this._line
-            ? this._context.lineTo(this._x2, this._y2)
-            : this._context.moveTo(this._x2, this._y2));
-        break;
-      case 3:
-        this._point = 4;
-      default:
-        N(this, e, t);
-        break;
-    }
-    ((this._l01_a = this._l12_a),
-      (this._l12_a = this._l23_a),
-      (this._l01_2a = this._l12_2a),
-      (this._l12_2a = this._l23_2a),
-      (this._x0 = this._x1),
-      (this._x1 = this._x2),
-      (this._x2 = e),
-      (this._y0 = this._y1),
-      (this._y1 = this._y2),
-      (this._y2 = t));
-  },
-};
-var Fe = (function e(t) {
-  function n(e) {
-    return t ? new L(e, t) : new M(e, 0);
-  }
-  return (
-    (n.alpha = function (t) {
-      return e(+t);
-    }),
-    n
-  );
-})(0.5);
-function R(e) {
-  this._context = e;
-}
-R.prototype = {
-  areaStart: E,
-  areaEnd: E,
-  lineStart: function () {
-    this._point = 0;
-  },
-  lineEnd: function () {
-    this._point && this._context.closePath();
-  },
-  point: function (e, t) {
-    ((e = +e),
-      (t = +t),
-      this._point
-        ? this._context.lineTo(e, t)
-        : ((this._point = 1), this._context.moveTo(e, t)));
-  },
-};
-function Ie(e) {
-  return new R(e);
-}
-function z(e) {
-  this._context = e;
-}
-z.prototype = {
-  areaStart: function () {
-    this._line = 0;
-  },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x = []), (this._y = []));
-  },
-  lineEnd: function () {
-    var e = this._x,
-      t = this._y,
-      n = e.length;
-    if (n)
-      if (
-        (this._line
-          ? this._context.lineTo(e[0], t[0])
-          : this._context.moveTo(e[0], t[0]),
-        n === 2)
-      )
-        this._context.lineTo(e[1], t[1]);
-      else
-        for (var r = B(e), i = B(t), a = 0, o = 1; o < n; ++a, ++o)
-          this._context.bezierCurveTo(
-            r[0][a],
-            i[0][a],
-            r[1][a],
-            i[1][a],
-            e[o],
-            t[o],
-          );
-    ((this._line || (this._line !== 0 && n === 1)) && this._context.closePath(),
-      (this._line = 1 - this._line),
-      (this._x = this._y = null));
-  },
-  point: function (e, t) {
-    (this._x.push(+e), this._y.push(+t));
-  },
-};
-function B(e) {
-  var t,
-    n = e.length - 1,
-    r,
-    i = Array(n),
-    a = Array(n),
-    o = Array(n);
-  for (i[0] = 0, a[0] = 2, o[0] = e[0] + 2 * e[1], t = 1; t < n - 1; ++t)
-    ((i[t] = 1), (a[t] = 4), (o[t] = 4 * e[t] + 2 * e[t + 1]));
-  for (
-    i[n - 1] = 2, a[n - 1] = 7, o[n - 1] = 8 * e[n - 1] + e[n], t = 1;
-    t < n;
-    ++t
-  )
-    ((r = i[t] / a[t - 1]), (a[t] -= r), (o[t] -= r * o[t - 1]));
-  for (i[n - 1] = o[n - 1] / a[n - 1], t = n - 2; t >= 0; --t)
-    i[t] = (o[t] - i[t + 1]) / a[t];
-  for (a[n - 1] = (e[n] + i[n - 1]) / 2, t = 0; t < n - 1; ++t)
-    a[t] = 2 * e[t + 1] - i[t + 1];
-  return [i, a];
-}
-function V(e) {
-  return new z(e);
-}
-function H(e, t) {
-  ((this._context = e), (this._t = t));
-}
-H.prototype = {
-  areaStart: function () {
-    this._line = 0;
-  },
-  areaEnd: function () {
-    this._line = NaN;
-  },
-  lineStart: function () {
-    ((this._x = this._y = NaN), (this._point = 0));
-  },
-  lineEnd: function () {
-    (0 < this._t &&
-      this._t < 1 &&
-      this._point === 2 &&
-      this._context.lineTo(this._x, this._y),
-      (this._line || (this._line !== 0 && this._point === 1)) &&
-        this._context.closePath(),
-      this._line >= 0 &&
-        ((this._t = 1 - this._t), (this._line = 1 - this._line)));
-  },
-  point: function (e, t) {
-    switch (((e = +e), (t = +t), this._point)) {
-      case 0:
-        ((this._point = 1),
-          this._line ? this._context.lineTo(e, t) : this._context.moveTo(e, t));
-        break;
-      case 1:
-        this._point = 2;
-      default:
-        if (this._t <= 0)
-          (this._context.lineTo(this._x, t), this._context.lineTo(e, t));
-        else {
-          var n = this._x * (1 - this._t) + e * this._t;
-          (this._context.lineTo(n, this._y), this._context.lineTo(n, t));
-        }
-        break;
-    }
-    ((this._x = e), (this._y = t));
-  },
-};
-function Le(e) {
-  return new H(e, 0.5);
-}
-function Re(e) {
-  return new H(e, 0);
-}
-function ze(e) {
-  return new H(e, 1);
-}
-var Be = de(),
-  Ve = {
-    curveBasis: we,
-    curveBasisClosed: Ee,
-    curveBasisOpen: Oe,
-    curveBumpX: Se,
-    curveBumpY: Ce,
-    curveBundle: Ae,
-    curveCardinalClosed: Me,
-    curveCardinalOpen: Ne,
-    curveCardinal: je,
-    curveCatmullRomClosed: Pe,
-    curveCatmullRomOpen: Fe,
-    curveCatmullRom: F,
-    curveLinear: oe,
-    curveLinearClosed: Ie,
-    curveMonotoneX: se,
-    curveMonotoneY: y,
-    curveNatural: V,
-    curveStep: Le,
-    curveStepAfter: ze,
-    curveStepBefore: Re,
-  },
-  He =
+  Ie =
     /\s*(?:(\w+)(?=:):|(\w+))\s*(?:(\w+)|((?:(?!}%{2}).|\r?\n)*))?\s*(?:}%{2})?/gi,
-  Ue = _(function (e, t) {
-    let n = We(e, /(?:init\b)|(?:initialize\b)/),
+  Le = b(function (e, t) {
+    let n = A(e, /(?:init\b)|(?:initialize\b)/),
       r = {};
     if (Array.isArray(n)) {
       let e = n.map((e) => e.args);
-      (ce(e), (r = ue(r, [...e])));
+      (Ce(e), (r = C(r, [...e])));
     } else r = n.args;
     if (!r) return;
-    let i = le(e, t),
+    let i = we(e, t),
       a = `config`;
     return (
       r[a] !== void 0 &&
@@ -1019,22 +164,22 @@ var Be = de(),
       r
     );
   }, `detectInit`),
-  We = _(function (e, t = null) {
+  A = b(function (e, t = null) {
     try {
       let n = RegExp(
-        `[%]{2}(?![{]${He.source})(?=[}][%]{2}).*
+        `[%]{2}(?![{]${Ie.source})(?=[}][%]{2}).*
 `,
         `ig`,
       );
       ((e = e.trim().replace(n, ``).replace(/'/gm, `"`)),
-        g.debug(
+        x.debug(
           `Detecting diagram directive${t === null ? `` : ` type:` + t} based on the text:${e}`,
         ));
       let r,
         i = [];
-      for (; (r = b.exec(e)) !== null; )
+      for (; (r = S.exec(e)) !== null; )
         if (
-          (r.index === b.lastIndex && b.lastIndex++,
+          (r.index === S.lastIndex && S.lastIndex++,
           (r && !t) || (t && r[1]?.match(t)) || (t && r[2]?.match(t)))
         ) {
           let e = r[1] ? r[1] : r[2],
@@ -1048,70 +193,70 @@ var Be = de(),
           : i;
     } catch (n) {
       return (
-        g.error(
+        x.error(
           `ERROR: ${n.message} - Unable to parse directive type: '${t}' based on the text: '${e}'`,
         ),
         { type: void 0, args: null }
       );
     }
   }, `detectDirective`),
-  Ge = _(function (e) {
-    return e.replace(b, ``);
+  Re = b(function (e) {
+    return e.replace(S, ``);
   }, `removeDirectives`),
-  Ke = _(function (e, t) {
+  ze = b(function (e, t) {
     for (let [n, r] of t.entries()) if (r.match(e)) return n;
     return -1;
   }, `isSubstringInArray`);
-function U(e, t) {
-  return e ? (Ve[`curve${e.charAt(0).toUpperCase() + e.slice(1)}`] ?? t) : t;
+function j(e, t) {
+  return e ? (Fe[`curve${e.charAt(0).toUpperCase() + e.slice(1)}`] ?? t) : t;
 }
-_(U, `interpolateToCurve`);
-function qe(e, t) {
+b(j, `interpolateToCurve`);
+function M(e, t) {
   let n = e.trim();
-  if (n) return t.securityLevel === `loose` ? n : (0, Be.sanitizeUrl)(n);
+  if (n) return t.securityLevel === `loose` ? n : (0, Pe.sanitizeUrl)(n);
 }
-_(qe, `formatUrl`);
-var Je = _((e, ...t) => {
+b(M, `formatUrl`);
+var Be = b((e, ...t) => {
   let n = e.split(`.`),
     r = n.length - 1,
     i = n[r],
     a = window;
   for (let t = 0; t < r; t++)
     if (((a = a[n[t]]), !a)) {
-      g.error(`Function name: ${e} not found in window`);
+      x.error(`Function name: ${e} not found in window`);
       return;
     }
   a[i](...t);
 }, `runFunc`);
-function W(e, t) {
+function N(e, t) {
   return !e || !t ? 0 : Math.sqrt((t.x - e.x) ** 2 + (t.y - e.y) ** 2);
 }
-_(W, `distance`);
-function Ye(e) {
+b(N, `distance`);
+function P(e) {
   let t,
     n = 0;
   return (
     e.forEach((e) => {
-      ((n += W(e, t)), (t = e));
+      ((n += N(e, t)), (t = e));
     }),
-    G(e, n / 2)
+    L(e, n / 2)
   );
 }
-_(Ye, `traverseEdge`);
-function Xe(e) {
-  return e.length === 1 ? e[0] : Ye(e);
+b(P, `traverseEdge`);
+function F(e) {
+  return e.length === 1 ? e[0] : P(e);
 }
-_(Xe, `calcLabelPosition`);
-var Ze = _((e, t = 2) => {
+b(F, `calcLabelPosition`);
+var I = b((e, t = 2) => {
     let n = 10 ** t;
     return Math.round(e * n) / n;
   }, `roundNumber`),
-  G = _((e, t) => {
+  L = b((e, t) => {
     let n,
       r = t;
     for (let t of e) {
       if (n) {
-        let e = W(t, n);
+        let e = N(t, n);
         if (e === 0) return n;
         if (e < r) r -= e;
         else {
@@ -1120,8 +265,8 @@ var Ze = _((e, t = 2) => {
           if (i >= 1) return { x: t.x, y: t.y };
           if (i > 0 && i < 1)
             return {
-              x: Ze((1 - i) * n.x + i * t.x, 5),
-              y: Ze((1 - i) * n.y + i * t.y, 5),
+              x: I((1 - i) * n.x + i * t.x, 5),
+              y: I((1 - i) * n.y + i * t.y, 5),
             };
         }
       }
@@ -1129,10 +274,10 @@ var Ze = _((e, t = 2) => {
     }
     throw Error(`Could not find a suitable point for the given distance`);
   }, `calculatePoint`),
-  Qe = _((e, t, n) => {
-    (g.info(`our points ${JSON.stringify(t)}`),
+  Ve = b((e, t, n) => {
+    (x.info(`our points ${JSON.stringify(t)}`),
       t[0] !== n && (t = t.reverse()));
-    let r = G(t, 25),
+    let r = L(t, 25),
       i = e ? 10 : 5,
       a = Math.atan2(t[0].y - r.y, t[0].x - r.x),
       o = { x: 0, y: 0 };
@@ -1142,11 +287,11 @@ var Ze = _((e, t = 2) => {
       o
     );
   }, `calcCardinalityPosition`);
-function $e(e, t, n) {
+function R(e, t, n) {
   let r = structuredClone(n);
-  (g.info(`our points`, r),
+  (x.info(`our points`, r),
     t !== `start_left` && t !== `start_right` && r.reverse());
-  let i = G(r, 25 + e),
+  let i = L(r, 25 + e),
     a = 10 + e * 0.5,
     o = Math.atan2(r[0].y - i.y, r[0].x - i.x),
     s = { x: 0, y: 0 };
@@ -1165,8 +310,8 @@ function $e(e, t, n) {
     s
   );
 }
-_($e, `calcTerminalLabelPosition`);
-function K(e) {
+b(R, `calcTerminalLabelPosition`);
+function z(e) {
   let t = ``,
     n = ``;
   for (let r of e)
@@ -1176,21 +321,21 @@ function K(e) {
         : (t = t + r + `;`));
   return { style: t, labelStyle: n };
 }
-_(K, `getStylesFromArray`);
-var et = 0,
-  tt = _(
-    () => (et++, `id-` + Math.random().toString(36).substr(2, 12) + `-` + et),
+b(z, `getStylesFromArray`);
+var B = 0,
+  V = b(
+    () => (B++, `id-` + Math.random().toString(36).substr(2, 12) + `-` + B),
     `generateId`,
   );
-function nt(e) {
+function H(e) {
   let t = ``;
   for (let n = 0; n < e; n++)
     t += `0123456789abcdef`.charAt(Math.floor(Math.random() * 16));
   return t;
 }
-_(nt, `makeRandomHex`);
-var rt = _((e) => nt(e.length), `random`),
-  it = _(function () {
+b(H, `makeRandomHex`);
+var U = b((e) => H(e.length), `random`),
+  He = b(function () {
     return {
       x: 0,
       y: 0,
@@ -1206,9 +351,9 @@ var rt = _((e) => nt(e.length), `random`),
       text: ``,
     };
   }, `getTextObj`),
-  at = _(function (e, t) {
-    let n = t.text.replace(x.lineBreakRegex, ` `),
-      [, r] = Z(t.fontSize),
+  Ue = b(function (e, t) {
+    let n = t.text.replace(w.lineBreakRegex, ` `),
+      [, r] = X(t.fontSize),
       i = e.append(`text`);
     (i.attr(`x`, t.x),
       i.attr(`y`, t.y),
@@ -1226,7 +371,7 @@ var rt = _((e) => nt(e.length), `random`),
       i
     );
   }, `drawSimpleText`),
-  ot = h(
+  W = h(
     (e, t, n) => {
       if (
         !e ||
@@ -1239,7 +384,7 @@ var rt = _((e) => nt(e.length), `random`),
           },
           n,
         )),
-        x.lineBreakRegex.test(e))
+        w.lineBreakRegex.test(e))
       )
         return e;
       let r = e.split(` `).filter(Boolean),
@@ -1247,10 +392,10 @@ var rt = _((e) => nt(e.length), `random`),
         a = ``;
       return (
         r.forEach((e, o) => {
-          let s = J(`${e} `, n),
-            c = J(a, n);
+          let s = K(`${e} `, n),
+            c = K(a, n);
           if (s > t) {
-            let { hyphenatedStrings: r, remainingWord: o } = st(e, t, `-`, n);
+            let { hyphenatedStrings: r, remainingWord: o } = We(e, t, `-`, n);
             (i.push(a, ...r), (a = o));
           } else
             c + s >= t
@@ -1264,7 +409,7 @@ var rt = _((e) => nt(e.length), `random`),
     (e, t, n) =>
       `${e}${t}${n.fontSize}${n.fontWeight}${n.fontFamily}${n.joinWith}`,
   ),
-  st = h(
+  We = h(
     (e, t, n = `-`, r) => {
       r = Object.assign(
         { fontSize: 12, fontWeight: 400, fontFamily: `Arial`, margin: 0 },
@@ -1276,7 +421,7 @@ var rt = _((e) => nt(e.length), `random`),
       return (
         i.forEach((e, s) => {
           let c = `${o}${e}`;
-          if (J(c, r) >= t) {
+          if (K(c, r) >= t) {
             let e = s + 1,
               t = i.length === e,
               r = `${c}${n}`;
@@ -1289,15 +434,15 @@ var rt = _((e) => nt(e.length), `random`),
     (e, t, n = `-`, r) =>
       `${e}${t}${n}${r.fontSize}${r.fontWeight}${r.fontFamily}`,
   );
-function q(e, t) {
-  return Y(e, t).height;
+function G(e, t) {
+  return q(e, t).height;
 }
-_(q, `calculateTextHeight`);
-function J(e, t) {
-  return Y(e, t).width;
+b(G, `calculateTextHeight`);
+function K(e, t) {
+  return q(e, t).width;
 }
-_(J, `calculateTextWidth`);
-var Y = h(
+b(K, `calculateTextWidth`);
+var q = h(
     (e, t) => {
       let {
         fontSize: n = 12,
@@ -1305,20 +450,20 @@ var Y = h(
         fontWeight: i = 400,
       } = t;
       if (!e) return { width: 0, height: 0 };
-      let [, a] = Z(n),
+      let [, a] = X(n),
         o = [`sans-serif`, r],
-        s = e.split(x.lineBreakRegex),
+        s = e.split(w.lineBreakRegex),
         c = [],
-        l = v(`body`);
+        l = g(`body`);
       if (!l.remove) return { width: 0, height: 0, lineHeight: 0 };
       let u = l.append(`svg`);
       for (let e of o) {
         let t = 0,
           n = { width: 0, height: 0, lineHeight: 0 };
         for (let r of s) {
-          let o = it();
+          let o = He();
           o.text = r || `​`;
-          let s = at(u, o)
+          let s = Ue(u, o)
               .style(`font-size`, a)
               .style(`font-weight`, i)
               .style(`font-family`, e),
@@ -1348,33 +493,33 @@ var Y = h(
     },
     (e, t) => `${e}${t.fontSize}${t.fontWeight}${t.fontFamily}`,
   ),
-  ct = class {
+  Ge = class {
     constructor(e = !1, t) {
       ((this.count = 0),
         (this.count = t ? t.length : 0),
         (this.next = e ? () => this.count++ : () => Date.now()));
     }
     static {
-      _(this, `InitIDGenerator`);
+      b(this, `InitIDGenerator`);
     }
   },
-  X,
-  lt = _(function (e) {
+  J,
+  Ke = b(function (e) {
     return (
-      (X ||= document.createElement(`div`)),
+      (J ||= document.createElement(`div`)),
       (e = escape(e)
         .replace(/%26/g, `&`)
         .replace(/%23/g, `#`)
         .replace(/%3B/g, `;`)),
-      (X.innerHTML = e),
-      unescape(X.textContent)
+      (J.innerHTML = e),
+      unescape(J.textContent)
     );
   }, `entityDecode`);
-function ut(e) {
+function Y(e) {
   return `str` in e;
 }
-_(ut, `isDetailedError`);
-var dt = _((e, t, n, r) => {
+b(Y, `isDetailedError`);
+var qe = b((e, t, n, r) => {
     if (!r) return;
     let i = e.node()?.getBBox();
     i &&
@@ -1386,7 +531,7 @@ var dt = _((e, t, n, r) => {
         .attr(`y`, -n)
         .attr(`class`, t);
   }, `insertTitle`),
-  Z = _((e) => {
+  X = b((e) => {
     if (typeof e == `number`) return [e, e + `px`];
     let t = parseInt(e ?? ``, 10);
     return Number.isNaN(t)
@@ -1395,36 +540,36 @@ var dt = _((e, t, n, r) => {
         ? [t, e + `px`]
         : [t, e];
   }, `parseFontSize`);
-function Q(e, t) {
-  return T({}, e, t);
+function Z(e, t) {
+  return k({}, e, t);
 }
-_(Q, `cleanAndMerge`);
-var ft = {
-    assignWithDepth: ue,
-    wrapLabel: ot,
-    calculateTextHeight: q,
-    calculateTextWidth: J,
-    calculateTextDimensions: Y,
-    cleanAndMerge: Q,
-    detectInit: Ue,
-    detectDirective: We,
-    isSubstringInArray: Ke,
-    interpolateToCurve: U,
-    calcLabelPosition: Xe,
-    calcCardinalityPosition: Qe,
-    calcTerminalLabelPosition: $e,
-    formatUrl: qe,
-    getStylesFromArray: K,
-    generateId: tt,
-    random: rt,
-    runFunc: Je,
-    entityDecode: lt,
-    insertTitle: dt,
+b(Z, `cleanAndMerge`);
+var Je = {
+    assignWithDepth: C,
+    wrapLabel: W,
+    calculateTextHeight: G,
+    calculateTextWidth: K,
+    calculateTextDimensions: q,
+    cleanAndMerge: Z,
+    detectInit: Le,
+    detectDirective: A,
+    isSubstringInArray: ze,
+    interpolateToCurve: j,
+    calcLabelPosition: F,
+    calcCardinalityPosition: Ve,
+    calcTerminalLabelPosition: R,
+    formatUrl: M,
+    getStylesFromArray: z,
+    generateId: V,
+    random: U,
+    runFunc: Be,
+    entityDecode: Ke,
+    insertTitle: qe,
     isLabelCoordinateInPath: $,
-    parseFontSize: Z,
-    InitIDGenerator: ct,
+    parseFontSize: X,
+    InitIDGenerator: Ge,
   },
-  pt = _(function (e) {
+  Ye = b(function (e) {
     let t = e;
     return (
       (t = t.replace(/style.*:\S*#.*;/g, function (e) {
@@ -1440,51 +585,42 @@ var ft = {
       t
     );
   }, `encodeEntities`),
-  mt = _(function (e) {
+  Xe = b(function (e) {
     return e.replace(/ﬂ°°/g, `&#`).replace(/ﬂ°/g, `&`).replace(/¶ß/g, `;`);
   }, `decodeEntities`),
-  ht = _(
+  Ze = b(
     (e, t, { counter: n = 0, prefix: r, suffix: i }, a) =>
       a || `${r ? `${r}_` : ``}${e}_${t}_${n}${i ? `_${i}` : ``}`,
     `getEdgeId`,
   );
-function gt(e) {
+function Q(e) {
   return e ?? null;
 }
-_(gt, `handleUndefinedAttr`);
+b(Q, `handleUndefinedAttr`);
 function $(e, t) {
   let n = Math.round(e.x),
     r = Math.round(e.y),
     i = t.replace(/(\d+\.\d+)/g, (e) => Math.round(parseFloat(e)).toString());
   return i.includes(n.toString()) || i.includes(r.toString());
 }
-_($, `isLabelCoordinateInPath`);
+b($, `isLabelCoordinateInPath`);
 export {
-  we as C,
-  T as E,
-  je as S,
-  Ce as T,
-  ze as _,
-  pt as a,
-  V as b,
-  K as c,
-  ut as d,
-  Z as f,
-  ot as g,
-  ft as h,
-  mt as i,
-  gt as l,
-  Ge as m,
-  J as n,
-  tt as o,
-  rt as p,
-  Q as r,
-  ht as s,
-  q as t,
-  U as u,
-  Re as v,
-  Se as w,
-  F as x,
-  Le as y,
+  k as _,
+  Ye as a,
+  z as c,
+  Y as d,
+  X as f,
+  W as g,
+  Je as h,
+  Xe as i,
+  Q as l,
+  Re as m,
+  K as n,
+  V as o,
+  U as p,
+  Z as r,
+  Ze as s,
+  G as t,
+  j as u,
 };
 //# sourceMappingURL=chunk-S3R3BYOJ.js.map

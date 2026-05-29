@@ -1,72 +1,78 @@
-import { s as e } from "./chunk.js";
-import { Cn as t, _ as n } from "./src-BLHmAhbF.js";
-import { is as r, zo as i } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { S as t, zn as n } from "./src-C.js";
+import { $s as r, Ps as i } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as a, t as o } from "./jsx-runtime.js";
-import "./codex-diff-css.js";
-import { t as s } from "./clsx.js";
-import "./react-dom.js";
+import "./shiki-highlight-provider-gate-BIldj-yk.js";
+import { t as s } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
 import "./core.esm.js";
-import "./katex-BzX-JuVf.js";
-import "./marked.esm.js";
-import "./pdf-DbRVTnv1.js";
+import "./katex-C2KDRoso.js";
+import "./marked.esm-BR-H6018.js";
+import "./pdf-DDdRP0ey.js";
 import {
-  B as c,
-  H as l,
-  J as u,
-  L as d,
-  S as f,
-  W as p,
-  X as m,
-  Y as h,
+  G as c,
+  L as l,
+  S as u,
+  U as d,
+  V as f,
+  X as p,
+  Y as m,
+  Z as h,
   _ as g,
   a as _,
   p as v,
   u as y,
-  xt as b,
+  wt as b,
   y as x,
 } from "./setting-storage.js";
-import { f as S, h as C } from "./chunk-LFPYN7LY.js";
+import { _ as S, m as C } from "./chunk-LFPYN7LY.js";
 import "./known-app-icon.js";
 import "./branch.js";
-import { t as w } from "./github-mark.js";
+import { t as w } from "./github-mark-BbpRNXQM.js";
 import "./google-drive.js";
-import "./notion.js";
-import "./product-logger.js";
-import "./statsig.js";
+import "./notion-hFEWPyiF.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import { c as T } from "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import { u as E } from "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import { u as E } from "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./codex-api.js";
-import "./_baseOrderBy.js";
-import "./parse-owner-repo.js";
-import "./use-debounced-value.js";
-import "./use-is-dark.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
+import "./apps-queries-CmwRqoKz.js";
+import "./startCase.js";
+import "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
 import "./connector-logo.js";
 import { r as D } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import "./tooltip.js";
+import "./tooltip-CDzchJxN.js";
 import { t as O } from "./route-scope.js";
-import "./prompt-text.js";
+import "./prompt-text-DuAhtLDu.js";
 import "./mention-item.js";
-import "./use-collaboration-mode.js";
-import "./use-model-settings.js";
+import "./use-collaboration-mode-CQFe-Ilp.js";
+import "./use-model-settings-BGTYyORt.js";
 import { t as k } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import { t as A } from "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
-import "./link-external.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./link-external-BPZREBQk.js";
 import "./open-config-toml-button.js";
-import "./open-workspace-file.js";
+import "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
-import "./model-queries.js";
+import "./model-queries-CVdTsyPv.js";
 import "./use-webview-execution-target.js";
 import "./remote-projects.js";
 import "./collaboration-mode-queries.js";
@@ -74,168 +80,170 @@ import "./thread-detail-level.js";
 import "./permissions-mode-defaults.js";
 import "./use-permissions-mode.js";
 import "./proxy.js";
-import { h as j } from "./app-shell-state.js";
-import "./app-shell-panel-animation.js";
-import { t as M } from "./app-shell.js";
+import { _ as j } from "./app-shell-state.js";
+import { t as M } from "./app-shell-D4HBgUPf.js";
 import "./use-service-tier-settings.js";
-import "./apps.js";
-import "./x.js";
-import "./plugin-install-store.js";
+import "./apps-DwfMzB5Q.js";
+import "./x-C_RDKBp5.js";
+import "./projectless-thread.js";
+import "./plugin-install-store-Daxzgjai.js";
 import "./use-platform.js";
-import "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
-import "./apps-queries.js";
-import "./startCase.js";
-import "./uniq.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
 import "./check-circle-filled.js";
-import "./chrome-theme.js";
-import "./parsePatchFiles.js";
-import "./browser-sidebar-manager.js";
-import "./app-shell-tab-controller.js";
-import "./review-navigation-model.js";
-import "./parse-diff.js";
-import "./file-diff.js";
-import "./sumBy.js";
-import "./thread-context.js";
 import "./diff-view-mode.js";
-import "./git-current-branch-query.js";
+import "./browser-sidebar-manager.js";
+import "./app-shell-tab-controller-BTWycTBb.js";
+import "./review-navigation-model-DMRVNxCn.js";
 import "./focus-composer.js";
+import "./file-diff-DOHfgomY.js";
+import "./sumBy-zUPwGmzt.js";
+import "./thread-context-CaET2O8s.js";
+import "./git-current-branch-query.js";
 import "./terminal.js";
-import "./info.js";
+import "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import "./download.js";
 import { t as N } from "./with-window.js";
 import "./use-resolved-theme-variant.js";
 import "./window-app-action-helpers.js";
-import "./sidebar-thread-keys.js";
 import "./dialog-layout.js";
+import "./build-worktree-label-from-input.js";
+import "./local-projects.js";
+import "./pending-worktree-store-COXB8WW0.js";
 import "./run-command.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
 import "./use-stable-callback.js";
 import "./electron-menu-shortcuts.js";
-import "./use-skills.js";
-import "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
+import "./local-task-row-signals-BzazYVei.js";
+import { u as P } from "./sidebar-project-group-signals-CEQTKcIf.js";
+import { p as F } from "./sidebar-project-groups.js";
+import "./_defineProperty.js";
+import "./use-register-command.js";
 import "./homepage-logo.js";
 import "./loading-page.js";
-import "./sortable.esm.js";
-import "./use-resize-observer.js";
+import "./sortable.esm-BRPfvPzy.js";
+import "./use-resize-observer-DCpyQHos.js";
 import "./check-md.js";
 import "./chevron-right.js";
-import { t as P } from "./context-menu.js";
+import { t as ee } from "./context-menu.js";
+import "./command-keybindings-C3NM9T-L.js";
 import "./expand.js";
-import "./keyboard-modifier-state.js";
-import "./thread-side-panel-browser-tab-state.js";
-import "./command-keybindings.js";
+import "./keyboard-modifier-state-BKqcycjV.js";
 import "./arrow-left.js";
 import "./use-window-controls-safe-area.js";
 import "./app-shell-bottom-panel-scroll-sync.js";
-import "./local-task-row-signals.js";
-import { u as F } from "./sidebar-project-group-signals-.js";
-import { t as I } from "./git-origins-query.js";
-import "./sidebar-project-groups.js";
-import "./_defineProperty.js";
-import "./automation-schedule.js";
+import "./checkbox-DtuSNXXy.js";
+import "./minus.js";
 import "./badge.js";
-import "./bug.js";
+import "./bug-B5-GWt65.js";
 import "./chat.js";
-import "./clock.js";
+import "./clock-BflmlnpZ.js";
 import "./search.js";
-import "./skills.js";
-import { r as L, t as R } from "./dropdown.js";
-import "./globe.js";
+import "./skills-BUMAZe_D.js";
+import "./mcp-capability-signals-DAPblgpG.js";
+import { r as I, t as L } from "./dropdown-DtQxMoJw.js";
+import "./globe-CnvlclXd.js";
 import "./three-dots.js";
-import { t as z } from "./chevron.js";
+import { t as R } from "./chevron-NmAOI_v1.js";
+import "./use-relative-now.js";
 import "./format-relative-date-time.js";
-import "./folder.js";
-import { t as ee } from "./copy-to-clipboard.js";
+import { t as te } from "./copy-to-clipboard-C2Mq2hN-.js";
 import "./warning.js";
-import { h as B, s as V } from "./review-header-toolbar.js";
-import "./markdown-75WV5XlN.js";
-import "./external-markdown-link.js";
+import { r as z } from "./pull-request-status-DcVXKzZN.js";
+import "./markdown-46SswYUq.js";
+import "./external-markdown-link-DVRKkYqo.js";
 import "./use-native-apps.electron.js";
 import "./get-file-icon.js";
-import "./code.js";
-import "./json-DAjHKBV7.js";
-import "./image-square.js";
-import "./notebook.js";
+import "./code-s3Scfd05.js";
+import "./json-CRHyc9De.js";
+import "./image-square-CGEtcnWp.js";
+import "./notebook-MImpo36y.js";
 import "./settings.cog.js";
-import "./mcp.js";
-import "./chrome.js";
-import "./codex.js";
-import "./openai-blossom.js";
+import "./mcp-D_m7bYb5.js";
+import "./chrome-ZI-wJE1V.js";
+import "./codex-BjFeJtxQ.js";
+import "./openai-blossom-CXnPbecc.js";
 import "./pencil.js";
 import "./filesystem-media-src.js";
 import "./inline-mentions.js";
-import "./code-snippet.js";
-import "./tailwind-styled-components.esm.js";
-import "./copy.js";
+import "./workspace-file-context-menu.js";
+import "./use-skills.js";
+import "./code-snippet-hioibDaj.js";
+import "./copy-Cen6nDnP.js";
 import "./copy-button.js";
-import "./minus-D.js";
 import "./plus.js";
 import "./image-preview-dialog.js";
-import "./use-diff-annotations.js";
+import "./pull-request-readonly-comment.js";
 import "./pull-request-open.js";
-import { t as te } from "./use-is-pull-request-merge-helper-enabled.js";
-import "./use-is-background-subagents-enabled.js";
-import "./local-environments.js";
-import "./local-environment-selection.js";
-import "./pending-worktree-store.js";
-import "./arrow-up.js";
-import { t as H } from "./bullet-separator.js";
+import "./automation-queries-DCiNISnO.js";
+import "./get-attached-heartbeat-automation-for-thread.js";
+import "./use-is-background-subagents-enabled-B.js";
+import "./local-environments-DcKJ5oGa.js";
+import "./local-environment-selection-DyGLYKsj.js";
+import "./arrow-up-fq4d26GH.js";
+import { t as B } from "./bullet-separator-DZkwhKzs.js";
+import "./check-lg.js";
 import "./sortBy.js";
-import "./prompt-editor.js";
-/* empty css                    */ import "./check-lg.js";
+import "./prompt-editor-.js";
+/* empty css                    */ import "./composer-top-menu-chrome.js";
 import "./toggle.js";
-import "./file-tree-search-input.js";
-import "./use-at-mention-sections.js";
-import { n as ne } from "./diff-stats-.js";
+import { s as ne } from "./review-header-toolbar.js";
+import "./at-mention-list-C6rdlW9Y.js";
+import { n as V } from "./diff-stats.js";
+import "./connected-apps.js";
 import "./use-composer-controller.js";
 import "./undo.js";
 import "./regenerate.js";
 import "./format-skill-scope.js";
-import "./list-navigation.js";
-import "./build-worktree-label-from-input.js";
+import "./list-navigation-DnxNfoPi.js";
 import "./right-panel-composer-overlay-scroll-reserve.js";
-import "./use-workspace-file-search.js";
-import { t as U } from "./large-empty-state.js";
-import "./pull-request-code-review-comments.js";
+import "./mcp-capability-client.js";
+import "./use-workspace-file-search-KLsQKyAb.js";
+import { t as H } from "./large-empty-state-C2F-IvSK.js";
+import "./pull-request-code-review-comments-qcxIGUtE.js";
+import "./file-tree-search-input.js";
 import "./codex-analytics-attribution.js";
 import "./use-target-apps.js";
-import "./diff-unified.js";
+import "./diff-unified-BETzamPI.js";
+import "./use-diff-annotations.js";
 import "./rich-preview-primitives.js";
-import "./markdown-surface.js";
+import "./markdown-surface-vWOcyIeh.js";
 import "./anchored-autocomplete-overlay.js";
-import "./use-autocomplete-overlay-placement.js";
-import "./folders.js";
+import "./use-autocomplete-overlay-placement-uVAiOuYR.js";
+import "./folders-DmG-RYpY.js";
 import "./summary-panel-row.js";
 import "./middle-truncated-text.js";
 import "./use-measured-text-collapse.js";
-import "./document-search.js";
-import "./checkbox.js";
-import { t as re } from "./selectable-list-row.js";
-import { n as W, t as ie } from "./sectioned-page.js";
-import { t as G } from "./segmented-toggle.js";
+import "./document-search-bccqfQcB.js";
+import "./automation-schedule-CNorTxWd.js";
+import { t as re } from "./use-is-pull-request-merge-helper-enabled-BEgcRHJE.js";
+import { t as ie } from "./selectable-list-row.js";
+import { n as U, t as ae } from "./sectioned-page-CVpAhlwS.js";
+import { t as W } from "./segmented-toggle.js";
 import {
-  a as ae,
-  c as oe,
-  d as K,
-  f as q,
-  i as se,
-  l as ce,
-  m as J,
-  n as le,
-  o as Y,
-  p as X,
-  r as Z,
-  s as ue,
-  t as de,
-  u as fe,
+  a as oe,
+  c as se,
+  d as G,
+  f as K,
+  i as ce,
+  l as le,
+  m as q,
+  n as ue,
+  o as J,
+  p as Y,
+  r as X,
+  s as de,
+  t as fe,
+  u as pe,
 } from "./pull-request-board-model.js";
-var Q = b(),
-  pe = e(a(), 1),
+var Z = b(),
+  Q = e(a(), 1),
   $ = o(),
-  me = c({
+  me = f({
     draft: {
       id: `pullRequestsPage.column.draft`,
       defaultMessage: `Draft`,
@@ -257,14 +265,14 @@ var Q = b(),
       description: `Board section label for pull requests with unmet checks`,
     },
   }),
-  he = c({
+  he = f({
     allRepos: {
       id: `pullRequestsPage.repo.allRepos`,
       defaultMessage: `All repos`,
       description: `Dropdown option label that shows pull requests from all available repositories`,
     },
   }),
-  ge = c({
+  ge = f({
     copyUrl: {
       id: `pullRequestsPage.card.contextMenu.copyUrl`,
       defaultMessage: `Copy URL`,
@@ -288,30 +296,30 @@ var Q = b(),
   }),
   _e = [];
 function ve(e) {
-  let r = (0, Q.c)(38),
+  let r = (0, Z.c)(38),
     {
       selectedFilterView: i,
       repoOption: a,
       repoOptions: o,
       selectedPullRequestNumber: s,
-      selectedPullRequestUrl: c,
+      selectedPullRequestUrl: l,
       selectedRepoKey: u,
-      onSelectPullRequest: d,
-      onSelectFilterView: f,
+      onSelectPullRequest: f,
+      onSelectFilterView: p,
       onSelectRepo: m,
     } = e,
-    h = p(),
+    h = c(),
     { data: y } = T(),
     b;
   r[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((b = { merged: !0 }), (r[0] = b))
     : (b = r[0]);
-  let [x, S] = (0, pe.useState)(b),
-    [C, w] = (0, pe.useState)(null),
+  let [x, S] = (0, Q.useState)(b),
+    [C, w] = (0, Q.useState)(null),
     E;
   r[1] === i
     ? (E = r[2])
-    : ((E = ae({ searchQuery: se(i), selectedFilterView: i })),
+    : ((E = oe({ searchQuery: ce(i), selectedFilterView: i })),
       (r[1] = i),
       (r[2] = E));
   let D = E,
@@ -326,7 +334,7 @@ function ve(e) {
     ? ((k = O
         ? { repos: o.map(be), searchQuery: D }
         : {
-            cwd: t(a?.cwd ?? `/`),
+            cwd: n(a?.cwd ?? `/`),
             hostId: a?.hostId,
             repo: a?.repo ?? null,
             searchQuery: D,
@@ -357,48 +365,48 @@ function ve(e) {
       (r[13] = N),
       (r[14] = P))
     : (P = r[14]);
-  let { data: F, isLoading: I } = v(`gh-pr-board`, P),
-    L = _(n.pullRequestMergeMethod),
-    R = F?.status === `success` ? F.items : [],
-    z = de(R),
-    ee = z.find(ye)?.items[0] ?? null,
-    B = ue({
-      items: R,
+  let { data: F, isLoading: ee } = v(`gh-pr-board`, P),
+    I = _(t.pullRequestMergeMethod),
+    L = F?.status === `success` ? F.items : [],
+    R = fe(L),
+    te = R.find(ye)?.items[0] ?? null,
+    z = de({
+      items: L,
       selectedPullRequestNumber: s,
-      selectedPullRequestUrl: c,
+      selectedPullRequestUrl: l,
     }),
-    V = `${u ?? ``}:${i}:${D ?? ``}`,
-    te = s != null || c != null;
-  (0, pe.useEffect)(() => {
-    ee == null || te || C === V || (w(V), d(ee, { replace: !0 }));
-  }, [V, C, ee, te, d]);
-  let H;
+    B = `${u ?? ``}:${i}:${D ?? ``}`,
+    ne = s != null || l != null;
+  (0, Q.useEffect)(() => {
+    te == null || ne || C === B || (w(B), f(te, { replace: !0 }));
+  }, [B, C, te, ne, f]);
+  let V;
   r[15] === h
-    ? (H = r[16])
-    : ((H = (e) => ({ id: je(e.key), title: h.formatMessage(Me(e.key)) })),
+    ? (V = r[16])
+    : ((V = (e) => ({ id: je(e.key), title: h.formatMessage(Me(e.key)) })),
       (r[15] = h),
-      (r[16] = H));
-  let ne = z.map(H),
-    U = le(y ?? []),
-    re = B == null ? _e : (U.get(B.headBranch.trim()) ?? _e),
-    W;
+      (r[16] = V));
+  let H = R.map(V),
+    re = ue(y ?? []),
+    ie = z == null ? _e : (re.get(z.headBranch.trim()) ?? _e),
+    U;
   r[17] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((W = (0, $.jsx)(`div`, {
+    ? ((U = (0, $.jsx)(`div`, {
         className: `min-w-0 text-base font-medium text-token-foreground`,
-        children: (0, $.jsx)(l, {
+        children: (0, $.jsx)(d, {
           id: `pullRequestsPage.title`,
           defaultMessage: `Pull requests`,
           description: `Header title for the pull requests page`,
         }),
       })),
-      (r[17] = W))
-    : (W = r[17]);
-  let G;
+      (r[17] = U))
+    : (U = r[17]);
+  let W;
   r[18] !== m || r[19] !== o || r[20] !== u
-    ? ((G = (0, $.jsxs)(`div`, {
+    ? ((W = (0, $.jsxs)(`div`, {
         className: `draggable flex w-full min-w-0 items-center justify-between gap-3 electron:h-toolbar extension:py-row-y`,
         children: [
-          W,
+          U,
           (0, $.jsx)(`div`, {
             className: `flex items-center gap-2`,
             children: (0, $.jsx)(De, {
@@ -412,62 +420,62 @@ function ve(e) {
       (r[18] = m),
       (r[19] = o),
       (r[20] = u),
-      (r[21] = G))
-    : (G = r[21]);
-  let oe = G,
-    K;
-  r[22] !== V || r[23] !== d
-    ? ((K = () => {
-        (w(V), d(null));
+      (r[21] = W))
+    : (W = r[21]);
+  let se = W,
+    G;
+  r[22] !== B || r[23] !== f
+    ? ((G = () => {
+        (w(B), f(null));
       }),
-      (r[22] = V),
-      (r[23] = d),
-      (r[24] = K))
-    : (K = r[24]);
-  let q;
-  r[25] === oe
-    ? (q = r[26])
-    : ((q = (0, $.jsx)(M.Header, { children: oe })), (r[25] = oe), (r[26] = q));
-  let ce = ie,
-    J;
+      (r[22] = B),
+      (r[23] = f),
+      (r[24] = G))
+    : (G = r[24]);
+  let K;
+  r[25] === se
+    ? (K = r[26])
+    : ((K = (0, $.jsx)(M.Header, { children: se })), (r[25] = se), (r[26] = K));
+  let le = ae,
+    q;
   r[27] === h
-    ? (J = r[28])
-    : ((J = h.formatMessage({
+    ? (q = r[28])
+    : ((q = h.formatMessage({
         id: `pullRequestsPage.sectionsNav`,
         defaultMessage: `Pull request sections`,
         description: `Accessible label for the pull request sections on the pull requests page`,
       })),
       (r[27] = h),
-      (r[28] = J));
-  let Y;
-  r[29] !== f || r[30] !== i
-    ? ((Y = (0, $.jsx)(Te, { selectedFilterView: i, onSelectFilterView: f })),
-      (r[29] = f),
+      (r[28] = q));
+  let J;
+  r[29] !== p || r[30] !== i
+    ? ((J = (0, $.jsx)(Te, { selectedFilterView: i, onSelectFilterView: p })),
+      (r[29] = p),
       (r[30] = i),
-      (r[31] = Y))
-    : (Y = r[31]);
-  let X =
+      (r[31] = J))
+    : (J = r[31]);
+  let Y =
       F?.status === `error`
         ? (0, $.jsx)(Se, {})
-        : I
+        : ee
           ? (0, $.jsx)(`div`, {
               className: `flex min-h-[240px] items-center justify-center`,
               children: (0, $.jsx)(A, {}),
             })
-          : R.length === 0
+          : L.length === 0
             ? (0, $.jsx)(Ce, { isAllReposSelected: O, selectedFilterView: i })
-            : z.map((e) =>
+            : R.map((e) =>
                 (0, $.jsx)(
                   Ee,
                   {
                     collapsed: x[e.key] === !0,
                     column: e,
-                    mergeMethod: L ?? `merge`,
-                    selectedPullRequestNumber: B?.number ?? s,
-                    selectedPullRequestUrl: B?.url ?? c,
+                    mergeMethod: I ?? `merge`,
+                    selectedPullRequestNumber: z?.number ?? s,
+                    selectedPullRequestUrl: z?.url ?? l,
                     repo: a?.repo ?? null,
                     showRepo: O,
-                    onSelectPullRequest: d,
+                    onSelectPullRequest: f,
                     onToggleSection: () => {
                       S((t) => ({ ...t, [e.key]: t[e.key] !== !0 }));
                     },
@@ -475,37 +483,37 @@ function ve(e) {
                   e.key,
                 ),
               ),
-    Z;
+    X;
   return (
-    r[32] !== ce || r[33] !== ne || r[34] !== J || r[35] !== Y || r[36] !== X
-      ? ((Z = (0, $.jsx)(ce, {
-          ariaLabel: J,
+    r[32] !== le || r[33] !== H || r[34] !== q || r[35] !== J || r[36] !== Y
+      ? ((X = (0, $.jsx)(le, {
+          ariaLabel: q,
           className: `[--sectioned-page-leading-inset:0.75rem]`,
           contentInnerClassName: `flex flex-col gap-8 px-panel pb-panel`,
-          header: Y,
-          sections: ne,
+          header: J,
+          sections: H,
           showNav: !1,
-          children: X,
+          children: Y,
         })),
-        (r[32] = ce),
-        (r[33] = ne),
-        (r[34] = J),
-        (r[35] = Y),
-        (r[36] = X),
-        (r[37] = Z))
-      : (Z = r[37]),
+        (r[32] = le),
+        (r[33] = H),
+        (r[34] = q),
+        (r[35] = J),
+        (r[36] = Y),
+        (r[37] = X))
+      : (X = r[37]),
     (0, $.jsxs)(`div`, {
       className: `flex h-full min-h-0 flex-col`,
       children: [
         (0, $.jsx)(xe, {
-          hostId: B?.hostId ?? a?.hostId,
-          item: B,
-          relatedThreads: re,
-          repo: B?.repo ?? a?.repo ?? null,
-          onClose: K,
+          hostId: z?.hostId ?? a?.hostId,
+          item: z,
+          relatedThreads: ie,
+          repo: z?.repo ?? a?.repo ?? null,
+          onClose: G,
         }),
-        q,
-        Z,
+        K,
+        X,
       ],
     })
   );
@@ -514,12 +522,12 @@ function ye(e) {
   return e.items.length > 0;
 }
 function be(e) {
-  return { cwd: t(e.cwd), hostId: e.hostId, repo: e.repo };
+  return { cwd: n(e.cwd), hostId: e.hostId, repo: e.repo };
 }
 function xe(e) {
-  let t = (0, Q.c)(10),
+  let t = (0, Z.c)(10),
     { hostId: n, item: r, relatedThreads: i, repo: a, onClose: o } = e,
-    s = h(O),
+    s = p(O),
     c = r != null,
     l,
     u;
@@ -537,7 +545,7 @@ function xe(e) {
         (t[2] = l),
         (t[3] = u))
       : ((l = t[2]), (u = t[3])),
-    (0, pe.useLayoutEffect)(l, u),
+    (0, Q.useLayoutEffect)(l, u),
     r == null)
   )
     return null;
@@ -545,7 +553,7 @@ function xe(e) {
   return (
     t[4] !== n || t[5] !== r || t[6] !== o || t[7] !== i || t[8] !== a
       ? ((d = (0, $.jsx)(M.RightPanelOutlet, {
-          children: (0, $.jsx)(fe, {
+          children: (0, $.jsx)(pe, {
             hostId: n,
             item: r,
             relatedThreads: i,
@@ -564,8 +572,8 @@ function xe(e) {
   );
 }
 function Se() {
-  let e = (0, Q.c)(7),
-    t = p(),
+  let e = (0, Z.c)(7),
+    t = c(),
     n;
   e[0] === t
     ? (n = e[1])
@@ -591,7 +599,7 @@ function Se() {
     e[4] !== n || e[5] !== r
       ? ((i = (0, $.jsx)(`div`, {
           className: `flex h-full min-h-full items-center justify-center`,
-          children: (0, $.jsx)(U, { description: n, title: r }),
+          children: (0, $.jsx)(H, { description: n, title: r }),
         })),
         (e[4] = n),
         (e[5] = r),
@@ -601,9 +609,9 @@ function Se() {
   );
 }
 function Ce(e) {
-  let t = (0, Q.c)(9),
+  let t = (0, Z.c)(9),
     { isAllReposSelected: n, selectedFilterView: r } = e,
-    i = p(),
+    i = c(),
     a;
   t[0] !== i || t[1] !== n || t[2] !== r
     ? ((a = we({ intl: i, isAllReposSelected: n, selectedFilterView: r })),
@@ -627,7 +635,7 @@ function Ce(e) {
     t[6] !== a || t[7] !== o
       ? ((s = (0, $.jsx)(`div`, {
           className: `flex h-full min-h-full items-center justify-center`,
-          children: (0, $.jsx)(U, { description: a, title: o }),
+          children: (0, $.jsx)(H, { description: a, title: o }),
         })),
         (t[6] = a),
         (t[7] = o),
@@ -659,9 +667,9 @@ function we({ intl: e, isAllReposSelected: t, selectedFilterView: n }) {
   }
 }
 function Te(e) {
-  let t = (0, Q.c)(8),
+  let t = (0, Z.c)(8),
     { selectedFilterView: n, onSelectFilterView: r } = e,
-    i = p(),
+    i = c(),
     a;
   t[0] === i
     ? (a = t[1])
@@ -676,7 +684,7 @@ function Te(e) {
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((o = {
         id: `authored`,
-        label: (0, $.jsx)(l, {
+        label: (0, $.jsx)(d, {
           id: `pullRequestsPage.filter.authored`,
           defaultMessage: `Authored`,
           description: `Preset filter for pull requests authored by the user`,
@@ -690,7 +698,7 @@ function Te(e) {
         o,
         {
           id: `review`,
-          label: (0, $.jsx)(l, {
+          label: (0, $.jsx)(d, {
             id: `pullRequestsPage.filter.review`,
             defaultMessage: `Review`,
             description: `Preset filter for pull requests requesting a review from the user`,
@@ -699,12 +707,12 @@ function Te(e) {
       ]),
       (t[3] = s))
     : (s = t[3]);
-  let c;
+  let l;
   return (
     t[4] !== r || t[5] !== n || t[6] !== a
-      ? ((c = (0, $.jsx)(`div`, {
+      ? ((l = (0, $.jsx)(`div`, {
           className: `flex items-center`,
-          children: (0, $.jsx)(G, {
+          children: (0, $.jsx)(W, {
             ariaLabel: a,
             selectedId: n,
             size: `toolbar`,
@@ -715,13 +723,13 @@ function Te(e) {
         (t[4] = r),
         (t[5] = n),
         (t[6] = a),
-        (t[7] = c))
-      : (c = t[7]),
-    c
+        (t[7] = l))
+      : (l = t[7]),
+    l
   );
 }
 function Ee(e) {
-  let t = (0, Q.c)(31),
+  let t = (0, Z.c)(31),
     {
       collapsed: n,
       column: r,
@@ -748,7 +756,7 @@ function Ee(e) {
   let v;
   t[4] === _
     ? (v = t[5])
-    : ((v = (0, $.jsx)(z, { className: _ })), (t[4] = _), (t[5] = v));
+    : ((v = (0, $.jsx)(R, { className: _ })), (t[4] = _), (t[5] = v));
   let y;
   t[6] === r.key ? (y = t[7]) : ((y = Ae(r.key)), (t[6] = r.key), (t[7] = y));
   let b;
@@ -822,7 +830,7 @@ function Ee(e) {
   let C;
   return (
     t[27] !== p || t[28] !== S || t[29] !== x
-      ? ((C = (0, $.jsx)(W, { id: p, title: x, children: S })),
+      ? ((C = (0, $.jsx)(U, { id: p, title: x, children: S })),
         (t[27] = p),
         (t[28] = S),
         (t[29] = x),
@@ -832,40 +840,40 @@ function Ee(e) {
   );
 }
 function De(e) {
-  let t = (0, Q.c)(37),
+  let t = (0, Z.c)(37),
     { repoOptions: n, selectedRepoKey: r, onSelect: i } = e,
-    a = p(),
+    a = c(),
     o = r === `all`,
-    c;
+    l;
   t[0] !== n || t[1] !== r
-    ? ((c = n.find((e) => e.key === r) ?? n[0] ?? null),
+    ? ((l = n.find((e) => e.key === r) ?? n[0] ?? null),
       (t[0] = n),
       (t[1] = r),
-      (t[2] = c))
-    : (c = t[2]);
-  let u = c,
-    d;
+      (t[2] = l))
+    : (l = t[2]);
+  let u = l,
+    f;
   t[3] !== a || t[4] !== o || t[5] !== u?.label
-    ? ((d = o ? a.formatMessage(he.allRepos) : u?.label),
+    ? ((f = o ? a.formatMessage(he.allRepos) : u?.label),
       (t[3] = a),
       (t[4] = o),
       (t[5] = u?.label),
-      (t[6] = d))
-    : (d = t[6]);
-  let f = d,
-    [m, h] = (0, pe.useState)(!1),
+      (t[6] = f))
+    : (f = t[6]);
+  let p = f,
+    [m, h] = (0, Q.useState)(!1),
     g;
   t[7] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((g = (0, $.jsx)(w, { className: `icon-sm shrink-0` })), (t[7] = g))
     : (g = t[7]);
   let _;
-  t[8] === f
+  t[8] === p
     ? (_ = t[9])
     : ((_ = (0, $.jsx)(`span`, {
         className: `max-w-[220px] truncate`,
-        children: f,
+        children: p,
       })),
-      (t[8] = f),
+      (t[8] = p),
       (t[9] = _));
   let v = m && `rotate-180`,
     y;
@@ -880,7 +888,7 @@ function De(e) {
   let b;
   t[12] === y
     ? (b = t[13])
-    : ((b = (0, $.jsx)(z, { className: y })), (t[12] = y), (t[13] = b));
+    : ((b = (0, $.jsx)(R, { className: y })), (t[12] = y), (t[13] = b));
   let x;
   t[14] !== m || t[15] !== _ || t[16] !== b
     ? ((x = (0, $.jsxs)(k, {
@@ -906,18 +914,18 @@ function De(e) {
       (t[19] = C));
   let T;
   t[20] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = (0, $.jsx)(l, { ...he.allRepos })), (t[20] = T))
+    ? ((T = (0, $.jsx)(d, { ...he.allRepos })), (t[20] = T))
     : (T = t[20]);
   let E;
   t[21] !== C || t[22] !== S
-    ? ((E = (0, $.jsx)(L.Item, { className: S, onClick: C, children: T })),
+    ? ((E = (0, $.jsx)(I.Item, { className: S, onClick: C, children: T })),
       (t[21] = C),
       (t[22] = S),
       (t[23] = E))
     : (E = t[23]);
   let D;
   t[24] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((D = (0, $.jsx)(L.Separator, {})), (t[24] = D))
+    ? ((D = (0, $.jsx)(I.Separator, {})), (t[24] = D))
     : (D = t[24]);
   let O;
   if (t[25] !== i || t[26] !== n || t[27] !== r) {
@@ -925,7 +933,7 @@ function De(e) {
     (t[29] !== i || t[30] !== r
       ? ((e = (e) =>
           (0, $.jsx)(
-            L.Item,
+            I.Item,
             {
               className: e.key === r ? `font-medium` : void 0,
               onClick: () => {
@@ -948,7 +956,7 @@ function De(e) {
   let A;
   return (
     t[32] !== m || t[33] !== E || t[34] !== O || t[35] !== x
-      ? ((A = (0, $.jsxs)(R, {
+      ? ((A = (0, $.jsxs)(L, {
           onOpenChange: h,
           open: m,
           triggerButton: x,
@@ -964,7 +972,7 @@ function De(e) {
   );
 }
 function Oe(e) {
-  let t = (0, Q.c)(63),
+  let t = (0, Z.c)(63),
     {
       item: n,
       mergeMethod: r,
@@ -973,26 +981,26 @@ function Oe(e) {
       selected: o,
       showRepo: s,
     } = e,
-    c = h(f),
-    u = p(),
-    m = d(),
-    g = te(),
+    f = p(u),
+    m = c(),
+    h = l(),
+    g = re(),
     _;
-  t[0] !== u || t[1] !== m || t[2] !== c
+  t[0] !== m || t[1] !== h || t[2] !== f
     ? ((_ = (e) => {
         e.status === `success` &&
-          (m.invalidateQueries({ queryKey: y(`gh-pr-board`) }),
-          c.get(D).success(
-            u.formatMessage({
+          (h.invalidateQueries({ queryKey: y(`gh-pr-board`) }),
+          f.get(D).success(
+            m.formatMessage({
               id: `pullRequestsPage.card.merge.success`,
               defaultMessage: `Merged pull request`,
               description: `Toast shown when a board merge succeeds`,
             }),
           ));
       }),
-      (t[0] = u),
-      (t[1] = m),
-      (t[2] = c),
+      (t[0] = m),
+      (t[1] = h),
+      (t[2] = f),
       (t[3] = _))
     : (_ = t[3]);
   let v;
@@ -1010,25 +1018,25 @@ function Oe(e) {
       (t[7] = _),
       (t[8] = v))
     : (v = t[8]);
-  let b = V(v),
+  let b = ne(v),
     S;
-  t[9] !== n || t[10] !== r || t[11] !== b || t[12] !== a || t[13] !== c
+  t[9] !== n || t[10] !== r || t[11] !== b || t[12] !== a || t[13] !== f
     ? ((S = async (e) => {
         (e.stopPropagation(),
-          X(c, { action: `merge`, item: n, surface: `pull_request_page` }));
+          Y(f, { action: `merge`, item: n, surface: `pull_request_page` }));
         let t = await b.mutateAsync({
           cwd: n.cwd,
           mergeMethod: r,
           number: n.number,
           repo: a,
         });
-        t.status !== `success` && c.get(D).danger(t.error);
+        t.status !== `success` && f.get(D).danger(t.error);
       }),
       (t[9] = n),
       (t[10] = r),
       (t[11] = b),
       (t[12] = a),
-      (t[13] = c),
+      (t[13] = f),
       (t[14] = S))
     : (S = t[14]);
   let C = S,
@@ -1054,34 +1062,34 @@ function Oe(e) {
     : (w = t[20]);
   let T = w,
     E;
-  t[21] !== u || t[22] !== n || t[23] !== c
+  t[21] !== m || t[22] !== n || t[23] !== f
     ? ((E = {
         id: `copy-pull-request-url`,
         message: ge.copyUrl,
         onSelect: () => {
-          (X(c, { action: `copy_url`, item: n, surface: `pull_request_page` }),
-            ee(n.url).then(
+          (Y(f, { action: `copy_url`, item: n, surface: `pull_request_page` }),
+            te(n.url).then(
               () => {
-                c.get(D).success(u.formatMessage(ge.copyUrlSuccess));
+                f.get(D).success(m.formatMessage(ge.copyUrlSuccess));
               },
               () => {
-                c.get(D).danger(u.formatMessage(ge.copyUrlError));
+                f.get(D).danger(m.formatMessage(ge.copyUrlError));
               },
             ));
         },
       }),
-      (t[21] = u),
+      (t[21] = m),
       (t[22] = n),
-      (t[23] = c),
+      (t[23] = f),
       (t[24] = E))
     : (E = t[24]);
   let O;
-  t[25] !== n || t[26] !== c
+  t[25] !== n || t[26] !== f
     ? ((O = {
         id: `open-pull-request-in-browser`,
         message: ge.openInBrowser,
         onSelect: () => {
-          (X(c, {
+          (Y(f, {
             action: `open_in_browser`,
             item: n,
             surface: `pull_request_page`,
@@ -1090,7 +1098,7 @@ function Oe(e) {
         },
       }),
       (t[25] = n),
-      (t[26] = c),
+      (t[26] = f),
       (t[27] = O))
     : (O = t[27]);
   let k;
@@ -1101,25 +1109,25 @@ function Oe(e) {
     j;
   t[31] === n.state
     ? (j = t[32])
-    : ((j = (0, $.jsx)(B, {
+    : ((j = (0, $.jsx)(z, {
         className: `icon-sm shrink-0 translate-y-[2px]`,
         state: n.state,
       })),
       (t[31] = n.state),
       (t[32] = j));
   let M;
-  t[33] !== n || t[34] !== i || t[35] !== c
+  t[33] !== n || t[34] !== i || t[35] !== f
     ? ((M = () => {
-        (J(c, { item: n, surface: `pull_request_page` }), i(n));
+        (q(f, { item: n, surface: `pull_request_page` }), i(n));
       }),
       (t[33] = n),
       (t[34] = i),
-      (t[35] = c),
+      (t[35] = f),
       (t[36] = M))
     : (M = t[36]);
   let N;
   t[37] !== n.additions || t[38] !== n.deletions
-    ? ((N = (0, $.jsx)(ne, {
+    ? ((N = (0, $.jsx)(V, {
         linesAdded: n.additions,
         linesRemoved: n.deletions,
       })),
@@ -1127,37 +1135,37 @@ function Oe(e) {
       (t[38] = n.deletions),
       (t[39] = N))
     : (N = t[39]);
-  let F;
+  let P;
   t[40] === n.number
-    ? (F = t[41])
-    : ((F = (0, $.jsx)(l, {
+    ? (P = t[41])
+    : ((P = (0, $.jsx)(d, {
         id: `pullRequestsPage.card.pullRequestNumber`,
         defaultMessage: `#{number}`,
         description: `Pull request number shown on a pull request board card`,
         values: { number: n.number },
       })),
       (t[40] = n.number),
-      (t[41] = F));
-  let I;
+      (t[41] = P));
+  let F;
   t[42] !== n.repo || t[43] !== s
-    ? ((I =
+    ? ((F =
         s && n.repo != null
           ? (0, $.jsxs)($.Fragment, {
               children: [
                 (0, $.jsx)(`span`, { className: `truncate`, children: n.repo }),
-                (0, $.jsx)(H, { className: `shrink-0` }),
+                (0, $.jsx)(B, { className: `shrink-0` }),
               ],
             })
           : null),
       (t[42] = n.repo),
       (t[43] = s),
-      (t[44] = I))
-    : (I = t[44]);
-  let L;
+      (t[44] = F))
+    : (F = t[44]);
+  let I;
   t[45] !== n.baseBranch || t[46] !== n.headBranch
-    ? ((L = (0, $.jsx)(`span`, {
+    ? ((I = (0, $.jsx)(`span`, {
         className: `truncate`,
-        children: (0, $.jsx)(l, {
+        children: (0, $.jsx)(d, {
           id: `pullRequestsPage.card.branchPair`,
           defaultMessage: `{headBranch} to {baseBranch}`,
           description: `Branch pair shown on a pull request board card`,
@@ -1166,35 +1174,35 @@ function Oe(e) {
       })),
       (t[45] = n.baseBranch),
       (t[46] = n.headBranch),
-      (t[47] = L))
-    : (L = t[47]);
-  let R;
-  t[48] !== I || t[49] !== L
-    ? ((R = (0, $.jsxs)(`span`, {
+      (t[47] = I))
+    : (I = t[47]);
+  let L;
+  t[48] !== F || t[49] !== I
+    ? ((L = (0, $.jsxs)(`span`, {
         className: `flex min-w-0 items-center gap-1 truncate`,
-        children: [I, L],
+        children: [F, I],
       })),
-      (t[48] = I),
-      (t[49] = L),
-      (t[50] = R))
-    : (R = t[50]);
-  let z;
+      (t[48] = F),
+      (t[49] = I),
+      (t[50] = L))
+    : (L = t[50]);
+  let R;
   t[51] !== n.title ||
   t[52] !== T ||
   t[53] !== o ||
   t[54] !== N ||
-  t[55] !== F ||
-  t[56] !== R ||
+  t[55] !== P ||
+  t[56] !== L ||
   t[57] !== j ||
   t[58] !== M
-    ? ((z = (0, $.jsx)(re, {
+    ? ((R = (0, $.jsx)(ie, {
         ariaLabel: n.title,
         icon: j,
         isSelected: o,
         onSelect: M,
         rightText: N,
-        secondaryTitle: F,
-        secondLine: R,
+        secondaryTitle: P,
+        secondLine: L,
         secondLineRightText: T,
         title: n.title,
       })),
@@ -1202,21 +1210,21 @@ function Oe(e) {
       (t[52] = T),
       (t[53] = o),
       (t[54] = N),
-      (t[55] = F),
-      (t[56] = R),
+      (t[55] = P),
+      (t[56] = L),
       (t[57] = j),
       (t[58] = M),
-      (t[59] = z))
-    : (z = t[59]);
-  let U;
+      (t[59] = R))
+    : (R = t[59]);
+  let H;
   return (
-    t[60] !== A || t[61] !== z
-      ? ((U = (0, $.jsx)(P, { items: A, children: z })),
+    t[60] !== A || t[61] !== R
+      ? ((H = (0, $.jsx)(ee, { items: A, children: R })),
         (t[60] = A),
-        (t[61] = z),
-        (t[62] = U))
-      : (U = t[62]),
-    U
+        (t[61] = R),
+        (t[62] = H))
+      : (H = t[62]),
+    H
   );
 }
 function ke({
@@ -1233,16 +1241,16 @@ function ke({
         loading: e,
         size: `default`,
         onClick: i,
-        children: (0, $.jsx)(l, {
+        children: (0, $.jsx)(d, {
           id: `pullRequestsPage.card.merge`,
           defaultMessage: `Merge`,
           description: `Button label for a ready pull request card`,
         }),
       })
-    : t && q(n)
+    : t && K(n)
       ? (0, $.jsx)(N, {
           electron: !0,
-          children: (0, $.jsx)(K, {
+          children: (0, $.jsx)(G, {
             className: `px-3 text-sm leading-[22px]`,
             item: n,
             repo: r,
@@ -1252,7 +1260,7 @@ function ke({
       : null;
 }
 function Ae(e) {
-  return (0, $.jsx)(l, { ...Me(e) });
+  return (0, $.jsx)(d, { ...Me(e) });
 }
 function je(e) {
   return `pull-request-board-section-${e}`;
@@ -1271,35 +1279,35 @@ function Me(e) {
 }
 var Ne = i(`pull-request-board:last-selected-repo-key`, null);
 function Pe() {
-  let e = (0, Q.c)(39),
-    t = p(),
-    n = S(),
-    [i] = C(),
+  let e = (0, Z.c)(39),
+    t = c(),
+    n = C(),
+    [i] = S(),
     [a, o] = r(Ne),
     s = i.get(`repoKey`),
-    c;
-  e[0] === i ? (c = e[1]) : ((c = Y(i.get(`view`))), (e[0] = i), (e[1] = c));
-  let l = c,
+    l;
+  e[0] === i ? (l = e[1]) : ((l = J(i.get(`view`))), (e[0] = i), (e[1] = l));
+  let u = l,
     d;
   e[2] === i
     ? (d = e[3])
     : ((d = i.get(`pullRequestUrl`)), (e[2] = i), (e[3] = d));
   let f = d,
-    h;
+    p;
   e[4] === i
-    ? (h = e[5])
-    : ((h = oe(i.get(`pullRequestNumber`))), (e[4] = i), (e[5] = h));
-  let g = h,
-    _ = m(F),
-    { isLoading: v } = m(E),
+    ? (p = e[5])
+    : ((p = se(i.get(`pullRequestNumber`))), (e[4] = i), (e[5] = p));
+  let g = p,
+    _ = h(P),
+    { isLoading: v } = h(E),
     y;
   e[6] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((y = { params: void 0, source: `pull_requests_page` }), (e[6] = y))
     : (y = e[6]);
-  let { data: b, isLoading: x } = u(I, y),
-    w = Z({ gitOrigins: b?.origins ?? [], workspaceGroups: _ }),
+  let { data: b, isLoading: x } = m(F, y),
+    w = X({ gitOrigins: b?.origins ?? [], workspaceGroups: _ }),
     T = s ?? a,
-    D = ce({ repoOptions: w, requestedRepoKey: T }),
+    D = le({ repoOptions: w, requestedRepoKey: T }),
     O = T === `all` ? `all` : (D?.key ?? null);
   if (v || x) {
     let t;
@@ -1340,7 +1348,7 @@ function Pe() {
       e[12] !== n || e[13] !== r
         ? ((i = (0, $.jsx)(`div`, {
             className: `flex h-full items-center justify-center`,
-            children: (0, $.jsx)(U, { description: n, title: r }),
+            children: (0, $.jsx)(H, { description: n, title: r }),
           })),
           (e[12] = n),
           (e[13] = r),
@@ -1365,11 +1373,11 @@ function Pe() {
       (e[18] = k))
     : (k = e[18]);
   let j;
-  e[19] !== n || e[20] !== i || e[21] !== l || e[22] !== O
+  e[19] !== n || e[20] !== i || e[21] !== u || e[22] !== O
     ? ((j = (e, t) => {
         let r = new URLSearchParams(i);
         (O != null && r.set(`repoKey`, O),
-          r.set(`view`, l),
+          r.set(`view`, u),
           e == null
             ? (r.delete(`pullRequestNumber`), r.delete(`pullRequestUrl`))
             : (r.set(`pullRequestNumber`, String(e.number)),
@@ -1381,31 +1389,31 @@ function Pe() {
       }),
       (e[19] = n),
       (e[20] = i),
-      (e[21] = l),
+      (e[21] = u),
       (e[22] = O),
       (e[23] = j))
     : (j = e[23]);
   let M;
-  e[24] !== n || e[25] !== i || e[26] !== l || e[27] !== o
+  e[24] !== n || e[25] !== i || e[26] !== u || e[27] !== o
     ? ((M = (e) => {
         o(e);
         let t = new URLSearchParams(i);
         (t.set(`repoKey`, e),
-          t.set(`view`, l),
+          t.set(`view`, u),
           t.delete(`pullRequestNumber`),
           t.delete(`pullRequestUrl`),
           n({ pathname: `/pull-requests`, search: `?${t.toString()}` }));
       }),
       (e[24] = n),
       (e[25] = i),
-      (e[26] = l),
+      (e[26] = u),
       (e[27] = o),
       (e[28] = M))
     : (M = e[28]);
   let N;
   return (
     e[29] !== w ||
-    e[30] !== l ||
+    e[30] !== u ||
     e[31] !== g ||
     e[32] !== f ||
     e[33] !== D ||
@@ -1414,7 +1422,7 @@ function Pe() {
     e[36] !== j ||
     e[37] !== M
       ? ((N = (0, $.jsx)(ve, {
-          selectedFilterView: l,
+          selectedFilterView: u,
           repoOption: D,
           repoOptions: w,
           selectedPullRequestNumber: g,
@@ -1425,7 +1433,7 @@ function Pe() {
           onSelectRepo: M,
         })),
         (e[29] = w),
-        (e[30] = l),
+        (e[30] = u),
         (e[31] = g),
         (e[32] = f),
         (e[33] = D),

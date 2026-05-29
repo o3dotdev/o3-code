@@ -1,7 +1,7 @@
-import { ts as e } from "./app-server-manager-signals.js";
-import { L as t, T as n, _ as r, xt as i } from "./setting-storage.js";
-import { a, t as o } from "./use-is-plugins-enabled.js";
-import { _ as s, a as c, d as l } from "./use-plugins.js";
+import { Xs as e } from "./app-server-manager-signals-DkRDRgNB.js";
+import { L as t, T as n, _ as r, wt as i } from "./setting-storage.js";
+import { i as a, t as o } from "./use-is-plugins-enabled.js";
+import { _ as s, a as c, d as l } from "./use-plugins-jIZrcuZQ.js";
 var u = i(),
   d = [`plugins`, `detail`];
 function f(i) {

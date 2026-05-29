@@ -1,9 +1,49 @@
 import { t as e } from "./jsx-runtime.js";
-import { t } from "./clsx.js";
-import { xt as n } from "./setting-storage.js";
+import { t } from "./clsx-BcPLHiun.js";
+import { wt as n } from "./setting-storage.js";
 var r = n(),
   i = e();
 function a(e) {
+  let n = (0, r.c)(9),
+    { children: a, className: o, variant: s } = e,
+    c = s === void 0 ? `default` : s,
+    l =
+      c === `default` ? `border border-token-border` : `bg-token-bg-secondary`,
+    u;
+  n[0] !== o || n[1] !== l
+    ? ((u = t(
+        `flex flex-col divide-y-[0.5px] divide-token-border overflow-hidden rounded-lg`,
+        l,
+        o,
+      )),
+      (n[0] = o),
+      (n[1] = l),
+      (n[2] = u))
+    : (u = n[2]);
+  let d;
+  n[3] === c
+    ? (d = n[4])
+    : ((d =
+        c === `default`
+          ? {
+              backgroundColor: `var(--color-background-panel, var(--color-token-bg-fog))`,
+            }
+          : void 0),
+      (n[3] = c),
+      (n[4] = d));
+  let f;
+  return (
+    n[5] !== a || n[6] !== u || n[7] !== d
+      ? ((f = (0, i.jsx)(`div`, { className: u, style: d, children: a })),
+        (n[5] = a),
+        (n[6] = u),
+        (n[7] = d),
+        (n[8] = f))
+      : (f = n[8]),
+    f
+  );
+}
+function o(e) {
   let n = (0, r.c)(5),
     { children: a, className: o } = e,
     s;
@@ -21,12 +61,13 @@ function a(e) {
     c
   );
 }
-function o(e) {
-  let n = (0, r.c)(17),
-    { title: a, subtitle: o, actions: s, className: c } = e,
-    l = a != null,
-    u = o != null;
-  if (!l && !u && s == null) {
+function s(e) {
+  let n = (0, r.c)(20),
+    { title: a, subtitle: o, actions: s, className: c, titleGap: l } = e,
+    u = l === void 0 ? `default` : l,
+    d = a != null,
+    f = o != null;
+  if (!d && !f && s == null) {
     let e;
     return (
       n[0] === Symbol.for(`react.memo_cache_sentinel`)
@@ -35,69 +76,72 @@ function o(e) {
       e
     );
   }
-  let d = u
+  let p = f
       ? `flex items-start justify-between gap-2 px-0 pt-[calc((var(--height-toolbar)-1.5rem)/2)]`
       : `flex h-toolbar items-center justify-between gap-2 px-0 py-0`,
-    f;
-  n[1] !== c || n[2] !== d
-    ? ((f = t(d, c)), (n[1] = c), (n[2] = d), (n[3] = f))
-    : (f = n[3]);
-  let p;
-  n[4] === a
-    ? (p = n[5])
-    : ((p = a
+    m;
+  n[1] !== c || n[2] !== p
+    ? ((m = t(p, c)), (n[1] = c), (n[2] = p), (n[3] = m))
+    : (m = n[3]);
+  let h = u === `none` ? `gap-0` : `gap-1`,
+    g;
+  n[4] === h
+    ? (g = n[5])
+    : ((g = t(`flex min-w-0 flex-1 flex-col`, h)), (n[4] = h), (n[5] = g));
+  let _;
+  n[6] === a
+    ? (_ = n[7])
+    : ((_ = a
         ? (0, i.jsx)(`div`, {
             className: `text-base font-medium text-token-text-primary`,
             children: a,
           })
         : null),
-      (n[4] = a),
-      (n[5] = p));
-  let m;
-  n[6] === o
-    ? (m = n[7])
-    : ((m = o
+      (n[6] = a),
+      (n[7] = _));
+  let v;
+  n[8] === o
+    ? (v = n[9])
+    : ((v = o
         ? (0, i.jsx)(`div`, {
             className: `text-base font-normal text-token-text-tertiary`,
             children: o,
           })
         : null),
-      (n[6] = o),
-      (n[7] = m));
-  let h;
-  n[8] !== p || n[9] !== m
-    ? ((h = (0, i.jsxs)(`div`, {
-        className: `flex min-w-0 flex-1 flex-col gap-1`,
-        children: [p, m],
-      })),
-      (n[8] = p),
-      (n[9] = m),
-      (n[10] = h))
-    : (h = n[10]);
-  let g;
-  n[11] === s
-    ? (g = n[12])
-    : ((g = s
+      (n[8] = o),
+      (n[9] = v));
+  let y;
+  n[10] !== g || n[11] !== _ || n[12] !== v
+    ? ((y = (0, i.jsxs)(`div`, { className: g, children: [_, v] })),
+      (n[10] = g),
+      (n[11] = _),
+      (n[12] = v),
+      (n[13] = y))
+    : (y = n[13]);
+  let b;
+  n[14] === s
+    ? (b = n[15])
+    : ((b = s
         ? (0, i.jsx)(`div`, {
             className: `flex items-center gap-2`,
             children: s,
           })
         : null),
-      (n[11] = s),
-      (n[12] = g));
-  let _;
+      (n[14] = s),
+      (n[15] = b));
+  let x;
   return (
-    n[13] !== f || n[14] !== h || n[15] !== g
-      ? ((_ = (0, i.jsxs)(`div`, { className: f, children: [h, g] })),
-        (n[13] = f),
-        (n[14] = h),
-        (n[15] = g),
-        (n[16] = _))
-      : (_ = n[16]),
-    _
+    n[16] !== m || n[17] !== y || n[18] !== b
+      ? ((x = (0, i.jsxs)(`div`, { className: m, children: [y, b] })),
+        (n[16] = m),
+        (n[17] = y),
+        (n[18] = b),
+        (n[19] = x))
+      : (x = n[19]),
+    x
   );
 }
-function s(e) {
+function c(e) {
   let n = (0, r.c)(5),
     { children: a, className: o } = e,
     s;
@@ -115,6 +159,6 @@ function s(e) {
     c
   );
 }
-var c = Object.assign(a, { Header: o, Content: s });
-export { c as t };
+var l = Object.assign(o, { Header: s, Content: c });
+export { a as n, l as t };
 //# sourceMappingURL=settings-group.js.map

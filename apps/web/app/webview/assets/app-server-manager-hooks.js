@@ -1,32 +1,32 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import {
-  Po as t,
-  Ta as n,
-  X as r,
-  _ as i,
-  a,
+  Q as t,
+  Xs as n,
+  _ as r,
+  a as i,
+  at as a,
   b as o,
   c as s,
-  o as c,
-  r as l,
-  rt as u,
-  s as d,
-  ts as f,
-  y as p,
-} from "./app-server-manager-signals.js";
+  ks as c,
+  o as l,
+  po as u,
+  r as d,
+  s as f,
+  x as p,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as m } from "./jsx-runtime.js";
 import {
   C as h,
-  J as g,
-  L as _,
-  S as v,
-  T as y,
-  X as b,
-  Y as x,
+  L as g,
+  S as _,
+  T as v,
+  X as y,
+  Y as b,
+  Z as x,
   _ as S,
-  xt as C,
+  wt as C,
 } from "./setting-storage.js";
-import { p as w } from "./statsig.js";
+import { p as w } from "./statsig--EYRNU53.js";
 import { t as T } from "./remote-connection-visibility.js";
 import { D as E, k as D } from "./sidebar-signals.js";
 var O = class {
@@ -35,9 +35,9 @@ var O = class {
     }
     addManager(e) {
       let n = e.getHostId();
-      (this.scope.set(r, (e) => (e.includes(n) ? e : [...e, n])),
-        this.scope.get(l, n).set(e),
-        this.scope.get(c, n).set(t(e)),
+      (this.scope.set(t, (e) => (e.includes(n) ? e : [...e, n])),
+        this.scope.set(d, n, e),
+        this.scope.set(l, n, c(e)),
         this.scope.set(s, (e) => e + 1));
     }
     addRegistryCallback(e) {
@@ -47,10 +47,10 @@ var O = class {
       });
     }
     deleteManager(e) {
-      (this.scope.set(r, (t) => t.filter((t) => t !== e)),
-        this.scope.get(c, e).set(null),
-        this.scope.get(l, e).set(null),
-        u(this.scope, {
+      (this.scope.set(t, (t) => t.filter((t) => t !== e)),
+        this.scope.set(l, e, null),
+        this.scope.set(d, e, null),
+        a(this.scope, {
           error: null,
           hostId: e,
           source: `registry_delete_manager`,
@@ -59,10 +59,10 @@ var O = class {
         this.scope.set(s, (e) => e + 1));
     }
     getAll() {
-      return this.scope.get(d);
+      return this.scope.get(f);
     }
     getDefault() {
-      return this.scope.get(i);
+      return this.scope.get(r);
     }
     getForConversationId(e) {
       let t = this.getMaybeForConversationId(e);
@@ -70,10 +70,10 @@ var O = class {
       throw Error(`No AppServerManager registered for conversationId: ${e}`);
     }
     getForHostId(e) {
-      return this.scope.get(r).includes(e) ? this.scope.get(c, e).get() : null;
+      return this.scope.get(t).includes(e) ? this.scope.get(l, e) : null;
     }
     getImplForHostId(e) {
-      return this.scope.get(r).includes(e) ? this.scope.get(l, e).get() : null;
+      return this.scope.get(t).includes(e) ? this.scope.get(d, e) : null;
     }
     getForHostIdOrThrow(e) {
       let t = this.getForHostId(e);
@@ -88,7 +88,7 @@ var O = class {
       return null;
     }
     getMaybeForConversationId(e) {
-      return o(this.scope, e);
+      return p(this.scope, e);
     }
     notifyRegistryChanged() {
       this.scope.set(s, (e) => e + 1);
@@ -107,7 +107,7 @@ function M(e, t) {
   return t.getAll().filter((t) => {
     let r = t.getHostId();
     if (r === n) return !0;
-    let { error: i, state: a } = p(e, r);
+    let { error: i, state: a } = o(e, r);
     return a === `connected` || i?.code === `login-required`;
   });
 }
@@ -164,41 +164,41 @@ function I({ appServerRegistry: e, enabledRemoteHostIds: t, sortKey: n }) {
 async function L({
   scope: e,
   appServerRegistry: t,
-  enabledRemoteHostIds: n,
-  sortKey: r,
+  enabledRemoteHostIds: r,
+  sortKey: i,
 }) {
   return (
     await Promise.all(
       M(e, t).map((e) =>
-        f(`refresh-recent-conversations-for-host`, {
+        n(`refresh-recent-conversations-for-host`, {
           hostId: e.getHostId(),
-          sortKey: r,
+          sortKey: i,
         }),
       ),
     ),
-    I({ appServerRegistry: t, enabledRemoteHostIds: n, sortKey: r })
+    I({ appServerRegistry: t, enabledRemoteHostIds: r, sortKey: i })
   );
 }
 function R({
   scope: e,
   appServerRegistry: t,
-  sortKey: n,
-  refreshesInFlightHostIds: r,
+  sortKey: r,
+  refreshesInFlightHostIds: i,
 }) {
-  for (let i of M(e, t)) {
-    let e = i.getHostId();
-    i.hasFetchedRecentConversations ||
-      r.has(e) ||
-      (r.add(e),
-      f(`refresh-recent-conversations-for-host`, { hostId: e, sortKey: n })
+  for (let a of M(e, t)) {
+    let e = a.getHostId();
+    a.hasFetchedRecentConversations ||
+      i.has(e) ||
+      (i.add(e),
+      n(`refresh-recent-conversations-for-host`, { hostId: e, sortKey: r })
         .catch((t) => {
           h.warning(`recent_conversations_refresh_failed`, {
-            safe: { hostId: e, sortKey: n },
+            safe: { hostId: e, sortKey: r },
             sensitive: { error: t },
           });
         })
         .finally(() => {
-          r.delete(e);
+          i.delete(e);
         }));
   }
 }
@@ -210,7 +210,7 @@ function B(e) {
 }
 function V() {
   let e = (0, k.c)(5),
-    t = x(v),
+    t = y(_),
     n;
   e[0] === t ? (n = e[1]) : ((n = () => new O(t)), (e[0] = t), (e[1] = n));
   let [r] = (0, A.useState)(n),
@@ -249,16 +249,16 @@ function U(e) {
 }
 function W(e) {
   let t = (0, k.c)(6),
-    n = g(a, e),
+    n = b(i, e),
     r = V(),
-    i;
+    a;
   t[0] !== r || t[1] !== e
-    ? ((i = (t) => (e == null ? r.addRegistryCallback(t) : F(r, t))),
+    ? ((a = (t) => (e == null ? r.addRegistryCallback(t) : F(r, t))),
       (t[0] = r),
       (t[1] = e),
-      (t[2] = i))
-    : (i = t[2]);
-  let o = i,
+      (t[2] = a))
+    : (a = t[2]);
+  let o = a,
     s;
   t[3] !== r || t[4] !== e
     ? ((s = () => (e == null ? r.getDefault() : r.getForConversationId(e))),
@@ -271,16 +271,16 @@ function W(e) {
 }
 function G(e) {
   let t = (0, k.c)(6),
-    n = g(a, e),
+    n = b(i, e),
     r = V(),
-    i;
+    a;
   t[0] !== r || t[1] !== e
-    ? ((i = (t) => (e == null ? K : F(r, t))),
+    ? ((a = (t) => (e == null ? K : F(r, t))),
       (t[0] = r),
       (t[1] = e),
-      (t[2] = i))
-    : (i = t[2]);
-  let o = i,
+      (t[2] = a))
+    : (a = t[2]);
+  let o = a,
     s;
   t[3] !== r || t[4] !== e
     ? ((s = () => (e == null ? null : r.getMaybeForConversationId(e))),
@@ -293,7 +293,7 @@ function G(e) {
 }
 function K() {}
 function q(e) {
-  let t = U(n);
+  let t = U(u);
   return G(e) ?? t;
 }
 function J() {
@@ -337,16 +337,16 @@ function Z(e, t) {
 function Q(e) {
   let t = (0, k.c)(24),
     { queryKeyPrefix: n, subscribeToManager: r } = e,
-    i = x(v),
+    i = y(_),
     a = V(),
     { enabledRemoteHostIdSet: o } = T(),
     s;
   t[0] === o ? (s = t[1]) : ((s = B(o)), (t[0] = o), (t[1] = s));
   let c = s,
-    l = g(w, `2413345355`),
-    u = b(E),
+    l = b(w, `2413345355`),
+    u = x(E),
     d = l ? D : u,
-    f = _(),
+    f = g(),
     p;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((p = new Set()), (t[2] = p))
@@ -418,30 +418,39 @@ function Q(e) {
           queryKey: O,
           refetchOnWindowFocus: `always`,
           staleTime: S.INFINITE,
+          structuralSharing: $,
           queryFn: j,
         }),
         (t[21] = O),
         (t[22] = j),
         (t[23] = M))
       : (M = t[23]),
-    y(M)
+    v(M)
   );
 }
-function $(e) {
+function $(e, t) {
+  return Array.isArray(e) &&
+    Array.isArray(t) &&
+    e.length === t.length &&
+    e.every((e, n) => e === t[n])
+    ? e
+    : t;
+}
+function ee(e) {
   let t = (0, k.c)(3),
-    r = U(e === void 0 ? n : e),
-    i,
-    a;
+    n = U(e === void 0 ? u : e),
+    r,
+    i;
   return (
-    t[0] === r
-      ? ((i = t[1]), (a = t[2]))
-      : ((i = (e) => r.addConfigNoticeCallback(e)),
-        (a = () => r.getConfigNotices()),
-        (t[0] = r),
-        (t[1] = i),
-        (t[2] = a)),
-    (0, A.useSyncExternalStore)(i, a)
+    t[0] === n
+      ? ((r = t[1]), (i = t[2]))
+      : ((r = (e) => n.addConfigNoticeCallback(e)),
+        (i = () => n.getConfigNotices()),
+        (t[0] = n),
+        (t[1] = r),
+        (t[2] = i)),
+    (0, A.useSyncExternalStore)(r, i)
   );
 }
-export { U as a, X as c, H as i, W as n, V as o, q as r, J as s, $ as t };
+export { U as a, X as c, H as i, W as n, V as o, q as r, J as s, ee as t };
 //# sourceMappingURL=app-server-manager-hooks.js.map

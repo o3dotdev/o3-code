@@ -1,13 +1,13 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
 import { t as r } from "./mime-types.js";
 import { t as i } from "./terminal.js";
-import { t as a } from "./skills.js";
-import { t as o } from "./folder.js";
-import { t as s } from "./code.js";
-import { n as c, t as l } from "./json-DAjHKBV7.js";
-import { t as u } from "./image-square.js";
-import { t as d } from "./notebook.js";
+import { t as a } from "./folder.js";
+import { t as o } from "./skills-BUMAZe_D.js";
+import { t as s } from "./code-s3Scfd05.js";
+import { n as c, t as l } from "./json-CRHyc9De.js";
+import { t as u } from "./image-square-CGEtcnWp.js";
+import { t as d } from "./notebook-MImpo36y.js";
 import { t as f } from "./settings.cog.js";
 e(t());
 var p = n(),
@@ -572,7 +572,7 @@ var p = n(),
     file: c,
     css: S,
     cplusplus: h,
-    folder: o,
+    folder: a,
     html: w,
     java: T,
     javascript: E,
@@ -586,7 +586,7 @@ var p = n(),
     react: k,
     rust: A,
     shell: x,
-    skill: a,
+    skill: o,
     spreadsheet: y,
     build: C,
     presentation: v,

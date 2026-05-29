@@ -1,4 +1,4 @@
-import { gi as e } from "./src-BLHmAhbF.js";
+import { qi as e } from "./src-C.js";
 var t = e()
   .url()
   .refine((e) => e.startsWith(`https://`));

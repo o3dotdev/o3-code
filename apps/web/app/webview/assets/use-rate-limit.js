@@ -1,43 +1,50 @@
-import { s as e } from "./chunk.js";
-import { Rt as t, zt as n } from "./app-server-manager-signals.js";
-import { n as r, t as i } from "./jsx-runtime.js";
-import { t as a } from "./clsx.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { _n as t } from "./app-server-manager-signals-DkRDRgNB.js";
+import { n, t as r } from "./jsx-runtime.js";
+import { t as i } from "./clsx-BcPLHiun.js";
 import {
-  H as o,
-  L as s,
-  S as c,
-  T as l,
-  W as u,
-  Y as d,
-  _ as f,
+  G as a,
+  L as o,
+  S as s,
+  T as c,
+  U as l,
+  X as u,
+  _ as d,
+  p as f,
   w as p,
-  xt as m,
+  wt as m,
   y as h,
 } from "./setting-storage.js";
 import { t as g } from "./google-drive.js";
-import { t as _ } from "./product-logger.js";
-import { c as v, i as y } from "./statsig.js";
-import { l as b } from "./codex-api.js";
-import { t as x } from "./button.js";
-import { t as S } from "./proxy.js";
-import { r as C, t as w } from "./skus.js";
-import { d as T, l as E, n as D, u as O } from "./dialog-layout.js";
-import { t as ee } from "./lightning-bolt.js";
-import { r as te } from "./modal-controller-state-.js";
-import { t as k } from "./conversation-starter-card.js";
-import { i as A, n as j } from "./links.js";
+import { t as _ } from "./product-logger-DusapRyT.js";
+import { c as v, i as y } from "./statsig--EYRNU53.js";
+import { t as b } from "./request-DWZTrEAr.js";
+import { p as x } from "./codex-api-bK--r_2t.js";
+import { t as S } from "./button.js";
+import { t as C } from "./proxy.js";
+import { i as w, t as T } from "./skus-JiYadAsS.js";
+import { d as E, l as D, n as ee, u as te } from "./dialog-layout.js";
+import { t as ne } from "./lightning-bolt.js";
+import { r as O } from "./modal-controller-state.js";
+import { t as k } from "./codex-api-error-CsUcWied.js";
+import { a as A, r as re } from "./links.js";
+import { t as j } from "./conversation-starter-card.js";
 function M(e) {
   return e === `failed` || e === `payment_declined`;
 }
 var N = m(),
   P = [`usage-settings`, `auto-top-up`],
-  F = [`usage-settings`, `auto-top-up-billing-currency`],
+  F = [`usage-settings`, `accounts-check`],
   I = [`usage-settings`, `auto-top-up-pricing`],
-  L = [`usage-settings`, `plan-pricing`],
-  R = `US`,
-  ne = [`usage-settings`, `add-credits-nudge-email`],
-  re = `v4-2023-04-27`;
-function z(e) {
+  ie = [`usage-settings`, `plan-pricing`],
+  ae = [`usage-settings`, `workspace-monthly-usage`],
+  L = [`usage-settings`, `workspace-admin-requests`],
+  oe = 100,
+  se = `US`,
+  ce = `Current user monthly cap is not available.`,
+  le = [`usage-settings`, `add-credits-nudge-email`],
+  R = `v4-2023-04-27`;
+function ue(e) {
   let t = (0, N.c)(2),
     { enabled: n } = e,
     r;
@@ -46,117 +53,230 @@ function z(e) {
       ? (r = t[1])
       : ((r = {
           queryKey: P,
-          queryFn: K,
+          queryFn: _e,
           enabled: n,
-          staleTime: f.ONE_MINUTE,
+          staleTime: d.ONE_MINUTE,
           refetchOnWindowFocus: !1,
-          select: fe,
+          select: Se,
         }),
         (t[0] = n),
         (t[1] = r)),
-    l(r)
+    c(r)
   );
 }
-function B(e) {
+function z(e) {
   let t = (0, N.c)(8),
     { enabled: n } = e,
-    { data: r, isLoading: i } = b(),
+    { data: r, isLoading: i } = x(),
     a = r?.id ?? null,
     o;
-  t[0] === a ? (o = t[1]) : ((o = [...F, a]), (t[0] = a), (t[1] = o));
+  t[0] === a ? (o = t[1]) : ((o = [...F, R, a]), (t[0] = a), (t[1] = o));
   let s = n && !i && r != null,
-    c;
+    l;
   t[2] === r
-    ? (c = t[3])
-    : ((c = (e) =>
+    ? (l = t[3])
+    : ((l = (e) =>
         r ? (e.accounts?.[r.id]?.entitlement?.billing_currency ?? null) : null),
       (t[2] = r),
-      (t[3] = c));
+      (t[3] = l));
   let u;
   return (
-    t[4] !== o || t[5] !== s || t[6] !== c
+    t[4] !== o || t[5] !== s || t[6] !== l
       ? ((u = {
           queryKey: o,
           enabled: s,
-          staleTime: f.INFINITE,
+          staleTime: d.INFINITE,
           refetchOnWindowFocus: !1,
           retry: !1,
-          queryFn: ie,
-          select: c,
+          queryFn: ge,
+          select: l,
         }),
         (t[4] = o),
         (t[5] = s),
-        (t[6] = c),
+        (t[6] = l),
         (t[7] = u))
       : (u = t[7]),
-    l(u)
+    c(u)
   );
 }
-function ie() {
-  return n.safeGet(`/accounts/check/{version}`, {
-    parameters: { path: { version: re } },
-  });
-}
-function ae(e) {
+function de(e) {
   let t = (0, N.c)(8),
-    { billingCurrency: r, enabled: i } = e,
-    a = r ?? null,
+    { enabled: n } = e,
+    { data: r, isLoading: i } = x(),
+    a = r?.id ?? null,
     o;
-  t[0] === a ? (o = t[1]) : ((o = [...I, a]), (t[0] = a), (t[1] = o));
-  let s = i && r != null,
-    c;
+  t[0] === a ? (o = t[1]) : ((o = [...F, R, a]), (t[0] = a), (t[1] = o));
+  let s = n && !i && r != null,
+    l;
   t[2] === r
-    ? (c = t[3])
-    : ((c = async () => {
-        if (r == null) return null;
-        let e = await n.safeGet(
+    ? (l = t[3])
+    : ((l = (e) =>
+        r
+          ? (e.accounts?.[r.id]?.last_active_subscription
+              .purchase_origin_platform ?? null)
+          : null),
+      (t[2] = r),
+      (t[3] = l));
+  let u;
+  return (
+    t[4] !== o || t[5] !== s || t[6] !== l
+      ? ((u = {
+          queryKey: o,
+          enabled: s,
+          staleTime: d.INFINITE,
+          refetchOnWindowFocus: !1,
+          retry: !1,
+          queryFn: ge,
+          select: l,
+        }),
+        (t[4] = o),
+        (t[5] = s),
+        (t[6] = l),
+        (t[7] = u))
+      : (u = t[7]),
+    c(u)
+  );
+}
+function B(e) {
+  let t = (0, N.c)(10),
+    { enabled: n } = e,
+    r;
+  t[0] === n ? (r = t[1]) : ((r = { enabled: n }), (t[0] = n), (t[1] = r));
+  let { accountId: i, isLoading: a } = J(r),
+    o;
+  t[2] === i ? (o = t[3]) : ((o = [...ae, i]), (t[2] = i), (t[3] = o));
+  let s = n && !a && i != null,
+    l;
+  t[4] === i
+    ? (l = t[5])
+    : ((l = async () => {
+        if (i == null) return null;
+        try {
+          return await b.safeGet(
+            `/accounts/{account_id}/spend-controls/current-user/monthly-usage`,
+            { parameters: { path: { account_id: i } } },
+          );
+        } catch (e) {
+          let t = e;
+          if (t instanceof Error && k(t)?.message === ce) return null;
+          throw t;
+        }
+      }),
+      (t[4] = i),
+      (t[5] = l));
+  let u;
+  return (
+    t[6] !== o || t[7] !== s || t[8] !== l
+      ? ((u = {
+          queryKey: o,
+          enabled: s,
+          staleTime: d.ONE_MINUTE,
+          refetchOnMount: `always`,
+          refetchOnWindowFocus: !1,
+          retry: !1,
+          queryFn: l,
+        }),
+        (t[6] = o),
+        (t[7] = s),
+        (t[8] = l),
+        (t[9] = u))
+      : (u = t[9]),
+    c(u)
+  );
+}
+function V(e) {
+  let t = (0, N.c)(10),
+    { enabled: n } = e,
+    r;
+  t[0] === n ? (r = t[1]) : ((r = { enabled: n }), (t[0] = n), (t[1] = r));
+  let { accountId: i, isLoading: a } = J(r),
+    o;
+  t[2] === i ? (o = t[3]) : ((o = [...L, i]), (t[2] = i), (t[3] = o));
+  let s = n && !a && i != null,
+    l;
+  t[4] === i
+    ? (l = t[5])
+    : ((l = async () => (i == null ? null : Y(i))), (t[4] = i), (t[5] = l));
+  let u;
+  return (
+    t[6] !== o || t[7] !== s || t[8] !== l
+      ? ((u = {
+          queryKey: o,
+          enabled: s,
+          staleTime: d.ONE_MINUTE,
+          refetchOnMount: `always`,
+          refetchOnWindowFocus: !1,
+          retry: !1,
+          queryFn: l,
+        }),
+        (t[6] = o),
+        (t[7] = s),
+        (t[8] = l),
+        (t[9] = u))
+      : (u = t[9]),
+    c(u)
+  );
+}
+function fe(e) {
+  let t = (0, N.c)(8),
+    { billingCurrency: n, enabled: r } = e,
+    i = n ?? null,
+    a;
+  t[0] === i ? (a = t[1]) : ((a = [...I, i]), (t[0] = i), (t[1] = a));
+  let o = r && n != null,
+    s;
+  t[2] === n
+    ? (s = t[3])
+    : ((s = async () => {
+        if (n == null) return null;
+        let e = await b.safeGet(
             `/checkout_pricing_config/configs/{country_code}`,
-            { parameters: { path: { country_code: r } } },
+            { parameters: { path: { country_code: n } } },
           ),
           t = e.currency_config?.amount_per_credit;
         return t == null || t <= 0
           ? null
           : {
               amountPerCredit: t,
-              currencyCode: e.currency_config?.symbol_code ?? r,
+              currencyCode: e.currency_config?.symbol_code ?? n,
               minorUnitExponent: e.currency_config?.minor_unit_exponent ?? null,
             };
       }),
-      (t[2] = r),
-      (t[3] = c));
-  let u;
+      (t[2] = n),
+      (t[3] = s));
+  let l;
   return (
-    t[4] !== o || t[5] !== s || t[6] !== c
-      ? ((u = {
-          queryKey: o,
-          enabled: s,
-          staleTime: f.INFINITE,
+    t[4] !== a || t[5] !== o || t[6] !== s
+      ? ((l = {
+          queryKey: a,
+          enabled: o,
+          staleTime: d.INFINITE,
           refetchOnWindowFocus: !1,
           retry: !1,
-          queryFn: c,
+          queryFn: s,
         }),
-        (t[4] = o),
-        (t[5] = s),
-        (t[6] = c),
-        (t[7] = u))
-      : (u = t[7]),
-    l(u)
+        (t[4] = a),
+        (t[5] = o),
+        (t[6] = s),
+        (t[7] = l))
+      : (l = t[7]),
+    c(l)
   );
 }
-function V(e) {
+function H(e) {
   let t = (0, N.c)(8),
-    { billingCurrency: r, enabled: i } = e,
-    a = r ?? R,
-    o;
-  t[0] === a ? (o = t[1]) : ((o = [...L, a]), (t[0] = a), (t[1] = o));
-  let s = i && r !== void 0,
-    c;
-  t[2] === a
-    ? (c = t[3])
-    : ((c = async () => {
+    { billingCurrency: n, enabled: r } = e,
+    i = n ?? se,
+    a;
+  t[0] === i ? (a = t[1]) : ((a = [...ie, i]), (t[0] = i), (t[1] = a));
+  let o = r && n !== void 0,
+    s;
+  t[2] === i
+    ? (s = t[3])
+    : ((s = async () => {
         let e = (
-          await n.safeGet(`/checkout_pricing_config/configs/{country_code}`, {
-            parameters: { path: { country_code: a } },
+          await b.safeGet(`/checkout_pricing_config/configs/{country_code}`, {
+            parameters: { path: { country_code: i } },
           })
         ).currency_config;
         if (e?.symbol_code == null) return null;
@@ -164,7 +284,7 @@ function V(e) {
           e.business_currency_override != null &&
           e.business_currency_override !== e.symbol_code
             ? (
-                await n.safeGet(
+                await b.safeGet(
                   `/checkout_pricing_config/configs/{country_code}`,
                   {
                     parameters: {
@@ -189,31 +309,31 @@ function V(e) {
           },
         };
       }),
-      (t[2] = a),
-      (t[3] = c));
-  let u;
+      (t[2] = i),
+      (t[3] = s));
+  let l;
   return (
-    t[4] !== o || t[5] !== s || t[6] !== c
-      ? ((u = {
-          queryKey: o,
-          enabled: s,
-          staleTime: f.INFINITE,
+    t[4] !== a || t[5] !== o || t[6] !== s
+      ? ((l = {
+          queryKey: a,
+          enabled: o,
+          staleTime: d.INFINITE,
           refetchOnWindowFocus: !1,
           retry: !1,
-          queryFn: c,
+          queryFn: s,
         }),
-        (t[4] = o),
-        (t[5] = s),
-        (t[6] = c),
-        (t[7] = u))
-      : (u = t[7]),
-    l(u)
+        (t[4] = a),
+        (t[5] = o),
+        (t[6] = s),
+        (t[7] = l))
+      : (l = t[7]),
+    c(l)
   );
 }
-function oe() {
+function U() {
   let e = (0, N.c)(16),
-    t = d(c),
-    n = s(),
+    t = u(s),
+    n = o(),
     r;
   e[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((r = [...P, `enable`]), (e[0] = r))
@@ -222,10 +342,10 @@ function oe() {
   e[1] !== n || e[2] !== t
     ? ((i = {
         mutationKey: r,
-        mutationFn: ce,
+        mutationFn: G,
         onSuccess: (e) => {
           M(e.immediate_top_up_status) ||
-            G({ scope: t, queryClient: n, response: e });
+            X({ scope: t, queryClient: n, response: e });
         },
       }),
       (e[1] = n),
@@ -233,25 +353,25 @@ function oe() {
       (e[3] = i))
     : (i = e[3]);
   let a = p(i),
-    o;
+    c;
   e[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((o = [...P, `update`]), (e[4] = o))
-    : (o = e[4]);
+    ? ((c = [...P, `update`]), (e[4] = c))
+    : (c = e[4]);
   let l;
   e[5] !== n || e[6] !== t
     ? ((l = {
-        mutationKey: o,
-        mutationFn: H,
+        mutationKey: c,
+        mutationFn: W,
         onSuccess: (e) => {
           M(e.immediate_top_up_status) ||
-            G({ scope: t, queryClient: n, response: e });
+            X({ scope: t, queryClient: n, response: e });
         },
       }),
       (e[5] = n),
       (e[6] = t),
       (e[7] = l))
     : (l = e[7]);
-  let u = p(l),
+  let d = p(l),
     f;
   e[8] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((f = [...P, `disable`]), (e[8] = f))
@@ -260,9 +380,9 @@ function oe() {
   e[9] !== n || e[10] !== t
     ? ((m = {
         mutationKey: f,
-        mutationFn: se,
+        mutationFn: pe,
         onSuccess: (e) => {
-          G({ scope: t, queryClient: n, response: e });
+          X({ scope: t, queryClient: n, response: e });
         },
       }),
       (e[9] = n),
@@ -272,69 +392,196 @@ function oe() {
   let h = p(m),
     g;
   return (
-    e[12] !== h || e[13] !== a || e[14] !== u
+    e[12] !== h || e[13] !== a || e[14] !== d
       ? ((g = {
           enableAutoTopUpMutation: a,
-          updateAutoTopUpMutation: u,
+          updateAutoTopUpMutation: d,
           disableAutoTopUpMutation: h,
         }),
         (e[12] = h),
         (e[13] = a),
-        (e[14] = u),
+        (e[14] = d),
         (e[15] = g))
       : (g = e[15]),
     g
   );
 }
-function se() {
-  return de();
+function pe() {
+  return be();
 }
-function H(e) {
-  return ue(e);
+function W(e) {
+  return ye(e);
 }
-function ce(e) {
-  return le(e);
+function G(e) {
+  return ve(e);
 }
-function U() {
+function me() {
   let e = (0, N.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = { mutationKey: ne, mutationFn: W }), (e[0] = t))
+      ? ((t = { mutationKey: le, mutationFn: K }), (e[0] = t))
       : (t = e[0]),
     p(t)
   );
 }
-function W(e) {
-  return q(e);
+function K(e) {
+  return xe(e);
 }
-function G({ scope: e, queryClient: n, response: r }) {
+function q() {
+  let e = (0, N.c)(11),
+    t = o(),
+    n;
+  e[0] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((n = { enabled: !0 }), (e[0] = n))
+    : (n = e[0]);
+  let { accountId: r } = J(n),
+    i,
+    a;
+  e[1] === r
+    ? ((i = e[2]), (a = e[3]))
+    : ((i = [...L, r, `save`]),
+      (a = async (e) => {
+        let { justification: t, requestId: n } = e;
+        if (r == null)
+          throw Error(`Cannot save workspace admin request without account`);
+        if (n == null) {
+          let e = { justification: t };
+          return b.safePost(`/accounts/{account_id}/workspace_admin_requests`, {
+            parameters: { path: { account_id: r } },
+            requestBody: e,
+          });
+        }
+        let i = { justification: t };
+        return b.safePatch(
+          `/accounts/{account_id}/workspace_admin_requests/{request_id}`,
+          {
+            parameters: { path: { account_id: r, request_id: n } },
+            requestBody: i,
+          },
+        );
+      }),
+      (e[1] = r),
+      (e[2] = i),
+      (e[3] = a));
+  let s;
+  e[4] !== r || e[5] !== t
+    ? ((s = (e) => {
+        (t.setQueryData([...L, r], (t) => he(t, e)),
+          t.invalidateQueries({ queryKey: [...L, r] }));
+      }),
+      (e[4] = r),
+      (e[5] = t),
+      (e[6] = s))
+    : (s = e[6]);
+  let c;
+  return (
+    e[7] !== i || e[8] !== a || e[9] !== s
+      ? ((c = { mutationKey: i, mutationFn: a, onSuccess: s }),
+        (e[7] = i),
+        (e[8] = a),
+        (e[9] = s),
+        (e[10] = c))
+      : (c = e[10]),
+    p(c)
+  );
+}
+function J(e) {
+  let t = (0, N.c)(8),
+    { enabled: n } = e,
+    { data: r, isLoading: i, hasEverErrored: a } = x(),
+    o = r?.id == null && (!i || a),
+    s = n && o,
+    c;
+  t[0] === s
+    ? (c = t[1])
+    : ((c = { queryConfig: { enabled: s, staleTime: d.ONE_MINUTE } }),
+      (t[0] = s),
+      (t[1] = c));
+  let { data: l, isLoading: u } = f(`account-info`, c);
+  if (r?.id != null) {
+    let e;
+    return (
+      t[2] === r.id
+        ? (e = t[3])
+        : ((e = { accountId: r.id, isLoading: !1 }), (t[2] = r.id), (t[3] = e)),
+      e
+    );
+  }
+  if (!o) {
+    let e;
+    return (
+      t[4] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((e = { accountId: void 0, isLoading: !0 }), (t[4] = e))
+        : (e = t[4]),
+      e
+    );
+  }
+  let p = l?.accountId,
+    m;
+  return (
+    t[5] !== u || t[6] !== p
+      ? ((m = { accountId: p, isLoading: u }),
+        (t[5] = u),
+        (t[6] = p),
+        (t[7] = m))
+      : (m = t[7]),
+    m
+  );
+}
+async function Y(e) {
+  let t = [],
+    n = new Set(),
+    r = null;
+  for (;;) {
+    let i = await b.safeGet(`/accounts/{account_id}/workspace_admin_requests`, {
+      parameters: { path: { account_id: e }, query: { cursor: r, limit: oe } },
+    });
+    t.push(...(i.items ?? []));
+    let a = i.cursor ?? null;
+    if (a == null || n.has(a)) return { items: t, cursor: a };
+    (n.add(a), (r = a));
+  }
+}
+function X({ scope: e, queryClient: n, response: r }) {
   (n.setQueryData(P, r),
     r.immediate_top_up_status === `succeeded` && e.query.invalidate(t));
 }
-async function K() {
-  return n.safeGet(`/subscriptions/auto_top_up/settings`);
+function he(e, t) {
+  if (e == null) return { items: [t], cursor: null };
+  let n = e.items.findIndex((e) => e.id === t.id);
+  return n === -1
+    ? { ...e, items: [t, ...e.items] }
+    : { ...e, items: e.items.map((e, r) => (r === n ? t : e)) };
 }
-async function le(e) {
-  return n.safePost(`/subscriptions/auto_top_up/enable`, { requestBody: e });
+function ge() {
+  return b.safeGet(`/accounts/check/{version}`, {
+    parameters: { path: { version: R } },
+  });
 }
-async function ue(e) {
+async function _e() {
+  return b.safeGet(`/subscriptions/auto_top_up/settings`);
+}
+async function ve(e) {
+  return b.safePost(`/subscriptions/auto_top_up/enable`, { requestBody: e });
+}
+async function ye(e) {
   let t = {
     recharge_threshold: e.recharge_threshold,
     recharge_target: e.recharge_target,
     recharge_monthly_limit: e.recharge_monthly_limit,
   };
-  return n.safePost(`/subscriptions/auto_top_up/update`, { requestBody: t });
+  return b.safePost(`/subscriptions/auto_top_up/update`, { requestBody: t });
 }
-async function de() {
-  return n.safePost(`/subscriptions/auto_top_up/disable`);
+async function be() {
+  return b.safePost(`/subscriptions/auto_top_up/disable`);
 }
-async function q(e) {
-  return n.safePost(`/accounts/send_add_credits_nudge_email`, {
+async function xe(e) {
+  return b.safePost(`/accounts/send_add_credits_nudge_email`, {
     requestBody: e,
   });
 }
-function fe(e) {
+function Se(e) {
   return {
     isEnabled: e.is_enabled,
     rechargeThreshold: e.recharge_threshold ?? null,
@@ -342,33 +589,33 @@ function fe(e) {
     rechargeMonthlyLimit: e.recharge_monthly_limit ?? null,
   };
 }
-var J = 1440,
-  Y = 7 * J,
-  X = 30 * J,
-  Z = 365 * J,
-  pe = 60 * J,
-  me = 90;
-function he(e) {
+var Z = 1440,
+  Ce = 7 * Z,
+  we = 30 * Z,
+  Te = 365 * Z,
+  Ee = 60 * Z,
+  De = 90;
+function Oe(e) {
   return e != null && (e.windowDurationMins ?? 0) > 0;
 }
-function ge(e, t = new Date()) {
-  let n = Te(e);
+function ke(e, t = new Date()) {
+  let n = Re(e);
   return n ? Math.floor((n.getTime() - t.getTime()) / 1e3) : null;
 }
-function _e(e) {
+function Ae(e) {
   let { primary: t, secondary: n } = e ?? { primary: null, secondary: null },
     r = t?.usedPercent ?? 0,
     i = n?.usedPercent ?? 0,
     a = t?.windowDurationMins ?? 0,
     o = n?.windowDurationMins ?? 0,
     s = Math.max(r, i);
-  return s < me
+  return s < De
     ? null
     : i > r || (r === i && o > a)
       ? {
           severity: s >= 100 ? `blocked` : `warning`,
           usedPercent: i,
-          remainingPercent: ve(i),
+          remainingPercent: je(i),
           windowMinutes: o,
           resetsAt: n?.resetsAt ?? null,
         }
@@ -376,23 +623,23 @@ function _e(e) {
         ? {
             severity: s >= 100 ? `blocked` : `warning`,
             usedPercent: r,
-            remainingPercent: ve(r),
+            remainingPercent: je(r),
             windowMinutes: a,
             resetsAt: t?.resetsAt ?? null,
           }
         : null;
 }
-function ve(e) {
+function je(e) {
   return Number.isFinite(e) ? Math.min(Math.max(100 - e, 0), 100) : 100;
 }
-function ye(e) {
+function Me(e) {
   if (!Number.isFinite(e)) return `–`;
   let t = Math.min(Math.max(e, 0), 100);
   return `${Math.round(t)}%`;
 }
-function be({ intl: e, minutes: t, variant: n = `summary` }) {
+function Ne({ intl: e, minutes: t, variant: n = `summary` }) {
   let r = t ?? 0,
-    i = xe(r, Z);
+    i = Pe(r, Te);
   if (i != null)
     return n === `summary`
       ? e.formatMessage(
@@ -411,7 +658,7 @@ function be({ intl: e, minutes: t, variant: n = `summary` }) {
           },
           { years: i },
         );
-  let a = xe(r, X);
+  let a = Pe(r, we);
   if (a != null)
     return n === `summary`
       ? e.formatMessage(
@@ -431,7 +678,7 @@ function be({ intl: e, minutes: t, variant: n = `summary` }) {
           { months: a },
         );
   if (r >= 10079) {
-    let t = Math.ceil(r / Y);
+    let t = Math.ceil(r / Ce);
     return n === `summary`
       ? e.formatMessage(
           {
@@ -451,7 +698,7 @@ function be({ intl: e, minutes: t, variant: n = `summary` }) {
         );
   }
   if (r >= 1439) {
-    let t = Math.ceil(r / J);
+    let t = Math.ceil(r / Z);
     return e.formatMessage(
       {
         id: `composer.mode.rateLimit.day`,
@@ -489,29 +736,29 @@ function be({ intl: e, minutes: t, variant: n = `summary` }) {
     description: `Rate limit summary heading`,
   });
 }
-function xe(e, t) {
+function Pe(e, t) {
   if (!Number.isFinite(e) || e <= 0) return null;
   let n = Math.max(1, Math.round(e / t));
-  return Se(e, n * t) ? n : null;
+  return Fe(e, n * t) ? n : null;
 }
-function Se(e, t) {
+function Fe(e, t) {
   return e >= t * 0.95 && e <= t * 1.05;
 }
-function Ce(e, t = new Date()) {
+function Ie(e, t = new Date()) {
   let n = Math.floor((e.getTime() - t.getTime()) / 1e3);
   return n <= 0
     ? new Intl.RelativeTimeFormat(void 0, { numeric: `auto` }).format(
         0,
         `second`,
       )
-    : n < pe
+    : n < Ee
       ? new Intl.DateTimeFormat(void 0, { timeStyle: `short` }).format(e)
       : new Intl.DateTimeFormat(void 0, {
           month: `short`,
           day: `numeric`,
         }).format(e);
 }
-function we(e) {
+function Le(e) {
   return {
     date: new Intl.DateTimeFormat(void 0, {
       month: `short`,
@@ -520,71 +767,83 @@ function we(e) {
     time: new Intl.DateTimeFormat(void 0, { timeStyle: `short` }).format(e),
   };
 }
-function Te(e) {
+function Re(e) {
   if (e == null || !Number.isFinite(e)) return null;
   let t = e * 1e3;
   return Number.isFinite(t) ? new Date(t) : null;
 }
-var Ee = `https://chatgpt.com/codex/purchase/plus?checkout_from=codex_app`,
-  De = `https://chatgpt.com/codex/purchase/pro?checkout_from=codex_app`,
-  Oe = `https://chatgpt.com/codex/purchase/codex_team?checkout_from=codex_app`,
-  ke = `https://chatgpt.com/codex/purchase/team?checkout_from=codex_app`,
-  Ae = `https://chatgpt.com/#settings/Billing`,
-  je = { [w.FREE]: 0, [w.GO]: 1, [w.PLUS]: 2, [w.PROLITE]: 3, [w.PRO]: 4 };
-function Me(e) {
-  if (!Ie(e)) return null;
+var ze = `https://chatgpt.com/codex/purchase/plus?checkout_from=codex_app`,
+  Be = `https://chatgpt.com/codex/purchase/pro5x?checkout_from=codex_app`,
+  Ve = `https://chatgpt.com/codex/purchase/pro?checkout_from=codex_app`,
+  He = `https://chatgpt.com/codex/purchase/codex_team?checkout_from=codex_app`,
+  Ue = `https://chatgpt.com/codex/purchase/team?checkout_from=codex_app`,
+  We = `https://chatgpt.com/#settings/Billing`,
+  Ge = `https://help.openai.com/en/articles/7905690-how-to-cancel-your-apple-subscription-for-chatgpt-in-the-chatgpt-ios-app`,
+  Ke = `https://help.openai.com/en/articles/8258076-how-to-cancel-a-subscription-in-the-chatgpt-android-app`,
+  qe = { [T.FREE]: 0, [T.GO]: 1, [T.PLUS]: 2, [T.PROLITE]: 3, [T.PRO]: 4 };
+function Je(e) {
+  return e === `chatgpt_mobile_ios` || e === `sora_mobile_ios`
+    ? `ios`
+    : e === `chatgpt_mobile_android`
+      ? `android`
+      : null;
+}
+function Ye(e) {
+  if (!$e(e)) return null;
   switch (e) {
-    case w.FREE:
+    case T.FREE:
       return { displayPlan: `free`, pricePlan: e, cta: `upgrade` };
-    case w.GO:
+    case T.GO:
       return { displayPlan: `go`, pricePlan: e, cta: `upgrade` };
-    case w.PLUS:
+    case T.PLUS:
       return { displayPlan: `plus`, pricePlan: e, cta: `view` };
-    case w.PROLITE:
-    case w.PRO:
+    case T.PROLITE:
+    case T.PRO:
       return { displayPlan: `pro`, pricePlan: e, cta: `view` };
   }
 }
-function Ne(e) {
-  return e === w.GO || e === w.PLUS || e === w.PROLITE || e === w.PRO;
+function Xe(e) {
+  return e === T.GO || e === T.PLUS || e === T.PROLITE || e === T.PRO;
 }
-function Pe({ currentPlan: e, targetPlan: t }) {
-  return e === t ? `current` : je[t] < je[e] ? `downgrade` : `upgrade`;
+function Ze({ currentPlan: e, targetPlan: t }) {
+  return e === t ? `current` : qe[t] < qe[e] ? `downgrade` : `upgrade`;
 }
-function Fe({ currentPlan: e, targetPlan: t }) {
-  let n = Pe({ currentPlan: e, targetPlan: t });
+function Qe({ currentPlan: e, targetPlan: t }) {
+  let n = Ze({ currentPlan: e, targetPlan: t });
   return n === `current`
     ? null
     : n === `downgrade`
-      ? `https://chatgpt.com/codex/downgrade/${t}`
-      : t === w.PLUS
-        ? Ee
-        : De;
+      ? `https://chatgpt.com/codex/downgrade/${t === T.PROLITE ? `pro5x` : t}`
+      : t === T.PLUS
+        ? ze
+        : t === T.PROLITE
+          ? Be
+          : Ve;
 }
-function Ie(e) {
+function $e(e) {
   return (
-    e === w.FREE || e === w.GO || e === w.PLUS || e === w.PROLITE || e === w.PRO
+    e === T.FREE || e === T.GO || e === T.PLUS || e === T.PROLITE || e === T.PRO
   );
 }
-var Le = e(r(), 1),
-  Q = i();
-function Re(e) {
+var et = e(n(), 1),
+  Q = r();
+function tt(e) {
   let t = (0, N.c)(18),
-    { ariaLabel: n, className: r, options: i, selectedId: o, onSelect: s } = e,
-    c = (0, Le.useId)(),
+    { ariaLabel: n, className: r, options: a, selectedId: o, onSelect: s } = e,
+    c = (0, et.useId)(),
     l;
   t[0] === r
     ? (l = t[1])
-    : ((l = a(`bg-token-foreground/10 inline-grid gap-1 rounded-2xl p-1`, r)),
+    : ((l = i(`bg-token-foreground/10 inline-grid gap-1 rounded-2xl p-1`, r)),
       (t[0] = r),
       (t[1] = l));
-  let u = `repeat(${i.length}, minmax(0, 1fr))`,
+  let u = `repeat(${a.length}, minmax(0, 1fr))`,
     d;
   t[2] === u
     ? (d = t[3])
     : ((d = { gridTemplateColumns: u }), (t[2] = u), (t[3] = d));
   let f;
-  if (t[4] !== c || t[5] !== s || t[6] !== i || t[7] !== o) {
+  if (t[4] !== c || t[5] !== s || t[6] !== a || t[7] !== o) {
     let e;
     (t[9] !== c || t[10] !== s || t[11] !== o
       ? ((e = (e) => {
@@ -592,7 +851,7 @@ function Re(e) {
           return (0, Q.jsxs)(
             `button`,
             {
-              className: a(
+              className: i(
                 `cursor-interaction relative isolate min-w-0 rounded-xl px-3 py-1.5 text-sm font-medium transition-transform duration-150 active:scale-[0.98]`,
                 t ? `text-black` : `text-token-text-secondary`,
               ),
@@ -604,7 +863,7 @@ function Re(e) {
               },
               children: [
                 t
-                  ? (0, Q.jsx)(S.span, {
+                  ? (0, Q.jsx)(C.span, {
                       layoutId: c,
                       className: `absolute inset-0 -z-10 rounded-xl bg-white shadow-sm`,
                       transition: { type: `spring`, duration: 0.28, bounce: 0 },
@@ -621,10 +880,10 @@ function Re(e) {
         (t[11] = o),
         (t[12] = e))
       : (e = t[12]),
-      (f = i.map(e)),
+      (f = a.map(e)),
       (t[4] = c),
       (t[5] = s),
-      (t[6] = i),
+      (t[6] = a),
       (t[7] = o),
       (t[8] = f));
   } else f = t[8];
@@ -647,8 +906,8 @@ function Re(e) {
     p
   );
 }
-var ze = `show_logged_in_pricing_page`;
-function Be(e) {
+var nt = `show_logged_in_pricing_page`;
+function rt(e) {
   let t = (0, N.c)(3),
     { logExposure: n } = e,
     r = v(),
@@ -656,7 +915,7 @@ function Be(e) {
   return (
     t[0] !== n || t[1] !== r
       ? ((i = () =>
-          y(r, `337040058`, { disableExposureLog: !n }).get(ze, !1) ? A : j),
+          y(r, `337040058`, { disableExposureLog: !n }).get(nt, !1) ? A : re),
         (t[0] = n),
         (t[1] = r),
         (t[2] = i))
@@ -664,7 +923,7 @@ function Be(e) {
     i
   );
 }
-function Ve({ intl: e, amount: t, currencyCode: n, minorUnitExponent: r }) {
+function it({ intl: e, amount: t, currencyCode: n, minorUnitExponent: r }) {
   return t == null
     ? null
     : e.formatNumber(t, {
@@ -676,26 +935,26 @@ function Ve({ intl: e, amount: t, currencyCode: n, minorUnitExponent: r }) {
         maximumFractionDigits: r ?? void 0,
       });
 }
-function He(e) {
+function at(e) {
   let t = (0, N.c)(94),
     {
       currentPlan: n,
       pricingInfo: r,
-      getPlansUrl: i,
+      getPlansUrl: o,
       onCtaClick: s,
       onOpenChange: c,
-      onOpenUrl: l,
+      onOpenUrl: u,
       open: d,
     } = e,
-    f = u(),
-    [p, m] = (0, Le.useState)(`personal`),
-    [h, g] = (0, Le.useState)(n === w.PRO ? w.PRO : w.PROLITE),
-    _ = n === w.GO || n === w.PLUS || n === w.PROLITE || n === w.PRO,
+    f = a(),
+    [p, m] = (0, et.useState)(`personal`),
+    [h, g] = (0, et.useState)(n === T.PRO ? T.PRO : T.PROLITE),
+    _ = n === T.GO || n === T.PLUS || n === T.PROLITE || n === T.PRO,
     v;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, Q.jsx)(T, {
+    ? ((v = (0, Q.jsx)(E, {
         className: `text-lg font-medium`,
-        children: (0, Q.jsx)(o, {
+        children: (0, Q.jsx)(l, {
           id: `settings.usage.upgradePlan.title`,
           defaultMessage: `Upgrade plan`,
           description: `Title for the plan upgrade dialog`,
@@ -705,9 +964,9 @@ function He(e) {
     : (v = t[0]);
   let y;
   t[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((y = (0, Q.jsx)(O, {
+    ? ((y = (0, Q.jsx)(te, {
         className: `sr-only`,
-        children: (0, Q.jsx)(o, {
+        children: (0, Q.jsx)(l, {
           id: `settings.usage.upgradePlan.description`,
           defaultMessage: `Compare personal and business plans`,
           description: `Screen reader description for the plan upgrade dialog`,
@@ -729,7 +988,7 @@ function He(e) {
   t[4] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((x = {
         id: `personal`,
-        label: (0, Q.jsx)(o, {
+        label: (0, Q.jsx)(l, {
           id: `settings.usage.upgradePlan.tabs.personal`,
           defaultMessage: `Personal`,
           description: `Label for personal plans tab`,
@@ -743,7 +1002,7 @@ function He(e) {
         x,
         {
           id: `business`,
-          label: (0, Q.jsx)(o, {
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.tabs.business`,
             defaultMessage: `Business`,
             description: `Label for business plans tab`,
@@ -754,7 +1013,7 @@ function He(e) {
     : (S = t[5]);
   let C;
   t[6] !== b || t[7] !== p
-    ? ((C = (0, Q.jsx)(Re, {
+    ? ((C = (0, Q.jsx)(tt, {
         ariaLabel: b,
         className: `w-fit`,
         selectedId: p,
@@ -765,197 +1024,197 @@ function He(e) {
       (t[7] = p),
       (t[8] = C))
     : (C = t[8]);
-  let ee = p !== `personal`,
-    te = p !== `personal` && `invisible pointer-events-none`,
-    k;
-  t[9] === te
-    ? (k = t[10])
-    : ((k = a(`col-start-1 row-start-1 grid gap-2.5 md:grid-cols-3`, te)),
-      (t[9] = te),
-      (t[10] = k));
-  let A;
+  let w = p !== `personal`,
+    ne = p !== `personal` && `invisible pointer-events-none`,
+    O;
+  t[9] === ne
+    ? (O = t[10])
+    : ((O = i(`col-start-1 row-start-1 grid gap-2.5 md:grid-cols-3`, ne)),
+      (t[9] = ne),
+      (t[10] = O));
+  let k;
   t[11] !== n ||
-  t[12] !== i ||
+  t[12] !== o ||
   t[13] !== f ||
   t[14] !== s ||
-  t[15] !== l ||
+  t[15] !== u ||
   t[16] !== r ||
   t[17] !== _
-    ? ((A = _
+    ? ((k = _
         ? null
-        : (0, Q.jsx)(Ge, {
+        : (0, Q.jsx)(ct, {
             currentPlan: n,
-            targetPlan: w.FREE,
-            price: Qe({ intl: f, pricingInfo: r, plan: w.FREE }),
-            title: (0, Q.jsx)(o, {
+            targetPlan: T.FREE,
+            price: ht({ intl: f, pricingInfo: r, plan: T.FREE }),
+            title: (0, Q.jsx)(l, {
               id: `settings.usage.upgradePlan.personal.free.title`,
               defaultMessage: `Free`,
               description: `Title for the Free personal plan card`,
             }),
             features: [
               {
-                icon: (0, Q.jsx)(et, {}),
-                label: (0, Q.jsx)(o, {
+                icon: (0, Q.jsx)(_t, {}),
+                label: (0, Q.jsx)(l, {
                   id: `settings.usage.upgradePlan.personal.free.usage`,
                   defaultMessage: `Limited Codex usage`,
                   description: `Usage feature on the Free personal plan card`,
                 }),
               },
               {
-                icon: (0, Q.jsx)(tt, {}),
-                label: (0, Q.jsx)(o, {
+                icon: (0, Q.jsx)(vt, {}),
+                label: (0, Q.jsx)(l, {
                   id: `settings.usage.upgradePlan.personal.free.model`,
                   defaultMessage: `GPT-5.3`,
                   description: `Model feature on the Free personal plan card`,
                 }),
               },
             ],
-            getPlansUrl: i,
+            getPlansUrl: o,
             onCtaClick: s,
-            onOpenUrl: l,
+            onOpenUrl: u,
           })),
       (t[11] = n),
-      (t[12] = i),
+      (t[12] = o),
       (t[13] = f),
       (t[14] = s),
-      (t[15] = l),
+      (t[15] = u),
       (t[16] = r),
       (t[17] = _),
-      (t[18] = A))
-    : (A = t[18]);
-  let j;
+      (t[18] = k))
+    : (k = t[18]);
+  let A;
   t[19] !== f || t[20] !== r
-    ? ((j = Qe({ intl: f, pricingInfo: r, plan: w.PLUS })),
+    ? ((A = ht({ intl: f, pricingInfo: r, plan: T.PLUS })),
       (t[19] = f),
       (t[20] = r),
-      (t[21] = j))
-    : (j = t[21]);
-  let M, P;
+      (t[21] = A))
+    : (A = t[21]);
+  let re, j;
   t[22] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((M = (0, Q.jsx)(o, {
+    ? ((re = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.personal.plus.title`,
         defaultMessage: `Plus`,
         description: `Title for the Plus personal plan card`,
       })),
-      (P = [
+      (j = [
         {
-          icon: (0, Q.jsx)(et, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(_t, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.personal.plus.usage`,
             defaultMessage: `Enhanced Codex usage`,
             description: `Usage feature on the Plus personal plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(tt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(vt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.personal.plus.model`,
             defaultMessage: `GPT-5.5 Thinking`,
             description: `Model feature on the Plus personal plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(nt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(yt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.personal.plus.workspace`,
             defaultMessage: `Connect to Google Workspace`,
             description: `Workspace feature on the Plus personal plan card`,
           }),
         },
       ]),
-      (t[22] = M),
-      (t[23] = P))
-    : ((M = t[22]), (P = t[23]));
-  let F;
+      (t[22] = re),
+      (t[23] = j))
+    : ((re = t[22]), (j = t[23]));
+  let M;
   t[24] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((F = (0, Q.jsx)(o, {
+    ? ((M = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.more.plus`,
         defaultMessage: `View more details for Plus plan`,
         description: `Screen reader label for the Plus plan details link`,
       })),
-      (t[24] = F))
-    : (F = t[24]);
-  let I;
-  t[25] !== n || t[26] !== i || t[27] !== s || t[28] !== l || t[29] !== j
-    ? ((I = (0, Q.jsx)(Ge, {
+      (t[24] = M))
+    : (M = t[24]);
+  let P;
+  t[25] !== n || t[26] !== o || t[27] !== s || t[28] !== u || t[29] !== A
+    ? ((P = (0, Q.jsx)(ct, {
         currentPlan: n,
-        targetPlan: w.PLUS,
-        price: j,
-        title: M,
-        features: P,
-        getPlansUrl: i,
+        targetPlan: T.PLUS,
+        price: A,
+        title: re,
+        features: j,
+        getPlansUrl: o,
         onCtaClick: s,
-        onOpenUrl: l,
-        planDetailsLabel: F,
+        onOpenUrl: u,
+        planDetailsLabel: M,
       })),
       (t[25] = n),
-      (t[26] = i),
+      (t[26] = o),
       (t[27] = s),
-      (t[28] = l),
-      (t[29] = j),
-      (t[30] = I))
-    : (I = t[30]);
-  let L;
+      (t[28] = u),
+      (t[29] = A),
+      (t[30] = P))
+    : (P = t[30]);
+  let F;
   t[31] !== n ||
-  t[32] !== i ||
+  t[32] !== o ||
   t[33] !== f ||
   t[34] !== s ||
-  t[35] !== l ||
+  t[35] !== u ||
   t[36] !== r ||
   t[37] !== h ||
   t[38] !== _
-    ? ((L = _
+    ? ((F = _
         ? (0, Q.jsxs)(Q.Fragment, {
             children: [
-              (0, Q.jsx)(Ge, {
+              (0, Q.jsx)(ct, {
                 currentPlan: n,
-                targetPlan: w.PROLITE,
-                price: Qe({ intl: f, pricingInfo: r, plan: w.PROLITE }),
-                title: (0, Q.jsx)(qe, {
-                  tier: (0, Q.jsx)(o, {
+                targetPlan: T.PROLITE,
+                price: ht({ intl: f, pricingInfo: r, plan: T.PROLITE }),
+                title: (0, Q.jsx)(ut, {
+                  tier: (0, Q.jsx)(l, {
                     id: `settings.usage.upgradePlan.personal.proLite.tier`,
                     defaultMessage: `5x`,
                     description: `Tier suffix for the Pro 5x personal plan card`,
                   }),
                 }),
-                features: Je(w.PROLITE),
-                getPlansUrl: i,
+                features: dt(T.PROLITE),
+                getPlansUrl: o,
                 onCtaClick: s,
-                onOpenUrl: l,
-                planDetailsLabel: (0, Q.jsx)(Ye, { plan: w.PROLITE }),
+                onOpenUrl: u,
+                planDetailsLabel: (0, Q.jsx)(ft, { plan: T.PROLITE }),
               }),
-              (0, Q.jsx)(Ge, {
+              (0, Q.jsx)(ct, {
                 currentPlan: n,
-                targetPlan: w.PRO,
-                price: Qe({ intl: f, pricingInfo: r, plan: w.PRO }),
-                title: (0, Q.jsx)(qe, {
-                  tier: (0, Q.jsx)(o, {
+                targetPlan: T.PRO,
+                price: ht({ intl: f, pricingInfo: r, plan: T.PRO }),
+                title: (0, Q.jsx)(ut, {
+                  tier: (0, Q.jsx)(l, {
                     id: `settings.usage.upgradePlan.personal.pro.tier`,
                     defaultMessage: `20x`,
                     description: `Tier suffix for the Pro 20x personal plan card`,
                   }),
                 }),
-                features: Je(w.PRO),
-                getPlansUrl: i,
+                features: dt(T.PRO),
+                getPlansUrl: o,
                 onCtaClick: s,
-                onOpenUrl: l,
-                planDetailsLabel: (0, Q.jsx)(Ye, { plan: w.PRO }),
+                onOpenUrl: u,
+                planDetailsLabel: (0, Q.jsx)(ft, { plan: T.PRO }),
               }),
             ],
           })
-        : (0, Q.jsx)(Ge, {
+        : (0, Q.jsx)(ct, {
             currentPlan: n,
             targetPlan: h,
-            price: Qe({ intl: f, pricingInfo: r, plan: h }),
+            price: ht({ intl: f, pricingInfo: r, plan: h }),
             title: (0, Q.jsxs)(`div`, {
               className: `flex items-center justify-between gap-4`,
               children: [
-                (0, Q.jsx)(o, {
+                (0, Q.jsx)(l, {
                   id: `settings.usage.upgradePlan.personal.pro.title`,
                   defaultMessage: `Pro`,
                   description: `Title for the Pro personal plan card`,
                 }),
-                (0, Q.jsx)(Re, {
+                (0, Q.jsx)(tt, {
                   ariaLabel: f.formatMessage({
                     id: `settings.usage.upgradePlan.personal.proTier.ariaLabel`,
                     defaultMessage: `Choose Pro plan tier`,
@@ -966,16 +1225,16 @@ function He(e) {
                   onSelect: g,
                   options: [
                     {
-                      id: w.PROLITE,
-                      label: (0, Q.jsx)(o, {
+                      id: T.PROLITE,
+                      label: (0, Q.jsx)(l, {
                         id: `settings.usage.upgradePlan.personal.proTier.fiveX`,
                         defaultMessage: `5x`,
                         description: `Label for the Pro 5x tier toggle`,
                       }),
                     },
                     {
-                      id: w.PRO,
-                      label: (0, Q.jsx)(o, {
+                      id: T.PRO,
+                      label: (0, Q.jsx)(l, {
                         id: `settings.usage.upgradePlan.personal.proTier.twentyX`,
                         defaultMessage: `20x`,
                         description: `Label for the Pro 20x tier toggle`,
@@ -985,412 +1244,427 @@ function He(e) {
                 }),
               ],
             }),
-            features: Je(h),
-            getPlansUrl: i,
+            features: dt(h),
+            getPlansUrl: o,
             onCtaClick: s,
-            onOpenUrl: l,
-            planDetailsLabel: (0, Q.jsx)(Ye, { plan: h }),
+            onOpenUrl: u,
+            planDetailsLabel: (0, Q.jsx)(ft, { plan: h }),
           })),
       (t[31] = n),
-      (t[32] = i),
+      (t[32] = o),
       (t[33] = f),
       (t[34] = s),
-      (t[35] = l),
+      (t[35] = u),
       (t[36] = r),
       (t[37] = h),
       (t[38] = _),
-      (t[39] = L))
-    : (L = t[39]);
-  let R;
-  t[40] !== A || t[41] !== I || t[42] !== L || t[43] !== ee || t[44] !== k
-    ? ((R = (0, Q.jsxs)(`div`, {
-        "aria-hidden": ee,
-        className: k,
-        children: [A, I, L],
+      (t[39] = F))
+    : (F = t[39]);
+  let I;
+  t[40] !== k || t[41] !== P || t[42] !== F || t[43] !== w || t[44] !== O
+    ? ((I = (0, Q.jsxs)(`div`, {
+        "aria-hidden": w,
+        className: O,
+        children: [k, P, F],
       })),
-      (t[40] = A),
-      (t[41] = I),
-      (t[42] = L),
-      (t[43] = ee),
-      (t[44] = k),
-      (t[45] = R))
-    : (R = t[45]);
-  let ne = p !== `business`,
-    re = p !== `business` && `invisible pointer-events-none`,
-    z;
-  t[46] === re
-    ? (z = t[47])
-    : ((z = a(`col-start-1 row-start-1 grid gap-2.5 md:grid-cols-2`, re)),
-      (t[46] = re),
-      (t[47] = z));
-  let B, ie, ae, V, oe, se;
+      (t[40] = k),
+      (t[41] = P),
+      (t[42] = F),
+      (t[43] = w),
+      (t[44] = O),
+      (t[45] = I))
+    : (I = t[45]);
+  let ie = p !== `business`,
+    ae = p !== `business` && `invisible pointer-events-none`,
+    L;
+  t[46] === ae
+    ? (L = t[47])
+    : ((L = i(`col-start-1 row-start-1 grid gap-2.5 md:grid-cols-2`, ae)),
+      (t[46] = ae),
+      (t[47] = L));
+  let oe, se, ce, le, R, ue;
   t[48] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((B = (0, Q.jsx)(o, {
+    ? ((oe = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.codex.title`,
         defaultMessage: `Business`,
         description: `Title for the Codex Business plan card`,
       })),
-      (ie = (0, Q.jsx)(o, {
+      (se = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.codex.subtitle`,
         defaultMessage: `Codex`,
         description: `Subtitle for the Codex Business plan card`,
       })),
-      (ae = (0, Q.jsx)(o, {
+      (ce = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.codex.price`,
         defaultMessage: `Usage pricing`,
         description: `Price label for the Codex Business plan card`,
       })),
-      (V = (0, Q.jsx)(o, {
+      (le = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.codex.description`,
         defaultMessage: `No fixed seat. Pay as you go based on usage`,
         description: `Description for the Codex Business plan card`,
       })),
-      (oe = [
+      (R = [
         {
-          icon: (0, Q.jsx)(et, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(_t, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.codex.usage`,
             defaultMessage: `Pay-as-you-go usage`,
             description: `Usage feature on the Codex Business plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(tt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(vt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.codex.model`,
             defaultMessage: `GPT-5.5 Thinking`,
             description: `Model feature on the Codex Business plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(nt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(yt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.codex.workspace`,
             defaultMessage: `Connect to Google Workspace`,
             description: `Workspace feature on the Codex Business plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(rt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(bt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.codex.security`,
             defaultMessage: `Enhanced security and admin controls`,
             description: `Security feature on the Codex Business plan card`,
           }),
         },
       ]),
-      (se = (0, Q.jsx)(o, {
+      (ue = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.addWorkspace`,
         defaultMessage: `Add Business workspace`,
         description: `CTA to add a business workspace`,
       })),
-      (t[48] = B),
-      (t[49] = ie),
-      (t[50] = ae),
-      (t[51] = V),
-      (t[52] = oe),
-      (t[53] = se))
-    : ((B = t[48]),
-      (ie = t[49]),
-      (ae = t[50]),
-      (V = t[51]),
-      (oe = t[52]),
-      (se = t[53]));
-  let H;
-  t[54] === l
-    ? (H = t[55])
-    : ((H = () => {
-        l(Oe);
+      (t[48] = oe),
+      (t[49] = se),
+      (t[50] = ce),
+      (t[51] = le),
+      (t[52] = R),
+      (t[53] = ue))
+    : ((oe = t[48]),
+      (se = t[49]),
+      (ce = t[50]),
+      (le = t[51]),
+      (R = t[52]),
+      (ue = t[53]));
+  let z;
+  t[54] === u
+    ? (z = t[55])
+    : ((z = () => {
+        u(He);
       }),
-      (t[54] = l),
-      (t[55] = H));
-  let ce;
+      (t[54] = u),
+      (t[55] = z));
+  let de;
   t[56] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((ce = (0, Q.jsx)(o, {
+    ? ((de = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.more.businessCodex`,
         defaultMessage: `View more details for Business Codex plan`,
         description: `Screen reader label for the Business Codex plan details link`,
       })),
-      (t[56] = ce))
-    : (ce = t[56]);
-  let U;
-  t[57] !== i || t[58] !== s || t[59] !== l || t[60] !== H
-    ? ((U = (0, Q.jsx)(Ke, {
-        title: B,
-        subtitle: ie,
-        priceLabel: ae,
-        description: V,
-        features: oe,
-        cta: se,
-        onClick: H,
-        targetPlan: w.SELF_SERVE_BUSINESS_USAGE_BASED,
-        getPlansUrl: i,
+      (t[56] = de))
+    : (de = t[56]);
+  let B;
+  t[57] !== o || t[58] !== s || t[59] !== u || t[60] !== z
+    ? ((B = (0, Q.jsx)(lt, {
+        title: oe,
+        subtitle: se,
+        priceLabel: ce,
+        description: le,
+        features: R,
+        cta: ue,
+        onClick: z,
+        targetPlan: T.SELF_SERVE_BUSINESS_USAGE_BASED,
+        getPlansUrl: o,
         onCtaClick: s,
-        onOpenUrl: l,
-        planDetailsLabel: ce,
+        onOpenUrl: u,
+        planDetailsLabel: de,
       })),
-      (t[57] = i),
+      (t[57] = o),
       (t[58] = s),
-      (t[59] = l),
-      (t[60] = H),
-      (t[61] = U))
-    : (U = t[61]);
-  let W, G;
+      (t[59] = u),
+      (t[60] = z),
+      (t[61] = B))
+    : (B = t[61]);
+  let V, fe;
   t[62] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((W = (0, Q.jsx)(o, {
+    ? ((V = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.team.title`,
         defaultMessage: `Business`,
         description: `Title for the ChatGPT and Codex Business plan card`,
       })),
-      (G = (0, Q.jsx)(o, {
+      (fe = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.team.subtitle`,
         defaultMessage: `ChatGPT & Codex`,
         description: `Subtitle for the ChatGPT and Codex Business plan card`,
       })),
-      (t[62] = W),
-      (t[63] = G))
-    : ((W = t[62]), (G = t[63]));
-  let K;
+      (t[62] = V),
+      (t[63] = fe))
+    : ((V = t[62]), (fe = t[63]));
+  let H;
   t[64] !== f || t[65] !== r
-    ? ((K = $e({ intl: f, pricingInfo: r })),
+    ? ((H = gt({ intl: f, pricingInfo: r })),
       (t[64] = f),
       (t[65] = r),
-      (t[66] = K))
-    : (K = t[66]);
-  let le, ue, de;
+      (t[66] = H))
+    : (H = t[66]);
+  let U, pe, W;
   t[67] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((le = (0, Q.jsx)(o, {
+    ? ((U = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.team.description`,
         defaultMessage: `When billed annually. Minimum of 2 users`,
         description: `Description for the ChatGPT and Codex Business plan card`,
       })),
-      (ue = [
+      (pe = [
         {
-          icon: (0, Q.jsx)(et, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(_t, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.team.usage`,
             defaultMessage: `Enhanced Codex usage`,
             description: `Usage feature on the ChatGPT and Codex Business plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(tt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(vt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.team.model`,
             defaultMessage: `GPT-5.5 Thinking`,
             description: `Model feature on the ChatGPT and Codex Business plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(nt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(yt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.team.workspace`,
             defaultMessage: `Connect to Google Workspace`,
             description: `Workspace feature on the ChatGPT and Codex Business plan card`,
           }),
         },
         {
-          icon: (0, Q.jsx)(rt, {}),
-          label: (0, Q.jsx)(o, {
+          icon: (0, Q.jsx)(bt, {}),
+          label: (0, Q.jsx)(l, {
             id: `settings.usage.upgradePlan.business.team.security`,
             defaultMessage: `Enhanced security and admin controls`,
             description: `Security feature on the ChatGPT and Codex Business plan card`,
           }),
         },
       ]),
-      (de = (0, Q.jsx)(o, {
+      (W = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.addWorkspace`,
         defaultMessage: `Add Business workspace`,
         description: `CTA to add a business workspace`,
       })),
-      (t[67] = le),
-      (t[68] = ue),
-      (t[69] = de))
-    : ((le = t[67]), (ue = t[68]), (de = t[69]));
-  let q;
-  t[70] === l
-    ? (q = t[71])
-    : ((q = () => {
-        l(ke);
+      (t[67] = U),
+      (t[68] = pe),
+      (t[69] = W))
+    : ((U = t[67]), (pe = t[68]), (W = t[69]));
+  let G;
+  t[70] === u
+    ? (G = t[71])
+    : ((G = () => {
+        u(Ue);
       }),
-      (t[70] = l),
-      (t[71] = q));
-  let fe;
+      (t[70] = u),
+      (t[71] = G));
+  let me;
   t[72] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((fe = (0, Q.jsx)(o, {
+    ? ((me = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.more.businessTeam`,
         defaultMessage: `View more details for Business ChatGPT and Codex plan`,
         description: `Screen reader label for the Business ChatGPT and Codex plan details link`,
       })),
-      (t[72] = fe))
-    : (fe = t[72]);
-  let J;
-  t[73] !== i || t[74] !== s || t[75] !== l || t[76] !== K || t[77] !== q
-    ? ((J = (0, Q.jsx)(Ke, {
-        title: W,
-        subtitle: G,
-        priceLabel: K,
-        description: le,
-        features: ue,
-        cta: de,
-        onClick: q,
-        targetPlan: w.SELF_SERVE_BUSINESS,
-        getPlansUrl: i,
+      (t[72] = me))
+    : (me = t[72]);
+  let K;
+  t[73] !== o || t[74] !== s || t[75] !== u || t[76] !== H || t[77] !== G
+    ? ((K = (0, Q.jsx)(lt, {
+        title: V,
+        subtitle: fe,
+        priceLabel: H,
+        description: U,
+        features: pe,
+        cta: W,
+        onClick: G,
+        targetPlan: T.SELF_SERVE_BUSINESS,
+        getPlansUrl: o,
         onCtaClick: s,
-        onOpenUrl: l,
-        planDetailsLabel: fe,
+        onOpenUrl: u,
+        planDetailsLabel: me,
       })),
-      (t[73] = i),
+      (t[73] = o),
       (t[74] = s),
-      (t[75] = l),
-      (t[76] = K),
-      (t[77] = q),
-      (t[78] = J))
-    : (J = t[78]);
+      (t[75] = u),
+      (t[76] = H),
+      (t[77] = G),
+      (t[78] = K))
+    : (K = t[78]);
+  let q;
+  t[79] !== ie || t[80] !== L || t[81] !== B || t[82] !== K
+    ? ((q = (0, Q.jsxs)(`div`, {
+        "aria-hidden": ie,
+        className: L,
+        children: [B, K],
+      })),
+      (t[79] = ie),
+      (t[80] = L),
+      (t[81] = B),
+      (t[82] = K),
+      (t[83] = q))
+    : (q = t[83]);
+  let J;
+  t[84] !== I || t[85] !== q
+    ? ((J = (0, Q.jsxs)(`div`, { className: `grid`, children: [I, q] })),
+      (t[84] = I),
+      (t[85] = q),
+      (t[86] = J))
+    : (J = t[86]);
   let Y;
-  t[79] !== ne || t[80] !== z || t[81] !== U || t[82] !== J
-    ? ((Y = (0, Q.jsxs)(`div`, {
-        "aria-hidden": ne,
-        className: z,
-        children: [U, J],
-      })),
-      (t[79] = ne),
-      (t[80] = z),
-      (t[81] = U),
-      (t[82] = J),
-      (t[83] = Y))
-    : (Y = t[83]);
-  let X;
-  t[84] !== R || t[85] !== Y
-    ? ((X = (0, Q.jsxs)(`div`, { className: `grid`, children: [R, Y] })),
-      (t[84] = R),
-      (t[85] = Y),
-      (t[86] = X))
-    : (X = t[86]);
-  let Z;
-  t[87] !== X || t[88] !== C
-    ? ((Z = (0, Q.jsxs)(D, {
+  t[87] !== J || t[88] !== C
+    ? ((Y = (0, Q.jsxs)(ee, {
         className: `max-h-[calc(100vh-2rem)] gap-3 overflow-y-auto px-5 py-4`,
-        children: [v, y, C, X],
+        children: [v, y, C, J],
       })),
-      (t[87] = X),
+      (t[87] = J),
       (t[88] = C),
-      (t[89] = Z))
-    : (Z = t[89]);
-  let pe;
+      (t[89] = Y))
+    : (Y = t[89]);
+  let X;
   return (
-    t[90] !== c || t[91] !== d || t[92] !== Z
-      ? ((pe = (0, Q.jsx)(E, {
+    t[90] !== c || t[91] !== d || t[92] !== Y
+      ? ((X = (0, Q.jsx)(D, {
           open: d,
           onOpenChange: c,
           contentClassName: `!w-[min(800px,calc(100vw-2rem))]`,
-          children: Z,
+          children: Y,
         })),
         (t[90] = c),
         (t[91] = d),
-        (t[92] = Z),
-        (t[93] = pe))
-      : (pe = t[93]),
-    pe
+        (t[92] = Y),
+        (t[93] = X))
+      : (X = t[93]),
+    X
   );
 }
-function Ue(e) {
-  let t = (0, N.c)(19),
+function ot(e) {
+  let t = (0, N.c)(24),
     { currentPlan: n, onClose: r, source: i } = e,
-    a = d(c),
-    o;
+    a = u(s),
+    { data: o } = x(),
+    c;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((o = { enabled: !0 }), (t[0] = o))
-    : (o = t[0]);
-  let { data: s } = B(o),
-    l;
-  t[1] === s
-    ? (l = t[2])
-    : ((l = { billingCurrency: s, enabled: !0 }), (t[1] = s), (t[2] = l));
-  let { data: u } = V(l),
-    f;
+    ? ((c = { enabled: !0 }), (t[0] = c))
+    : (c = t[0]);
+  let { data: l } = z(c),
+    d;
+  t[1] === l
+    ? (d = t[2])
+    : ((d = { billingCurrency: l, enabled: !0 }), (t[1] = l), (t[2] = d));
+  let { data: f } = H(d),
+    p;
   t[3] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((f = { logExposure: !1 }), (t[3] = f))
-    : (f = t[3]);
-  let p = Be(f),
-    m,
-    h;
-  (t[4] !== a || t[5] !== i
-    ? ((m = () => {
+    ? ((p = { logExposure: !1 }), (t[3] = p))
+    : (p = t[3]);
+  let m = rt(p),
+    h = o?.plan_type,
+    g,
+    v;
+  (t[4] !== n || t[5] !== h || t[6] !== r
+    ? ((g = () => {
+        h != null && h !== n.toString() && r();
+      }),
+      (v = [n, h, r]),
+      (t[4] = n),
+      (t[5] = h),
+      (t[6] = r),
+      (t[7] = g),
+      (t[8] = v))
+    : ((g = t[7]), (v = t[8])),
+    (0, et.useEffect)(g, v));
+  let y, b;
+  (t[9] !== a || t[10] !== i
+    ? ((y = () => {
         _(a, {
           eventName: `codex_upgrade_plan_modal_shown`,
           metadata: { source: i },
         });
       }),
-      (h = [a, i]),
-      (t[4] = a),
-      (t[5] = i),
-      (t[6] = m),
-      (t[7] = h))
-    : ((m = t[6]), (h = t[7])),
-    (0, Le.useEffect)(m, h));
-  let g = u ?? null,
-    v;
-  t[8] !== a || t[9] !== i
-    ? ((v = (e, t) => {
+      (b = [a, i]),
+      (t[9] = a),
+      (t[10] = i),
+      (t[11] = y),
+      (t[12] = b))
+    : ((y = t[11]), (b = t[12])),
+    (0, et.useEffect)(y, b));
+  let S = f ?? null,
+    C;
+  t[13] !== a || t[14] !== i
+    ? ((C = (e, t) => {
         _(a, {
           eventName: `codex_upgrade_plan_modal_cta_clicked`,
           metadata: { cta_action: e, source: i, target_plan: t },
         });
       }),
-      (t[8] = a),
-      (t[9] = i),
-      (t[10] = v))
-    : (v = t[10]);
-  let y;
-  t[11] === r
-    ? (y = t[12])
-    : ((y = (e) => {
+      (t[13] = a),
+      (t[14] = i),
+      (t[15] = C))
+    : (C = t[15]);
+  let w;
+  t[16] === r
+    ? (w = t[17])
+    : ((w = (e) => {
         e || r();
       }),
-      (t[11] = r),
-      (t[12] = y));
-  let b;
+      (t[16] = r),
+      (t[17] = w));
+  let T;
   return (
-    t[13] !== n || t[14] !== p || t[15] !== g || t[16] !== v || t[17] !== y
-      ? ((b = (0, Q.jsx)(He, {
+    t[18] !== n || t[19] !== m || t[20] !== w || t[21] !== S || t[22] !== C
+      ? ((T = (0, Q.jsx)(at, {
           open: !0,
           currentPlan: n,
-          pricingInfo: g,
-          getPlansUrl: p,
-          onCtaClick: v,
-          onOpenChange: y,
-          onOpenUrl: We,
+          pricingInfo: S,
+          getPlansUrl: m,
+          onCtaClick: C,
+          onOpenChange: w,
+          onOpenUrl: st,
         })),
-        (t[13] = n),
-        (t[14] = p),
-        (t[15] = g),
-        (t[16] = v),
-        (t[17] = y),
-        (t[18] = b))
-      : (b = t[18]),
-    b
+        (t[18] = n),
+        (t[19] = m),
+        (t[20] = w),
+        (t[21] = S),
+        (t[22] = C),
+        (t[23] = T))
+      : (T = t[23]),
+    T
   );
 }
-function We(e) {
+function st(e) {
   h.dispatchMessage(`open-in-browser`, { url: e });
 }
-function Ge(e) {
+function ct(e) {
   let t = (0, N.c)(29),
     {
       currentPlan: n,
       features: r,
       getPlansUrl: i,
       onCtaClick: a,
-      onOpenUrl: s,
-      planDetailsLabel: c,
-      price: l,
+      onOpenUrl: o,
+      planDetailsLabel: s,
+      price: c,
       targetPlan: u,
       title: d,
     } = e,
     f;
   t[0] !== n || t[1] !== u
-    ? ((f = Pe({ currentPlan: n, targetPlan: u })),
+    ? ((f = Ze({ currentPlan: n, targetPlan: u })),
       (t[0] = n),
       (t[1] = u),
       (t[2] = f))
@@ -1398,33 +1672,33 @@ function Ge(e) {
   let p = f,
     m;
   t[3] !== n || t[4] !== u
-    ? ((m = Fe({ currentPlan: n, targetPlan: u })),
+    ? ((m = Qe({ currentPlan: n, targetPlan: u })),
       (t[3] = n),
       (t[4] = u),
       (t[5] = m))
     : (m = t[5]);
   let h = m,
     g;
-  t[6] !== i || t[7] !== s || t[8] !== c
+  t[6] !== i || t[7] !== o || t[8] !== s
     ? ((g =
-        c == null
+        s == null
           ? null
-          : (0, Q.jsx)(Ze, { detailsLabel: c, getPlansUrl: i, onOpenUrl: s })),
+          : (0, Q.jsx)(mt, { detailsLabel: s, getPlansUrl: i, onOpenUrl: o })),
       (t[6] = i),
-      (t[7] = s),
-      (t[8] = c),
+      (t[7] = o),
+      (t[8] = s),
       (t[9] = g))
     : (g = t[9]);
   let _ = p === `upgrade` ? `primary` : `outline`,
     v = p === `current`,
     y;
-  t[10] !== p || t[11] !== a || t[12] !== s || t[13] !== u || t[14] !== h
+  t[10] !== p || t[11] !== a || t[12] !== o || t[13] !== u || t[14] !== h
     ? ((y = () => {
-        h == null || p === `current` || (a(p, u), s(h));
+        h == null || p === `current` || (a(p, u), o(h));
       }),
       (t[10] = p),
       (t[11] = a),
-      (t[12] = s),
+      (t[12] = o),
       (t[13] = u),
       (t[14] = h),
       (t[15] = y))
@@ -1434,27 +1708,27 @@ function Ge(e) {
     ? (b = t[17])
     : ((b =
         p === `current`
-          ? (0, Q.jsx)(o, {
+          ? (0, Q.jsx)(l, {
               id: `settings.usage.upgradePlan.current`,
               defaultMessage: `Current plan`,
               description: `Disabled CTA label for the user's current plan`,
             })
           : p === `downgrade`
-            ? (0, Q.jsx)(o, {
+            ? (0, Q.jsx)(l, {
                 id: `settings.usage.upgradePlan.downgrade`,
                 defaultMessage: `Downgrade`,
                 description: `CTA label for moving to a lower-tier plan`,
               })
-            : (0, Q.jsx)(o, {
+            : (0, Q.jsx)(l, {
                 id: `settings.usage.upgradePlan.upgrade`,
                 defaultMessage: `Upgrade plan`,
                 description: `CTA label for moving to a higher-tier plan`,
               })),
       (t[16] = p),
       (t[17] = b));
-  let S;
+  let x;
   t[18] !== _ || t[19] !== v || t[20] !== y || t[21] !== b
-    ? ((S = (0, Q.jsx)(x, {
+    ? ((x = (0, Q.jsx)(S, {
         className: `w-full justify-center`,
         color: _,
         disabled: v,
@@ -1466,30 +1740,30 @@ function Ge(e) {
       (t[19] = v),
       (t[20] = y),
       (t[21] = b),
-      (t[22] = S))
-    : (S = t[22]);
+      (t[22] = x))
+    : (x = t[22]);
   let C;
   return (
-    t[23] !== r || t[24] !== l || t[25] !== g || t[26] !== S || t[27] !== d
-      ? ((C = (0, Q.jsx)(Xe, {
+    t[23] !== r || t[24] !== c || t[25] !== g || t[26] !== x || t[27] !== d
+      ? ((C = (0, Q.jsx)(pt, {
           title: d,
-          priceLabel: l,
+          priceLabel: c,
           features: r,
           featureSlotCount: 3,
           detailsLink: g,
-          footer: S,
+          footer: x,
         })),
         (t[23] = r),
-        (t[24] = l),
+        (t[24] = c),
         (t[25] = g),
-        (t[26] = S),
+        (t[26] = x),
         (t[27] = d),
         (t[28] = C))
       : (C = t[28]),
     C
   );
 }
-function Ke(e) {
+function lt(e) {
   let t = (0, N.c)(19),
     {
       cta: n,
@@ -1507,7 +1781,7 @@ function Ke(e) {
     } = e,
     m;
   t[0] !== a || t[1] !== c || t[2] !== l
-    ? ((m = (0, Q.jsx)(Ze, { detailsLabel: l, getPlansUrl: a, onOpenUrl: c })),
+    ? ((m = (0, Q.jsx)(mt, { detailsLabel: l, getPlansUrl: a, onOpenUrl: c })),
       (t[0] = a),
       (t[1] = c),
       (t[2] = l),
@@ -1525,7 +1799,7 @@ function Ke(e) {
     : (h = t[7]);
   let g;
   t[8] !== n || t[9] !== h
-    ? ((g = (0, Q.jsx)(x, {
+    ? ((g = (0, Q.jsx)(S, {
         className: `w-full justify-center`,
         size: `large`,
         onClick: h,
@@ -1544,7 +1818,7 @@ function Ke(e) {
     t[15] !== m ||
     t[16] !== g ||
     t[17] !== p
-      ? ((_ = (0, Q.jsx)(Xe, {
+      ? ((_ = (0, Q.jsx)(pt, {
           title: p,
           subtitle: d,
           priceLabel: u,
@@ -1567,12 +1841,12 @@ function Ke(e) {
     _
   );
 }
-function qe(e) {
+function ut(e) {
   let t = (0, N.c)(3),
     { tier: n } = e,
     r;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((r = (0, Q.jsx)(o, {
+    ? ((r = (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.personal.pro.title`,
         defaultMessage: `Pro`,
         description: `Title for the Pro personal plan card`,
@@ -1598,34 +1872,34 @@ function qe(e) {
     i
   );
 }
-function Je(e) {
+function dt(e) {
   return [
     {
-      icon: (0, Q.jsx)(et, {}),
+      icon: (0, Q.jsx)(_t, {}),
       label:
-        e === w.PROLITE
-          ? (0, Q.jsx)(o, {
+        e === T.PROLITE
+          ? (0, Q.jsx)(l, {
               id: `settings.usage.upgradePlan.personal.proLite.usage`,
               defaultMessage: `5x more usage than Plus`,
               description: `Usage feature for the Pro 5x plan card`,
             })
-          : (0, Q.jsx)(o, {
+          : (0, Q.jsx)(l, {
               id: `settings.usage.upgradePlan.personal.pro.usage`,
               defaultMessage: `20x more usage than Plus`,
               description: `Usage feature for the Pro 20x plan card`,
             }),
     },
     {
-      icon: (0, Q.jsx)(tt, {}),
-      label: (0, Q.jsx)(o, {
+      icon: (0, Q.jsx)(vt, {}),
+      label: (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.personal.pro.model`,
         defaultMessage: `GPT-5.5 Pro`,
         description: `Model feature on the Pro personal plan card`,
       }),
     },
     {
-      icon: (0, Q.jsx)(nt, {}),
-      label: (0, Q.jsx)(o, {
+      icon: (0, Q.jsx)(yt, {}),
+      label: (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.personal.pro.workspace`,
         defaultMessage: `Connect to Google Workspace`,
         description: `Workspace feature on the Pro personal plan card`,
@@ -1633,7 +1907,7 @@ function Je(e) {
     },
   ];
 }
-function Ye(e) {
+function ft(e) {
   let t = (0, N.c)(2),
     { plan: n } = e,
     r;
@@ -1641,13 +1915,13 @@ function Ye(e) {
     t[0] === n
       ? (r = t[1])
       : ((r =
-          n === w.PROLITE
-            ? (0, Q.jsx)(o, {
+          n === T.PROLITE
+            ? (0, Q.jsx)(l, {
                 id: `settings.usage.upgradePlan.more.proLite`,
                 defaultMessage: `View more details for Pro 5x plan`,
                 description: `Screen reader label for the Pro 5x plan details link`,
               })
-            : (0, Q.jsx)(o, {
+            : (0, Q.jsx)(l, {
                 id: `settings.usage.upgradePlan.more.pro`,
                 defaultMessage: `View more details for Pro 20x plan`,
                 description: `Screen reader label for the Pro 20x plan details link`,
@@ -1657,12 +1931,12 @@ function Ye(e) {
     r
   );
 }
-function Xe(e) {
+function pt(e) {
   let t = (0, N.c)(41),
     {
       description: n,
       detailsLink: r,
-      features: i,
+      features: a,
       featureSlotCount: o,
       footer: s,
       priceLabel: c,
@@ -1675,7 +1949,7 @@ function Xe(e) {
     m;
   t[0] === p
     ? (m = t[1])
-    : ((m = a(`flex flex-col gap-1`, p)), (t[0] = p), (t[1] = m));
+    : ((m = i(`flex flex-col gap-1`, p)), (t[0] = p), (t[1] = m));
   let h;
   t[2] === d
     ? (h = t[3])
@@ -1709,14 +1983,14 @@ function Xe(e) {
     y;
   t[10] === v
     ? (y = t[11])
-    : ((y = a(`mt-3 flex flex-col`, v)), (t[10] = v), (t[11] = y));
+    : ((y = i(`mt-3 flex flex-col`, v)), (t[10] = v), (t[11] = y));
   let b;
   t[12] !== c || t[13] !== f
     ? ((b =
         c == null
           ? null
           : (0, Q.jsx)(`div`, {
-              className: a(
+              className: i(
                 `text-token-text-primary`,
                 f === `large`
                   ? `text-2xl font-normal`
@@ -1749,15 +2023,15 @@ function Xe(e) {
       (t[20] = S))
     : (S = t[20]);
   let C;
-  if (t[21] !== o || t[22] !== i || t[23] !== f) {
+  if (t[21] !== o || t[22] !== a || t[23] !== f) {
     let e;
-    (t[25] !== i || t[26] !== f
+    (t[25] !== a || t[26] !== f
       ? ((e = (e, t) => {
-          let n = i[t];
+          let n = a[t];
           return (0, Q.jsx)(
             `div`,
             {
-              className: a(
+              className: i(
                 `flex items-center gap-3 text-sm text-token-text-primary`,
                 f === `large` ? `h-10` : `h-8`,
               ),
@@ -1777,7 +2051,7 @@ function Xe(e) {
             t,
           );
         }),
-        (t[25] = i),
+        (t[25] = a),
         (t[26] = f),
         (t[27] = e))
       : (e = t[27]),
@@ -1786,7 +2060,7 @@ function Xe(e) {
         children: Array.from({ length: o }, e),
       })),
       (t[21] = o),
-      (t[22] = i),
+      (t[22] = a),
       (t[23] = f),
       (t[24] = C));
   } else C = t[24];
@@ -1794,7 +2068,7 @@ function Xe(e) {
     T;
   t[28] === w
     ? (T = t[29])
-    : ((T = a(`mt-3 flex flex-col`, w)), (t[28] = w), (t[29] = T));
+    : ((T = i(`mt-3 flex flex-col`, w)), (t[28] = w), (t[29] = T));
   let E;
   t[30] === r
     ? (E = t[31])
@@ -1815,10 +2089,10 @@ function Xe(e) {
       (t[34] = E),
       (t[35] = D))
     : (D = t[35]);
-  let O;
+  let ee;
   return (
     t[36] !== S || t[37] !== C || t[38] !== D || t[39] !== _
-      ? ((O = (0, Q.jsxs)(`section`, {
+      ? ((ee = (0, Q.jsxs)(`section`, {
           className: `flex h-full min-h-0 flex-col rounded-2xl border border-token-border p-4`,
           children: [_, S, C, D],
         })),
@@ -1826,12 +2100,12 @@ function Xe(e) {
         (t[37] = C),
         (t[38] = D),
         (t[39] = _),
-        (t[40] = O))
-      : (O = t[40]),
-    O
+        (t[40] = ee))
+      : (ee = t[40]),
+    ee
   );
 }
-function Ze(e) {
+function mt(e) {
   let t = (0, N.c)(9),
     { detailsLabel: n, getPlansUrl: r, onOpenUrl: i } = e,
     a;
@@ -1843,53 +2117,53 @@ function Ze(e) {
       (t[1] = i),
       (t[2] = a))
     : (a = t[2]);
-  let s;
+  let o;
   t[3] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((s = (0, Q.jsx)(`span`, {
+    ? ((o = (0, Q.jsx)(`span`, {
         "aria-hidden": `true`,
-        children: (0, Q.jsx)(o, {
+        children: (0, Q.jsx)(l, {
           id: `settings.usage.upgradePlan.more`,
           defaultMessage: `+ more`,
           description: `Link to view more plan details from a plan card`,
         }),
       })),
-      (t[3] = s))
-    : (s = t[3]);
-  let c;
+      (t[3] = o))
+    : (o = t[3]);
+  let s;
   t[4] === n
-    ? (c = t[5])
-    : ((c = (0, Q.jsx)(`span`, { className: `sr-only`, children: n })),
+    ? (s = t[5])
+    : ((s = (0, Q.jsx)(`span`, { className: `sr-only`, children: n })),
       (t[4] = n),
-      (t[5] = c));
-  let l;
+      (t[5] = s));
+  let c;
   return (
-    t[6] !== a || t[7] !== c
-      ? ((l = (0, Q.jsxs)(`button`, {
+    t[6] !== a || t[7] !== s
+      ? ((c = (0, Q.jsxs)(`button`, {
           className: `w-fit cursor-interaction border-0 bg-transparent p-0 text-sm text-token-text-primary underline underline-offset-2`,
           type: `button`,
           onClick: a,
-          children: [s, c],
+          children: [o, s],
         })),
         (t[6] = a),
-        (t[7] = c),
-        (t[8] = l))
-      : (l = t[8]),
-    l
+        (t[7] = s),
+        (t[8] = c))
+      : (c = t[8]),
+    c
   );
 }
-function Qe({ intl: e, plan: t, pricingInfo: n }) {
+function ht({ intl: e, plan: t, pricingInfo: n }) {
   return n == null
     ? null
-    : Ve({
+    : it({
         intl: e,
         amount: n.monthlyAmounts[t],
         currencyCode: n.currencyCode,
         minorUnitExponent: n.minorUnitExponent,
       });
 }
-function $e({ intl: e, pricingInfo: t }) {
+function gt({ intl: e, pricingInfo: t }) {
   if (t == null) return null;
-  let n = Ve({
+  let n = it({
     intl: e,
     amount: t.monthlyAmounts.business,
     currencyCode: t.businessCurrencyCode,
@@ -1897,19 +2171,19 @@ function $e({ intl: e, pricingInfo: t }) {
   });
   return n == null
     ? null
-    : (0, Q.jsx)(o, {
+    : (0, Q.jsx)(l, {
         id: `settings.usage.upgradePlan.business.team.price`,
         defaultMessage: `{price} / user / month`,
         description: `Localized monthly per-user price for the ChatGPT and Codex Business plan`,
         values: { price: n },
       });
 }
-function et() {
+function _t() {
   let e = (0, N.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, Q.jsx)(k, {
+      ? ((t = (0, Q.jsx)(j, {
           className: `icon-sm`,
           name: `bubble-on-bubble`,
         })),
@@ -1918,12 +2192,12 @@ function et() {
     t
   );
 }
-function tt() {
+function vt() {
   let e = (0, N.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, Q.jsx)(ee, {
+      ? ((t = (0, Q.jsx)(ne, {
           className: `icon-sm text-token-charts-yellow`,
         })),
         (e[0] = t))
@@ -1931,7 +2205,7 @@ function tt() {
     t
   );
 }
-function nt() {
+function yt() {
   let e = (0, N.c)(1),
     t;
   return (
@@ -1941,19 +2215,19 @@ function nt() {
     t
   );
 }
-function rt() {
+function bt() {
   let e = (0, N.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, Q.jsx)(k, { className: `icon-base`, name: `shield` })),
+      ? ((t = (0, Q.jsx)(j, { className: `icon-base`, name: `shield` })),
         (e[0] = t))
       : (t = e[0]),
     t
   );
 }
-var it = `1640366510`;
-function at() {
+var xt = `1640366510`;
+function St() {
   let e = (0, N.c)(2),
     t = v(),
     n;
@@ -1961,45 +2235,45 @@ function at() {
     e[0] === t
       ? (n = e[1])
       : ((n = (e) => {
-          let { currentPlan: n, source: r, scope: i } = e;
-          return n == null ||
-            !y(t, it, { disableExposureLog: !1 }).get(`enabled`, !1)
+          let { scope: n, currentPlan: r, source: i } = e;
+          return r == null ||
+            !y(t, xt, { disableExposureLog: !1 }).get(`enabled`, !1)
             ? !1
-            : (st(i, n, r), !0);
+            : (wt(n, r, i), !0);
         }),
         (e[0] = t),
         (e[1] = n)),
     n
   );
 }
-function ot() {
+function Ct() {
   let e = (0, N.c)(2),
-    t = at(),
+    t = St(),
     n;
   return (
     e[0] === t
       ? (n = e[1])
       : ((n = (e) => {
-          let { currentPlan: n, getPricingUrl: r, source: i, scope: a } = e;
-          t({ currentPlan: n, source: i, scope: a }) ||
-            h.dispatchMessage(`open-in-browser`, { url: r() });
+          let { scope: n, currentPlan: r, getPricingUrl: i, source: a } = e;
+          t({ scope: n, currentPlan: r, source: a }) ||
+            h.dispatchMessage(`open-in-browser`, { url: i() });
         }),
         (e[0] = t),
         (e[1] = n)),
     n
   );
 }
-function st(e, t, n) {
-  te(e, Ue, { currentPlan: t, source: n });
+function wt(e, t, n) {
+  O(e, ot, { currentPlan: t, source: n });
 }
-function ct(e) {
+function Tt(e) {
   return e?.rate_limit ?? null;
 }
-function lt(e) {
+function Et(e) {
   return e?.credits ?? null;
 }
-function ut(e) {
-  let t = ct(e),
+function Dt(e) {
+  let t = Tt(e),
     n = [];
   return (
     t?.primary_window && n.push(t.primary_window),
@@ -2007,8 +2281,8 @@ function ut(e) {
     n
   );
 }
-function dt(e) {
-  let t = ut(e);
+function Ot(e) {
+  let t = Dt(e);
   return t.length === 0
     ? null
     : t.reduce((e, t) =>
@@ -2021,27 +2295,52 @@ function dt(e) {
               : (t.reset_at, e.reset_at, e),
       );
 }
-function ft(e) {
-  return dt(e)?.reset_at ?? null;
+function kt(e) {
+  return Ot(e)?.reset_at ?? null;
 }
-function pt(e) {
+function At(e) {
   if (e?.rate_limit_reached_type != null) return !0;
-  let t = ct(e),
-    n = C(e?.plan_type) && !e?.credits?.unlimited && !e?.credits?.has_credits;
-  return !!(t?.limit_reached === !0 || t?.allowed === !1 || n || ht(e));
+  let t = Tt(e),
+    n =
+      w(e?.plan_type) &&
+      e?.credits?.unlimited === !1 &&
+      e?.credits?.has_credits === !1;
+  return !!(t?.limit_reached === !0 || t?.allowed === !1 || n || Ft(e));
 }
-function mt(e) {
-  let t = lt(e);
+function jt({ rateLimitStatus: e, isWorkspaceAccount: t }) {
+  let n = e?.rate_limit_reached_type?.type,
+    r = n != null && n !== `rate_limit_reached`;
+  return t && Pt(e) && !Ft(e) && !r;
+}
+function Mt({ rateLimitStatus: e, isWorkspaceAccount: t }) {
+  return t && Ft(e);
+}
+function Nt({
+  rateLimitStatus: e,
+  isWorkspaceAccount: t,
+  isCreditsEnabled: n,
+}) {
+  let r = !t && Pt(e);
+  return (
+    n &&
+    !Mt({ rateLimitStatus: e, isWorkspaceAccount: t }) &&
+    At(e) &&
+    !r &&
+    !jt({ rateLimitStatus: e, isWorkspaceAccount: t })
+  );
+}
+function Pt(e) {
+  let t = Et(e);
   return t?.unlimited === !0 || t?.has_credits === !0;
 }
-function ht(e) {
+function Ft(e) {
   return e?.spend_control?.reached === !0;
 }
-function gt(e) {
+function It(e) {
   let t = e?.rate_limit;
   return t?.limit_reached === !0 || t?.allowed === !1;
 }
-function _t(e, t) {
+function Lt(e, t) {
   let n = new Date(),
     r = new Date(t * 1e3);
   return r.getFullYear() === n.getFullYear() &&
@@ -2050,109 +2349,109 @@ function _t(e, t) {
     ? r.toLocaleTimeString(e.locale, { timeStyle: `short` })
     : r.toLocaleString(e.locale, { timeStyle: `short`, dateStyle: `medium` });
 }
-var vt = 60;
-function yt(e) {
+var Rt = 60;
+function zt(e) {
   return e == null
     ? null
     : {
         usedPercent: e.used_percent ?? 0,
         windowMinutes:
-          e.limit_window_seconds == null ? null : e.limit_window_seconds / vt,
+          e.limit_window_seconds == null ? null : e.limit_window_seconds / Rt,
         resetAt: e.reset_at ?? null,
       };
 }
-var bt = `codex`;
-function xt(e, t, n, r = null) {
+var Bt = `codex`;
+function Vt(e, t, n, r = null) {
   return {
     limitId: null,
     limitName: r,
-    primary: Pt(e?.primary_window),
-    secondary: Pt(e?.secondary_window),
-    credits: Ft(t),
-    planType: It(n),
+    primary: en(e?.primary_window),
+    secondary: en(e?.secondary_window),
+    credits: tn(t),
+    planType: nn(n),
     rateLimitReachedType: null,
   };
 }
-function St(e) {
+function Ht(e) {
   if (e == null) return null;
   let t = e.rate_limit_name;
   if (t == null) return null;
   let n = t.trim();
   return n.length > 0 ? n : null;
 }
-function Ct(e) {
+function Ut(e) {
   if (e == null) return [];
   let t = [],
-    n = St(e),
-    r = xt(e.rate_limit, e.credits, e.plan_type, n);
-  r && t.push({ limitName: null, snapshot: r, blocked: pt(e) });
+    n = Ht(e),
+    r = Vt(e.rate_limit, e.credits, e.plan_type, n);
+  r && t.push({ limitName: null, snapshot: r, blocked: At(e) });
   let i = e.additional_rate_limits;
   if (Array.isArray(i))
     for (let n of i) {
       if (!n?.rate_limit) continue;
       let r = n.limit_name?.trim() ?? null;
       if (r == null || r.length === 0) continue;
-      let i = xt(n.rate_limit, null, e.plan_type, r);
-      i && t.push({ limitName: r, snapshot: i, blocked: gt(n) });
+      let i = Vt(n.rate_limit, null, e.plan_type, r);
+      i && t.push({ limitName: r, snapshot: i, blocked: It(n) });
     }
   return t;
 }
-function wt(e, { activeLimitName: t, selectedModel: n } = {}) {
+function Wt(e, { activeLimitName: t, selectedModel: n } = {}) {
   if (e.length === 0) return e;
   let r = $(n),
     i = $(t),
-    a = r ?? (i && !jt(i) ? i : null);
+    a = r ?? (i && !Zt(i) ? i : null);
   return a
     ? e.filter((e) => (e.limitName == null ? !0 : $(e.limitName) === a))
     : e.filter((e) => e.limitName == null);
 }
-function Tt(e, { activeLimitName: t, selectedModel: n } = {}) {
+function Gt(e, { activeLimitName: t, selectedModel: n } = {}) {
   if (e.length === 0) return null;
   let r = e.find((e) => e.limitName == null) ?? null,
-    i = Mt(e, n),
-    a = Mt(e, t),
+    i = Qt(e, n),
+    a = Qt(e, t),
     o = r?.blocked !== !0;
   return o && i?.blocked === !0
     ? i
-    : o && a?.blocked === !0 && !jt(a.limitName)
+    : o && a?.blocked === !0 && !Zt(a.limitName)
       ? a
       : (r ?? i ?? a ?? e[0] ?? null);
 }
-function Et(e, t = {}) {
-  let n = Tt(e, t);
-  return n == null ? null : _e(n.snapshot);
+function Kt(e, t = {}) {
+  let n = Gt(e, t);
+  return n == null ? null : Ae(n.snapshot);
 }
-function Dt(e) {
-  return Nt(e)?.resetsAt ?? null;
+function qt(e) {
+  return $t(e)?.resetsAt ?? null;
 }
-function Ot(e, t = {}) {
-  if (e == null || pt(e)) return !1;
-  let n = t.activeLimitName ?? St(e),
+function Jt(e, t = {}) {
+  if (e == null || At(e)) return !1;
+  let n = t.activeLimitName ?? Ht(e),
     r = e.additional_rate_limits;
-  if (!Array.isArray(r)) return n != null && !jt(n);
+  if (!Array.isArray(r)) return n != null && !Zt(n);
   let i = $(t.selectedModel);
-  return i != null && r.some((e) => (gt(e) ? $(e.limit_name) === i : !1))
+  return i != null && r.some((e) => (It(e) ? $(e.limit_name) === i : !1))
     ? !0
-    : n != null && !jt(n);
+    : n != null && !Zt(n);
 }
-function kt(e, t) {
+function Yt(e, t) {
   if (e == null) return !1;
   let n = $(t);
   if (n == null) return !1;
   let r = e.additional_rate_limits;
   return Array.isArray(r)
-    ? r.some((e) => (gt(e) ? $(e.limit_name) === n : !1))
+    ? r.some((e) => (It(e) ? $(e.limit_name) === n : !1))
     : !1;
 }
-function At(e) {
+function Xt(e) {
   return e.coreRateLimitBlocked
     ? `upsell`
     : e.selectedModelRateLimitReached
       ? `model_limit`
       : `none`;
 }
-function jt(e) {
-  return e == null ? !0 : e.trim().toLowerCase() === bt;
+function Zt(e) {
+  return e == null ? !0 : e.trim().toLowerCase() === Bt;
 }
 function $(e) {
   if (e == null) return null;
@@ -2162,11 +2461,11 @@ function $(e) {
     .replace(/[_\s.]+/g, `-`);
   return t.length > 0 ? t : null;
 }
-function Mt(e, t) {
+function Qt(e, t) {
   let n = $(t);
   return n == null ? null : (e.find((e) => $(e.limitName) === n) ?? null);
 }
-function Nt(e) {
+function $t(e) {
   if (e == null) return null;
   let t = [e.snapshot.primary, e.snapshot.secondary].filter((e) => e != null);
   return t.length === 0
@@ -2181,8 +2480,8 @@ function Nt(e) {
               : e,
       );
 }
-function Pt(e) {
-  let t = yt(e);
+function en(e) {
+  let t = zt(e);
   return t == null
     ? null
     : {
@@ -2191,7 +2490,7 @@ function Pt(e) {
         resetsAt: t.resetAt,
       };
 }
-function Ft(e) {
+function tn(e) {
   return e
     ? {
         hasCredits: e.has_credits,
@@ -2200,7 +2499,7 @@ function Ft(e) {
       }
     : null;
 }
-function It(e) {
+function nn(e) {
   if (!e) return null;
   switch (e) {
     case `free`:
@@ -2231,50 +2530,58 @@ function It(e) {
   }
 }
 export {
-  ye as A,
-  B,
-  Ae as C,
-  X as D,
-  J as E,
-  ve as F,
-  M as G,
-  oe as H,
-  ge as I,
-  he as L,
-  we as M,
-  Ce as N,
-  Y as O,
-  _e as P,
-  Te as R,
-  Be as S,
-  Ne as T,
-  z as U,
-  ae as V,
-  V as W,
-  ht as _,
-  At as a,
-  at as b,
-  St as c,
-  Ot as d,
-  xt as f,
-  pt as g,
-  mt as h,
-  Tt as i,
-  be as j,
-  Z as k,
-  jt as l,
-  ft as m,
-  Mt as n,
-  Ct as o,
-  _t as p,
-  Et as r,
-  Dt as s,
-  wt as t,
-  kt as u,
-  st as v,
-  Me as w,
-  Ve as x,
-  ot as y,
-  U as z,
+  M as $,
+  Z as A,
+  ke as B,
+  rt as C,
+  Je as D,
+  Ge as E,
+  Ne as F,
+  fe as G,
+  Re as H,
+  Le as I,
+  H as J,
+  U as K,
+  Ie as L,
+  Ce as M,
+  Te as N,
+  Ye as O,
+  Me as P,
+  B as Q,
+  Ae as R,
+  it as S,
+  We as T,
+  me as U,
+  Oe as V,
+  z as W,
+  q as X,
+  de as Y,
+  V as Z,
+  Nt as _,
+  Xt as a,
+  Ct as b,
+  Ht as c,
+  Jt as d,
+  Vt as f,
+  Mt as g,
+  Pt as h,
+  Gt as i,
+  we as j,
+  Xe as k,
+  Zt as l,
+  kt as m,
+  Qt as n,
+  Ut as o,
+  Lt as p,
+  ue as q,
+  Kt as r,
+  qt as s,
+  Wt as t,
+  Yt as u,
+  jt as v,
+  Ke as w,
+  St as x,
+  wt as y,
+  je as z,
 };
 //# sourceMappingURL=use-rate-limit.js.map

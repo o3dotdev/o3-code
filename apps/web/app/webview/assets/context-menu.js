@@ -1,6 +1,6 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
+import { t as r } from "./clsx-BcPLHiun.js";
 import {
   a as i,
   c as a,
@@ -12,21 +12,21 @@ import {
   s as d,
   t as ee,
   u as te,
-} from "./dist-1yvMF-ho.js";
-import { H as ne, W as re, xt as f } from "./setting-storage.js";
-import { n as ie } from "./window-zoom-context.js";
-import { t as ae } from "./tooltip.js";
-import { t as oe } from "./use-stable-callback.js";
-import { t as se } from "./check-md.js";
-import { t as ce } from "./chevron-right.js";
-var le = f(),
-  p = e(t(), 1),
-  m = n();
-function h(e, t) {
+} from "./dist-dALQ7PpJ.js";
+import { G as ne, U as f, wt as p } from "./setting-storage.js";
+import { n as re } from "./window-zoom-context.js";
+import { t as ie } from "./tooltip-CDzchJxN.js";
+import { t as ae } from "./use-stable-callback.js";
+import { t as oe } from "./check-md.js";
+import { t as se } from "./chevron-right.js";
+var ce = p(),
+  m = e(t(), 1),
+  h = n();
+function g(e, t) {
   return e.map((e) => {
     if (e.type === `separator`)
       return { ...e, nativeLabel: ``, submenu: void 0 };
-    let n = e.submenu ? h(e.submenu, t) : void 0,
+    let n = e.submenu ? g(e.submenu, t) : void 0,
       r = e.message ? t(e.message, e.messageValues) : e.id,
       i = e.tooltipMessage
         ? t(e.tooltipMessage, e.tooltipMessageValues)
@@ -34,7 +34,7 @@ function h(e, t) {
     return { ...e, nativeLabel: r, nativeTooltip: i, submenu: n };
   });
 }
-function ue(e) {
+function le(e) {
   return e.map((e) => ({
     id: e.id,
     type: e.type === `separator` ? `separator` : void 0,
@@ -47,143 +47,143 @@ function ue(e) {
     icon: e.icon,
     enabled: e.enabled ?? !0,
     toolTip: e.nativeTooltip,
-    submenu: e.submenu ? ue(e.submenu) : void 0,
+    submenu: e.submenu ? le(e.submenu) : void 0,
   }));
 }
-function de(e, t) {
+function ue(e, t) {
   for (let n of e)
     if (n.type !== `separator`) {
       if (n.id === t) return n;
       if (n.submenu) {
-        let e = de(n.submenu, t);
+        let e = ue(n.submenu, t);
         if (e) return e;
       }
     }
 }
-function fe(e) {
-  return typeof e.then == `function`;
+function de(e) {
+  return `then` in e && typeof e.then == `function`;
 }
-function pe(e) {
-  let t = (0, le.c)(83),
+function fe(e) {
+  let t = (0, ce.c)(83),
     {
       items: n,
-      getItems: f,
-      children: se,
-      disableNative: ce,
-      awaitBeforeOpen: pe,
-      onBeforeOpen: g,
+      getItems: p,
+      children: oe,
+      disableNative: se,
+      awaitBeforeOpen: fe,
+      onBeforeOpen: _,
     } = e,
-    _ = pe === void 0 ? !0 : pe,
-    v = re(),
-    y = ie(),
-    b = !ce && window.electronBridge?.showContextMenu != null,
-    x;
-  t[0] === n ? (x = t[1]) : ((x = n ?? []), (t[0] = n), (t[1] = x));
-  let S;
-  t[2] !== v.formatMessage || t[3] !== x
-    ? ((S = h(x, v.formatMessage)),
-      (t[2] = v.formatMessage),
-      (t[3] = x),
-      (t[4] = S))
-    : (S = t[4]);
-  let [C, ge] = p.useState(S),
-    w;
-  t[5] === v.formatMessage
-    ? (w = t[6])
-    : ((w = (e) => {
-        let t = h(e, v.formatMessage);
-        return (ge(t), t);
+    v = fe === void 0 ? !0 : fe,
+    y = ne(),
+    b = re(),
+    x = !se && window.electronBridge?.showContextMenu != null,
+    S;
+  t[0] === n ? (S = t[1]) : ((S = n ?? []), (t[0] = n), (t[1] = S));
+  let C;
+  t[2] !== y.formatMessage || t[3] !== S
+    ? ((C = g(S, y.formatMessage)),
+      (t[2] = y.formatMessage),
+      (t[3] = S),
+      (t[4] = C))
+    : (C = t[4]);
+  let [w, he] = m.useState(C),
+    T;
+  t[5] === y.formatMessage
+    ? (T = t[6])
+    : ((T = (e) => {
+        let t = g(e, y.formatMessage);
+        return (he(t), t);
       }),
-      (t[5] = v.formatMessage),
-      (t[6] = w));
-  let T = w,
-    E;
-  t[7] !== f || t[8] !== n || t[9] !== T
-    ? ((E = () => {
-        let e = f ? f() : (n ?? []);
-        return fe(e) ? (ge([]), e.then(T), []) : T(e);
+      (t[5] = y.formatMessage),
+      (t[6] = T));
+  let E = T,
+    D;
+  t[7] !== p || t[8] !== n || t[9] !== E
+    ? ((D = () => {
+        let e = p ? p() : (n ?? []);
+        return de(e) ? (he([]), e.then(E), []) : E(e);
       }),
-      (t[7] = f),
+      (t[7] = p),
       (t[8] = n),
-      (t[9] = T),
-      (t[10] = E))
-    : (E = t[10]);
-  let D = E,
-    O;
-  t[11] !== _ || t[12] !== g || t[13] !== D
-    ? ((O = () => {
-        if (!_) {
-          let e = D(),
-            t = g?.();
-          return (t != null && Promise.resolve(t).then(D), e);
+      (t[9] = E),
+      (t[10] = D))
+    : (D = t[10]);
+  let O = D,
+    k;
+  t[11] !== v || t[12] !== _ || t[13] !== O
+    ? ((k = () => {
+        if (!v) {
+          let e = O(),
+            t = _?.();
+          return (t != null && Promise.resolve(t).then(O), e);
         }
-        let e = g?.();
-        return (e != null && Promise.resolve(e).then(D), D());
+        let e = _?.();
+        return (e != null && Promise.resolve(e).then(O), O());
       }),
-      (t[11] = _),
-      (t[12] = g),
-      (t[13] = D),
-      (t[14] = O))
-    : (O = t[14]);
-  let k = O,
-    A;
-  t[15] !== f || t[16] !== n || t[17] !== g || t[18] !== T
-    ? ((A = async () => (await g?.(), T(await (f ? f() : (n ?? []))))),
-      (t[15] = f),
+      (t[11] = v),
+      (t[12] = _),
+      (t[13] = O),
+      (t[14] = k))
+    : (k = t[14]);
+  let A = k,
+    j;
+  t[15] !== p || t[16] !== n || t[17] !== _ || t[18] !== E
+    ? ((j = async () => (await _?.(), E(await (p ? p() : (n ?? []))))),
+      (t[15] = p),
       (t[16] = n),
-      (t[17] = g),
-      (t[18] = T),
-      (t[19] = A))
-    : (A = t[19]);
-  let j = A,
+      (t[17] = _),
+      (t[18] = E),
+      (t[19] = j))
+    : (j = t[19]);
+  let ge = j,
     M;
-  t[20] !== f || t[21] !== v.formatMessage || t[22] !== n
+  t[20] !== p || t[21] !== y.formatMessage || t[22] !== n
     ? ((M = () => {
-        f || ge(h(n ?? [], v.formatMessage));
+        p || he(g(n ?? [], y.formatMessage));
       }),
-      (t[20] = f),
-      (t[21] = v.formatMessage),
+      (t[20] = p),
+      (t[21] = y.formatMessage),
       (t[22] = n),
       (t[23] = M))
     : (M = t[23]);
   let N;
-  (t[24] !== f || t[25] !== v || t[26] !== n
-    ? ((N = [f, v, n]), (t[24] = f), (t[25] = v), (t[26] = n), (t[27] = N))
+  (t[24] !== p || t[25] !== y || t[26] !== n
+    ? ((N = [p, y, n]), (t[24] = p), (t[25] = y), (t[26] = n), (t[27] = N))
     : (N = t[27]),
-    p.useEffect(M, N));
+    m.useEffect(M, N));
   let P;
-  t[28] === C
+  t[28] === w
     ? (P = t[29])
     : ((P = (e, t) => {
-        de(t === void 0 ? C : t, e)?.onSelect?.();
+        ue(t === void 0 ? w : t, e)?.onSelect?.();
       }),
-      (t[28] = C),
+      (t[28] = w),
       (t[29] = P));
-  let F = P,
-    _e = me,
+  let _e = P,
+    F = pe,
     I;
-  t[30] !== _ || t[31] !== F || t[32] !== k || t[33] !== j || t[34] !== b
+  t[30] !== v || t[31] !== _e || t[32] !== A || t[33] !== ge || t[34] !== x
     ? ((I = async (e) => {
-        if (!b) return;
+        if (!x) return;
         e.preventDefault();
-        let t = _ ? await j() : k(),
-          n = (await window.electronBridge?.showContextMenu?.(ue(t)))?.id;
-        n && F(n, t);
+        let t = v ? await ge() : A(),
+          n = (await window.electronBridge?.showContextMenu?.(le(t)))?.id;
+        n && _e(n, t);
       }),
-      (t[30] = _),
-      (t[31] = F),
-      (t[32] = k),
-      (t[33] = j),
-      (t[34] = b),
+      (t[30] = v),
+      (t[31] = _e),
+      (t[32] = A),
+      (t[33] = ge),
+      (t[34] = x),
       (t[35] = I))
     : (I = t[35]);
-  let ve = oe(I),
-    L = se,
+  let ve = ae(I),
+    L = oe,
     ye = L.props.onContextMenu,
     R;
-  t[36] !== ye || t[37] !== ve || t[38] !== b
+  t[36] !== ye || t[37] !== ve || t[38] !== x
     ? ((R = (e) => {
-        if ((ye?.(e), b)) {
+        if ((ye?.(e), x)) {
           ve(e);
           return;
         }
@@ -191,18 +191,18 @@ function pe(e) {
       }),
       (t[36] = ye),
       (t[37] = ve),
-      (t[38] = b),
+      (t[38] = x),
       (t[39] = R))
     : (R = t[39]);
-  let z = oe(R);
-  if (b) {
+  let z = ae(R);
+  if (x) {
     let e;
     if (t[40] !== L || t[41] !== z) {
       let n;
       (t[43] === z
         ? (n = t[44])
         : ((n = { onContextMenu: z }), (t[43] = z), (t[44] = n)),
-        (e = p.cloneElement(L, n)),
+        (e = m.cloneElement(L, n)),
         (t[40] = L),
         (t[41] = z),
         (t[42] = e));
@@ -215,7 +215,7 @@ function pe(e) {
     (t[48] === z
       ? (e = t[49])
       : ((e = { onContextMenu: z }), (t[48] = z), (t[49] = e)),
-      (B = p.cloneElement(L, e)),
+      (B = m.cloneElement(L, e)),
       (t[45] = L),
       (t[46] = z),
       (t[47] = B));
@@ -230,26 +230,26 @@ function pe(e) {
     J,
     Y,
     X;
-  if (t[50] !== k || t[51] !== C || t[52] !== V || t[53] !== y) {
+  if (t[50] !== A || t[51] !== w || t[52] !== V || t[53] !== b) {
     let e = (t) =>
       t.map((t) =>
         t.type === `separator`
-          ? (0, m.jsx)(
+          ? (0, h.jsx)(
               l,
               { className: `mx-1 my-1 border-t border-token-border/60` },
               t.id,
             )
           : t.type === `checkbox`
-            ? (0, m.jsx)(
-                ae,
+            ? (0, h.jsx)(
+                ie,
                 {
                   tooltipContent: t.tooltipMessage
-                    ? (0, m.jsx)(ne, {
+                    ? (0, h.jsx)(f, {
                         ...t.tooltipMessage,
                         values: t.tooltipMessageValues,
                       })
                     : null,
-                  children: (0, m.jsx)(ee, {
+                  children: (0, h.jsx)(ee, {
                     checked: t.checked ?? !1,
                     className: r(
                       `text-token-foreground outline-hidden rounded-lg p-1.5 text-sm cursor-interaction hover:bg-token-list-hover-background focus:bg-token-list-hover-background`,
@@ -259,9 +259,9 @@ function pe(e) {
                     onCheckedChange: () => {
                       t.onSelect?.();
                     },
-                    children: (0, m.jsx)(he, {
+                    children: (0, h.jsx)(me, {
                       checked: t.checked === !0,
-                      label: _e(t),
+                      label: F(t),
                       showCheckbox: !0,
                     }),
                   }),
@@ -269,24 +269,24 @@ function pe(e) {
                 t.id,
               )
             : t.submenu
-              ? (0, m.jsxs)(
+              ? (0, h.jsxs)(
                   d,
                   {
                     children: [
-                      (0, m.jsx)(s, {
+                      (0, h.jsx)(s, {
                         className: `flex cursor-interaction items-center justify-between gap-1.5 rounded-lg p-1.5 text-sm text-token-foreground outline-hidden hover:bg-token-list-hover-background focus:bg-token-list-hover-background`,
                         disabled: t.enabled === !1,
-                        children: (0, m.jsx)(he, {
+                        children: (0, h.jsx)(me, {
                           icon: t.icon,
-                          label: _e(t),
+                          label: F(t),
                           showChevron: !0,
                         }),
                       }),
-                      (0, m.jsx)(o, {
-                        children: (0, m.jsx)(a, {
+                      (0, h.jsx)(o, {
+                        children: (0, h.jsx)(a, {
                           className: `z-50 m-px flex min-w-[200px] flex-col rounded-xl bg-token-dropdown-background/90 p-1 text-token-foreground shadow-lg ring-[0.5px] ring-token-border backdrop-blur-sm select-none`,
                           collisionPadding: 6,
-                          style: { zoom: y === 1 ? void 0 : y },
+                          style: { zoom: b === 1 ? void 0 : b },
                           children: e(t.submenu),
                         }),
                       }),
@@ -294,16 +294,16 @@ function pe(e) {
                   },
                   t.id,
                 )
-              : (0, m.jsx)(
-                  ae,
+              : (0, h.jsx)(
+                  ie,
                   {
                     tooltipContent: t.tooltipMessage
-                      ? (0, m.jsx)(ne, {
+                      ? (0, h.jsx)(f, {
                           ...t.tooltipMessage,
                           values: t.tooltipMessageValues,
                         })
                       : null,
-                    children: (0, m.jsx)(u, {
+                    children: (0, h.jsx)(u, {
                       className: r(
                         `text-token-foreground outline-hidden rounded-lg p-1.5 text-sm cursor-interaction hover:bg-token-list-hover-background focus:bg-token-list-hover-background`,
                         t.enabled === !1 && `cursor-default opacity-50`,
@@ -316,36 +316,36 @@ function pe(e) {
                         t.onSelect?.();
                       },
                       "aria-disabled": t.enabled === !1,
-                      children: (0, m.jsx)(he, { icon: t.icon, label: _e(t) }),
+                      children: (0, h.jsx)(me, { icon: t.icon, label: F(t) }),
                     }),
                   },
                   t.id,
                 ),
       );
     ((W = i),
-      t[63] === k
+      t[63] === A
         ? (Y = t[64])
         : ((Y = (e) => {
-            e && k();
+            e && A();
           }),
-          (t[63] = k),
+          (t[63] = A),
           (t[64] = Y)),
       t[65] === V
         ? (X = t[66])
-        : ((X = (0, m.jsx)(te, { asChild: !0, children: V })),
+        : ((X = (0, h.jsx)(te, { asChild: !0, children: V })),
           (t[65] = V),
           (t[66] = X)),
       (U = o),
       (H = c),
       (G = `z-50 m-px flex min-w-[180px] flex-col rounded-xl bg-token-dropdown-background/90 p-1 text-token-foreground shadow-lg ring-[0.5px] ring-token-border backdrop-blur-sm select-none`),
       (K = 6));
-    let n = y === 1 ? void 0 : y;
+    let n = b === 1 ? void 0 : b;
     (t[67] === n ? (q = t[68]) : ((q = { zoom: n }), (t[67] = n), (t[68] = q)),
-      (J = e(C)),
-      (t[50] = k),
-      (t[51] = C),
+      (J = e(w)),
+      (t[50] = A),
+      (t[51] = w),
       (t[52] = V),
-      (t[53] = y),
+      (t[53] = b),
       (t[54] = H),
       (t[55] = U),
       (t[56] = W),
@@ -367,7 +367,7 @@ function pe(e) {
       (X = t[62]));
   let Z;
   t[69] !== H || t[70] !== G || t[71] !== K || t[72] !== q || t[73] !== J
-    ? ((Z = (0, m.jsx)(H, {
+    ? ((Z = (0, h.jsx)(H, {
         className: G,
         collisionPadding: K,
         style: q,
@@ -382,7 +382,7 @@ function pe(e) {
     : (Z = t[74]);
   let Q;
   t[75] !== U || t[76] !== Z
-    ? ((Q = (0, m.jsx)(U, { children: Z })),
+    ? ((Q = (0, h.jsx)(U, { children: Z })),
       (t[75] = U),
       (t[76] = Z),
       (t[77] = Q))
@@ -390,7 +390,7 @@ function pe(e) {
   let $;
   return (
     t[78] !== W || t[79] !== Y || t[80] !== X || t[81] !== Q
-      ? (($ = (0, m.jsxs)(W, { onOpenChange: Y, children: [X, Q] })),
+      ? (($ = (0, h.jsxs)(W, { onOpenChange: Y, children: [X, Q] })),
         (t[78] = W),
         (t[79] = Y),
         (t[80] = X),
@@ -400,21 +400,21 @@ function pe(e) {
     $
   );
 }
-function me(e) {
+function pe(e) {
   return e.message
-    ? (0, m.jsx)(ne, { ...e.message, values: e.messageValues })
+    ? (0, h.jsx)(f, { ...e.message, values: e.messageValues })
     : e.id;
 }
-function he(e) {
-  let t = (0, le.c)(15),
+function me(e) {
+  let t = (0, ce.c)(15),
     { checked: n, icon: r, label: i, showCheckbox: a, showChevron: o } = e,
     s;
   t[0] !== n || t[1] !== a
     ? ((s = a
-        ? (0, m.jsx)(`span`, {
+        ? (0, h.jsx)(`span`, {
             className: `icon-sm flex shrink-0 items-center justify-center`,
             children: n
-              ? (0, m.jsx)(se, { "aria-hidden": !0, className: `icon-xs` })
+              ? (0, h.jsx)(oe, { "aria-hidden": !0, className: `icon-xs` })
               : null,
           })
         : null),
@@ -425,7 +425,7 @@ function he(e) {
   let c;
   t[3] !== r || t[4] !== i
     ? ((c = r
-        ? (0, m.jsx)(`img`, {
+        ? (0, h.jsx)(`img`, {
             alt: typeof i == `string` ? i : ``,
             src: r,
             className: `icon-sm`,
@@ -438,21 +438,21 @@ function he(e) {
   let l;
   t[6] === i
     ? (l = t[7])
-    : ((l = (0, m.jsx)(`span`, { className: `truncate`, children: i })),
+    : ((l = (0, h.jsx)(`span`, { className: `truncate`, children: i })),
       (t[6] = i),
       (t[7] = l));
   let u;
   t[8] === o
     ? (u = t[9])
     : ((u = o
-        ? (0, m.jsx)(ce, { className: `icon-xs ml-auto opacity-50` })
+        ? (0, h.jsx)(se, { className: `icon-xs ml-auto opacity-50` })
         : null),
       (t[8] = o),
       (t[9] = u));
   let d;
   return (
     t[10] !== s || t[11] !== c || t[12] !== l || t[13] !== u
-      ? ((d = (0, m.jsxs)(`span`, {
+      ? ((d = (0, h.jsxs)(`span`, {
           className: `flex w-full items-center gap-1.5`,
           children: [s, c, l, u],
         })),
@@ -465,5 +465,5 @@ function he(e) {
     d
   );
 }
-export { pe as t };
+export { fe as t };
 //# sourceMappingURL=context-menu.js.map

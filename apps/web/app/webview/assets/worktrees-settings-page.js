@@ -1,54 +1,56 @@
-import { s as e } from "./chunk.js";
-import { $t as t, Bn as n } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { br as t, mn as n } from "./src-C.js";
 import {
-  Ca as r,
-  Cr as i,
-  hn as a,
-  ts as o,
-} from "./app-server-manager-signals.js";
+  Un as r,
+  Xs as i,
+  do as a,
+  ni as o,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as s, t as c } from "./jsx-runtime.js";
-import "./react-dom.js";
-import "./marked.esm.js";
+import "./react-dom-CvzHKZGB.js";
+import "./marked.esm-BR-H6018.js";
 import {
   C as l,
-  H as u,
-  J as d,
-  S as f,
-  W as p,
+  G as u,
+  S as d,
+  U as f,
+  X as p,
   Y as m,
   l as h,
-  xt as g,
+  wt as g,
 } from "./setting-storage.js";
-import "./product-logger.js";
-import "./statsig.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import { s as _ } from "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import { l as v } from "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import { l as v } from "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
-import "./_baseOrderBy.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
 import { r as y } from "./toast-signal.js";
 import { t as b } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import { t as x } from "./spinner.js";
 import "./initial-route-atom.js";
 import "./use-stable-callback.js";
 import { t as S } from "./use-navigate-to-local-conversation.js";
 import "./_defineProperty.js";
-import "./chevron.js";
-import { t as C } from "./use-is-background-subagents-enabled.js";
+import "./links.js";
+import "./chevron-NmAOI_v1.js";
+import { t as C } from "./use-is-background-subagents-enabled-B.js";
 import "./sortBy.js";
 import "./use-connected-remote-connections.js";
 import { t as w } from "./regenerate.js";
-import { i as T } from "./settings-shared.js";
-import { n as E } from "./is-subagent-conversation.js";
-import "./settings-host-selection.js";
-import { t as D } from "./settings-host-context.js";
+import { i as T } from "./settings-shared-BTHmEeQY.js";
+import { n as E } from "./is-subagent-conversation-BDD-JXTj.js";
+import { t as D } from "./settings-host-context-ILiCQlCE.js";
 import { t as O } from "./settings-content-layout.js";
-import { t as k } from "./settings-surface.js";
-import { t as A } from "./settings-group.js";
+import { n as k, t as A } from "./settings-group.js";
 import { t as j } from "./use-codex-worktrees.js";
 import { n as M } from "./worktree-paths.js";
 var N = g(),
@@ -56,18 +58,18 @@ var N = g(),
   F = c();
 function I() {
   let e = (0, N.c)(57),
-    t = p(),
+    t = u(),
     { selectedHostId: n } = D(),
     {
-      data: i,
-      isLoading: a,
+      data: r,
+      isLoading: i,
       isFetching: o,
       error: s,
       refetch: c,
-    } = j(r(n), `worktrees_settings_page`),
+    } = j(a(n), `worktrees_settings_page`),
     l;
   e[0] === n ? (l = e[1]) : ((l = { hostId: n }), (e[0] = n), (e[1] = l));
-  let { data: f, isLoading: m, error: h } = d(v, l),
+  let { data: d, isLoading: p, error: h } = m(v, l),
     { data: g, isLoading: y } = _(),
     S = C(),
     M,
@@ -77,21 +79,21 @@ function I() {
     e[3] !== t ||
     e[4] !== S ||
     e[5] !== y ||
-    e[6] !== m ||
+    e[6] !== p ||
     e[7] !== o ||
-    e[8] !== a ||
+    e[8] !== i ||
     e[9] !== c ||
     e[10] !== n ||
-    e[11] !== f?.roots ||
+    e[11] !== d?.roots ||
     e[12] !== h ||
-    e[13] !== i?.worktrees ||
+    e[13] !== r?.worktrees ||
     e[14] !== s
   ) {
     P = Symbol.for(`react.early_return_sentinel`);
     bb0: {
-      let r = B(i?.worktrees ?? [], f?.roots ?? []),
+      let a = B(r?.worktrees ?? [], d?.roots ?? []),
         l,
-        d;
+        u;
       if (e[17] !== g || e[18] !== S || e[19] !== n) {
         let t;
         (e[22] === n
@@ -102,15 +104,15 @@ function I() {
         (e[24] === S
           ? (r = e[25])
           : ((r = (e) => !E(e, S)), (e[24] = S), (e[25] = r)),
-          (d = l.filter(r)),
+          (u = l.filter(r)),
           (e[17] = g),
           (e[18] = S),
           (e[19] = n),
           (e[20] = l),
-          (e[21] = d));
-      } else ((l = e[20]), (d = e[21]));
-      let p = d,
-        _ = z(r),
+          (e[21] = u));
+      } else ((l = e[20]), (u = e[21]));
+      let m = u,
+        _ = z(a),
         v;
       e[26] === t
         ? (v = e[27])
@@ -157,14 +159,14 @@ function I() {
         : (N = e[36]);
       let I = N,
         R = s ?? h;
-      if (a || m) {
+      if (i || p) {
         let t;
         e[37] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((t = (0, F.jsx)(T, { slug: `worktrees` })), (e[37] = t))
           : (t = e[37]);
         let n;
         e[38] === Symbol.for(`react.memo_cache_sentinel`)
-          ? ((n = (0, F.jsx)(u, {
+          ? ((n = (0, F.jsx)(f, {
               id: `settings.worktrees.loading.title`,
               defaultMessage: `Loading worktrees`,
               description: `Loading state title for worktrees settings`,
@@ -185,7 +187,7 @@ function I() {
                   className: `flex items-center gap-2 p-3 text-sm text-token-text-secondary`,
                   children: [
                     (0, F.jsx)(x, { className: `icon-xxs` }),
-                    (0, F.jsx)(u, {
+                    (0, F.jsx)(f, {
                       id: `settings.worktrees.loading.body`,
                       defaultMessage: `Fetching worktree details.`,
                       description: `Loading state body for worktrees settings`,
@@ -215,7 +217,7 @@ function I() {
           : (n = e[44]);
         let r;
         e[45] === Symbol.for(`react.memo_cache_sentinel`)
-          ? ((r = (0, F.jsx)(u, {
+          ? ((r = (0, F.jsx)(f, {
               id: `settings.worktrees.error.title`,
               defaultMessage: `Unable to load worktrees`,
               description: `Error state title for worktrees settings`,
@@ -278,7 +280,7 @@ function I() {
               ? (0, F.jsxs)(A, {
                   children: [
                     (0, F.jsx)(A.Header, {
-                      title: (0, F.jsx)(u, {
+                      title: (0, F.jsx)(f, {
                         id: `settings.worktrees.empty.title`,
                         defaultMessage: `No worktrees yet`,
                         description: `Empty state title for worktrees settings`,
@@ -289,7 +291,7 @@ function I() {
                       children: (0, F.jsx)(k, {
                         children: (0, F.jsx)(`div`, {
                           className: `p-3 text-sm text-token-text-secondary`,
-                          children: (0, F.jsx)(u, {
+                          children: (0, F.jsx)(f, {
                             id: `settings.worktrees.empty.body`,
                             defaultMessage: `Worktrees created by Codex will appear here.`,
                             description: `Empty state body for worktrees settings`,
@@ -305,7 +307,7 @@ function I() {
                     {
                       action: t === 0 ? I : null,
                       allConversations: l,
-                      visibleConversations: p,
+                      visibleConversations: m,
                       hostId: n,
                       isConversationsLoading: y,
                       onWorktreeDeleted: () => {
@@ -323,14 +325,14 @@ function I() {
       (e[3] = t),
       (e[4] = S),
       (e[5] = y),
-      (e[6] = m),
+      (e[6] = p),
       (e[7] = o),
-      (e[8] = a),
+      (e[8] = i),
       (e[9] = c),
       (e[10] = n),
-      (e[11] = f?.roots),
+      (e[11] = d?.roots),
       (e[12] = h),
-      (e[13] = i?.worktrees),
+      (e[13] = r?.worktrees),
       (e[14] = s),
       (e[15] = M),
       (e[16] = P));
@@ -346,10 +348,10 @@ function L(e) {
       allConversations: s,
       visibleConversations: c,
       hostId: l,
-      isConversationsLoading: d,
-      onWorktreeDeleted: f,
+      isConversationsLoading: u,
+      onWorktreeDeleted: d,
     } = e,
-    { data: p, isLoading: m } = a(i, r(l), `worktree_restore_banner`),
+    { data: p, isLoading: m } = r(i, a(l), `worktree_restore_banner`),
     h = p?.root ?? i ?? o[0]?.dir ?? null,
     g;
   t[0] === h
@@ -359,7 +361,7 @@ function L(e) {
             className: `truncate font-mono text-sm`,
             children: h,
           })
-        : (0, F.jsx)(u, {
+        : (0, F.jsx)(f, {
             id: `settings.worktrees.repository.unknown`,
             defaultMessage: `Unknown repository`,
             description: `Fallback label when worktree repository cannot be resolved`,
@@ -383,7 +385,7 @@ function L(e) {
     : ((b = v
         ? (0, F.jsx)(`div`, {
             className: `text-xs text-token-text-secondary`,
-            children: (0, F.jsx)(u, {
+            children: (0, F.jsx)(f, {
               id: `settings.worktrees.repository.loading`,
               defaultMessage: `Loading repository metadata…`,
               description: `Subtitle while repository metadata is loading`,
@@ -413,13 +415,13 @@ function L(e) {
   if (
     t[12] !== s ||
     t[13] !== l ||
-    t[14] !== d ||
-    t[15] !== f ||
+    t[14] !== u ||
+    t[15] !== d ||
     t[16] !== c ||
     t[17] !== o
   ) {
     let e;
-    (t[19] !== s || t[20] !== l || t[21] !== d || t[22] !== f || t[23] !== c
+    (t[19] !== s || t[20] !== l || t[21] !== u || t[22] !== d || t[23] !== c
       ? ((e = (e) =>
           (0, F.jsx)(
             R,
@@ -427,24 +429,24 @@ function L(e) {
               allConversations: V(e.dir, s),
               hostId: l,
               visibleConversations: V(e.dir, c),
-              isConversationsLoading: d,
-              onWorktreeDeleted: f,
+              isConversationsLoading: u,
+              onWorktreeDeleted: d,
               worktree: e,
             },
             e.dir,
           )),
         (t[19] = s),
         (t[20] = l),
-        (t[21] = d),
-        (t[22] = f),
+        (t[21] = u),
+        (t[22] = d),
         (t[23] = c),
         (t[24] = e))
       : (e = t[24]),
       (C = H(o, c).map(e)),
       (t[12] = s),
       (t[13] = l),
-      (t[14] = d),
-      (t[15] = f),
+      (t[14] = u),
+      (t[15] = d),
       (t[16] = c),
       (t[17] = o),
       (t[18] = C));
@@ -470,25 +472,25 @@ function L(e) {
 }
 function R({
   worktree: e,
-  allConversations: n,
-  visibleConversations: a,
+  allConversations: t,
+  visibleConversations: r,
   hostId: s,
   isConversationsLoading: c,
-  onWorktreeDeleted: d,
+  onWorktreeDeleted: m,
 }) {
-  let g = m(f),
+  let g = p(d),
     _ = S(),
-    v = p(),
+    v = u(),
     [C, w] = (0, P.useState)(!1),
-    T = r(s),
+    T = a(s),
     E = async () => {
       if (!C) {
         w(!0);
         try {
-          (n.length > 0 &&
+          (t.length > 0 &&
             (await Promise.all(
-              n.map((e) =>
-                o(`archive-conversation`, {
+              t.map((e) =>
+                i(`archive-conversation`, {
                   conversationId: e.id,
                   cleanupWorktree: !1,
                 }),
@@ -501,11 +503,11 @@ function R({
                 reason: `settings-delete-targeted`,
               },
             }),
-            d());
+            m());
         } catch (e) {
           (l.error(`Failed to delete worktree`, {
             safe: {},
-            sensitive: { error: t(e) },
+            sensitive: { error: n(e) },
           }),
             g.get(y).danger(
               v.formatMessage({
@@ -530,7 +532,7 @@ function R({
             children: [
               (0, F.jsx)(`div`, {
                 className: `text-sm font-medium text-token-text-primary`,
-                children: (0, F.jsx)(u, {
+                children: (0, F.jsx)(f, {
                   id: `settings.worktrees.row.title`,
                   defaultMessage: `Worktree`,
                   description: `Label for a worktree row`,
@@ -550,7 +552,7 @@ function R({
               E();
             },
             size: `toolbar`,
-            children: (0, F.jsx)(u, {
+            children: (0, F.jsx)(f, {
               id: `settings.worktrees.row.delete`,
               defaultMessage: `Delete`,
               description: `Delete button label for a worktree row`,
@@ -563,7 +565,7 @@ function R({
         children: [
           (0, F.jsx)(`div`, {
             className: `text-xs text-token-text-secondary`,
-            children: (0, F.jsx)(u, {
+            children: (0, F.jsx)(f, {
               id: `settings.worktrees.row.conversations`,
               defaultMessage: `Conversations`,
               description: `Label for conversations list within a worktree row`,
@@ -574,17 +576,17 @@ function R({
                 className: `flex items-center gap-2 text-xs text-token-text-secondary`,
                 children: [
                   (0, F.jsx)(x, { className: `icon-xxs` }),
-                  (0, F.jsx)(u, {
+                  (0, F.jsx)(f, {
                     id: `settings.worktrees.row.conversations.loading`,
                     defaultMessage: `Loading conversations…`,
                     description: `Loading label for conversations list`,
                   }),
                 ],
               })
-            : a.length === 0
+            : r.length === 0
               ? (0, F.jsx)(`div`, {
                   className: `text-xs text-token-text-secondary`,
-                  children: (0, F.jsx)(u, {
+                  children: (0, F.jsx)(f, {
                     id: `settings.worktrees.row.conversations.empty`,
                     defaultMessage: `No conversations linked to this worktree.`,
                     description: `Empty state for conversations list in worktree row`,
@@ -592,8 +594,8 @@ function R({
                 })
               : (0, F.jsx)(`div`, {
                   className: `flex flex-col gap-1`,
-                  children: a.map((e) => {
-                    let t = i(e);
+                  children: r.map((e) => {
+                    let t = o(e);
                     return (0, F.jsx)(
                       `button`,
                       {
@@ -606,7 +608,7 @@ function R({
                           className: `truncate`,
                           children:
                             t ||
-                            (0, F.jsx)(u, {
+                            (0, F.jsx)(f, {
                               id: `settings.worktrees.conversation.untitled`,
                               defaultMessage: `Untitled conversation`,
                               description: `Fallback title for a conversation`,
@@ -665,7 +667,7 @@ function H(e, t) {
   );
 }
 function U(e) {
-  return n(e).replace(/\/+$/, ``);
+  return t(e).replace(/\/+$/, ``);
 }
 function W(e) {
   return e.hostId ?? `local`;

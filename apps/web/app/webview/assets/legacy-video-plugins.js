@@ -1,9 +1,9 @@
 const __vite__mapDeps = (
   i,
   m = __vite__mapDeps,
-  d = m.f || (m.f = ["./index.umd.js", "./chunk.js"]),
+  d = m.f || (m.f = ["./index.umd.js", "./chunk-Bj-mKKzh.js"]),
 ) => i.map((i) => d[i]);
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { t } from "./preload-helper.js";
 import { i as n, n as r } from "./tslib.es6.js";
 function i(i) {

@@ -1,2528 +1,123 @@
-import { s as e } from "./chunk.js";
-import { Ti as t } from "./src-BLHmAhbF.js";
-import { Rt as n, zt as r } from "./app-server-manager-signals.js";
-import { n as i, t as a } from "./jsx-runtime.js";
-import { t as o } from "./clsx.js";
-import "./react-dom.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { ea as t } from "./src-C.js";
+import { _n as n } from "./app-server-manager-signals-DkRDRgNB.js";
+import { n as r, t as i } from "./jsx-runtime.js";
+import { t as a } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import {
-  H as s,
-  S as c,
-  W as l,
-  X as u,
-  Y as d,
-  w as f,
-  xt as p,
-  y as m,
+  G as o,
+  S as s,
+  U as c,
+  X as l,
+  Z as u,
+  w as d,
+  wt as f,
+  y as p,
 } from "./setting-storage.js";
 import "./google-drive.js";
-import "./product-logger.js";
-import { u as h } from "./statsig.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import { t as m } from "./request-DWZTrEAr.js";
 import "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./codex-api.js";
-import "./_baseOrderBy.js";
-import "./parse-owner-repo.js";
-import "./use-debounced-value.js";
-import "./use-is-dark.js";
-import { r as g } from "./toast-signal.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
+import "./use-is-dark-BHkhnHe-.js";
+import { r as h } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import { t as _ } from "./button.js";
-import "./reduced-motion-preference.js";
-import { t as v } from "./spinner.js";
-import { t as y } from "./link-external.js";
+import { t as g } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
+import { t as _ } from "./spinner.js";
 import "./proxy.js";
-import "./x.js";
-import { t as b } from "./skus.js";
-import { t as x } from "./check-circle-filled.js";
+import "./x-C_RDKBp5.js";
+import { n as v, t as y } from "./skus-JiYadAsS.js";
 import "./with-window.js";
 import {
-  a as S,
-  d as C,
-  i as w,
-  l as T,
-  n as E,
-  r as D,
+  a as b,
+  d as x,
+  i as S,
+  l as C,
+  n as w,
+  r as T,
 } from "./dialog-layout.js";
 import "./lightning-bolt.js";
-import { r as O } from "./modal-controller-state-.js";
+import "./modal-controller-state.js";
+import "./check-md.js";
+import "./codex-api-error-CsUcWied.js";
 import {
-  B as k,
-  C as A,
-  E as j,
-  F as M,
+  $ as E,
+  A as D,
+  D as O,
+  E as k,
   G as ee,
-  H as N,
-  N as te,
-  R as P,
-  T as F,
-  U as I,
-  V as ne,
-  W as L,
-  n as R,
-  o as z,
-  v as B,
-  w as V,
-  x as H,
+  H as A,
+  J as j,
+  K as M,
+  L as N,
+  O as P,
+  Q as te,
+  S as F,
+  T as I,
+  W as ne,
+  X as L,
+  Y as re,
+  Z as ie,
+  k as R,
+  n as ae,
+  o as oe,
+  q as z,
+  w as se,
+  y as B,
+  z as V,
 } from "./use-rate-limit.js";
+import "./checkbox-DtuSNXXy.js";
+import "./minus.js";
+import { i as H, n as ce, r as U, t as W } from "./rate-limit-rows.js";
+import "./links.js";
 import "./conversation-starter-card.js";
-import "./chevron.js";
-import { t as U } from "./rate-limit-rows.js";
-import { t as W } from "./banner.js";
-import { t as G } from "./toggle.js";
-import { i as re } from "./settings-shared.js";
-import { t as ie } from "./settings-content-layout.js";
-import { n as ae } from "./settings-row-D.js";
-import { t as K } from "./settings-surface.js";
-import { t as q } from "./settings-group.js";
-import { t as oe } from "./useForm.js";
-import { t as se } from "./use-usage-settings-access.js";
-var J = p(),
-  Y = e(i(), 1);
-function X({ intl: e, amount: t, currencyCode: n, currencyFractionDigits: r }) {
-  let i = r ?? ce({ intl: e, currencyCode: n });
-  return e.formatNumber(t, {
-    style: `currency`,
-    currency: n,
-    minimumFractionDigits: i,
-    maximumFractionDigits: i,
-  });
-}
-function ce({ intl: e, currencyCode: t }) {
-  return (
-    e.formatters
-      .getNumberFormat(e.locale, { style: `currency`, currency: t })
-      .resolvedOptions().maximumFractionDigits ?? 0
-  );
-}
-var le = [500, 1e3, 2e3],
-  ue = 1e3;
-function de(e) {
-  let t = Se(e.rechargeThreshold ?? ``),
-    n = Se(e.rechargeTarget ?? ``);
-  return t.kind !== `valid` || n.kind !== `valid` || n.value <= t.value
-    ? String(le[0])
-    : String(n.value - t.value);
-}
-function fe(e) {
-  let t = Se(e.rechargeThreshold ?? ``);
-  return t.kind === `valid` ? String(t.value) : `125`;
-}
-function pe(e) {
-  return e.rechargeMonthlyLimit == null ? `` : Z(e.rechargeMonthlyLimit);
-}
-function me(e) {
-  let t = Se(e);
-  switch (t.kind) {
-    case `missing`:
-      return `missing`;
-    case `invalid`:
-      return `not-whole-number`;
-    case `valid`:
-      return t.value < 125 ? `below-minimum` : null;
-  }
-}
-function he(e) {
-  if (e == null || e.minorUnitExponent == null || e.amountPerCredit <= 0)
-    return 250;
-  let t = e.amountPerCredit * 10 ** e.minorUnitExponent,
-    n = Math.ceil(ue / t);
-  return Math.max(250, Ce(n, 250));
-}
-function ge({ value: e, pricingInfo: t }) {
-  let n = Se(e);
-  switch (n.kind) {
-    case `missing`:
-      return `missing`;
-    case `invalid`:
-      return `not-whole-number`;
-    case `valid`:
-      return n.value < he(t)
-        ? `below-minimum`
-        : n.value % 250 == 0
-          ? null
-          : `invalid-increment`;
-  }
-}
-function _e({
-  value: e,
-  pricingInfo: t,
-  groupSeparator: n,
-  decimalSeparator: r,
-}) {
-  let i = ve({
-    value: e,
-    pricingInfo: t,
-    groupSeparator: n,
-    decimalSeparator: r,
-  });
-  if (i == null) return null;
-  let a = Math.round(i);
-  return Math.abs(i - a) > 1e-6 ? null : String(a);
-}
-function ve({
-  value: e,
-  pricingInfo: t,
-  groupSeparator: n,
-  decimalSeparator: r,
-}) {
-  let i = Z(e)
-    .replaceAll(n, ``)
-    .replaceAll(r, `.`)
-    .replace(/[^\d.]/g, ``);
-  if (!/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(i)) return null;
-  let a = Number.parseFloat(i);
-  return t == null || t.amountPerCredit <= 0 || !Number.isFinite(a) || a <= 0
-    ? null
-    : a / t.amountPerCredit;
-}
-function ye({ monthlyLimit: e, minimumBalance: t, reloadQuantity: n }) {
-  let r = Se(e),
-    i = Se(t),
-    a = Se(n);
-  switch (r.kind) {
-    case `missing`:
-      return null;
-    case `invalid`:
-      return `not-whole-number`;
-    case `valid`:
-      return i.kind === `valid` &&
-        a.kind === `valid` &&
-        r.value < i.value + a.value
-        ? `monthly-limit-below-target`
-        : null;
-  }
-}
-function be({ minimumBalance: e, reloadQuantity: t, monthlyLimit: n }) {
-  if (
-    me(e) != null ||
-    me(t) != null ||
-    ye({ monthlyLimit: n, minimumBalance: e, reloadQuantity: t }) != null
-  )
-    return null;
-  let r = Number.parseInt(Z(e), 10),
-    i = Number.parseInt(Z(t), 10),
-    a = Z(n);
-  return {
-    recharge_threshold: String(r),
-    recharge_target: String(r + i),
-    recharge_monthly_limit: a.length > 0 ? a : null,
-  };
-}
-function xe({ isEnabled: e, serverState: t, savePayload: n }) {
-  return e
-    ? n == null
-      ? null
-      : t.isEnabled
-        ? n.recharge_threshold !== t.rechargeThreshold ||
-          n.recharge_target !== t.rechargeTarget ||
-          n.recharge_monthly_limit !== t.rechargeMonthlyLimit
-          ? `update`
-          : null
-        : `enable`
-    : t.isEnabled
-      ? `disable`
-      : null;
-}
+import "./chevron-NmAOI_v1.js";
+import { t as G } from "./banner.js";
+import { i as K } from "./settings-shared-BTHmEeQY.js";
+import { t as le } from "./settings-content-layout.js";
+import { n as ue } from "./settings-row.js";
+import { n as q, t as J } from "./settings-group.js";
+import { t as de } from "./settings-empty-state-Bec-Sn2w.js";
+import { t as fe } from "./useForm-BsmKTTLN.js";
+import { t as pe } from "./use-usage-settings-access.js";
+var Y = f(),
+  X = e(r(), 1);
 function Z(e) {
-  return e?.trim() ?? ``;
-}
-function Se(e) {
-  let t = Z(e);
-  return t.length === 0
-    ? { kind: `missing` }
-    : /^\d+$/.test(t)
-      ? { kind: `valid`, value: Number.parseInt(t, 10) }
-      : { kind: `invalid` };
-}
-function Ce(e, t) {
-  return Math.ceil(e / t) * t;
-}
-function we({ intl: e, creditQuantity: t, pricingInfo: n }) {
-  return Number.isFinite(t)
-    ? X({
-        intl: e,
-        amount: t * n.amountPerCredit,
-        currencyCode: n.currencyCode,
-        currencyFractionDigits: n.minorUnitExponent,
-      })
-    : null;
-}
-function Te({ intl: e, creditQuantity: t, pricingInfo: n }) {
-  let r = ke({ intl: e, amount: t * n.amountPerCredit, pricingInfo: n });
-  return r == null
-    ? null
-    : r
-        .filter((e) => e.type !== `currency`)
-        .map((e) => e.value)
-        .join(``)
-        .trim();
-}
-function Ee({ intl: e, pricingInfo: t }) {
-  return (
-    ke({ intl: e, amount: 0, pricingInfo: t })?.find(
-      (e) => e.type === `currency`,
-    )?.value ?? null
-  );
-}
-function De({ intl: e, creditQuantity: t, pricingInfo: n }) {
-  if (!Number.isFinite(t)) return null;
-  let r = t * n.amountPerCredit;
-  return X({
-    intl: e,
-    amount: r,
-    currencyCode: n.currencyCode,
-    currencyFractionDigits: Number.isInteger(r) ? 0 : n.minorUnitExponent,
-  });
-}
-function Oe({ intl: e, creditBalance: t, rechargeTarget: n, pricingInfo: r }) {
-  let i = Number.parseInt(Z(n), 10);
-  if (!Number.isFinite(i)) return null;
-  let a = Math.max(0, Math.floor(Number(t ?? 0))),
-    o = Math.max(0, i - a);
-  return o === 0 ? null : we({ intl: e, creditQuantity: o, pricingInfo: r });
-}
-function ke({ intl: e, amount: t, pricingInfo: n }) {
-  return Number.isFinite(t)
-    ? e.formatters
-        .getNumberFormat(e.locale, {
-          style: `currency`,
-          currency: n.currencyCode,
-          minimumFractionDigits: n.minorUnitExponent ?? void 0,
-          maximumFractionDigits: n.minorUnitExponent ?? void 0,
-        })
-        .formatToParts(t)
-    : null;
-}
-var Q = a();
-function Ae(e) {
-  let t = (0, J.c)(42),
-    {
-      intl: n,
-      value: r,
-      selection: i,
-      pricingInfo: a,
-      error: c,
-      minimumQuantity: l,
-      quantityStep: u,
-      onChange: d,
-      onSelectionChange: f,
-      onInvalidCurrencyDraftChange: p,
-      onBlur: m,
-    } = e,
-    h;
-  t[0] === r ? (h = t[1]) : ((h = Z(r)), (t[0] = r), (t[1] = h));
-  let g = h,
-    _ = i === `preset`,
-    v;
-  t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, Q.jsx)(`label`, {
-        className: `text-sm text-token-text-primary`,
-        children: (0, Q.jsx)(s, {
-          id: `settings.usage.creditReload.reloadAmount`,
-          defaultMessage: `Credit amount`,
-          description: `Label shown above the credit amount options`,
-        }),
-      })),
-      (t[2] = v))
-    : (v = t[2]);
-  let y;
-  t[3] !== n ||
-  t[4] !== _ ||
-  t[5] !== d ||
-  t[6] !== f ||
-  t[7] !== a ||
-  t[8] !== g
-    ? ((y = le.map((e) =>
-        (0, Q.jsx)(
-          Ne,
-          {
-            creditQuantity: e,
-            pricingInfo: a,
-            isSelected: _ && String(e) === g,
-            intl: n,
-            onClick: () => {
-              (f(`preset`), d(String(e)));
-            },
-          },
-          e,
-        ),
-      )),
-      (t[3] = n),
-      (t[4] = _),
-      (t[5] = d),
-      (t[6] = f),
-      (t[7] = a),
-      (t[8] = g),
-      (t[9] = y))
-    : (y = t[9]);
-  let b = !_,
-    x = _ ? `border border-token-border` : `border-2 border-token-text-primary`,
-    S;
-  t[10] === x
-    ? (S = t[11])
-    : ((S = o(
-        `cursor-interaction flex h-12 items-center rounded-xl px-3 text-left text-sm`,
-        x,
-      )),
-      (t[10] = x),
-      (t[11] = S));
-  let C;
-  t[12] !== _ || t[13] !== d || t[14] !== f
-    ? ((C = () => {
-        _ && (f(`custom`), d(``));
-      }),
-      (t[12] = _),
-      (t[13] = d),
-      (t[14] = f),
-      (t[15] = C))
-    : (C = t[15]);
-  let w;
-  t[16] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((w = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.amount.other`,
-        defaultMessage: `Other`,
-        description: `Option label for entering a custom reload amount`,
-      })),
-      (t[16] = w))
-    : (w = t[16]);
-  let T;
-  t[17] !== b || t[18] !== S || t[19] !== C
-    ? ((T = (0, Q.jsx)(`button`, {
-        type: `button`,
-        "aria-pressed": b,
-        className: S,
-        onClick: C,
-        children: w,
-      })),
-      (t[17] = b),
-      (t[18] = S),
-      (t[19] = C),
-      (t[20] = T))
-    : (T = t[20]);
-  let E;
-  t[21] !== y || t[22] !== T
-    ? ((E = (0, Q.jsxs)(`div`, {
-        className: `grid grid-cols-4 gap-2`,
-        children: [y, T],
-      })),
-      (t[21] = y),
-      (t[22] = T),
-      (t[23] = E))
-    : (E = t[23]);
-  let D;
-  t[24] !== c ||
-  t[25] !== n ||
-  t[26] !== _ ||
-  t[27] !== l ||
-  t[28] !== m ||
-  t[29] !== d ||
-  t[30] !== p ||
-  t[31] !== a ||
-  t[32] !== r
-    ? ((D = _
-        ? null
-        : (0, Q.jsxs)(`div`, {
-            className: `flex flex-col gap-2`,
-            children: [
-              (0, Q.jsx)(`label`, {
-                className: `text-sm text-token-text-primary`,
-                children: (0, Q.jsx)(s, {
-                  id: `settings.usage.creditReload.amount.other`,
-                  defaultMessage: `Other`,
-                  description: `Option label for entering a custom reload amount`,
-                }),
-              }),
-              (0, Q.jsx)(je, {
-                intl: n,
-                value: r,
-                pricingInfo: a,
-                placeholder:
-                  Te({ intl: n, creditQuantity: l, pricingInfo: a }) ?? ``,
-                hasError: c != null,
-                ariaLabel: n.formatMessage({
-                  id: `settings.usage.creditReload.amount.other.ariaLabel`,
-                  defaultMessage: `Custom reload amount`,
-                  description: `Accessible label for the custom reload amount input`,
-                }),
-                showCreditQuantity: !0,
-                onInvalidCurrencyDraftChange: p,
-                onBlur: m,
-                onChange: d,
-              }),
-            ],
-          })),
-      (t[24] = c),
-      (t[25] = n),
-      (t[26] = _),
-      (t[27] = l),
-      (t[28] = m),
-      (t[29] = d),
-      (t[30] = p),
-      (t[31] = a),
-      (t[32] = r),
-      (t[33] = D))
-    : (D = t[33]);
-  let O;
-  t[34] !== c || t[35] !== l || t[36] !== u
-    ? ((O =
-        c == null
-          ? null
-          : (0, Q.jsx)(Me, {
-              fieldError: c,
-              minimumQuantity: l,
-              quantityStep: u,
-            })),
-      (t[34] = c),
-      (t[35] = l),
-      (t[36] = u),
-      (t[37] = O))
-    : (O = t[37]);
-  let k;
-  return (
-    t[38] !== E || t[39] !== D || t[40] !== O
-      ? ((k = (0, Q.jsxs)(`div`, {
-          className: `flex flex-col gap-2`,
-          children: [v, E, D, O],
-        })),
-        (t[38] = E),
-        (t[39] = D),
-        (t[40] = O),
-        (t[41] = k))
-      : (k = t[41]),
-    k
-  );
-}
-function je(e) {
-  let t = (0, J.c)(43),
-    {
-      intl: n,
-      value: r,
-      pricingInfo: i,
-      placeholder: a,
-      hasError: c,
-      ariaLabel: l,
-      showCreditQuantity: u,
-      onChange: d,
-      onInvalidCurrencyDraftChange: f,
-      onBlur: p,
-    } = e,
-    m = u === void 0 ? !1 : u,
-    [h, g] = (0, Y.useState)(null),
-    _,
-    v,
-    y,
-    b;
-  if (t[0] !== h || t[1] !== n || t[2] !== i || t[3] !== m || t[4] !== r) {
-    let e = m
-      ? Te({
-          intl: n,
-          creditQuantity: Number.parseInt(Z(r), 10),
-          pricingInfo: i,
-        })
-      : we({
-          intl: n,
-          creditQuantity: Number.parseInt(Z(r), 10),
-          pricingInfo: i,
-        });
-    y = h ?? e ?? r;
-    let a;
-    (t[9] !== n || t[10] !== i || t[11] !== m
-      ? ((a = m ? Ee({ intl: n, pricingInfo: i }) : null),
-        (t[9] = n),
-        (t[10] = i),
-        (t[11] = m),
-        (t[12] = a))
-      : (a = t[12]),
-      (v = a),
-      (_ = Pe({ intl: n, value: y, pricingInfo: i })),
-      (b = Fe({ intl: n, value: y, pricingInfo: i })),
-      (t[0] = h),
-      (t[1] = n),
-      (t[2] = i),
-      (t[3] = m),
-      (t[4] = r),
-      (t[5] = _),
-      (t[6] = v),
-      (t[7] = y),
-      (t[8] = b));
-  } else ((_ = t[5]), (v = t[6]), (y = t[7]), (b = t[8]));
-  let x = b,
-    S = m && `pr-28`,
-    C = v != null && `pl-7`,
-    w;
-  t[13] !== S || t[14] !== C
-    ? ((w = o(
-        `bg-token-input-background text-token-text-primary placeholder:text-token-input-placeholder-foreground h-8 w-full rounded-xl border border-token-border px-3 text-left text-sm tabular-nums outline-none focus-visible:ring-2 focus-visible:ring-token-focus`,
-        S,
-        C,
-        `aria-invalid:border-token-error-foreground aria-invalid:ring-token-error-foreground/20`,
-      )),
-      (t[13] = S),
-      (t[14] = C),
-      (t[15] = w))
-    : (w = t[15]);
-  let T;
-  t[16] !== _ || t[17] !== h || t[18] !== p || t[19] !== f
-    ? ((T = () => {
-        ((h == null || _ != null) && g(null),
-          f?.(h != null && h.length > 0 && _ == null),
-          p());
-      }),
-      (t[16] = _),
-      (t[17] = h),
-      (t[18] = p),
-      (t[19] = f),
-      (t[20] = T))
-    : (T = t[20]);
-  let E;
-  t[21] !== n || t[22] !== d || t[23] !== f || t[24] !== i
-    ? ((E = (e) => {
-        let t = e.currentTarget.value;
-        if (!Le({ intl: n, value: t, pricingInfo: i })) return;
-        g(t);
-        let r = Pe({ intl: n, value: t, pricingInfo: i });
-        (f?.(t.length > 0 && r == null), d(r ?? ``));
-      }),
-      (t[21] = n),
-      (t[22] = d),
-      (t[23] = f),
-      (t[24] = i),
-      (t[25] = E))
-    : (E = t[25]);
-  let D;
-  t[26] !== l ||
-  t[27] !== y ||
-  t[28] !== c ||
-  t[29] !== a ||
-  t[30] !== w ||
-  t[31] !== T ||
-  t[32] !== E
-    ? ((D = (0, Q.jsx)(`input`, {
-        value: y,
-        placeholder: a,
-        inputMode: `decimal`,
-        "aria-label": l,
-        "aria-invalid": c,
-        className: w,
-        onBlur: T,
-        onChange: E,
-      })),
-      (t[26] = l),
-      (t[27] = y),
-      (t[28] = c),
-      (t[29] = a),
-      (t[30] = w),
-      (t[31] = T),
-      (t[32] = E),
-      (t[33] = D))
-    : (D = t[33]);
-  let O;
-  t[34] === v
-    ? (O = t[35])
-    : ((O =
-        v == null
-          ? null
-          : (0, Q.jsx)(`span`, {
-              className: `pointer-events-none absolute inset-y-0 left-3 flex items-center text-sm text-token-text-secondary`,
-              children: v,
-            })),
-      (t[34] = v),
-      (t[35] = O));
-  let k;
-  t[36] !== x || t[37] !== m
-    ? ((k =
-        m && x != null
-          ? (0, Q.jsx)(`span`, {
-              className: `pointer-events-none absolute inset-y-0 right-3 flex items-center text-sm text-token-text-secondary`,
-              children: (0, Q.jsx)(s, {
-                id: `settings.usage.creditReload.amount.credits`,
-                defaultMessage: `{creditQuantity, number} credits`,
-                description: `Credit count shown below a reload amount price`,
-                values: { creditQuantity: x },
-              }),
-            })
-          : null),
-      (t[36] = x),
-      (t[37] = m),
-      (t[38] = k))
-    : (k = t[38]);
-  let A;
-  return (
-    t[39] !== k || t[40] !== D || t[41] !== O
-      ? ((A = (0, Q.jsxs)(`div`, {
-          className: `relative`,
-          children: [D, O, k],
-        })),
-        (t[39] = k),
-        (t[40] = D),
-        (t[41] = O),
-        (t[42] = A))
-      : (A = t[42]),
-    A
-  );
-}
-function Me(e) {
-  let t = (0, J.c)(21),
-    { fieldError: n, minimumQuantity: r, quantityStep: i } = e,
-    a = r === void 0 ? 125 : r,
-    o = i === void 0 ? null : i;
-  if (n == null) return null;
-  let c;
-  t[0] === n
-    ? (c = t[1])
-    : ((c =
-        n === `missing`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.error.missing`,
-              defaultMessage: `Enter an amount`,
-              description: `Validation message when a credit reload amount is missing`,
-            })
-          : null),
-      (t[0] = n),
-      (t[1] = c));
-  let l;
-  t[2] === n
-    ? (l = t[3])
-    : ((l =
-        n === `not-whole-number`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.error.wholeNumber`,
-              defaultMessage: `Enter a whole number of credits`,
-              description: `Validation message when a credit reload amount is not a whole number`,
-            })
-          : null),
-      (t[2] = n),
-      (t[3] = l));
-  let u;
-  t[4] === n
-    ? (u = t[5])
-    : ((u =
-        n === `invalid-currency-amount`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.error.invalidCurrencyAmount`,
-              defaultMessage: `Enter an amount that converts to a whole number of credits`,
-              description: `Validation message when a typed currency amount does not convert to a whole number of credits`,
-            })
-          : null),
-      (t[4] = n),
-      (t[5] = u));
-  let d;
-  t[6] !== n || t[7] !== a
-    ? ((d =
-        n === `below-minimum`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.error.minimum`,
-              defaultMessage: `Enter at least {minimumQuantity, number} credits`,
-              description: `Validation message when a credit reload amount is below the minimum`,
-              values: { minimumQuantity: a },
-            })
-          : null),
-      (t[6] = n),
-      (t[7] = a),
-      (t[8] = d))
-    : (d = t[8]);
-  let f;
-  t[9] !== n || t[10] !== o
-    ? ((f =
-        n === `invalid-increment`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.error.increment`,
-              defaultMessage: `Enter credits in increments of {quantityStep, number}`,
-              description: `Validation message when a one-time reload amount is outside the allowed increment`,
-              values: { quantityStep: o },
-            })
-          : null),
-      (t[9] = n),
-      (t[10] = o),
-      (t[11] = f))
-    : (f = t[11]);
-  let p;
-  t[12] === n
-    ? (p = t[13])
-    : ((p =
-        n === `monthly-limit-below-target`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.error.monthlyLimit`,
-              defaultMessage: `Set the monthly limit high enough to cover one reload`,
-              description: `Validation message when the monthly limit cannot cover one reload`,
-            })
-          : null),
-      (t[12] = n),
-      (t[13] = p));
-  let m;
-  return (
-    t[14] !== c ||
-    t[15] !== l ||
-    t[16] !== u ||
-    t[17] !== d ||
-    t[18] !== f ||
-    t[19] !== p
-      ? ((m = (0, Q.jsxs)(`p`, {
-          className: `text-sm text-token-error-foreground`,
-          children: [c, l, u, d, f, p],
-        })),
-        (t[14] = c),
-        (t[15] = l),
-        (t[16] = u),
-        (t[17] = d),
-        (t[18] = f),
-        (t[19] = p),
-        (t[20] = m))
-      : (m = t[20]),
-    m
-  );
-}
-function Ne(e) {
-  let t = (0, J.c)(18),
-    {
-      creditQuantity: n,
-      pricingInfo: r,
-      isSelected: i,
-      intl: a,
-      onClick: c,
-    } = e,
-    l;
-  t[0] !== n || t[1] !== a || t[2] !== r
-    ? ((l = we({ intl: a, creditQuantity: n, pricingInfo: r })),
-      (t[0] = n),
-      (t[1] = a),
-      (t[2] = r),
-      (t[3] = l))
-    : (l = t[3]);
-  let u = l,
-    d = i ? `border-2 border-token-text-primary` : `border border-token-border`,
-    f;
-  t[4] === d
-    ? (f = t[5])
-    : ((f = o(
-        `cursor-interaction flex h-12 flex-col justify-center rounded-xl px-3 text-left`,
-        d,
-      )),
-      (t[4] = d),
-      (t[5] = f));
-  let p;
-  t[6] === u
-    ? (p = t[7])
-    : ((p =
-        u ??
-        (0, Q.jsx)(s, {
-          id: `settings.usage.creditReload.amount.pending`,
-          defaultMessage: `—`,
-          description: `Placeholder shown while a reload amount price is loading`,
-        })),
-      (t[6] = u),
-      (t[7] = p));
-  let m;
-  t[8] === p
-    ? (m = t[9])
-    : ((m = (0, Q.jsx)(`span`, {
-        className: `text-sm text-token-text-primary`,
-        children: p,
-      })),
-      (t[8] = p),
-      (t[9] = m));
-  let h;
-  t[10] === n
-    ? (h = t[11])
-    : ((h = (0, Q.jsx)(`span`, {
-        className: `text-xs text-token-text-secondary`,
-        children: (0, Q.jsx)(s, {
-          id: `settings.usage.creditReload.amount.credits`,
-          defaultMessage: `{creditQuantity, number} credits`,
-          description: `Credit count shown below a reload amount price`,
-          values: { creditQuantity: n },
-        }),
-      })),
-      (t[10] = n),
-      (t[11] = h));
-  let g;
-  return (
-    t[12] !== i || t[13] !== c || t[14] !== f || t[15] !== m || t[16] !== h
-      ? ((g = (0, Q.jsxs)(`button`, {
-          type: `button`,
-          "aria-pressed": i,
-          className: f,
-          onClick: c,
-          children: [m, h],
-        })),
-        (t[12] = i),
-        (t[13] = c),
-        (t[14] = f),
-        (t[15] = m),
-        (t[16] = h),
-        (t[17] = g))
-      : (g = t[17]),
-    g
-  );
-}
-function Pe({ intl: e, value: t, pricingInfo: n }) {
-  let r = t.trim();
-  if (r.length === 0) return ``;
-  let { groupSeparator: i, decimalSeparator: a } = Ie({
-    intl: e,
-    pricingInfo: n,
-  });
-  return _e({
-    value: r,
-    pricingInfo: n,
-    groupSeparator: i,
-    decimalSeparator: a,
-  });
-}
-function Fe({ intl: e, value: t, pricingInfo: n }) {
-  let r = t.trim();
-  if (r.length === 0) return null;
-  let { groupSeparator: i, decimalSeparator: a } = Ie({
-    intl: e,
-    pricingInfo: n,
-  });
-  return ve({
-    value: r,
-    pricingInfo: n,
-    groupSeparator: i,
-    decimalSeparator: a,
-  });
-}
-function Ie({ intl: e, pricingInfo: t }) {
-  let n = e.formatters
-    .getNumberFormat(e.locale, {
-      style: `currency`,
-      currency: t.currencyCode,
-      minimumFractionDigits: t.minorUnitExponent ?? void 0,
-      maximumFractionDigits: t.minorUnitExponent ?? void 0,
-    })
-    .formatToParts(12345.6);
-  return {
-    groupSeparator: n.find((e) => e.type === `group`)?.value ?? `,`,
-    decimalSeparator: n.find((e) => e.type === `decimal`)?.value ?? `.`,
-  };
-}
-function Le({ intl: e, value: t, pricingInfo: n }) {
-  let { groupSeparator: r, decimalSeparator: i } = Ie({
-      intl: e,
-      pricingInfo: n,
-    }),
-    a = 0;
-  for (let e of t)
-    if (!(/^\d$/.test(e) || e === r) && !(e === i && ((a += 1), a <= 1)))
-      return !1;
-  return !0;
-}
-function Re(e) {
-  let t = (0, J.c)(46),
-    {
-      intl: n,
-      reloadQuantity: r,
-      monthlyLimit: i,
-      minimumBalance: a,
-      pricingInfo: c,
-      monthlyLimitError: l,
-      hasImmediateTopUpFailure: u,
-      immediateTopUpFailureAmount: d,
-      isManagePaymentPending: f,
-      onMonthlyLimitChange: p,
-      onInvalidMonthlyLimitCurrencyDraftChange: m,
-      onMonthlyLimitBlur: h,
-      onOpenManagePayment: g,
-    } = e,
-    _;
-  t[0] !== n || t[1] !== a || t[2] !== c
-    ? ((_ = De({
-        intl: n,
-        creditQuantity: Number.parseInt(Z(a), 10),
-        pricingInfo: c,
-      })),
-      (t[0] = n),
-      (t[1] = a),
-      (t[2] = c),
-      (t[3] = _))
-    : (_ = t[3]);
-  let v = _,
-    y;
-  t[4] !== n || t[5] !== c || t[6] !== r
-    ? ((y = De({
-        intl: n,
-        creditQuantity: Number.parseInt(Z(r), 10),
-        pricingInfo: c,
-      })),
-      (t[4] = n),
-      (t[5] = c),
-      (t[6] = r),
-      (t[7] = y))
-    : (y = t[7]);
-  let b = y,
-    x;
-  t[8] !== n || t[9] !== i || t[10] !== c
-    ? ((x = De({
-        intl: n,
-        creditQuantity: Number.parseInt(Z(i), 10),
-        pricingInfo: c,
-      })),
-      (t[8] = n),
-      (t[9] = i),
-      (t[10] = c),
-      (t[11] = x))
-    : (x = t[11]);
-  let S = x,
-    C;
-  t[12] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((C = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.spendLimit`,
-        defaultMessage: `Maximum monthly spend`,
-        description: `Label shown above the monthly reload spend limit`,
-      })),
-      (t[12] = C))
-    : (C = t[12]);
-  let w;
-  t[13] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((w = (0, Q.jsxs)(`label`, {
-        className: `flex items-center gap-1 text-sm text-token-text-primary`,
-        children: [
-          C,
-          (0, Q.jsx)(`span`, {
-            className: `text-token-text-secondary`,
-            children: (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.spendLimit.optional`,
-              defaultMessage: `(Optional)`,
-              description: `Helper label marking the monthly reload spend limit as optional`,
-            }),
-          }),
-        ],
-      })),
-      (t[13] = w))
-    : (w = t[13]);
-  let T;
-  t[14] === n
-    ? (T = t[15])
-    : ((T = n.formatMessage({
-        id: `settings.usage.creditReload.spendLimit.placeholder`,
-        defaultMessage: `None`,
-        description: `Placeholder shown when no monthly reload spend limit is set`,
-      })),
-      (t[14] = n),
-      (t[15] = T));
-  let E = l != null,
-    D;
-  t[16] === n
-    ? (D = t[17])
-    : ((D = n.formatMessage({
-        id: `settings.usage.creditReload.spendLimit.ariaLabel`,
-        defaultMessage: `Monthly reload spend limit`,
-        description: `Accessible label for the monthly reload spend limit input`,
-      })),
-      (t[16] = n),
-      (t[17] = D));
-  let O;
-  t[18] !== n ||
-  t[19] !== i ||
-  t[20] !== m ||
-  t[21] !== h ||
-  t[22] !== p ||
-  t[23] !== c ||
-  t[24] !== T ||
-  t[25] !== E ||
-  t[26] !== D
-    ? ((O = (0, Q.jsx)(je, {
-        intl: n,
-        value: i,
-        pricingInfo: c,
-        placeholder: T,
-        hasError: E,
-        ariaLabel: D,
-        showCreditQuantity: !0,
-        onInvalidCurrencyDraftChange: m,
-        onBlur: h,
-        onChange: p,
-      })),
-      (t[18] = n),
-      (t[19] = i),
-      (t[20] = m),
-      (t[21] = h),
-      (t[22] = p),
-      (t[23] = c),
-      (t[24] = T),
-      (t[25] = E),
-      (t[26] = D),
-      (t[27] = O))
-    : (O = t[27]);
-  let k;
-  t[28] === l
-    ? (k = t[29])
-    : ((k = l == null ? null : (0, Q.jsx)(Me, { fieldError: l })),
-      (t[28] = l),
-      (t[29] = k));
-  let A;
-  t[30] !== k || t[31] !== O
-    ? ((A = (0, Q.jsxs)(`div`, {
-        className: `flex flex-col gap-2`,
-        children: [w, O, k],
-      })),
-      (t[30] = k),
-      (t[31] = O),
-      (t[32] = A))
-    : (A = t[32]);
-  let j;
-  t[33] !== S || t[34] !== b || t[35] !== v
-    ? ((j = (0, Q.jsx)(`p`, {
-        className: `text-sm leading-5 text-token-text-secondary`,
-        children:
-          v == null || b == null
-            ? (0, Q.jsx)(s, {
-                id: `settings.usage.creditReload.autoReload.description.pending`,
-                defaultMessage: `If your balance falls below the minimum, Codex will automatically reload your credits`,
-                description: `Fallback description shown while pricing is loading`,
-              })
-            : S == null
-              ? (0, Q.jsx)(s, {
-                  id: `settings.usage.creditReload.autoReload.description.noLimit`,
-                  defaultMessage: `If your balance falls below {thresholdAmount} you'll be charged {reloadAmount}`,
-                  description: `Description explaining how automatic reload works without a monthly limit`,
-                  values: { thresholdAmount: v, reloadAmount: b },
-                })
-              : (0, Q.jsx)(s, {
-                  id: `settings.usage.creditReload.autoReload.description`,
-                  defaultMessage: `If your balance falls below {thresholdAmount} you'll be charged {reloadAmount}, up to {monthlyLimitAmount} per month`,
-                  description: `Description explaining how automatic reload works`,
-                  values: {
-                    thresholdAmount: v,
-                    reloadAmount: b,
-                    monthlyLimitAmount: S,
-                  },
-                }),
-      })),
-      (t[33] = S),
-      (t[34] = b),
-      (t[35] = v),
-      (t[36] = j))
-    : (j = t[36]);
-  let M;
-  t[37] !== u || t[38] !== d || t[39] !== f || t[40] !== g
-    ? ((M = u
-        ? (0, Q.jsx)(`div`, {
-            className: `rounded-2xl border border-token-error-foreground/20 bg-token-input-validation-error-background/20 px-4 py-3 text-sm leading-5 text-token-text-primary`,
-            children:
-              d == null
-                ? (0, Q.jsx)(s, {
-                    id: `settings.usage.creditReload.immediateTopUpFailure.generic`,
-                    defaultMessage: `The initial reload failed. <managePayment>Update your payment method</managePayment>`,
-                    description: `Inline error shown when the initial auto reload purchase fails`,
-                    values: {
-                      managePayment: (e) =>
-                        (0, Q.jsx)(`button`, {
-                          type: `button`,
-                          className: o(
-                            `cursor-interaction font-medium underline underline-offset-2`,
-                            f && `pointer-events-none opacity-60`,
-                          ),
-                          disabled: f,
-                          onClick: g,
-                          children: e,
-                        }),
-                    },
-                  })
-                : (0, Q.jsx)(s, {
-                    id: `settings.usage.creditReload.immediateTopUpFailure.amount`,
-                    defaultMessage: `The initial reload for an estimated {amount} failed. <managePayment>Update your payment method</managePayment>`,
-                    description: `Inline error shown when the initial auto reload purchase fails with a price estimate`,
-                    values: {
-                      amount: d,
-                      managePayment: (e) =>
-                        (0, Q.jsx)(`button`, {
-                          type: `button`,
-                          className: o(
-                            `cursor-interaction font-medium underline underline-offset-2`,
-                            f && `pointer-events-none opacity-60`,
-                          ),
-                          disabled: f,
-                          onClick: g,
-                          children: e,
-                        }),
-                    },
-                  }),
-          })
-        : null),
-      (t[37] = u),
-      (t[38] = d),
-      (t[39] = f),
-      (t[40] = g),
-      (t[41] = M))
-    : (M = t[41]);
-  let ee;
-  return (
-    t[42] !== A || t[43] !== j || t[44] !== M
-      ? ((ee = (0, Q.jsxs)(Q.Fragment, { children: [A, j, M] })),
-        (t[42] = A),
-        (t[43] = j),
-        (t[44] = M),
-        (t[45] = ee))
-      : (ee = t[45]),
-    ee
-  );
-}
-function ze(e) {
-  let t = (0, J.c)(12),
-    { intl: n, isEnabled: r, isActionPending: i, onChange: a } = e,
-    o;
-  t[0] === n
-    ? (o = t[1])
-    : ((o = n.formatMessage({
-        id: `settings.usage.creditReload.autoReload.toggle.ariaLabel`,
-        defaultMessage: `Toggle auto-reload`,
-        description: `Accessible label for the auto reload toggle`,
-      })),
-      (t[0] = n),
-      (t[1] = o));
-  let c;
-  t[2] !== i || t[3] !== r || t[4] !== a || t[5] !== o
-    ? ((c = (0, Q.jsx)(G, {
-        id: `credit-reload-auto-reload-toggle`,
-        checked: r,
-        disabled: i,
-        ariaLabel: o,
-        onChange: a,
-      })),
-      (t[2] = i),
-      (t[3] = r),
-      (t[4] = a),
-      (t[5] = o),
-      (t[6] = c))
-    : (c = t[6]);
-  let l;
-  t[7] === r
-    ? (l = t[8])
-    : ((l = (0, Q.jsx)(`label`, {
-        htmlFor: `credit-reload-auto-reload-toggle`,
-        className: `cursor-interaction text-sm font-medium text-token-text-primary`,
-        children: r
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.autoReload.toggle.on`,
-              defaultMessage: `Auto-reload is on`,
-              description: `Label shown beside the enabled auto reload toggle`,
-            })
-          : (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.autoReload.toggle.off`,
-              defaultMessage: `Auto-reload is off`,
-              description: `Label shown beside the disabled auto reload toggle`,
-            }),
-      })),
-      (t[7] = r),
-      (t[8] = l));
-  let u;
-  return (
-    t[9] !== c || t[10] !== l
-      ? ((u = (0, Q.jsxs)(`div`, {
-          className: `flex items-center gap-3`,
-          children: [c, l],
-        })),
-        (t[9] = c),
-        (t[10] = l),
-        (t[11] = u))
-      : (u = t[11]),
-    u
-  );
-}
-var Be = { duration: 3 },
-  Ve = `min-w-[88px] justify-center`;
-function He(e) {
-  let n = (0, J.c)(24),
-    { pricingInfo: r, onOpenChange: i, dialogDescriptionId: a } = e,
-    o = l(),
-    [s, c] = (0, Y.useState)(String(le[0])),
-    [u, d] = (0, Y.useState)(`preset`),
-    [f, p] = (0, Y.useState)(!1),
-    [h, g] = (0, Y.useState)(!1),
-    _;
-  n[0] === r ? (_ = n[1]) : ((_ = he(r)), (n[0] = r), (n[1] = _));
-  let v = _,
-    y;
-  n[2] !== h || n[3] !== s || n[4] !== r
-    ? ((y = h ? `invalid-currency-amount` : ge({ value: s, pricingInfo: r })),
-      (n[2] = h),
-      (n[3] = s),
-      (n[4] = r),
-      (n[5] = y))
-    : (y = n[5]);
-  let b = y,
-    x;
-  n[6] !== i || n[7] !== s || n[8] !== b
-    ? ((x = () => {
-        (p(!0),
-          b ??
-            (m.dispatchMessage(`open-in-browser`, {
-              url: `${t}/purchase/credits?quantity=${encodeURIComponent(Z(s))}`,
-            }),
-            i(!1)));
-      }),
-      (n[6] = i),
-      (n[7] = s),
-      (n[8] = b),
-      (n[9] = x))
-    : (x = n[9]);
-  let S = x,
-    C = f ? b : null,
-    w;
-  n[10] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((w = (e) => {
-        (g(!1), d(e));
-      }),
-      (n[10] = w))
-    : (w = n[10]);
-  let T;
-  n[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = () => {
-        p(!0);
-      }),
-      (n[11] = T))
-    : (T = n[11]);
-  let E;
-  n[12] === i
-    ? (E = n[13])
-    : ((E = () => {
-        i(!1);
-      }),
-      (n[12] = i),
-      (n[13] = E));
-  let D;
-  return (
-    n[14] !== a ||
-    n[15] !== S ||
-    n[16] !== o ||
-    n[17] !== u ||
-    n[18] !== v ||
-    n[19] !== s ||
-    n[20] !== r ||
-    n[21] !== C ||
-    n[22] !== E
-      ? ((D = (0, Q.jsx)(We, {
-          intl: o,
-          dialogDescriptionId: a,
-          quantity: s,
-          amountSelection: u,
-          pricingInfo: r,
-          minimumQuantity: v,
-          quantityError: C,
-          onQuantityChange: c,
-          onAmountSelectionChange: w,
-          onInvalidCurrencyDraftChange: g,
-          onQuantityBlur: T,
-          onCancel: E,
-          onSubmit: S,
-        })),
-        (n[14] = a),
-        (n[15] = S),
-        (n[16] = o),
-        (n[17] = u),
-        (n[18] = v),
-        (n[19] = s),
-        (n[20] = r),
-        (n[21] = C),
-        (n[22] = E),
-        (n[23] = D))
-      : (D = n[23]),
-    D
-  );
-}
-function Ue({
-  serverState: e,
-  creditDetails: t,
-  pricingInfo: n,
-  enableAutoTopUpMutation: i,
-  updateAutoTopUpMutation: a,
-  disableAutoTopUpMutation: o,
-  onOpenChange: s,
-  dialogDescriptionId: u,
-}) {
-  let p = d(c),
-    h = l(),
-    _ = de(e),
-    v = fe(e),
-    [y, b] = (0, Y.useState)(_),
-    [x, S] = (0, Y.useState)(Je(_) ? `preset` : `custom`),
-    [C, w] = (0, Y.useState)(() => pe(e)),
-    [T, E] = (0, Y.useState)(!0),
-    [D, O] = (0, Y.useState)(!1),
-    [k, A] = (0, Y.useState)(!1),
-    [j, M] = (0, Y.useState)(!1),
-    [N, te] = (0, Y.useState)(!1),
-    [P, F] = (0, Y.useState)(!1),
-    [I, ne] = (0, Y.useState)(null),
-    L = i.isPending || a.isPending,
-    R = o.isPending,
-    z = L || R,
-    B = j ? `invalid-currency-amount` : me(y),
-    V = N
-      ? `invalid-currency-amount`
-      : ye({ monthlyLimit: C, minimumBalance: v, reloadQuantity: y }),
-    H = N
-      ? null
-      : be({ minimumBalance: v, reloadQuantity: y, monthlyLimit: C }),
-    U = xe({ isEnabled: T, serverState: e, savePayload: H }),
-    W = () => {
-      (F(!1), ne(null));
-    },
-    G = ({ intent: e, kind: t }) => {
-      let n;
-      switch (e) {
-        case `enable`:
-          n =
-            t === `success`
-              ? h.formatMessage({
-                  id: `settings.usage.creditReload.autoReload.enable.success`,
-                  defaultMessage: `Enabled auto-reload`,
-                  description: `Toast shown when enabling auto reload succeeds`,
-                })
-              : h.formatMessage({
-                  id: `settings.usage.creditReload.autoReload.enable.error`,
-                  defaultMessage: `Failed to enable auto-reload`,
-                  description: `Toast shown when enabling auto reload fails`,
-                });
-          break;
-        case `update`:
-          n =
-            t === `success`
-              ? h.formatMessage({
-                  id: `settings.usage.creditReload.autoReload.update.success`,
-                  defaultMessage: `Updated auto-reload settings`,
-                  description: `Toast shown when updating auto reload succeeds`,
-                })
-              : h.formatMessage({
-                  id: `settings.usage.creditReload.autoReload.update.error`,
-                  defaultMessage: `Failed to update auto-reload`,
-                  description: `Toast shown when updating auto reload fails`,
-                });
-          break;
-        case `disable`:
-          n =
-            t === `success`
-              ? h.formatMessage({
-                  id: `settings.usage.creditReload.autoReload.disable.success`,
-                  defaultMessage: `Disabled auto-reload`,
-                  description: `Toast shown when disabling auto reload succeeds`,
-                })
-              : h.formatMessage({
-                  id: `settings.usage.creditReload.autoReload.disable.error`,
-                  defaultMessage: `Failed to disable auto-reload`,
-                  description: `Toast shown when disabling auto reload fails`,
-                });
-      }
-      if (t === `success`) {
-        p.get(g).success(n, Be);
-        return;
-      }
-      p.get(g).danger(n, Be);
-    },
-    re = f({
-      mutationKey: [`usage-settings`, `credit-reload`, `manage-payment`],
-      mutationFn: async () => await r.safeGet(`/payments/customer_portal`),
-      onSuccess: (e) => {
-        m.dispatchMessage(`open-in-browser`, { url: e.url });
-      },
-      onError: () => {
-        p.get(g).danger(
-          h.formatMessage({
-            id: `settings.usage.creditReload.managePayment.error`,
-            defaultMessage: `Unable to open payment settings right now. Please try again`,
-            description: `Error shown when opening the manage payment flow from the combined reload dialog fails`,
-          }),
-          Be,
-        );
-      },
-    }),
-    ie = async () => {
-      if ((T && (O(!0), A(!0)), !(U == null || z)))
-        try {
-          if ((W(), U === `disable`)) {
-            (await o.mutateAsync(),
-              G({ intent: `disable`, kind: `success` }),
-              s(!1));
-            return;
-          }
-          if (H == null) return;
-          if (
-            ee(
-              (U === `enable` ? await i.mutateAsync(H) : await a.mutateAsync(H))
-                .immediate_top_up_status,
-            )
-          ) {
-            (F(!0),
-              ne(
-                Oe({
-                  intl: h,
-                  creditBalance: t?.balance,
-                  rechargeTarget: H.recharge_target,
-                  pricingInfo: n,
-                }),
-              ));
-            return;
-          }
-          (G({ intent: U, kind: `success` }), s(!1));
-        } catch {
-          G({ intent: U, kind: `danger` });
-        }
-    };
-  return (0, Q.jsx)(qe, {
-    intl: h,
-    dialogDescriptionId: u,
-    quantity: y,
-    amountSelection: x,
-    monthlyLimit: C,
-    minimumBalance: v,
-    pricingInfo: n,
-    isActionPending: z,
-    isSavePending: L || R,
-    isAutoReloadEnabled: T,
-    saveIntent: U,
-    quantityError: D ? B : null,
-    monthlyLimitError: k ? V : null,
-    hasImmediateTopUpFailure: P,
-    immediateTopUpFailureAmount: I,
-    isManagePaymentPending: re.isPending,
-    onQuantityChange: (e) => {
-      (W(), b(e));
-    },
-    onAmountSelectionChange: (e) => {
-      (M(!1), S(e));
-    },
-    onInvalidCurrencyDraftChange: M,
-    onMonthlyLimitChange: (e) => {
-      (W(), w(e));
-    },
-    onInvalidMonthlyLimitCurrencyDraftChange: te,
-    onQuantityBlur: () => {
-      O(!0);
-    },
-    onMonthlyLimitBlur: () => {
-      A(!0);
-    },
-    onToggleChange: (e) => {
-      (W(), E(e));
-    },
-    onOpenManagePayment: () => {
-      re.mutate();
-    },
-    onCancel: () => {
-      s(!1);
-    },
-    onSubmit: () => {
-      ie();
-    },
-  });
-}
-function We(e) {
-  let t = (0, J.c)(28),
-    {
-      intl: n,
-      dialogDescriptionId: r,
-      quantity: i,
-      amountSelection: a,
-      pricingInfo: o,
-      minimumQuantity: c,
-      quantityError: l,
-      onQuantityChange: u,
-      onAmountSelectionChange: d,
-      onInvalidCurrencyDraftChange: f,
-      onQuantityBlur: p,
-      onCancel: m,
-      onSubmit: h,
-    } = e,
-    g;
-  t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((g = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.addCredits.title`,
-        defaultMessage: `Add credits`,
-        description: `Title for the add credits modal`,
-      })),
-      (t[0] = g))
-    : (g = t[0]);
-  let v = g,
-    y;
-  t[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((y = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.addCredits.screenReaderDescription`,
-        defaultMessage: `Credits power Codex. Valid for 12 months. View rate card`,
-        description: `Screen reader description for the add credits modal`,
-      })),
-      (t[1] = y))
-    : (y = t[1]);
-  let b;
-  t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((b = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.addCredits.description`,
-        defaultMessage: `Credits power Codex. Valid for 12 months. <link>View rate card</link>`,
-        description: `Description for the add credits modal`,
-        values: { link: Ge },
-      })),
-      (t[2] = b))
-    : (b = t[2]);
-  let x;
-  t[3] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((x = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.cancel`,
-        defaultMessage: `Cancel`,
-        description: `Button label to close the credit reload dialog`,
-      })),
-      (t[3] = x))
-    : (x = t[3]);
-  let C;
-  t[4] === m
-    ? (C = t[5])
-    : ((C = (0, Q.jsx)(_, { color: `outline`, onClick: m, children: x })),
-      (t[4] = m),
-      (t[5] = C));
-  let w = l != null,
-    T;
-  t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.addCredits`,
-        defaultMessage: `Add credits`,
-        description: `Button label to submit the add credits flow`,
-      })),
-      (t[6] = T))
-    : (T = t[6]);
-  let E;
-  t[7] === w
-    ? (E = t[8])
-    : ((E = (0, Q.jsx)(_, {
-        color: `primary`,
-        type: `submit`,
-        className: Ve,
-        disabled: w,
-        children: T,
-      })),
-      (t[7] = w),
-      (t[8] = E));
-  let D;
-  t[9] !== C || t[10] !== E
-    ? ((D = (0, Q.jsxs)(`div`, {
-        className: `flex justify-end gap-3`,
-        children: [C, E],
-      })),
-      (t[9] = C),
-      (t[10] = E),
-      (t[11] = D))
-    : (D = t[11]);
-  let O;
-  t[12] !== a ||
-  t[13] !== n ||
-  t[14] !== c ||
-  t[15] !== d ||
-  t[16] !== f ||
-  t[17] !== p ||
-  t[18] !== u ||
-  t[19] !== o ||
-  t[20] !== i ||
-  t[21] !== l
-    ? ((O = (0, Q.jsx)(S, {
-        className: `gap-3 pt-4`,
-        children: (0, Q.jsx)(Ae, {
-          intl: n,
-          value: i,
-          selection: a,
-          pricingInfo: o,
-          error: l,
-          minimumQuantity: c,
-          quantityStep: 250,
-          onChange: u,
-          onSelectionChange: d,
-          onInvalidCurrencyDraftChange: f,
-          onBlur: p,
-        }),
-      })),
-      (t[12] = a),
-      (t[13] = n),
-      (t[14] = c),
-      (t[15] = d),
-      (t[16] = f),
-      (t[17] = p),
-      (t[18] = u),
-      (t[19] = o),
-      (t[20] = i),
-      (t[21] = l),
-      (t[22] = O))
-    : (O = t[22]);
-  let k;
-  return (
-    t[23] !== r || t[24] !== h || t[25] !== O || t[26] !== D
-      ? ((k = (0, Q.jsx)(Ye, {
-          dialogDescriptionId: r,
-          screenReaderTitle: v,
-          screenReaderDescription: y,
-          headerTitle: v,
-          headerSubtitle: b,
-          footer: D,
-          onSubmit: h,
-          children: O,
-        })),
-        (t[23] = r),
-        (t[24] = h),
-        (t[25] = O),
-        (t[26] = D),
-        (t[27] = k))
-      : (k = t[27]),
-    k
-  );
-}
-function Ge(e) {
-  return (0, Q.jsx)(`button`, {
-    type: `button`,
-    className: `text-token-link`,
-    onClick: Ke,
-    children: e,
-  });
-}
-function Ke() {
-  m.dispatchMessage(`open-in-browser`, {
-    url: `https://developers.openai.com/codex/pricing`,
-  });
-}
-function qe(e) {
-  let t = (0, J.c)(53),
-    {
-      intl: n,
-      dialogDescriptionId: r,
-      quantity: i,
-      amountSelection: a,
-      monthlyLimit: o,
-      minimumBalance: c,
-      pricingInfo: l,
-      isActionPending: u,
-      isSavePending: d,
-      isAutoReloadEnabled: f,
-      saveIntent: p,
-      quantityError: m,
-      monthlyLimitError: h,
-      hasImmediateTopUpFailure: g,
-      immediateTopUpFailureAmount: v,
-      isManagePaymentPending: y,
-      onQuantityChange: b,
-      onAmountSelectionChange: x,
-      onInvalidCurrencyDraftChange: C,
-      onMonthlyLimitChange: w,
-      onInvalidMonthlyLimitCurrencyDraftChange: T,
-      onQuantityBlur: E,
-      onMonthlyLimitBlur: D,
-      onToggleChange: O,
-      onOpenManagePayment: k,
-      onCancel: A,
-      onSubmit: j,
-    } = e,
-    M;
-  t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((M = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.autoReload.title`,
-        defaultMessage: `Automatic reload`,
-        description: `Title for the automatic reload modal`,
-      })),
-      (t[0] = M))
-    : (M = t[0]);
-  let ee = M,
-    N;
-  t[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((N = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.autoReload.modalDescription`,
-        defaultMessage: `Automatically add credits when your balance runs low`,
-        description: `Description for the automatic reload modal`,
-      })),
-      (t[1] = N))
-    : (N = t[1]);
-  let te = N,
-    P;
-  t[2] !== n || t[3] !== u || t[4] !== f || t[5] !== O
-    ? ((P = (0, Q.jsx)(ze, {
-        intl: n,
-        isEnabled: f,
-        isActionPending: u,
-        onChange: O,
-      })),
-      (t[2] = n),
-      (t[3] = u),
-      (t[4] = f),
-      (t[5] = O),
-      (t[6] = P))
-    : (P = t[6]);
-  let F;
-  t[7] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((F = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.cancel`,
-        defaultMessage: `Cancel`,
-        description: `Button label to close the credit reload dialog`,
-      })),
-      (t[7] = F))
-    : (F = t[7]);
-  let I;
-  t[8] !== u || t[9] !== A
-    ? ((I = (0, Q.jsx)(_, {
-        color: `outline`,
-        disabled: u,
-        onClick: A,
-        children: F,
-      })),
-      (t[8] = u),
-      (t[9] = A),
-      (t[10] = I))
-    : (I = t[10]);
-  let ne = u || p == null,
-    L;
-  t[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((L = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.autoReload.save`,
-        defaultMessage: `Save`,
-        description: `Button label to save automatic reload settings`,
-      })),
-      (t[11] = L))
-    : (L = t[11]);
-  let R;
-  t[12] !== d || t[13] !== ne
-    ? ((R = (0, Q.jsx)(_, {
-        color: `primary`,
-        type: `submit`,
-        className: Ve,
-        loading: d,
-        disabled: ne,
-        children: L,
-      })),
-      (t[12] = d),
-      (t[13] = ne),
-      (t[14] = R))
-    : (R = t[14]);
-  let z;
-  t[15] !== I || t[16] !== R
-    ? ((z = (0, Q.jsxs)(`div`, {
-        className: `flex shrink-0 items-center gap-3`,
-        children: [I, R],
-      })),
-      (t[15] = I),
-      (t[16] = R),
-      (t[17] = z))
-    : (z = t[17]);
-  let B;
-  t[18] !== P || t[19] !== z
-    ? ((B = (0, Q.jsxs)(`div`, {
-        className: `flex items-center justify-between gap-4`,
-        children: [P, z],
-      })),
-      (t[18] = P),
-      (t[19] = z),
-      (t[20] = B))
-    : (B = t[20]);
-  let V;
-  t[21] !== a ||
-  t[22] !== n ||
-  t[23] !== x ||
-  t[24] !== C ||
-  t[25] !== E ||
-  t[26] !== b ||
-  t[27] !== l ||
-  t[28] !== i ||
-  t[29] !== m
-    ? ((V = (0, Q.jsx)(Ae, {
-        intl: n,
-        value: i,
-        selection: a,
-        pricingInfo: l,
-        error: m,
-        minimumQuantity: 125,
-        quantityStep: null,
-        onChange: b,
-        onSelectionChange: x,
-        onInvalidCurrencyDraftChange: C,
-        onBlur: E,
-      })),
-      (t[21] = a),
-      (t[22] = n),
-      (t[23] = x),
-      (t[24] = C),
-      (t[25] = E),
-      (t[26] = b),
-      (t[27] = l),
-      (t[28] = i),
-      (t[29] = m),
-      (t[30] = V))
-    : (V = t[30]);
-  let H;
-  t[31] !== g ||
-  t[32] !== v ||
-  t[33] !== n ||
-  t[34] !== y ||
-  t[35] !== c ||
-  t[36] !== o ||
-  t[37] !== h ||
-  t[38] !== T ||
-  t[39] !== D ||
-  t[40] !== w ||
-  t[41] !== k ||
-  t[42] !== l ||
-  t[43] !== i
-    ? ((H = (0, Q.jsx)(Re, {
-        intl: n,
-        reloadQuantity: i,
-        monthlyLimit: o,
-        minimumBalance: c,
-        pricingInfo: l,
-        monthlyLimitError: h,
-        hasImmediateTopUpFailure: g,
-        immediateTopUpFailureAmount: v,
-        isManagePaymentPending: y,
-        onMonthlyLimitChange: w,
-        onInvalidMonthlyLimitCurrencyDraftChange: T,
-        onMonthlyLimitBlur: D,
-        onOpenManagePayment: k,
-      })),
-      (t[31] = g),
-      (t[32] = v),
-      (t[33] = n),
-      (t[34] = y),
-      (t[35] = c),
-      (t[36] = o),
-      (t[37] = h),
-      (t[38] = T),
-      (t[39] = D),
-      (t[40] = w),
-      (t[41] = k),
-      (t[42] = l),
-      (t[43] = i),
-      (t[44] = H))
-    : (H = t[44]);
-  let U;
-  t[45] !== V || t[46] !== H
-    ? ((U = (0, Q.jsxs)(S, { className: `gap-4 pt-4`, children: [V, H] })),
-      (t[45] = V),
-      (t[46] = H),
-      (t[47] = U))
-    : (U = t[47]);
-  let W;
-  return (
-    t[48] !== r || t[49] !== j || t[50] !== B || t[51] !== U
-      ? ((W = (0, Q.jsx)(Ye, {
-          dialogDescriptionId: r,
-          screenReaderTitle: ee,
-          screenReaderDescription: te,
-          headerTitle: ee,
-          headerSubtitle: te,
-          footer: B,
-          onSubmit: j,
-          children: U,
-        })),
-        (t[48] = r),
-        (t[49] = j),
-        (t[50] = B),
-        (t[51] = U),
-        (t[52] = W))
-      : (W = t[52]),
-    W
-  );
-}
-function Je(e) {
-  let t = Z(e);
-  return le.some((e) => String(e) === t);
-}
-function Ye(e) {
-  let t = (0, J.c)(19),
-    {
-      dialogDescriptionId: n,
-      screenReaderTitle: r,
-      screenReaderDescription: i,
-      headerTitle: a,
-      headerSubtitle: o,
-      footer: s,
-      onSubmit: c,
-      children: l,
-    } = e,
-    u;
-  t[0] === c
-    ? (u = t[1])
-    : ((u = (e) => {
-        (e.preventDefault(), c());
-      }),
-      (t[0] = c),
-      (t[1] = u));
-  let d;
-  t[2] === r
-    ? (d = t[3])
-    : ((d = (0, Q.jsx)(C, {
-        asChild: !0,
-        children: (0, Q.jsx)(`h2`, { className: `sr-only`, children: r }),
-      })),
-      (t[2] = r),
-      (t[3] = d));
-  let f;
-  t[4] !== n || t[5] !== i
-    ? ((f = (0, Q.jsx)(`p`, { id: n, className: `sr-only`, children: i })),
-      (t[4] = n),
-      (t[5] = i),
-      (t[6] = f))
-    : (f = t[6]);
-  let p;
-  t[7] !== o || t[8] !== a
-    ? ((p = (0, Q.jsx)(S, {
-        children: (0, Q.jsx)(w, { title: a, subtitle: o, titleSize: `base` }),
-      })),
-      (t[7] = o),
-      (t[8] = a),
-      (t[9] = p))
-    : (p = t[9]);
-  let m;
-  t[10] === s
-    ? (m = t[11])
-    : ((m = (0, Q.jsx)(S, { className: `pt-4`, children: s })),
-      (t[10] = s),
-      (t[11] = m));
-  let h;
-  return (
-    t[12] !== l ||
-    t[13] !== u ||
-    t[14] !== d ||
-    t[15] !== f ||
-    t[16] !== p ||
-    t[17] !== m
-      ? ((h = (0, Q.jsxs)(E, {
-          as: `form`,
-          className: `gap-0 px-4 py-4`,
-          onSubmit: u,
-          children: [d, f, p, l, m],
-        })),
-        (t[12] = l),
-        (t[13] = u),
-        (t[14] = d),
-        (t[15] = f),
-        (t[16] = p),
-        (t[17] = m),
-        (t[18] = h))
-      : (h = t[18]),
-    h
-  );
-}
-function Xe(e) {
-  let t = (0, J.c)(25),
-    n = (0, Y.useId)(),
-    r = e.state === `loading` || e.state === `error`,
-    i =
-      !r &&
-      e.variant === `settings-auto-reload` &&
-      (e.enableAutoTopUpMutation.isPending ||
-        e.updateAutoTopUpMutation.isPending ||
-        e.disableAutoTopUpMutation.isPending),
-    a;
-  if (r) {
-    let r = e.state === `error` ? e.onRetry : void 0,
-      i;
-    t[0] === e
-      ? (i = t[1])
-      : ((i = () => {
-          e.onOpenChange(!1);
-        }),
-        (t[0] = e),
-        (t[1] = i));
-    let o;
-    (t[2] !== n ||
-    t[3] !== e.state ||
-    t[4] !== e.variant ||
-    t[5] !== r ||
-    t[6] !== i
-      ? ((o = (0, Q.jsx)(Qe, {
-          variant: e.variant,
-          state: e.state,
-          dialogDescriptionId: n,
-          onRetry: r,
-          onClose: i,
-        })),
-        (t[2] = n),
-        (t[3] = e.state),
-        (t[4] = e.variant),
-        (t[5] = r),
-        (t[6] = i),
-        (t[7] = o))
-      : (o = t[7]),
-      (a = o));
-  } else if (e.variant === `settings-add-credits`) {
-    let r;
-    (t[8] !== n || t[9] !== e
-      ? ((r = (0, Q.jsx)(He, { ...e, dialogDescriptionId: n })),
-        (t[8] = n),
-        (t[9] = e),
-        (t[10] = r))
-      : (r = t[10]),
-      (a = r));
-  } else {
-    let r;
-    (t[11] !== n || t[12] !== e
-      ? ((r = (0, Q.jsx)(Ue, { ...e, dialogDescriptionId: n })),
-        (t[11] = n),
-        (t[12] = e),
-        (t[13] = r))
-      : (r = t[13]),
-      (a = r));
-  }
-  let o;
-  t[14] === n
-    ? (o = t[15])
-    : ((o = { "aria-describedby": n, onOpenAutoFocus: Ze }),
-      (t[14] = n),
-      (t[15] = o));
-  let s;
-  t[16] !== i || t[17] !== e
-    ? ((s = (t) => {
-        (i && !t) || e.onOpenChange(t);
-      }),
-      (t[16] = i),
-      (t[17] = e),
-      (t[18] = s))
-    : (s = t[18]);
-  let c;
-  return (
-    t[19] !== a || t[20] !== i || t[21] !== e.open || t[22] !== o || t[23] !== s
-      ? ((c = (0, Q.jsx)(T, {
-          open: e.open,
-          size: `default`,
-          contentClassName: `w-[580px] max-w-[calc(100vw-2rem)]`,
-          contentProps: o,
-          shouldIgnoreClickOutside: i,
-          onOpenChange: s,
-          children: a,
-        })),
-        (t[19] = a),
-        (t[20] = i),
-        (t[21] = e.open),
-        (t[22] = o),
-        (t[23] = s),
-        (t[24] = c))
-      : (c = t[24]),
-    c
-  );
-}
-function Ze(e) {
-  e.preventDefault();
-}
-function Qe(e) {
-  let t = (0, J.c)(28),
-    {
-      variant: n,
-      state: r,
-      dialogDescriptionId: i,
-      onRetry: a,
-      onClose: o,
-    } = e,
-    c;
-  t[0] === n
-    ? (c = t[1])
-    : ((c =
-        n === `settings-auto-reload`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.autoReload.title`,
-              defaultMessage: `Automatic reload`,
-              description: `Title for the automatic reload modal`,
-            })
-          : (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.addCredits.title`,
-              defaultMessage: `Add credits`,
-              description: `Title for the add credits modal`,
-            })),
-      (t[0] = n),
-      (t[1] = c));
-  let l = c,
-    u;
-  t[2] === l
-    ? (u = t[3])
-    : ((u = (0, Q.jsx)(C, {
-        asChild: !0,
-        children: (0, Q.jsx)(`h2`, { className: `sr-only`, children: l }),
-      })),
-      (t[2] = l),
-      (t[3] = u));
-  let d;
-  t[4] === n
-    ? (d = t[5])
-    : ((d =
-        n === `settings-auto-reload`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.autoReload.modalDescription`,
-              defaultMessage: `Automatically add credits when your balance runs low`,
-              description: `Description for the automatic reload modal`,
-            })
-          : (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.addCredits.screenReaderDescription`,
-              defaultMessage: `Credits power Codex. Valid for 12 months. View rate card`,
-              description: `Screen reader description for the add credits modal`,
-            })),
-      (t[4] = n),
-      (t[5] = d));
-  let f;
-  t[6] !== i || t[7] !== d
-    ? ((f = (0, Q.jsx)(`p`, { id: i, className: `sr-only`, children: d })),
-      (t[6] = i),
-      (t[7] = d),
-      (t[8] = f))
-    : (f = t[8]);
-  let p;
-  t[9] === r
-    ? (p = t[10])
-    : ((p =
-        r === `error`
-          ? (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.load.error`,
-              defaultMessage: `Could not load credit settings`,
-              description: `Error shown when the combined credit reload dialog cannot load`,
-            })
-          : (0, Q.jsx)(s, {
-              id: `settings.usage.creditReload.load.loading`,
-              defaultMessage: `Loading credit settings…`,
-              description: `Loading label shown while the combined credit reload dialog loads`,
-            })),
-      (t[9] = r),
-      (t[10] = p));
-  let m;
-  t[11] !== p || t[12] !== l
-    ? ((m = (0, Q.jsx)(S, {
-        children: (0, Q.jsx)(w, { title: l, subtitle: p, titleSize: `base` }),
-      })),
-      (t[11] = p),
-      (t[12] = l),
-      (t[13] = m))
-    : (m = t[13]);
-  let h;
-  t[14] !== a || t[15] !== r
-    ? ((h =
-        r === `error` && a != null
-          ? (0, Q.jsx)(_, {
-              color: `outline`,
-              onClick: a,
-              children: (0, Q.jsx)(s, {
-                id: `settings.usage.creditReload.load.retry`,
-                defaultMessage: `Retry`,
-                description: `Retry button for the combined credit reload dialog`,
-              }),
-            })
-          : null),
-      (t[14] = a),
-      (t[15] = r),
-      (t[16] = h))
-    : (h = t[16]);
-  let g;
-  t[17] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((g = (0, Q.jsx)(s, {
-        id: `settings.usage.creditReload.load.cancel`,
-        defaultMessage: `Cancel`,
-        description: `Button label to close the combined credit reload dialog`,
-      })),
-      (t[17] = g))
-    : (g = t[17]);
-  let v;
-  t[18] === o
-    ? (v = t[19])
-    : ((v = (0, Q.jsx)(_, { color: `outline`, onClick: o, children: g })),
-      (t[18] = o),
-      (t[19] = v));
-  let y;
-  t[20] !== h || t[21] !== v
-    ? ((y = (0, Q.jsx)(S, {
-        className: `pt-4`,
-        children: (0, Q.jsxs)(`div`, {
-          className: `flex justify-end gap-3`,
-          children: [h, v],
-        }),
-      })),
-      (t[20] = h),
-      (t[21] = v),
-      (t[22] = y))
-    : (y = t[22]);
-  let b;
-  return (
-    t[23] !== y || t[24] !== u || t[25] !== f || t[26] !== m
-      ? ((b = (0, Q.jsxs)(E, {
-          className: `gap-0 px-4 py-4`,
-          children: [u, f, m, y],
-        })),
-        (t[23] = y),
-        (t[24] = u),
-        (t[25] = f),
-        (t[26] = m),
-        (t[27] = b))
-      : (b = t[27]),
-    b
-  );
-}
-function $e(e) {
-  let t = (0, J.c)(42),
-    { onClose: r, variant: i } = e,
-    { data: a } = u(n),
-    o = i === `settings-auto-reload`,
-    s;
-  t[0] === o ? (s = t[1]) : ((s = { enabled: o }), (t[0] = o), (t[1] = s));
-  let { data: c, isError: l, refetch: d } = I(s),
-    {
-      enableAutoTopUpMutation: f,
-      updateAutoTopUpMutation: p,
-      disableAutoTopUpMutation: m,
-    } = N(),
-    h;
-  t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = { enabled: !0 }), (t[2] = h))
-    : (h = t[2]);
-  let { data: g, isPending: _, isError: v, refetch: y } = k(h),
-    b;
-  t[3] === g
-    ? (b = t[4])
-    : ((b = { billingCurrency: g, enabled: !0 }), (t[3] = g), (t[4] = b));
-  let { data: x, isPending: S, isError: C, refetch: w } = ne(b),
-    T = _ || S,
-    E;
-  t[5] !== y || t[6] !== w
-    ? ((E = () => {
-        (y(), w());
-      }),
-      (t[5] = y),
-      (t[6] = w),
-      (t[7] = E))
-    : (E = t[7]);
-  let D = E,
-    O;
-  t[8] === r
-    ? (O = t[9])
-    : ((O = (e) => {
-        e || r();
-      }),
-      (t[8] = r),
-      (t[9] = O));
-  let A = O;
-  if (i === `settings-add-credits`) {
-    if (T) {
-      let e;
-      return (
-        t[10] !== A || t[11] !== i
-          ? ((e = (0, Q.jsx)(Xe, {
-              open: !0,
-              variant: i,
-              state: `loading`,
-              onOpenChange: A,
-            })),
-            (t[10] = A),
-            (t[11] = i),
-            (t[12] = e))
-          : (e = t[12]),
-        e
-      );
-    }
-    if (v || C || g == null || x == null) {
-      let e;
-      return (
-        t[13] !== A || t[14] !== D || t[15] !== i
-          ? ((e = (0, Q.jsx)(Xe, {
-              open: !0,
-              variant: i,
-              state: `error`,
-              onRetry: D,
-              onOpenChange: A,
-            })),
-            (t[13] = A),
-            (t[14] = D),
-            (t[15] = i),
-            (t[16] = e))
-          : (e = t[16]),
-        e
-      );
-    }
-    let e;
-    return (
-      t[17] !== x || t[18] !== A || t[19] !== i
-        ? ((e = (0, Q.jsx)(Xe, {
-            open: !0,
-            variant: i,
-            pricingInfo: x,
-            onOpenChange: A,
-          })),
-          (t[17] = x),
-          (t[18] = A),
-          (t[19] = i),
-          (t[20] = e))
-        : (e = t[20]),
-      e
-    );
-  }
-  if (c == null) {
-    let e;
-    return (
-      t[21] !== A || t[22] !== l || t[23] !== d || t[24] !== i
-        ? ((e = l
-            ? (0, Q.jsx)(Xe, {
-                open: !0,
-                variant: i,
-                state: `error`,
-                onRetry: () => {
-                  d();
-                },
-                onOpenChange: A,
-              })
-            : (0, Q.jsx)(Xe, {
-                open: !0,
-                variant: i,
-                state: `loading`,
-                onOpenChange: A,
-              })),
-          (t[21] = A),
-          (t[22] = l),
-          (t[23] = d),
-          (t[24] = i),
-          (t[25] = e))
-        : (e = t[25]),
-      e
-    );
-  }
-  if (T) {
-    let e;
-    return (
-      t[26] !== A || t[27] !== i
-        ? ((e = (0, Q.jsx)(Xe, {
-            open: !0,
-            variant: i,
-            state: `loading`,
-            onOpenChange: A,
-          })),
-          (t[26] = A),
-          (t[27] = i),
-          (t[28] = e))
-        : (e = t[28]),
-      e
-    );
-  }
-  if (v || C || g == null || x == null) {
-    let e;
-    return (
-      t[29] !== A || t[30] !== D || t[31] !== i
-        ? ((e = (0, Q.jsx)(Xe, {
-            open: !0,
-            variant: i,
-            state: `error`,
-            onRetry: D,
-            onOpenChange: A,
-          })),
-          (t[29] = A),
-          (t[30] = D),
-          (t[31] = i),
-          (t[32] = e))
-        : (e = t[32]),
-      e
-    );
-  }
-  let j = a?.credits ?? null,
-    M;
-  return (
-    t[33] !== x ||
-    t[34] !== c ||
-    t[35] !== m ||
-    t[36] !== f ||
-    t[37] !== A ||
-    t[38] !== j ||
-    t[39] !== p ||
-    t[40] !== i
-      ? ((M = (0, Q.jsx)(Xe, {
-          open: !0,
-          variant: i,
-          serverState: c,
-          creditDetails: j,
-          pricingInfo: x,
-          enableAutoTopUpMutation: f,
-          updateAutoTopUpMutation: p,
-          disableAutoTopUpMutation: m,
-          onOpenChange: A,
-        })),
-        (t[33] = x),
-        (t[34] = c),
-        (t[35] = m),
-        (t[36] = f),
-        (t[37] = A),
-        (t[38] = j),
-        (t[39] = p),
-        (t[40] = i),
-        (t[41] = M))
-      : (M = t[41]),
-    M
-  );
-}
-var et = `1721641661`;
-function tt({ intent: e, isCombinedModalEnabled: t }) {
-  return t
-    ? `combined-modal`
-    : e === `add-credits`
-      ? `legacy-add-credits`
-      : `legacy-auto-reload`;
-}
-function nt() {
-  let e = (0, J.c)(3),
-    t;
-  e[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((t = { disableExposureLog: !1 }), (e[0] = t))
-    : (t = e[0]);
-  let n = h(et, t),
-    r;
-  return (
-    e[1] === n
-      ? (r = e[2])
-      : ((r = n.get(`enabled`, !1)), (e[1] = n), (e[2] = r)),
-    r
-  );
-}
-function rt() {
-  let e = (0, J.c)(3),
-    t = d(c),
-    n = nt(),
-    r;
-  return (
-    e[0] !== n || e[1] !== t
-      ? ((r = (e) => {
-          if (
-            tt({ intent: e.intent, isCombinedModalEnabled: n }) ===
-            `combined-modal`
-          ) {
-            O(t, $e, {
-              variant:
-                e.intent === `add-credits`
-                  ? `settings-add-credits`
-                  : `settings-auto-reload`,
-            });
-            return;
-          }
-          if (e.intent === `add-credits`) {
-            m.dispatchMessage(`open-in-browser`, { url: e.legacyUrl });
-            return;
-          }
-          e.openLegacyAutoReload();
-        }),
-        (e[0] = n),
-        (e[1] = t),
-        (e[2] = r))
-      : (r = e[2]),
-    r
-  );
-}
-function $(e) {
   return e == null ? `` : e.trim();
 }
-function it({ rechargeThreshold: e, rechargeTarget: t }) {
-  let n = lt(e),
-    r = lt(t),
-    i = ut(n),
-    a = dt({ parsedThreshold: n, parsedTarget: r });
+function me({ rechargeThreshold: e, rechargeTarget: t }) {
+  let n = ve(e),
+    r = ve(t),
+    i = ye(n),
+    a = be({ parsedThreshold: n, parsedTarget: r });
   return {
     rechargeThresholdError: i,
     rechargeTargetError: a,
     isValid: i == null && a == null,
   };
 }
-function at({ draftState: e, serverState: t, isSaving: n }) {
-  let r = it({
+function he({ draftState: e, serverState: t, isSaving: n }) {
+  let r = me({
       rechargeThreshold: e.rechargeThreshold,
       rechargeTarget: e.rechargeTarget,
     }),
-    i = st({ draftState: e, serverState: t }),
-    a = ot({ draftState: e, serverState: t, validation: r });
+    i = ge({ draftState: e, serverState: t }),
+    a = Q({ draftState: e, serverState: t, validation: r });
   return {
     validation: r,
     hasChanges: i,
@@ -2530,12 +125,12 @@ function at({ draftState: e, serverState: t, isSaving: n }) {
     isSaveEnabled: i && a !== `none` && !n,
   };
 }
-function ot({ draftState: e, serverState: t, validation: n }) {
+function Q({ draftState: e, serverState: t, validation: n }) {
   return e.isEnabled
     ? n.isValid
       ? t.isEnabled
-        ? $(e.rechargeThreshold) === $(t.rechargeThreshold) &&
-          $(e.rechargeTarget) === $(t.rechargeTarget)
+        ? Z(e.rechargeThreshold) === Z(t.rechargeThreshold) &&
+          Z(e.rechargeTarget) === Z(t.rechargeTarget)
           ? `none`
           : `update`
         : `enable`
@@ -2544,31 +139,31 @@ function ot({ draftState: e, serverState: t, validation: n }) {
       ? `disable`
       : `none`;
 }
-function st({ draftState: e, serverState: t }) {
+function ge({ draftState: e, serverState: t }) {
   return e.isEnabled === t.isEnabled
     ? !e.isEnabled && !t.isEnabled
       ? !1
-      : $(e.rechargeThreshold) !== $(t.rechargeThreshold) ||
-        $(e.rechargeTarget) !== $(t.rechargeTarget)
+      : Z(e.rechargeThreshold) !== Z(t.rechargeThreshold) ||
+        Z(e.rechargeTarget) !== Z(t.rechargeTarget)
     : !0;
 }
-function ct({ rechargeThreshold: e, rechargeTarget: t }) {
-  let n = $(e),
-    r = $(t);
+function _e({ rechargeThreshold: e, rechargeTarget: t }) {
+  let n = Z(e),
+    r = Z(t);
   if (!/^\d+$/.test(n) || !/^\d+$/.test(r)) return null;
   let i = Number.parseInt(n, 10),
     a = Number.parseInt(r, 10);
   return a < i ? null : a - i;
 }
-function lt(e) {
-  let t = $(e);
+function ve(e) {
+  let t = Z(e);
   return t.length === 0
     ? { kind: `missing` }
     : /^\d+$/.test(t)
       ? { kind: `valid`, value: Number.parseInt(t, 10) }
       : { kind: `invalid` };
 }
-function ut(e) {
+function ye(e) {
   switch (e.kind) {
     case `missing`:
       return `missing`;
@@ -2578,7 +173,7 @@ function ut(e) {
       return e.value < 125 ? `below-threshold-minimum` : null;
   }
 }
-function dt({ parsedThreshold: e, parsedTarget: t }) {
+function be({ parsedThreshold: e, parsedTarget: t }) {
   switch (t.kind) {
     case `missing`:
       return `missing`;
@@ -2590,369 +185,389 @@ function dt({ parsedThreshold: e, parsedTarget: t }) {
         : null;
   }
 }
-var ft = { duration: 3 },
-  pt = `125`,
-  mt = `250`,
-  ht = `${t}/settings/usage?credit_modal=true`,
-  gt = `min-w-[88px] justify-center`;
-function _t(e) {
-  let t = (0, J.c)(41),
+var $ = i(),
+  xe = { duration: 3 },
+  Se = `125`,
+  Ce = `250`,
+  we = `${t}/settings/usage?credit_modal=true`,
+  Te = `https://help.openai.com/en/articles/20001106-codex-rate-card`,
+  Ee = `min-w-[88px] justify-center`;
+function De(e) {
+  let t = (0, Y.c)(43),
     {
       serverState: n,
       creditDetails: r,
       enableAutoTopUpMutation: i,
       updateAutoTopUpMutation: a,
-      disableAutoTopUpMutation: o,
+      disableAutoTopUpMutation: s,
     } = e,
-    c = l(),
-    u = rt(),
-    [d, f] = (0, Y.useState)(!1),
-    p = i.isPending || a.isPending || o.isPending,
-    m;
+    l = o(),
+    u = ce(),
+    d;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((m = (0, Q.jsx)(q.Header, {
-        title: (0, Q.jsx)(s, {
-          id: `settings.usage.credit.title`,
-          defaultMessage: `Credit`,
-          description: `Title for credit-related settings`,
-        }),
+    ? ((d = { enabled: !0 }), (t[0] = d))
+    : (d = t[0]);
+  let { data: f } = ne(d),
+    p;
+  t[1] === f
+    ? (p = t[2])
+    : ((p = { billingCurrency: f, enabled: !0 }), (t[1] = f), (t[2] = p));
+  let { data: m } = ee(p),
+    [h, _] = (0, X.useState)(!1),
+    v;
+  t[3] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((v = (0, $.jsx)(c, {
+        id: `settings.usage.credit.balance.title`,
+        defaultMessage: `Credits balance`,
+        description: `Title for the credits balance section`,
       })),
-      (t[0] = m))
-    : (m = t[0]);
-  let h;
-  t[1] !== r || t[2] !== c
-    ? ((h = Bt({ intl: c, creditDetails: r })),
-      (t[1] = r),
-      (t[2] = c),
-      (t[3] = h))
-    : (h = t[3]);
-  let g;
-  t[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((g = (0, Q.jsx)(s, {
-        id: `settings.usage.credit.remaining.description`,
-        defaultMessage: `Use credit to send messages when you reach usage limits. <link>Doc</link>`,
-        description: `Description shown below the remaining credit row in usage settings`,
-        values: { link: vt },
-      })),
-      (t[4] = g))
-    : (g = t[4]);
-  let v;
-  t[5] === u
-    ? (v = t[6])
-    : ((v = () => {
-        u({ intent: `add-credits`, legacyUrl: ht });
-      }),
-      (t[5] = u),
-      (t[6] = v));
+      (t[3] = v))
+    : (v = t[3]);
   let y;
-  t[7] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((y = (0, Q.jsx)(s, {
-        id: `settings.usage.credit.purchase`,
-        defaultMessage: `Purchase`,
-        description: `Button label to open the credit purchase flow`,
-      })),
-      (t[7] = y))
-    : (y = t[7]);
-  let b;
-  t[8] === v
-    ? (b = t[9])
-    : ((b = (0, Q.jsx)(_, {
-        color: `secondary`,
-        size: `toolbar`,
-        onClick: v,
-        children: y,
-      })),
-      (t[8] = v),
-      (t[9] = b));
-  let x;
-  t[10] !== h || t[11] !== b
-    ? ((x = (0, Q.jsx)(Dt, { title: h, description: g, action: b })),
-      (t[10] = h),
-      (t[11] = b),
-      (t[12] = x))
-    : (x = t[12]);
-  let S;
-  t[13] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((S = (0, Q.jsx)(`span`, {
-        children: (0, Q.jsx)(s, {
-          id: `settings.usage.autoTopUp.title`,
-          defaultMessage: `Auto-reload credits`,
-          description: `Title for the auto top up settings row`,
+  t[4] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((y = (0, $.jsx)(J.Header, {
+        className: `pb-3 [&>div>div]:!text-sm`,
+        title: v,
+        subtitle: (0, $.jsx)(c, {
+          id: `settings.usage.credit.balance.description`,
+          defaultMessage: `Buy credits or turn on auto-reload to continue using Codex if you hit a limit. <link>Learn more</link>`,
+          description: `Description for the credits balance section in usage settings`,
+          values: { link: Oe },
         }),
       })),
-      (t[13] = S))
-    : (S = t[13]);
-  let C;
-  t[14] === n.isEnabled
-    ? (C = t[15])
-    : ((C = n.isEnabled ? (0, Q.jsx)(Ot, {}) : null),
-      (t[14] = n.isEnabled),
-      (t[15] = C));
+      (t[4] = y))
+    : (y = t[4]);
+  let b;
+  t[5] !== r || t[6] !== m || t[7] !== l
+    ? ((b = Ye({ intl: l, creditDetails: r, pricingInfo: m })),
+      (t[5] = r),
+      (t[6] = m),
+      (t[7] = l),
+      (t[8] = b))
+    : (b = t[8]);
+  let x;
+  t[9] === b
+    ? (x = t[10])
+    : ((x = (0, $.jsx)(`div`, {
+        className: `text-sm text-token-text-primary`,
+        children: b,
+      })),
+      (t[9] = b),
+      (t[10] = x));
+  let S, C;
+  t[11] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((S = (0, $.jsx)(c, {
+        id: `settings.usage.credit.balance.current`,
+        defaultMessage: `Current balance`,
+        description: `Label below the current credits balance amount`,
+      })),
+      (C = (0, $.jsx)(`span`, {
+        "aria-hidden": !0,
+        className: `size-0.5 rounded-full bg-current`,
+      })),
+      (t[11] = S),
+      (t[12] = C))
+    : ((S = t[11]), (C = t[12]));
   let w;
-  t[16] === C
-    ? (w = t[17])
-    : ((w = (0, Q.jsxs)(`div`, {
-        className: `flex items-center gap-1.5`,
-        children: [S, C],
-      })),
-      (t[16] = C),
-      (t[17] = w));
-  let T;
-  t[18] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = (0, Q.jsx)(s, {
-        id: `settings.usage.autoTopUp.description`,
-        defaultMessage: `Automatically add credits when you reach your minimum balance.`,
-        description: `Description shown below the auto top up row in usage settings`,
-      })),
-      (t[18] = T))
-    : (T = t[18]);
-  let E;
-  t[19] === u
-    ? (E = t[20])
-    : ((E = () => {
+  t[13] !== u || t[14] !== n.isEnabled
+    ? ((w = () => {
         u({
           intent: `auto-reload`,
+          isAutoReloadEnabled: n.isEnabled,
           openLegacyAutoReload: () => {
-            f(!0);
+            _(!0);
           },
         });
       }),
-      (t[19] = u),
-      (t[20] = E));
-  let D;
-  t[21] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((D = (0, Q.jsx)(s, {
-        id: `settings.usage.autoTopUp.settings`,
-        defaultMessage: `Settings`,
-        description: `Button label to open the auto top up settings dialog`,
-      })),
-      (t[21] = D))
-    : (D = t[21]);
-  let O;
-  t[22] !== p || t[23] !== E
-    ? ((O = (0, Q.jsx)(_, {
-        color: `secondary`,
-        size: `toolbar`,
-        disabled: p,
-        onClick: E,
-        children: D,
-      })),
-      (t[22] = p),
-      (t[23] = E),
-      (t[24] = O))
-    : (O = t[24]);
-  let k;
-  t[25] !== w || t[26] !== O
-    ? ((k = (0, Q.jsx)(Dt, { title: w, description: T, action: O })),
-      (t[25] = w),
-      (t[26] = O),
-      (t[27] = k))
-    : (k = t[27]);
-  let A;
-  t[28] !== k || t[29] !== x
-    ? ((A = (0, Q.jsxs)(q, {
+      (t[13] = u),
+      (t[14] = n.isEnabled),
+      (t[15] = w))
+    : (w = t[15]);
+  let T;
+  t[16] === n.isEnabled
+    ? (T = t[17])
+    : ((T = n.isEnabled
+        ? (0, $.jsx)(c, {
+            id: `settings.usage.credit.balance.manageAutoReload`,
+            defaultMessage: `Manage auto-reload`,
+            description: `Button label to manage active auto reload from the credits balance section`,
+          })
+        : (0, $.jsx)(c, {
+            id: `settings.usage.credit.balance.setupAutoReload`,
+            defaultMessage: `Set up auto-reload`,
+            description: `Button label to set up auto reload from the credits balance section`,
+          })),
+      (t[16] = n.isEnabled),
+      (t[17] = T));
+  let E;
+  t[18] !== T || t[19] !== w
+    ? ((E = (0, $.jsxs)(`div`, {
+        className: `flex flex-wrap items-center gap-x-1 text-sm text-token-text-secondary`,
         children: [
-          m,
-          (0, Q.jsx)(q.Content, {
-            children: (0, Q.jsxs)(K, { children: [x, k] }),
+          S,
+          C,
+          (0, $.jsx)(`button`, {
+            type: `button`,
+            className: `cursor-interaction text-token-text-link-foreground`,
+            onClick: w,
+            children: T,
           }),
         ],
       })),
-      (t[28] = k),
-      (t[29] = x),
-      (t[30] = A))
-    : (A = t[30]);
+      (t[18] = T),
+      (t[19] = w),
+      (t[20] = E))
+    : (E = t[20]);
+  let D;
+  t[21] !== E || t[22] !== x
+    ? ((D = (0, $.jsxs)(`div`, {
+        className: `flex min-w-0 flex-1 flex-col gap-1`,
+        children: [x, E],
+      })),
+      (t[21] = E),
+      (t[22] = x),
+      (t[23] = D))
+    : (D = t[23]);
+  let O;
+  t[24] !== u || t[25] !== n.isEnabled
+    ? ((O = () => {
+        u({
+          intent: `purchase`,
+          isAutoReloadEnabled: n.isEnabled,
+          legacyUrl: we,
+        });
+      }),
+      (t[24] = u),
+      (t[25] = n.isEnabled),
+      (t[26] = O))
+    : (O = t[26]);
+  let k;
+  t[27] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((k = (0, $.jsx)(c, {
+        id: `settings.usage.credit.balance.buyCredits`,
+        defaultMessage: `Buy credits`,
+        description: `Button label to open the credit purchase flow`,
+      })),
+      (t[27] = k))
+    : (k = t[27]);
+  let A;
+  t[28] === O
+    ? (A = t[29])
+    : ((A = (0, $.jsx)(g, { color: `outline`, onClick: O, children: k })),
+      (t[28] = O),
+      (t[29] = A));
   let j;
-  t[31] !== r ||
-  t[32] !== o ||
-  t[33] !== i ||
-  t[34] !== d ||
-  t[35] !== n ||
-  t[36] !== a
-    ? ((j = d
-        ? (0, Q.jsx)(yt, {
-            open: d,
+  t[30] !== D || t[31] !== A
+    ? ((j = (0, $.jsxs)(J, {
+        children: [
+          y,
+          (0, $.jsx)(J.Content, {
+            children: (0, $.jsx)(q, {
+              children: (0, $.jsxs)(`div`, {
+                className: `flex items-center justify-between gap-4 p-4`,
+                children: [D, A],
+              }),
+            }),
+          }),
+        ],
+      })),
+      (t[30] = D),
+      (t[31] = A),
+      (t[32] = j))
+    : (j = t[32]);
+  let M;
+  t[33] !== r ||
+  t[34] !== s ||
+  t[35] !== i ||
+  t[36] !== h ||
+  t[37] !== n ||
+  t[38] !== a
+    ? ((M = h
+        ? (0, $.jsx)(Ae, {
+            open: h,
             serverState: n,
             creditDetails: r,
             enableAutoTopUpMutation: i,
             updateAutoTopUpMutation: a,
-            disableAutoTopUpMutation: o,
-            onOpenChange: f,
+            disableAutoTopUpMutation: s,
+            onOpenChange: _,
           })
         : null),
-      (t[31] = r),
-      (t[32] = o),
-      (t[33] = i),
-      (t[34] = d),
-      (t[35] = n),
-      (t[36] = a),
-      (t[37] = j))
-    : (j = t[37]);
-  let M;
+      (t[33] = r),
+      (t[34] = s),
+      (t[35] = i),
+      (t[36] = h),
+      (t[37] = n),
+      (t[38] = a),
+      (t[39] = M))
+    : (M = t[39]);
+  let N;
   return (
-    t[38] !== A || t[39] !== j
-      ? ((M = (0, Q.jsxs)(Q.Fragment, { children: [A, j] })),
-        (t[38] = A),
-        (t[39] = j),
-        (t[40] = M))
-      : (M = t[40]),
-    M
+    t[40] !== j || t[41] !== M
+      ? ((N = (0, $.jsxs)($.Fragment, { children: [j, M] })),
+        (t[40] = j),
+        (t[41] = M),
+        (t[42] = N))
+      : (N = t[42]),
+    N
   );
 }
-function vt(e) {
-  return (0, Q.jsx)(Q.Fragment, {
-    children: (0, Q.jsxs)(`a`, {
-      href: `https://developers.openai.com/codex/pricing`,
-      target: `_blank`,
-      rel: `noopener noreferrer`,
-      className: `inline-flex items-center gap-1 text-token-text-secondary hover:text-token-text-primary`,
-      children: [e, (0, Q.jsx)(y, { className: `icon-xxs` })],
-    }),
+function Oe(e) {
+  return (0, $.jsx)(`a`, {
+    href: Te,
+    target: `_blank`,
+    rel: `noopener noreferrer`,
+    className: `inline-flex cursor-interaction text-token-text-link-foreground`,
+    onClick: ke,
+    children: e,
   });
 }
-function yt(e) {
-  let t = (0, J.c)(72),
+function ke(e) {
+  (e.preventDefault(), p.dispatchMessage(`open-in-browser`, { url: Te }));
+}
+function Ae(e) {
+  let t = (0, Y.c)(72),
     {
       open: n,
       serverState: r,
       creditDetails: i,
       enableAutoTopUpMutation: a,
-      updateAutoTopUpMutation: o,
-      disableAutoTopUpMutation: u,
+      updateAutoTopUpMutation: u,
+      disableAutoTopUpMutation: f,
       onOpenChange: p,
     } = e,
-    m = d(c),
-    h = l(),
+    m = l(s),
+    _ = o(),
     v;
   t[0] === n ? (v = t[1]) : ((v = { enabled: n }), (t[0] = n), (t[1] = v));
-  let { data: y, isPending: b } = k(v),
-    x;
+  let { data: y, isPending: D } = ne(v),
+    O;
   t[2] !== y || t[3] !== n
-    ? ((x = { billingCurrency: y, enabled: n }),
+    ? ((O = { billingCurrency: y, enabled: n }),
       (t[2] = y),
       (t[3] = n),
-      (t[4] = x))
-    : (x = t[4]);
-  let { data: O, isPending: A } = ne(x),
-    j = b || A,
-    M = (0, Y.useId)(),
-    N = (0, Y.useId)(),
-    te = (0, Y.useId)(),
-    P = (0, Y.useId)(),
-    F = a.isPending || o.isPending,
-    I = u.isPending,
+      (t[4] = O))
+    : (O = t[4]);
+  let { data: k, isPending: A } = ee(O),
+    j = D || A,
+    M = (0, X.useId)(),
+    N = (0, X.useId)(),
+    P = (0, X.useId)(),
+    te = (0, X.useId)(),
+    F = a.isPending || u.isPending,
+    I = f.isPending,
     L = F || I,
-    [R, z] = (0, Y.useState)(null),
-    [B, V] = (0, Y.useState)(!1),
-    H;
-  t[5] !== h || t[6] !== m
-    ? ((H = (e) => {
-        m.get(g).danger($t(e, h), ft);
+    [re, ie] = (0, X.useState)(null),
+    [R, ae] = (0, X.useState)(!1),
+    oe;
+  t[5] !== _ || t[6] !== m
+    ? ((oe = (e) => {
+        m.get(h).danger(st(e, _), xe);
       }),
-      (t[5] = h),
+      (t[5] = _),
       (t[6] = m),
-      (t[7] = H))
-    : (H = t[7]);
-  let U = H,
-    W;
-  t[8] !== h || t[9] !== m
-    ? ((W = (e) => {
-        m.get(g).success(en(e, h), ft);
+      (t[7] = oe))
+    : (oe = t[7]);
+  let z = oe,
+    se;
+  t[8] !== _ || t[9] !== m
+    ? ((se = (e) => {
+        m.get(h).success(ct(e, _), xe);
       }),
-      (t[8] = h),
+      (t[8] = _),
       (t[9] = m),
-      (t[10] = W))
-    : (W = t[10]);
-  let G = W,
-    re;
+      (t[10] = se))
+    : (se = t[10]);
+  let B = se,
+    V;
   t[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((re = () => {
-        (V(!1), z(null));
+    ? ((V = () => {
+        (ae(!1), ie(null));
       }),
-      (t[11] = re))
-    : (re = t[11]);
-  let ie = re,
-    ae;
-  t[12] !== O || t[13] !== i?.balance || t[14] !== h
-    ? ((ae = (e) => {
+      (t[11] = V))
+    : (V = t[11]);
+  let H = V,
+    ce;
+  t[12] !== k || t[13] !== i?.balance || t[14] !== _
+    ? ((ce = (e) => {
         let { draftState: t } = e;
-        (V(!0),
-          z(
-            Wt({
-              intl: h,
+        (ae(!0),
+          ie(
+            Qe({
+              intl: _,
               creditBalance: i?.balance,
               rechargeThreshold: t.rechargeThreshold,
               rechargeTarget: t.rechargeTarget,
-              pricingInfo: O,
+              pricingInfo: k,
             })?.amount ?? null,
           ));
       }),
-      (t[12] = O),
+      (t[12] = k),
       (t[13] = i?.balance),
-      (t[14] = h),
-      (t[15] = ae))
-    : (ae = t[15]);
-  let K = ae,
-    q;
+      (t[14] = _),
+      (t[15] = ce))
+    : (ce = t[15]);
+  let U = ce,
+    W;
   t[16] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((q = [`usage-settings`, `auto-top-up`, `manage-payment`]), (t[16] = q))
-    : (q = t[16]);
-  let se;
-  t[17] !== h || t[18] !== m
-    ? ((se = {
-        mutationKey: q,
-        mutationFn: Et,
-        onSuccess: Tt,
+    ? ((W = [`usage-settings`, `auto-top-up`, `manage-payment`]), (t[16] = W))
+    : (W = t[16]);
+  let G;
+  t[17] !== _ || t[18] !== m
+    ? ((G = {
+        mutationKey: W,
+        mutationFn: Le,
+        onSuccess: Ie,
         onError: () => {
-          m.get(g).danger(
-            h.formatMessage({
+          m.get(h).danger(
+            _.formatMessage({
               id: `settings.usage.autoTopUp.managePayment.error`,
               defaultMessage: `Unable to open payment settings right now. Please try again.`,
               description: `Error shown when opening the manage payment flow from the auto top up settings dialog fails`,
             }),
-            ft,
+            xe,
           );
         },
       }),
-      (t[17] = h),
+      (t[17] = _),
       (t[18] = m),
-      (t[19] = se))
-    : (se = t[19]);
-  let X = f(se),
-    ce;
-  t[20] === X
-    ? (ce = t[21])
-    : ((ce = () => {
-        X.isPending || X.mutate();
+      (t[19] = G))
+    : (G = t[19]);
+  let K = d(G),
+    le;
+  t[20] === K
+    ? (le = t[21])
+    : ((le = () => {
+        K.isPending || K.mutate();
       }),
-      (t[20] = X),
-      (t[21] = ce));
-  let le = ce,
-    ue = r.rechargeThreshold ?? pt,
-    de = r.rechargeTarget ?? mt,
-    fe;
-  t[22] !== ue || t[23] !== de
-    ? ((fe = { isEnabled: !0, rechargeThreshold: ue, rechargeTarget: de }),
-      (t[22] = ue),
-      (t[23] = de),
-      (t[24] = fe))
-    : (fe = t[24]);
+      (t[20] = K),
+      (t[21] = le));
+  let ue = le,
+    q = r.rechargeThreshold ?? Se,
+    J = r.rechargeTarget ?? Ce,
+    de;
+  t[22] !== q || t[23] !== J
+    ? ((de = { isEnabled: !0, rechargeThreshold: q, rechargeTarget: J }),
+      (t[22] = q),
+      (t[23] = J),
+      (t[24] = de))
+    : (de = t[24]);
   let pe;
   t[25] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((pe = { onChange: wt, onSubmit: Ct }), (t[25] = pe))
+    ? ((pe = { onChange: Fe, onSubmit: Pe }), (t[25] = pe))
     : (pe = t[25]);
-  let me;
+  let Z;
   t[26] !== a ||
-  t[27] !== K ||
+  t[27] !== U ||
   t[28] !== L ||
   t[29] !== p ||
   t[30] !== r ||
-  t[31] !== U ||
-  t[32] !== G ||
-  t[33] !== o
-    ? ((me = async (e) => {
+  t[31] !== z ||
+  t[32] !== B ||
+  t[33] !== u
+    ? ((Z = async (e) => {
         let { value: t } = e,
-          n = at({ draftState: t, serverState: r, isSaving: L });
+          n = he({ draftState: t, serverState: r, isSaving: L });
         if (n.isSaveEnabled)
           switch (n.saveIntent) {
             case `disable`:
@@ -2961,182 +576,180 @@ function yt(e) {
             case `enable`:
               try {
                 if (
-                  (ie(),
-                  ee((await a.mutateAsync(tn(t))).immediate_top_up_status))
+                  (H(), E((await a.mutateAsync(lt(t))).immediate_top_up_status))
                 ) {
-                  K({ draftState: t });
+                  U({ draftState: t });
                   return;
                 }
-                (G(`enable`), p(!1));
+                (B(`enable`), p(!1));
               } catch {
-                U(`enable`);
+                z(`enable`);
               }
               return;
             case `update`:
               try {
                 if (
-                  (ie(),
-                  ee((await o.mutateAsync(tn(t))).immediate_top_up_status))
+                  (H(), E((await u.mutateAsync(lt(t))).immediate_top_up_status))
                 ) {
-                  K({ draftState: t });
+                  U({ draftState: t });
                   return;
                 }
-                (G(`update`), p(!1));
+                (B(`update`), p(!1));
               } catch {
-                U(`update`);
+                z(`update`);
               }
               return;
           }
       }),
       (t[26] = a),
-      (t[27] = K),
+      (t[27] = U),
       (t[28] = L),
       (t[29] = p),
       (t[30] = r),
-      (t[31] = U),
-      (t[32] = G),
-      (t[33] = o),
-      (t[34] = me))
-    : (me = t[34]);
-  let he;
-  t[35] !== fe || t[36] !== me
-    ? ((he = { defaultValues: fe, validators: pe, onSubmit: me }),
-      (t[35] = fe),
-      (t[36] = me),
-      (t[37] = he))
-    : (he = t[37]);
-  let ge = oe(he),
-    _e;
+      (t[31] = z),
+      (t[32] = B),
+      (t[33] = u),
+      (t[34] = Z))
+    : (Z = t[34]);
+  let me;
+  t[35] !== de || t[36] !== Z
+    ? ((me = { defaultValues: de, validators: pe, onSubmit: Z }),
+      (t[35] = de),
+      (t[36] = Z),
+      (t[37] = me))
+    : (me = t[37]);
+  let Q = fe(me),
+    ge;
   t[38] !== L || t[39] !== p
-    ? ((_e = (e) => {
-        (L && !e) || (e || ie(), p(e));
+    ? ((ge = (e) => {
+        (L && !e) || (e || H(), p(e));
       }),
       (t[38] = L),
       (t[39] = p),
-      (t[40] = _e))
-    : (_e = t[40]);
-  let ve = _e,
-    ye;
-  t[41] !== u ||
+      (t[40] = ge))
+    : (ge = t[40]);
+  let _e = ge,
+    ve;
+  t[41] !== f ||
   t[42] !== p ||
   t[43] !== r.isEnabled ||
-  t[44] !== U ||
-  t[45] !== G
-    ? ((ye = async () => {
+  t[44] !== z ||
+  t[45] !== B
+    ? ((ve = async () => {
         if (r.isEnabled)
           try {
-            (await u.mutateAsync(), G(`disable`), p(!1));
+            (await f.mutateAsync(), B(`disable`), p(!1));
           } catch {
-            U(`disable`);
+            z(`disable`);
           }
       }),
-      (t[41] = u),
+      (t[41] = f),
       (t[42] = p),
       (t[43] = r.isEnabled),
-      (t[44] = U),
-      (t[45] = G),
-      (t[46] = ye))
-    : (ye = t[46]);
-  let be = ye,
-    xe;
-  t[47] !== O ||
+      (t[44] = z),
+      (t[45] = B),
+      (t[46] = ve))
+    : (ve = t[46]);
+  let ye = ve,
+    be;
+  t[47] !== k ||
   t[48] !== i?.balance ||
   t[49] !== N ||
   t[50] !== M ||
-  t[51] !== ge ||
-  t[52] !== ve ||
-  t[53] !== be ||
-  t[54] !== le ||
-  t[55] !== B ||
-  t[56] !== R ||
-  t[57] !== h ||
+  t[51] !== Q ||
+  t[52] !== _e ||
+  t[53] !== ye ||
+  t[54] !== ue ||
+  t[55] !== R ||
+  t[56] !== re ||
+  t[57] !== _ ||
   t[58] !== L ||
   t[59] !== j ||
   t[60] !== I ||
   t[61] !== F ||
   t[62] !== p ||
   t[63] !== n ||
-  t[64] !== X.isPending ||
+  t[64] !== K.isPending ||
   t[65] !== r ||
-  t[66] !== P ||
-  t[67] !== te
-    ? ((xe = (e) => {
+  t[66] !== te ||
+  t[67] !== P
+    ? ((be = (e) => {
         let { values: t, submissionAttempts: a } = e,
-          o = at({ draftState: t, serverState: r, isSaving: L }),
-          c = Wt({
-            intl: h,
+          o = he({ draftState: t, serverState: r, isSaving: L }),
+          s = Qe({
+            intl: _,
             creditBalance: i?.balance,
             rechargeThreshold: t.rechargeThreshold,
             rechargeTarget: t.rechargeTarget,
-            pricingInfo: O,
+            pricingInfo: k,
           }),
           l =
-            !B &&
-            c != null &&
+            !R &&
+            s != null &&
             (o.saveIntent === `enable` || o.saveIntent === `update`)
               ? {
                   saveIntent: o.saveIntent,
-                  amount: c.amount,
-                  creditCount: c.creditCount,
+                  amount: s.amount,
+                  creditCount: s.creditCount,
                 }
               : null;
-        return (0, Q.jsx)(T, {
+        return (0, $.jsx)(C, {
           open: n,
           size: `default`,
           contentClassName: `w-[536px] max-w-[calc(100vw-2rem)]`,
-          contentProps: { "aria-describedby": N, onOpenAutoFocus: xt },
+          contentProps: { "aria-describedby": N, onOpenAutoFocus: Me },
           shouldIgnoreClickOutside: L,
-          onOpenChange: ve,
-          children: (0, Q.jsx)(`form`, {
+          onOpenChange: _e,
+          children: (0, $.jsx)(`form`, {
             onSubmit: (e) => {
-              (e.preventDefault(), ge.handleSubmit());
+              (e.preventDefault(), Q.handleSubmit());
             },
-            children: (0, Q.jsxs)(E, {
+            children: (0, $.jsxs)(w, {
               className: `gap-0 px-6 py-6`,
               children: [
-                (0, Q.jsx)(C, {
+                (0, $.jsx)(x, {
                   asChild: !0,
-                  children: (0, Q.jsx)(`h2`, {
+                  children: (0, $.jsx)(`h2`, {
                     id: M,
                     className: `sr-only`,
-                    children: h.formatMessage({
+                    children: _.formatMessage({
                       id: `settings.usage.autoTopUp.dialog.title`,
                       defaultMessage: `Auto-reload credits`,
                       description: `Title for the auto top up settings dialog`,
                     }),
                   }),
                 }),
-                (0, Q.jsx)(`p`, {
+                (0, $.jsx)(`p`, {
                   id: N,
                   className: `sr-only`,
-                  children: h.formatMessage({
+                  children: _.formatMessage({
                     id: `settings.usage.autoTopUp.dialog.description`,
                     defaultMessage: `OpenAI will charge your payment method automatically when you reach your minimum balance.`,
                     description: `Description shown below the inputs in the auto top up settings dialog`,
                   }),
                 }),
-                (0, Q.jsx)(S, {
-                  children: (0, Q.jsx)(w, {
-                    title: (0, Q.jsx)(s, {
+                (0, $.jsx)(b, {
+                  children: (0, $.jsx)(S, {
+                    title: (0, $.jsx)(c, {
                       id: `settings.usage.autoTopUp.dialog.title`,
                       defaultMessage: `Auto-reload credits`,
                       description: `Title for the auto top up settings dialog`,
                     }),
                   }),
                 }),
-                (0, Q.jsxs)(S, {
+                (0, $.jsxs)(b, {
                   className: `gap-5`,
                   children: [
-                    (0, Q.jsx)(ge.Field, {
+                    (0, $.jsx)(Q.Field, {
                       name: `rechargeThreshold`,
                       children: (e) => {
                         let t =
                           a > 0 || e.state.meta.isBlurred
-                            ? Kt(e.state.meta.errors)
+                            ? et(e.state.meta.errors)
                             : null;
-                        return (0, Q.jsx)(Lt, {
-                          id: te,
-                          label: (0, Q.jsx)(s, {
+                        return (0, $.jsx)(Ke, {
+                          id: P,
+                          label: (0, $.jsx)(c, {
                             id: `settings.usage.autoTopUp.threshold.label`,
                             defaultMessage: `Minimum balance`,
                             description: `Label for the auto top up threshold input in the dialog`,
@@ -3145,45 +758,45 @@ function yt(e) {
                           placeholder: `125`,
                           disabled: L,
                           hasError: t != null,
-                          helperText: (0, Q.jsx)(s, {
+                          helperText: (0, $.jsx)(c, {
                             id: `settings.usage.autoTopUp.threshold.helper`,
                             defaultMessage: `Auto reload triggers when your credit balance goes below this amount.`,
                             description: `Helper text shown below the minimum balance input in the auto top up dialog`,
                           }),
-                          footerContent: Xt({
+                          footerContent: it({
                             fieldError: t,
                             fieldName: `threshold`,
-                            intl: h,
+                            intl: _,
                           }),
                           footerTone: `error`,
-                          ariaLabel: h.formatMessage({
+                          ariaLabel: _.formatMessage({
                             id: `settings.usage.autoTopUp.threshold.ariaLabel`,
                             defaultMessage: `Auto-reload minimum balance`,
                             description: `Aria label for the auto top up threshold input`,
                           }),
                           onBlur: e.handleBlur,
                           onChange: (t) => {
-                            (ie(), e.handleChange(t));
+                            (H(), e.handleChange(t));
                           },
                         });
                       },
                     }),
-                    (0, Q.jsx)(ge.Field, {
+                    (0, $.jsx)(Q.Field, {
                       name: `rechargeTarget`,
                       children: (e) => {
                         let n =
                             a > 0 || e.state.meta.isBlurred
-                              ? qt(e.state.meta.errors)
+                              ? tt(e.state.meta.errors)
                               : null,
-                          r = Ut({
-                            intl: h,
+                          r = Ze({
+                            intl: _,
                             rechargeThreshold: t.rechargeThreshold,
                             rechargeTarget: e.state.value,
-                            pricingInfo: O,
+                            pricingInfo: k,
                           });
-                        return (0, Q.jsx)(Lt, {
-                          id: P,
-                          label: (0, Q.jsx)(s, {
+                        return (0, $.jsx)(Ke, {
+                          id: te,
+                          label: (0, $.jsx)(c, {
                             id: `settings.usage.autoTopUp.target.label`,
                             defaultMessage: `Target balance`,
                             description: `Label for the auto top up target balance input in the dialog`,
@@ -3192,7 +805,7 @@ function yt(e) {
                           placeholder: `250`,
                           disabled: L,
                           hasError: n != null,
-                          helperText: (0, Q.jsx)(s, {
+                          helperText: (0, $.jsx)(c, {
                             id: `settings.usage.autoTopUp.target.helper`,
                             defaultMessage: `Auto reload brings your credit balance back up to this amount.`,
                             description: `Helper text shown below the target balance input in the auto top up dialog`,
@@ -3200,40 +813,40 @@ function yt(e) {
                           footerContent:
                             n == null
                               ? j
-                                ? (0, Q.jsx)(Rt, { intl: h })
+                                ? (0, $.jsx)(qe, { intl: _ })
                                 : r == null
                                   ? null
-                                  : (0, Q.jsx)(s, {
+                                  : (0, $.jsx)(c, {
                                       id: `settings.usage.autoTopUp.target.equivalent`,
                                       defaultMessage: `Minimum {creditCount, number} credit will be purchased, equivalent to <strong>{amount}</strong>`,
                                       description: `Message shown below the target balance input with the estimated minimum billing amount`,
                                       values: {
                                         creditCount: r.creditCount,
                                         amount: r.amount,
-                                        strong: bt,
+                                        strong: je,
                                       },
                                     })
-                              : Xt({
+                              : it({
                                   fieldError: n,
                                   fieldName: `target`,
-                                  intl: h,
+                                  intl: _,
                                 }),
                           footerTone: n == null ? `secondary` : `error`,
-                          ariaLabel: h.formatMessage({
+                          ariaLabel: _.formatMessage({
                             id: `settings.usage.autoTopUp.target.ariaLabel`,
                             defaultMessage: `Auto-reload target balance`,
                             description: `Aria label for the auto top up target balance input`,
                           }),
                           onBlur: e.handleBlur,
                           onChange: (t) => {
-                            (ie(), e.handleChange(t));
+                            (H(), e.handleChange(t));
                           },
                         });
                       },
                     }),
-                    (0, Q.jsx)(`div`, {
+                    (0, $.jsx)(`div`, {
                       className: `text-sm leading-5 text-token-text-secondary`,
-                      children: (0, Q.jsx)(s, {
+                      children: (0, $.jsx)(c, {
                         id: `settings.usage.autoTopUp.dialog.description`,
                         defaultMessage: `OpenAI will charge your payment method automatically when you reach your minimum balance.`,
                         description: `Description shown below the inputs in the auto top up settings dialog`,
@@ -3241,63 +854,65 @@ function yt(e) {
                     }),
                     l == null
                       ? null
-                      : (0, Q.jsx)(kt, {
+                      : (0, $.jsx)(Re, {
                           saveIntent: l.saveIntent,
                           amount: l.amount,
                           creditCount: l.creditCount,
                         }),
-                    B
-                      ? (0, Q.jsx)(Mt, {
-                          amount: R,
-                          isManagePaymentPending: X.isPending,
-                          onManagePaymentClick: le,
+                    R
+                      ? (0, $.jsx)(Ve, {
+                          amount: re,
+                          isManagePaymentPending: K.isPending,
+                          onManagePaymentClick: ue,
                         })
                       : null,
                   ],
                 }),
-                (0, Q.jsx)(S, {
+                (0, $.jsx)(b, {
                   className: `pt-7`,
-                  children: (0, Q.jsxs)(D, {
+                  children: (0, $.jsxs)(T, {
                     children: [
                       r.isEnabled
-                        ? (0, Q.jsx)(_, {
+                        ? (0, $.jsx)(g, {
                             color: `outline`,
-                            className: gt,
+                            className: Ee,
                             loading: I,
                             disabled: L,
-                            onClick: be,
-                            children: (0, Q.jsx)(s, {
+                            onClick: () => {
+                              ye();
+                            },
+                            children: (0, $.jsx)(c, {
                               id: `settings.usage.autoTopUp.disable`,
                               defaultMessage: `Turn off`,
                               description: `Button label to disable auto top up`,
                             }),
                           })
-                        : (0, Q.jsx)(_, {
+                        : (0, $.jsx)(g, {
                             color: `outline`,
-                            className: gt,
+                            className: Ee,
                             disabled: L,
                             onClick: () => {
                               p(!1);
                             },
-                            children: (0, Q.jsx)(s, {
+                            children: (0, $.jsx)(c, {
                               id: `settings.usage.autoTopUp.cancel`,
                               defaultMessage: `Cancel`,
                               description: `Button label to close the auto top up dialog without saving`,
                             }),
                           }),
-                      (0, Q.jsx)(_, {
+                      (0, $.jsx)(g, {
                         color: `primary`,
                         type: `submit`,
-                        className: gt,
+                        className: Ee,
                         loading: F,
                         disabled: !o.isSaveEnabled,
                         children: r.isEnabled
-                          ? (0, Q.jsx)(s, {
+                          ? (0, $.jsx)(c, {
                               id: `settings.usage.autoTopUp.save`,
                               defaultMessage: `Save`,
                               description: `Button label to save auto top up settings`,
                             })
-                          : (0, Q.jsx)(s, {
+                          : (0, $.jsx)(c, {
                               id: `settings.usage.autoTopUp.enable`,
                               defaultMessage: `Turn on`,
                               description: `Button label to enable auto top up`,
@@ -3311,163 +926,88 @@ function yt(e) {
           }),
         });
       }),
-      (t[47] = O),
+      (t[47] = k),
       (t[48] = i?.balance),
       (t[49] = N),
       (t[50] = M),
-      (t[51] = ge),
-      (t[52] = ve),
-      (t[53] = be),
-      (t[54] = le),
-      (t[55] = B),
-      (t[56] = R),
-      (t[57] = h),
+      (t[51] = Q),
+      (t[52] = _e),
+      (t[53] = ye),
+      (t[54] = ue),
+      (t[55] = R),
+      (t[56] = re),
+      (t[57] = _),
       (t[58] = L),
       (t[59] = j),
       (t[60] = I),
       (t[61] = F),
       (t[62] = p),
       (t[63] = n),
-      (t[64] = X.isPending),
+      (t[64] = K.isPending),
       (t[65] = r),
-      (t[66] = P),
-      (t[67] = te),
-      (t[68] = xe))
-    : (xe = t[68]);
-  let Z;
+      (t[66] = te),
+      (t[67] = P),
+      (t[68] = be))
+    : (be = t[68]);
+  let we;
   return (
-    t[69] !== ge.Subscribe || t[70] !== xe
-      ? ((Z = (0, Q.jsx)(ge.Subscribe, { selector: St, children: xe })),
-        (t[69] = ge.Subscribe),
-        (t[70] = xe),
-        (t[71] = Z))
-      : (Z = t[71]),
-    Z
+    t[69] !== Q.Subscribe || t[70] !== be
+      ? ((we = (0, $.jsx)(Q.Subscribe, { selector: Ne, children: be })),
+        (t[69] = Q.Subscribe),
+        (t[70] = be),
+        (t[71] = we))
+      : (we = t[71]),
+    we
   );
 }
-function bt(e) {
-  return (0, Q.jsx)(`span`, {
+function je(e) {
+  return (0, $.jsx)(`span`, {
     className: `font-medium text-token-text-primary`,
     children: e,
   });
 }
-function xt(e) {
+function Me(e) {
   e.preventDefault();
 }
-function St(e) {
+function Ne(e) {
   return { values: e.values, submissionAttempts: e.submissionAttempts };
 }
-function Ct(e) {
+function Pe(e) {
   let { value: t } = e;
-  return Gt(t);
+  return $e(t);
 }
-function wt(e) {
+function Fe(e) {
   let { value: t } = e;
-  return Gt(t);
+  return $e(t);
 }
-function Tt(e) {
+function Ie(e) {
   window.open(e.url, `_blank`, `noopener,noreferrer`);
 }
-async function Et() {
-  return await r.safeGet(`/payments/customer_portal`);
+async function Le() {
+  return await m.safeGet(`/payments/customer_portal`);
 }
-function Dt(e) {
-  let t = (0, J.c)(12),
-    { title: n, description: r, action: i } = e,
-    a;
-  t[0] === n
-    ? (a = t[1])
-    : ((a = (0, Q.jsx)(`div`, {
-        className: `text-sm text-token-text-primary`,
-        children: n,
-      })),
-      (t[0] = n),
-      (t[1] = a));
-  let o;
-  t[2] === r
-    ? (o = t[3])
-    : ((o = (0, Q.jsx)(`div`, {
-        className: `text-sm text-token-text-secondary`,
-        children: r,
-      })),
-      (t[2] = r),
-      (t[3] = o));
-  let s;
-  t[4] !== a || t[5] !== o
-    ? ((s = (0, Q.jsxs)(`div`, {
-        className: `flex min-w-0 flex-1 flex-col gap-1`,
-        children: [a, o],
-      })),
-      (t[4] = a),
-      (t[5] = o),
-      (t[6] = s))
-    : (s = t[6]);
-  let c;
-  t[7] === i
-    ? (c = t[8])
-    : ((c = (0, Q.jsx)(`div`, {
-        className: `flex shrink-0 items-center`,
-        children: i,
-      })),
-      (t[7] = i),
-      (t[8] = c));
-  let l;
-  return (
-    t[9] !== s || t[10] !== c
-      ? ((l = (0, Q.jsxs)(`div`, {
-          className: `flex items-center justify-between gap-4 p-4`,
-          children: [s, c],
-        })),
-        (t[9] = s),
-        (t[10] = c),
-        (t[11] = l))
-      : (l = t[11]),
-    l
-  );
-}
-function Ot() {
-  let e = (0, J.c)(1),
-    t;
-  return (
-    e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, Q.jsxs)(`span`, {
-          className: `inline-flex items-center gap-1 text-sm text-token-charts-green`,
-          children: [
-            (0, Q.jsx)(x, { className: `icon-2xs shrink-0` }),
-            (0, Q.jsx)(s, {
-              id: `settings.usage.autoTopUp.status.active`,
-              defaultMessage: `Active`,
-              description: `Badge label shown when auto top up is enabled`,
-            }),
-          ],
-        })),
-        (e[0] = t))
-      : (t = e[0]),
-    t
-  );
-}
-function kt(e) {
-  let t = (0, J.c)(4),
+function Re(e) {
+  let t = (0, Y.c)(4),
     { saveIntent: n, amount: r, creditCount: i } = e,
     a;
   return (
     t[0] !== r || t[1] !== i || t[2] !== n
-      ? ((a = (0, Q.jsx)(W, {
+      ? ((a = (0, $.jsx)(G, {
           type: `normal`,
           layout: `vertical`,
           content:
             n === `enable`
-              ? (0, Q.jsx)(s, {
+              ? (0, $.jsx)(c, {
                   id: `settings.usage.autoTopUp.immediateTopUpNotice.enable`,
                   defaultMessage: `Enabling auto reload will trigger a one-time purchase of {creditCount, number} credit to reach your target balance. Estimated cost: <strong>{amount}</strong>.`,
                   description: `Informational banner shown before enabling auto top up when a one-time immediate top up will occur`,
-                  values: { amount: r, creditCount: i, strong: jt },
+                  values: { amount: r, creditCount: i, strong: Be },
                 })
-              : (0, Q.jsx)(s, {
+              : (0, $.jsx)(c, {
                   id: `settings.usage.autoTopUp.immediateTopUpNotice.update`,
                   defaultMessage: `Updating your settings will trigger a one-time purchase of {creditCount, number} credit with an estimated cost of <strong>{amount}</strong>.`,
                   description: `Informational banner shown before updating auto top up when a one-time immediate top up will occur`,
-                  values: { amount: r, creditCount: i, strong: At },
+                  values: { amount: r, creditCount: i, strong: ze },
                 }),
         })),
         (t[0] = r),
@@ -3478,39 +1018,39 @@ function kt(e) {
     a
   );
 }
-function At(e) {
-  return (0, Q.jsx)(`span`, {
+function ze(e) {
+  return (0, $.jsx)(`span`, {
     className: `font-medium text-token-text-primary`,
     children: e,
   });
 }
-function jt(e) {
-  return (0, Q.jsx)(`span`, {
+function Be(e) {
+  return (0, $.jsx)(`span`, {
     className: `font-medium text-token-text-primary`,
     children: e,
   });
 }
-function Mt(e) {
-  let t = (0, J.c)(4),
+function Ve(e) {
+  let t = (0, Y.c)(4),
     { amount: n, isManagePaymentPending: r, onManagePaymentClick: i } = e,
-    a;
+    o;
   return (
     t[0] !== n || t[1] !== r || t[2] !== i
-      ? ((a = (0, Q.jsx)(W, {
+      ? ((o = (0, $.jsx)(G, {
           type: `error`,
           layout: `vertical`,
           content:
             n == null
-              ? (0, Q.jsx)(s, {
+              ? (0, $.jsx)(c, {
                   id: `settings.usage.autoTopUp.immediateTopUpFailure.generic`,
                   defaultMessage: `The initial top-up failed. <actionLine><managePayment>Update your payment method</managePayment> or <purchaseCredit>purchase credit directly</purchaseCredit>.</actionLine>`,
                   description: `Inline error shown in the auto top up settings dialog when the initial top up attempt fails without a price estimate`,
                   values: {
-                    actionLine: It,
+                    actionLine: Ge,
                     managePayment: (e) =>
-                      (0, Q.jsx)(`a`, {
+                      (0, $.jsx)(`a`, {
                         href: `#`,
-                        className: o(
+                        className: a(
                           `font-medium underline underline-offset-2`,
                           r && `pointer-events-none opacity-60`,
                         ),
@@ -3520,20 +1060,20 @@ function Mt(e) {
                         },
                         children: e,
                       }),
-                    purchaseCredit: Ft,
+                    purchaseCredit: We,
                   },
                 })
-              : (0, Q.jsx)(s, {
+              : (0, $.jsx)(c, {
                   id: `settings.usage.autoTopUp.immediateTopUpFailure.amount`,
                   defaultMessage: `The initial top-up for an estimated {amount} failed. <actionLine><managePayment>Update your payment method</managePayment> or <purchaseCredit>purchase credit directly</purchaseCredit>.</actionLine>`,
                   description: `Inline error shown in the auto top up settings dialog when the initial top up attempt fails and a price estimate is available`,
                   values: {
                     amount: n,
-                    actionLine: Pt,
+                    actionLine: Ue,
                     managePayment: (e) =>
-                      (0, Q.jsx)(`a`, {
+                      (0, $.jsx)(`a`, {
                         href: `#`,
-                        className: o(
+                        className: a(
                           `font-medium underline underline-offset-2`,
                           r && `pointer-events-none opacity-60`,
                         ),
@@ -3543,49 +1083,49 @@ function Mt(e) {
                         },
                         children: e,
                       }),
-                    purchaseCredit: Nt,
+                    purchaseCredit: He,
                   },
                 }),
         })),
         (t[0] = n),
         (t[1] = r),
         (t[2] = i),
-        (t[3] = a))
-      : (a = t[3]),
-    a
+        (t[3] = o))
+      : (o = t[3]),
+    o
   );
 }
-function Nt(e) {
-  return (0, Q.jsx)(`a`, {
-    href: ht,
+function He(e) {
+  return (0, $.jsx)(`a`, {
+    href: we,
     target: `_blank`,
     rel: `noopener noreferrer`,
     className: `font-medium underline underline-offset-2`,
     children: e,
   });
 }
-function Pt(e) {
-  return (0, Q.jsx)(`div`, { className: `mt-1`, children: e });
+function Ue(e) {
+  return (0, $.jsx)(`div`, { className: `mt-1`, children: e });
 }
-function Ft(e) {
-  return (0, Q.jsx)(`a`, {
-    href: ht,
+function We(e) {
+  return (0, $.jsx)(`a`, {
+    href: we,
     target: `_blank`,
     rel: `noopener noreferrer`,
     className: `font-medium underline underline-offset-2`,
     children: e,
   });
 }
-function It(e) {
-  return (0, Q.jsx)(`div`, { className: `mt-1`, children: e });
+function Ge(e) {
+  return (0, $.jsx)(`div`, { className: `mt-1`, children: e });
 }
-function Lt(e) {
-  let t = (0, J.c)(22),
+function Ke(e) {
+  let t = (0, Y.c)(22),
     {
       id: n,
       label: r,
       value: i,
-      placeholder: a,
+      placeholder: o,
       disabled: s,
       hasError: c,
       helperText: l,
@@ -3598,7 +1138,7 @@ function Lt(e) {
     h = d === void 0 ? `secondary` : d,
     g;
   t[0] !== n || t[1] !== r
-    ? ((g = (0, Q.jsx)(`label`, {
+    ? ((g = (0, $.jsx)(`label`, {
         htmlFor: n,
         className: `text-lg text-token-text-secondary`,
         children: r,
@@ -3611,7 +1151,7 @@ function Lt(e) {
   t[3] === l
     ? (_ = t[4])
     : ((_ = l
-        ? (0, Q.jsx)(`div`, {
+        ? (0, $.jsx)(`div`, {
             className: `text-sm leading-4 text-token-text-secondary`,
             children: l,
           })
@@ -3625,12 +1165,12 @@ function Lt(e) {
   t[8] !== n ||
   t[9] !== m ||
   t[10] !== p ||
-  t[11] !== a ||
+  t[11] !== o ||
   t[12] !== i
-    ? ((v = (0, Q.jsx)(zt, {
+    ? ((v = (0, $.jsx)(Je, {
         id: n,
         value: i,
-        placeholder: a,
+        placeholder: o,
         disabled: s,
         hasError: c,
         ariaLabel: f,
@@ -3643,7 +1183,7 @@ function Lt(e) {
       (t[8] = n),
       (t[9] = m),
       (t[10] = p),
-      (t[11] = a),
+      (t[11] = o),
       (t[12] = i),
       (t[13] = v))
     : (v = t[13]);
@@ -3652,8 +1192,8 @@ function Lt(e) {
     ? ((y =
         u == null
           ? null
-          : (0, Q.jsx)(`div`, {
-              className: o(
+          : (0, $.jsx)(`div`, {
+              className: a(
                 `text-sm`,
                 h === `error`
                   ? `text-token-error-foreground`
@@ -3668,7 +1208,7 @@ function Lt(e) {
   let b;
   return (
     t[17] !== g || t[18] !== _ || t[19] !== v || t[20] !== y
-      ? ((b = (0, Q.jsxs)(`div`, {
+      ? ((b = (0, $.jsxs)(`div`, {
           className: `flex flex-col gap-2`,
           children: [g, _, v, y],
         })),
@@ -3681,8 +1221,8 @@ function Lt(e) {
     b
   );
 }
-function Rt(e) {
-  let t = (0, J.c)(5),
+function qe(e) {
+  let t = (0, Y.c)(5),
     { intl: n } = e,
     r;
   t[0] === n
@@ -3696,7 +1236,7 @@ function Rt(e) {
       (t[1] = r));
   let i;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((i = (0, Q.jsx)(v, {
+    ? ((i = (0, $.jsx)(_, {
         className: `icon-xxs text-token-description-foreground`,
       })),
       (t[2] = i))
@@ -3705,7 +1245,7 @@ function Rt(e) {
   return (
     t[3] === r
       ? (a = t[4])
-      : ((a = (0, Q.jsx)(`span`, {
+      : ((a = (0, $.jsx)(`span`, {
           role: `status`,
           "aria-label": r,
           className: `inline-flex items-center`,
@@ -3716,13 +1256,13 @@ function Rt(e) {
     a
   );
 }
-function zt(e) {
-  let t = (0, J.c)(12),
+function Je(e) {
+  let t = (0, Y.c)(12),
     {
       id: n,
       value: r,
       placeholder: i,
-      disabled: a,
+      disabled: o,
       hasError: s,
       ariaLabel: c,
       onChange: l,
@@ -3730,7 +1270,7 @@ function zt(e) {
     } = e,
     d;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((d = o(
+    ? ((d = a(
         `bg-token-input-background text-token-text-primary placeholder:text-token-input-placeholder-foreground h-10 w-full rounded-lg border border-token-border px-3 text-left text-sm tabular-nums outline-none focus-visible:ring-2 focus-visible:ring-token-focus`,
         `aria-invalid:border-token-error-foreground aria-invalid:ring-token-error-foreground/20`,
       )),
@@ -3747,18 +1287,18 @@ function zt(e) {
   let p;
   return (
     t[3] !== c ||
-    t[4] !== a ||
+    t[4] !== o ||
     t[5] !== s ||
     t[6] !== n ||
     t[7] !== u ||
     t[8] !== i ||
     t[9] !== f ||
     t[10] !== r
-      ? ((p = (0, Q.jsx)(`input`, {
+      ? ((p = (0, $.jsx)(`input`, {
           id: n,
           value: r,
           placeholder: i,
-          disabled: a,
+          disabled: o,
           inputMode: `numeric`,
           pattern: `[0-9]*`,
           "aria-label": c,
@@ -3768,7 +1308,7 @@ function zt(e) {
           onBlur: u,
         })),
         (t[3] = c),
-        (t[4] = a),
+        (t[4] = o),
         (t[5] = s),
         (t[6] = n),
         (t[7] = u),
@@ -3780,51 +1320,40 @@ function zt(e) {
     p
   );
 }
-function Bt({ intl: e, creditDetails: t }) {
+function Ye({ intl: e, creditDetails: t, pricingInfo: n }) {
+  let r = e.formatMessage({
+    id: `settings.usage.credit.remaining.unavailable`,
+    defaultMessage: `Credit remaining unavailable`,
+    description: `Fallback title shown when the remaining credit is unavailable`,
+  });
   return t == null
-    ? e.formatMessage({
-        id: `settings.usage.credit.remaining.unavailable`,
-        defaultMessage: `Credit remaining unavailable`,
-        description: `Fallback title shown when the remaining credit is unavailable`,
-      })
+    ? r
     : t.unlimited
       ? e.formatMessage({
           id: `settings.usage.credit.remaining.unlimited`,
           defaultMessage: `Unlimited credit`,
           description: `Title shown when the account has unlimited credit`,
         })
-      : e.formatMessage(
-          {
-            id: `settings.usage.credit.remaining.value`,
-            defaultMessage: `{credit} credit remaining`,
-            description: `Title shown for the remaining credit row in usage settings`,
-          },
-          { credit: Vt(e, t.balance) },
-        );
+      : n == null
+        ? r
+        : (U({ intl: e, creditQuantity: Xe(t.balance), pricingInfo: n }) ?? r);
 }
-function Vt(e, t) {
-  return e.formatNumber(Ht(t), {
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-    maximumSignificantDigits: 10,
-  });
-}
-function Ht(e) {
+function Xe(e) {
   return Math.floor(Number(e ?? 0));
 }
-function Ut({
+function Ze({
   intl: e,
   rechargeThreshold: t,
   rechargeTarget: n,
   pricingInfo: r,
 }) {
   if (r == null) return null;
-  let i = ct({ rechargeThreshold: t, rechargeTarget: n });
+  let i = _e({ rechargeThreshold: t, rechargeTarget: n });
   return i == null
     ? null
     : {
         creditCount: i,
-        amount: X({
+        amount: H({
           intl: e,
           amount: i * r.amountPerCredit,
           currencyCode: r.currencyCode,
@@ -3832,7 +1361,7 @@ function Ut({
         }),
       };
 }
-function Wt({
+function Qe({
   intl: e,
   creditBalance: t,
   rechargeThreshold: n,
@@ -3840,15 +1369,15 @@ function Wt({
   pricingInfo: i,
 }) {
   if (i == null) return null;
-  let a = Ht(t),
-    o = Number($(n)),
-    s = Number($(r));
+  let a = Xe(t),
+    o = Number(Z(n)),
+    s = Number(Z(r));
   if (a >= o) return null;
   let c = Math.ceil(s - a);
   return c <= 0
     ? null
     : {
-        amount: X({
+        amount: H({
           intl: e,
           amount: c * i.amountPerCredit,
           currencyCode: i.currencyCode,
@@ -3857,8 +1386,8 @@ function Wt({
         creditCount: c,
       };
 }
-function Gt({ rechargeThreshold: e, rechargeTarget: t }) {
-  let n = it({ rechargeThreshold: e, rechargeTarget: t });
+function $e({ rechargeThreshold: e, rechargeTarget: t }) {
+  let n = me({ rechargeThreshold: e, rechargeTarget: t });
   if (!(n.rechargeThresholdError == null && n.rechargeTargetError == null))
     return {
       fields: {
@@ -3867,40 +1396,40 @@ function Gt({ rechargeThreshold: e, rechargeTarget: t }) {
       },
     };
 }
-function Kt(e) {
+function et(e) {
   if (e == null) return null;
-  for (let t of e) if (Jt(t)) return t;
+  for (let t of e) if (nt(t)) return t;
   return null;
 }
-function qt(e) {
+function tt(e) {
   if (e == null) return null;
-  for (let t of e) if (Yt(t)) return t;
+  for (let t of e) if (rt(t)) return t;
   return null;
 }
-function Jt(e) {
+function nt(e) {
   return (
     e === `missing` ||
     e === `not-whole-number` ||
     e === `below-threshold-minimum`
   );
 }
-function Yt(e) {
+function rt(e) {
   return (
     e === `missing` ||
     e === `not-whole-number` ||
     e === `target-difference-too-small`
   );
 }
-function Xt(e) {
+function it(e) {
   if (e.fieldError == null) return null;
   switch (e.fieldName) {
     case `threshold`:
-      return Zt(e.fieldError, e.intl);
+      return at(e.fieldError, e.intl);
     case `target`:
-      return Qt(e.fieldError, e.intl);
+      return ot(e.fieldError, e.intl);
   }
 }
-function Zt(e, t) {
+function at(e, t) {
   switch (e) {
     case `missing`:
       return t.formatMessage({
@@ -3922,7 +1451,7 @@ function Zt(e, t) {
       });
   }
 }
-function Qt(e, t) {
+function ot(e, t) {
   switch (e) {
     case `missing`:
       return t.formatMessage({
@@ -3944,7 +1473,7 @@ function Qt(e, t) {
       });
   }
 }
-function $t(e, t) {
+function st(e, t) {
   switch (e) {
     case `enable`:
       return t.formatMessage({
@@ -3972,7 +1501,7 @@ function $t(e, t) {
       });
   }
 }
-function en(e, t) {
+function ct(e, t) {
   switch (e) {
     case `enable`:
       return t.formatMessage({
@@ -3994,22 +1523,22 @@ function en(e, t) {
       });
   }
 }
-function tn(e) {
+function lt(e) {
   return {
-    recharge_threshold: $(e.rechargeThreshold),
-    recharge_target: $(e.rechargeTarget),
+    recharge_threshold: Z(e.rechargeThreshold),
+    recharge_target: Z(e.rechargeTarget),
   };
 }
-function nn(e) {
-  let t = (0, J.c)(17),
+function ut(e) {
+  let t = (0, Y.c)(17),
     { plan: n } = e,
-    r = d(c),
-    i = l(),
-    a = V(n),
-    o = a != null,
-    u;
-  t[0] === o ? (u = t[1]) : ((u = { enabled: o }), (t[0] = o), (t[1] = u));
-  let { data: f } = k(u),
+    r = l(s),
+    i = o(),
+    a = P(n),
+    u = a != null,
+    d;
+  t[0] === u ? (d = t[1]) : ((d = { enabled: u }), (t[0] = u), (t[1] = d));
+  let { data: f } = ne(d),
     p = a != null,
     m;
   t[2] !== f || t[3] !== p
@@ -4018,12 +1547,12 @@ function nn(e) {
       (t[3] = p),
       (t[4] = m))
     : (m = t[4]);
-  let { data: h } = L(m);
+  let { data: h } = j(m);
   if (a == null) return null;
-  let g =
+  let _ =
       h == null
         ? null
-        : H({
+        : F({
             intl: i,
             amount: h.monthlyAmounts[a.pricePlan],
             currencyCode: h.currencyCode,
@@ -4031,8 +1560,8 @@ function nn(e) {
           }),
     v;
   t[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, Q.jsx)(q.Header, {
-        title: (0, Q.jsx)(s, {
+    ? ((v = (0, $.jsx)(J.Header, {
+        title: (0, $.jsx)(c, {
           id: `settings.usage.plan.title`,
           defaultMessage: `Your plan`,
           description: `Title for the current plan section in usage settings`,
@@ -4041,21 +1570,21 @@ function nn(e) {
       (t[5] = v))
     : (v = t[5]);
   let y;
-  t[6] === g
+  t[6] === _
     ? (y = t[7])
     : ((y =
-        g == null
+        _ == null
           ? null
-          : (0, Q.jsx)(`span`, {
+          : (0, $.jsx)(`span`, {
               className: `text-token-text-secondary`,
-              children: (0, Q.jsx)(s, {
+              children: (0, $.jsx)(c, {
                 id: `settings.usage.plan.price`,
                 defaultMessage: `({price}/mo)`,
                 description: `Localized monthly price next to the current plan name`,
-                values: { price: g },
+                values: { price: _ },
               }),
             })),
-      (t[6] = g),
+      (t[6] = _),
       (t[7] = y));
   let b = a.cta === `upgrade` ? `primary` : `outline`,
     x;
@@ -4072,12 +1601,12 @@ function nn(e) {
     ? (S = t[12])
     : ((S =
         a.cta === `upgrade`
-          ? (0, Q.jsx)(s, {
+          ? (0, $.jsx)(c, {
               id: `settings.usage.plan.upgrade`,
               defaultMessage: `Upgrade plan`,
               description: `CTA to open the upgrade plan dialog`,
             })
-          : (0, Q.jsx)(s, {
+          : (0, $.jsx)(c, {
               id: `settings.usage.plan.view`,
               defaultMessage: `View plans`,
               description: `CTA to open the plan selection dialog`,
@@ -4087,7 +1616,7 @@ function nn(e) {
   let C;
   return (
     t[13] !== b || t[14] !== x || t[15] !== S
-      ? ((C = (0, Q.jsx)(_, {
+      ? ((C = (0, $.jsx)(g, {
           color: b,
           size: `toolbar`,
           onClick: x,
@@ -4098,18 +1627,18 @@ function nn(e) {
         (t[15] = S),
         (t[16] = C))
       : (C = t[16]),
-    (0, Q.jsxs)(q, {
+    (0, $.jsxs)(J, {
       children: [
         v,
-        (0, Q.jsx)(q.Content, {
-          children: (0, Q.jsx)(K, {
-            children: (0, Q.jsx)(ae, {
+        (0, $.jsx)(J.Content, {
+          children: (0, $.jsx)(q, {
+            children: (0, $.jsx)(ue, {
               className: `gap-6`,
-              label: (0, Q.jsxs)(`div`, {
+              label: (0, $.jsxs)(`div`, {
                 className: `flex items-center gap-2`,
-                children: [on(a.displayPlan), y],
+                children: [pt(a.displayPlan), y],
               }),
-              description: sn(a.pricePlan),
+              description: mt(a.pricePlan),
               control: C,
             }),
           }),
@@ -4118,217 +1647,747 @@ function nn(e) {
     })
   );
 }
-function rn(e) {
-  let t = (0, J.c)(4),
-    { plan: n } = e;
-  if (!F(n)) return null;
-  let r;
-  t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((r = (0, Q.jsx)(q.Header, {
-        title: (0, Q.jsx)(s, {
+function dt(e) {
+  let t = (0, Y.c)(9),
+    { plan: n } = e,
+    r;
+  t[0] === n ? (r = t[1]) : ((r = R(n)), (t[0] = n), (t[1] = r));
+  let i;
+  t[2] === r ? (i = t[3]) : ((i = { enabled: r }), (t[2] = r), (t[3] = i));
+  let { data: a } = re(i);
+  if (!R(n)) return null;
+  let o;
+  t[4] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((o = (0, $.jsx)(J.Header, {
+        title: (0, $.jsx)(c, {
           id: `settings.usage.cancelPlan.title`,
           defaultMessage: `Cancel plan`,
           description: `Title for the cancel plan section in usage settings`,
         }),
       })),
-      (t[0] = r))
-    : (r = t[0]);
-  let i, a;
-  t[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((i = (0, Q.jsx)(s, {
-        id: `settings.usage.cancelPlan.rowTitle`,
-        defaultMessage: `Cancel plan`,
-        description: `Title for the cancel plan row`,
-      })),
-      (a = (0, Q.jsx)(s, {
-        id: `settings.usage.cancelPlan.description`,
-        defaultMessage: `You'll keep full access to your plan features until the end of your billing period`,
-        description: `Description shown below the cancel plan row title`,
-      })),
-      (t[1] = i),
-      (t[2] = a))
-    : ((i = t[1]), (a = t[2]));
-  let o;
+      (t[4] = o))
+    : (o = t[4]);
+  let s;
+  t[5] === a ? (s = t[6]) : ((s = O(a)), (t[5] = a), (t[6] = s));
+  let l;
   return (
-    t[3] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((o = (0, Q.jsxs)(q, {
+    t[7] === s
+      ? (l = t[8])
+      : ((l = (0, $.jsxs)(J, {
           children: [
-            r,
-            (0, Q.jsx)(q.Content, {
-              children: (0, Q.jsx)(K, {
-                children: (0, Q.jsx)(ae, {
-                  className: `gap-6`,
-                  label: i,
-                  description: a,
-                  control: (0, Q.jsx)(_, {
-                    color: `outline`,
-                    size: `toolbar`,
-                    onClick: an,
-                    children: (0, Q.jsx)(s, {
-                      id: `settings.usage.cancelPlan.cta`,
-                      defaultMessage: `Cancel plan`,
-                      description: `CTA to open Billing settings for cancellation`,
-                    }),
-                  }),
-                }),
+            o,
+            (0, $.jsx)(J.Content, {
+              className: `text-sm text-token-text-secondary`,
+              children: (0, $.jsx)(`p`, {
+                children: (0, $.jsx)(ft, { platform: s }),
               }),
             }),
           ],
         })),
-        (t[3] = o))
-      : (o = t[3]),
-    o
+        (t[7] = s),
+        (t[8] = l)),
+    l
   );
 }
-function an() {
-  cn(A);
+function ft(e) {
+  let t = (0, Y.c)(8),
+    { platform: n } = e,
+    r = n === `ios` ? k : n === `android` ? se : I,
+    i;
+  t[0] === r
+    ? (i = t[1])
+    : ((i = (e) =>
+        (0, $.jsx)(`a`, {
+          className: `cursor-interaction text-token-text-link-foreground`,
+          href: r,
+          target: `_blank`,
+          rel: `noreferrer`,
+          onClick: (e) => {
+            (e.preventDefault(), ht(r));
+          },
+          children: e,
+        })),
+      (t[0] = r),
+      (t[1] = i));
+  let a = i;
+  switch (n) {
+    case null: {
+      let e;
+      return (
+        t[2] === a
+          ? (e = t[3])
+          : ((e = (0, $.jsx)(c, {
+              id: `settings.usage.cancelPlan.webDescription`,
+              defaultMessage: `Your subscription is managed through ChatGPT. Go to <cancel>billing</cancel> to cancel your plan`,
+              description: `Description shown when a ChatGPT-managed subscription can be canceled through web billing settings`,
+              values: { cancel: a },
+            })),
+            (t[2] = a),
+            (t[3] = e)),
+        e
+      );
+    }
+    case `ios`: {
+      let e;
+      return (
+        t[4] === a
+          ? (e = t[5])
+          : ((e = (0, $.jsx)(c, {
+              id: `settings.usage.cancelPlan.appleDescription`,
+              defaultMessage: `Your subscription is managed through your Apple account. You'll need to <cancel>cancel via iOS</cancel>`,
+              description: `Description shown when an Apple-managed subscription must be canceled through iOS`,
+              values: { cancel: a },
+            })),
+            (t[4] = a),
+            (t[5] = e)),
+        e
+      );
+    }
+    case `android`: {
+      let e;
+      return (
+        t[6] === a
+          ? (e = t[7])
+          : ((e = (0, $.jsx)(c, {
+              id: `settings.usage.cancelPlan.googlePlayDescription`,
+              defaultMessage: `Your subscription is managed through your Google Play account. You'll need to <cancel>cancel via Android</cancel>`,
+              description: `Description shown when a Google Play-managed subscription must be canceled through Android`,
+              values: { cancel: a },
+            })),
+            (t[6] = a),
+            (t[7] = e)),
+        e
+      );
+    }
+  }
 }
-function on(e) {
+function pt(e) {
   switch (e) {
     case `free`:
-      return (0, Q.jsx)(s, {
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.free`,
         defaultMessage: `Free plan`,
         description: `Name of the Free plan in usage settings`,
       });
     case `go`:
-      return (0, Q.jsx)(s, {
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.go`,
         defaultMessage: `Go plan`,
         description: `Name of the Go plan in usage settings`,
       });
     case `plus`:
-      return (0, Q.jsx)(s, {
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.plus`,
         defaultMessage: `Plus plan`,
         description: `Name of the Plus plan in usage settings`,
       });
     case `pro`:
-      return (0, Q.jsx)(s, {
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.pro`,
         defaultMessage: `Pro plan`,
         description: `Name of the Pro plan in usage settings`,
       });
   }
 }
-function sn(e) {
+function mt(e) {
   switch (e) {
-    case b.FREE:
-      return (0, Q.jsx)(s, {
+    case y.FREE:
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.free.description`,
         defaultMessage: `Limited Codex usage, GPT-5.3`,
         description: `Description for the Free plan in usage settings`,
       });
-    case b.GO:
-      return (0, Q.jsx)(s, {
+    case y.GO:
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.go.description`,
         defaultMessage: `Limited Codex usage, GPT-5.3`,
         description: `Description for the Go plan in usage settings`,
       });
-    case b.PLUS:
-      return (0, Q.jsx)(s, {
+    case y.PLUS:
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.plus.description`,
         defaultMessage: `Expanded Codex usage, GPT-5.5 Thinking`,
         description: `Description for the Plus plan in usage settings`,
       });
-    case b.PROLITE:
-      return (0, Q.jsx)(s, {
+    case y.PROLITE:
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.proLite.description`,
         defaultMessage: `5x more usage than Plus, GPT-5.5 Pro`,
         description: `Description for the Pro 5x plan in usage settings`,
       });
-    case b.PRO:
-      return (0, Q.jsx)(s, {
+    case y.PRO:
+      return (0, $.jsx)(c, {
         id: `settings.usage.plan.pro.description`,
         defaultMessage: `20x more usage than Plus, GPT-5.5 Pro`,
         description: `Description for the Pro 20x plan in usage settings`,
       });
   }
 }
-function cn(e) {
-  m.dispatchMessage(`open-in-browser`, { url: e });
+function ht(e) {
+  p.dispatchMessage(`open-in-browser`, { url: e });
 }
-var ln = `gpt-5.3-codex-spark`,
-  un = 300,
-  dn = 30 * j;
-function fn(e) {
-  let t = (0, J.c)(7),
-    { rateLimitStatus: n } = e,
-    r,
-    i,
-    a;
-  if (t[0] !== n) {
-    a = Symbol.for(`react.early_return_sentinel`);
+var gt = `gpt-5.3-codex-spark`,
+  _t = 300,
+  vt = 30 * D,
+  yt = `account_user_spend_controls`,
+  bt = `account_user.credit_limits`;
+function xt(e) {
+  let t = (0, Y.c)(14),
+    {
+      rateLimitStatus: n,
+      showEnterpriseMonthlyUsageLimit: r,
+      canRequestEnterpriseMonthlyUsageLimit: i,
+      workspaceMonthlyUsage: a,
+      workspaceAdminRequests: o,
+      isWorkspaceAdminRequestsLoading: s,
+      isSavingWorkspaceAdminRequest: l,
+      saveWorkspaceAdminRequest: u,
+    } = e,
+    d = r === void 0 ? !1 : r,
+    f = i === void 0 ? !1 : i,
+    p = a === void 0 ? null : a,
+    m = o === void 0 ? null : o,
+    h = s === void 0 ? !1 : s,
+    g = l === void 0 ? !1 : l,
+    _,
+    v,
+    y;
+  if (
+    t[0] !== f ||
+    t[1] !== g ||
+    t[2] !== h ||
+    t[3] !== n ||
+    t[4] !== u ||
+    t[5] !== d ||
+    t[6] !== m ||
+    t[7] !== p
+  ) {
+    y = Symbol.for(`react.early_return_sentinel`);
     bb0: {
-      let e = z(n),
-        t = gn(e, null),
-        o = gn(e, ln);
-      if (t.length === 0 && o.length === 0) {
-        a = null;
+      let e = oe(n),
+        t = Ot(e, null),
+        r = d ? jt(p) : At({ rateLimitStatus: n, coreUsageLimitRows: t }),
+        i = r == null ? t : t.filter(wt),
+        a = Ot(e, gt),
+        o = d && f,
+        s = d && r == null && i.length === 0;
+      if (r == null && i.length === 0 && a.length === 0 && !s && !o) {
+        y = null;
         break bb0;
       }
-      ((r =
-        t.length > 0
-          ? (0, Q.jsxs)(q, {
+      ((_ =
+        r != null || i.length > 0 || s || o
+          ? (0, $.jsxs)(J, {
               children: [
-                (0, Q.jsx)(q.Header, {
-                  title: (0, Q.jsx)(s, {
+                (0, $.jsx)(J.Header, {
+                  title: (0, $.jsx)(c, {
                     id: `settings.usage.limits.title`,
                     defaultMessage: `General usage limits`,
                     description: `Title for the usage limits section in usage settings`,
                   }),
                 }),
-                (0, Q.jsx)(q.Content, {
-                  children: (0, Q.jsx)(K, { children: t.map(mn) }),
+                (0, $.jsxs)(J.Content, {
+                  children: [
+                    (0, $.jsxs)(q, {
+                      children: [
+                        r == null
+                          ? null
+                          : (0, $.jsx)(Et, { usageLimit: r }, r.key),
+                        s
+                          ? (0, $.jsx)(de, {
+                              children: (0, $.jsx)(c, {
+                                id: `settings.usage.limits.monthly.none`,
+                                defaultMessage: `You don't currently have a monthly usage limit.`,
+                                description: `Empty state shown when an enterprise user has no monthly usage limit`,
+                              }),
+                            })
+                          : null,
+                        i.map(Ct),
+                      ],
+                    }),
+                    o
+                      ? (0, $.jsx)(Tt, {
+                          pendingRequest: Mt(m),
+                          isLoading: h,
+                          isSaving: g,
+                          saveWorkspaceAdminRequest: u,
+                        })
+                      : null,
+                  ],
                 }),
               ],
             })
           : null),
-        (i =
-          o.length > 0
-            ? (0, Q.jsxs)(q, {
+        (v =
+          a.length > 0
+            ? (0, $.jsxs)(J, {
                 children: [
-                  (0, Q.jsx)(q.Header, {
-                    title: (0, Q.jsx)(s, {
+                  (0, $.jsx)(J.Header, {
+                    title: (0, $.jsx)(c, {
                       id: `settings.usage.limits.spark.title`,
                       defaultMessage: `GPT-5.3-Codex-Spark usage limits`,
                       description: `Title for the GPT-5.3-Codex-Spark usage limits section`,
                     }),
                   }),
-                  (0, Q.jsx)(q.Content, {
-                    children: (0, Q.jsx)(K, { children: o.map(pn) }),
+                  (0, $.jsx)(J.Content, {
+                    children: (0, $.jsx)(q, { children: a.map(St) }),
                   }),
                 ],
               })
             : null));
     }
-    ((t[0] = n), (t[1] = r), (t[2] = i), (t[3] = a));
-  } else ((r = t[1]), (i = t[2]), (a = t[3]));
-  if (a !== Symbol.for(`react.early_return_sentinel`)) return a;
-  let o;
+    ((t[0] = f),
+      (t[1] = g),
+      (t[2] = h),
+      (t[3] = n),
+      (t[4] = u),
+      (t[5] = d),
+      (t[6] = m),
+      (t[7] = p),
+      (t[8] = _),
+      (t[9] = v),
+      (t[10] = y));
+  } else ((_ = t[8]), (v = t[9]), (y = t[10]));
+  if (y !== Symbol.for(`react.early_return_sentinel`)) return y;
+  let b;
   return (
-    t[4] !== r || t[5] !== i
-      ? ((o = (0, Q.jsxs)(Q.Fragment, { children: [r, i] })),
-        (t[4] = r),
-        (t[5] = i),
-        (t[6] = o))
-      : (o = t[6]),
-    o
+    t[11] !== _ || t[12] !== v
+      ? ((b = (0, $.jsxs)($.Fragment, { children: [_, v] })),
+        (t[11] = _),
+        (t[12] = v),
+        (t[13] = b))
+      : (b = t[13]),
+    b
   );
 }
-function pn(e) {
-  return (0, Q.jsx)(hn, { rateLimitRow: e }, e.key);
+function St(e) {
+  return (0, $.jsx)(Dt, { rateLimitRow: e }, e.key);
 }
-function mn(e) {
-  return (0, Q.jsx)(hn, { rateLimitRow: e }, e.key);
+function Ct(e) {
+  return (0, $.jsx)(Dt, { rateLimitRow: e }, e.key);
 }
-function hn(e) {
-  let t = (0, J.c)(14),
+function wt(e) {
+  return !Ft(e);
+}
+function Tt(e) {
+  let t = (0, Y.c)(28),
+    {
+      pendingRequest: n,
+      isLoading: r,
+      isSaving: i,
+      saveWorkspaceAdminRequest: a,
+    } = e,
+    u = l(s),
+    d = o(),
+    [f, p] = (0, X.useState)(!1),
+    [m, _] = (0, X.useState)(n?.justification ?? ``),
+    v;
+  t[0] !== d || t[1] !== m || t[2] !== n || t[3] !== a || t[4] !== u
+    ? ((v = () => {
+        let e = m.trim();
+        if (e.length === 0) {
+          u.get(h).warning(
+            d.formatMessage({
+              id: `settings.usage.limits.requestMissingJustification`,
+              defaultMessage: `Enter a justification to submit your request.`,
+              description: `Toast shown when a workspace usage limit request is missing a justification`,
+            }),
+          );
+          return;
+        }
+        a?.({ justification: e, requestId: n?.id })
+          .then(() => {
+            (u.get(h).success(
+              d.formatMessage(
+                n == null
+                  ? {
+                      id: `settings.usage.limits.requestSaved`,
+                      defaultMessage: `Request submitted`,
+                      description: `Toast shown when a workspace usage limit request is submitted`,
+                    }
+                  : {
+                      id: `settings.usage.limits.requestUpdated`,
+                      defaultMessage: `Request updated`,
+                      description: `Toast shown when a workspace usage limit request is updated`,
+                    },
+              ),
+            ),
+              p(!1));
+          })
+          .catch(() => {
+            u.get(h).danger(
+              d.formatMessage({
+                id: `settings.usage.limits.requestSaveError`,
+                defaultMessage: `Could not save your request. Please try again.`,
+                description: `Toast shown when a workspace usage limit request cannot be saved`,
+              }),
+            );
+          });
+      }),
+      (t[0] = d),
+      (t[1] = m),
+      (t[2] = n),
+      (t[3] = a),
+      (t[4] = u),
+      (t[5] = v))
+    : (v = t[5]);
+  let y = v,
+    b;
+  t[6] === n
+    ? (b = t[7])
+    : ((b =
+        n == null
+          ? null
+          : (0, $.jsx)(`div`, {
+              className: `text-sm text-token-text-secondary`,
+              children: (0, $.jsx)(c, {
+                id: `settings.usage.limits.requestPending`,
+                defaultMessage: `Your request is pending admin review.`,
+                description: `Status text for a pending workspace usage limit request`,
+              }),
+            })),
+      (t[6] = n),
+      (t[7] = b));
+  let x = a == null,
+    S;
+  t[8] === n?.justification
+    ? (S = t[9])
+    : ((S = () => {
+        (_(n?.justification ?? ``), p(!0));
+      }),
+      (t[8] = n?.justification),
+      (t[9] = S));
+  let C;
+  t[10] === n
+    ? (C = t[11])
+    : ((C =
+        n == null
+          ? (0, $.jsx)(c, {
+              id: `settings.usage.limits.requestIncrease`,
+              defaultMessage: `Request limit increase`,
+              description: `Button to request a workspace monthly usage limit increase`,
+            })
+          : (0, $.jsx)(c, {
+              id: `settings.usage.limits.updatePendingRequest`,
+              defaultMessage: `Update pending request`,
+              description: `Button to update an existing pending workspace usage limit request`,
+            })),
+      (t[10] = n),
+      (t[11] = C));
+  let w;
+  t[12] !== r || t[13] !== x || t[14] !== S || t[15] !== C
+    ? ((w = (0, $.jsx)(g, {
+        color: `primary`,
+        size: `medium`,
+        className: `self-start rounded-full`,
+        loading: r,
+        disabled: x,
+        onClick: S,
+        children: C,
+      })),
+      (t[12] = r),
+      (t[13] = x),
+      (t[14] = S),
+      (t[15] = C),
+      (t[16] = w))
+    : (w = t[16]);
+  let T;
+  t[17] !== y ||
+  t[18] !== d ||
+  t[19] !== f ||
+  t[20] !== i ||
+  t[21] !== m ||
+  t[22] !== n
+    ? ((T = f
+        ? (0, $.jsx)(q, {
+            className: `mt-1 w-full`,
+            children: (0, $.jsxs)(`div`, {
+              className: `flex flex-col gap-3 p-3`,
+              children: [
+                (0, $.jsxs)(`label`, {
+                  className: `flex flex-col gap-1.5 text-sm font-medium text-token-text-primary`,
+                  children: [
+                    (0, $.jsx)(c, {
+                      id: `settings.usage.limits.requestJustificationLabel`,
+                      defaultMessage: `Justification`,
+                      description: `Label for the workspace usage limit request justification`,
+                    }),
+                    (0, $.jsx)(`textarea`, {
+                      value: m,
+                      rows: 3,
+                      placeholder: d.formatMessage({
+                        id: `settings.usage.limits.requestJustificationPlaceholder`,
+                        defaultMessage: `Tell your admin why you need more credits.`,
+                        description: `Placeholder for the workspace usage limit request justification`,
+                      }),
+                      className: `min-h-20 resize-none rounded-md border border-token-border bg-token-input-background px-3 py-2 text-sm leading-5 text-token-text-primary outline-none placeholder:text-token-text-tertiary focus:border-token-border-heavy`,
+                      onChange: (e) => {
+                        _(e.target.value);
+                      },
+                    }),
+                  ],
+                }),
+                (0, $.jsxs)(`div`, {
+                  className: `flex justify-end gap-2`,
+                  children: [
+                    (0, $.jsx)(g, {
+                      color: `secondary`,
+                      size: `default`,
+                      onClick: () => {
+                        p(!1);
+                      },
+                      children: (0, $.jsx)(c, {
+                        id: `settings.usage.limits.requestCancel`,
+                        defaultMessage: `Cancel`,
+                        description: `Cancel button for the workspace usage limit request form`,
+                      }),
+                    }),
+                    (0, $.jsx)(g, {
+                      color: `primary`,
+                      size: `default`,
+                      loading: i,
+                      onClick: y,
+                      children:
+                        n == null
+                          ? (0, $.jsx)(c, {
+                              id: `settings.usage.limits.requestSave`,
+                              defaultMessage: `Submit request`,
+                              description: `Submit button for a workspace usage limit request`,
+                            })
+                          : (0, $.jsx)(c, {
+                              id: `settings.usage.limits.requestUpdate`,
+                              defaultMessage: `Update request`,
+                              description: `Submit button for updating a pending workspace usage limit request`,
+                            }),
+                    }),
+                  ],
+                }),
+              ],
+            }),
+          })
+        : null),
+      (t[17] = y),
+      (t[18] = d),
+      (t[19] = f),
+      (t[20] = i),
+      (t[21] = m),
+      (t[22] = n),
+      (t[23] = T))
+    : (T = t[23]);
+  let E;
+  return (
+    t[24] !== b || t[25] !== w || t[26] !== T
+      ? ((E = (0, $.jsxs)(`div`, {
+          className: `mt-2 flex flex-col items-start gap-2`,
+          children: [b, w, T],
+        })),
+        (t[24] = b),
+        (t[25] = w),
+        (t[26] = T),
+        (t[27] = E))
+      : (E = t[27]),
+    E
+  );
+}
+function Et(e) {
+  let t = (0, Y.c)(46),
+    { usageLimit: n } = e,
+    r = o(),
+    i;
+  t[0] === n.usedPercent
+    ? (i = t[1])
+    : ((i = zt(n.usedPercent)), (t[0] = n.usedPercent), (t[1] = i));
+  let a = i,
+    s,
+    l,
+    u,
+    d,
+    f,
+    p,
+    m;
+  if (
+    t[2] !== r ||
+    t[3] !== n.limitCredits ||
+    t[4] !== n.remainingPercent ||
+    t[5] !== n.resetAt ||
+    t[6] !== n.usedCredits
+  ) {
+    let e = zt(n.remainingPercent),
+      i;
+    if (t[14] !== n.resetAt) {
+      let e = A(n.resetAt);
+      ((i = e == null ? null : N(e)), (t[14] = n.resetAt), (t[15] = i));
+    } else i = t[15];
+    let a = i,
+      o;
+    (t[16] !== r || t[17] !== n.limitCredits || t[18] !== n.usedCredits
+      ? ((o =
+          n.usedCredits == null || n.limitCredits == null
+            ? null
+            : r.formatMessage(
+                {
+                  id: `settings.usage.limits.monthly.creditsUsed`,
+                  defaultMessage: `{used} of {limit} credits used`,
+                  description: `Usage summary for monthly usage limit credits that have been used`,
+                },
+                { used: Lt(r, n.usedCredits), limit: Lt(r, n.limitCredits) },
+              )),
+        (t[16] = r),
+        (t[17] = n.limitCredits),
+        (t[18] = n.usedCredits),
+        (t[19] = o))
+      : (o = t[19]),
+      (m = o));
+    let h;
+    (t[20] === a
+      ? (h = t[21])
+      : ((h =
+          a == null
+            ? null
+            : (0, $.jsx)(c, {
+                id: `settings.usage.limits.window.resetAt`,
+                defaultMessage: `Resets {time}`,
+                description: `Description showing when a usage limit window resets`,
+                values: { time: a },
+              })),
+        (t[20] = a),
+        (t[21] = h)),
+      (s = h),
+      (p = `p-4`),
+      (d = `flex items-center justify-between gap-4`),
+      t[22] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((f = (0, $.jsx)(`div`, {
+            className: `text-sm font-semibold text-token-text-primary`,
+            children: (0, $.jsx)(c, {
+              id: `settings.usage.limits.monthly.label`,
+              defaultMessage: `Monthly usage limit`,
+              description: `Label for a monthly usage limit row`,
+            }),
+          })),
+          (t[22] = f))
+        : (f = t[22]),
+      (l = `shrink-0 text-sm text-token-text-secondary tabular-nums`),
+      (u = r.formatMessage(
+        {
+          id: `settings.usage.limits.monthly.progress.remaining`,
+          defaultMessage: `{remaining}% remaining`,
+          description: `Remaining percentage shown next to usage progress`,
+        },
+        { remaining: r.formatNumber(e, { maximumFractionDigits: 0 }) },
+      )),
+      (t[2] = r),
+      (t[3] = n.limitCredits),
+      (t[4] = n.remainingPercent),
+      (t[5] = n.resetAt),
+      (t[6] = n.usedCredits),
+      (t[7] = s),
+      (t[8] = l),
+      (t[9] = u),
+      (t[10] = d),
+      (t[11] = f),
+      (t[12] = p),
+      (t[13] = m));
+  } else
+    ((s = t[7]),
+      (l = t[8]),
+      (u = t[9]),
+      (d = t[10]),
+      (f = t[11]),
+      (p = t[12]),
+      (m = t[13]));
+  let h;
+  t[23] !== l || t[24] !== u
+    ? ((h = (0, $.jsx)(`div`, { className: l, children: u })),
+      (t[23] = l),
+      (t[24] = u),
+      (t[25] = h))
+    : (h = t[25]);
+  let g;
+  t[26] !== d || t[27] !== f || t[28] !== h
+    ? ((g = (0, $.jsxs)(`div`, { className: d, children: [f, h] })),
+      (t[26] = d),
+      (t[27] = f),
+      (t[28] = h),
+      (t[29] = g))
+    : (g = t[29]);
+  let _;
+  t[30] === r
+    ? (_ = t[31])
+    : ((_ = r.formatMessage({
+        id: `settings.usage.limits.monthly.progress.ariaLabel`,
+        defaultMessage: `Monthly usage used`,
+        description: `Aria label for monthly usage limit progress`,
+      })),
+      (t[30] = r),
+      (t[31] = _));
+  let v = `${a}%`,
+    y;
+  t[32] === v
+    ? (y = t[33])
+    : ((y = (0, $.jsx)(`div`, {
+        className: `bg-[#0285FF]`,
+        style: { width: v },
+      })),
+      (t[32] = v),
+      (t[33] = y));
+  let b;
+  t[34] !== y || t[35] !== _ || t[36] !== a
+    ? ((b = (0, $.jsx)(`div`, {
+        role: `progressbar`,
+        "aria-label": _,
+        "aria-valuemin": 0,
+        "aria-valuemax": 100,
+        "aria-valuenow": a,
+        className: `mt-4 flex h-2 overflow-hidden rounded-full bg-[#DFDFDF]`,
+        children: y,
+      })),
+      (t[34] = y),
+      (t[35] = _),
+      (t[36] = a),
+      (t[37] = b))
+    : (b = t[37]);
+  let x;
+  t[38] !== s || t[39] !== m
+    ? ((x =
+        m != null || s != null
+          ? (0, $.jsxs)(`div`, {
+              className: `mt-5 flex items-center justify-between gap-3`,
+              children: [
+                (0, $.jsx)(`div`, {
+                  className: `text-xs text-token-text-tertiary`,
+                  children: m,
+                }),
+                (0, $.jsx)(`div`, {
+                  className: `shrink-0 text-end text-xs text-token-text-tertiary`,
+                  children: s,
+                }),
+              ],
+            })
+          : null),
+      (t[38] = s),
+      (t[39] = m),
+      (t[40] = x))
+    : (x = t[40]);
+  let S;
+  return (
+    t[41] !== b || t[42] !== x || t[43] !== p || t[44] !== g
+      ? ((S = (0, $.jsxs)(`div`, { className: p, children: [g, b, x] })),
+        (t[41] = b),
+        (t[42] = x),
+        (t[43] = p),
+        (t[44] = g),
+        (t[45] = S))
+      : (S = t[45]),
+    S
+  );
+}
+function Dt(e) {
+  let t = (0, Y.c)(14),
     { rateLimitRow: n } = e,
     r;
   if (t[0] !== n.bucket.resetsAt) {
-    let e = P(n.bucket.resetsAt ?? null);
-    ((r = e == null ? null : te(e)), (t[0] = n.bucket.resetsAt), (t[1] = r));
+    let e = A(n.bucket.resetsAt ?? null);
+    ((r = e == null ? null : N(e)), (t[0] = n.bucket.resetsAt), (t[1] = r));
   } else r = t[1];
   let i = r,
     a;
@@ -4337,7 +2396,7 @@ function hn(e) {
     : ((a =
         i == null
           ? null
-          : (0, Q.jsx)(s, {
+          : (0, $.jsx)(c, {
               id: `settings.usage.limits.window.resetAt`,
               defaultMessage: `Resets {time}`,
               description: `Description showing when a usage limit window resets`,
@@ -4346,20 +2405,20 @@ function hn(e) {
       (t[2] = i),
       (t[3] = a));
   let o = a,
-    c = n.bucket.usedPercent ?? 0,
+    s = n.bucket.usedPercent ?? 0,
     l;
-  t[4] === c ? (l = t[5]) : ((l = M(c)), (t[4] = c), (t[5] = l));
+  t[4] === s ? (l = t[5]) : ((l = V(s)), (t[4] = s), (t[5] = l));
   let u = l,
     d;
-  t[6] === n ? (d = t[7]) : ((d = _n(n)), (t[6] = n), (t[7] = d));
+  t[6] === n ? (d = t[7]) : ((d = kt(n)), (t[6] = n), (t[7] = d));
   let f;
   t[8] === u
     ? (f = t[9])
-    : ((f = (0, Q.jsx)(yn, { remainingPercent: u })), (t[8] = u), (t[9] = f));
+    : ((f = (0, $.jsx)(Rt, { remainingPercent: u })), (t[8] = u), (t[9] = f));
   let p;
   return (
     t[10] !== o || t[11] !== d || t[12] !== f
-      ? ((p = (0, Q.jsx)(ae, {
+      ? ((p = (0, $.jsx)(ue, {
           className: `gap-6`,
           label: d,
           description: o,
@@ -4373,100 +2432,162 @@ function hn(e) {
     p
   );
 }
-function gn(e, t) {
-  let n = t == null ? (e.find((e) => e.limitName == null) ?? null) : R(e, t);
-  return n == null ? [] : U({ entry: n, keyPrefix: t ?? `core` });
+function Ot(e, t) {
+  let n = t == null ? (e.find((e) => e.limitName == null) ?? null) : ae(e, t);
+  return n == null ? [] : W({ entry: n, keyPrefix: t ?? `core` });
 }
-function _n(e) {
+function kt(e) {
   let t = e.bucket.windowDurationMins ?? 0;
-  return vn(t, dn)
-    ? (0, Q.jsx)(s, {
+  return Ft(e)
+    ? (0, $.jsx)(c, {
         id: `settings.usage.limits.monthly.label`,
         defaultMessage: `Monthly usage limit`,
         description: `Label for a monthly usage limit row`,
       })
-    : vn(t, un)
-      ? (0, Q.jsx)(s, {
+    : It(t, _t)
+      ? (0, $.jsx)(c, {
           id: `settings.usage.limits.fiveHour.label`,
           defaultMessage: `5 hour usage limit`,
           description: `Label for the 5-hour usage limit row`,
         })
-      : vn(t, 10080)
-        ? (0, Q.jsx)(s, {
+      : It(t, 10080)
+        ? (0, $.jsx)(c, {
             id: `settings.usage.limits.week.label`,
             defaultMessage: `Weekly usage limit`,
             description: `Label for a weekly usage limit row`,
           })
-        : vn(t, 1440)
-          ? (0, Q.jsx)(s, {
+        : It(t, 1440)
+          ? (0, $.jsx)(c, {
               id: `settings.usage.limits.day.label`,
               defaultMessage: `Daily usage limit`,
               description: `Label for a daily usage limit row`,
             })
-          : (0, Q.jsx)(s, {
+          : (0, $.jsx)(c, {
               id: `settings.usage.limits.genericWindow.label`,
               defaultMessage: `Usage limit`,
               description: `Generic label for a usage limit row`,
             });
 }
-function vn(e, t) {
+function At({ rateLimitStatus: e, coreUsageLimitRows: t }) {
+  let n = e?.spend_control?.individual_limit ?? null;
+  if (n != null)
+    return {
+      key: `spend-control-monthly`,
+      usedPercent: n.used_percent,
+      remainingPercent: n.remaining_percent,
+      resetAt: n.reset_at,
+      usedCredits: n.used,
+      limitCredits: n.limit,
+    };
+  let r = t.find(Ft) ?? null;
+  if (r == null) return null;
+  let i = r.bucket.usedPercent ?? 0;
+  return {
+    key: r.key,
+    usedPercent: i,
+    remainingPercent: V(i),
+    resetAt: r.bucket.resetsAt ?? null,
+    usedCredits: null,
+    limitCredits: null,
+  };
+}
+function jt(e) {
+  let t = e?.effective_monthly_limit?.limit ?? null,
+    n = e?.current_month_usage ?? null;
+  if (t == null || n == null || t < 0) return null;
+  let r = t === 0 ? 100 : zt((n / t) * 100);
+  return {
+    key: `workspace-monthly`,
+    usedPercent: r,
+    remainingPercent: zt(100 - r),
+    resetAt: null,
+    usedCredits: String(n),
+    limitCredits: String(t),
+  };
+}
+function Mt(e) {
+  return e?.items.find((e) => e.status === `pending` && Nt(e) != null) ?? null;
+}
+function Nt(e) {
+  return e.payloads.find(Pt) ?? null;
+}
+function Pt(e) {
+  return (
+    e.kind === `spend_limit` &&
+    e.target.source === yt &&
+    e.target.source_id === bt
+  );
+}
+function Ft(e) {
+  return It(e.bucket.windowDurationMins ?? 0, vt);
+}
+function It(e, t) {
   return !Number.isFinite(e) || e <= 0 ? !1 : Math.abs(e - t) <= t * 0.05;
 }
-function yn(e) {
-  let t = (0, J.c)(16),
+function Lt(e, t) {
+  let n = Number(t);
+  return Number.isFinite(n)
+    ? e.formatNumber(Math.max(n, 0), {
+        minimumFractionDigits: 0,
+        maximumFractionDigits: n >= 10 ? 0 : 2,
+      })
+    : t;
+}
+function Rt(e) {
+  let t = (0, Y.c)(16),
     { remainingPercent: n } = e,
-    r = l(),
+    r = o(),
     i;
-  t[0] === n ? (i = t[1]) : ((i = bn(n)), (t[0] = n), (t[1] = i));
-  let a = i,
-    s;
+  t[0] === n ? (i = t[1]) : ((i = zt(n)), (t[0] = n), (t[1] = i));
+  let s = i,
+    c;
   t[2] === r
-    ? (s = t[3])
-    : ((s = r.formatMessage({
+    ? (c = t[3])
+    : ((c = r.formatMessage({
         id: `settings.usage.limits.progress.ariaLabel`,
         defaultMessage: `Usage remaining`,
         description: `Aria label for usage remaining progress bars`,
       })),
       (t[2] = r),
-      (t[3] = s));
-  let c;
+      (t[3] = c));
+  let l;
   t[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = o(
+    ? ((l = a(
         `h-1.5 w-24 overflow-hidden rounded-full [&::-webkit-progress-bar]:bg-token-foreground/10 [&::-webkit-progress-value]:bg-token-foreground [&::-moz-progress-bar]:bg-token-foreground`,
         `[&::-ms-fill]:bg-token-foreground`,
       )),
-      (t[4] = c))
-    : (c = t[4]);
+      (t[4] = l))
+    : (l = t[4]);
   let u;
-  t[5] !== a || t[6] !== s
-    ? ((u = (0, Q.jsx)(`progress`, {
+  t[5] !== s || t[6] !== c
+    ? ((u = (0, $.jsx)(`progress`, {
         max: 100,
-        value: a,
-        "aria-label": s,
-        className: c,
+        value: s,
+        "aria-label": c,
+        className: l,
       })),
-      (t[5] = a),
-      (t[6] = s),
+      (t[5] = s),
+      (t[6] = c),
       (t[7] = u))
     : (u = t[7]);
   let d;
-  t[8] !== a || t[9] !== r
+  t[8] !== s || t[9] !== r
     ? ((d = r.formatMessage(
         {
           id: `settings.usage.limits.progress.remaining`,
           defaultMessage: `{remaining}% left`,
           description: `Remaining percentage shown next to usage progress`,
         },
-        { remaining: r.formatNumber(a, { maximumFractionDigits: 0 }) },
+        { remaining: r.formatNumber(s, { maximumFractionDigits: 0 }) },
       )),
-      (t[8] = a),
+      (t[8] = s),
       (t[9] = r),
       (t[10] = d))
     : (d = t[10]);
   let f;
   t[11] === d
     ? (f = t[12])
-    : ((f = (0, Q.jsx)(`span`, {
+    : ((f = (0, $.jsx)(`span`, {
         className: `w-[72px] text-right text-sm text-token-text-secondary tabular-nums`,
         children: d,
       })),
@@ -4475,7 +2596,7 @@ function yn(e) {
   let p;
   return (
     t[13] !== u || t[14] !== f
-      ? ((p = (0, Q.jsxs)(`div`, {
+      ? ((p = (0, $.jsxs)(`div`, {
           className: `flex items-center gap-2`,
           children: [u, f],
         })),
@@ -4486,191 +2607,278 @@ function yn(e) {
     p
   );
 }
-function bn(e) {
+function zt(e) {
   return Number.isFinite(e) ? Math.max(0, Math.min(100, e)) : 0;
 }
-function xn() {
-  let e = (0, J.c)(35),
+function Bt() {
+  let e = (0, Y.c)(55),
     {
       canManageCreditSettings: t,
       isUsageSettingsVisible: r,
       isUsageSettingsAccessLoading: i,
       plan: a,
-    } = se(),
-    { data: o, isLoading: c, isError: l, refetch: d } = u(n),
-    f;
-  e[0] === t ? (f = e[1]) : ((f = { enabled: t }), (e[0] = t), (e[1] = f));
-  let { data: p, isLoading: m, isError: h, refetch: g } = I(f),
+    } = pe(),
+    o;
+  e[0] === a ? (o = e[1]) : ((o = v(a)), (e[0] = a), (e[1] = o));
+  let s = o,
+    l = s && r && !i,
+    { data: d, isLoading: f, isError: p, refetch: m } = u(n),
+    h;
+  e[2] === t ? (h = e[3]) : ((h = { enabled: t }), (e[2] = t), (e[3] = h));
+  let { data: _, isLoading: y, isError: b, refetch: x } = z(h),
+    S;
+  e[4] === l ? (S = e[5]) : ((S = { enabled: l }), (e[4] = l), (e[5] = S));
+  let { data: C, isLoading: w, isError: T, refetch: E } = te(S),
+    D =
+      C?.effective_monthly_limit?.limit != null &&
+      C.effective_monthly_limit.limit >= 0,
+    O = l && D,
+    k;
+  e[6] === O ? (k = e[7]) : ((k = { enabled: O }), (e[6] = O), (e[7] = k));
+  let { data: ee, isLoading: A, isError: j, refetch: N } = ie(k),
+    P = L(),
     {
-      enableAutoTopUpMutation: v,
-      updateAutoTopUpMutation: y,
-      disableAutoTopUpMutation: b,
-    } = N(),
-    x;
-  e[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((x = (0, Q.jsx)(re, { slug: `usage` })), (e[2] = x))
-    : (x = e[2]);
-  let S = x;
+      enableAutoTopUpMutation: F,
+      updateAutoTopUpMutation: I,
+      disableAutoTopUpMutation: ne,
+    } = M(),
+    re;
+  e[8] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((re = (0, $.jsx)(K, { slug: `usage` })), (e[8] = re))
+    : (re = e[8]);
+  let R = re;
   if (!r && !i) return null;
-  let C = !r && i,
-    w = (t && m && p == null) || (c && o == null),
-    T = (t && h && p == null) || (l && o == null);
-  if (C || T || w) {
+  let ae = !r && i,
+    oe = s
+      ? (w && C == null) || (D && A && ee == null)
+      : (t && y && _ == null) || (f && d == null),
+    se = s
+      ? (T && C == null) || (D && j && ee == null)
+      : (t && b && _ == null) || (p && d == null);
+  if (ae || se || oe) {
     let n,
       r = null;
-    if (C) {
+    if (ae) {
       let t;
-      (e[3] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((t = (0, Q.jsx)(s, {
+      (e[9] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((t = (0, $.jsx)(c, {
             id: `settings.usage.access.loading`,
             defaultMessage: `Checking subscription…`,
             description: `Loading label while checking whether Usage settings should be visible`,
           })),
-          (e[3] = t))
-        : (t = e[3]),
+          (e[9] = t))
+        : (t = e[9]),
         (n = t));
-    } else if (T) {
+    } else if (se) {
       let i;
-      (e[4] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((i = (0, Q.jsx)(s, {
+      (e[10] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((i = (0, $.jsx)(c, {
             id: `settings.usage.load.error`,
             defaultMessage: `Could not load usage settings.`,
             description: `Error label shown when usage settings cannot be fetched`,
           })),
-          (e[4] = i))
-        : (i = e[4]),
+          (e[10] = i))
+        : (i = e[10]),
         (n = i));
       let a;
-      e[5] !== t || e[6] !== g || e[7] !== d
+      e[11] !== t ||
+      e[12] !== D ||
+      e[13] !== s ||
+      e[14] !== x ||
+      e[15] !== m ||
+      e[16] !== N ||
+      e[17] !== E
         ? ((a = () => {
-            Promise.all(t ? [g(), d()] : [d()]);
+            Promise.all(s ? (D ? [E(), N()] : [E()]) : t ? [x(), m()] : [m()]);
           }),
-          (e[5] = t),
-          (e[6] = g),
-          (e[7] = d),
-          (e[8] = a))
-        : (a = e[8]);
+          (e[11] = t),
+          (e[12] = D),
+          (e[13] = s),
+          (e[14] = x),
+          (e[15] = m),
+          (e[16] = N),
+          (e[17] = E),
+          (e[18] = a))
+        : (a = e[18]);
       let o;
-      e[9] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((o = (0, Q.jsx)(s, {
+      e[19] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((o = (0, $.jsx)(c, {
             id: `settings.usage.load.retry`,
             defaultMessage: `Retry`,
             description: `Retry button for usage settings fetch errors`,
           })),
-          (e[9] = o))
-        : (o = e[9]);
-      let c;
-      (e[10] === a
-        ? (c = e[11])
-        : ((c = (0, Q.jsx)(_, {
+          (e[19] = o))
+        : (o = e[19]);
+      let l;
+      (e[20] === a
+        ? (l = e[21])
+        : ((l = (0, $.jsx)(g, {
             color: `secondary`,
             size: `toolbar`,
             onClick: a,
             children: o,
           })),
-          (e[10] = a),
-          (e[11] = c)),
-        (r = c));
+          (e[20] = a),
+          (e[21] = l)),
+        (r = l));
     } else {
       let t;
-      (e[12] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((t = (0, Q.jsx)(s, {
+      (e[22] === Symbol.for(`react.memo_cache_sentinel`)
+        ? ((t = (0, $.jsx)(c, {
             id: `settings.usage.load.loading`,
             defaultMessage: `Loading usage settings…`,
             description: `Loading label while usage settings are being fetched`,
           })),
-          (e[12] = t))
-        : (t = e[12]),
+          (e[22] = t))
+        : (t = e[22]),
         (n = t));
     }
     let i;
     return (
-      e[13] !== r || e[14] !== n
-        ? ((i = (0, Q.jsx)(wn, { title: S, rowLabel: n, rowControl: r })),
-          (e[13] = r),
-          (e[14] = n),
-          (e[15] = i))
-        : (i = e[15]),
+      e[23] !== r || e[24] !== n
+        ? ((i = (0, $.jsx)(Ut, { title: R, rowLabel: n, rowControl: r })),
+          (e[23] = r),
+          (e[24] = n),
+          (e[25] = i))
+        : (i = e[25]),
       i
     );
   }
-  if (t && p == null) return null;
-  let E;
-  e[16] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((E = (0, Q.jsx)(Sn, {})), (e[16] = E))
-    : (E = e[16]);
-  let D;
-  e[17] === a
-    ? (D = e[18])
-    : ((D = (0, Q.jsx)(nn, { plan: a })), (e[17] = a), (e[18] = D));
-  let O;
-  e[19] !== p ||
-  e[20] !== t ||
-  e[21] !== b ||
-  e[22] !== v ||
-  e[23] !== o?.credits ||
-  e[24] !== y
-    ? ((O =
-        t && p != null
-          ? (0, Q.jsx)(_t, {
-              serverState: p,
-              creditDetails: o?.credits ?? null,
-              enableAutoTopUpMutation: v,
-              updateAutoTopUpMutation: y,
-              disableAutoTopUpMutation: b,
+  if (t && _ == null) return null;
+  if (s) {
+    let t, n;
+    e[26] === Symbol.for(`react.memo_cache_sentinel`)
+      ? ((t = (0, $.jsx)(c, {
+          id: `settings.usage.enterprise.title`,
+          defaultMessage: `Usage limits`,
+          description: `Title for enterprise usage limits settings`,
+        })),
+        (n = (0, $.jsx)(c, {
+          id: `settings.usage.enterprise.subtitle`,
+          defaultMessage: `See your usage within the limits defined by your administrator.`,
+          description: `Subtitle for enterprise usage limits settings`,
+        })),
+        (e[26] = t),
+        (e[27] = n))
+      : ((t = e[26]), (n = e[27]));
+    let r = d ?? null,
+      i = C ?? null,
+      a = ee ?? null,
+      o;
+    return (
+      e[28] !== D ||
+      e[29] !== A ||
+      e[30] !== a ||
+      e[31] !== r ||
+      e[32] !== i ||
+      e[33] !== P.isPending ||
+      e[34] !== P.mutateAsync
+        ? ((o = (0, $.jsx)(le, {
+            title: t,
+            subtitle: n,
+            subtitleClassName: `whitespace-normal`,
+            titleStackClassName: `gap-2 pb-1`,
+            children: (0, $.jsx)(xt, {
+              rateLimitStatus: r,
+              showEnterpriseMonthlyUsageLimit: !0,
+              canRequestEnterpriseMonthlyUsageLimit: D,
+              workspaceMonthlyUsage: i,
+              workspaceAdminRequests: a,
+              isWorkspaceAdminRequestsLoading: A,
+              isSavingWorkspaceAdminRequest: P.isPending,
+              saveWorkspaceAdminRequest: P.mutateAsync,
+            }),
+          })),
+          (e[28] = D),
+          (e[29] = A),
+          (e[30] = a),
+          (e[31] = r),
+          (e[32] = i),
+          (e[33] = P.isPending),
+          (e[34] = P.mutateAsync),
+          (e[35] = o))
+        : (o = e[35]),
+      o
+    );
+  }
+  let B;
+  e[36] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((B = (0, $.jsx)(Vt, {})), (e[36] = B))
+    : (B = e[36]);
+  let V;
+  e[37] === a
+    ? (V = e[38])
+    : ((V = (0, $.jsx)(ut, { plan: a })), (e[37] = a), (e[38] = V));
+  let H;
+  e[39] !== _ ||
+  e[40] !== t ||
+  e[41] !== ne ||
+  e[42] !== F ||
+  e[43] !== d?.credits ||
+  e[44] !== I
+    ? ((H =
+        t && _ != null
+          ? (0, $.jsx)(De, {
+              serverState: _,
+              creditDetails: d?.credits ?? null,
+              enableAutoTopUpMutation: F,
+              updateAutoTopUpMutation: I,
+              disableAutoTopUpMutation: ne,
             })
           : null),
-      (e[19] = p),
-      (e[20] = t),
-      (e[21] = b),
-      (e[22] = v),
-      (e[23] = o?.credits),
-      (e[24] = y),
-      (e[25] = O))
-    : (O = e[25]);
-  let k = o ?? null,
-    A;
-  e[26] === k
-    ? (A = e[27])
-    : ((A = (0, Q.jsx)(fn, { rateLimitStatus: k })), (e[26] = k), (e[27] = A));
-  let j;
-  e[28] === a
-    ? (j = e[29])
-    : ((j = (0, Q.jsx)(rn, { plan: a })), (e[28] = a), (e[29] = j));
-  let M;
+      (e[39] = _),
+      (e[40] = t),
+      (e[41] = ne),
+      (e[42] = F),
+      (e[43] = d?.credits),
+      (e[44] = I),
+      (e[45] = H))
+    : (H = e[45]);
+  let ce = d ?? null,
+    U;
+  e[46] === ce
+    ? (U = e[47])
+    : ((U = (0, $.jsx)(xt, { rateLimitStatus: ce })),
+      (e[46] = ce),
+      (e[47] = U));
+  let W;
+  e[48] === a
+    ? (W = e[49])
+    : ((W = (0, $.jsx)(dt, { plan: a })), (e[48] = a), (e[49] = W));
+  let G;
   return (
-    e[30] !== D || e[31] !== O || e[32] !== A || e[33] !== j
-      ? ((M = (0, Q.jsxs)(ie, {
-          title: S,
-          subtitle: E,
+    e[50] !== U || e[51] !== W || e[52] !== V || e[53] !== H
+      ? ((G = (0, $.jsxs)(le, {
+          title: R,
+          subtitle: B,
           subtitleClassName: `whitespace-normal`,
           titleStackClassName: `gap-2 pb-1`,
-          children: [D, O, A, j],
+          children: [V, H, U, W],
         })),
-        (e[30] = D),
-        (e[31] = O),
-        (e[32] = A),
-        (e[33] = j),
-        (e[34] = M))
-      : (M = e[34]),
-    M
+        (e[50] = U),
+        (e[51] = W),
+        (e[52] = V),
+        (e[53] = H),
+        (e[54] = G))
+      : (G = e[54]),
+    G
   );
 }
-function Sn() {
-  let e = (0, J.c)(1),
-    t = Cn,
+function Vt() {
+  let e = (0, Y.c)(1),
+    t = Ht,
     n;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((n = (0, Q.jsx)(s, {
+      ? ((n = (0, $.jsx)(c, {
           id: `settings.usage.subtitle`,
           defaultMessage: `To view invoices, change your payment method, and take other actions, visit <settings>settings</settings> on Web`,
           description: `Subtitle pointing users to ChatGPT billing settings for broader billing actions`,
           values: {
             settings: (e) =>
-              (0, Q.jsx)(`a`, {
+              (0, $.jsx)(`a`, {
                 className: `inline-flex cursor-interaction text-token-text-link-foreground`,
-                href: A,
+                href: I,
                 target: `_blank`,
                 rel: `noreferrer`,
                 onClick: t,
@@ -4683,18 +2891,18 @@ function Sn() {
     n
   );
 }
-function Cn(e) {
-  (e.preventDefault(), m.dispatchMessage(`open-in-browser`, { url: A }));
+function Ht(e) {
+  (e.preventDefault(), p.dispatchMessage(`open-in-browser`, { url: I }));
 }
-function wn(e) {
-  let t = (0, J.c)(6),
+function Ut(e) {
+  let t = (0, Y.c)(6),
     { title: n, rowLabel: r, rowControl: i } = e,
     a;
   t[0] !== i || t[1] !== r
-    ? ((a = (0, Q.jsx)(q, {
-        children: (0, Q.jsx)(q.Content, {
-          children: (0, Q.jsx)(K, {
-            children: (0, Q.jsx)(ae, {
+    ? ((a = (0, $.jsx)(J, {
+        children: (0, $.jsx)(J.Content, {
+          children: (0, $.jsx)(q, {
+            children: (0, $.jsx)(ue, {
               className: `gap-6`,
               label: r,
               control: i,
@@ -4709,7 +2917,7 @@ function wn(e) {
   let o;
   return (
     t[3] !== a || t[4] !== n
-      ? ((o = (0, Q.jsx)(ie, { title: n, children: a })),
+      ? ((o = (0, $.jsx)(le, { title: n, children: a })),
         (t[3] = a),
         (t[4] = n),
         (t[5] = o))
@@ -4717,5 +2925,5 @@ function wn(e) {
     o
   );
 }
-export { xn as UsageSettings };
+export { Bt as UsageSettings };
 //# sourceMappingURL=usage-settings.js.map

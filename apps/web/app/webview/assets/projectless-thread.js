@@ -1,22 +1,38 @@
-import { l as e } from "./setting-storage.js";
-function t(e) {
+import { yt as e } from "./src-C.js";
+import { l as t } from "./setting-storage.js";
+function n(e) {
   return e.length === 0 || (e.length === 1 && e[0] === `~`);
 }
-async function n(n, { directoryName: r, prompt: i } = {}) {
-  if (!t(n))
+async function r(e, { directoryName: r, prompt: i } = {}) {
+  if (!n(e))
     return {
-      cwd: n[0] ?? null,
+      cwd: e[0] ?? null,
       projectlessOutputDirectory: null,
-      workspaceRoots: n,
+      workspaceRoots: e,
     };
   let {
     cwd: a,
     outputDirectory: o,
     workspaceRoot: s,
-  } = await e(`projectless-thread-cwd`, {
+  } = await t(`projectless-thread-cwd`, {
     params: { ...(r == null ? {} : { directoryName: r }), prompt: i ?? null },
   });
   return { cwd: a, projectlessOutputDirectory: o, workspaceRoots: [s] };
 }
-export { t as n, n as t };
+async function i({
+  projectId: n,
+  projectWritableRoots: r,
+  legacyRoot: i = n,
+  prompt: a,
+}) {
+  let o = e({ projectId: n, projectWritableRoots: r, legacyRoot: i });
+  if (o.length === 1) return { cwd: o[0], workspaceRoots: o };
+  let s = await t(`projectless-thread-cwd`, { params: { prompt: a ?? null } });
+  return {
+    cwd: s.cwd,
+    workspaceRoots: [s.workspaceRoot, ...o],
+    generatedWorkspace: s,
+  };
+}
+export { r as n, n as r, i as t };
 //# sourceMappingURL=projectless-thread.js.map

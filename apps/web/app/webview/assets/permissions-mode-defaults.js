@@ -1,9 +1,13 @@
-import { Wo as e, qo as t, zo as n } from "./app-server-manager-signals.js";
+import {
+  Hs as e,
+  Ps as t,
+  zs as n,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 var r = `agent-mode-by-host-id`,
-  i = n(r, {}),
-  a = n(`preferred-non-full-access-agent-mode-by-host-id`, {});
-function o(n, i) {
-  t(r, { ...e(r, {}), [n]: i });
+  i = t(r, {}),
+  a = t(`preferred-non-full-access-agent-mode-by-host-id`, {});
+function o(t, i) {
+  e(r, { ...n(r, {}), [t]: i });
 }
 function s(e, t) {
   return t[e] ?? null;

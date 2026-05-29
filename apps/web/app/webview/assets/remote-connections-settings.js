@@ -1,205 +1,218 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import {
-  $t as t,
-  Ar as n,
-  Mr as r,
-  Nr as i,
-  Pr as a,
-  hn as o,
-  ir as s,
-  mn as c,
-  v as l,
-  vn as u,
-} from "./src-BLHmAhbF.js";
+  An as t,
+  C as n,
+  Pn as r,
+  ai as i,
+  ci as a,
+  jn as o,
+  kr as s,
+  li as c,
+  mn as l,
+  si as u,
+} from "./src-C.js";
 import {
-  Ct as d,
-  Fa as f,
-  It as p,
-  Ta as m,
-  _o as h,
-  fo as g,
-  go as _,
-  ho as v,
-  ja as y,
+  Co as d,
+  Li as f,
+  Pt as p,
+  Xs as m,
+  at as h,
+  cs as g,
+  ds as _,
+  fo as v,
+  fs as y,
   l as b,
-  mo as x,
+  ls as x,
   po as S,
-  rt as C,
-  ts as w,
-  vo as T,
-  wa as E,
-  wt as D,
-} from "./app-server-manager-signals.js";
+  ps as C,
+  ss as w,
+  us as T,
+  xt as E,
+  yo as D,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as O, t as k } from "./jsx-runtime.js";
-import { t as A } from "./clsx.js";
-import "./react-dom.js";
+import { t as A } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
 import "./core.esm.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import {
-  B as j,
-  C as M,
-  H as N,
-  J as P,
-  S as F,
-  W as I,
-  X as ee,
-  Y as L,
-  a as R,
-  h as te,
-  i as z,
-  l as ne,
-  m as B,
-  w as re,
-  xt as V,
-  y as H,
+  C as j,
+  G as ee,
+  S as M,
+  U as N,
+  V as P,
+  X as F,
+  Y as I,
+  Z as te,
+  a as L,
+  h as ne,
+  i as re,
+  l as ie,
+  m as R,
+  w as ae,
+  wt as z,
+  y as B,
 } from "./setting-storage.js";
-import { r as U, t as ie } from "./product-logger.js";
-import { o as ae } from "./statsig.js";
-import { o as oe } from "./app-server-manager-hooks.js";
-import { t as W } from "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
-import { n as G, t as K } from "./device-connections.js";
-import { r as q } from "./remote-connection-visibility.js";
+import { r as V, t as H } from "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import { o as oe } from "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
+import { o as se } from "./app-server-manager-hooks.js";
+import { t as U } from "./use-global-state.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
+import { n as W, t as G } from "./device-connections.js";
+import { r as K } from "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./use-is-dark.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
+import "./apps-queries-CmwRqoKz.js";
+import "./startCase.js";
+import "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
 import "./connector-logo.js";
-import { r as J } from "./toast-signal.js";
+import { r as q } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import { t as se } from "./tooltip.js";
+import { t as J } from "./tooltip-CDzchJxN.js";
 import "./route-scope.js";
 import { t as Y } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import { t as ce } from "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./remote-projects.js";
 import "./proxy.js";
 import "./app-shell-state.js";
-import "./app-shell-panel-animation.js";
-import "./app-shell.js";
-import "./apps.js";
-import "./chats.js";
-import { t as le } from "./x.js";
-import "./plugin-install-store.js";
+import "./app-shell-D4HBgUPf.js";
+import "./apps-DwfMzB5Q.js";
+import "./chats-DoviPPWc.js";
+import { t as le } from "./x-C_RDKBp5.js";
+import "./projectless-thread.js";
+import "./plugin-install-store-Daxzgjai.js";
 import { t as ue } from "./use-platform.js";
-import "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
-import "./apps-queries.js";
-import "./startCase.js";
-import "./uniq.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
 import "./browser-sidebar-manager.js";
-import "./app-shell-tab-controller.js";
+import "./app-shell-tab-controller-BTWycTBb.js";
 import { t as de } from "./terminal.js";
-import { t as fe } from "./info.js";
+import { t as fe } from "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import "./download.js";
 import { t as pe } from "./with-window.js";
 import "./window-app-action-helpers.js";
-import "./plugin-config-edits.js";
-import { l as me } from "./use-plugin-install-flow.js";
+import { c as me, l as he } from "./use-plugin-install-flow.js";
 import {
   a as X,
-  d as he,
-  i as ge,
-  l as _e,
-  n as ve,
-  r as ye,
+  d as ge,
+  i as _e,
+  l as ve,
+  n as ye,
+  r as be,
 } from "./dialog-layout.js";
+import "./plugins-availability-txQMPSuC.js";
+import "./plugin-config-edits-DUMiyKty.js";
+import "./local-projects.js";
 import "./run-command.js";
+import { r as xe } from "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
 import "./use-stable-callback.js";
 import "./electron-menu-shortcuts.js";
-import "./use-skills.js";
-import { r as be } from "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
+import "./use-register-command.js";
 import "./homepage-logo.js";
 import "./loading-page.js";
-import "./sortable.esm.js";
-import "./use-resize-observer.js";
-import { t as xe } from "./check-md.js";
+import "./sortable.esm-BRPfvPzy.js";
+import "./use-resize-observer-DCpyQHos.js";
+import { t as Se } from "./check-md.js";
 import "./chevron-right.js";
 import "./context-menu.js";
+import "./command-keybindings-C3NM9T-L.js";
 import "./expand.js";
-import "./keyboard-modifier-state.js";
-import "./thread-side-panel-browser-tab-state.js";
-import "./command-keybindings.js";
+import "./keyboard-modifier-state-BKqcycjV.js";
 import "./arrow-left.js";
 import "./use-window-controls-safe-area.js";
 import "./app-shell-bottom-panel-scroll-sync.js";
-import "./check-circle.js";
-import "./phone.js";
+import "./codex-api-error-CsUcWied.js";
+import { t as Ce } from "./checkbox-DtuSNXXy.js";
+import "./minus.js";
+import "./links.js";
+import "./check-circle-hJ_ggIqT.js";
+import "./phone-B4TY4-zj.js";
 import "./badge.js";
 import "./search.js";
-import { r as Se, t as Ce } from "./dropdown.js";
-import "./globe.js";
+import { r as we, t as Te } from "./dropdown-DtQxMoJw.js";
+import "./globe-CnvlclXd.js";
 import "./three-dots.js";
-import { t as we } from "./trash.js";
-import "./chevron.js";
-import { t as Te } from "./use-app-server-connection-state.js";
-import { t as Ee } from "./format-relative-date-time.js";
-import "./remote-host-globe-icon.js";
-import "./cloud.js";
-import { t as De } from "./macbook.js";
-import "./worktree.js";
+import { t as Ee } from "./trash.js";
+import "./chevron-NmAOI_v1.js";
+import { t as De } from "./use-app-server-connection-state.js";
+import "./use-relative-now.js";
+import { t as Oe } from "./format-relative-date-time.js";
+import "./remote-host-globe-icon-DwUovbza.js";
+import "./cloud-BOSNAJnX.js";
+import { t as ke } from "./macbook.js";
+import "./worktree-D_6WAQVb.js";
 import "./thread-env-icon.js";
-import { t as Oe } from "./copy-to-clipboard.js";
-import { t as ke } from "./code.js";
-import "./chrome.js";
-import "./openai-blossom.js";
-import { t as Ae } from "./pencil.js";
+import { t as Ae } from "./copy-to-clipboard-C2Mq2hN-.js";
+import { t as je } from "./code-s3Scfd05.js";
+import "./chrome-ZI-wJE1V.js";
+import "./openai-blossom-CXnPbecc.js";
+import { t as Me } from "./pencil.js";
 import "./filesystem-media-src.js";
-import "./minus-D.js";
-import "./plugin-detail-page-utils.js";
-import "./plugin-detail-queries.js";
+import "./use-skills.js";
 import "./check-plugin-availability.js";
-import { n as je, t as Me } from "./app-server-connection-state.js";
-import "./alert-CbWF3t74.js";
-import { t as Ne } from "./laptop.js";
-import { t as Pe } from "./log-out.js";
-import { t as Fe } from "./toggle.js";
+import "./plugin-detail-queries.js";
+import { n as Ne, t as Pe } from "./app-server-connection-state.js";
+import "./alert-m4o6hR60.js";
+import { t as Fe } from "./laptop.js";
+import { t as Ie } from "./log-out.js";
+import { t as Le } from "./toggle.js";
+import "./app-connect-oauth-Cy-gX8IV.js";
 import "./computer-use-app-approvals-query.js";
-import "./bundled-plugin-auto-install-preference.js";
-import "./app-connect-oauth.js";
-import "./codex-api-error.js";
-import "./hooks-settings-queries.js";
-import { t as Ie } from "./regenerate.js";
-import { i as Le } from "./settings-shared.js";
-import { t as Re } from "./more-menu-trigger.js";
-import { t as ze } from "./large-empty-state.js";
-import { t as Be } from "./checkbox.js";
+import "./hooks-settings-queries-BUP-44jb.js";
+import { t as Re } from "./regenerate.js";
+import { i as ze } from "./settings-shared-BTHmEeQY.js";
+import { t as Be } from "./more-menu-trigger-DgGAgPrg.js";
+import { t as Ve } from "./large-empty-state-C2F-IvSK.js";
 import "./thread-page-header.js";
-import { t as Ve } from "./settings-content-layout.js";
-import { t as He } from "./sun.js";
-import { n as Ue } from "./settings-row-D.js";
-import { t as We } from "./settings-surface.js";
-import { t as Ge } from "./settings-group.js";
+import { t as He } from "./settings-content-layout.js";
+import { t as Ue } from "./sun.js";
+import { n as We } from "./settings-row.js";
+import { n as Ge, t as Ke } from "./settings-group.js";
 import "./local-remote-control-enabled-sync.js";
-import "./plugins-availability.js";
-import { a as Ke, i as qe, t as Je } from "./codex-mobile-setup-dialog.js";
+import { t as qe } from "./settings-empty-state-Bec-Sn2w.js";
+import {
+  a as Je,
+  i as Ye,
+  t as Xe,
+} from "./codex-mobile-setup-dialog-es3uf3kp.js";
 import "./chatgpt-token-auth.browser.js";
 import {
-  a as Ye,
-  c as Xe,
-  i as Ze,
-  n as Qe,
-  o as $e,
-  r as et,
-  s as tt,
-  t as nt,
+  a as Ze,
+  c as Qe,
+  i as $e,
+  n as et,
+  o as tt,
+  r as nt,
+  s as rt,
+  t as it,
 } from "./codex-mobile-setup-flow.js";
 import "./use-home-directory.js";
 import "./cursor.js";
 import "./segmented-toggle.js";
-import { r as rt, t as it } from "./onboarding-login-content.js";
-import { t as at } from "./tabs.js";
-import { t as ot } from "./useForm.js";
-import { t as st } from "./settings-empty-state.js";
+import { r as at, t as ot } from "./onboarding-login-content--MyCkfDo.js";
+import { t as st } from "./tabs.js";
+import { t as ct } from "./useForm-BsmKTTLN.js";
 var Z = e(O()),
   Q = k(),
-  ct = (e) =>
+  lt = (e) =>
     (0, Q.jsxs)(`svg`, {
       xmlns: `http://www.w3.org/2000/svg`,
       width: 77,
@@ -226,7 +239,7 @@ var Z = e(O()),
         }),
       ],
     }),
-  lt = (e) =>
+  ut = (e) =>
     (0, Q.jsxs)(`svg`, {
       xmlns: `http://www.w3.org/2000/svg`,
       width: 66,
@@ -253,8 +266,8 @@ var Z = e(O()),
         }),
       ],
     }),
-  $ = V(),
-  ut = (e) =>
+  $ = z(),
+  dt = (e) =>
     (0, Q.jsxs)(`svg`, {
       xmlns: `http://www.w3.org/2000/svg`,
       width: 61,
@@ -272,20 +285,20 @@ var Z = e(O()),
         }),
       ],
     });
-function dt(e) {
+function ft(e) {
   let t = (0, $.c)(2),
     { onClose: n } = e,
     r;
   return (
     t[0] === n
       ? (r = t[1])
-      : ((r = (0, Q.jsx)(nt, { onClose: n, variant: `dialog` })),
+      : ((r = (0, Q.jsx)(it, { onClose: n, variant: `dialog` })),
         (t[0] = n),
         (t[1] = r)),
     r
   );
 }
-var ft = (e) =>
+var pt = (e) =>
   (0, Q.jsx)(`svg`, {
     width: 20,
     height: 20,
@@ -298,46 +311,46 @@ var ft = (e) =>
       fill: `currentColor`,
     }),
   });
-function pt(e) {
+function mt(e) {
   switch (e.device_type) {
     case `phone`:
-      return (0, Q.jsx)(ft, { className: `icon-sm` });
+      return (0, Q.jsx)(pt, { className: `icon-sm` });
     case `laptop`:
-      return (0, Q.jsx)(De, { className: `icon-sm` });
+      return (0, Q.jsx)(ke, { className: `icon-sm` });
     case `desktop`:
-      return (0, Q.jsx)(Ne, { className: `icon-sm` });
+      return (0, Q.jsx)(Fe, { className: `icon-sm` });
     case null:
     case void 0:
     default:
-      return (0, Q.jsx)(Ne, { className: `icon-sm` });
+      return (0, Q.jsx)(Fe, { className: `icon-sm` });
   }
 }
-function mt(e) {
+function ht(e) {
   switch (e.clientType) {
     case `CODEX_CLI`:
       return (0, Q.jsx)(de, { className: `icon-sm` });
     case `CODEX_DESKTOP_APP`:
-      return (0, Q.jsx)(Ne, { className: `icon-sm` });
+      return (0, Q.jsx)(Fe, { className: `icon-sm` });
     case `CODEX_IDE_VSCODE`:
     case `CODEX_IDE_XCODE`:
     case `CODEX_IDE_JETBRAINS`:
-      return (0, Q.jsx)(ke, { className: `icon-sm` });
+      return (0, Q.jsx)(je, { className: `icon-sm` });
     case `CODEX_UNKNOWN`:
-      return (0, Q.jsx)(Ne, { className: `icon-sm` });
+      return (0, Q.jsx)(Fe, { className: `icon-sm` });
   }
 }
-var ht = `remote-control-client-revoke-success`,
-  gt = `remote-control-client-revoke-error`,
-  _t = `[remote-connections/settings]`;
-function vt() {
+var gt = `remote-control-client-revoke-success`,
+  _t = `remote-control-client-revoke-error`,
+  vt = `[remote-connections/settings]`;
+function yt() {
   let e = (0, $.c)(2),
-    { data: t, isLoading: n } = W(s.CODEX_MOBILE_SETUP_COMPLETED);
+    { data: t, isLoading: n } = U(s.CODEX_MOBILE_SETUP_COMPLETED);
   if (n) return null;
   if (!t) {
     let t;
     return (
       e[0] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((t = (0, Q.jsx)(bt, { mode: `setup` })), (e[0] = t))
+        ? ((t = (0, Q.jsx)(xt, { mode: `setup` })), (e[0] = t))
         : (t = e[0]),
       t
     );
@@ -346,37 +359,36 @@ function vt() {
   return (
     e[1] === Symbol.for(`react.memo_cache_sentinel`)
       ? ((r = (0, Q.jsxs)(Q.Fragment, {
-          children: [(0, Q.jsx)(bt, { mode: `manage` }), (0, Q.jsx)(yt, {})],
+          children: [(0, Q.jsx)(xt, { mode: `manage` }), (0, Q.jsx)(bt, {})],
         })),
         (e[1] = r))
       : (r = e[1]),
     r
   );
 }
-function yt() {
-  let e = (0, $.c)(24),
-    t = L(F),
-    n = I(),
-    { platform: r } = ue(),
-    i = r !== `windows`,
-    a = R(l.keepRemoteControlAwakeWhilePluggedIn),
-    o = P(p, m),
+function bt() {
+  let e = (0, $.c)(35),
+    t = F(M),
+    r = ee(),
+    { platform: i } = ue(),
+    a = L(n.keepRemoteControlAwakeWhilePluggedIn),
+    o = I(p, S),
     s;
   e[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((s = { hostId: m }), (e[0] = s))
+    ? ((s = { hostId: S }), (e[0] = s))
     : (s = e[0]);
-  let c = Qe(s),
-    u;
-  e[1] !== n || e[2] !== t || e[3] !== c
-    ? ((u = (e) => {
-        (ie(t, {
+  let c = et(s),
+    l;
+  e[1] !== r || e[2] !== t || e[3] !== c
+    ? ((l = (e) => {
+        (H(t, {
           eventName: `codex_remote_control_host_toggle_clicked`,
           metadata: { enabled: e },
         }),
           c.mutate(e, {
             onError: () => {
-              t.get(J).danger(
-                n.formatMessage({
+              t.get(q).danger(
+                r.formatMessage({
                   id: `settings.remoteConnections.localHost.remoteControlUpdateError`,
                   defaultMessage: `Couldn’t update remote control availability`,
                   description: `Toast shown when enabling or disabling local remote control fails`,
@@ -385,132 +397,154 @@ function yt() {
             },
           }));
       }),
-      (e[1] = n),
+      (e[1] = r),
       (e[2] = t),
       (e[3] = c),
-      (e[4] = u))
-    : (u = e[4]);
-  let d = u,
-    f;
+      (e[4] = l))
+    : (l = e[4]);
+  let u = l,
+    d;
   e[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((f = (0, Q.jsx)(Ge.Header, {
+    ? ((d = (0, Q.jsx)(Ke.Header, {
         title: (0, Q.jsx)(N, {
           id: `settings.remoteConnections.localHost.otherSettings.title`,
           defaultMessage: `Other settings`,
           description: `Header title for additional local remote control settings`,
         }),
       })),
-      (e[5] = f))
-    : (f = e[5]);
-  let h, g, _;
+      (e[5] = d))
+    : (d = e[5]);
+  let f, m, h;
   e[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = (0, Q.jsx)(Ke, { className: `icon-sm` })),
-      (g = (0, Q.jsx)(N, {
+    ? ((f = (0, Q.jsx)(Je, { className: `icon-sm` })),
+      (m = (0, Q.jsx)(N, {
         id: `settings.remoteConnections.localHost.remoteControl.label`,
         defaultMessage: `Allow this device to be discovered and controlled`,
         description: `Label for allowing remote control on this device`,
       })),
-      (_ = (0, Q.jsx)(N, {
+      (h = (0, Q.jsx)(N, {
         id: `settings.remoteConnections.localHost.remoteControl.description`,
         defaultMessage: `Authorized devices on your ChatGPT account can discover and control this device`,
         description: `Description for allowing remote control on this device`,
       })),
-      (e[6] = h),
-      (e[7] = g),
-      (e[8] = _))
-    : ((h = e[6]), (g = e[7]), (_ = e[8]));
-  let v = c.isPending,
-    y;
-  e[9] === n
-    ? (y = e[10])
-    : ((y = n.formatMessage({
+      (e[6] = f),
+      (e[7] = m),
+      (e[8] = h))
+    : ((f = e[6]), (m = e[7]), (h = e[8]));
+  let g = c.isPending,
+    _;
+  e[9] === r
+    ? (_ = e[10])
+    : ((_ = r.formatMessage({
         id: `settings.remoteConnections.localHost.remoteControl.label`,
         defaultMessage: `Allow this device to be discovered and controlled`,
         description: `Label for allowing remote control on this device`,
       })),
-      (e[9] = n),
-      (e[10] = y));
-  let b;
-  e[11] !== d || e[12] !== o || e[13] !== c.isPending || e[14] !== y
-    ? ((b = (0, Q.jsx)(Ue, {
-        icon: h,
-        label: g,
-        description: _,
-        control: (0, Q.jsx)(Fe, {
+      (e[9] = r),
+      (e[10] = _));
+  let v;
+  e[11] !== u || e[12] !== o || e[13] !== c.isPending || e[14] !== _
+    ? ((v = (0, Q.jsx)(We, {
+        icon: f,
+        label: m,
+        description: h,
+        control: (0, Q.jsx)(Le, {
           checked: o,
-          disabled: v,
-          onChange: d,
-          ariaLabel: y,
+          disabled: g,
+          onChange: u,
+          ariaLabel: _,
         }),
       })),
-      (e[11] = d),
+      (e[11] = u),
       (e[12] = o),
       (e[13] = c.isPending),
-      (e[14] = y),
-      (e[15] = b))
-    : (b = e[15]);
+      (e[14] = _),
+      (e[15] = v))
+    : (v = e[15]);
+  let y;
+  e[16] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((y = (0, Q.jsx)(Ue, { className: `icon-sm` })), (e[16] = y))
+    : (y = e[16]);
+  let b;
+  e[17] === i
+    ? (b = e[18])
+    : ((b =
+        i === `windows`
+          ? (0, Q.jsx)(N, { ...Dt.keepLiveWindowsLabel })
+          : (0, Q.jsx)(N, { ...Dt.keepLiveMacLabel })),
+      (e[17] = i),
+      (e[18] = b));
   let x;
-  e[16] !== n || e[17] !== a || e[18] !== t || e[19] !== i
-    ? ((x = i
-        ? (0, Q.jsx)(Ue, {
-            icon: (0, Q.jsx)(He, { className: `icon-sm` }),
-            label: (0, Q.jsx)(N, {
-              id: `settings.remoteConnections.localHost.keepLive.label`,
-              defaultMessage: `Keep this Mac awake`,
-              description: `Label for keeping the local Mac awake`,
-            }),
-            description: (0, Q.jsx)(N, {
-              id: `settings.remoteConnections.localHost.keepLive.description`,
-              defaultMessage: `Prevent sleep when computer is plugged in and remote access is enabled`,
-              description: `Description for keeping the local Mac awake`,
-            }),
-            control: (0, Q.jsx)(Fe, {
-              checked: a ?? !1,
-              onChange: (e) => {
-                z(t, l.keepRemoteControlAwakeWhilePluggedIn, e);
-              },
-              ariaLabel: n.formatMessage({
-                id: `settings.remoteConnections.localHost.keepLive.label`,
-                defaultMessage: `Keep this Mac awake`,
-                description: `Label for keeping the local Mac awake`,
-              }),
-            }),
-          })
-        : null),
-      (e[16] = n),
-      (e[17] = a),
-      (e[18] = t),
-      (e[19] = i),
-      (e[20] = x))
-    : (x = e[20]);
-  let S;
+  e[19] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((x = (0, Q.jsx)(N, {
+        id: `settings.remoteConnections.localHost.keepLive.description`,
+        defaultMessage: `Prevent sleep when computer is plugged in and remote access is enabled`,
+        description: `Description for keeping the local computer awake`,
+      })),
+      (e[19] = x))
+    : (x = e[19]);
+  let C = a ?? !1,
+    w;
+  e[20] === t
+    ? (w = e[21])
+    : ((w = (e) => {
+        re(t, n.keepRemoteControlAwakeWhilePluggedIn, e);
+      }),
+      (e[20] = t),
+      (e[21] = w));
+  let T;
+  e[22] !== r || e[23] !== i
+    ? ((T =
+        i === `windows`
+          ? r.formatMessage(Dt.keepLiveWindowsLabel)
+          : r.formatMessage(Dt.keepLiveMacLabel)),
+      (e[22] = r),
+      (e[23] = i),
+      (e[24] = T))
+    : (T = e[24]);
+  let E;
+  e[25] !== C || e[26] !== w || e[27] !== T
+    ? ((E = (0, Q.jsx)(Le, { checked: C, onChange: w, ariaLabel: T })),
+      (e[25] = C),
+      (e[26] = w),
+      (e[27] = T),
+      (e[28] = E))
+    : (E = e[28]);
+  let D;
+  e[29] !== b || e[30] !== E
+    ? ((D = (0, Q.jsx)(We, { icon: y, label: b, description: x, control: E })),
+      (e[29] = b),
+      (e[30] = E),
+      (e[31] = D))
+    : (D = e[31]);
+  let O;
   return (
-    e[21] !== b || e[22] !== x
-      ? ((S = (0, Q.jsxs)(Ge, {
+    e[32] !== D || e[33] !== v
+      ? ((O = (0, Q.jsxs)(Ke, {
           children: [
-            f,
-            (0, Q.jsx)(Ge.Content, {
-              children: (0, Q.jsxs)(We, { children: [b, x] }),
+            d,
+            (0, Q.jsx)(Ke.Content, {
+              children: (0, Q.jsxs)(Ge, { children: [v, D] }),
             }),
           ],
         })),
-        (e[21] = b),
-        (e[22] = x),
-        (e[23] = S))
-      : (S = e[23]),
-    S
+        (e[32] = D),
+        (e[33] = v),
+        (e[34] = O))
+      : (O = e[34]),
+    O
   );
 }
-function bt(e) {
+function xt(e) {
   let t = (0, $.c)(81),
     { mode: n } = e,
-    r = L(F),
-    i = I(),
+    r = F(M),
+    i = ee(),
     { platform: a } = ue(),
     [o, s] = (0, Z.useState)(null),
     [c, l] = (0, Z.useState)(null),
-    [u] = E(`local_remote_control_client_id`),
-    d = ee(et),
+    [u] = v(`local_remote_control_client_id`),
+    d = te(nt),
     f = o === `waiting`,
     p;
   t[0] !== c || t[1] !== u || t[2] !== f
@@ -524,136 +558,136 @@ function bt(e) {
       (t[2] = f),
       (t[3] = p))
     : (p = t[3]);
-  let m = $e(P(Ze, p).data, u),
-    h = o === `waiting` && c != null ? Ye(m, c) : null,
+  let m = tt(I($e, p).data, u),
+    h = o === `waiting` && c != null ? Ze(m, c) : null,
     g = h === `connected` ? `connected` : h === `dismiss` ? null : o,
     _;
   t[4] === r.query
     ? (_ = t[5])
-    : ((_ = r.query.snapshot(et)), (t[4] = r.query), (t[5] = _));
-  let v = _,
-    y;
-  t[6] !== i || t[7] !== v || t[8] !== r
-    ? ((y = (e, t) => {
+    : ((_ = r.query.snapshot(nt)), (t[4] = r.query), (t[5] = _));
+  let y = _,
+    b;
+  t[6] !== i || t[7] !== y || t[8] !== r
+    ? ((b = (e, t) => {
         let { clientId: n } = t;
-        (ie(r, {
+        (H(r, {
           eventName: `codex_remote_control_client_revoke_result`,
           metadata: { result: `succeeded` },
         }),
-          v.setData((e) => e?.filter((e) => e.client_id !== n)),
-          v.invalidate(),
-          r.get(J).success(
+          y.setData((e) => e?.filter((e) => e.client_id !== n)),
+          y.invalidate(),
+          r.get(q).success(
             i.formatMessage({
               id: `settings.remoteConnections.remoteControlClients.revoke.success`,
               defaultMessage: `Revoked device access`,
               description: `Toast shown when access for a remote control client is revoked`,
             }),
-            { id: ht },
+            { id: gt },
           ));
       }),
       (t[6] = i),
-      (t[7] = v),
+      (t[7] = y),
       (t[8] = r),
-      (t[9] = y))
-    : (y = t[9]);
-  let b;
+      (t[9] = b))
+    : (b = t[9]);
+  let x;
   t[10] !== i || t[11] !== r
-    ? ((b = (e, t) => {
+    ? ((x = (e, t) => {
         let { clientId: n } = t;
-        (ie(r, {
+        (H(r, {
           eventName: `codex_remote_control_client_revoke_result`,
           metadata: { result: `failed` },
         }),
-          M.warning(`${_t} remote_control_client_revoke_failed`, {
+          j.warning(`${vt} remote_control_client_revoke_failed`, {
             safe: {},
             sensitive: { clientId: n, error: e },
           }),
-          r.get(J).danger(
+          r.get(q).danger(
             i.formatMessage({
               id: `settings.remoteConnections.remoteControlClients.revoke.error`,
               defaultMessage: `Failed to revoke device access`,
               description: `Toast shown when access for a remote control client cannot be revoked`,
             }),
-            { id: gt },
+            { id: _t },
           ));
       }),
       (t[10] = i),
       (t[11] = r),
-      (t[12] = b))
-    : (b = t[12]);
-  let x;
-  t[13] !== y || t[14] !== b
-    ? ((x = { mutationFn: Xe, onSuccess: y, onError: b }),
-      (t[13] = y),
-      (t[14] = b),
-      (t[15] = x))
-    : (x = t[15]);
-  let S = re(x),
-    C;
+      (t[12] = x))
+    : (x = t[12]);
+  let S;
+  t[13] !== b || t[14] !== x
+    ? ((S = { mutationFn: Qe, onSuccess: b, onError: x }),
+      (t[13] = b),
+      (t[14] = x),
+      (t[15] = S))
+    : (S = t[15]);
+  let C = ae(S),
+    w;
   t[16] !== u || t[17] !== d.data
-    ? ((C = $e(d.data, u)), (t[16] = u), (t[17] = d.data), (t[18] = C))
-    : (C = t[18]);
-  let w = C,
-    T = w?.length,
-    D = d.error instanceof tt,
+    ? ((w = tt(d.data, u)), (t[16] = u), (t[17] = d.data), (t[18] = w))
+    : (w = t[18]);
+  let T = w,
+    E = T?.length,
+    D = d.error instanceof rt,
     O,
     k;
-  (t[19] !== n || t[20] !== T || t[21] !== d.isLoading || t[22] !== r
+  (t[19] !== n || t[20] !== E || t[21] !== d.isLoading || t[22] !== r
     ? ((O = () => {
         n !== `manage` ||
           d.isLoading ||
-          T == null ||
-          ie(r, {
+          E == null ||
+          H(r, {
             eventName: `codex_remote_control_client_inventory_loaded`,
-            metadata: { client_count: T },
+            metadata: { client_count: E },
           });
       }),
-      (k = [n, T, d.isLoading, r]),
+      (k = [n, E, d.isLoading, r]),
       (t[19] = n),
-      (t[20] = T),
+      (t[20] = E),
       (t[21] = d.isLoading),
       (t[22] = r),
       (t[23] = O),
       (t[24] = k))
     : ((O = t[23]), (k = t[24])),
     (0, Z.useEffect)(O, k));
-  let A = S.isPending ? S.variables?.clientId : null,
-    j;
-  t[25] !== n || t[26] !== T || t[27] !== w || t[28] !== r
-    ? ((j = () => {
+  let A = C.isPending ? C.variables?.clientId : null,
+    P;
+  t[25] !== n || t[26] !== E || t[27] !== T || t[28] !== r
+    ? ((P = () => {
         if (
-          (ie(r, {
+          (H(r, {
             eventName: `codex_remote_control_add_device_started`,
-            metadata: { existing_client_count: T ?? 0, source: n },
+            metadata: { existing_client_count: E ?? 0, source: n },
           }),
           n === `setup`)
         ) {
-          be(r, dt);
+          xe(r, ft);
           return;
         }
-        (l(new Set(w?.map(Ct))), s(`waiting`));
+        (l(new Set(T?.map(wt))), s(`waiting`));
       }),
       (t[25] = n),
-      (t[26] = T),
-      (t[27] = w),
+      (t[26] = E),
+      (t[27] = T),
       (t[28] = r),
-      (t[29] = j))
-    : (j = t[29]);
-  let R = j,
-    te;
-  t[30] === v
-    ? (te = t[31])
-    : ((te = () => {
-        (s(null), l(null), v.invalidate());
+      (t[29] = P))
+    : (P = t[29]);
+  let L = P,
+    ne;
+  t[30] === y
+    ? (ne = t[31])
+    : ((ne = () => {
+        (s(null), l(null), y.invalidate());
       }),
-      (t[30] = v),
-      (t[31] = te));
-  let z = te,
-    ne = (w?.length ?? 0) > 0,
-    B;
+      (t[30] = y),
+      (t[31] = ne));
+  let re = ne,
+    ie = (T?.length ?? 0) > 0,
+    R;
   t[32] === a
-    ? (B = t[33])
-    : ((B =
+    ? (R = t[33])
+    : ((R =
         a === `windows`
           ? (0, Q.jsx)(N, {
               id: `settings.remoteConnections.remoteControlClients.devices.title.windows`,
@@ -666,15 +700,15 @@ function bt(e) {
               description: `Header title for devices that can control this Mac`,
             })),
       (t[32] = a),
-      (t[33] = B));
-  let V;
-  t[34] !== R || t[35] !== ne || t[36] !== n || t[37] !== d.isLoading
-    ? ((V =
-        n === `manage` && ne
+      (t[33] = R));
+  let z;
+  t[34] !== L || t[35] !== ie || t[36] !== n || t[37] !== d.isLoading
+    ? ((z =
+        n === `manage` && ie
           ? (0, Q.jsx)(Y, {
               color: `secondary`,
               disabled: d.isLoading,
-              onClick: R,
+              onClick: L,
               children: (0, Q.jsx)(N, {
                 id: `settings.remoteConnections.add.short`,
                 defaultMessage: `Add`,
@@ -682,24 +716,24 @@ function bt(e) {
               }),
             })
           : null),
-      (t[34] = R),
-      (t[35] = ne),
+      (t[34] = L),
+      (t[35] = ie),
       (t[36] = n),
       (t[37] = d.isLoading),
-      (t[38] = V))
-    : (V = t[38]);
-  let H;
-  t[39] !== B || t[40] !== V
-    ? ((H = (0, Q.jsx)(Ge.Header, { title: B, actions: V })),
-      (t[39] = B),
-      (t[40] = V),
-      (t[41] = H))
-    : (H = t[41]);
-  let U;
-  t[42] !== R || t[43] !== n || t[44] !== a
-    ? ((U =
+      (t[38] = z))
+    : (z = t[38]);
+  let B;
+  t[39] !== R || t[40] !== z
+    ? ((B = (0, Q.jsx)(Ke.Header, { title: R, actions: z })),
+      (t[39] = R),
+      (t[40] = z),
+      (t[41] = B))
+    : (B = t[41]);
+  let V;
+  t[42] !== L || t[43] !== n || t[44] !== a
+    ? ((V =
         n === `setup`
-          ? (0, Q.jsx)(ze, {
+          ? (0, Q.jsx)(Ve, {
               spacing: `compact`,
               title: null,
               description:
@@ -714,12 +748,12 @@ function bt(e) {
                       defaultMessage: `Control this Mac from your phone or other device`,
                       description: `Description shown before local remote control setup has started`,
                     }),
-              illustration: (0, Q.jsx)(ut, {
+              illustration: (0, Q.jsx)(dt, {
                 className: `h-6 w-auto text-token-text-primary`,
               }),
               actions: (0, Q.jsx)(Y, {
                 color: `secondary`,
-                onClick: R,
+                onClick: L,
                 children: (0, Q.jsx)(N, {
                   id: `settings.remoteConnections.remoteControlClients.setup.action`,
                   defaultMessage: `Set up`,
@@ -728,14 +762,14 @@ function bt(e) {
               }),
             })
           : null),
-      (t[42] = R),
+      (t[42] = L),
       (t[43] = n),
       (t[44] = a),
-      (t[45] = U))
-    : (U = t[45]);
-  let ae;
+      (t[45] = V))
+    : (V = t[45]);
+  let oe;
   t[46] !== n || t[47] !== d.isLoading
-    ? ((ae =
+    ? ((oe =
         n === `manage` &&
         d.isLoading &&
         (0, Q.jsxs)(`div`, {
@@ -751,17 +785,17 @@ function bt(e) {
         })),
       (t[46] = n),
       (t[47] = d.isLoading),
-      (t[48] = ae))
-    : (ae = t[48]);
-  let oe;
+      (t[48] = oe))
+    : (oe = t[48]);
+  let se;
   t[49] !== n ||
   t[50] !== D ||
   t[51] !== d.isError ||
   t[52] !== d.isFetching ||
   t[53] !== r
-    ? ((oe =
+    ? ((se =
         n === `manage` && d.isError
-          ? (0, Q.jsx)(ze, {
+          ? (0, Q.jsx)(Ve, {
               spacing: `compact`,
               title: (0, Q.jsx)(N, {
                 id: `settings.remoteConnections.remoteControlClients.loadError.title`,
@@ -783,7 +817,7 @@ function bt(e) {
                 color: `secondary`,
                 disabled: d.isFetching,
                 onClick: () => {
-                  r.get(et).refetch();
+                  r.get(nt).refetch();
                 },
                 children: (0, Q.jsx)(N, {
                   id: `settings.remoteConnections.remoteControlClients.loadError.retry`,
@@ -798,21 +832,21 @@ function bt(e) {
       (t[51] = d.isError),
       (t[52] = d.isFetching),
       (t[53] = r),
-      (t[54] = oe))
-    : (oe = t[54]);
-  let W;
-  t[55] !== R ||
+      (t[54] = se))
+    : (se = t[54]);
+  let U;
+  t[55] !== L ||
   t[56] !== n ||
   t[57] !== a ||
-  t[58] !== w?.length ||
+  t[58] !== T?.length ||
   t[59] !== d.isError ||
   t[60] !== d.isLoading
-    ? ((W =
+    ? ((U =
         n === `manage` &&
         !d.isLoading &&
         !d.isError &&
-        w?.length === 0 &&
-        (0, Q.jsx)(ze, {
+        T?.length === 0 &&
+        (0, Q.jsx)(Ve, {
           spacing: `compact`,
           title: null,
           description:
@@ -827,12 +861,12 @@ function bt(e) {
                   defaultMessage: `Add device to control this Mac remotely`,
                   description: `Empty state for devices that can control the local computer`,
                 }),
-          illustration: (0, Q.jsx)(ut, {
+          illustration: (0, Q.jsx)(dt, {
             className: `h-6 w-auto text-token-text-primary`,
           }),
           actions: (0, Q.jsx)(Y, {
             color: `secondary`,
-            onClick: R,
+            onClick: L,
             children: (0, Q.jsx)(N, {
               id: `settings.remoteConnections.add.short`,
               defaultMessage: `Add`,
@@ -840,35 +874,35 @@ function bt(e) {
             }),
           }),
         })),
-      (t[55] = R),
+      (t[55] = L),
       (t[56] = n),
       (t[57] = a),
-      (t[58] = w?.length),
+      (t[58] = T?.length),
       (t[59] = d.isError),
       (t[60] = d.isLoading),
-      (t[61] = W))
-    : (W = t[61]);
-  let G;
+      (t[61] = U))
+    : (U = t[61]);
+  let W;
   t[62] !== n ||
-  t[63] !== w ||
+  t[63] !== T ||
   t[64] !== d.isError ||
-  t[65] !== S ||
+  t[65] !== C ||
   t[66] !== A
-    ? ((G =
+    ? ((W =
         n === `manage` && !d.isError
-          ? w?.map((e) =>
+          ? T?.map((e) =>
               (0, Q.jsx)(
-                Ue,
+                We,
                 {
-                  icon: pt(e),
-                  label: wt(e),
-                  description: Tt(e),
+                  icon: mt(e),
+                  label: Tt(e),
+                  description: Et(e),
                   control: (0, Q.jsx)(Y, {
                     color: `secondary`,
-                    disabled: S.isPending,
+                    disabled: C.isPending,
                     loading: A === e.client_id,
                     onClick: () => {
-                      S.mutate({ clientId: e.client_id });
+                      C.mutate({ clientId: e.client_id });
                     },
                     children: (0, Q.jsx)(N, {
                       id: `settings.remoteConnections.remoteControlClients.revoke`,
@@ -882,66 +916,66 @@ function bt(e) {
             )
           : null),
       (t[62] = n),
-      (t[63] = w),
+      (t[63] = T),
       (t[64] = d.isError),
-      (t[65] = S),
+      (t[65] = C),
       (t[66] = A),
-      (t[67] = G))
-    : (G = t[67]);
-  let K;
-  t[68] !== U || t[69] !== ae || t[70] !== oe || t[71] !== W || t[72] !== G
-    ? ((K = (0, Q.jsx)(Ge.Content, {
-        children: (0, Q.jsxs)(We, { children: [U, ae, oe, W, G] }),
+      (t[67] = W))
+    : (W = t[67]);
+  let G;
+  t[68] !== V || t[69] !== oe || t[70] !== se || t[71] !== U || t[72] !== W
+    ? ((G = (0, Q.jsx)(Ke.Content, {
+        children: (0, Q.jsxs)(Ge, { children: [V, oe, se, U, W] }),
       })),
-      (t[68] = U),
-      (t[69] = ae),
-      (t[70] = oe),
-      (t[71] = W),
-      (t[72] = G),
-      (t[73] = K))
-    : (K = t[73]);
-  let q;
-  t[74] !== z || t[75] !== g
-    ? ((q =
+      (t[68] = V),
+      (t[69] = oe),
+      (t[70] = se),
+      (t[71] = U),
+      (t[72] = W),
+      (t[73] = G))
+    : (G = t[73]);
+  let K;
+  t[74] !== re || t[75] !== g
+    ? ((K =
         g == null
           ? null
-          : (0, Q.jsx)(Je, {
+          : (0, Q.jsx)(Xe, {
               open: !0,
               showStartSetupError: !1,
               setupInProgress: !1,
               step: g,
-              onAllowHost: St,
+              onAllowHost: Ct,
               onOpenChange: (e) => {
-                e || z();
+                e || re();
               },
-              onSkip: z,
-              onStartSetup: xt,
+              onSkip: re,
+              onStartSetup: St,
             })),
-      (t[74] = z),
+      (t[74] = re),
       (t[75] = g),
-      (t[76] = q))
-    : (q = t[76]);
-  let se;
+      (t[76] = K))
+    : (K = t[76]);
+  let J;
   return (
-    t[77] !== H || t[78] !== K || t[79] !== q
-      ? ((se = (0, Q.jsxs)(Ge, { children: [H, K, q] })),
-        (t[77] = H),
-        (t[78] = K),
-        (t[79] = q),
-        (t[80] = se))
-      : (se = t[80]),
-    se
+    t[77] !== B || t[78] !== G || t[79] !== K
+      ? ((J = (0, Q.jsxs)(Ke, { children: [B, G, K] })),
+        (t[77] = B),
+        (t[78] = G),
+        (t[79] = K),
+        (t[80] = J))
+      : (J = t[80]),
+    J
   );
 }
-function xt() {}
 function St() {}
-function Ct(e) {
+function Ct() {}
+function wt(e) {
   return e.client_id;
 }
-function wt(e) {
+function Tt(e) {
   return e.display_name ?? e.device_model ?? e.platform ?? e.client_id;
 }
-function Tt(e) {
+function Et(e) {
   return e.last_seen_at == null
     ? (0, Q.jsx)(N, {
         id: `settings.remoteConnections.remoteControlClients.authorized`,
@@ -953,114 +987,126 @@ function Tt(e) {
         defaultMessage: `Last connected {date}`,
         description: `Description for when a device that can control this computer was last seen`,
         values: {
-          date: (0, Q.jsx)(Ee, { dateString: e.last_seen_at }, `last-seen-at`),
+          date: (0, Q.jsx)(Oe, { dateString: e.last_seen_at }, `last-seen-at`),
         },
       });
 }
-var Et = `[remote-connections/auth]`;
-function Dt({ hostId: e, open: n, onOpenChange: r }) {
-  let i = L(F),
-    a = I(),
-    [o, s] = (0, Z.useState)(null),
-    [c, l] = (0, Z.useState)(``),
+var Dt = P({
+    keepLiveMacLabel: {
+      id: `settings.remoteConnections.localHost.keepLive.label`,
+      defaultMessage: `Keep this Mac awake`,
+      description: `Label for keeping the local Mac awake`,
+    },
+    keepLiveWindowsLabel: {
+      id: `settings.remoteConnections.localHost.keepLive.label.windows`,
+      defaultMessage: `Keep this PC awake`,
+      description: `Label for keeping the local Windows device awake`,
+    },
+  }),
+  Ot = `[remote-connections/auth]`;
+function kt({ hostId: e, open: t, onOpenChange: n }) {
+  let r = F(M),
+    i = ee(),
+    [a, o] = (0, Z.useState)(null),
+    [s, c] = (0, Z.useState)(``),
     [u, d] = (0, Z.useState)(!1),
     [f, p] = (0, Z.useState)(!1),
-    m = o != null,
-    h = () => {
-      (s(null), l(``), d(!1), p(!1));
+    h = a != null,
+    g = () => {
+      (o(null), c(``), d(!1), p(!1));
     },
-    g = ({ abortPendingLogin: e }) => {
-      (e && o?.abort(), h(), r(!1));
+    _ = ({ abortPendingLogin: e }) => {
+      (e && a?.abort(), g(), n(!1));
     },
-    _ = (e) => {
-      i.get(J).warning(
-        a.formatMessage(
+    v = (e) => {
+      r.get(q).warning(
+        i.formatMessage(
           {
             id: `settings.remoteConnections.auth.error`,
             defaultMessage: `Sign-in failed: {message}`,
             description: `Toast shown when remote connection authentication fails`,
           },
-          { message: t(e) },
+          { message: l(e) },
         ),
       );
     },
-    v = async () => {
+    y = async () => {
       if (e == null) {
-        _(`Remote connection manager is unavailable.`);
+        v(`Remote connection manager is unavailable.`);
         return;
       }
-      if (m) {
-        (o?.abort(), s(null));
+      if (h) {
+        (a?.abort(), o(null));
         return;
       }
       let t = new AbortController();
-      s(t);
+      o(t);
       try {
-        let { authUrl: n, completion: r } = await rt({
+        let { authUrl: n, completion: r } = await at({
           hostId: e,
           signal: t.signal,
         });
-        H.dispatchMessage(`open-in-browser`, { url: n });
+        B.dispatchMessage(`open-in-browser`, { url: n });
         let i = await r;
         if (!i.success) {
-          (M.warning(`${Et} chatgpt_sign_in_failed`, {
+          (j.warning(`${Ot} chatgpt_sign_in_failed`, {
             safe: {},
             sensitive: { hostId: e, error: i.error ?? `Unknown error` },
           }),
-            _(i.error ?? `Unknown error`));
+            v(i.error ?? `Unknown error`));
           return;
         }
-        g({ abortPendingLogin: !1 });
+        _({ abortPendingLogin: !1 });
       } catch (t) {
         if (t?.name === `AbortError`) return;
-        (M.warning(`${Et} chatgpt_sign_in_failed`, {
+        (j.warning(`${Ot} chatgpt_sign_in_failed`, {
           safe: {},
           sensitive: { error: t, hostId: e },
         }),
-          _(t));
+          v(t));
       } finally {
-        s(null);
+        o(null);
       }
     },
-    y = async () => {
+    b = async () => {
       if (e == null) {
-        _(`Remote connection manager is unavailable.`);
+        v(`Remote connection manager is unavailable.`);
         return;
       }
-      let t = c.trim();
+      let t = s.trim();
       if (!(!t || f)) {
         p(!0);
         try {
-          (await w(`login-with-api-key-for-host`, { hostId: e, apiKey: t }),
-            g({ abortPendingLogin: !1 }));
+          (await m(`login-with-api-key-for-host`, { hostId: e, apiKey: t }),
+            _({ abortPendingLogin: !1 }));
         } catch (t) {
-          (M.warning(`${Et} api_key_sign_in_failed`, {
+          (j.warning(`${Ot} api_key_sign_in_failed`, {
             safe: {},
             sensitive: { error: t, hostId: e },
           }),
-            _(t));
+            v(t));
         } finally {
           p(!1);
         }
       }
     };
-  return (0, Q.jsx)(_e, {
-    open: n,
+  return (0, Q.jsx)(ve, {
+    open: t,
     onOpenChange: (e) => {
       if (!e) {
-        g({ abortPendingLogin: !0 });
+        _({ abortPendingLogin: !0 });
         return;
       }
-      r(!0);
+      n(!0);
     },
     contentProps: { "aria-describedby": void 0 },
     showDialogClose: !1,
     size: `compact`,
-    children: (0, Q.jsxs)(ve, {
+    children: (0, Q.jsxs)(ye, {
       children: [
-        (0, Q.jsx)(he, {
+        (0, Q.jsx)(ge, {
           className: `sr-only`,
-          children: a.formatMessage({
+          children: i.formatMessage({
             id: `settings.remoteConnections.auth.title`,
             defaultMessage: `Login required`,
             description: `Title for the remote connection login dialog`,
@@ -1070,7 +1116,7 @@ function Dt({ hostId: e, open: n, onOpenChange: r }) {
           children: (0, Q.jsxs)(`div`, {
             className: `flex items-start justify-between gap-3`,
             children: [
-              (0, Q.jsx)(ge, {
+              (0, Q.jsx)(_e, {
                 className: `min-w-0 flex-1`,
                 title: (0, Q.jsx)(N, {
                   id: `settings.remoteConnections.auth.title`,
@@ -1084,7 +1130,7 @@ function Dt({ hostId: e, open: n, onOpenChange: r }) {
                 }),
               }),
               (0, Q.jsx)(Y, {
-                "aria-label": a.formatMessage({
+                "aria-label": i.formatMessage({
                   id: `settings.remoteConnections.auth.closeIcon`,
                   defaultMessage: `Close`,
                   description: `Accessible label for the remote connection login dialog close button`,
@@ -1092,7 +1138,7 @@ function Dt({ hostId: e, open: n, onOpenChange: r }) {
                 className: `-mt-1 -mr-1 shrink-0`,
                 color: `ghost`,
                 size: `icon`,
-                onClick: () => g({ abortPendingLogin: !0 }),
+                onClick: () => _({ abortPendingLogin: !0 }),
                 children: (0, Q.jsx)(le, { className: `icon-xs` }),
               }),
             ],
@@ -1101,17 +1147,17 @@ function Dt({ hostId: e, open: n, onOpenChange: r }) {
         (0, Q.jsx)(X, {
           children: (0, Q.jsx)(`div`, {
             className: `flex justify-center pt-2`,
-            children: (0, Q.jsx)(it, {
-              apiKeyValue: c,
+            children: (0, Q.jsx)(ot, {
+              apiKeyValue: s,
               isApiKeyEntryVisible: u,
               isApiKeySignInPending: f,
-              isChatGptSignInPending: m,
+              isChatGptSignInPending: h,
               onApiKeySecondaryAction: () => {
-                (l(``), d(!1));
+                (c(``), d(!1));
               },
-              onApiKeySubmit: y,
-              onApiKeyValueChange: l,
-              onChatGptSignIn: v,
+              onApiKeySubmit: b,
+              onApiKeyValueChange: c,
+              onChatGptSignIn: y,
               onShowApiKeyEntry: () => d(!0),
               apiKeySecondaryActionLabel: (0, Q.jsx)(N, {
                 id: `settings.remoteConnections.auth.back`,
@@ -1122,11 +1168,11 @@ function Dt({ hostId: e, open: n, onOpenChange: r }) {
           }),
         }),
         (0, Q.jsx)(X, {
-          children: (0, Q.jsx)(ye, {
+          children: (0, Q.jsx)(be, {
             children: (0, Q.jsx)(Y, {
               color: `ghost`,
               type: `button`,
-              onClick: () => g({ abortPendingLogin: !0 }),
+              onClick: () => _({ abortPendingLogin: !0 }),
               children: (0, Q.jsx)(N, {
                 id: `settings.remoteConnections.auth.close`,
                 defaultMessage: `Close`,
@@ -1139,7 +1185,7 @@ function Dt({ hostId: e, open: n, onOpenChange: r }) {
     }),
   });
 }
-function Ot(e) {
+function At(e) {
   let t = (0, $.c)(19),
     {
       emptyState: n,
@@ -1153,7 +1199,7 @@ function Ot(e) {
     l;
   t[0] === o
     ? (l = t[1])
-    : ((l = (0, Q.jsx)(X, { children: (0, Q.jsx)(ge, { title: o }) })),
+    : ((l = (0, Q.jsx)(X, { children: (0, Q.jsx)(_e, { title: o }) })),
       (t[0] = o),
       (t[1] = l));
   let u = i == null ? `h-full` : `max-h-full overflow-y-auto`,
@@ -1175,7 +1221,7 @@ function Ot(e) {
         className: `pt-6`,
         children: (0, Q.jsx)(`div`, {
           className: `h-[300px]`,
-          children: (0, Q.jsx)(We, { className: u, children: d }),
+          children: (0, Q.jsx)(Ge, { className: u, children: d }),
         }),
       })),
       (t[5] = u),
@@ -1190,7 +1236,7 @@ function Ot(e) {
       (t[9] = p));
   let m;
   t[10] !== c || t[11] !== l || t[12] !== f || t[13] !== p
-    ? ((m = (0, Q.jsxs)(ve, { as: `form`, onSubmit: c, children: [l, f, p] })),
+    ? ((m = (0, Q.jsxs)(ye, { as: `form`, onSubmit: c, children: [l, f, p] })),
       (t[10] = c),
       (t[11] = l),
       (t[12] = f),
@@ -1200,7 +1246,7 @@ function Ot(e) {
   let h;
   return (
     t[15] !== s || t[16] !== a || t[17] !== m
-      ? ((h = (0, Q.jsx)(_e, { open: a, onOpenChange: s, children: m })),
+      ? ((h = (0, Q.jsx)(ve, { open: a, onOpenChange: s, children: m })),
         (t[15] = s),
         (t[16] = a),
         (t[17] = m),
@@ -1209,7 +1255,7 @@ function Ot(e) {
     h
   );
 }
-function kt(e) {
+function jt(e) {
   let t = (0, $.c)(34),
     {
       connections: n,
@@ -1223,7 +1269,7 @@ function kt(e) {
       onToggleConnection: u,
       selectedHostIds: d,
     } = e,
-    f = I(),
+    f = ee(),
     p;
   t[0] === l
     ? (p = t[1])
@@ -1255,7 +1301,7 @@ function kt(e) {
   let _ = a || r,
     v;
   t[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, Q.jsx)(Ie, { className: `icon-sm` })), (t[5] = v))
+    ? ((v = (0, Q.jsx)(Re, { className: `icon-sm` })), (t[5] = v))
     : (v = t[5]);
   let y;
   t[6] !== c || t[7] !== a || t[8] !== g || t[9] !== _
@@ -1294,40 +1340,41 @@ function kt(e) {
       })),
       (t[12] = o),
       (t[13] = x));
-  let S;
+  let S = n.length === 0 || r,
+    C;
   t[14] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((S = (0, Q.jsx)(N, {
+    ? ((C = (0, Q.jsx)(N, {
         id: `settings.remoteConnections.discoveryDialog.save`,
         defaultMessage: `Add`,
         description: `Primary action that adds selected discovered SSH connections`,
       })),
-      (t[14] = S))
-    : (S = t[14]);
-  let C;
-  t[15] === r
-    ? (C = t[16])
-    : ((C = (0, Q.jsx)(Y, {
+      (t[14] = C))
+    : (C = t[14]);
+  let w;
+  t[15] === S
+    ? (w = t[16])
+    : ((w = (0, Q.jsx)(Y, {
         type: `submit`,
         size: `large`,
-        disabled: r,
-        children: S,
+        disabled: S,
+        children: C,
       })),
-      (t[15] = r),
-      (t[16] = C));
-  let w;
-  t[17] !== C || t[18] !== y || t[19] !== x
-    ? ((w = (0, Q.jsxs)(`div`, {
+      (t[15] = S),
+      (t[16] = w));
+  let T;
+  t[17] !== w || t[18] !== y || t[19] !== x
+    ? ((T = (0, Q.jsxs)(`div`, {
         className: `flex items-center gap-3`,
-        children: [y, x, C],
+        children: [y, x, w],
       })),
-      (t[17] = C),
+      (t[17] = w),
       (t[18] = y),
       (t[19] = x),
-      (t[20] = w))
-    : (w = t[20]);
-  let T;
+      (t[20] = T))
+    : (T = t[20]);
+  let E;
   t[21] !== n || t[22] !== f || t[23] !== r || t[24] !== u || t[25] !== d
-    ? ((T =
+    ? ((E =
         n.length === 0
           ? null
           : n.map((e) => {
@@ -1351,15 +1398,15 @@ function kt(e) {
                       },
                   role: `button`,
                   tabIndex: r ? -1 : 0,
-                  children: (0, Q.jsx)(Ue, {
-                    icon: (0, Q.jsx)(Ne, { className: `icon-sm` }),
+                  children: (0, Q.jsx)(We, {
+                    icon: (0, Q.jsx)(Fe, { className: `icon-sm` }),
                     label: t,
                     description: e.sshHost,
                     control: (0, Q.jsx)(`div`, {
                       className: `relative flex items-center`,
-                      onClick: jt,
-                      onKeyDown: At,
-                      children: (0, Q.jsx)(Be, {
+                      onClick: Nt,
+                      onKeyDown: Mt,
+                      children: (0, Q.jsx)(Ce, {
                         "aria-label": f.formatMessage(
                           {
                             id: `settings.remoteConnections.discoveryDialog.toggleSelection`,
@@ -1385,46 +1432,46 @@ function kt(e) {
       (t[23] = r),
       (t[24] = u),
       (t[25] = d),
-      (t[26] = T))
-    : (T = t[26]);
-  let E;
+      (t[26] = E))
+    : (E = t[26]);
+  let D;
   t[27] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((E = (0, Q.jsx)(N, {
+    ? ((D = (0, Q.jsx)(N, {
         id: `settings.remoteConnections.discoveryDialog.title`,
         defaultMessage: `Add SSH Connection`,
         description: `Title for the dialog that lets users add a discovered SSH connection`,
       })),
-      (t[27] = E))
-    : (E = t[27]);
-  let D;
+      (t[27] = D))
+    : (D = t[27]);
+  let O;
   return (
-    t[28] !== m || t[29] !== s || t[30] !== i || t[31] !== w || t[32] !== T
-      ? ((D = (0, Q.jsx)(Ot, {
+    t[28] !== m || t[29] !== s || t[30] !== i || t[31] !== T || t[32] !== E
+      ? ((O = (0, Q.jsx)(At, {
           emptyState: h,
-          footer: w,
-          list: T,
+          footer: T,
+          list: E,
           open: i,
-          title: E,
+          title: D,
           onOpenChange: s,
           onSubmit: m,
         })),
         (t[28] = m),
         (t[29] = s),
         (t[30] = i),
-        (t[31] = w),
-        (t[32] = T),
-        (t[33] = D))
-      : (D = t[33]),
-    D
+        (t[31] = T),
+        (t[32] = E),
+        (t[33] = O))
+      : (O = t[33]),
+    O
   );
 }
-function At(e) {
+function Mt(e) {
   e.stopPropagation();
 }
-function jt(e) {
+function Nt(e) {
   e.stopPropagation();
 }
-function Mt() {
+function Pt() {
   return {
     displayName: ``,
     targetKind: `hostname`,
@@ -1434,7 +1481,7 @@ function Mt() {
     identity: ``,
   };
 }
-function Nt(e) {
+function Ft(e) {
   return {
     displayName: e.displayName,
     targetKind: e.sshAlias?.trim() ? `alias` : `hostname`,
@@ -1444,33 +1491,33 @@ function Nt(e) {
     identity: e.identity ?? ``,
   };
 }
-function Pt(e, { connectionAnalyticsId: t } = {}) {
-  let n = e.displayName.trim(),
-    r = e.sshHost.trim(),
-    i = e.targetKind === `alias` ? r : null;
-  return i == null
+function It(e, { connectionAnalyticsId: n } = {}) {
+  let r = e.displayName.trim(),
+    i = e.sshHost.trim(),
+    a = e.targetKind === `alias` ? i : null;
+  return a == null
     ? {
-        hostId: c(n),
-        ...(t == null ? {} : { connectionAnalyticsId: t }),
-        displayName: n,
+        hostId: t(r),
+        ...(n == null ? {} : { connectionAnalyticsId: n }),
+        displayName: r,
         source: `codex-managed`,
         alias: null,
-        hostname: r,
-        sshPort: It(e.sshPort),
+        hostname: i,
+        sshPort: Rt(e.sshPort),
         identity: e.authMode === `identity` ? e.identity.trim() : null,
       }
     : {
-        hostId: o(i),
-        ...(t == null ? {} : { connectionAnalyticsId: t }),
-        displayName: n,
+        hostId: o(a),
+        ...(n == null ? {} : { connectionAnalyticsId: n }),
+        displayName: r,
         source: `discovered`,
-        alias: i,
+        alias: a,
         hostname: null,
         sshPort: null,
         identity: null,
       };
 }
-function Ft({ draft: e, editingHostId: t, existingConnections: n }) {
+function Lt({ draft: e, editingHostId: t, existingConnections: n }) {
   let r = [],
     i = e.displayName.trim();
   (i.length === 0 && r.push(`displayNameRequired`),
@@ -1493,14 +1540,14 @@ function Ft({ draft: e, editingHostId: t, existingConnections: n }) {
     r
   );
 }
-function It(e) {
+function Rt(e) {
   let t = e.trim();
   if (t.length === 0 || !/^\d+$/.test(t)) return null;
   let n = Number(t);
   return Number.isSafeInteger(n) ? n : null;
 }
-var Lt = [`none`, `identity`];
-function Rt(e) {
+var zt = [`none`, `identity`];
+function Bt(e) {
   let t = (0, $.c)(65),
     {
       open: n,
@@ -1512,12 +1559,12 @@ function Rt(e) {
       onSubmit: c,
       isSaving: l,
     } = e,
-    u = I(),
+    u = ee(),
     d = r === `edit` && i.targetKind === `alias`,
     f;
   t[0] !== o || t[1] !== a
     ? ((f = (e) => {
-        let t = Ft({ draft: e, existingConnections: a, editingHostId: o });
+        let t = Lt({ draft: e, existingConnections: a, editingHostId: o });
         if (t.length !== 0) return t;
       }),
       (t[0] = o),
@@ -1558,7 +1605,7 @@ function Rt(e) {
       (t[10] = h),
       (t[11] = g))
     : (g = t[11]);
-  let _ = ot(g),
+  let _ = ct(g),
     v = r === `add` ? `default` : `compact`,
     y;
   t[12] === _
@@ -1572,7 +1619,7 @@ function Rt(e) {
   t[14] === r
     ? (b = t[15])
     : ((b = (0, Q.jsx)(X, {
-        children: (0, Q.jsx)(ge, {
+        children: (0, Q.jsx)(_e, {
           title:
             r === `add`
               ? (0, Q.jsx)(N, {
@@ -1600,7 +1647,7 @@ function Rt(e) {
       (t[17] = x));
   let S;
   t[18] !== _.Subscribe || t[19] !== x
-    ? ((S = (0, Q.jsx)(_.Subscribe, { selector: x, children: Bt })),
+    ? ((S = (0, Q.jsx)(_.Subscribe, { selector: x, children: Ht })),
       (t[18] = _.Subscribe),
       (t[19] = x),
       (t[20] = S))
@@ -1609,7 +1656,7 @@ function Rt(e) {
   t[21] === l
     ? (C = t[22])
     : ((C = (e) =>
-        (0, Q.jsx)(Ht, {
+        (0, Q.jsx)(Wt, {
           label: (0, Q.jsx)(N, {
             id: `settings.remoteConnections.dialog.field.displayName`,
             defaultMessage: `Display name`,
@@ -1632,7 +1679,7 @@ function Rt(e) {
   let T;
   t[26] !== u || t[27] !== d || t[28] !== l
     ? ((T = (e) =>
-        (0, Q.jsx)(Ht, {
+        (0, Q.jsx)(Wt, {
           label: d
             ? (0, Q.jsx)(N, {
                 id: `settings.remoteConnections.dialog.field.alias`,
@@ -1677,7 +1724,7 @@ function Rt(e) {
               (0, Q.jsx)(_.Field, {
                 name: `sshPort`,
                 children: (e) =>
-                  (0, Q.jsx)(Ht, {
+                  (0, Q.jsx)(Wt, {
                     label: (0, Q.jsxs)(Q.Fragment, {
                       children: [
                         (0, Q.jsx)(N, {
@@ -1705,20 +1752,20 @@ function Rt(e) {
               (0, Q.jsx)(_.Field, {
                 name: `authMode`,
                 children: (e) =>
-                  (0, Q.jsx)(Ut, {
+                  (0, Q.jsx)(Gt, {
                     authMode: e.state.value,
                     disabled: l,
                     onChange: e.handleChange,
                   }),
               }),
               (0, Q.jsx)(_.Subscribe, {
-                selector: zt,
+                selector: Vt,
                 children: (e) =>
                   e === `identity`
                     ? (0, Q.jsx)(_.Field, {
                         name: `identity`,
                         children: (e) =>
-                          (0, Q.jsx)(Ht, {
+                          (0, Q.jsx)(Wt, {
                             label: (0, Q.jsx)(N, {
                               id: `settings.remoteConnections.dialog.field.identity`,
                               defaultMessage: `Identity file path`,
@@ -1801,15 +1848,15 @@ function Rt(e) {
   t[51] !== j || t[52] !== P
     ? ((F = (0, Q.jsx)(X, {
         className: `pt-4`,
-        children: (0, Q.jsxs)(ye, { children: [j, P] }),
+        children: (0, Q.jsxs)(be, { children: [j, P] }),
       })),
       (t[51] = j),
       (t[52] = P),
       (t[53] = F))
     : (F = t[53]);
-  let ee;
+  let I;
   t[54] !== O || t[55] !== F || t[56] !== y || t[57] !== b || t[58] !== S
-    ? ((ee = (0, Q.jsxs)(ve, {
+    ? ((I = (0, Q.jsxs)(ye, {
         as: `form`,
         onSubmit: y,
         children: [b, S, O, F],
@@ -1819,43 +1866,43 @@ function Rt(e) {
       (t[56] = y),
       (t[57] = b),
       (t[58] = S),
-      (t[59] = ee))
-    : (ee = t[59]);
-  let L;
+      (t[59] = I))
+    : (I = t[59]);
+  let te;
   return (
-    t[60] !== s || t[61] !== n || t[62] !== ee || t[63] !== v
-      ? ((L = (0, Q.jsx)(_e, {
+    t[60] !== s || t[61] !== n || t[62] !== I || t[63] !== v
+      ? ((te = (0, Q.jsx)(ve, {
           open: n,
           onOpenChange: s,
           size: v,
-          children: ee,
+          children: I,
         })),
         (t[60] = s),
         (t[61] = n),
-        (t[62] = ee),
+        (t[62] = I),
         (t[63] = v),
-        (t[64] = L))
-      : (L = t[64]),
-    L
+        (t[64] = te))
+      : (te = t[64]),
+    te
   );
 }
-function zt(e) {
+function Vt(e) {
   return e.values.authMode;
 }
-function Bt(e) {
+function Ht(e) {
   return e.length > 0
     ? (0, Q.jsx)(X, {
         children: (0, Q.jsx)(`div`, {
           className: `border-token-border-error rounded-md border p-2 text-sm text-token-error-foreground`,
-          children: e.map(Vt),
+          children: e.map(Ut),
         }),
       })
     : null;
 }
-function Vt(e) {
-  return (0, Q.jsx)(`div`, { children: Wt(e) }, e);
+function Ut(e) {
+  return (0, Q.jsx)(`div`, { children: Kt(e) }, e);
 }
-function Ht(e) {
+function Wt(e) {
   let t = (0, $.c)(16),
     {
       label: n,
@@ -1923,10 +1970,10 @@ function Ht(e) {
     m
   );
 }
-function Ut(e) {
+function Gt(e) {
   let t = (0, $.c)(9),
     { authMode: n, disabled: r, onChange: i } = e,
-    a = I(),
+    a = ee(),
     o;
   t[0] === a
     ? (o = t[1])
@@ -1939,7 +1986,7 @@ function Ut(e) {
       (t[1] = o));
   let s;
   t[2] !== n || t[3] !== r || t[4] !== i
-    ? ((s = Lt.map((e) => {
+    ? ((s = zt.map((e) => {
         let t = e === n;
         return (0, Q.jsx)(
           `button`,
@@ -1993,7 +2040,7 @@ function Ut(e) {
     c
   );
 }
-function Wt(e) {
+function Kt(e) {
   switch (e) {
     case `displayNameRequired`:
       return (0, Q.jsx)(N, {
@@ -2033,27 +2080,27 @@ function Wt(e) {
       });
   }
 }
-function Gt(e) {
+function qt(e) {
   return {
-    refreshSource: S.CODEX_REMOTE_CONTROL_REFRESH_SOURCE_SETTINGS,
+    refreshSource: g.CODEX_REMOTE_CONTROL_REFRESH_SOURCE_SETTINGS,
     connectionCount: e.length,
     onlineConnectionCount: e.filter((e) => e.online).length,
     busyConnectionCount: e.filter((e) => e.busy).length,
     autoConnectConnectionCount: e.filter((e) => e.autoConnect).length,
     unsupportedAppServerVersionConnectionCount: e.filter(
-      (e) => !a(e.appServerVersion),
+      (e) => !c(e.appServerVersion),
     ).length,
   };
 }
-var Kt = `—`;
-function qt(e) {
+var Jt = `—`;
+function Yt(e) {
   let t = (0, $.c)(9),
     { value: n, placeholder: r } = e,
     i;
   t[0] === n ? (i = t[1]) : ((i = n?.trim() ?? ``), (t[0] = n), (t[1] = i));
   let a = i;
   if (a === ``) {
-    let e = r ?? Kt,
+    let e = r ?? Jt,
       n;
     return (
       t[2] === e
@@ -2073,7 +2120,7 @@ function qt(e) {
   let s;
   return (
     t[6] !== o || t[7] !== a
-      ? ((s = (0, Q.jsx)(se, {
+      ? ((s = (0, Q.jsx)(J, {
           tooltipContent: a,
           openWhen: `trigger-overflows`,
           children: o,
@@ -2085,9 +2132,9 @@ function qt(e) {
     s
   );
 }
-var Jt = `text-sm electron:!text-sm`,
-  Yt = `!size-5 !rounded-full !p-0 electron:!rounded-full electron:!p-0`;
-function Xt(e) {
+var Xt = `text-sm electron:!text-sm`,
+  Zt = `!size-5 !rounded-full !p-0 electron:!rounded-full electron:!p-0`;
+function Qt(e) {
   let t = (0, $.c)(29),
     {
       actionsLabel: n,
@@ -2108,19 +2155,19 @@ function Xt(e) {
     g;
   t[0] === n
     ? (g = t[1])
-    : ((g = (0, Q.jsx)(Re, {
+    : ((g = (0, Q.jsx)(Be, {
         label: n,
         size: `icon`,
         iconClassName: `icon-sm`,
-        className: Yt,
+        className: Zt,
       })),
       (t[0] = n),
       (t[1] = g));
   let _;
   t[2] !== o || t[3] !== d
-    ? ((_ = (0, Q.jsx)(Se.Item, {
+    ? ((_ = (0, Q.jsx)(we.Item, {
         LeftIcon: fe,
-        className: Jt,
+        className: Xt,
         onSelect: d,
         children: o,
       })),
@@ -2131,9 +2178,9 @@ function Xt(e) {
   let v = s ? l : null,
     y;
   t[5] !== s || t[6] !== c || t[7] !== f || t[8] !== v
-    ? ((y = (0, Q.jsx)(Se.Item, {
-        LeftIcon: Ae,
-        className: Jt,
+    ? ((y = (0, Q.jsx)(we.Item, {
+        LeftIcon: Me,
+        className: Xt,
         disabled: s,
         onSelect: f,
         tooltipText: v,
@@ -2149,9 +2196,9 @@ function Xt(e) {
   t[10] !== m || t[11] !== h
     ? ((b =
         h != null && m != null
-          ? (0, Q.jsx)(Se.Item, {
-              LeftIcon: Ie,
-              className: Jt,
+          ? (0, Q.jsx)(we.Item, {
+              LeftIcon: Re,
+              className: Xt,
               onSelect: m,
               children: h,
             })
@@ -2166,9 +2213,9 @@ function Xt(e) {
     : ((x =
         p == null
           ? null
-          : (0, Q.jsx)(Se.Item, {
-              LeftIcon: Pe,
-              className: Jt,
+          : (0, Q.jsx)(we.Item, {
+              LeftIcon: Ie,
+              className: Xt,
               onSelect: p,
               children: (0, Q.jsx)(N, {
                 id: `settings.remoteConnections.logout`,
@@ -2180,17 +2227,17 @@ function Xt(e) {
       (t[14] = x));
   let S;
   t[15] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((S = (0, Q.jsx)(Se.Separator, {})), (t[15] = S))
+    ? ((S = (0, Q.jsx)(we.Separator, {})), (t[15] = S))
     : (S = t[15]);
   let C;
   t[16] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((C = A(Jt, `text-token-charts-red`)), (t[16] = C))
+    ? ((C = A(Xt, `text-token-charts-red`)), (t[16] = C))
     : (C = t[16]);
   let w = r ? a : null,
     T;
   t[17] !== r || t[18] !== i || t[19] !== u || t[20] !== w
-    ? ((T = (0, Q.jsx)(Se.Item, {
-        LeftIcon: we,
+    ? ((T = (0, Q.jsx)(we.Item, {
+        LeftIcon: Ee,
         className: C,
         leftIconClassName: `icon-xs text-token-charts-red`,
         disabled: r,
@@ -2212,7 +2259,7 @@ function Xt(e) {
     t[25] !== y ||
     t[26] !== b ||
     t[27] !== x
-      ? ((E = (0, Q.jsxs)(Ce, {
+      ? ((E = (0, Q.jsxs)(Te, {
           align: `end`,
           contentWidth: `menu`,
           triggerButton: g,
@@ -2229,7 +2276,7 @@ function Xt(e) {
     E
   );
 }
-function Zt(e) {
+function $t(e) {
   let t = (0, $.c)(22),
     {
       className: n,
@@ -2242,7 +2289,7 @@ function Zt(e) {
     } = e,
     l;
   t[0] !== a || t[1] !== s
-    ? ((l = s ?? (0, Q.jsx)(qt, { value: a })),
+    ? ((l = s ?? (0, Q.jsx)(Yt, { value: a })),
       (t[0] = a),
       (t[1] = s),
       (t[2] = l))
@@ -2290,7 +2337,7 @@ function Zt(e) {
     : (h = t[13]);
   let g;
   t[14] !== n || t[15] !== r || t[16] !== d || t[17] !== h
-    ? ((g = (0, Q.jsx)(Ue, { className: n, icon: d, label: h, control: r })),
+    ? ((g = (0, Q.jsx)(We, { className: n, icon: d, label: h, control: r })),
       (t[14] = n),
       (t[15] = r),
       (t[16] = d),
@@ -2312,40 +2359,56 @@ function Zt(e) {
     _
   );
 }
-function Qt(e, t) {
-  return !e.online || !a(e.appServerVersion) || t !== `connected`
+function en(e, t) {
+  return !e.online || !c(e.appServerVersion)
     ? `block size-2 rounded-full bg-gray-400`
-    : e.busy
-      ? `block size-2 rounded-full bg-token-charts-yellow`
-      : `block size-2 rounded-full bg-token-charts-green`;
+    : t === `error`
+      ? `block size-2 rounded-full bg-token-charts-red`
+      : t === `connected`
+        ? e.busy
+          ? `block size-2 rounded-full bg-token-charts-yellow`
+          : `block size-2 rounded-full bg-token-charts-green`
+        : `block size-2 rounded-full bg-gray-400`;
 }
-function $t(e, t, r) {
+function tn(e, t, n) {
   return t.online
-    ? a(t.appServerVersion)
-      ? r === `connected`
-        ? t.busy
-          ? e.formatMessage({
-              id: `settings.remoteControlConnections.availability.busy`,
-              defaultMessage: `busy`,
-              description: `Availability label for a remote control environment that is busy`,
-            })
-          : e.formatMessage({
-              id: `settings.remoteControlConnections.availability.online`,
-              defaultMessage: `online`,
-              description: `Availability label for a remote control environment that is online`,
-            })
-        : e.formatMessage({
-            id: `threadPage.remoteConnectionStatusBadge.disconnected`,
-            defaultMessage: `Disconnected`,
-            description: `Label shown when remote connection is unavailable`,
+    ? c(t.appServerVersion)
+      ? n === `connecting` || n === `restarting`
+        ? e.formatMessage({
+            id: `settings.remoteControlConnections.availability.connecting`,
+            defaultMessage: `Connecting`,
+            description: `Availability label for a remote control environment that is connecting`,
           })
+        : n === `error`
+          ? e.formatMessage({
+              id: `settings.remoteControlConnections.availability.connectionFailed`,
+              defaultMessage: `Connection failed`,
+              description: `Availability label for a remote control environment whose app-server transport failed`,
+            })
+          : n === `connected`
+            ? t.busy
+              ? e.formatMessage({
+                  id: `settings.remoteControlConnections.availability.busy`,
+                  defaultMessage: `busy`,
+                  description: `Availability label for a remote control environment that is busy`,
+                })
+              : e.formatMessage({
+                  id: `settings.remoteControlConnections.availability.online`,
+                  defaultMessage: `online`,
+                  description: `Availability label for a remote control environment that is online`,
+                })
+            : e.formatMessage({
+                id: `threadPage.remoteConnectionStatusBadge.disconnected`,
+                defaultMessage: `Disconnected`,
+                description: `Label shown when remote connection is unavailable`,
+              })
       : e.formatMessage(
           {
             id: `settings.remoteControlConnections.availability.updateRequired`,
             defaultMessage: `Please update app-server version (current: {currentVersion}) to {requiredVersion} or newer`,
             description: `Availability label for an online remote control environment with an incompatible app-server version`,
           },
-          { currentVersion: t.appServerVersion, requiredVersion: n },
+          { currentVersion: t.appServerVersion, requiredVersion: i },
         )
     : e.formatMessage({
         id: `settings.remoteControlConnections.availability.offline`,
@@ -2353,14 +2416,14 @@ function $t(e, t, r) {
         description: `Availability label for a remote control environment that is offline`,
       });
 }
-function en(e) {
-  let t = (0, $.c)(79),
+function nn(e) {
+  let t = (0, $.c)(80),
     {
-      connection: r,
-      clientAuthorized: i,
-      disabled: o,
-      isEditing: s,
-      isRenamePending: c,
+      connection: n,
+      clientAuthorized: r,
+      disabled: a,
+      isEditing: o,
+      isRenamePending: s,
       isSaving: l,
       onCancelEditing: u,
       onLogoutConnection: d,
@@ -2370,240 +2433,246 @@ function en(e) {
       onStartEditing: h,
       onToggleConnection: g,
     } = e,
-    _ = I(),
-    [v, y] = (0, Z.useState)(r.displayName),
-    { state: b } = Te(r.hostId),
+    _ = ee(),
+    [v, y] = (0, Z.useState)(n.displayName),
+    { state: b } = De(n.hostId),
     x,
     S;
-  if (t[0] !== i || t[1] !== r.appServerVersion || t[2] !== r.online) {
-    let e = a(r.appServerVersion);
-    ((x = i && r.online && e),
-      (S = nn(i, r.online, e)),
-      (t[0] = i),
-      (t[1] = r.appServerVersion),
-      (t[2] = r.online),
-      (t[3] = x),
-      (t[4] = S));
-  } else ((x = t[3]), (S = t[4]));
+  if (
+    t[0] !== r ||
+    t[1] !== n.appServerVersion ||
+    t[2] !== n.online ||
+    t[3] !== b
+  ) {
+    let e = c(n.appServerVersion);
+    ((x = r && n.online && e),
+      (S = an(r, n.online, e, b)),
+      (t[0] = r),
+      (t[1] = n.appServerVersion),
+      (t[2] = n.online),
+      (t[3] = b),
+      (t[4] = x),
+      (t[5] = S));
+  } else ((x = t[4]), (S = t[5]));
   let C = S,
     w;
-  t[5] === v ? (w = t[6]) : ((w = v.trim()), (t[5] = v), (t[6] = w));
+  t[6] === v ? (w = t[7]) : ((w = v.trim()), (t[6] = v), (t[7] = w));
   let T = w,
     E;
-  t[7] === _
-    ? (E = t[8])
+  t[8] === _
+    ? (E = t[9])
     : ((E = _.formatMessage({
         id: `settings.remoteControlConnections.rename.inputLabel`,
         defaultMessage: `Display name`,
         description: `Screen reader label for remote control display name rename input`,
       })),
-      (t[7] = _),
-      (t[8] = E));
+      (t[8] = _),
+      (t[9] = E));
   let D = E,
     O;
-  t[9] === _
-    ? (O = t[10])
+  t[10] === _
+    ? (O = t[11])
     : ((O = _.formatMessage({
         id: `settings.remoteControlConnections.rename.save`,
         defaultMessage: `Save`,
         description: `Button label to save a remote control environment rename`,
       })),
-      (t[9] = _),
-      (t[10] = O));
+      (t[10] = _),
+      (t[11] = O));
   let k = O,
     A;
-  t[11] === _
-    ? (A = t[12])
+  t[12] === _
+    ? (A = t[13])
     : ((A = _.formatMessage({
         id: `settings.remoteControlConnections.rename.cancel`,
         defaultMessage: `Cancel`,
         description: `Button label to cancel a remote control environment rename`,
       })),
-      (t[11] = _),
-      (t[12] = A));
+      (t[12] = _),
+      (t[13] = A));
   let j = A,
     M;
-  t[13] === _
-    ? (M = t[14])
+  t[14] === _
+    ? (M = t[15])
     : ((M = _.formatMessage({
         id: `settings.remoteControlConnections.rename`,
         defaultMessage: `Rename`,
         description: `Menu item label to rename a signed-in device`,
       })),
-      (t[13] = _),
-      (t[14] = M));
+      (t[14] = _),
+      (t[15] = M));
   let P = M,
     F;
-  t[15] === _
-    ? (F = t[16])
+  t[16] === _
+    ? (F = t[17])
     : ((F = _.formatMessage({
         id: `settings.remoteConnections.deleteConnection`,
         defaultMessage: `Delete`,
         description: `Menu item label to delete a remote connection`,
       })),
-      (t[15] = _),
-      (t[16] = F));
-  let ee = F,
-    L;
-  t[17] === _
-    ? (L = t[18])
-    : ((L = _.formatMessage({
+      (t[16] = _),
+      (t[17] = F));
+  let I = F,
+    te;
+  t[18] === _
+    ? (te = t[19])
+    : ((te = _.formatMessage({
         id: `settings.remoteControlConnections.delete.offlineOnly`,
         defaultMessage: `Only offline environments can be deleted`,
         description: `Tooltip shown when an online remote control environment cannot be deleted`,
       })),
-      (t[17] = _),
-      (t[18] = L));
-  let R = L,
-    te;
-  t[19] === _
-    ? (te = t[20])
-    : ((te = _.formatMessage({
+      (t[18] = _),
+      (t[19] = te));
+  let L = te,
+    ne;
+  t[20] === _
+    ? (ne = t[21])
+    : ((ne = _.formatMessage({
         id: `settings.remoteConnections.detailsMenu`,
         defaultMessage: `Details`,
         description: `Menu item label to show remote connection details`,
       })),
-      (t[19] = _),
-      (t[20] = te));
-  let z = te,
-    ne = o || c || s || r.online,
-    B = r.online ? R : ee,
-    re;
-  t[21] !== r.displayName || t[22] !== u
-    ? ((re = () => {
-        (y(r.displayName), u());
+      (t[20] = _),
+      (t[21] = ne));
+  let re = ne,
+    ie = a || s || o || n.online,
+    R = n.online ? L : I,
+    ae;
+  t[22] !== n.displayName || t[23] !== u
+    ? ((ae = () => {
+        (y(n.displayName), u());
       }),
-      (t[21] = r.displayName),
-      (t[22] = u),
-      (t[23] = re))
-    : (re = t[23]);
-  let V = re,
-    H;
-  t[24] !== V || t[25] !== r || t[26] !== c || t[27] !== p || t[28] !== T
-    ? ((H = async () => {
-        if (!(T.length === 0 || c)) {
-          if (T === r.displayName) {
-            V();
+      (t[22] = n.displayName),
+      (t[23] = u),
+      (t[24] = ae))
+    : (ae = t[24]);
+  let z = ae,
+    B;
+  t[25] !== z || t[26] !== n || t[27] !== s || t[28] !== p || t[29] !== T
+    ? ((B = async () => {
+        if (!(T.length === 0 || s)) {
+          if (T === n.displayName) {
+            z();
             return;
           }
-          await p(r, T);
+          await p(n, T);
         }
       }),
-      (t[24] = V),
-      (t[25] = r),
-      (t[26] = c),
-      (t[27] = p),
-      (t[28] = T),
-      (t[29] = H))
-    : (H = t[29]);
-  let U = H,
-    ie = r.displayName,
-    ae;
-  t[30] === r ? (ae = t[31]) : ((ae = mt(r)), (t[30] = r), (t[31] = ae));
-  let oe;
-  t[32] === r.appServerVersion
-    ? (oe = t[33])
-    : ((oe = { currentVersion: r.appServerVersion, requiredVersion: n }),
-      (t[32] = r.appServerVersion),
-      (t[33] = oe));
+      (t[25] = z),
+      (t[26] = n),
+      (t[27] = s),
+      (t[28] = p),
+      (t[29] = T),
+      (t[30] = B))
+    : (B = t[30]);
+  let V = B,
+    H = n.displayName,
+    oe;
+  t[31] === n ? (oe = t[32]) : ((oe = ht(n)), (t[31] = n), (t[32] = oe));
+  let se;
+  t[33] === n.appServerVersion
+    ? (se = t[34])
+    : ((se = { currentVersion: n.appServerVersion, requiredVersion: i }),
+      (t[33] = n.appServerVersion),
+      (t[34] = se));
+  let U;
+  t[35] !== C || t[36] !== se
+    ? ((U = (0, Q.jsx)(N, { ...C, values: se })),
+      (t[35] = C),
+      (t[36] = se),
+      (t[37] = U))
+    : (U = t[37]);
   let W;
-  t[34] !== C || t[35] !== oe
-    ? ((W = (0, Q.jsx)(N, { ...C, values: oe })),
-      (t[34] = C),
-      (t[35] = oe),
-      (t[36] = W))
-    : (W = t[36]);
-  let G;
-  t[37] !== V ||
-  t[38] !== o ||
-  t[39] !== v ||
-  t[40] !== s ||
-  t[41] !== l ||
-  t[42] !== D ||
-  t[43] !== U
-    ? ((G = s
+  t[38] !== z ||
+  t[39] !== a ||
+  t[40] !== v ||
+  t[41] !== o ||
+  t[42] !== l ||
+  t[43] !== D ||
+  t[44] !== V
+    ? ((W = o
         ? (0, Q.jsx)(`input`, {
             "aria-label": D,
             className: `min-w-0 rounded-md border border-token-input-border bg-token-input-background px-2 py-1 text-sm text-token-input-foreground outline-none placeholder:text-token-input-placeholder-foreground focus:border-token-focus-border disabled:bg-token-foreground/5 disabled:text-token-text-secondary disabled:opacity-100`,
             value: v,
-            disabled: o || l,
+            disabled: a || l,
             onChange: (e) => {
               y(e.target.value);
             },
             onKeyDown: (e) => {
               e.key === `Enter`
-                ? (e.preventDefault(), U())
-                : e.key === `Escape` && (e.preventDefault(), V());
+                ? (e.preventDefault(), V())
+                : e.key === `Escape` && (e.preventDefault(), z());
             },
             autoFocus: !0,
           })
         : void 0),
-      (t[37] = V),
-      (t[38] = o),
-      (t[39] = v),
-      (t[40] = s),
-      (t[41] = l),
-      (t[42] = D),
-      (t[43] = U),
-      (t[44] = G))
-    : (G = t[44]);
+      (t[38] = z),
+      (t[39] = a),
+      (t[40] = v),
+      (t[41] = o),
+      (t[42] = l),
+      (t[43] = D),
+      (t[44] = V),
+      (t[45] = W))
+    : (W = t[45]);
+  let G;
+  t[46] !== n || t[47] !== b
+    ? ((G = (0, Q.jsx)(rn, { connection: n, state: b })),
+      (t[46] = n),
+      (t[47] = b),
+      (t[48] = G))
+    : (G = t[48]);
   let K;
-  t[45] !== r || t[46] !== b
-    ? ((K = (0, Q.jsx)(tn, { connection: r, state: b })),
-      (t[45] = r),
-      (t[46] = b),
-      (t[47] = K))
-    : (K = t[47]);
-  let q;
-  t[48] !== x ||
-  t[49] !== V ||
-  t[50] !== j ||
-  t[51] !== r ||
-  t[52] !== ne ||
-  t[53] !== ee ||
-  t[54] !== B ||
-  t[55] !== z ||
-  t[56] !== o ||
-  t[57] !== P ||
-  t[58] !== _ ||
-  t[59] !== s ||
-  t[60] !== c ||
-  t[61] !== l ||
-  t[62] !== d ||
-  t[63] !== f ||
-  t[64] !== m ||
-  t[65] !== h ||
-  t[66] !== g ||
-  t[67] !== U ||
-  t[68] !== k ||
-  t[69] !== b ||
-  t[70] !== T.length
-    ? ((q = s
+  t[49] !== x ||
+  t[50] !== z ||
+  t[51] !== j ||
+  t[52] !== n ||
+  t[53] !== ie ||
+  t[54] !== I ||
+  t[55] !== R ||
+  t[56] !== re ||
+  t[57] !== a ||
+  t[58] !== P ||
+  t[59] !== _ ||
+  t[60] !== o ||
+  t[61] !== s ||
+  t[62] !== l ||
+  t[63] !== d ||
+  t[64] !== f ||
+  t[65] !== m ||
+  t[66] !== h ||
+  t[67] !== g ||
+  t[68] !== V ||
+  t[69] !== k ||
+  t[70] !== b ||
+  t[71] !== T.length
+    ? ((K = o
         ? (0, Q.jsxs)(`div`, {
             className: `flex items-center gap-1`,
             children: [
-              (0, Q.jsx)(se, {
+              (0, Q.jsx)(J, {
                 tooltipContent: k,
                 children: (0, Q.jsx)(Y, {
                   "aria-label": k,
                   color: `ghost`,
                   size: `icon`,
                   loading: l,
-                  disabled: o || T.length === 0 || c,
+                  disabled: a || T.length === 0 || s,
                   onClick: () => {
-                    U();
+                    V();
                   },
-                  children: (0, Q.jsx)(xe, { className: `icon-xs` }),
+                  children: (0, Q.jsx)(Se, { className: `icon-xs` }),
                 }),
               }),
-              (0, Q.jsx)(se, {
+              (0, Q.jsx)(J, {
                 tooltipContent: j,
                 children: (0, Q.jsx)(Y, {
                   "aria-label": j,
                   color: `ghost`,
                   size: `icon`,
-                  disabled: o || l,
-                  onClick: V,
+                  disabled: a || l,
+                  onClick: z,
                   children: (0, Q.jsx)(le, { className: `icon-xs` }),
                 }),
               }),
@@ -2612,44 +2681,44 @@ function en(e) {
         : (0, Q.jsxs)(`div`, {
             className: `flex items-center gap-2`,
             children: [
-              (0, Q.jsx)(Xt, {
+              (0, Q.jsx)(Qt, {
                 actionsLabel: _.formatMessage(
                   {
                     id: `settings.remoteConnections.table.actions.ariaLabel`,
                     defaultMessage: `{connectionName} actions`,
                     description: `Screen reader label for the remote connection actions menu`,
                   },
-                  { connectionName: r.displayName },
+                  { connectionName: n.displayName },
                 ),
                 editLabel: P,
                 editTooltip: P,
-                editDisabled: o || c || s,
+                editDisabled: a || s || o,
                 onEdit: () => {
-                  (y(r.displayName), h());
+                  (y(n.displayName), h());
                 },
-                detailsLabel: z,
-                onDetails: () => m(r),
-                onLogout: b === `connected` ? () => d(r.hostId) : void 0,
-                deleteLabel: ee,
-                deleteTooltip: B,
-                deleteDisabled: ne,
-                onDelete: () => f(r),
+                detailsLabel: re,
+                onDetails: () => m(n),
+                onLogout: b === `connected` ? () => d(n.hostId) : void 0,
+                deleteLabel: I,
+                deleteTooltip: R,
+                deleteDisabled: ie,
+                onDelete: () => f(n),
               }),
-              r.online
-                ? (0, Q.jsx)(Fe, {
-                    checked: r.autoConnect,
+              n.online
+                ? (0, Q.jsx)(Le, {
+                    checked: n.autoConnect,
                     disabled: !x,
-                    onChange: (e) => g(r.hostId, e),
+                    onChange: (e) => g(n.hostId, e),
                     ariaLabel: _.formatMessage(
                       {
                         id: `settings.remoteControlConnections.table.connect.ariaLabel`,
                         defaultMessage: `Connect {connectionName}`,
                         description: `Screen reader label for the remote control connection toggle`,
                       },
-                      { connectionName: r.displayName },
+                      { connectionName: n.displayName },
                     ),
                   })
-                : (0, Q.jsx)(se, {
+                : (0, Q.jsx)(J, {
                     tooltipContent: _.formatMessage({
                       id: `settings.remoteControlConnections.connect.offlineTooltip`,
                       defaultMessage: `This device is offline. Refresh to check again`,
@@ -2657,87 +2726,87 @@ function en(e) {
                     }),
                     children: (0, Q.jsx)(`span`, {
                       className: `inline-flex`,
-                      children: (0, Q.jsx)(Fe, {
-                        checked: r.autoConnect,
+                      children: (0, Q.jsx)(Le, {
+                        checked: n.autoConnect,
                         disabled: !0,
-                        onChange: (e) => g(r.hostId, e),
+                        onChange: (e) => g(n.hostId, e),
                         ariaLabel: _.formatMessage(
                           {
                             id: `settings.remoteControlConnections.table.connect.ariaLabel`,
                             defaultMessage: `Connect {connectionName}`,
                             description: `Screen reader label for the remote control connection toggle`,
                           },
-                          { connectionName: r.displayName },
+                          { connectionName: n.displayName },
                         ),
                       }),
                     }),
                   }),
             ],
           })),
-      (t[48] = x),
-      (t[49] = V),
-      (t[50] = j),
-      (t[51] = r),
-      (t[52] = ne),
-      (t[53] = ee),
-      (t[54] = B),
-      (t[55] = z),
-      (t[56] = o),
-      (t[57] = P),
-      (t[58] = _),
-      (t[59] = s),
-      (t[60] = c),
-      (t[61] = l),
-      (t[62] = d),
-      (t[63] = f),
-      (t[64] = m),
-      (t[65] = h),
-      (t[66] = g),
-      (t[67] = U),
-      (t[68] = k),
-      (t[69] = b),
-      (t[70] = T.length),
-      (t[71] = q))
-    : (q = t[71]);
-  let J;
+      (t[49] = x),
+      (t[50] = z),
+      (t[51] = j),
+      (t[52] = n),
+      (t[53] = ie),
+      (t[54] = I),
+      (t[55] = R),
+      (t[56] = re),
+      (t[57] = a),
+      (t[58] = P),
+      (t[59] = _),
+      (t[60] = o),
+      (t[61] = s),
+      (t[62] = l),
+      (t[63] = d),
+      (t[64] = f),
+      (t[65] = m),
+      (t[66] = h),
+      (t[67] = g),
+      (t[68] = V),
+      (t[69] = k),
+      (t[70] = b),
+      (t[71] = T.length),
+      (t[72] = K))
+    : (K = t[72]);
+  let q;
   return (
-    t[72] !== r.displayName ||
-    t[73] !== ae ||
-    t[74] !== W ||
-    t[75] !== G ||
-    t[76] !== K ||
-    t[77] !== q
-      ? ((J = (0, Q.jsx)(Zt, {
-          displayName: ie,
-          icon: ae,
-          description: W,
-          label: G,
-          status: K,
-          control: q,
+    t[73] !== n.displayName ||
+    t[74] !== oe ||
+    t[75] !== U ||
+    t[76] !== W ||
+    t[77] !== G ||
+    t[78] !== K
+      ? ((q = (0, Q.jsx)($t, {
+          displayName: H,
+          icon: oe,
+          description: U,
+          label: W,
+          status: G,
+          control: K,
         })),
-        (t[72] = r.displayName),
-        (t[73] = ae),
-        (t[74] = W),
-        (t[75] = G),
-        (t[76] = K),
-        (t[77] = q),
-        (t[78] = J))
-      : (J = t[78]),
-    J
+        (t[73] = n.displayName),
+        (t[74] = oe),
+        (t[75] = U),
+        (t[76] = W),
+        (t[77] = G),
+        (t[78] = K),
+        (t[79] = q))
+      : (q = t[79]),
+    q
   );
 }
-function tn(e) {
+function rn(e) {
   let t = (0, $.c)(13),
     { connection: n, state: r } = e,
-    i = I(),
+    i = ee(),
     a;
   t[0] !== n || t[1] !== i || t[2] !== r
-    ? ((a = $t(i, n, r)), (t[0] = n), (t[1] = i), (t[2] = r), (t[3] = a))
+    ? ((a = tn(i, n, r)), (t[0] = n), (t[1] = i), (t[2] = r), (t[3] = a))
     : (a = t[3]);
   let o = a,
     s;
   t[4] !== n || t[5] !== r
-    ? ((s = Qt(n, r)), (t[4] = n), (t[5] = r), (t[6] = s))
+    ? ((s = en(n, r)), (t[4] = n), (t[5] = r), (t[6] = s))
     : (s = t[6]);
   let c;
   t[7] !== o || t[8] !== s
@@ -2749,7 +2818,7 @@ function tn(e) {
   let l;
   return (
     t[10] !== o || t[11] !== c
-      ? ((l = (0, Q.jsx)(se, { tooltipContent: o, children: c })),
+      ? ((l = (0, Q.jsx)(J, { tooltipContent: o, children: c })),
         (t[10] = o),
         (t[11] = c),
         (t[12] = l))
@@ -2757,18 +2826,24 @@ function tn(e) {
     l
   );
 }
-function nn(e, t, n) {
+function an(e, t, n, r) {
   return !e && !t
-    ? rn.signedInDeviceAuthorizationRequiredOfflineSubtitle
+    ? on.signedInDeviceAuthorizationRequiredOfflineSubtitle
     : e
       ? t
         ? n
-          ? rn.signedInDeviceOnlineSubtitle
-          : rn.signedInDeviceUpdateRequiredSubtitle
-        : rn.signedInDeviceOfflineSubtitle
-      : rn.signedInDeviceAuthorizationRequiredSubtitle;
+          ? r === `connecting` || r === `restarting`
+            ? on.signedInDeviceConnectingSubtitle
+            : r === `error`
+              ? on.signedInDeviceConnectionFailedSubtitle
+              : r === `connected`
+                ? on.signedInDeviceOnlineSubtitle
+                : on.signedInDeviceDisconnectedSubtitle
+          : on.signedInDeviceUpdateRequiredSubtitle
+        : on.signedInDeviceOfflineSubtitle
+      : on.signedInDeviceAuthorizationRequiredSubtitle;
 }
-var rn = j({
+var on = P({
   signedInDeviceAuthorizationRequiredOfflineSubtitle: {
     id: `settings.remoteConnections.deviceConnections.signedInDeviceAuthorizationRequiredOfflineSubtitle`,
     defaultMessage: `Requires authorization · Offline`,
@@ -2789,14 +2864,29 @@ var rn = j({
     defaultMessage: `Please update app-server version (current: {currentVersion}) to {requiredVersion} or newer`,
     description: `Subtitle for online signed-in-device rows that require an app-server update`,
   },
+  signedInDeviceConnectingSubtitle: {
+    id: `settings.remoteConnections.deviceConnections.signedInDeviceConnectingSubtitle`,
+    defaultMessage: `Connecting`,
+    description: `Subtitle for signed-in-device rows whose app-server transport is connecting`,
+  },
+  signedInDeviceConnectionFailedSubtitle: {
+    id: `settings.remoteConnections.deviceConnections.signedInDeviceConnectionFailedSubtitle`,
+    defaultMessage: `Connection failed`,
+    description: `Subtitle for signed-in-device rows whose app-server transport failed`,
+  },
+  signedInDeviceDisconnectedSubtitle: {
+    id: `settings.remoteConnections.deviceConnections.signedInDeviceDisconnectedSubtitle`,
+    defaultMessage: `Disconnected`,
+    description: `Subtitle for signed-in-device rows whose app-server transport is disconnected`,
+  },
   signedInDeviceOnlineSubtitle: {
     id: `settings.remoteConnections.deviceConnections.signedInDeviceOnlineSubtitle`,
     defaultMessage: `Connected`,
     description: `Subtitle for online signed-in-device rows in the device connections table`,
   },
 });
-function an(e) {
-  let t = (0, $.c)(21),
+function sn(e) {
+  let t = (0, $.c)(23),
     {
       action: n,
       error: r,
@@ -2804,11 +2894,11 @@ function an(e) {
       restartAvailableNotice: a,
       statusMessage: o,
     } = e,
-    s = I();
+    s = ee();
   if (n != null && (i || r?.code === `restart-required`)) {
     let e;
     t[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((e = (0, Q.jsx)(on, {})), (t[0] = e))
+      ? ((e = (0, Q.jsx)(cn, {})), (t[0] = e))
       : (e = t[0]);
     let r;
     t[1] === n
@@ -2838,7 +2928,7 @@ function an(e) {
       ? ((i =
           a == null
             ? null
-            : (0, Q.jsx)(se, {
+            : (0, Q.jsx)(J, {
                 side: `bottom`,
                 tooltipContent: s.formatMessage(
                   {
@@ -2890,10 +2980,14 @@ function an(e) {
   if (r == null || o == null) return null;
   let c;
   t[9] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = (0, Q.jsx)(on, {})), (t[9] = c))
+    ? ((c = (0, Q.jsx)(cn, {})), (t[9] = c))
     : (c = t[9]);
   let l;
-  t[10] !== r.code || t[11] !== s || t[12] !== o
+  t[10] !== r.code ||
+  t[11] !== r.currentVersion ||
+  t[12] !== r.minRequiredVersion ||
+  t[13] !== s ||
+  t[14] !== o
     ? ((l =
         r.code === `connection-failed`
           ? (0, Q.jsxs)(`span`, {
@@ -2904,7 +2998,7 @@ function an(e) {
                   defaultMessage: `SSH connection failed`,
                   description: `Concise inline message shown for generic SSH connection failures`,
                 }),
-                (0, Q.jsx)(se, {
+                (0, Q.jsx)(J, {
                   side: `bottom`,
                   tooltipContent: o,
                   children: (0, Q.jsx)(`span`, {
@@ -2923,33 +3017,66 @@ function an(e) {
               ],
             })
           : r.code === `update-required`
-            ? (0, Q.jsx)(N, {
-                id: `settings.remoteConnections.updateRequiredInline`,
-                defaultMessage: `Update your CLI version`,
-                description: `Concise inline message shown when an SSH remote requires a newer Codex version`,
+            ? (0, Q.jsxs)(`span`, {
+                className: `inline-flex min-w-0 items-center gap-1`,
+                children: [
+                  (0, Q.jsx)(N, {
+                    id: `settings.remoteConnections.updateRequiredInline`,
+                    defaultMessage: `Update your CLI version`,
+                    description: `Concise inline message shown when an SSH remote requires a newer Codex version`,
+                  }),
+                  (0, Q.jsx)(J, {
+                    side: `bottom`,
+                    tooltipContent: s.formatMessage(
+                      {
+                        id: `settings.remoteConnections.updateRequiredInline.tooltip`,
+                        defaultMessage: `Minimum required: {minRequiredVersion}. Currently installed: {currentVersion}`,
+                        description: `Tooltip shown from the inline update-required notice with the installed and minimum required CLI versions`,
+                      },
+                      {
+                        currentVersion: r.currentVersion,
+                        minRequiredVersion: r.minRequiredVersion,
+                      },
+                    ),
+                    children: (0, Q.jsx)(`span`, {
+                      "aria-label": s.formatMessage({
+                        id: `settings.remoteConnections.updateRequiredInline.details`,
+                        defaultMessage: `Update details`,
+                        description: `Accessible label for the inline update-required details tooltip trigger`,
+                      }),
+                      className: `text-token-text-secondary`,
+                      children: (0, Q.jsx)(fe, {
+                        "aria-hidden": !0,
+                        className: `icon-xs shrink-0`,
+                      }),
+                    }),
+                  }),
+                ],
               })
             : o),
       (t[10] = r.code),
-      (t[11] = s),
-      (t[12] = o),
-      (t[13] = l))
-    : (l = t[13]);
+      (t[11] = r.currentVersion),
+      (t[12] = r.minRequiredVersion),
+      (t[13] = s),
+      (t[14] = o),
+      (t[15] = l))
+    : (l = t[15]);
   let u;
-  t[14] === l
-    ? (u = t[15])
+  t[16] === l
+    ? (u = t[17])
     : ((u = (0, Q.jsx)(`span`, {
         className: `min-w-0 break-words`,
         children: l,
       })),
-      (t[14] = l),
-      (t[15] = u));
+      (t[16] = l),
+      (t[17] = u));
   let d;
-  t[16] === n
-    ? (d = t[17])
-    : ((d = (0, Q.jsx)(sn, { action: n })), (t[16] = n), (t[17] = d));
+  t[18] === n
+    ? (d = t[19])
+    : ((d = (0, Q.jsx)(ln, { action: n })), (t[18] = n), (t[19] = d));
   let f;
   return (
-    t[18] !== u || t[19] !== d
+    t[20] !== u || t[21] !== d
       ? ((f = (0, Q.jsxs)(Q.Fragment, {
           children: [
             c,
@@ -2959,14 +3086,14 @@ function an(e) {
             }),
           ],
         })),
-        (t[18] = u),
-        (t[19] = d),
-        (t[20] = f))
-      : (f = t[20]),
+        (t[20] = u),
+        (t[21] = d),
+        (t[22] = f))
+      : (f = t[22]),
     f
   );
 }
-function on() {
+function cn() {
   let e = (0, $.c)(1),
     t;
   return (
@@ -2977,7 +3104,7 @@ function on() {
     t
   );
 }
-function sn(e) {
+function ln(e) {
   let t = (0, $.c)(10),
     { action: n } = e;
   if (n == null) return null;
@@ -3015,7 +3142,7 @@ function sn(e) {
       ? ((l =
           n.tooltipText == null
             ? c
-            : (0, Q.jsx)(se, { tooltipContent: n.tooltipText, children: c })),
+            : (0, Q.jsx)(J, { tooltipContent: n.tooltipText, children: c })),
         (t[7] = n.tooltipText),
         (t[8] = c),
         (t[9] = l))
@@ -3023,7 +3150,7 @@ function sn(e) {
     l
   );
 }
-function cn(e) {
+function un(e) {
   let t = (0, $.c)(86),
     {
       connection: n,
@@ -3037,13 +3164,13 @@ function cn(e) {
       onShowDetails: u,
       onToggleConnection: d,
     } = e,
-    f = I(),
+    f = ee(),
     {
       appServerVersion: p,
       error: m,
       installedCodexVersion: h,
       state: g,
-    } = Te(n.hostId),
+    } = De(n.hostId),
     _ = n.displayName,
     v;
   t[0] === f
@@ -3089,7 +3216,7 @@ function cn(e) {
       (t[6] = f),
       (t[7] = w));
   let T = w,
-    E = ae(`2153867414`),
+    E = oe(`2153867414`),
     D,
     O,
     k,
@@ -3109,7 +3236,7 @@ function cn(e) {
     t[17] !== E ||
     t[18] !== g
   ) {
-    ((k = un({ appServerVersion: p, installedCodexVersion: h, state: g })),
+    ((k = fn({ appServerVersion: p, installedCodexVersion: h, state: g })),
       (D =
         g === `connected` ||
         m?.code === `login-required` ||
@@ -3119,13 +3246,13 @@ function cn(e) {
       statusError: e,
       isRestartAvailableNotice: o,
       statusState: c,
-    } = ln({ error: m, restartAvailableNotice: k, state: g });
+    } = dn({ error: m, restartAvailableNotice: k, state: g });
     ((A = e),
       (O = o),
       (j =
         c == null
           ? null
-          : je(f, {
+          : Ne(f, {
               canLogin: !0,
               error: A,
               state: c,
@@ -3137,7 +3264,7 @@ function cn(e) {
     ((M =
       j == null || l
         ? null
-        : dn({
+        : pn({
             action: j.action,
             disabled: r,
             hostId: n.hostId,
@@ -3171,29 +3298,29 @@ function cn(e) {
       (M = t[24]));
   let P = M,
     F,
-    ee;
+    I;
   t[25] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((F = (0, Q.jsx)(de, { className: `icon-sm` })),
-      (ee = (0, Q.jsx)(N, {
+      (I = (0, Q.jsx)(N, {
         id: `settings.remoteConnections.deviceConnections.sshSubtitle`,
         defaultMessage: `SSH`,
         description: `Subtitle for SSH-backed rows in the device connections table`,
       })),
       (t[25] = F),
-      (t[26] = ee))
-    : ((F = t[25]), (ee = t[26]));
-  let L = j?.message ?? null,
-    R;
-  t[27] !== O || t[28] !== k || t[29] !== P || t[30] !== A || t[31] !== L
-    ? ((R = (0, Q.jsxs)(Q.Fragment, {
+      (t[26] = I))
+    : ((F = t[25]), (I = t[26]));
+  let te = j?.message ?? null,
+    L;
+  t[27] !== O || t[28] !== k || t[29] !== P || t[30] !== A || t[31] !== te
+    ? ((L = (0, Q.jsxs)(Q.Fragment, {
         children: [
-          ee,
-          (0, Q.jsx)(an, {
+          I,
+          (0, Q.jsx)(sn, {
             action: P,
             error: A,
             isRestartAvailableNotice: O,
             restartAvailableNotice: k,
-            statusMessage: L,
+            statusMessage: te,
           }),
         ],
       })),
@@ -3201,20 +3328,20 @@ function cn(e) {
       (t[28] = k),
       (t[29] = P),
       (t[30] = A),
-      (t[31] = L),
-      (t[32] = R))
-    : (R = t[32]);
-  let te;
+      (t[31] = te),
+      (t[32] = L))
+    : (L = t[32]);
+  let ne;
   t[33] !== n || t[34] !== m || t[35] !== g
-    ? ((te = (0, Q.jsx)(pn, { connection: n, error: m, state: g })),
+    ? ((ne = (0, Q.jsx)(hn, { connection: n, error: m, state: g })),
       (t[33] = n),
       (t[34] = m),
       (t[35] = g),
-      (t[36] = te))
-    : (te = t[36]);
-  let z;
+      (t[36] = ne))
+    : (ne = t[36]);
+  let re;
   t[37] !== _ || t[38] !== f
-    ? ((z = f.formatMessage(
+    ? ((re = f.formatMessage(
         {
           id: `settings.remoteConnections.table.actions.ariaLabel`,
           defaultMessage: `{connectionName} actions`,
@@ -3224,92 +3351,92 @@ function cn(e) {
       )),
       (t[37] = _),
       (t[38] = f),
-      (t[39] = z))
-    : (z = t[39]);
-  let ne;
+      (t[39] = re))
+    : (re = t[39]);
+  let ie;
   t[40] !== n.hostId || t[41] !== o
-    ? ((ne = () => o(n.hostId)), (t[40] = n.hostId), (t[41] = o), (t[42] = ne))
-    : (ne = t[42]);
-  let B;
+    ? ((ie = () => o(n.hostId)), (t[40] = n.hostId), (t[41] = o), (t[42] = ie))
+    : (ie = t[42]);
+  let R;
   t[43] !== n || t[44] !== u
-    ? ((B = () => u(n)), (t[43] = n), (t[44] = u), (t[45] = B))
-    : (B = t[45]);
-  let re = D ? T : void 0,
-    V;
+    ? ((R = () => u(n)), (t[43] = n), (t[44] = u), (t[45] = R))
+    : (R = t[45]);
+  let ae = D ? T : void 0,
+    z;
   t[46] !== D || t[47] !== n.hostId
-    ? ((V = D
+    ? ((z = D
         ? () => {
-            fn(n.hostId);
+            mn(n.hostId);
           }
         : void 0),
       (t[46] = D),
       (t[47] = n.hostId),
-      (t[48] = V))
-    : (V = t[48]);
-  let H;
+      (t[48] = z))
+    : (z = t[48]);
+  let B;
   t[49] !== n.hostId || t[50] !== c || t[51] !== g
-    ? ((H = g === `connected` ? () => c(n.hostId) : void 0),
+    ? ((B = g === `connected` ? () => c(n.hostId) : void 0),
       (t[49] = n.hostId),
       (t[50] = c),
       (t[51] = g),
-      (t[52] = H))
-    : (H = t[52]);
-  let U;
+      (t[52] = B))
+    : (B = t[52]);
+  let V;
   t[53] !== n.hostId || t[54] !== l
-    ? ((U = () => l(n.hostId)), (t[53] = n.hostId), (t[54] = l), (t[55] = U))
-    : (U = t[55]);
-  let ie;
+    ? ((V = () => l(n.hostId)), (t[53] = n.hostId), (t[54] = l), (t[55] = V))
+    : (V = t[55]);
+  let H;
   t[56] !== x ||
   t[57] !== C ||
   t[58] !== r ||
   t[59] !== y ||
-  t[60] !== z ||
-  t[61] !== ne ||
-  t[62] !== B ||
-  t[63] !== re ||
-  t[64] !== V ||
-  t[65] !== H ||
-  t[66] !== U
-    ? ((ie = (0, Q.jsx)(Xt, {
-        actionsLabel: z,
+  t[60] !== re ||
+  t[61] !== ie ||
+  t[62] !== R ||
+  t[63] !== ae ||
+  t[64] !== z ||
+  t[65] !== B ||
+  t[66] !== V
+    ? ((H = (0, Q.jsx)(Qt, {
+        actionsLabel: re,
         editLabel: y,
         editTooltip: y,
         editDisabled: r,
-        onEdit: ne,
+        onEdit: ie,
         detailsLabel: C,
-        onDetails: B,
-        restartLabel: re,
-        onRestart: V,
-        onLogout: H,
+        onDetails: R,
+        restartLabel: ae,
+        onRestart: z,
+        onLogout: B,
         deleteLabel: x,
         deleteTooltip: x,
         deleteDisabled: r,
-        onDelete: U,
+        onDelete: V,
       })),
       (t[56] = x),
       (t[57] = C),
       (t[58] = r),
       (t[59] = y),
-      (t[60] = z),
-      (t[61] = ne),
-      (t[62] = B),
-      (t[63] = re),
-      (t[64] = V),
-      (t[65] = H),
-      (t[66] = U),
-      (t[67] = ie))
-    : (ie = t[67]);
-  let oe = n.autoConnect,
-    W;
+      (t[60] = re),
+      (t[61] = ie),
+      (t[62] = R),
+      (t[63] = ae),
+      (t[64] = z),
+      (t[65] = B),
+      (t[66] = V),
+      (t[67] = H))
+    : (H = t[67]);
+  let se = n.autoConnect,
+    U;
   t[68] !== n.hostId || t[69] !== d
-    ? ((W = (e) => d(n.hostId, e)),
+    ? ((U = (e) => d(n.hostId, e)),
       (t[68] = n.hostId),
       (t[69] = d),
-      (t[70] = W))
-    : (W = t[70]);
-  let G;
+      (t[70] = U))
+    : (U = t[70]);
+  let W;
   t[71] !== n.displayName || t[72] !== f
-    ? ((G = f.formatMessage(
+    ? ((W = f.formatMessage(
         {
           id: `settings.remoteConnections.table.autoConnect.ariaLabel`,
           defaultMessage: `Connect {connectionName}`,
@@ -3319,69 +3446,69 @@ function cn(e) {
       )),
       (t[71] = n.displayName),
       (t[72] = f),
-      (t[73] = G))
-    : (G = t[73]);
-  let K;
-  t[74] !== n.autoConnect || t[75] !== W || t[76] !== G
-    ? ((K = (0, Q.jsx)(Fe, { checked: oe, onChange: W, ariaLabel: G })),
+      (t[73] = W))
+    : (W = t[73]);
+  let G;
+  t[74] !== n.autoConnect || t[75] !== U || t[76] !== W
+    ? ((G = (0, Q.jsx)(Le, { checked: se, onChange: U, ariaLabel: W })),
       (t[74] = n.autoConnect),
-      (t[75] = W),
-      (t[76] = G),
-      (t[77] = K))
-    : (K = t[77]);
-  let q;
-  t[78] !== ie || t[79] !== K
-    ? ((q = (0, Q.jsxs)(`div`, {
+      (t[75] = U),
+      (t[76] = W),
+      (t[77] = G))
+    : (G = t[77]);
+  let K;
+  t[78] !== H || t[79] !== G
+    ? ((K = (0, Q.jsxs)(`div`, {
         className: `flex items-center gap-2`,
-        children: [ie, K],
+        children: [H, G],
       })),
-      (t[78] = ie),
-      (t[79] = K),
-      (t[80] = q))
-    : (q = t[80]);
-  let J;
+      (t[78] = H),
+      (t[79] = G),
+      (t[80] = K))
+    : (K = t[80]);
+  let q;
   return (
-    t[81] !== _ || t[82] !== te || t[83] !== q || t[84] !== R
-      ? ((J = (0, Q.jsx)(Zt, {
+    t[81] !== _ || t[82] !== ne || t[83] !== K || t[84] !== L
+      ? ((q = (0, Q.jsx)($t, {
           displayName: _,
           icon: F,
-          description: R,
-          status: te,
-          control: q,
+          description: L,
+          status: ne,
+          control: K,
         })),
         (t[81] = _),
-        (t[82] = te),
-        (t[83] = q),
-        (t[84] = R),
-        (t[85] = J))
-      : (J = t[85]),
-    J
+        (t[82] = ne),
+        (t[83] = K),
+        (t[84] = L),
+        (t[85] = q))
+      : (q = t[85]),
+    q
   );
 }
-function ln({ error: e, restartAvailableNotice: t, state: n }) {
+function dn({ error: e, restartAvailableNotice: t, state: n }) {
   return n === `error`
     ? {
-        statusError: e ?? (t == null ? null : r(t)),
+        statusError: e ?? (t == null ? null : u(t)),
         isRestartAvailableNotice: !1,
         statusState: `error`,
       }
     : t == null
       ? { statusError: null, isRestartAvailableNotice: !1, statusState: n }
       : {
-          statusError: r(t),
+          statusError: u(t),
           isRestartAvailableNotice: e == null,
           statusState: `error`,
         };
 }
-function un({ appServerVersion: e, installedCodexVersion: t, state: n }) {
+function fn({ appServerVersion: e, installedCodexVersion: t, state: n }) {
   return n == null ||
     e == null ||
     t == null ||
-    !i({ appServerVersion: e, installedCodexVersion: t })
+    !a({ appServerVersion: e, installedCodexVersion: t })
     ? null
     : { currentVersion: e, installedVersion: t };
 }
-function dn({
+function pn({
   action: e,
   disabled: t,
   hostId: n,
@@ -3405,26 +3532,26 @@ function dn({
       return { label: e.label, onClick: () => i(n) };
     case `restart`:
       return e.tooltipText == null
-        ? { label: e.label, onClick: () => fn(n) }
-        : { label: e.label, tooltipText: e.tooltipText, onClick: () => fn(n) };
+        ? { label: e.label, onClick: () => mn(n) }
+        : { label: e.label, tooltipText: e.tooltipText, onClick: () => mn(n) };
     case `settings`:
       return null;
   }
 }
-function fn(e) {
-  H.dispatchMessage(`codex-app-server-restart`, {
+function mn(e) {
+  B.dispatchMessage(`codex-app-server-restart`, {
     hostId: e,
     killCodexProcess: !0,
   });
 }
-function pn(e) {
+function hn(e) {
   let t = (0, $.c)(18),
     { connection: n, error: r, state: i } = e,
-    a = I();
+    a = ee();
   if (i === `error`) {
     let e;
     t[0] !== r || t[1] !== a || t[2] !== i
-      ? ((e = je(a, {
+      ? ((e = Ne(a, {
           canLogin: !1,
           error: r,
           state: i,
@@ -3449,7 +3576,7 @@ function pn(e) {
     let c;
     return (
       t[6] !== o || t[7] !== s
-        ? ((c = (0, Q.jsx)(se, { tooltipContent: o, children: s })),
+        ? ((c = (0, Q.jsx)(J, { tooltipContent: o, children: s })),
           (t[6] = o),
           (t[7] = s),
           (t[8] = c))
@@ -3462,7 +3589,7 @@ function pn(e) {
     return (
       t[9] === n.hostId
         ? (e = t[10])
-        : ((e = (0, Q.jsx)(Me, { hostId: n.hostId })),
+        : ((e = (0, Q.jsx)(Pe, { hostId: n.hostId })),
           (t[9] = n.hostId),
           (t[10] = e)),
       e
@@ -3492,7 +3619,7 @@ function pn(e) {
   let l;
   return (
     t[15] !== s || t[16] !== c
-      ? ((l = (0, Q.jsx)(se, { tooltipContent: s, children: c })),
+      ? ((l = (0, Q.jsx)(J, { tooltipContent: s, children: c })),
         (t[15] = s),
         (t[16] = c),
         (t[17] = l))
@@ -3500,8 +3627,8 @@ function pn(e) {
     l
   );
 }
-var mn = `—`;
-function hn({
+var gn = `—`;
+function _n({
   connections: e,
   clientAuthorized: t,
   disabled: n,
@@ -3535,7 +3662,7 @@ function hn({
   return (0, Q.jsxs)(Q.Fragment, {
     children: [
       e.length === 0 && i
-        ? (0, Q.jsx)(st, {
+        ? (0, Q.jsx)(qe, {
             children:
               a ??
               (0, Q.jsx)(N, {
@@ -3548,7 +3675,7 @@ function hn({
       e.map((e) =>
         e.source === `remote-control`
           ? (0, Q.jsx)(
-              en,
+              nn,
               {
                 connection: e,
                 clientAuthorized: t,
@@ -3571,7 +3698,7 @@ function hn({
               e.hostId,
             )
           : (0, Q.jsx)(
-              cn,
+              un,
               {
                 connection: e,
                 disabled: n,
@@ -3587,7 +3714,7 @@ function hn({
               e.hostId,
             ),
       ),
-      (0, Q.jsx)(gn, {
+      (0, Q.jsx)(vn, {
         connection: v,
         onOpenChange: (e) => {
           e || y(null);
@@ -3596,20 +3723,20 @@ function hn({
     ],
   });
 }
-function gn(e) {
+function vn(e) {
   let t = (0, $.c)(6),
     { connection: n, onOpenChange: r } = e,
     i = n != null,
     a;
   t[0] === n
     ? (a = t[1])
-    : ((a = n == null ? null : (0, Q.jsx)(_n, { connection: n })),
+    : ((a = n == null ? null : (0, Q.jsx)(yn, { connection: n })),
       (t[0] = n),
       (t[1] = a));
   let o;
   return (
     t[2] !== r || t[3] !== i || t[4] !== a
-      ? ((o = (0, Q.jsx)(_e, {
+      ? ((o = (0, Q.jsx)(ve, {
           open: i,
           onOpenChange: r,
           contentClassName: `bg-token-bg-primary`,
@@ -3624,18 +3751,18 @@ function gn(e) {
     o
   );
 }
-function _n(e) {
+function yn(e) {
   let t = (0, $.c)(21),
     { connection: n } = e,
-    { appServerVersion: r, error: i, state: a } = Te(n.hostId),
-    o = q(),
+    { appServerVersion: r, error: i, state: a } = De(n.hostId),
+    o = K(),
     s = n.source === `remote-control`,
     c;
   t[0] !== n || t[1] !== i || t[2] !== s || t[3] !== a
     ? ((c = s
-        ? (0, Q.jsxs)(vn, {
+        ? (0, Q.jsxs)(bn, {
             children: [
-              (0, Q.jsx)(tn, { connection: n, state: a }),
+              (0, Q.jsx)(rn, { connection: n, state: a }),
               (0, Q.jsx)(N, {
                 id: `settings.remoteConnections.deviceConnections.signedInDeviceSubtitle`,
                 defaultMessage: `Signed in device`,
@@ -3643,7 +3770,7 @@ function _n(e) {
               }),
             ],
           })
-        : (0, Q.jsx)(yn, { connection: n, error: i, state: a })),
+        : (0, Q.jsx)(xn, { connection: n, error: i, state: a })),
       (t[0] = n),
       (t[1] = i),
       (t[2] = s),
@@ -3653,7 +3780,7 @@ function _n(e) {
   let l;
   t[5] !== n.displayName || t[6] !== c
     ? ((l = (0, Q.jsx)(X, {
-        children: (0, Q.jsx)(ge, {
+        children: (0, Q.jsx)(_e, {
           title: n.displayName,
           titleClassName: `break-words pr-8 text-lg leading-snug`,
           className: `gap-2`,
@@ -3668,7 +3795,7 @@ function _n(e) {
   t[8] !== r || t[9] !== n || t[10] !== a
     ? ((u = (0, Q.jsx)(X, {
         className: `pt-0`,
-        children: (0, Q.jsx)(Sn, {
+        children: (0, Q.jsx)(wn, {
           connection: n,
           state: a,
           appServerVersion: r,
@@ -3683,7 +3810,7 @@ function _n(e) {
   t[12] !== n || t[13] !== s || t[14] !== o || t[15] !== a
     ? ((d =
         !s && o && a === `connected`
-          ? (0, Q.jsx)(xn, { connection: n })
+          ? (0, Q.jsx)(Cn, { connection: n })
           : null),
       (t[12] = n),
       (t[13] = s),
@@ -3694,7 +3821,7 @@ function _n(e) {
   let f;
   return (
     t[17] !== l || t[18] !== u || t[19] !== d
-      ? ((f = (0, Q.jsxs)(ve, {
+      ? ((f = (0, Q.jsxs)(ye, {
           className: `gap-2 px-6 py-5`,
           children: [l, u, d],
         })),
@@ -3706,7 +3833,7 @@ function _n(e) {
     f
   );
 }
-function vn(e) {
+function bn(e) {
   let t = (0, $.c)(2),
     { children: n } = e,
     r;
@@ -3722,13 +3849,13 @@ function vn(e) {
     r
   );
 }
-function yn(e) {
+function xn(e) {
   let t = (0, $.c)(4),
     { connection: n, error: r, state: i } = e,
     a;
   return (
     t[0] !== n || t[1] !== r || t[2] !== i
-      ? ((a = (0, Q.jsx)(bn, { connection: n, error: r, state: i })),
+      ? ((a = (0, Q.jsx)(Sn, { connection: n, error: r, state: i })),
         (t[0] = n),
         (t[1] = r),
         (t[2] = i),
@@ -3737,12 +3864,12 @@ function yn(e) {
     a
   );
 }
-function bn(e) {
+function Sn(e) {
   let t = (0, $.c)(7),
     { connection: n, error: r, state: i } = e,
     a;
   t[0] !== n || t[1] !== r || t[2] !== i
-    ? ((a = (0, Q.jsx)(pn, { connection: n, error: r, state: i })),
+    ? ((a = (0, Q.jsx)(hn, { connection: n, error: r, state: i })),
       (t[0] = n),
       (t[1] = r),
       (t[2] = i),
@@ -3761,21 +3888,21 @@ function bn(e) {
   return (
     t[5] === a
       ? (s = t[6])
-      : ((s = (0, Q.jsxs)(vn, { children: [a, o] })), (t[5] = a), (t[6] = s)),
+      : ((s = (0, Q.jsxs)(bn, { children: [a, o] })), (t[5] = a), (t[6] = s)),
     s
   );
 }
-function xn(e) {
+function Cn(e) {
   let t = (0, $.c)(15),
     { connection: n } = e,
-    r = L(F),
-    i = I(),
-    a = P(p, n.hostId),
+    r = F(M),
+    i = ee(),
+    a = I(p, n.hostId),
     o;
   t[0] === n.hostId
     ? (o = t[1])
     : ((o = { hostId: n.hostId }), (t[0] = n.hostId), (t[1] = o));
-  let s = Qe(o),
+  let s = et(o),
     c,
     l;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
@@ -3798,7 +3925,7 @@ function xn(e) {
     ? ((d = (e) => {
         s.mutate(e, {
           onError: () => {
-            r.get(J).danger(
+            r.get(q).danger(
               i.formatMessage({
                 id: `settings.remoteConnections.details.availableFromSignedInDevicesUpdateError`,
                 defaultMessage: `Couldn’t update signed-in device availability`,
@@ -3828,11 +3955,11 @@ function xn(e) {
     t[10] !== a || t[11] !== s.isPending || t[12] !== d || t[13] !== f
       ? ((m = (0, Q.jsx)(X, {
           className: `pt-0`,
-          children: (0, Q.jsx)(We, {
-            children: (0, Q.jsx)(Ue, {
+          children: (0, Q.jsx)(Ge, {
+            children: (0, Q.jsx)(We, {
               label: c,
               description: l,
-              control: (0, Q.jsx)(Fe, {
+              control: (0, Q.jsx)(Le, {
                 checked: a,
                 disabled: u,
                 onChange: d,
@@ -3850,21 +3977,21 @@ function xn(e) {
     m
   );
 }
-function Sn(e) {
+function wn(e) {
   let t = (0, $.c)(15),
     { appServerVersion: n, connection: r, state: i } = e,
-    a = L(F),
-    o = I(),
+    a = F(M),
+    o = ee(),
     s,
     c;
   if (t[0] !== n || t[1] !== r || t[2] !== o || t[3] !== a || t[4] !== i) {
-    let e = Cn(r, i, n),
+    let e = Tn(r, i, n),
       l;
     t[7] !== o || t[8] !== a
       ? ((l = (e, t) => {
-          Oe(e, t).then(
+          Ae(e, t).then(
             () => {
-              a.get(J).info(
+              a.get(q).info(
                 o.formatMessage({
                   id: `settings.remoteConnections.details.copySuccess`,
                   defaultMessage: `Copied to clipboard`,
@@ -3873,7 +4000,7 @@ function Sn(e) {
               );
             },
             () => {
-              a.get(J).danger(
+              a.get(q).danger(
                 o.formatMessage({
                   id: `settings.remoteConnections.details.copyError`,
                   defaultMessage: `Failed to copy value`,
@@ -3896,7 +4023,7 @@ function Sn(e) {
           let t = e.copyValue,
             n =
               typeof e.value == `string`
-                ? (0, Q.jsx)(qt, { value: e.value })
+                ? (0, Q.jsx)(Yt, { value: e.value })
                 : e.value;
           return (0, Q.jsxs)(
             `div`,
@@ -3948,11 +4075,11 @@ function Sn(e) {
     l
   );
 }
-function Cn(e, t, n) {
+function Tn(e, t, n) {
   if (e.source === `remote-control`) {
-    let t = e.hostName || mn,
-      n = wn(e),
-      r = e.appServerVersion || mn;
+    let t = e.hostName || gn,
+      n = En(e),
+      r = e.appServerVersion || gn;
     return [
       {
         copyValue: e.hostName || null,
@@ -3965,7 +4092,7 @@ function Cn(e, t, n) {
         value: t,
       },
       {
-        copyValue: n === mn ? null : n,
+        copyValue: n === gn ? null : n,
         id: `platform`,
         label: (0, Q.jsx)(N, {
           id: `settings.remoteControlConnections.details.platform`,
@@ -3994,8 +4121,8 @@ function Cn(e, t, n) {
         }),
         value:
           e.lastSeenAt == null
-            ? mn
-            : (0, Q.jsx)(Ee, { dateString: e.lastSeenAt }),
+            ? gn
+            : (0, Q.jsx)(Oe, { dateString: e.lastSeenAt }),
       },
     ];
   }
@@ -4032,7 +4159,7 @@ function Cn(e, t, n) {
           defaultMessage: `Port`,
           description: `Modal label for SSH connection port`,
         }),
-        value: e.sshPort == null ? mn : String(e.sshPort),
+        value: e.sshPort == null ? gn : String(e.sshPort),
       },
       {
         copyValue: e.identity,
@@ -4042,7 +4169,7 @@ function Cn(e, t, n) {
           defaultMessage: `Identity`,
           description: `Modal label for SSH connection identity file`,
         }),
-        value: e.identity ?? mn,
+        value: e.identity ?? gn,
       },
     ));
   let a = n?.trim();
@@ -4063,18 +4190,20 @@ function Cn(e, t, n) {
     r
   );
 }
-function wn(e) {
-  let t = [e.os, e.arch].filter((e) => e.trim().length > 0);
-  return t.length > 0 ? t.join(` / `) : mn;
-}
-var Tn =
-  `` +
-  new URL(`remote-control-authorization-dialog-artwork.png`, import.meta.url)
-    .href;
 function En(e) {
+  let t = [e.os, e.arch].filter((e) => e.trim().length > 0);
+  return t.length > 0 ? t.join(` / `) : gn;
+}
+var Dn =
+  `` +
+  new URL(
+    `remote-control-authorization-dialog-artwork-BDkdoGfj.png`,
+    import.meta.url,
+  ).href;
+function On(e) {
   let t = (0, $.c)(29),
     { authorizing: n, open: r, onAuthorize: i, onOpenChange: a } = e,
-    o = I(),
+    o = ee(),
     { platform: s } = ue(),
     c;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
@@ -4101,12 +4230,12 @@ function En(e) {
   let u;
   t[4] === l
     ? (u = t[5])
-    : ((u = (0, Q.jsx)(he, { className: `sr-only`, children: l })),
+    : ((u = (0, Q.jsx)(ge, { className: `sr-only`, children: l })),
       (t[4] = l),
       (t[5] = u));
   let d;
   t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((d = (0, Q.jsx)(Dn, {})), (t[6] = d))
+    ? ((d = (0, Q.jsx)(kn, {})), (t[6] = d))
     : (d = t[6]);
   let f;
   t[7] === s
@@ -4160,7 +4289,7 @@ function En(e) {
     : (m = t[13]);
   let h;
   t[14] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = (0, Q.jsx)(qe, { variant: `dialog` })), (t[14] = h))
+    ? ((h = (0, Q.jsx)(Ye, { variant: `dialog` })), (t[14] = h))
     : (h = t[14]);
   let g;
   t[15] === Symbol.for(`react.memo_cache_sentinel`)
@@ -4206,7 +4335,7 @@ function En(e) {
   let b;
   return (
     t[25] !== a || t[26] !== r || t[27] !== y
-      ? ((b = (0, Q.jsx)(_e, {
+      ? ((b = (0, Q.jsx)(ve, {
           open: r,
           onOpenChange: a,
           contentProps: c,
@@ -4222,7 +4351,7 @@ function En(e) {
     b
   );
 }
-function Dn() {
+function kn() {
   let e = (0, $.c)(1),
     t;
   return (
@@ -4233,7 +4362,7 @@ function Dn() {
             alt: ``,
             "aria-hidden": !0,
             className: `h-full w-full object-cover`,
-            src: Tn,
+            src: Dn,
           }),
         })),
         (e[0] = t))
@@ -4241,7 +4370,7 @@ function Dn() {
     t
   );
 }
-function On(e) {
+function An(e) {
   let t = (0, $.c)(32),
     {
       connections: n,
@@ -4254,7 +4383,7 @@ function On(e) {
       onToggleConnection: l,
       selectedEnvIds: u,
     } = e,
-    d = I(),
+    d = ee(),
     f;
   t[0] === c
     ? (f = t[1])
@@ -4286,7 +4415,7 @@ function On(e) {
   let g = r || i,
     _;
   t[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((_ = (0, Q.jsx)(Ie, { className: `icon-sm` })), (t[5] = _))
+    ? ((_ = (0, Q.jsx)(Re, { className: `icon-sm` })), (t[5] = _))
     : (_ = t[5]);
   let v;
   t[6] !== s || t[7] !== r || t[8] !== h || t[9] !== g
@@ -4307,11 +4436,11 @@ function On(e) {
     : (v = t[10]);
   let y;
   t[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((y = (0, Q.jsx)(Mn, {})), (t[11] = y))
+    ? ((y = (0, Q.jsx)(Pn, {})), (t[11] = y))
     : (y = t[11]);
   let b;
   t[12] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((b = (0, Q.jsx)(se, {
+    ? ((b = (0, Q.jsx)(J, {
         interactive: !0,
         side: `top`,
         tooltipBodyClassName: `max-w-[320px]`,
@@ -4328,39 +4457,40 @@ function On(e) {
       })),
       (t[12] = b))
     : (b = t[12]);
-  let x;
+  let x = n.length === 0 || i,
+    S;
   t[13] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((x = (0, Q.jsx)(N, {
+    ? ((S = (0, Q.jsx)(N, {
         id: `settings.remoteConnections.remoteControlDiscoveryDialog.save`,
         defaultMessage: `Add`,
         description: `Primary action that adds selected signed-in devices`,
       })),
-      (t[13] = x))
-    : (x = t[13]);
-  let S;
-  t[14] === i
-    ? (S = t[15])
-    : ((S = (0, Q.jsx)(Y, {
+      (t[13] = S))
+    : (S = t[13]);
+  let C;
+  t[14] === x
+    ? (C = t[15])
+    : ((C = (0, Q.jsx)(Y, {
         type: `submit`,
         size: `large`,
-        disabled: i,
-        children: x,
+        disabled: x,
+        children: S,
       })),
-      (t[14] = i),
-      (t[15] = S));
-  let C;
-  t[16] !== S || t[17] !== v
-    ? ((C = (0, Q.jsxs)(`div`, {
-        className: `flex items-center gap-3`,
-        children: [v, b, S],
-      })),
-      (t[16] = S),
-      (t[17] = v),
-      (t[18] = C))
-    : (C = t[18]);
+      (t[14] = x),
+      (t[15] = C));
   let w;
+  t[16] !== C || t[17] !== v
+    ? ((w = (0, Q.jsxs)(`div`, {
+        className: `flex items-center gap-3`,
+        children: [v, b, C],
+      })),
+      (t[16] = C),
+      (t[17] = v),
+      (t[18] = w))
+    : (w = t[18]);
+  let T;
   t[19] !== n || t[20] !== d || t[21] !== i || t[22] !== l || t[23] !== u
-    ? ((w =
+    ? ((T =
         n.length === 0
           ? null
           : n.map((e) => {
@@ -4383,15 +4513,15 @@ function On(e) {
                       },
                   role: `button`,
                   tabIndex: i ? -1 : 0,
-                  children: (0, Q.jsx)(Ue, {
-                    icon: mt(e),
+                  children: (0, Q.jsx)(We, {
+                    icon: ht(e),
                     label: e.displayName,
-                    description: (0, Q.jsx)(jn, { connection: e }),
+                    description: (0, Q.jsx)(Nn, { connection: e }),
                     control: (0, Q.jsx)(`div`, {
                       className: `relative flex items-center`,
-                      onClick: An,
-                      onKeyDown: kn,
-                      children: (0, Q.jsx)(Be, {
+                      onClick: Mn,
+                      onKeyDown: jn,
+                      children: (0, Q.jsx)(Ce, {
                         "aria-label": d.formatMessage(
                           {
                             id: `settings.remoteConnections.remoteControlDiscoveryDialog.toggleSelection`,
@@ -4417,46 +4547,46 @@ function On(e) {
       (t[21] = i),
       (t[22] = l),
       (t[23] = u),
-      (t[24] = w))
-    : (w = t[24]);
-  let T;
+      (t[24] = T))
+    : (T = t[24]);
+  let E;
   t[25] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = (0, Q.jsx)(N, {
+    ? ((E = (0, Q.jsx)(N, {
         id: `settings.remoteConnections.remoteControlDiscoveryDialog.title`,
         defaultMessage: `Add device`,
         description: `Title for the dialog that lets users add a signed-in device`,
       })),
-      (t[25] = T))
-    : (T = t[25]);
-  let E;
+      (t[25] = E))
+    : (E = t[25]);
+  let D;
   return (
-    t[26] !== p || t[27] !== o || t[28] !== a || t[29] !== C || t[30] !== w
-      ? ((E = (0, Q.jsx)(Ot, {
+    t[26] !== p || t[27] !== o || t[28] !== a || t[29] !== w || t[30] !== T
+      ? ((D = (0, Q.jsx)(At, {
           emptyState: m,
-          footer: C,
-          list: w,
+          footer: w,
+          list: T,
           open: a,
-          title: T,
+          title: E,
           onOpenChange: o,
           onSubmit: p,
         })),
         (t[26] = p),
         (t[27] = o),
         (t[28] = a),
-        (t[29] = C),
-        (t[30] = w),
-        (t[31] = E))
-      : (E = t[31]),
-    E
+        (t[29] = w),
+        (t[30] = T),
+        (t[31] = D))
+      : (D = t[31]),
+    D
   );
 }
-function kn(e) {
-  e.stopPropagation();
-}
-function An(e) {
-  e.stopPropagation();
-}
 function jn(e) {
+  e.stopPropagation();
+}
+function Mn(e) {
+  e.stopPropagation();
+}
+function Nn(e) {
   let t = (0, $.c)(8),
     { connection: n } = e,
     r = n.online
@@ -4486,7 +4616,7 @@ function jn(e) {
               description: `Status label for a signed-in device that was seen previously in the add-device dialog`,
               values: {
                 date: (0, Q.jsx)(
-                  Ee,
+                  Oe,
                   { dateString: n.lastSeenAt },
                   `last-used-at`,
                 ),
@@ -4510,7 +4640,7 @@ function jn(e) {
     o
   );
 }
-function Mn() {
+function Pn() {
   let e = (0, $.c)(5),
     { platform: t } = ue(),
     n,
@@ -4598,7 +4728,7 @@ function Mn() {
     a
   );
 }
-function Nn(e) {
+function Fn(e) {
   let t = (0, $.c)(27),
     {
       connection: n,
@@ -4641,7 +4771,7 @@ function Nn(e) {
   t[5] === u
     ? (f = t[6])
     : ((f = (0, Q.jsx)(X, {
-        children: (0, Q.jsx)(ge, { title: u, subtitle: d }),
+        children: (0, Q.jsx)(_e, { title: u, subtitle: d }),
       })),
       (t[5] = u),
       (t[6] = f));
@@ -4691,14 +4821,14 @@ function Nn(e) {
       (t[15] = _));
   let v;
   t[16] !== _ || t[17] !== h
-    ? ((v = (0, Q.jsx)(X, { children: (0, Q.jsxs)(ye, { children: [h, _] }) })),
+    ? ((v = (0, Q.jsx)(X, { children: (0, Q.jsxs)(be, { children: [h, _] }) })),
       (t[16] = _),
       (t[17] = h),
       (t[18] = v))
     : (v = t[18]);
   let y;
   t[19] !== c || t[20] !== v || t[21] !== f
-    ? ((y = (0, Q.jsxs)(ve, { as: `form`, onSubmit: c, children: [f, v] })),
+    ? ((y = (0, Q.jsxs)(ye, { as: `form`, onSubmit: c, children: [f, v] })),
       (t[19] = c),
       (t[20] = v),
       (t[21] = f),
@@ -4707,7 +4837,7 @@ function Nn(e) {
   let b;
   return (
     t[23] !== a || t[24] !== r || t[25] !== y
-      ? ((b = (0, Q.jsx)(_e, {
+      ? ((b = (0, Q.jsx)(ve, {
           open: r,
           onOpenChange: a,
           size: `compact`,
@@ -4721,384 +4851,389 @@ function Nn(e) {
     b
   );
 }
-function Pn({
+function In({
   remoteControlConnectionsAuthorized: e,
   remoteControlConnectionsAuthRequired: t,
   showRemoteControlConnectionsSection: n,
 }) {
   return n && !t && !e;
 }
-var Fn = `remote-connections-refresh-success`,
-  In = `remote-connections-refresh-error`,
-  Ln = `remote-connections-save-success`,
-  Rn = `remote-connections-save-error`,
-  zn = `remote-connections-connect-toggle-error`,
-  Bn = `remote-connections-install-codex-error`,
-  Vn = `remote-connections-logout-error`,
-  Hn = `remote-control-environment-rename-success`,
-  Un = `remote-control-environment-rename-error`,
-  Wn = `remote-control-environment-delete-success`,
-  Gn = `remote-control-environment-delete-error`,
-  Kn = `remote-control-authorize-success`,
-  qn = `remote-control-authorize-error`,
-  Jn = `[remote-connections/settings]`,
-  Yn = 15e3,
-  Xn = [],
-  Zn = [];
-function Qn() {
-  let e = L(F),
-    t = ee(U),
-    n = oe(),
-    r = I(),
-    { platform: i } = ue(),
-    a = r.formatMessage({
+var Ln = `remote-connections-refresh-success`,
+  Rn = `remote-connections-refresh-error`,
+  zn = `remote-connections-save-success`,
+  Bn = `remote-connections-save-error`,
+  Vn = `remote-connections-connect-toggle-error`,
+  Hn = `remote-connections-install-codex-error`,
+  Un = `remote-connections-logout-error`,
+  Wn = `remote-control-environment-rename-success`,
+  Gn = `remote-control-environment-rename-error`,
+  Kn = `remote-control-environment-delete-success`,
+  qn = `remote-control-environment-delete-error`,
+  Jn = `remote-control-authorize-success`,
+  Yn = `remote-control-authorize-error`,
+  Xn = `[remote-connections/settings]`,
+  Zn = 15e3,
+  Qn = [],
+  $n = [];
+function er() {
+  let e = F(M),
+    t = te(V),
+    n = se(),
+    i = ee(),
+    { platform: a } = ue(),
+    o = oe(`782640499`),
+    c = i.formatMessage({
       id: `settings.remoteConnections.refresh`,
       defaultMessage: `Refresh`,
       description: `Button label to refresh remote connections`,
     }),
-    [o] = E(`remote_connections`),
-    [c] = E(`remote_control_connections`),
-    [l] = E(`remote_control_connections_state`),
-    [p, m] = (0, Z.useState)(null),
-    [S, O] = (0, Z.useState)(Xn),
-    [k, A] = (0, Z.useState)([]),
-    [j, P] = (0, Z.useState)([]),
-    [R, z] = (0, Z.useState)(!1),
-    [V, H] = (0, Z.useState)(!1),
-    [ae, q] = (0, Z.useState)(!1),
-    [ce, le] = (0, Z.useState)(`control-this-mac`),
-    [de, fe] = (0, Z.useState)(null),
-    [X, he] = (0, Z.useState)(null),
-    ge = me(),
-    _e = o == null,
-    ve = ge && c == null,
-    ye = [...(o ?? Xn)].sort($n),
-    be = tr(c ?? Zn),
-    { data: xe } = W(s.ADDED_REMOTE_CONTROL_ENV_IDS),
-    Se = G({ addedRemoteControlEnvIds: xe, remoteControlConnections: be }),
-    Ce = K({ addedRemoteControlEnvIds: xe, remoteControlConnections: be }),
-    we = Se.length > 0,
-    Te = l?.authRequired === !0,
-    Ee = l?.clientAuthorized === !0,
-    De = Pn({
-      remoteControlConnectionsAuthorized: Ee,
-      remoteControlConnectionsAuthRequired: Te,
-      showRemoteControlConnectionsSection: ge,
+    [l] = v(`remote_connections`),
+    [u] = v(`remote_control_connections`),
+    [p] = v(`remote_control_connections_state`),
+    [g, S] = (0, Z.useState)(null),
+    [O, k] = (0, Z.useState)(Qn),
+    [A, P] = (0, Z.useState)([]),
+    [I, L] = (0, Z.useState)([]),
+    [re, z] = (0, Z.useState)(!1),
+    [B, K] = (0, Z.useState)(!1),
+    [ce, le] = (0, Z.useState)(!1),
+    [de, fe] = (0, Z.useState)(`control-this-mac`),
+    [X, ge] = (0, Z.useState)(null),
+    [_e, ve] = (0, Z.useState)(null),
+    ye = he(),
+    be = !o,
+    xe = l == null,
+    Se = ye && u == null,
+    Ce = [...(l ?? Qn)].sort(tr),
+    we = nr(u ?? $n),
+    { data: Te } = U(s.ADDED_REMOTE_CONTROL_ENV_IDS),
+    Ee = W({ addedRemoteControlEnvIds: Te, remoteControlConnections: we }),
+    De = G({ addedRemoteControlEnvIds: Te, remoteControlConnections: we }),
+    Oe = Ee.length > 0,
+    ke = p?.authRequired === !0,
+    Ae = p?.clientAuthorized === !0,
+    je = In({
+      remoteControlConnectionsAuthorized: Ae,
+      remoteControlConnectionsAuthRequired: ke,
+      showRemoteControlConnectionsSection: ye,
     }),
-    Oe = !we && Ee && !Te,
-    ke = ye.map((e) =>
-      Pt(Nt(e), { connectionAnalyticsId: e.connectionAnalyticsId }),
+    Me = !Oe && Ae && !ke,
+    Ne = Ce.map((e) =>
+      It(Ft(e), { connectionAnalyticsId: e.connectionAnalyticsId }),
     ),
-    Ae = new Set(ke.map((e) => e.hostId)),
-    je = S.filter((e) => !Ae.has(e.hostId)),
-    Me = ge && !0,
-    Ne = ge && !0,
-    Pe = er({
-      selectedConnectionsTab: ce,
-      showControlThisMacTab: Me,
-      showRemoteControlConnectionsSection: ge,
-      showTabbedSshPage: Ne,
+    Pe = new Set(Ne.map((e) => e.hostId)),
+    Fe = O.filter((e) => !Pe.has(e.hostId)),
+    Ie = ye && !0,
+    Le = be && (ye || !1),
+    Be = me({
+      selectedConnectionsTab: de,
+      showControlOtherDevices: be,
+      showControlThisMacTab: Ie,
+      showRemoteControlConnectionsSection: ye,
+      showRemoteSshConnections: !0,
+      showTabbedSshPage: ye && !0,
     }),
-    Fe = () => {
-      e.get(J).success(
-        r.formatMessage({
+    Ue = () => {
+      e.get(q).success(
+        i.formatMessage({
           id: `settings.remoteConnections.refresh.success`,
           defaultMessage: `Refreshed remote connections`,
           description: `Toast shown when remote connections refresh successfully`,
         }),
-        { id: Fn },
+        { id: Ln },
       );
     },
-    Re = (t) => {
-      (M.warning(`${Jn} refresh_failed`, { safe: {}, sensitive: { error: t } }),
-        e.get(J).danger(
+    We = (t) => {
+      (j.warning(`${Xn} refresh_failed`, { safe: {}, sensitive: { error: t } }),
+        e.get(q).danger(
           t instanceof Error
             ? t.message
-            : r.formatMessage({
+            : i.formatMessage({
                 id: `settings.remoteConnections.refresh.error`,
                 defaultMessage: `Failed to refresh remote connections`,
                 description: `Toast shown when remote connections fail to refresh`,
               }),
-          { id: In },
+          { id: Rn },
         ));
     },
-    Be = B(`refresh-remote-connections`),
-    He = B(`discover-remote-ssh-connections`),
-    Ue = B(`refresh-remote-control-connections`),
-    Ke = B(`authorize-remote-control-connections`, {
+    qe = R(`refresh-remote-connections`),
+    Je = R(`discover-remote-ssh-connections`),
+    Ye = R(`refresh-remote-control-connections`),
+    Xe = R(`authorize-remote-control-connections`, {
       onSuccess: () => {
-        (ie(e, {
+        (H(e, {
           eventName: `codex_remote_control_authorization_result`,
           metadata: { result: `succeeded` },
         }),
-          e.get(J).success(
-            r.formatMessage({
+          e.get(q).success(
+            i.formatMessage({
               id: `settings.remoteControlConnections.authorize.success`,
               defaultMessage: `Remote control authorized`,
               description: `Toast shown when remote control authorization succeeds`,
             }),
-            { id: Kn },
+            { id: Jn },
           ),
-          q(!1),
-          P([]),
-          H(!0));
+          le(!1),
+          L([]),
+          K(!0));
       },
       onError: (t) => {
-        (ie(e, {
+        (H(e, {
           eventName: `codex_remote_control_authorization_result`,
           metadata: { result: `failed` },
         }),
-          M.warning(`${Jn} remote_control_authorize_failed`, {
+          j.warning(`${Xn} remote_control_authorize_failed`, {
             safe: {},
             sensitive: { error: t },
           }),
-          e.get(J).danger(
-            t instanceof te &&
+          e.get(q).danger(
+            t instanceof ne &&
               t.errorCode === `remote_control_enrollment_account_mismatch`
-              ? r.formatMessage({
+              ? i.formatMessage({
                   id: `settings.remoteControlConnections.authorize.accountMismatch`,
                   defaultMessage: `Remote control authorization used a different account`,
                   description: `Toast shown when remote control authorization completes for a different account`,
                 })
-              : r.formatMessage({
+              : i.formatMessage({
                   id: `settings.remoteControlConnections.authorize.error`,
                   defaultMessage: `Failed to authorize remote control`,
                   description: `Toast shown when remote control authorization fails`,
                 }),
-            { id: qn },
+            { id: Yn },
           ));
       },
     }),
-    qe = B(`save-codex-managed-remote-ssh-connections`, {
+    Ze = R(`save-codex-managed-remote-ssh-connections`, {
       onSuccess: () => {
-        e.get(J).success(
-          r.formatMessage({
+        e.get(q).success(
+          i.formatMessage({
             id: `settings.remoteConnections.save.success`,
             defaultMessage: `Saved remote connections`,
             description: `Toast shown when remote connections are saved`,
           }),
-          { id: Ln },
+          { id: zn },
         );
       },
       onError: (t) => {
-        (M.warning(`${Jn} save_failed`, { safe: {}, sensitive: { error: t } }),
-          e.get(J).danger(
-            r.formatMessage({
+        (j.warning(`${Xn} save_failed`, { safe: {}, sensitive: { error: t } }),
+          e.get(q).danger(
+            i.formatMessage({
               id: `settings.remoteConnections.save.error`,
               defaultMessage: `Failed to save remote connections`,
               description: `Toast shown when remote connections fail to save`,
             }),
-            { id: Rn },
-          ));
-      },
-    }),
-    Je = re({
-      mutationFn: (t) => d(e, s.ADDED_REMOTE_CONTROL_ENV_IDS, [...xe, ...t]),
-    }),
-    Ye = B(`set-remote-connection-auto-connect`, {
-      onError: (n, { autoConnect: i, hostId: a }) => {
-        let o = ye.find((e) => e.hostId === a);
-        (i &&
-          o != null &&
-          y(t, {
-            action: x.CODEX_REMOTE_SSH_CONNECTION_ACTION_CONNECT,
-            result: T.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
-            source: h.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
-            connection: o,
-            errorCategory:
-              v.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_CONNECTION_FAILED,
-          }),
-          M.warning(`${Jn} connect_toggle_failed`, {
-            safe: { autoConnect: i },
-            sensitive: { error: n, hostId: a },
-          }),
-          e.get(J).danger(
-            r.formatMessage({
-              id: `settings.remoteConnections.connectToggle.error`,
-              defaultMessage: `Failed to update connection`,
-              description: `Toast shown when remote connection toggle fails`,
-            }),
-            { id: zn },
-          ));
-      },
-    }),
-    Xe = B(`install-remote-codex`, {
-      onError: (t, { hostId: n }) => {
-        (M.warning(`${Jn} install_remote_codex_failed`, {
-          safe: {},
-          sensitive: { error: t, hostId: n },
-        }),
-          e.get(J).danger(
-            t instanceof Error
-              ? t.message
-              : r.formatMessage({
-                  id: `settings.remoteConnections.installCodex.error`,
-                  defaultMessage: `Failed to install Codex`,
-                  description: `Toast shown when installing Codex on a remote connection fails`,
-                }),
             { id: Bn },
           ));
       },
     }),
-    Ze = B(`rename-remote-control-environment`, {
-      onSuccess: () => {
-        e.get(J).success(
-          r.formatMessage({
-            id: `settings.remoteControlConnections.rename.success`,
-            defaultMessage: `Renamed remote control environment`,
-            description: `Toast shown when a remote control environment is renamed`,
+    Qe = ae({
+      mutationFn: (t) => f(e, s.ADDED_REMOTE_CONTROL_ENV_IDS, [...Te, ...t]),
+    }),
+    $e = R(`set-remote-connection-auto-connect`, {
+      onError: (n, { autoConnect: r, hostId: a }) => {
+        let o = Ce.find((e) => e.hostId === a);
+        (r &&
+          o != null &&
+          D(t, {
+            action: x.CODEX_REMOTE_SSH_CONNECTION_ACTION_CONNECT,
+            result: C.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
+            source: y.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
+            connection: o,
+            errorCategory:
+              T.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_CONNECTION_FAILED,
           }),
-          { id: Hn },
-        );
-      },
-      onError: (t, { envId: n }) => {
-        (M.warning(`${Jn} remote_control_rename_failed`, {
-          safe: {},
-          sensitive: { envId: n, error: t },
-        }),
-          e.get(J).danger(
-            r.formatMessage({
-              id: `settings.remoteControlConnections.rename.error`,
-              defaultMessage: `Failed to rename remote control environment`,
-              description: `Toast shown when a remote control environment rename fails`,
+          j.warning(`${Xn} connect_toggle_failed`, {
+            safe: { autoConnect: r },
+            sensitive: { error: n, hostId: a },
+          }),
+          e.get(q).danger(
+            i.formatMessage({
+              id: `settings.remoteConnections.connectToggle.error`,
+              defaultMessage: `Failed to update connection`,
+              description: `Toast shown when remote connection toggle fails`,
             }),
-            { id: Un },
+            { id: Vn },
           ));
       },
     }),
-    Qe = B(`delete-remote-control-environment`, {
+    et = R(`install-remote-codex`, {
+      onError: (t, { hostId: n }) => {
+        (j.warning(`${Xn} install_remote_codex_failed`, {
+          safe: {},
+          sensitive: { error: t, hostId: n },
+        }),
+          e.get(q).danger(
+            t instanceof Error
+              ? t.message
+              : i.formatMessage({
+                  id: `settings.remoteConnections.installCodex.error`,
+                  defaultMessage: `Failed to install Codex`,
+                  description: `Toast shown when installing Codex on a remote connection fails`,
+                }),
+            { id: Hn },
+          ));
+      },
+    }),
+    tt = R(`rename-remote-control-environment`, {
       onSuccess: () => {
-        e.get(J).success(
-          r.formatMessage({
-            id: `settings.remoteControlConnections.delete.success`,
-            defaultMessage: `Deleted remote control environment`,
-            description: `Toast shown when a remote control environment is deleted`,
+        e.get(q).success(
+          i.formatMessage({
+            id: `settings.remoteControlConnections.rename.success`,
+            defaultMessage: `Renamed remote control environment`,
+            description: `Toast shown when a remote control environment is renamed`,
           }),
           { id: Wn },
         );
       },
       onError: (t, { envId: n }) => {
-        (M.warning(`${Jn} remote_control_delete_failed`, {
+        (j.warning(`${Xn} remote_control_rename_failed`, {
           safe: {},
           sensitive: { envId: n, error: t },
         }),
-          e.get(J).danger(
-            r.formatMessage({
-              id: `settings.remoteControlConnections.delete.error`,
-              defaultMessage: `Failed to delete remote control environment`,
-              description: `Toast shown when a remote control environment delete fails`,
+          e.get(q).danger(
+            i.formatMessage({
+              id: `settings.remoteControlConnections.rename.error`,
+              defaultMessage: `Failed to rename remote control environment`,
+              description: `Toast shown when a remote control environment rename fails`,
             }),
             { id: Gn },
           ));
       },
     }),
-    $e = qe.isPending,
-    et =
-      Be.isPending ||
-      He.isPending ||
-      Ue.isPending ||
-      Ke.isPending ||
+    nt = R(`delete-remote-control-environment`, {
+      onSuccess: () => {
+        e.get(q).success(
+          i.formatMessage({
+            id: `settings.remoteControlConnections.delete.success`,
+            defaultMessage: `Deleted remote control environment`,
+            description: `Toast shown when a remote control environment is deleted`,
+          }),
+          { id: Kn },
+        );
+      },
+      onError: (t, { envId: n }) => {
+        (j.warning(`${Xn} remote_control_delete_failed`, {
+          safe: {},
+          sensitive: { envId: n, error: t },
+        }),
+          e.get(q).danger(
+            i.formatMessage({
+              id: `settings.remoteControlConnections.delete.error`,
+              defaultMessage: `Failed to delete remote control environment`,
+              description: `Toast shown when a remote control environment delete fails`,
+            }),
+            { id: qn },
+          ));
+      },
+    }),
+    rt = Ze.isPending,
+    it =
       qe.isPending ||
       Je.isPending ||
       Ye.isPending ||
       Xe.isPending ||
       Ze.isPending ||
-      Qe.isPending,
-    tt = (t) => {
-      n.getForHostId(t) ?? n.addManager(D(e, t, e.get(b, t).get()));
+      Qe.isPending ||
+      $e.isPending ||
+      et.isPending ||
+      tt.isPending ||
+      nt.isPending,
+    at = (t) => {
+      n.getForHostId(t) ?? n.addManager(E(e, t, e.get(b, t)));
     },
-    nt = async () => {
+    ot = async () => {
       try {
         let e = [];
-        (y(t, {
+        (D(t, {
           action: x.CODEX_REMOTE_SSH_CONNECTION_ACTION_REFRESH,
-          result: T.CODEX_REMOTE_SSH_CONNECTION_RESULT_STARTED,
-          source: h.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
+          result: C.CODEX_REMOTE_SSH_CONNECTION_RESULT_STARTED,
+          source: y.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
         }),
           e.push(
-            Be.mutateAsync(void 0)
+            qe
+              .mutateAsync(void 0)
               .then(({ remoteConnections: e }) => {
-                t.trackStructuredEvent(_, f(e));
+                t.trackStructuredEvent(_, d(e));
               })
               .catch((e) => {
                 throw (
-                  y(t, {
+                  D(t, {
                     action: x.CODEX_REMOTE_SSH_CONNECTION_ACTION_REFRESH,
-                    result: T.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
-                    source: h.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
+                    result: C.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
+                    source: y.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
                     errorCategory:
-                      v.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_UNKNOWN,
+                      T.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_UNKNOWN,
                   }),
                   e
                 );
               }),
           ),
-          ge && e.push(dt()),
+          ye && e.push(ht()),
           await Promise.all(e),
-          Fe());
+          Ue());
       } catch (e) {
-        Re(e);
+        We(e);
       }
     },
-    rt = async () => {
-      let { discoveredRemoteConnections: e } = await He.mutateAsync(void 0);
-      O([...e].sort($n));
+    ct = async () => {
+      let { discoveredRemoteConnections: e } = await Je.mutateAsync(void 0);
+      k([...e].sort(tr));
     },
-    it = async () => {
+    $ = async () => {
       try {
-        (await rt(), A([]), z(!0));
+        (await ct(), P([]), z(!0));
       } catch (e) {
-        Re(e);
+        We(e);
       }
     },
-    ot = (e) => {
-      P((t) => (t.includes(e) ? t.filter((t) => t !== e) : [...t, e]));
+    dt = (e) => {
+      L((t) => (t.includes(e) ? t.filter((t) => t !== e) : [...t, e]));
     },
-    st = () => {
-      if (Je.isPending) return;
-      let t = Ce.filter((e) => j.includes(e.envId)).map((e) => e.envId);
+    ft = () => {
+      if (Qe.isPending) return;
+      let t = De.filter((e) => I.includes(e.envId)).map((e) => e.envId);
       if (t.length === 0) {
-        H(!1);
+        K(!1);
         return;
       }
-      (ie(e, {
+      (H(e, {
         eventName: `codex_remote_control_environment_add_clicked`,
         metadata: {
-          addable_connection_count: Ce.length,
-          existing_connection_count: Se.length,
+          addable_connection_count: De.length,
+          existing_connection_count: Ee.length,
         },
       }),
-        Je.mutate(t, {
+        Qe.mutate(t, {
           onSuccess: () => {
-            (P([]), H(!1));
+            (L([]), K(!1));
           },
         }));
     },
-    $ = () => {
-      (P([]), H(!0));
+    pt = () => {
+      (L([]), K(!0));
     },
-    ut = () => {
-      (ie(e, {
+    mt = () => {
+      (H(e, {
         eventName: `codex_remote_control_authorization_result`,
         metadata: { result: `started` },
       }),
-        Ke.mutate(void 0));
+        Xe.mutate(void 0));
     },
-    dt = async () => {
-      let { remoteControlConnections: e } = await Ue.mutateAsync(void 0);
-      t.trackStructuredEvent(g, Gt(e));
+    ht = async () => {
+      let { remoteControlConnections: e } = await Ye.mutateAsync(void 0);
+      t.trackStructuredEvent(w, qt(e));
     },
-    ft = (0, Z.useEffectEvent)(async (e) => {
-      if (!et)
+    gt = (0, Z.useEffectEvent)(async (e) => {
+      if (!it)
         try {
           let t = [];
-          (t.push(ne(`refresh-remote-connections`, { signal: e })),
-            ge &&
-              t.push(ne(`refresh-remote-control-connections`, { signal: e })),
+          (t.push(ie(`refresh-remote-connections`, { signal: e })),
+            ye &&
+              t.push(ie(`refresh-remote-control-connections`, { signal: e })),
             await Promise.all(t));
         } catch (e) {
           if (e instanceof DOMException && e.name === `AbortError`) return;
-          M.debug(`${Jn} auto_refresh_failed`, {
+          j.debug(`${Xn} auto_refresh_failed`, {
             safe: {},
             sensitive: { error: e },
           });
@@ -5111,7 +5246,7 @@ function Qn() {
         if (!t) {
           ((t = !0), (e = new AbortController()));
           try {
-            await ft(e.signal);
+            await gt(e.signal);
           } finally {
             ((e = null), (t = !1));
           }
@@ -5119,20 +5254,20 @@ function Qn() {
       },
       r = window.setInterval(() => {
         n();
-      }, Yn);
+      }, Zn);
     return () => {
       (e?.abort(), window.clearInterval(r));
     };
   }, []);
-  let pt = async () => {
-      if (X != null)
+  let _t = async () => {
+      if (_e != null)
         try {
-          (await Qe.mutateAsync({ envId: X.envId }), he(null));
+          (await nt.mutateAsync({ envId: _e.envId }), ve(null));
         } catch {}
     },
-    mt = (t, r, i) => {
-      (tt(t),
-        C(e, {
+    vt = (t, r, i) => {
+      (at(t),
+        h(e, {
           error: i,
           hostId: t,
           source: `settings_sync_remote_connection_state`,
@@ -5140,233 +5275,207 @@ function Qn() {
         }),
         n.notifyRegistryChanged());
     },
-    ht = (e) => {
-      Xe.mutate(
+    bt = (e) => {
+      et.mutate(
         { hostId: e },
         {
           onSuccess: ({ state: t, error: n }) => {
-            mt(e, t, n);
+            vt(e, t, n);
           },
         },
       );
     },
-    gt = (e) => {
-      if (p == null || $e) return;
+    xt = (e) => {
+      if (g == null || rt) return;
       let n =
-          p.mode === `edit`
-            ? (ye.find((e) => e.hostId === p.hostId) ?? null)
+          g.mode === `edit`
+            ? (Ce.find((e) => e.hostId === g.hostId) ?? null)
             : null,
-        r = p.mode === `add` ? !0 : (n?.autoConnect ?? !1),
-        i = Pt(e, { connectionAnalyticsId: n?.connectionAnalyticsId }),
+        r = g.mode === `add` ? !0 : (n?.autoConnect ?? !1),
+        i = It(e, { connectionAnalyticsId: n?.connectionAnalyticsId }),
         a =
-          p.mode === `add`
-            ? [...ke, i]
-            : ke
-                .filter((e) => e.hostId !== p.hostId)
+          g.mode === `add`
+            ? [...Ne, i]
+            : Ne.filter((e) => e.hostId !== g.hostId)
                 .concat(i)
-                .sort($n);
-      qe.mutate(
+                .sort(tr);
+      Ze.mutate(
         { remoteConnections: a },
         {
           onSuccess: ({ remoteConnections: e }) => {
             let n = e.find((e) => e.hostId === i.hostId) ?? i;
-            y(t, {
+            D(t, {
               action: x.CODEX_REMOTE_SSH_CONNECTION_ACTION_SAVE_CONNECTION,
-              result: T.CODEX_REMOTE_SSH_CONNECTION_RESULT_SUCCEEDED,
-              source: h.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
+              result: C.CODEX_REMOTE_SSH_CONNECTION_RESULT_SUCCEEDED,
+              source: y.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
               connection: n,
             });
-            let a = p.mode === `add` && p.returnToDiscoveryDialog;
-            (m(null), a && z(!0), r && xt(i.hostId, !0));
+            let a = g.mode === `add` && g.returnToDiscoveryDialog;
+            (S(null), a && z(!0), r && Tt(i.hostId, !0));
           },
           onError: () => {
-            y(t, {
+            D(t, {
               action: x.CODEX_REMOTE_SSH_CONNECTION_ACTION_SAVE_CONNECTION,
-              result: T.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
-              source: h.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
+              result: C.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
+              source: y.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
               connection: i,
               errorCategory:
-                v.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_UNKNOWN,
+                T.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_UNKNOWN,
             });
           },
         },
       );
     },
-    _t = (e) => {
-      $e || qe.mutate({ remoteConnections: ke.filter((t) => t.hostId !== e) });
+    St = (e) => {
+      rt || Ze.mutate({ remoteConnections: Ne.filter((t) => t.hostId !== e) });
     },
-    yt = (e) => {
-      A((t) => (t.includes(e) ? t.filter((t) => t !== e) : [...t, e]));
+    Ct = (e) => {
+      P((t) => (t.includes(e) ? t.filter((t) => t !== e) : [...t, e]));
     },
-    bt = () => {
-      if ($e) return;
-      let e = je.filter((e) => k.includes(e.hostId));
+    wt = () => {
+      if (rt) return;
+      let e = Fe.filter((e) => A.includes(e.hostId));
       if (e.length === 0) {
         z(!1);
         return;
       }
       let t = e.map((e) =>
-        Pt({ ...Nt(e), displayName: e.sshAlias?.trim() || e.displayName }),
+        It({ ...Ft(e), displayName: e.sshAlias?.trim() || e.displayName }),
       );
-      qe.mutate(
-        { remoteConnections: [...ke, ...t].sort($n) },
+      Ze.mutate(
+        { remoteConnections: [...Ne, ...t].sort(tr) },
         {
           onSuccess: () => {
             (t.forEach((e) => {
-              xt(e.hostId, !0);
+              Tt(e.hostId, !0);
             }),
-              A([]),
+              P([]),
               z(!1));
           },
         },
       );
     },
-    xt = (e, n) => {
-      $e ||
-        Ye.mutate(
+    Tt = (e, n) => {
+      rt ||
+        $e.mutate(
           { hostId: e, autoConnect: n },
           {
-            onSuccess: ({ remoteConnections: r, state: i, error: a }) => {
-              mt(e, i, a);
-              let o = r.find((t) => t.hostId === e && u(t));
-              if (n && o != null) {
-                let e = i === `connected` && a == null;
-                y(t, {
+            onSuccess: ({ remoteConnections: i, state: a, error: o }) => {
+              vt(e, a, o);
+              let s = i.find((t) => t.hostId === e && r(t));
+              if (n && s != null) {
+                let e = a === `connected` && o == null;
+                D(t, {
                   action: x.CODEX_REMOTE_SSH_CONNECTION_ACTION_CONNECT,
                   result: e
-                    ? T.CODEX_REMOTE_SSH_CONNECTION_RESULT_SUCCEEDED
-                    : T.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
-                  source: h.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
-                  connection: o,
-                  connectionState: i,
+                    ? C.CODEX_REMOTE_SSH_CONNECTION_RESULT_SUCCEEDED
+                    : C.CODEX_REMOTE_SSH_CONNECTION_RESULT_FAILED,
+                  source: y.CODEX_REMOTE_SSH_CONNECTION_EVENT_SOURCE_SETTINGS,
+                  connection: s,
+                  connectionState: a,
                   ...(e
                     ? {}
-                    : a == null
+                    : o == null
                       ? {
                           errorCategory:
-                            v.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_UNKNOWN,
+                            T.CODEX_REMOTE_SSH_CONNECTION_ERROR_CATEGORY_UNKNOWN,
                         }
-                      : { connectionError: a }),
+                      : { connectionError: o }),
                 });
               }
             },
           },
         );
     },
-    St = () => {
-      it();
+    Et = () => {
+      $();
     },
-    Ct = async (t) => {
+    Dt = async (t) => {
       try {
-        (await w(`logout`, { hostId: t }),
-          mt(t, `error`, { code: `login-required` }));
+        (await m(`logout`, { hostId: t }),
+          vt(t, `error`, { code: `login-required` }));
       } catch (n) {
-        (M.warning(`${Jn} logout_failed`, {
+        (j.warning(`${Xn} logout_failed`, {
           safe: {},
           sensitive: { error: n, hostId: t },
         }),
-          e.get(J).danger(
-            r.formatMessage({
+          e.get(q).danger(
+            i.formatMessage({
               id: `settings.remoteConnections.logout.error`,
               defaultMessage: `Failed to log out of connection`,
               description: `Toast shown when logging out of a remote connection fails`,
             }),
-            { id: Vn },
+            { id: Un },
           ));
       }
-    };
+    },
+    Ot = [
+      {
+        key: `access-other-devices`,
+        name: (0, Q.jsx)(N, {
+          id: `settings.remoteConnections.tabs.accessOtherDevices`,
+          defaultMessage: `Control other devices`,
+          description: `Tab label for settings that let this computer control other devices`,
+        }),
+      },
+    ],
+    At = [
+      {
+        key: `control-this-mac`,
+        name:
+          a === `windows`
+            ? (0, Q.jsx)(N, {
+                id: `settings.remoteConnections.tabs.controlThisMac.windows`,
+                defaultMessage: `Control this PC`,
+                description: `Tab label for settings that let other devices control this Windows device`,
+              })
+            : (0, Q.jsx)(N, {
+                id: `settings.remoteConnections.tabs.controlThisMac`,
+                defaultMessage: `Control this Mac`,
+                description: `Tab label for settings that let other devices control this computer`,
+              }),
+      },
+    ],
+    Mt = [
+      {
+        key: `ssh`,
+        name: (0, Q.jsx)(N, {
+          id: `settings.remoteConnections.tabs.ssh`,
+          defaultMessage: `SSH`,
+          description: `Tab label for SSH remote connections`,
+        }),
+      },
+    ],
+    Nt = [...(Ie ? At : []), ...(Le ? Ot : []), ...Mt];
   return (0, Q.jsxs)(Q.Fragment, {
     children: [
-      (0, Q.jsxs)(Ve, {
-        title: (0, Q.jsx)(Le, { slug: `connections` }),
+      (0, Q.jsxs)(He, {
+        title: (0, Q.jsx)(ze, { slug: `connections` }),
         subtitle: null,
         children: [
-          Me
-            ? (0, Q.jsx)(at, {
-                ariaLabel: r.formatMessage({
+          Nt.length >= 2
+            ? (0, Q.jsx)(st, {
+                ariaLabel: i.formatMessage({
                   id: `settings.remoteConnections.tabs.ariaLabel`,
                   defaultMessage: `Connections view`,
                   description: `Accessible label for the remote connections view selector`,
                 }),
                 className: `w-full`,
-                tabs: [
-                  {
-                    key: `control-this-mac`,
-                    name:
-                      i === `windows`
-                        ? (0, Q.jsx)(N, {
-                            id: `settings.remoteConnections.tabs.controlThisMac.windows`,
-                            defaultMessage: `Control this PC`,
-                            description: `Tab label for settings that let other devices control this Windows device`,
-                          })
-                        : (0, Q.jsx)(N, {
-                            id: `settings.remoteConnections.tabs.controlThisMac`,
-                            defaultMessage: `Control this Mac`,
-                            description: `Tab label for settings that let other devices control this computer`,
-                          }),
-                  },
-                  {
-                    key: `access-other-devices`,
-                    name: (0, Q.jsx)(N, {
-                      id: `settings.remoteConnections.tabs.accessOtherDevices`,
-                      defaultMessage: `Control other devices`,
-                      description: `Tab label for settings that let this computer control other devices`,
-                    }),
-                  },
-                  {
-                    key: `ssh`,
-                    name: (0, Q.jsx)(N, {
-                      id: `settings.remoteConnections.tabs.ssh`,
-                      defaultMessage: `SSH`,
-                      description: `Tab label for SSH remote connections`,
-                    }),
-                  },
-                ],
-                selectedKey: Pe,
+                tabs: Nt,
+                selectedKey: Be,
                 variant: `underline`,
-                onSelect: le,
+                onSelect: fe,
               })
             : null,
-          !Me && Ne
-            ? (0, Q.jsx)(at, {
-                ariaLabel: r.formatMessage({
-                  id: `settings.remoteConnections.tabs.ariaLabel`,
-                  defaultMessage: `Connections view`,
-                  description: `Accessible label for the remote connections view selector`,
-                }),
-                className: `w-full`,
-                tabs: [
-                  {
-                    key: `access-other-devices`,
-                    name: (0, Q.jsx)(N, {
-                      id: `settings.remoteConnections.tabs.accessOtherDevices`,
-                      defaultMessage: `Control other devices`,
-                      description: `Tab label for settings that let this computer control other devices`,
-                    }),
-                  },
-                  {
-                    key: `ssh`,
-                    name: (0, Q.jsx)(N, {
-                      id: `settings.remoteConnections.tabs.ssh`,
-                      defaultMessage: `SSH`,
-                      description: `Tab label for SSH remote connections`,
-                    }),
-                  },
-                ],
-                selectedKey: Pe,
-                variant: `underline`,
-                onSelect: le,
-              })
+          Be === `control-this-mac`
+            ? (0, Q.jsx)(pe, { electron: !0, children: (0, Q.jsx)(yt, {}) })
             : null,
-          Pe === `control-this-mac`
-            ? (0, Q.jsx)(pe, { electron: !0, children: (0, Q.jsx)(vt, {}) })
-            : null,
-          Pe === `access-other-devices` && De
-            ? (0, Q.jsxs)(Ge, {
+          be && Be === `access-other-devices` && je
+            ? (0, Q.jsxs)(Ke, {
                 children: [
-                  (0, Q.jsx)(Ge.Header, {
+                  (0, Q.jsx)(Ke.Header, {
                     title:
-                      i === `windows`
+                      a === `windows`
                         ? (0, Q.jsx)(N, {
                             id: `settings.remoteConnections.accessOtherDevices.devices.title.windows`,
                             defaultMessage: `Devices you can control from this PC`,
@@ -5378,9 +5487,9 @@ function Qn() {
                             description: `Header title for the access other devices setup section`,
                           }),
                   }),
-                  (0, Q.jsx)(Ge.Content, {
-                    children: (0, Q.jsx)(We, {
-                      children: (0, Q.jsx)(ze, {
+                  (0, Q.jsx)(Ke.Content, {
+                    children: (0, Q.jsx)(Ge, {
+                      children: (0, Q.jsx)(Ve, {
                         spacing: `compact`,
                         title: null,
                         description: (0, Q.jsx)(N, {
@@ -5388,14 +5497,14 @@ function Qn() {
                           defaultMessage: `Access and control other devices from this computer`,
                           description: `Description shown before this computer has been set up to access other devices`,
                         }),
-                        illustration: (0, Q.jsx)(ct, {
+                        illustration: (0, Q.jsx)(lt, {
                           className: `h-6 w-auto text-token-text-primary`,
                         }),
                         actions: (0, Q.jsx)(Y, {
                           color: `secondary`,
-                          disabled: et,
+                          disabled: it,
                           onClick: () => {
-                            q(!0);
+                            le(!0);
                           },
                           children: (0, Q.jsx)(N, {
                             id: `settings.remoteConnections.accessOtherDevices.setup.action`,
@@ -5409,12 +5518,12 @@ function Qn() {
                 ],
               })
             : null,
-          Pe === `access-other-devices` && !De
-            ? (0, Q.jsxs)(Ge, {
+          be && Be === `access-other-devices` && !je
+            ? (0, Q.jsxs)(Ke, {
                 children: [
-                  (0, Q.jsx)(Ge.Header, {
+                  (0, Q.jsx)(Ke.Header, {
                     title:
-                      i === `windows`
+                      a === `windows`
                         ? (0, Q.jsx)(N, {
                             id: `settings.remoteConnections.accessOtherDevices.header.title.windows`,
                             defaultMessage: `Devices you can control from this PC`,
@@ -5427,24 +5536,24 @@ function Qn() {
                           }),
                     actions: (0, Q.jsxs)(Q.Fragment, {
                       children: [
-                        (0, Q.jsx)(se, {
-                          tooltipContent: a,
+                        (0, Q.jsx)(J, {
+                          tooltipContent: c,
                           children: (0, Q.jsx)(Y, {
-                            "aria-label": a,
+                            "aria-label": c,
                             color: `ghost`,
                             size: `icon`,
-                            disabled: et,
+                            disabled: it,
                             onClick: () => {
-                              nt();
+                              ot();
                             },
-                            children: (0, Q.jsx)(Ie, { className: `icon-xs` }),
+                            children: (0, Q.jsx)(Re, { className: `icon-xs` }),
                           }),
                         }),
-                        we
+                        Oe
                           ? (0, Q.jsx)(Y, {
                               color: `secondary`,
-                              disabled: et || Te,
-                              onClick: $,
+                              disabled: it || ke,
+                              onClick: pt,
                               children: (0, Q.jsx)(N, {
                                 id: `settings.remoteConnections.add.short`,
                                 defaultMessage: `Add`,
@@ -5455,9 +5564,9 @@ function Qn() {
                       ],
                     }),
                   }),
-                  (0, Q.jsx)(Ge.Content, {
-                    children: ve
-                      ? (0, Q.jsx)(We, {
+                  (0, Q.jsx)(Ke.Content, {
+                    children: Se
+                      ? (0, Q.jsx)(Ge, {
                           children: (0, Q.jsx)(`div`, {
                             className: `p-3 text-sm text-token-text-secondary`,
                             children: (0, Q.jsx)(N, {
@@ -5467,11 +5576,11 @@ function Qn() {
                             }),
                           }),
                         })
-                      : (0, Q.jsx)(We, {
+                      : (0, Q.jsx)(Ge, {
                           children: (0, Q.jsxs)(Q.Fragment, {
                             children: [
-                              Oe
-                                ? (0, Q.jsx)(ze, {
+                              Me
+                                ? (0, Q.jsx)(Ve, {
                                     spacing: `compact`,
                                     title: null,
                                     description: (0, Q.jsx)(N, {
@@ -5479,13 +5588,13 @@ function Qn() {
                                       defaultMessage: `No devices added yet`,
                                       description: `Empty state for devices this computer can access`,
                                     }),
-                                    illustration: (0, Q.jsx)(ct, {
+                                    illustration: (0, Q.jsx)(lt, {
                                       className: `h-6 w-auto text-token-text-primary`,
                                     }),
                                     actions: (0, Q.jsx)(Y, {
                                       color: `secondary`,
-                                      disabled: et,
-                                      onClick: $,
+                                      disabled: it,
+                                      onClick: pt,
                                       children: (0, Q.jsx)(N, {
                                         id: `settings.remoteConnections.add.short`,
                                         defaultMessage: `Add`,
@@ -5493,10 +5602,10 @@ function Qn() {
                                       }),
                                     }),
                                   })
-                                : (0, Q.jsx)(hn, {
-                                    connections: Se,
-                                    disabled: et,
-                                    clientAuthorized: Ee,
+                                : (0, Q.jsx)(_n, {
+                                    connections: Ee,
+                                    disabled: it,
+                                    clientAuthorized: Ae,
                                     installingCodexHostId: null,
                                     showEmptyState: !1,
                                     onEditSshConnection: () => {},
@@ -5506,19 +5615,19 @@ function Qn() {
                                       e,
                                       t,
                                     ) => {
-                                      await Ze.mutateAsync({
+                                      await tt.mutateAsync({
                                         envId: e,
                                         name: t,
                                       });
                                     },
-                                    onRequestDeleteRemoteControlConnection: he,
-                                    onToggleConnection: xt,
+                                    onRequestDeleteRemoteControlConnection: ve,
+                                    onToggleConnection: Tt,
                                     onLogoutConnection: (e) => {
-                                      Ct(e);
+                                      Dt(e);
                                     },
                                     onAuthenticate: () => {},
                                   }),
-                              Te
+                              ke
                                 ? (0, Q.jsx)(`div`, {
                                     className: `p-3 text-sm text-token-text-secondary`,
                                     children: (0, Q.jsx)(N, {
@@ -5535,12 +5644,12 @@ function Qn() {
                 ],
               })
             : null,
-          Pe === `ssh`
-            ? (0, Q.jsxs)(Ge, {
+          Be === `ssh`
+            ? (0, Q.jsxs)(Ke, {
                 children: [
-                  (0, Q.jsx)(Ge.Header, {
+                  (0, Q.jsx)(Ke.Header, {
                     title:
-                      i === `windows`
+                      a === `windows`
                         ? (0, Q.jsx)(N, {
                             id: `settings.remoteConnections.ssh.header.title.windows`,
                             defaultMessage: `SSH connections from this PC`,
@@ -5552,11 +5661,11 @@ function Qn() {
                             description: `Header title for SSH connections from this Mac`,
                           }),
                     actions:
-                      ye.length > 0
+                      Ce.length > 0
                         ? (0, Q.jsx)(Y, {
                             color: `secondary`,
-                            disabled: $e,
-                            onClick: St,
+                            disabled: rt,
+                            onClick: Et,
                             children: (0, Q.jsx)(N, {
                               id: `settings.remoteConnections.add.short`,
                               defaultMessage: `Add`,
@@ -5565,9 +5674,9 @@ function Qn() {
                           })
                         : null,
                   }),
-                  (0, Q.jsx)(Ge.Content, {
-                    children: (0, Q.jsx)(We, {
-                      children: _e
+                  (0, Q.jsx)(Ke.Content, {
+                    children: (0, Q.jsx)(Ge, {
+                      children: xe
                         ? (0, Q.jsx)(`div`, {
                             className: `p-3 text-sm text-token-text-secondary`,
                             children: (0, Q.jsx)(N, {
@@ -5576,8 +5685,8 @@ function Qn() {
                               description: `Loading message for SSH connections`,
                             }),
                           })
-                        : ye.length === 0
-                          ? (0, Q.jsx)(ze, {
+                        : Ce.length === 0
+                          ? (0, Q.jsx)(Ve, {
                               spacing: `compact`,
                               title: null,
                               description: (0, Q.jsx)(N, {
@@ -5585,13 +5694,13 @@ function Qn() {
                                 defaultMessage: `Connect to a remote device through SSH connection`,
                                 description: `Empty state for SSH connections`,
                               }),
-                              illustration: (0, Q.jsx)(lt, {
+                              illustration: (0, Q.jsx)(ut, {
                                 className: `h-6 w-auto text-token-text-primary`,
                               }),
                               actions: (0, Q.jsx)(Y, {
                                 color: `secondary`,
-                                disabled: $e,
-                                onClick: St,
+                                disabled: rt,
+                                onClick: Et,
                                 children: (0, Q.jsx)(N, {
                                   id: `settings.remoteConnections.add.short`,
                                   defaultMessage: `Add`,
@@ -5600,34 +5709,34 @@ function Qn() {
                               }),
                             })
                           : (0, Q.jsx)(Q.Fragment, {
-                              children: (0, Q.jsx)(hn, {
-                                connections: ye,
-                                disabled: et,
-                                clientAuthorized: Ee,
-                                installingCodexHostId: Xe.isPending
-                                  ? (Xe.variables?.hostId ?? null)
+                              children: (0, Q.jsx)(_n, {
+                                connections: Ce,
+                                disabled: it,
+                                clientAuthorized: Ae,
+                                installingCodexHostId: et.isPending
+                                  ? (et.variables?.hostId ?? null)
                                   : null,
                                 showEmptyState: !1,
                                 onEditSshConnection: (e) => {
-                                  let t = ye.find((t) => t.hostId === e);
+                                  let t = Ce.find((t) => t.hostId === e);
                                   t != null &&
-                                    m({
+                                    S({
                                       mode: `edit`,
                                       hostId: e,
-                                      draft: Nt(t),
+                                      draft: Ft(t),
                                     });
                                 },
-                                onInstallCodex: ht,
-                                onRemoveSshConnection: _t,
+                                onInstallCodex: bt,
+                                onRemoveSshConnection: St,
                                 onRenameRemoteControlConnection: async () => {},
                                 onRequestDeleteRemoteControlConnection:
                                   () => {},
-                                onToggleConnection: xt,
+                                onToggleConnection: Tt,
                                 onLogoutConnection: (e) => {
-                                  Ct(e);
+                                  Dt(e);
                                 },
                                 onAuthenticate: (e) => {
-                                  (tt(e), fe(e));
+                                  (at(e), ge(e));
                                 },
                               }),
                             }),
@@ -5638,107 +5747,97 @@ function Qn() {
             : null,
         ],
       }),
-      p == null
+      g == null
         ? null
-        : (0, Q.jsx)(Rt, {
+        : (0, Q.jsx)(Bt, {
             open: !0,
-            mode: p.mode,
-            draft: p.draft,
-            existingConnections: ye,
-            editingHostId: p.mode === `edit` ? p.hostId : null,
+            mode: g.mode,
+            draft: g.draft,
+            existingConnections: Ce,
+            editingHostId: g.mode === `edit` ? g.hostId : null,
             onOpenChange: (e) => {
               if (!e) {
-                let e = p.mode === `add` && p.returnToDiscoveryDialog;
-                (m(null), e && z(!0));
+                let e = g.mode === `add` && g.returnToDiscoveryDialog;
+                (S(null), e && z(!0));
               }
             },
-            onSubmit: gt,
-            isSaving: qe.isPending,
+            onSubmit: xt,
+            isSaving: Ze.isPending,
           }),
-      R
-        ? (0, Q.jsx)(kt, {
-            connections: je,
-            isSaving: qe.isPending,
+      re
+        ? (0, Q.jsx)(jt, {
+            connections: Fe,
+            isSaving: Ze.isPending,
             open: !0,
-            refreshing: He.isPending,
+            refreshing: Je.isPending,
             onAddManually: () => {
               (z(!1),
-                m({ mode: `add`, draft: Mt(), returnToDiscoveryDialog: !0 }));
+                S({ mode: `add`, draft: Pt(), returnToDiscoveryDialog: !0 }));
             },
             onOpenChange: z,
             onRefresh: () => {
-              rt().catch(Re);
+              ct().catch(We);
             },
-            onSave: bt,
-            onToggleConnection: yt,
-            selectedHostIds: k,
+            onSave: wt,
+            onToggleConnection: Ct,
+            selectedHostIds: A,
           })
         : null,
-      V
-        ? (0, Q.jsx)(On, {
-            connections: Ce,
-            refreshing: Ue.isPending,
-            isSaving: Je.isPending,
+      be && B
+        ? (0, Q.jsx)(An, {
+            connections: De,
+            refreshing: Ye.isPending,
+            isSaving: Qe.isPending,
             open: !0,
             onOpenChange: (e) => {
-              (H(e), e || P([]));
+              (K(e), e || L([]));
             },
             onRefresh: () => {
-              dt().catch(Re);
+              ht().catch(We);
             },
-            onSave: st,
-            onToggleConnection: ot,
-            selectedEnvIds: j,
+            onSave: ft,
+            onToggleConnection: dt,
+            selectedEnvIds: I,
           })
         : null,
-      ae
-        ? (0, Q.jsx)(En, {
-            authorizing: Ke.isPending,
+      be && ce
+        ? (0, Q.jsx)(On, {
+            authorizing: Xe.isPending,
             open: !0,
-            onAuthorize: ut,
-            onOpenChange: q,
+            onAuthorize: mt,
+            onOpenChange: le,
           })
         : null,
-      (0, Q.jsx)(Dt, {
-        hostId: de,
-        open: de != null,
-        onOpenChange: (e) => {
-          e || fe(null);
-        },
-      }),
-      (0, Q.jsx)(Nn, {
-        connection: X,
+      (0, Q.jsx)(kt, {
+        hostId: X,
         open: X != null,
-        isDeleting: Qe.isPending,
         onOpenChange: (e) => {
-          e || he(null);
-        },
-        onConfirm: () => {
-          pt();
+          e || ge(null);
         },
       }),
+      be
+        ? (0, Q.jsx)(Fn, {
+            connection: _e,
+            open: _e != null,
+            isDeleting: nt.isPending,
+            onOpenChange: (e) => {
+              e || ve(null);
+            },
+            onConfirm: () => {
+              _t();
+            },
+          })
+        : null,
     ],
   });
 }
-function $n(e, t) {
+function tr(e, t) {
   return e.displayName.localeCompare(t.displayName);
 }
-function er({
-  selectedConnectionsTab: e,
-  showControlThisMacTab: t,
-  showRemoteControlConnectionsSection: n,
-  showTabbedSshPage: r,
-}) {
-  return n
-    ? (e === `control-this-mac` && !t) || (e === `ssh` && !r)
-      ? `access-other-devices`
-      : e
-    : `ssh`;
-}
-function tr(e) {
+function nr(e) {
   return [...e].sort((e, t) =>
     e.online && t.online
-      ? $n(e, t)
+      ? tr(e, t)
       : e.online === t.online
         ? e.lastSeenAt != null && t.lastSeenAt == null
           ? -1
@@ -5748,11 +5847,11 @@ function tr(e) {
                 t.lastSeenAt != null &&
                 e.lastSeenAt !== t.lastSeenAt
               ? t.lastSeenAt.localeCompare(e.lastSeenAt)
-              : $n(e, t)
+              : tr(e, t)
         : e.online
           ? -1
           : 1,
   );
 }
-export { Qn as RemoteConnectionsSettings };
+export { er as RemoteConnectionsSettings };
 //# sourceMappingURL=remote-connections-settings.js.map

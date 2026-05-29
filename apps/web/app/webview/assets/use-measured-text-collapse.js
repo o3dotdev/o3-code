@@ -1,7 +1,7 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t } from "./jsx-runtime.js";
-import { xt as n } from "./setting-storage.js";
-import { n as r } from "./use-resize-observer.js";
+import { wt as n } from "./setting-storage.js";
+import { n as r } from "./use-resize-observer-DCpyQHos.js";
 var i = n(),
   a = e(t(), 1),
   o = 1.5,
@@ -51,37 +51,59 @@ function c(e) {
     _
   );
 }
-function l({ collapsedLineCount: e, fallbackFontSizePx: t }) {
-  let [n, i] = (0, a.useState)(null),
-    o = (0, a.useCallback)(
-      (n, r) => {
-        i((i) => {
-          let a = u(r, n.contentRect.width, e, t);
-          return i?.collapsedHeightPx === a?.collapsedHeightPx &&
-            i?.contentHeightPx === a?.contentHeightPx &&
-            i?.font === a?.font &&
-            i?.lineHeightPx === a?.lineHeightPx &&
-            i?.maxWidthPx === a?.maxWidthPx &&
-            i?.element === a?.element &&
-            i?.fallbackFontSizePx === a?.fallbackFontSizePx
-            ? i
-            : a;
+function l(e) {
+  let t = (0, i.c)(10),
+    { collapsedLineCount: n, fallbackFontSizePx: o } = e,
+    [s, c] = (0, a.useState)(null),
+    l;
+  t[0] !== n || t[1] !== o
+    ? ((l = (e, t) => {
+        c((r) => {
+          let i = u(t, e.contentRect.width, n, o);
+          return r?.collapsedHeightPx === i?.collapsedHeightPx &&
+            r?.contentHeightPx === i?.contentHeightPx &&
+            r?.font === i?.font &&
+            r?.lineHeightPx === i?.lineHeightPx &&
+            r?.maxWidthPx === i?.maxWidthPx &&
+            r?.element === i?.element &&
+            r?.fallbackFontSizePx === i?.fallbackFontSizePx
+            ? r
+            : i;
         });
-      },
-      [e, t],
-    ),
-    s = r((e, t) => {
-      o(e, t);
-    });
-  return {
-    setTextMeasurementRef: (0, a.useCallback)(
-      (e) => {
-        s(e);
-      },
-      [s],
-    ),
-    textMeasurement: n,
-  };
+      }),
+      (t[0] = n),
+      (t[1] = o),
+      (t[2] = l))
+    : (l = t[2]);
+  let d = l,
+    f;
+  t[3] === d
+    ? (f = t[4])
+    : ((f = (e, t) => {
+        d(e, t);
+      }),
+      (t[3] = d),
+      (t[4] = f));
+  let p = r(f),
+    m;
+  t[5] === p
+    ? (m = t[6])
+    : ((m = (e) => {
+        p(e);
+      }),
+      (t[5] = p),
+      (t[6] = m));
+  let h = m,
+    g;
+  return (
+    t[7] !== h || t[8] !== s
+      ? ((g = { setTextMeasurementRef: h, textMeasurement: s }),
+        (t[7] = h),
+        (t[8] = s),
+        (t[9] = g))
+      : (g = t[9]),
+    g
+  );
 }
 function u(e, t, n, r) {
   let i = Math.floor(t);

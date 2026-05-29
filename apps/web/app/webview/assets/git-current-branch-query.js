@@ -1,83 +1,66 @@
 import {
-  Cn as e,
-  _n as t,
-  an as n,
-  bn as r,
-  vn as i,
-  yn as a,
-} from "./app-server-manager-signals.js";
-import { Q as o, S as s, Z as c, et as l } from "./setting-storage.js";
-function u({ getOptions: u, getParams: p, method: m }) {
-  let h = o(
-      s,
-      (t) =>
-        l(s, () =>
-          n(
-            m,
-            { commonDir: t.commonDir, root: t.root },
-            p(t),
-            e(t.hostConfig),
-            t.hostConfig,
-            { enabled: t.enabled, ...u?.(t) },
-          ),
-        ),
-      { key: d },
-    ),
-    g = o(
+  Gn as e,
+  Jn as t,
+  Kn as n,
+  Nn as r,
+  Qn as i,
+  qn as a,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { $ as o, S as s, nt as c } from "./setting-storage.js";
+function l({ getOptions: l, getParams: u, method: d }) {
+  let f = c(
       s,
       (e) =>
-        c(
-          s,
-          ({ get: t }) => (
-            t(
-              t(a, {
-                commonDir: e.commonDir,
-                enabled: e.enabled,
-                hostConfig: e.hostConfig,
-                operationSource: e.operationSource,
-                root: e.root,
-              }),
-            ),
-            t(t(h, e))
-          ),
+        r(
+          d,
+          { commonDir: e.commonDir, root: e.root },
+          u(e),
+          i(e.hostConfig),
+          e.hostConfig,
+          { enabled: e.enabled, ...l?.(e) },
         ),
-      { key: d },
+      { excludeFieldsFromKey: [`operationSource`] },
+    ),
+    p = o(
+      s,
+      (e, { get: t }) => (
+        t(
+          t(a, {
+            commonDir: e.commonDir,
+            enabled: e.enabled,
+            hostConfig: e.hostConfig,
+            operationSource: e.operationSource,
+            root: e.root,
+          }),
+        ),
+        t(f, e)
+      ),
+      { excludeFieldsFromKey: [`operationSource`] },
     );
   return {
     fromCwd$: o(
       s,
-      (e) =>
-        c(s, ({ get: n }) => {
-          if (!e.enabled || e.cwd == null) return t();
-          let a = n(
-              n(r, {
-                cwd: e.cwd,
-                enabled: e.enabled,
-                hostConfig: e.hostConfig,
-                operationSource: e.operationSource,
-                watchForGitInit: !1,
-              }),
-            ),
-            o = a.data ?? null;
-          if (o == null) return i(a);
-          let { cwd: s, ...c } = e;
-          return n(n(g, { ...c, commonDir: o.commonDir, root: o.root }));
-        }),
-      { key: f },
+      (r, { get: i }) => {
+        if (!r.enabled || r.cwd == null) return e();
+        let a = i(t, {
+            cwd: r.cwd,
+            enabled: r.enabled,
+            hostConfig: r.hostConfig,
+            operationSource: r.operationSource,
+            watchForGitInit: !1,
+          }),
+          o = a.data ?? null;
+        if (o == null) return n(a);
+        let { cwd: s, ...c } = r;
+        return i(p, { ...c, commonDir: o.commonDir, root: o.root });
+      },
+      { excludeFieldsFromKey: [`operationSource`] },
     ),
-    fromMetadata$: g,
-    queryByMetadata$: h,
+    fromMetadata$: p,
+    queryByMetadata$: f,
   };
 }
-function d(e) {
-  let { operationSource: t, ...n } = e;
-  return JSON.stringify(n);
-}
-function f(e) {
-  let { operationSource: t, ...n } = e;
-  return JSON.stringify(n);
-}
-var p = u({
+var u = l({
     method: `current-branch`,
     getParams: (e) => ({ operationSource: e.operationSource, root: e.root }),
     getOptions: (e) => ({
@@ -86,8 +69,8 @@ var p = u({
       ...(e.staleTime == null ? {} : { staleTime: e.staleTime }),
     }),
   }),
-  m = p.fromMetadata$,
-  h = p.fromCwd$,
-  g = o(s, (e) => c(s, ({ get: t }) => t(t(h, e)).data ?? null));
-export { u as i, h as n, g as r, m as t };
+  d = u.fromMetadata$,
+  f = u.fromCwd$,
+  p = o(s, (e, { get: t }) => t(f, e).data ?? null);
+export { l as i, f as n, p as r, d as t };
 //# sourceMappingURL=git-current-branch-query.js.map

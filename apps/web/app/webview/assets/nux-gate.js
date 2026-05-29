@@ -1,6 +1,6 @@
 import { t as e } from "./jsx-runtime.js";
-import { xt as t } from "./setting-storage.js";
-import { r as n } from "./chunk-LFPYN7LY.js";
+import { wt as t } from "./setting-storage.js";
+import { a as n } from "./chunk-LFPYN7LY.js";
 import { t as r } from "./app-preloader.js";
 import { t as i } from "./use-nux.js";
 var a = t(),

@@ -1,41 +1,43 @@
-import { s as e } from "./chunk.js";
-import { zt as t } from "./app-server-manager-signals.js";
-import { n, t as r } from "./jsx-runtime.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./app-server-manager-signals-DkRDRgNB.js";
+import { n as t, t as n } from "./jsx-runtime.js";
 import {
-  C as i,
-  H as a,
-  L as o,
-  S as s,
-  T as ee,
-  W as te,
-  Y as ne,
-  _ as re,
-  w as ie,
-  xt as c,
-  y as l,
+  C as r,
+  G as i,
+  L as a,
+  S as o,
+  T as s,
+  U as c,
+  X as ee,
+  _ as te,
+  w as ne,
+  wt as l,
+  y as u,
 } from "./setting-storage.js";
-import { u as ae } from "./chunk-LFPYN7LY.js";
-import { o as oe } from "./statsig.js";
-import { t as se } from "./connector-logo.js";
-import { r as u } from "./toast-signal.js";
-import { t as ce } from "./button.js";
-import { t as d } from "./spinner.js";
+import { r as re } from "./chunk-LFPYN7LY.js";
+import { o as ie } from "./statsig--EYRNU53.js";
+import { t as d } from "./request-DWZTrEAr.js";
 import {
-  _ as le,
-  g as f,
-  h as ue,
-  m as de,
-  p as fe,
-  v as pe,
-} from "./apps-queries.js";
-import { t as me } from "./check-circle-filled.js";
-import { l as he, n as ge } from "./dialog-layout.js";
-import { t as _e } from "./openai-blossom.js";
-import { t as p } from "./toggle.js";
-import { n as ve } from "./app-connect-oauth.js";
+  _ as f,
+  g as ae,
+  h as oe,
+  m as p,
+  v as se,
+  y as ce,
+} from "./apps-queries-CmwRqoKz.js";
+import { t as le } from "./connector-logo.js";
+import { r as ue } from "./toast-signal.js";
+import { t as de } from "./button.js";
+import { t as fe } from "./spinner.js";
+import { t as pe } from "./check-circle-filled.js";
+import { l as me, n as he } from "./dialog-layout.js";
+import { t as ge } from "./openai-blossom-CXnPbecc.js";
+import { t as m } from "./toggle.js";
+import { n as _e } from "./app-connect-oauth-Cy-gX8IV.js";
+import { t as ve } from "./connected-apps.js";
 import { t as ye } from "./arrow-top-right.js";
-var be = c(),
-  xe = e(n(), 1);
+var be = l(),
+  xe = e(t(), 1);
 function Se(e) {
   let t = (0, be.c)(16),
     n;
@@ -43,98 +45,85 @@ function Se(e) {
     ? (n = t[1])
     : ((n = e === void 0 ? {} : e), (t[0] = e), (t[1] = n));
   let { hostId: r, onConnectStarted: i } = n,
-    a = ae(),
+    a = (0, xe.useContext)(re),
     o = r ?? `local`,
-    s = oe(`2761268526`),
+    s = ie(`2761268526`),
     {
-      clearPendingAppConnect: ee,
-      isAppConnectPending: te,
-      markAppConnectOAuthPending: ne,
-    } = ve(),
-    [re, ie] = (0, xe.useState)(null),
-    c = Ce,
-    l;
-  t[2] !== ee || t[3] !== s || t[4] !== i
-    ? ((l = async (e) => {
-        if ((ee({ appId: e.id }), i?.(e), !s && e.installUrl?.trim())) {
-          c(e.installUrl);
+      clearPendingAppConnect: c,
+      isAppConnectPending: ee,
+      markAppConnectOAuthPending: te,
+    } = _e(),
+    [ne, l] = (0, xe.useState)(null),
+    u = Ce,
+    d;
+  t[2] !== c || t[3] !== s || t[4] !== i
+    ? ((d = async (e) => {
+        if ((c({ appId: e.id }), i?.(e), !s && e.installUrl?.trim())) {
+          u(e.installUrl);
           return;
         }
-        ie(e);
+        l(e);
       }),
-      (t[2] = ee),
+      (t[2] = c),
       (t[3] = s),
       (t[4] = i),
-      (t[5] = l))
-    : (l = t[5]);
-  let se = l,
-    u;
+      (t[5] = d))
+    : (d = t[5]);
+  let f = d,
+    ae;
   t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((u = () => {
-        ie(null);
+    ? ((ae = () => {
+        l(null);
       }),
-      (t[6] = u))
-    : (u = t[6]);
-  let ce = u,
-    d;
-  t[7] !== o || t[8] !== a || t[9] !== ne
-    ? ((d = (e) => {
+      (t[6] = ae))
+    : (ae = t[6]);
+  let oe = ae,
+    p;
+  t[7] !== o || t[8] !== a?.location || t[9] !== te
+    ? ((p = (e) => {
         let { app: t, redirectUrl: n } = e;
-        ne({
-          app: t,
-          hostId: o,
-          redirectUrl: n,
-          returnTo: `${a.pathname}${a.search}${a.hash}`,
-        });
+        te({ app: t, hostId: o, redirectUrl: n, returnTo: we(a?.location) });
       }),
       (t[7] = o),
-      (t[8] = a),
-      (t[9] = ne),
-      (t[10] = d))
-    : (d = t[10]);
-  let le = d,
-    f;
+      (t[8] = a?.location),
+      (t[9] = te),
+      (t[10] = p))
+    : (p = t[10]);
+  let se = p,
+    ce;
   return (
-    t[11] !== re || t[12] !== le || t[13] !== se || t[14] !== te
-      ? ((f = {
-          connectingApp: re,
-          clearConnectingApp: ce,
-          handleAppConnectOAuthStarted: le,
-          handleConnectApp: se,
-          handleOpenAppUrl: c,
-          isAppConnectPending: te,
+    t[11] !== ne || t[12] !== se || t[13] !== f || t[14] !== ee
+      ? ((ce = {
+          connectingApp: ne,
+          clearConnectingApp: oe,
+          handleAppConnectOAuthStarted: se,
+          handleConnectApp: f,
+          handleOpenAppUrl: u,
+          isAppConnectPending: ee,
         }),
-        (t[11] = re),
-        (t[12] = le),
-        (t[13] = se),
-        (t[14] = te),
-        (t[15] = f))
-      : (f = t[15]),
-    f
+        (t[11] = ne),
+        (t[12] = se),
+        (t[13] = f),
+        (t[14] = ee),
+        (t[15] = ce))
+      : (ce = t[15]),
+    ce
   );
 }
 function Ce(e) {
   let t = e?.trim();
-  t && l.dispatchMessage(`open-in-browser`, { url: t });
+  t && u.dispatchMessage(`open-in-browser`, { url: t });
 }
-var m = r(),
-  we = (e) =>
-    (0, m.jsx)(`svg`, {
-      width: 20,
-      height: 20,
-      viewBox: `0 0 20 20`,
-      fill: `none`,
-      xmlns: `http://www.w3.org/2000/svg`,
-      ...e,
-      children: (0, m.jsx)(`path`, {
-        d: `M7.45996 14.375C7.45996 13.3616 6.63844 12.54 5.625 12.54C4.61156 12.54 3.79004 13.3616 3.79004 14.375C3.79004 15.3884 4.61156 16.21 5.625 16.21C6.63844 16.21 7.45996 15.3884 7.45996 14.375ZM16.21 14.375C16.21 13.3616 15.3884 12.54 14.375 12.54C13.3616 12.54 12.54 13.3616 12.54 14.375C12.54 15.3884 13.3616 16.21 14.375 16.21C15.3884 16.21 16.21 15.3884 16.21 14.375ZM7.45996 5.625C7.45996 4.61156 6.63844 3.79004 5.625 3.79004C4.61156 3.79004 3.79004 4.61156 3.79004 5.625C3.79004 6.63844 4.61156 7.45996 5.625 7.45996C6.63844 7.45996 7.45996 6.63844 7.45996 5.625ZM16.21 5.625C16.21 4.61156 15.3884 3.79004 14.375 3.79004C13.3616 3.79004 12.54 4.61156 12.54 5.625C12.54 6.63844 13.3616 7.45996 14.375 7.45996C15.3884 7.45996 16.21 6.63844 16.21 5.625ZM17.54 14.375C17.54 16.123 16.123 17.54 14.375 17.54C12.627 17.54 11.21 16.123 11.21 14.375C11.21 12.627 12.627 11.21 14.375 11.21C16.123 11.21 17.54 12.627 17.54 14.375ZM8.79004 5.625C8.79004 7.37298 7.37298 8.79004 5.625 8.79004C3.87702 8.79004 2.45996 7.37298 2.45996 5.625C2.45996 3.87702 3.87702 2.45996 5.625 2.45996C7.37298 2.45996 8.79004 3.87702 8.79004 5.625ZM17.54 5.625C17.54 7.37298 16.123 8.79004 14.375 8.79004C13.7416 8.79004 13.153 8.60173 12.6582 8.28125L8.28125 12.6582C8.60173 13.153 8.79004 13.7416 8.79004 14.375C8.79004 16.123 7.37298 17.54 5.625 17.54C3.87702 17.54 2.45996 16.123 2.45996 14.375C2.45996 12.627 3.87702 11.21 5.625 11.21C6.25794 11.21 6.84623 11.3977 7.34082 11.7178L11.7178 7.34082C11.3977 6.84623 11.21 6.25794 11.21 5.625C11.21 3.87702 12.627 2.45996 14.375 2.45996C16.123 2.45996 17.54 3.87702 17.54 5.625Z`,
-        fill: `currentColor`,
-      }),
-    }),
+function we(e) {
+  return e == null
+    ? `${window.location.pathname}${window.location.search}${window.location.hash}`
+    : `${e.pathname}${e.search}${e.hash}`;
+}
+var h = n(),
   Te = `OAI-Product-Sku`,
   Ee = `CODEX`,
-  De = /\[([^\]]+)\]\(([^)]+)\)/g;
-function Oe(e) {
+  g = /\[([^\]]+)\]\(([^)]+)\)/g;
+function De(e) {
   if (typeof e != `object` || !e) return !1;
   let t = e,
     n = t.properties;
@@ -142,23 +131,23 @@ function Oe(e) {
   let r = t.required;
   return !!(Array.isArray(r) && r.length > 0);
 }
-function ke(e) {
+function Oe(e) {
   return e.supported_auth.some((e) => e.type === `OAUTH`)
     ? `OAUTH`
     : e.supported_auth.some((e) => e.type === `NONE`)
       ? `NONE`
       : `UNSUPPORTED`;
 }
-function Ae(e) {
+function ke(e) {
   return (
     e?.branding?.developer?.trim() || e?.app_metadata?.developer?.trim() || null
   );
 }
-function h(e) {
+function _(e) {
   let t = [],
     n = 0,
     r;
-  for (; (r = De.exec(e)) != null; ) {
+  for (; (r = g.exec(e)) != null; ) {
     r.index > n && t.push(e.slice(n, r.index));
     let [i, a, o] = r,
       s = o.trim();
@@ -167,7 +156,7 @@ function h(e) {
       continue;
     }
     (t.push(
-      (0, m.jsx)(
+      (0, h.jsx)(
         `a`,
         {
           href: s,
@@ -176,7 +165,7 @@ function h(e) {
           className: `underline`,
           onClick: (e) => {
             (e.preventDefault(),
-              l.dispatchMessage(`open-in-browser`, { url: s }));
+              u.dispatchMessage(`open-in-browser`, { url: s }));
           },
           children: a,
         },
@@ -190,33 +179,33 @@ function h(e) {
     t.length === 0 ? e : t.length === 1 ? t[0] : t
   );
 }
-function je() {
+function Ae() {
   let e = (0, be.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, m.jsx)(`div`, {
+      ? ((t = (0, h.jsx)(`div`, {
           className: `rounded-2xl border border-token-border-default px-4 py-2`,
-          children: Array.from({ length: 3 }).map(Me),
+          children: Array.from({ length: 3 }).map(v),
         })),
         (e[0] = t))
       : (t = e[0]),
     t
   );
 }
-function Me(e, t) {
-  return (0, m.jsxs)(
+function v(e, t) {
+  return (0, h.jsxs)(
     `div`,
     {
       className: `flex flex-col gap-1 border-b border-token-border-default py-2.5 last:border-none`,
       children: [
-        (0, m.jsx)(`div`, {
+        (0, h.jsx)(`div`, {
           className: `h-3 w-36 rounded bg-token-border-default`,
         }),
-        (0, m.jsx)(`div`, {
+        (0, h.jsx)(`div`, {
           className: `h-2.5 w-full rounded bg-token-border-default`,
         }),
-        (0, m.jsx)(`div`, {
+        (0, h.jsx)(`div`, {
           className: `h-2.5 w-4/5 rounded bg-token-border-default`,
         }),
       ],
@@ -224,7 +213,7 @@ function Me(e, t) {
     t,
   );
 }
-function Ne(e) {
+function je(e) {
   let t = (0, be.c)(7),
     { blurbs: n, personalizationToggle: r } = e,
     i;
@@ -233,23 +222,23 @@ function Ne(e) {
     : ((i =
         r == null
           ? null
-          : (0, m.jsxs)(`div`, {
+          : (0, h.jsxs)(`div`, {
               className: `flex items-start justify-between gap-4 border-b border-token-border-default py-2.5 last:border-none`,
               children: [
-                (0, m.jsxs)(`div`, {
+                (0, h.jsxs)(`div`, {
                   className: `min-w-0 flex-1`,
                   children: [
-                    (0, m.jsx)(`div`, {
+                    (0, h.jsx)(`div`, {
                       className: `text-sm font-medium text-token-text-primary`,
                       children: r.blurb.title,
                     }),
-                    (0, m.jsx)(`div`, {
+                    (0, h.jsx)(`div`, {
                       className: `text-xs text-token-text-secondary`,
-                      children: h(r.blurb.description),
+                      children: _(r.blurb.description),
                     }),
                   ],
                 }),
-                (0, m.jsx)(p, {
+                (0, h.jsx)(m, {
                   checked: r.checked,
                   disabled: r.disabled,
                   ariaLabel: r.ariaLabel,
@@ -260,11 +249,11 @@ function Ne(e) {
       (t[0] = r),
       (t[1] = i));
   let a;
-  t[2] === n ? (a = t[3]) : ((a = n.map(g)), (t[2] = n), (t[3] = a));
+  t[2] === n ? (a = t[3]) : ((a = n.map(y)), (t[2] = n), (t[3] = a));
   let o;
   return (
     t[4] !== i || t[5] !== a
-      ? ((o = (0, m.jsxs)(`div`, {
+      ? ((o = (0, h.jsxs)(`div`, {
           className: `rounded-2xl border border-token-border-default px-4 py-2`,
           children: [i, a],
         })),
@@ -275,844 +264,848 @@ function Ne(e) {
     o
   );
 }
-function g(e, t) {
-  return (0, m.jsxs)(
+function y(e, t) {
+  return (0, h.jsxs)(
     `div`,
     {
       className: `flex flex-col gap-1 border-b border-token-border-default py-2.5 last:border-none`,
       children: [
-        (0, m.jsx)(`div`, {
+        (0, h.jsx)(`div`, {
           className: `text-sm font-medium text-token-text-primary`,
           children: e.title,
         }),
-        (0, m.jsx)(`div`, {
+        (0, h.jsx)(`div`, {
           className: `text-xs text-token-text-secondary`,
-          children: h(e.description),
+          children: _(e.description),
         }),
       ],
     },
     `${e.title}-${t}`,
   );
 }
-function _(e) {
-  let n = (0, be.c)(170),
+function Me(e) {
+  let t = (0, be.c)(170),
     {
-      app: r,
-      connectApp: c,
-      closeOnFailedConnect: ae,
-      isCompletingConnection: oe,
-      onOpenChange: p,
-      onConnected: ve,
+      app: n,
+      connectApp: l,
+      closeOnFailedConnect: re,
+      isCompletingConnection: ie,
+      onOpenChange: m,
+      onConnected: _e,
       onOAuthStarted: Se,
       showResultToasts: Ce,
     } = e,
-    De = ae === void 0 ? !1 : ae,
-    h = oe === void 0 ? !1 : oe,
-    Me = Ce === void 0 ? !0 : Ce,
-    g = ne(s),
-    _ = te(),
-    Fe = o(),
-    [Ie, Le] = (0, xe.useState)(null),
-    Re = r != null,
-    v = r?.id ?? ``,
-    ze;
-  n[0] === p
-    ? (ze = n[1])
-    : ((ze = (e) => {
-        (e || Le(null), p(e));
+    we = re === void 0 ? !1 : re,
+    g = ie === void 0 ? !1 : ie,
+    _ = Ce === void 0 ? !0 : Ce,
+    v = ee(o),
+    y = i(),
+    Me = a(),
+    [Pe, Fe] = (0, xe.useState)(null),
+    Ie = n != null,
+    b = n?.id ?? ``,
+    Le;
+  t[0] === m
+    ? (Le = t[1])
+    : ((Le = (e) => {
+        (e || Fe(null), m(e));
       }),
-      (n[0] = p),
-      (n[1] = ze));
-  let y = ze,
-    b;
-  n[2] === v
-    ? (b = n[3])
-    : ((b = [`mcp-settings`, `app-connect`, v]), (n[2] = v), (n[3] = b));
-  let Be = Re && r != null,
-    x;
-  n[4] === r
-    ? (x = n[5])
-    : ((x = async () => {
-        if (r == null) throw Error(`Expected app metadata to be present.`);
-        return t.safeGet(`/aip/connectors/{connector_id}`, {
+      (t[0] = m),
+      (t[1] = Le));
+  let x = Le,
+    S;
+  t[2] === b
+    ? (S = t[3])
+    : ((S = [`mcp-settings`, `app-connect`, b]), (t[2] = b), (t[3] = S));
+  let Re = Ie && n != null,
+    C;
+  t[4] === n
+    ? (C = t[5])
+    : ((C = async () => {
+        if (n == null) throw Error(`Expected app metadata to be present.`);
+        return d.safeGet(`/aip/connectors/{connector_id}`, {
           parameters: {
-            path: { connector_id: r.id },
+            path: { connector_id: n.id },
             query: { include_logo: !1, include_actions: !1 },
           },
           additionalHeaders: { [Te]: Ee },
         });
       }),
-      (n[4] = r),
-      (n[5] = x));
-  let Ve;
-  n[6] !== b || n[7] !== Be || n[8] !== x
-    ? ((Ve = {
-        queryKey: b,
-        enabled: Be,
-        staleTime: re.FIVE_MINUTES,
-        queryFn: x,
+      (t[4] = n),
+      (t[5] = C));
+  let ze;
+  t[6] !== S || t[7] !== Re || t[8] !== C
+    ? ((ze = {
+        queryKey: S,
+        enabled: Re,
+        staleTime: te.FIVE_MINUTES,
+        queryFn: C,
       }),
-      (n[6] = b),
-      (n[7] = Be),
-      (n[8] = x),
-      (n[9] = Ve))
-    : (Ve = n[9]);
-  let S = ee(Ve),
-    C = S.data,
-    w;
-  n[10] === v
-    ? (w = n[11])
-    : ((w = [`mcp-settings`, `app-connect`, `tos`, v]),
-      (n[10] = v),
-      (n[11] = w));
-  let He = Re && r != null,
-    T;
-  n[12] === r
-    ? (T = n[13])
-    : ((T = async () => {
-        if (r == null) throw Error(`Expected app metadata to be present.`);
-        return t.safeGet(`/aip/connectors/{connector_id}/tos`, {
-          parameters: { path: { connector_id: r.id } },
+      (t[6] = S),
+      (t[7] = Re),
+      (t[8] = C),
+      (t[9] = ze))
+    : (ze = t[9]);
+  let w = s(ze),
+    T = w.data,
+    E;
+  t[10] === b
+    ? (E = t[11])
+    : ((E = [`mcp-settings`, `app-connect`, `tos`, b]),
+      (t[10] = b),
+      (t[11] = E));
+  let Be = Ie && n != null,
+    D;
+  t[12] === n
+    ? (D = t[13])
+    : ((D = async () => {
+        if (n == null) throw Error(`Expected app metadata to be present.`);
+        return d.safeGet(`/aip/connectors/{connector_id}/tos`, {
+          parameters: { path: { connector_id: n.id } },
           additionalHeaders: { [Te]: Ee },
         });
       }),
-      (n[12] = r),
-      (n[13] = T));
-  let Ue;
-  n[14] !== He || n[15] !== T || n[16] !== w
-    ? ((Ue = {
-        queryKey: w,
-        enabled: He,
-        staleTime: re.FIVE_MINUTES,
-        queryFn: T,
+      (t[12] = n),
+      (t[13] = D));
+  let Ve;
+  t[14] !== Be || t[15] !== D || t[16] !== E
+    ? ((Ve = {
+        queryKey: E,
+        enabled: Be,
+        staleTime: te.FIVE_MINUTES,
+        queryFn: D,
       }),
-      (n[14] = He),
-      (n[15] = T),
-      (n[16] = w),
-      (n[17] = Ue))
-    : (Ue = n[17]);
-  let E = ee(Ue),
-    D = S.isPending,
-    We;
-  n[18] === C
-    ? (We = n[19])
-    : ((We = C == null ? `UNSUPPORTED` : ke(C)), (n[18] = C), (n[19] = We));
-  let O = We,
+      (t[14] = Be),
+      (t[15] = D),
+      (t[16] = E),
+      (t[17] = Ve))
+    : (Ve = t[17]);
+  let O = s(Ve),
+    k = w.isPending,
+    He;
+  t[18] === T
+    ? (He = t[19])
+    : ((He = T == null ? `UNSUPPORTED` : Oe(T)), (t[18] = T), (t[19] = He));
+  let A = He,
+    Ue;
+  t[20] === T
+    ? (Ue = t[21])
+    : ((Ue = T == null ? !1 : De(T.link_params_schema)),
+      (t[20] = T),
+      (t[21] = Ue));
+  let We = Ue,
+    j =
+      l == null && !k && (w.isError || T == null || We || A === `UNSUPPORTED`),
     Ge;
-  n[20] === C
-    ? (Ge = n[21])
-    : ((Ge = C == null ? !1 : Oe(C.link_params_schema)),
-      (n[20] = C),
-      (n[21] = Ge));
-  let Ke = Ge,
-    k =
-      c == null && !D && (S.isError || C == null || Ke || O === `UNSUPPORTED`),
-    qe;
-  n[22] !== r?.installUrl || n[23] !== y || n[24] !== _ || n[25] !== g
-    ? ((qe = (e) => {
-        let { closeModal: t, showMissingUrlToast: n } = e === void 0 ? {} : e,
+  t[22] !== n?.installUrl || t[23] !== x || t[24] !== y || t[25] !== v
+    ? ((Ge = (e) => {
+        let { closeModal: t, showMissingUrlToast: r } = e === void 0 ? {} : e,
           i = t === void 0 ? !0 : t,
-          a = n === void 0 ? !0 : n,
-          o = r?.installUrl?.trim();
+          a = r === void 0 ? !0 : r,
+          o = n?.installUrl?.trim();
         if (!o) {
           if (!a) return;
-          g.get(u).danger(f(_));
+          v.get(ue).danger(f(y));
           return;
         }
-        (l.dispatchMessage(`open-in-browser`, { url: o }), i && y(!1));
+        (u.dispatchMessage(`open-in-browser`, { url: o }), i && x(!1));
       }),
-      (n[22] = r?.installUrl),
-      (n[23] = y),
-      (n[24] = _),
-      (n[25] = g),
-      (n[26] = qe))
-    : (qe = n[26]);
-  let A = qe,
-    Je;
-  n[27] !== r || n[28] !== _ || n[29] !== p || n[30] !== g
-    ? ((Je = () => {
-        if (r == null) return;
-        let e = le(r);
+      (t[22] = n?.installUrl),
+      (t[23] = x),
+      (t[24] = y),
+      (t[25] = v),
+      (t[26] = Ge))
+    : (Ge = t[26]);
+  let M = Ge,
+    Ke;
+  t[27] !== n || t[28] !== y || t[29] !== m || t[30] !== v
+    ? ((Ke = () => {
+        if (n == null) return;
+        let e = se(n);
         if (!e) {
-          g.get(u).danger(f(_));
+          v.get(ue).danger(f(y));
           return;
         }
-        (l.dispatchMessage(`open-in-browser`, { url: e }), p(!1));
+        (u.dispatchMessage(`open-in-browser`, { url: e }), m(!1));
       }),
-      (n[27] = r),
-      (n[28] = _),
-      (n[29] = p),
-      (n[30] = g),
-      (n[31] = Je))
-    : (Je = n[31]);
-  let Ye = Je,
-    Xe;
-  n[32] !== r ||
-  n[33] !== De ||
-  n[34] !== y ||
-  n[35] !== _ ||
-  n[36] !== ve ||
-  n[37] !== Se ||
-  n[38] !== g ||
-  n[39] !== Me
-    ? ((Xe = (e) => {
+      (t[27] = n),
+      (t[28] = y),
+      (t[29] = m),
+      (t[30] = v),
+      (t[31] = Ke))
+    : (Ke = t[31]);
+  let qe = Ke,
+    Je;
+  t[32] !== n ||
+  t[33] !== we ||
+  t[34] !== x ||
+  t[35] !== y ||
+  t[36] !== _e ||
+  t[37] !== Se ||
+  t[38] !== v ||
+  t[39] !== _
+    ? ((Je = (e) => {
         switch (e.kind) {
           case `connected-directly`:
-            (Me &&
-              g.get(u).success(
-                ue({
+            (_ &&
+              v.get(ue).success(
+                ae({
                   appName:
-                    r?.name ??
-                    _.formatMessage({
+                    n?.name ??
+                    y.formatMessage({
                       id: `settings.mcp.appConnectModal.fallbackAppName`,
                       defaultMessage: `App`,
                       description: `Fallback app name used in app connect success toasts`,
                     }),
-                  intl: _,
+                  intl: y,
                 }),
               ),
-              ve && Promise.resolve(ve()),
-              y(!1));
+              _e && Promise.resolve(_e()),
+              x(!1));
             return;
           case `oauth-started`:
-            (r != null &&
+            (n != null &&
               Se?.({
-                app: { id: r.id, name: r.name },
+                app: { id: n.id, name: n.name },
                 redirectUrl: e.redirectUrl,
               }),
-              g.get(u).info(de({ intl: _ })),
-              y(!1));
+              v.get(ue).info(oe({ intl: y })),
+              x(!1));
             return;
           case `browser-fallback`:
-            y(!1);
+            x(!1);
             return;
           case `failed`:
-            (Me && g.get(u).danger(r?.installUrl?.trim() ? fe(_) : f(_)),
-              De && y(!1));
+            (_ && v.get(ue).danger(n?.installUrl?.trim() ? p(y) : f(y)),
+              we && x(!1));
             return;
         }
       }),
-      (n[32] = r),
-      (n[33] = De),
-      (n[34] = y),
-      (n[35] = _),
-      (n[36] = ve),
-      (n[37] = Se),
-      (n[38] = g),
-      (n[39] = Me),
-      (n[40] = Xe))
-    : (Xe = n[40]);
-  let Ze;
-  n[41] !== r?.id || n[42] !== _ || n[43] !== g
-    ? ((Ze = (e) => {
-        (i.error(`Failed to connect app {}`, {
-          safe: { templateArgs: [r?.id ?? `unknown`] },
+      (t[32] = n),
+      (t[33] = we),
+      (t[34] = x),
+      (t[35] = y),
+      (t[36] = _e),
+      (t[37] = Se),
+      (t[38] = v),
+      (t[39] = _),
+      (t[40] = Je))
+    : (Je = t[40]);
+  let Ye;
+  t[41] !== n?.id || t[42] !== y || t[43] !== v
+    ? ((Ye = (e) => {
+        (r.error(`Failed to connect app {}`, {
+          safe: { templateArgs: [n?.id ?? `unknown`] },
           sensitive: { error: e },
         }),
-          g.get(u).danger(fe(_)));
+          v.get(ue).danger(p(y)));
       }),
-      (n[41] = r?.id),
-      (n[42] = _),
-      (n[43] = g),
-      (n[44] = Ze))
-    : (Ze = n[44]);
-  let j = ie({
+      (t[41] = n?.id),
+      (t[42] = y),
+      (t[43] = v),
+      (t[44] = Ye))
+    : (Ye = t[44]);
+  let N = ne({
       mutationFn: async () => {
-        if (r == null) throw Error(`Expected app metadata to be present.`);
-        return c == null
-          ? pe({
-              app: { id: r.id, installUrl: r.installUrl, name: r.name },
-              connector: C,
-              openInBrowser: Pe,
-              personalizationMode: st,
-              queryClient: Fe,
+        if (n == null) throw Error(`Expected app metadata to be present.`);
+        return l == null
+          ? ce({
+              app: { id: n.id, installUrl: n.installUrl, name: n.name },
+              connector: T,
+              openInBrowser: Ne,
+              personalizationMode: it,
+              queryClient: Me,
             })
-          : (await c({ app: r, personalizationMode: st }))
+          : (await l({ app: n, personalizationMode: it }))
             ? { kind: `connected-directly` }
             : { kind: `failed` };
       },
-      onSuccess: Xe,
-      onError: Ze,
+      onSuccess: Je,
+      onError: Ye,
     }),
-    M = j.isPending || h;
-  if (r == null) return null;
-  let N = r.isAccessible && !h,
-    P = C?.name ?? r.name,
-    Qe;
-  n[45] === C ? (Qe = n[46]) : ((Qe = Ae(C)), (n[45] = C), (n[46] = Qe));
-  let $e = Qe,
-    F;
-  n[47] === _
-    ? (F = n[48])
-    : ((F = _.formatMessage({
+    P = N.isPending || g;
+  if (n == null) return null;
+  let F = n.isAccessible && !g,
+    I = T?.name ?? n.name,
+    Xe;
+  t[45] === T ? (Xe = t[46]) : ((Xe = ke(T)), (t[45] = T), (t[46] = Xe));
+  let Ze = Xe,
+    L;
+  t[47] === y
+    ? (L = t[48])
+    : ((L = y.formatMessage({
         id: `settings.mcp.appConnectModal.permissionsTitle`,
         defaultMessage: `Permissions always respected`,
         description: `Fallback permissions blurb title`,
       })),
-      (n[47] = _),
-      (n[48] = F));
-  let I;
-  n[49] === _
-    ? (I = n[50])
-    : ((I = _.formatMessage({
+      (t[47] = y),
+      (t[48] = L));
+  let R;
+  t[49] === y
+    ? (R = t[50])
+    : ((R = y.formatMessage({
         id: `settings.mcp.appConnectModal.permissionsDescription`,
         defaultMessage: `ChatGPT is strictly limited to permissions you've explicitly set. Disable access anytime to revoke permissions.`,
         description: `Fallback permissions blurb description`,
       })),
-      (n[49] = _),
-      (n[50] = I));
-  let L;
-  n[51] !== F || n[52] !== I
-    ? ((L = { title: F, description: I }),
-      (n[51] = F),
-      (n[52] = I),
-      (n[53] = L))
-    : (L = n[53]);
-  let et;
-  n[54] === _
-    ? (et = n[55])
-    : ((et = _.formatMessage({
+      (t[49] = y),
+      (t[50] = R));
+  let z;
+  t[51] !== L || t[52] !== R
+    ? ((z = { title: L, description: R }),
+      (t[51] = L),
+      (t[52] = R),
+      (t[53] = z))
+    : (z = t[53]);
+  let B;
+  t[54] === y
+    ? (B = t[55])
+    : ((B = y.formatMessage({
         id: `settings.mcp.appConnectModal.dataTitle`,
         defaultMessage: `How ChatGPT uses data`,
         description: `Fallback data usage blurb title`,
       })),
-      (n[54] = _),
-      (n[55] = et));
-  let R;
-  n[56] === _
-    ? (R = n[57])
-    : ((R = _.formatMessage({
+      (t[54] = y),
+      (t[55] = B));
+  let V;
+  t[56] === y
+    ? (V = t[57])
+    : ((V = y.formatMessage({
         id: `settings.mcp.appConnectModal.dataDescription`,
         defaultMessage: `By default, we do not train on your data. Data from this connector may be used to provide you relevant and useful information.`,
         description: `Fallback data usage blurb description`,
       })),
-      (n[56] = _),
-      (n[57] = R));
-  let z;
-  n[58] !== et || n[59] !== R
-    ? ((z = { title: et, description: R }),
-      (n[58] = et),
-      (n[59] = R),
-      (n[60] = z))
-    : (z = n[60]);
-  let B;
-  n[61] === _
-    ? (B = n[62])
-    : ((B = _.formatMessage({
+      (t[56] = y),
+      (t[57] = V));
+  let H;
+  t[58] !== B || t[59] !== V
+    ? ((H = { title: B, description: V }),
+      (t[58] = B),
+      (t[59] = V),
+      (t[60] = H))
+    : (H = t[60]);
+  let U;
+  t[61] === y
+    ? (U = t[62])
+    : ((U = y.formatMessage({
         id: `settings.mcp.appConnectModal.riskTitle`,
         defaultMessage: `Connectors may introduce risk`,
         description: `Fallback risk blurb title`,
       })),
-      (n[61] = _),
-      (n[62] = B));
-  let V;
-  n[63] === _
-    ? (V = n[64])
-    : ((V = _.formatMessage({
+      (t[61] = y),
+      (t[62] = U));
+  let W;
+  t[63] === y
+    ? (W = t[64])
+    : ((W = y.formatMessage({
         id: `settings.mcp.appConnectModal.riskDescription`,
         defaultMessage: `Connectors are designed to respect your privacy, but sites may attempt to steal your data.`,
         description: `Fallback risk blurb description`,
       })),
-      (n[63] = _),
-      (n[64] = V));
-  let H;
-  n[65] !== B || n[66] !== V
-    ? ((H = { title: B, description: V }),
-      (n[65] = B),
-      (n[66] = V),
-      (n[67] = H))
-    : (H = n[67]);
-  let tt;
-  n[68] !== L || n[69] !== z || n[70] !== H
-    ? ((tt = [L, z, H]), (n[68] = L), (n[69] = z), (n[70] = H), (n[71] = tt))
-    : (tt = n[71]);
-  let nt = tt,
-    rt;
-  n[72] === E.data?.blurbs
-    ? (rt = n[73])
-    : ((rt = E.data?.blurbs ?? []), (n[72] = E.data?.blurbs), (n[73] = rt));
-  let it = rt,
-    at = E.data?.personalization_toggle_blurb ?? null,
-    ot =
-      Ie?.connectorId === v
-        ? Ie.enabled
-        : E.data?.personalization_default === `PERSONALIZE_ALWAYS`,
-    st = at == null ? void 0 : ot ? `PERSONALIZE_ALWAYS` : `NO_PERSONALIZATION`,
-    ct = it.length > 0 ? it : nt,
-    lt;
-  n[74] !== v ||
-  n[75] !== P ||
-  n[76] !== _ ||
-  n[77] !== N ||
-  n[78] !== M ||
-  n[79] !== ot ||
-  n[80] !== at ||
-  n[81] !== k
-    ? ((lt =
-        !N && !k && at != null
+      (t[63] = y),
+      (t[64] = W));
+  let G;
+  t[65] !== U || t[66] !== W
+    ? ((G = { title: U, description: W }),
+      (t[65] = U),
+      (t[66] = W),
+      (t[67] = G))
+    : (G = t[67]);
+  let Qe;
+  t[68] !== z || t[69] !== H || t[70] !== G
+    ? ((Qe = [z, H, G]), (t[68] = z), (t[69] = H), (t[70] = G), (t[71] = Qe))
+    : (Qe = t[71]);
+  let $e = Qe,
+    et;
+  t[72] === O.data?.blurbs
+    ? (et = t[73])
+    : ((et = O.data?.blurbs ?? []), (t[72] = O.data?.blurbs), (t[73] = et));
+  let tt = et,
+    nt = O.data?.personalization_toggle_blurb ?? null,
+    rt =
+      Pe?.connectorId === b
+        ? Pe.enabled
+        : O.data?.personalization_default === `PERSONALIZE_ALWAYS`,
+    it = nt == null ? void 0 : rt ? `PERSONALIZE_ALWAYS` : `NO_PERSONALIZATION`,
+    at = tt.length > 0 ? tt : $e,
+    ot;
+  t[74] !== b ||
+  t[75] !== I ||
+  t[76] !== y ||
+  t[77] !== F ||
+  t[78] !== P ||
+  t[79] !== rt ||
+  t[80] !== nt ||
+  t[81] !== j
+    ? ((ot =
+        !F && !j && nt != null
           ? {
-              ariaLabel: _.formatMessage(
+              ariaLabel: y.formatMessage(
                 {
                   id: `settings.mcp.appConnectModal.personalizationToggle`,
                   defaultMessage: `Allow ChatGPT to use reference memories and chats for {appName}`,
                   description: `Accessible label for the personalization toggle in the app connect modal`,
                 },
-                { appName: P },
+                { appName: I },
               ),
-              blurb: at,
-              checked: ot,
-              disabled: M,
+              blurb: nt,
+              checked: rt,
+              disabled: P,
               onChange: (e) => {
-                Le({ connectorId: v, enabled: e });
+                Fe({ connectorId: b, enabled: e });
               },
             }
           : null),
-      (n[74] = v),
-      (n[75] = P),
-      (n[76] = _),
-      (n[77] = N),
-      (n[78] = M),
-      (n[79] = ot),
-      (n[80] = at),
-      (n[81] = k),
-      (n[82] = lt))
-    : (lt = n[82]);
-  let ut = lt,
-    dt;
-  n[83] !== j ||
-  n[84] !== N ||
-  n[85] !== D ||
-  n[86] !== M ||
-  n[87] !== A ||
-  n[88] !== Ye ||
-  n[89] !== k
-    ? ((dt = () => {
-        if (!(D || M)) {
-          if (N) {
-            Ye();
+      (t[74] = b),
+      (t[75] = I),
+      (t[76] = y),
+      (t[77] = F),
+      (t[78] = P),
+      (t[79] = rt),
+      (t[80] = nt),
+      (t[81] = j),
+      (t[82] = ot))
+    : (ot = t[82]);
+  let st = ot,
+    ct;
+  t[83] !== N ||
+  t[84] !== F ||
+  t[85] !== k ||
+  t[86] !== P ||
+  t[87] !== M ||
+  t[88] !== qe ||
+  t[89] !== j
+    ? ((ct = () => {
+        if (!(k || P)) {
+          if (F) {
+            qe();
             return;
           }
-          if (k) {
-            A();
+          if (j) {
+            M();
             return;
           }
-          j.mutate();
+          N.mutate();
         }
       }),
-      (n[83] = j),
-      (n[84] = N),
-      (n[85] = D),
-      (n[86] = M),
-      (n[87] = A),
-      (n[88] = Ye),
-      (n[89] = k),
-      (n[90] = dt))
-    : (dt = n[90]);
-  let ft = dt,
-    pt;
-  n[91] !== r.installUrl ||
-  n[92] !== c ||
-  n[93] !== h ||
-  n[94] !== N ||
-  n[95] !== D ||
-  n[96] !== O ||
-  n[97] !== k
-    ? ((pt =
-        c == null &&
-        !D &&
-        !h &&
-        !N &&
+      (t[83] = N),
+      (t[84] = F),
+      (t[85] = k),
+      (t[86] = P),
+      (t[87] = M),
+      (t[88] = qe),
+      (t[89] = j),
+      (t[90] = ct))
+    : (ct = t[90]);
+  let lt = ct,
+    ut;
+  t[91] !== n.installUrl ||
+  t[92] !== l ||
+  t[93] !== g ||
+  t[94] !== F ||
+  t[95] !== k ||
+  t[96] !== A ||
+  t[97] !== j
+    ? ((ut =
+        l == null &&
         !k &&
-        O === `OAUTH` &&
-        !!r.installUrl?.trim()),
-      (n[91] = r.installUrl),
-      (n[92] = c),
-      (n[93] = h),
-      (n[94] = N),
-      (n[95] = D),
-      (n[96] = O),
-      (n[97] = k),
-      (n[98] = pt))
-    : (pt = n[98]);
-  let mt = pt,
-    ht = N || (!h && !k && O === `OAUTH`),
-    gt;
-  n[99] !== c ||
-  n[100] !== S.isError ||
-  n[101] !== h ||
-  n[102] !== D ||
-  n[103] !== O ||
-  n[104] !== Ke
-    ? ((gt = h
-        ? (0, m.jsxs)(`span`, {
+        !g &&
+        !F &&
+        !j &&
+        A === `OAUTH` &&
+        !!n.installUrl?.trim()),
+      (t[91] = n.installUrl),
+      (t[92] = l),
+      (t[93] = g),
+      (t[94] = F),
+      (t[95] = k),
+      (t[96] = A),
+      (t[97] = j),
+      (t[98] = ut))
+    : (ut = t[98]);
+  let dt = ut,
+    ft = F || (!g && !j && A === `OAUTH`),
+    pt;
+  t[99] !== l ||
+  t[100] !== w.isError ||
+  t[101] !== g ||
+  t[102] !== k ||
+  t[103] !== A ||
+  t[104] !== We
+    ? ((pt = g
+        ? (0, h.jsxs)(`span`, {
             className: `flex items-center justify-center gap-2`,
             children: [
-              (0, m.jsx)(d, { className: `icon-xs` }),
-              (0, m.jsx)(a, {
+              (0, h.jsx)(fe, { className: `icon-xs` }),
+              (0, h.jsx)(c, {
                 id: `settings.mcp.appConnectModal.completingConnection`,
                 defaultMessage: `Finishing connection…`,
                 description: `Message shown while an app connection OAuth callback is still completing in the background`,
               }),
             ],
           })
-        : D
-          ? (0, m.jsxs)(`span`, {
+        : k
+          ? (0, h.jsxs)(`span`, {
               className: `flex items-center justify-center gap-2`,
               children: [
-                (0, m.jsx)(d, { className: `icon-xs` }),
-                (0, m.jsx)(a, {
+                (0, h.jsx)(fe, { className: `icon-xs` }),
+                (0, h.jsx)(c, {
                   id: `settings.mcp.appConnectModal.loading`,
                   defaultMessage: `Loading connection details...`,
                   description: `Message shown while app connector details are loading in the app connect modal`,
                 }),
               ],
             })
-          : S.isError && c == null
-            ? (0, m.jsx)(a, {
+          : w.isError && l == null
+            ? (0, h.jsx)(c, {
                 id: `settings.mcp.appConnectModal.loadError`,
                 defaultMessage: `Could not load this app's connection details. Continue in browser.`,
                 description: `Message shown when app connector details fail to load in app connect modal`,
               })
-            : Ke && c == null
-              ? (0, m.jsx)(a, {
+            : We && l == null
+              ? (0, h.jsx)(c, {
                   id: `settings.mcp.appConnectModal.browserRequiredLinkParams`,
                   defaultMessage: `This app needs extra setup fields, so connection continues in browser.`,
                   description: `Message shown when app requires link params and must connect in browser`,
                 })
-              : O === `UNSUPPORTED` && c == null
-                ? (0, m.jsx)(a, {
+              : A === `UNSUPPORTED` && l == null
+                ? (0, h.jsx)(c, {
                     id: `settings.mcp.appConnectModal.browserRequiredAuth`,
                     defaultMessage: `This app uses an auth method that currently opens in browser.`,
                     description: `Message shown when app auth type is not supported in modal flow`,
                   })
                 : null),
-      (n[99] = c),
-      (n[100] = S.isError),
-      (n[101] = h),
-      (n[102] = D),
-      (n[103] = O),
-      (n[104] = Ke),
-      (n[105] = gt))
-    : (gt = n[105]);
-  let _t = gt,
-    vt;
-  n[106] !== P || n[107] !== h || n[108] !== N || n[109] !== O || n[110] !== k
-    ? ((vt = h
-        ? (0, m.jsx)(a, {
+      (t[99] = l),
+      (t[100] = w.isError),
+      (t[101] = g),
+      (t[102] = k),
+      (t[103] = A),
+      (t[104] = We),
+      (t[105] = pt))
+    : (pt = t[105]);
+  let mt = pt,
+    ht;
+  t[106] !== I || t[107] !== g || t[108] !== F || t[109] !== A || t[110] !== j
+    ? ((ht = g
+        ? (0, h.jsx)(c, {
             id: `settings.mcp.appConnectModal.completingConnectionButton`,
             defaultMessage: `Finishing connection…`,
             description: `Primary button label shown while an app connection OAuth callback is still completing in the background`,
           })
-        : N
-          ? (0, m.jsx)(a, {
+        : F
+          ? (0, h.jsx)(c, {
               id: `settings.mcp.appConnectModal.manageOnChatGpt`,
               defaultMessage: `Manage on ChatGPT`,
               description: `Primary button label shown when an app is already connected and can be managed on ChatGPT`,
             })
-          : k
-            ? (0, m.jsx)(a, {
+          : j
+            ? (0, h.jsx)(c, {
                 id: `settings.mcp.appConnectModal.openInBrowser`,
                 defaultMessage: `Open in browser`,
                 description: `Primary button label when app connect needs to continue in browser`,
               })
-            : O === `OAUTH`
-              ? (0, m.jsx)(a, {
+            : A === `OAUTH`
+              ? (0, h.jsx)(c, {
                   id: `settings.mcp.appConnectModal.continueToApp`,
                   defaultMessage: `Continue to {appName}`,
                   description: `Primary button label for OAuth connectors in app connect modal`,
-                  values: { appName: P },
+                  values: { appName: I },
                 })
-              : (0, m.jsx)(a, {
+              : (0, h.jsx)(c, {
                   id: `settings.mcp.appConnectModal.connectToApp`,
                   defaultMessage: `Connect {appName}`,
                   description: `Primary button label for no-auth connectors in app connect modal`,
-                  values: { appName: P },
+                  values: { appName: I },
                 })),
-      (n[106] = P),
-      (n[107] = h),
-      (n[108] = N),
-      (n[109] = O),
-      (n[110] = k),
-      (n[111] = vt))
-    : (vt = n[111]);
-  let yt = vt,
-    bt;
-  n[112] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((bt = (0, m.jsx)(`span`, {
+      (t[106] = I),
+      (t[107] = g),
+      (t[108] = F),
+      (t[109] = A),
+      (t[110] = j),
+      (t[111] = ht))
+    : (ht = t[111]);
+  let gt = ht,
+    _t;
+  t[112] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((_t = (0, h.jsx)(`span`, {
         className: `flex size-14 shrink-0 items-center justify-center rounded-xl bg-black text-white shadow-sm`,
-        children: (0, m.jsx)(_e, { className: `size-12` }),
+        children: (0, h.jsx)(ge, { className: `size-12` }),
       })),
-      (n[112] = bt))
-    : (bt = n[112]);
-  let xt;
-  n[113] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((xt = (0, m.jsxs)(`span`, {
+      (t[112] = _t))
+    : (_t = t[112]);
+  let vt;
+  t[113] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((vt = (0, h.jsxs)(`span`, {
         className: `flex items-center gap-1`,
         children: [
-          (0, m.jsx)(`span`, {
+          (0, h.jsx)(`span`, {
             className: `size-1.5 rounded-full bg-token-border-default`,
           }),
-          (0, m.jsx)(`span`, {
+          (0, h.jsx)(`span`, {
             className: `size-1.5 rounded-full bg-token-border-default`,
           }),
-          (0, m.jsx)(`span`, {
+          (0, h.jsx)(`span`, {
             className: `size-1.5 rounded-full bg-token-border-default`,
           }),
         ],
       })),
-      (n[113] = xt))
-    : (xt = n[113]);
-  let U;
-  n[114] !== r.name || n[115] !== _
-    ? ((U = _.formatMessage(
+      (t[113] = vt))
+    : (vt = t[113]);
+  let K;
+  t[114] !== n.name || t[115] !== y
+    ? ((K = y.formatMessage(
         {
           id: `settings.mcp.appConnectModal.logoAlt`,
           defaultMessage: `{appName} logo`,
           description: `Alt text for connector logo in app connect modal`,
         },
-        { appName: r.name },
+        { appName: n.name },
       )),
-      (n[114] = r.name),
-      (n[115] = _),
-      (n[116] = U))
-    : (U = n[116]);
-  let St = r.logoUrl ?? C?.logo_url ?? null,
-    Ct = r.logoUrlDark ?? C?.logo_url_dark ?? null,
-    wt;
-  n[117] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((wt = (0, m.jsx)(we, {
+      (t[114] = n.name),
+      (t[115] = y),
+      (t[116] = K))
+    : (K = t[116]);
+  let yt = n.logoUrl ?? T?.logo_url ?? null,
+    bt = n.logoUrlDark ?? T?.logo_url_dark ?? null,
+    xt;
+  t[117] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((xt = (0, h.jsx)(ve, {
         className: `icon-sm text-token-text-secondary`,
       })),
-      (n[117] = wt))
-    : (wt = n[117]);
-  let W;
-  n[118] !== U || n[119] !== St || n[120] !== Ct
-    ? ((W = (0, m.jsxs)(`div`, {
+      (t[117] = xt))
+    : (xt = t[117]);
+  let q;
+  t[118] !== K || t[119] !== yt || t[120] !== bt
+    ? ((q = (0, h.jsxs)(`div`, {
         className: `flex items-center gap-3`,
         children: [
-          bt,
-          xt,
-          (0, m.jsx)(`span`, {
+          _t,
+          vt,
+          (0, h.jsx)(`span`, {
             className: `bg-token-surface-tertiary flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-token-border-default shadow-sm`,
-            children: (0, m.jsx)(se, {
-              alt: U,
+            children: (0, h.jsx)(le, {
+              alt: K,
               className: `size-full object-contain`,
-              logoUrl: St,
-              logoDarkUrl: Ct,
-              fallback: wt,
+              logoUrl: yt,
+              logoDarkUrl: bt,
+              fallback: xt,
             }),
           }),
         ],
       })),
-      (n[118] = U),
-      (n[119] = St),
-      (n[120] = Ct),
-      (n[121] = W))
-    : (W = n[121]);
-  let G;
-  n[122] === P
-    ? (G = n[123])
-    : ((G = (0, m.jsx)(`div`, {
+      (t[118] = K),
+      (t[119] = yt),
+      (t[120] = bt),
+      (t[121] = q))
+    : (q = t[121]);
+  let J;
+  t[122] === I
+    ? (J = t[123])
+    : ((J = (0, h.jsx)(`div`, {
         className: `heading-dialog font-semibold`,
-        children: (0, m.jsx)(a, {
+        children: (0, h.jsx)(c, {
           id: `settings.mcp.appConnectModal.title`,
           defaultMessage: `Connect {appName}`,
           description: `Title for the modal that connects an app from MCP settings`,
-          values: { appName: P },
+          values: { appName: I },
         }),
       })),
-      (n[122] = P),
-      (n[123] = G));
-  let K;
-  n[124] === $e
-    ? (K = n[125])
-    : ((K = $e
-        ? (0, m.jsx)(`div`, {
+      (t[122] = I),
+      (t[123] = J));
+  let Y;
+  t[124] === Ze
+    ? (Y = t[125])
+    : ((Y = Ze
+        ? (0, h.jsx)(`div`, {
             className: `text-sm text-token-text-secondary`,
-            children: (0, m.jsx)(a, {
+            children: (0, h.jsx)(c, {
               id: `settings.mcp.appConnectModal.developedBy`,
               defaultMessage: `Developed by {developer}`,
               description: `Developer subtitle shown in app connect modal`,
-              values: { developer: $e },
+              values: { developer: Ze },
             }),
           })
         : null),
-      (n[124] = $e),
-      (n[125] = K));
-  let q;
-  n[126] !== G || n[127] !== K
-    ? ((q = (0, m.jsxs)(`div`, {
+      (t[124] = Ze),
+      (t[125] = Y));
+  let X;
+  t[126] !== J || t[127] !== Y
+    ? ((X = (0, h.jsxs)(`div`, {
         className: `flex flex-col items-center gap-1 text-center`,
-        children: [G, K],
+        children: [J, Y],
       })),
-      (n[126] = G),
-      (n[127] = K),
-      (n[128] = q))
-    : (q = n[128]);
-  let Tt;
-  n[129] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Tt = (0, m.jsxs)(`div`, {
+      (t[126] = J),
+      (t[127] = Y),
+      (t[128] = X))
+    : (X = t[128]);
+  let St;
+  t[129] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((St = (0, h.jsxs)(`div`, {
         className: `flex items-center gap-2 text-base text-token-charts-green`,
         children: [
-          (0, m.jsx)(me, { className: `icon-sm shrink-0` }),
-          (0, m.jsx)(a, {
+          (0, h.jsx)(pe, { className: `icon-sm shrink-0` }),
+          (0, h.jsx)(c, {
             id: `settings.mcp.appConnectModal.adminApproved`,
             defaultMessage: `Approved by your admin`,
             description: `Admin approval stamp text shown in app connect modal`,
           }),
         ],
       })),
-      (n[129] = Tt))
-    : (Tt = n[129]);
-  let J;
-  n[130] !== W || n[131] !== q
-    ? ((J = (0, m.jsxs)(`div`, {
+      (t[129] = St))
+    : (St = t[129]);
+  let Z;
+  t[130] !== q || t[131] !== X
+    ? ((Z = (0, h.jsxs)(`div`, {
         className: `flex flex-col items-center gap-4`,
-        children: [W, q, Tt],
+        children: [q, X, St],
       })),
-      (n[130] = W),
-      (n[131] = q),
-      (n[132] = J))
-    : (J = n[132]);
-  let Y;
-  n[133] !== E.isPending || n[134] !== D || n[135] !== ut || n[136] !== ct
-    ? ((Y =
-        D || E.isPending
-          ? (0, m.jsx)(je, {})
-          : (0, m.jsx)(Ne, { blurbs: ct, personalizationToggle: ut })),
-      (n[133] = E.isPending),
-      (n[134] = D),
-      (n[135] = ut),
-      (n[136] = ct),
-      (n[137] = Y))
-    : (Y = n[137]);
-  let X;
-  n[138] === _t
-    ? (X = n[139])
-    : ((X = _t
-        ? (0, m.jsx)(`div`, {
+      (t[130] = q),
+      (t[131] = X),
+      (t[132] = Z))
+    : (Z = t[132]);
+  let Q;
+  t[133] !== O.isPending || t[134] !== k || t[135] !== st || t[136] !== at
+    ? ((Q =
+        k || O.isPending
+          ? (0, h.jsx)(Ae, {})
+          : (0, h.jsx)(je, { blurbs: at, personalizationToggle: st })),
+      (t[133] = O.isPending),
+      (t[134] = k),
+      (t[135] = st),
+      (t[136] = at),
+      (t[137] = Q))
+    : (Q = t[137]);
+  let Ct;
+  t[138] === mt
+    ? (Ct = t[139])
+    : ((Ct = mt
+        ? (0, h.jsx)(`div`, {
             className: `text-center text-sm text-token-description-foreground`,
-            children: _t,
+            children: mt,
           })
         : null),
-      (n[138] = _t),
-      (n[139] = X));
-  let Et = D || h,
-    Z;
-  n[140] === ht
-    ? (Z = n[141])
-    : ((Z = ht ? (0, m.jsx)(ye, { className: `icon-xs` }) : null),
-      (n[140] = ht),
-      (n[141] = Z));
-  let Dt;
-  n[142] !== yt || n[143] !== Z
-    ? ((Dt = (0, m.jsxs)(`span`, {
+      (t[138] = mt),
+      (t[139] = Ct));
+  let wt = k || g,
+    Tt;
+  t[140] === ft
+    ? (Tt = t[141])
+    : ((Tt = ft ? (0, h.jsx)(ye, { className: `icon-xs` }) : null),
+      (t[140] = ft),
+      (t[141] = Tt));
+  let Et;
+  t[142] !== gt || t[143] !== Tt
+    ? ((Et = (0, h.jsxs)(`span`, {
         className: `flex items-center gap-1`,
-        children: [yt, Z],
+        children: [gt, Tt],
       })),
-      (n[142] = yt),
-      (n[143] = Z),
-      (n[144] = Dt))
-    : (Dt = n[144]);
-  let Ot;
-  n[145] !== ft || n[146] !== M || n[147] !== Et || n[148] !== Dt
-    ? ((Ot = (0, m.jsx)(ce, {
+      (t[142] = gt),
+      (t[143] = Tt),
+      (t[144] = Et))
+    : (Et = t[144]);
+  let Dt;
+  t[145] !== lt || t[146] !== P || t[147] !== wt || t[148] !== Et
+    ? ((Dt = (0, h.jsx)(de, {
         color: `primary`,
         size: `large`,
         className: `w-full justify-center`,
-        loading: M,
-        disabled: Et,
-        onClick: ft,
-        children: Dt,
+        loading: P,
+        disabled: wt,
+        onClick: lt,
+        children: Et,
       })),
-      (n[145] = ft),
-      (n[146] = M),
-      (n[147] = Et),
-      (n[148] = Dt),
-      (n[149] = Ot))
-    : (Ot = n[149]);
-  let kt;
-  n[150] !== mt || n[151] !== j.isPending || n[152] !== A
-    ? ((kt = mt
-        ? (0, m.jsx)(ce, {
+      (t[145] = lt),
+      (t[146] = P),
+      (t[147] = wt),
+      (t[148] = Et),
+      (t[149] = Dt))
+    : (Dt = t[149]);
+  let Ot;
+  t[150] !== dt || t[151] !== N.isPending || t[152] !== M
+    ? ((Ot = dt
+        ? (0, h.jsx)(de, {
             color: `ghost`,
             size: `large`,
             className: `w-full justify-center`,
-            disabled: j.isPending,
+            disabled: N.isPending,
             onClick: () => {
-              A({ closeModal: !0 });
+              M({ closeModal: !0 });
             },
-            children: (0, m.jsx)(a, {
+            children: (0, h.jsx)(c, {
               id: `settings.mcp.appConnectModal.advancedSettings`,
               defaultMessage: `Advanced settings (opens ChatGPT.com)`,
               description: `Secondary action label for opening advanced connector settings`,
             }),
           })
         : null),
-      (n[150] = mt),
-      (n[151] = j.isPending),
-      (n[152] = A),
-      (n[153] = kt))
-    : (kt = n[153]);
-  let At;
-  n[154] !== Ot || n[155] !== kt
-    ? ((At = (0, m.jsxs)(`div`, {
+      (t[150] = dt),
+      (t[151] = N.isPending),
+      (t[152] = M),
+      (t[153] = Ot))
+    : (Ot = t[153]);
+  let kt;
+  t[154] !== Dt || t[155] !== Ot
+    ? ((kt = (0, h.jsxs)(`div`, {
         className: `flex flex-col gap-2`,
-        children: [Ot, kt],
+        children: [Dt, Ot],
       })),
-      (n[154] = Ot),
-      (n[155] = kt),
-      (n[156] = At))
-    : (At = n[156]);
-  let Q;
-  n[157] !== D || n[158] !== k
-    ? ((Q =
-        k && !D
-          ? (0, m.jsx)(`div`, {
+      (t[154] = Dt),
+      (t[155] = Ot),
+      (t[156] = kt))
+    : (kt = t[156]);
+  let At;
+  t[157] !== k || t[158] !== j
+    ? ((At =
+        j && !k
+          ? (0, h.jsx)(`div`, {
               className: `text-center text-xs text-token-description-foreground`,
-              children: (0, m.jsx)(a, {
+              children: (0, h.jsx)(c, {
                 id: `settings.mcp.appConnectModal.browserFallbackDescription`,
                 defaultMessage: `This connector needs setup in your browser.`,
                 description: `Helper text shown when app connect falls back to browser flow`,
               }),
             })
           : null),
-      (n[157] = D),
-      (n[158] = k),
-      (n[159] = Q))
-    : (Q = n[159]);
+      (t[157] = k),
+      (t[158] = j),
+      (t[159] = At))
+    : (At = t[159]);
   let $;
-  n[160] !== J || n[161] !== Y || n[162] !== X || n[163] !== At || n[164] !== Q
-    ? (($ = (0, m.jsxs)(ge, {
+  t[160] !== Z ||
+  t[161] !== Q ||
+  t[162] !== Ct ||
+  t[163] !== kt ||
+  t[164] !== At
+    ? (($ = (0, h.jsxs)(he, {
         className: `gap-6 px-6 pt-8 pb-6`,
-        children: [J, Y, X, At, Q],
+        children: [Z, Q, Ct, kt, At],
       })),
-      (n[160] = J),
-      (n[161] = Y),
-      (n[162] = X),
-      (n[163] = At),
-      (n[164] = Q),
-      (n[165] = $))
-    : ($ = n[165]);
+      (t[160] = Z),
+      (t[161] = Q),
+      (t[162] = Ct),
+      (t[163] = kt),
+      (t[164] = At),
+      (t[165] = $))
+    : ($ = t[165]);
   let jt;
   return (
-    n[166] !== y || n[167] !== Re || n[168] !== $
-      ? ((jt = (0, m.jsx)(he, {
-          open: Re,
-          onOpenChange: y,
+    t[166] !== x || t[167] !== Ie || t[168] !== $
+      ? ((jt = (0, h.jsx)(me, {
+          open: Ie,
+          onOpenChange: x,
           size: `wide`,
           children: $,
         })),
-        (n[166] = y),
-        (n[167] = Re),
-        (n[168] = $),
-        (n[169] = jt))
-      : (jt = n[169]),
+        (t[166] = x),
+        (t[167] = Ie),
+        (t[168] = $),
+        (t[169] = jt))
+      : (jt = t[169]),
     jt
   );
 }
-function Pe(e) {
-  l.dispatchMessage(`open-in-browser`, { url: e });
+function Ne(e) {
+  u.dispatchMessage(`open-in-browser`, { url: e });
 }
-export { we as n, Se as r, _ as t };
+export { Se as n, Me as t };
 //# sourceMappingURL=app-connect-modal.js.map

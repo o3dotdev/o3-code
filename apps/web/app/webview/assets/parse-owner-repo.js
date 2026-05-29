@@ -1,14 +1,4 @@
-import { t as e } from "./chunk.js";
-import { Ui as t, ga as n } from "./app-server-manager-signals.js";
-var r = e((e, r) => {
-  var i = n(),
-    a = t();
-  function o(e, t) {
-    return e && e.length ? a(e, i(t, 2)) : [];
-  }
-  r.exports = o;
-});
-function i(e) {
+function e(e) {
   try {
     let t = e.trim(),
       n = /^(?<user>[^@]+)@(?<host>[^:]+):(?<path>.+)$/.exec(t),
@@ -35,25 +25,25 @@ function i(e) {
     return null;
   }
 }
-function a(e) {
+function t(t) {
   try {
-    let t = e.trim();
-    if (!t) return null;
-    let n = t.replace(/[?#].*$/, ``),
-      r = /^(?:[^@]+)@github\.com:(?<path>.+)$/i.exec(n)?.groups?.path,
+    let n = t.trim();
+    if (!n) return null;
+    let r = n.replace(/[?#].*$/, ``),
+      i = /^(?:[^@]+)@github\.com:(?<path>.+)$/i.exec(r)?.groups?.path,
       a;
-    if (r) a = r.split(`/`).filter(Boolean);
+    if (i) a = i.split(`/`).filter(Boolean);
     else {
-      let e = /^[a-z][a-z0-9+.-]*:\/\//i.test(n);
-      if (!e && !/^github\.com\//i.test(n)) return null;
-      let t = new URL(e ? n : `https://${n}`);
+      let e = /^[a-z][a-z0-9+.-]*:\/\//i.test(r);
+      if (!e && !/^github\.com\//i.test(r)) return null;
+      let t = new URL(e ? r : `https://${r}`);
       if (t.hostname.toLowerCase() !== `github.com`) return null;
       a = t.pathname.split(`/`).filter(Boolean);
     }
-    return a.length === 2 ? i(n.replace(/\/+$/, ``)) : null;
+    return a.length === 2 ? e(r.replace(/\/+$/, ``)) : null;
   } catch {
     return null;
   }
 }
-export { i as n, r, a as t };
+export { e as n, t };
 //# sourceMappingURL=parse-owner-repo.js.map

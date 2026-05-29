@@ -1,28 +1,32 @@
-import { Lt as e, Ta as t, ts as n } from "./app-server-manager-signals.js";
-async function r(t, r, i, { shouldApplyStatus: a = () => !0 } = {}) {
-  let o = await n(`set-remote-control-enabled-for-host`, {
+import {
+  Ft as e,
+  Xs as t,
+  po as n,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+async function r(n, r, i, { shouldApplyStatus: a = () => !0 } = {}) {
+  let o = await t(`set-remote-control-enabled-for-host`, {
     enabled: i,
     hostId: r,
   });
-  return (a() && e(t, r, o), o);
+  return (a() && e(n, r, o), o);
 }
 var i,
   a,
   o = 0,
   s;
-async function c(e, n, { force: l = !1 } = {}) {
-  if (((a = n), s?.enabled === n)) return s.promise;
-  if (!l && i === n) return null;
+async function c(e, t, { force: l = !1 } = {}) {
+  if (((a = t), s?.enabled === t)) return s.promise;
+  if (!l && i === t) return null;
   let u = ++o,
-    d = r(e, t, n, { shouldApplyStatus: () => u === o });
-  s = { enabled: n, promise: d };
+    d = r(e, n, t, { shouldApplyStatus: () => u === o });
+  s = { enabled: t, promise: d };
   try {
-    let t = await d;
+    let n = await d;
     return u === o
-      ? ((i = n), t)
-      : (a != null && a !== n && (await c(e, a, { force: !0 })), t);
+      ? ((i = t), n)
+      : (a != null && a !== t && (await c(e, a, { force: !0 })), n);
   } catch (e) {
-    throw (u === o && i === n && (i = void 0), e);
+    throw (u === o && i === t && (i = void 0), e);
   } finally {
     s?.promise === d && (s = void 0);
   }

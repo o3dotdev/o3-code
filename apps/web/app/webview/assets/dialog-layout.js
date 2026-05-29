@@ -1,6 +1,6 @@
-import { r as e, s as t } from "./chunk.js";
+import { r as e, s as t } from "./chunk-Bj-mKKzh.js";
 import { n, t as r } from "./jsx-runtime.js";
-import { t as i } from "./clsx.js";
+import { t as i } from "./clsx-BcPLHiun.js";
 import {
   c as a,
   d as o,
@@ -10,7 +10,7 @@ import {
   s as u,
   t as d,
   u as f,
-} from "./dist-BzssiQ2D.js";
+} from "./dist-B8SKCozm.js";
 import {
   a as p,
   i as m,
@@ -20,23 +20,23 @@ import {
   s as v,
   t as y,
 } from "./Combination.js";
-import { xt as b } from "./setting-storage.js";
+import { wt as b } from "./setting-storage.js";
 import { n as x } from "./window-zoom-context.js";
 import { n as S } from "./tooltip-dismiss.js";
 import { t as C } from "./button.js";
-import { t as w } from "./x.js";
+import { t as w } from "./x-C_RDKBp5.js";
 import { t as T } from "./with-window.js";
 var E = e({
     Close: () => be,
     Content: () => _e,
     Description: () => ye,
     Dialog: () => N,
-    DialogClose: () => ae,
+    DialogClose: () => Y,
     DialogContent: () => G,
-    DialogDescription: () => re,
+    DialogDescription: () => ie,
     DialogOverlay: () => V,
     DialogPortal: () => z,
-    DialogTitle: () => Y,
+    DialogTitle: () => J,
     DialogTrigger: () => F,
     Overlay: () => ge,
     Portal: () => he,
@@ -251,24 +251,24 @@ var K = D.forwardRef((e, t) => {
       })
     );
   }),
-  J = `DialogTitle`,
-  Y = D.forwardRef((e, t) => {
-    let { __scopeDialog: n, ...r } = e,
-      i = M(J, n);
-    return (0, O.jsx)(s.h2, { id: i.titleId, ...r, ref: t });
-  });
-Y.displayName = J;
-var ne = `DialogDescription`,
-  re = D.forwardRef((e, t) => {
+  ne = `DialogTitle`,
+  J = D.forwardRef((e, t) => {
     let { __scopeDialog: n, ...r } = e,
       i = M(ne, n);
+    return (0, O.jsx)(s.h2, { id: i.titleId, ...r, ref: t });
+  });
+J.displayName = ne;
+var re = `DialogDescription`,
+  ie = D.forwardRef((e, t) => {
+    let { __scopeDialog: n, ...r } = e,
+      i = M(re, n);
     return (0, O.jsx)(s.p, { id: i.descriptionId, ...r, ref: t });
   });
-re.displayName = ne;
-var ie = `DialogClose`,
-  ae = D.forwardRef((e, t) => {
+ie.displayName = re;
+var ae = `DialogClose`,
+  Y = D.forwardRef((e, t) => {
     let { __scopeDialog: n, ...r } = e,
-      i = M(ie, n);
+      i = M(ae, n);
     return (0, O.jsx)(s.button, {
       type: `button`,
       ...r,
@@ -276,12 +276,12 @@ var ie = `DialogClose`,
       onClick: o(e.onClick, () => i.onOpenChange(!1)),
     });
   });
-ae.displayName = ie;
+Y.displayName = ae;
 function oe(e) {
   return e ? `open` : `closed`;
 }
 var se = `DialogTitleWarning`,
-  [ce, le] = u(se, { contentName: W, titleName: J, docsSlug: `dialog` }),
+  [ce, le] = u(se, { contentName: W, titleName: ne, docsSlug: `dialog` }),
   ue = ({ titleId: e }) => {
     let t = le(se),
       n = `\`${t.contentName}\` requires a \`${t.titleName}\` for the component to be accessible for screen reader users.
@@ -312,12 +312,23 @@ For more information, see https://radix-ui.com/primitives/docs/components/${t.do
   he = z,
   ge = V,
   _e = G,
-  ve = Y,
-  ye = re,
-  be = ae,
+  ve = J,
+  ye = ie,
+  be = Y,
+  xe = `_content_pk7td_1`,
+  Se = `_overlay_pk7td_26`,
+  Ce = {
+    content: xe,
+    "codex-dialog-enter": `_codex-dialog-enter_pk7td_1`,
+    overlay: Se,
+    "codex-dialog-overlay": `_codex-dialog-overlay_pk7td_1`,
+  },
   X = b(),
-  xe = `extension:bg-token-editor-background/80 electron:bg-[#00000022] codex-dialog-overlay fixed inset-0 z-50`;
-function Se(e) {
+  we = i(
+    `extension:bg-token-editor-background/80 electron:bg-[#00000022] codex-dialog-overlay fixed inset-0 z-50`,
+    Ce.overlay,
+  );
+function Te(e) {
   return e === `narrow`
     ? `w-[380px]`
     : e === `feature`
@@ -334,7 +345,7 @@ function Se(e) {
                 ? `w-[600px] h-[720px] max-w-full max-h-full`
                 : `w-[520px]`;
 }
-function Ce(e) {
+function Ee(e) {
   let t = (0, X.c)(37),
     n,
     r,
@@ -412,7 +423,7 @@ function Ce(e) {
   let C = x,
     w;
   t[17] !== g || t[18] !== m || t[19] !== h
-    ? ((w = m && (0, O.jsx)(Ee, { asChild: g, triggerRef: h, children: m })),
+    ? ((w = m && (0, O.jsx)(ke, { asChild: g, triggerRef: h, children: m })),
       (t[17] = g),
       (t[18] = m),
       (t[19] = h),
@@ -429,7 +440,7 @@ function Ce(e) {
   t[28] !== _ ||
   t[29] !== b ||
   t[30] !== y
-    ? ((T = (0, O.jsx)(De, {
+    ? ((T = (0, O.jsx)(Ae, {
         contentClassName: r,
         dialogCloseClassName: a,
         overlayClassName: o,
@@ -466,7 +477,7 @@ function Ce(e) {
     E
   );
 }
-function we(e) {
+function De(e) {
   let t = (0, X.c)(2),
     n;
   return (
@@ -476,7 +487,7 @@ function we(e) {
     n
   );
 }
-function Te(e) {
+function Oe(e) {
   let t = (0, X.c)(2),
     n;
   return (
@@ -486,7 +497,7 @@ function Te(e) {
     n
   );
 }
-function Ee(e) {
+function ke(e) {
   let t = (0, X.c)(8),
     n,
     r,
@@ -511,7 +522,7 @@ function Ee(e) {
     o
   );
 }
-function De(e) {
+function Ae(e) {
   let t = (0, X.c)(35),
     {
       children: n,
@@ -538,9 +549,10 @@ function De(e) {
     S = x(),
     C = i(
       `codex-dialog left-1/2 top-1/2 z-50 -translate-x-1/2 -translate-y-1/2 outline-none`,
+      Ce.content,
       s == null ? `fixed` : `absolute`,
     ),
-    T = Se(d),
+    T = Te(d),
     k = (0, D.useRef)(null),
     A = (0, D.useRef)(null),
     ee =
@@ -603,7 +615,7 @@ function De(e) {
   let P = E,
     F = s ?? void 0,
     I;
-  t[3] === o ? (I = t[4]) : ((I = i(xe, o)), (t[3] = o), (t[4] = I));
+  t[3] === o ? (I = t[4]) : ((I = i(we, o)), (t[3] = o), (t[4] = I));
   let L;
   t[5] === I
     ? (L = t[6])
@@ -657,7 +669,7 @@ function De(e) {
             `no-drag absolute top-4 right-4 cursor-interaction rounded p-1 leading-none text-token-foreground/80 hover:bg-token-toolbar-hover-background focus:ring-1 focus:ring-token-focus-border focus:outline-none`,
             a,
           ),
-          onClick: Oe,
+          onClick: je,
           children: (0, O.jsx)(w, { className: `icon-xs` }),
         })),
       (t[18] = a),
@@ -705,14 +717,14 @@ function De(e) {
     q
   );
 }
-function Oe(e) {
+function je(e) {
   e.stopPropagation();
 }
-var ke = `codex.debug.dialogLayout`,
-  Ae = `w-auto gap-2`,
+var Me = `codex.debug.dialogLayout`,
+  Ne = `w-auto gap-2`,
   Z = `relative rounded-lg border border-token-charts-blue/40`,
-  je = `absolute -top-2 left-2 rounded bg-token-charts-blue/15 px-1.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-token-charts-blue`;
-function Me(e) {
+  Pe = `absolute -top-2 left-2 rounded bg-token-charts-blue/15 px-1.5 py-0.5 text-xs font-semibold uppercase tracking-wide text-token-charts-blue`;
+function Fe(e) {
   if (e === `full`) return `h-full min-h-0`;
   if (e === `tall`) return `min-h-[520px] max-h-[560px]`;
 }
@@ -721,7 +733,7 @@ function Q() {
     window.localStorage == null ||
     typeof window.localStorage.getItem != `function`
     ? !1
-    : window.localStorage.getItem(ke) === `1`;
+    : window.localStorage.getItem(Me) === `1`;
 }
 function $(e) {
   let t = (0, X.c)(2),
@@ -730,13 +742,13 @@ function $(e) {
   return (
     t[0] === n
       ? (r = t[1])
-      : ((r = (0, O.jsx)(`span`, { className: je, children: n })),
+      : ((r = (0, O.jsx)(`span`, { className: Pe, children: n })),
         (t[0] = n),
         (t[1] = r)),
     r
   );
 }
-function Ne(e) {
+function Ie(e) {
   let t = (0, X.c)(29),
     {
       icon: n,
@@ -851,74 +863,76 @@ function Ne(e) {
     w
   );
 }
-function Pe(e) {
-  let t = (0, X.c)(19),
+function Le(e) {
+  let t = (0, X.c)(22),
     { children: n, className: r, size: a } = e,
     o,
-    s,
-    c,
-    l;
-  if (t[0] !== n || t[1] !== r || t[2] !== e || t[3] !== a) {
-    l = Symbol.for(`react.early_return_sentinel`);
-    bb0: {
-      o = Q();
-      let u = Me(a),
-        d = i(
-          `flex flex-col gap-0 px-5 py-5 text-base leading-normal tracking-normal`,
-          o && Z,
-          u,
-          r,
-        );
-      if (e.as === `form`) {
-        let r;
-        if (t[8] !== e) {
-          let { as: n, children: i, className: a, size: o, ...s } = e;
-          ((r = s), (t[8] = e), (t[9] = r));
-        } else r = t[9];
-        l = (0, O.jsxs)(`form`, {
-          ...r,
-          className: d,
-          children: [o ? (0, O.jsx)($, { name: `DialogBody` }) : null, n],
-        });
-        break bb0;
-      }
-      let f;
-      if (t[10] !== e) {
-        let { as: n, children: r, className: i, size: a, ...o } = e;
-        ((f = o), (t[10] = e), (t[11] = f));
-      } else f = t[11];
-      ((s = f), (c = i(d)));
-    }
-    ((t[0] = n),
-      (t[1] = r),
-      (t[2] = e),
-      (t[3] = a),
-      (t[4] = o),
-      (t[5] = s),
-      (t[6] = c),
-      (t[7] = l));
-  } else ((o = t[4]), (s = t[5]), (c = t[6]), (l = t[7]));
-  if (l !== Symbol.for(`react.early_return_sentinel`)) return l;
+    s;
+  if (t[0] !== r || t[1] !== a) {
+    o = Q();
+    let e = Fe(a);
+    ((s = i(
+      `flex flex-col gap-0 px-5 py-5 text-base leading-normal tracking-normal`,
+      o && Z,
+      e,
+      r,
+    )),
+      (t[0] = r),
+      (t[1] = a),
+      (t[2] = o),
+      (t[3] = s));
+  } else ((o = t[2]), (s = t[3]));
+  let c = s;
+  if (e.as === `form`) {
+    let r;
+    if (t[4] !== e) {
+      let { as: n, children: i, className: a, size: o, ...s } = e;
+      ((r = s), (t[4] = e), (t[5] = r));
+    } else r = t[5];
+    let i;
+    t[6] === o
+      ? (i = t[7])
+      : ((i = o ? (0, O.jsx)($, { name: `DialogBody` }) : null),
+        (t[6] = o),
+        (t[7] = i));
+    let a;
+    return (
+      t[8] !== n || t[9] !== c || t[10] !== r || t[11] !== i
+        ? ((a = (0, O.jsxs)(`form`, { ...r, className: c, children: [i, n] })),
+          (t[8] = n),
+          (t[9] = c),
+          (t[10] = r),
+          (t[11] = i),
+          (t[12] = a))
+        : (a = t[12]),
+      a
+    );
+  }
+  let l;
+  if (t[13] !== e) {
+    let { as: n, children: r, className: i, size: a, ...o } = e;
+    ((l = o), (t[13] = e), (t[14] = l));
+  } else l = t[14];
   let u;
-  t[12] === o
-    ? (u = t[13])
+  t[15] === o
+    ? (u = t[16])
     : ((u = o ? (0, O.jsx)($, { name: `DialogBody` }) : null),
-      (t[12] = o),
-      (t[13] = u));
+      (t[15] = o),
+      (t[16] = u));
   let d;
   return (
-    t[14] !== n || t[15] !== s || t[16] !== c || t[17] !== u
-      ? ((d = (0, O.jsxs)(`div`, { ...s, className: c, children: [u, n] })),
-        (t[14] = n),
-        (t[15] = s),
-        (t[16] = c),
-        (t[17] = u),
-        (t[18] = d))
-      : (d = t[18]),
+    t[17] !== n || t[18] !== c || t[19] !== l || t[20] !== u
+      ? ((d = (0, O.jsxs)(`div`, { ...l, className: c, children: [u, n] })),
+        (t[17] = n),
+        (t[18] = c),
+        (t[19] = l),
+        (t[20] = u),
+        (t[21] = d))
+      : (d = t[21]),
     d
   );
 }
-function Fe(e) {
+function Re(e) {
   let t = (0, X.c)(21),
     { children: n, className: r } = e,
     a,
@@ -931,7 +945,7 @@ function Fe(e) {
   if (t[0] !== n || t[1] !== r) {
     let e = Q(),
       f = D.Children.toArray(n),
-      p = f.reduce(Ie, 0),
+      p = f.reduce(ze, 0),
       m = (e) =>
         f.map((t) => {
           if (!D.isValidElement(t) || t.type !== C) return t;
@@ -991,10 +1005,10 @@ function Fe(e) {
     p
   );
 }
-function Ie(e, t) {
+function ze(e, t) {
   return !D.isValidElement(t) || t.type !== C ? e : e + 1;
 }
-function Le(e) {
+function Be(e) {
   let t = (0, X.c)(9),
     { children: n, className: r } = e,
     a,
@@ -1024,7 +1038,7 @@ function Le(e) {
     c
   );
 }
-function Re(e) {
+function Ve(e) {
   let t = (0, X.c)(9),
     { children: n, className: r } = e,
     a,
@@ -1054,7 +1068,7 @@ function Re(e) {
     c
   );
 }
-function ze(e) {
+function He(e) {
   let t = (0, X.c)(9),
     { children: n, className: r } = e,
     a,
@@ -1085,20 +1099,20 @@ function ze(e) {
   );
 }
 export {
-  Le as a,
-  xe as c,
-  we as d,
+  Be as a,
+  we as c,
+  De as d,
   _e as f,
   pe as h,
-  Ne as i,
-  Ce as l,
+  Ie as i,
+  Ee as l,
   he as m,
-  Pe as n,
-  ze as o,
+  Le as n,
+  He as o,
   ge as p,
-  Fe as r,
-  Re as s,
-  Ae as t,
-  Te as u,
+  Re as r,
+  Ve as s,
+  Ne as t,
+  Oe as u,
 };
 //# sourceMappingURL=dialog-layout.js.map

@@ -1,38 +1,43 @@
-import { a as e, g as t, h as n, m as r, r as i } from "./app-shell-state.js";
-import { n as a, t as o } from "./app-shell-tab-controller.js";
-function s(e) {
-  return e === `bottom` ? o : a;
+import {
+  D as e,
+  E as t,
+  Z as n,
+  _ as r,
+  g as i,
+  v as a,
+} from "./app-shell-state.js";
+import { n as o, t as s } from "./app-shell-tab-controller-BTWycTBb.js";
+function c(e) {
+  return e === `bottom` ? s : o;
 }
-function c(t, n) {
-  return n === `bottom` ? t.get(i) : t.get(e);
-}
-function l(e, n, { activateFallbackTab: i, allowEmpty: a } = {}) {
-  let o = s(n),
-    c = e.get(o.tabs$);
-  return c.length === 0 && a !== !0
+function l(r, o, { activateFallbackTab: s, allowEmpty: l } = {}) {
+  let u = c(o),
+    d = r.get(u.tabs$),
+    f = null;
+  if (o === `bottom`) {
+    let t = r.get(e);
+    f = t === `bottom-panel` ? null : t;
+  }
+  return d.length === 0 && l !== !0
     ? !1
-    : (i === !0 &&
-        e.get(o.activeTab$) == null &&
-        o.activateTab(e, c[0]?.tabId ?? null),
-      n === `bottom` ? r(e, !0) : t(e, !0),
+    : (s === !0 &&
+        r.get(u.activeTab$) == null &&
+        u.activateTab(r, d[0]?.tabId ?? null),
+      o === `bottom`
+        ? (f != null && r.set(t, f), i(r, !0), n(r, `bottom-panel`))
+        : a(r, !0),
       !0);
 }
-function u(e, t) {
-  if (t === `bottom`) {
-    r(e, !1);
+function u(a, o) {
+  if (o === `bottom`) {
+    let r = a.get(e) === `bottom-panel` ? a.get(t) : null;
+    (i(a, !1), r != null && n(a, r));
     return;
   }
-  n(e, !1, { restoreFullWidthOnNextOpen: !0 });
+  r(a, !1, { restoreFullWidthOnNextOpen: !0 });
 }
-function d(e, t) {
-  if (c(e, t)) {
-    u(e, t);
-    return;
-  }
-  l(e, t, { allowEmpty: !0 });
+function d(e, t, n, r) {
+  return r() ? (c(t).activateTab(e, n), l(e, t)) : !1;
 }
-function f(e, t, n, r) {
-  return r() ? (s(t).activateTab(e, n), l(e, t)) : !1;
-}
-export { d as a, f as i, s as n, l as r, u as t };
+export { d as i, c as n, l as r, u as t };
 //# sourceMappingURL=thread-panel-state.js.map

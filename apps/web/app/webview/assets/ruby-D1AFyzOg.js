@@ -1,0 +1,2 @@
+import { t as e } from "./ruby-_vZ6AZs7.js";
+export { e as default };

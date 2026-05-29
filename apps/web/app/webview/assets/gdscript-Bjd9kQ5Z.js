@@ -1,0 +1,2 @@
+import { t as e } from "./gdscript-CPUnxGRx.js";
+export { e as default };

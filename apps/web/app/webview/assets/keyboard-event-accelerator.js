@@ -1,15 +1,16 @@
-var e = new Set([`Meta`, `Control`, `Alt`, `AltGraph`, `Shift`]),
-  t = 1,
-  n = 2,
-  r = new Map([
+import { t as e } from "./keyboard-layout-map-qWvmLFDu.js";
+var t = new Set([`Meta`, `Control`, `Alt`, `AltGraph`, `Shift`]),
+  n = 1,
+  r = 2,
+  i = new Map([
     [`Escape`, `Esc`],
     [`ArrowUp`, `Up`],
     [`ArrowDown`, `Down`],
     [`ArrowLeft`, `Left`],
     [`ArrowRight`, `Right`],
   ]);
-function i(e) {
-  let t = c(e);
+function a(e) {
+  let t = l(e);
   if (t == null) return null;
   let n = [];
   return (
@@ -21,60 +22,55 @@ function i(e) {
     n.join(`+`)
   );
 }
-function a(e) {
-  return s(e, `pressed`);
-}
 function o(e) {
-  return s(e, `released`);
+  return c(e, `pressed`);
 }
-function s(e, r) {
+function s(e) {
+  return c(e, `released`);
+}
+function c(e, t) {
   if (e.key.toLowerCase() === `fn`) return `Fn`;
-  let i = e.location === t ? `Left` : e.location === n ? `Right` : null;
+  let i = e.location === n ? `Left` : e.location === r ? `Right` : null;
   if (i == null) return null;
   switch (e.key) {
     case `Alt`:
-      return r === `released` ||
+      return t === `released` ||
         (e.altKey && !e.ctrlKey && !e.metaKey && !e.shiftKey)
         ? `${i}Option`
         : null;
     case `Meta`:
-      return r === `released` ||
+      return t === `released` ||
         (e.metaKey && !e.ctrlKey && !e.altKey && !e.shiftKey)
         ? `${i}Command`
         : null;
     case `Control`:
       return i === `Left` &&
-        (r === `released` ||
+        (t === `released` ||
           (e.ctrlKey && !e.metaKey && !e.altKey && !e.shiftKey))
         ? `LeftControl`
         : null;
-    case `Shift`:
-      return null;
     default:
       return null;
   }
 }
-function c(t) {
-  let { key: n, code: i, altKey: a } = t;
-  if (e.has(n)) return null;
-  if (a) {
-    let e = l(i);
-    if (e != null) return e;
-  }
-  return n === ` `
-    ? `Space`
-    : n === `+`
-      ? `Plus`
-      : (r.get(n) ??
-        (/^f\d{1,2}$/i.test(n)
-          ? n.toUpperCase()
-          : n.toLowerCase() === `fn`
-            ? `Fn`
-            : n.length === 1
-              ? n.toUpperCase()
-              : (l(i) ?? n)));
+function l(n) {
+  let r = e(n);
+  return t.has(r)
+    ? null
+    : r === ` `
+      ? `Space`
+      : r === `+`
+        ? `Plus`
+        : (i.get(r) ??
+          (/^f\d{1,2}$/i.test(r)
+            ? r.toUpperCase()
+            : r.toLowerCase() === `fn`
+              ? `Fn`
+              : r.length === 1
+                ? r.toUpperCase()
+                : (u(n.code) ?? r)));
 }
-function l(e) {
+function u(e) {
   return e == null
     ? null
     : /^Key[A-Z]$/.test(e)
@@ -85,5 +81,5 @@ function l(e) {
           ? `Space`
           : null;
 }
-export { a as n, o as r, i as t };
+export { o as n, s as r, a as t };
 //# sourceMappingURL=keyboard-event-accelerator.js.map

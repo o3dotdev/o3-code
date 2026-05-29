@@ -1,13 +1,13 @@
 import {
-  Xr as e,
-  _i as t,
-  di as n,
-  gi as r,
-  ii as i,
-  si as a,
-  ui as o,
-} from "./src-BLHmAhbF.js";
-import { Qi as s } from "./app-server-manager-signals.js";
+  Di as e,
+  Fi as t,
+  Hi as n,
+  Ji as r,
+  Ri as i,
+  Vi as a,
+  qi as o,
+} from "./src-C.js";
+import { Va as s } from "./app-server-manager-signals-DkRDRgNB.js";
 function c(e) {
   return Math.max(0, -e.scrollTop);
 }
@@ -103,18 +103,18 @@ var u = {
     timelineScroll: { [u.timelineScroll]: `` },
   },
   m = `current`,
-  h = a(m),
-  g = i(`type`, [
-    n({ type: a(`pixels`), y: o() }),
-    n({ type: a(`pages`), count: o() }),
-    n({ type: a(`edge`), edge: e([`top`, `bottom`]) }),
+  h = i(m),
+  g = t(`type`, [
+    n({ type: i(`pixels`), y: a() }),
+    n({ type: i(`pages`), count: a() }),
+    n({ type: i(`edge`), edge: e([`top`, `bottom`]) }),
   ]),
   _ = e([`previous`, `next`]),
-  v = t([n({ heading: r() }), n({ ordinal: o().int().nonnegative() })]),
-  y = t([
-    n({ projectId: r() }),
-    n({ label: r() }),
-    n({ ordinal: o().int().nonnegative() }),
+  v = r([n({ heading: o() }), n({ ordinal: a().int().nonnegative() })]),
+  y = r([
+    n({ projectId: o() }),
+    n({ label: o() }),
+    n({ ordinal: a().int().nonnegative() }),
   ]);
 function b(e) {
   let t = document.querySelector(e);

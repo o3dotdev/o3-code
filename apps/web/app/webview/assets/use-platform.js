@@ -1,5 +1,5 @@
-import { xt as e } from "./setting-storage.js";
-import { t } from "./use-os-info.js";
+import { wt as e } from "./setting-storage.js";
+import { t } from "./use-os-info-CpFtQpVC.js";
 var n = e();
 function r() {
   let e = (0, n.c)(7),

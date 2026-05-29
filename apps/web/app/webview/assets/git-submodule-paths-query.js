@@ -1,6 +1,6 @@
-import { Q as e, S as t, Z as n } from "./setting-storage.js";
-import { i as r } from "./git-current-branch-query.js";
-var i = r({
+import { $ as e, S as t } from "./setting-storage.js";
+import { i as n } from "./git-current-branch-query.js";
+var r = n({
     method: `submodule-paths`,
     getParams: (e) => ({ operationSource: e.operationSource, root: e.root }),
     getOptions: (e) => ({
@@ -9,6 +9,6 @@ var i = r({
       staleTime: e.staleTime,
     }),
   }).fromCwd$,
-  a = e(t, (e) => n(t, ({ get: t }) => t(t(i, e)).data ?? null));
-export { a as n, i as t };
+  i = e(t, (e, { get: t }) => t(r, e).data ?? null);
+export { i as n, r as t };
 //# sourceMappingURL=git-submodule-paths-query.js.map

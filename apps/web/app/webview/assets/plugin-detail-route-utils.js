@@ -1,27 +1,22 @@
 import {
-  $ as e,
-  K as t,
-  Q as n,
-  ct as r,
-  di as i,
-  it as a,
-  ot as o,
-  si as s,
-} from "./src-BLHmAhbF.js";
-import { o as c } from "./use-plugins.js";
-var l = i({ openedFromPluginsPage: s(!0).optional() }).passthrough();
-function u(t, n) {
-  return e({
-    hostId: n?.hostId,
-    pluginId: t.plugin.id,
-    ...c(t),
-    source: n?.source,
+  Hi as e,
+  Ri as t,
+  ct as n,
+  gt as r,
+  nt as i,
+  pt as a,
+} from "./src-C.js";
+import { o } from "./use-plugins-jIZrcuZQ.js";
+var s = e({ openedFromPluginsPage: t(!0).optional() }).passthrough();
+function c(e, t) {
+  return n({
+    hostId: t?.hostId,
+    pluginId: e.plugin.id,
+    ...o(e),
+    source: t?.source,
   });
 }
-function d(e) {
-  return o(e) ? n({ pluginId: e }) : null;
-}
-function f({
+function l({
   explicitMarketplacePath: e,
   explicitPluginName: t,
   explicitRemoteMarketplaceName: n,
@@ -36,56 +31,56 @@ function f({
       : (r?.remoteMarketplaceName ?? null),
   };
 }
-function p({ plugins: e, requestedPluginId: t }) {
+function u({ plugins: e, requestedPluginId: t }) {
   if (a(t)) {
-    let n = e.find((e) => y(e, t));
+    let n = e.find((e) => g(e, t));
     if (n != null) return n;
   }
-  return e.find((e) => v(e, t)) ?? null;
+  return e.find((e) => h(e, t)) ?? null;
 }
-function m(e) {
-  let n = new URLSearchParams(e),
-    r = n.get(`marketplacePath`)?.trim(),
-    i = n.get(`remoteMarketplaceName`)?.trim(),
-    a = n.get(`pluginName`)?.trim(),
-    o = n.get(`hostId`)?.trim() || null,
-    s = n.get(`source`)?.trim(),
-    c = !!r || !!i;
-  return (r && i) || (c && !a) || (!c && a)
+function d(e) {
+  let t = new URLSearchParams(e),
+    n = t.get(`marketplacePath`)?.trim(),
+    r = t.get(`remoteMarketplaceName`)?.trim(),
+    a = t.get(`pluginName`)?.trim(),
+    o = t.get(`hostId`)?.trim() || null,
+    s = t.get(`source`)?.trim(),
+    c = !!n || !!r;
+  return (n && r) || (c && !a) || (!c && a)
     ? null
     : {
-        marketplacePath: r || null,
+        marketplacePath: n || null,
         pluginName: a || null,
-        remoteMarketplaceName: i || null,
+        remoteMarketplaceName: r || null,
         hostId: o,
-        source: s === `manage` ? t : null,
+        source: s === `manage` ? i : null,
       };
 }
-function h(e) {
+function f(e) {
   if (typeof e != `object` || !e) return null;
   let t = Reflect.get(e, `pluginDetailDeepLinkMode`);
   return t === `share` || t === `view` ? t : null;
 }
-function g() {
+function p() {
   return { openedFromPluginsPage: !0 };
 }
-function _(e) {
-  let t = l.safeParse(e);
+function m(e) {
+  let t = s.safeParse(e);
   return t.success && t.data.openedFromPluginsPage === !0;
 }
-function v(e, t) {
+function h(e, t) {
   return a(t)
     ? e.plugin.source.type === `remote` &&
         e.plugin.remotePluginId != null &&
         r(e.plugin.remotePluginId, t)
     : e.plugin.id === t;
 }
-function y(e, t) {
+function g(e, t) {
   return (
     e.plugin.source.type === `local` &&
     e.plugin.shareContext?.remotePluginId != null &&
     r(e.plugin.shareContext.remotePluginId, t)
   );
 }
-export { _ as a, m as c, h as i, f as n, u as o, d as r, p as s, g as t };
+export { c as a, m as i, l as n, u as o, f as r, d as s, p as t };
 //# sourceMappingURL=plugin-detail-route-utils.js.map

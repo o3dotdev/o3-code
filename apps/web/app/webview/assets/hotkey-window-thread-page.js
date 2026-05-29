@@ -1,441 +1,473 @@
-import { Cn as e, Z as t, nt as n } from "./src-BLHmAhbF.js";
-import { g as r } from "./app-server-manager-signals.js";
+import { dt as e, st as t, zn as n } from "./src-C.js";
+import { g as r } from "./app-server-manager-signals-DkRDRgNB.js";
 import { t as i } from "./jsx-runtime.js";
-import "./codex-diff-css.js";
-import { r as a } from "./local-conversation-thread.js";
-import "./react-dom.js";
+import "./shiki-highlight-provider-gate-BIldj-yk.js";
+import { b as a, r as o } from "./local-conversation-thread-DAwsPWah.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
 import "./core.esm.js";
-import "./katex-BzX-JuVf.js";
-import "./marked.esm.js";
-import "./pdf-DbRVTnv1.js";
-import { J as o, W as s, p as c, xt as l } from "./setting-storage.js";
-import { m as u, r as d } from "./chunk-LFPYN7LY.js";
+import "./katex-C2KDRoso.js";
+import "./marked.esm-BR-H6018.js";
+import "./pdf-DDdRP0ey.js";
+import { G as s, X as c, Y as l, Z as u, wt as d } from "./setting-storage.js";
+import { a as f, g as p } from "./chunk-LFPYN7LY.js";
 import "./known-app-icon.js";
 import "./branch.js";
-import "./github-mark.js";
+import "./github-mark-BbpRNXQM.js";
 import "./google-drive.js";
-import "./notion.js";
-import "./product-logger.js";
-import "./statsig.js";
+import "./notion-hFEWPyiF.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./codex-api.js";
-import "./_baseOrderBy.js";
-import "./parse-owner-repo.js";
-import "./use-debounced-value.js";
-import "./use-is-dark.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
+import "./apps-queries-CmwRqoKz.js";
+import "./startCase.js";
+import "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
 import "./connector-logo.js";
 import "./toast-signal.js";
 import "./window-zoom-context.js";
-import "./tooltip.js";
-import "./build-start-conversation-params.js";
-import "./route-scope.js";
-import "./prompt-text.js";
+import "./tooltip-CDzchJxN.js";
+import "./build-start-conversation-params-DHCgiUKY.js";
+import { t as m } from "./route-scope.js";
+import "./prompt-text-DuAhtLDu.js";
 import "./use-environment.js";
-import "./composer-view-state.js";
+import "./composer-view-state-JRNwOfub.js";
 import "./mention-item.js";
-import "./use-collaboration-mode.js";
-import "./use-model-settings.js";
+import "./use-collaboration-mode-CQFe-Ilp.js";
+import "./use-model-settings-BGTYyORt.js";
 import "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
-import "./link-external.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./link-external-BPZREBQk.js";
 import "./open-config-toml-button.js";
-import "./open-workspace-file.js";
+import "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
-import "./model-queries.js";
+import "./model-queries-CVdTsyPv.js";
 import "./use-webview-execution-target.js";
 import "./remote-projects.js";
 import "./collaboration-mode-queries.js";
 import "./thread-detail-level.js";
 import "./permissions-mode-defaults.js";
 import "./use-permissions-mode.js";
+import "./composer-footer-C_v29uwU.js";
 import "./proxy.js";
 import "./app-shell-state.js";
-import "./app-shell-panel-animation.js";
-import "./app-shell.js";
+import "./app-shell-D4HBgUPf.js";
 import "./onboarding-state.js";
 import "./use-service-tier-settings.js";
-import "./apps.js";
-import "./chats.js";
-import "./x.js";
+import "./apps-DwfMzB5Q.js";
+import "./chats-DoviPPWc.js";
+import "./x-C_RDKBp5.js";
 import "./projectless-thread.js";
-import "./plugin-install-store.js";
+import "./plugin-install-store-Daxzgjai.js";
 import "./use-platform.js";
-import "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
-import "./apps-queries.js";
-import "./startCase.js";
-import "./uniq.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
 import "./check-circle-filled.js";
-import "./chrome-theme.js";
-import "./parsePatchFiles.js";
-import "./browser-sidebar-manager.js";
-import "./app-shell-tab-controller.js";
-import { t as f } from "./local-conversation-title-signals.js";
-import "./review-navigation-model.js";
-import "./parse-diff.js";
-import "./review-file-source-tab.js";
-import "./file-diff.js";
-import "./sumBy.js";
-import "./thread-context.js";
 import "./diff-view-mode.js";
-import "./git-current-branch-query.js";
+import "./browser-sidebar-manager.js";
+import "./app-shell-tab-controller-BTWycTBb.js";
+import { t as h } from "./local-conversation-title-signals-bVA-f9H8.js";
+import "./review-navigation-model-DMRVNxCn.js";
 import "./focus-composer.js";
+import "./review-file-source-tab.js";
+import "./file-diff-DOHfgomY.js";
+import "./sumBy-zUPwGmzt.js";
+import "./thread-context-CaET2O8s.js";
+import "./git-current-branch-query.js";
 import "./terminal.js";
 import "./app-intl-signal.js";
-import "./terminal-service.js";
-import "./thread-page-bottom-panel-state-DZYvoqqn.js";
-import "./info.js";
+import "./thread-page-bottom-panel-state.js";
+import "./xterm-display-helpers.js";
+import "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import "./download.js";
 import "./with-window.js";
 import "./use-resolved-theme-variant.js";
 import "./thread-panel-state.js";
 import "./window-app-action-helpers.js";
-import "./plugin-config-edits.js";
-import "./sidebar-thread-keys.js";
-import "./local-remote-selection.js";
-import "./use-is-remote-host.js";
+import "./locale-resolver-CfTzWTiS.js";
+import "./use-is-remote-host-DScyzh-e.js";
 import "./use-is-fast-mode-enabled.js";
+import "./plugin-detail-route-utils.js";
 import "./use-plugin-install-flow.js";
 import "./dialog-layout.js";
 import "./lightning-bolt.js";
-import "./reasoning-minimal.js";
+import "./reasoning-minimal-DZ-l40pu.js";
+import "./plugins-availability-txQMPSuC.js";
+import "./plugin-config-edits-DUMiyKty.js";
+import "./build-worktree-label-from-input.js";
+import "./local-projects.js";
+import "./pending-worktree-store-COXB8WW0.js";
+import "./app-server-dynamic-tools-BARsY_O-.js";
 import "./run-command.js";
-import "./composer.js";
-import "./thread-management-dynamic-tools.js";
+import "./composer-07OrsRiq.js";
+import "./process-manager-target.js";
+import "./thread-side-panel-tabs-BAdsmGgF.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
+import "./local-conversation-background-terminals-model.js";
 import "./initial-route-atom.js";
 import "./use-stable-callback.js";
 import "./use-navigate-to-local-conversation.js";
 import "./electron-menu-shortcuts.js";
-import "./use-skills.js";
-import "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
+import "./local-task-row-signals-BzazYVei.js";
+import "./sidebar-project-group-signals-CEQTKcIf.js";
+import "./pinned-threads-query-DYArLI-i.js";
+import "./sidebar-project-groups.js";
+import "./_defineProperty.js";
+import "./use-register-command.js";
 import "./homepage-logo.js";
 import "./loading-page.js";
-import "./sortable.esm.js";
-import "./use-resize-observer.js";
+import "./sortable.esm-BRPfvPzy.js";
+import "./use-resize-observer-DCpyQHos.js";
 import "./check-md.js";
 import "./chevron-right.js";
 import "./context-menu.js";
+import "./command-keybindings-C3NM9T-L.js";
 import "./expand.js";
-import "./keyboard-modifier-state.js";
-import "./thread-side-panel-browser-tab-state.js";
-import "./command-keybindings.js";
+import "./keyboard-modifier-state-BKqcycjV.js";
 import "./arrow-left.js";
 import "./use-window-controls-safe-area.js";
 import "./app-shell-bottom-panel-scroll-sync.js";
-import "./use-start-new-conversation-B.js";
+import "./select-project.js";
+import "./use-start-new-conversation.js";
 import "./compose.js";
+import "./codex-api-error-CsUcWied.js";
 import "./use-rate-limit.js";
+import "./checkbox-DtuSNXXy.js";
+import "./minus.js";
+import "./rate-limit-rows.js";
+import "./links.js";
 import "./conversation-starter-card.js";
-import "./thread-actions.js";
-import "./local-task-row-signals.js";
-import "./sidebar-project-group-signals-.js";
-import "./pinned-threads-query.js";
-import "./git-origins-query.js";
-import "./sidebar-project-groups.js";
-import "./_defineProperty.js";
-import "./check-circle.js";
+import "./check-circle-hJ_ggIqT.js";
 import "./x-circle.js";
 import "./thinking-shimmer.js";
-import "./automation-schedule.js";
 import "./badge.js";
-import "./bug.js";
+import "./bug-B5-GWt65.js";
 import "./chat.js";
-import "./clock.js";
+import "./clock-BflmlnpZ.js";
 import "./search.js";
-import "./skills.js";
-import "./types.js";
-import "./edit.js";
-import "./dropdown.js";
-import "./thread-side-panel-tabs-BL2fcy4d.js";
-import "./globe.js";
-import "./set-pinned-thread.js";
+import "./skills-BUMAZe_D.js";
+import "./mcp-capability-signals-DAPblgpG.js";
+import "./edit-CWssO-QK.js";
+import "./dropdown-DtQxMoJw.js";
+import "./globe-CnvlclXd.js";
+import "./set-pinned-thread-CqaOWPwd.js";
+import "./thread-actions.js";
 import "./popover.js";
 import "./face.js";
-import "./archive.js";
+import "./archive-DxqnmQgI.js";
 import "./three-dots.js";
 import "./trash.js";
-import "./chevron.js";
+import "./chevron-NmAOI_v1.js";
 import "./use-app-server-connection-state.js";
+import "./use-relative-now.js";
 import "./format-relative-date-time.js";
-import "./profile-dropdown.js";
-import "./remote-host-globe-icon.js";
-import "./cloud.js";
+import "./local-task-row-BShx8eqa.js";
+import "./remote-host-globe-icon-DwUovbza.js";
+import "./cloud-BOSNAJnX.js";
 import "./macbook.js";
-import "./worktree.js";
+import "./worktree-D_6WAQVb.js";
 import "./thread-env-icon.js";
 import "./workspace-root-icon.js";
-import "./folder.js";
 import "./warning.js";
-import "./automation-shared.js";
-import "./review-header-toolbar.js";
-import "./markdown-75WV5XlN.js";
-import "./external-markdown-link.js";
+import "./format-automation-next-run-label.js";
+import "./pull-request-status-DcVXKzZN.js";
+import "./markdown-46SswYUq.js";
+import "./external-markdown-link-DVRKkYqo.js";
 import "./use-native-apps.electron.js";
 import "./get-file-icon.js";
-import "./code.js";
-import "./json-DAjHKBV7.js";
-import "./image-square.js";
-import "./notebook.js";
+import "./code-s3Scfd05.js";
+import "./json-CRHyc9De.js";
+import "./image-square-CGEtcnWp.js";
+import "./notebook-MImpo36y.js";
 import "./settings.cog.js";
-import "./mcp.js";
-import "./chrome.js";
-import "./codex.js";
-import "./openai-blossom.js";
+import "./mcp-D_m7bYb5.js";
+import "./chrome-ZI-wJE1V.js";
+import "./codex-BjFeJtxQ.js";
+import "./openai-blossom-CXnPbecc.js";
 import "./pencil.js";
 import "./filesystem-media-src.js";
 import "./inline-mentions.js";
-import "./code-snippet.js";
-import "./tailwind-styled-components.esm.js";
-import "./copy.js";
+import "./workspace-file-context-menu.js";
+import "./use-skills.js";
+import "./code-snippet-hioibDaj.js";
+import "./copy-Cen6nDnP.js";
 import "./copy-button.js";
-import "./minus-D.js";
 import "./plus.js";
 import "./image-preview-dialog.js";
-import "./use-diff-annotations.js";
+import "./pull-request-readonly-comment.js";
 import "./pull-request-open.js";
-import "./use-is-pull-request-merge-helper-enabled.js";
-import "./use-is-background-subagents-enabled.js";
+import "./gh-cli-status-query-DoYMwBhd.js";
+import "./automation-queries-DCiNISnO.js";
+import "./get-attached-heartbeat-automation-for-thread.js";
+import "./use-is-background-subagents-enabled-B.js";
 import "./use-git-current-branch.js";
-import { t as p } from "./get-project-name.js";
-import "./annotation-comment-editor-card.js";
-import "./local-environments.js";
-import "./local-environment-selection.js";
-import "./plugin-detail-page-utils.js";
-import "./plugin-detail-queries.js";
+import { t as g } from "./get-project-name.js";
+import "./stop.js";
+import "./realtime-controller-pdTEzsRt.js";
+import "./local-environments-DcKJ5oGa.js";
+import "./local-environment-selection-DyGLYKsj.js";
+import "./fork-conversation-actions-BTbUVcRb.js";
 import "./check-plugin-availability.js";
+import "./plugin-detail-queries.js";
 import "./plugin-prefill-prompt.js";
-import "./link.js";
-import "./pending-worktree-store.js";
-import "./arrow-up.js";
+import "./plugins-page-selectors.js";
+import "./arrow-up-fq4d26GH.js";
 import "./use-active-conversation-id.js";
+import "./avatar-Cr2UdTU9.js";
 import "./building.js";
+import "./keyboard-BdirdM4I.js";
 import "./log-out.js";
-import "./profile-visibility.js";
-import "./bullet-separator.js";
+import "./profile-dropdown-CNm7g-4O.js";
+import "./referral-invite-modal-CeoKsCTr.js";
+import "./bullet-separator-DZkwhKzs.js";
 import "./speedometer.js";
-import "./rate-limit-summary.js";
-import "./slash-command-item.js";
-import "./sortBy.js";
-import "./prompt-editor.js";
-/* empty css                    */ import "./use-connected-remote-connections.js";
-import "./use-is-appshot-available.js";
-import "./attachment-remove-button.js";
-import "./mention-metadata-syncer.js";
-import "./browser-sidebar-state.js";
-import "./above-composer-panel-row.js";
-import "./permissions-mode-helpers.js";
-import "./banner.js";
+import "./rate-limit-summary-BDTPCTJm.js";
 import "./check-lg.js";
-import "./use-git-default-branch.js";
+import "./profile-queries.js";
+import "./profile-visibility.js";
+import "./sortBy.js";
+import "./prompt-editor-.js";
+import "./workspace-dependencies-feature-DTe1S-zC.js";
+/* empty css                    */ import "./use-connected-remote-connections.js";
+import "./browser-sidebar-comment-light-dismiss.js";
+import "./use-is-appshot-available-BuzGfUqU.js";
+import "./attachment-remove-button-BPMNqRUa.js";
+import "./mention-metadata-syncer.js";
+import "./local-remote-selection-DqDRxu-D.js";
+import "./composer-top-menu-chrome.js";
+import "./above-composer-panel-row.js";
+import "./permissions-mode-helpers-CfjXuDYv.js";
+import "./banner.js";
+import "./browser-sidebar-state-BftrCPEH.js";
+import "./use-git-default-branch-gyzefibF.js";
 import "./use-enter-behavior.js";
 import "./toggle.js";
+import "./app-connect-oauth-Cy-gX8IV.js";
 import "./computer-use-app-approvals-query.js";
-import "./bundled-plugin-auto-install-preference.js";
-import "./app-connect-oauth.js";
-import "./codex-api-error.js";
-import "./hooks-settings-queries.js";
-import "./file-tree-search-input.js";
-import "./use-at-mention-sections.js";
-import "./diff-stats-.js";
+import "./hooks-settings-queries-BUP-44jb.js";
+import "./slash-command-item.js";
+import "./review-header-toolbar.js";
+import "./at-mention-list-C6rdlW9Y.js";
+import "./diff-stats.js";
 import "./permissions-mode-visibility.js";
+import "./connected-apps.js";
 import "./use-composer-controller.js";
-import "./plan.js";
+import "./plan-Bf1LT-JR.js";
 import "./send-to-cloud.js";
 import "./appshot-window.js";
 import "./undo.js";
 import "./regenerate.js";
 import "./use-recording-waveform.js";
-import "./locale-resolver.js";
+import "./git-branch-picker-dropdown-content-116YOJSU.js";
 import "./shield-code.js";
 import "./shield-exclamation.js";
-import "./settings-shared.js";
-import "./is-subagent-conversation.js";
+import "./settings-shared-BTHmEeQY.js";
+import "./is-subagent-conversation-BDD-JXTj.js";
 import "./format-skill-scope.js";
-import "./git-branch-picker-dropdown-content.js";
 import "./use-personality.js";
-import "./use-is-thread-realtime-enabled.js";
+import "./use-is-thread-realtime-enabled-DgNYbuij.js";
 import "./dictation-error-message.js";
-import "./use-hotkey.js";
-import "./settings-host-selection.js";
-import "./settings-host-context.js";
-import "./list-navigation.js";
-import "./use-diff-comments.js";
-import "./build-worktree-label-from-input.js";
+import "./use-hotkey-yGPn4uDB.js";
+import "./hooks-settings-navigation-BWOkRsTX.js";
+import "./settings-host-context-ILiCQlCE.js";
+import "./list-navigation-DnxNfoPi.js";
+import "./arrow-rotate-ccw.js";
+import "./mcp-capability-view-frame-BVZUfJnz.js";
 import "./use-diff-comment-sources.js";
-import "./arrow-up-right-lg.js";
+import "./arrow-up-right-lg-C37BA3DV.js";
 import "./right-panel-composer-overlay-scroll-reserve.js";
+import "./annotation-mode-button.js";
 import "./browser-sidebar-comment-mode-coachmark-state.js";
-import "./drag.js";
-import "./use-workspace-file-search.js";
-import "./more-menu-trigger.js";
-import "./browser-use-origin-state-queries.js";
-import "./large-empty-state.js";
-import "./pull-request-code-review-comments.js";
+import "./drag-DztkEAnS.js";
+import "./link-Cym8GZvE.js";
+import "./mcp-capability-client.js";
+import "./use-workspace-file-search-KLsQKyAb.js";
+import "./more-menu-trigger-DgGAgPrg.js";
+import "./browser-use-origin-state-queries-CGA9Am-q.js";
+import "./large-empty-state-C2F-IvSK.js";
+import "./pull-request-code-review-comments-qcxIGUtE.js";
+import "./file-tree-search-input.js";
 import "./codex-analytics-attribution.js";
 import "./use-target-apps.js";
-import "./review-file-tree-side-pane.js";
-import "./diff-unified.js";
+import "./diff-unified-BETzamPI.js";
+import "./use-diff-annotations.js";
 import "./rich-preview-primitives.js";
-import "./markdown-surface.js";
+import "./markdown-surface-vWOcyIeh.js";
 import "./anchored-autocomplete-overlay.js";
-import "./use-autocomplete-overlay-placement.js";
+import "./use-autocomplete-overlay-placement-uVAiOuYR.js";
+import "./gh-pull-request-status-query.js";
+import "./open-artifact-side-panel-tab.js";
+import "./app-connect-modal.js";
+import "./compound-button-BQclBs-H.js";
+import "./artifact-preview-header.js";
+import "./arrow-top-right.js";
+import "./folders-DmG-RYpY.js";
+import "./history-BwxRjoaE.js";
+import "./mcp-capability-file-viewer-frame-DKPiqjwC.js";
+import "./project-dropdown-options.js";
+import "./alert-CoBPbdcu.js";
+import "./mcp-tool-item-content-utils.js";
 import "./workspace-directory-tree.js";
-import "./folders.js";
 import "./use-git-synced-branch.js";
-import "./compound-button.js";
 import "./summary-panel-row.js";
 import "./middle-truncated-text.js";
 import "./use-measured-text-collapse.js";
-import "./document-search.js";
-import "./checkbox.js";
-import "./thread-layout.js";
-import "./project-dropdown-options.js";
-import "./heartbeat-automation-eligibility.js";
-import "./heartbeat-automation-permissions.js";
+import "./document-search-bccqfQcB.js";
+import "./thread-layout-DxVAHgCj.js";
+import "./automation-schedule-CNorTxWd.js";
+import "./automation-shared-BaYmxTav.js";
+import "./heartbeat-automation-permissions-DKKzssYc.js";
+import "./pop-in-mac.js";
 import "./primary-runtime-install-state.js";
-import "./alert-C_qI2eAS.js";
-import "./settings-row-D.js";
-import "./scroll-to-bottom-buton.js";
-import "./arrow-top-right.js";
-import "./hooks.js";
+import "./settings-row.js";
+import "./scroll-to-bottom-buton-DATGE4ZU.js";
+import "./hooks-Cw0VrjI0.js";
 import "./feedback-form-dialog.js";
 import "./thread-handoff-store.js";
-import "./open-artifact-side-panel-tab.js";
-import "./history.js";
+import "./use-is-pull-request-merge-helper-enabled-BEgcRHJE.js";
+import { n as _ } from "./hotkey-window-state-VEDcKqNF.js";
 import "./use-git-config-value.js";
 import "./git-submodule-paths-query.js";
-import "./open-in-google-drive-menu-item.js";
-import "./app-connect-modal.js";
-import "./plugin-detail-route-utils.js";
-import "./plugins-availability.js";
+import "./appgen-url-DZWguk-Q.js";
+import "./lock.js";
+import "./members.js";
+import "./appgen-access-mode-CTtzZwIv.js";
 import "./use-automation-history-items.js";
-import "./tasks.js";
+import "./tasks-DNCFvQEW.js";
 import "./star.js";
-import "./play-outline-C-zmd4eu.js";
+import "./play-outline.js";
 import "./segmented-toggle.js";
 import "./git-branch-switcher.js";
 import "./local-remote-dropdown.js";
-import "./dock.js";
+import "./dock-CDRDKrMD.js";
 import "./use-codex-worktrees.js";
 import "./patch-item-content.js";
-import "./reply.js";
-import "./use-git-base-branch.js";
-import "./header-BOkDHtMc.js";
-import { n as m } from "./use-hotkey-window-detail-layout.js";
+import "./browser-use-DS7v_bwd.js";
+import "./user-formatted-text.js";
+import "./header-Bgvtt60z.js";
+import { n as v } from "./use-hotkey-window-detail-layout.js";
 import "./thread-scroll-layout.js";
-import { t as h } from "./heartbeat-automation-thread-bridge.js";
-import "./user-message-attachments.js";
+import { t as y } from "./heartbeat-automation-thread-bridge.js";
+import "./hooks-settings-copy.js";
+import "./user-message-attachments-C-Jxxwpp.js";
+import "./app-window.js";
 import "./local-environments-utils.js";
 import "./pull-request-board-model.js";
-import "./split-items-into-render-groups.js";
+import "./split-items-into-render-groups-TGUHLoXy.js";
 import "./worktree-paths.js";
-import "./mcp-app-resource-content.js";
-import "./mcp-tool-item-content-utils.js";
 import "./primary-runtime-install-status-message.js";
 import "./plan-summary-item-content.js";
-import "./app-window.js";
-var g = l(),
-  _ = i();
-function v() {
-  let i = (0, g.c)(13),
-    l = s(),
-    { conversationId: v } = u(),
-    { data: y } = c(`hotkey-window-hotkey-state`),
-    b = y == null || y.configuredHotkey != null,
-    x;
-  i[0] === b ? (x = i[1]) : ((x = n(b)), (i[0] = b), (i[1] = x));
-  let S = x,
-    C = o(f, v ?? null),
-    w = o(r, v ?? null),
-    T;
-  i[2] === w ? (T = i[3]) : ((T = p(w ? e(w) : null)), (i[2] = w), (i[3] = T));
-  let E = T,
-    D;
+var b = d(),
+  x = i();
+function S() {
+  let i = (0, b.c)(13),
+    d = c(m),
+    S = s(),
+    { conversationId: C } = p(),
+    { data: w } = u(_),
+    T = w == null || w.configuredHotkey != null,
+    E;
+  i[0] === T ? (E = i[1]) : ((E = e(T)), (i[0] = T), (i[1] = E));
+  let D = E,
+    O = l(h, C ?? null),
+    k = l(r, C ?? null),
+    A;
+  i[2] === k ? (A = i[3]) : ((A = g(k ? n(k) : null)), (i[2] = k), (i[3] = A));
+  let j = A;
+  a(d);
+  let M;
   if (
-    (i[4] !== v || i[5] !== l || i[6] !== E || i[7] !== C
-      ? ((D =
-          v == null
+    (i[4] !== C || i[5] !== S || i[6] !== j || i[7] !== O
+      ? ((M =
+          C == null
             ? null
             : {
-                title: (0, _.jsxs)(`div`, {
+                title: (0, x.jsxs)(`div`, {
                   className: `flex max-w-full min-w-0 items-baseline gap-2`,
                   children: [
-                    (0, _.jsx)(`div`, {
+                    (0, x.jsx)(`div`, {
                       className: `min-w-0 shrink-[999] truncate text-token-foreground`,
                       children:
-                        C ??
-                        l.formatMessage({
+                        O ??
+                        S.formatMessage({
                           id: `hotkeyWindow.defaultTitle`,
                           defaultMessage: `Codex`,
                           description: `Fallback title for hotkey window thread header`,
                         }),
                     }),
-                    E == null
+                    j == null
                       ? null
-                      : (0, _.jsx)(`div`, {
+                      : (0, x.jsx)(`div`, {
                           className: `flex shrink-0 items-center gap-1 whitespace-nowrap text-token-description-foreground`,
-                          children: (0, _.jsx)(`span`, {
+                          children: (0, x.jsx)(`span`, {
                             className: `truncate`,
-                            children: E,
+                            children: j,
                           }),
                         }),
                   ],
                 }),
-                mainWindowPath: t(v),
+                mainWindowPath: t(C),
               }),
-        (i[4] = v),
-        (i[5] = l),
-        (i[6] = E),
-        (i[7] = C),
-        (i[8] = D))
-      : (D = i[8]),
-    m(D),
-    !v)
+        (i[4] = C),
+        (i[5] = S),
+        (i[6] = j),
+        (i[7] = O),
+        (i[8] = M))
+      : (M = i[8]),
+    v(M),
+    !C)
   ) {
     let e;
     return (
-      i[9] === S
+      i[9] === D
         ? (e = i[10])
-        : ((e = (0, _.jsx)(d, { to: S, replace: !0 })),
-          (i[9] = S),
+        : ((e = (0, x.jsx)(f, { to: D, replace: !0 })),
+          (i[9] = D),
           (i[10] = e)),
       e
     );
   }
-  let O;
+  let N;
   return (
-    i[11] === v
-      ? (O = i[12])
-      : ((O = (0, _.jsxs)(_.Fragment, {
+    i[11] === C
+      ? (N = i[12])
+      : ((N = (0, x.jsxs)(x.Fragment, {
           children: [
-            (0, _.jsx)(h, { conversationId: v }),
-            (0, _.jsx)(a, {
+            (0, x.jsx)(y, { conversationId: C }),
+            (0, x.jsx)(o, {
               className: `h-full [--padding-panel:calc(var(--padding-panel-base)/2)]`,
-              conversationId: v,
+              conversationId: C,
               allowMissingConversation: !0,
               showExternalFooter: !0,
             }),
           ],
         })),
-        (i[11] = v),
-        (i[12] = O)),
-    O
+        (i[11] = C),
+        (i[12] = N)),
+    N
   );
 }
-export { v as HotkeyWindowThreadPage };
+export { S as HotkeyWindowThreadPage };
 //# sourceMappingURL=hotkey-window-thread-page.js.map

@@ -1,66 +1,95 @@
-import { s as e } from "./chunk.js";
-import { cr as t, dt as n } from "./src-BLHmAhbF.js";
-import { Ti as r } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Nr as t, St as n } from "./src-C.js";
+import { na as r } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as i, t as a } from "./jsx-runtime.js";
-import { t as o } from "./clsx.js";
-import { B as s, xt as c } from "./setting-storage.js";
-var l = c(),
-  u = e(i(), 1),
-  d = a(),
-  f = (0, u.createContext)(!1);
-function p(e) {
-  let t = (0, l.c)(8),
-    { className: n, hasAboveComposerPortalContent: r, children: i } = e,
-    a = r === void 0 ? !1 : r,
-    s;
-  t[0] === n
-    ? (s = t[1])
-    : ((s = o(`order-2 flex min-w-0 flex-col`, n)), (t[0] = n), (t[1] = s));
-  let c;
-  t[2] !== i || t[3] !== s
-    ? ((c = (0, d.jsx)(`div`, { className: s, children: i })),
-      (t[2] = i),
-      (t[3] = s),
-      (t[4] = c))
-    : (c = t[4]);
-  let u;
-  return (
-    t[5] !== a || t[6] !== c
-      ? ((u = (0, d.jsx)(f.Provider, { value: a, children: c })),
-        (t[5] = a),
-        (t[6] = c),
-        (t[7] = u))
-      : (u = t[7]),
-    u
-  );
-}
+import { t as o } from "./clsx-BcPLHiun.js";
+import { V as s, wt as c } from "./setting-storage.js";
+import { r as l } from "./composer-top-menu-chrome.js";
+var u = c(),
+  d = e(i(), 1),
+  f = a(),
+  p = (0, d.createContext)({
+    expandedTopTray: !1,
+    hasAboveComposerPortalContent: !1,
+  });
 function m(e) {
-  let t = (0, l.c)(6),
-    { className: n, children: r } = e,
-    i = !(0, u.useContext)(f) && `first:rounded-t-2xl`,
-    a;
-  t[0] !== n || t[1] !== i
-    ? ((a = o(
-        `bg-token-input-background/70 text-token-foreground border-token-border/80 relative min-w-0 overflow-clip border-x border-t backdrop-blur-sm`,
-        i,
-        n,
-      )),
-      (t[0] = n),
-      (t[1] = i),
-      (t[2] = a))
-    : (a = t[2]);
-  let s;
+  let t = (0, u.c)(14),
+    {
+      className: n,
+      expandedTopTray: r,
+      hasAboveComposerPortalContent: i,
+      children: a,
+    } = e,
+    s = r === void 0 ? !1 : r,
+    c = i === void 0 ? !1 : i,
+    d;
+  t[0] === n
+    ? (d = t[1])
+    : ((d = o(`order-2 flex min-w-0 flex-col`, n)), (t[0] = n), (t[1] = d));
+  let m;
+  t[2] !== a || t[3] !== d
+    ? ((m = (0, f.jsx)(`div`, { className: d, children: a })),
+      (t[2] = a),
+      (t[3] = d),
+      (t[4] = m))
+    : (m = t[4]);
+  let h = m,
+    g;
+  t[5] !== s || t[6] !== c
+    ? ((g = { expandedTopTray: s, hasAboveComposerPortalContent: c }),
+      (t[5] = s),
+      (t[6] = c),
+      (t[7] = g))
+    : (g = t[7]);
+  let _;
+  t[8] !== s || t[9] !== h
+    ? ((_ = s
+        ? (0, f.jsx)(l, { expandedTopTray: !0, inFlow: !0, children: h })
+        : h),
+      (t[8] = s),
+      (t[9] = h),
+      (t[10] = _))
+    : (_ = t[10]);
+  let v;
   return (
-    t[3] !== r || t[4] !== a
-      ? ((s = (0, d.jsx)(`div`, { className: a, children: r })),
-        (t[3] = r),
-        (t[4] = a),
-        (t[5] = s))
-      : (s = t[5]),
-    s
+    t[11] !== g || t[12] !== _
+      ? ((v = (0, f.jsx)(p.Provider, { value: g, children: _ })),
+        (t[11] = g),
+        (t[12] = _),
+        (t[13] = v))
+      : (v = t[13]),
+    v
   );
 }
 function h(e) {
+  let t = (0, u.c)(7),
+    { className: n, children: r } = e,
+    { expandedTopTray: i, hasAboveComposerPortalContent: a } = (0,
+    d.useContext)(p),
+    s =
+      !i &&
+      `bg-token-input-background/70 border-token-border/80 border-x border-t backdrop-blur-sm`,
+    c = !i && !a && `first:rounded-t-2xl`,
+    l;
+  t[0] !== n || t[1] !== s || t[2] !== c
+    ? ((l = o(`relative min-w-0 overflow-clip text-token-foreground`, s, c, n)),
+      (t[0] = n),
+      (t[1] = s),
+      (t[2] = c),
+      (t[3] = l))
+    : (l = t[3]);
+  let m;
+  return (
+    t[4] !== r || t[5] !== l
+      ? ((m = (0, f.jsx)(`div`, { className: l, children: r })),
+        (t[4] = r),
+        (t[5] = l),
+        (t[6] = m))
+      : (m = t[6]),
+    m
+  );
+}
+function g(e) {
   let i = [],
     a = [],
     o = [];
@@ -77,15 +106,15 @@ function h(e) {
     diffCommentAttachments: o,
   };
 }
-function g(e) {
-  return h(e).diffCommentAttachments;
-}
 function _(e) {
+  return g(e).diffCommentAttachments;
+}
+function v(e) {
   let { annotationCommentAttachments: t, designTweakCommentAttachments: n } =
-    h(e);
+    g(e);
   return [...t, ...n];
 }
-var v = s({
+var y = s({
   annotationCount: {
     id: `commentAttachments.numAnnotations`,
     defaultMessage: `{count, plural, one {# annotation} other {# annotations}}`,
@@ -112,51 +141,51 @@ var v = s({
     description: `Summary text for a queued message with both browser annotations and diff comments`,
   },
 });
-function y(e, { count: t, kind: n }) {
+function b(e, { count: t, kind: n }) {
   switch (n) {
     case `annotation`:
-      return e.formatMessage(v.annotationCount, { count: t });
+      return e.formatMessage(y.annotationCount, { count: t });
     case `comment`:
-      return e.formatMessage(v.commentCount, { count: t });
+      return e.formatMessage(y.commentCount, { count: t });
   }
 }
-function b(e, t, n) {
-  return y(e, { count: n, kind: t });
+function x(e, t, n) {
+  return b(e, { count: n, kind: t });
 }
-function x(e, t) {
+function S(e, t) {
   switch (t) {
     case `annotation`:
-      return e.formatMessage(v.removeAnnotations);
+      return e.formatMessage(y.removeAnnotations);
     case `comment`:
-      return e.formatMessage(v.removeComments);
+      return e.formatMessage(y.removeComments);
   }
 }
-function S(
+function C(
   e,
   { annotationCount: t, commentCount: n, designTweakCount: r = 0 },
 ) {
   let i = t + r;
   return i > 0 && n > 0
-    ? e.formatMessage(v.mixedSummary, {
-        annotations: y(e, { count: i, kind: `annotation` }),
-        comments: y(e, { count: n, kind: `comment` }),
+    ? e.formatMessage(y.mixedSummary, {
+        annotations: b(e, { count: i, kind: `annotation` }),
+        comments: b(e, { count: n, kind: `comment` }),
       })
     : i > 0
-      ? y(e, { count: i, kind: `annotation` })
+      ? b(e, { count: i, kind: `annotation` })
       : n > 0
-        ? y(e, { count: n, kind: `comment` })
+        ? b(e, { count: n, kind: `comment` })
         : ``;
 }
-function C(e) {
-  let t = (0, l.c)(32),
+function w(e) {
+  let t = (0, u.c)(32),
     n,
     r,
     i,
     a,
     s,
     c,
-    u,
-    f;
+    l,
+    d;
   t[0] === e
     ? ((n = t[1]),
       (r = t[2]),
@@ -164,16 +193,16 @@ function C(e) {
       (a = t[4]),
       (s = t[5]),
       (c = t[6]),
-      (u = t[7]),
-      (f = t[8]))
+      (l = t[7]),
+      (d = t[8]))
     : (({
         actions: n,
         className: r,
         icon: i,
         meta: a,
         title: c,
-        titleClassName: u,
-        trailing: f,
+        titleClassName: l,
+        trailing: d,
         ...s
       } = e),
       (t[0] = e),
@@ -183,8 +212,8 @@ function C(e) {
       (t[4] = a),
       (t[5] = s),
       (t[6] = c),
-      (t[7] = u),
-      (t[8] = f));
+      (t[7] = l),
+      (t[8] = d));
   let p;
   t[9] === r
     ? (p = t[10])
@@ -200,23 +229,23 @@ function C(e) {
     : ((m =
         i == null
           ? null
-          : (0, d.jsx)(`span`, {
+          : (0, f.jsx)(`span`, {
               className: `flex h-4 shrink-0 items-center justify-center`,
               children: i,
             })),
       (t[11] = i),
       (t[12] = m));
   let h;
-  t[13] === u
+  t[13] === l
     ? (h = t[14])
-    : ((h = o(`min-w-0 flex-1 leading-4`, u)), (t[13] = u), (t[14] = h));
+    : ((h = o(`min-w-0 flex-1 leading-4`, l)), (t[13] = l), (t[14] = h));
   let g;
   t[15] === a
     ? (g = t[16])
     : ((g =
         a == null
           ? null
-          : (0, d.jsx)(`span`, {
+          : (0, f.jsx)(`span`, {
               className: `ml-1 text-token-description-foreground`,
               children: a,
             })),
@@ -224,7 +253,7 @@ function C(e) {
       (t[16] = g));
   let _;
   t[17] !== h || t[18] !== g || t[19] !== c
-    ? ((_ = (0, d.jsxs)(`div`, { className: h, children: [c, g] })),
+    ? ((_ = (0, f.jsxs)(`div`, { className: h, children: [c, g] })),
       (t[17] = h),
       (t[18] = g),
       (t[19] = c),
@@ -232,7 +261,7 @@ function C(e) {
     : (_ = t[20]);
   let v;
   t[21] !== m || t[22] !== _
-    ? ((v = (0, d.jsxs)(`div`, {
+    ? ((v = (0, f.jsxs)(`div`, {
         className: `flex min-w-0 flex-1 items-center gap-1.5`,
         children: [m, _],
       })),
@@ -241,22 +270,22 @@ function C(e) {
       (t[23] = v))
     : (v = t[23]);
   let y;
-  t[24] !== n || t[25] !== f
+  t[24] !== n || t[25] !== d
     ? ((y =
-        f != null || n != null
-          ? (0, d.jsxs)(`div`, {
+        d != null || n != null
+          ? (0, f.jsxs)(`div`, {
               className: `flex shrink-0 items-center gap-1`,
-              children: [f, n],
+              children: [d, n],
             })
           : null),
       (t[24] = n),
-      (t[25] = f),
+      (t[25] = d),
       (t[26] = y))
     : (y = t[26]);
   let b;
   return (
     t[27] !== s || t[28] !== p || t[29] !== v || t[30] !== y
-      ? ((b = (0, d.jsxs)(`div`, { ...s, className: p, children: [v, y] })),
+      ? ((b = (0, f.jsxs)(`div`, { ...s, className: p, children: [v, y] })),
         (t[27] = s),
         (t[28] = p),
         (t[29] = v),
@@ -267,14 +296,14 @@ function C(e) {
   );
 }
 export {
-  g as a,
-  p as c,
-  x as i,
-  m as l,
-  b as n,
-  _ as o,
-  S as r,
-  h as s,
-  C as t,
+  _ as a,
+  m as c,
+  S as i,
+  h as l,
+  x as n,
+  v as o,
+  C as r,
+  g as s,
+  w as t,
 };
 //# sourceMappingURL=above-composer-panel-row.js.map

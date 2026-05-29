@@ -1,28 +1,27 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { H as i, W as a, xt as o } from "./setting-storage.js";
-import { o as s } from "./statsig.js";
-import { h as c } from "./mention-item.js";
-import { t as l } from "./x.js";
-import { m as u } from "./use-plugins.js";
-import { u as d } from "./apps-queries.js";
-import { n as f } from "./use-skills.js";
-import { t as p } from "./chevron.js";
-import { d as m, t as h } from "./use-native-apps.electron.js";
-import { n as g } from "./get-file-icon.js";
+import { t as r } from "./clsx-BcPLHiun.js";
+import { G as i, U as a, wt as o } from "./setting-storage.js";
+import { o as s } from "./statsig--EYRNU53.js";
+import { d as c } from "./apps-queries-CmwRqoKz.js";
+import { _ as l } from "./mention-item.js";
+import { t as u } from "./x-C_RDKBp5.js";
+import { m as d } from "./use-plugins-jIZrcuZQ.js";
+import { t as f } from "./chevron-NmAOI_v1.js";
+import { d as p, t as m } from "./use-native-apps.electron.js";
+import { n as h } from "./get-file-icon.js";
+import { n as g } from "./use-skills.js";
 import { t as _ } from "./image-preview-dialog.js";
-import { t as v } from "./attachment-remove-button.js";
-import { r as y, t as b } from "./iconResolver.js";
-import { n as x } from "./use-composer-controller.js";
-function S(e) {
+import { t as v } from "./attachment-remove-button-BPMNqRUa.js";
+import { n as y } from "./use-composer-controller.js";
+function b(e) {
   return (e ?? 140) + 8;
 }
-var C = o(),
-  w = e(t(), 1),
-  T = n();
-function E(e) {
-  let t = (0, C.c)(94),
+var x = o(),
+  S = e(t(), 1),
+  C = n();
+function w(e) {
+  let t = (0, x.c)(94),
     {
       appIconSrc: n,
       appName: o,
@@ -38,14 +37,13 @@ function E(e) {
       windowTitle: g,
       onRemove: y,
     } = e,
-    b = c === void 0 ? !0 : c,
-    x = l === void 0 ? 0 : l,
-    E = h === void 0 ? `composer` : h,
-    j = a(),
-    [M, te] = (0, w.useState)(!1),
-    [ne, re] = (0, w.useState)(!1),
-    [N, ie] = (0, w.useState)(x),
-    P,
+    w = c === void 0 ? !0 : c,
+    O = l === void 0 ? 0 : l,
+    A = h === void 0 ? `composer` : h,
+    j = i(),
+    [M, te] = (0, S.useState)(!1),
+    [ne, N] = (0, S.useState)(!1),
+    [P, re] = (0, S.useState)(O),
     F,
     I,
     L,
@@ -60,26 +58,27 @@ function E(e) {
     K,
     q,
     J,
-    Y;
+    Y,
+    X;
   if (
     t[0] !== s ||
     t[1] !== n ||
     t[2] !== o ||
-    t[3] !== N ||
+    t[3] !== P ||
     t[4] !== j ||
     t[5] !== ne ||
     t[6] !== y ||
-    t[7] !== b ||
-    t[8] !== x ||
+    t[7] !== w ||
+    t[8] !== O ||
     t[9] !== u ||
     t[10] !== d ||
     t[11] !== f ||
     t[12] !== p ||
     t[13] !== m ||
-    t[14] !== E ||
+    t[14] !== A ||
     t[15] !== g
   ) {
-    let e = ee({ appName: o, windowTitle: g }),
+    let e = k({ appName: o, windowTitle: g }),
       i = d ?? ``,
       a;
     t[32] !== s || t[33] !== f || t[34] !== i
@@ -95,106 +94,106 @@ function E(e) {
       ? ((l = u ?? [c]), (t[36] = c), (t[37] = u), (t[38] = l))
       : (l = t[38]);
     let h = l;
-    F = h[N] ?? c;
+    I = h[P] ?? c;
     let _;
-    (t[39] === F.accessibilityText
+    (t[39] === I.accessibilityText
       ? (_ = t[40])
-      : ((_ = F.accessibilityText?.trim() ?? ``),
-        (t[39] = F.accessibilityText),
+      : ((_ = I.accessibilityText?.trim() ?? ``),
+        (t[39] = I.accessibilityText),
         (t[40] = _)),
-      (P = _),
-      (L = P.length > 0),
-      (R = ne && L),
-      (B = N > 0 ? N - 1 : null),
-      (z = N + 1 < h.length ? N + 1 : null));
-    let C = m != null && m.length > 0,
-      w = p ?? 140,
-      D;
-    t[41] !== p || t[42] !== E
-      ? ((D = E === `composer` ? S(p) : void 0),
+      (F = _),
+      (R = F.length > 0),
+      (z = ne && R),
+      (V = P > 0 ? P - 1 : null),
+      (B = P + 1 < h.length ? P + 1 : null));
+    let x = m != null && m.length > 0,
+      S = p ?? 140,
+      T;
+    t[41] !== p || t[42] !== A
+      ? ((T = A === `composer` ? b(p) : void 0),
         (t[41] = p),
-        (t[42] = E),
-        (t[43] = D))
-      : (D = t[43]);
-    let O = D,
+        (t[42] = A),
+        (t[43] = T))
+      : (T = t[43]);
+    let E = T,
       M;
-    (t[44] === x
+    (t[44] === O
       ? (M = t[45])
       : ((M = (e) => {
-          (e && ie(x), re(!1), te(e));
+          (e && re(O), N(!1), te(e));
         }),
-        (t[44] = x),
+        (t[44] = O),
         (t[45] = M)),
-      (I = M));
-    let X;
+      (L = M));
+    let Z;
     t[46] !== n ||
-    t[47] !== C ||
-    t[48] !== w ||
+    t[47] !== x ||
+    t[48] !== S ||
     t[49] !== d ||
     t[50] !== f ||
     t[51] !== m ||
-    t[52] !== E
-      ? ((X =
-          E === `thread`
-            ? (0, T.jsx)(A, {
+    t[52] !== A
+      ? ((Z =
+          A === `thread`
+            ? (0, C.jsx)(ee, {
                 appIconSrc: n,
                 screenshotAlt: d,
                 screenshotSrc: f,
               })
-            : (0, T.jsx)(k, {
-                hasTransitionSnapshot: C,
-                renderedSnapshotHeight: w,
+            : (0, C.jsx)(D, {
+                hasTransitionSnapshot: x,
+                renderedSnapshotHeight: S,
                 transitionSnapshotSrc: m,
               })),
         (t[46] = n),
-        (t[47] = C),
-        (t[48] = w),
+        (t[47] = x),
+        (t[48] = S),
         (t[49] = d),
         (t[50] = f),
         (t[51] = m),
-        (t[52] = E),
-        (t[53] = X))
-      : (X = t[53]);
-    let ae = X,
-      Z = E === `thread` ? `pt-[10px]` : null,
-      Q = b ? `cursor-interaction` : `cursor-default`;
-    (t[54] !== Z || t[55] !== Q
-      ? ((W = r(
+        (t[52] = A),
+        (t[53] = Z))
+      : (Z = t[53]);
+    let ie = Z,
+      Q = A === `thread` ? `pt-[10px]` : null,
+      $ = w ? `cursor-interaction` : `cursor-default`;
+    (t[54] !== Q || t[55] !== $
+      ? ((G = r(
           `group/appshot relative flex w-[232px] flex-shrink-0 flex-col items-center overflow-visible rounded-2xl pb-2 hover:bg-token-bg-appshot focus:outline-none focus-visible:ring-1 focus-visible:ring-token-focus-border focus-visible:ring-inset`,
-          Z,
           Q,
+          $,
         )),
-        (t[54] = Z),
-        (t[55] = Q),
-        (t[56] = W))
-      : (W = t[56]),
-      t[57] === O
-        ? (G = t[58])
-        : ((G = O == null ? void 0 : { height: O }), (t[57] = O), (t[58] = G)),
-      (K = b ? `button` : void 0),
-      (q = b ? e : void 0),
-      (J = b ? 0 : void 0),
-      t[59] !== I || t[60] !== b
-        ? ((Y = b
+        (t[54] = Q),
+        (t[55] = $),
+        (t[56] = G))
+      : (G = t[56]),
+      t[57] === E
+        ? (K = t[58])
+        : ((K = E == null ? void 0 : { height: E }), (t[57] = E), (t[58] = K)),
+      (q = w ? `button` : void 0),
+      (J = w ? e : void 0),
+      (Y = w ? 0 : void 0),
+      t[59] !== L || t[60] !== w
+        ? ((X = w
             ? (e) => {
                 (e.key === `Enter` || e.key === ` `) &&
-                  (e.preventDefault(), I(!0));
+                  (e.preventDefault(), L(!0));
               }
             : void 0),
-          (t[59] = I),
-          (t[60] = b),
-          (t[61] = Y))
-        : (Y = t[61]),
-      (V = ae),
-      (H =
-        E === `thread`
-          ? (0, T.jsx)(`div`, {
+          (t[59] = L),
+          (t[60] = w),
+          (t[61] = X))
+        : (X = t[61]),
+      (H = ie),
+      (U =
+        A === `thread`
+          ? (0, C.jsx)(`div`, {
               className: `mt-1 w-full truncate text-center text-[13px] leading-[17px] font-medium text-token-text-primary`,
               children: e,
             })
           : null),
-      (U = y
-        ? (0, T.jsx)(v, {
+      (W = y
+        ? (0, C.jsx)(v, {
             className: `pointer-events-none top-1.5 right-1.5 z-20 opacity-0 group-hover/appshot:pointer-events-auto group-hover/appshot:opacity-100 focus-visible:pointer-events-auto focus-visible:opacity-100`,
             ariaLabel: j.formatMessage(
               {
@@ -210,98 +209,98 @@ function E(e) {
       (t[0] = s),
       (t[1] = n),
       (t[2] = o),
-      (t[3] = N),
+      (t[3] = P),
       (t[4] = j),
       (t[5] = ne),
       (t[6] = y),
-      (t[7] = b),
-      (t[8] = x),
+      (t[7] = w),
+      (t[8] = O),
       (t[9] = u),
       (t[10] = d),
       (t[11] = f),
       (t[12] = p),
       (t[13] = m),
-      (t[14] = E),
+      (t[14] = A),
       (t[15] = g),
-      (t[16] = P),
-      (t[17] = F),
-      (t[18] = I),
-      (t[19] = L),
-      (t[20] = R),
-      (t[21] = z),
-      (t[22] = B),
-      (t[23] = V),
-      (t[24] = H),
-      (t[25] = U),
-      (t[26] = W),
-      (t[27] = G),
-      (t[28] = K),
-      (t[29] = q),
-      (t[30] = J),
-      (t[31] = Y));
+      (t[16] = F),
+      (t[17] = I),
+      (t[18] = L),
+      (t[19] = R),
+      (t[20] = z),
+      (t[21] = B),
+      (t[22] = V),
+      (t[23] = H),
+      (t[24] = U),
+      (t[25] = W),
+      (t[26] = G),
+      (t[27] = K),
+      (t[28] = q),
+      (t[29] = J),
+      (t[30] = Y),
+      (t[31] = X));
   } else
-    ((P = t[16]),
-      (F = t[17]),
-      (I = t[18]),
-      (L = t[19]),
-      (R = t[20]),
-      (z = t[21]),
-      (B = t[22]),
-      (V = t[23]),
-      (H = t[24]),
-      (U = t[25]),
-      (W = t[26]),
-      (G = t[27]),
-      (K = t[28]),
-      (q = t[29]),
-      (J = t[30]),
-      (Y = t[31]));
-  let X;
-  t[62] !== V ||
-  t[63] !== H ||
-  t[64] !== U ||
-  t[65] !== W ||
-  t[66] !== G ||
-  t[67] !== K ||
-  t[68] !== q ||
-  t[69] !== J ||
-  t[70] !== Y
-    ? ((X = (0, T.jsxs)(`div`, {
-        className: W,
-        style: G,
-        role: K,
-        "aria-label": q,
-        tabIndex: J,
-        onKeyDown: Y,
-        children: [V, H, U],
-      })),
-      (t[62] = V),
-      (t[63] = H),
-      (t[64] = U),
-      (t[65] = W),
-      (t[66] = G),
-      (t[67] = K),
-      (t[68] = q),
-      (t[69] = J),
-      (t[70] = Y),
-      (t[71] = X))
-    : (X = t[71]);
-  let ae = X;
-  if (!b) return ae;
+    ((F = t[16]),
+      (I = t[17]),
+      (L = t[18]),
+      (R = t[19]),
+      (z = t[20]),
+      (B = t[21]),
+      (V = t[22]),
+      (H = t[23]),
+      (U = t[24]),
+      (W = t[25]),
+      (G = t[26]),
+      (K = t[27]),
+      (q = t[28]),
+      (J = t[29]),
+      (Y = t[30]),
+      (X = t[31]));
   let Z;
-  t[72] !== P || t[73] !== R
-    ? ((Z = R ? (0, T.jsx)(O, { accessibilityText: P }) : void 0),
-      (t[72] = P),
-      (t[73] = R),
-      (t[74] = Z))
-    : (Z = t[74]);
-  let Q = !R,
-    $;
-  t[75] !== L || t[76] !== j || t[77] !== R
-    ? (($ = L
+  t[62] !== H ||
+  t[63] !== U ||
+  t[64] !== W ||
+  t[65] !== G ||
+  t[66] !== K ||
+  t[67] !== q ||
+  t[68] !== J ||
+  t[69] !== Y ||
+  t[70] !== X
+    ? ((Z = (0, C.jsxs)(`div`, {
+        className: G,
+        style: K,
+        role: q,
+        "aria-label": J,
+        tabIndex: Y,
+        onKeyDown: X,
+        children: [H, U, W],
+      })),
+      (t[62] = H),
+      (t[63] = U),
+      (t[64] = W),
+      (t[65] = G),
+      (t[66] = K),
+      (t[67] = q),
+      (t[68] = J),
+      (t[69] = Y),
+      (t[70] = X),
+      (t[71] = Z))
+    : (Z = t[71]);
+  let ie = Z;
+  if (!w) return ie;
+  let Q;
+  t[72] !== F || t[73] !== z
+    ? ((Q = z ? (0, C.jsx)(E, { accessibilityText: F }) : void 0),
+      (t[72] = F),
+      (t[73] = z),
+      (t[74] = Q))
+    : (Q = t[74]);
+  let $ = !z,
+    ae;
+  t[75] !== R || t[76] !== j || t[77] !== z
+    ? ((ae = R
         ? {
-            active: R,
-            ariaLabel: R
+            active: z,
+            ariaLabel: z
               ? j.formatMessage({
                   id: `appshotAttachment.showVisualPreview`,
                   defaultMessage: `Show screenshot`,
@@ -312,77 +311,77 @@ function E(e) {
                   defaultMessage: `Show accessibility text`,
                   description: `Aria label for switching the appshot lightbox from the screenshot to accessibility text`,
                 }),
-            label: (0, T.jsx)(i, {
+            label: (0, C.jsx)(a, {
               id: `appshotAttachment.viewAccessibilityText`,
               defaultMessage: `View text`,
               description: `Label for the appshot lightbox button that toggles the accessibility text preview`,
             }),
             onClick: () => {
-              re(D);
+              N(T);
             },
           }
         : void 0),
-      (t[75] = L),
+      (t[75] = R),
       (t[76] = j),
-      (t[77] = R),
-      (t[78] = $))
-    : ($ = t[78]);
+      (t[77] = z),
+      (t[78] = ae))
+    : (ae = t[78]);
   let oe;
-  t[79] === B
+  t[79] === V
     ? (oe = t[80])
     : ((oe =
+        V == null
+          ? void 0
+          : () => {
+              (re(V), N(!1));
+            }),
+      (t[79] = V),
+      (t[80] = oe));
+  let se;
+  t[81] === B
+    ? (se = t[82])
+    : ((se =
         B == null
           ? void 0
           : () => {
-              (ie(B), re(!1));
+              (re(B), N(!1));
             }),
-      (t[79] = B),
-      (t[80] = oe));
-  let se;
-  t[81] === z
-    ? (se = t[82])
-    : ((se =
-        z == null
-          ? void 0
-          : () => {
-              (ie(z), re(!1));
-            }),
-      (t[81] = z),
+      (t[81] = B),
       (t[82] = se));
   let ce;
   return (
-    t[83] !== ae ||
-    t[84] !== F.alt ||
-    t[85] !== F.src ||
-    t[86] !== I ||
+    t[83] !== ie ||
+    t[84] !== I.alt ||
+    t[85] !== I.src ||
+    t[86] !== L ||
     t[87] !== M ||
-    t[88] !== Z ||
-    t[89] !== Q ||
-    t[90] !== $ ||
+    t[88] !== Q ||
+    t[89] !== $ ||
+    t[90] !== ae ||
     t[91] !== oe ||
     t[92] !== se
-      ? ((ce = (0, T.jsx)(_, {
-          src: F.src,
-          alt: F.alt,
+      ? ((ce = (0, C.jsx)(_, {
+          src: I.src,
+          alt: I.alt,
           open: M,
-          onOpenChange: I,
-          downloadSrc: F.src,
+          onOpenChange: L,
+          downloadSrc: I.src,
           imageDraggable: !1,
-          previewContent: Z,
-          showZoomControls: Q,
-          toolbarLeadingAction: $,
+          previewContent: Q,
+          showZoomControls: $,
+          toolbarLeadingAction: ae,
           onPreviousImage: oe,
           onNextImage: se,
-          triggerContent: ae,
+          triggerContent: ie,
         })),
-        (t[83] = ae),
-        (t[84] = F.alt),
-        (t[85] = F.src),
-        (t[86] = I),
+        (t[83] = ie),
+        (t[84] = I.alt),
+        (t[85] = I.src),
+        (t[86] = L),
         (t[87] = M),
-        (t[88] = Z),
-        (t[89] = Q),
-        (t[90] = $),
+        (t[88] = Q),
+        (t[89] = $),
+        (t[90] = ae),
         (t[91] = oe),
         (t[92] = se),
         (t[93] = ce))
@@ -390,19 +389,19 @@ function E(e) {
     ce
   );
 }
-function D(e) {
+function T(e) {
   return !e;
 }
-function O(e) {
-  let t = (0, C.c)(3),
+function E(e) {
+  let t = (0, x.c)(3),
     { accessibilityText: n } = e,
     r;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((r = (0, T.jsx)(`div`, {
+    ? ((r = (0, C.jsx)(`div`, {
         className: `flex items-center border-b border-token-border px-5 py-3 font-sans text-sm text-token-description-foreground select-none`,
-        children: (0, T.jsx)(`div`, {
+        children: (0, C.jsx)(`div`, {
           className: `min-w-0 truncate`,
-          children: (0, T.jsx)(i, {
+          children: (0, C.jsx)(a, {
             id: `appshotAttachment.accessibilityTextPreviewTitle`,
             defaultMessage: `plaintext`,
             description: `Title shown above accessibility text in the appshot lightbox`,
@@ -411,17 +410,17 @@ function O(e) {
       })),
       (t[0] = r))
     : (r = t[0]);
-  let a;
+  let i;
   return (
     t[1] === n
-      ? (a = t[2])
-      : ((a = (0, T.jsxs)(`div`, {
+      ? (i = t[2])
+      : ((i = (0, C.jsxs)(`div`, {
           className: `m-auto flex h-[min(72vh,44rem)] w-[min(78vw,56rem)] max-w-full flex-col overflow-hidden rounded-3xl border border-token-border bg-token-dropdown-background/95 text-token-foreground shadow-2xl ring-[0.5px] ring-token-border backdrop-blur-xl`,
           children: [
             r,
-            (0, T.jsx)(`div`, {
+            (0, C.jsx)(`div`, {
               className: `min-h-0 flex-1 overflow-y-auto bg-token-main-surface-primary px-5 py-4`,
-              children: (0, T.jsx)(`pre`, {
+              children: (0, C.jsx)(`pre`, {
                 className: `text-size-chat m-0 font-sans leading-relaxed break-words whitespace-pre-wrap text-token-text-primary extension:leading-normal`,
                 children: n,
               }),
@@ -429,12 +428,12 @@ function O(e) {
           ],
         })),
         (t[1] = n),
-        (t[2] = a)),
-    a
+        (t[2] = i)),
+    i
   );
 }
-function k(e) {
-  let t = (0, C.c)(9),
+function D(e) {
+  let t = (0, x.c)(9),
     {
       hasTransitionSnapshot: n,
       renderedSnapshotHeight: r,
@@ -445,7 +444,7 @@ function k(e) {
   let o;
   t[2] !== n || t[3] !== r || t[4] !== i
     ? ((o = n
-        ? (0, T.jsx)(`img`, {
+        ? (0, C.jsx)(`img`, {
             src: i ?? void 0,
             alt: ``,
             "aria-hidden": !0,
@@ -453,7 +452,7 @@ function k(e) {
             style: { height: r, width: 232 },
             draggable: !1,
           })
-        : (0, T.jsx)(`span`, {
+        : (0, C.jsx)(`span`, {
             "aria-hidden": !0,
             className: `block`,
             style: { height: r, width: 232 },
@@ -466,7 +465,7 @@ function k(e) {
   let s;
   return (
     t[6] !== a || t[7] !== o
-      ? ((s = (0, T.jsx)(`div`, {
+      ? ((s = (0, C.jsx)(`div`, {
           className: `relative flex w-full items-center justify-center`,
           style: a,
           children: o,
@@ -478,12 +477,12 @@ function k(e) {
     s
   );
 }
-function A(e) {
-  let t = (0, C.c)(17),
+function ee(e) {
+  let t = (0, x.c)(17),
     { appIconSrc: n, screenshotAlt: r, screenshotSrc: i } = e,
-    [a, o] = (0, w.useState)(null),
+    [a, o] = (0, S.useState)(null),
     s;
-  t[0] === a ? (s = t[1]) : ((s = j(a)), (t[0] = a), (t[1] = s));
+  t[0] === a ? (s = t[1]) : ((s = O(a)), (t[0] = a), (t[1] = s));
   let c = s,
     l;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
@@ -513,7 +512,7 @@ function A(e) {
     : (f = t[5]);
   let p;
   t[6] !== i || t[7] !== d
-    ? ((p = (0, T.jsx)(`img`, {
+    ? ((p = (0, C.jsx)(`img`, {
         src: i,
         alt: d,
         className: `max-h-full max-w-full object-contain`,
@@ -526,7 +525,7 @@ function A(e) {
     : (p = t[8]);
   let m;
   t[9] !== u || t[10] !== p
-    ? ((m = (0, T.jsx)(`div`, {
+    ? ((m = (0, C.jsx)(`div`, {
         className: `flex items-end justify-center`,
         style: u,
         children: p,
@@ -540,7 +539,7 @@ function A(e) {
     ? (h = t[13])
     : ((h =
         n != null && n.length > 0
-          ? (0, T.jsx)(`img`, {
+          ? (0, C.jsx)(`img`, {
               src: n,
               alt: ``,
               "aria-hidden": !0,
@@ -553,7 +552,7 @@ function A(e) {
   let g;
   return (
     t[14] !== m || t[15] !== h
-      ? ((g = (0, T.jsxs)(`div`, {
+      ? ((g = (0, C.jsxs)(`div`, {
           className: `relative flex items-end justify-center`,
           style: l,
           children: [m, h],
@@ -565,24 +564,24 @@ function A(e) {
     g
   );
 }
-function j(e) {
+function O(e) {
   if (e == null || e.height <= 0 || e.width <= 0) return 140;
   let t = Math.min(232 / e.width, 140 / e.height);
   return e.height * t;
 }
-function ee({ appName: e, windowTitle: t }) {
+function k({ appName: e, windowTitle: t }) {
   let n = t?.trim();
   return n != null && n.length > 0 ? n : e;
 }
-function M(e) {
-  let t = (0, C.c)(45),
+function A(e) {
+  let t = (0, x.c)(45),
     n,
     i,
     a,
     o,
     s,
     c,
-    u,
+    l,
     d,
     f;
   t[0] === e
@@ -592,7 +591,7 @@ function M(e) {
       (o = t[4]),
       (s = t[5]),
       (c = t[6]),
-      (u = t[7]),
+      (l = t[7]),
       (d = t[8]),
       (f = t[9]))
     : (({
@@ -604,7 +603,7 @@ function M(e) {
         layout: f,
         className: a,
         ref: d,
-        ...u
+        ...l
       } = e),
       (t[0] = e),
       (t[1] = n),
@@ -613,7 +612,7 @@ function M(e) {
       (t[4] = o),
       (t[5] = s),
       (t[6] = c),
-      (t[7] = u),
+      (t[7] = l),
       (t[8] = d),
       (t[9] = f));
   let p = (f === void 0 ? `pill` : f) === `card`,
@@ -650,46 +649,46 @@ function M(e) {
   let b = p
       ? `flex size-10 items-center justify-center rounded-lg bg-token-bg-secondary text-token-text-secondary`
       : `text-token-input-placeholder-foreground`,
-    x;
+    S;
   t[17] === b
-    ? (x = t[18])
-    : ((x = r(`flex-shrink-0`, b)), (t[17] = b), (t[18] = x));
-  let S = p ? `size-6` : `icon-2xs`,
-    w;
-  t[19] === S ? (w = t[20]) : ((w = r(S)), (t[19] = S), (t[20] = w));
+    ? (S = t[18])
+    : ((S = r(`flex-shrink-0`, b)), (t[17] = b), (t[18] = S));
+  let w = p ? `size-6` : `icon-2xs`,
+    T;
+  t[19] === w ? (T = t[20]) : ((T = r(w)), (t[19] = w), (t[20] = T));
   let E;
-  t[21] !== n || t[22] !== w
-    ? ((E = (0, T.jsx)(n, { className: w })),
+  t[21] !== n || t[22] !== T
+    ? ((E = (0, C.jsx)(n, { className: T })),
       (t[21] = n),
-      (t[22] = w),
+      (t[22] = T),
       (t[23] = E))
     : (E = t[23]);
   let D;
-  t[24] !== E || t[25] !== x
-    ? ((D = (0, T.jsx)(`div`, { className: x, children: E })),
+  t[24] !== E || t[25] !== S
+    ? ((D = (0, C.jsx)(`div`, { className: S, children: E })),
       (t[24] = E),
-      (t[25] = x),
+      (t[25] = S),
       (t[26] = D))
     : (D = t[26]);
-  let O = p
+  let ee = p
       ? `text-size-chat truncate font-medium text-token-foreground`
       : `truncate pr-1 text-sm font-medium`,
-    k;
-  t[27] === O
-    ? (k = t[28])
-    : ((k = r(`relative min-w-0 flex-1`, O)), (t[27] = O), (t[28] = k));
-  let A;
-  t[29] !== i || t[30] !== k
-    ? ((A = (0, T.jsx)(`div`, { className: k, children: i })),
+    O;
+  t[27] === ee
+    ? (O = t[28])
+    : ((O = r(`relative min-w-0 flex-1`, ee)), (t[27] = ee), (t[28] = O));
+  let k;
+  t[29] !== i || t[30] !== O
+    ? ((k = (0, C.jsx)(`div`, { className: O, children: i })),
       (t[29] = i),
-      (t[30] = k),
-      (t[31] = A))
-    : (A = t[31]);
-  let j;
+      (t[30] = O),
+      (t[31] = k))
+    : (k = t[31]);
+  let A;
   t[32] !== h || t[33] !== p || t[34] !== s || t[35] !== c
-    ? ((j =
+    ? ((A =
         s &&
-        (0, T.jsx)(`div`, {
+        (0, C.jsx)(`div`, {
           role: `button`,
           tabIndex: 0,
           onClick: (e) => {
@@ -703,7 +702,7 @@ function M(e) {
               : `pointer-events-none absolute top-1/2 right-1 h-5 w-5 -translate-y-1/2 rounded-full border border-token-border bg-token-menu-background opacity-0 group-hover:pointer-events-auto group-hover:opacity-100 hover:bg-[color-mix(in_srgb,var(--color-token-menu-background)_88%,var(--color-token-foreground))] focus-visible:pointer-events-auto focus-visible:bg-[color-mix(in_srgb,var(--color-token-menu-background)_88%,var(--color-token-foreground))] focus-visible:opacity-100`,
           ),
           "aria-label": c,
-          children: (0, T.jsx)(l, {
+          children: (0, C.jsx)(u, {
             className: r(p ? `icon-xxs` : `icon-2xs text-token-foreground`),
           }),
         })),
@@ -711,51 +710,51 @@ function M(e) {
       (t[33] = p),
       (t[34] = s),
       (t[35] = c),
-      (t[36] = j))
-    : (j = t[36]);
-  let ee;
+      (t[36] = A))
+    : (A = t[36]);
+  let j;
   return (
     t[37] !== o ||
-    t[38] !== u ||
+    t[38] !== l ||
     t[39] !== d ||
     t[40] !== D ||
-    t[41] !== A ||
-    t[42] !== j ||
+    t[41] !== k ||
+    t[42] !== A ||
     t[43] !== y
-      ? ((ee = (0, T.jsxs)(`button`, {
+      ? ((j = (0, C.jsxs)(`button`, {
           ref: d,
           type: `button`,
           className: y,
           onClick: o,
-          ...u,
-          children: [D, A, j],
+          ...l,
+          children: [D, k, A],
         })),
         (t[37] = o),
-        (t[38] = u),
+        (t[38] = l),
         (t[39] = d),
         (t[40] = D),
-        (t[41] = A),
-        (t[42] = j),
+        (t[41] = k),
+        (t[42] = A),
         (t[43] = y),
-        (t[44] = ee))
-      : (ee = t[44]),
-    ee
+        (t[44] = j))
+      : (j = t[44]),
+    j
   );
 }
-var te = { default: `px-4 py-3`, compact: `p-2`, extraCompact: `p-1.5` },
-  ne = {
+var j = { default: `px-4 py-3`, compact: `p-2`, extraCompact: `p-1.5` },
+  M = {
     default: `py-3 pr-10 pl-4`,
     compact: `py-2 pr-8 pl-2`,
     extraCompact: `py-1.5 pr-10 pl-1.5`,
   },
-  re = {
+  te = {
     default: `text-size-chat-sm`,
     medium: `text-base`,
     toolbar: `h-token-button-composer text-base leading-[18px]`,
   },
-  N = { default: `px-2 py-1`, medium: `px-4 py-1.5`, toolbar: `px-2 py-0` };
-function ie(e) {
-  let t = (0, C.c)(8),
+  ne = { default: `px-2 py-1`, medium: `px-4 py-1.5`, toolbar: `px-2 py-0` };
+function N(e) {
+  let t = (0, x.c)(8),
     { as: n, children: i, className: a } = e,
     o = n === void 0 ? `div` : n,
     s;
@@ -772,7 +771,7 @@ function ie(e) {
     let e;
     return (
       t[2] !== i || t[3] !== c
-        ? ((e = (0, T.jsx)(`span`, { className: c, children: i })),
+        ? ((e = (0, C.jsx)(`span`, { className: c, children: i })),
           (t[2] = i),
           (t[3] = c),
           (t[4] = e))
@@ -783,7 +782,7 @@ function ie(e) {
   let l;
   return (
     t[5] !== i || t[6] !== c
-      ? ((l = (0, T.jsx)(`div`, { className: c, children: i })),
+      ? ((l = (0, C.jsx)(`div`, { className: c, children: i })),
         (t[5] = i),
         (t[6] = c),
         (t[7] = l))
@@ -792,7 +791,7 @@ function ie(e) {
   );
 }
 function P(e) {
-  let t = (0, C.c)(16),
+  let t = (0, x.c)(16),
     {
       className: n,
       icon: i,
@@ -804,7 +803,7 @@ function P(e) {
       trailing: u,
     } = e,
     d = a === void 0 ? `default` : a,
-    f = o !== void 0 && o ? ne[d] : te[d],
+    f = o !== void 0 && o ? M[d] : j[d],
     p;
   t[0] !== n || t[1] !== f
     ? ((p = r(`flex min-w-0 items-center gap-2.5 text-left`, f, n)),
@@ -814,7 +813,7 @@ function P(e) {
     : (p = t[2]);
   let m;
   t[3] !== c || t[4] !== l
-    ? ((m = (0, T.jsx)(`span`, {
+    ? ((m = (0, C.jsx)(`span`, {
         className: `text-size-chat truncate font-medium text-token-foreground`,
         title: l,
         children: c,
@@ -829,7 +828,7 @@ function P(e) {
     : ((h =
         s == null
           ? null
-          : (0, T.jsx)(`span`, {
+          : (0, C.jsx)(`span`, {
               className: `text-size-chat-sm truncate text-token-text-secondary`,
               children: s,
             })),
@@ -837,7 +836,7 @@ function P(e) {
       (t[7] = h));
   let g;
   t[8] !== m || t[9] !== h
-    ? ((g = (0, T.jsxs)(`span`, {
+    ? ((g = (0, C.jsxs)(`span`, {
         className: `flex min-w-0 flex-1 flex-col`,
         children: [m, h],
       })),
@@ -848,7 +847,7 @@ function P(e) {
   let _;
   return (
     t[11] !== i || t[12] !== p || t[13] !== g || t[14] !== u
-      ? ((_ = (0, T.jsxs)(`span`, { className: p, children: [i, g, u] })),
+      ? ((_ = (0, C.jsxs)(`span`, { className: p, children: [i, g, u] })),
         (t[11] = i),
         (t[12] = p),
         (t[13] = g),
@@ -858,8 +857,8 @@ function P(e) {
     _
   );
 }
-function F(e) {
-  let t = (0, C.c)(13),
+function re(e) {
+  let t = (0, x.c)(13),
     {
       label: n,
       matchDropdownWidth: i,
@@ -870,38 +869,38 @@ function F(e) {
     c = i === void 0 ? !1 : i,
     l = o === void 0 ? `default` : o,
     u = s === void 0 ? !1 : s,
-    d = re[l],
-    f;
+    d = te[l],
+    p;
   t[0] === d
-    ? (f = t[1])
-    : ((f = r(
+    ? (p = t[1])
+    : ((p = r(
         `flex shrink-0 items-center overflow-hidden rounded-lg border border-token-border text-token-foreground`,
         d,
       )),
       (t[0] = d),
-      (t[1] = f));
+      (t[1] = p));
   let m;
   t[2] !== n || t[3] !== c || t[4] !== a || t[5] !== l
     ? ((m = c
-        ? (0, T.jsxs)(`span`, {
-            className: r(`grid`, N[l]),
+        ? (0, C.jsxs)(`span`, {
+            className: r(`grid`, ne[l]),
             children: [
-              (0, T.jsxs)(`span`, {
+              (0, C.jsxs)(`span`, {
                 "aria-hidden": !0,
                 className: `invisible col-start-1 row-start-1 flex items-center gap-1`,
                 children: [
                   a ?? n,
-                  (0, T.jsx)(p, { className: `icon-2xs shrink-0` }),
+                  (0, C.jsx)(f, { className: `icon-2xs shrink-0` }),
                 ],
               }),
-              (0, T.jsx)(`span`, {
+              (0, C.jsx)(`span`, {
                 className: `col-start-1 row-start-1 flex items-center justify-center`,
                 children: n,
               }),
             ],
           })
-        : (0, T.jsx)(`span`, {
-            className: r(`flex items-center font-medium`, N[l]),
+        : (0, C.jsx)(`span`, {
+            className: r(`flex items-center font-medium`, ne[l]),
             children: n,
           })),
       (t[2] = n),
@@ -914,9 +913,9 @@ function F(e) {
   t[7] === u
     ? (h = t[8])
     : ((h = u
-        ? (0, T.jsx)(`span`, {
+        ? (0, C.jsx)(`span`, {
             className: `flex self-stretch border-l border-token-border px-1.5`,
-            children: (0, T.jsx)(p, {
+            children: (0, C.jsx)(f, {
               className: `icon-2xs self-center text-token-text-tertiary`,
             }),
           })
@@ -925,9 +924,9 @@ function F(e) {
       (t[8] = h));
   let g;
   return (
-    t[9] !== f || t[10] !== m || t[11] !== h
-      ? ((g = (0, T.jsxs)(`span`, { className: f, children: [m, h] })),
-        (t[9] = f),
+    t[9] !== p || t[10] !== m || t[11] !== h
+      ? ((g = (0, C.jsxs)(`span`, { className: p, children: [m, h] })),
+        (t[9] = p),
         (t[10] = m),
         (t[11] = h),
         (t[12] = g))
@@ -935,8 +934,8 @@ function F(e) {
     g
   );
 }
-function I(e) {
-  let t = (0, C.c)(9),
+function F(e) {
+  let t = (0, x.c)(9),
     { children: n, isExpanded: i, onClick: a } = e,
     o = i && `rotate-180`,
     s;
@@ -944,11 +943,11 @@ function I(e) {
   let c;
   t[2] === s
     ? (c = t[3])
-    : ((c = (0, T.jsx)(p, { className: s })), (t[2] = s), (t[3] = c));
+    : ((c = (0, C.jsx)(f, { className: s })), (t[2] = s), (t[3] = c));
   let l;
   return (
     t[4] !== n || t[5] !== i || t[6] !== a || t[7] !== c
-      ? ((l = (0, T.jsxs)(`button`, {
+      ? ((l = (0, C.jsxs)(`button`, {
           type: `button`,
           "aria-expanded": i,
           className: `text-size-chat flex h-10 cursor-interaction items-center justify-center gap-1 text-token-text-tertiary hover:bg-token-list-hover-background/30 focus-visible:ring-1 focus-visible:ring-token-focus-border focus-visible:outline-none focus-visible:ring-inset`,
@@ -964,9 +963,8 @@ function I(e) {
     l
   );
 }
-var L = b();
-function R(e) {
-  let t = (0, C.c)(61),
+function I(e) {
+  let t = (0, x.c)(52),
     {
       filename: n,
       onRemove: r,
@@ -975,41 +973,38 @@ function R(e) {
       lineInfo: c,
       Icon: l,
       layout: u,
-      filePath: d,
-      subtitle: f,
+      subtitle: d,
     } = e,
-    p = u === void 0 ? `pill` : u,
-    m = a(),
-    h;
+    f = u === void 0 ? `pill` : u,
+    p = i(),
+    m;
   t[0] !== l || t[1] !== n
-    ? ((h = l ?? g(n)), (t[0] = l), (t[1] = n), (t[2] = h))
-    : (h = t[2]);
-  let _ = h,
-    y,
-    b;
+    ? ((m = l ?? h(n)), (t[0] = l), (t[1] = n), (t[2] = m))
+    : (m = t[2]);
+  let g = m,
+    _,
+    y;
   if (
-    t[3] !== _ ||
-    t[4] !== l ||
-    t[5] !== d ||
-    t[6] !== n ||
-    t[7] !== m ||
-    t[8] !== p ||
-    t[9] !== c ||
-    t[10] !== s ||
-    t[11] !== r ||
-    t[12] !== o ||
-    t[13] !== f
+    t[3] !== g ||
+    t[4] !== n ||
+    t[5] !== p ||
+    t[6] !== f ||
+    t[7] !== c ||
+    t[8] !== s ||
+    t[9] !== r ||
+    t[10] !== o ||
+    t[11] !== d
   ) {
-    b = Symbol.for(`react.early_return_sentinel`);
+    y = Symbol.for(`react.early_return_sentinel`);
     bb0: {
-      let e = B(n),
+      let e = L(n),
         i;
       if (
-        (t[16] !== n || t[17] !== m || t[18] !== r || t[19] !== o
+        (t[14] !== n || t[15] !== p || t[16] !== r || t[17] !== o
           ? ((i =
               o ??
               (r
-                ? m.formatMessage(
+                ? p.formatMessage(
                     {
                       id: `fileAttachment.removeAriaLabel`,
                       defaultMessage: `Remove {filename}`,
@@ -1018,138 +1013,120 @@ function R(e) {
                     { filename: n },
                   )
                 : void 0)),
-            (t[16] = n),
-            (t[17] = m),
-            (t[18] = r),
-            (t[19] = o),
-            (t[20] = i))
-          : (i = t[20]),
-        (y = i),
-        p === `card`)
+            (t[14] = n),
+            (t[15] = p),
+            (t[16] = r),
+            (t[17] = o),
+            (t[18] = i))
+          : (i = t[18]),
+        (_ = i),
+        f === `card`)
       ) {
         let i;
-        t[21] !== n || t[22] !== s
+        t[19] !== n || t[20] !== s
           ? ((i = s
-              ? (0, T.jsx)(`button`, {
+              ? (0, C.jsx)(`button`, {
                   type: `button`,
                   className: `absolute inset-0 cursor-interaction bg-transparent group-hover/file-attachment:bg-token-list-hover-background/30 focus-visible:ring-1 focus-visible:ring-token-focus-border focus-visible:outline-none focus-visible:ring-inset`,
                   onClick: s,
                   "aria-label": n,
                 })
               : null),
-            (t[21] = n),
-            (t[22] = s),
-            (t[23] = i))
-          : (i = t[23]);
+            (t[19] = n),
+            (t[20] = s),
+            (t[21] = i))
+          : (i = t[21]);
         let a;
-        t[24] !== l || t[25] !== d || t[26] !== n
-          ? ((a = l == null ? z(d ?? n) : void 0),
-            (t[24] = l),
-            (t[25] = d),
-            (t[26] = n),
-            (t[27] = a))
-          : (a = t[27]);
-        let o;
-        t[28] === _
-          ? (o = t[29])
-          : ((o = (0, T.jsx)(_, { className: `size-6` })),
-            (t[28] = _),
-            (t[29] = o));
-        let u;
-        t[30] !== a || t[31] !== o
-          ? ((u = (0, T.jsx)(`span`, {
+        t[22] === g
+          ? (a = t[23])
+          : ((a = (0, C.jsx)(`span`, {
               className: `flex size-10 shrink-0 items-center justify-center rounded-lg bg-token-bg-secondary text-token-text-secondary`,
-              style: a,
-              children: o,
+              children: (0, C.jsx)(g, { className: `size-6` }),
             })),
-            (t[30] = a),
-            (t[31] = o),
-            (t[32] = u))
-          : (u = t[32]);
-        let p = r != null,
-          h;
-        t[33] === n
-          ? (h = t[34])
-          : ((h = (0, T.jsx)(`span`, {
+            (t[22] = g),
+            (t[23] = a));
+        let o = r != null,
+          l;
+        t[24] === n
+          ? (l = t[25])
+          : ((l = (0, C.jsx)(`span`, {
               className: `block max-w-32 truncate`,
               children: n,
             })),
-            (t[33] = n),
-            (t[34] = h));
-        let g = f ?? V(e, c, m),
-          x;
-        t[35] !== h || t[36] !== g || t[37] !== u || t[38] !== p
-          ? ((x = (0, T.jsx)(P, {
+            (t[24] = n),
+            (t[25] = l));
+        let u = d ?? R(e, c, p),
+          f;
+        t[26] !== a || t[27] !== o || t[28] !== l || t[29] !== u
+          ? ((f = (0, C.jsx)(P, {
               className: `pointer-events-none relative z-10 h-full`,
-              icon: u,
+              icon: a,
               padding: `extraCompact`,
-              reserveTrailingSpace: p,
-              title: h,
-              subtitle: g,
+              reserveTrailingSpace: o,
+              title: l,
+              subtitle: u,
             })),
-            (t[35] = h),
-            (t[36] = g),
-            (t[37] = u),
-            (t[38] = p),
-            (t[39] = x))
-          : (x = t[39]);
-        let S;
-        t[40] !== r || t[41] !== y
-          ? ((S = r
-              ? (0, T.jsx)(v, {
+            (t[26] = a),
+            (t[27] = o),
+            (t[28] = l),
+            (t[29] = u),
+            (t[30] = f))
+          : (f = t[30]);
+        let m;
+        t[31] !== r || t[32] !== _
+          ? ((m = r
+              ? (0, C.jsx)(v, {
                   className: `top-1 right-1 z-20`,
-                  ariaLabel: y,
+                  ariaLabel: _,
                   onRemove: r,
                 })
               : null),
-            (t[40] = r),
-            (t[41] = y),
-            (t[42] = S))
-          : (S = t[42]);
-        let C;
-        (t[43] !== x || t[44] !== S || t[45] !== i
-          ? ((C = (0, T.jsxs)(ie, {
+            (t[31] = r),
+            (t[32] = _),
+            (t[33] = m))
+          : (m = t[33]);
+        let h;
+        (t[34] !== f || t[35] !== m || t[36] !== i
+          ? ((h = (0, C.jsxs)(N, {
               as: `span`,
               className: `group/file-attachment relative w-fit max-w-64 flex-shrink-0 bg-token-input-background`,
-              children: [i, x, S],
+              children: [i, f, m],
             })),
-            (t[43] = x),
-            (t[44] = S),
-            (t[45] = i),
-            (t[46] = C))
-          : (C = t[46]),
-          (b = C));
+            (t[34] = f),
+            (t[35] = m),
+            (t[36] = i),
+            (t[37] = h))
+          : (h = t[37]),
+          (y = h));
         break bb0;
       }
     }
-    ((t[3] = _),
-      (t[4] = l),
-      (t[5] = d),
-      (t[6] = n),
-      (t[7] = m),
-      (t[8] = p),
-      (t[9] = c),
-      (t[10] = s),
-      (t[11] = r),
-      (t[12] = o),
-      (t[13] = f),
-      (t[14] = y),
-      (t[15] = b));
-  } else ((y = t[14]), (b = t[15]));
-  if (b !== Symbol.for(`react.early_return_sentinel`)) return b;
-  let x;
-  t[47] === n
-    ? (x = t[48])
-    : ((x = (0, T.jsx)(`span`, { className: `truncate`, children: n })),
-      (t[47] = n),
-      (t[48] = x));
+    ((t[3] = g),
+      (t[4] = n),
+      (t[5] = p),
+      (t[6] = f),
+      (t[7] = c),
+      (t[8] = s),
+      (t[9] = r),
+      (t[10] = o),
+      (t[11] = d),
+      (t[12] = _),
+      (t[13] = y));
+  } else ((_ = t[12]), (y = t[13]));
+  if (y !== Symbol.for(`react.early_return_sentinel`)) return y;
+  let b;
+  t[38] === n
+    ? (b = t[39])
+    : ((b = (0, C.jsx)(`span`, { className: `truncate`, children: n })),
+      (t[38] = n),
+      (t[39] = b));
   let S;
-  t[49] === c
-    ? (S = t[50])
+  t[40] === c
+    ? (S = t[41])
     : ((S = c
-        ? (0, T.jsx)(`span`, {
+        ? (0, C.jsx)(`span`, {
             className: `shrink-0 font-normal text-token-input-placeholder-foreground`,
-            children: (0, T.jsx)(i, {
+            children: (0, C.jsx)(a, {
               id: `fileAttachment.lineInfo`,
               defaultMessage: `{lineInfo}`,
               description: `Line range or number for a file attachment, no surrounding punctuation`,
@@ -1157,55 +1134,50 @@ function R(e) {
             }),
           })
         : null),
-      (t[49] = c),
-      (t[50] = S));
+      (t[40] = c),
+      (t[41] = S));
   let w;
-  t[51] !== x || t[52] !== S
-    ? ((w = (0, T.jsxs)(`span`, {
+  t[42] !== b || t[43] !== S
+    ? ((w = (0, C.jsxs)(`span`, {
         className: `flex max-w-full min-w-0 items-center gap-1`,
-        children: [x, S],
+        children: [b, S],
       })),
-      (t[51] = x),
-      (t[52] = S),
-      (t[53] = w))
-    : (w = t[53]);
-  let E;
+      (t[42] = b),
+      (t[43] = S),
+      (t[44] = w))
+    : (w = t[44]);
+  let T;
   return (
-    t[54] !== _ ||
-    t[55] !== p ||
-    t[56] !== s ||
-    t[57] !== r ||
-    t[58] !== y ||
-    t[59] !== w
-      ? ((E = (0, T.jsx)(M, {
-          Icon: _,
+    t[45] !== g ||
+    t[46] !== f ||
+    t[47] !== s ||
+    t[48] !== r ||
+    t[49] !== _ ||
+    t[50] !== w
+      ? ((T = (0, C.jsx)(A, {
+          Icon: g,
           onClick: s,
           onRemove: r,
-          layout: p,
-          onRemoveAriaLabel: y,
+          layout: f,
+          onRemoveAriaLabel: _,
           children: w,
         })),
-        (t[54] = _),
-        (t[55] = p),
-        (t[56] = s),
-        (t[57] = r),
-        (t[58] = y),
-        (t[59] = w),
-        (t[60] = E))
-      : (E = t[60]),
-    E
+        (t[45] = g),
+        (t[46] = f),
+        (t[47] = s),
+        (t[48] = r),
+        (t[49] = _),
+        (t[50] = w),
+        (t[51] = T))
+      : (T = t[51]),
+    T
   );
 }
-function z(e) {
-  let t = L.resolveIcon(`file-tree-icon-file`, e).token,
-    n = t == null ? void 0 : y(t);
-  return n == null ? void 0 : { color: n };
-}
-function B(e) {
+function L(e) {
   let t = e.lastIndexOf(`.`);
   return t <= 0 || t === e.length - 1 ? null : e.slice(t + 1).toUpperCase();
 }
-function V(e, t, n) {
+function R(e, t, n) {
   return e == null
     ? (t ?? null)
     : t == null
@@ -1219,84 +1191,84 @@ function V(e, t, n) {
           { extension: e, lineInfo: t },
         );
 }
-function H(e, t) {
+function z(e, t) {
   return t
     ? e.replace(/(?:\s+\(\s*\d+(?:-\d+)?\s*\)|\s+\d+(?:-\d+)?)(\s*)$/, ``)
     : e;
 }
-function U(e) {
-  let t = (0, C.c)(17),
+function B(e) {
+  let t = (0, x.c)(17),
     { composerController: n, hostId: r, roots: i, shouldLoadPlugins: a } = e,
     o;
   t[0] === r ? (o = t[1]) : ((o = { hostId: r }), (t[0] = r), (t[1] = o));
-  let s = d(o),
-    c = x(n, W),
-    l = a || c,
-    { isLoading: u, skills: p } = f(i, r),
-    m,
-    h;
-  (t[2] !== s || t[3] !== n || t[4] !== u || t[5] !== p
-    ? ((m = () => {
-        u || n.syncMentionMetadata({ skills: p, apps: s });
+  let s = c(o),
+    l = y(n, V),
+    u = a || l,
+    { isLoading: d, skills: f } = g(i, r),
+    p,
+    m;
+  (t[2] !== s || t[3] !== n || t[4] !== d || t[5] !== f
+    ? ((p = () => {
+        d || n.syncMentionMetadata({ skills: f, apps: s });
       }),
-      (h = [s, n, u, p]),
+      (m = [s, n, d, f]),
       (t[2] = s),
       (t[3] = n),
-      (t[4] = u),
-      (t[5] = p),
-      (t[6] = m),
-      (t[7] = h))
-    : ((m = t[6]), (h = t[7])),
-    (0, w.useEffect)(m, h));
-  let g;
+      (t[4] = d),
+      (t[5] = f),
+      (t[6] = p),
+      (t[7] = m))
+    : ((p = t[6]), (m = t[7])),
+    (0, S.useEffect)(p, m));
+  let h;
   return (
     t[8] !== s ||
     t[9] !== n ||
-    t[10] !== c ||
+    t[10] !== l ||
     t[11] !== r ||
-    t[12] !== u ||
+    t[12] !== d ||
     t[13] !== i ||
-    t[14] !== l ||
-    t[15] !== p
-      ? ((g = l
-          ? (0, T.jsx)(G, {
+    t[14] !== u ||
+    t[15] !== f
+      ? ((h = u
+          ? (0, C.jsx)(H, {
               apps: s,
               composerController: n,
               hostId: r,
-              includeRemoteCatalog: c,
+              includeRemoteCatalog: l,
               roots: i,
-              skillsReady: !u,
-              skills: p,
+              skillsReady: !d,
+              skills: f,
             })
           : null),
         (t[8] = s),
         (t[9] = n),
-        (t[10] = c),
+        (t[10] = l),
         (t[11] = r),
-        (t[12] = u),
+        (t[12] = d),
         (t[13] = i),
-        (t[14] = l),
-        (t[15] = p),
-        (t[16] = g))
-      : (g = t[16]),
-    g
+        (t[14] = u),
+        (t[15] = f),
+        (t[16] = h))
+      : (h = t[16]),
+    h
   );
 }
-function W(e) {
-  return e.hasPluginMentions();
+function V(e) {
+  return e.hasPluginBackedMentions();
 }
-function G(e) {
-  let t = (0, C.c)(16),
+function H(e) {
+  let t = (0, x.c)(16),
     {
       apps: n,
       composerController: r,
-      hostId: i,
+      hostId: a,
       includeRemoteCatalog: o,
-      roots: l,
-      skillsReady: d,
+      roots: c,
+      skillsReady: u,
       skills: f,
     } = e,
-    p = a(),
+    h = i(),
     g = s(`1269116100`),
     _;
   t[0] !== o || t[1] !== g
@@ -1308,58 +1280,58 @@ function G(e) {
       (t[1] = g),
       (t[2] = _))
     : (_ = t[2]);
-  let { availablePlugins: v } = u(i, l, _),
+  let { availablePlugins: v } = d(a, c, _),
     y;
-  t[3] === v ? (y = t[4]) : ((y = m(v)), (t[3] = v), (t[4] = y));
+  t[3] === v ? (y = t[4]) : ((y = p(v)), (t[3] = v), (t[4] = y));
   let b = y != null,
-    x;
-  t[5] === b ? (x = t[6]) : ((x = { enabled: b }), (t[5] = b), (t[6] = x));
-  let { nativeApps: S } = h(x),
+    C;
+  t[5] === b ? (C = t[6]) : ((C = { enabled: b }), (t[5] = b), (t[6] = C));
+  let { nativeApps: w } = m(C),
     T,
     E;
   return (
     t[7] !== n ||
     t[8] !== v ||
     t[9] !== r ||
-    t[10] !== p ||
-    t[11] !== S ||
+    t[10] !== h ||
+    t[11] !== w ||
     t[12] !== f ||
-    t[13] !== d
+    t[13] !== u
       ? ((T = () => {
-          d &&
+          u &&
             r.syncMentionMetadata({
               skills: f,
               apps: n,
               plugins: v,
-              nativeApps: S,
-              pluginMentionLabels: c(p),
+              nativeApps: w,
+              pluginMentionLabels: l(h),
             });
         }),
-        (E = [n, r, p, S, v, f, d]),
+        (E = [n, r, h, w, v, f, u]),
         (t[7] = n),
         (t[8] = v),
         (t[9] = r),
-        (t[10] = p),
-        (t[11] = S),
+        (t[10] = h),
+        (t[11] = w),
         (t[12] = f),
-        (t[13] = d),
+        (t[13] = u),
         (t[14] = T),
         (t[15] = E))
       : ((T = t[14]), (E = t[15])),
-    (0, w.useEffect)(T, E),
+    (0, S.useEffect)(T, E),
     null
   );
 }
 export {
-  I as a,
-  M as c,
-  ie as i,
-  E as l,
-  H as n,
-  F as o,
-  R as r,
+  F as a,
+  A as c,
+  N as i,
+  w as l,
+  z as n,
+  re as o,
+  I as r,
   P as s,
-  U as t,
-  S as u,
+  B as t,
+  b as u,
 };
 //# sourceMappingURL=mention-metadata-syncer.js.map

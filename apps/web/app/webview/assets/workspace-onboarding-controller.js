@@ -1,37 +1,31 @@
-import { s as e } from "./chunk.js";
-import { as as t, is as n } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { $s as t, ec as n } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as r } from "./jsx-runtime.js";
-import { X as i, xt as a } from "./setting-storage.js";
-import { n as o, s } from "./statsig.js";
-import { u as c } from "./thread-context-inputs.js";
-import { h as l } from "./codex-api.js";
-import { m as u, p as d } from "./onboarding-state.js";
-import { t as f } from "./use-is-remote-host.js";
+import { Z as i, wt as a } from "./setting-storage.js";
+import { n as o, s } from "./statsig--EYRNU53.js";
+import { u as c } from "./thread-context-inputs-DBrOekVr.js";
+import { y as l } from "./codex-api-bK--r_2t.js";
+import { f as u, p as d } from "./onboarding-state.js";
+import { t as f } from "./use-is-remote-host-DScyzh-e.js";
 import {
   c as p,
   d as m,
   i as h,
   l as g,
-  m as _,
-  o as v,
-  p as y,
-  r as b,
-  u as x,
+  o as _,
+  r as v,
+  s as y,
 } from "./workspace-onboarding-experiment.js";
-var S = a(),
-  C = e(r(), 1);
-function w({ onboardingTarget: e, assignment: t, evaluateExperimentArm: n }) {
-  return t == null
-    ? e !== `workspace` && e !== `welcome` && e !== `login`
-      ? `control`
-      : n()
-    : t.arm;
+var b = a(),
+  x = e(r(), 1);
+function S({ onboardingTarget: e, assignment: t, evaluateExperimentArm: n }) {
+  return t == null ? (e === `workspace` ? n() : `control`) : t.arm;
 }
-function T() {
-  let e = (0, S.c)(5),
-    n = t(u),
+function C() {
+  let e = (0, b.c)(5),
+    t = n(d),
     r;
-  e[0] === n ? (r = e[1]) : ((r = g(n) ? n : null), (e[0] = n), (e[1] = r));
+  e[0] === t ? (r = e[1]) : ((r = y(t) ? t : null), (e[0] = t), (e[1] = r));
   let i = r,
     a = i?.arm ?? `control`,
     o;
@@ -48,80 +42,65 @@ function T() {
     o
   );
 }
-function E(e) {
-  let t = (0, S.c)(19),
+function w(e) {
+  let n = (0, b.c)(17),
     { onboardingTarget: r } = e,
-    [i, a] = n(u),
-    c;
-  t[0] === i ? (c = t[1]) : ((c = g(i) ? i : null), (t[0] = i), (t[1] = c));
-  let l = c,
-    { client: d } = s(),
-    f,
-    m;
-  if (t[2] !== r || t[3] !== d || t[4] !== l) {
-    let e = o(d, v),
-      n;
-    (t[7] === d ? (n = t[8]) : ((n = () => p(d)), (t[7] = d), (t[8] = n)),
-      (m = w({ onboardingTarget: r, assignment: l, evaluateExperimentArm: n })),
-      (f = _({ experimentArm: m, welcomeV2DefaultFlowEnabled: e })),
-      (t[2] = r),
-      (t[3] = d),
-      (t[4] = l),
-      (t[5] = f),
-      (t[6] = m));
-  } else ((f = t[5]), (m = t[6]));
-  let y = f,
-    b,
-    x;
-  (t[9] !== r || t[10] !== a || t[11] !== d || t[12] !== l
-    ? ((b = () => {
-        (r !== `workspace` && r !== `welcome` && r !== `login`) ||
-          (l ?? a({ arm: p(d), assignedAtMs: Date.now(), experimentName: h }));
+    [i, a] = t(d),
+    o;
+  n[0] === i ? (o = n[1]) : ((o = y(i) ? i : null), (n[0] = i), (n[1] = o));
+  let c = o,
+    { client: l } = s(),
+    u;
+  n[2] === l ? (u = n[3]) : ((u = () => _(l)), (n[2] = l), (n[3] = u));
+  let f;
+  n[4] !== r || n[5] !== u || n[6] !== c
+    ? ((f = S({
+        onboardingTarget: r,
+        assignment: c,
+        evaluateExperimentArm: u,
+      })),
+      (n[4] = r),
+      (n[5] = u),
+      (n[6] = c),
+      (n[7] = f))
+    : (f = n[7]);
+  let p = f,
+    m,
+    g;
+  (n[8] !== r || n[9] !== a || n[10] !== l || n[11] !== c
+    ? ((m = () => {
+        r === `workspace` &&
+          c == null &&
+          a({ arm: _(l), assignedAtMs: Date.now(), experimentName: h });
       }),
-      (x = [r, a, d, l]),
-      (t[9] = r),
-      (t[10] = a),
-      (t[11] = d),
-      (t[12] = l),
-      (t[13] = b),
-      (t[14] = x))
-    : ((b = t[13]), (x = t[14])),
-    (0, C.useEffect)(b, x));
-  let T;
+      (g = [r, a, l, c]),
+      (n[8] = r),
+      (n[9] = a),
+      (n[10] = l),
+      (n[11] = c),
+      (n[12] = m),
+      (n[13] = g))
+    : ((m = n[12]), (g = n[13])),
+    (0, x.useEffect)(m, g));
+  let v;
   return (
-    t[15] !== y || t[16] !== m || t[17] !== l
-      ? ((T = {
-          workspaceOnboardingExperimentAssignment: l,
-          workspaceOnboardingExperimentArm: m,
-          shouldUseWelcomeV2Onboarding: y,
+    n[14] !== p || n[15] !== c
+      ? ((v = {
+          workspaceOnboardingExperimentAssignment: c,
+          workspaceOnboardingExperimentArm: p,
         }),
-        (t[15] = y),
-        (t[16] = m),
-        (t[17] = l),
-        (t[18] = T))
-      : (T = t[18]),
-    T
+        (n[14] = p),
+        (n[15] = c),
+        (n[16] = v))
+      : (v = n[16]),
+    v
   );
 }
-function D({ onboardingTarget: e, arm: t, isRemoteHost: n }) {
-  return e === `workspace` && !n && m(t);
+function T({ onboardingTarget: e, arm: t, isRemoteHost: n }) {
+  return e === `workspace` && !n && g(t);
 }
-function O(e) {
-  let t = (0, S.c)(3),
-    { client: n } = s(),
-    r;
-  return (
-    t[0] !== e || t[1] !== n
-      ? ((r = _({ experimentArm: e, welcomeV2DefaultFlowEnabled: o(n, v) })),
-        (t[0] = e),
-        (t[1] = n),
-        (t[2] = r))
-      : (r = t[2]),
-    r
-  );
-}
-function k(e) {
-  let t = (0, S.c)(13),
+function E(e) {
+  let t = (0, b.c)(13),
     { enabled: n } = e,
     { client: r, isLoading: i } = s(),
     a;
@@ -162,7 +141,7 @@ function k(e) {
     h
   );
 }
-function A({
+function D({
   arm: e,
   isRemoteHost: t,
   isLoadingRoots: n,
@@ -171,71 +150,71 @@ function A({
 }) {
   return t || n || r || i
     ? `none`
-    : m(e)
+    : g(e)
       ? `home_open_picker_or_create_default`
-      : x(e)
+      : p(e)
         ? `select_workspace_skip_to_playground`
         : `none`;
 }
-function j() {
-  let e = (0, S.c)(15),
-    { workspaceOnboardingExperimentArm: t } = T(),
+function O() {
+  let e = (0, b.c)(15),
+    { workspaceOnboardingExperimentArm: n } = C(),
     r = f(),
-    [a, o] = n(d),
+    [a, o] = t(u),
     { data: s, isLoading: l } = i(c),
-    u = (s?.roots?.length ?? 0) > 0,
+    d = (s?.roots?.length ?? 0) > 0,
     p;
-  e[0] !== u || e[1] !== l || e[2] !== r || e[3] !== a || e[4] !== t
-    ? ((p = A({
-        arm: t,
+  e[0] !== d || e[1] !== l || e[2] !== r || e[3] !== a || e[4] !== n
+    ? ((p = D({
+        arm: n,
         isRemoteHost: r,
         isLoadingRoots: l,
-        hasPersistedRoots: u,
+        hasPersistedRoots: d,
         autoLaunchApplied: a,
       })),
-      (e[0] = u),
+      (e[0] = d),
       (e[1] = l),
       (e[2] = r),
       (e[3] = a),
-      (e[4] = t),
+      (e[4] = n),
       (e[5] = p))
     : (p = e[5]);
   let m = p,
     h;
   return (
     e[6] !== m ||
-    e[7] !== u ||
+    e[7] !== d ||
     e[8] !== l ||
     e[9] !== r ||
     e[10] !== o ||
     e[11] !== a ||
-    e[12] !== t ||
+    e[12] !== n ||
     e[13] !== s
       ? ((h = {
-          workspaceOnboardingExperimentArm: t,
+          workspaceOnboardingExperimentArm: n,
           isRemoteHost: r,
           workspaceOnboardingAutoLaunchApplied: a,
           setWorkspaceOnboardingAutoLaunchApplied: o,
           workspaceRootOptions: s,
           isLoadingWorkspaceRootOptions: l,
-          hasPersistedRoots: u,
+          hasPersistedRoots: d,
           autoLaunchAction: m,
         }),
         (e[6] = m),
-        (e[7] = u),
+        (e[7] = d),
         (e[8] = l),
         (e[9] = r),
         (e[10] = o),
         (e[11] = a),
-        (e[12] = t),
+        (e[12] = n),
         (e[13] = s),
         (e[14] = h))
       : (h = e[14]),
     h
   );
 }
-function M(e) {
-  if (y(e)) return b;
+function k(e) {
+  if (m(e)) return v;
 }
-export { j as a, O as i, D as n, E as o, k as r, M as t };
+export { w as a, O as i, T as n, E as r, k as t };
 //# sourceMappingURL=workspace-onboarding-controller.js.map

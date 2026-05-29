@@ -1,29 +1,29 @@
 const __vite__mapDeps = (
   i,
   m = __vite__mapDeps,
-  d = m.f || (m.f = ["./3Dmol.js", "./chunk.js"]),
+  d = m.f || (m.f = ["./3Dmol-BnqFAKJQ.js", "./chunk-Bj-mKKzh.js"]),
 ) => i.map((i) => d[i]);
-import { s as e } from "./chunk.js";
-import "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./src-C.js";
 import { t } from "./preload-helper.js";
 import { n, t as r } from "./jsx-runtime.js";
-import { t as i } from "./clsx.js";
-import "./react-dom.js";
+import { t as i } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import { H as a, W as o, p as s, xt as c } from "./setting-storage.js";
+import { G as a, U as o, p as s, wt as c } from "./setting-storage.js";
 import "./window-zoom-context.js";
-import "./tooltip.js";
+import "./tooltip-CDzchJxN.js";
 import { t as l } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
 import "./proxy.js";
 import "./use-stable-callback.js";
-import { n as u } from "./use-resize-observer.js";
+import { n as u } from "./use-resize-observer-DCpyQHos.js";
 import { t as d } from "./check-md.js";
 import "./chevron-right.js";
 import "./search.js";
-import { r as f, t as p } from "./dropdown.js";
-import { t as m } from "./chevron.js";
+import { r as f, t as p } from "./dropdown-DtQxMoJw.js";
+import { t as m } from "./chevron-NmAOI_v1.js";
 import { n as h, t as g } from "./rich-preview-primitives.js";
 var _ = c(),
   v = e(n(), 1),
@@ -328,7 +328,7 @@ function V(e) {
   );
 }
 function H({ className: n, contents: r, filePath: i }) {
-  let s = o(),
+  let s = a(),
     c = (0, v.useMemo)(() => S(r), [r]),
     [_, y] = (0, v.useState)(0),
     [b, x] = (0, v.useState)(null),
@@ -408,7 +408,8 @@ function H({ className: n, contents: r, filePath: i }) {
           try {
             let r = ie(
               await t(
-                () => import(`./3Dmol.js`).then((t) => e(t.default, 1)),
+                () =>
+                  import(`./3Dmol-BnqFAKJQ.js`).then((t) => e(t.default, 1)),
                 __vite__mapDeps([0, 1]),
                 import.meta.url,
               ),
@@ -451,7 +452,7 @@ function H({ className: n, contents: r, filePath: i }) {
           children: (0, F.jsx)(`div`, {
             className: `flex h-full items-center justify-center`,
             children: (0, F.jsx)(h, {
-              children: (0, F.jsx)(a, {
+              children: (0, F.jsx)(o, {
                 id: `codex.filePreview.pdb.empty`,
                 defaultMessage: `No PDB atoms found`,
                 description: `Placeholder text when a PDB file cannot be parsed into atom records.`,
@@ -520,7 +521,7 @@ function H({ className: n, contents: r, filePath: i }) {
                   size: `toolbar`,
                   className: `!h-6 shrink-0 rounded-md !border-token-border-default bg-token-main-surface-primary text-sm text-token-text-primary hover:text-token-text-primary`,
                   onClick: fe,
-                  children: (0, F.jsx)(a, {
+                  children: (0, F.jsx)(o, {
                     id: `codex.filePreview.pdb.resetView`,
                     defaultMessage: `Reset view`,
                     description: `Button label for resetting PDB viewer rotation and zoom.`,
@@ -530,7 +531,7 @@ function H({ className: n, contents: r, filePath: i }) {
                   className: `ml-auto flex flex-wrap gap-x-4 gap-y-1 text-xs text-token-text-secondary`,
                   children: [
                     (0, F.jsx)(`span`, {
-                      children: (0, F.jsx)(a, {
+                      children: (0, F.jsx)(o, {
                         id: `codex.filePreview.pdb.residueCount`,
                         defaultMessage: `{count, number} residues`,
                         description: `Summary count of residues parsed from a PDB file.`,
@@ -538,7 +539,7 @@ function H({ className: n, contents: r, filePath: i }) {
                       }),
                     }),
                     (0, F.jsx)(`span`, {
-                      children: (0, F.jsx)(a, {
+                      children: (0, F.jsx)(o, {
                         id: `codex.filePreview.pdb.atomCount`,
                         defaultMessage: `{count, number} atoms`,
                         description: `Summary count of atoms parsed from a PDB file.`,
@@ -546,7 +547,7 @@ function H({ className: n, contents: r, filePath: i }) {
                       }),
                     }),
                     (0, F.jsx)(`span`, {
-                      children: (0, F.jsx)(a, {
+                      children: (0, F.jsx)(o, {
                         id: `codex.filePreview.pdb.scoreSummary`,
                         defaultMessage: `B-factor/pLDDT {mean}`,
                         description: `Summary of the mean B-factor or AlphaFold pLDDT score in a PDB file.`,
@@ -592,7 +593,7 @@ function H({ className: n, contents: r, filePath: i }) {
                   ? (0, F.jsx)(`div`, {
                       className: `absolute inset-0 flex items-center justify-center bg-token-main-surface-primary`,
                       children: (0, F.jsx)(h, {
-                        children: (0, F.jsx)(a, {
+                        children: (0, F.jsx)(o, {
                           id: `codex.filePreview.pdb.viewerLoadError`,
                           defaultMessage: `Unable to load the 3Dmol PDB viewer`,
                           description: `Error text when the 3Dmol PDB viewer cannot be loaded.`,
@@ -607,7 +608,7 @@ function H({ className: n, contents: r, filePath: i }) {
               children: [
                 (0, F.jsx)(U, {
                   className: `bg-[#0053d6]`,
-                  children: (0, F.jsx)(a, {
+                  children: (0, F.jsx)(o, {
                     id: `codex.filePreview.pdb.legendVeryHigh`,
                     defaultMessage: `90+`,
                     description: `PDB confidence legend label for very high scores.`,
@@ -615,7 +616,7 @@ function H({ className: n, contents: r, filePath: i }) {
                 }),
                 (0, F.jsx)(U, {
                   className: `bg-[#65cbf3]`,
-                  children: (0, F.jsx)(a, {
+                  children: (0, F.jsx)(o, {
                     id: `codex.filePreview.pdb.legendConfident`,
                     defaultMessage: `70-90`,
                     description: `PDB confidence legend label for confident scores.`,
@@ -623,7 +624,7 @@ function H({ className: n, contents: r, filePath: i }) {
                 }),
                 (0, F.jsx)(U, {
                   className: `bg-[#ffdb13]`,
-                  children: (0, F.jsx)(a, {
+                  children: (0, F.jsx)(o, {
                     id: `codex.filePreview.pdb.legendLow`,
                     defaultMessage: `50-70`,
                     description: `PDB confidence legend label for low scores.`,
@@ -631,7 +632,7 @@ function H({ className: n, contents: r, filePath: i }) {
                 }),
                 (0, F.jsx)(U, {
                   className: `bg-[#ff7d45]`,
-                  children: (0, F.jsx)(a, {
+                  children: (0, F.jsx)(o, {
                     id: `codex.filePreview.pdb.legendVeryLow`,
                     defaultMessage: `<50`,
                     description: `PDB confidence legend label for very low scores.`,
@@ -639,7 +640,7 @@ function H({ className: n, contents: r, filePath: i }) {
                 }),
                 (0, F.jsx)(`span`, {
                   className: `ml-auto`,
-                  children: (0, F.jsx)(a, {
+                  children: (0, F.jsx)(o, {
                     id: `codex.filePreview.pdb.interactionHint`,
                     defaultMessage: `Drag to rotate. Scroll to zoom.`,
                     description: `Interaction hint for the PDB structure viewer.`,
@@ -697,7 +698,7 @@ function ne(e) {
       selectedRange: y,
       selectedResidues: b,
     } = e,
-    x = o(),
+    x = a(),
     S = (0, v.useRef)(null),
     C = (0, v.useRef)(null),
     w = y?.chainId === g.chainId ? y : null,
@@ -747,7 +748,7 @@ function ne(e) {
                 children: [
                   (0, F.jsx)(`span`, {
                     className: `text-token-text-primary`,
-                    children: (0, F.jsx)(a, {
+                    children: (0, F.jsx)(o, {
                       id: `codex.filePreview.pdb.chainLabel`,
                       defaultMessage: `Chain {chainId}`,
                       description: `Label for the active chain in a PDB sequence preview.`,
@@ -764,7 +765,7 @@ function ne(e) {
                     RightIcon: e.chainId === g.chainId ? d : void 0,
                     onSelect: () => r(e.chainId),
                     className: `text-token-text-primary`,
-                    children: (0, F.jsx)(a, {
+                    children: (0, F.jsx)(o, {
                       id: `codex.filePreview.pdb.chainOption`,
                       defaultMessage: `Chain {chainId} ({count, number} residues)`,
                       description: `Dropdown option for a PDB chain sequence.`,
@@ -780,7 +781,7 @@ function ne(e) {
             })
           : (0, F.jsx)(`span`, {
               className: `font-medium text-token-text-primary`,
-              children: (0, F.jsx)(a, {
+              children: (0, F.jsx)(o, {
                 id: `codex.filePreview.pdb.chainLabel`,
                 defaultMessage: `Chain {chainId}`,
                 description: `Label for the active chain in a PDB sequence preview.`,
@@ -798,7 +799,7 @@ function ne(e) {
     ? (A = t[9])
     : ((A = (0, F.jsx)(`span`, {
         className: `tabular-nums`,
-        children: (0, F.jsx)(a, {
+        children: (0, F.jsx)(o, {
           id: `codex.filePreview.pdb.sequenceResidueCount`,
           defaultMessage: `{count, number} coordinate residues`,
           description: `Coordinate residue count for the current PDB sequence chain.`,
@@ -814,7 +815,7 @@ function ne(e) {
         b.length > 0
           ? (0, F.jsx)(`span`, {
               className: `ml-auto font-medium text-token-text-primary`,
-              children: (0, F.jsx)(a, {
+              children: (0, F.jsx)(o, {
                 id: `codex.filePreview.pdb.selectedResidues`,
                 defaultMessage: `Selected {range}`,
                 description: `Summary of the selected PDB residue range.`,

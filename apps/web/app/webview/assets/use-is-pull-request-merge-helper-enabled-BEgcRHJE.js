@@ -1,0 +1,47 @@
+import { kt as e } from "./app-server-manager-signals-DkRDRgNB.js";
+import { S as t, et as n, ot as r } from "./setting-storage.js";
+import { o as i } from "./statsig--EYRNU53.js";
+var a = e(`skip-pull-request-merge-helper-confirm`, !1),
+  o = n(t, (e, { signal: t }) => {
+    let n = t(null),
+      r = t(null);
+    return {
+      ciJobsFixed$: t(0),
+      conversationId$: r,
+      mergeConflictsResolved$: t(0),
+      pendingWorktreeId$: n,
+    };
+  }),
+  s = r(t, (e) => null),
+  c = r(t, (e) => null);
+function l(e, { pendingWorktreeId: t, pullRequestUrl: n }) {
+  let r = e.get(o, n);
+  (r.pendingWorktreeId$.set(t),
+    r.conversationId$.set(null),
+    r.ciJobsFixed$.set(0),
+    r.mergeConflictsResolved$.set(0),
+    e.set(s, t, n));
+}
+function u(e, { conversationId: t, pendingWorktreeId: n }) {
+  let r = e.get(s, n);
+  r != null && (e.get(o, r).conversationId$.set(t), e.set(c, t, r));
+}
+function d(e, t) {
+  let n = e.get(s, t);
+  n != null && e.get(o, n).pendingWorktreeId$.set(null);
+}
+function f(
+  e,
+  { ciJobsFixed: t, conversationId: n, mergeConflictsResolved: r },
+) {
+  let i = e.get(c, n);
+  if (i == null) return;
+  let a = e.get(o, i);
+  (t > 0 && a.ciJobsFixed$.set((e) => e + t),
+    r > 0 && a.mergeConflictsResolved$.set((e) => e + r));
+}
+function p() {
+  return i(`896050304`);
+}
+export { o as a, l as c, d as i, u as n, c as o, f as r, a as s, p as t };
+//# sourceMappingURL=use-is-pull-request-merge-helper-enabled-BEgcRHJE.js.map

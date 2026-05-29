@@ -1,16 +1,16 @@
 import {
-  Fo as e,
-  Io as t,
-  Lo as n,
-  Ro as r,
-  ei as i,
-  ni as a,
-  ri as o,
-} from "./app-server-manager-signals.js";
-import { C as s, S as c, Y as l, xt as u } from "./setting-storage.js";
-import { t as d } from "./product-logger.js";
-import { n as f, t as p } from "./use-model-settings.js";
-import { n as m } from "./model-queries.js";
+  As as e,
+  Ei as t,
+  Ms as n,
+  Ns as r,
+  Oi as i,
+  js as a,
+  ki as o,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { C as s, S as c, X as l, wt as u } from "./setting-storage.js";
+import { t as d } from "./product-logger-DusapRyT.js";
+import { n as f, t as p } from "./use-model-settings-BGTYyORt.js";
+import { n as m } from "./model-queries-CVdTsyPv.js";
 import { n as h } from "./use-webview-execution-target.js";
 var g = u();
 function _(u) {
@@ -26,13 +26,13 @@ function _(u) {
   let { data: C, isLoading: w } = m(S),
     T = e(),
     E = n(),
-    D = t(),
+    D = a(),
     O = r(),
     k,
     A;
   _[2] !== T.serviceTier || _[3] !== C?.models || _[4] !== x.model
     ? ((k = f(C?.models, x.model)),
-      (A = a(k, T.serviceTier)),
+      (A = i(k, T.serviceTier)),
       (_[2] = T.serviceTier),
       (_[3] = C?.models),
       (_[4] = x.model),
@@ -50,12 +50,12 @@ function _(u) {
   _[12] !== E ||
   _[13] !== O
     ? ((N = async (e, t) => {
-        let n = a(k, e),
+        let n = i(k, e),
           r = t !== `enterprise_default`,
-          i = r && !D,
+          a = r && !D,
           c = e !== T.serviceTier && (n == null || n !== j);
         try {
-          (i && O(!0), c && (await E(e)));
+          (a && O(!0), c && (await E(e)));
         } catch (e) {
           let t = e;
           s.error(`Failed to set default service tier`, {
@@ -86,7 +86,7 @@ function _(u) {
     : (N = _[14]);
   let P = N,
     F;
-  _[15] === k ? (F = _[16]) : ((F = i(k)), (_[15] = k), (_[16] = F));
+  _[15] === k ? (F = _[16]) : ((F = t(k)), (_[15] = k), (_[16] = F));
   let I;
   _[17] !== T.serviceTier || _[18] !== j || _[19] !== M || _[20] !== F
     ? ((I = {

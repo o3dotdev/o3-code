@@ -1,33 +1,29 @@
 import {
   L as e,
-  _ as t,
-  p as n,
-  u as r,
-  xt as i,
-  y as a,
+  S as t,
+  Z as n,
+  _ as r,
+  f as i,
+  u as a,
+  wt as o,
+  y as s,
 } from "./setting-storage.js";
-var o = i();
-function s() {
-  let i = (0, o.c)(12),
-    s = e(),
-    c;
-  i[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = {
-        params: { limit: 200 },
-        queryConfig: {
-          enabled: !0,
-          staleTime: t.ONE_MINUTE,
-          intervalMs: t.ONE_MINUTE,
-        },
-      }),
-      (i[0] = c))
-    : (c = i[0]);
-  let l = n(`inbox-items`, c),
-    u;
-  i[1] === s
-    ? (u = i[2])
-    : ((u = (e) => {
-        (s.setQueryData(r(`inbox-items`, { limit: 200 }), (t) =>
+var c = o(),
+  l = i(t, `inbox-items`, {
+    enabled: !0,
+    params: { limit: 200 },
+    refetchInterval: r.ONE_MINUTE,
+    staleTime: r.ONE_MINUTE,
+  });
+function u() {
+  let t = (0, c.c)(11),
+    r = e(),
+    i = n(l),
+    o;
+  t[0] === r
+    ? (o = t[1])
+    : ((o = (e) => {
+        (r.setQueryData(a(`inbox-items`, { limit: 200 }), (t) =>
           t == null
             ? t
             : {
@@ -39,19 +35,19 @@ function s() {
                 ),
               },
         ),
-          a.dispatchMessage(`inbox-item-set-read-state`, {
+          s.dispatchMessage(`inbox-item-set-read-state`, {
             id: e,
             isRead: !0,
           }));
       }),
-      (i[1] = s),
-      (i[2] = u));
-  let d = u,
-    f;
-  i[3] === s
-    ? (f = i[4])
-    : ((f = (e) => {
-        (s.setQueryData(r(`inbox-items`, { limit: 200 }), (t) =>
+      (t[0] = r),
+      (t[1] = o));
+  let u = o,
+    d;
+  t[2] === r
+    ? (d = t[3])
+    : ((d = (e) => {
+        (r.setQueryData(a(`inbox-items`, { limit: 200 }), (t) =>
           t == null
             ? t
             : {
@@ -61,30 +57,30 @@ function s() {
                 ),
               },
         ),
-          a.dispatchMessage(`inbox-item-set-read-state`, {
+          s.dispatchMessage(`inbox-item-set-read-state`, {
             id: e,
             isRead: !1,
           }));
       }),
-      (i[3] = s),
-      (i[4] = f));
-  let p = f,
-    m;
-  i[5] === l.data?.items
-    ? (m = i[6])
-    : ((m = l.data?.items ?? []), (i[5] = l.data?.items), (i[6] = m));
-  let h;
+      (t[2] = r),
+      (t[3] = d));
+  let f = d,
+    p;
+  t[4] === i.data?.items
+    ? (p = t[5])
+    : ((p = i.data?.items ?? []), (t[4] = i.data?.items), (t[5] = p));
+  let m;
   return (
-    i[7] !== l.isLoading || i[8] !== d || i[9] !== p || i[10] !== m
-      ? ((h = { items: m, isLoading: l.isLoading, markRead: d, markUnread: p }),
-        (i[7] = l.isLoading),
-        (i[8] = d),
-        (i[9] = p),
-        (i[10] = m),
-        (i[11] = h))
-      : (h = i[11]),
-    h
+    t[6] !== i.isLoading || t[7] !== u || t[8] !== f || t[9] !== p
+      ? ((m = { items: p, isLoading: i.isLoading, markRead: u, markUnread: f }),
+        (t[6] = i.isLoading),
+        (t[7] = u),
+        (t[8] = f),
+        (t[9] = p),
+        (t[10] = m))
+      : (m = t[10]),
+    m
   );
 }
-export { s as t };
+export { u as t };
 //# sourceMappingURL=use-automation-history-items.js.map

@@ -1,0 +1,2 @@
+import { t as e } from "./html-derivative-DL--6lGP.js";
+export { e as default };

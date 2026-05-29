@@ -1,50 +1,50 @@
-import { Cn as e } from "./src-BLHmAhbF.js";
+import { zn as e } from "./src-C.js";
 import { t } from "./jsx-runtime.js";
-import { t as n } from "./clsx.js";
-import { H as r, W as i, xt as a } from "./setting-storage.js";
+import { t as n } from "./clsx-BcPLHiun.js";
+import { G as r, U as i, wt as a } from "./setting-storage.js";
 import { t as o } from "./remote-connection-visibility.js";
-import { t as s } from "./tooltip.js";
+import { t as s } from "./tooltip-CDzchJxN.js";
 import { t as c } from "./button.js";
-import { t as l } from "./chats.js";
-import { t as u } from "./info.js";
-import { t as ee } from "./check-md.js";
-import { r as d, t as f } from "./dropdown.js";
-import { t as p } from "./chevron.js";
-import { t as m } from "./worktree.js";
-import { t as h } from "./folder.js";
-import { t as g } from "./use-connected-remote-connections.js";
-var _ = a(),
-  v = t();
-function y(t) {
-  let a = (0, _.c)(40),
+import { t as l } from "./chats-DoviPPWc.js";
+import { t as u } from "./info-B8GAwpK6.js";
+import { t as ee } from "./folder.js";
+import { t as d } from "./check-md.js";
+import { r as f, t as p } from "./dropdown-DtQxMoJw.js";
+import { t as m } from "./chevron-NmAOI_v1.js";
+import { t as te } from "./worktree-D_6WAQVb.js";
+import { t as h } from "./use-connected-remote-connections.js";
+var ne = a(),
+  g = t();
+function _(t) {
+  let a = (0, ne.c)(40),
     {
-      selectedRoots: y,
-      options: S,
-      placeholder: te,
-      align: ne,
-      className: C,
-      showIcon: re,
-      includeChats: ie,
-      selectionMode: ae,
+      selectedRoots: _,
+      options: b,
+      placeholder: re,
+      align: ie,
+      className: x,
+      showIcon: ae,
+      includeChats: S,
+      selectionMode: C,
       localOnlyTooltip: w,
       onChange: T,
     } = t,
-    E = ne === void 0 ? `start` : ne,
-    D = re === void 0 ? !0 : re,
-    O = ie === void 0 ? !0 : ie,
-    k = ae === void 0 ? `multiple` : ae,
-    A = i(),
+    E = ie === void 0 ? `start` : ie,
+    D = ae === void 0 ? !0 : ae,
+    O = S === void 0 ? !0 : S,
+    k = C === void 0 ? `multiple` : C,
+    A = r(),
     j = e(`~`),
     { remoteConnections: oe } = o(),
-    M = g(oe).length > 0,
+    M = h(oe).length > 0,
     N = A.formatMessage({
       id: `components.projectDropdown.projectless`,
       defaultMessage: `Chats`,
       description: `Label for selecting the chats target in the project dropdown`,
     }),
-    se = O ? [{ value: j, label: N }, ...S] : S,
-    P = new Map(se.map(b)),
-    F = y.filter((e) => P.has(e)),
+    se = O ? [{ value: j, label: N }, ...b] : b,
+    P = new Map(se.map(v)),
+    F = _.filter((e) => P.has(e)),
     I = new Set(F),
     ce = F[0] == null ? void 0 : P.get(F[0]),
     L =
@@ -57,9 +57,9 @@ function y(t) {
             },
             { count: F.length },
           )
-        : (ce?.label ?? y[0] ?? te),
+        : (ce?.label ?? _[0] ?? re),
     R = O && I.has(j),
-    z = R ? l : ce?.isCodexWorktree === !0 ? m : h,
+    z = R ? l : ce?.isCodexWorktree === !0 ? te : ee,
     B;
   a[0] === A
     ? (B = a[1])
@@ -71,10 +71,10 @@ function y(t) {
       (a[0] = A),
       (a[1] = B));
   let V;
-  a[2] === C ? (V = a[3]) : ((V = n(`min-w-0`, C)), (a[2] = C), (a[3] = V));
+  a[2] === x ? (V = a[3]) : ((V = n(`min-w-0`, x)), (a[2] = x), (a[3] = V));
   let H;
   a[4] !== z || a[5] !== D
-    ? ((H = D ? (0, v.jsx)(z, { className: `icon-xs shrink-0` }) : null),
+    ? ((H = D ? (0, g.jsx)(z, { className: `icon-xs shrink-0` }) : null),
       (a[4] = z),
       (a[5] = D),
       (a[6] = H))
@@ -82,7 +82,7 @@ function y(t) {
   let U;
   a[7] === L
     ? (U = a[8])
-    : ((U = (0, v.jsx)(`span`, {
+    : ((U = (0, g.jsx)(`span`, {
         className: `truncate text-left text-token-foreground`,
         children: L,
       })),
@@ -90,14 +90,14 @@ function y(t) {
       (a[8] = U));
   let W;
   a[9] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((W = (0, v.jsx)(p, {
+    ? ((W = (0, g.jsx)(m, {
         className: `icon-2xs shrink-0 text-token-input-placeholder-foreground`,
       })),
       (a[9] = W))
     : (W = a[9]);
   let G;
   a[10] !== B || a[11] !== V || a[12] !== H || a[13] !== U
-    ? ((G = (0, v.jsxs)(c, {
+    ? ((G = (0, g.jsxs)(c, {
         "aria-label": B,
         size: `composerSm`,
         color: `ghost`,
@@ -112,7 +112,7 @@ function y(t) {
     : (G = a[14]);
   let K;
   a[15] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((K = (0, v.jsx)(r, {
+    ? ((K = (0, g.jsx)(i, {
         id: `components.projectDropdown.title`,
         defaultMessage: `Project`,
         description: `Header label above project options`,
@@ -122,11 +122,11 @@ function y(t) {
   let q;
   a[16] !== M || a[17] !== A || a[18] !== w
     ? ((q = M
-        ? (0, v.jsx)(s, {
+        ? (0, g.jsx)(s, {
             tooltipContent: w,
             side: `top`,
             align: `center`,
-            children: (0, v.jsx)(`button`, {
+            children: (0, g.jsx)(`button`, {
               type: `button`,
               className: `inline-flex shrink-0 items-center justify-center text-token-description-foreground hover:text-token-foreground`,
               "aria-label": A.formatMessage({
@@ -134,7 +134,7 @@ function y(t) {
                 defaultMessage: `Project availability details`,
                 description: `Aria label for the project local-only info tooltip trigger`,
               }),
-              children: (0, v.jsx)(u, { className: `icon-2xs` }),
+              children: (0, g.jsx)(u, { className: `icon-2xs` }),
             }),
           })
         : null),
@@ -146,17 +146,17 @@ function y(t) {
   let J;
   a[20] === q
     ? (J = a[21])
-    : ((J = (0, v.jsx)(d.Title, {
-        children: (0, v.jsxs)(`div`, {
+    : ((J = (0, g.jsx)(f.Title, {
+        children: (0, g.jsxs)(`div`, {
           className: `flex min-w-0 items-center gap-1`,
           children: [K, q],
         }),
       })),
       (a[20] = q),
       (a[21] = J));
-  let Y = S.map((e) =>
-      (0, v.jsx)(
-        x,
+  let Y = b.map((e) =>
+      (0, g.jsx)(
+        y,
         {
           option: e,
           selectedRoots: F,
@@ -168,24 +168,24 @@ function y(t) {
       ),
     ),
     X;
-  a[22] === S.length
+  a[22] === b.length
     ? (X = a[23])
     : ((X =
-        S.length === 0
-          ? (0, v.jsx)(`div`, {
+        b.length === 0
+          ? (0, g.jsx)(`div`, {
               className: `text-token-muted-foreground px-3 py-2 text-sm`,
-              children: (0, v.jsx)(r, {
+              children: (0, g.jsx)(i, {
                 id: `components.projectDropdown.empty`,
                 defaultMessage: `No project folders available`,
                 description: `Fallback label when no project options are available`,
               }),
             })
           : null),
-      (a[22] = S.length),
+      (a[22] = b.length),
       (a[23] = X));
   let Z;
   a[24] !== Y || a[25] !== X
-    ? ((Z = (0, v.jsxs)(d.Section, {
+    ? ((Z = (0, g.jsxs)(f.Section, {
         className: `flex flex-col [--edge-fade-distance:1.5rem]`,
         children: [Y, X],
       })),
@@ -201,14 +201,14 @@ function y(t) {
   a[31] !== T ||
   a[32] !== k
     ? ((Q = O
-        ? (0, v.jsxs)(v.Fragment, {
+        ? (0, g.jsxs)(g.Fragment, {
             children: [
-              (0, v.jsx)(d.Separator, {}),
-              (0, v.jsx)(d.Section, {
+              (0, g.jsx)(f.Separator, {}),
+              (0, g.jsx)(f.Section, {
                 className: `flex flex-col`,
-                children: (0, v.jsx)(d.Item, {
+                children: (0, g.jsx)(f.Item, {
                   LeftIcon: l,
-                  RightIcon: R ? ee : void 0,
+                  RightIcon: R ? d : void 0,
                   onSelect: () => {
                     T(k === `single` || !R ? [j] : []);
                   },
@@ -229,7 +229,7 @@ function y(t) {
   let $;
   return (
     a[34] !== E || a[35] !== G || a[36] !== J || a[37] !== Z || a[38] !== Q
-      ? (($ = (0, v.jsxs)(f, {
+      ? (($ = (0, g.jsxs)(p, {
           align: E,
           contentWidth: `workspace`,
           contentMaxHeight: `tall`,
@@ -247,11 +247,11 @@ function y(t) {
     $
   );
 }
-function b(e) {
+function v(e) {
   return [e.value, e];
 }
-function x(t) {
-  let n = (0, _.c)(22),
+function y(t) {
+  let n = (0, ne.c)(22),
     {
       option: r,
       selectedRoots: i,
@@ -259,7 +259,7 @@ function x(t) {
       selectionMode: o,
       onChange: s,
     } = t,
-    c = r.isCodexWorktree === !0 ? m : h,
+    c = r.isCodexWorktree === !0 ? te : ee,
     l,
     u;
   n[0] !== r.value || n[1] !== a
@@ -270,73 +270,73 @@ function x(t) {
       (n[2] = l),
       (n[3] = u))
     : ((l = n[2]), (u = n[3]));
-  let f = u,
-    p = f ? ee : void 0,
-    g;
-  n[4] !== f || n[5] !== l || n[6] !== s || n[7] !== i || n[8] !== o
-    ? ((g = () => {
+  let p = u,
+    m = p ? d : void 0,
+    h;
+  n[4] !== p || n[5] !== l || n[6] !== s || n[7] !== i || n[8] !== o
+    ? ((h = () => {
         if (o === `single`) {
           s([l]);
           return;
         }
-        s(f ? i.filter((e) => e !== l) : [...i, l]);
+        s(p ? i.filter((e) => e !== l) : [...i, l]);
       }),
-      (n[4] = f),
+      (n[4] = p),
       (n[5] = l),
       (n[6] = s),
       (n[7] = i),
       (n[8] = o),
-      (n[9] = g))
-    : (g = n[9]);
-  let y;
+      (n[9] = h))
+    : (h = n[9]);
+  let _;
   n[10] === r.label
-    ? (y = n[11])
-    : ((y = (0, v.jsx)(`span`, { children: r.label })),
+    ? (_ = n[11])
+    : ((_ = (0, g.jsx)(`span`, { children: r.label })),
       (n[10] = r.label),
-      (n[11] = y));
-  let b;
+      (n[11] = _));
+  let v;
   n[12] === r.description
-    ? (b = n[13])
-    : ((b = r.description
-        ? (0, v.jsx)(`span`, {
+    ? (v = n[13])
+    : ((v = r.description
+        ? (0, g.jsx)(`span`, {
             className: `truncate text-sm text-token-description-foreground`,
             children: r.description,
           })
         : null),
       (n[12] = r.description),
-      (n[13] = b));
-  let x;
-  n[14] !== y || n[15] !== b
-    ? ((x = (0, v.jsxs)(`div`, {
+      (n[13] = v));
+  let y;
+  n[14] !== _ || n[15] !== v
+    ? ((y = (0, g.jsxs)(`div`, {
         className: `flex items-center gap-1`,
-        children: [y, b],
+        children: [_, v],
       })),
-      (n[14] = y),
-      (n[15] = b),
-      (n[16] = x))
-    : (x = n[16]);
-  let S;
+      (n[14] = _),
+      (n[15] = v),
+      (n[16] = y))
+    : (y = n[16]);
+  let b;
   return (
-    n[17] !== c || n[18] !== p || n[19] !== g || n[20] !== x
-      ? ((S = (0, v.jsx)(d.Item, {
+    n[17] !== c || n[18] !== m || n[19] !== h || n[20] !== y
+      ? ((b = (0, g.jsx)(f.Item, {
           LeftIcon: c,
-          RightIcon: p,
-          onSelect: g,
-          children: x,
+          RightIcon: m,
+          onSelect: h,
+          children: y,
         })),
         (n[17] = c),
-        (n[18] = p),
-        (n[19] = g),
-        (n[20] = x),
-        (n[21] = S))
-      : (S = n[21]),
-    S
+        (n[18] = m),
+        (n[19] = h),
+        (n[20] = y),
+        (n[21] = b))
+      : (b = n[21]),
+    b
   );
 }
-function S({ workspaceGroups: e, roots: t, formatRootLabel: n }) {
+function b({ workspaceGroups: e, roots: t, formatRootLabel: n }) {
   return e
     ? e
-        .filter((e) => e.projectKind === `local`)
+        .filter((e) => e.projectKind === `local` && e.path != null)
         .map((e) => {
           let t = e.repositoryData?.rootFolder ?? void 0,
             n = t != null && t !== e.label;
@@ -349,5 +349,5 @@ function S({ workspaceGroups: e, roots: t, formatRootLabel: n }) {
         })
     : t.map((e) => ({ value: e, label: n(e) }));
 }
-export { y as n, S as t };
+export { _ as n, b as t };
 //# sourceMappingURL=project-dropdown-options.js.map

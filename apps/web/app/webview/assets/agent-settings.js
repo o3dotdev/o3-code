@@ -1,178 +1,185 @@
-import { s as e } from "./chunk.js";
-import { Cn as t, Tn as n, di as r, gi as i } from "./src-BLHmAhbF.js";
-import { Ca as a, ts as o } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Hi as t, Un as n, qi as r, zn as i } from "./src-C.js";
+import { Xs as a, do as o } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as s, t as c } from "./jsx-runtime.js";
-import "./react-dom.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import "./katex-BzX-JuVf.js";
-import "./marked.esm.js";
+import "./katex-C2KDRoso.js";
+import "./marked.esm-BR-H6018.js";
 import {
-  H as l,
-  J as ee,
-  L as u,
-  S as d,
-  W as te,
-  X as ne,
-  Y as f,
-  _ as p,
-  l as m,
-  m as h,
-  p as g,
-  u as _,
-  w as v,
-  xt as y,
+  G as ee,
+  L as l,
+  S as u,
+  T as d,
+  U as f,
+  X as p,
+  Y as m,
+  Z as h,
+  _ as g,
+  l as _,
+  m as v,
+  w as y,
+  wt as b,
 } from "./setting-storage.js";
-import { f as b, u as x } from "./chunk-LFPYN7LY.js";
+import { f as x } from "./chunk-LFPYN7LY.js";
 import "./known-app-icon.js";
 import "./branch.js";
-import "./github-mark.js";
+import "./github-mark-BbpRNXQM.js";
 import "./google-drive.js";
-import "./notion.js";
-import "./product-logger.js";
-import { l as S, o as C } from "./statsig.js";
-import { t as w } from "./app-server-manager-hooks.js";
+import "./notion-hFEWPyiF.js";
+import "./product-logger-DusapRyT.js";
+import { n as S } from "./rpc-DqwD0euc.js";
+import { c as C, l as te, o as w } from "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
+import { t as T } from "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import { t as T } from "./thread-context-inputs.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import { t as E } from "./thread-context-inputs-DBrOekVr.js";
 import {
-  c as E,
-  d as D,
-  f as O,
-  m as k,
-  n as re,
-  r as A,
+  c as D,
+  d as O,
+  f as k,
+  h as A,
+  n as ne,
+  r as re,
   s as ie,
-  v as ae,
-} from "./config-queries.js";
+  v as j,
+} from "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./_baseOrderBy.js";
-import "./use-is-dark.js";
-import { r as oe } from "./toast-signal.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./apps-queries-CmwRqoKz.js";
+import "./startCase.js";
+import { n as ae, r as oe } from "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
+import { r as se } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import "./tooltip.js";
+import "./tooltip-CDzchJxN.js";
 import "./route-scope.js";
 import "./mention-item.js";
-import { t as se } from "./button.js";
-import "./reduced-motion-preference.js";
+import { t as ce } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
-import { t as ce } from "./use-codex-home.js";
-import "./use-os-info.js";
-import { t as le } from "./link-external.js";
-import { r as j, t as M } from "./open-config-toml-button.js";
-import { t as N } from "./open-workspace-file.js";
+import { t as le } from "./use-codex-home.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import { t as M } from "./link-external-BPZREBQk.js";
+import { r as ue, t as N } from "./open-config-toml-button.js";
+import { t as P } from "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
+import "./remote-projects.js";
 import "./proxy.js";
-import "./apps.js";
-import { t as ue } from "./x.js";
+import "./apps-DwfMzB5Q.js";
+import { t as de } from "./x-C_RDKBp5.js";
+import "./projectless-thread.js";
 import "./use-platform.js";
-import { n as P, r as de } from "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
-import "./apps-queries.js";
-import "./startCase.js";
-import "./uniq.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
 import "./terminal.js";
-import "./info.js";
+import "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import { t as fe } from "./download.js";
 import { t as F } from "./with-window.js";
 import "./window-app-action-helpers.js";
 import "./dialog-layout.js";
+import "./local-projects.js";
 import "./run-command.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
 import "./use-stable-callback.js";
-import "./use-skills.js";
-import "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
-import { t as pe } from "./check-md.js";
+import "./_defineProperty.js";
+import "./use-register-command.js";
+import { t as I } from "./check-md.js";
 import "./chevron-right.js";
 import "./context-menu.js";
 import "./arrow-left.js";
-import { s as I } from "./links.js";
-import "./_defineProperty.js";
+import "./minus.js";
+import { l as pe } from "./links.js";
 import "./badge.js";
-import "./bug.js";
+import "./bug-B5-GWt65.js";
 import "./chat.js";
 import { t as me } from "./search.js";
-import "./skills.js";
-import { r as L, t as he } from "./dropdown.js";
-import "./globe.js";
-import "./chevron.js";
-import "./folder.js";
-import { t as ge } from "./warning.js";
-import { n as R } from "./markdown-75WV5XlN.js";
-import "./external-markdown-link.js";
+import "./skills-BUMAZe_D.js";
+import { r as L, t as R } from "./dropdown-DtQxMoJw.js";
+import "./globe-CnvlclXd.js";
+import "./chevron-NmAOI_v1.js";
+import { t as he } from "./warning.js";
+import { n as z } from "./markdown-46SswYUq.js";
+import "./external-markdown-link-DVRKkYqo.js";
 import "./use-native-apps.electron.js";
 import "./get-file-icon.js";
-import "./code.js";
-import "./json-DAjHKBV7.js";
-import "./image-square.js";
-import "./notebook.js";
+import "./code-s3Scfd05.js";
+import "./json-CRHyc9De.js";
+import "./image-square-CGEtcnWp.js";
+import "./notebook-MImpo36y.js";
 import "./settings.cog.js";
-import "./mcp.js";
-import "./chrome.js";
-import "./codex.js";
-import "./openai-blossom.js";
+import "./mcp-D_m7bYb5.js";
+import "./chrome-ZI-wJE1V.js";
+import "./codex-BjFeJtxQ.js";
+import "./openai-blossom-CXnPbecc.js";
 import "./pencil.js";
 import "./filesystem-media-src.js";
 import "./inline-mentions.js";
-import "./code-snippet.js";
-import "./tailwind-styled-components.esm.js";
-import "./copy.js";
+import "./workspace-file-context-menu.js";
+import "./use-skills.js";
+import "./code-snippet-hioibDaj.js";
+import "./copy-Cen6nDnP.js";
 import "./copy-button.js";
-import "./minus-D.js";
 import "./plus.js";
 import "./image-preview-dialog.js";
-import { t as _e } from "./alert-CbWF3t74.js";
+import { t as ge } from "./alert-m4o6hR60.js";
 import "./sortBy.js";
 import "./use-connected-remote-connections.js";
-import { t as ve } from "./toggle.js";
-import { i as z, t as ye } from "./settings-shared.js";
-import "./settings-host-selection.js";
-import { t as be } from "./settings-host-context.js";
-import { t as xe } from "./settings-content-layout.js";
-import { i as B, t as Se } from "./primary-runtime-install-action.js";
+import { t as _e } from "./toggle.js";
+import { i as ve, t as ye } from "./settings-shared-BTHmEeQY.js";
+import { t as B } from "./settings-host-context-ILiCQlCE.js";
+import { t as be } from "./arrow-top-right.js";
+import { t as xe } from "./alert-CoBPbdcu.js";
+import { t as V } from "./settings-content-layout.js";
+import { i as H, t as Se } from "./primary-runtime-install-action.js";
+import { a as Ce, n as we } from "./primary-runtime-query-keys.js";
 import {
-  a as Ce,
-  i as we,
-  n as Te,
-  r as Ee,
+  a as Te,
+  i as Ee,
+  n as De,
+  r as Oe,
 } from "./primary-runtime-install-state.js";
-import { t as V } from "./alert-C_qI2eAS.js";
-import { n as H } from "./settings-row-D.js";
-import { t as De } from "./settings-surface.js";
-import { t as Oe } from "./arrow-top-right.js";
-import { t as U } from "./settings-group.js";
-import { n as ke, t as Ae } from "./primary-runtime-install-status-message.js";
-import { t as W } from "./lock.js";
-var je = y(),
-  G = e(s(), 1);
-async function Me({ filePath: e, keyPath: t, value: n }) {
-  let r = K(t, n);
+import { n as U } from "./settings-row.js";
+import { n as ke, t as W } from "./settings-group.js";
+import { t as G } from "./lock.js";
+import { n as Ae, t as je } from "./primary-runtime-install-status-message.js";
+import { t as Me } from "./open-in-targets-query.js";
+var K = b(),
+  q = e(s(), 1);
+async function Ne({ filePath: e, keyPath: t, value: n }) {
+  let r = Fe(t, n);
   if (r == null)
     throw Error(`Unsupported config key for project config write.`);
-  await Ne({ filePath: e, field: r });
+  await Pe({ filePath: e, field: r });
 }
-async function Ne({ filePath: e, field: t }) {
+async function Pe({ filePath: e, field: t }) {
   let n = ``;
   try {
-    n = (await m(`read-file`, { params: { path: e } })).contents;
+    n = (await _(`read-file`, { params: { path: e } })).contents;
   } catch (e) {
-    if (!Fe(e)) throw Error(`Failed to read project config.`);
+    if (!Q(e)) throw Error(`Failed to read project config.`);
   }
-  let r = q(n, t.name, t.value);
+  let r = J(n, t.name, t.value);
   if (r !== n)
     try {
-      await m(`local-environment-config-save`, {
+      await _(`local-environment-config-save`, {
         params: { configPath: e, raw: r },
       });
     } catch {
       throw Error(`Failed to save project config.`);
     }
 }
-function K(e, t) {
+function Fe(e, t) {
   return e === `approval_policy` && typeof t == `string`
     ? { name: `approval_policy`, value: t }
     : e === `sandbox_mode` && typeof t == `string`
@@ -181,10 +188,10 @@ function K(e, t) {
         ? { name: `network_access`, value: t }
         : null;
 }
-function q(e, t, n) {
-  return t === `network_access` ? Pe(e, n === !0) : J(e, t, String(n));
-}
 function J(e, t, n) {
+  return t === `network_access` ? Y(e, n === !0) : Ie(e, t, String(n));
+}
+function Ie(e, t, n) {
   let r =
       e.length > 0
         ? e.split(`
@@ -192,9 +199,8 @@ function J(e, t, n) {
         : [],
     i = null,
     a = !1;
-  for (let e = 0; e < r.length; e += 1) {
-    let o = r[e],
-      s = X(o);
+  for (let [e, o] of r.entries()) {
+    let s = Z(o);
     if (s != null) {
       i = s;
       continue;
@@ -205,16 +211,16 @@ function J(e, t, n) {
     }
   }
   if (!a) {
-    let e = r.findIndex((e) => X(e) != null),
+    let e = r.findIndex((e) => Z(e) != null),
       i = e === -1 ? r.length : e;
     r.splice(i, 0, `${t} = "${n}"`);
   }
-  return Y(
+  return X(
     r.join(`
 `),
   );
 }
-function Pe(e, t) {
+function Y(e, t) {
   let n =
       e.length > 0
         ? e.split(`
@@ -223,9 +229,8 @@ function Pe(e, t) {
     r = !1,
     i = n.length,
     a = !1;
-  for (let e = 0; e < n.length; e += 1) {
-    let o = n[e],
-      s = X(o);
+  for (let [e, o] of n.entries()) {
+    let s = Z(o);
     if (s != null) {
       if (r) {
         i = e;
@@ -242,13 +247,13 @@ function Pe(e, t) {
   if (r && !a)
     return (
       n.splice(i, 0, `network_access = ${t ? `true` : `false`}`),
-      Y(
+      X(
         n.join(`
 `),
       )
     );
   if (a)
-    return Y(
+    return X(
       n.join(`
 `),
     );
@@ -265,24 +270,24 @@ function Pe(e, t) {
 `
   }[sandbox_workspace_write]\nnetwork_access = ${t ? `true` : `false`}\n`;
 }
-function Y(e) {
+function X(e) {
   return e.endsWith(`
 `)
     ? e
     : `${e}\n`;
 }
-function X(e) {
+function Z(e) {
   let t = e.match(/^\s*\[([^\]]+)\]\s*(?:#.*)?$/);
   return t?.[1] == null ? null : t[1].trim();
 }
-function Fe(e) {
+function Q(e) {
   if (!(e instanceof Error)) return !1;
   let t = e.message.trim().toLowerCase();
   return (
     t === `enoent` || t.includes(`no such file`) || t.includes(`not found`)
   );
 }
-function Z(e) {
+function Le(e) {
   return e.stage === `beta`
     ? e.name !== `memories` &&
         e.name !== `multi_agent` &&
@@ -294,30 +299,30 @@ function Z(e) {
         e.name !== `workspace_dependencies`
     : !1;
 }
-var Q = c();
-function Ie(e) {
-  let t = (0, je.c)(26),
+var $ = c();
+function Re(e) {
+  let t = (0, K.c)(26),
     { hostId: n } = e,
-    r = te(),
-    [i, a] = (0, G.useState)(!1),
-    { data: o, isLoading: s } = ee(P, n),
+    r = ee(),
+    [i, a] = (0, q.useState)(!1),
+    { data: o, isLoading: s } = m(ae, n),
     c = o === void 0 ? [] : o,
-    u;
-  t[0] === n ? (u = t[1]) : ((u = { hostId: n }), (t[0] = n), (t[1] = u));
-  let d = de(u),
-    ne = c.filter(Re),
-    f = c.some($),
-    p = c.find(Le),
-    m;
-  t[2] === d
-    ? (m = t[3])
-    : ((m = (e) => ({
+    l;
+  t[0] === n ? (l = t[1]) : ((l = { hostId: n }), (t[0] = n), (t[1] = l));
+  let u = oe(l),
+    d = c.filter(Ve),
+    p = c.some(Be),
+    h = c.find(ze),
+    g;
+  t[2] === u
+    ? (g = t[3])
+    : ((g = (e) => ({
         key: e.name,
         label: e.displayName ?? e.name,
         description: e.description ?? void 0,
         enabled: e.enabled,
         onChange: (t) => {
-          d.mutate(
+          u.mutate(
             { featureName: e.name, enabled: t },
             {
               onSuccess: () => {
@@ -327,10 +332,10 @@ function Ie(e) {
           );
         },
       })),
-      (t[2] = d),
-      (t[3] = m));
-  let h = [
-      ...(f
+      (t[2] = u),
+      (t[3] = g));
+  let _ = [
+      ...(p
         ? [
             {
               key: `plugins`,
@@ -340,15 +345,15 @@ function Ie(e) {
                 description: `Label for the plugins experimental feature toggle`,
               }),
               description:
-                p?.description ??
+                h?.description ??
                 r.formatMessage({
                   id: `settings.general.experimentalFeatures.plugins.description`,
                   defaultMessage: `Enable the plugins experience in Codex`,
                   description: `Description for the plugins experimental feature toggle`,
                 }),
-              enabled: p?.enabled ?? !0,
+              enabled: h?.enabled ?? !0,
               onChange: (e) => {
-                d.mutate(
+                u.mutate(
                   { featureName: `plugins`, enabled: e },
                   {
                     onSuccess: () => {
@@ -360,26 +365,26 @@ function Ie(e) {
             },
           ]
         : []),
-      ...ne.map(m),
+      ...d.map(g),
     ],
-    g = h.length > 0,
-    _ = U,
-    v;
+    v = _.length > 0,
+    y = W,
+    b;
   t[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, Q.jsx)(l, {
+    ? ((b = (0, $.jsx)(f, {
         id: `settings.general.experimentalFeatures`,
         defaultMessage: `Experimental features (Beta)`,
         description: `Heading for beta experimental features settings group`,
       })),
-      (t[4] = v))
-    : (v = t[4]);
-  let y;
+      (t[4] = b))
+    : (b = t[4]);
+  let x;
   t[5] === i
-    ? (y = t[6])
-    : ((y = i
-        ? (0, Q.jsx)(`div`, {
+    ? (x = t[6])
+    : ((x = i
+        ? (0, $.jsx)(`div`, {
             className: `mb-2 block font-medium text-token-error-foreground`,
-            children: (0, Q.jsx)(l, {
+            children: (0, $.jsx)(f, {
               id: `settings.general.experimentalFeatures.restartNote`,
               defaultMessage: `Restart Codex to apply experimental feature changes`,
               description: `Notice shown after changing an experimental feature to indicate restart is required`,
@@ -387,56 +392,56 @@ function Ie(e) {
           })
         : void 0),
       (t[5] = i),
-      (t[6] = y));
-  let b;
-  t[7] === y
-    ? (b = t[8])
-    : ((b = (0, Q.jsx)(U.Header, { title: v, subtitle: y })),
-      (t[7] = y),
-      (t[8] = b));
-  let x = U,
-    S = De,
-    C;
+      (t[6] = x));
+  let S;
+  t[7] === x
+    ? (S = t[8])
+    : ((S = (0, $.jsx)(W.Header, { title: b, subtitle: x })),
+      (t[7] = x),
+      (t[8] = S));
+  let C = W,
+    te = ke,
+    w;
   t[9] === s
-    ? (C = t[10])
-    : ((C = s
-        ? (0, Q.jsx)(H, {
-            label: (0, Q.jsx)(l, {
+    ? (w = t[10])
+    : ((w = s
+        ? (0, $.jsx)(U, {
+            label: (0, $.jsx)(f, {
               id: `settings.general.experimentalFeatures.loading`,
               defaultMessage: `Loading experimental features…`,
               description: `Loading label for beta experimental features settings group`,
             }),
-            control: (0, Q.jsx)(`span`, { className: `h-5 w-8` }),
+            control: (0, $.jsx)(`span`, { className: `h-5 w-8` }),
           })
         : null),
       (t[9] = s),
-      (t[10] = C));
-  let w;
-  t[11] !== g || t[12] !== s
-    ? ((w =
-        !s && !g
-          ? (0, Q.jsx)(H, {
-              label: (0, Q.jsx)(l, {
+      (t[10] = w));
+  let T;
+  t[11] !== v || t[12] !== s
+    ? ((T =
+        !s && !v
+          ? (0, $.jsx)(U, {
+              label: (0, $.jsx)(f, {
                 id: `settings.general.experimentalFeatures.empty`,
                 defaultMessage: `No beta experimental features available`,
                 description: `Empty label for beta experimental features settings group`,
               }),
-              control: (0, Q.jsx)(`span`, { className: `h-5 w-8` }),
+              control: (0, $.jsx)(`span`, { className: `h-5 w-8` }),
             })
           : null),
-      (t[11] = g),
+      (t[11] = v),
       (t[12] = s),
-      (t[13] = w))
-    : (w = t[13]);
-  let T = h.map((e) =>
-      (0, Q.jsx)(
-        H,
+      (t[13] = T))
+    : (T = t[13]);
+  let E = _.map((e) =>
+      (0, $.jsx)(
+        U,
         {
           label: e.label,
           description: e.description,
-          control: (0, Q.jsx)(ve, {
+          control: (0, $.jsx)(_e, {
             checked: e.enabled,
-            disabled: d.isPending,
+            disabled: u.isPending,
             onChange: e.onChange,
             ariaLabel: r.formatMessage(
               {
@@ -451,51 +456,51 @@ function Ie(e) {
         e.key,
       ),
     ),
-    E;
-  t[14] !== S || t[15] !== T || t[16] !== C || t[17] !== w
-    ? ((E = (0, Q.jsxs)(S, { children: [C, w, T] })),
-      (t[14] = S),
-      (t[15] = T),
-      (t[16] = C),
-      (t[17] = w),
-      (t[18] = E))
-    : (E = t[18]);
-  let D;
-  t[19] !== E || t[20] !== x.Content
-    ? ((D = (0, Q.jsx)(x.Content, { children: E })),
-      (t[19] = E),
-      (t[20] = x.Content),
-      (t[21] = D))
-    : (D = t[21]);
+    D;
+  t[14] !== te || t[15] !== E || t[16] !== w || t[17] !== T
+    ? ((D = (0, $.jsxs)(te, { children: [w, T, E] })),
+      (t[14] = te),
+      (t[15] = E),
+      (t[16] = w),
+      (t[17] = T),
+      (t[18] = D))
+    : (D = t[18]);
   let O;
+  t[19] !== D || t[20] !== C.Content
+    ? ((O = (0, $.jsx)(C.Content, { children: D })),
+      (t[19] = D),
+      (t[20] = C.Content),
+      (t[21] = O))
+    : (O = t[21]);
+  let k;
   return (
-    t[22] !== _ || t[23] !== D || t[24] !== b
-      ? ((O = (0, Q.jsxs)(_, { children: [b, D] })),
-        (t[22] = _),
-        (t[23] = D),
-        (t[24] = b),
-        (t[25] = O))
-      : (O = t[25]),
-    O
+    t[22] !== y || t[23] !== O || t[24] !== S
+      ? ((k = (0, $.jsxs)(y, { children: [S, O] })),
+        (t[22] = y),
+        (t[23] = O),
+        (t[24] = S),
+        (t[25] = k))
+      : (k = t[25]),
+    k
   );
 }
-function Le(e) {
+function ze(e) {
   return e.name === `plugins`;
 }
-function $(e) {
+function Be(e) {
   return e.name === `apps` && e.enabled;
 }
-function Re(e) {
-  return Z(e);
+function Ve(e) {
+  return Le(e);
 }
-var ze = r({ workspaceRoot: i().min(1).nullable().optional() }).passthrough();
-function Be(e) {
-  let t = ze.safeParse(e);
+var He = t({ workspaceRoot: r().min(1).nullable().optional() }).passthrough();
+function Ue(e) {
+  let t = He.safeParse(e);
   return !t.success || !Object.hasOwn(t.data, `workspaceRoot`)
     ? { hasValue: !1, workspaceRoot: null }
     : { hasValue: !0, workspaceRoot: t.data.workspaceRoot ?? null };
 }
-var Ve = [
+var We = [
     {
       value: `untrusted`,
       label: `Untrusted`,
@@ -517,7 +522,7 @@ var Ve = [
       description: `Run without asking for approval`,
     },
   ],
-  He = [
+  Ge = [
     {
       value: `read-only`,
       label: `Read only`,
@@ -534,31 +539,31 @@ var Ve = [
       description: `Can edit files outside this workspace`,
     },
   ];
-function Ue() {
-  let e = (0, je.c)(40),
-    { selectedHostId: t } = be(),
-    n = a(t),
-    r = w(t),
-    i = C(B),
-    o = C(`2106641128`),
+function Ke() {
+  let e = (0, K.c)(37),
+    { selectedHostId: t } = B(),
+    n = o(t),
+    r = T(t),
+    i = w(H),
+    a = w(`2106641128`),
     s;
   e[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((s = (0, Q.jsx)(z, { slug: `agent` })), (e[0] = s))
+    ? ((s = (0, $.jsx)(ve, { slug: `agent` })), (e[0] = s))
     : (s = e[0]);
   let c;
   e[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = (0, Q.jsx)(l, {
+    ? ((c = (0, $.jsx)(f, {
         id: `settings.agent.configuration.subtitle.summary`,
         defaultMessage: `Configure approval policy and sandbox settings <a>Learn more</a>`,
         description: `Summary text for the configuration settings subtitle`,
-        values: { a: We },
+        values: { a: qe },
       })),
       (e[1] = c))
     : (c = e[1]);
   let ee;
   e[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((ee = (0, Q.jsx)(U.Header, {
-        title: (0, Q.jsx)(l, {
+    ? ((ee = (0, $.jsx)(W.Header, {
+        title: (0, $.jsx)(f, {
           id: `settings.agent.customConfig.sectionTitle`,
           defaultMessage: `Custom config.toml settings`,
           description: `Heading for the custom config.toml settings section`,
@@ -566,29 +571,29 @@ function Ue() {
       })),
       (e[2] = ee))
     : (ee = e[2]);
-  let u;
+  let l;
   if (e[3] !== r || e[4] !== t) {
     let n;
     (e[6] !== r.length || e[7] !== t
       ? ((n = (e, n) =>
-          (0, Q.jsx)(
-            V,
+          (0, $.jsx)(
+            xe,
             {
               fullWidth: !0,
-              icon: _e,
+              icon: ge,
               level: e.level,
               className: n === r.length - 1 ? `mb-3` : `mb-2`,
-              children: (0, Q.jsx)(`div`, {
+              children: (0, $.jsx)(`div`, {
                 className: `flex min-w-0 flex-col gap-2`,
-                children: (0, Q.jsxs)(`div`, {
+                children: (0, $.jsxs)(`div`, {
                   className: `flex min-w-0 items-start justify-between gap-2`,
                   children: [
-                    (0, Q.jsxs)(`div`, {
+                    (0, $.jsxs)(`div`, {
                       className: `flex min-w-0 flex-col gap-1`,
                       children: [
-                        (0, Q.jsx)(`div`, {
+                        (0, $.jsx)(`div`, {
                           className: `min-w-0 text-sm text-token-text-primary`,
-                          children: (0, Q.jsx)(R, {
+                          children: (0, $.jsx)(z, {
                             cwd: null,
                             className: `[&>p]:my-0`,
                             textStyle: { kind: `small` },
@@ -596,9 +601,9 @@ function Ue() {
                           }),
                         }),
                         e.details != null && e.details.length > 0
-                          ? (0, Q.jsx)(`div`, {
+                          ? (0, $.jsx)(`div`, {
                               className: `min-w-0 text-sm text-token-text-secondary`,
-                              children: (0, Q.jsx)(R, {
+                              children: (0, $.jsx)(z, {
                                 cwd: null,
                                 className: `[&>p]:my-0`,
                                 textStyle: { kind: `small` },
@@ -608,20 +613,20 @@ function Ue() {
                           : null,
                         e.path == null
                           ? null
-                          : (0, Q.jsx)(`div`, {
+                          : (0, $.jsx)(`div`, {
                               className: `min-w-0 text-sm text-token-text-secondary`,
-                              children: (0, Q.jsx)(l, {
+                              children: (0, $.jsx)(f, {
                                 id: `settings.agent.configuration.notice.fileContext`,
                                 defaultMessage: `File: {path}{location}`,
                                 description: `File path and optional location for a config or rules warning shown in settings`,
                                 values: {
-                                  path: (0, Q.jsx)(`code`, {
+                                  path: (0, $.jsx)(`code`, {
                                     children: e.path,
                                   }),
                                   location:
                                     e.range == null
                                       ? ``
-                                      : (0, Q.jsx)(l, {
+                                      : (0, $.jsx)(f, {
                                           id: `settings.agent.configuration.notice.fileLocationSuffix`,
                                           defaultMessage: ` (line {line}, column {column})`,
                                           description: `Suffix showing the line and column for a config warning in settings`,
@@ -637,19 +642,19 @@ function Ue() {
                     }),
                     e.path == null
                       ? null
-                      : (0, Q.jsx)(se, {
+                      : (0, $.jsx)(ce, {
                           color: `secondary`,
                           size: `toolbar`,
                           className: `inline-flex w-fit shrink-0`,
                           onClick: () => {
                             e.path != null &&
-                              j({
+                              ue({
                                 hostId: t,
                                 path: e.path,
                                 ...(e.range == null ? {} : { range: e.range }),
                               });
                           },
-                          children: (0, Q.jsx)(l, {
+                          children: (0, $.jsx)(f, {
                             id: `settings.agent.configuration.notice.openFile`,
                             defaultMessage: `Open file`,
                             description: `Button label to open the file associated with a config or rules warning`,
@@ -665,230 +670,270 @@ function Ue() {
         (e[7] = t),
         (e[8] = n))
       : (n = e[8]),
-      (u = r.map(n)),
+      (l = r.map(n)),
       (e[3] = r),
       (e[4] = t),
-      (e[5] = u));
-  } else u = e[5];
-  let d;
+      (e[5] = l));
+  } else l = e[5];
+  let u;
   e[9] === t
-    ? (d = e[10])
-    : ((d = (0, Q.jsx)(F, {
+    ? (u = e[10])
+    : ((u = (0, $.jsx)(F, {
         electron: !0,
-        children: (0, Q.jsx)(qe, { hostId: t }),
+        children: (0, $.jsx)(Ze, { hostId: t }),
       })),
       (e[9] = t),
-      (e[10] = d));
-  let te, ne;
+      (e[10] = u));
+  let d, p;
   e[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((te = (0, Q.jsx)(l, {
+    ? ((d = (0, $.jsx)(f, {
         id: `settings.agent.configuration.configToml`,
         defaultMessage: `config.toml`,
         description: `Label for config.toml open button`,
       })),
-      (ne = (0, Q.jsx)(l, {
+      (p = (0, $.jsx)(f, {
         id: `settings.agent.configuration.configToml.description`,
         defaultMessage: `Edit your config to customize agent behavior`,
         description: `Description for config.toml open row`,
       })),
-      (e[11] = te),
-      (e[12] = ne))
-    : ((te = e[11]), (ne = e[12]));
-  let f, p;
+      (e[11] = d),
+      (e[12] = p))
+    : ((d = e[11]), (p = e[12]));
+  let m, h;
   e[13] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((f = (0, Q.jsx)(`span`, { className: `block` })),
-      (p = (0, Q.jsx)(l, {
+    ? ((m = (0, $.jsx)(`span`, { className: `block` })),
+      (h = (0, $.jsx)(f, {
         id: `settings.agent.configuration.configToml.restartNote`,
         defaultMessage: `Restart Codex after editing to apply changes`,
         description: `Note that config.toml changes require a restart`,
       })),
-      (e[13] = f),
-      (e[14] = p))
-    : ((f = e[13]), (p = e[14]));
-  let m;
+      (e[13] = m),
+      (e[14] = h))
+    : ((m = e[13]), (h = e[14]));
+  let g;
   e[15] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((m = (0, Q.jsxs)(Q.Fragment, {
+    ? ((g = (0, $.jsxs)($.Fragment, {
         children: [
-          ne,
-          ` `,
-          f,
           p,
           ` `,
-          (0, Q.jsxs)(`a`, {
+          m,
+          h,
+          ` `,
+          (0, $.jsxs)(`a`, {
             className: `inline-flex items-center gap-1 text-token-text-secondary hover:text-token-text-primary`,
-            href: I,
+            href: pe,
             target: `_blank`,
             rel: `noreferrer`,
             children: [
-              (0, Q.jsx)(l, {
+              (0, $.jsx)(f, {
                 id: `settings.agent.configuration.configToml.docs`,
                 defaultMessage: `Docs`,
                 description: `Link label for config documentation`,
               }),
-              (0, Q.jsx)(le, { className: `icon-xxs` }),
+              (0, $.jsx)(M, { className: `icon-xxs` }),
             ],
           }),
         ],
       })),
-      (e[15] = m))
-    : (m = e[15]);
-  let h;
+      (e[15] = g))
+    : (g = e[15]);
+  let _;
   e[16] === t
-    ? (h = e[17])
-    : ((h = (0, Q.jsx)(H, {
-        label: te,
-        description: m,
-        control: (0, Q.jsx)(M, { hostId: t }),
+    ? (_ = e[17])
+    : ((_ = (0, $.jsx)(F, {
+        extension: !0,
+        children: (0, $.jsx)(ke, {
+          children: (0, $.jsx)(U, {
+            label: d,
+            description: g,
+            control: (0, $.jsx)(N, { hostId: t }),
+          }),
+        }),
       })),
       (e[16] = t),
-      (e[17] = h));
-  let g;
-  e[18] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((g = (0, Q.jsx)(Xe, {})), (e[18] = g))
-    : (g = e[18]);
-  let _;
-  e[19] === h
-    ? (_ = e[20])
-    : ((_ = (0, Q.jsx)(F, {
-        extension: !0,
-        children: (0, Q.jsxs)(De, { children: [h, g] }),
-      })),
-      (e[19] = h),
-      (e[20] = _));
+      (e[17] = _));
   let v;
-  e[21] !== _ || e[22] !== u || e[23] !== d
-    ? ((v = (0, Q.jsxs)(U, {
+  e[18] !== _ || e[19] !== l || e[20] !== u
+    ? ((v = (0, $.jsxs)(W, {
         className: `gap-2`,
-        children: [ee, (0, Q.jsxs)(U.Content, { children: [u, d, _] })],
+        children: [ee, (0, $.jsxs)(W.Content, { children: [l, u, _] })],
       })),
-      (e[21] = _),
-      (e[22] = u),
-      (e[23] = d),
-      (e[24] = v))
-    : (v = e[24]);
+      (e[18] = _),
+      (e[19] = l),
+      (e[20] = u),
+      (e[21] = v))
+    : (v = e[21]);
   let y;
-  e[25] !== o || e[26] !== t
-    ? ((y = o ? (0, Q.jsx)(Ie, { hostId: t }) : null),
-      (e[25] = o),
-      (e[26] = t),
-      (e[27] = y))
-    : (y = e[27]);
+  e[22] !== a || e[23] !== t
+    ? ((y = a ? (0, $.jsx)(Re, { hostId: t }) : null),
+      (e[22] = a),
+      (e[23] = t),
+      (e[24] = y))
+    : (y = e[24]);
   let b;
-  e[28] === y
-    ? (b = e[29])
-    : ((b = (0, Q.jsx)(F, { electron: !0, children: y })),
-      (e[28] = y),
-      (e[29] = b));
+  e[25] === y
+    ? (b = e[26])
+    : ((b = (0, $.jsx)(F, { electron: !0, children: y })),
+      (e[25] = y),
+      (e[26] = b));
   let x;
-  e[30] !== i || e[31] !== n || e[32] !== t
-    ? ((x = i && n.kind === `local` ? (0, Q.jsx)(Ge, { hostId: t }) : null),
-      (e[30] = i),
-      (e[31] = n),
-      (e[32] = t),
-      (e[33] = x))
-    : (x = e[33]);
+  e[27] !== i || e[28] !== n || e[29] !== t
+    ? ((x = i && n.kind === `local` ? (0, $.jsx)(Je, { hostId: t }) : null),
+      (e[27] = i),
+      (e[28] = n),
+      (e[29] = t),
+      (e[30] = x))
+    : (x = e[30]);
   let S;
-  e[34] === x
-    ? (S = e[35])
-    : ((S = (0, Q.jsx)(F, { electron: !0, children: x })),
-      (e[34] = x),
-      (e[35] = S));
-  let T;
+  e[31] === x
+    ? (S = e[32])
+    : ((S = (0, $.jsx)(F, { electron: !0, children: x })),
+      (e[31] = x),
+      (e[32] = S));
+  let C;
   return (
-    e[36] !== v || e[37] !== b || e[38] !== S
-      ? ((T = (0, Q.jsx)(Q.Fragment, {
-          children: (0, Q.jsxs)(xe, {
+    e[33] !== v || e[34] !== b || e[35] !== S
+      ? ((C = (0, $.jsx)($.Fragment, {
+          children: (0, $.jsxs)(V, {
             title: s,
             subtitle: c,
             children: [v, b, S],
           }),
         })),
-        (e[36] = v),
-        (e[37] = b),
-        (e[38] = S),
-        (e[39] = T))
-      : (T = e[39]),
-    T
+        (e[33] = v),
+        (e[34] = b),
+        (e[35] = S),
+        (e[36] = C))
+      : (C = e[36]),
+    C
   );
 }
-function We(e) {
-  return (0, Q.jsx)(`a`, {
+function qe(e) {
+  return (0, $.jsx)(`a`, {
     className: `inline-flex text-token-text-link-foreground`,
-    href: I,
+    href: pe,
     target: `_blank`,
     rel: `noreferrer`,
     children: e,
   });
 }
-function Ge(e) {
-  let t = (0, je.c)(87),
-    { hostId: r } = e,
-    i = f(d),
-    a = te(),
-    o = u(),
-    { logEventWithStatsig: s } = S(),
-    { data: c, isLoading: m } = ee(P, r),
-    y;
-  t[0] === r ? (y = t[1]) : ((y = { hostId: r }), (t[0] = r), (t[1] = y));
-  let b = de(y),
+function Je(e) {
+  let t = (0, K.c)(2),
+    { hostId: n } = e,
+    r = S.primaryRuntime;
+  if (r == null) return null;
+  let i;
+  return (
+    t[0] === n
+      ? (i = t[1])
+      : ((i = (0, $.jsx)(Ye, { hostId: n, primaryRuntime: r })),
+        (t[0] = n),
+        (t[1] = i)),
+    i
+  );
+}
+function Ye(e) {
+  let t = (0, K.c)(97),
+    { hostId: r, primaryRuntime: i } = e,
+    a = p(u),
+    o = ee(),
+    s = C(),
+    { logEventWithStatsig: c } = te(),
+    { data: l, isLoading: _ } = m(ae, r),
+    v;
+  t[0] === r ? (v = t[1]) : ((v = { hostId: r }), (t[0] = r), (t[1] = v));
+  let b = oe(v),
     x;
-  t[2] === c ? (x = t[3]) : ((x = c?.find(Ke)), (t[2] = c), (t[3] = x));
-  let C = x,
-    w = C?.enabled === !0,
+  t[2] === l ? (x = t[3]) : ((x = l?.find(Xe)), (t[2] = l), (t[3] = x));
+  let S = x,
+    w = S?.enabled === !0,
     T;
-  t[4] === r ? (T = t[5]) : ((T = { hostId: r }), (t[4] = r), (t[5] = T));
+  t[4] !== r || t[5] !== i
+    ? ((T = () => i.diagnoseDependencies({ hostId: r })),
+      (t[4] = r),
+      (t[5] = i),
+      (t[6] = T))
+    : (T = t[6]);
   let E;
-  t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((E = { staleTime: p.FIVE_SECONDS }), (t[6] = E))
-    : (E = t[6]);
+  t[7] === r ? (E = t[8]) : ((E = we(r)), (t[7] = r), (t[8] = E));
   let D;
-  t[7] === T
-    ? (D = t[8])
-    : ((D = { params: T, queryConfig: E }), (t[7] = T), (t[8] = D));
-  let O = g(`diagnose-primary-runtime-dependencies`, D),
-    k = h(`diagnose-primary-runtime-dependencies`),
-    re = h(`primary-runtime-update-run-now`),
-    A = h(`reset-primary-runtime-dependencies`),
+  t[9] !== T || t[10] !== E
+    ? ((D = { queryFn: T, queryKey: E, staleTime: g.FIVE_SECONDS }),
+      (t[9] = T),
+      (t[10] = E),
+      (t[11] = D))
+    : (D = t[11]);
+  let O = d(D),
+    k;
+  t[12] !== r || t[13] !== i
+    ? ((k = { mutationFn: () => i.diagnoseDependencies({ hostId: r }) }),
+      (t[12] = r),
+      (t[13] = i),
+      (t[14] = k))
+    : (k = t[14]);
+  let A = y(k),
+    ne;
+  t[15] !== i || t[16] !== s
+    ? ((ne = {
+        mutationFn: async (e) => {
+          let { release: t } = e;
+          return (await Ce(s), i.runUpdateNow({ release: t }));
+        },
+      }),
+      (t[15] = i),
+      (t[16] = s),
+      (t[17] = ne))
+    : (ne = t[17]);
+  let re = y(ne),
     ie;
-  t[9] === r
-    ? (ie = t[10])
-    : ((ie = { mutationFn: () => Ce({ hostId: r }) }),
-      (t[9] = r),
-      (t[10] = ie));
-  let ae = v(ie),
-    ce = ne(we),
-    le = ne(Ee),
-    j = ce?.hostId === r ? ce : null,
-    M;
-  t[11] === i ? (M = t[12]) : ((M = i.get(oe)), (t[11] = i), (t[12] = M));
-  let N = M,
-    F =
-      m ||
+  t[18] !== r || t[19] !== i || t[20] !== s
+    ? ((ie = {
+        mutationFn: async (e) => {
+          let { release: t } = e;
+          return (await Ce(s), i.resetDependencies({ hostId: r, release: t }));
+        },
+      }),
+      (t[18] = r),
+      (t[19] = i),
+      (t[20] = s),
+      (t[21] = ie))
+    : (ie = t[21]);
+  let j = y(ie),
+    le;
+  t[22] === r
+    ? (le = t[23])
+    : ((le = { mutationFn: () => Te({ hostId: r }) }),
+      (t[22] = r),
+      (t[23] = le));
+  let M = y(le),
+    ue = h(Ee),
+    N = h(Oe),
+    P = ue?.hostId === r ? ue : null,
+    F;
+  t[24] === a ? (F = t[25]) : ((F = a.get(se)), (t[24] = a), (t[25] = F));
+  let I = F,
+    pe =
+      _ ||
       b.isPending ||
-      k.isPending ||
-      re.isPending ||
       A.isPending ||
-      ae.isPending,
-    pe;
-  t[13] === j ? (pe = t[14]) : ((pe = Te(j)), (t[13] = j), (t[14] = pe));
-  let I = pe,
-    L =
+      re.isPending ||
+      j.isPending ||
+      M.isPending,
+    L;
+  t[26] === P ? (L = t[27]) : ((L = De(P)), (t[26] = P), (t[27] = L));
+  let R = L,
+    he =
       O.data?.bundleVersion == null || O.data.bundleVersion.length === 0
         ? null
         : O.data.bundleVersion,
-    he;
-  t[15] !== k ||
-  t[16] !== O ||
-  t[17] !== r ||
-  t[18] !== a ||
-  t[19] !== s ||
-  t[20] !== N
-    ? ((he = () => {
+    z;
+  t[28] !== A || t[29] !== O || t[30] !== o || t[31] !== c || t[32] !== I
+    ? ((z = () => {
         let e = Date.now();
-        k.mutateAsync({ hostId: r })
+        A.mutateAsync()
           .then((t) => {
             if (
-              (s(`codex_primary_runtime_dependencies_diagnose`, {
+              (c(`codex_primary_runtime_dependencies_diagnose`, {
                 bundle_version: t.bundleVersion ?? ``,
                 duration_ms: Date.now() - e,
                 problem_count: t.problems.length,
@@ -897,8 +942,8 @@ function Ge(e) {
               O.refetch(),
               t.installed)
             ) {
-              N.success(
-                a.formatMessage({
+              I.success(
+                o.formatMessage({
                   id: `settings.agent.dependencies.diagnose.ok`,
                   defaultMessage: `Codex dependencies look healthy`,
                   description: `Toast shown when dependency diagnostics find no problems`,
@@ -906,8 +951,8 @@ function Ge(e) {
               );
               return;
             }
-            N.warning(
-              a.formatMessage({
+            I.warning(
+              o.formatMessage({
                 id: `settings.agent.dependencies.diagnose.problem`,
                 defaultMessage: `Codex dependencies may need repair. Send /feedback if this keeps happening`,
                 description: `Toast shown when dependency diagnostics find problems`,
@@ -915,12 +960,12 @@ function Ge(e) {
             );
           })
           .catch(() => {
-            (s(`codex_primary_runtime_dependencies_diagnose`, {
+            (c(`codex_primary_runtime_dependencies_diagnose`, {
               duration_ms: Date.now() - e,
               status: `failed`,
             }),
-              N.danger(
-                a.formatMessage({
+              I.danger(
+                o.formatMessage({
                   id: `settings.agent.dependencies.diagnose.failed`,
                   defaultMessage: `Couldn’t diagnose Codex dependencies`,
                   description: `Toast shown when dependency diagnostics fail`,
@@ -928,44 +973,34 @@ function Ge(e) {
               ));
           });
       }),
-      (t[15] = k),
-      (t[16] = O),
-      (t[17] = r),
-      (t[18] = a),
-      (t[19] = s),
-      (t[20] = N),
-      (t[21] = he))
-    : (he = t[21]);
-  let ge = he,
-    R;
-  t[22] !== O ||
-  t[23] !== r ||
-  t[24] !== a ||
-  t[25] !== s ||
-  t[26] !== le ||
-  t[27] !== o ||
-  t[28] !== A ||
-  t[29] !== i ||
-  t[30] !== N
-    ? ((R = () => {
+      (t[28] = A),
+      (t[29] = O),
+      (t[30] = o),
+      (t[31] = c),
+      (t[32] = I),
+      (t[33] = z))
+    : (z = t[33]);
+  let ge = z,
+    ve;
+  t[34] !== O ||
+  t[35] !== o ||
+  t[36] !== c ||
+  t[37] !== N ||
+  t[38] !== j ||
+  t[39] !== a ||
+  t[40] !== I
+    ? ((ve = () => {
         let e = Date.now();
-        A.mutateAsync({ hostId: r, release: le })
+        j.mutateAsync({ release: N })
           .then((t) => {
-            (s(`codex_primary_runtime_dependencies_reset`, {
+            (c(`codex_primary_runtime_dependencies_reset`, {
               bundle_version: t.bundleVersion ?? ``,
               duration_ms: Date.now() - e,
               status: t.status,
             }),
-              Promise.all([
-                O.refetch(),
-                o.invalidateQueries({
-                  queryKey: _(`load-primary-runtime-dependencies`, {
-                    hostId: r,
-                  }),
-                }),
-              ]),
-              N.success(
-                a.formatMessage({
+              O.refetch(),
+              I.success(
+                o.formatMessage({
                   id: `settings.agent.dependencies.reset.installed`,
                   defaultMessage: `Codex dependencies were reinstalled`,
                   description: `Toast shown when dependency reset and reinstall succeeds`,
@@ -974,14 +1009,14 @@ function Ge(e) {
           })
           .catch((t) => {
             if (Se(t)) {
-              (i.set(we, null),
+              (a.set(Ee, null),
                 O.refetch(),
-                s(`codex_primary_runtime_dependencies_reset`, {
+                c(`codex_primary_runtime_dependencies_reset`, {
                   duration_ms: Date.now() - e,
                   status: `canceled`,
                 }),
-                N.info(
-                  a.formatMessage({
+                I.info(
+                  o.formatMessage({
                     id: `settings.agent.dependencies.reset.canceled`,
                     defaultMessage: `Codex dependency download canceled`,
                     description: `Toast shown when dependency reset and reinstall is canceled`,
@@ -990,12 +1025,12 @@ function Ge(e) {
                 ));
               return;
             }
-            (s(`codex_primary_runtime_dependencies_reset`, {
+            (c(`codex_primary_runtime_dependencies_reset`, {
               duration_ms: Date.now() - e,
               status: `failed`,
             }),
-              N.danger(
-                a.formatMessage({
+              I.danger(
+                o.formatMessage({
                   id: `settings.agent.dependencies.reset.failed`,
                   defaultMessage: `Couldn’t reinstall Codex dependencies`,
                   description: `Toast shown when dependency reset fails`,
@@ -1003,27 +1038,25 @@ function Ge(e) {
               ));
           });
       }),
-      (t[22] = O),
-      (t[23] = r),
-      (t[24] = a),
-      (t[25] = s),
-      (t[26] = le),
-      (t[27] = o),
-      (t[28] = A),
-      (t[29] = i),
-      (t[30] = N),
-      (t[31] = R))
-    : (R = t[31]);
-  let _e = R,
-    z;
-  t[32] !== ae || t[33] !== O || t[34] !== a || t[35] !== i || t[36] !== N
-    ? ((z = () => {
-        ae.mutateAsync()
+      (t[34] = O),
+      (t[35] = o),
+      (t[36] = c),
+      (t[37] = N),
+      (t[38] = j),
+      (t[39] = a),
+      (t[40] = I),
+      (t[41] = ve))
+    : (ve = t[41]);
+  let ye = ve,
+    B;
+  t[42] !== M || t[43] !== O || t[44] !== o || t[45] !== a || t[46] !== I
+    ? ((B = () => {
+        M.mutateAsync()
           .then((e) => {
             let { canceled: t } = e;
-            if ((i.set(we, null), O.refetch(), !t)) {
-              N.info(
-                a.formatMessage({
+            if ((a.set(Ee, null), O.refetch(), !t)) {
+              I.info(
+                o.formatMessage({
                   id: `settings.agent.dependencies.cancel.noop`,
                   defaultMessage: `No Codex dependency download is running`,
                   description: `Toast shown when canceling a Codex dependency download but no download is running`,
@@ -1031,8 +1064,8 @@ function Ge(e) {
               );
               return;
             }
-            N.info(
-              a.formatMessage({
+            I.info(
+              o.formatMessage({
                 id: `settings.agent.dependencies.cancel.canceled`,
                 defaultMessage: `Canceling Codex dependency download`,
                 description: `Toast shown after requesting cancellation of a Codex dependency download`,
@@ -1041,8 +1074,8 @@ function Ge(e) {
             );
           })
           .catch(() => {
-            N.danger(
-              a.formatMessage({
+            I.danger(
+              o.formatMessage({
                 id: `settings.agent.dependencies.cancel.failed`,
                 defaultMessage: `Couldn’t cancel Codex dependency download`,
                 description: `Toast shown when canceling a Codex dependency download fails`,
@@ -1050,492 +1083,489 @@ function Ge(e) {
             );
           });
       }),
-      (t[32] = ae),
-      (t[33] = O),
-      (t[34] = a),
-      (t[35] = i),
-      (t[36] = N),
-      (t[37] = z))
-    : (z = t[37]);
-  let ye = z,
-    be;
-  t[38] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((be = (0, Q.jsx)(U.Header, {
-        title: (0, Q.jsx)(l, {
+      (t[42] = M),
+      (t[43] = O),
+      (t[44] = o),
+      (t[45] = a),
+      (t[46] = I),
+      (t[47] = B))
+    : (B = t[47]);
+  let be = B,
+    xe;
+  t[48] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((xe = (0, $.jsx)(W.Header, {
+        title: (0, $.jsx)(f, {
           id: `settings.agent.dependencies.sectionTitle`,
           defaultMessage: `Workspace Dependencies`,
           description: `Heading for the Codex dependencies settings section`,
         }),
       })),
-      (t[38] = be))
-    : (be = t[38]);
-  let xe;
-  t[39] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((xe = (0, Q.jsx)(l, {
+      (t[48] = xe))
+    : (xe = t[48]);
+  let V;
+  t[49] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((V = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.bundleVersion.label`,
         defaultMessage: `Current version`,
         description: `Label for the installed Codex dependency bundle version`,
       })),
-      (t[39] = xe))
-    : (xe = t[39]);
-  let B;
-  t[40] === O.data?.problems.length
-    ? (B = t[41])
-    : ((B = O.data?.problems.length
-        ? (0, Q.jsx)(l, {
+      (t[49] = V))
+    : (V = t[49]);
+  let H;
+  t[50] === O.data?.problems.length
+    ? (H = t[51])
+    : ((H = O.data?.problems.length
+        ? (0, $.jsx)(f, {
             id: `settings.agent.dependencies.bundleVersion.problemDescription`,
             defaultMessage: `Run diagnostics or reinstall if tool calls fail`,
             description: `Description shown when dependency diagnostics have problems`,
           })
         : null),
-      (t[40] = O.data?.problems.length),
-      (t[41] = B));
-  let V;
-  t[42] !== L || t[43] !== O.isLoading || t[44] !== I || t[45] !== j
-    ? ((V = I
-        ? ke(j, Ae(j))
+      (t[50] = O.data?.problems.length),
+      (t[51] = H));
+  let G;
+  t[52] !== he || t[53] !== O.isLoading || t[54] !== R || t[55] !== P
+    ? ((G = R
+        ? Ae(P, je(P))
         : O.isLoading
-          ? (0, Q.jsx)(l, {
+          ? (0, $.jsx)(f, {
               id: `settings.agent.dependencies.bundleVersion.loading`,
               defaultMessage: `Checking…`,
               description: `Status while loading the current dependency bundle version`,
             })
-          : (L ??
-            (0, Q.jsx)(l, {
+          : (he ??
+            (0, $.jsx)(f, {
               id: `settings.agent.dependencies.bundleVersion.notInstalled`,
               defaultMessage: `Not installed`,
               description: `Status when dependency bundle version is unavailable`,
             }))),
-      (t[42] = L),
-      (t[43] = O.isLoading),
-      (t[44] = I),
-      (t[45] = j),
-      (t[46] = V))
-    : (V = t[46]);
-  let Oe;
-  t[47] === V
-    ? (Oe = t[48])
-    : ((Oe = (0, Q.jsx)(`span`, {
+      (t[52] = he),
+      (t[53] = O.isLoading),
+      (t[54] = R),
+      (t[55] = P),
+      (t[56] = G))
+    : (G = t[56]);
+  let Me;
+  t[57] === G
+    ? (Me = t[58])
+    : ((Me = (0, $.jsx)(`span`, {
         className: `text-sm text-token-text-secondary`,
-        children: V,
+        children: G,
       })),
-      (t[47] = V),
-      (t[48] = Oe));
-  let W;
-  t[49] !== B || t[50] !== Oe
-    ? ((W = (0, Q.jsx)(H, { label: xe, description: B, control: Oe })),
-      (t[49] = B),
-      (t[50] = Oe),
-      (t[51] = W))
-    : (W = t[51]);
-  let G, Me;
-  t[52] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((G = (0, Q.jsx)(l, {
+      (t[57] = G),
+      (t[58] = Me));
+  let q;
+  t[59] !== H || t[60] !== Me
+    ? ((q = (0, $.jsx)(U, { label: V, description: H, control: Me })),
+      (t[59] = H),
+      (t[60] = Me),
+      (t[61] = q))
+    : (q = t[61]);
+  let Ne, Pe;
+  t[62] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((Ne = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.enabled.label`,
         defaultMessage: `Codex dependencies`,
         description: `Label for the Codex dependencies enabled toggle`,
       })),
-      (Me = (0, Q.jsx)(l, {
+      (Pe = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.enabled.description`,
         defaultMessage: `Allow Codex to install and expose bundled Node.js and Python tools`,
         description: `Description for the Codex dependencies enabled toggle`,
       })),
-      (t[52] = G),
-      (t[53] = Me))
-    : ((G = t[52]), (Me = t[53]));
-  let Ne = m || b.isPending || C == null,
-    K;
-  t[54] !== le || t[55] !== re || t[56] !== b
-    ? ((K = (e) => {
+      (t[62] = Ne),
+      (t[63] = Pe))
+    : ((Ne = t[62]), (Pe = t[63]));
+  let Fe = _ || b.isPending || S == null,
+    J;
+  t[64] !== N || t[65] !== re || t[66] !== b
+    ? ((J = (e) => {
         b.mutate(
           { enabled: e, featureName: n },
           {
             onSuccess: () => {
-              e && re.mutate({ release: le });
+              e && re.mutate({ release: N });
             },
           },
         );
       }),
-      (t[54] = le),
-      (t[55] = re),
-      (t[56] = b),
-      (t[57] = K))
-    : (K = t[57]);
-  let q;
-  t[58] === a
-    ? (q = t[59])
-    : ((q = a.formatMessage({
+      (t[64] = N),
+      (t[65] = re),
+      (t[66] = b),
+      (t[67] = J))
+    : (J = t[67]);
+  let Ie;
+  t[68] === o
+    ? (Ie = t[69])
+    : ((Ie = o.formatMessage({
         id: `settings.agent.dependencies.enabled.ariaLabel`,
         defaultMessage: `Enable Codex dependencies`,
         description: `Aria label for the Codex dependencies enabled toggle`,
       })),
-      (t[58] = a),
-      (t[59] = q));
-  let J;
-  t[60] !== w || t[61] !== Ne || t[62] !== K || t[63] !== q
-    ? ((J = (0, Q.jsx)(H, {
-        label: G,
-        description: Me,
-        control: (0, Q.jsx)(ve, {
+      (t[68] = o),
+      (t[69] = Ie));
+  let Y;
+  t[70] !== w || t[71] !== Fe || t[72] !== J || t[73] !== Ie
+    ? ((Y = (0, $.jsx)(U, {
+        label: Ne,
+        description: Pe,
+        control: (0, $.jsx)(_e, {
           checked: w,
-          disabled: Ne,
-          onChange: K,
-          ariaLabel: q,
+          disabled: Fe,
+          onChange: J,
+          ariaLabel: Ie,
         }),
       })),
-      (t[60] = w),
-      (t[61] = Ne),
-      (t[62] = K),
-      (t[63] = q),
-      (t[64] = J))
-    : (J = t[64]);
-  let Pe, Y;
-  t[65] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Pe = (0, Q.jsx)(l, {
+      (t[70] = w),
+      (t[71] = Fe),
+      (t[72] = J),
+      (t[73] = Ie),
+      (t[74] = Y))
+    : (Y = t[74]);
+  let X, Z;
+  t[75] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((X = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.diagnose.label`,
         defaultMessage: `Diagnose issues in Codex Workspace`,
         description: `Label for dependency diagnostics in settings`,
       })),
-      (Y = (0, Q.jsx)(l, {
+      (Z = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.diagnose.description`,
         defaultMessage: `Checks the current bundle and records diagnostic logs`,
         description: `Description for dependency diagnostics in settings`,
       })),
-      (t[65] = Pe),
-      (t[66] = Y))
-    : ((Pe = t[65]), (Y = t[66]));
-  let X, Fe;
-  t[67] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((X = (0, Q.jsx)(me, { className: `icon-2xs` })),
-      (Fe = (0, Q.jsx)(l, {
+      (t[75] = X),
+      (t[76] = Z))
+    : ((X = t[75]), (Z = t[76]));
+  let Q, Le;
+  t[77] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((Q = (0, $.jsx)(me, { className: `icon-2xs` })),
+      (Le = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.diagnose.button`,
         defaultMessage: `Diagnose`,
         description: `Button label for dependency diagnostics`,
       })),
-      (t[67] = X),
-      (t[68] = Fe))
-    : ((X = t[67]), (Fe = t[68]));
-  let Z;
-  t[69] !== k.isPending || t[70] !== ge || t[71] !== A.isPending
-    ? ((Z = (0, Q.jsx)(H, {
-        label: Pe,
-        description: Y,
-        control: (0, Q.jsxs)(se, {
+      (t[77] = Q),
+      (t[78] = Le))
+    : ((Q = t[77]), (Le = t[78]));
+  let Re;
+  t[79] !== A.isPending || t[80] !== ge || t[81] !== j.isPending
+    ? ((Re = (0, $.jsx)(U, {
+        label: X,
+        description: Z,
+        control: (0, $.jsxs)(ce, {
           color: `secondary`,
           size: `toolbar`,
-          loading: k.isPending,
-          disabled: A.isPending,
+          loading: A.isPending,
+          disabled: j.isPending,
           onClick: ge,
-          children: [X, Fe],
+          children: [Q, Le],
         }),
       })),
-      (t[69] = k.isPending),
-      (t[70] = ge),
-      (t[71] = A.isPending),
-      (t[72] = Z))
-    : (Z = t[72]);
-  let Ie, Le;
-  t[73] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Ie = (0, Q.jsx)(l, {
+      (t[79] = A.isPending),
+      (t[80] = ge),
+      (t[81] = j.isPending),
+      (t[82] = Re))
+    : (Re = t[82]);
+  let ze, Be;
+  t[83] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((ze = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.reset.label`,
         defaultMessage: `Reset and install Workspace`,
         description: `Label for resetting and reinstalling dependencies in settings`,
       })),
-      (Le = (0, Q.jsx)(l, {
+      (Be = (0, $.jsx)(f, {
         id: `settings.agent.dependencies.reset.description`,
         defaultMessage: `Deletes the local bundle, downloads it again, and reloads tools`,
         description: `Description for resetting and reinstalling dependencies in settings`,
       })),
-      (t[73] = Ie),
-      (t[74] = Le))
-    : ((Ie = t[73]), (Le = t[74]));
-  let $ = I ? ae.isPending : A.isPending,
-    Re = !w || (I ? ae.isPending : F),
-    ze = I ? ye : _e,
-    Be;
-  t[75] === I
-    ? (Be = t[76])
-    : ((Be = I
-        ? (0, Q.jsxs)(Q.Fragment, {
+      (t[83] = ze),
+      (t[84] = Be))
+    : ((ze = t[83]), (Be = t[84]));
+  let Ve = R ? M.isPending : j.isPending,
+    He = !w || (R ? M.isPending : pe),
+    Ue = R ? be : ye,
+    We;
+  t[85] === R
+    ? (We = t[86])
+    : ((We = R
+        ? (0, $.jsxs)($.Fragment, {
             children: [
-              (0, Q.jsx)(ue, { className: `icon-2xs` }),
-              (0, Q.jsx)(l, {
+              (0, $.jsx)(de, { className: `icon-2xs` }),
+              (0, $.jsx)(f, {
                 id: `settings.agent.dependencies.cancel.button`,
                 defaultMessage: `Cancel download`,
                 description: `Button label for canceling dependency download`,
               }),
             ],
           })
-        : (0, Q.jsxs)(Q.Fragment, {
+        : (0, $.jsxs)($.Fragment, {
             children: [
-              (0, Q.jsx)(fe, { className: `icon-2xs` }),
-              (0, Q.jsx)(l, {
+              (0, $.jsx)(fe, { className: `icon-2xs` }),
+              (0, $.jsx)(f, {
                 id: `settings.agent.dependencies.reset.button`,
                 defaultMessage: `Reinstall`,
                 description: `Button label for resetting and reinstalling dependencies`,
               }),
             ],
           })),
-      (t[75] = I),
-      (t[76] = Be));
-  let Ve;
-  t[77] !== $ || t[78] !== Re || t[79] !== ze || t[80] !== Be
-    ? ((Ve = (0, Q.jsx)(H, {
-        label: Ie,
-        description: Le,
-        control: (0, Q.jsx)(se, {
+      (t[85] = R),
+      (t[86] = We));
+  let Ge;
+  t[87] !== Ve || t[88] !== He || t[89] !== Ue || t[90] !== We
+    ? ((Ge = (0, $.jsx)(U, {
+        label: ze,
+        description: Be,
+        control: (0, $.jsx)(ce, {
           color: `danger`,
           size: `toolbar`,
-          loading: $,
-          disabled: Re,
-          onClick: ze,
-          children: Be,
+          loading: Ve,
+          disabled: He,
+          onClick: Ue,
+          children: We,
         }),
       })),
-      (t[77] = $),
-      (t[78] = Re),
-      (t[79] = ze),
-      (t[80] = Be),
-      (t[81] = Ve))
-    : (Ve = t[81]);
-  let He;
+      (t[87] = Ve),
+      (t[88] = He),
+      (t[89] = Ue),
+      (t[90] = We),
+      (t[91] = Ge))
+    : (Ge = t[91]);
+  let Ke;
   return (
-    t[82] !== W || t[83] !== J || t[84] !== Z || t[85] !== Ve
-      ? ((He = (0, Q.jsxs)(U, {
+    t[92] !== q || t[93] !== Y || t[94] !== Re || t[95] !== Ge
+      ? ((Ke = (0, $.jsxs)(W, {
           className: `gap-2`,
           children: [
-            be,
-            (0, Q.jsx)(U.Content, {
-              children: (0, Q.jsxs)(De, { children: [W, J, Z, Ve] }),
+            xe,
+            (0, $.jsx)(W.Content, {
+              children: (0, $.jsxs)(ke, { children: [q, Y, Re, Ge] }),
             }),
           ],
         })),
-        (t[82] = W),
-        (t[83] = J),
-        (t[84] = Z),
-        (t[85] = Ve),
-        (t[86] = He))
-      : (He = t[86]),
-    He
+        (t[92] = q),
+        (t[93] = Y),
+        (t[94] = Re),
+        (t[95] = Ge),
+        (t[96] = Ke))
+      : (Ke = t[96]),
+    Ke
   );
 }
-function Ke(e) {
+function Xe(e) {
   return e.name === n;
 }
-function qe({ hostId: e }) {
-  let n = te(),
-    r = x(),
-    i = u(),
-    [a, s] = (0, G.useState)(null),
-    [c, d] = (0, G.useState)(null),
-    [f, m] = (0, G.useState)({}),
-    { data: _ } = ne(T),
-    v = Be(r.state),
-    y = v.hasValue
+function Ze({ hostId: e }) {
+  let t = ee(),
+    n = x(),
+    r = l(),
+    [o, s] = (0, q.useState)(null),
+    [c, u] = (0, q.useState)(null),
+    [d, p] = (0, q.useState)({}),
+    { data: g } = h(E),
+    _ = Ue(n.state),
+    y = _.hasValue
       ? e === `local`
-        ? v.workspaceRoot
+        ? _.workspaceRoot
         : null
       : e === `local`
-        ? (_?.roots?.[0] ?? null)
+        ? (g?.roots?.[0] ?? null)
         : null,
-    b = ce(e),
-    { data: S, isPending: C } = ae(y, {
+    b = le(e),
+    { data: S, isPending: C } = j(y, {
       hostId: e,
       cwdMode: e === `local` ? `fallback-to-workspace` : `preserve-null`,
     }),
-    { data: w, isPending: oe } = ee(E, e),
-    le = h(`open-file`),
-    j = S?.config ?? null,
-    M = S?.layers ?? null,
-    ue = S?.origins ?? null,
-    P = w?.requirements ?? null,
-    de = Ze(M, n),
-    fe = M?.find((e) => e.name.type === `user`) ?? null,
-    F = M?.find((e) => O(e.name)) ?? null,
-    I = b == null ? null : `${b}/config.toml`,
-    me = fe == null ? I : D(fe.name),
-    R = {
+    { data: te, isPending: w } = m(D, e),
+    T = v(`open-file`),
+    ae = S?.config ?? null,
+    oe = S?.layers ?? null,
+    se = S?.origins ?? null,
+    M = te?.requirements ?? null,
+    ue = et(oe, t),
+    N = oe?.find((e) => e.name.type === `user`) ?? null,
+    de = oe?.find((e) => k(e.name)) ?? null,
+    fe = b == null ? null : `${b}/config.toml`,
+    F = N == null ? fe : O(N.name),
+    pe = {
       key: `user`,
       kind: `user`,
-      label: n.formatMessage({
+      label: t.formatMessage({
         id: `settings.agent.configuration.scope.user`,
         defaultMessage: `User config`,
         description: `Label for the user config scope in configuration settings`,
       }),
-      tooltipText: me ?? `~/.codex/config.toml`,
-      filePath: me,
-      expectedVersion: fe?.version ?? null,
+      tooltipText: F ?? `~/.codex/config.toml`,
+      filePath: F,
+      expectedVersion: N?.version ?? null,
       workspaceRoot: null,
-      layer: fe,
+      layer: N,
     },
-    _e =
-      F == null
+    me =
+      de == null
         ? null
         : {
             key: `managed`,
             kind: `managed`,
-            label: n.formatMessage({
+            label: t.formatMessage({
               id: `settings.agent.configuration.scope.managed`,
               defaultMessage: `Admin config`,
               description: `Label for the admin config scope in configuration settings`,
             }),
-            tooltipText: n.formatMessage({
+            tooltipText: t.formatMessage({
               id: `settings.agent.configuration.scope.managedDescription`,
               defaultMessage: `Managed by admin policy`,
               description: `Tooltip text for the admin config scope in configuration settings`,
             }),
-            filePath: D(F.name),
-            expectedVersion: F.version,
+            filePath: O(de.name),
+            expectedVersion: de.version,
             workspaceRoot: null,
-            layer: F,
+            layer: de,
           },
-    z = [...de, R, ...(_e == null ? [] : [_e])],
-    be = de.length > 0,
-    xe = y == null ? (z[0]?.key ?? null) : `project:${y}`,
+    z = [...ue, pe, ...(me == null ? [] : [me])],
+    ge = ue.length > 0,
+    ve = y == null ? (z[0]?.key ?? null) : `project:${y}`,
     B =
-      z.find((e) => e.key === a) ?? z.find((e) => e.key === xe) ?? z[0] ?? null,
-    { data: Se } = g(`open-in-targets`, {
-      params: {
-        cwd:
-          B?.workspaceRoot == null
-            ? y == null
-              ? null
-              : t(y)
-            : t(B.workspaceRoot),
-        hostId: e,
-      },
-      queryConfig: { staleTime: p.ONE_MINUTE, enabled: !0 },
+      z.find((e) => e.key === o) ?? z.find((e) => e.key === ve) ?? z[0] ?? null,
+    { data: xe } = m(Me, {
+      cwd:
+        B?.workspaceRoot == null
+          ? y == null
+            ? null
+            : i(y)
+          : i(B.workspaceRoot),
+      hostId: e,
     }),
-    Ce = et(B?.layer?.config ?? null),
-    we = at(j?.approval_policy ?? null) ?? `on-request`,
-    Te = j?.sandbox_mode == null ? `read-only` : j.sandbox_mode,
-    Ee = Ce.sandboxMode == null && Te === `workspace-write`,
-    V = Ce.sandboxMode === `workspace-write` || Ee,
-    ke = Ce.approvalPolicy ?? we,
-    Ae = Ce.sandboxMode ?? Te,
-    W = Ce.networkAccess ?? j?.sandbox_workspace_write?.network_access ?? !1,
-    je = ue == null ? null : k(ue, `approval_policy`, [`approvalPolicy`]),
-    Ne = ue == null ? null : k(ue, `sandbox_mode`),
-    K =
-      ue == null ? null : k(ue, `sandbox_workspace_write`, [`network_access`]),
-    q = B?.kind === `project` ? (B.layer?.disabledReason ?? null) : null,
-    J = tt(B, n),
-    Pe = Ve.filter((e) =>
-      P?.allowedApprovalPolicies == null ||
-      P.allowedApprovalPolicies.length === 0
+    V = rt(B?.layer?.config ?? null),
+    H = ct(ae?.approval_policy ?? null) ?? `on-request`,
+    Se = ae?.sandbox_mode == null ? `read-only` : ae.sandbox_mode,
+    Ce = V.sandboxMode == null && Se === `workspace-write`,
+    we = V.sandboxMode === `workspace-write` || Ce,
+    Te = V.approvalPolicy ?? H,
+    Ee = V.sandboxMode ?? Se,
+    De = V.networkAccess ?? ae?.sandbox_workspace_write?.network_access ?? !1,
+    Oe = se == null ? null : A(se, `approval_policy`, [`approvalPolicy`]),
+    G = se == null ? null : A(se, `sandbox_mode`),
+    Ae =
+      se == null ? null : A(se, `sandbox_workspace_write`, [`network_access`]),
+    je = B?.kind === `project` ? (B.layer?.disabledReason ?? null) : null,
+    K = it(B, t),
+    Pe = We.filter((e) =>
+      M?.allowedApprovalPolicies == null ||
+      M.allowedApprovalPolicies.length === 0
         ? !0
-        : P.allowedApprovalPolicies.includes(e.value),
+        : M.allowedApprovalPolicies.includes(e.value),
     ),
-    Y = He.filter((e) =>
-      P?.allowedSandboxModes == null || P.allowedSandboxModes.length === 0
+    Fe = Ge.filter((e) =>
+      M?.allowedSandboxModes == null || M.allowedSandboxModes.length === 0
         ? !0
-        : P.allowedSandboxModes.includes(e.value),
+        : M.allowedSandboxModes.includes(e.value),
     );
-  async function X(t, n, r) {
+  async function J(t, n, i) {
     if (!(B == null || B.filePath == null) && c == null) {
-      (d(t), m((e) => ({ ...e, [t]: void 0 })));
+      (u(t), p((e) => ({ ...e, [t]: void 0 })));
       try {
         (B.kind === `project`
-          ? await Me({ filePath: B.filePath, keyPath: n, value: r })
-          : await o(`write-config-value`, {
+          ? await Ne({ filePath: B.filePath, keyPath: n, value: i })
+          : await a(`write-config-value`, {
               hostId: e,
               keyPath: n,
-              value: r,
+              value: i,
               mergeStrategy: `upsert`,
               filePath: B.filePath,
               expectedVersion: B.expectedVersion,
             }),
           await Promise.all([
-            i.invalidateQueries({ queryKey: [...re, e] }),
-            i.invalidateQueries({ queryKey: [...A, e] }),
-            i.invalidateQueries({ queryKey: [...ie, e] }),
+            r.invalidateQueries({ queryKey: [...ne, e] }),
+            r.invalidateQueries({ queryKey: [...re, e] }),
+            r.invalidateQueries({ queryKey: [...ie, e] }),
           ]));
       } catch (e) {
-        m((n) => ({
+        p((n) => ({
           ...n,
           [t]: e instanceof Error ? e.message : `Unable to save`,
         }));
       } finally {
-        d(null);
+        u(null);
       }
     }
   }
-  let Fe = C || oe,
-    Z = nt({
-      intl: n,
-      scopeLockReason: J,
-      origin: je,
+  let Ie = C || w,
+    Y = at({
+      intl: t,
+      scopeLockReason: K,
+      origin: Oe,
       selectedScope: B,
       hasOptions: Pe.length > 0,
-      restrictedMessage: n.formatMessage({
+      restrictedMessage: t.formatMessage({
         id: `settings.agent.configuration.approval.restricted`,
         defaultMessage: `Approval policy is restricted by this installation.`,
         description: `Restriction message for approval policy in configuration settings`,
       }),
     }),
-    Ie = nt({
-      intl: n,
-      scopeLockReason: J,
-      origin: Ne,
+    X = at({
+      intl: t,
+      scopeLockReason: K,
+      origin: G,
       selectedScope: B,
-      hasOptions: Y.length > 0,
-      restrictedMessage: n.formatMessage({
+      hasOptions: Fe.length > 0,
+      restrictedMessage: t.formatMessage({
         id: `settings.agent.configuration.sandbox.restricted`,
         defaultMessage: `Sandbox mode is restricted by this installation.`,
         description: `Restriction message for sandbox mode in configuration settings`,
       }),
     }),
-    Le = nt({
-      intl: n,
-      scopeLockReason: J,
-      origin: K,
+    Z = at({
+      intl: t,
+      scopeLockReason: K,
+      origin: Ae,
       selectedScope: B,
       hasOptions: !0,
       restrictedMessage: ``,
     }),
-    $ = Fe || c != null || q != null,
-    Re = (e) => {
-      (s(e), m({}));
+    Q = Ie || c != null || je != null,
+    Le = (e) => {
+      (s(e), p({}));
     };
-  return (0, Q.jsxs)(U, {
+  return (0, $.jsxs)(W, {
     children: [
-      (0, Q.jsx)(U.Header, {
-        title: (0, Q.jsxs)(he, {
+      (0, $.jsx)(W.Header, {
+        title: (0, $.jsxs)(R, {
           align: `start`,
           contentWidth: `menuWide`,
           disabled: z.length === 0,
-          triggerButton: (0, Q.jsx)(ye, {
+          triggerButton: (0, $.jsx)(ye, {
             disabled: z.length === 0,
             contentClassName: `truncate`,
             children:
               B?.label ??
-              n.formatMessage({
+              t.formatMessage({
                 id: `settings.agent.configuration.scope.loading`,
                 defaultMessage: `Loading…`,
                 description: `Fallback label while config scope options are loading`,
               }),
           }),
           children: [
-            be
-              ? (0, Q.jsxs)(Q.Fragment, {
+            ge
+              ? (0, $.jsxs)($.Fragment, {
                   children: [
-                    (0, Q.jsxs)(L.Section, {
+                    (0, $.jsxs)(L.Section, {
                       children: [
-                        (0, Q.jsx)(L.SectionLabel, {
-                          children: (0, Q.jsx)(l, {
+                        (0, $.jsx)(L.SectionLabel, {
+                          children: (0, $.jsx)(f, {
                             id: `settings.agent.configuration.scope.projectGroup`,
                             defaultMessage: `Project config`,
                             description: `Section label for project config scopes`,
                           }),
                         }),
-                        de.map((e) =>
-                          (0, Q.jsx)(
-                            Je,
+                        ue.map((e) =>
+                          (0, $.jsx)(
+                            Qe,
                             {
                               scopeOption: e,
                               selected: B?.key === e.key,
                               onSelect: () => {
-                                Re(e.key);
+                                Le(e.key);
                               },
                             },
                             e.key,
@@ -1543,118 +1573,118 @@ function qe({ hostId: e }) {
                         ),
                       ],
                     }),
-                    (0, Q.jsx)(L.Separator, {}),
+                    (0, $.jsx)(L.Separator, {}),
                   ],
                 })
               : null,
-            (0, Q.jsxs)(L.Section, {
+            (0, $.jsxs)(L.Section, {
               children: [
-                (0, Q.jsx)(L.SectionLabel, {
-                  children: (0, Q.jsx)(l, {
+                (0, $.jsx)(L.SectionLabel, {
+                  children: (0, $.jsx)(f, {
                     id: `settings.agent.configuration.scope.globalGroup`,
                     defaultMessage: `Global config`,
                     description: `Section label for user and admin config scopes`,
                   }),
                 }),
-                (0, Q.jsx)(Je, {
-                  scopeOption: R,
-                  selected: B?.key === R.key,
+                (0, $.jsx)(Qe, {
+                  scopeOption: pe,
+                  selected: B?.key === pe.key,
                   onSelect: () => {
-                    Re(R.key);
+                    Le(pe.key);
                   },
                 }),
-                _e == null
+                me == null
                   ? null
-                  : (0, Q.jsx)(Je, {
-                      scopeOption: _e,
-                      selected: B?.key === _e.key,
+                  : (0, $.jsx)(Qe, {
+                      scopeOption: me,
+                      selected: B?.key === me.key,
                       onSelect: () => {
-                        Re(_e.key);
+                        Le(me.key);
                       },
                     }),
               ],
             }),
           ],
         }),
-        actions: (0, Q.jsxs)(se, {
+        actions: (0, $.jsxs)(ce, {
           color: `ghost`,
           size: `toolbar`,
           disabled: B?.filePath == null,
           onClick: () => {
             B?.filePath != null &&
-              N({
+              P({
                 path: B.filePath,
-                cwd: B.workspaceRoot == null ? null : t(B.workspaceRoot),
+                cwd: B.workspaceRoot == null ? null : i(B.workspaceRoot),
                 hostId: e,
-                target: Se?.preferredTarget,
-                openFile: le.mutate,
+                target: xe?.preferredTarget,
+                openFile: T.mutate,
               });
           },
           children: [
-            (0, Q.jsx)(l, {
+            (0, $.jsx)(f, {
               id: `settings.agent.configuration.scope.open`,
               defaultMessage: `Open config.toml`,
               description: `Button label to open the selected config file`,
             }),
-            (0, Q.jsx)(Oe, { className: `icon-2xs` }),
+            (0, $.jsx)(be, { className: `icon-2xs` }),
           ],
         }),
       }),
-      (0, Q.jsx)(U.Content, {
-        children: (0, Q.jsxs)(De, {
+      (0, $.jsx)(W.Content, {
+        children: (0, $.jsxs)(ke, {
           children: [
-            q == null
+            je == null
               ? null
-              : (0, Q.jsxs)(`div`, {
+              : (0, $.jsxs)(`div`, {
                   className: `flex items-start gap-2 p-3`,
                   children: [
-                    (0, Q.jsx)(ge, {
+                    (0, $.jsx)(he, {
                       className: `icon-xs mt-0.5 shrink-0 text-token-editor-warning-foreground`,
                     }),
-                    (0, Q.jsx)(`div`, {
+                    (0, $.jsx)(`div`, {
                       className: `text-sm text-token-text-secondary`,
-                      children: q,
+                      children: je,
                     }),
                   ],
                 }),
-            (0, Q.jsx)(H, {
-              label: (0, Q.jsx)(l, {
+            (0, $.jsx)(U, {
+              label: (0, $.jsx)(f, {
                 id: `settings.agent.configuration.approval.label`,
                 defaultMessage: `Approval policy`,
                 description: `Label for approval policy in configuration settings`,
               }),
-              description: (0, Q.jsx)(Ye, {
-                error: f.approval,
-                lockReason: Z,
-                children: (0, Q.jsx)(l, {
+              description: (0, $.jsx)($e, {
+                error: d.approval,
+                lockReason: Y,
+                children: (0, $.jsx)(f, {
                   id: `settings.agent.configuration.approval.definition`,
                   defaultMessage: `Choose when Codex asks for approval`,
                   description: `Definition for approval policy in configuration settings`,
                 }),
               }),
-              control: (0, Q.jsx)(he, {
+              control: (0, $.jsx)(R, {
                 align: `end`,
                 contentWidth: `panelWide`,
-                disabled: $ || Z != null,
-                triggerButton: (0, Q.jsx)(ye, {
-                  disabled: $ || Z != null,
+                disabled: Q || Y != null,
+                triggerButton: (0, $.jsx)(ye, {
+                  disabled: Q || Y != null,
                   contentClassName: `truncate`,
-                  children: rt(ke)?.label ?? ke,
+                  children: ot(Te)?.label ?? Te,
                 }),
                 children: Pe.map((e) =>
-                  (0, Q.jsx)(
+                  (0, $.jsx)(
                     L.Item,
                     {
-                      RightIcon: e.value === ke ? pe : void 0,
+                      RightIcon: e.value === Te ? I : void 0,
                       subTextAllowWrap: !0,
                       onSelect: () => {
-                        X(`approval`, `approval_policy`, e.value);
+                        J(`approval`, `approval_policy`, e.value);
                       },
-                      SubText: (0, Q.jsx)(`div`, {
+                      SubText: (0, $.jsx)(`div`, {
                         className: `pt-1 text-sm text-token-text-secondary`,
                         children: e.description,
                       }),
-                      children: (0, Q.jsx)(`span`, {
+                      children: (0, $.jsx)(`span`, {
                         className: `text-sm`,
                         children: e.label,
                       }),
@@ -1664,44 +1694,44 @@ function qe({ hostId: e }) {
                 ),
               }),
             }),
-            (0, Q.jsx)(H, {
-              label: (0, Q.jsx)(l, {
+            (0, $.jsx)(U, {
+              label: (0, $.jsx)(f, {
                 id: `settings.agent.configuration.sandbox.label`,
                 defaultMessage: `Sandbox settings`,
                 description: `Label for sandbox settings in configuration settings`,
               }),
-              description: (0, Q.jsx)(Ye, {
-                error: f.sandbox,
-                lockReason: Ie,
-                children: (0, Q.jsx)(l, {
+              description: (0, $.jsx)($e, {
+                error: d.sandbox,
+                lockReason: X,
+                children: (0, $.jsx)(f, {
                   id: `settings.agent.configuration.sandbox.definition`,
                   defaultMessage: `Choose how much Codex can do when running commands`,
                   description: `Definition for sandbox settings in configuration settings`,
                 }),
               }),
-              control: (0, Q.jsx)(he, {
+              control: (0, $.jsx)(R, {
                 align: `end`,
                 contentWidth: `panelWide`,
-                disabled: $ || Ie != null,
-                triggerButton: (0, Q.jsx)(ye, {
-                  disabled: $ || Ie != null,
+                disabled: Q || X != null,
+                triggerButton: (0, $.jsx)(ye, {
+                  disabled: Q || X != null,
                   contentClassName: `truncate`,
-                  children: it(Ae)?.label ?? Ae,
+                  children: st(Ee)?.label ?? Ee,
                 }),
-                children: Y.map((e) =>
-                  (0, Q.jsx)(
+                children: Fe.map((e) =>
+                  (0, $.jsx)(
                     L.Item,
                     {
-                      RightIcon: e.value === Ae ? pe : void 0,
+                      RightIcon: e.value === Ee ? I : void 0,
                       subTextAllowWrap: !0,
                       onSelect: () => {
-                        X(`sandbox`, `sandbox_mode`, e.value);
+                        J(`sandbox`, `sandbox_mode`, e.value);
                       },
-                      SubText: (0, Q.jsx)(`div`, {
+                      SubText: (0, $.jsx)(`div`, {
                         className: `pt-1 text-sm text-token-text-secondary`,
                         children: e.description,
                       }),
-                      children: (0, Q.jsx)(`span`, {
+                      children: (0, $.jsx)(`span`, {
                         className: `text-sm`,
                         children: e.label,
                       }),
@@ -1711,29 +1741,29 @@ function qe({ hostId: e }) {
                 ),
               }),
             }),
-            V
-              ? (0, Q.jsx)(H, {
-                  label: (0, Q.jsx)(l, {
+            we
+              ? (0, $.jsx)(U, {
+                  label: (0, $.jsx)(f, {
                     id: `settings.agent.configuration.network.label`,
                     defaultMessage: `Allow network access`,
                     description: `Label for network access in configuration settings`,
                   }),
-                  description: (0, Q.jsx)(Ye, {
-                    error: f.network,
-                    lockReason: Le,
-                    children: (0, Q.jsx)(l, {
+                  description: (0, $.jsx)($e, {
+                    error: d.network,
+                    lockReason: Z,
+                    children: (0, $.jsx)(f, {
                       id: `settings.agent.configuration.network.definition`,
                       defaultMessage: `Allow network access when the sandbox is set to workspace write`,
                       description: `Definition for network access in configuration settings`,
                     }),
                   }),
-                  control: (0, Q.jsx)(ve, {
-                    checked: W,
-                    disabled: $ || Le != null,
+                  control: (0, $.jsx)(_e, {
+                    checked: De,
+                    disabled: Q || Z != null,
                     onChange: (e) => {
-                      X(`network`, `sandbox_workspace_write.network_access`, e);
+                      J(`network`, `sandbox_workspace_write.network_access`, e);
                     },
-                    ariaLabel: n.formatMessage({
+                    ariaLabel: t.formatMessage({
                       id: `settings.agent.configuration.network.ariaLabel`,
                       defaultMessage: `Allow network access`,
                       description: `Aria label for network access toggle in configuration settings`,
@@ -1747,14 +1777,14 @@ function qe({ hostId: e }) {
     ],
   });
 }
-function Je(e) {
-  let t = (0, je.c)(7),
+function Qe(e) {
+  let t = (0, K.c)(7),
     { onSelect: n, scopeOption: r, selected: i } = e,
-    a = i ? pe : void 0,
+    a = i ? I : void 0,
     o;
   t[0] === r.label
     ? (o = t[1])
-    : ((o = (0, Q.jsx)(`span`, {
+    : ((o = (0, $.jsx)(`span`, {
         className: `truncate text-sm`,
         children: r.label,
       })),
@@ -1763,7 +1793,7 @@ function Je(e) {
   let s;
   return (
     t[2] !== n || t[3] !== r.tooltipText || t[4] !== a || t[5] !== o
-      ? ((s = (0, Q.jsx)(L.Item, {
+      ? ((s = (0, $.jsx)(L.Item, {
           RightIcon: a,
           tooltipText: r.tooltipText,
           tooltipSide: `right`,
@@ -1779,24 +1809,24 @@ function Je(e) {
     s
   );
 }
-function Ye(e) {
-  let t = (0, je.c)(10),
+function $e(e) {
+  let t = (0, K.c)(10),
     { children: n, error: r, lockReason: i } = e,
     a;
   t[0] === n
     ? (a = t[1])
-    : ((a = (0, Q.jsx)(`div`, { children: n })), (t[0] = n), (t[1] = a));
+    : ((a = (0, $.jsx)(`div`, { children: n })), (t[0] = n), (t[1] = a));
   let o;
   t[2] === i
     ? (o = t[3])
     : ((o =
         i == null
           ? null
-          : (0, Q.jsxs)(`div`, {
+          : (0, $.jsxs)(`div`, {
               className: `inline-flex items-center gap-1 text-sm text-token-editor-warning-foreground`,
               children: [
-                (0, Q.jsx)(W, { className: `icon-2xs` }),
-                (0, Q.jsx)(`span`, { children: i }),
+                (0, $.jsx)(G, { className: `icon-2xs` }),
+                (0, $.jsx)(`span`, { children: i }),
               ],
             })),
       (t[2] = i),
@@ -1807,7 +1837,7 @@ function Ye(e) {
     : ((s =
         r == null
           ? null
-          : (0, Q.jsx)(`div`, {
+          : (0, $.jsx)(`div`, {
               className: `text-sm text-token-error-foreground`,
               children: r,
             })),
@@ -1816,7 +1846,7 @@ function Ye(e) {
   let c;
   return (
     t[6] !== a || t[7] !== o || t[8] !== s
-      ? ((c = (0, Q.jsxs)(`div`, {
+      ? ((c = (0, $.jsxs)(`div`, {
           className: `flex flex-col gap-1`,
           children: [a, o, s],
         })),
@@ -1828,67 +1858,12 @@ function Ye(e) {
     c
   );
 }
-function Xe() {
-  let e = (0, je.c)(7),
-    t = b(),
-    n,
-    r;
-  e[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((n = (0, Q.jsx)(l, {
-        id: `settings.openSourceLicenses.rowLabel`,
-        defaultMessage: `Open source licenses`,
-        description: `Label for the open source licenses row`,
-      })),
-      (r = (0, Q.jsx)(l, {
-        id: `settings.openSourceLicenses.rowDescription`,
-        defaultMessage: `Third-party notices for bundled dependencies`,
-        description: `Description for the open source licenses row`,
-      })),
-      (e[0] = n),
-      (e[1] = r))
-    : ((n = e[0]), (r = e[1]));
-  let i;
-  e[2] === t
-    ? (i = e[3])
-    : ((i = () => {
-        t(`/settings/open-source-licenses`);
-      }),
-      (e[2] = t),
-      (e[3] = i));
-  let a;
-  e[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((a = (0, Q.jsx)(l, {
-        id: `settings.openSourceLicenses.view`,
-        defaultMessage: `View`,
-        description: `Button label to open the open source licenses page`,
-      })),
-      (e[4] = a))
-    : (a = e[4]);
-  let o;
-  return (
-    e[5] === i
-      ? (o = e[6])
-      : ((o = (0, Q.jsx)(H, {
-          label: n,
-          description: r,
-          control: (0, Q.jsx)(se, {
-            color: `secondary`,
-            size: `toolbar`,
-            onClick: i,
-            children: a,
-          }),
-        })),
-        (e[5] = i),
-        (e[6] = o)),
-    o
-  );
-}
-function Ze(e, t) {
+function et(e, t) {
   if (e == null) return [];
   let n = [];
   for (let r of e) {
     if (r.name.type !== `project`) continue;
-    let e = Qe(r.name.dotCodexFolder);
+    let e = tt(r.name.dotCodexFolder);
     n.push({
       key: `project:${e ?? r.name.dotCodexFolder}`,
       kind: `project`,
@@ -1898,10 +1873,10 @@ function Ze(e, t) {
           defaultMessage: `{repoName}`,
           description: `Label for a project config scope in configuration settings`,
         },
-        { repoName: $e(e ?? r.name.dotCodexFolder) },
+        { repoName: nt(e ?? r.name.dotCodexFolder) },
       ),
-      tooltipText: D(r.name) ?? r.name.dotCodexFolder,
-      filePath: D(r.name),
+      tooltipText: O(r.name) ?? r.name.dotCodexFolder,
+      filePath: O(r.name),
       expectedVersion: r.version,
       workspaceRoot: e,
       layer: r,
@@ -1909,22 +1884,22 @@ function Ze(e, t) {
   }
   return n;
 }
-function Qe(e) {
+function tt(e) {
   return e.endsWith(`/.codex`) || e.endsWith(`\\.codex`)
     ? e.slice(0, -7)
     : null;
 }
-function $e(e) {
+function nt(e) {
   return e.split(/[/\\]/).at(-1) || e;
 }
-function et(e) {
+function rt(e) {
   if (typeof e != `object` || !e || Array.isArray(e))
     return { approvalPolicy: null, sandboxMode: null, networkAccess: null };
   let t = e.approval_policy,
     n = e.sandbox_mode,
     r = e.sandbox_workspace_write;
   return {
-    approvalPolicy: at(t ?? null),
+    approvalPolicy: ct(t ?? null),
     sandboxMode:
       n === `read-only` || n === `workspace-write` || n === `danger-full-access`
         ? n
@@ -1938,7 +1913,7 @@ function et(e) {
         : null,
   };
 }
-function tt(e, t) {
+function it(e, t) {
   return e == null
     ? t.formatMessage({
         id: `settings.agent.configuration.scope.unavailable`,
@@ -1953,7 +1928,7 @@ function tt(e, t) {
         })
       : null;
 }
-function nt({
+function at({
   intl: e,
   scopeLockReason: t,
   origin: n,
@@ -1964,7 +1939,7 @@ function nt({
   return (
     t ??
     (i
-      ? r?.kind !== `managed` && n != null && O(n.name)
+      ? r?.kind !== `managed` && n != null && k(n.name)
         ? e.formatMessage({
             id: `settings.agent.configuration.control.managed`,
             defaultMessage: `This value is managed by admin policy.`,
@@ -1974,13 +1949,13 @@ function nt({
       : a)
   );
 }
-function rt(e) {
-  return Ve.find((t) => t.value === e) ?? null;
+function ot(e) {
+  return We.find((t) => t.value === e) ?? null;
 }
-function it(e) {
-  return He.find((t) => t.value === e) ?? null;
+function st(e) {
+  return Ge.find((t) => t.value === e) ?? null;
 }
-function at(e) {
+function ct(e) {
   return e === `untrusted` ||
     e === `on-failure` ||
     e === `on-request` ||
@@ -1988,5 +1963,5 @@ function at(e) {
     ? e
     : null;
 }
-export { Ue as AgentSettings };
+export { Ke as AgentSettings };
 //# sourceMappingURL=agent-settings.js.map

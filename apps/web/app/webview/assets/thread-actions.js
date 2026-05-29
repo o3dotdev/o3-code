@@ -1,429 +1,77 @@
-import { s as e } from "./chunk.js";
-import { $t as t, ar as n, ft as r, ir as i } from "./src-BLHmAhbF.js";
-import { Ct as a, ts as o } from "./app-server-manager-signals.js";
+import { Ct as e, mn as t } from "./src-C.js";
 import {
-  B as s,
-  C as c,
-  S as l,
-  W as u,
-  X as d,
-  Y as f,
-  l as p,
-  xt as m,
+  Xs as n,
+  in as r,
+  zt as i,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import {
+  C as a,
+  G as o,
+  S as s,
+  V as c,
+  X as l,
+  Z as u,
+  wt as d,
 } from "./setting-storage.js";
-import { r as h } from "./toast-signal.js";
-import { t as g } from "./uniq.js";
-import { a as _, l as v } from "./sidebar-thread-keys.js";
-import { t as y } from "./pinned-threads-query.js";
-import { n as b } from "./set-pinned-thread.js";
-import { t as x } from "./copy-to-clipboard.js";
-function S({ threadIds: e, visibleThreadIds: t, nextVisibleThreadIds: n }) {
-  let r = new Set(t),
-    i = 0,
-    a = [];
-  for (let t of e) {
-    if (!r.has(t)) {
-      a.push(t);
-      continue;
-    }
-    let e = n[i];
-    (e != null && a.push(e), (i += 1));
-  }
-  return a;
-}
-function C({ visibleThreadKeys: e, pendingVisibleThreadOrder: t }) {
-  return t == null ||
-    !E(t.previousVisibleThreadKeys, e) ||
-    !D(t.nextVisibleThreadKeys, e)
-    ? e
-    : t.nextVisibleThreadKeys;
-}
-function w({ visibleThreadKeys: e, activeThreadKey: t, overThreadKey: n }) {
-  if (t == null || n == null || t === n) return null;
-  let r = e.indexOf(t),
-    i = e.indexOf(n);
-  return r === -1 || i === -1
-    ? null
-    : { beforeThreadKey: e[r < i ? i + 1 : i] ?? null };
-}
-function ee(e, t) {
-  let n = new Map(t.map((e, t) => [e, t])),
-    r = (e, t) => {
-      let r = re(e);
-      return r == null ? t : (n.get(r) ?? t);
-    };
-  return e
-    .map((e, t) => [e, t])
-    .sort(([e, t], [n, i]) => r(e, t) - r(n, i) || t - i)
-    .map(([e]) => e);
-}
-function T(e) {
-  return e.flatMap((e) =>
-    e.task.kind === `pending-worktree` ? [] : [e.task.key],
-  );
-}
-function te(e) {
-  return e.flatMap((e) => {
-    let t = _(e);
-    return t == null ? [] : [t];
-  });
-}
-function ne(e) {
-  let t = v(String(e));
-  switch (t?.kind) {
-    case `local`:
-    case `remote`:
-    case `pending-worktree`:
-      return t.key;
-    case void 0:
-      return null;
-  }
-}
-function E(e, t) {
-  return e.length === t.length ? e.every((e, n) => e === t[n]) : !1;
-}
-function D(e, t) {
-  if (e.length !== t.length) return !1;
-  let n = new Set(t);
-  return e.every((e) => n.has(e));
-}
-function re(e) {
-  return e.task.kind === `pending-worktree` ? null : e.task.key;
-}
-var ie = e(g(), 1),
-  ae = /\p{Extended_Pictographic}|\p{Regional_Indicator}/u,
-  oe = [];
-function se() {
-  return typeof crypto < `u` && crypto.randomUUID != null
-    ? crypto.randomUUID()
-    : `${Date.now().toString(36)}-${Math.random().toString(36).slice(2)}`;
-}
-function ce({ sections: e, sectionId: t, emoji: n, name: r, threadId: i }) {
-  let a = r.trim();
-  return a.length === 0
-    ? e
-    : [
-        ...(i == null ? e : P({ sections: e, threadId: i })),
-        { id: t, emoji: O(n), name: a, threadIds: i == null ? [] : [i] },
-      ];
-}
-function le({ sections: e, sectionId: t, emoji: n, name: r }) {
-  let i = r.trim();
-  if (i.length === 0) return e;
-  let a = O(n),
-    o = !1,
-    s = e.map((e) =>
-      e.id !== t || (e.emoji === a && e.name === i)
-        ? e
-        : ((o = !0), { ...e, emoji: a, name: i }),
-    );
-  return o ? s : e;
-}
-function O(e) {
-  let t = U(e.trim());
-  return ae.test(t) ? t : ``;
-}
-function ue(e) {
-  return e.emoji ? `${e.emoji} ${e.name}` : e.name;
-}
-function k({ sections: e, sectionId: t }) {
-  let n = e.filter((e) => e.id !== t);
-  return n.length === e.length ? e : n;
-}
-function A({ sections: e, sectionId: t, threadId: n, included: r }) {
-  if (!e.some((e) => e.id === t)) return e;
-  let i = !1,
-    a = e.map((e) => {
-      let a = e.threadIds.includes(n);
-      return e.id === t
-        ? a === r
-          ? e
-          : ((i = !0),
-            r
-              ? { ...e, threadIds: [...e.threadIds, n] }
-              : { ...e, threadIds: e.threadIds.filter((e) => e !== n) })
-        : !r || !a
-          ? e
-          : ((i = !0), { ...e, threadIds: e.threadIds.filter((e) => e !== n) });
-    });
-  return i ? a : e;
-}
-function j({ sections: e, sectionId: t, threadId: n, beforeThreadId: r }) {
-  if (!e.some((e) => e.id === t)) return e;
-  let i = !1,
-    a = e.map((e) => {
-      let a = e.threadIds.filter((e) => e !== n);
-      if (e.id !== t)
-        return a.length === e.threadIds.length
-          ? e
-          : ((i = !0), { ...e, threadIds: a });
-      let o = r == null ? 0 : a.indexOf(r),
-        s = o === -1 ? [...a, n] : [...a.slice(0, o), n, ...a.slice(o)];
-      return e.sortKey == null &&
-        s.length === e.threadIds.length &&
-        s.every((t, n) => t === e.threadIds[n])
-        ? e
-        : ((i = !0), { ...e, threadIds: s });
-    });
-  return i ? a : e;
-}
-function M({
-  sections: e,
-  sectionId: t,
-  visibleThreadIds: n,
-  nextVisibleThreadIds: r,
-}) {
-  let i = !1,
-    a = e.map((e) => {
-      if (e.id !== t) return e;
-      let a = S({
-        threadIds: e.threadIds,
-        visibleThreadIds: n,
-        nextVisibleThreadIds: r,
-      });
-      return e.sortKey == null &&
-        a.length === e.threadIds.length &&
-        a.every((t, n) => t === e.threadIds[n])
-        ? e
-        : ((i = !0), z({ section: e, threadIds: a, sortKey: null }));
-    });
-  return i ? a : e;
-}
-function N({ sections: e, sectionId: t, sortKey: n }) {
-  let r = !1,
-    i = e.map((e) =>
-      e.id !== t || (e.sortKey ?? null) === n
-        ? e
-        : ((r = !0), z({ section: e, threadIds: e.threadIds, sortKey: n })),
-    );
-  return r ? i : e;
-}
-function P({ sections: e, threadId: t }) {
-  let n = !1,
-    r = e.map((e) =>
-      e.threadIds.includes(t)
-        ? ((n = !0), { ...e, threadIds: e.threadIds.filter((e) => e !== t) })
-        : e,
-    );
-  return n ? r : e;
-}
-function F({ sections: e, sourceThreadId: t, targetThreadId: n }) {
-  if (t === n) return e;
-  let r = !1,
-    i = e.map((e) =>
-      e.threadIds.includes(t)
-        ? ((r = !0),
-          {
-            ...e,
-            threadIds: (0, ie.default)(
-              e.threadIds.map((e) => (e === t ? n : e)),
-            ),
-          })
-        : e,
-    );
-  return r ? i : e;
-}
-function I({ items: e, threadIds: t, sortKey: n }) {
-  if (t.length === 0) return oe;
-  let r = new Map(
-    B({ items: e, threadIds: t, sortKey: n ?? null }).map((e, t) => [e, t]),
-  );
-  return e
-    .map((e, t) => {
-      let n = H(e);
-      return n == null || !r.has(n) ? null : [e, r.get(n) ?? t, t];
-    })
-    .filter((e) => e != null)
-    .sort(([, e, t], [, n, r]) => e - n || t - r)
-    .map(([e]) => e);
-}
-function L({ items: e, sections: t }) {
-  let n = new Set();
-  if (t == null || t.length === 0) return n;
-  let r = new Set();
-  for (let e of t) for (let t of e.threadIds) r.add(t);
-  for (let t of e) {
-    let e = H(t);
-    e != null && r.has(e) && n.add(t.task.key);
-  }
-  return n;
-}
-function R({ items: e, sections: t }) {
-  let n = new Map();
-  for (let t of e) {
-    let e = H(t);
-    if (e == null) continue;
-    let r = n.get(e);
-    (r ?? ((r = []), n.set(e, r)), r.push(t));
-  }
-  let r = [],
-    i = new Set();
-  for (let a of t)
-    for (let t of B({
-      items: e,
-      threadIds: a.threadIds,
-      sortKey: a.sortKey ?? null,
-    })) {
-      let e = n.get(t);
-      if (e != null)
-        for (let t of e) i.has(t.task.key) || (i.add(t.task.key), r.push(t));
-    }
-  return r;
-}
-function z({ section: e, threadIds: t, sortKey: n }) {
-  if (n == null) {
-    let { sortKey: n, ...r } = e;
-    return { ...r, threadIds: t };
-  }
-  return { ...e, threadIds: t, sortKey: n };
-}
-function B({ items: e, threadIds: t, sortKey: n }) {
-  if (n == null) return t;
-  let r = new Set(t),
-    i = new Set(),
-    a = e
-      .flatMap((e, t) => {
-        let a = H(e);
-        return a == null || !r.has(a) || i.has(a)
-          ? []
-          : (i.add(a), [{ threadId: a, timestamp: V(e, n), index: t }]);
-      })
-      .sort((e, t) => t.timestamp - e.timestamp || e.index - t.index)
-      .map(({ threadId: e }) => e),
-    o = new Set(a);
-  return [...a, ...t.filter((e) => !o.has(e))];
-}
-function V(e, t) {
-  switch (e.task.kind) {
-    case `local`:
-      return t === `updated_at`
-        ? e.task.conversation.updatedAt
-        : e.task.conversation.createdAt;
-    case `remote`:
-      return (
-        ((t === `updated_at`
-          ? (e.task.task.updated_at ?? e.task.task.created_at)
-          : (e.task.task.created_at ?? e.task.task.updated_at)) ?? 0) * 1e3
-      );
-    case `pending-worktree`:
-      return 0;
-  }
-}
-function H(e) {
-  switch (e.task.kind) {
-    case `local`:
-      return e.task.conversation.id;
-    case `remote`:
-      return e.task.task.id;
-    case `pending-worktree`:
-      return null;
-  }
-}
-function U(e) {
-  if (e.length === 0) return ``;
-  try {
-    let t = new Intl.Segmenter(void 0, { granularity: `grapheme` });
-    for (let { segment: n } of t.segment(e)) return n;
-  } catch {
-    return Array.from(e)[0] ?? ``;
-  }
-  return ``;
-}
-var W = Promise.resolve();
-function de(e, t) {
-  return q(e, (e) => ce({ sections: e, ...t }));
-}
-function fe(e, t) {
-  return q(e, (e) => le({ sections: e, ...t }));
-}
-function G(e, t) {
-  return q(e, (e) => k({ sections: e, sectionId: t }));
-}
-function pe(e, t) {
-  return q(e, (e) => A({ sections: e, ...t }));
-}
-function me(e, t) {
-  return q(e, (e) => j({ sections: e, ...t }));
-}
-function he(e, t) {
-  return q(e, (e) => M({ sections: e, ...t }));
-}
-function ge(e, t) {
-  return q(e, (e) => N({ sections: e, ...t }));
-}
-function K(e, t) {
-  return q(e, (e) => P({ sections: e, threadId: t }));
-}
-function _e(e, t) {
-  return q(e, (e) => F({ sections: e, ...t }));
-}
-function q(e, t) {
-  let r = async () => {
-      let { value: r } = await p(`get-global-state`, {
-          params: { key: i.SIDEBAR_CUSTOM_SECTIONS },
-        }),
-        o = r ?? n(i.SIDEBAR_CUSTOM_SECTIONS),
-        s = t(o);
-      s !== o && (await a(e, i.SIDEBAR_CUSTOM_SECTIONS, s));
-    },
-    o = W.then(r, r);
-  return ((W = o.catch(() => {})), o);
-}
-async function J(e, t, n, i) {
-  let a = e.query.snapshot(y),
-    o = a.getData(),
-    s =
-      o == null
+import { r as f } from "./toast-signal.js";
+import { t as p } from "./pinned-threads-query-DYArLI-i.js";
+import { n as m } from "./set-pinned-thread-CqaOWPwd.js";
+import { t as h } from "./copy-to-clipboard-C2Mq2hN-.js";
+async function g(t, n, a, o) {
+  let s = t.query.snapshot(p),
+    c = s.getData(),
+    l =
+      c == null
         ? null
         : {
-            threadIds: n
-              ? r({
-                  threadIds: o.threadIds,
-                  threadId: t,
-                  beforeThreadId: i ?? null,
+            threadIds: a
+              ? e({
+                  threadIds: c.threadIds,
+                  threadId: n,
+                  beforeThreadId: o ?? null,
                 })
-              : o.threadIds.filter((e) => e !== t),
+              : c.threadIds.filter((e) => e !== n),
           };
-  s != null && a.setData(s);
-  let c = !1;
+  l != null && s.setData(l);
+  let u = !1;
   try {
-    (i === void 0 ? await b(t, n) : await b(t, n, i),
-      (c = n),
-      n && (await K(e, t)));
+    (o === void 0 ? await m(n, a) : await m(n, a, o),
+      (u = a),
+      a && (await i(t, n)));
   } catch (e) {
-    let n = a.getData();
+    let t = s.getData();
     if (
-      (s != null && n != null && E(n.threadIds, s.threadIds) && a.setData(o), c)
+      (l != null && t != null && r(t.threadIds, l.threadIds) && s.setData(c), u)
     )
       try {
-        await b(t, !1);
+        await m(n, !1);
       } catch (e) {
-        Y(e);
+        v(e);
       }
-    Y(e);
+    v(e);
   }
 }
-async function ve(e, t, n) {
+async function _(e, t, n) {
   await n;
   try {
-    await b(t, !1);
+    await m(t, !1);
   } catch (n) {
     try {
-      await K(e, t);
+      await i(e, t);
     } catch (e) {
-      Y(e);
+      v(e);
     }
     throw n;
   }
 }
-function Y(e) {
-  c.error(`Failed to update sidebar thread membership`, {
+function v(e) {
+  a.error(`Failed to update sidebar thread membership`, {
     safe: {},
     sensitive: { error: t(e) },
   });
 }
-var X = m(),
-  Z = s({
+var y = d(),
+  b = c({
     archiveThreadError: {
       id: `sidebarElectron.archiveThreadError`,
       defaultMessage: `Failed to archive chat`,
@@ -550,193 +198,160 @@ var X = m(),
       description: `Prompt text shown on the worktree init page for thread-menu fork actions`,
     },
   });
-function ye(e, t) {
-  let n = (0, X.c)(16),
+function x(e, t) {
+  let n = (0, y.c)(16),
     r;
   n[0] === t
     ? (r = n[1])
     : ((r = t === void 0 ? {} : t), (n[0] = t), (n[1] = r));
   let { canPin: i } = r,
     a = i === void 0 ? !0 : i,
-    o = f(l),
-    { data: s } = d(y),
-    c;
-  n[2] === s?.threadIds
-    ? (c = n[3])
-    : ((c = s?.threadIds ?? []), (n[2] = s?.threadIds), (n[3] = c));
-  let u = c,
-    p;
-  n[4] !== a || n[5] !== e || n[6] !== u
-    ? ((p = a && e != null && u.includes(e)),
+    o = l(s),
+    { data: c } = u(p),
+    d;
+  n[2] === c?.threadIds
+    ? (d = n[3])
+    : ((d = c?.threadIds ?? []), (n[2] = c?.threadIds), (n[3] = d));
+  let f = d,
+    m;
+  n[4] !== a || n[5] !== e || n[6] !== f
+    ? ((m = a && e != null && f.includes(e)),
       (n[4] = a),
       (n[5] = e),
-      (n[6] = u),
-      (n[7] = p))
-    : (p = n[7]);
-  let m = p,
-    h;
-  n[8] !== a || n[9] !== e || n[10] !== m || n[11] !== o
-    ? ((h = () => {
-        !a || e == null || J(o, e, !m);
+      (n[6] = f),
+      (n[7] = m))
+    : (m = n[7]);
+  let h = m,
+    _;
+  n[8] !== a || n[9] !== e || n[10] !== h || n[11] !== o
+    ? ((_ = () => {
+        !a || e == null || g(o, e, !h);
       }),
       (n[8] = a),
       (n[9] = e),
-      (n[10] = m),
+      (n[10] = h),
       (n[11] = o),
-      (n[12] = h))
-    : (h = n[12]);
-  let g = h,
-    _;
+      (n[12] = _))
+    : (_ = n[12]);
+  let v = _,
+    b;
   return (
-    n[13] !== m || n[14] !== g
-      ? ((_ = { isPinned: m, togglePin: g }),
-        (n[13] = m),
-        (n[14] = g),
-        (n[15] = _))
-      : (_ = n[15]),
-    _
+    n[13] !== h || n[14] !== v
+      ? ((b = { isPinned: h, togglePin: v }),
+        (n[13] = h),
+        (n[14] = v),
+        (n[15] = b))
+      : (b = n[15]),
+    b
   );
 }
-function be({ cwd: e, intl: t, scope: n }) {
-  e &&
-    x(e).then(
+function S({ scope: e, cwd: t, intl: n }) {
+  t &&
+    h(t).then(
       () => {
-        n.get(h).success(t.formatMessage(Z.copyWorkingDirectorySuccess));
+        e.get(f).success(n.formatMessage(b.copyWorkingDirectorySuccess));
       },
       () => {
-        n.get(h).danger(t.formatMessage(Z.copyWorkingDirectoryError));
+        e.get(f).danger(n.formatMessage(b.copyWorkingDirectoryError));
       },
     );
 }
-function Q(e) {
-  e && x(e);
+function C(e) {
+  e && h(e);
 }
-function $(e) {
-  e && x(`codex://threads/${e}`);
+function w(e) {
+  e && h(`codex://threads/${e}`);
 }
-function xe({ getMarkdown: e, intl: t, scope: n }) {
+function T({ scope: e, getMarkdown: t, intl: n }) {
   (async () => {
-    let r = await e();
+    let r = await t();
     r == null ||
       r.trim().length === 0 ||
-      (await x(r),
-      n.get(h).success(t.formatMessage(Z.copyConversationMarkdownSuccess)));
+      (await h(r),
+      e.get(f).success(n.formatMessage(b.copyConversationMarkdownSuccess)));
   })().catch(() => {
-    n.get(h).danger(t.formatMessage(Z.copyConversationMarkdownError));
+    e.get(f).danger(n.formatMessage(b.copyConversationMarkdownError));
   });
 }
-function Se() {
-  let e = (0, X.c)(17),
-    t = f(l),
-    n = u(),
-    r,
-    i;
-  e[0] !== n || e[1] !== t
-    ? ((r = (e) => {
-        let { conversationId: r, onArchiveSuccess: i, onArchiveError: a } = e;
-        o(`archive-conversation`, { conversationId: r })
+function E() {
+  let e = (0, y.c)(17),
+    t = l(s),
+    r = o(),
+    i,
+    a;
+  e[0] !== r || e[1] !== t
+    ? ((i = (e) => {
+        let { conversationId: i, onArchiveSuccess: a, onArchiveError: o } = e;
+        n(`archive-conversation`, { conversationId: i })
           .then(() => {
-            i?.();
+            a?.();
           })
           .catch(() => {
-            (a?.(), t.get(h).danger(n.formatMessage(Z.archiveThreadError)));
+            (o?.(), t.get(f).danger(r.formatMessage(b.archiveThreadError)));
           });
       }),
-      (i = (e) => {
-        let { conversationId: r } = e;
-        o(`interrupt-conversation`, { conversationId: r }).catch(() => {
-          t.get(h).danger(n.formatMessage(Z.interruptThreadError));
+      (a = (e) => {
+        let { conversationId: i } = e;
+        n(`interrupt-conversation`, { conversationId: i }).catch(() => {
+          t.get(f).danger(r.formatMessage(b.interruptThreadError));
         });
       }),
-      (e[0] = n),
+      (e[0] = r),
       (e[1] = t),
-      (e[2] = r),
-      (e[3] = i))
-    : ((r = e[2]), (i = e[3]));
-  let a, s;
-  e[4] !== n || e[5] !== t
-    ? ((a = (e) => {
-        let { conversationId: r, title: i } = e;
-        o(`set-thread-title`, { conversationId: r, title: i }).catch(() => {
-          t.get(h).danger(n.formatMessage(Z.renameThreadError));
+      (e[2] = i),
+      (e[3] = a))
+    : ((i = e[2]), (a = e[3]));
+  let c, u;
+  e[4] !== r || e[5] !== t
+    ? ((c = (e) => {
+        let { conversationId: i, title: a } = e;
+        n(`set-thread-title`, { conversationId: i, title: a }).catch(() => {
+          t.get(f).danger(r.formatMessage(b.renameThreadError));
         });
       }),
-      (s = (e) => {
-        be({ cwd: e, intl: n, scope: t });
+      (u = (e) => {
+        S({ scope: t, cwd: e, intl: r });
       }),
-      (e[4] = n),
+      (e[4] = r),
       (e[5] = t),
-      (e[6] = a),
-      (e[7] = s))
-    : ((a = e[6]), (s = e[7]));
-  let c;
-  e[8] !== n || e[9] !== t
-    ? ((c = (e) => {
-        xe({ getMarkdown: e, intl: n, scope: t });
-      }),
-      (e[8] = n),
-      (e[9] = t),
-      (e[10] = c))
-    : (c = e[10]);
+      (e[6] = c),
+      (e[7] = u))
+    : ((c = e[6]), (u = e[7]));
   let d;
+  e[8] !== r || e[9] !== t
+    ? ((d = (e) => {
+        T({ scope: t, getMarkdown: e, intl: r });
+      }),
+      (e[8] = r),
+      (e[9] = t),
+      (e[10] = d))
+    : (d = e[10]);
+  let p;
   return (
-    e[11] !== r || e[12] !== i || e[13] !== a || e[14] !== s || e[15] !== c
-      ? ((d = {
-          archiveThread: r,
-          interruptThread: i,
-          markThreadAsUnread: Ce,
-          renameThread: a,
-          copyWorkingDirectory: s,
-          copySessionId: Q,
-          copyAppLink: $,
-          copyConversationMarkdown: c,
+    e[11] !== i || e[12] !== a || e[13] !== c || e[14] !== u || e[15] !== d
+      ? ((p = {
+          archiveThread: i,
+          interruptThread: a,
+          markThreadAsUnread: D,
+          renameThread: c,
+          copyWorkingDirectory: u,
+          copySessionId: C,
+          copyAppLink: w,
+          copyConversationMarkdown: d,
         }),
-        (e[11] = r),
-        (e[12] = i),
-        (e[13] = a),
-        (e[14] = s),
-        (e[15] = c),
-        (e[16] = d))
-      : (d = e[16]),
-    d
+        (e[11] = i),
+        (e[12] = a),
+        (e[13] = c),
+        (e[14] = u),
+        (e[15] = d),
+        (e[16] = p))
+      : (p = e[16]),
+    p
   );
 }
-function Ce(e) {
+function D(e) {
   let { conversationId: t } = e;
-  o(`mark-conversation-as-unread`, { conversationId: t });
+  n(`mark-conversation-as-unread`, { conversationId: t });
 }
-export {
-  E as A,
-  j as C,
-  T as D,
-  te as E,
-  ne as M,
-  w as O,
-  R as S,
-  ee as T,
-  se as _,
-  Se as a,
-  I as b,
-  de as c,
-  K as d,
-  he as f,
-  fe as g,
-  _e as h,
-  ye as i,
-  S as j,
-  C as k,
-  G as l,
-  pe as m,
-  Q as n,
-  ve as o,
-  ge as p,
-  Z as r,
-  J as s,
-  $ as t,
-  me as u,
-  O as v,
-  P as w,
-  ue as x,
-  L as y,
-};
+export { E as a, x as i, C as n, _ as o, b as r, g as s, w as t };
 //# sourceMappingURL=thread-actions.js.map

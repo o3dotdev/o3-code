@@ -1,22 +1,21 @@
-import { s as e } from "./chunk.js";
-import { Yn as t, qi as n } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Ia as t, wr as n } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as r, t as i } from "./jsx-runtime.js";
-import { t as a } from "./clsx.js";
-import { C as o, H as s, m as c, xt as l } from "./setting-storage.js";
-import { t as u } from "./use-is-dark.js";
-import { t as ee } from "./tooltip.js";
-import { t as te } from "./open-workspace-file.js";
-import { t as d } from "./proxy.js";
-import { t as f } from "./parse-diff.js";
-import { t as p } from "./file-diff.js";
-import { n as m } from "./use-resize-observer.js";
-import { t as h } from "./chevron-right.js";
-import { t as g } from "./thinking-shimmer.js";
-import { t as _ } from "./animations.js";
-import { t as v } from "./code-snippet.js";
-import { t as y } from "./tailwind-styled-components.esm.js";
+import { t as a } from "./clsx-BcPLHiun.js";
+import { C as o, U as s, m as c, wt as l } from "./setting-storage.js";
+import { t as u } from "./use-is-dark-BHkhnHe-.js";
+import { t as ee } from "./tooltip-CDzchJxN.js";
+import { t as d } from "./open-workspace-file-WgoEFjrv.js";
+import { t as f } from "./proxy.js";
+import { i as p } from "./focus-composer.js";
+import { t as m } from "./file-diff-DOHfgomY.js";
+import { n as h } from "./use-resize-observer-DCpyQHos.js";
+import { t as g } from "./chevron-right.js";
+import { t as _ } from "./thinking-shimmer.js";
+import { t as v } from "./animations.js";
+import { t as y } from "./code-snippet-hioibDaj.js";
 import { t as b } from "./copy-button.js";
-import { n as ne } from "./diff-stats-.js";
+import { n as te } from "./diff-stats.js";
 function x(e) {
   let t = e.toLowerCase();
   if (/(^|[\\/])makefile$/.test(t)) return `makefile`;
@@ -119,7 +118,7 @@ function w() {
       }),
       (e[1] = a))
     : (a = e[1]);
-  let o = m(a),
+  let o = h(a),
     s;
   e[2] === o
     ? (s = e[3])
@@ -149,7 +148,7 @@ function T(e) {
 function E(e, t) {
   if (!e) return null;
   let n = D(e),
-    r = f(e)[0];
+    r = p(e)[0];
   return r &&
     (r.additions > 0 || r.deletions > 0 || (n.added === 0 && n.deleted === 0))
     ? {
@@ -174,7 +173,7 @@ function D(e) {
   return { added: t, deleted: n };
 }
 var O = i();
-function re(e) {
+function k(e) {
   let t = (0, S.c)(8),
     { children: n, className: r, padding: i } = e,
     o = i === void 0 ? `default` : i,
@@ -207,8 +206,7 @@ function re(e) {
     l
   );
 }
-var ie = y.div`text-token-description-foreground/80 bg-token-editor-background flex w-full items-center justify-center px-2 pt-7 pb-8 text-size-chat`;
-function ae(e) {
+function ne(e) {
   let t = (0, S.c)(12),
     { item: n, isTurnCancelled: r, cwd: i, hostId: a } = e,
     o = r === void 0 ? !1 : r,
@@ -240,14 +238,14 @@ function ae(e) {
     t[8] !== n.grantRoot ||
     t[9] !== s ||
     t[10] !== c
-      ? ((l = (0, O.jsx)(re, {
+      ? ((l = (0, O.jsx)(k, {
           padding: `offset`,
           children: (0, O.jsx)(`div`, {
             className: `flex flex-col gap-[var(--conversation-patch-file-gap,var(--conversation-tool-assistant-gap,8px))]`,
             children: c.map((e) => {
               let [t, r] = e;
               return (0, O.jsx)(
-                oe,
+                ie,
                 {
                   path: t,
                   change: r,
@@ -271,43 +269,70 @@ function ae(e) {
     l
   );
 }
-function oe(e) {
+function re(e) {
+  let t = (0, S.c)(8),
+    n,
+    r;
+  t[0] === e
+    ? ((n = t[1]), (r = t[2]))
+    : (({ className: n, ...r } = e), (t[0] = e), (t[1] = n), (t[2] = r));
+  let i;
+  t[3] === n
+    ? (i = t[4])
+    : ((i = a(
+        `text-token-description-foreground/80 bg-token-editor-background flex w-full items-center justify-center px-2 pt-7 pb-8 text-size-chat`,
+        n,
+      )),
+      (t[3] = n),
+      (t[4] = i));
+  let o;
+  return (
+    t[5] !== r || t[6] !== i
+      ? ((o = (0, O.jsx)(`div`, { className: i, ...r })),
+        (t[5] = r),
+        (t[6] = i),
+        (t[7] = o))
+      : (o = t[7]),
+    o
+  );
+}
+function ie(e) {
   let r = (0, S.c)(90),
-    { path: i, change: o, status: l, cwd: u, hostId: f, grantRoot: p } = e,
-    m = l === `streaming`,
-    v = l === `stopped`,
-    y = l === `pending`,
-    b = l === `rejected`,
-    x = m || y,
-    T = x || v,
-    [D, re] = (0, C.useState)(!1),
-    { elementHeightPx: ae, elementRef: oe } = w(),
-    k = c(`open-file`),
-    A;
+    { path: i, change: o, status: l, cwd: u, hostId: p, grantRoot: m } = e,
+    h = l === `streaming`,
+    y = l === `stopped`,
+    b = l === `pending`,
+    x = l === `rejected`,
+    T = h || b,
+    D = T || y,
+    [k, ne] = (0, C.useState)(!1),
+    { elementHeightPx: ie, elementRef: ce } = w(),
+    A = c(`open-file`),
+    j;
   r[0] !== o || r[1] !== i
-    ? ((A = t(i, o)), (r[0] = o), (r[1] = i), (r[2] = A))
-    : (A = r[2]);
-  let j = A,
-    M;
-  r[3] === D ? (M = r[4]) : ((M = () => {}), (r[3] = D), (r[4] = M));
-  let ue = (0, C.useEffectEvent)(M),
+    ? ((j = n(i, o)), (r[0] = o), (r[1] = i), (r[2] = j))
+    : (j = r[2]);
+  let M = j,
     N;
-  r[5] === ue
-    ? (N = r[6])
-    : ((N = () => {
-        ue();
+  r[3] === k ? (N = r[4]) : ((N = () => {}), (r[3] = k), (r[4] = N));
+  let le = (0, C.useEffectEvent)(N),
+    ue;
+  r[5] === le
+    ? (ue = r[6])
+    : ((ue = () => {
+        le();
       }),
-      (r[5] = ue),
-      (r[6] = N));
+      (r[5] = le),
+      (r[6] = ue));
   let de;
   (r[7] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((de = [!1]), (r[7] = de))
     : (de = r[7]),
-    (0, C.useEffect)(N, de));
+    (0, C.useEffect)(ue, de));
   let P;
   bb0: {
     if (o.type === `add`) {
-      if (v) {
+      if (y) {
         let e;
         (r[8] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((e = (0, O.jsx)(s, {
@@ -320,7 +345,7 @@ function oe(e) {
           (P = e));
         break bb0;
       }
-      if (b) {
+      if (x) {
         let e;
         (r[9] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((e = (0, O.jsx)(s, {
@@ -334,9 +359,9 @@ function oe(e) {
         break bb0;
       }
       let e;
-      (r[10] === T
+      (r[10] === D
         ? (e = r[11])
-        : ((e = T
+        : ((e = D
             ? (0, O.jsx)(s, {
                 id: `codex.patch.change.creating`,
                 defaultMessage: `Creating`,
@@ -347,13 +372,13 @@ function oe(e) {
                 defaultMessage: `Created`,
                 description: `Label indicating a file has been created in the patch summary`,
               })),
-          (r[10] = T),
+          (r[10] = D),
           (r[11] = e)),
         (P = e));
       break bb0;
     }
     if (o.type === `delete`) {
-      if (v) {
+      if (y) {
         let e;
         (r[12] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((e = (0, O.jsx)(s, {
@@ -366,7 +391,7 @@ function oe(e) {
           (P = e));
         break bb0;
       }
-      if (b) {
+      if (x) {
         let e;
         (r[13] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((e = (0, O.jsx)(s, {
@@ -380,9 +405,9 @@ function oe(e) {
         break bb0;
       }
       let e;
-      (r[14] === T
+      (r[14] === D
         ? (e = r[15])
-        : ((e = T
+        : ((e = D
             ? (0, O.jsx)(s, {
                 id: `codex.patch.change.deleting`,
                 defaultMessage: `Deleting`,
@@ -393,12 +418,12 @@ function oe(e) {
                 defaultMessage: `Deleted`,
                 description: `Label indicating a file has been deleted in the patch summary`,
               })),
-          (r[14] = T),
+          (r[14] = D),
           (r[15] = e)),
         (P = e));
       break bb0;
     }
-    if (v) {
+    if (y) {
       let e;
       (r[16] === Symbol.for(`react.memo_cache_sentinel`)
         ? ((e = (0, O.jsx)(s, {
@@ -411,7 +436,7 @@ function oe(e) {
         (P = e));
       break bb0;
     }
-    if (b) {
+    if (x) {
       let e;
       (r[17] === Symbol.for(`react.memo_cache_sentinel`)
         ? ((e = (0, O.jsx)(s, {
@@ -425,9 +450,9 @@ function oe(e) {
       break bb0;
     }
     let e;
-    (r[18] === T
+    (r[18] === D
       ? (e = r[19])
-      : ((e = T
+      : ((e = D
           ? (0, O.jsx)(s, {
               id: `codex.patch.change.editing`,
               defaultMessage: `Editing`,
@@ -438,37 +463,37 @@ function oe(e) {
               defaultMessage: `Edited`,
               description: `Label indicating a file has been edited in the patch summary`,
             })),
-        (r[18] = T),
+        (r[18] = D),
         (r[19] = e)),
       (P = e));
   }
   let F = P,
     fe;
-  r[20] !== i || r[21] !== j
-    ? ((fe = E(j, i)), (r[20] = i), (r[21] = j), (r[22] = fe))
+  r[20] !== i || r[21] !== M
+    ? ((fe = E(M, i)), (r[20] = i), (r[21] = M), (r[22] = fe))
     : (fe = r[22]);
   let I = fe,
     pe;
   r[23] !== u ||
   r[24] !== I?.openLocation?.line ||
-  r[25] !== p ||
-  r[26] !== f ||
-  r[27] !== k.mutate ||
+  r[25] !== m ||
+  r[26] !== p ||
+  r[27] !== A.mutate ||
   r[28] !== i
     ? ((pe = () => {
-        te({
+        d({
           path: i,
           line: I?.openLocation?.line,
-          cwd: p ?? u ?? null,
-          ...(f == null ? {} : { hostId: f }),
-          openFile: k.mutate,
+          cwd: m ?? u ?? null,
+          ...(p == null ? {} : { hostId: p }),
+          openFile: A.mutate,
         });
       }),
       (r[23] = u),
       (r[24] = I?.openLocation?.line),
-      (r[25] = p),
-      (r[26] = f),
-      (r[27] = k.mutate),
+      (r[25] = m),
+      (r[26] = p),
+      (r[27] = A.mutate),
       (r[28] = i),
       (r[29] = pe))
     : (pe = r[29]);
@@ -476,7 +501,7 @@ function oe(e) {
     me = o.type === `delete` && I,
     R;
   bb1: {
-    if (!D || T || b) {
+    if (!k || D || x) {
       R = null;
       break bb1;
     }
@@ -519,35 +544,35 @@ function oe(e) {
   }
   let z = R,
     B = z != null,
-    V = D,
-    he = V ? ae : 0,
-    ge = V ? oe : null,
+    V = k,
+    he = V ? ie : 0,
+    ge = V ? ce : null,
     H;
   r[33] !== o ||
   r[34] !== I?.added ||
   r[35] !== I?.deleted ||
   r[36] !== I?.openLocation ||
   r[37] !== L ||
-  r[38] !== y ||
+  r[38] !== b ||
   r[39] !== i ||
-  r[40] !== j
-    ? ((H = j
-        ? (0, O.jsx)(ce, {
+  r[40] !== M
+    ? ((H = M
+        ? (0, O.jsx)(oe, {
             className: `mt-1.5`,
             path: i,
-            unifiedDiff: j,
+            unifiedDiff: M,
             openLocation: I?.openLocation,
             linesAdded: I?.added,
             linesRemoved: I?.deleted,
             onOpenFile: L,
-            children: (0, O.jsx)(le, {
+            children: (0, O.jsx)(se, {
               path: i,
               change: o,
-              unifiedDiff: j,
-              isShortView: y,
+              unifiedDiff: M,
+              isShortView: b,
             }),
           })
-        : (0, O.jsx)(ie, {
+        : (0, O.jsx)(re, {
             children:
               o.type === `delete`
                 ? (0, O.jsx)(s, {
@@ -566,9 +591,9 @@ function oe(e) {
       (r[35] = I?.deleted),
       (r[36] = I?.openLocation),
       (r[37] = L),
-      (r[38] = y),
+      (r[38] = b),
       (r[39] = i),
-      (r[40] = j),
+      (r[40] = M),
       (r[41] = H))
     : (H = r[41]);
   let _e;
@@ -579,7 +604,7 @@ function oe(e) {
       (r[44] = _e))
     : (_e = r[44]);
   let ve = _e,
-    ye = y ? `rounded-xl` : `rounded-lg`,
+    ye = b ? `rounded-xl` : `rounded-lg`,
     U;
   r[45] === ye
     ? (U = r[46])
@@ -590,32 +615,32 @@ function oe(e) {
         `cursor-interaction group flex items-center justify-between gap-1 text-ellipsis text-size-chat`,
         `px-0 py-0`,
       )),
-      (xe = () => re(se)),
+      (xe = () => ne(ae)),
       (r[47] = be),
       (r[48] = xe))
     : ((be = r[47]), (xe = r[48]));
   let W;
   r[49] !== F ||
   r[50] !== z ||
-  r[51] !== x ||
-  r[52] !== y ||
-  r[53] !== v ||
-  r[54] !== m
-    ? ((W = m
-        ? (0, O.jsx)(g, {
+  r[51] !== T ||
+  r[52] !== b ||
+  r[53] !== y ||
+  r[54] !== h
+    ? ((W = h
+        ? (0, O.jsx)(_, {
             active: !0,
             className: `text-token-description-foreground/80 select-text group-hover:text-token-foreground`,
             children: F,
           })
-        : v
+        : y
           ? (0, O.jsx)(`span`, {
               className: `text-token-description-foreground/80 select-text group-hover:text-token-foreground`,
               children: F,
             })
-          : y
+          : b
             ? null
-            : (0, O.jsx)(g, {
-                active: x,
+            : (0, O.jsx)(_, {
+                active: T,
                 className: a(
                   `text-token-description-foreground/80 group-hover:text-token-foreground select-text`,
                 ),
@@ -623,10 +648,10 @@ function oe(e) {
               })),
       (r[49] = F),
       (r[50] = z),
-      (r[51] = x),
-      (r[52] = y),
-      (r[53] = v),
-      (r[54] = m),
+      (r[51] = T),
+      (r[52] = b),
+      (r[53] = y),
+      (r[54] = h),
       (r[55] = W))
     : (W = r[55]);
   let G;
@@ -644,7 +669,7 @@ function oe(e) {
                 onClick: (e) => {
                   (e.stopPropagation(), L());
                 },
-                children: n(i),
+                children: t(i),
               }),
             })
           : null),
@@ -660,7 +685,7 @@ function oe(e) {
           ? (0, O.jsxs)(`div`, {
               className: `flex items-center gap-1.5`,
               children: [
-                (0, O.jsx)(ne, {
+                (0, O.jsx)(te, {
                   className: `text-size-chat-sm`,
                   linesAdded: I.added,
                   linesRemoved: I.deleted,
@@ -688,7 +713,7 @@ function oe(e) {
             ? null
             : (0, O.jsxs)(O.Fragment, {
                 children: [
-                  (0, O.jsx)(ne, {
+                  (0, O.jsx)(te, {
                     className: `text-size-chat-sm`,
                     linesAdded: I.added,
                     linesRemoved: I.deleted,
@@ -706,7 +731,7 @@ function oe(e) {
       (r[66] = B),
       (r[67] = q))
     : (q = r[67]);
-  let Se = D && `rotate-90 opacity-100`,
+  let Se = k && `rotate-90 opacity-100`,
     J;
   r[68] === Se
     ? (J = r[69])
@@ -719,7 +744,7 @@ function oe(e) {
   let Y;
   r[70] === J
     ? (Y = r[71])
-    : ((Y = (0, O.jsx)(h, { className: J })), (r[70] = J), (r[71] = Y));
+    : ((Y = (0, O.jsx)(g, { className: J })), (r[70] = J), (r[71] = Y));
   let X;
   r[72] !== W || r[73] !== G || r[74] !== K || r[75] !== q || r[76] !== Y
     ? ((X = (0, O.jsxs)(`div`, {
@@ -751,22 +776,22 @@ function oe(e) {
       (r[79] = X),
       (r[80] = Z));
   let Q;
-  r[81] !== ve || r[82] !== V || r[83] !== m || r[84] !== he
-    ? ((Q = m
+  r[81] !== ve || r[82] !== V || r[83] !== h || r[84] !== he
+    ? ((Q = h
         ? V
           ? (0, O.jsx)(`div`, { children: ve })
           : null
-        : (0, O.jsx)(d.div, {
+        : (0, O.jsx)(f.div, {
             initial: !1,
             animate: { height: he, opacity: V ? 1 : 0 },
-            transition: _,
+            transition: v,
             className: a(V ? `overflow-visible` : `overflow-hidden`),
             style: { pointerEvents: V ? `auto` : `none` },
             children: ve,
           })),
       (r[81] = ve),
       (r[82] = V),
-      (r[83] = m),
+      (r[83] = h),
       (r[84] = he),
       (r[85] = Q))
     : (Q = r[85]);
@@ -785,11 +810,11 @@ function oe(e) {
     $
   );
 }
-function se(e) {
+function ae(e) {
   return !e;
 }
-function ce(e) {
-  let t = (0, S.c)(35),
+function oe(e) {
+  let n = (0, S.c)(35),
     {
       className: r,
       path: i,
@@ -798,136 +823,136 @@ function ce(e) {
       linesAdded: c,
       linesRemoved: l,
       onOpenFile: u,
-      children: te,
+      children: d,
     } = e,
-    d;
-  t[0] === r
-    ? (d = t[1])
-    : ((d = a(
+    f;
+  n[0] === r
+    ? (f = n[1])
+    : ((f = a(
         `border-token-border flex flex-col overflow-hidden rounded-lg border`,
         r,
       )),
-      (t[0] = r),
-      (t[1] = d));
-  let f;
-  t[2] === i
-    ? (f = t[3])
-    : ((f = (0, O.jsx)(`span`, { className: `font-mono`, children: i })),
-      (t[2] = i),
-      (t[3] = f));
-  let p = !s && `cursor-default no-underline`,
-    m;
-  t[4] === p
-    ? (m = t[5])
-    : ((m = a(
+      (n[0] = r),
+      (n[1] = f));
+  let p;
+  n[2] === i
+    ? (p = n[3])
+    : ((p = (0, O.jsx)(`span`, { className: `font-mono`, children: i })),
+      (n[2] = i),
+      (n[3] = p));
+  let m = !s && `cursor-default no-underline`,
+    h;
+  n[4] === m
+    ? (h = n[5])
+    : ((h = a(
         `text-token-description-foreground/80 cursor-interaction max-w-full truncate text-start hover:underline`,
-        p,
+        m,
       )),
-      (t[4] = p),
-      (t[5] = m));
-  let h;
-  t[6] !== u || t[7] !== s
-    ? ((h = (e) => {
+      (n[4] = m),
+      (n[5] = h));
+  let g;
+  n[6] !== u || n[7] !== s
+    ? ((g = (e) => {
         (e.stopPropagation(), s && u());
       }),
-      (t[6] = u),
-      (t[7] = s),
-      (t[8] = h))
-    : (h = t[8]);
-  let g;
-  t[9] === i ? (g = t[10]) : ((g = n(i)), (t[9] = i), (t[10] = g));
+      (n[6] = u),
+      (n[7] = s),
+      (n[8] = g))
+    : (g = n[8]);
   let _;
-  t[11] !== m || t[12] !== h || t[13] !== g
-    ? ((_ = (0, O.jsx)(`button`, {
-        type: `button`,
-        className: m,
-        onClick: h,
-        children: g,
-      })),
-      (t[11] = m),
-      (t[12] = h),
-      (t[13] = g),
-      (t[14] = _))
-    : (_ = t[14]);
+  n[9] === i ? (_ = n[10]) : ((_ = t(i)), (n[9] = i), (n[10] = _));
   let v;
-  t[15] !== f || t[16] !== _
-    ? ((v = (0, O.jsx)(ee, { tooltipContent: f, children: _ })),
-      (t[15] = f),
-      (t[16] = _),
-      (t[17] = v))
-    : (v = t[17]);
+  n[11] !== h || n[12] !== g || n[13] !== _
+    ? ((v = (0, O.jsx)(`button`, {
+        type: `button`,
+        className: h,
+        onClick: g,
+        children: _,
+      })),
+      (n[11] = h),
+      (n[12] = g),
+      (n[13] = _),
+      (n[14] = v))
+    : (v = n[14]);
   let y;
-  t[18] !== c || t[19] !== l
-    ? ((y =
+  n[15] !== p || n[16] !== v
+    ? ((y = (0, O.jsx)(ee, { tooltipContent: p, children: v })),
+      (n[15] = p),
+      (n[16] = v),
+      (n[17] = y))
+    : (y = n[17]);
+  let x;
+  n[18] !== c || n[19] !== l
+    ? ((x =
         c != null && l != null
-          ? (0, O.jsx)(ne, {
+          ? (0, O.jsx)(te, {
               className: `text-size-chat-sm`,
               linesAdded: c,
               linesRemoved: l,
             })
           : null),
-      (t[18] = c),
-      (t[19] = l),
-      (t[20] = y))
-    : (y = t[20]);
-  let x;
-  t[21] !== v || t[22] !== y
-    ? ((x = (0, O.jsxs)(`div`, {
-        className: `flex min-w-0 items-center gap-2`,
-        children: [v, y],
-      })),
-      (t[21] = v),
-      (t[22] = y),
-      (t[23] = x))
-    : (x = t[23]);
+      (n[18] = c),
+      (n[19] = l),
+      (n[20] = x))
+    : (x = n[20]);
   let C;
-  t[24] === o
-    ? (C = t[25])
-    : ((C = (0, O.jsx)(b, {
+  n[21] !== y || n[22] !== x
+    ? ((C = (0, O.jsxs)(`div`, {
+        className: `flex min-w-0 items-center gap-2`,
+        children: [y, x],
+      })),
+      (n[21] = y),
+      (n[22] = x),
+      (n[23] = C))
+    : (C = n[23]);
+  let w;
+  n[24] === o
+    ? (w = n[25])
+    : ((w = (0, O.jsx)(b, {
         iconOnly: !0,
         iconClassName: `icon-2xs`,
         onCopy: () => {
           navigator.clipboard.writeText(o);
         },
       })),
-      (t[24] = o),
-      (t[25] = C));
-  let w;
-  t[26] !== x || t[27] !== C
-    ? ((w = (0, O.jsxs)(`div`, {
-        className: `text-size-chat-sm flex items-center justify-between gap-2 border-b border-token-border bg-token-list-hover-background/60 px-2.5 py-0.5 text-token-description-foreground/80`,
-        children: [x, C],
-      })),
-      (t[26] = x),
-      (t[27] = C),
-      (t[28] = w))
-    : (w = t[28]);
+      (n[24] = o),
+      (n[25] = w));
   let T;
-  t[29] === te
-    ? (T = t[30])
-    : ((T = (0, O.jsx)(`div`, {
-        className: `bg-token-editor-background`,
-        children: te,
+  n[26] !== C || n[27] !== w
+    ? ((T = (0, O.jsxs)(`div`, {
+        className: `text-size-chat-sm flex items-center justify-between gap-2 border-b border-token-border bg-token-list-hover-background/60 px-2.5 py-0.5 text-token-description-foreground/80`,
+        children: [C, w],
       })),
-      (t[29] = te),
-      (t[30] = T));
+      (n[26] = C),
+      (n[27] = w),
+      (n[28] = T))
+    : (T = n[28]);
   let E;
+  n[29] === d
+    ? (E = n[30])
+    : ((E = (0, O.jsx)(`div`, {
+        className: `bg-token-editor-background`,
+        children: d,
+      })),
+      (n[29] = d),
+      (n[30] = E));
+  let D;
   return (
-    t[31] !== d || t[32] !== w || t[33] !== T
-      ? ((E = (0, O.jsxs)(`div`, { className: d, children: [w, T] })),
-        (t[31] = d),
-        (t[32] = w),
-        (t[33] = T),
-        (t[34] = E))
-      : (E = t[34]),
-    E
+    n[31] !== f || n[32] !== T || n[33] !== E
+      ? ((D = (0, O.jsxs)(`div`, { className: f, children: [T, E] })),
+        (n[31] = f),
+        (n[32] = T),
+        (n[33] = E),
+        (n[34] = D))
+      : (D = n[34]),
+    D
   );
 }
-function le(e) {
+function se(e) {
   let t = (0, S.c)(10),
     { path: n, change: r, unifiedDiff: i, isShortView: o } = e,
     s;
-  t[0] === i ? (s = t[1]) : ((s = f(i)), (t[0] = i), (t[1] = s));
+  t[0] === i ? (s = t[1]) : ((s = p(i)), (t[0] = i), (t[1] = s));
   let c = s;
   if (i) {
     let e = c[0];
@@ -942,7 +967,7 @@ function le(e) {
       let i;
       return (
         t[4] !== e.metadata || t[5] !== r
-          ? ((i = (0, O.jsx)(p, {
+          ? ((i = (0, O.jsx)(m, {
               className: r,
               fileDiff: e.metadata,
               diffStyle: `unified`,
@@ -959,7 +984,7 @@ function le(e) {
   let l;
   return (
     t[7] !== r || t[8] !== n
-      ? ((l = (0, O.jsx)(k, { path: n, change: r })),
+      ? ((l = (0, O.jsx)(ce, { path: n, change: r })),
         (t[7] = r),
         (t[8] = n),
         (t[9] = l))
@@ -967,7 +992,7 @@ function le(e) {
     l
   );
 }
-function k(e) {
+function ce(e) {
   let t = (0, S.c)(8),
     { path: n, change: r } = e;
   if (r.type === `add`) {
@@ -998,7 +1023,7 @@ function k(e) {
     let e;
     return (
       t[7] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((e = (0, O.jsx)(ie, {
+        ? ((e = (0, O.jsx)(re, {
             children: (0, O.jsx)(s, {
               id: `codex.patch.change.contentsDeleted`,
               defaultMessage: `Contents deleted`,
@@ -1030,7 +1055,7 @@ function A(e) {
     r;
   return (
     t[0] !== e || t[1] !== n
-      ? ((r = (0, O.jsx)(v, {
+      ? ((r = (0, O.jsx)(y, {
           ...e,
           showActionBar: !1,
           codeClassName: `text-size-chat`,
@@ -1045,5 +1070,5 @@ function A(e) {
     r
   );
 }
-export { w as a, E as i, ae as n, re as r, oe as t };
+export { w as a, E as i, ne as n, k as r, ie as t };
 //# sourceMappingURL=patch-item-content.js.map

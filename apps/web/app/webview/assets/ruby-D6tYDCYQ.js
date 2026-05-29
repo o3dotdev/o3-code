@@ -1,2 +1,0 @@
-import { t as e } from "./ruby-Dcg526VA.js";
-export { e as default };
