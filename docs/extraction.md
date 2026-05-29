@@ -9,20 +9,25 @@ Copied material:
 
 Codex-owned runtime resources such as plugins, sounds, notices, asset catalogs,
 locale folders, helper apps, frameworks, code signatures, native add-ons,
-helper executables, and plugin prebuilds are not copied. Electron is provided by
-pnpm. Codex App runtime material is resolved from the installed Codex App at
+helper executables, and plugin prebuilds are not copied. The Electron host and
+all Codex App runtime material are resolved from the installed Codex App at
 launch.
 
-Electron host version: because O3 Code runs its own Electron but loads the
-installed Codex App's native modules (`better-sqlite3`, `node-pty`, `objc-js`)
-through `scripts/start.mjs`, the repo's `electron` dependency must match the
-installed app's native-module ABI (`NODE_MODULE_VERSION`), not the `electron`
-devDependency declared in the extracted app `package.json`. These can diverge:
-in `26.527.30818` the app framework is Electron 42 (Chromium 148) but its native
-modules are built for `NODE_MODULE_VERSION 143` (Electron 40), so the repo pins
-`electron` to `40.x`. Determine the target each refresh from the app's
-`app.asar.unpacked/node_modules/better-sqlite3/build/Release/better_sqlite3.node`
-(its `NODE_MODULE_VERSION`) and pick the matching Electron major.
+Electron host: O3 Code does not use an npm `electron` package. It launches the
+Desktop Reconstruction under the installed Codex App's own Electron executable
+(`Codex.app/Contents/MacOS/<bundle name>`, resolved by
+`resolveCodexAppElectronExecutable`). The Codex App ships a custom Electron
+framework whose native add-ons are built against that framework's exact V8, and
+the framework decouples its Node ABI (`NODE_MODULE_VERSION`) from its
+Chromium/V8 version, so no public npm `electron` release matches both. In
+`26.527.30818` the framework is Chromium 148 (V8 ~14.8) while its raw-V8
+`better-sqlite3` add-on is `NODE_MODULE_VERSION 143`: npm `electron` 40 matches
+the ABI but its Chromium 144 V8 makes the add-on jump to a null V8 vtable and
+segfault the renderer, while npm `electron` 42 matches the V8 but fails the ABI
+load check. Running the installed framework in place preserves its
+hardened-runtime code signature, and its library validation still loads the
+Codex-team-signed native modules. See
+`docs/adr/0033-run-under-installed-codex-app-electron-framework.md`.
 
 Normalization:
 

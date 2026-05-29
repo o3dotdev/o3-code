@@ -27,7 +27,7 @@ After Normalization, most Vite chunk and asset names should be stable canonical 
 
 Launcher scripts should derive the default `CODEX_BUILD_NUMBER` from package metadata. Source Refresh should not leave `scripts/start.mjs` pinned to an older literal build number.
 
-Pin the repo `electron` dependency to the installed app's native-module ABI, not to the `electron` devDependency in the extracted app `package.json`. O3 Code runs its own Electron host but loads the installed Codex App's native modules, so the host Electron major must match the `NODE_MODULE_VERSION` of the app's `better-sqlite3.node` (and `pnpm-workspace.yaml` must allow Electron's build script so the binary installs). The app's framework Electron version and its native-module ABI can diverge across releases; verify with `pnpm start` reaching renderer mount with the SQLite database accessible, not just static checks.
+Do not add or pin an npm `electron` dependency. O3 Code launches the Desktop Reconstruction under the installed Codex App's own Electron framework (see [ADR 0033](./adr/0033-run-under-installed-codex-app-electron-framework.md)), so the runtime ABI tracks the installed app automatically and there is no Electron version to choose per refresh. The Codex App ships a custom framework whose native-module ABI (`NODE_MODULE_VERSION`) is decoupled from its Chromium/V8 version, so no npm `electron` release matches both; the framework that built the native add-ons is the only correct host. Still verify with `pnpm start` reaching renderer mount with the SQLite database accessible, because the installed framework — not a static check — is the source of truth for native-module compatibility.
 
 ## Commit Shape
 
