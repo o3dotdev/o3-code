@@ -1,55 +1,61 @@
-import { s as e } from "./chunk.js";
-import "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./src-C.js";
 import { o as t } from "./gpu-tearing-debug-settings.js";
 import {
-  Ja as n,
-  Ta as r,
-  Za as i,
-  qa as a,
-} from "./app-server-manager-signals.js";
+  Fo as n,
+  Io as r,
+  po as i,
+  zo as a,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as o, t as s } from "./jsx-runtime.js";
-import "./codex-diff-css.js";
-import { t as c } from "./clsx.js";
-import "./react-dom.js";
+import "./shiki-highlight-provider-gate-BIldj-yk.js";
+import { t as c } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import {
-  H as l,
+  G as l,
   S as u,
-  W as d,
+  U as d,
   X as f,
-  Y as p,
+  Z as p,
   m,
-  xt as h,
+  wt as h,
   y as g,
 } from "./setting-storage.js";
-import { r as _ } from "./product-logger.js";
-import "./statsig.js";
+import { r as _ } from "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./_baseOrderBy.js";
-import "./use-is-dark.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
 import { r as v } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import "./tooltip.js";
-import "./use-model-settings.js";
+import "./tooltip-CDzchJxN.js";
+import "./route-scope.js";
+import "./use-model-settings-BGTYyORt.js";
 import { t as y } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import { t as b } from "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
-import "./link-external.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./link-external-BPZREBQk.js";
 import "./open-config-toml-button.js";
-import "./open-workspace-file.js";
+import "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
-import "./model-queries.js";
+import "./model-queries-CVdTsyPv.js";
 import "./use-webview-execution-target.js";
 import "./remote-projects.js";
 import "./thread-detail-level.js";
@@ -57,79 +63,86 @@ import "./permissions-mode-defaults.js";
 import "./use-permissions-mode.js";
 import "./proxy.js";
 import "./use-service-tier-settings.js";
-import "./apps.js";
-import "./x.js";
+import "./apps-DwfMzB5Q.js";
+import "./x-C_RDKBp5.js";
+import "./projectless-thread.js";
 import "./use-platform.js";
-import "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
 import "./check-circle-filled.js";
-import "./chrome-theme.js";
-import "./parsePatchFiles.js";
-import "./file-diff.js";
+import "./recommended-skill-statsig-overrides.js";
+import "./diff-view-mode.js";
+import "./file-diff-DOHfgomY.js";
 import "./terminal.js";
-import "./info.js";
+import "./info-B8GAwpK6.js";
 import { t as x } from "./with-window.js";
 import "./use-resolved-theme-variant.js";
 import "./window-app-action-helpers.js";
+import "./locale-resolver-CfTzWTiS.js";
 import "./use-is-fast-mode-enabled.js";
 import "./dialog-layout.js";
+import "./local-projects.js";
 import "./run-command.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
 import "./initial-route-atom.js";
 import "./use-stable-callback.js";
 import "./electron-menu-shortcuts.js";
-import { n as S } from "./use-skills.js";
-import "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
+import "./_defineProperty.js";
+import "./use-register-command.js";
 import "./check-md.js";
 import "./chevron-right.js";
-import { t as C } from "./use-start-new-conversation-B.js";
-import "./_defineProperty.js";
+import "./select-project.js";
+import { n as S } from "./use-start-new-conversation.js";
+import "./checkbox-DtuSNXXy.js";
+import "./minus.js";
+import "./links.js";
 import "./x-circle.js";
 import "./search.js";
-import "./skills.js";
-import "./dropdown.js";
+import "./skills-BUMAZe_D.js";
+import "./dropdown-DtQxMoJw.js";
 import "./popover.js";
 import "./trash.js";
-import { t as w } from "./chevron.js";
+import { t as C } from "./chevron-NmAOI_v1.js";
+import "./use-relative-now.js";
 import "./format-relative-date-time.js";
-import "./json-DAjHKBV7.js";
+import "./json-CRHyc9De.js";
 import "./settings.cog.js";
-import "./mcp.js";
-import "./copy.js";
-import "./minus-D.js";
+import "./mcp-D_m7bYb5.js";
+import { n as w } from "./use-skills.js";
+import "./copy-Cen6nDnP.js";
 import "./plus.js";
-import "./arrow-up.js";
+import "./arrow-up-fq4d26GH.js";
 import "./laptop.js";
 import "./sortBy.js";
-import "./permissions-mode-helpers.js";
+import "./permissions-mode-helpers-CfjXuDYv.js";
 import "./use-enter-behavior.js";
 import "./toggle.js";
 import "./permissions-mode-visibility.js";
-import "./locale-resolver.js";
-import { i as T } from "./settings-shared.js";
-import "./folders.js";
-import "./checkbox.js";
-import { t as E } from "./settings-content-layout.js";
-import { t as D } from "./avatar-overlay-analytics.js";
-import { n as O, r as k, t as A } from "./codex-avatar.js";
-import { t as j } from "./avatar-overlay-open-state-signal.js";
-import "./moon.js";
+import { i as T } from "./settings-shared-BTHmEeQY.js";
+import { t as E } from "./arrow-top-right.js";
+import "./folders-DmG-RYpY.js";
+import "./alert-CoBPbdcu.js";
+import { t as D } from "./settings-content-layout.js";
+import { t as O } from "./avatar-overlay-analytics-qWZkfIni.js";
+import { a as k, i as A, t as j } from "./codex-avatar.js";
+import { t as M } from "./avatar-overlay-open-state-signal-BBUBUTF2.js";
 import "./sun.js";
-import "./alert-C_qI2eAS.js";
-import { t as M } from "./use-recommended-skills.js";
-import { n as N } from "./settings-row-D.js";
-import { t as P } from "./settings-surface.js";
-import "./external-agent-import-step-e.js";
-import "./scroll-to-bottom-buton.js";
-import { t as F } from "./arrow-top-right.js";
-import "./hooks.js";
+import { t as N } from "./use-recommended-skills-DPaHTHtv.js";
+import { n as P } from "./settings-row.js";
+import { n as F, t as I } from "./settings-group.js";
+import "./external-agent-import-step.js";
+import "./scroll-to-bottom-buton-DATGE4ZU.js";
+import "./hooks-Cw0VrjI0.js";
 import "./onboarding-shell.js";
-import { t as I } from "./settings-group.js";
+import "./hotkey-window-state-VEDcKqNF.js";
 import { t as L } from "./use-avatar-options.js";
 import "./segmented-toggle.js";
 import "./statsig-url-config.js";
-import { n as R } from "./general-settings-ChHT-8De.js";
+import "./open-in-targets-query.js";
+import { n as R } from "./general-settings-CV9Safs7.js";
 var z = e(o(), 1),
   B = h(),
   V = s();
@@ -155,7 +168,7 @@ function H(e) {
     f = n?.spritesheetUrl,
     p;
   t[3] !== u || t[4] !== d || t[5] !== f
-    ? ((p = (0, V.jsx)(A, { assetRef: u, className: d, spritesheetUrl: f })),
+    ? ((p = (0, V.jsx)(j, { assetRef: u, className: d, spritesheetUrl: f })),
       (t[3] = u),
       (t[4] = d),
       (t[5] = f),
@@ -180,8 +193,8 @@ function H(e) {
 function U(e) {
   let t = (0, B.c)(21),
     { avatarDirectory: n } = e,
-    r = p(u),
-    i = d(),
+    r = f(u),
+    i = l(),
     a;
   t[0] !== i || t[1] !== r
     ? ((a = () => {
@@ -210,10 +223,10 @@ function U(e) {
   t[5] !== o || t[6] !== s
     ? ((c = { onSuccess: s, onError: o }), (t[5] = o), (t[6] = s), (t[7] = c))
     : (c = t[7]);
-  let { mutate: f } = m(`open-file`, c),
+  let { mutate: p } = m(`open-file`, c),
     h;
   t[8] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = (0, V.jsx)(l, {
+    ? ((h = (0, V.jsx)(d, {
         id: `settings.pets.custom.title`,
         defaultMessage: `Custom pets`,
         description: `Heading for custom pet settings`,
@@ -230,22 +243,22 @@ function U(e) {
       (t[9] = n),
       (t[10] = g));
   let _;
-  t[11] !== n || t[12] !== f
+  t[11] !== n || t[12] !== p
     ? ((_ = () => {
-        f({ path: n, cwd: null, target: `fileManager`, openMode: `workspace` });
+        p({ path: n, cwd: null, target: `fileManager`, openMode: `workspace` });
       }),
       (t[11] = n),
-      (t[12] = f),
+      (t[12] = p),
       (t[13] = _))
     : (_ = t[13]);
   let b, x;
   t[14] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((b = (0, V.jsx)(l, {
+    ? ((b = (0, V.jsx)(d, {
         id: `settings.pets.custom.openFolder`,
         defaultMessage: `Open folder`,
         description: `Button label to open the local custom pet folder`,
       })),
-      (x = (0, V.jsx)(F, { className: `icon-2xs` })),
+      (x = (0, V.jsx)(E, { className: `icon-2xs` })),
       (t[14] = b),
       (t[15] = x))
     : ((b = t[14]), (x = t[15]));
@@ -263,7 +276,7 @@ function U(e) {
   let C;
   return (
     t[18] !== g || t[19] !== S
-      ? ((C = (0, V.jsx)(N, { label: h, description: g, control: S })),
+      ? ((C = (0, V.jsx)(P, { label: h, description: g, control: S })),
         (t[18] = g),
         (t[19] = S),
         (t[20] = C))
@@ -327,74 +340,74 @@ function W(e) {
 function G(e) {
   let t = (0, B.c)(56),
     {
-      avatarDirectory: r,
+      avatarDirectory: i,
       avatarOptions: o,
       defaultExpanded: s,
-      isCreatingCustomAvatar: u,
-      isCustomAvatarLoadError: d,
-      isLoadingCustomAvatars: p,
+      isCreatingCustomAvatar: l,
+      isCustomAvatarLoadError: u,
+      isLoadingCustomAvatars: f,
       onCreateCustomAvatar: m,
       onRefreshCustomAvatars: h,
     } = e,
-    v = f(j),
-    x = f(_),
+    v = p(M),
+    x = p(_),
     S = (0, z.useId)(),
-    [C, T] = (0, z.useState)(s),
-    { selectedAvatar: E, setSelectedAvatarId: k } = O(o),
-    A,
-    M,
+    [w, T] = (0, z.useState)(s),
+    { selectedAvatar: E, setSelectedAvatarId: D } = A(o),
+    k,
+    j,
     N,
-    F,
+    P,
     L,
     R;
   if (
-    t[0] !== r ||
+    t[0] !== i ||
     t[1] !== o ||
     t[2] !== v ||
     t[3] !== S ||
-    t[4] !== u ||
-    t[5] !== d ||
-    t[6] !== C ||
-    t[7] !== p ||
+    t[4] !== l ||
+    t[5] !== u ||
+    t[6] !== w ||
+    t[7] !== f ||
     t[8] !== m ||
     t[9] !== h ||
     t[10] !== x ||
     t[11] !== E ||
-    t[12] !== k
+    t[12] !== D
   ) {
     let e = o.filter(q),
       s = o.filter(K),
-      f;
+      p;
     t[19] === x
-      ? (f = t[20])
-      : ((f = (e, t) => {
+      ? (p = t[20])
+      : ((p = (e, t) => {
           x.trackStructuredEvent(
-            n,
-            D({
+            r,
+            O({
               action: e,
               selectedAvatar: t,
-              source: i.CODEX_AVATAR_OVERLAY_SOURCE_SETTINGS,
+              source: a.CODEX_AVATAR_OVERLAY_SOURCE_SETTINGS,
             }),
           );
         }),
         (t[19] = x),
-        (t[20] = f));
-    let _ = f,
-      O;
-    t[21] !== k || t[22] !== _
-      ? ((O = (e) => {
-          (k(e.id), _(a.CODEX_AVATAR_OVERLAY_ACTION_PET_SELECTED, e));
+        (t[20] = p));
+    let _ = p,
+      A;
+    t[21] !== D || t[22] !== _
+      ? ((A = (e) => {
+          (D(e.id), _(n.CODEX_AVATAR_OVERLAY_ACTION_PET_SELECTED, e));
         }),
-        (t[21] = k),
+        (t[21] = D),
         (t[22] = _),
-        (t[23] = O))
-      : (O = t[23]);
-    let j = O;
+        (t[23] = A))
+      : (A = t[23]);
+    let M = A;
     ((R = `flex flex-col gap-[var(--padding-panel)]`),
       (N = I),
-      (M = I.Content),
-      (A = P));
-    let z = C ? `rounded-t-lg` : `rounded-lg`,
+      (j = I.Content),
+      (k = F));
+    let z = w ? `rounded-t-lg` : `rounded-lg`,
       B;
     t[24] === z
       ? (B = t[25])
@@ -405,18 +418,18 @@ function G(e) {
         (t[24] = z),
         (t[25] = B));
     let H;
-    t[26] === C
+    t[26] === w
       ? (H = t[27])
       : ((H = () => {
-          T(!C);
+          T(!w);
         }),
-        (t[26] = C),
+        (t[26] = w),
         (t[27] = H));
     let W;
     t[28] === Symbol.for(`react.memo_cache_sentinel`)
       ? ((W = (0, V.jsx)(`span`, {
           className: `min-w-0 text-sm text-token-text-primary`,
-          children: (0, V.jsx)(l, {
+          children: (0, V.jsx)(d, {
             id: `settings.personalization.pets.title`,
             defaultMessage: `Pets`,
             description: `Heading above the pet picker in personalization settings`,
@@ -425,20 +438,20 @@ function G(e) {
         (t[28] = W))
       : (W = t[28]);
     let G;
-    t[29] !== d || t[30] !== E
+    t[29] !== u || t[30] !== E
       ? ((G = (0, V.jsxs)(`span`, {
           className: `flex min-w-0 flex-col gap-1`,
           children: [
             W,
             (0, V.jsx)(`span`, {
               className: `min-w-0 text-sm text-token-text-secondary`,
-              children: d
-                ? (0, V.jsx)(l, {
+              children: u
+                ? (0, V.jsx)(d, {
                     id: `settings.pets.loadCustomError`,
                     defaultMessage: `Unable to load custom pets`,
                     description: `Message shown when custom pet manifests fail to load`,
                   })
-                : (0, V.jsx)(l, {
+                : (0, V.jsx)(d, {
                     id: `settings.personalization.pets.current`,
                     defaultMessage: `{petName} selected`,
                     description: `Collapsed pet settings row summary`,
@@ -447,11 +460,11 @@ function G(e) {
             }),
           ],
         })),
-        (t[29] = d),
+        (t[29] = u),
         (t[30] = E),
         (t[31] = G))
       : (G = t[31]);
-    let Y = C && `rotate-180`,
+    let Y = w && `rotate-180`,
       X;
     t[32] === Y
       ? (X = t[33])
@@ -464,32 +477,32 @@ function G(e) {
     let Z;
     (t[34] === X
       ? (Z = t[35])
-      : ((Z = (0, V.jsx)(w, { className: X, "aria-hidden": !0 })),
+      : ((Z = (0, V.jsx)(C, { className: X, "aria-hidden": !0 })),
         (t[34] = X),
         (t[35] = Z)),
       t[36] !== S ||
-      t[37] !== C ||
+      t[37] !== w ||
       t[38] !== G ||
       t[39] !== Z ||
       t[40] !== B ||
       t[41] !== H
-        ? ((F = (0, V.jsxs)(`button`, {
+        ? ((P = (0, V.jsxs)(`button`, {
             type: `button`,
             className: B,
             "aria-controls": S,
-            "aria-expanded": C,
+            "aria-expanded": w,
             onClick: H,
             children: [G, Z],
           })),
           (t[36] = S),
-          (t[37] = C),
+          (t[37] = w),
           (t[38] = G),
           (t[39] = Z),
           (t[40] = B),
           (t[41] = H),
-          (t[42] = F))
-        : (F = t[42]),
-      (L = C
+          (t[42] = P))
+        : (P = t[42]),
+      (L = w
         ? (0, V.jsxs)(`div`, {
             id: S,
             className: `flex flex-col divide-y divide-token-border bg-token-bg-secondary/20`,
@@ -500,21 +513,21 @@ function G(e) {
                   m
                     ? (0, V.jsx)(y, {
                         color: `secondary`,
-                        loading: u,
+                        loading: l,
                         onClick: () => {
                           (x.trackStructuredEvent(
-                            n,
-                            D({
+                            r,
+                            O({
                               action:
-                                a.CODEX_AVATAR_OVERLAY_ACTION_CUSTOM_PET_CREATE_STARTED,
-                              source: i.CODEX_AVATAR_OVERLAY_SOURCE_SETTINGS,
+                                n.CODEX_AVATAR_OVERLAY_ACTION_CUSTOM_PET_CREATE_STARTED,
+                              source: a.CODEX_AVATAR_OVERLAY_SOURCE_SETTINGS,
                               selectedAvatar: E,
                             }),
                           ),
                             m());
                         },
                         size: `toolbar`,
-                        children: (0, V.jsx)(l, {
+                        children: (0, V.jsx)(d, {
                           id: `settings.pets.custom.create.title`,
                           defaultMessage: `Create your own pet`,
                           description: `Button label for creating a custom Codex pet from settings`,
@@ -526,7 +539,7 @@ function G(e) {
                         color: `secondary`,
                         onClick: h,
                         size: `toolbar`,
-                        children: (0, V.jsx)(l, {
+                        children: (0, V.jsx)(d, {
                           id: `settings.pets.refresh`,
                           defaultMessage: `Refresh`,
                           description: `Button label to refresh custom pets from local manifests`,
@@ -538,20 +551,20 @@ function G(e) {
                     onClick: () => {
                       (_(
                         v
-                          ? a.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED
-                          : a.CODEX_AVATAR_OVERLAY_ACTION_OPEN_REQUESTED,
+                          ? n.CODEX_AVATAR_OVERLAY_ACTION_CLOSE_REQUESTED
+                          : n.CODEX_AVATAR_OVERLAY_ACTION_OPEN_REQUESTED,
                         E,
                       ),
                         g.dispatchMessage(`avatar-overlay-open`, {}));
                     },
                     size: `toolbar`,
                     children: v
-                      ? (0, V.jsx)(l, {
+                      ? (0, V.jsx)(d, {
                           id: `settings.personalization.pets.tuckAwayPet`,
                           defaultMessage: `Tuck Away Pet`,
                           description: `Button that closes the floating pet overlay`,
                         })
-                      : (0, V.jsx)(l, {
+                      : (0, V.jsx)(d, {
                           id: `settings.personalization.pets.openPet`,
                           defaultMessage: `Wake Pet`,
                           description: `Button that opens the floating pet overlay`,
@@ -559,12 +572,12 @@ function G(e) {
                   }),
                 ],
               }),
-              p
+              f
                 ? (0, V.jsxs)(`div`, {
                     className: `flex items-center gap-2 p-3 text-sm text-token-text-secondary`,
                     children: [
                       (0, V.jsx)(b, { className: `icon-xs` }),
-                      (0, V.jsx)(l, {
+                      (0, V.jsx)(d, {
                         id: `settings.pets.loadingCustom`,
                         defaultMessage: `Loading custom pets`,
                         description: `Message shown while loading custom pet manifests`,
@@ -572,10 +585,10 @@ function G(e) {
                     ],
                   })
                 : null,
-              d
+              u
                 ? (0, V.jsx)(`div`, {
                     className: `p-3 text-sm text-token-text-secondary`,
-                    children: (0, V.jsx)(l, {
+                    children: (0, V.jsx)(d, {
                       id: `settings.pets.loadCustomError`,
                       defaultMessage: `Unable to load custom pets`,
                       description: `Message shown when custom pet manifests fail to load`,
@@ -585,59 +598,59 @@ function G(e) {
               e.map((e) =>
                 (0, V.jsx)(
                   J,
-                  { avatar: e, isSelected: e.id === E.id, onSelectAvatar: j },
+                  { avatar: e, isSelected: e.id === E.id, onSelectAvatar: M },
                   e.id,
                 ),
               ),
-              r == null ? null : (0, V.jsx)(U, { avatarDirectory: r }),
+              i == null ? null : (0, V.jsx)(U, { avatarDirectory: i }),
               s.map((e) =>
                 (0, V.jsx)(
                   J,
-                  { avatar: e, isSelected: e.id === E.id, onSelectAvatar: j },
+                  { avatar: e, isSelected: e.id === E.id, onSelectAvatar: M },
                   e.id,
                 ),
               ),
             ],
           })
         : null),
-      (t[0] = r),
+      (t[0] = i),
       (t[1] = o),
       (t[2] = v),
       (t[3] = S),
-      (t[4] = u),
-      (t[5] = d),
-      (t[6] = C),
-      (t[7] = p),
+      (t[4] = l),
+      (t[5] = u),
+      (t[6] = w),
+      (t[7] = f),
       (t[8] = m),
       (t[9] = h),
       (t[10] = x),
       (t[11] = E),
-      (t[12] = k),
-      (t[13] = A),
-      (t[14] = M),
+      (t[12] = D),
+      (t[13] = k),
+      (t[14] = j),
       (t[15] = N),
-      (t[16] = F),
+      (t[16] = P),
       (t[17] = L),
       (t[18] = R));
   } else
-    ((A = t[13]),
-      (M = t[14]),
+    ((k = t[13]),
+      (j = t[14]),
       (N = t[15]),
-      (F = t[16]),
+      (P = t[16]),
       (L = t[17]),
       (R = t[18]));
   let H;
-  t[43] !== A || t[44] !== F || t[45] !== L
-    ? ((H = (0, V.jsxs)(A, { children: [F, L] })),
-      (t[43] = A),
-      (t[44] = F),
+  t[43] !== k || t[44] !== P || t[45] !== L
+    ? ((H = (0, V.jsxs)(k, { children: [P, L] })),
+      (t[43] = k),
+      (t[44] = P),
       (t[45] = L),
       (t[46] = H))
     : (H = t[46]);
   let W;
-  t[47] !== M || t[48] !== H
-    ? ((W = (0, V.jsx)(M, { children: H })),
-      (t[47] = M),
+  t[47] !== j || t[48] !== H
+    ? ((W = (0, V.jsx)(j, { children: H })),
+      (t[47] = j),
       (t[48] = H),
       (t[49] = W))
     : (W = t[49]);
@@ -679,7 +692,7 @@ function J(e) {
             color: `secondary`,
             disabled: !0,
             size: `toolbar`,
-            children: (0, V.jsx)(l, {
+            children: (0, V.jsx)(d, {
               id: `settings.personalization.avatars.selected`,
               defaultMessage: `Selected`,
               description: `Label for the selected avatar`,
@@ -691,7 +704,7 @@ function J(e) {
             onClick: () => {
               i(n);
             },
-            children: (0, V.jsx)(l, {
+            children: (0, V.jsx)(d, {
               id: `settings.personalization.avatars.select`,
               defaultMessage: `Select`,
               description: `Button label to select an avatar`,
@@ -705,7 +718,7 @@ function J(e) {
   let s;
   return (
     t[6] !== n.description || t[7] !== n.displayName || t[8] !== a || t[9] !== o
-      ? ((s = (0, V.jsx)(N, {
+      ? ((s = (0, V.jsx)(P, {
           icon: a,
           label: n.displayName,
           description: n.description,
@@ -749,16 +762,16 @@ function Q(e) {
 function $({ defaultExpanded: e }) {
   let [t, n] = (0, z.useState)(!1),
     {
-      avatarDirectory: i,
+      avatarDirectory: r,
       avatarOptions: a,
       isError: o,
       isLoading: s,
       refetch: c,
     } = L(),
-    l = C(),
-    { findSkillByName: u, forceReload: d } = S(void 0, r),
-    { ensureSkillByName: f, installSkill: p } = M({
-      hostId: r,
+    l = S(),
+    { findSkillByName: u, forceReload: d } = w(void 0, i),
+    { ensureSkillByName: f, installSkill: p } = N({
+      hostId: i,
       loadOnMount: !1,
     }),
     m = async () => {
@@ -777,7 +790,7 @@ function $({ defaultExpanded: e }) {
       }
     };
   return (0, V.jsx)(W, {
-    avatarDirectory: i,
+    avatarDirectory: r,
     avatarOptions: a,
     defaultExpanded: e,
     isCreatingCustomAvatar: t,
@@ -786,7 +799,9 @@ function $({ defaultExpanded: e }) {
     onCreateCustomAvatar: () => {
       m();
     },
-    onRefreshCustomAvatars: c,
+    onRefreshCustomAvatars: () => {
+      c();
+    },
   });
 }
 function ee() {
@@ -794,7 +809,7 @@ function ee() {
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, V.jsxs)(E, {
+      ? ((t = (0, V.jsxs)(D, {
           title: (0, V.jsx)(T, { slug: `appearance` }),
           children: [(0, V.jsx)(R, {}), (0, V.jsx)(Q, {})],
         })),

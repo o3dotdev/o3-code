@@ -1,39 +1,39 @@
-import { s as e } from "./chunk.js";
-import { Cn as t } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { zn as t } from "./src-C.js";
 import {
-  $i as n,
-  Qi as r,
-  Yi as i,
-  Zi as a,
-} from "./app-server-manager-signals.js";
+  Ba as n,
+  Ha as r,
+  Ra as i,
+  Va as a,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as o, t as s } from "./jsx-runtime.js";
 import {
-  H as c,
+  $ as c,
   J as l,
-  Q as u,
-  S as d,
+  S as u,
+  U as d,
   X as f,
   Y as p,
   Z as m,
   _ as h,
   d as g,
-  ft as _,
+  ht as _,
   m as v,
-  q as ee,
-  xt as y,
+  ot as y,
+  wt as b,
 } from "./setting-storage.js";
-import { t as te } from "./route-scope.js";
-import { t as b } from "./use-stable-callback.js";
-import { n as x, r as ne, t as re } from "./file-tree-search-input.js";
-import { t as ie } from "./use-workspace-file-search.js";
-function ae(e) {
+import { t as ee } from "./route-scope.js";
+import { t as x } from "./use-stable-callback.js";
+import { t as te } from "./use-workspace-file-search-KLsQKyAb.js";
+import { n as S, r as ne, t as re } from "./file-tree-search-input.js";
+function ie(e) {
   return [null, ...e.filter((e) => e.length > 0)];
 }
-function S(e) {
+function C(e) {
   return e.map((e) => ({ displayPath: e.path, path: e.path }));
 }
-function oe(e, t) {
-  return w(e, t)
+function ae(e, t) {
+  return T(e, t)
     ? e
     : {
         expandedPaths: t.expandedPaths,
@@ -42,7 +42,7 @@ function oe(e, t) {
         selectedPath: t.selectedPath,
       };
 }
-function se(e, t) {
+function oe(e, t) {
   return e.searchQuery === t
     ? e
     : {
@@ -52,9 +52,9 @@ function se(e, t) {
         selectedPath: e.selectedPath,
       };
 }
-function ce(e, t) {
+function se(e, t) {
   if (t == null) return e;
-  let n = ue(e.expandedPaths, t);
+  let n = le(e.expandedPaths, t);
   return e.selectedPath === t && n === e.expandedPaths
     ? e
     : {
@@ -64,52 +64,52 @@ function ce(e, t) {
         selectedPath: t,
       };
 }
-function le({ filePath: e, root: t }) {
-  let n = r(e).replace(/\/+$/, ``);
-  if (n.length === 0) return null;
-  if (!i(n)) return n;
-  let o = r(t).replace(/\/+$/, ``),
-    s = a(n).replace(/\/+$/, ``),
-    c = a(o).replace(/\/+$/, ``);
+function ce({ filePath: e, root: t }) {
+  let r = a(e).replace(/\/+$/, ``);
+  if (r.length === 0) return null;
+  if (!i(r)) return r;
+  let o = a(t).replace(/\/+$/, ``),
+    s = n(r).replace(/\/+$/, ``),
+    c = n(o).replace(/\/+$/, ``);
   return c.length === 0 || !s.startsWith(`${c}/`)
     ? null
-    : n.slice(o.length + 1);
+    : r.slice(o.length + 1);
 }
-function ue(e, t) {
+function le(e, t) {
   let n = e;
-  for (let r of C(t)) n.includes(r) || (n === e && (n = [...e]), n.push(r));
+  for (let r of w(t)) n.includes(r) || (n === e && (n = [...e]), n.push(r));
   return n;
 }
-function de(e, t, n) {
+function ue(e, t, n) {
   return e ?? (t?.query === n ? t.files : null);
 }
-function C(e) {
+function w(e) {
   let t = e.split(`/`).filter(Boolean),
     n = [];
   for (let e = 1; e < t.length; e += 1) n.push(t.slice(0, e).join(`/`));
   return n;
 }
-function w(e, t) {
+function T(e, t) {
   return (
     e.scrollTop === t.scrollTop &&
     e.selectedPath === t.selectedPath &&
-    T(e.expandedPaths, t.expandedPaths)
+    E(e.expandedPaths, t.expandedPaths)
   );
 }
-function T(e, t) {
+function E(e, t) {
   return e.length === t.length ? e.every((e, n) => e === t[n]) : !1;
 }
-var E = y(),
-  D = e(o(), 1),
-  O = s(),
-  k = `/`,
-  A = [],
-  fe = 100,
-  pe = { expandedPaths: A, scrollTop: 0, searchQuery: ``, selectedPath: null },
-  me = u(te, (e, { signal: t }) => t(pe)),
-  he = u(te, (e, { signal: t }) => t(null)),
-  j = g(
-    d,
+var D = b(),
+  O = e(o(), 1),
+  k = s(),
+  A = `/`,
+  j = [],
+  de = 100,
+  fe = { expandedPaths: j, scrollTop: 0, searchQuery: ``, selectedPath: null },
+  pe = y(ee, (e) => fe),
+  me = y(ee, (e) => null),
+  M = g(
+    u,
     `workspace-directory-entries`,
     ({
       directoryPath: e,
@@ -129,43 +129,37 @@ var E = y(),
       staleTime: h.FIVE_SECONDS,
     }),
   ),
-  ge = u(d, (e) =>
-    m(d, ({ get: t }) => {
-      let n = t(
-          t(j, {
-            directoryPath: null,
+  he = c(u, (e, { get: t }) => {
+    let n = t(M, {
+        directoryPath: null,
+        hostId: e.hostId,
+        includeHidden: e.includeHidden,
+        refreshKey: e.refreshKey,
+        root: e.root,
+      }),
+      r = new Set();
+    F(r, n.data?.entries);
+    for (let n of e.expandedItems)
+      n.length !== 0 &&
+        F(
+          r,
+          t(M, {
+            directoryPath: n,
             hostId: e.hostId,
             includeHidden: e.includeHidden,
             refreshKey: e.refreshKey,
             root: e.root,
-          }),
-        ),
-        r = new Set();
-      P(r, n.data?.entries);
-      for (let n of e.expandedItems)
-        n.length !== 0 &&
-          P(
-            r,
-            t(
-              t(j, {
-                directoryPath: n,
-                hostId: e.hostId,
-                includeHidden: e.includeHidden,
-                refreshKey: e.refreshKey,
-                root: e.root,
-              }),
-            ).data?.entries,
-          );
-      return {
-        error: n.error,
-        files: Array.from(r),
-        isEmpty: n.data != null && n.data.entries.length === 0,
-        isLoading: n.isLoading && n.data == null,
-      };
-    }),
-  );
-function _e(e) {
-  let r = (0, E.c)(108),
+          }).data?.entries,
+        );
+    return {
+      error: n.error,
+      files: Array.from(r),
+      isEmpty: n.data != null && n.data.entries.length === 0,
+      isLoading: n.isLoading && n.data == null,
+    };
+  });
+function ge(e) {
+  let n = (0, D.c)(108),
     {
       activeFilePath: i,
       autoFocusSearch: a,
@@ -175,379 +169,379 @@ function _e(e) {
       onSelectFile: u,
       refreshKey: d,
     } = e,
-    m = p(te),
-    h;
-  r[0] !== c || r[1] !== s || r[2] !== o
-    ? ((h = { hostId: c, includeHidden: s, root: o }),
-      (r[0] = c),
-      (r[1] = s),
-      (r[2] = o),
-      (r[3] = h))
-    : (h = r[3]);
-  let g = ee(me, h),
-    _ = f(g),
-    y;
-  r[4] !== c || r[5] !== s || r[6] !== o
-    ? ((y = { hostId: c, includeHidden: s, root: o }),
-      (r[4] = c),
-      (r[5] = s),
-      (r[6] = o),
-      (r[7] = y))
-    : (y = r[7]);
-  let x = ee(he, y),
-    ne = f(x),
-    ae = v(`open-file`),
-    S;
-  r[8] === o ? (S = r[9]) : ((S = t(o)), (r[8] = o), (r[9] = S));
-  let C = S,
-    w,
-    T;
-  r[10] !== i || r[11] !== _ || r[12] !== o
-    ? ((w = i == null ? null : le({ filePath: i, root: o })),
-      (T = ce(_, w)),
-      (r[10] = i),
-      (r[11] = _),
-      (r[12] = o),
-      (r[13] = w),
-      (r[14] = T))
-    : ((w = r[13]), (T = r[14]));
-  let k = T,
-    [A, pe] = (0, D.useState)(k.expandedPaths),
-    [j, _e] = (0, D.useState)(k.selectedPath),
-    M = (0, D.useRef)(A),
-    N = (0, D.useRef)(null),
-    P = (0, D.useRef)(null),
-    F = (0, D.useRef)(j),
-    I;
-  r[15] !== A || r[16] !== c || r[17] !== s || r[18] !== d || r[19] !== o
-    ? ((I = {
-        expandedItems: A,
+    h = f(ee),
+    g;
+  n[0] !== c || n[1] !== s || n[2] !== o
+    ? ((g = { hostId: c, includeHidden: s, root: o }),
+      (n[0] = c),
+      (n[1] = s),
+      (n[2] = o),
+      (n[3] = g))
+    : (g = n[3]);
+  let _ = l(pe, g),
+    y = m(_),
+    b;
+  n[4] !== c || n[5] !== s || n[6] !== o
+    ? ((b = { hostId: c, includeHidden: s, root: o }),
+      (n[4] = c),
+      (n[5] = s),
+      (n[6] = o),
+      (n[7] = b))
+    : (b = n[7]);
+  let S = l(me, b),
+    ne = m(S),
+    ie = v(`open-file`),
+    C;
+  n[8] === o ? (C = n[9]) : ((C = t(o)), (n[8] = o), (n[9] = C));
+  let w = C,
+    T,
+    E;
+  n[10] !== i || n[11] !== y || n[12] !== o
+    ? ((T = i == null ? null : ce({ filePath: i, root: o })),
+      (E = se(y, T)),
+      (n[10] = i),
+      (n[11] = y),
+      (n[12] = o),
+      (n[13] = T),
+      (n[14] = E))
+    : ((T = n[13]), (E = n[14]));
+  let A = E,
+    [j, fe] = (0, O.useState)(A.expandedPaths),
+    [M, ge] = (0, O.useState)(A.selectedPath),
+    N = (0, O.useRef)(j),
+    P = (0, O.useRef)(null),
+    F = (0, O.useRef)(null),
+    I = (0, O.useRef)(M),
+    L;
+  n[15] !== j || n[16] !== c || n[17] !== s || n[18] !== d || n[19] !== o
+    ? ((L = {
+        expandedItems: j,
         hostId: c,
         includeHidden: s,
         refreshKey: d,
         root: o,
       }),
-      (r[15] = A),
-      (r[16] = c),
-      (r[17] = s),
-      (r[18] = d),
-      (r[19] = o),
-      (r[20] = I))
-    : (I = r[20]);
-  let { error: Ce, files: we, isEmpty: Te, isLoading: Ee } = l(ge, I),
-    L;
-  r[21] === o ? (L = r[22]) : ((L = [o]), (r[21] = o), (r[22] = L));
-  let De = L,
+      (n[15] = j),
+      (n[16] = c),
+      (n[17] = s),
+      (n[18] = d),
+      (n[19] = o),
+      (n[20] = L))
+    : (L = n[20]);
+  let { error: Se, files: Ce, isEmpty: we, isLoading: Te } = p(he, L),
     R;
-  r[23] !== x || r[24] !== m
-    ? ((R = (e) => {
-        let { files: t, query: n } = e;
-        n.trim().length !== 0 && m.set(x, { files: t, query: n });
-      }),
-      (r[23] = x),
-      (r[24] = m),
-      (r[25] = R))
-    : (R = r[25]);
-  let Oe = b(R),
+  n[21] === o ? (R = n[22]) : ((R = [o]), (n[21] = o), (n[22] = R));
+  let Ee = R,
     z;
-  r[26] !== Oe || r[27] !== c || r[28] !== _.searchQuery || r[29] !== De
-    ? ((z = { hostId: c, onFiles: Oe, query: _.searchQuery, roots: De }),
-      (r[26] = Oe),
-      (r[27] = c),
-      (r[28] = _.searchQuery),
-      (r[29] = De),
-      (r[30] = z))
-    : (z = r[30]);
-  let { files: ke, isLoading: Ae } = ie(z),
+  n[23] !== S || n[24] !== h
+    ? ((z = (e) => {
+        let { files: t, query: n } = e;
+        n.trim().length !== 0 && h.set(S, { files: t, query: n });
+      }),
+      (n[23] = S),
+      (n[24] = h),
+      (n[25] = z))
+    : (z = n[25]);
+  let De = x(z),
     B;
-  r[31] === _.searchQuery
-    ? (B = r[32])
-    : ((B = _.searchQuery.trim()), (r[31] = _.searchQuery), (r[32] = B));
-  let je = B,
+  n[26] !== De || n[27] !== c || n[28] !== y.searchQuery || n[29] !== Ee
+    ? ((B = { hostId: c, onFiles: De, query: y.searchQuery, roots: Ee }),
+      (n[26] = De),
+      (n[27] = c),
+      (n[28] = y.searchQuery),
+      (n[29] = Ee),
+      (n[30] = B))
+    : (B = n[30]);
+  let { files: Oe, isLoading: ke } = te(B),
     V;
-  r[33] !== ne || r[34] !== _.searchQuery || r[35] !== ke
-    ? ((V = de(ke, ne, _.searchQuery)),
-      (r[33] = ne),
-      (r[34] = _.searchQuery),
-      (r[35] = ke),
-      (r[36] = V))
-    : (V = r[36]);
-  let H = V,
-    U;
-  r[37] !== C || r[38] !== u || r[39] !== ae || r[40] !== o
-    ? ((U = (e, t) => {
+  n[31] === y.searchQuery
+    ? (V = n[32])
+    : ((V = y.searchQuery.trim()), (n[31] = y.searchQuery), (n[32] = V));
+  let Ae = V,
+    H;
+  n[33] !== ne || n[34] !== y.searchQuery || n[35] !== Oe
+    ? ((H = ue(Oe, ne, y.searchQuery)),
+      (n[33] = ne),
+      (n[34] = y.searchQuery),
+      (n[35] = Oe),
+      (n[36] = H))
+    : (H = n[36]);
+  let U = H,
+    W;
+  n[37] !== w || n[38] !== u || n[39] !== ie || n[40] !== o
+    ? ((W = (e, t) => {
         if (u != null) {
-          u(n(o, e), t);
+          u(r(o, e), t);
           return;
         }
-        ae.mutate({ cwd: C, path: e });
+        ie.mutate({ cwd: w, path: e });
       }),
-      (r[37] = C),
-      (r[38] = u),
-      (r[39] = ae),
-      (r[40] = o),
-      (r[41] = U))
-    : (U = r[41]);
-  let W = b(U),
-    G;
-  r[42] === W
-    ? (G = r[43])
-    : ((G = (e) => {
-        be(e, (e) => {
-          W(e, { isPreview: !0 });
+      (n[37] = w),
+      (n[38] = u),
+      (n[39] = ie),
+      (n[40] = o),
+      (n[41] = W))
+    : (W = n[41]);
+  let G = x(W),
+    K;
+  n[42] === G
+    ? (K = n[43])
+    : ((K = (e) => {
+        ye(e, (e) => {
+          G(e, { isPreview: !0 });
         });
       }),
-      (r[42] = W),
-      (r[43] = G));
-  let Me = b(G),
-    K;
-  r[44] === W
-    ? (K = r[45])
-    : ((K = (e) => {
-        W(e, { isPreview: !1 });
-      }),
-      (r[44] = W),
-      (r[45] = K));
-  let Ne = b(K),
+      (n[42] = G),
+      (n[43] = K));
+  let je = x(K),
     q;
-  r[46] !== x ||
-  r[47] !== _.searchQuery ||
-  r[48] !== m ||
-  r[49] !== W ||
-  r[50] !== H
-    ? ((q = (e) => {
-        (H != null && m.set(x, { files: H, query: _.searchQuery }),
-          W(e, { isPreview: !0 }));
+  n[44] === G
+    ? (q = n[45])
+    : ((q = (e) => {
+        G(e, { isPreview: !1 });
       }),
-      (r[46] = x),
-      (r[47] = _.searchQuery),
-      (r[48] = m),
-      (r[49] = W),
-      (r[50] = H),
-      (r[51] = q))
-    : (q = r[51]);
-  let Pe = b(q),
+      (n[44] = G),
+      (n[45] = q));
+  let Me = x(q),
     J;
-  r[52] === W
-    ? (J = r[53])
-    : ((J = (e) => {
-        W(e, { isPreview: !1 });
+  n[46] !== S ||
+  n[47] !== y.searchQuery ||
+  n[48] !== h ||
+  n[49] !== G ||
+  n[50] !== U
+    ? ((J = (e) => {
+        (U != null && h.set(S, { files: U, query: y.searchQuery }),
+          G(e, { isPreview: !0 }));
       }),
-      (r[52] = W),
-      (r[53] = J));
-  let Fe = b(J),
+      (n[46] = S),
+      (n[47] = y.searchQuery),
+      (n[48] = h),
+      (n[49] = G),
+      (n[50] = U),
+      (n[51] = J))
+    : (J = n[51]);
+  let Ne = x(J),
     Y;
-  r[54] !== g || r[55] !== m
-    ? ((Y = () => {
-        let e = N.current;
-        e != null && ((N.current = null), m.set(g, (t) => oe(t, e)));
+  n[52] === G
+    ? (Y = n[53])
+    : ((Y = (e) => {
+        G(e, { isPreview: !1 });
       }),
-      (r[54] = g),
-      (r[55] = m),
-      (r[56] = Y))
-    : (Y = r[56]);
-  let X = b(Y),
+      (n[52] = G),
+      (n[53] = Y));
+  let Pe = x(Y),
+    Fe;
+  n[54] !== _ || n[55] !== h
+    ? ((Fe = () => {
+        let e = P.current;
+        e != null && ((P.current = null), h.set(_, (t) => ae(t, e)));
+      }),
+      (n[54] = _),
+      (n[55] = h),
+      (n[56] = Fe))
+    : (Fe = n[56]);
+  let X = x(Fe),
     Ie;
-  r[57] !== g || r[58] !== m
+  n[57] !== _ || n[58] !== h
     ? ((Ie = (e) => {
-        m.set(g, (t) => se(t, e));
+        h.set(_, (t) => oe(t, e));
       }),
-      (r[57] = g),
-      (r[58] = m),
-      (r[59] = Ie))
-    : (Ie = r[59]);
-  let Le = b(Ie),
+      (n[57] = _),
+      (n[58] = h),
+      (n[59] = Ie))
+    : (Ie = n[59]);
+  let Le = x(Ie),
     Re;
-  r[60] === X
-    ? (Re = r[61])
+  n[60] === X
+    ? (Re = n[61])
     : ((Re = (e) => {
-        ((N.current = e),
-          P.current != null && window.clearTimeout(P.current),
-          (P.current = window.setTimeout(() => {
-            ((P.current = null), X());
-          }, fe)));
+        ((P.current = e),
+          F.current != null && window.clearTimeout(F.current),
+          (F.current = window.setTimeout(() => {
+            ((F.current = null), X());
+          }, de)));
       }),
-      (r[60] = X),
-      (r[61] = Re));
-  let ze = b(Re),
+      (n[60] = X),
+      (n[61] = Re));
+  let ze = x(Re),
     Be;
-  r[62] === ze
-    ? (Be = r[63])
+  n[62] === ze
+    ? (Be = n[63])
     : ((Be = (e) => {
-        (Se(M.current, e.expandedPaths) ||
-          ((M.current = e.expandedPaths), pe(e.expandedPaths)),
-          F.current !== e.selectedPath &&
-            ((F.current = e.selectedPath), _e(e.selectedPath)),
+        (xe(N.current, e.expandedPaths) ||
+          ((N.current = e.expandedPaths), fe(e.expandedPaths)),
+          I.current !== e.selectedPath &&
+            ((I.current = e.selectedPath), ge(e.selectedPath)),
           ze(e));
       }),
-      (r[62] = ze),
-      (r[63] = Be));
-  let Ve = b(Be),
+      (n[62] = ze),
+      (n[63] = Be));
+  let Ve = x(Be),
     He,
     Ue;
-  (r[64] !== w || r[65] !== g || r[66] !== m
+  (n[64] !== T || n[65] !== _ || n[66] !== h
     ? ((He = () => {
-        if (w == null) return;
-        let e = ue(M.current, w);
-        (Se(M.current, e) || ((M.current = e), pe(e)),
-          F.current !== w && ((F.current = w), _e(w)),
-          (N.current = null),
-          P.current != null &&
-            (window.clearTimeout(P.current), (P.current = null)),
-          m.set(g, (e) => ce(e, w)));
+        if (T == null) return;
+        let e = le(N.current, T);
+        (xe(N.current, e) || ((N.current = e), fe(e)),
+          I.current !== T && ((I.current = T), ge(T)),
+          (P.current = null),
+          F.current != null &&
+            (window.clearTimeout(F.current), (F.current = null)),
+          h.set(_, (e) => se(e, T)));
       }),
-      (Ue = [w, g, m]),
-      (r[64] = w),
-      (r[65] = g),
-      (r[66] = m),
-      (r[67] = He),
-      (r[68] = Ue))
-    : ((He = r[67]), (Ue = r[68])),
-    (0, D.useEffect)(He, Ue));
-  let Z, We;
-  (r[69] !== A ||
-  r[70] !== c ||
-  r[71] !== s ||
-  r[72] !== d ||
-  r[73] !== o ||
-  r[74] !== m
-    ? ((Z = () => {
-        xe(m, {
-          expandedItems: A,
+      (Ue = [T, _, h]),
+      (n[64] = T),
+      (n[65] = _),
+      (n[66] = h),
+      (n[67] = He),
+      (n[68] = Ue))
+    : ((He = n[67]), (Ue = n[68])),
+    (0, O.useEffect)(He, Ue));
+  let We, Ge;
+  (n[69] !== j ||
+  n[70] !== c ||
+  n[71] !== s ||
+  n[72] !== d ||
+  n[73] !== o ||
+  n[74] !== h
+    ? ((We = () => {
+        be(h, {
+          expandedItems: j,
           hostId: c,
           includeHidden: s,
           refreshKey: d,
           root: o,
         });
       }),
-      (We = [A, c, s, d, o, m]),
-      (r[69] = A),
-      (r[70] = c),
-      (r[71] = s),
-      (r[72] = d),
-      (r[73] = o),
-      (r[74] = m),
-      (r[75] = Z),
-      (r[76] = We))
-    : ((Z = r[75]), (We = r[76])),
-    (0, D.useEffect)(Z, We));
-  let Ge, Ke;
-  (r[77] === X
-    ? ((Ge = r[78]), (Ke = r[79]))
-    : ((Ge = () => () => {
-        (P.current != null &&
-          (window.clearTimeout(P.current), (P.current = null)),
+      (Ge = [j, c, s, d, o, h]),
+      (n[69] = j),
+      (n[70] = c),
+      (n[71] = s),
+      (n[72] = d),
+      (n[73] = o),
+      (n[74] = h),
+      (n[75] = We),
+      (n[76] = Ge))
+    : ((We = n[75]), (Ge = n[76])),
+    (0, O.useEffect)(We, Ge));
+  let Ke, qe;
+  (n[77] === X
+    ? ((Ke = n[78]), (qe = n[79]))
+    : ((Ke = () => () => {
+        (F.current != null &&
+          (window.clearTimeout(F.current), (F.current = null)),
           X());
       }),
-      (Ke = [X]),
-      (r[77] = X),
-      (r[78] = Ge),
-      (r[79] = Ke)),
-    (0, D.useEffect)(Ge, Ke));
-  let Q;
-  r[80] !== a || r[81] !== Le || r[82] !== _.searchQuery
-    ? ((Q = (0, O.jsx)(`div`, {
+      (qe = [X]),
+      (n[77] = X),
+      (n[78] = Ke),
+      (n[79] = qe)),
+    (0, O.useEffect)(Ke, qe));
+  let Z;
+  n[80] !== a || n[81] !== Le || n[82] !== y.searchQuery
+    ? ((Z = (0, k.jsx)(`div`, {
         className: `shrink-0 px-2 pt-2 pb-px`,
-        children: (0, O.jsx)(re, {
+        children: (0, k.jsx)(re, {
           autoFocus: a,
           inputId: `workspace-directory-tree-search`,
           onQueryChange: Le,
-          searchQuery: _.searchQuery,
+          searchQuery: y.searchQuery,
         }),
       })),
-      (r[80] = a),
-      (r[81] = Le),
-      (r[82] = _.searchQuery),
-      (r[83] = Q))
-    : (Q = r[83]);
-  let $;
-  r[84] !== w ||
-  r[85] !== Ce ||
-  r[86] !== A ||
-  r[87] !== we ||
-  r[88] !== C ||
-  r[89] !== Ne ||
-  r[90] !== Fe ||
-  r[91] !== Pe ||
-  r[92] !== Me ||
-  r[93] !== Ve ||
-  r[94] !== c ||
-  r[95] !== Te ||
-  r[96] !== Ee ||
-  r[97] !== Ae ||
-  r[98] !== _.scrollTop ||
-  r[99] !== _.searchQuery ||
-  r[100] !== o ||
-  r[101] !== j ||
-  r[102] !== je.length ||
-  r[103] !== H
-    ? (($ = (0, O.jsx)(`div`, {
+      (n[80] = a),
+      (n[81] = Le),
+      (n[82] = y.searchQuery),
+      (n[83] = Z))
+    : (Z = n[83]);
+  let Q;
+  n[84] !== T ||
+  n[85] !== Se ||
+  n[86] !== j ||
+  n[87] !== Ce ||
+  n[88] !== w ||
+  n[89] !== Me ||
+  n[90] !== Pe ||
+  n[91] !== Ne ||
+  n[92] !== je ||
+  n[93] !== Ve ||
+  n[94] !== c ||
+  n[95] !== we ||
+  n[96] !== Te ||
+  n[97] !== ke ||
+  n[98] !== y.scrollTop ||
+  n[99] !== y.searchQuery ||
+  n[100] !== o ||
+  n[101] !== M ||
+  n[102] !== Ae.length ||
+  n[103] !== U
+    ? ((Q = (0, k.jsx)(`div`, {
         className: `min-h-0 flex-1`,
         children:
-          je.length > 0
-            ? (0, O.jsx)(ye, {
-                files: H,
+          Ae.length > 0
+            ? (0, k.jsx)(ve, {
+                files: U,
                 hostId: c,
-                isLoading: Ae,
-                onOpenFile: Fe,
-                onSelectFile: Pe,
-                query: _.searchQuery,
+                isLoading: ke,
+                onOpenFile: Pe,
+                onSelectFile: Ne,
+                query: y.searchQuery,
                 root: o,
               })
-            : (0, O.jsx)(ve, {
-                error: Ce,
-                files: we,
-                gitCwd: C,
+            : (0, k.jsx)(_e, {
+                error: Se,
+                files: Ce,
+                gitCwd: w,
                 hostId: c,
-                initialExpandedPaths: A,
-                initialScrollTop: _.scrollTop,
-                isEmpty: Te,
-                isLoading: Ee,
-                onOpenFile: Ne,
-                onSelectionChange: Me,
+                initialExpandedPaths: j,
+                initialScrollTop: y.scrollTop,
+                isEmpty: we,
+                isLoading: Te,
+                onOpenFile: Me,
+                onSelectionChange: je,
                 onStateChange: Ve,
-                revealSelectedPath: w != null,
-                selectedPath: j,
+                revealSelectedPath: T != null,
+                selectedPath: M,
               }),
       })),
-      (r[84] = w),
-      (r[85] = Ce),
-      (r[86] = A),
-      (r[87] = we),
-      (r[88] = C),
-      (r[89] = Ne),
-      (r[90] = Fe),
-      (r[91] = Pe),
-      (r[92] = Me),
-      (r[93] = Ve),
-      (r[94] = c),
-      (r[95] = Te),
-      (r[96] = Ee),
-      (r[97] = Ae),
-      (r[98] = _.scrollTop),
-      (r[99] = _.searchQuery),
-      (r[100] = o),
-      (r[101] = j),
-      (r[102] = je.length),
-      (r[103] = H),
-      (r[104] = $))
-    : ($ = r[104]);
-  let qe;
+      (n[84] = T),
+      (n[85] = Se),
+      (n[86] = j),
+      (n[87] = Ce),
+      (n[88] = w),
+      (n[89] = Me),
+      (n[90] = Pe),
+      (n[91] = Ne),
+      (n[92] = je),
+      (n[93] = Ve),
+      (n[94] = c),
+      (n[95] = we),
+      (n[96] = Te),
+      (n[97] = ke),
+      (n[98] = y.scrollTop),
+      (n[99] = y.searchQuery),
+      (n[100] = o),
+      (n[101] = M),
+      (n[102] = Ae.length),
+      (n[103] = U),
+      (n[104] = Q))
+    : (Q = n[104]);
+  let $;
   return (
-    r[105] !== Q || r[106] !== $
-      ? ((qe = (0, O.jsxs)(`div`, {
+    n[105] !== Z || n[106] !== Q
+      ? (($ = (0, k.jsxs)(`div`, {
           className: `flex h-full min-h-0 w-full flex-col`,
-          children: [Q, $],
+          children: [Z, Q],
         })),
-        (r[105] = Q),
-        (r[106] = $),
-        (r[107] = qe))
-      : (qe = r[107]),
-    qe
+        (n[105] = Z),
+        (n[106] = Q),
+        (n[107] = $))
+      : ($ = n[107]),
+    $
   );
 }
-function ve(e) {
-  let t = (0, E.c)(17),
+function _e(e) {
+  let t = (0, D.c)(17),
     {
       error: n,
       files: r,
@@ -555,9 +549,9 @@ function ve(e) {
       hostId: a,
       initialExpandedPaths: o,
       initialScrollTop: s,
-      isEmpty: l,
-      isLoading: u,
-      onOpenFile: d,
+      isEmpty: c,
+      isLoading: l,
+      onOpenFile: u,
       onSelectionChange: f,
       onStateChange: p,
       revealSelectedPath: m,
@@ -568,7 +562,7 @@ function ve(e) {
     return (
       t[0] === n.message
         ? (e = t[1])
-        : ((e = (0, O.jsx)(`div`, {
+        : ((e = (0, k.jsx)(`div`, {
             className: `px-3 py-2 text-xs text-token-error-foreground`,
             children: n.message,
           })),
@@ -577,12 +571,12 @@ function ve(e) {
       e
     );
   }
-  if (u) {
+  if (l) {
     let e;
     return (
       t[2] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((e = (0, O.jsx)(F, {
-            children: (0, O.jsx)(c, {
+        ? ((e = (0, k.jsx)(I, {
+            children: (0, k.jsx)(d, {
               id: `threadSidePanel.workspaceBrowser.loading`,
               defaultMessage: `Loading directory entries…`,
               description: `Loading message shown while the workspace file browser is fetching a directory`,
@@ -593,12 +587,12 @@ function ve(e) {
       e
     );
   }
-  if (l) {
+  if (c) {
     let e;
     return (
       t[3] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((e = (0, O.jsx)(F, {
-            children: (0, O.jsx)(c, {
+        ? ((e = (0, k.jsx)(I, {
+            children: (0, k.jsx)(d, {
               id: `threadSidePanel.workspaceBrowser.empty`,
               defaultMessage: `No files in this folder`,
               description: `Empty state shown when a workspace directory contains no visible entries`,
@@ -610,13 +604,13 @@ function ve(e) {
     );
   }
   let g;
-  t[4] === d
+  t[4] === u
     ? (g = t[5])
     : ((g = (e) => {
-        let t = N(e.nativeEvent);
-        t != null && d(t);
+        let t = P(e.nativeEvent);
+        t != null && u(t);
       }),
-      (t[4] = d),
+      (t[4] = u),
       (t[5] = g));
   let _;
   return (
@@ -630,9 +624,9 @@ function ve(e) {
     t[13] !== m ||
     t[14] !== h ||
     t[15] !== g
-      ? ((_ = (0, O.jsx)(`div`, {
+      ? ((_ = (0, k.jsx)(`div`, {
           className: `h-full min-h-0 w-full px-2`,
-          children: (0, O.jsx)(x, {
+          children: (0, k.jsx)(S, {
             cwd: i,
             hostId: a,
             initialExpandedPaths: o,
@@ -660,33 +654,33 @@ function ve(e) {
     _
   );
 }
-function ye(e) {
-  let n = (0, E.c)(22),
+function ve(e) {
+  let n = (0, D.c)(22),
     {
       files: r,
       hostId: i,
       isLoading: a,
       onOpenFile: o,
       onSelectFile: s,
-      query: l,
-      root: u,
+      query: c,
+      root: l,
     } = e,
-    d;
+    u;
   n[0] === r
-    ? (d = n[1])
-    : ((d = r == null ? null : S(r)), (n[0] = r), (n[1] = d));
-  let f = d,
+    ? (u = n[1])
+    : ((u = r == null ? null : C(r)), (n[0] = r), (n[1] = u));
+  let f = u,
     p;
   n[2] === f
     ? (p = n[3])
-    : ((p = f == null ? A : I(f.map(M))), (n[2] = f), (n[3] = p));
+    : ((p = f == null ? j : L(f.map(N))), (n[2] = f), (n[3] = p));
   let m = p;
   if (f == null || (a && f.length === 0)) {
     let e;
     return (
       n[4] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((e = (0, O.jsx)(F, {
-            children: (0, O.jsx)(c, {
+        ? ((e = (0, k.jsx)(I, {
+            children: (0, k.jsx)(d, {
               id: `thread.fileTreePanel.searchingFiles`,
               defaultMessage: `Searching files…`,
               description: `Loading state shown while searching workspace files`,
@@ -701,8 +695,8 @@ function ye(e) {
     let e;
     return (
       n[5] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((e = (0, O.jsx)(F, {
-            children: (0, O.jsx)(c, {
+        ? ((e = (0, k.jsx)(I, {
+            children: (0, k.jsx)(d, {
               id: `thread.fileTreePanel.noMatchingFiles`,
               defaultMessage: `No matching files`,
               description: `Empty state shown when workspace file search has no results`,
@@ -714,7 +708,7 @@ function ye(e) {
     );
   }
   let h;
-  n[6] === u ? (h = n[7]) : ((h = t(u)), (n[6] = u), (n[7] = h));
+  n[6] === l ? (h = n[7]) : ((h = t(l)), (n[6] = l), (n[7] = h));
   let g;
   n[8] !== s || n[9] !== f
     ? ((g = (e) => {
@@ -728,7 +722,7 @@ function ye(e) {
   let _;
   n[11] !== o || n[12] !== f
     ? ((_ = (e) => {
-        let t = N(e.nativeEvent),
+        let t = P(e.nativeEvent),
           n = f.find((e) => e.displayPath === t);
         n != null && o(n.path);
       }),
@@ -740,14 +734,14 @@ function ye(e) {
   return (
     n[14] !== i ||
     n[15] !== m ||
-    n[16] !== l ||
+    n[16] !== c ||
     n[17] !== f ||
     n[18] !== h ||
     n[19] !== g ||
     n[20] !== _
-      ? ((v = (0, O.jsx)(`div`, {
+      ? ((v = (0, k.jsx)(`div`, {
           className: `h-full min-h-0 w-full px-2`,
-          children: (0, O.jsx)(x, {
+          children: (0, k.jsx)(S, {
             flattenEmptyDirectories: !0,
             cwd: h,
             hostId: i,
@@ -755,12 +749,12 @@ function ye(e) {
             onSelectionChange: g,
             onDoubleClick: _,
             paths: f,
-            resetKey: l,
+            resetKey: c,
           }),
         })),
         (n[14] = i),
         (n[15] = m),
-        (n[16] = l),
+        (n[16] = c),
         (n[17] = f),
         (n[18] = h),
         (n[19] = g),
@@ -770,35 +764,35 @@ function ye(e) {
     v
   );
 }
-function M(e) {
+function N(e) {
   return e.displayPath;
 }
-function be(e, t) {
-  let n = e.find((e) => !e.endsWith(k));
+function ye(e, t) {
+  let n = e.find((e) => !e.endsWith(A));
   n != null && t(n);
 }
-function N(e) {
+function P(e) {
   let t = ne(e);
-  return t == null || t.endsWith(k) ? null : t;
+  return t == null || t.endsWith(A) ? null : t;
 }
-function P(e, t) {
+function F(e, t) {
   if (t != null)
     for (let n of t) {
       if (n.type === `directory`) {
-        e.add(`${n.path}${k}`);
+        e.add(`${n.path}${A}`);
         continue;
       }
       e.add(n.path);
     }
 }
-async function xe(
+async function be(
   e,
   { expandedItems: t, hostId: n, includeHidden: r, refreshKey: i, root: a },
 ) {
   await Promise.all(
-    ae(t).map(async (t) => {
+    ie(t).map(async (t) => {
       await e.query
-        .fetch(j, {
+        .fetch(M, {
           directoryPath: t,
           hostId: n,
           includeHidden: r,
@@ -809,14 +803,14 @@ async function xe(
     }),
   );
 }
-function F(e) {
-  let t = (0, E.c)(2),
+function I(e) {
+  let t = (0, D.c)(2),
     { children: n } = e,
     r;
   return (
     t[0] === n
       ? (r = t[1])
-      : ((r = (0, O.jsx)(`div`, {
+      : ((r = (0, k.jsx)(`div`, {
           className: `px-2 py-2 text-left text-base text-token-description-foreground`,
           children: n,
         })),
@@ -825,7 +819,7 @@ function F(e) {
     r
   );
 }
-function I(e) {
+function L(e) {
   let t = new Set();
   for (let n of e) {
     let e = (n.endsWith(`/`) ? n.slice(0, -1) : n).split(`/`);
@@ -833,8 +827,8 @@ function I(e) {
   }
   return Array.from(t);
 }
-function Se(e, t) {
+function xe(e, t) {
   return e.length === t.length ? e.every((e, n) => e === t[n]) : !1;
 }
-export { _e as t };
+export { ge as t };
 //# sourceMappingURL=workspace-directory-tree.js.map

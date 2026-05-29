@@ -1,5 +1,6 @@
 import { f as e, i as t, l as n, n as r } from "./chunk-S3R3BYOJ.js";
-import { i, r as a, t as o } from "./src-DXdm7MTq.js";
+import { t as i } from "./src-BHeH9bp0.js";
+import { n as a, r as o } from "./chunk-AGHRB4JF-CwjJfTB_.js";
 import {
   A as s,
   I as c,
@@ -11,1714 +12,39 @@ import {
   h as m,
   s as h,
   y as g,
-} from "./chunk-ABZYJK2D.js";
+} from "./chunk-ABZYJK2D-DSLQAJWr.js";
 import { n as _, r as v } from "./chunk-JA3XYJ7Z.js";
 import { t as y } from "./chunk-CVBHYZKI.js";
 import { a as b, i as x, r as S, t as C } from "./chunk-ATLVNIR6.js";
-function w(e, t, n) {
-  if (e && e.length) {
-    let [r, i] = t,
-      a = (Math.PI / 180) * n,
-      o = Math.cos(a),
-      s = Math.sin(a);
-    for (let t of e) {
-      let [e, n] = t;
-      ((t[0] = (e - r) * o - (n - i) * s + r),
-        (t[1] = (e - r) * s + (n - i) * o + i));
-    }
-  }
-}
-function T(e, t) {
-  return e[0] === t[0] && e[1] === t[1];
-}
-function E(e, t, n, r = 1) {
-  let i = n,
-    a = Math.max(t, 0.1),
-    o = e[0] && e[0][0] && typeof e[0][0] == `number` ? [e] : e,
-    s = [0, 0];
-  if (i) for (let e of o) w(e, s, i);
-  let c = (function (e, t, n) {
-    let r = [];
-    for (let t of e) {
-      let e = [...t];
-      (T(e[0], e[e.length - 1]) || e.push([e[0][0], e[0][1]]),
-        e.length > 2 && r.push(e));
-    }
-    let i = [];
-    t = Math.max(t, 0.1);
-    let a = [];
-    for (let e of r)
-      for (let t = 0; t < e.length - 1; t++) {
-        let n = e[t],
-          r = e[t + 1];
-        if (n[1] !== r[1]) {
-          let e = Math.min(n[1], r[1]);
-          a.push({
-            ymin: e,
-            ymax: Math.max(n[1], r[1]),
-            x: e === n[1] ? n[0] : r[0],
-            islope: (r[0] - n[0]) / (r[1] - n[1]),
-          });
-        }
-      }
-    if (
-      (a.sort((e, t) =>
-        e.ymin < t.ymin
-          ? -1
-          : e.ymin > t.ymin
-            ? 1
-            : e.x < t.x
-              ? -1
-              : e.x > t.x
-                ? 1
-                : e.ymax === t.ymax
-                  ? 0
-                  : (e.ymax - t.ymax) / Math.abs(e.ymax - t.ymax),
-      ),
-      !a.length)
-    )
-      return i;
-    let o = [],
-      s = a[0].ymin,
-      c = 0;
-    for (; o.length || a.length; ) {
-      if (a.length) {
-        let e = -1;
-        for (let t = 0; t < a.length && !(a[t].ymin > s); t++) e = t;
-        a.splice(0, e + 1).forEach((e) => {
-          o.push({ s, edge: e });
-        });
-      }
-      if (
-        ((o = o.filter((e) => !(e.edge.ymax <= s))),
-        o.sort((e, t) =>
-          e.edge.x === t.edge.x
-            ? 0
-            : (e.edge.x - t.edge.x) / Math.abs(e.edge.x - t.edge.x),
-        ),
-        (n !== 1 || c % t == 0) && o.length > 1)
-      )
-        for (let e = 0; e < o.length; e += 2) {
-          let t = e + 1;
-          if (t >= o.length) break;
-          let n = o[e].edge,
-            r = o[t].edge;
-          i.push([
-            [Math.round(n.x), s],
-            [Math.round(r.x), s],
-          ]);
-        }
-      ((s += n),
-        o.forEach((e) => {
-          e.edge.x = e.edge.x + n * e.edge.islope;
-        }),
-        c++);
-    }
-    return i;
-  })(o, a, r);
-  if (i) {
-    for (let e of o) w(e, s, -i);
-    (function (e, t, n) {
-      let r = [];
-      (e.forEach((e) => r.push(...e)), w(r, t, n));
-    })(c, s, -i);
-  }
-  return c;
-}
-function D(e, t) {
-  let n = t.hachureAngle + 90,
-    r = t.hachureGap;
-  (r < 0 && (r = 4 * t.strokeWidth), (r = Math.round(Math.max(r, 0.1))));
-  let i = 1;
-  return (
-    t.roughness >= 1 &&
-      (t.randomizer?.next() || Math.random()) > 0.7 &&
-      (i = r),
-    E(e, r, n, i || 1)
-  );
-}
-var O = class {
-  constructor(e) {
-    this.helper = e;
-  }
-  fillPolygons(e, t) {
-    return this._fillPolygons(e, t);
-  }
-  _fillPolygons(e, t) {
-    let n = D(e, t);
-    return { type: `fillSketch`, ops: this.renderLines(n, t) };
-  }
-  renderLines(e, t) {
-    let n = [];
-    for (let r of e)
-      n.push(
-        ...this.helper.doubleLineOps(r[0][0], r[0][1], r[1][0], r[1][1], t),
-      );
-    return n;
-  }
-};
-function k(e) {
-  let t = e[0],
-    n = e[1];
-  return Math.sqrt((t[0] - n[0]) ** 2 + (t[1] - n[1]) ** 2);
-}
-var A = class extends O {
-    fillPolygons(e, t) {
-      let n = t.hachureGap;
-      (n < 0 && (n = 4 * t.strokeWidth), (n = Math.max(n, 0.1)));
-      let r = D(e, Object.assign({}, t, { hachureGap: n })),
-        i = (Math.PI / 180) * t.hachureAngle,
-        a = [],
-        o = 0.5 * n * Math.cos(i),
-        s = 0.5 * n * Math.sin(i);
-      for (let [e, t] of r)
-        k([e, t]) &&
-          a.push(
-            [[e[0] - o, e[1] + s], [...t]],
-            [[e[0] + o, e[1] - s], [...t]],
-          );
-      return { type: `fillSketch`, ops: this.renderLines(a, t) };
-    }
-  },
-  j = class extends O {
-    fillPolygons(e, t) {
-      let n = this._fillPolygons(e, t),
-        r = Object.assign({}, t, { hachureAngle: t.hachureAngle + 90 }),
-        i = this._fillPolygons(e, r);
-      return ((n.ops = n.ops.concat(i.ops)), n);
-    }
-  },
-  M = class {
-    constructor(e) {
-      this.helper = e;
-    }
-    fillPolygons(e, t) {
-      let n = D(e, (t = Object.assign({}, t, { hachureAngle: 0 })));
-      return this.dotsOnLines(n, t);
-    }
-    dotsOnLines(e, t) {
-      let n = [],
-        r = t.hachureGap;
-      (r < 0 && (r = 4 * t.strokeWidth), (r = Math.max(r, 0.1)));
-      let i = t.fillWeight;
-      i < 0 && (i = t.strokeWidth / 2);
-      let a = r / 4;
-      for (let o of e) {
-        let e = k(o),
-          s = e / r,
-          c = Math.ceil(s) - 1,
-          l = e - c * r,
-          u = (o[0][0] + o[1][0]) / 2 - r / 4,
-          d = Math.min(o[0][1], o[1][1]);
-        for (let e = 0; e < c; e++) {
-          let o = d + l + e * r,
-            s = u - a + 2 * Math.random() * a,
-            c = o - a + 2 * Math.random() * a,
-            f = this.helper.ellipse(s, c, i, i, t);
-          n.push(...f.ops);
-        }
-      }
-      return { type: `fillSketch`, ops: n };
-    }
-  },
-  N = class {
-    constructor(e) {
-      this.helper = e;
-    }
-    fillPolygons(e, t) {
-      let n = D(e, t);
-      return { type: `fillSketch`, ops: this.dashedLine(n, t) };
-    }
-    dashedLine(e, t) {
-      let n =
-          t.dashOffset < 0
-            ? t.hachureGap < 0
-              ? 4 * t.strokeWidth
-              : t.hachureGap
-            : t.dashOffset,
-        r =
-          t.dashGap < 0
-            ? t.hachureGap < 0
-              ? 4 * t.strokeWidth
-              : t.hachureGap
-            : t.dashGap,
-        i = [];
-      return (
-        e.forEach((e) => {
-          let a = k(e),
-            o = Math.floor(a / (n + r)),
-            s = (a + r - o * (n + r)) / 2,
-            c = e[0],
-            l = e[1];
-          c[0] > l[0] && ((c = e[1]), (l = e[0]));
-          let u = Math.atan((l[1] - c[1]) / (l[0] - c[0]));
-          for (let e = 0; e < o; e++) {
-            let a = e * (n + r),
-              o = a + n,
-              l = [
-                c[0] + a * Math.cos(u) + s * Math.cos(u),
-                c[1] + a * Math.sin(u) + s * Math.sin(u),
-              ],
-              d = [
-                c[0] + o * Math.cos(u) + s * Math.cos(u),
-                c[1] + o * Math.sin(u) + s * Math.sin(u),
-              ];
-            i.push(...this.helper.doubleLineOps(l[0], l[1], d[0], d[1], t));
-          }
-        }),
-        i
-      );
-    }
-  },
-  P = class {
-    constructor(e) {
-      this.helper = e;
-    }
-    fillPolygons(e, t) {
-      let n = t.hachureGap < 0 ? 4 * t.strokeWidth : t.hachureGap,
-        r = t.zigzagOffset < 0 ? n : t.zigzagOffset,
-        i = D(e, (t = Object.assign({}, t, { hachureGap: n + r })));
-      return { type: `fillSketch`, ops: this.zigzagLines(i, r, t) };
-    }
-    zigzagLines(e, t, n) {
-      let r = [];
-      return (
-        e.forEach((e) => {
-          let i = k(e),
-            a = Math.round(i / (2 * t)),
-            o = e[0],
-            s = e[1];
-          o[0] > s[0] && ((o = e[1]), (s = e[0]));
-          let c = Math.atan((s[1] - o[1]) / (s[0] - o[0]));
-          for (let e = 0; e < a; e++) {
-            let i = 2 * e * t,
-              a = 2 * (e + 1) * t,
-              s = Math.sqrt(2 * t ** 2),
-              l = [o[0] + i * Math.cos(c), o[1] + i * Math.sin(c)],
-              u = [o[0] + a * Math.cos(c), o[1] + a * Math.sin(c)],
-              d = [
-                l[0] + s * Math.cos(c + Math.PI / 4),
-                l[1] + s * Math.sin(c + Math.PI / 4),
-              ];
-            r.push(
-              ...this.helper.doubleLineOps(l[0], l[1], d[0], d[1], n),
-              ...this.helper.doubleLineOps(d[0], d[1], u[0], u[1], n),
-            );
-          }
-        }),
-        r
-      );
-    }
-  },
-  F = {},
-  I = class {
-    constructor(e) {
-      this.seed = e;
-    }
-    next() {
-      return this.seed
-        ? ((2 ** 31 - 1) & (this.seed = Math.imul(48271, this.seed))) / 2 ** 31
-        : Math.random();
-    }
-  },
-  ee = 0,
-  te = 1,
-  ne = 2,
-  re = {
-    A: 7,
-    a: 7,
-    C: 6,
-    c: 6,
-    H: 1,
-    h: 1,
-    L: 2,
-    l: 2,
-    M: 2,
-    m: 2,
-    Q: 4,
-    q: 4,
-    S: 4,
-    s: 4,
-    T: 2,
-    t: 2,
-    V: 1,
-    v: 1,
-    Z: 0,
-    z: 0,
-  };
-function ie(e, t) {
-  return e.type === t;
-}
-function ae(e) {
-  let t = [],
-    n = (function (e) {
-      let t = [];
-      for (; e !== ``; )
-        if (e.match(/^([ \t\r\n,]+)/)) e = e.substr(RegExp.$1.length);
-        else if (e.match(/^([aAcChHlLmMqQsStTvVzZ])/))
-          ((t[t.length] = { type: ee, text: RegExp.$1 }),
-            (e = e.substr(RegExp.$1.length)));
-        else {
-          if (
-            !e.match(
-              /^(([-+]?[0-9]+(\.[0-9]*)?|[-+]?\.[0-9]+)([eE][-+]?[0-9]+)?)/,
-            )
-          )
-            return [];
-          ((t[t.length] = { type: te, text: `${parseFloat(RegExp.$1)}` }),
-            (e = e.substr(RegExp.$1.length)));
-        }
-      return ((t[t.length] = { type: ne, text: `` }), t);
-    })(e),
-    r = `BOD`,
-    i = 0,
-    a = n[i];
-  for (; !ie(a, ne); ) {
-    let o = 0,
-      s = [];
-    if (r === `BOD`) {
-      if (a.text !== `M` && a.text !== `m`) return ae(`M0,0` + e);
-      (i++, (o = re[a.text]), (r = a.text));
-    } else ie(a, te) ? (o = re[r]) : (i++, (o = re[a.text]), (r = a.text));
-    if (!(i + o < n.length)) throw Error(`Path data ended short`);
-    for (let e = i; e < i + o; e++) {
-      let t = n[e];
-      if (!ie(t, te)) throw Error(`Param not a number: ` + r + `,` + t.text);
-      s[s.length] = +t.text;
-    }
-    if (typeof re[r] != `number`) throw Error(`Bad segment: ` + r);
-    {
-      let e = { key: r, data: s };
-      (t.push(e),
-        (i += o),
-        (a = n[i]),
-        r === `M` && (r = `L`),
-        r === `m` && (r = `l`));
-    }
-  }
-  return t;
-}
-function L(e) {
-  let t = 0,
-    n = 0,
-    r = 0,
-    i = 0,
-    a = [];
-  for (let { key: o, data: s } of e)
-    switch (o) {
-      case `M`:
-        (a.push({ key: `M`, data: [...s] }), ([t, n] = s), ([r, i] = s));
-        break;
-      case `m`:
-        ((t += s[0]),
-          (n += s[1]),
-          a.push({ key: `M`, data: [t, n] }),
-          (r = t),
-          (i = n));
-        break;
-      case `L`:
-        (a.push({ key: `L`, data: [...s] }), ([t, n] = s));
-        break;
-      case `l`:
-        ((t += s[0]), (n += s[1]), a.push({ key: `L`, data: [t, n] }));
-        break;
-      case `C`:
-        (a.push({ key: `C`, data: [...s] }), (t = s[4]), (n = s[5]));
-        break;
-      case `c`: {
-        let e = s.map((e, r) => (r % 2 ? e + n : e + t));
-        (a.push({ key: `C`, data: e }), (t = e[4]), (n = e[5]));
-        break;
-      }
-      case `Q`:
-        (a.push({ key: `Q`, data: [...s] }), (t = s[2]), (n = s[3]));
-        break;
-      case `q`: {
-        let e = s.map((e, r) => (r % 2 ? e + n : e + t));
-        (a.push({ key: `Q`, data: e }), (t = e[2]), (n = e[3]));
-        break;
-      }
-      case `A`:
-        (a.push({ key: `A`, data: [...s] }), (t = s[5]), (n = s[6]));
-        break;
-      case `a`:
-        ((t += s[5]),
-          (n += s[6]),
-          a.push({ key: `A`, data: [s[0], s[1], s[2], s[3], s[4], t, n] }));
-        break;
-      case `H`:
-        (a.push({ key: `H`, data: [...s] }), (t = s[0]));
-        break;
-      case `h`:
-        ((t += s[0]), a.push({ key: `H`, data: [t] }));
-        break;
-      case `V`:
-        (a.push({ key: `V`, data: [...s] }), (n = s[0]));
-        break;
-      case `v`:
-        ((n += s[0]), a.push({ key: `V`, data: [n] }));
-        break;
-      case `S`:
-        (a.push({ key: `S`, data: [...s] }), (t = s[2]), (n = s[3]));
-        break;
-      case `s`: {
-        let e = s.map((e, r) => (r % 2 ? e + n : e + t));
-        (a.push({ key: `S`, data: e }), (t = e[2]), (n = e[3]));
-        break;
-      }
-      case `T`:
-        (a.push({ key: `T`, data: [...s] }), (t = s[0]), (n = s[1]));
-        break;
-      case `t`:
-        ((t += s[0]), (n += s[1]), a.push({ key: `T`, data: [t, n] }));
-        break;
-      case `Z`:
-      case `z`:
-        (a.push({ key: `Z`, data: [] }), (t = r), (n = i));
-    }
-  return a;
-}
-function oe(e) {
-  let t = [],
-    n = ``,
-    r = 0,
-    i = 0,
-    a = 0,
-    o = 0,
-    s = 0,
-    c = 0;
-  for (let { key: l, data: u } of e) {
-    switch (l) {
-      case `M`:
-        (t.push({ key: `M`, data: [...u] }), ([r, i] = u), ([a, o] = u));
-        break;
-      case `C`:
-        (t.push({ key: `C`, data: [...u] }),
-          (r = u[4]),
-          (i = u[5]),
-          (s = u[2]),
-          (c = u[3]));
-        break;
-      case `L`:
-        (t.push({ key: `L`, data: [...u] }), ([r, i] = u));
-        break;
-      case `H`:
-        ((r = u[0]), t.push({ key: `L`, data: [r, i] }));
-        break;
-      case `V`:
-        ((i = u[0]), t.push({ key: `L`, data: [r, i] }));
-        break;
-      case `S`: {
-        let e = 0,
-          a = 0;
-        (n === `C` || n === `S`
-          ? ((e = r + (r - s)), (a = i + (i - c)))
-          : ((e = r), (a = i)),
-          t.push({ key: `C`, data: [e, a, ...u] }),
-          (s = u[0]),
-          (c = u[1]),
-          (r = u[2]),
-          (i = u[3]));
-        break;
-      }
-      case `T`: {
-        let [e, a] = u,
-          o = 0,
-          l = 0;
-        n === `Q` || n === `T`
-          ? ((o = r + (r - s)), (l = i + (i - c)))
-          : ((o = r), (l = i));
-        let d = r + (2 * (o - r)) / 3,
-          f = i + (2 * (l - i)) / 3,
-          p = e + (2 * (o - e)) / 3,
-          m = a + (2 * (l - a)) / 3;
-        (t.push({ key: `C`, data: [d, f, p, m, e, a] }),
-          (s = o),
-          (c = l),
-          (r = e),
-          (i = a));
-        break;
-      }
-      case `Q`: {
-        let [e, n, a, o] = u,
-          l = r + (2 * (e - r)) / 3,
-          d = i + (2 * (n - i)) / 3,
-          f = a + (2 * (e - a)) / 3,
-          p = o + (2 * (n - o)) / 3;
-        (t.push({ key: `C`, data: [l, d, f, p, a, o] }),
-          (s = e),
-          (c = n),
-          (r = a),
-          (i = o));
-        break;
-      }
-      case `A`: {
-        let e = Math.abs(u[0]),
-          n = Math.abs(u[1]),
-          a = u[2],
-          o = u[3],
-          s = u[4],
-          c = u[5],
-          l = u[6];
-        e === 0 || n === 0
-          ? (t.push({ key: `C`, data: [r, i, c, l, c, l] }), (r = c), (i = l))
-          : (r !== c || i !== l) &&
-            (ce(r, i, c, l, e, n, a, o, s).forEach(function (e) {
-              t.push({ key: `C`, data: e });
-            }),
-            (r = c),
-            (i = l));
-        break;
-      }
-      case `Z`:
-        (t.push({ key: `Z`, data: [] }), (r = a), (i = o));
-    }
-    n = l;
-  }
-  return t;
-}
-function se(e, t, n) {
-  return [e * Math.cos(n) - t * Math.sin(n), e * Math.sin(n) + t * Math.cos(n)];
-}
-function ce(e, t, n, r, i, a, o, s, c, l) {
-  let u = ((d = o), (Math.PI * d) / 180);
-  var d;
-  let f = [],
-    p = 0,
-    m = 0,
-    h = 0,
-    g = 0;
-  if (l) [p, m, h, g] = l;
-  else {
-    (([e, t] = se(e, t, -u)), ([n, r] = se(n, r, -u)));
-    let o = (e - n) / 2,
-      l = (t - r) / 2,
-      d = (o * o) / (i * i) + (l * l) / (a * a);
-    d > 1 && ((d = Math.sqrt(d)), (i *= d), (a *= d));
-    let f = i * i,
-      _ = a * a,
-      v = f * _ - f * l * l - _ * o * o,
-      y = f * l * l + _ * o * o,
-      b = (s === c ? -1 : 1) * Math.sqrt(Math.abs(v / y));
-    ((h = (b * i * l) / a + (e + n) / 2),
-      (g = (b * -a * o) / i + (t + r) / 2),
-      (p = Math.asin(parseFloat(((t - g) / a).toFixed(9)))),
-      (m = Math.asin(parseFloat(((r - g) / a).toFixed(9)))),
-      e < h && (p = Math.PI - p),
-      n < h && (m = Math.PI - m),
-      p < 0 && (p = 2 * Math.PI + p),
-      m < 0 && (m = 2 * Math.PI + m),
-      c && p > m && (p -= 2 * Math.PI),
-      !c && m > p && (m -= 2 * Math.PI));
-  }
-  let _ = m - p;
-  if (Math.abs(_) > (120 * Math.PI) / 180) {
-    let e = m,
-      t = n,
-      s = r;
-    ((m =
-      c && m > p
-        ? p + ((120 * Math.PI) / 180) * 1
-        : p + ((120 * Math.PI) / 180) * -1),
-      (f = ce(
-        (n = h + i * Math.cos(m)),
-        (r = g + a * Math.sin(m)),
-        t,
-        s,
-        i,
-        a,
-        o,
-        0,
-        c,
-        [m, e, h, g],
-      )));
-  }
-  _ = m - p;
-  let v = Math.cos(p),
-    y = Math.sin(p),
-    b = Math.cos(m),
-    x = Math.sin(m),
-    S = Math.tan(_ / 4),
-    C = (4 / 3) * i * S,
-    w = (4 / 3) * a * S,
-    T = [e, t],
-    E = [e + C * y, t - w * v],
-    D = [n + C * x, r - w * b],
-    O = [n, r];
-  if (((E[0] = 2 * T[0] - E[0]), (E[1] = 2 * T[1] - E[1]), l))
-    return [E, D, O].concat(f);
-  {
-    f = [E, D, O].concat(f);
-    let e = [];
-    for (let t = 0; t < f.length; t += 3) {
-      let n = se(f[t][0], f[t][1], u),
-        r = se(f[t + 1][0], f[t + 1][1], u),
-        i = se(f[t + 2][0], f[t + 2][1], u);
-      e.push([n[0], n[1], r[0], r[1], i[0], i[1]]);
-    }
-    return e;
-  }
-}
-var le = {
-  randOffset: function (e, t) {
-    return R(e, t);
-  },
-  randOffsetWithRange: function (e, t, n) {
-    return Se(e, t, n);
-  },
-  ellipse: function (e, t, n, r, i) {
-    return he(e, t, i, me(n, r, i)).opset;
-  },
-  doubleLineOps: function (e, t, n, r, i) {
-    return z(e, t, n, r, i, !0);
-  },
-};
-function ue(e, t, n, r, i) {
-  return { type: `path`, ops: z(e, t, n, r, i) };
-}
-function de(e, t, n) {
-  let r = (e || []).length;
-  if (r > 2) {
-    let i = [];
-    for (let t = 0; t < r - 1; t++)
-      i.push(...z(e[t][0], e[t][1], e[t + 1][0], e[t + 1][1], n));
-    return (
-      t && i.push(...z(e[r - 1][0], e[r - 1][1], e[0][0], e[0][1], n)),
-      { type: `path`, ops: i }
-    );
-  }
-  return r === 2
-    ? ue(e[0][0], e[0][1], e[1][0], e[1][1], n)
-    : { type: `path`, ops: [] };
-}
-function fe(e, t, n, r, i) {
-  return (function (e, t) {
-    return de(e, !0, t);
-  })(
-    [
-      [e, t],
-      [e + n, t],
-      [e + n, t + r],
-      [e, t + r],
-    ],
-    i,
-  );
-}
-function pe(e, t) {
-  if (e.length) {
-    let n = typeof e[0][0] == `number` ? [e] : e,
-      r = we(n[0], 1 * (1 + 0.2 * t.roughness), t),
-      i = t.disableMultiStroke
-        ? []
-        : we(n[0], 1.5 * (1 + 0.22 * t.roughness), be(t));
-    for (let e = 1; e < n.length; e++) {
-      let a = n[e];
-      if (a.length) {
-        let e = we(a, 1 * (1 + 0.2 * t.roughness), t),
-          n = t.disableMultiStroke
-            ? []
-            : we(a, 1.5 * (1 + 0.22 * t.roughness), be(t));
-        for (let t of e) t.op !== `move` && r.push(t);
-        for (let e of n) e.op !== `move` && i.push(e);
-      }
-    }
-    return { type: `path`, ops: r.concat(i) };
-  }
-  return { type: `path`, ops: [] };
-}
-function me(e, t, n) {
-  let r = Math.sqrt(2 * Math.PI * Math.sqrt(((e / 2) ** 2 + (t / 2) ** 2) / 2)),
-    i = Math.ceil(
-      Math.max(n.curveStepCount, (n.curveStepCount / Math.sqrt(200)) * r),
-    ),
-    a = (2 * Math.PI) / i,
-    o = Math.abs(e / 2),
-    s = Math.abs(t / 2),
-    c = 1 - n.curveFitting;
-  return (
-    (o += R(o * c, n)),
-    (s += R(s * c, n)),
-    { increment: a, rx: o, ry: s }
-  );
-}
-function he(e, t, n, r) {
-  let [i, a] = Ee(
-      r.increment,
-      e,
-      t,
-      r.rx,
-      r.ry,
-      1,
-      r.increment * Se(0.1, Se(0.4, 1, n), n),
-      n,
-    ),
-    o = Te(i, null, n);
-  if (!n.disableMultiStroke && n.roughness !== 0) {
-    let [i] = Ee(r.increment, e, t, r.rx, r.ry, 1.5, 0, n),
-      a = Te(i, null, n);
-    o = o.concat(a);
-  }
-  return { estimatedPoints: a, opset: { type: `path`, ops: o } };
-}
-function ge(e, t, n, r, i, a, o, s, c) {
-  let l = e,
-    u = t,
-    d = Math.abs(n / 2),
-    f = Math.abs(r / 2);
-  ((d += R(0.01 * d, c)), (f += R(0.01 * f, c)));
-  let p = i,
-    m = a;
-  for (; p < 0; ) ((p += 2 * Math.PI), (m += 2 * Math.PI));
-  m - p > 2 * Math.PI && ((p = 0), (m = 2 * Math.PI));
-  let h = (2 * Math.PI) / c.curveStepCount,
-    g = Math.min(h / 2, (m - p) / 2),
-    _ = De(g, l, u, d, f, p, m, 1, c);
-  if (!c.disableMultiStroke) {
-    let e = De(g, l, u, d, f, p, m, 1.5, c);
-    _.push(...e);
-  }
-  return (
-    o &&
-      (s
-        ? _.push(
-            ...z(l, u, l + d * Math.cos(p), u + f * Math.sin(p), c),
-            ...z(l, u, l + d * Math.cos(m), u + f * Math.sin(m), c),
-          )
-        : _.push(
-            { op: `lineTo`, data: [l, u] },
-            { op: `lineTo`, data: [l + d * Math.cos(p), u + f * Math.sin(p)] },
-          )),
-    { type: `path`, ops: _ }
-  );
-}
-function _e(e, t) {
-  let n = oe(L(ae(e))),
-    r = [],
-    i = [0, 0],
-    a = [0, 0];
-  for (let { key: e, data: o } of n)
-    switch (e) {
-      case `M`:
-        ((a = [o[0], o[1]]), (i = [o[0], o[1]]));
-        break;
-      case `L`:
-        (r.push(...z(a[0], a[1], o[0], o[1], t)), (a = [o[0], o[1]]));
-        break;
-      case `C`: {
-        let [e, n, i, s, c, l] = o;
-        (r.push(...Oe(e, n, i, s, c, l, a, t)), (a = [c, l]));
-        break;
-      }
-      case `Z`:
-        (r.push(...z(a[0], a[1], i[0], i[1], t)), (a = [i[0], i[1]]));
-    }
-  return { type: `path`, ops: r };
-}
-function ve(e, t) {
-  let n = [];
-  for (let r of e)
-    if (r.length) {
-      let e = t.maxRandomnessOffset || 0,
-        i = r.length;
-      if (i > 2) {
-        n.push({ op: `move`, data: [r[0][0] + R(e, t), r[0][1] + R(e, t)] });
-        for (let a = 1; a < i; a++)
-          n.push({
-            op: `lineTo`,
-            data: [r[a][0] + R(e, t), r[a][1] + R(e, t)],
-          });
-      }
-    }
-  return { type: `fillPath`, ops: n };
-}
-function ye(e, t) {
-  return (function (e, t) {
-    let n = e.fillStyle || `hachure`;
-    if (!F[n])
-      switch (n) {
-        case `zigzag`:
-          F[n] || (F[n] = new A(t));
-          break;
-        case `cross-hatch`:
-          F[n] || (F[n] = new j(t));
-          break;
-        case `dots`:
-          F[n] || (F[n] = new M(t));
-          break;
-        case `dashed`:
-          F[n] || (F[n] = new N(t));
-          break;
-        case `zigzag-line`:
-          F[n] || (F[n] = new P(t));
-          break;
-        default:
-          ((n = `hachure`), F[n] || (F[n] = new O(t)));
-      }
-    return F[n];
-  })(t, le).fillPolygons(e, t);
-}
-function be(e) {
-  let t = Object.assign({}, e);
-  return ((t.randomizer = void 0), e.seed && (t.seed = e.seed + 1), t);
-}
-function xe(e) {
-  return ((e.randomizer ||= new I(e.seed || 0)), e.randomizer.next());
-}
-function Se(e, t, n, r = 1) {
-  return n.roughness * r * (xe(n) * (t - e) + e);
-}
-function R(e, t, n = 1) {
-  return Se(-e, e, t, n);
-}
-function z(e, t, n, r, i, a = !1) {
-  let o = a ? i.disableMultiStrokeFill : i.disableMultiStroke,
-    s = Ce(e, t, n, r, i, !0, !1);
-  if (o) return s;
-  let c = Ce(e, t, n, r, i, !0, !0);
-  return s.concat(c);
-}
-function Ce(e, t, n, r, i, a, o) {
-  let s = (e - n) ** 2 + (t - r) ** 2,
-    c = Math.sqrt(s),
-    l = 1;
-  l = c < 200 ? 1 : c > 500 ? 0.4 : -0.0016668 * c + 1.233334;
-  let u = i.maxRandomnessOffset || 0;
-  u * u * 100 > s && (u = c / 10);
-  let d = u / 2,
-    f = 0.2 + 0.2 * xe(i),
-    p = (i.bowing * i.maxRandomnessOffset * (r - t)) / 200,
-    m = (i.bowing * i.maxRandomnessOffset * (e - n)) / 200;
-  ((p = R(p, i, l)), (m = R(m, i, l)));
-  let h = [],
-    g = () => R(d, i, l),
-    _ = () => R(u, i, l),
-    v = i.preserveVertices;
-  return (
-    a &&
-      (o
-        ? h.push({ op: `move`, data: [e + (v ? 0 : g()), t + (v ? 0 : g())] })
-        : h.push({
-            op: `move`,
-            data: [e + (v ? 0 : R(u, i, l)), t + (v ? 0 : R(u, i, l))],
-          })),
-    o
-      ? h.push({
-          op: `bcurveTo`,
-          data: [
-            p + e + (n - e) * f + g(),
-            m + t + (r - t) * f + g(),
-            p + e + 2 * (n - e) * f + g(),
-            m + t + 2 * (r - t) * f + g(),
-            n + (v ? 0 : g()),
-            r + (v ? 0 : g()),
-          ],
-        })
-      : h.push({
-          op: `bcurveTo`,
-          data: [
-            p + e + (n - e) * f + _(),
-            m + t + (r - t) * f + _(),
-            p + e + 2 * (n - e) * f + _(),
-            m + t + 2 * (r - t) * f + _(),
-            n + (v ? 0 : _()),
-            r + (v ? 0 : _()),
-          ],
-        }),
-    h
-  );
-}
-function we(e, t, n) {
-  if (!e.length) return [];
-  let r = [];
-  (r.push([e[0][0] + R(t, n), e[0][1] + R(t, n)]),
-    r.push([e[0][0] + R(t, n), e[0][1] + R(t, n)]));
-  for (let i = 1; i < e.length; i++)
-    (r.push([e[i][0] + R(t, n), e[i][1] + R(t, n)]),
-      i === e.length - 1 && r.push([e[i][0] + R(t, n), e[i][1] + R(t, n)]));
-  return Te(r, null, n);
-}
-function Te(e, t, n) {
-  let r = e.length,
-    i = [];
-  if (r > 3) {
-    let a = [],
-      o = 1 - n.curveTightness;
-    i.push({ op: `move`, data: [e[1][0], e[1][1]] });
-    for (let t = 1; t + 2 < r; t++) {
-      let n = e[t];
-      ((a[0] = [n[0], n[1]]),
-        (a[1] = [
-          n[0] + (o * e[t + 1][0] - o * e[t - 1][0]) / 6,
-          n[1] + (o * e[t + 1][1] - o * e[t - 1][1]) / 6,
-        ]),
-        (a[2] = [
-          e[t + 1][0] + (o * e[t][0] - o * e[t + 2][0]) / 6,
-          e[t + 1][1] + (o * e[t][1] - o * e[t + 2][1]) / 6,
-        ]),
-        (a[3] = [e[t + 1][0], e[t + 1][1]]),
-        i.push({
-          op: `bcurveTo`,
-          data: [a[1][0], a[1][1], a[2][0], a[2][1], a[3][0], a[3][1]],
-        }));
-    }
-    if (t && t.length === 2) {
-      let e = n.maxRandomnessOffset;
-      i.push({ op: `lineTo`, data: [t[0] + R(e, n), t[1] + R(e, n)] });
-    }
-  } else
-    r === 3
-      ? (i.push({ op: `move`, data: [e[1][0], e[1][1]] }),
-        i.push({
-          op: `bcurveTo`,
-          data: [e[1][0], e[1][1], e[2][0], e[2][1], e[2][0], e[2][1]],
-        }))
-      : r === 2 && i.push(...Ce(e[0][0], e[0][1], e[1][0], e[1][1], n, !0, !0));
-  return i;
-}
-function Ee(e, t, n, r, i, a, o, s) {
-  let c = [],
-    l = [];
-  if (s.roughness === 0) {
-    ((e /= 4), l.push([t + r * Math.cos(-e), n + i * Math.sin(-e)]));
-    for (let a = 0; a <= 2 * Math.PI; a += e) {
-      let e = [t + r * Math.cos(a), n + i * Math.sin(a)];
-      (c.push(e), l.push(e));
-    }
-    (l.push([t + r * Math.cos(0), n + i * Math.sin(0)]),
-      l.push([t + r * Math.cos(e), n + i * Math.sin(e)]));
-  } else {
-    let u = R(0.5, s) - Math.PI / 2;
-    l.push([
-      R(a, s) + t + 0.9 * r * Math.cos(u - e),
-      R(a, s) + n + 0.9 * i * Math.sin(u - e),
-    ]);
-    let d = 2 * Math.PI + u - 0.01;
-    for (let o = u; o < d; o += e) {
-      let e = [R(a, s) + t + r * Math.cos(o), R(a, s) + n + i * Math.sin(o)];
-      (c.push(e), l.push(e));
-    }
-    (l.push([
-      R(a, s) + t + r * Math.cos(u + 2 * Math.PI + 0.5 * o),
-      R(a, s) + n + i * Math.sin(u + 2 * Math.PI + 0.5 * o),
-    ]),
-      l.push([
-        R(a, s) + t + 0.98 * r * Math.cos(u + o),
-        R(a, s) + n + 0.98 * i * Math.sin(u + o),
-      ]),
-      l.push([
-        R(a, s) + t + 0.9 * r * Math.cos(u + 0.5 * o),
-        R(a, s) + n + 0.9 * i * Math.sin(u + 0.5 * o),
-      ]));
-  }
-  return [l, c];
-}
-function De(e, t, n, r, i, a, o, s, c) {
-  let l = a + R(0.1, c),
-    u = [];
-  u.push([
-    R(s, c) + t + 0.9 * r * Math.cos(l - e),
-    R(s, c) + n + 0.9 * i * Math.sin(l - e),
-  ]);
-  for (let a = l; a <= o; a += e)
-    u.push([R(s, c) + t + r * Math.cos(a), R(s, c) + n + i * Math.sin(a)]);
-  return (
-    u.push([t + r * Math.cos(o), n + i * Math.sin(o)]),
-    u.push([t + r * Math.cos(o), n + i * Math.sin(o)]),
-    Te(u, null, c)
-  );
-}
-function Oe(e, t, n, r, i, a, o, s) {
-  let c = [],
-    l = [s.maxRandomnessOffset || 1, (s.maxRandomnessOffset || 1) + 0.3],
-    u = [0, 0],
-    d = s.disableMultiStroke ? 1 : 2,
-    f = s.preserveVertices;
-  for (let p = 0; p < d; p++)
-    (p === 0
-      ? c.push({ op: `move`, data: [o[0], o[1]] })
-      : c.push({
-          op: `move`,
-          data: [o[0] + (f ? 0 : R(l[0], s)), o[1] + (f ? 0 : R(l[0], s))],
-        }),
-      (u = f ? [i, a] : [i + R(l[p], s), a + R(l[p], s)]),
-      c.push({
-        op: `bcurveTo`,
-        data: [
-          e + R(l[p], s),
-          t + R(l[p], s),
-          n + R(l[p], s),
-          r + R(l[p], s),
-          u[0],
-          u[1],
-        ],
-      }));
-  return c;
-}
-function ke(e) {
-  return [...e];
-}
-function Ae(e, t = 0) {
-  let n = e.length;
-  if (n < 3) throw Error(`A curve must have at least three points.`);
-  let r = [];
-  if (n === 3) r.push(ke(e[0]), ke(e[1]), ke(e[2]), ke(e[2]));
-  else {
-    let n = [];
-    n.push(e[0], e[0]);
-    for (let t = 1; t < e.length; t++)
-      (n.push(e[t]), t === e.length - 1 && n.push(e[t]));
-    let i = [],
-      a = 1 - t;
-    r.push(ke(n[0]));
-    for (let e = 1; e + 2 < n.length; e++) {
-      let t = n[e];
-      ((i[0] = [t[0], t[1]]),
-        (i[1] = [
-          t[0] + (a * n[e + 1][0] - a * n[e - 1][0]) / 6,
-          t[1] + (a * n[e + 1][1] - a * n[e - 1][1]) / 6,
-        ]),
-        (i[2] = [
-          n[e + 1][0] + (a * n[e][0] - a * n[e + 2][0]) / 6,
-          n[e + 1][1] + (a * n[e][1] - a * n[e + 2][1]) / 6,
-        ]),
-        (i[3] = [n[e + 1][0], n[e + 1][1]]),
-        r.push(i[1], i[2], i[3]));
-    }
-  }
-  return r;
-}
-function je(e, t) {
-  return (e[0] - t[0]) ** 2 + (e[1] - t[1]) ** 2;
-}
-function Me(e, t, n) {
-  let r = je(t, n);
-  if (r === 0) return je(e, t);
-  let i = ((e[0] - t[0]) * (n[0] - t[0]) + (e[1] - t[1]) * (n[1] - t[1])) / r;
-  return ((i = Math.max(0, Math.min(1, i))), je(e, Ne(t, n, i)));
-}
-function Ne(e, t, n) {
-  return [e[0] + (t[0] - e[0]) * n, e[1] + (t[1] - e[1]) * n];
-}
-function Pe(e, t, n, r) {
-  let i = r || [];
-  if (
-    (function (e, t) {
-      let n = e[t + 0],
-        r = e[t + 1],
-        i = e[t + 2],
-        a = e[t + 3],
-        o = 3 * r[0] - 2 * n[0] - a[0];
-      o *= o;
-      let s = 3 * r[1] - 2 * n[1] - a[1];
-      s *= s;
-      let c = 3 * i[0] - 2 * a[0] - n[0];
-      c *= c;
-      let l = 3 * i[1] - 2 * a[1] - n[1];
-      return ((l *= l), o < c && (o = c), s < l && (s = l), o + s);
-    })(e, t) < n
-  ) {
-    let n = e[t + 0];
-    (i.length
-      ? ((a = i[i.length - 1]), (o = n), Math.sqrt(je(a, o))) > 1 && i.push(n)
-      : i.push(n),
-      i.push(e[t + 3]));
-  } else {
-    let r = 0.5,
-      a = e[t + 0],
-      o = e[t + 1],
-      s = e[t + 2],
-      c = e[t + 3],
-      l = Ne(a, o, r),
-      u = Ne(o, s, r),
-      d = Ne(s, c, r),
-      f = Ne(l, u, r),
-      p = Ne(u, d, r),
-      m = Ne(f, p, r);
-    (Pe([a, l, f, m], 0, n, i), Pe([m, p, d, c], 0, n, i));
-  }
-  var a, o;
-  return i;
-}
-function Fe(e, t) {
-  return Ie(e, 0, e.length, t);
-}
-function Ie(e, t, n, r, i) {
-  let a = i || [],
-    o = e[t],
-    s = e[n - 1],
-    c = 0,
-    l = 1;
-  for (let r = t + 1; r < n - 1; ++r) {
-    let t = Me(e[r], o, s);
-    t > c && ((c = t), (l = r));
-  }
-  return (
-    Math.sqrt(c) > r
-      ? (Ie(e, t, l + 1, r, a), Ie(e, l, n, r, a))
-      : (a.length || a.push(o), a.push(s)),
-    a
-  );
-}
-function Le(e, t = 0.15, n) {
-  let r = [],
-    i = (e.length - 1) / 3;
-  for (let n = 0; n < i; n++) Pe(e, 3 * n, t, r);
-  return n && n > 0 ? Ie(r, 0, r.length, n) : r;
-}
-var B = `none`,
-  Re = class {
-    constructor(e) {
-      ((this.defaultOptions = {
-        maxRandomnessOffset: 2,
-        roughness: 1,
-        bowing: 1,
-        stroke: `#000`,
-        strokeWidth: 1,
-        curveTightness: 0,
-        curveFitting: 0.95,
-        curveStepCount: 9,
-        fillStyle: `hachure`,
-        fillWeight: -1,
-        hachureAngle: -41,
-        hachureGap: -1,
-        dashOffset: -1,
-        dashGap: -1,
-        zigzagOffset: -1,
-        seed: 0,
-        disableMultiStroke: !1,
-        disableMultiStrokeFill: !1,
-        preserveVertices: !1,
-        fillShapeRoughnessGain: 0.8,
-      }),
-        (this.config = e || {}),
-        this.config.options &&
-          (this.defaultOptions = this._o(this.config.options)));
-    }
-    static newSeed() {
-      return Math.floor(Math.random() * 2 ** 31);
-    }
-    _o(e) {
-      return e
-        ? Object.assign({}, this.defaultOptions, e)
-        : this.defaultOptions;
-    }
-    _d(e, t, n) {
-      return { shape: e, sets: t || [], options: n || this.defaultOptions };
-    }
-    line(e, t, n, r, i) {
-      let a = this._o(i);
-      return this._d(`line`, [ue(e, t, n, r, a)], a);
-    }
-    rectangle(e, t, n, r, i) {
-      let a = this._o(i),
-        o = [],
-        s = fe(e, t, n, r, a);
-      if (a.fill) {
-        let i = [
-          [e, t],
-          [e + n, t],
-          [e + n, t + r],
-          [e, t + r],
-        ];
-        a.fillStyle === `solid` ? o.push(ve([i], a)) : o.push(ye([i], a));
-      }
-      return (a.stroke !== B && o.push(s), this._d(`rectangle`, o, a));
-    }
-    ellipse(e, t, n, r, i) {
-      let a = this._o(i),
-        o = [],
-        s = me(n, r, a),
-        c = he(e, t, a, s);
-      if (a.fill)
-        if (a.fillStyle === `solid`) {
-          let n = he(e, t, a, s).opset;
-          ((n.type = `fillPath`), o.push(n));
-        } else o.push(ye([c.estimatedPoints], a));
-      return (a.stroke !== B && o.push(c.opset), this._d(`ellipse`, o, a));
-    }
-    circle(e, t, n, r) {
-      let i = this.ellipse(e, t, n, n, r);
-      return ((i.shape = `circle`), i);
-    }
-    linearPath(e, t) {
-      let n = this._o(t);
-      return this._d(`linearPath`, [de(e, !1, n)], n);
-    }
-    arc(e, t, n, r, i, a, o = !1, s) {
-      let c = this._o(s),
-        l = [],
-        u = ge(e, t, n, r, i, a, o, !0, c);
-      if (o && c.fill)
-        if (c.fillStyle === `solid`) {
-          let o = Object.assign({}, c);
-          o.disableMultiStroke = !0;
-          let s = ge(e, t, n, r, i, a, !0, !1, o);
-          ((s.type = `fillPath`), l.push(s));
-        } else
-          l.push(
-            (function (e, t, n, r, i, a, o) {
-              let s = e,
-                c = t,
-                l = Math.abs(n / 2),
-                u = Math.abs(r / 2);
-              ((l += R(0.01 * l, o)), (u += R(0.01 * u, o)));
-              let d = i,
-                f = a;
-              for (; d < 0; ) ((d += 2 * Math.PI), (f += 2 * Math.PI));
-              f - d > 2 * Math.PI && ((d = 0), (f = 2 * Math.PI));
-              let p = (f - d) / o.curveStepCount,
-                m = [];
-              for (let e = d; e <= f; e += p)
-                m.push([s + l * Math.cos(e), c + u * Math.sin(e)]);
-              return (
-                m.push([s + l * Math.cos(f), c + u * Math.sin(f)]),
-                m.push([s, c]),
-                ye([m], o)
-              );
-            })(e, t, n, r, i, a, c),
-          );
-      return (c.stroke !== B && l.push(u), this._d(`arc`, l, c));
-    }
-    curve(e, t) {
-      let n = this._o(t),
-        r = [],
-        i = pe(e, n);
-      if (n.fill && n.fill !== B)
-        if (n.fillStyle === `solid`) {
-          let t = pe(
-            e,
-            Object.assign(Object.assign({}, n), {
-              disableMultiStroke: !0,
-              roughness: n.roughness
-                ? n.roughness + n.fillShapeRoughnessGain
-                : 0,
-            }),
-          );
-          r.push({ type: `fillPath`, ops: this._mergedShape(t.ops) });
-        } else {
-          let t = [],
-            i = e;
-          if (i.length) {
-            let e = typeof i[0][0] == `number` ? [i] : i;
-            for (let r of e)
-              r.length < 3
-                ? t.push(...r)
-                : r.length === 3
-                  ? t.push(
-                      ...Le(
-                        Ae([r[0], r[0], r[1], r[2]]),
-                        10,
-                        (1 + n.roughness) / 2,
-                      ),
-                    )
-                  : t.push(...Le(Ae(r), 10, (1 + n.roughness) / 2));
-          }
-          t.length && r.push(ye([t], n));
-        }
-      return (n.stroke !== B && r.push(i), this._d(`curve`, r, n));
-    }
-    polygon(e, t) {
-      let n = this._o(t),
-        r = [],
-        i = de(e, !0, n);
-      return (
-        n.fill &&
-          (n.fillStyle === `solid` ? r.push(ve([e], n)) : r.push(ye([e], n))),
-        n.stroke !== B && r.push(i),
-        this._d(`polygon`, r, n)
-      );
-    }
-    path(e, t) {
-      let n = this._o(t),
-        r = [];
-      if (!e) return this._d(`path`, r, n);
-      e = (e || ``)
-        .replace(/\n/g, ` `)
-        .replace(/(-\s)/g, `-`)
-        .replace(`/(ss)/g`, ` `);
-      let i = n.fill && n.fill !== `transparent` && n.fill !== B,
-        a = n.stroke !== B,
-        o = !!(n.simplification && n.simplification < 1),
-        s = (function (e, t, n) {
-          let r = oe(L(ae(e))),
-            i = [],
-            a = [],
-            o = [0, 0],
-            s = [],
-            c = () => {
-              (s.length >= 4 && a.push(...Le(s, t)), (s = []));
-            },
-            l = () => {
-              (c(), a.length && (i.push(a), (a = [])));
-            };
-          for (let { key: e, data: t } of r)
-            switch (e) {
-              case `M`:
-                (l(), (o = [t[0], t[1]]), a.push(o));
-                break;
-              case `L`:
-                (c(), a.push([t[0], t[1]]));
-                break;
-              case `C`:
-                if (!s.length) {
-                  let e = a.length ? a[a.length - 1] : o;
-                  s.push([e[0], e[1]]);
-                }
-                (s.push([t[0], t[1]]),
-                  s.push([t[2], t[3]]),
-                  s.push([t[4], t[5]]));
-                break;
-              case `Z`:
-                (c(), a.push([o[0], o[1]]));
-            }
-          if ((l(), !n)) return i;
-          let u = [];
-          for (let e of i) {
-            let t = Fe(e, n);
-            t.length && u.push(t);
-          }
-          return u;
-        })(e, 1, o ? 4 - 4 * (n.simplification || 1) : (1 + n.roughness) / 2),
-        c = _e(e, n);
-      if (i)
-        if (n.fillStyle === `solid`)
-          if (s.length === 1) {
-            let t = _e(
-              e,
-              Object.assign(Object.assign({}, n), {
-                disableMultiStroke: !0,
-                roughness: n.roughness
-                  ? n.roughness + n.fillShapeRoughnessGain
-                  : 0,
-              }),
-            );
-            r.push({ type: `fillPath`, ops: this._mergedShape(t.ops) });
-          } else r.push(ve(s, n));
-        else r.push(ye(s, n));
-      return (
-        a &&
-          (o
-            ? s.forEach((e) => {
-                r.push(de(e, !1, n));
-              })
-            : r.push(c)),
-        this._d(`path`, r, n)
-      );
-    }
-    opsToPath(e, t) {
-      let n = ``;
-      for (let r of e.ops) {
-        let e =
-          typeof t == `number` && t >= 0
-            ? r.data.map((e) => +e.toFixed(t))
-            : r.data;
-        switch (r.op) {
-          case `move`:
-            n += `M${e[0]} ${e[1]} `;
-            break;
-          case `bcurveTo`:
-            n += `C${e[0]} ${e[1]}, ${e[2]} ${e[3]}, ${e[4]} ${e[5]} `;
-            break;
-          case `lineTo`:
-            n += `L${e[0]} ${e[1]} `;
-        }
-      }
-      return n.trim();
-    }
-    toPaths(e) {
-      let t = e.sets || [],
-        n = e.options || this.defaultOptions,
-        r = [];
-      for (let e of t) {
-        let t = null;
-        switch (e.type) {
-          case `path`:
-            t = {
-              d: this.opsToPath(e),
-              stroke: n.stroke,
-              strokeWidth: n.strokeWidth,
-              fill: B,
-            };
-            break;
-          case `fillPath`:
-            t = {
-              d: this.opsToPath(e),
-              stroke: B,
-              strokeWidth: 0,
-              fill: n.fill || B,
-            };
-            break;
-          case `fillSketch`:
-            t = this.fillSketch(e, n);
-        }
-        t && r.push(t);
-      }
-      return r;
-    }
-    fillSketch(e, t) {
-      let n = t.fillWeight;
-      return (
-        n < 0 && (n = t.strokeWidth / 2),
-        { d: this.opsToPath(e), stroke: t.fill || B, strokeWidth: n, fill: B }
-      );
-    }
-    _mergedShape(e) {
-      return e.filter((e, t) => t === 0 || e.op !== `move`);
-    }
-  },
-  ze = class {
-    constructor(e, t) {
-      ((this.canvas = e),
-        (this.ctx = this.canvas.getContext(`2d`)),
-        (this.gen = new Re(t)));
-    }
-    draw(e) {
-      let t = e.sets || [],
-        n = e.options || this.getDefaultOptions(),
-        r = this.ctx,
-        i = e.options.fixedDecimalPlaceDigits;
-      for (let a of t)
-        switch (a.type) {
-          case `path`:
-            (r.save(),
-              (r.strokeStyle = n.stroke === `none` ? `transparent` : n.stroke),
-              (r.lineWidth = n.strokeWidth),
-              n.strokeLineDash && r.setLineDash(n.strokeLineDash),
-              n.strokeLineDashOffset &&
-                (r.lineDashOffset = n.strokeLineDashOffset),
-              this._drawToContext(r, a, i),
-              r.restore());
-            break;
-          case `fillPath`: {
-            (r.save(), (r.fillStyle = n.fill || ``));
-            let t =
-              e.shape === `curve` || e.shape === `polygon` || e.shape === `path`
-                ? `evenodd`
-                : `nonzero`;
-            (this._drawToContext(r, a, i, t), r.restore());
-            break;
-          }
-          case `fillSketch`:
-            this.fillSketch(r, a, n);
-        }
-    }
-    fillSketch(e, t, n) {
-      let r = n.fillWeight;
-      (r < 0 && (r = n.strokeWidth / 2),
-        e.save(),
-        n.fillLineDash && e.setLineDash(n.fillLineDash),
-        n.fillLineDashOffset && (e.lineDashOffset = n.fillLineDashOffset),
-        (e.strokeStyle = n.fill || ``),
-        (e.lineWidth = r),
-        this._drawToContext(e, t, n.fixedDecimalPlaceDigits),
-        e.restore());
-    }
-    _drawToContext(e, t, n, r = `nonzero`) {
-      e.beginPath();
-      for (let r of t.ops) {
-        let t =
-          typeof n == `number` && n >= 0
-            ? r.data.map((e) => +e.toFixed(n))
-            : r.data;
-        switch (r.op) {
-          case `move`:
-            e.moveTo(t[0], t[1]);
-            break;
-          case `bcurveTo`:
-            e.bezierCurveTo(t[0], t[1], t[2], t[3], t[4], t[5]);
-            break;
-          case `lineTo`:
-            e.lineTo(t[0], t[1]);
-        }
-      }
-      t.type === `fillPath` ? e.fill(r) : e.stroke();
-    }
-    get generator() {
-      return this.gen;
-    }
-    getDefaultOptions() {
-      return this.gen.defaultOptions;
-    }
-    line(e, t, n, r, i) {
-      let a = this.gen.line(e, t, n, r, i);
-      return (this.draw(a), a);
-    }
-    rectangle(e, t, n, r, i) {
-      let a = this.gen.rectangle(e, t, n, r, i);
-      return (this.draw(a), a);
-    }
-    ellipse(e, t, n, r, i) {
-      let a = this.gen.ellipse(e, t, n, r, i);
-      return (this.draw(a), a);
-    }
-    circle(e, t, n, r) {
-      let i = this.gen.circle(e, t, n, r);
-      return (this.draw(i), i);
-    }
-    linearPath(e, t) {
-      let n = this.gen.linearPath(e, t);
-      return (this.draw(n), n);
-    }
-    polygon(e, t) {
-      let n = this.gen.polygon(e, t);
-      return (this.draw(n), n);
-    }
-    arc(e, t, n, r, i, a, o = !1, s) {
-      let c = this.gen.arc(e, t, n, r, i, a, o, s);
-      return (this.draw(c), c);
-    }
-    curve(e, t) {
-      let n = this.gen.curve(e, t);
-      return (this.draw(n), n);
-    }
-    path(e, t) {
-      let n = this.gen.path(e, t);
-      return (this.draw(n), n);
-    }
-  },
-  Be = `http://www.w3.org/2000/svg`,
-  Ve = class {
-    constructor(e, t) {
-      ((this.svg = e), (this.gen = new Re(t)));
-    }
-    draw(e) {
-      let t = e.sets || [],
-        n = e.options || this.getDefaultOptions(),
-        r = this.svg.ownerDocument || window.document,
-        i = r.createElementNS(Be, `g`),
-        a = e.options.fixedDecimalPlaceDigits;
-      for (let o of t) {
-        let t = null;
-        switch (o.type) {
-          case `path`:
-            ((t = r.createElementNS(Be, `path`)),
-              t.setAttribute(`d`, this.opsToPath(o, a)),
-              t.setAttribute(`stroke`, n.stroke),
-              t.setAttribute(`stroke-width`, n.strokeWidth + ``),
-              t.setAttribute(`fill`, `none`),
-              n.strokeLineDash &&
-                t.setAttribute(
-                  `stroke-dasharray`,
-                  n.strokeLineDash.join(` `).trim(),
-                ),
-              n.strokeLineDashOffset &&
-                t.setAttribute(
-                  `stroke-dashoffset`,
-                  `${n.strokeLineDashOffset}`,
-                ));
-            break;
-          case `fillPath`:
-            ((t = r.createElementNS(Be, `path`)),
-              t.setAttribute(`d`, this.opsToPath(o, a)),
-              t.setAttribute(`stroke`, `none`),
-              t.setAttribute(`stroke-width`, `0`),
-              t.setAttribute(`fill`, n.fill || ``),
-              (e.shape !== `curve` && e.shape !== `polygon`) ||
-                t.setAttribute(`fill-rule`, `evenodd`));
-            break;
-          case `fillSketch`:
-            t = this.fillSketch(r, o, n);
-        }
-        t && i.appendChild(t);
-      }
-      return i;
-    }
-    fillSketch(e, t, n) {
-      let r = n.fillWeight;
-      r < 0 && (r = n.strokeWidth / 2);
-      let i = e.createElementNS(Be, `path`);
-      return (
-        i.setAttribute(`d`, this.opsToPath(t, n.fixedDecimalPlaceDigits)),
-        i.setAttribute(`stroke`, n.fill || ``),
-        i.setAttribute(`stroke-width`, r + ``),
-        i.setAttribute(`fill`, `none`),
-        n.fillLineDash &&
-          i.setAttribute(`stroke-dasharray`, n.fillLineDash.join(` `).trim()),
-        n.fillLineDashOffset &&
-          i.setAttribute(`stroke-dashoffset`, `${n.fillLineDashOffset}`),
-        i
-      );
-    }
-    get generator() {
-      return this.gen;
-    }
-    getDefaultOptions() {
-      return this.gen.defaultOptions;
-    }
-    opsToPath(e, t) {
-      return this.gen.opsToPath(e, t);
-    }
-    line(e, t, n, r, i) {
-      let a = this.gen.line(e, t, n, r, i);
-      return this.draw(a);
-    }
-    rectangle(e, t, n, r, i) {
-      let a = this.gen.rectangle(e, t, n, r, i);
-      return this.draw(a);
-    }
-    ellipse(e, t, n, r, i) {
-      let a = this.gen.ellipse(e, t, n, r, i);
-      return this.draw(a);
-    }
-    circle(e, t, n, r) {
-      let i = this.gen.circle(e, t, n, r);
-      return this.draw(i);
-    }
-    linearPath(e, t) {
-      let n = this.gen.linearPath(e, t);
-      return this.draw(n);
-    }
-    polygon(e, t) {
-      let n = this.gen.polygon(e, t);
-      return this.draw(n);
-    }
-    arc(e, t, n, r, i, a, o = !1, s) {
-      let c = this.gen.arc(e, t, n, r, i, a, o, s);
-      return this.draw(c);
-    }
-    curve(e, t) {
-      let n = this.gen.curve(e, t);
-      return this.draw(n);
-    }
-    path(e, t) {
-      let n = this.gen.path(e, t);
-      return this.draw(n);
-    }
-  },
-  V = {
-    canvas: (e, t) => new ze(e, t),
-    svg: (e, t) => new Ve(e, t),
-    generator: (e) => new Re(e),
-    newSeed: () => Re.newSeed(),
-  },
-  H = a(async (r, i, s) => {
+import { t as w } from "./rough.esm-k7zZ13IR.js";
+var T = a(async (r, o, s) => {
     let l,
-      u = i.useHtmlLabels || m(f()?.htmlLabels);
+      u = o.useHtmlLabels || m(f()?.htmlLabels);
     l = s || `node default`;
     let d = r
         .insert(`g`)
         .attr(`class`, l)
-        .attr(`id`, i.domId || i.id),
-      h = d.insert(`g`).attr(`class`, `label`).attr(`style`, n(i.labelStyle)),
+        .attr(`id`, o.domId || o.id),
+      h = d.insert(`g`).attr(`class`, `label`).attr(`style`, n(o.labelStyle)),
       g;
     g =
-      i.label === void 0
+      o.label === void 0
         ? ``
-        : typeof i.label == `string`
-          ? i.label
-          : i.label[0];
+        : typeof o.label == `string`
+          ? o.label
+          : o.label[0];
     let v = await _(h, c(t(g), f()), {
         useHtmlLabels: u,
-        width: i.width || f().flowchart?.wrappingWidth,
+        width: o.width || f().flowchart?.wrappingWidth,
         cssClasses: `markdown-node-label`,
-        style: i.labelStyle,
-        addSvgBackground: !!i.icon || !!i.img,
+        style: o.labelStyle,
+        addSvgBackground: !!o.icon || !!o.img,
       }),
       y = v.getBBox(),
-      b = (i?.padding ?? 0) / 2;
+      b = (o?.padding ?? 0) / 2;
     if (u) {
       let t = v.children[0],
-        n = o(v),
+        n = i(v),
         r = t.getElementsByTagName(`img`);
       if (r) {
         let t = g.replace(/<img[^>]*>/g, ``).trim() === ``;
@@ -1763,7 +89,7 @@ var B = `none`,
             `translate(` + -y.width / 2 + `, ` + -y.height / 2 + `)`,
           )
         : h.attr(`transform`, `translate(0, ` + -y.height / 2 + `)`),
-      i.centerLabel &&
+      o.centerLabel &&
         h.attr(
           `transform`,
           `translate(` + -y.width / 2 + `, ` + -y.height / 2 + `)`,
@@ -1772,14 +98,14 @@ var B = `none`,
       { shapeSvg: d, bbox: y, halfPadding: b, label: h }
     );
   }, `labelHelper`),
-  He = a(async (e, n, r) => {
-    let i = r.useHtmlLabels || m(f()?.flowchart?.htmlLabels),
-      a = e
+  E = a(async (e, n, r) => {
+    let a = r.useHtmlLabels || m(f()?.flowchart?.htmlLabels),
+      o = e
         .insert(`g`)
         .attr(`class`, `label`)
         .attr(`style`, r.labelStyle || ``),
-      s = await _(a, c(t(n), f()), {
-        useHtmlLabels: i,
+      s = await _(o, c(t(n), f()), {
+        useHtmlLabels: a,
         width: r.width || f()?.flowchart?.wrappingWidth,
         style: r.labelStyle,
         addSvgBackground: !!r.icon || !!r.img,
@@ -1788,32 +114,32 @@ var B = `none`,
       u = r.padding / 2;
     if (m(f()?.flowchart?.htmlLabels)) {
       let e = s.children[0],
-        t = o(s);
+        t = i(s);
       ((l = e.getBoundingClientRect()),
         t.attr(`width`, l.width),
         t.attr(`height`, l.height));
     }
     return (
-      i
-        ? a.attr(
+      a
+        ? o.attr(
             `transform`,
             `translate(` + -l.width / 2 + `, ` + -l.height / 2 + `)`,
           )
-        : a.attr(`transform`, `translate(0, ` + -l.height / 2 + `)`),
+        : o.attr(`transform`, `translate(0, ` + -l.height / 2 + `)`),
       r.centerLabel &&
-        a.attr(
+        o.attr(
           `transform`,
           `translate(` + -l.width / 2 + `, ` + -l.height / 2 + `)`,
         ),
-      a.insert(`rect`, `:first-child`),
-      { shapeSvg: e, bbox: l, halfPadding: u, label: a }
+      o.insert(`rect`, `:first-child`),
+      { shapeSvg: e, bbox: l, halfPadding: u, label: o }
     );
   }, `insertLabel`),
-  U = a((e, t) => {
+  D = a((e, t) => {
     let n = t.node().getBBox();
     ((e.width = n.width), (e.height = n.height));
   }, `updateNodeBounds`),
-  W = a(
+  O = a(
     (e, t) =>
       (e.look === `handDrawn` ? `rough-node` : `node`) +
       ` ` +
@@ -1822,12 +148,12 @@ var B = `none`,
       (t || ``),
     `getNodeClasses`,
   );
-function G(e) {
+function k(e) {
   let t = e.map((e, t) => `${t === 0 ? `M` : `L`}${e.x},${e.y}`);
   return (t.push(`Z`), t.join(` `));
 }
-a(G, `createPathFromPoints`);
-function K(e, t, n, r, i, a) {
+a(k, `createPathFromPoints`);
+function A(e, t, n, r, i, a) {
   let o = [],
     s = n - e,
     c = r - t,
@@ -1841,8 +167,8 @@ function K(e, t, n, r, i, a) {
   }
   return o;
 }
-a(K, `generateFullSineWavePoints`);
-function Ue(e, t, n, r, i, a) {
+a(A, `generateFullSineWavePoints`);
+function j(e, t, n, r, i, a) {
   let o = [],
     s = (i * Math.PI) / 180,
     c = ((a * Math.PI) / 180 - s) / (r - 1);
@@ -1854,8 +180,8 @@ function Ue(e, t, n, r, i, a) {
   }
   return o;
 }
-a(Ue, `generateCirclePoints`);
-var We = a((e, t) => {
+a(j, `generateCirclePoints`);
+var M = a((e, t) => {
   var n = e.x,
     r = e.y,
     i = t.x - n,
@@ -1871,20 +197,20 @@ var We = a((e, t) => {
     { x: n + c, y: r + l }
   );
 }, `intersectRect`);
-function Ge(e, t) {
+function N(e, t) {
   t && e.attr(`style`, t);
 }
-a(Ge, `applyStyle`);
-async function Ke(e) {
-  let t = o(
+a(N, `applyStyle`);
+async function P(e) {
+  let t = i(
       document.createElementNS(`http://www.w3.org/2000/svg`, `foreignObject`),
     ),
     n = t.append(`xhtml:div`),
     r = f(),
-    i = e.label;
+    a = e.label;
   e.label &&
     d(e.label) &&
-    (i = await u(
+    (a = await u(
       e.label.replace(
         h.lineBreakRegex,
         `
@@ -1892,17 +218,17 @@ async function Ke(e) {
       ),
       r,
     ));
-  let a =
+  let o =
     `<span class="` +
     (e.isNode ? `nodeLabel` : `edgeLabel`) +
     `" ` +
     (e.labelStyle ? `style="` + e.labelStyle + `"` : ``) +
     `>` +
-    i +
+    a +
     `</span>`;
   return (
-    n.html(c(a, r)),
-    Ge(n, e.labelStyle),
+    n.html(c(o, r)),
+    N(n, e.labelStyle),
     n.style(`display`, `inline-block`),
     n.style(`padding-right`, `1px`),
     n.style(`white-space`, `nowrap`),
@@ -1910,16 +236,16 @@ async function Ke(e) {
     t.node()
   );
 }
-a(Ke, `addHtmlLabel`);
-var qe = a(async (e, n, r, a) => {
-    let o = e || ``;
-    if ((typeof o == `object` && (o = o[0]), m(f().flowchart.htmlLabels)))
+a(P, `addHtmlLabel`);
+var F = a(async (e, n, r, i) => {
+    let a = e || ``;
+    if ((typeof a == `object` && (a = a[0]), m(f().flowchart.htmlLabels)))
       return (
-        (o = o.replace(/\\n|\n/g, `<br />`)),
-        i.info(`vertexText` + o),
-        await Ke({
-          isNode: a,
-          label: t(o).replace(
+        (a = a.replace(/\\n|\n/g, `<br />`)),
+        o.info(`vertexText` + a),
+        await P({
+          isNode: i,
+          label: t(a).replace(
             /fa[blrs]?:fa-[\w-]+/g,
             (e) => `<i class='${e.replace(`:`, ` `)}'></i>`,
           ),
@@ -1931,10 +257,10 @@ var qe = a(async (e, n, r, a) => {
       e.setAttribute(`style`, n.replace(`color:`, `fill:`));
       let t = [];
       t =
-        typeof o == `string`
-          ? o.split(/\\n|\n|<br\s*\/?>/gi)
-          : Array.isArray(o)
-            ? o
+        typeof a == `string`
+          ? a.split(/\\n|\n|<br\s*\/?>/gi)
+          : Array.isArray(a)
+            ? a
             : [];
       for (let n of t) {
         let t = document.createElementNS(`http://www.w3.org/2000/svg`, `tspan`);
@@ -1954,7 +280,7 @@ var qe = a(async (e, n, r, a) => {
       return e;
     }
   }, `createLabel`),
-  q = a(
+  I = a(
     (e, t, n, r, i) =>
       [
         `M`,
@@ -2004,8 +330,8 @@ var qe = a(async (e, n, r, a) => {
       ].join(` `),
     `createRoundedRectPathD`,
   ),
-  Je = a(async (e, t) => {
-    i.info(`Creating subgraph rect for `, t.id, t);
+  L = a(async (e, t) => {
+    o.info(`Creating subgraph rect for `, t.id, t);
     let n = f(),
       { themeVariables: r, handDrawnSeed: a } = n,
       { clusterBkg: s, clusterBorder: c } = r,
@@ -2030,22 +356,22 @@ var qe = a(async (e, n, r, a) => {
       C = S.getBBox();
     if (m(n.flowchart.htmlLabels)) {
       let e = S.children[0],
-        t = o(S);
+        t = i(S);
       ((C = e.getBoundingClientRect()),
         t.attr(`width`, C.width),
         t.attr(`height`, C.height));
     }
-    let w = t.width <= C.width + t.padding ? C.width + t.padding : t.width;
+    let T = t.width <= C.width + t.padding ? C.width + t.padding : t.width;
     t.width <= C.width + t.padding
-      ? (t.diff = (w - t.width) / 2 - t.padding)
+      ? (t.diff = (T - t.width) / 2 - t.padding)
       : (t.diff = -t.padding);
-    let T = t.height,
-      E = t.x - w / 2,
-      D = t.y - T / 2;
-    i.trace(`Data `, t, JSON.stringify(t));
-    let O;
+    let E = t.height,
+      D = t.x - T / 2,
+      O = t.y - E / 2;
+    o.trace(`Data `, t, JSON.stringify(t));
+    let k;
     if (t.look === `handDrawn`) {
-      let e = V.svg(h),
+      let e = w.svg(h),
         n = b(t, {
           roughness: 0.7,
           fill: s,
@@ -2053,53 +379,54 @@ var qe = a(async (e, n, r, a) => {
           fillWeight: 3,
           seed: a,
         }),
-        r = e.path(q(E, D, w, T, 0), n);
-      ((O = h.insert(
-        () => (i.debug(`Rough node insert CXC`, r), r),
+        r = e.path(I(D, O, T, E, 0), n);
+      ((k = h.insert(
+        () => (o.debug(`Rough node insert CXC`, r), r),
         `:first-child`,
       )),
-        O.select(`path:nth-child(2)`).attr(`style`, d.join(`;`)),
-        O.select(`path`).attr(`style`, p.join(`;`).replace(`fill`, `stroke`)));
+        k.select(`path:nth-child(2)`).attr(`style`, d.join(`;`)),
+        k.select(`path`).attr(`style`, p.join(`;`).replace(`fill`, `stroke`)));
     } else
-      ((O = h.insert(`rect`, `:first-child`)),
-        O.attr(`style`, u)
+      ((k = h.insert(`rect`, `:first-child`)),
+        k
+          .attr(`style`, u)
           .attr(`rx`, t.rx)
           .attr(`ry`, t.ry)
-          .attr(`x`, E)
-          .attr(`y`, D)
-          .attr(`width`, w)
-          .attr(`height`, T));
-    let { subGraphTitleTopMargin: k } = y(n);
+          .attr(`x`, D)
+          .attr(`y`, O)
+          .attr(`width`, T)
+          .attr(`height`, E));
+    let { subGraphTitleTopMargin: A } = y(n);
     if (
       (v.attr(
         `transform`,
-        `translate(${t.x - C.width / 2}, ${t.y - t.height / 2 + k})`,
+        `translate(${t.x - C.width / 2}, ${t.y - t.height / 2 + A})`,
       ),
       l)
     ) {
       let e = v.select(`span`);
       e && e.attr(`style`, l);
     }
-    let A = O.node().getBBox();
+    let j = k.node().getBBox();
     return (
       (t.offsetX = 0),
-      (t.width = A.width),
-      (t.height = A.height),
+      (t.width = j.width),
+      (t.height = j.height),
       (t.offsetY = C.height - t.padding / 2),
       (t.intersect = function (e) {
-        return We(t, e);
+        return M(t, e);
       }),
       { cluster: h, labelBBox: C }
     );
   }, `rect`),
-  Ye = {
-    rect: Je,
-    squareRect: Je,
+  R = {
+    rect: L,
+    squareRect: L,
     roundedWithTitle: a(async (e, t) => {
       let n = f(),
-        { themeVariables: r, handDrawnSeed: i } = n,
+        { themeVariables: r, handDrawnSeed: a } = n,
         {
-          altBackground: a,
+          altBackground: o,
           compositeBackground: s,
           compositeTitleBackground: c,
           nodeBorder: l,
@@ -2113,11 +440,11 @@ var qe = a(async (e, n, r, a) => {
         d = u.insert(`g`, `:first-child`),
         p = u.insert(`g`).attr(`class`, `cluster-label`),
         h = u.append(`rect`),
-        g = p.node().appendChild(await qe(t.label, t.labelStyle, void 0, !0)),
+        g = p.node().appendChild(await F(t.label, t.labelStyle, void 0, !0)),
         _ = g.getBBox();
       if (m(n.flowchart.htmlLabels)) {
         let e = g.children[0],
-          t = o(g);
+          t = i(g);
         ((_ = e.getBoundingClientRect()),
           t.attr(`width`, _.width),
           t.attr(`height`, _.height));
@@ -2132,56 +459,56 @@ var qe = a(async (e, n, r, a) => {
       let x = t.height + v,
         S = t.height + v - _.height - 6,
         C = t.x - b / 2,
-        w = t.y - x / 2;
+        T = t.y - x / 2;
       t.width = b;
-      let T = t.y - t.height / 2 - y + _.height + 2,
-        E;
+      let E = t.y - t.height / 2 - y + _.height + 2,
+        D;
       if (t.look === `handDrawn`) {
         let e = t.cssClasses.includes(`statediagram-cluster-alt`),
-          n = V.svg(u),
+          n = w.svg(u),
           r =
             t.rx || t.ry
-              ? n.path(q(C, w, b, x, 10), {
+              ? n.path(I(C, T, b, x, 10), {
                   roughness: 0.7,
                   fill: c,
                   fillStyle: `solid`,
                   stroke: l,
-                  seed: i,
+                  seed: a,
                 })
-              : n.rectangle(C, w, b, x, { seed: i });
-        E = u.insert(() => r, `:first-child`);
-        let o = n.rectangle(C, T, b, S, {
-          fill: e ? a : s,
+              : n.rectangle(C, T, b, x, { seed: a });
+        D = u.insert(() => r, `:first-child`);
+        let i = n.rectangle(C, E, b, S, {
+          fill: e ? o : s,
           fillStyle: e ? `hachure` : `solid`,
           stroke: l,
-          seed: i,
+          seed: a,
         });
-        ((E = u.insert(() => r, `:first-child`)), (h = u.insert(() => o)));
+        ((D = u.insert(() => r, `:first-child`)), (h = u.insert(() => i)));
       } else
-        ((E = d.insert(`rect`, `:first-child`)),
-          E.attr(`class`, `outer`)
+        ((D = d.insert(`rect`, `:first-child`)),
+          D.attr(`class`, `outer`)
             .attr(`x`, C)
-            .attr(`y`, w)
+            .attr(`y`, T)
             .attr(`width`, b)
             .attr(`height`, x)
             .attr(`data-look`, t.look),
           h
             .attr(`class`, `inner`)
             .attr(`x`, C)
-            .attr(`y`, T)
+            .attr(`y`, E)
             .attr(`width`, b)
             .attr(`height`, S));
       return (
         p.attr(
           `transform`,
-          `translate(${t.x - _.width / 2}, ${w + 1 - (m(n.flowchart.htmlLabels) ? 0 : 3)})`,
+          `translate(${t.x - _.width / 2}, ${T + 1 - (m(n.flowchart.htmlLabels) ? 0 : 3)})`,
         ),
-        (t.height = E.node().getBBox().height),
+        (t.height = D.node().getBBox().height),
         (t.offsetX = 0),
         (t.offsetY = _.height - t.padding / 2),
         (t.labelBBox = _),
         (t.intersect = function (e) {
-          return We(t, e);
+          return M(t, e);
         }),
         { cluster: u, labelBBox: _ }
       );
@@ -2203,7 +530,7 @@ var qe = a(async (e, n, r, a) => {
         (t.width = o.width),
         (t.height = o.height),
         (t.intersect = function (e) {
-          return We(t, e);
+          return M(t, e);
         }),
         { cluster: n, labelBBox: { width: 0, height: 0 } }
       );
@@ -2226,7 +553,7 @@ var qe = a(async (e, n, r, a) => {
       t.width = c;
       let p;
       if (t.look === `handDrawn`) {
-        let e = V.svg(a).rectangle(u, d, c, l, {
+        let e = w.svg(a).rectangle(u, d, c, l, {
           fill: `lightgrey`,
           roughness: 0.5,
           strokeLineDash: [5],
@@ -2248,13 +575,13 @@ var qe = a(async (e, n, r, a) => {
         (t.offsetX = 0),
         (t.offsetY = 0),
         (t.intersect = function (e) {
-          return We(t, e);
+          return M(t, e);
         }),
         { cluster: a, labelBBox: {} }
       );
     }, `divider`),
     kanbanSection: a(async (e, t) => {
-      i.info(`Creating subgraph rect for `, t.id, t);
+      o.info(`Creating subgraph rect for `, t.id, t);
       let n = f(),
         { themeVariables: r, handDrawnSeed: a } = n,
         { clusterBkg: s, clusterBorder: c } = r,
@@ -2280,22 +607,22 @@ var qe = a(async (e, n, r, a) => {
         C = S.getBBox();
       if (m(n.flowchart.htmlLabels)) {
         let e = S.children[0],
-          t = o(S);
+          t = i(S);
         ((C = e.getBoundingClientRect()),
           t.attr(`width`, C.width),
           t.attr(`height`, C.height));
       }
-      let w = t.width <= C.width + t.padding ? C.width + t.padding : t.width;
+      let T = t.width <= C.width + t.padding ? C.width + t.padding : t.width;
       t.width <= C.width + t.padding
-        ? (t.diff = (w - t.width) / 2 - t.padding)
+        ? (t.diff = (T - t.width) / 2 - t.padding)
         : (t.diff = -t.padding);
-      let T = t.height,
-        E = t.x - w / 2,
-        D = t.y - T / 2;
-      i.trace(`Data `, t, JSON.stringify(t));
-      let O;
+      let E = t.height,
+        D = t.x - T / 2,
+        O = t.y - E / 2;
+      o.trace(`Data `, t, JSON.stringify(t));
+      let k;
       if (t.look === `handDrawn`) {
-        let e = V.svg(h),
+        let e = w.svg(h),
           n = b(t, {
             roughness: 0.7,
             fill: s,
@@ -2303,63 +630,63 @@ var qe = a(async (e, n, r, a) => {
             fillWeight: 4,
             seed: a,
           }),
-          r = e.path(q(E, D, w, T, t.rx), n);
-        ((O = h.insert(
-          () => (i.debug(`Rough node insert CXC`, r), r),
+          r = e.path(I(D, O, T, E, t.rx), n);
+        ((k = h.insert(
+          () => (o.debug(`Rough node insert CXC`, r), r),
           `:first-child`,
         )),
-          O.select(`path:nth-child(2)`).attr(`style`, d.join(`;`)),
-          O.select(`path`).attr(
-            `style`,
-            p.join(`;`).replace(`fill`, `stroke`),
-          ));
+          k.select(`path:nth-child(2)`).attr(`style`, d.join(`;`)),
+          k
+            .select(`path`)
+            .attr(`style`, p.join(`;`).replace(`fill`, `stroke`)));
       } else
-        ((O = h.insert(`rect`, `:first-child`)),
-          O.attr(`style`, u)
+        ((k = h.insert(`rect`, `:first-child`)),
+          k
+            .attr(`style`, u)
             .attr(`rx`, t.rx)
             .attr(`ry`, t.ry)
-            .attr(`x`, E)
-            .attr(`y`, D)
-            .attr(`width`, w)
-            .attr(`height`, T));
-      let { subGraphTitleTopMargin: k } = y(n);
+            .attr(`x`, D)
+            .attr(`y`, O)
+            .attr(`width`, T)
+            .attr(`height`, E));
+      let { subGraphTitleTopMargin: A } = y(n);
       if (
         (v.attr(
           `transform`,
-          `translate(${t.x - C.width / 2}, ${t.y - t.height / 2 + k})`,
+          `translate(${t.x - C.width / 2}, ${t.y - t.height / 2 + A})`,
         ),
         l)
       ) {
         let e = v.select(`span`);
         e && e.attr(`style`, l);
       }
-      let A = O.node().getBBox();
+      let j = k.node().getBBox();
       return (
         (t.offsetX = 0),
-        (t.width = A.width),
-        (t.height = A.height),
+        (t.width = j.width),
+        (t.height = j.height),
         (t.offsetY = C.height - t.padding / 2),
         (t.intersect = function (e) {
-          return We(t, e);
+          return M(t, e);
         }),
         { cluster: h, labelBBox: C }
       );
     }, `kanbanSection`),
   },
-  Xe = new Map(),
-  Ze = a(async (e, t) => {
-    let n = await Ye[t.shape || `rect`](e, t);
-    return (Xe.set(t.id, n), n);
+  z = new Map(),
+  ee = a(async (e, t) => {
+    let n = await R[t.shape || `rect`](e, t);
+    return (z.set(t.id, n), n);
   }, `insertCluster`),
-  Qe = a(() => {
-    Xe = new Map();
+  te = a(() => {
+    z = new Map();
   }, `clear`);
-function $e(e, t) {
+function B(e, t) {
   return e.intersect(t);
 }
-a($e, `intersectNode`);
-var et = $e;
-function tt(e, t, n, r) {
+a(B, `intersectNode`);
+var ne = B;
+function V(e, t, n, r) {
   var i = e.x,
     a = e.y,
     o = i - r.x,
@@ -2370,14 +697,14 @@ function tt(e, t, n, r) {
   var u = Math.abs((t * n * s) / c);
   return (r.y < a && (u = -u), { x: i + l, y: a + u });
 }
-a(tt, `intersectEllipse`);
-var nt = tt;
-function rt(e, t, n) {
-  return nt(e, t, t, n);
+a(V, `intersectEllipse`);
+var re = V;
+function H(e, t, n) {
+  return re(e, t, t, n);
 }
-a(rt, `intersectCircle`);
-var it = rt;
-function at(e, t, n, r) {
+a(H, `intersectCircle`);
+var ie = H;
+function ae(e, t, n, r) {
   {
     let i = t.y - e.y,
       a = e.x - t.x,
@@ -2385,13 +712,13 @@ function at(e, t, n, r) {
       s = i * n.x + a * n.y + o,
       c = i * r.x + a * r.y + o,
       l = 1e-6;
-    if (s !== 0 && c !== 0 && ot(s, c)) return;
+    if (s !== 0 && c !== 0 && oe(s, c)) return;
     let u = r.y - n.y,
       d = n.x - r.x,
       f = r.x * n.y - n.x * r.y,
       p = u * e.x + d * e.y + f,
       m = u * t.x + d * t.y + f;
-    if (Math.abs(p) < l && Math.abs(m) < l && ot(p, m)) return;
+    if (Math.abs(p) < l && Math.abs(m) < l && oe(p, m)) return;
     let h = i * d - u * a;
     if (h === 0) return;
     let g = Math.abs(h / 2),
@@ -2403,13 +730,13 @@ function at(e, t, n, r) {
     );
   }
 }
-a(at, `intersectLine`);
-function ot(e, t) {
+a(ae, `intersectLine`);
+function oe(e, t) {
   return e * t > 0;
 }
-a(ot, `sameSign`);
-var st = at;
-function ct(e, t, n) {
+a(oe, `sameSign`);
+var se = ae;
+function ce(e, t, n) {
   let r = e.x,
     i = e.y,
     a = [],
@@ -2425,7 +752,7 @@ function ct(e, t, n) {
   for (let r = 0; r < t.length; r++) {
     let i = t[r],
       o = t[r < t.length - 1 ? r + 1 : 0],
-      s = st(e, n, { x: c + i.x, y: l + i.y }, { x: c + o.x, y: l + o.y });
+      s = se(e, n, { x: c + i.x, y: l + i.y }, { x: c + o.x, y: l + o.y });
     s && a.push(s);
   }
   return a.length
@@ -2442,35 +769,35 @@ function ct(e, t, n) {
       a[0])
     : e;
 }
-a(ct, `intersectPolygon`);
-var J = { node: et, circle: it, ellipse: nt, polygon: ct, rect: We };
-function lt(e, t) {
+a(ce, `intersectPolygon`);
+var U = { node: ne, circle: ie, ellipse: re, polygon: ce, rect: M };
+function le(e, t) {
   let { labelStyles: r } = x(t);
   t.labelStyle = r;
-  let a = W(t),
-    o = a;
-  a || (o = `anchor`);
+  let i = O(t),
+    a = i;
+  i || (a = `anchor`);
   let s = e
       .insert(`g`)
-      .attr(`class`, o)
+      .attr(`class`, a)
       .attr(`id`, t.domId || t.id),
     { cssStyles: c } = t,
-    l = V.svg(s),
+    l = w.svg(s),
     u = b(t, { fill: `black`, stroke: `none`, fillStyle: `solid` });
   t.look !== `handDrawn` && (u.roughness = 0);
   let d = l.circle(0, 0, 2, u),
     f = s.insert(() => d, `:first-child`);
   return (
     f.attr(`class`, `anchor`).attr(`style`, n(c)),
-    U(t, f),
+    D(t, f),
     (t.intersect = function (e) {
-      return (i.info(`Circle intersect`, t, 1, e), J.circle(t, 1, e));
+      return (o.info(`Circle intersect`, t, 1, e), U.circle(t, 1, e));
     }),
     s
   );
 }
-a(lt, `anchor`);
-function ut(e, t, n, r, i, a, o) {
+a(le, `anchor`);
+function ue(e, t, n, r, i, a, o) {
   let s = (e + n) / 2,
     c = (t + r) / 2,
     l = Math.atan2(r - t, n - e),
@@ -2498,11 +825,11 @@ function ut(e, t, n, r, i, a, o) {
   }
   return b;
 }
-a(ut, `generateArcPoints`);
-async function dt(e, t) {
+a(ue, `generateArcPoints`);
+async function de(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = a.width + t.padding + 20,
     s = a.height + t.padding,
     c = s / 2,
@@ -2511,14 +838,14 @@ async function dt(e, t) {
     d = [
       { x: o / 2, y: -s / 2 },
       { x: -o / 2, y: -s / 2 },
-      ...ut(-o / 2, -s / 2, -o / 2, s / 2, l, c, !1),
+      ...ue(-o / 2, -s / 2, -o / 2, s / 2, l, c, !1),
       { x: o / 2, y: s / 2 },
-      ...ut(o / 2, s / 2, o / 2, -s / 2, l, c, !0),
+      ...ue(o / 2, s / 2, o / 2, -s / 2, l, c, !0),
     ],
-    f = V.svg(i),
+    f = w.svg(i),
     p = b(t, {});
   t.look !== `handDrawn` && ((p.roughness = 0), (p.fillStyle = `solid`));
-  let m = G(d),
+  let m = k(d),
     h = f.path(m, p),
     g = i.insert(() => h, `:first-child`);
   return (
@@ -2526,15 +853,15 @@ async function dt(e, t) {
     u && t.look !== `handDrawn` && g.selectAll(`path`).attr(`style`, u),
     r && t.look !== `handDrawn` && g.selectAll(`path`).attr(`style`, r),
     g.attr(`transform`, `translate(${l / 2}, 0)`),
-    U(t, g),
+    D(t, g),
     (t.intersect = function (e) {
-      return J.polygon(t, d, e);
+      return U.polygon(t, d, e);
     }),
     i
   );
 }
-a(dt, `bowTieRect`);
-function Y(e, t, n, r) {
+a(de, `bowTieRect`);
+function W(e, t, n, r) {
   return e
     .insert(`polygon`, `:first-child`)
     .attr(
@@ -2548,11 +875,11 @@ function Y(e, t, n, r) {
     .attr(`class`, `label-container`)
     .attr(`transform`, `translate(` + -t / 2 + `,` + n / 2 + `)`);
 }
-a(Y, `insertPolygonShape`);
-async function ft(e, t) {
+a(W, `insertPolygonShape`);
+async function fe(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = a.height + t.padding,
     s = a.width + t.padding + 12,
     c = s,
@@ -2568,31 +895,31 @@ async function ft(e, t) {
     d,
     { cssStyles: f } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(i),
+    let e = w.svg(i),
       n = b(t, {}),
-      r = G(u),
+      r = k(u),
       a = e.path(r, n);
     ((d = i
       .insert(() => a, `:first-child`)
       .attr(`transform`, `translate(${-s / 2}, ${o / 2})`)),
       f && d.attr(`style`, f));
-  } else d = Y(i, s, o, u);
+  } else d = W(i, s, o, u);
   return (
     r && d.attr(`style`, r),
-    U(t, d),
+    D(t, d),
     (t.intersect = function (e) {
-      return J.polygon(t, u, e);
+      return U.polygon(t, u, e);
     }),
     i
   );
 }
-a(ft, `card`);
-function pt(e, t) {
+a(fe, `card`);
+function pe(e, t) {
   let { nodeStyles: n } = x(t);
   t.label = ``;
   let r = e
       .insert(`g`)
-      .attr(`class`, W(t))
+      .attr(`class`, O(t))
       .attr(`id`, t.domId ?? t.id),
     { cssStyles: i } = t,
     a = Math.max(28, t.width ?? 0),
@@ -2602,10 +929,10 @@ function pt(e, t) {
       { x: 0, y: -a / 2 },
       { x: -a / 2, y: 0 },
     ],
-    s = V.svg(r),
+    s = w.svg(r),
     c = b(t, {});
   t.look !== `handDrawn` && ((c.roughness = 0), (c.fillStyle = `solid`));
-  let l = G(o),
+  let l = k(o),
     u = s.path(l, c),
     d = r.insert(() => u, `:first-child`);
   return (
@@ -2614,22 +941,22 @@ function pt(e, t) {
     (t.width = 28),
     (t.height = 28),
     (t.intersect = function (e) {
-      return J.polygon(t, o, e);
+      return U.polygon(t, o, e);
     }),
     r
   );
 }
-a(pt, `choice`);
-async function mt(e, t, r) {
-  let { labelStyles: a, nodeStyles: o } = x(t);
-  t.labelStyle = a;
-  let { shapeSvg: s, bbox: c, halfPadding: l } = await H(e, t, W(t)),
+a(pe, `choice`);
+async function me(e, t, r) {
+  let { labelStyles: i, nodeStyles: a } = x(t);
+  t.labelStyle = i;
+  let { shapeSvg: s, bbox: c, halfPadding: l } = await T(e, t, O(t)),
     u = r?.padding ?? l,
     d = c.width / 2 + u,
     f,
     { cssStyles: p } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(s),
+    let e = w.svg(s),
       r = b(t, {}),
       i = e.circle(0, 0, d * 2, r);
     ((f = s.insert(() => i, `:first-child`)),
@@ -2638,24 +965,24 @@ async function mt(e, t, r) {
     f = s
       .insert(`circle`, `:first-child`)
       .attr(`class`, `basic label-container`)
-      .attr(`style`, o)
+      .attr(`style`, a)
       .attr(`r`, d)
       .attr(`cx`, 0)
       .attr(`cy`, 0);
   return (
-    U(t, f),
+    D(t, f),
     (t.calcIntersect = function (e, t) {
       let n = e.width / 2;
-      return J.circle(e, n, t);
+      return U.circle(e, n, t);
     }),
     (t.intersect = function (e) {
-      return (i.info(`Circle intersect`, t, d, e), J.circle(t, d, e));
+      return (o.info(`Circle intersect`, t, d, e), U.circle(t, d, e));
     }),
     s
   );
 }
-a(mt, `circle`);
-function ht(e) {
+a(me, `circle`);
+function he(e) {
   let t = Math.cos(Math.PI / 4),
     n = Math.sin(Math.PI / 4),
     r = e * 2,
@@ -2666,39 +993,39 @@ function ht(e) {
   return `M ${a.x},${a.y} L ${s.x},${s.y}
                    M ${i.x},${i.y} L ${o.x},${o.y}`;
 }
-a(ht, `createLine`);
-function gt(e, t) {
+a(he, `createLine`);
+function ge(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   ((t.labelStyle = n), (t.label = ``));
-  let a = e
+  let i = e
       .insert(`g`)
-      .attr(`class`, W(t))
+      .attr(`class`, O(t))
       .attr(`id`, t.domId ?? t.id),
-    o = Math.max(30, t?.width ?? 0),
+    a = Math.max(30, t?.width ?? 0),
     { cssStyles: s } = t,
-    c = V.svg(a),
+    c = w.svg(i),
     l = b(t, {});
   t.look !== `handDrawn` && ((l.roughness = 0), (l.fillStyle = `solid`));
-  let u = c.circle(0, 0, o * 2, l),
-    d = ht(o),
+  let u = c.circle(0, 0, a * 2, l),
+    d = he(a),
     f = c.path(d, l),
-    p = a.insert(() => u, `:first-child`);
+    p = i.insert(() => u, `:first-child`);
   return (
     p.insert(() => f),
     s && t.look !== `handDrawn` && p.selectAll(`path`).attr(`style`, s),
     r && t.look !== `handDrawn` && p.selectAll(`path`).attr(`style`, r),
-    U(t, p),
+    D(t, p),
     (t.intersect = function (e) {
       return (
-        i.info(`crossedCircle intersect`, t, { radius: o, point: e }),
-        J.circle(t, o, e)
+        o.info(`crossedCircle intersect`, t, { radius: a, point: e }),
+        U.circle(t, a, e)
       );
     }),
-    a
+    i
   );
 }
-a(gt, `crossedCircle`);
-function X(e, t, n, r = 100, i = 0, a = 180) {
+a(ge, `crossedCircle`);
+function G(e, t, n, r = 100, i = 0, a = 180) {
   let o = [],
     s = (i * Math.PI) / 180,
     c = ((a * Math.PI) / 180 - s) / (r - 1);
@@ -2710,41 +1037,41 @@ function X(e, t, n, r = 100, i = 0, a = 180) {
   }
   return o;
 }
-a(X, `generateCirclePoints`);
-async function _t(e, t) {
+a(G, `generateCirclePoints`);
+async function _e(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = a.width + (t.padding ?? 0),
     c = a.height + (t.padding ?? 0),
     l = Math.max(5, c * 0.1),
     { cssStyles: u } = t,
     d = [
-      ...X(s / 2, -c / 2, l, 30, -90, 0),
+      ...G(s / 2, -c / 2, l, 30, -90, 0),
       { x: -s / 2 - l, y: l },
-      ...X(s / 2 + l * 2, -l, l, 20, -180, -270),
-      ...X(s / 2 + l * 2, l, l, 20, -90, -180),
+      ...G(s / 2 + l * 2, -l, l, 20, -180, -270),
+      ...G(s / 2 + l * 2, l, l, 20, -90, -180),
       { x: -s / 2 - l, y: -c / 2 },
-      ...X(s / 2, c / 2, l, 20, 0, 90),
+      ...G(s / 2, c / 2, l, 20, 0, 90),
     ],
     f = [
       { x: s / 2, y: -c / 2 - l },
       { x: -s / 2, y: -c / 2 - l },
-      ...X(s / 2, -c / 2, l, 20, -90, 0),
+      ...G(s / 2, -c / 2, l, 20, -90, 0),
       { x: -s / 2 - l, y: -l },
-      ...X(s / 2 + s * 0.1, -l, l, 20, -180, -270),
-      ...X(s / 2 + s * 0.1, l, l, 20, -90, -180),
+      ...G(s / 2 + s * 0.1, -l, l, 20, -180, -270),
+      ...G(s / 2 + s * 0.1, l, l, 20, -90, -180),
       { x: -s / 2 - l, y: c / 2 },
-      ...X(s / 2, c / 2, l, 20, 0, 90),
+      ...G(s / 2, c / 2, l, 20, 0, 90),
       { x: -s / 2, y: c / 2 + l },
       { x: s / 2, y: c / 2 + l },
     ],
-    p = V.svg(i),
+    p = w.svg(i),
     m = b(t, { fill: `none` });
   t.look !== `handDrawn` && ((m.roughness = 0), (m.fillStyle = `solid`));
-  let h = G(d).replace(`Z`, ``),
+  let h = k(d).replace(`Z`, ``),
     g = p.path(h, m),
-    _ = G(f),
+    _ = k(f),
     v = p.path(_, { ...m }),
     y = i.insert(`g`, `:first-child`);
   return (
@@ -2758,15 +1085,15 @@ async function _t(e, t) {
       `transform`,
       `translate(${-s / 2 + l - (a.x - (a.left ?? 0))},${-c / 2 + (t.padding ?? 0) / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, y),
+    D(t, y),
     (t.intersect = function (e) {
-      return J.polygon(t, f, e);
+      return U.polygon(t, f, e);
     }),
     i
   );
 }
-a(_t, `curlyBraceLeft`);
-function Z(e, t, n, r = 100, i = 0, a = 180) {
+a(_e, `curlyBraceLeft`);
+function K(e, t, n, r = 100, i = 0, a = 180) {
   let o = [],
     s = (i * Math.PI) / 180,
     c = ((a * Math.PI) / 180 - s) / (r - 1);
@@ -2778,41 +1105,41 @@ function Z(e, t, n, r = 100, i = 0, a = 180) {
   }
   return o;
 }
-a(Z, `generateCirclePoints`);
-async function vt(e, t) {
+a(K, `generateCirclePoints`);
+async function ve(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = a.width + (t.padding ?? 0),
     c = a.height + (t.padding ?? 0),
     l = Math.max(5, c * 0.1),
     { cssStyles: u } = t,
     d = [
-      ...Z(s / 2, -c / 2, l, 20, -90, 0),
+      ...K(s / 2, -c / 2, l, 20, -90, 0),
       { x: s / 2 + l, y: -l },
-      ...Z(s / 2 + l * 2, -l, l, 20, -180, -270),
-      ...Z(s / 2 + l * 2, l, l, 20, -90, -180),
+      ...K(s / 2 + l * 2, -l, l, 20, -180, -270),
+      ...K(s / 2 + l * 2, l, l, 20, -90, -180),
       { x: s / 2 + l, y: c / 2 },
-      ...Z(s / 2, c / 2, l, 20, 0, 90),
+      ...K(s / 2, c / 2, l, 20, 0, 90),
     ],
     f = [
       { x: -s / 2, y: -c / 2 - l },
       { x: s / 2, y: -c / 2 - l },
-      ...Z(s / 2, -c / 2, l, 20, -90, 0),
+      ...K(s / 2, -c / 2, l, 20, -90, 0),
       { x: s / 2 + l, y: -l },
-      ...Z(s / 2 + l * 2, -l, l, 20, -180, -270),
-      ...Z(s / 2 + l * 2, l, l, 20, -90, -180),
+      ...K(s / 2 + l * 2, -l, l, 20, -180, -270),
+      ...K(s / 2 + l * 2, l, l, 20, -90, -180),
       { x: s / 2 + l, y: c / 2 },
-      ...Z(s / 2, c / 2, l, 20, 0, 90),
+      ...K(s / 2, c / 2, l, 20, 0, 90),
       { x: s / 2, y: c / 2 + l },
       { x: -s / 2, y: c / 2 + l },
     ],
-    p = V.svg(i),
+    p = w.svg(i),
     m = b(t, { fill: `none` });
   t.look !== `handDrawn` && ((m.roughness = 0), (m.fillStyle = `solid`));
-  let h = G(d).replace(`Z`, ``),
+  let h = k(d).replace(`Z`, ``),
     g = p.path(h, m),
-    _ = G(f),
+    _ = k(f),
     v = p.path(_, { ...m }),
     y = i.insert(`g`, `:first-child`);
   return (
@@ -2826,15 +1153,15 @@ async function vt(e, t) {
       `transform`,
       `translate(${-s / 2 + (t.padding ?? 0) / 2 - (a.x - (a.left ?? 0))},${-c / 2 + (t.padding ?? 0) / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, y),
+    D(t, y),
     (t.intersect = function (e) {
-      return J.polygon(t, f, e);
+      return U.polygon(t, f, e);
     }),
     i
   );
 }
-a(vt, `curlyBraceRight`);
-function Q(e, t, n, r = 100, i = 0, a = 180) {
+a(ve, `curlyBraceRight`);
+function q(e, t, n, r = 100, i = 0, a = 180) {
   let o = [],
     s = (i * Math.PI) / 180,
     c = ((a * Math.PI) / 180 - s) / (r - 1);
@@ -2846,88 +1173,88 @@ function Q(e, t, n, r = 100, i = 0, a = 180) {
   }
   return o;
 }
-a(Q, `generateCirclePoints`);
-async function yt(e, t) {
+a(q, `generateCirclePoints`);
+async function ye(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = a.width + (t.padding ?? 0),
     c = a.height + (t.padding ?? 0),
     l = Math.max(5, c * 0.1),
     { cssStyles: u } = t,
     d = [
-      ...Q(s / 2, -c / 2, l, 30, -90, 0),
+      ...q(s / 2, -c / 2, l, 30, -90, 0),
       { x: -s / 2 - l, y: l },
-      ...Q(s / 2 + l * 2, -l, l, 20, -180, -270),
-      ...Q(s / 2 + l * 2, l, l, 20, -90, -180),
+      ...q(s / 2 + l * 2, -l, l, 20, -180, -270),
+      ...q(s / 2 + l * 2, l, l, 20, -90, -180),
       { x: -s / 2 - l, y: -c / 2 },
-      ...Q(s / 2, c / 2, l, 20, 0, 90),
+      ...q(s / 2, c / 2, l, 20, 0, 90),
     ],
     f = [
-      ...Q(-s / 2 + l + l / 2, -c / 2, l, 20, -90, -180),
+      ...q(-s / 2 + l + l / 2, -c / 2, l, 20, -90, -180),
       { x: s / 2 - l / 2, y: l },
-      ...Q(-s / 2 - l / 2, -l, l, 20, 0, 90),
-      ...Q(-s / 2 - l / 2, l, l, 20, -90, 0),
+      ...q(-s / 2 - l / 2, -l, l, 20, 0, 90),
+      ...q(-s / 2 - l / 2, l, l, 20, -90, 0),
       { x: s / 2 - l / 2, y: -l },
-      ...Q(-s / 2 + l + l / 2, c / 2, l, 30, -180, -270),
+      ...q(-s / 2 + l + l / 2, c / 2, l, 30, -180, -270),
     ],
     p = [
       { x: s / 2, y: -c / 2 - l },
       { x: -s / 2, y: -c / 2 - l },
-      ...Q(s / 2, -c / 2, l, 20, -90, 0),
+      ...q(s / 2, -c / 2, l, 20, -90, 0),
       { x: -s / 2 - l, y: -l },
-      ...Q(s / 2 + l * 2, -l, l, 20, -180, -270),
-      ...Q(s / 2 + l * 2, l, l, 20, -90, -180),
+      ...q(s / 2 + l * 2, -l, l, 20, -180, -270),
+      ...q(s / 2 + l * 2, l, l, 20, -90, -180),
       { x: -s / 2 - l, y: c / 2 },
-      ...Q(s / 2, c / 2, l, 20, 0, 90),
+      ...q(s / 2, c / 2, l, 20, 0, 90),
       { x: -s / 2, y: c / 2 + l },
       { x: s / 2 - l - l / 2, y: c / 2 + l },
-      ...Q(-s / 2 + l + l / 2, -c / 2, l, 20, -90, -180),
+      ...q(-s / 2 + l + l / 2, -c / 2, l, 20, -90, -180),
       { x: s / 2 - l / 2, y: l },
-      ...Q(-s / 2 - l / 2, -l, l, 20, 0, 90),
-      ...Q(-s / 2 - l / 2, l, l, 20, -90, 0),
+      ...q(-s / 2 - l / 2, -l, l, 20, 0, 90),
+      ...q(-s / 2 - l / 2, l, l, 20, -90, 0),
       { x: s / 2 - l / 2, y: -l },
-      ...Q(-s / 2 + l + l / 2, c / 2, l, 30, -180, -270),
+      ...q(-s / 2 + l + l / 2, c / 2, l, 30, -180, -270),
     ],
-    m = V.svg(i),
+    m = w.svg(i),
     h = b(t, { fill: `none` });
   t.look !== `handDrawn` && ((h.roughness = 0), (h.fillStyle = `solid`));
-  let g = G(d).replace(`Z`, ``),
+  let g = k(d).replace(`Z`, ``),
     _ = m.path(g, h),
-    v = G(f).replace(`Z`, ``),
+    v = k(f).replace(`Z`, ``),
     y = m.path(v, h),
-    S = G(p),
+    S = k(p),
     C = m.path(S, { ...h }),
-    w = i.insert(`g`, `:first-child`);
+    E = i.insert(`g`, `:first-child`);
   return (
-    w.insert(() => C, `:first-child`).attr(`stroke-opacity`, 0),
-    w.insert(() => _, `:first-child`),
-    w.insert(() => y, `:first-child`),
-    w.attr(`class`, `text`),
-    u && t.look !== `handDrawn` && w.selectAll(`path`).attr(`style`, u),
-    r && t.look !== `handDrawn` && w.selectAll(`path`).attr(`style`, r),
-    w.attr(`transform`, `translate(${l - l / 4}, 0)`),
+    E.insert(() => C, `:first-child`).attr(`stroke-opacity`, 0),
+    E.insert(() => _, `:first-child`),
+    E.insert(() => y, `:first-child`),
+    E.attr(`class`, `text`),
+    u && t.look !== `handDrawn` && E.selectAll(`path`).attr(`style`, u),
+    r && t.look !== `handDrawn` && E.selectAll(`path`).attr(`style`, r),
+    E.attr(`transform`, `translate(${l - l / 4}, 0)`),
     o.attr(
       `transform`,
       `translate(${-s / 2 + (t.padding ?? 0) / 2 - (a.x - (a.left ?? 0))},${-c / 2 + (t.padding ?? 0) / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, w),
+    D(t, E),
     (t.intersect = function (e) {
-      return J.polygon(t, p, e);
+      return U.polygon(t, p, e);
     }),
     i
   );
 }
-a(yt, `curlyBraces`);
-async function bt(e, t) {
+a(ye, `curlyBraces`);
+async function be(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(80, (a.width + (t.padding ?? 0) * 2) * 1.25, t?.width ?? 0),
     s = Math.max(20, a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     c = s / 2,
     { cssStyles: l } = t,
-    u = V.svg(i),
+    u = w.svg(i),
     d = b(t, {});
   t.look !== `handDrawn` && ((d.roughness = 0), (d.fillStyle = `solid`));
   let f = o,
@@ -2940,9 +1267,9 @@ async function bt(e, t) {
       { x: 0, y: p / 2 },
       { x: h, y: p },
       { x: m, y: p },
-      ...Ue(-m, -p / 2, c, 50, 270, 90),
+      ...j(-m, -p / 2, c, 50, 270, 90),
     ],
-    _ = G(g),
+    _ = k(g),
     v = u.path(_, d),
     y = i.insert(() => v, `:first-child`);
   return (
@@ -2950,15 +1277,15 @@ async function bt(e, t) {
     l && t.look !== `handDrawn` && y.selectChildren(`path`).attr(`style`, l),
     r && t.look !== `handDrawn` && y.selectChildren(`path`).attr(`style`, r),
     y.attr(`transform`, `translate(${-o / 2}, ${-s / 2})`),
-    U(t, y),
+    D(t, y),
     (t.intersect = function (e) {
-      return J.polygon(t, g, e);
+      return U.polygon(t, g, e);
     }),
     i
   );
 }
-a(bt, `curvedTrapezoid`);
-var xt = a(
+a(be, `curvedTrapezoid`);
+var xe = a(
     (e, t, n, r, i, a) =>
       [
         `M${e},${t + a}`,
@@ -2970,7 +1297,7 @@ var xt = a(
       ].join(` `),
     `createCylinderPathD`,
   ),
-  St = a(
+  Se = a(
     (e, t, n, r, i, a) =>
       [
         `M${e},${t + a}`,
@@ -2982,15 +1309,15 @@ var xt = a(
       ].join(` `),
     `createOuterCylinderPathD`,
   ),
-  Ct = a(
+  Ce = a(
     (e, t, n, r, i, a) =>
       [`M${e - n / 2},${-r / 2}`, `a${i},${a} 0,0,0 ${n},0`].join(` `),
     `createInnerCylinderPathD`,
   );
-async function wt(e, t) {
+async function we(e, t) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: a, bbox: o, label: s } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: o, label: s } = await T(e, t, O(t)),
     c = Math.max(o.width + t.padding, t.width ?? 0),
     l = c / 2,
     u = l / (2.5 + c / 50),
@@ -2998,9 +1325,9 @@ async function wt(e, t) {
     f,
     { cssStyles: p } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(a),
-      n = St(0, 0, c, d, l, u),
-      r = Ct(0, u, c, d, l, u),
+    let e = w.svg(a),
+      n = Se(0, 0, c, d, l, u),
+      r = Ce(0, u, c, d, l, u),
       i = e.path(n, b(t, {})),
       o = e.path(r, b(t, { fill: `none` }));
     ((f = a.insert(() => o, `:first-child`)),
@@ -3008,7 +1335,7 @@ async function wt(e, t) {
       f.attr(`class`, `basic label-container`),
       p && f.attr(`style`, p));
   } else {
-    let e = xt(0, 0, c, d, l, u);
+    let e = xe(0, 0, c, d, l, u);
     f = a
       .insert(`path`, `:first-child`)
       .attr(`d`, e)
@@ -3019,13 +1346,13 @@ async function wt(e, t) {
   return (
     f.attr(`label-offset-y`, u),
     f.attr(`transform`, `translate(${-c / 2}, ${-(d / 2 + u)})`),
-    U(t, f),
+    D(t, f),
     s.attr(
       `transform`,
       `translate(${-(o.width / 2) - (o.x - (o.left ?? 0))}, ${-(o.height / 2) + (t.padding ?? 0) / 1.5 - (o.y - (o.top ?? 0))})`,
     ),
     (t.intersect = function (e) {
-      let n = J.rect(t, e),
+      let n = U.rect(t, e),
         r = n.x - (t.x ?? 0);
       if (
         l != 0 &&
@@ -3044,18 +1371,18 @@ async function wt(e, t) {
     a
   );
 }
-a(wt, `cylinder`);
-async function Tt(e, t) {
+a(we, `cylinder`);
+async function Te(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = a.width + t.padding,
     c = a.height + t.padding,
     l = c * 0.2,
     u = -s / 2,
     d = -c / 2 - l / 2,
     { cssStyles: f } = t,
-    p = V.svg(i),
+    p = w.svg(i),
     m = b(t, {});
   t.look !== `handDrawn` && ((m.roughness = 0), (m.fillStyle = `solid`));
   let h = [
@@ -3080,110 +1407,110 @@ async function Tt(e, t) {
       `transform`,
       `translate(${u + (t.padding ?? 0) / 2 - (a.x - (a.left ?? 0))}, ${d + l + (t.padding ?? 0) / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, _),
+    D(t, _),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     i
   );
 }
-a(Tt, `dividedRectangle`);
-async function Et(e, t) {
-  let { labelStyles: r, nodeStyles: a } = x(t);
+a(Te, `dividedRectangle`);
+async function Ee(e, t) {
+  let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: o, bbox: s, halfPadding: c } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: s, halfPadding: c } = await T(e, t, O(t)),
     l = s.width / 2 + c + 5,
     u = s.width / 2 + c,
     d,
     { cssStyles: f } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(o),
+    let e = w.svg(a),
       r = b(t, { roughness: 0.2, strokeWidth: 2.5 }),
       i = b(t, { roughness: 0.2, strokeWidth: 1.5 }),
-      a = e.circle(0, 0, l * 2, r),
+      o = e.circle(0, 0, l * 2, r),
       s = e.circle(0, 0, u * 2, i);
-    ((d = o.insert(`g`, `:first-child`)),
+    ((d = a.insert(`g`, `:first-child`)),
       d.attr(`class`, n(t.cssClasses)).attr(`style`, n(f)),
-      d.node()?.appendChild(a),
+      d.node()?.appendChild(o),
       d.node()?.appendChild(s));
   } else {
-    d = o.insert(`g`, `:first-child`);
+    d = a.insert(`g`, `:first-child`);
     let e = d.insert(`circle`, `:first-child`),
       t = d.insert(`circle`);
-    (d.attr(`class`, `basic label-container`).attr(`style`, a),
+    (d.attr(`class`, `basic label-container`).attr(`style`, i),
       e
         .attr(`class`, `outer-circle`)
-        .attr(`style`, a)
+        .attr(`style`, i)
         .attr(`r`, l)
         .attr(`cx`, 0)
         .attr(`cy`, 0),
       t
         .attr(`class`, `inner-circle`)
-        .attr(`style`, a)
+        .attr(`style`, i)
         .attr(`r`, u)
         .attr(`cx`, 0)
         .attr(`cy`, 0));
   }
   return (
-    U(t, d),
+    D(t, d),
     (t.intersect = function (e) {
-      return (i.info(`DoubleCircle intersect`, t, l, e), J.circle(t, l, e));
+      return (o.info(`DoubleCircle intersect`, t, l, e), U.circle(t, l, e));
     }),
-    o
+    a
   );
 }
-a(Et, `doublecircle`);
-function Dt(e, t, { config: { themeVariables: n } }) {
-  let { labelStyles: r, nodeStyles: a } = x(t);
+a(Ee, `doublecircle`);
+function De(e, t, { config: { themeVariables: n } }) {
+  let { labelStyles: r, nodeStyles: i } = x(t);
   ((t.label = ``), (t.labelStyle = r));
-  let o = e
+  let a = e
       .insert(`g`)
-      .attr(`class`, W(t))
+      .attr(`class`, O(t))
       .attr(`id`, t.domId ?? t.id),
     { cssStyles: s } = t,
-    c = V.svg(o),
+    c = w.svg(a),
     { nodeBorder: l } = n,
     u = b(t, { fillStyle: `solid` });
   t.look !== `handDrawn` && (u.roughness = 0);
   let d = c.circle(0, 0, 14, u),
-    f = o.insert(() => d, `:first-child`);
+    f = a.insert(() => d, `:first-child`);
   return (
     f.selectAll(`path`).attr(`style`, `fill: ${l} !important;`),
     s &&
       s.length > 0 &&
       t.look !== `handDrawn` &&
       f.selectAll(`path`).attr(`style`, s),
-    a && t.look !== `handDrawn` && f.selectAll(`path`).attr(`style`, a),
-    U(t, f),
+    i && t.look !== `handDrawn` && f.selectAll(`path`).attr(`style`, i),
+    D(t, f),
     (t.intersect = function (e) {
       return (
-        i.info(`filledCircle intersect`, t, { radius: 7, point: e }),
-        J.circle(t, 7, e)
+        o.info(`filledCircle intersect`, t, { radius: 7, point: e }),
+        U.circle(t, 7, e)
       );
     }),
-    o
+    a
   );
 }
-a(Dt, `filledCircle`);
-async function Ot(e, t) {
+a(De, `filledCircle`);
+async function Oe(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: a, bbox: o, label: s } = await H(e, t, W(t)),
-    c = o.width + (t.padding ?? 0),
-    l = c + o.height,
-    u = c + o.height,
+  let { shapeSvg: i, bbox: a, label: s } = await T(e, t, O(t)),
+    c = a.width + (t.padding ?? 0),
+    l = c + a.height,
+    u = c + a.height,
     d = [
       { x: 0, y: -l },
       { x: u, y: -l },
       { x: u / 2, y: 0 },
     ],
     { cssStyles: f } = t,
-    p = V.svg(a),
+    p = w.svg(i),
     m = b(t, {});
   t.look !== `handDrawn` && ((m.roughness = 0), (m.fillStyle = `solid`));
-  let h = G(d),
+  let h = k(d),
     g = p.path(h, m),
-    _ = a
+    _ = i
       .insert(() => g, `:first-child`)
       .attr(`transform`, `translate(${-l / 2}, ${l / 2})`);
   return (
@@ -3191,24 +1518,24 @@ async function Ot(e, t) {
     r && t.look !== `handDrawn` && _.selectChildren(`path`).attr(`style`, r),
     (t.width = c),
     (t.height = l),
-    U(t, _),
+    D(t, _),
     s.attr(
       `transform`,
-      `translate(${-o.width / 2 - (o.x - (o.left ?? 0))}, ${-l / 2 + (t.padding ?? 0) / 2 + (o.y - (o.top ?? 0))})`,
+      `translate(${-a.width / 2 - (a.x - (a.left ?? 0))}, ${-l / 2 + (t.padding ?? 0) / 2 + (a.y - (a.top ?? 0))})`,
     ),
     (t.intersect = function (e) {
-      return (i.info(`Triangle intersect`, t, d, e), J.polygon(t, d, e));
+      return (o.info(`Triangle intersect`, t, d, e), U.polygon(t, d, e));
     }),
-    a
+    i
   );
 }
-a(Ot, `flippedTriangle`);
-function kt(e, t, { dir: n, config: { state: r, themeVariables: i } }) {
+a(Oe, `flippedTriangle`);
+function ke(e, t, { dir: n, config: { state: r, themeVariables: i } }) {
   let { nodeStyles: a } = x(t);
   t.label = ``;
   let o = e
       .insert(`g`)
-      .attr(`class`, W(t))
+      .attr(`class`, O(t))
       .attr(`id`, t.domId ?? t.id),
     { cssStyles: s } = t,
     c = Math.max(70, t?.width ?? 0),
@@ -3217,68 +1544,68 @@ function kt(e, t, { dir: n, config: { state: r, themeVariables: i } }) {
     ((c = Math.max(10, t?.width ?? 0)), (l = Math.max(70, t?.height ?? 0)));
   let u = (-1 * c) / 2,
     d = (-1 * l) / 2,
-    f = V.svg(o),
+    f = w.svg(o),
     p = b(t, { stroke: i.lineColor, fill: i.lineColor });
   t.look !== `handDrawn` && ((p.roughness = 0), (p.fillStyle = `solid`));
   let m = f.rectangle(u, d, c, l, p),
     h = o.insert(() => m, `:first-child`);
   (s && t.look !== `handDrawn` && h.selectAll(`path`).attr(`style`, s),
     a && t.look !== `handDrawn` && h.selectAll(`path`).attr(`style`, a),
-    U(t, h));
+    D(t, h));
   let g = r?.padding ?? 0;
   return (
     t.width && t.height && ((t.width += g / 2 || 0), (t.height += g / 2 || 0)),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     o
   );
 }
-a(kt, `forkJoin`);
-async function At(e, t) {
+a(ke, `forkJoin`);
+async function Ae(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: a, bbox: o } = await H(e, t, W(t)),
-    s = Math.max(80, o.width + (t.padding ?? 0) * 2, t?.width ?? 0),
-    c = Math.max(50, o.height + (t.padding ?? 0) * 2, t?.height ?? 0),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
+    s = Math.max(80, a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
+    c = Math.max(50, a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = c / 2,
     { cssStyles: u } = t,
-    d = V.svg(a),
+    d = w.svg(i),
     f = b(t, {});
   t.look !== `handDrawn` && ((f.roughness = 0), (f.fillStyle = `solid`));
   let p = [
       { x: -s / 2, y: -c / 2 },
       { x: s / 2 - l, y: -c / 2 },
-      ...Ue(-s / 2 + l, 0, l, 50, 90, 270),
+      ...j(-s / 2 + l, 0, l, 50, 90, 270),
       { x: s / 2 - l, y: c / 2 },
       { x: -s / 2, y: c / 2 },
     ],
-    m = G(p),
+    m = k(p),
     h = d.path(m, f),
-    g = a.insert(() => h, `:first-child`);
+    g = i.insert(() => h, `:first-child`);
   return (
     g.attr(`class`, `basic label-container`),
     u && t.look !== `handDrawn` && g.selectChildren(`path`).attr(`style`, u),
     r && t.look !== `handDrawn` && g.selectChildren(`path`).attr(`style`, r),
-    U(t, g),
+    D(t, g),
     (t.intersect = function (e) {
       return (
-        i.info(`Pill intersect`, t, { radius: l, point: e }),
-        J.polygon(t, p, e)
+        o.info(`Pill intersect`, t, { radius: l, point: e }),
+        U.polygon(t, p, e)
       );
     }),
-    a
+    i
   );
 }
-a(At, `halfRoundedRectangle`);
-async function jt(e, t) {
+a(Ae, `halfRoundedRectangle`);
+async function je(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = a.height + (t.padding ?? 0),
     s = a.width + (t.padding ?? 0) * 2.5,
     { cssStyles: c } = t,
-    l = V.svg(i),
+    l = w.svg(i),
     u = b(t, {});
   t.look !== `handDrawn` && ((u.roughness = 0), (u.fillStyle = `solid`));
   let d = s / 2,
@@ -3297,7 +1624,7 @@ async function jt(e, t) {
       { x: -h, y: p },
       { x: -d, y: 0 },
     ],
-    _ = G(g),
+    _ = k(g),
     v = l.path(_, u),
     y = i.insert(() => v, `:first-child`);
   return (
@@ -3306,55 +1633,55 @@ async function jt(e, t) {
     r && t.look !== `handDrawn` && y.selectChildren(`path`).attr(`style`, r),
     (t.width = s),
     (t.height = o),
-    U(t, y),
+    D(t, y),
     (t.intersect = function (e) {
-      return J.polygon(t, g, e);
+      return U.polygon(t, g, e);
     }),
     i
   );
 }
-a(jt, `hexagon`);
-async function Mt(e, t) {
+a(je, `hexagon`);
+async function Me(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   ((t.label = ``), (t.labelStyle = n));
-  let { shapeSvg: a } = await H(e, t, W(t)),
-    o = Math.max(30, t?.width ?? 0),
+  let { shapeSvg: i } = await T(e, t, O(t)),
+    a = Math.max(30, t?.width ?? 0),
     s = Math.max(30, t?.height ?? 0),
     { cssStyles: c } = t,
-    l = V.svg(a),
+    l = w.svg(i),
     u = b(t, {});
   t.look !== `handDrawn` && ((u.roughness = 0), (u.fillStyle = `solid`));
   let d = [
       { x: 0, y: 0 },
-      { x: o, y: 0 },
+      { x: a, y: 0 },
       { x: 0, y: s },
-      { x: o, y: s },
+      { x: a, y: s },
     ],
-    f = G(d),
+    f = k(d),
     p = l.path(f, u),
-    m = a.insert(() => p, `:first-child`);
+    m = i.insert(() => p, `:first-child`);
   return (
     m.attr(`class`, `basic label-container`),
     c && t.look !== `handDrawn` && m.selectChildren(`path`).attr(`style`, c),
     r && t.look !== `handDrawn` && m.selectChildren(`path`).attr(`style`, r),
-    m.attr(`transform`, `translate(${-o / 2}, ${-s / 2})`),
-    U(t, m),
+    m.attr(`transform`, `translate(${-a / 2}, ${-s / 2})`),
+    D(t, m),
     (t.intersect = function (e) {
-      return (i.info(`Pill intersect`, t, { points: d }), J.polygon(t, d, e));
+      return (o.info(`Pill intersect`, t, { points: d }), U.polygon(t, d, e));
     }),
-    a
+    i
   );
 }
-a(Mt, `hourglass`);
-async function Nt(e, t, { config: { themeVariables: n, flowchart: r } }) {
-  let { labelStyles: a } = x(t);
-  t.labelStyle = a;
-  let o = t.assetHeight ?? 48,
+a(Me, `hourglass`);
+async function Ne(e, t, { config: { themeVariables: n, flowchart: r } }) {
+  let { labelStyles: i } = x(t);
+  t.labelStyle = i;
+  let a = t.assetHeight ?? 48,
     s = t.assetWidth ?? 48,
-    c = Math.max(o, s),
+    c = Math.max(a, s),
     l = r?.wrappingWidth;
   t.width = Math.max(c, l ?? 0);
-  let { shapeSvg: u, bbox: d, label: f } = await H(e, t, `icon-shape default`),
+  let { shapeSvg: u, bbox: d, label: f } = await T(e, t, `icon-shape default`),
     p = t.pos === `t`,
     m = c,
     h = c,
@@ -3362,20 +1689,20 @@ async function Nt(e, t, { config: { themeVariables: n, flowchart: r } }) {
     { stylesMap: _ } = C(t),
     y = -h / 2,
     S = -m / 2,
-    w = t.label ? 8 : 0,
-    T = V.svg(u),
-    E = b(t, { stroke: `none`, fill: `none` });
-  t.look !== `handDrawn` && ((E.roughness = 0), (E.fillStyle = `solid`));
-  let D = T.rectangle(y, S, h, m, E),
-    O = Math.max(h, d.width),
-    k = m + d.height + w,
-    A = T.rectangle(-O / 2, -k / 2, O, k, {
-      ...E,
+    E = t.label ? 8 : 0,
+    O = w.svg(u),
+    k = b(t, { stroke: `none`, fill: `none` });
+  t.look !== `handDrawn` && ((k.roughness = 0), (k.fillStyle = `solid`));
+  let A = O.rectangle(y, S, h, m, k),
+    j = Math.max(h, d.width),
+    M = m + d.height + E,
+    N = O.rectangle(-j / 2, -M / 2, j, M, {
+      ...k,
       fill: `transparent`,
       stroke: `none`,
     }),
-    j = u.insert(() => D, `:first-child`),
-    M = u.insert(() => A);
+    P = u.insert(() => A, `:first-child`),
+    F = u.insert(() => N);
   if (t.icon) {
     let e = u.append(`g`);
     e.html(
@@ -3388,121 +1715,121 @@ async function Nt(e, t, { config: { themeVariables: n, flowchart: r } }) {
       o = n.y;
     (e.attr(
       `transform`,
-      `translate(${-r / 2 - a},${p ? d.height / 2 + w / 2 - i / 2 - o : -d.height / 2 - w / 2 - i / 2 - o})`,
+      `translate(${-r / 2 - a},${p ? d.height / 2 + E / 2 - i / 2 - o : -d.height / 2 - E / 2 - i / 2 - o})`,
     ),
       e.attr(`style`, `color: ${_.get(`stroke`) ?? g};`));
   }
   return (
     f.attr(
       `transform`,
-      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${p ? -k / 2 : k / 2 - d.height})`,
+      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${p ? -M / 2 : M / 2 - d.height})`,
     ),
-    j.attr(
+    P.attr(
       `transform`,
-      `translate(0,${p ? d.height / 2 + w / 2 : -d.height / 2 - w / 2})`,
+      `translate(0,${p ? d.height / 2 + E / 2 : -d.height / 2 - E / 2})`,
     ),
-    U(t, M),
+    D(t, F),
     (t.intersect = function (e) {
-      if ((i.info(`iconSquare intersect`, t, e), !t.label)) return J.rect(t, e);
+      if ((o.info(`iconSquare intersect`, t, e), !t.label)) return U.rect(t, e);
       let n = t.x ?? 0,
         r = t.y ?? 0,
-        a = t.height ?? 0,
-        o = [];
+        i = t.height ?? 0,
+        a = [];
       return (
-        (o = p
+        (a = p
           ? [
-              { x: n - d.width / 2, y: r - a / 2 },
-              { x: n + d.width / 2, y: r - a / 2 },
-              { x: n + d.width / 2, y: r - a / 2 + d.height + w },
-              { x: n + h / 2, y: r - a / 2 + d.height + w },
-              { x: n + h / 2, y: r + a / 2 },
-              { x: n - h / 2, y: r + a / 2 },
-              { x: n - h / 2, y: r - a / 2 + d.height + w },
-              { x: n - d.width / 2, y: r - a / 2 + d.height + w },
+              { x: n - d.width / 2, y: r - i / 2 },
+              { x: n + d.width / 2, y: r - i / 2 },
+              { x: n + d.width / 2, y: r - i / 2 + d.height + E },
+              { x: n + h / 2, y: r - i / 2 + d.height + E },
+              { x: n + h / 2, y: r + i / 2 },
+              { x: n - h / 2, y: r + i / 2 },
+              { x: n - h / 2, y: r - i / 2 + d.height + E },
+              { x: n - d.width / 2, y: r - i / 2 + d.height + E },
             ]
           : [
-              { x: n - h / 2, y: r - a / 2 },
-              { x: n + h / 2, y: r - a / 2 },
-              { x: n + h / 2, y: r - a / 2 + m },
-              { x: n + d.width / 2, y: r - a / 2 + m },
-              { x: n + d.width / 2 / 2, y: r + a / 2 },
-              { x: n - d.width / 2, y: r + a / 2 },
-              { x: n - d.width / 2, y: r - a / 2 + m },
-              { x: n - h / 2, y: r - a / 2 + m },
+              { x: n - h / 2, y: r - i / 2 },
+              { x: n + h / 2, y: r - i / 2 },
+              { x: n + h / 2, y: r - i / 2 + m },
+              { x: n + d.width / 2, y: r - i / 2 + m },
+              { x: n + d.width / 2 / 2, y: r + i / 2 },
+              { x: n - d.width / 2, y: r + i / 2 },
+              { x: n - d.width / 2, y: r - i / 2 + m },
+              { x: n - h / 2, y: r - i / 2 + m },
             ]),
-        J.polygon(t, o, e)
+        U.polygon(t, a, e)
       );
     }),
     u
   );
 }
-a(Nt, `icon`);
-async function Pt(e, t, { config: { themeVariables: n, flowchart: r } }) {
-  let { labelStyles: a } = x(t);
-  t.labelStyle = a;
-  let o = t.assetHeight ?? 48,
+a(Ne, `icon`);
+async function Pe(e, t, { config: { themeVariables: n, flowchart: r } }) {
+  let { labelStyles: i } = x(t);
+  t.labelStyle = i;
+  let a = t.assetHeight ?? 48,
     s = t.assetWidth ?? 48,
-    c = Math.max(o, s),
+    c = Math.max(a, s),
     l = r?.wrappingWidth;
   t.width = Math.max(c, l ?? 0);
-  let { shapeSvg: u, bbox: d, label: f } = await H(e, t, `icon-shape default`),
+  let { shapeSvg: u, bbox: d, label: f } = await T(e, t, `icon-shape default`),
     p = t.label ? 8 : 0,
     m = t.pos === `t`,
     { nodeBorder: h, mainBkg: g } = n,
     { stylesMap: _ } = C(t),
-    y = V.svg(u),
+    y = w.svg(u),
     S = b(t, {});
   (t.look !== `handDrawn` && ((S.roughness = 0), (S.fillStyle = `solid`)),
     (S.stroke = _.get(`fill`) ?? g));
-  let w = u.append(`g`);
+  let E = u.append(`g`);
   t.icon &&
-    w.html(
+    E.html(
       `<g>${await v(t.icon, { height: c, width: c, fallbackPrefix: `` })}</g>`,
     );
-  let T = w.node().getBBox(),
-    E = T.width,
-    D = T.height,
-    O = T.x,
-    k = T.y,
-    A = Math.max(E, D) * Math.SQRT2 + 40,
-    j = y.circle(0, 0, A, S),
-    M = Math.max(A, d.width),
-    N = A + d.height + p,
-    P = y.rectangle(-M / 2, -N / 2, M, N, {
+  let O = E.node().getBBox(),
+    k = O.width,
+    A = O.height,
+    j = O.x,
+    M = O.y,
+    N = Math.max(k, A) * Math.SQRT2 + 40,
+    P = y.circle(0, 0, N, S),
+    F = Math.max(N, d.width),
+    I = N + d.height + p,
+    L = y.rectangle(-F / 2, -I / 2, F, I, {
       ...S,
       fill: `transparent`,
       stroke: `none`,
     }),
-    F = u.insert(() => j, `:first-child`),
-    I = u.insert(() => P);
+    R = u.insert(() => P, `:first-child`),
+    z = u.insert(() => L);
   return (
-    w.attr(
+    E.attr(
       `transform`,
-      `translate(${-E / 2 - O},${m ? d.height / 2 + p / 2 - D / 2 - k : -d.height / 2 - p / 2 - D / 2 - k})`,
+      `translate(${-k / 2 - j},${m ? d.height / 2 + p / 2 - A / 2 - M : -d.height / 2 - p / 2 - A / 2 - M})`,
     ),
-    w.attr(`style`, `color: ${_.get(`stroke`) ?? h};`),
+    E.attr(`style`, `color: ${_.get(`stroke`) ?? h};`),
     f.attr(
       `transform`,
-      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${m ? -N / 2 : N / 2 - d.height})`,
+      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${m ? -I / 2 : I / 2 - d.height})`,
     ),
-    F.attr(
+    R.attr(
       `transform`,
       `translate(0,${m ? d.height / 2 + p / 2 : -d.height / 2 - p / 2})`,
     ),
-    U(t, I),
+    D(t, z),
     (t.intersect = function (e) {
-      return (i.info(`iconSquare intersect`, t, e), J.rect(t, e));
+      return (o.info(`iconSquare intersect`, t, e), U.rect(t, e));
     }),
     u
   );
 }
-a(Pt, `iconCircle`);
-async function Ft(e, t, { config: { themeVariables: n, flowchart: r } }) {
-  let { labelStyles: a } = x(t);
-  t.labelStyle = a;
-  let o = t.assetHeight ?? 48,
+a(Pe, `iconCircle`);
+async function Fe(e, t, { config: { themeVariables: n, flowchart: r } }) {
+  let { labelStyles: i } = x(t);
+  t.labelStyle = i;
+  let a = t.assetHeight ?? 48,
     s = t.assetWidth ?? 48,
-    c = Math.max(o, s),
+    c = Math.max(a, s),
     l = r?.wrappingWidth;
   t.width = Math.max(c, l ?? 0);
   let {
@@ -3510,29 +1837,29 @@ async function Ft(e, t, { config: { themeVariables: n, flowchart: r } }) {
       bbox: d,
       halfPadding: f,
       label: p,
-    } = await H(e, t, `icon-shape default`),
+    } = await T(e, t, `icon-shape default`),
     m = t.pos === `t`,
     h = c + f * 2,
     g = c + f * 2,
     { nodeBorder: _, mainBkg: y } = n,
     { stylesMap: S } = C(t),
-    w = -g / 2,
-    T = -h / 2,
-    E = t.label ? 8 : 0,
-    D = V.svg(u),
-    O = b(t, {});
-  (t.look !== `handDrawn` && ((O.roughness = 0), (O.fillStyle = `solid`)),
-    (O.stroke = S.get(`fill`) ?? y));
-  let k = D.path(q(w, T, g, h, 5), O),
-    A = Math.max(g, d.width),
-    j = h + d.height + E,
-    M = D.rectangle(-A / 2, -j / 2, A, j, {
-      ...O,
+    E = -g / 2,
+    O = -h / 2,
+    k = t.label ? 8 : 0,
+    A = w.svg(u),
+    j = b(t, {});
+  (t.look !== `handDrawn` && ((j.roughness = 0), (j.fillStyle = `solid`)),
+    (j.stroke = S.get(`fill`) ?? y));
+  let M = A.path(I(E, O, g, h, 5), j),
+    N = Math.max(g, d.width),
+    P = h + d.height + k,
+    F = A.rectangle(-N / 2, -P / 2, N, P, {
+      ...j,
       fill: `transparent`,
       stroke: `none`,
     }),
-    N = u.insert(() => k, `:first-child`).attr(`class`, `icon-shape2`),
-    P = u.insert(() => M);
+    L = u.insert(() => M, `:first-child`).attr(`class`, `icon-shape2`),
+    R = u.insert(() => F);
   if (t.icon) {
     let e = u.append(`g`);
     e.html(
@@ -3545,61 +1872,61 @@ async function Ft(e, t, { config: { themeVariables: n, flowchart: r } }) {
       o = n.y;
     (e.attr(
       `transform`,
-      `translate(${-r / 2 - a},${m ? d.height / 2 + E / 2 - i / 2 - o : -d.height / 2 - E / 2 - i / 2 - o})`,
+      `translate(${-r / 2 - a},${m ? d.height / 2 + k / 2 - i / 2 - o : -d.height / 2 - k / 2 - i / 2 - o})`,
     ),
       e.attr(`style`, `color: ${S.get(`stroke`) ?? _};`));
   }
   return (
     p.attr(
       `transform`,
-      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${m ? -j / 2 : j / 2 - d.height})`,
+      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${m ? -P / 2 : P / 2 - d.height})`,
     ),
-    N.attr(
+    L.attr(
       `transform`,
-      `translate(0,${m ? d.height / 2 + E / 2 : -d.height / 2 - E / 2})`,
+      `translate(0,${m ? d.height / 2 + k / 2 : -d.height / 2 - k / 2})`,
     ),
-    U(t, P),
+    D(t, R),
     (t.intersect = function (e) {
-      if ((i.info(`iconSquare intersect`, t, e), !t.label)) return J.rect(t, e);
+      if ((o.info(`iconSquare intersect`, t, e), !t.label)) return U.rect(t, e);
       let n = t.x ?? 0,
         r = t.y ?? 0,
-        a = t.height ?? 0,
-        o = [];
+        i = t.height ?? 0,
+        a = [];
       return (
-        (o = m
+        (a = m
           ? [
-              { x: n - d.width / 2, y: r - a / 2 },
-              { x: n + d.width / 2, y: r - a / 2 },
-              { x: n + d.width / 2, y: r - a / 2 + d.height + E },
-              { x: n + g / 2, y: r - a / 2 + d.height + E },
-              { x: n + g / 2, y: r + a / 2 },
-              { x: n - g / 2, y: r + a / 2 },
-              { x: n - g / 2, y: r - a / 2 + d.height + E },
-              { x: n - d.width / 2, y: r - a / 2 + d.height + E },
+              { x: n - d.width / 2, y: r - i / 2 },
+              { x: n + d.width / 2, y: r - i / 2 },
+              { x: n + d.width / 2, y: r - i / 2 + d.height + k },
+              { x: n + g / 2, y: r - i / 2 + d.height + k },
+              { x: n + g / 2, y: r + i / 2 },
+              { x: n - g / 2, y: r + i / 2 },
+              { x: n - g / 2, y: r - i / 2 + d.height + k },
+              { x: n - d.width / 2, y: r - i / 2 + d.height + k },
             ]
           : [
-              { x: n - g / 2, y: r - a / 2 },
-              { x: n + g / 2, y: r - a / 2 },
-              { x: n + g / 2, y: r - a / 2 + h },
-              { x: n + d.width / 2, y: r - a / 2 + h },
-              { x: n + d.width / 2 / 2, y: r + a / 2 },
-              { x: n - d.width / 2, y: r + a / 2 },
-              { x: n - d.width / 2, y: r - a / 2 + h },
-              { x: n - g / 2, y: r - a / 2 + h },
+              { x: n - g / 2, y: r - i / 2 },
+              { x: n + g / 2, y: r - i / 2 },
+              { x: n + g / 2, y: r - i / 2 + h },
+              { x: n + d.width / 2, y: r - i / 2 + h },
+              { x: n + d.width / 2 / 2, y: r + i / 2 },
+              { x: n - d.width / 2, y: r + i / 2 },
+              { x: n - d.width / 2, y: r - i / 2 + h },
+              { x: n - g / 2, y: r - i / 2 + h },
             ]),
-        J.polygon(t, o, e)
+        U.polygon(t, a, e)
       );
     }),
     u
   );
 }
-a(Ft, `iconRounded`);
-async function It(e, t, { config: { themeVariables: n, flowchart: r } }) {
-  let { labelStyles: a } = x(t);
-  t.labelStyle = a;
-  let o = t.assetHeight ?? 48,
+a(Fe, `iconRounded`);
+async function Ie(e, t, { config: { themeVariables: n, flowchart: r } }) {
+  let { labelStyles: i } = x(t);
+  t.labelStyle = i;
+  let a = t.assetHeight ?? 48,
     s = t.assetWidth ?? 48,
-    c = Math.max(o, s),
+    c = Math.max(a, s),
     l = r?.wrappingWidth;
   t.width = Math.max(c, l ?? 0);
   let {
@@ -3607,29 +1934,29 @@ async function It(e, t, { config: { themeVariables: n, flowchart: r } }) {
       bbox: d,
       halfPadding: f,
       label: p,
-    } = await H(e, t, `icon-shape default`),
+    } = await T(e, t, `icon-shape default`),
     m = t.pos === `t`,
     h = c + f * 2,
     g = c + f * 2,
     { nodeBorder: _, mainBkg: y } = n,
     { stylesMap: S } = C(t),
-    w = -g / 2,
-    T = -h / 2,
-    E = t.label ? 8 : 0,
-    D = V.svg(u),
-    O = b(t, {});
-  (t.look !== `handDrawn` && ((O.roughness = 0), (O.fillStyle = `solid`)),
-    (O.stroke = S.get(`fill`) ?? y));
-  let k = D.path(q(w, T, g, h, 0.1), O),
-    A = Math.max(g, d.width),
-    j = h + d.height + E,
-    M = D.rectangle(-A / 2, -j / 2, A, j, {
-      ...O,
+    E = -g / 2,
+    O = -h / 2,
+    k = t.label ? 8 : 0,
+    A = w.svg(u),
+    j = b(t, {});
+  (t.look !== `handDrawn` && ((j.roughness = 0), (j.fillStyle = `solid`)),
+    (j.stroke = S.get(`fill`) ?? y));
+  let M = A.path(I(E, O, g, h, 0.1), j),
+    N = Math.max(g, d.width),
+    P = h + d.height + k,
+    F = A.rectangle(-N / 2, -P / 2, N, P, {
+      ...j,
       fill: `transparent`,
       stroke: `none`,
     }),
-    N = u.insert(() => k, `:first-child`),
-    P = u.insert(() => M);
+    L = u.insert(() => M, `:first-child`),
+    R = u.insert(() => F);
   if (t.icon) {
     let e = u.append(`g`);
     e.html(
@@ -3642,147 +1969,147 @@ async function It(e, t, { config: { themeVariables: n, flowchart: r } }) {
       o = n.y;
     (e.attr(
       `transform`,
-      `translate(${-r / 2 - a},${m ? d.height / 2 + E / 2 - i / 2 - o : -d.height / 2 - E / 2 - i / 2 - o})`,
+      `translate(${-r / 2 - a},${m ? d.height / 2 + k / 2 - i / 2 - o : -d.height / 2 - k / 2 - i / 2 - o})`,
     ),
       e.attr(`style`, `color: ${S.get(`stroke`) ?? _};`));
   }
   return (
     p.attr(
       `transform`,
-      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${m ? -j / 2 : j / 2 - d.height})`,
+      `translate(${-d.width / 2 - (d.x - (d.left ?? 0))},${m ? -P / 2 : P / 2 - d.height})`,
     ),
-    N.attr(
+    L.attr(
       `transform`,
-      `translate(0,${m ? d.height / 2 + E / 2 : -d.height / 2 - E / 2})`,
+      `translate(0,${m ? d.height / 2 + k / 2 : -d.height / 2 - k / 2})`,
     ),
-    U(t, P),
+    D(t, R),
     (t.intersect = function (e) {
-      if ((i.info(`iconSquare intersect`, t, e), !t.label)) return J.rect(t, e);
+      if ((o.info(`iconSquare intersect`, t, e), !t.label)) return U.rect(t, e);
       let n = t.x ?? 0,
         r = t.y ?? 0,
-        a = t.height ?? 0,
-        o = [];
+        i = t.height ?? 0,
+        a = [];
       return (
-        (o = m
+        (a = m
           ? [
-              { x: n - d.width / 2, y: r - a / 2 },
-              { x: n + d.width / 2, y: r - a / 2 },
-              { x: n + d.width / 2, y: r - a / 2 + d.height + E },
-              { x: n + g / 2, y: r - a / 2 + d.height + E },
-              { x: n + g / 2, y: r + a / 2 },
-              { x: n - g / 2, y: r + a / 2 },
-              { x: n - g / 2, y: r - a / 2 + d.height + E },
-              { x: n - d.width / 2, y: r - a / 2 + d.height + E },
+              { x: n - d.width / 2, y: r - i / 2 },
+              { x: n + d.width / 2, y: r - i / 2 },
+              { x: n + d.width / 2, y: r - i / 2 + d.height + k },
+              { x: n + g / 2, y: r - i / 2 + d.height + k },
+              { x: n + g / 2, y: r + i / 2 },
+              { x: n - g / 2, y: r + i / 2 },
+              { x: n - g / 2, y: r - i / 2 + d.height + k },
+              { x: n - d.width / 2, y: r - i / 2 + d.height + k },
             ]
           : [
-              { x: n - g / 2, y: r - a / 2 },
-              { x: n + g / 2, y: r - a / 2 },
-              { x: n + g / 2, y: r - a / 2 + h },
-              { x: n + d.width / 2, y: r - a / 2 + h },
-              { x: n + d.width / 2 / 2, y: r + a / 2 },
-              { x: n - d.width / 2, y: r + a / 2 },
-              { x: n - d.width / 2, y: r - a / 2 + h },
-              { x: n - g / 2, y: r - a / 2 + h },
+              { x: n - g / 2, y: r - i / 2 },
+              { x: n + g / 2, y: r - i / 2 },
+              { x: n + g / 2, y: r - i / 2 + h },
+              { x: n + d.width / 2, y: r - i / 2 + h },
+              { x: n + d.width / 2 / 2, y: r + i / 2 },
+              { x: n - d.width / 2, y: r + i / 2 },
+              { x: n - d.width / 2, y: r - i / 2 + h },
+              { x: n - g / 2, y: r - i / 2 + h },
             ]),
-        J.polygon(t, o, e)
+        U.polygon(t, a, e)
       );
     }),
     u
   );
 }
-a(It, `iconSquare`);
-async function Lt(e, t, { config: { flowchart: n } }) {
+a(Ie, `iconSquare`);
+async function Le(e, t, { config: { flowchart: n } }) {
   let r = new Image();
   ((r.src = t?.img ?? ``), await r.decode());
-  let a = Number(r.naturalWidth.toString().replace(`px`, ``)),
-    o = Number(r.naturalHeight.toString().replace(`px`, ``));
-  t.imageAspectRatio = a / o;
+  let i = Number(r.naturalWidth.toString().replace(`px`, ``)),
+    a = Number(r.naturalHeight.toString().replace(`px`, ``));
+  t.imageAspectRatio = i / a;
   let { labelStyles: s } = x(t);
   t.labelStyle = s;
   let c = n?.wrappingWidth;
   t.defaultWidth = n?.wrappingWidth;
-  let l = Math.max(t.label ? (c ?? 0) : 0, t?.assetWidth ?? a),
+  let l = Math.max(t.label ? (c ?? 0) : 0, t?.assetWidth ?? i),
     u =
       t.constraint === `on` && t?.assetHeight
         ? t.assetHeight * t.imageAspectRatio
         : l,
-    d = t.constraint === `on` ? u / t.imageAspectRatio : (t?.assetHeight ?? o);
+    d = t.constraint === `on` ? u / t.imageAspectRatio : (t?.assetHeight ?? a);
   t.width = Math.max(u, c ?? 0);
-  let { shapeSvg: f, bbox: p, label: m } = await H(e, t, `image-shape default`),
+  let { shapeSvg: f, bbox: p, label: m } = await T(e, t, `image-shape default`),
     h = t.pos === `t`,
     g = -u / 2,
     _ = -d / 2,
     v = t.label ? 8 : 0,
-    y = V.svg(f),
+    y = w.svg(f),
     S = b(t, {});
   t.look !== `handDrawn` && ((S.roughness = 0), (S.fillStyle = `solid`));
   let C = y.rectangle(g, _, u, d, S),
-    w = Math.max(u, p.width),
-    T = d + p.height + v,
-    E = y.rectangle(-w / 2, -T / 2, w, T, {
+    E = Math.max(u, p.width),
+    O = d + p.height + v,
+    k = y.rectangle(-E / 2, -O / 2, E, O, {
       ...S,
       fill: `none`,
       stroke: `none`,
     }),
-    D = f.insert(() => C, `:first-child`),
-    O = f.insert(() => E);
+    A = f.insert(() => C, `:first-child`),
+    j = f.insert(() => k);
   if (t.img) {
     let e = f.append(`image`);
     (e.attr(`href`, t.img),
       e.attr(`width`, u),
       e.attr(`height`, d),
       e.attr(`preserveAspectRatio`, `none`),
-      e.attr(`transform`, `translate(${-u / 2},${h ? T / 2 - d : -T / 2})`));
+      e.attr(`transform`, `translate(${-u / 2},${h ? O / 2 - d : -O / 2})`));
   }
   return (
     m.attr(
       `transform`,
       `translate(${-p.width / 2 - (p.x - (p.left ?? 0))},${h ? -d / 2 - p.height / 2 - v / 2 : d / 2 - p.height / 2 + v / 2})`,
     ),
-    D.attr(
+    A.attr(
       `transform`,
       `translate(0,${h ? p.height / 2 + v / 2 : -p.height / 2 - v / 2})`,
     ),
-    U(t, O),
+    D(t, j),
     (t.intersect = function (e) {
-      if ((i.info(`iconSquare intersect`, t, e), !t.label)) return J.rect(t, e);
+      if ((o.info(`iconSquare intersect`, t, e), !t.label)) return U.rect(t, e);
       let n = t.x ?? 0,
         r = t.y ?? 0,
-        a = t.height ?? 0,
-        o = [];
+        i = t.height ?? 0,
+        a = [];
       return (
-        (o = h
+        (a = h
           ? [
-              { x: n - p.width / 2, y: r - a / 2 },
-              { x: n + p.width / 2, y: r - a / 2 },
-              { x: n + p.width / 2, y: r - a / 2 + p.height + v },
-              { x: n + u / 2, y: r - a / 2 + p.height + v },
-              { x: n + u / 2, y: r + a / 2 },
-              { x: n - u / 2, y: r + a / 2 },
-              { x: n - u / 2, y: r - a / 2 + p.height + v },
-              { x: n - p.width / 2, y: r - a / 2 + p.height + v },
+              { x: n - p.width / 2, y: r - i / 2 },
+              { x: n + p.width / 2, y: r - i / 2 },
+              { x: n + p.width / 2, y: r - i / 2 + p.height + v },
+              { x: n + u / 2, y: r - i / 2 + p.height + v },
+              { x: n + u / 2, y: r + i / 2 },
+              { x: n - u / 2, y: r + i / 2 },
+              { x: n - u / 2, y: r - i / 2 + p.height + v },
+              { x: n - p.width / 2, y: r - i / 2 + p.height + v },
             ]
           : [
-              { x: n - u / 2, y: r - a / 2 },
-              { x: n + u / 2, y: r - a / 2 },
-              { x: n + u / 2, y: r - a / 2 + d },
-              { x: n + p.width / 2, y: r - a / 2 + d },
-              { x: n + p.width / 2 / 2, y: r + a / 2 },
-              { x: n - p.width / 2, y: r + a / 2 },
-              { x: n - p.width / 2, y: r - a / 2 + d },
-              { x: n - u / 2, y: r - a / 2 + d },
+              { x: n - u / 2, y: r - i / 2 },
+              { x: n + u / 2, y: r - i / 2 },
+              { x: n + u / 2, y: r - i / 2 + d },
+              { x: n + p.width / 2, y: r - i / 2 + d },
+              { x: n + p.width / 2 / 2, y: r + i / 2 },
+              { x: n - p.width / 2, y: r + i / 2 },
+              { x: n - p.width / 2, y: r - i / 2 + d },
+              { x: n - u / 2, y: r - i / 2 + d },
             ]),
-        J.polygon(t, o, e)
+        U.polygon(t, a, e)
       );
     }),
     f
   );
 }
-a(Lt, `imageSquare`);
-async function Rt(e, t) {
+a(Le, `imageSquare`);
+async function Re(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     s = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     c = [
@@ -3794,31 +2121,31 @@ async function Rt(e, t) {
     l,
     { cssStyles: u } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(i),
+    let e = w.svg(i),
       n = b(t, {}),
-      r = G(c),
+      r = k(c),
       a = e.path(r, n);
     ((l = i
       .insert(() => a, `:first-child`)
       .attr(`transform`, `translate(${-o / 2}, ${s / 2})`)),
       u && l.attr(`style`, u));
-  } else l = Y(i, o, s, c);
+  } else l = W(i, o, s, c);
   return (
     r && l.attr(`style`, r),
     (t.width = o),
     (t.height = s),
-    U(t, l),
+    D(t, l),
     (t.intersect = function (e) {
-      return J.polygon(t, c, e);
+      return U.polygon(t, c, e);
     }),
     i
   );
 }
-a(Rt, `inv_trapezoid`);
-async function zt(e, t, r) {
+a(Re, `inv_trapezoid`);
+async function J(e, t, r) {
   let { labelStyles: i, nodeStyles: a } = x(t);
   t.labelStyle = i;
-  let { shapeSvg: o, bbox: s } = await H(e, t, W(t)),
+  let { shapeSvg: o, bbox: s } = await T(e, t, O(t)),
     c = Math.max(s.width + r.labelPaddingX * 2, t?.width || 0),
     l = Math.max(s.height + r.labelPaddingY * 2, t?.height || 0),
     u = -c / 2,
@@ -3827,10 +2154,10 @@ async function zt(e, t, r) {
     { rx: p, ry: m } = t,
     { cssStyles: h } = t;
   if ((r?.rx && r.ry && ((p = r.rx), (m = r.ry)), t.look === `handDrawn`)) {
-    let e = V.svg(o),
+    let e = w.svg(o),
       r = b(t, {}),
       i =
-        p || m ? e.path(q(u, d, c, l, p || 0), r) : e.rectangle(u, d, c, l, r);
+        p || m ? e.path(I(u, d, c, l, p || 0), r) : e.rectangle(u, d, c, l, r);
     ((f = o.insert(() => i, `:first-child`)),
       f.attr(`class`, `basic label-container`).attr(`style`, n(h)));
   } else
@@ -3845,19 +2172,19 @@ async function zt(e, t, r) {
         .attr(`width`, c)
         .attr(`height`, l));
   return (
-    U(t, f),
+    D(t, f),
     (t.calcIntersect = function (e, t) {
-      return J.rect(e, t);
+      return U.rect(e, t);
     }),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     o
   );
 }
-a(zt, `drawRect`);
-async function Bt(e, t) {
-  let { shapeSvg: n, bbox: r, label: i } = await H(e, t, `label`),
+a(J, `drawRect`);
+async function ze(e, t) {
+  let { shapeSvg: n, bbox: r, label: i } = await T(e, t, `label`),
     a = n.insert(`rect`, `:first-child`);
   return (
     a.attr(`width`, 0.1).attr(`height`, 0.1),
@@ -3866,18 +2193,18 @@ async function Bt(e, t) {
       `transform`,
       `translate(${-(r.width / 2) - (r.x - (r.left ?? 0))}, ${-(r.height / 2) - (r.y - (r.top ?? 0))})`,
     ),
-    U(t, a),
+    D(t, a),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     n
   );
 }
-a(Bt, `labelRect`);
-async function Vt(e, t) {
+a(ze, `labelRect`);
+async function Be(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(a.width + (t.padding ?? 0), t?.width ?? 0),
     s = Math.max(a.height + (t.padding ?? 0), t?.height ?? 0),
     c = [
@@ -3889,31 +2216,31 @@ async function Vt(e, t) {
     l,
     { cssStyles: u } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(i),
+    let e = w.svg(i),
       n = b(t, {}),
-      r = G(c),
+      r = k(c),
       a = e.path(r, n);
     ((l = i
       .insert(() => a, `:first-child`)
       .attr(`transform`, `translate(${-o / 2}, ${s / 2})`)),
       u && l.attr(`style`, u));
-  } else l = Y(i, o, s, c);
+  } else l = W(i, o, s, c);
   return (
     r && l.attr(`style`, r),
     (t.width = o),
     (t.height = s),
-    U(t, l),
+    D(t, l),
     (t.intersect = function (e) {
-      return J.polygon(t, c, e);
+      return U.polygon(t, c, e);
     }),
     i
   );
 }
-a(Vt, `lean_left`);
-async function Ht(e, t) {
+a(Be, `lean_left`);
+async function Ve(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(a.width + (t.padding ?? 0), t?.width ?? 0),
     s = Math.max(a.height + (t.padding ?? 0), t?.height ?? 0),
     c = [
@@ -3925,35 +2252,35 @@ async function Ht(e, t) {
     l,
     { cssStyles: u } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(i),
+    let e = w.svg(i),
       n = b(t, {}),
-      r = G(c),
+      r = k(c),
       a = e.path(r, n);
     ((l = i
       .insert(() => a, `:first-child`)
       .attr(`transform`, `translate(${-o / 2}, ${s / 2})`)),
       u && l.attr(`style`, u));
-  } else l = Y(i, o, s, c);
+  } else l = W(i, o, s, c);
   return (
     r && l.attr(`style`, r),
     (t.width = o),
     (t.height = s),
-    U(t, l),
+    D(t, l),
     (t.intersect = function (e) {
-      return J.polygon(t, c, e);
+      return U.polygon(t, c, e);
     }),
     i
   );
 }
-a(Ht, `lean_right`);
-function Ut(e, t) {
+a(Ve, `lean_right`);
+function He(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   ((t.label = ``), (t.labelStyle = n));
-  let a = e
+  let i = e
       .insert(`g`)
-      .attr(`class`, W(t))
+      .attr(`class`, O(t))
       .attr(`id`, t.domId ?? t.id),
-    { cssStyles: o } = t,
+    { cssStyles: a } = t,
     s = Math.max(35, t?.width ?? 0),
     c = Math.max(35, t?.height ?? 0),
     l = [
@@ -3964,25 +2291,25 @@ function Ut(e, t) {
       { x: s, y: c - 7 / 2 },
       { x: 14, y: c - 7 / 2 },
     ],
-    u = V.svg(a),
+    u = w.svg(i),
     d = b(t, {});
   t.look !== `handDrawn` && ((d.roughness = 0), (d.fillStyle = `solid`));
-  let f = G(l),
+  let f = k(l),
     p = u.path(f, d),
-    m = a.insert(() => p, `:first-child`);
+    m = i.insert(() => p, `:first-child`);
   return (
-    o && t.look !== `handDrawn` && m.selectAll(`path`).attr(`style`, o),
+    a && t.look !== `handDrawn` && m.selectAll(`path`).attr(`style`, a),
     r && t.look !== `handDrawn` && m.selectAll(`path`).attr(`style`, r),
     m.attr(`transform`, `translate(-${s / 2},${-c})`),
-    U(t, m),
+    D(t, m),
     (t.intersect = function (e) {
-      return (i.info(`lightningBolt intersect`, t, e), J.polygon(t, l, e));
+      return (o.info(`lightningBolt intersect`, t, e), U.polygon(t, l, e));
     }),
-    a
+    i
   );
 }
-a(Ut, `lightningBolt`);
-var Wt = a(
+a(He, `lightningBolt`);
+var Ue = a(
     (e, t, n, r, i, a, o) =>
       [
         `M${e},${t + a}`,
@@ -3996,7 +2323,7 @@ var Wt = a(
       ].join(` `),
     `createCylinderPathD`,
   ),
-  Gt = a(
+  We = a(
     (e, t, n, r, i, a, o) =>
       [
         `M${e},${t + a}`,
@@ -4010,15 +2337,15 @@ var Wt = a(
       ].join(` `),
     `createOuterCylinderPathD`,
   ),
-  Kt = a(
+  Ge = a(
     (e, t, n, r, i, a) =>
       [`M${e - n / 2},${-r / 2}`, `a${i},${a} 0,0,0 ${n},0`].join(` `),
     `createInnerCylinderPathD`,
   );
-async function qt(e, t) {
+async function Ke(e, t) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: a, bbox: o, label: s } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: o, label: s } = await T(e, t, O(t)),
     c = Math.max(o.width + (t.padding ?? 0), t.width ?? 0),
     l = c / 2,
     u = l / (2.5 + c / 50),
@@ -4027,9 +2354,9 @@ async function qt(e, t) {
     p,
     { cssStyles: m } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(a),
-      n = Gt(0, 0, c, d, l, u, f),
-      r = Kt(0, u, c, d, l, u),
+    let e = w.svg(a),
+      n = We(0, 0, c, d, l, u, f),
+      r = Ge(0, u, c, d, l, u),
       i = b(t, {}),
       o = e.path(n, i),
       s = e.path(r, i);
@@ -4038,7 +2365,7 @@ async function qt(e, t) {
       p.attr(`class`, `basic label-container`),
       m && p.attr(`style`, m));
   } else {
-    let e = Wt(0, 0, c, d, l, u, f);
+    let e = Ue(0, 0, c, d, l, u, f);
     p = a
       .insert(`path`, `:first-child`)
       .attr(`d`, e)
@@ -4049,13 +2376,13 @@ async function qt(e, t) {
   return (
     p.attr(`label-offset-y`, u),
     p.attr(`transform`, `translate(${-c / 2}, ${-(d / 2 + u)})`),
-    U(t, p),
+    D(t, p),
     s.attr(
       `transform`,
       `translate(${-(o.width / 2) - (o.x - (o.left ?? 0))}, ${-(o.height / 2) + u - (o.y - (o.top ?? 0))})`,
     ),
     (t.intersect = function (e) {
-      let n = J.rect(t, e),
+      let n = U.rect(t, e),
         r = n.x - (t.x ?? 0);
       if (
         l != 0 &&
@@ -4074,23 +2401,23 @@ async function qt(e, t) {
     a
   );
 }
-a(qt, `linedCylinder`);
-async function Jt(e, t) {
+a(Ke, `linedCylinder`);
+async function qe(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = c / 4,
     u = c + l,
     { cssStyles: d } = t,
-    f = V.svg(i),
+    f = w.svg(i),
     p = b(t, {});
   t.look !== `handDrawn` && ((p.roughness = 0), (p.fillStyle = `solid`));
   let m = [
       { x: -s / 2 - (s / 2) * 0.1, y: -u / 2 },
       { x: -s / 2 - (s / 2) * 0.1, y: u / 2 },
-      ...K(-s / 2 - (s / 2) * 0.1, u / 2, s / 2 + (s / 2) * 0.1, u / 2, l, 0.8),
+      ...A(-s / 2 - (s / 2) * 0.1, u / 2, s / 2 + (s / 2) * 0.1, u / 2, l, 0.8),
       { x: s / 2 + (s / 2) * 0.1, y: -u / 2 },
       { x: -s / 2 - (s / 2) * 0.1, y: -u / 2 },
       { x: -s / 2, y: -u / 2 },
@@ -4111,24 +2438,24 @@ async function Jt(e, t) {
       `transform`,
       `translate(${-s / 2 + (t.padding ?? 0) + ((s / 2) * 0.1) / 2 - (a.x - (a.left ?? 0))},${-c / 2 + (t.padding ?? 0) - l / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, g),
+    D(t, g),
     (t.intersect = function (e) {
-      return J.polygon(t, m, e);
+      return U.polygon(t, m, e);
     }),
     i
   );
 }
-a(Jt, `linedWaveEdgedRect`);
-async function Yt(e, t) {
+a(qe, `linedWaveEdgedRect`);
+async function Je(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = -s / 2,
     u = -c / 2,
     { cssStyles: d } = t,
-    f = V.svg(i),
+    f = w.svg(i),
     p = b(t, {}),
     m = [
       { x: l - 5, y: u + 5 },
@@ -4153,9 +2480,9 @@ async function Yt(e, t) {
       { x: l, y: u },
     ];
   t.look !== `handDrawn` && ((p.roughness = 0), (p.fillStyle = `solid`));
-  let g = G(m),
+  let g = k(m),
     _ = f.path(g, p),
-    v = G(h),
+    v = k(h),
     y = f.path(v, { ...p, fill: `none` }),
     S = i.insert(() => y, `:first-child`);
   return (
@@ -4167,18 +2494,18 @@ async function Yt(e, t) {
       `transform`,
       `translate(${-(a.width / 2) - 5 - (a.x - (a.left ?? 0))}, ${-(a.height / 2) + 5 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, S),
+    D(t, S),
     (t.intersect = function (e) {
-      return J.polygon(t, m, e);
+      return U.polygon(t, m, e);
     }),
     i
   );
 }
-a(Yt, `multiRect`);
-async function Xt(e, t) {
+a(Je, `multiRect`);
+async function Ye(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = c / 4,
@@ -4186,7 +2513,7 @@ async function Xt(e, t) {
     d = -s / 2,
     f = -u / 2,
     { cssStyles: p } = t,
-    m = K(d - 5, f + u + 5, d + s - 5, f + u + 5, l, 0.8),
+    m = A(d - 5, f + u + 5, d + s - 5, f + u + 5, l, 0.8),
     h = m?.[m.length - 1],
     g = [
       { x: d - 5, y: f + 5 },
@@ -4210,45 +2537,45 @@ async function Xt(e, t) {
       { x: d + s, y: f },
       { x: d, y: f },
     ],
-    v = V.svg(i),
+    v = w.svg(i),
     y = b(t, {});
   t.look !== `handDrawn` && ((y.roughness = 0), (y.fillStyle = `solid`));
-  let S = G(g),
+  let S = k(g),
     C = v.path(S, y),
-    w = G(_),
-    T = v.path(w, y),
-    E = i.insert(() => C, `:first-child`);
+    E = k(_),
+    j = v.path(E, y),
+    M = i.insert(() => C, `:first-child`);
   return (
-    E.insert(() => T),
-    E.attr(`class`, `basic label-container`),
-    p && t.look !== `handDrawn` && E.selectAll(`path`).attr(`style`, p),
-    r && t.look !== `handDrawn` && E.selectAll(`path`).attr(`style`, r),
-    E.attr(`transform`, `translate(0,${-l / 2})`),
+    M.insert(() => j),
+    M.attr(`class`, `basic label-container`),
+    p && t.look !== `handDrawn` && M.selectAll(`path`).attr(`style`, p),
+    r && t.look !== `handDrawn` && M.selectAll(`path`).attr(`style`, r),
+    M.attr(`transform`, `translate(0,${-l / 2})`),
     o.attr(
       `transform`,
       `translate(${-(a.width / 2) - 5 - (a.x - (a.left ?? 0))}, ${-(a.height / 2) + 5 - l / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, E),
+    D(t, M),
     (t.intersect = function (e) {
-      return J.polygon(t, g, e);
+      return U.polygon(t, g, e);
     }),
     i
   );
 }
-a(Xt, `multiWaveEdgedRectangle`);
-async function Zt(e, t, { config: { themeVariables: n } }) {
+a(Ye, `multiWaveEdgedRectangle`);
+async function Xe(e, t, { config: { themeVariables: n } }) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   ((t.labelStyle = r),
     t.useHtmlLabels ||
       g().flowchart?.htmlLabels !== !1 ||
       (t.centerLabel = !0));
-  let { shapeSvg: a, bbox: o, label: s } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: o, label: s } = await T(e, t, O(t)),
     c = Math.max(o.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     l = Math.max(o.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     u = -c / 2,
     d = -l / 2,
     { cssStyles: f } = t,
-    p = V.svg(a),
+    p = w.svg(a),
     m = b(t, { fill: n.noteBkgColor, stroke: n.noteBorderColor });
   t.look !== `handDrawn` && ((m.roughness = 0), (m.fillStyle = `solid`));
   let h = p.rectangle(u, d, c, l, m),
@@ -4261,15 +2588,15 @@ async function Zt(e, t, { config: { themeVariables: n } }) {
       `transform`,
       `translate(${-o.width / 2 - (o.x - (o.left ?? 0))}, ${-(o.height / 2) - (o.y - (o.top ?? 0))})`,
     ),
-    U(t, _),
+    D(t, _),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     a
   );
 }
-a(Zt, `note`);
-var Qt = a(
+a(Xe, `note`);
+var Ze = a(
   (e, t, n) =>
     [
       `M${e + n / 2},${t}`,
@@ -4280,10 +2607,10 @@ var Qt = a(
     ].join(` `),
   `createDecisionBoxPathD`,
 );
-async function $t(e, t) {
+async function Qe(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = a.width + t.padding + (a.height + t.padding),
     s = 0.5,
     c = [
@@ -4295,20 +2622,20 @@ async function $t(e, t) {
     l,
     { cssStyles: u } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(i),
+    let e = w.svg(i),
       n = b(t, {}),
-      r = Qt(0, 0, o),
+      r = Ze(0, 0, o),
       a = e.path(r, n);
     ((l = i
       .insert(() => a, `:first-child`)
       .attr(`transform`, `translate(${-o / 2 + s}, ${o / 2})`)),
       u && l.attr(`style`, u));
   } else
-    ((l = Y(i, o, o, c)),
+    ((l = W(i, o, o, c)),
       l.attr(`transform`, `translate(${-o / 2 + s}, ${o / 2})`));
   return (
     r && l.attr(`style`, r),
-    U(t, l),
+    D(t, l),
     (t.calcIntersect = function (e, t) {
       let n = e.width,
         r = [
@@ -4317,7 +2644,7 @@ async function $t(e, t) {
           { x: n / 2, y: -n },
           { x: 0, y: -n / 2 },
         ],
-        i = J.polygon(e, r, t);
+        i = U.polygon(e, r, t);
       return { x: i.x - 0.5, y: i.y - 0.5 };
     }),
     (t.intersect = function (e) {
@@ -4326,11 +2653,11 @@ async function $t(e, t) {
     i
   );
 }
-a($t, `question`);
-async function en(e, t) {
+a(Qe, `question`);
+async function $e(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0), t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0), t?.height ?? 0),
     l = -s / 2,
@@ -4344,10 +2671,10 @@ async function en(e, t) {
       { x: -l, y: u },
     ],
     { cssStyles: p } = t,
-    m = V.svg(i),
+    m = w.svg(i),
     h = b(t, {});
   t.look !== `handDrawn` && ((h.roughness = 0), (h.fillStyle = `solid`));
-  let g = G(f),
+  let g = k(f),
     _ = m.path(g, h),
     v = i.insert(() => _, `:first-child`);
   return (
@@ -4359,15 +2686,15 @@ async function en(e, t) {
       `transform`,
       `translate(${-d / 2 - a.width / 2 - (a.x - (a.left ?? 0))}, ${-(a.height / 2) - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, v),
+    D(t, v),
     (t.intersect = function (e) {
-      return J.polygon(t, f, e);
+      return U.polygon(t, f, e);
     }),
     i
   );
 }
-a(en, `rect_left_inv_arrow`);
-async function tn(e, t) {
+a($e, `rect_left_inv_arrow`);
+async function et(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
   let a;
@@ -4380,30 +2707,28 @@ async function tn(e, t) {
     l = s.insert(`g`).attr(`class`, `label`).attr(`style`, r),
     u = t.description,
     d = t.label,
-    p = l.node().appendChild(await qe(d, t.labelStyle, !0, !0)),
+    p = l.node().appendChild(await F(d, t.labelStyle, !0, !0)),
     h = { width: 0, height: 0 };
   if (m(f()?.flowchart?.htmlLabels)) {
     let e = p.children[0],
-      t = o(p);
+      t = i(p);
     ((h = e.getBoundingClientRect()),
       t.attr(`width`, h.width),
       t.attr(`height`, h.height));
   }
-  i.info(`Text 2`, u);
+  o.info(`Text 2`, u);
   let g = u || [],
     _ = p.getBBox(),
     v = l
       .node()
-      .appendChild(
-        await qe(g.join ? g.join(`<br/>`) : g, t.labelStyle, !0, !0),
-      ),
+      .appendChild(await F(g.join ? g.join(`<br/>`) : g, t.labelStyle, !0, !0)),
     y = v.children[0],
-    S = o(v);
+    S = i(v);
   ((h = y.getBoundingClientRect()),
     S.attr(`width`, h.width),
     S.attr(`height`, h.height));
   let C = (t.padding || 0) / 2;
-  (o(v).attr(
+  (i(v).attr(
     `transform`,
     `translate( ` +
       (h.width > _.width ? 0 : (_.width - h.width) / 2) +
@@ -4411,7 +2736,7 @@ async function tn(e, t) {
       (_.height + C + 5) +
       `)`,
   ),
-    o(p).attr(
+    i(p).attr(
       `transform`,
       `translate( ` +
         (h.width < _.width ? 0 : -(_.width - h.width) / 2) +
@@ -4422,56 +2747,56 @@ async function tn(e, t) {
       `transform`,
       `translate(` + -h.width / 2 + `, ` + (-h.height / 2 - C + 3) + `)`,
     ));
-  let w = h.width + (t.padding || 0),
-    T = h.height + (t.padding || 0),
-    E = -h.width / 2 - C,
-    D = -h.height / 2 - C,
-    O,
-    k;
+  let T = h.width + (t.padding || 0),
+    E = h.height + (t.padding || 0),
+    O = -h.width / 2 - C,
+    k = -h.height / 2 - C,
+    A,
+    j;
   if (t.look === `handDrawn`) {
-    let e = V.svg(s),
+    let e = w.svg(s),
       n = b(t, {}),
-      r = e.path(q(E, D, w, T, t.rx || 0), n),
-      a = e.line(
+      r = e.path(I(O, k, T, E, t.rx || 0), n),
+      i = e.line(
         -h.width / 2 - C,
         -h.height / 2 - C + _.height + C,
         h.width / 2 + C,
         -h.height / 2 - C + _.height + C,
         n,
       );
-    ((k = s.insert(
-      () => (i.debug(`Rough node insert CXC`, r), a),
+    ((j = s.insert(
+      () => (o.debug(`Rough node insert CXC`, r), i),
       `:first-child`,
     )),
-      (O = s.insert(
-        () => (i.debug(`Rough node insert CXC`, r), r),
+      (A = s.insert(
+        () => (o.debug(`Rough node insert CXC`, r), r),
         `:first-child`,
       )));
   } else
-    ((O = c.insert(`rect`, `:first-child`)),
-      (k = c.insert(`line`)),
-      O.attr(`class`, `outer title-state`)
+    ((A = c.insert(`rect`, `:first-child`)),
+      (j = c.insert(`line`)),
+      A.attr(`class`, `outer title-state`)
         .attr(`style`, r)
         .attr(`x`, -h.width / 2 - C)
         .attr(`y`, -h.height / 2 - C)
         .attr(`width`, h.width + (t.padding || 0))
         .attr(`height`, h.height + (t.padding || 0)),
-      k
+      j
         .attr(`class`, `divider`)
         .attr(`x1`, -h.width / 2 - C)
         .attr(`x2`, h.width / 2 + C)
         .attr(`y1`, -h.height / 2 - C + _.height + C)
         .attr(`y2`, -h.height / 2 - C + _.height + C));
   return (
-    U(t, O),
+    D(t, A),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     s
   );
 }
-a(tn, `rectWithTitle`);
-function nn(e, t, n, r, i, a, o) {
+a(et, `rectWithTitle`);
+function Y(e, t, n, r, i, a, o) {
   let s = (e + n) / 2,
     c = (t + r) / 2,
     l = Math.atan2(r - t, n - e),
@@ -4499,11 +2824,11 @@ function nn(e, t, n, r, i, a, o) {
   }
   return b;
 }
-a(nn, `generateArcPoints`);
-async function rn(e, t) {
+a(Y, `generateArcPoints`);
+async function tt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = t?.padding ?? 0,
     s = t?.padding ?? 0,
     c = (t?.width ? t?.width : a.width) + o * 2,
@@ -4511,50 +2836,50 @@ async function rn(e, t) {
     u = t.radius || 5,
     d = t.taper || 5,
     { cssStyles: f } = t,
-    p = V.svg(i),
+    p = w.svg(i),
     m = b(t, {});
   (t.stroke && (m.stroke = t.stroke),
     t.look !== `handDrawn` && ((m.roughness = 0), (m.fillStyle = `solid`)));
   let h = [
       { x: -c / 2 + d, y: -l / 2 },
       { x: c / 2 - d, y: -l / 2 },
-      ...nn(c / 2 - d, -l / 2, c / 2, -l / 2 + d, u, u, !0),
+      ...Y(c / 2 - d, -l / 2, c / 2, -l / 2 + d, u, u, !0),
       { x: c / 2, y: -l / 2 + d },
       { x: c / 2, y: l / 2 - d },
-      ...nn(c / 2, l / 2 - d, c / 2 - d, l / 2, u, u, !0),
+      ...Y(c / 2, l / 2 - d, c / 2 - d, l / 2, u, u, !0),
       { x: c / 2 - d, y: l / 2 },
       { x: -c / 2 + d, y: l / 2 },
-      ...nn(-c / 2 + d, l / 2, -c / 2, l / 2 - d, u, u, !0),
+      ...Y(-c / 2 + d, l / 2, -c / 2, l / 2 - d, u, u, !0),
       { x: -c / 2, y: l / 2 - d },
       { x: -c / 2, y: -l / 2 + d },
-      ...nn(-c / 2, -l / 2 + d, -c / 2 + d, -l / 2, u, u, !0),
+      ...Y(-c / 2, -l / 2 + d, -c / 2 + d, -l / 2, u, u, !0),
     ],
-    g = G(h),
+    g = k(h),
     _ = p.path(g, m),
     v = i.insert(() => _, `:first-child`);
   return (
     v.attr(`class`, `basic label-container outer-path`),
     f && t.look !== `handDrawn` && v.selectChildren(`path`).attr(`style`, f),
     r && t.look !== `handDrawn` && v.selectChildren(`path`).attr(`style`, r),
-    U(t, v),
+    D(t, v),
     (t.intersect = function (e) {
-      return J.polygon(t, h, e);
+      return U.polygon(t, h, e);
     }),
     i
   );
 }
-a(rn, `roundedRect`);
-async function an(e, t) {
+a(tt, `roundedRect`);
+async function nt(e, t) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: a, bbox: o, label: s } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: o, label: s } = await T(e, t, O(t)),
     c = t?.padding ?? 0,
     l = Math.max(o.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     u = Math.max(o.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     d = -o.width / 2 - c,
     f = -o.height / 2 - c,
     { cssStyles: p } = t,
-    m = V.svg(a),
+    m = w.svg(a),
     h = b(t, {});
   t.look !== `handDrawn` && ((h.roughness = 0), (h.fillStyle = `solid`));
   let g = [
@@ -4579,24 +2904,24 @@ async function an(e, t) {
       `transform`,
       `translate(${-l / 2 + 4 + (t.padding ?? 0) - (o.x - (o.left ?? 0))},${-u / 2 + (t.padding ?? 0) - (o.y - (o.top ?? 0))})`,
     ),
-    U(t, v),
+    D(t, v),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     a
   );
 }
-a(an, `shadedProcess`);
-async function on(e, t) {
+a(nt, `shadedProcess`);
+async function rt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = -s / 2,
     u = -c / 2,
     { cssStyles: d } = t,
-    f = V.svg(i),
+    f = w.svg(i),
     p = b(t, {});
   t.look !== `handDrawn` && ((p.roughness = 0), (p.fillStyle = `solid`));
   let m = [
@@ -4605,7 +2930,7 @@ async function on(e, t) {
       { x: l + s, y: u + c },
       { x: l + s, y: u - c / 2 },
     ],
-    h = G(m),
+    h = k(m),
     g = f.path(h, p),
     _ = i.insert(() => g, `:first-child`);
   return (
@@ -4617,16 +2942,16 @@ async function on(e, t) {
       `transform`,
       `translate(${-s / 2 + (t.padding ?? 0) - (a.x - (a.left ?? 0))}, ${-c / 4 + (t.padding ?? 0) - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, _),
+    D(t, _),
     (t.intersect = function (e) {
-      return J.polygon(t, m, e);
+      return U.polygon(t, m, e);
     }),
     i
   );
 }
-a(on, `slopedRect`);
-async function sn(e, t) {
-  return zt(e, t, {
+a(rt, `slopedRect`);
+async function it(e, t) {
+  return J(e, t, {
     rx: 0,
     ry: 0,
     classes: ``,
@@ -4634,45 +2959,45 @@ async function sn(e, t) {
     labelPaddingY: (t?.padding || 0) * 1,
   });
 }
-a(sn, `squareRect`);
-async function cn(e, t) {
+a(it, `squareRect`);
+async function at(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = a.height + t.padding,
     s = a.width + o / 4 + t.padding,
     c = o / 2,
     { cssStyles: l } = t,
-    u = V.svg(i),
+    u = w.svg(i),
     d = b(t, {});
   t.look !== `handDrawn` && ((d.roughness = 0), (d.fillStyle = `solid`));
   let f = [
       { x: -s / 2 + c, y: -o / 2 },
       { x: s / 2 - c, y: -o / 2 },
-      ...Ue(-s / 2 + c, 0, c, 50, 90, 270),
+      ...j(-s / 2 + c, 0, c, 50, 90, 270),
       { x: s / 2 - c, y: o / 2 },
-      ...Ue(s / 2 - c, 0, c, 50, 270, 450),
+      ...j(s / 2 - c, 0, c, 50, 270, 450),
     ],
-    p = G(f),
+    p = k(f),
     m = u.path(p, d),
     h = i.insert(() => m, `:first-child`);
   return (
     h.attr(`class`, `basic label-container outer-path`),
     l && t.look !== `handDrawn` && h.selectChildren(`path`).attr(`style`, l),
     r && t.look !== `handDrawn` && h.selectChildren(`path`).attr(`style`, r),
-    U(t, h),
+    D(t, h),
     (t.intersect = function (e) {
-      return J.polygon(t, f, e);
+      return U.polygon(t, f, e);
     }),
     i
   );
 }
-a(cn, `stadium`);
-async function ln(e, t) {
-  return zt(e, t, { rx: 5, ry: 5, classes: `flowchart-node` });
+a(at, `stadium`);
+async function ot(e, t) {
+  return J(e, t, { rx: 5, ry: 5, classes: `flowchart-node` });
 }
-a(ln, `state`);
-function un(e, t, { config: { themeVariables: n } }) {
+a(ot, `state`);
+function st(e, t, { config: { themeVariables: n } }) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
   let { cssStyles: a } = t,
@@ -4681,7 +3006,7 @@ function un(e, t, { config: { themeVariables: n } }) {
       .insert(`g`)
       .attr(`class`, `node default`)
       .attr(`id`, t.domId || t.id),
-    u = V.svg(l),
+    u = w.svg(l),
     d = b(t, {});
   t.look !== `handDrawn` && ((d.roughness = 0), (d.fillStyle = `solid`));
   let f = u.circle(0, 0, 14, { ...d, stroke: o, strokeWidth: 2 }),
@@ -4698,15 +3023,15 @@ function un(e, t, { config: { themeVariables: n } }) {
     h.insert(() => m),
     a && h.selectAll(`path`).attr(`style`, a),
     i && h.selectAll(`path`).attr(`style`, i),
-    U(t, h),
+    D(t, h),
     (t.intersect = function (e) {
-      return J.circle(t, 7, e);
+      return U.circle(t, 7, e);
     }),
     l
   );
 }
-a(un, `stateEnd`);
-function dn(e, t, { config: { themeVariables: n } }) {
+a(st, `stateEnd`);
+function ct(e, t, { config: { themeVariables: n } }) {
   let { lineColor: r } = n,
     i = e
       .insert(`g`)
@@ -4714,7 +3039,7 @@ function dn(e, t, { config: { themeVariables: n } }) {
       .attr(`id`, t.domId || t.id),
     a;
   if (t.look === `handDrawn`) {
-    let e = V.svg(i).circle(0, 0, 14, S(r));
+    let e = w.svg(i).circle(0, 0, 14, S(r));
     ((a = i.insert(() => e)),
       a
         .attr(`class`, `state-start`)
@@ -4729,18 +3054,18 @@ function dn(e, t, { config: { themeVariables: n } }) {
         .attr(`width`, 14)
         .attr(`height`, 14));
   return (
-    U(t, a),
+    D(t, a),
     (t.intersect = function (e) {
-      return J.circle(t, 7, e);
+      return U.circle(t, 7, e);
     }),
     i
   );
 }
-a(dn, `stateStart`);
-async function fn(e, t) {
+a(ct, `stateStart`);
+async function lt(e, t) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: a, bbox: o } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: o } = await T(e, t, O(t)),
     s = (t?.padding || 0) / 2,
     c = o.width + t.padding,
     l = o.height + t.padding,
@@ -4759,7 +3084,7 @@ async function fn(e, t) {
       { x: -8, y: 0 },
     ];
   if (t.look === `handDrawn`) {
-    let e = V.svg(a),
+    let e = w.svg(a),
       r = b(t, {}),
       i = e.rectangle(u - 8, d, c + 16, l, r),
       o = e.line(u, d, u, d + l, r),
@@ -4767,23 +3092,23 @@ async function fn(e, t) {
     (a.insert(() => o, `:first-child`), a.insert(() => s, `:first-child`));
     let f = a.insert(() => i, `:first-child`),
       { cssStyles: p } = t;
-    (f.attr(`class`, `basic label-container`).attr(`style`, n(p)), U(t, f));
+    (f.attr(`class`, `basic label-container`).attr(`style`, n(p)), D(t, f));
   } else {
-    let e = Y(a, c, l, f);
-    (i && e.attr(`style`, i), U(t, e));
+    let e = W(a, c, l, f);
+    (i && e.attr(`style`, i), D(t, e));
   }
   return (
     (t.intersect = function (e) {
-      return J.polygon(t, f, e);
+      return U.polygon(t, f, e);
     }),
     a
   );
 }
-a(fn, `subroutine`);
-async function pn(e, t) {
+a(lt, `subroutine`);
+async function ut(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     s = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     c = -o / 2,
@@ -4791,7 +3116,7 @@ async function pn(e, t) {
     u = 0.2 * s,
     d = 0.2 * s,
     { cssStyles: f } = t,
-    p = V.svg(i),
+    p = w.svg(i),
     m = b(t, {}),
     h = [
       { x: c - u / 2, y: l },
@@ -4805,9 +3130,9 @@ async function pn(e, t) {
       { x: c + o + u / 2, y: l + s - d },
     ];
   t.look !== `handDrawn` && ((m.roughness = 0), (m.fillStyle = `solid`));
-  let _ = G(h),
+  let _ = k(h),
     v = p.path(_, m),
-    y = G(g),
+    y = k(g),
     S = p.path(y, { ...m, fillStyle: `solid` }),
     C = i.insert(() => S, `:first-child`);
   return (
@@ -4815,18 +3140,18 @@ async function pn(e, t) {
     C.attr(`class`, `basic label-container`),
     f && t.look !== `handDrawn` && C.selectAll(`path`).attr(`style`, f),
     r && t.look !== `handDrawn` && C.selectAll(`path`).attr(`style`, r),
-    U(t, C),
+    D(t, C),
     (t.intersect = function (e) {
-      return J.polygon(t, h, e);
+      return U.polygon(t, h, e);
     }),
     i
   );
 }
-a(pn, `taggedRect`);
-async function mn(e, t) {
+a(ut, `taggedRect`);
+async function dt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = c / 4,
@@ -4834,12 +3159,12 @@ async function mn(e, t) {
     d = 0.2 * c,
     f = c + l,
     { cssStyles: p } = t,
-    m = V.svg(i),
+    m = w.svg(i),
     h = b(t, {});
   t.look !== `handDrawn` && ((h.roughness = 0), (h.fillStyle = `solid`));
   let g = [
       { x: -s / 2 - (s / 2) * 0.1, y: f / 2 },
-      ...K(-s / 2 - (s / 2) * 0.1, f / 2, s / 2 + (s / 2) * 0.1, f / 2, l, 0.8),
+      ...A(-s / 2 - (s / 2) * 0.1, f / 2, s / 2 + (s / 2) * 0.1, f / 2, l, 0.8),
       { x: s / 2 + (s / 2) * 0.1, y: -f / 2 },
       { x: -s / 2 - (s / 2) * 0.1, y: -f / 2 },
     ],
@@ -4849,35 +3174,35 @@ async function mn(e, t) {
       { x: _ + s - u, y: (v + c) * 1.4 },
       { x: _ + s, y: v + c - d },
       { x: _ + s, y: (v + c) * 0.9 },
-      ...K(_ + s, (v + c) * 1.3, _ + s - u, (v + c) * 1.5, -c * 0.03, 0.5),
+      ...A(_ + s, (v + c) * 1.3, _ + s - u, (v + c) * 1.5, -c * 0.03, 0.5),
     ],
-    S = G(g),
+    S = k(g),
     C = m.path(S, h),
-    w = G(y),
-    T = m.path(w, { ...h, fillStyle: `solid` }),
-    E = i.insert(() => T, `:first-child`);
+    E = k(y),
+    j = m.path(E, { ...h, fillStyle: `solid` }),
+    M = i.insert(() => j, `:first-child`);
   return (
-    E.insert(() => C, `:first-child`),
-    E.attr(`class`, `basic label-container`),
-    p && t.look !== `handDrawn` && E.selectAll(`path`).attr(`style`, p),
-    r && t.look !== `handDrawn` && E.selectAll(`path`).attr(`style`, r),
-    E.attr(`transform`, `translate(0,${-l / 2})`),
+    M.insert(() => C, `:first-child`),
+    M.attr(`class`, `basic label-container`),
+    p && t.look !== `handDrawn` && M.selectAll(`path`).attr(`style`, p),
+    r && t.look !== `handDrawn` && M.selectAll(`path`).attr(`style`, r),
+    M.attr(`transform`, `translate(0,${-l / 2})`),
     o.attr(
       `transform`,
       `translate(${-s / 2 + (t.padding ?? 0) - (a.x - (a.left ?? 0))},${-c / 2 + (t.padding ?? 0) - l / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, E),
+    D(t, M),
     (t.intersect = function (e) {
-      return J.polygon(t, g, e);
+      return U.polygon(t, g, e);
     }),
     i
   );
 }
-a(mn, `taggedWaveEdgedRectangle`);
-async function hn(e, t) {
+a(dt, `taggedWaveEdgedRectangle`);
+async function ft(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(a.width + t.padding, t?.width || 0),
     s = Math.max(a.height + t.padding, t?.height || 0),
     c = -o / 2,
@@ -4893,15 +3218,15 @@ async function hn(e, t) {
       .attr(`y`, l)
       .attr(`width`, o)
       .attr(`height`, s),
-    U(t, u),
+    D(t, u),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     i
   );
 }
-a(hn, `text`);
-var gn = a(
+a(ft, `text`);
+var pt = a(
     (e, t, n, r, i, a) => `M${e},${t}
     a${i},${a} 0,0,1 0,${-r}
     l${n},0
@@ -4911,7 +3236,7 @@ var gn = a(
     l${-n},0`,
     `createCylinderPathD`,
   ),
-  _n = a(
+  mt = a(
     (e, t, n, r, i, a) =>
       [
         `M${e},${t}`,
@@ -4923,15 +3248,15 @@ var gn = a(
       ].join(` `),
     `createOuterCylinderPathD`,
   ),
-  vn = a(
+  ht = a(
     (e, t, n, r, i, a) =>
       [`M${e + n / 2},${-r / 2}`, `a${i},${a} 0,0,0 0,${r}`].join(` `),
     `createInnerCylinderPathD`,
   );
-async function yn(e, t) {
+async function gt(e, t) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: a, bbox: o, label: s, halfPadding: c } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: o, label: s, halfPadding: c } = await T(e, t, O(t)),
     l = t.look === `neo` ? c * 2 : c,
     u = o.height + l,
     d = u / 2,
@@ -4940,9 +3265,9 @@ async function yn(e, t) {
     { cssStyles: m } = t,
     h;
   if (t.look === `handDrawn`) {
-    let e = V.svg(a),
-      n = _n(0, 0, p, u, f, d),
-      r = vn(0, 0, p, u, f, d),
+    let e = w.svg(a),
+      n = mt(0, 0, p, u, f, d),
+      r = ht(0, 0, p, u, f, d),
       i = e.path(n, b(t, {})),
       o = e.path(r, b(t, { fill: `none` }));
     ((h = a.insert(() => o, `:first-child`)),
@@ -4950,7 +3275,7 @@ async function yn(e, t) {
       h.attr(`class`, `basic label-container`),
       m && h.attr(`style`, m));
   } else {
-    let e = gn(0, 0, p, u, f, d);
+    let e = pt(0, 0, p, u, f, d);
     ((h = a
       .insert(`path`, `:first-child`)
       .attr(`d`, e)
@@ -4968,9 +3293,9 @@ async function yn(e, t) {
       `transform`,
       `translate(${-(o.width / 2) - f - (o.x - (o.left ?? 0))}, ${-(o.height / 2) - (o.y - (o.top ?? 0))})`,
     ),
-    U(t, h),
+    D(t, h),
     (t.intersect = function (e) {
-      let n = J.rect(t, e),
+      let n = U.rect(t, e),
         r = n.y - (t.y ?? 0);
       if (
         d != 0 &&
@@ -4989,11 +3314,11 @@ async function yn(e, t) {
     a
   );
 }
-a(yn, `tiltedCylinder`);
-async function bn(e, t) {
+a(gt, `tiltedCylinder`);
+async function _t(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = a.width + t.padding,
     s = a.height + t.padding,
     c = [
@@ -5005,35 +3330,35 @@ async function bn(e, t) {
     l,
     { cssStyles: u } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(i),
+    let e = w.svg(i),
       n = b(t, {}),
-      r = G(c),
+      r = k(c),
       a = e.path(r, n);
     ((l = i
       .insert(() => a, `:first-child`)
       .attr(`transform`, `translate(${-o / 2}, ${s / 2})`)),
       u && l.attr(`style`, u));
-  } else l = Y(i, o, s, c);
+  } else l = W(i, o, s, c);
   return (
     r && l.attr(`style`, r),
     (t.width = o),
     (t.height = s),
-    U(t, l),
+    D(t, l),
     (t.intersect = function (e) {
-      return J.polygon(t, c, e);
+      return U.polygon(t, c, e);
     }),
     i
   );
 }
-a(bn, `trapezoid`);
-async function xn(e, t) {
+a(_t, `trapezoid`);
+async function vt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(60, a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     s = Math.max(20, a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     { cssStyles: c } = t,
-    l = V.svg(i),
+    l = w.svg(i),
     u = b(t, {});
   t.look !== `handDrawn` && ((u.roughness = 0), (u.fillStyle = `solid`));
   let d = [
@@ -5044,41 +3369,41 @@ async function xn(e, t) {
       { x: -o / 2, y: s / 2 },
       { x: -o / 2, y: (-s / 2) * 0.6 },
     ],
-    f = G(d),
+    f = k(d),
     p = l.path(f, u),
     m = i.insert(() => p, `:first-child`);
   return (
     m.attr(`class`, `basic label-container`),
     c && t.look !== `handDrawn` && m.selectChildren(`path`).attr(`style`, c),
     r && t.look !== `handDrawn` && m.selectChildren(`path`).attr(`style`, r),
-    U(t, m),
+    D(t, m),
     (t.intersect = function (e) {
-      return J.polygon(t, d, e);
+      return U.polygon(t, d, e);
     }),
     i
   );
 }
-a(xn, `trapezoidalPentagon`);
-async function Sn(e, t) {
+a(vt, `trapezoidalPentagon`);
+async function yt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: a, bbox: o, label: s } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: s } = await T(e, t, O(t)),
     c = m(f().flowchart?.htmlLabels),
-    l = o.width + (t.padding ?? 0),
-    u = l + o.height,
-    d = l + o.height,
+    l = a.width + (t.padding ?? 0),
+    u = l + a.height,
+    d = l + a.height,
     p = [
       { x: 0, y: 0 },
       { x: d, y: 0 },
       { x: d / 2, y: -u },
     ],
     { cssStyles: h } = t,
-    g = V.svg(a),
+    g = w.svg(i),
     _ = b(t, {});
   t.look !== `handDrawn` && ((_.roughness = 0), (_.fillStyle = `solid`));
-  let v = G(p),
+  let v = k(p),
     y = g.path(v, _),
-    S = a
+    S = i
       .insert(() => y, `:first-child`)
       .attr(`transform`, `translate(${-u / 2}, ${u / 2})`);
   return (
@@ -5086,22 +3411,22 @@ async function Sn(e, t) {
     r && t.look !== `handDrawn` && S.selectChildren(`path`).attr(`style`, r),
     (t.width = l),
     (t.height = u),
-    U(t, S),
+    D(t, S),
     s.attr(
       `transform`,
-      `translate(${-o.width / 2 - (o.x - (o.left ?? 0))}, ${u / 2 - (o.height + (t.padding ?? 0) / (c ? 2 : 1) - (o.y - (o.top ?? 0)))})`,
+      `translate(${-a.width / 2 - (a.x - (a.left ?? 0))}, ${u / 2 - (a.height + (t.padding ?? 0) / (c ? 2 : 1) - (a.y - (a.top ?? 0)))})`,
     ),
     (t.intersect = function (e) {
-      return (i.info(`Triangle intersect`, t, p, e), J.polygon(t, p, e));
+      return (o.info(`Triangle intersect`, t, p, e), U.polygon(t, p, e));
     }),
-    a
+    i
   );
 }
-a(Sn, `triangle`);
-async function Cn(e, t) {
+a(yt, `triangle`);
+async function bt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = c / 8,
@@ -5109,16 +3434,16 @@ async function Cn(e, t) {
     { cssStyles: d } = t,
     f = 70 - s,
     p = f > 0 ? f / 2 : 0,
-    m = V.svg(i),
+    m = w.svg(i),
     h = b(t, {});
   t.look !== `handDrawn` && ((h.roughness = 0), (h.fillStyle = `solid`));
   let g = [
       { x: -s / 2 - p, y: u / 2 },
-      ...K(-s / 2 - p, u / 2, s / 2 + p, u / 2, l, 0.8),
+      ...A(-s / 2 - p, u / 2, s / 2 + p, u / 2, l, 0.8),
       { x: s / 2 + p, y: -u / 2 },
       { x: -s / 2 - p, y: -u / 2 },
     ],
-    _ = G(g),
+    _ = k(g),
     v = m.path(_, h),
     y = i.insert(() => v, `:first-child`);
   return (
@@ -5130,18 +3455,18 @@ async function Cn(e, t) {
       `transform`,
       `translate(${-s / 2 + (t.padding ?? 0) - (a.x - (a.left ?? 0))},${-c / 2 + (t.padding ?? 0) - l - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, y),
+    D(t, y),
     (t.intersect = function (e) {
-      return J.polygon(t, g, e);
+      return U.polygon(t, g, e);
     }),
     i
   );
 }
-a(Cn, `waveEdgedRectangle`);
-async function wn(e, t) {
+a(bt, `waveEdgedRectangle`);
+async function xt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a } = await T(e, t, O(t)),
     o = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     s = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     c = o / s,
@@ -5153,40 +3478,40 @@ async function wn(e, t) {
   let d = Math.min(u * 0.2, u / 4),
     f = u + d * 2,
     { cssStyles: p } = t,
-    m = V.svg(i),
+    m = w.svg(i),
     h = b(t, {});
   t.look !== `handDrawn` && ((h.roughness = 0), (h.fillStyle = `solid`));
   let g = [
       { x: -l / 2, y: f / 2 },
-      ...K(-l / 2, f / 2, l / 2, f / 2, d, 1),
+      ...A(-l / 2, f / 2, l / 2, f / 2, d, 1),
       { x: l / 2, y: -f / 2 },
-      ...K(l / 2, -f / 2, -l / 2, -f / 2, d, -1),
+      ...A(l / 2, -f / 2, -l / 2, -f / 2, d, -1),
     ],
-    _ = G(g),
+    _ = k(g),
     v = m.path(_, h),
     y = i.insert(() => v, `:first-child`);
   return (
     y.attr(`class`, `basic label-container`),
     p && t.look !== `handDrawn` && y.selectAll(`path`).attr(`style`, p),
     r && t.look !== `handDrawn` && y.selectAll(`path`).attr(`style`, r),
-    U(t, y),
+    D(t, y),
     (t.intersect = function (e) {
-      return J.polygon(t, g, e);
+      return U.polygon(t, g, e);
     }),
     i
   );
 }
-a(wn, `waveRectangle`);
-async function Tn(e, t) {
+a(xt, `waveRectangle`);
+async function St(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, label: o } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, label: o } = await T(e, t, O(t)),
     s = Math.max(a.width + (t.padding ?? 0) * 2, t?.width ?? 0),
     c = Math.max(a.height + (t.padding ?? 0) * 2, t?.height ?? 0),
     l = -s / 2,
     u = -c / 2,
     { cssStyles: d } = t,
-    f = V.svg(i),
+    f = w.svg(i),
     p = b(t, {}),
     m = [
       { x: l - 5, y: u - 5 },
@@ -5209,58 +3534,58 @@ async function Tn(e, t) {
       `transform`,
       `translate(${-(a.width / 2) + 5 / 2 - (a.x - (a.left ?? 0))}, ${-(a.height / 2) + 5 / 2 - (a.y - (a.top ?? 0))})`,
     ),
-    U(t, _),
+    D(t, _),
     (t.intersect = function (e) {
-      return J.polygon(t, m, e);
+      return U.polygon(t, m, e);
     }),
     i
   );
 }
-a(Tn, `windowPane`);
-async function En(e, t) {
+a(St, `windowPane`);
+async function Ct(e, t) {
   let n = t;
   if ((n.alias && (t.label = n.alias), t.look === `handDrawn`)) {
     let { themeVariables: n } = g(),
       { background: r } = n;
-    await En(e, {
+    await Ct(e, {
       ...t,
       id: t.id + `-background`,
       look: `default`,
       cssStyles: [`stroke: none`, `fill: ${r}`],
     });
   }
-  let i = g();
-  t.useHtmlLabels = i.htmlLabels;
-  let a = i.er?.diagramPadding ?? 10,
-    s = i.er?.entityPadding ?? 6,
+  let a = g();
+  t.useHtmlLabels = a.htmlLabels;
+  let o = a.er?.diagramPadding ?? 10,
+    s = a.er?.entityPadding ?? 6,
     { cssStyles: c } = t,
     { labelStyles: l, nodeStyles: u } = x(t);
   if (n.attributes.length === 0 && t.label) {
     let n = {
       rx: 0,
       ry: 0,
-      labelPaddingX: a,
-      labelPaddingY: a * 1.5,
+      labelPaddingX: o,
+      labelPaddingY: o * 1.5,
       classes: ``,
     };
-    r(t.label, i) + n.labelPaddingX * 2 < i.er.minEntityWidth &&
-      (t.width = i.er.minEntityWidth);
-    let o = await zt(e, t, n);
-    if (!m(i.htmlLabels)) {
-      let e = o.select(`text`),
+    r(t.label, a) + n.labelPaddingX * 2 < a.er.minEntityWidth &&
+      (t.width = a.er.minEntityWidth);
+    let i = await J(e, t, n);
+    if (!m(a.htmlLabels)) {
+      let e = i.select(`text`),
         t = e.node()?.getBBox();
       e.attr(`transform`, `translate(${-t.width / 2}, 0)`);
     }
-    return o;
+    return i;
   }
-  i.htmlLabels || ((a *= 1.25), (s *= 1.25));
-  let d = W(t);
+  a.htmlLabels || ((o *= 1.25), (s *= 1.25));
+  let d = O(t);
   d ||= `node default`;
   let f = e
       .insert(`g`)
       .attr(`class`, d)
       .attr(`id`, t.domId || t.id),
-    p = await Dn(f, t.label ?? ``, i, 0, 0, [`name`], l);
+    p = await X(f, t.label ?? ``, a, 0, 0, [`name`], l);
   p.height += s;
   let h = 0,
     _ = [],
@@ -5268,45 +3593,45 @@ async function En(e, t) {
     y = 0,
     S = 0,
     C = 0,
-    w = 0,
-    T = !0,
-    E = !0;
+    T = 0,
+    E = !0,
+    k = !0;
   for (let e of n.attributes) {
-    let t = await Dn(f, e.type, i, 0, h, [`attribute-type`], l);
-    y = Math.max(y, t.width + a);
-    let n = await Dn(f, e.name, i, 0, h, [`attribute-name`], l);
-    S = Math.max(S, n.width + a);
-    let r = await Dn(f, e.keys.join(), i, 0, h, [`attribute-keys`], l);
-    C = Math.max(C, r.width + a);
-    let o = await Dn(f, e.comment, i, 0, h, [`attribute-comment`], l);
-    w = Math.max(w, o.width + a);
-    let c = Math.max(t.height, n.height, r.height, o.height) + s;
+    let t = await X(f, e.type, a, 0, h, [`attribute-type`], l);
+    y = Math.max(y, t.width + o);
+    let n = await X(f, e.name, a, 0, h, [`attribute-name`], l);
+    S = Math.max(S, n.width + o);
+    let r = await X(f, e.keys.join(), a, 0, h, [`attribute-keys`], l);
+    C = Math.max(C, r.width + o);
+    let i = await X(f, e.comment, a, 0, h, [`attribute-comment`], l);
+    T = Math.max(T, i.width + o);
+    let c = Math.max(t.height, n.height, r.height, i.height) + s;
     (v.push({ yOffset: h, rowHeight: c }), (h += c));
   }
-  let D = 4;
-  (C <= a && ((T = !1), (C = 0), D--), w <= a && ((E = !1), (w = 0), D--));
-  let O = f.node().getBBox();
-  if (p.width + a * 2 - (y + S + C + w) > 0) {
-    let e = p.width + a * 2 - (y + S + C + w);
-    ((y += e / D), (S += e / D), C > 0 && (C += e / D), w > 0 && (w += e / D));
+  let A = 4;
+  (C <= o && ((E = !1), (C = 0), A--), T <= o && ((k = !1), (T = 0), A--));
+  let j = f.node().getBBox();
+  if (p.width + o * 2 - (y + S + C + T) > 0) {
+    let e = p.width + o * 2 - (y + S + C + T);
+    ((y += e / A), (S += e / A), C > 0 && (C += e / A), T > 0 && (T += e / A));
   }
-  let k = y + S + C + w,
-    A = V.svg(f),
-    j = b(t, {});
-  t.look !== `handDrawn` && ((j.roughness = 0), (j.fillStyle = `solid`));
-  let M = 0;
-  v.length > 0 && (M = v.reduce((e, t) => e + (t?.rowHeight ?? 0), 0));
-  let N = Math.max(O.width + a * 2, t?.width || 0, k),
-    P = Math.max((M ?? 0) + p.height, t?.height || 0),
-    F = -N / 2,
-    I = -P / 2;
+  let M = y + S + C + T,
+    N = w.svg(f),
+    P = b(t, {});
+  t.look !== `handDrawn` && ((P.roughness = 0), (P.fillStyle = `solid`));
+  let F = 0;
+  v.length > 0 && (F = v.reduce((e, t) => e + (t?.rowHeight ?? 0), 0));
+  let I = Math.max(j.width + o * 2, t?.width || 0, M),
+    L = Math.max((F ?? 0) + p.height, t?.height || 0),
+    R = -I / 2,
+    z = -L / 2;
   (f.selectAll(`g:not(:first-child)`).each((e, t, n) => {
-    let r = o(n[t]),
-      i = r.attr(`transform`),
+    let r = i(n[t]),
+      a = r.attr(`transform`),
       c = 0,
       l = 0;
-    if (i) {
-      let e = RegExp(/translate\(([^,]+),([^)]+)\)/).exec(i);
+    if (a) {
+      let e = RegExp(/translate\(([^,]+),([^)]+)\)/).exec(a);
       e &&
         ((c = parseFloat(e[1])),
         (l = parseFloat(e[2])),
@@ -5319,45 +3644,45 @@ async function En(e, t) {
     }
     r.attr(
       `transform`,
-      `translate(${F + a / 2 + c}, ${l + I + p.height + s / 2})`,
+      `translate(${R + o / 2 + c}, ${l + z + p.height + s / 2})`,
     );
   }),
     f
       .select(`.name`)
       .attr(
         `transform`,
-        `translate(` + -p.width / 2 + `, ` + (I + s / 2) + `)`,
+        `translate(` + -p.width / 2 + `, ` + (z + s / 2) + `)`,
       ));
-  let ee = A.rectangle(F, I, N, P, j),
+  let ee = N.rectangle(R, z, I, L, P),
     te = f.insert(() => ee, `:first-child`).attr(`style`, c.join(``)),
-    { themeVariables: ne } = g(),
-    { rowEven: re, rowOdd: ie, nodeBorder: ae } = ne;
+    { themeVariables: B } = g(),
+    { rowEven: ne, rowOdd: V, nodeBorder: re } = B;
   _.push(0);
   for (let [e, t] of v.entries()) {
     let n = (e + 1) % 2 == 0 && t.yOffset !== 0,
-      r = A.rectangle(F, p.height + I + t?.yOffset, N, t?.rowHeight, {
-        ...j,
-        fill: n ? re : ie,
-        stroke: ae,
+      r = N.rectangle(R, p.height + z + t?.yOffset, I, t?.rowHeight, {
+        ...P,
+        fill: n ? ne : V,
+        stroke: re,
       });
     f.insert(() => r, `g.label`)
       .attr(`style`, c.join(``))
       .attr(`class`, `row-rect-${n ? `even` : `odd`}`);
   }
-  let L = A.line(F, p.height + I, N + F, p.height + I, j);
-  (f.insert(() => L).attr(`class`, `divider`),
-    (L = A.line(y + F, p.height + I, y + F, P + I, j)),
-    f.insert(() => L).attr(`class`, `divider`),
-    T &&
-      ((L = A.line(y + S + F, p.height + I, y + S + F, P + I, j)),
-      f.insert(() => L).attr(`class`, `divider`)),
+  let H = N.line(R, p.height + z, I + R, p.height + z, P);
+  (f.insert(() => H).attr(`class`, `divider`),
+    (H = N.line(y + R, p.height + z, y + R, L + z, P)),
+    f.insert(() => H).attr(`class`, `divider`),
     E &&
-      ((L = A.line(y + S + C + F, p.height + I, y + S + C + F, P + I, j)),
-      f.insert(() => L).attr(`class`, `divider`)));
+      ((H = N.line(y + S + R, p.height + z, y + S + R, L + z, P)),
+      f.insert(() => H).attr(`class`, `divider`)),
+    k &&
+      ((H = N.line(y + S + C + R, p.height + z, y + S + C + R, L + z, P)),
+      f.insert(() => H).attr(`class`, `divider`)));
   for (let e of _)
-    ((L = A.line(F, p.height + I + e, N + F, p.height + I + e, j)),
-      f.insert(() => L).attr(`class`, `divider`));
-  if ((U(t, te), u && t.look !== `handDrawn`)) {
+    ((H = N.line(R, p.height + z + e, I + R, p.height + z + e, P)),
+      f.insert(() => H).attr(`class`, `divider`));
+  if ((D(t, te), u && t.look !== `handDrawn`)) {
     let e = u
       .split(`;`)
       ?.filter((e) => e.includes(`stroke`))
@@ -5368,17 +3693,17 @@ async function En(e, t) {
   }
   return (
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     f
   );
 }
-a(En, `erBox`);
-async function Dn(e, t, n, i = 0, a = 0, c = [], l = ``) {
+a(Ct, `erBox`);
+async function X(e, t, n, a = 0, o = 0, c = [], l = ``) {
   let u = e
     .insert(`g`)
     .attr(`class`, `label ${c.join(` `)}`)
-    .attr(`transform`, `translate(${i}, ${a})`)
+    .attr(`transform`, `translate(${a}, ${o})`)
     .attr(`style`, l);
   t !== s(t) &&
     ((t = s(t)), (t = t.replaceAll(`<`, `&lt;`).replaceAll(`>`, `&gt;`)));
@@ -5409,19 +3734,19 @@ async function Dn(e, t, n, i = 0, a = 0, c = [], l = ``) {
   if (m(n.htmlLabels)) {
     let e = d.children[0];
     e.style.textAlign = `start`;
-    let t = o(d);
+    let t = i(d);
     ((f = e.getBoundingClientRect()),
       t.attr(`width`, f.width),
       t.attr(`height`, f.height));
   }
   return f;
 }
-a(Dn, `addText`);
-async function On(e, t, n, r, i = n.class.padding ?? 12) {
+a(X, `addText`);
+async function wt(e, t, n, r, i = n.class.padding ?? 12) {
   let a = r ? 0 : 3,
     o = e
       .insert(`g`)
-      .attr(`class`, W(t))
+      .attr(`class`, O(t))
       .attr(`id`, t.domId || t.id),
     s = null,
     c = null,
@@ -5435,15 +3760,15 @@ async function On(e, t, n, r, i = n.class.padding ?? 12) {
     t.annotations.length > 0)
   ) {
     let e = t.annotations[0];
-    (await kn(s, { text: `\xAB${e}\xBB` }, 0), (d = s.node().getBBox().height));
+    (await Z(s, { text: `\xAB${e}\xBB` }, 0), (d = s.node().getBBox().height));
   }
   ((c = o.insert(`g`).attr(`class`, `label-group text`)),
-    await kn(c, t, 0, [`font-weight: bolder`]));
+    await Z(c, t, 0, [`font-weight: bolder`]));
   let m = c.node().getBBox();
   ((f = m.height), (l = o.insert(`g`).attr(`class`, `members-group text`)));
   let h = 0;
   for (let e of t.members) {
-    let t = await kn(l, e, h, [e.parseClassifier()]);
+    let t = await Z(l, e, h, [e.parseClassifier()]);
     h += t + a;
   }
   ((p = l.node().getBBox().height),
@@ -5451,7 +3776,7 @@ async function On(e, t, n, r, i = n.class.padding ?? 12) {
     (u = o.insert(`g`).attr(`class`, `methods-group text`)));
   let g = 0;
   for (let e of t.methods) {
-    let t = await kn(u, e, g, [e.parseClassifier()]);
+    let t = await Z(u, e, g, [e.parseClassifier()]);
     g += t + a;
   }
   let _ = o.node().getBBox();
@@ -5469,8 +3794,8 @@ async function On(e, t, n, r, i = n.class.padding ?? 12) {
     { shapeSvg: o, bbox: _ }
   );
 }
-a(On, `textHelper`);
-async function kn(e, n, i, s = []) {
+a(wt, `textHelper`);
+async function Z(e, n, o, s = []) {
   let c = e.insert(`g`).attr(`class`, `label`).attr(`style`, s.join(`; `)),
     u = g(),
     f = `useHtmlLabels` in n ? n.useHtmlLabels : (m(u.htmlLabels) ?? !0),
@@ -5488,7 +3813,7 @@ async function kn(e, n, i, s = []) {
     y = 1;
   if (f) {
     let e = h.children[0],
-      t = o(h);
+      t = i(h);
     ((y = e.innerHTML.split(`<br>`).length),
       e.innerHTML.includes(`</math>`) &&
         (y += e.innerHTML.split(`<mrow>`).length - 1));
@@ -5528,7 +3853,7 @@ async function kn(e, n, i, s = []) {
       t.attr(`height`, v.height));
   } else {
     (s.includes(`font-weight: bolder`) &&
-      o(h).selectAll(`tspan`).attr(`font-weight`, ``),
+      i(h).selectAll(`tspan`).attr(`font-weight`, ``),
       (y = h.children.length));
     let e = h.children[0];
     ((h.textContent === `` || h.textContent.includes(`&gt`)) &&
@@ -5541,21 +3866,21 @@ async function kn(e, n, i, s = []) {
       (v = h.getBBox()));
   }
   return (
-    c.attr(`transform`, `translate(0,` + (-v.height / (2 * y) + i) + `)`),
+    c.attr(`transform`, `translate(0,` + (-v.height / (2 * y) + o) + `)`),
     v.height
   );
 }
-a(kn, `addText`);
-async function An(e, t) {
+a(Z, `addText`);
+async function Tt(e, t) {
   let n = f(),
     r = n.class.padding ?? 12,
-    i = r,
-    a = t.useHtmlLabels ?? m(n.htmlLabels) ?? !0,
+    a = r,
+    o = t.useHtmlLabels ?? m(n.htmlLabels) ?? !0,
     s = t;
   ((s.annotations = s.annotations ?? []),
     (s.members = s.members ?? []),
     (s.methods = s.methods ?? []));
-  let { shapeSvg: c, bbox: l } = await On(e, t, n, a, i),
+  let { shapeSvg: c, bbox: l } = await wt(e, t, n, o, a),
     { labelStyles: u, nodeStyles: d } = x(t);
   ((t.labelStyle = u), (t.cssStyles = s.styles || ``));
   let p = s.styles?.join(`;`) || d || ``;
@@ -5564,17 +3889,17 @@ async function An(e, t) {
       s.members.length === 0 &&
       s.methods.length === 0 &&
       !n.class?.hideEmptyMembersBox,
-    g = V.svg(c),
+    g = w.svg(c),
     _ = b(t, {});
   t.look !== `handDrawn` && ((_.roughness = 0), (_.fillStyle = `solid`));
   let v = l.width,
     y = l.height;
   s.members.length === 0 && s.methods.length === 0
-    ? (y += i)
-    : s.members.length > 0 && s.methods.length === 0 && (y += i * 2);
+    ? (y += a)
+    : s.members.length > 0 && s.methods.length === 0 && (y += a * 2);
   let S = -v / 2,
     C = -y / 2,
-    w = g.rectangle(
+    T = g.rectangle(
       S - r,
       C -
         r -
@@ -5585,12 +3910,12 @@ async function An(e, t) {
         (h ? r * 2 : s.members.length === 0 && s.methods.length === 0 ? -r : 0),
       _,
     ),
-    T = c.insert(() => w, `:first-child`);
-  T.attr(`class`, `basic label-container`);
-  let E = T.node().getBBox();
+    E = c.insert(() => T, `:first-child`);
+  E.attr(`class`, `basic label-container`);
+  let O = E.node().getBBox();
   c.selectAll(`.text`).each((e, t, n) => {
-    let i = o(n[t]),
-      l = i.attr(`transform`),
+    let a = i(n[t]),
+      l = a.attr(`transform`),
       u = 0;
     if (l) {
       let e = RegExp(/translate\(([^,]+),([^)]+)\)/).exec(l);
@@ -5601,34 +3926,34 @@ async function An(e, t) {
       C +
       r -
       (h ? r : s.members.length === 0 && s.methods.length === 0 ? -r / 2 : 0);
-    a || (d -= 4);
+    o || (d -= 4);
     let f = S;
-    ((i.attr(`class`).includes(`label-group`) ||
-      i.attr(`class`).includes(`annotation-group`)) &&
-      ((f = -i.node()?.getBBox().width / 2 || 0),
+    ((a.attr(`class`).includes(`label-group`) ||
+      a.attr(`class`).includes(`annotation-group`)) &&
+      ((f = -a.node()?.getBBox().width / 2 || 0),
       c.selectAll(`text`).each(function (e, t, n) {
         window.getComputedStyle(n[t]).textAnchor === `middle` && (f = 0);
       })),
-      i.attr(`transform`, `translate(${f}, ${d})`));
+      a.attr(`transform`, `translate(${f}, ${d})`));
   });
-  let D =
+  let k =
       c.select(`.annotation-group`).node().getBBox().height - (h ? r / 2 : 0) ||
       0,
-    O = c.select(`.label-group`).node().getBBox().height - (h ? r / 2 : 0) || 0,
-    k =
+    A = c.select(`.label-group`).node().getBBox().height - (h ? r / 2 : 0) || 0,
+    j =
       c.select(`.members-group`).node().getBBox().height - (h ? r / 2 : 0) || 0;
   if (s.members.length > 0 || s.methods.length > 0 || h) {
-    let e = g.line(E.x, D + O + C + r, E.x + E.width, D + O + C + r, _);
+    let e = g.line(O.x, k + A + C + r, O.x + O.width, k + A + C + r, _);
     c.insert(() => e)
       .attr(`class`, `divider`)
       .attr(`style`, p);
   }
   if (h || s.members.length > 0 || s.methods.length > 0) {
     let e = g.line(
-      E.x,
-      D + O + k + C + i * 2 + r,
-      E.x + E.width,
-      D + O + k + C + r + i * 2,
+      O.x,
+      k + A + j + C + a * 2 + r,
+      O.x + O.width,
+      k + A + j + C + r + a * 2,
       _,
     );
     c.insert(() => e)
@@ -5637,12 +3962,12 @@ async function An(e, t) {
   }
   if (
     (s.look !== `handDrawn` && c.selectAll(`path`).attr(`style`, p),
-    T.select(`:nth-child(2)`).attr(`style`, p),
+    E.select(`:nth-child(2)`).attr(`style`, p),
     c.selectAll(`.divider`).select(`path`).attr(`style`, p),
     t.labelStyle
       ? c.selectAll(`span`).attr(`style`, t.labelStyle)
       : c.selectAll(`span`).attr(`style`, p),
-    !a)
+    !o)
   ) {
     let e = RegExp(/color\s*:\s*([^;]*)/),
       t = e.exec(p);
@@ -5658,59 +3983,59 @@ async function An(e, t) {
     }
   }
   return (
-    U(t, T),
+    D(t, E),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     c
   );
 }
-a(An, `classBox`);
-async function jn(e, t) {
+a(Tt, `classBox`);
+async function Et(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let i = t,
-    a = t,
+  let a = t,
+    o = t,
     s = `verifyMethod` in t,
-    c = W(t),
+    c = O(t),
     l = e
       .insert(`g`)
       .attr(`class`, c)
       .attr(`id`, t.domId ?? t.id),
     u;
   u = s
-    ? await $(l, `&lt;&lt;${i.type}&gt;&gt;`, 0, t.labelStyle)
-    : await $(l, `&lt;&lt;Element&gt;&gt;`, 0, t.labelStyle);
+    ? await Q(l, `&lt;&lt;${a.type}&gt;&gt;`, 0, t.labelStyle)
+    : await Q(l, `&lt;&lt;Element&gt;&gt;`, 0, t.labelStyle);
   let d = u,
-    f = await $(l, i.name, d, t.labelStyle + `; font-weight: bold;`);
+    f = await Q(l, a.name, d, t.labelStyle + `; font-weight: bold;`);
   if (((d += f + 20), s)) {
-    let e = await $(
+    let e = await Q(
       l,
-      `${i.requirementId ? `ID: ${i.requirementId}` : ``}`,
+      `${a.requirementId ? `ID: ${a.requirementId}` : ``}`,
       d,
       t.labelStyle,
     );
     d += e;
-    let n = await $(l, `${i.text ? `Text: ${i.text}` : ``}`, d, t.labelStyle);
+    let n = await Q(l, `${a.text ? `Text: ${a.text}` : ``}`, d, t.labelStyle);
     d += n;
-    let r = await $(l, `${i.risk ? `Risk: ${i.risk}` : ``}`, d, t.labelStyle);
+    let r = await Q(l, `${a.risk ? `Risk: ${a.risk}` : ``}`, d, t.labelStyle);
     ((d += r),
-      await $(
+      await Q(
         l,
-        `${i.verifyMethod ? `Verification: ${i.verifyMethod}` : ``}`,
+        `${a.verifyMethod ? `Verification: ${a.verifyMethod}` : ``}`,
         d,
         t.labelStyle,
       ));
   } else {
-    let e = await $(l, `${a.type ? `Type: ${a.type}` : ``}`, d, t.labelStyle);
+    let e = await Q(l, `${o.type ? `Type: ${o.type}` : ``}`, d, t.labelStyle);
     ((d += e),
-      await $(l, `${a.docRef ? `Doc Ref: ${a.docRef}` : ``}`, d, t.labelStyle));
+      await Q(l, `${o.docRef ? `Doc Ref: ${o.docRef}` : ``}`, d, t.labelStyle));
   }
   let p = (l.node()?.getBBox().width ?? 200) + 20,
     m = (l.node()?.getBBox().height ?? 200) + 20,
     h = -p / 2,
     g = -m / 2,
-    _ = V.svg(l),
+    _ = w.svg(l),
     v = b(t, {});
   t.look !== `handDrawn` && ((v.roughness = 0), (v.fillStyle = `solid`));
   let y = _.rectangle(h, g, p, m, v),
@@ -5718,17 +4043,17 @@ async function jn(e, t) {
   if (
     (S.attr(`class`, `basic label-container`).attr(`style`, r),
     l.selectAll(`.label`).each((e, t, n) => {
-      let r = o(n[t]),
-        i = r.attr(`transform`),
-        a = 0,
+      let r = i(n[t]),
+        a = r.attr(`transform`),
+        o = 0,
         s = 0;
-      if (i) {
-        let e = RegExp(/translate\(([^,]+),([^)]+)\)/).exec(i);
-        e && ((a = parseFloat(e[1])), (s = parseFloat(e[2])));
+      if (a) {
+        let e = RegExp(/translate\(([^,]+),([^)]+)\)/).exec(a);
+        e && ((o = parseFloat(e[1])), (s = parseFloat(e[2])));
       }
       let c = s - m / 2,
         l = h + 20 / 2;
-      ((t === 0 || t === 1) && (l = a),
+      ((t === 0 || t === 1) && (l = o),
         r.attr(`transform`, `translate(${l}, ${c + 20})`));
     }),
     d > u + f + 20)
@@ -5737,17 +4062,17 @@ async function jn(e, t) {
     l.insert(() => e).attr(`style`, r);
   }
   return (
-    U(t, S),
+    D(t, S),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     l
   );
 }
-a(jn, `requirementBox`);
-async function $(e, n, i, a = ``) {
+a(Et, `requirementBox`);
+async function Q(e, n, a, o = ``) {
   if (n === ``) return 0;
-  let s = e.insert(`g`).attr(`class`, `label`).attr(`style`, a),
+  let s = e.insert(`g`).attr(`class`, `label`).attr(`style`, o),
     c = f(),
     u = c.htmlLabels ?? !0,
     d = await _(
@@ -5757,14 +4082,14 @@ async function $(e, n, i, a = ``) {
         width: r(n, c) + 50,
         classes: `markdown-node-label`,
         useHtmlLabels: u,
-        style: a,
+        style: o,
       },
       c,
     ),
     p;
   if (u) {
     let e = d.children[0],
-      t = o(d);
+      t = i(d);
     ((p = e.getBoundingClientRect()),
       t.attr(`width`, p.width),
       t.attr(`height`, p.height));
@@ -5774,16 +4099,16 @@ async function $(e, n, i, a = ``) {
       ((t.textContent = t.textContent
         .replaceAll(`&gt;`, `>`)
         .replaceAll(`&lt;`, `<`)),
-        a && t.setAttribute(`style`, a));
+        o && t.setAttribute(`style`, o));
     ((p = d.getBBox()), (p.height += 6));
   }
   return (
-    s.attr(`transform`, `translate(${-p.width / 2},${-p.height / 2 + i})`),
+    s.attr(`transform`, `translate(${-p.width / 2},${-p.height / 2 + a})`),
     p.height
   );
 }
-a($, `addText`);
-var Mn = a((e) => {
+a(Q, `addText`);
+var Dt = a((e) => {
   switch (e) {
     case `Very High`:
       return `red`;
@@ -5797,12 +4122,12 @@ var Mn = a((e) => {
       return `lightblue`;
   }
 }, `colorFromPriority`);
-async function Nn(e, t, { config: n }) {
+async function Ot(e, t, { config: n }) {
   let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r || ``;
   let a = t.width;
   t.width = (t.width ?? 200) - 10;
-  let { shapeSvg: o, bbox: s, label: c } = await H(e, t, W(t)),
+  let { shapeSvg: o, bbox: s, label: c } = await T(e, t, O(t)),
     l = t.padding || 10,
     u = ``,
     d;
@@ -5826,17 +4151,13 @@ async function Nn(e, t, { config: n }) {
     p,
     m;
   d
-    ? ({ label: p, bbox: m } = await He(
-        d,
-        (`ticket` in t && t.ticket) || ``,
-        f,
-      ))
-    : ({ label: p, bbox: m } = await He(
+    ? ({ label: p, bbox: m } = await E(d, (`ticket` in t && t.ticket) || ``, f))
+    : ({ label: p, bbox: m } = await E(
         o,
         (`ticket` in t && t.ticket) || ``,
         f,
       ));
-  let { label: h, bbox: g } = await He(
+  let { label: h, bbox: g } = await E(
     o,
     (`assigned` in t && t.assigned) || ``,
     f,
@@ -5863,23 +4184,23 @@ async function Nn(e, t, { config: n }) {
         (-v + s.height / 2) +
         `)`,
     ));
-  let w,
-    { rx: T, ry: E } = t,
-    { cssStyles: D } = t;
+  let k,
+    { rx: A, ry: j } = t,
+    { cssStyles: M } = t;
   if (t.look === `handDrawn`) {
-    let e = V.svg(o),
+    let e = w.svg(o),
       n = b(t, {}),
       r =
-        T || E ? e.path(q(S, C, _, y, T || 0), n) : e.rectangle(S, C, _, y, n);
-    ((w = o.insert(() => r, `:first-child`)),
-      w.attr(`class`, `basic label-container`).attr(`style`, D || null));
+        A || j ? e.path(I(S, C, _, y, A || 0), n) : e.rectangle(S, C, _, y, n);
+    ((k = o.insert(() => r, `:first-child`)),
+      k.attr(`class`, `basic label-container`).attr(`style`, M || null));
   } else {
-    ((w = o.insert(`rect`, `:first-child`)),
-      w
+    ((k = o.insert(`rect`, `:first-child`)),
+      k
         .attr(`class`, `basic label-container __APA__`)
         .attr(`style`, i)
-        .attr(`rx`, T ?? 5)
-        .attr(`ry`, E ?? 5)
+        .attr(`rx`, A ?? 5)
+        .attr(`ry`, j ?? 5)
         .attr(`x`, S)
         .attr(`y`, C)
         .attr(`width`, _)
@@ -5888,30 +4209,30 @@ async function Nn(e, t, { config: n }) {
     if (e) {
       let t = o.append(`line`),
         n = S + 2,
-        r = C + Math.floor((T ?? 0) / 2),
-        i = C + y - Math.floor((T ?? 0) / 2);
+        r = C + Math.floor((A ?? 0) / 2),
+        i = C + y - Math.floor((A ?? 0) / 2);
       t.attr(`x1`, n)
         .attr(`y1`, r)
         .attr(`x2`, n)
         .attr(`y2`, i)
         .attr(`stroke-width`, `4`)
-        .attr(`stroke`, Mn(e));
+        .attr(`stroke`, Dt(e));
     }
   }
   return (
-    U(t, w),
+    D(t, k),
     (t.height = y),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     o
   );
 }
-a(Nn, `kanbanItem`);
-async function Pn(e, t) {
-  let { labelStyles: r, nodeStyles: a } = x(t);
+a(Ot, `kanbanItem`);
+async function kt(e, t) {
+  let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: o, bbox: s, halfPadding: c, label: l } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: s, halfPadding: c, label: l } = await T(e, t, O(t)),
     u = s.width + 10 * c,
     d = s.height + 8 * c,
     f = 0.15 * u,
@@ -5942,34 +4263,34 @@ async function Pn(e, t) {
     a${f},${f} 1 0,0 ${g * 0.1},${-1 * _ * 0.33}
   H0 V0 Z`;
   if (t.look === `handDrawn`) {
-    let e = V.svg(o),
+    let e = w.svg(a),
       r = b(t, {}),
       i = e.path(y, r);
-    ((v = o.insert(() => i, `:first-child`)),
+    ((v = a.insert(() => i, `:first-child`)),
       v.attr(`class`, `basic label-container`).attr(`style`, n(p)));
   } else
-    v = o
+    v = a
       .insert(`path`, `:first-child`)
       .attr(`class`, `basic label-container`)
-      .attr(`style`, a)
+      .attr(`style`, i)
       .attr(`d`, y);
   return (
     v.attr(`transform`, `translate(${-g / 2}, ${-_ / 2})`),
-    U(t, v),
+    D(t, v),
     (t.calcIntersect = function (e, t) {
-      return J.rect(e, t);
+      return U.rect(e, t);
     }),
     (t.intersect = function (e) {
-      return (i.info(`Bang intersect`, t, e), J.rect(t, e));
+      return (o.info(`Bang intersect`, t, e), U.rect(t, e));
     }),
-    o
+    a
   );
 }
-a(Pn, `bang`);
-async function Fn(e, t) {
-  let { labelStyles: r, nodeStyles: a } = x(t);
+a(kt, `bang`);
+async function At(e, t) {
+  let { labelStyles: r, nodeStyles: i } = x(t);
   t.labelStyle = r;
-  let { shapeSvg: o, bbox: s, halfPadding: c, label: l } = await H(e, t, W(t)),
+  let { shapeSvg: a, bbox: s, halfPadding: c, label: l } = await T(e, t, O(t)),
     u = s.width + 2 * c,
     d = s.height + 2 * c,
     f = 0.15 * u,
@@ -5994,35 +4315,35 @@ async function Fn(e, t) {
     a${h},${h} 1 0,1 ${u * 0.1},${-1 * d * 0.65}
   H0 V0 Z`;
   if (t.look === `handDrawn`) {
-    let e = V.svg(o),
+    let e = w.svg(a),
       r = b(t, {}),
       i = e.path(v, r);
-    ((_ = o.insert(() => i, `:first-child`)),
+    ((_ = a.insert(() => i, `:first-child`)),
       _.attr(`class`, `basic label-container`).attr(`style`, n(g)));
   } else
-    _ = o
+    _ = a
       .insert(`path`, `:first-child`)
       .attr(`class`, `basic label-container`)
-      .attr(`style`, a)
+      .attr(`style`, i)
       .attr(`d`, v);
   return (
     l.attr(`transform`, `translate(${-s.width / 2}, ${-s.height / 2})`),
     _.attr(`transform`, `translate(${-u / 2}, ${-d / 2})`),
-    U(t, _),
+    D(t, _),
     (t.calcIntersect = function (e, t) {
-      return J.rect(e, t);
+      return U.rect(e, t);
     }),
     (t.intersect = function (e) {
-      return (i.info(`Cloud intersect`, t, e), J.rect(t, e));
+      return (o.info(`Cloud intersect`, t, e), U.rect(t, e));
     }),
-    o
+    a
   );
 }
-a(Fn, `cloud`);
-async function In(e, t) {
+a(At, `cloud`);
+async function jt(e, t) {
   let { labelStyles: n, nodeStyles: r } = x(t);
   t.labelStyle = n;
-  let { shapeSvg: i, bbox: a, halfPadding: o, label: s } = await H(e, t, W(t)),
+  let { shapeSvg: i, bbox: a, halfPadding: o, label: s } = await T(e, t, O(t)),
     c = a.width + 8 * o,
     l = a.height + 2 * o,
     u = `
@@ -6053,22 +4374,22 @@ async function In(e, t) {
       .attr(`y2`, l / 2),
     s.attr(`transform`, `translate(${-a.width / 2}, ${-a.height / 2})`),
     i.append(() => s.node()),
-    U(t, d),
+    D(t, d),
     (t.calcIntersect = function (e, t) {
-      return J.rect(e, t);
+      return U.rect(e, t);
     }),
     (t.intersect = function (e) {
-      return J.rect(t, e);
+      return U.rect(t, e);
     }),
     i
   );
 }
-a(In, `defaultMindmapNode`);
-async function Ln(e, t) {
-  return mt(e, t, { padding: t.padding ?? 0 });
+a(jt, `defaultMindmapNode`);
+async function Mt(e, t) {
+  return me(e, t, { padding: t.padding ?? 0 });
 }
-a(Ln, `mindmapCircle`);
-var Rn = [
+a(Mt, `mindmapCircle`);
+var Nt = [
     {
       semanticName: `Process`,
       name: `Rectangle`,
@@ -6076,7 +4397,7 @@ var Rn = [
       description: `Standard process shape`,
       aliases: [`proc`, `process`, `rectangle`],
       internalAliases: [`squareRect`],
-      handler: sn,
+      handler: it,
     },
     {
       semanticName: `Event`,
@@ -6085,7 +4406,7 @@ var Rn = [
       description: `Represents an event`,
       aliases: [`event`],
       internalAliases: [`roundedRect`],
-      handler: rn,
+      handler: tt,
     },
     {
       semanticName: `Terminal Point`,
@@ -6093,7 +4414,7 @@ var Rn = [
       shortName: `stadium`,
       description: `Terminal point`,
       aliases: [`terminal`, `pill`],
-      handler: cn,
+      handler: at,
     },
     {
       semanticName: `Subprocess`,
@@ -6101,7 +4422,7 @@ var Rn = [
       shortName: `fr-rect`,
       description: `Subprocess`,
       aliases: [`subprocess`, `subproc`, `framed-rectangle`, `subroutine`],
-      handler: fn,
+      handler: lt,
     },
     {
       semanticName: `Database`,
@@ -6109,7 +4430,7 @@ var Rn = [
       shortName: `cyl`,
       description: `Database storage`,
       aliases: [`db`, `database`, `cylinder`],
-      handler: wt,
+      handler: we,
     },
     {
       semanticName: `Start`,
@@ -6117,7 +4438,7 @@ var Rn = [
       shortName: `circle`,
       description: `Starting point`,
       aliases: [`circ`],
-      handler: mt,
+      handler: me,
     },
     {
       semanticName: `Bang`,
@@ -6125,7 +4446,7 @@ var Rn = [
       shortName: `bang`,
       description: `Bang`,
       aliases: [`bang`],
-      handler: Pn,
+      handler: kt,
     },
     {
       semanticName: `Cloud`,
@@ -6133,7 +4454,7 @@ var Rn = [
       shortName: `cloud`,
       description: `cloud`,
       aliases: [`cloud`],
-      handler: Fn,
+      handler: At,
     },
     {
       semanticName: `Decision`,
@@ -6141,7 +4462,7 @@ var Rn = [
       shortName: `diam`,
       description: `Decision-making step`,
       aliases: [`decision`, `diamond`, `question`],
-      handler: $t,
+      handler: Qe,
     },
     {
       semanticName: `Prepare Conditional`,
@@ -6149,7 +4470,7 @@ var Rn = [
       shortName: `hex`,
       description: `Preparation or condition step`,
       aliases: [`hexagon`, `prepare`],
-      handler: jt,
+      handler: je,
     },
     {
       semanticName: `Data Input/Output`,
@@ -6158,7 +4479,7 @@ var Rn = [
       description: `Represents input or output`,
       aliases: [`lean-right`, `in-out`],
       internalAliases: [`lean_right`],
-      handler: Ht,
+      handler: Ve,
     },
     {
       semanticName: `Data Input/Output`,
@@ -6167,7 +4488,7 @@ var Rn = [
       description: `Represents output or input`,
       aliases: [`lean-left`, `out-in`],
       internalAliases: [`lean_left`],
-      handler: Vt,
+      handler: Be,
     },
     {
       semanticName: `Priority Action`,
@@ -6175,7 +4496,7 @@ var Rn = [
       shortName: `trap-b`,
       description: `Priority action`,
       aliases: [`priority`, `trapezoid-bottom`, `trapezoid`],
-      handler: bn,
+      handler: _t,
     },
     {
       semanticName: `Manual Operation`,
@@ -6184,7 +4505,7 @@ var Rn = [
       description: `Represents a manual task`,
       aliases: [`manual`, `trapezoid-top`, `inv-trapezoid`],
       internalAliases: [`inv_trapezoid`],
-      handler: Rt,
+      handler: Re,
     },
     {
       semanticName: `Stop`,
@@ -6193,14 +4514,14 @@ var Rn = [
       description: `Represents a stop point`,
       aliases: [`double-circle`],
       internalAliases: [`doublecircle`],
-      handler: Et,
+      handler: Ee,
     },
     {
       semanticName: `Text Block`,
       name: `Text Block`,
       shortName: `text`,
       description: `Text block`,
-      handler: hn,
+      handler: ft,
     },
     {
       semanticName: `Card`,
@@ -6208,7 +4529,7 @@ var Rn = [
       shortName: `notch-rect`,
       description: `Represents a card`,
       aliases: [`card`, `notched-rectangle`],
-      handler: ft,
+      handler: fe,
     },
     {
       semanticName: `Lined/Shaded Process`,
@@ -6221,7 +4542,7 @@ var Rn = [
         `lin-proc`,
         `shaded-process`,
       ],
-      handler: an,
+      handler: nt,
     },
     {
       semanticName: `Start`,
@@ -6230,7 +4551,7 @@ var Rn = [
       description: `Small starting point`,
       aliases: [`start`, `small-circle`],
       internalAliases: [`stateStart`],
-      handler: dn,
+      handler: ct,
     },
     {
       semanticName: `Stop`,
@@ -6239,7 +4560,7 @@ var Rn = [
       description: `Stop point`,
       aliases: [`stop`, `framed-circle`],
       internalAliases: [`stateEnd`],
-      handler: un,
+      handler: st,
     },
     {
       semanticName: `Fork/Join`,
@@ -6248,7 +4569,7 @@ var Rn = [
       description: `Fork or join in process flow`,
       aliases: [`join`],
       internalAliases: [`forkJoin`],
-      handler: kt,
+      handler: ke,
     },
     {
       semanticName: `Collate`,
@@ -6256,7 +4577,7 @@ var Rn = [
       shortName: `hourglass`,
       description: `Represents a collate operation`,
       aliases: [`hourglass`, `collate`],
-      handler: Mt,
+      handler: Me,
     },
     {
       semanticName: `Comment`,
@@ -6264,21 +4585,21 @@ var Rn = [
       shortName: `brace`,
       description: `Adds a comment`,
       aliases: [`comment`, `brace-l`],
-      handler: _t,
+      handler: _e,
     },
     {
       semanticName: `Comment Right`,
       name: `Curly Brace`,
       shortName: `brace-r`,
       description: `Adds a comment`,
-      handler: vt,
+      handler: ve,
     },
     {
       semanticName: `Comment with braces on both sides`,
       name: `Curly Braces`,
       shortName: `braces`,
       description: `Adds a comment`,
-      handler: yt,
+      handler: ye,
     },
     {
       semanticName: `Com Link`,
@@ -6286,7 +4607,7 @@ var Rn = [
       shortName: `bolt`,
       description: `Communication link`,
       aliases: [`com-link`, `lightning-bolt`],
-      handler: Ut,
+      handler: He,
     },
     {
       semanticName: `Document`,
@@ -6294,7 +4615,7 @@ var Rn = [
       shortName: `doc`,
       description: `Represents a document`,
       aliases: [`doc`, `document`],
-      handler: Cn,
+      handler: bt,
     },
     {
       semanticName: `Delay`,
@@ -6302,7 +4623,7 @@ var Rn = [
       shortName: `delay`,
       description: `Represents a delay`,
       aliases: [`half-rounded-rectangle`],
-      handler: At,
+      handler: Ae,
     },
     {
       semanticName: `Direct Access Storage`,
@@ -6310,7 +4631,7 @@ var Rn = [
       shortName: `h-cyl`,
       description: `Direct access storage`,
       aliases: [`das`, `horizontal-cylinder`],
-      handler: yn,
+      handler: gt,
     },
     {
       semanticName: `Disk Storage`,
@@ -6318,7 +4639,7 @@ var Rn = [
       shortName: `lin-cyl`,
       description: `Disk storage`,
       aliases: [`disk`, `lined-cylinder`],
-      handler: qt,
+      handler: Ke,
     },
     {
       semanticName: `Display`,
@@ -6326,7 +4647,7 @@ var Rn = [
       shortName: `curv-trap`,
       description: `Represents a display`,
       aliases: [`curved-trapezoid`, `display`],
-      handler: bt,
+      handler: be,
     },
     {
       semanticName: `Divided Process`,
@@ -6334,7 +4655,7 @@ var Rn = [
       shortName: `div-rect`,
       description: `Divided process shape`,
       aliases: [`div-proc`, `divided-rectangle`, `divided-process`],
-      handler: Tt,
+      handler: Te,
     },
     {
       semanticName: `Extract`,
@@ -6342,7 +4663,7 @@ var Rn = [
       shortName: `tri`,
       description: `Extraction process`,
       aliases: [`extract`, `triangle`],
-      handler: Sn,
+      handler: yt,
     },
     {
       semanticName: `Internal Storage`,
@@ -6350,7 +4671,7 @@ var Rn = [
       shortName: `win-pane`,
       description: `Internal storage`,
       aliases: [`internal-storage`, `window-pane`],
-      handler: Tn,
+      handler: St,
     },
     {
       semanticName: `Junction`,
@@ -6358,7 +4679,7 @@ var Rn = [
       shortName: `f-circ`,
       description: `Junction point`,
       aliases: [`junction`, `filled-circle`],
-      handler: Dt,
+      handler: De,
     },
     {
       semanticName: `Loop Limit`,
@@ -6366,7 +4687,7 @@ var Rn = [
       shortName: `notch-pent`,
       description: `Loop limit step`,
       aliases: [`loop-limit`, `notched-pentagon`],
-      handler: xn,
+      handler: vt,
     },
     {
       semanticName: `Manual File`,
@@ -6374,7 +4695,7 @@ var Rn = [
       shortName: `flip-tri`,
       description: `Manual file operation`,
       aliases: [`manual-file`, `flipped-triangle`],
-      handler: Ot,
+      handler: Oe,
     },
     {
       semanticName: `Manual Input`,
@@ -6382,7 +4703,7 @@ var Rn = [
       shortName: `sl-rect`,
       description: `Manual input step`,
       aliases: [`manual-input`, `sloped-rectangle`],
-      handler: on,
+      handler: rt,
     },
     {
       semanticName: `Multi-Document`,
@@ -6390,7 +4711,7 @@ var Rn = [
       shortName: `docs`,
       description: `Multiple documents`,
       aliases: [`documents`, `st-doc`, `stacked-document`],
-      handler: Xt,
+      handler: Ye,
     },
     {
       semanticName: `Multi-Process`,
@@ -6398,7 +4719,7 @@ var Rn = [
       shortName: `st-rect`,
       description: `Multiple processes`,
       aliases: [`procs`, `processes`, `stacked-rectangle`],
-      handler: Yt,
+      handler: Je,
     },
     {
       semanticName: `Stored Data`,
@@ -6406,7 +4727,7 @@ var Rn = [
       shortName: `bow-rect`,
       description: `Stored data`,
       aliases: [`stored-data`, `bow-tie-rectangle`],
-      handler: dt,
+      handler: de,
     },
     {
       semanticName: `Summary`,
@@ -6414,7 +4735,7 @@ var Rn = [
       shortName: `cross-circ`,
       description: `Summary`,
       aliases: [`summary`, `crossed-circle`],
-      handler: gt,
+      handler: ge,
     },
     {
       semanticName: `Tagged Document`,
@@ -6422,7 +4743,7 @@ var Rn = [
       shortName: `tag-doc`,
       description: `Tagged document`,
       aliases: [`tag-doc`, `tagged-document`],
-      handler: mn,
+      handler: dt,
     },
     {
       semanticName: `Tagged Process`,
@@ -6430,7 +4751,7 @@ var Rn = [
       shortName: `tag-rect`,
       description: `Tagged process`,
       aliases: [`tagged-rectangle`, `tag-proc`, `tagged-process`],
-      handler: pn,
+      handler: ut,
     },
     {
       semanticName: `Paper Tape`,
@@ -6438,7 +4759,7 @@ var Rn = [
       shortName: `flag`,
       description: `Paper tape`,
       aliases: [`paper-tape`],
-      handler: wn,
+      handler: xt,
     },
     {
       semanticName: `Odd`,
@@ -6446,7 +4767,7 @@ var Rn = [
       shortName: `odd`,
       description: `Odd shape`,
       internalAliases: [`rect_left_inv_arrow`],
-      handler: en,
+      handler: $e,
     },
     {
       semanticName: `Lined Document`,
@@ -6454,32 +4775,32 @@ var Rn = [
       shortName: `lin-doc`,
       description: `Lined document`,
       aliases: [`lined-document`],
-      handler: Jt,
+      handler: qe,
     },
   ],
-  zn = a(() => {
+  Pt = a(() => {
     let e = {
-        state: ln,
-        choice: pt,
-        note: Zt,
-        rectWithTitle: tn,
-        labelRect: Bt,
-        iconSquare: It,
-        iconCircle: Pt,
-        icon: Nt,
-        iconRounded: Ft,
-        imageSquare: Lt,
-        anchor: lt,
-        kanbanItem: Nn,
-        mindmapCircle: Ln,
-        defaultMindmapNode: In,
-        classBox: An,
-        erBox: En,
-        requirementBox: jn,
+        state: ot,
+        choice: pe,
+        note: Xe,
+        rectWithTitle: et,
+        labelRect: ze,
+        iconSquare: Ie,
+        iconCircle: Pe,
+        icon: Ne,
+        iconRounded: Fe,
+        imageSquare: Le,
+        anchor: le,
+        kanbanItem: Ot,
+        mindmapCircle: Mt,
+        defaultMindmapNode: jt,
+        classBox: Tt,
+        erBox: Ct,
+        requirementBox: Et,
       },
       t = [
         ...Object.entries(e),
-        ...Rn.flatMap((e) =>
+        ...Nt.flatMap((e) =>
           [
             e.shortName,
             ...(`aliases` in e ? e.aliases : []),
@@ -6489,16 +4810,16 @@ var Rn = [
       ];
     return Object.fromEntries(t);
   }, `generateShapeMap`)();
-function Bn(e) {
-  return e in zn;
+function Ft(e) {
+  return e in Pt;
 }
-a(Bn, `isValidShape`);
-var Vn = new Map();
-async function Hn(e, t, n) {
+a(Ft, `isValidShape`);
+var $ = new Map();
+async function It(e, t, n) {
   let r, i;
   t.shape === `rect` &&
     (t.rx && t.ry ? (t.shape = `roundedRect`) : (t.shape = `squareRect`));
-  let a = t.shape ? zn[t.shape] : void 0;
+  let a = t.shape ? Pt[t.shape] : void 0;
   if (!a) throw Error(`No such shape: ${t.shape}. Please check your syntax.`);
   if (t.link) {
     let o;
@@ -6513,21 +4834,21 @@ async function Hn(e, t, n) {
   } else ((i = await a(e, t, n)), (r = i));
   return (
     t.tooltip && i.attr(`title`, t.tooltip),
-    Vn.set(t.id, r),
+    $.set(t.id, r),
     t.haveCallback && r.attr(`class`, r.attr(`class`) + ` clickable`),
     r
   );
 }
-a(Hn, `insertNode`);
-var Un = a((e, t) => {
-    Vn.set(t.id, e);
+a(It, `insertNode`);
+var Lt = a((e, t) => {
+    $.set(t.id, e);
   }, `setNodeElem`),
-  Wn = a(() => {
-    Vn.clear();
+  Rt = a(() => {
+    $.clear();
   }, `clear`),
-  Gn = a((e) => {
-    let t = Vn.get(e.id);
-    i.trace(
+  zt = a((e) => {
+    let t = $.get(e.id);
+    o.trace(
       `Transforming node`,
       e.diff,
       e,
@@ -6549,16 +4870,15 @@ var Un = a((e, t) => {
     );
   }, `positionNode`);
 export {
-  Hn as a,
-  Gn as c,
-  V as d,
-  Ze as i,
-  Un as l,
-  Wn as n,
-  Bn as o,
-  qe as r,
-  H as s,
-  Qe as t,
-  U as u,
+  It as a,
+  zt as c,
+  ee as i,
+  Lt as l,
+  Rt as n,
+  Ft as o,
+  F as r,
+  T as s,
+  te as t,
+  D as u,
 };
 //# sourceMappingURL=chunk-JZLCHNYA.js.map

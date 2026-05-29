@@ -1,23 +1,24 @@
-import { s as e } from "./chunk.js";
-import { Qi as t } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Va as t } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n, t as r } from "./jsx-runtime.js";
-import { t as i } from "./clsx.js";
-import { H as a, xt as o } from "./setting-storage.js";
-import { t as s } from "./tooltip.js";
+import { t as i } from "./clsx-BcPLHiun.js";
+import { U as a, wt as o } from "./setting-storage.js";
+import { t as s } from "./tooltip-CDzchJxN.js";
 import { t as ee } from "./button.js";
-import { t as te } from "./spinner.js";
-import { t as c } from "./link-external.js";
-import { t as l } from "./check-md.js";
-import { r as u, t as ne } from "./dropdown.js";
-import { t as re } from "./chevron.js";
-import { t as ie } from "./settings.cog.js";
-import { n as ae } from "./local-environments.js";
-import { t as oe } from "./star.js";
-var d = o(),
+import { t as c } from "./spinner.js";
+import { t as l } from "./link-external-BPZREBQk.js";
+import { n as te, r as ne } from "./composer-footer-C_v29uwU.js";
+import { t as u } from "./check-md.js";
+import { r as d, t as re } from "./dropdown-DtQxMoJw.js";
+import { t as ie } from "./chevron-NmAOI_v1.js";
+import { t as ae } from "./settings.cog.js";
+import { n as oe } from "./local-environments-DcKJ5oGa.js";
+import { t as se } from "./star.js";
+var ce = o(),
   f = e(n(), 1),
   p = r();
 function m(e) {
-  let n = (0, d.c)(81),
+  let n = (0, ce.c)(81),
     {
       className: r,
       labelClassName: o,
@@ -67,17 +68,17 @@ function m(e) {
     n[11] !== O ||
     n[12] !== E
   ) {
-    let e = ae(m),
-      c;
+    let e = oe(m),
+      l;
     (n[26] === S
-      ? (c = n[27])
-      : ((c = S ? t(S) : null), (n[26] = S), (n[27] = c)),
-      (F = c));
-    let d = m.find((e) => t(e.configPath) === F) ?? null,
+      ? (l = n[27])
+      : ((l = S ? t(S) : null), (n[26] = S), (n[27] = l)),
+      (F = l));
+    let ce = m.find((e) => t(e.configPath) === F) ?? null,
       f = !h && !_;
     P = e && A ? m.filter((n) => t(n.configPath) !== t(e.configPath)) : m;
-    let v = se({ isLoading: h, selectedEnvironment: d });
-    ((N = ne), (L = j), (R = M), (z = E), (B = D));
+    let v = le({ isLoading: h, selectedEnvironment: ce });
+    ((N = re), (L = j), (R = M), (z = E), (B = D));
     let y;
     n[28] === Symbol.for(`react.memo_cache_sentinel`)
       ? ((y = (0, p.jsx)(a, {
@@ -94,18 +95,16 @@ function m(e) {
     let x;
     n[31] === O
       ? (x = n[32])
-      : ((x = O ? (0, p.jsx)(ie, { className: `icon-xs` }) : null),
+      : ((x = O ? (0, p.jsx)(ae, { className: `icon-xs` }) : null),
         (n[31] = O),
         (n[32] = x));
     let w;
     n[33] !== k || n[34] !== v || n[35] !== o
       ? ((w = k
           ? null
-          : (0, p.jsx)(`span`, {
-              className: i(
-                `composer-footer__label--sm max-w-40 truncate whitespace-nowrap`,
-                o ?? `composer-footer__secondary-label`,
-              ),
+          : (0, p.jsx)(te, {
+              collapse: o == null ? `secondary` : `sm`,
+              className: i(`max-w-40 truncate whitespace-nowrap`, o),
               children: v,
             })),
         (n[33] = k),
@@ -117,11 +116,13 @@ function m(e) {
     (n[37] === h
       ? (T = n[38])
       : ((T = h
-          ? (0, p.jsx)(te, {
+          ? (0, p.jsx)(c, {
               className: `icon-xs text-token-input-placeholder-foreground`,
             })
-          : (0, p.jsx)(re, {
-              className: `composer-footer__secondary-chevron icon-2xs text-token-input-placeholder-foreground`,
+          : (0, p.jsx)(ne, {
+              children: (0, p.jsx)(ie, {
+                className: `icon-2xs text-token-input-placeholder-foreground`,
+              }),
             })),
         (n[37] = h),
         (n[38] = T)),
@@ -143,7 +144,7 @@ function m(e) {
         : (V = n[43]),
       (G = `flex w-64 flex-col overflow-hidden`),
       n[44] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((I = (0, p.jsx)(u.Title, {
+        ? ((I = (0, p.jsx)(d.Title, {
             children: (0, p.jsx)(a, {
               id: `composer.worktreeEnvironment.title`,
               defaultMessage: `Local environment`,
@@ -155,8 +156,8 @@ function m(e) {
       (H = `vertical-scroll-fade-mask flex max-h-[220px] flex-col overflow-y-auto`),
       n[45] !== C || n[46] !== S || n[47] !== f
         ? ((U = f
-            ? (0, p.jsx)(u.Item, {
-                RightIcon: S == null ? l : void 0,
+            ? (0, p.jsx)(d.Item, {
+                RightIcon: S == null ? u : void 0,
                 onClick: () => {
                   (C(null), M(!1));
                 },
@@ -174,8 +175,8 @@ function m(e) {
         : (U = n[48]),
       (W =
         A && e
-          ? (0, p.jsx)(u.Item, {
-              RightIcon: F != null && t(e.configPath) === F ? l : void 0,
+          ? (0, p.jsx)(d.Item, {
+              RightIcon: F != null && t(e.configPath) === F ? u : void 0,
               onClick: () => {
                 (C(e.configPath), M(!1));
               },
@@ -188,7 +189,7 @@ function m(e) {
                       defaultMessage: `Default environment`,
                       description: `Tooltip for default local environment icon`,
                     }),
-                    children: (0, p.jsx)(oe, {
+                    children: (0, p.jsx)(se, {
                       className: `icon-xxs shrink-0 text-token-description-foreground`,
                     }),
                   }),
@@ -248,10 +249,10 @@ function m(e) {
     ? ((K = h
         ? (0, p.jsx)(`div`, {
             className: `flex items-center justify-center py-4`,
-            children: (0, p.jsx)(te, { className: `icon-xxs` }),
+            children: (0, p.jsx)(c, { className: `icon-xxs` }),
           })
         : _
-          ? (0, p.jsx)(u.Message, {
+          ? (0, p.jsx)(d.Message, {
               compact: !0,
               tone: `error`,
               children: (0, p.jsx)(a, {
@@ -266,9 +267,9 @@ function m(e) {
                 children: P.map((e) => {
                   let n = S != null && t(e.configPath) === F;
                   return (0, p.jsx)(
-                    u.Item,
+                    d.Item,
                     {
-                      RightIcon: n ? l : void 0,
+                      RightIcon: n ? u : void 0,
                       onClick: () => {
                         (C(e.configPath), M(!1));
                       },
@@ -282,7 +283,7 @@ function m(e) {
                 }),
               })
             : m.length === 0
-              ? (0, p.jsx)(u.Message, {
+              ? (0, p.jsx)(d.Message, {
                   compact: !0,
                   children: (0, p.jsx)(a, {
                     id: `codex.environments.noEnvironmentsFound`,
@@ -311,7 +312,7 @@ function m(e) {
     : (q = n[61]);
   let J;
   n[62] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((J = (0, p.jsx)(u.Separator, {})), (n[62] = J))
+    ? ((J = (0, p.jsx)(d.Separator, {})), (n[62] = J))
     : (J = n[62]);
   let Y;
   n[63] === w
@@ -333,9 +334,9 @@ function m(e) {
   let Z;
   n[66] === Y
     ? (Z = n[67])
-    : ((Z = (0, p.jsx)(u.Section, {
+    : ((Z = (0, p.jsx)(d.Section, {
         className: `flex flex-col pb-1`,
-        children: (0, p.jsx)(u.Item, { LeftIcon: c, onClick: Y, children: X }),
+        children: (0, p.jsx)(d.Item, { LeftIcon: l, onClick: Y, children: X }),
       })),
       (n[66] = Y),
       (n[67] = Z));
@@ -389,7 +390,7 @@ function g(e) {
   }
   return h(e.configPath);
 }
-function se({ isLoading: e, selectedEnvironment: t }) {
+function le({ isLoading: e, selectedEnvironment: t }) {
   return e
     ? (0, p.jsx)(a, {
         id: `composer.worktreeEnvironment.loading`,

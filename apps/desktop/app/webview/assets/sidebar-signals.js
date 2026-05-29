@@ -1,10 +1,10 @@
-import { Mt as e } from "./app-server-manager-signals.js";
-import { Q as t, S as n, Z as r, nt as i } from "./setting-storage.js";
+import { kt as e } from "./app-server-manager-signals-DkRDRgNB.js";
+import { $ as t, Q as n, S as r, at as i } from "./setting-storage.js";
 var a = `updated_at`,
   o = `project`,
   s = {},
   c = {},
-  l = { chats: !1, pinned: !1, threads: !1 },
+  l = { chats: !1, cloud: !1, pinned: !1, threads: !1 },
   u = e(`sidebar-organize-mode-v1`, o),
   d = e(`sidebar-keep-projects-in-recent-v1`, !0),
   f = e(`projectless-sidebar-chats-first-v1`, !1),
@@ -13,26 +13,26 @@ var a = `updated_at`,
   h = e(`sidebar-collapsed-groups`, s),
   g = e(`sidebar-collapsed-sections-v1`, l),
   _ = e(`sidebar-collapsed-custom-sections-v1`, c),
-  v = r(n, ({ get: e }) => e(u) ?? o),
-  y = r(n, ({ get: e }) => e(d) ?? !0),
-  b = r(n, ({ get: e }) => e(f) ?? !1),
-  x = r(n, ({ get: e }) => e(p) ?? `updated_at`),
-  S = r(n, ({ get: e }) => e(m)),
-  C = r(n, ({ get: e }) => e(h) ?? s),
-  w = r(n, ({ get: e }) => {
+  v = n(r, ({ get: e }) => e(u) ?? o),
+  y = n(r, ({ get: e }) => e(d) ?? !0),
+  b = n(r, ({ get: e }) => e(f) ?? !1),
+  x = n(r, ({ get: e }) => e(p) ?? `updated_at`),
+  S = n(r, ({ get: e }) => e(m)),
+  C = n(r, ({ get: e }) => e(h) ?? s),
+  w = n(r, ({ get: e }) => {
     let t = e(g);
     return t == null ? l : { ...l, ...t };
   }),
-  T = r(n, ({ get: e }) => e(_) ?? c),
-  E = i(n, []),
-  D = i(n, 0),
-  O = i(n, null),
-  k = i(n, {}),
-  A = t(n, (e) => r(n, ({ get: t }) => t(O) === e)),
-  j = t(n, (e) => r(n, ({ get: t }) => t(C)[e] === !0)),
-  M = t(n, (e) => r(n, ({ get: t }) => t(k)[e] === !0)),
-  N = t(n, (e) => r(n, ({ get: t }) => t(w)[e])),
-  P = t(n, (e) => r(n, ({ get: t }) => t(T)[e] === !0));
+  T = n(r, ({ get: e }) => e(_) ?? c),
+  E = i(r, []),
+  D = i(r, 0),
+  O = i(r, null),
+  k = i(r, {}),
+  A = t(r, (e, { get: t }) => t(O) === e),
+  j = t(r, (e, { get: t }) => t(C)[e] === !0),
+  M = t(r, (e, { get: t }) => t(k)[e] === !0),
+  N = t(r, (e, { get: t }) => t(w)[e]),
+  P = t(r, (e, { get: t }) => t(T)[e] === !0);
 function F(e, t) {
   e.set(u, t);
 }

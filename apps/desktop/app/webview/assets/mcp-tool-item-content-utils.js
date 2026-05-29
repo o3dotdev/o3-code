@@ -1,29 +1,29 @@
 import {
-  di as e,
-  ei as t,
-  gi as n,
-  mi as r,
-  ni as i,
-  nn as a,
-  ui as o,
-  vi as s,
-} from "./src-BLHmAhbF.js";
+  Gi as e,
+  Hi as t,
+  Ni as n,
+  Vi as r,
+  Yi as i,
+  _n as a,
+  ji as o,
+  qi as s,
+} from "./src-C.js";
 import { n as c } from "./hash-code.js";
 var l = new Set([`text/html`, `text/html;profile=mcp-app`]),
   u = 63,
   d = /^([a-z][a-z0-9+.-]*:\/\/)?%2a(?=\.)/i,
   f = /[\s;,"']/,
-  p = t(n()).transform(T),
-  m = e({
-    connectorId: n().optional(),
-    connector_id: n().optional(),
-    "openai/outputTemplate": n().optional(),
-    ui: e({ resourceUri: n().optional() }).strip().optional(),
-    "ui/resourceUri": n().optional(),
+  p = o(s()).transform(E),
+  m = t({
+    connectorId: s().optional(),
+    connector_id: s().optional(),
+    "openai/outputTemplate": s().optional(),
+    ui: t({ resourceUri: s().optional() }).strip().optional(),
+    "ui/resourceUri": s().optional(),
   }).passthrough(),
-  h = e({
-    _meta: e({
-      "openai/widgetCSP": e({
+  h = t({
+    _meta: t({
+      "openai/widgetCSP": t({
         baseUriDomains: p.optional(),
         base_uri_domains: p.optional(),
         connectDomains: p.optional(),
@@ -35,15 +35,15 @@ var l = new Set([`text/html`, `text/html;profile=mcp-app`]),
       })
         .strip()
         .optional(),
-      "openai/widgetDomain": n().optional(),
-      "openai/widgetHeightHint": o()
+      "openai/widgetDomain": s().optional(),
+      "openai/widgetHeightHint": r()
         .finite()
         .positive()
         .optional()
         .catch(void 0),
-      "openai/widgetPrefersBorder": i().optional(),
-      ui: e({
-        csp: e({
+      "openai/widgetPrefersBorder": n().optional(),
+      ui: t({
+        csp: t({
           baseUriDomains: p.optional(),
           connectDomains: p.optional(),
           frameDomains: p.optional(),
@@ -51,21 +51,21 @@ var l = new Set([`text/html`, `text/html;profile=mcp-app`]),
         })
           .strip()
           .optional(),
-        domain: n().optional(),
+        domain: s().optional(),
       })
         .strip()
         .optional(),
     })
       .strip()
       .optional(),
-    mimeType: n()
+    mimeType: s()
       .optional()
       .catch(void 0),
-    text: n()
+    text: s()
       .optional()
       .catch(void 0),
   }).strip(),
-  g = r(n(), s());
+  g = e(s(), i());
 function _({ mcpServerStatuses: e, server: t, tool: n, toolResult: r }) {
   let i = b(y({ mcpServerStatuses: e, server: t, tool: n }));
   if (i != null) return { resourceUri: i };
@@ -77,10 +77,12 @@ function v({ mcpServerStatuses: e, server: t, tool: n }) {
   if (r !== void 0) return x(r);
 }
 function y({ mcpServerStatuses: e, server: t, tool: n }) {
-  let r = e?.data.find((e) => e.name === t);
+  if (e == null) return;
+  let r = e.data.find((e) => e.name === t);
   return (
     r?.tools[n]?._meta ??
-    Object.values(r?.tools ?? {}).find((e) => e?.name === n)?._meta
+    Object.values(r?.tools ?? {}).find((e) => e?.name === n)?._meta ??
+    null
   );
 }
 function b(e) {
@@ -104,27 +106,50 @@ function S(e) {
   return x(e?._meta);
 }
 function C(e) {
-  for (let t of e?.contents ?? []) {
-    let e = h.safeParse(t);
-    if (!e.success || e.data.mimeType == null || !l.has(e.data.mimeType))
+  let t = null;
+  for (let n of e?.contents ?? []) {
+    let e = h.safeParse(n);
+    if (!e.success) continue;
+    if (e.data.mimeType === `text/x-dil;profile=mcp-app`) {
+      t ??= { htmlFallback: null, kind: `dil`, source: e.data.text ?? null };
       continue;
-    let n = e.data._meta?.ui?.csp,
-      r = e.data._meta?.[`openai/widgetCSP`],
-      i = e.data._meta?.[`openai/widgetHeightHint`];
-    return {
-      csp: w({ mcpAppCsp: n, openaiWidgetCsp: r }),
-      ...(i == null ? {} : { heightHint: i }),
-      html: e.data.text ?? null,
-      prefersBorder: e.data._meta?.[`openai/widgetPrefersBorder`] ?? !1,
-      widgetDomain:
-        e.data._meta?.ui?.domain ??
-        e.data._meta?.[`openai/widgetDomain`] ??
-        null,
-    };
+    }
+    if (e.data.mimeType == null || !l.has(e.data.mimeType)) continue;
+    let r = e.data._meta?.ui?.csp,
+      i = e.data._meta?.[`openai/widgetCSP`],
+      a = e.data._meta?.[`openai/widgetHeightHint`],
+      o = {
+        csp: T({ mcpAppCsp: r, openaiWidgetCsp: i }),
+        ...(a == null ? {} : { heightHint: a }),
+        html: e.data.text ?? null,
+        kind: `html`,
+        prefersBorder: e.data._meta?.[`openai/widgetPrefersBorder`] ?? !1,
+        widgetDomain:
+          e.data._meta?.ui?.domain ??
+          e.data._meta?.[`openai/widgetDomain`] ??
+          null,
+      };
+    return t == null ? o : { ...t, htmlFallback: o };
   }
-  return null;
+  return t;
 }
-function w({ mcpAppCsp: e, openaiWidgetCsp: t }) {
+function w({
+  isDilEnabled: e,
+  renderData: t,
+  resourceUri: n,
+  shouldRenderMcpApp: r,
+}) {
+  return r
+    ? t?.kind === `dil`
+      ? !e || n == null
+        ? t.htmlFallback == null
+          ? { kind: `fallback` }
+          : { kind: `html`, renderData: t.htmlFallback }
+        : { kind: `dil`, source: t.source }
+      : { kind: `html`, renderData: t?.kind === `html` ? t : null }
+    : { kind: `fallback` };
+}
+function T({ mcpAppCsp: e, openaiWidgetCsp: t }) {
   let n = e?.resourceDomains ?? t?.resourceDomains ?? t?.resource_domains ?? [],
     r = e?.frameDomains ?? t?.frameDomains ?? t?.frame_domains ?? [];
   return {
@@ -142,17 +167,17 @@ function w({ mcpAppCsp: e, openaiWidgetCsp: t }) {
     resourceDomains: n,
   };
 }
-function T(e) {
+function E(e) {
   return [
     ...new Set(
       e.flatMap((e) => {
-        let t = E(e);
+        let t = D(e);
         return t == null ? [] : [t];
       }),
     ),
   ];
 }
-function E(e) {
+function D(e) {
   let t = e.trim();
   if (t.length === 0 || f.test(t)) return null;
   if (t === `blob:` || t === `data:`) return t;
@@ -176,40 +201,40 @@ function E(e) {
     ? null
     : `${i.protocol}//${a}${i.port.length > 0 ? `:${i.port}` : ``}`;
 }
-function D({ locale: e, originScope: t, widgetDomain: n }) {
-  return a({ locale: e, subdomain: k({ originScope: t, widgetDomain: n }) });
+function O({ locale: e, originScope: t, widgetDomain: n }) {
+  return a({ locale: e, subdomain: A({ originScope: t, widgetDomain: n }) });
 }
-function O({ originScope: e, sourceUrl: t }) {
+function k({ originScope: e, sourceUrl: t }) {
   return `source-${c(`${e.kind === `codex_app` ? `codex_app:${e.connectorId ?? `instance:${e.instanceFallbackId}`}` : `mcp_server:${e.server}`}\n${t}`)}`;
 }
-function k({ originScope: e, widgetDomain: t }) {
+function A({ originScope: e, widgetDomain: t }) {
   return e.kind === `codex_app`
-    ? (A(t) ?? j(e.connectorId) ?? M(e.instanceFallbackId))
-    : N(e.server);
+    ? (j(t) ?? M(e.connectorId) ?? N(e.instanceFallbackId))
+    : P(e.server);
 }
-function A(e) {
+function j(e) {
   if (e == null) return null;
   try {
     let t = new URL(e);
-    return t.hostname ? F(t.hostname) : null;
+    return t.hostname ? I(t.hostname) : null;
   } catch {
-    return e.startsWith(`http`) ? null : A(`https://${e}`);
+    return e.startsWith(`http`) ? null : j(`https://${e}`);
   }
 }
-function j(e) {
+function M(e) {
   if (e == null) return null;
   let t = e.trim();
   return t.length === 0
     ? null
-    : P({ fallbackSlug: `app`, prefix: `mcp-app`, value: t });
-}
-function M(e) {
-  return P({ fallbackSlug: `instance`, prefix: `mcp-app-instance`, value: e });
+    : F({ fallbackSlug: `app`, prefix: `mcp-app`, value: t });
 }
 function N(e) {
-  return P({ fallbackSlug: `server`, prefix: `mcp-server`, value: e });
+  return F({ fallbackSlug: `instance`, prefix: `mcp-app-instance`, value: e });
 }
-function P({ fallbackSlug: e, prefix: t, value: n }) {
+function P(e) {
+  return F({ fallbackSlug: `server`, prefix: `mcp-server`, value: e });
+}
+function F({ fallbackSlug: e, prefix: t, value: n }) {
   let r = c(n),
     i = u - t.length - r.length - 2;
   return `${t}-${
@@ -221,7 +246,7 @@ function P({ fallbackSlug: e, prefix: t, value: n }) {
       .replaceAll(/-+$/g, ``) || e
   }-${r}`;
 }
-function F(e) {
+function I(e) {
   let t = e
     .toLowerCase()
     .replaceAll(/[^a-z0-9]+/g, `-`)
@@ -232,9 +257,9 @@ function F(e) {
     r = u - n.length - 1;
   return `${t.slice(0, r).replaceAll(/-+$/g, ``)}-${n}`;
 }
-function I({ toolResult: e }) {
+function L({ toolResult: e }) {
   let t = g.safeParse(e._meta);
   return t.success ? t.data : null;
 }
-export { _ as a, D as i, C as n, S as o, O as r, I as s, v as t };
+export { O as a, L as c, k as i, w as n, _ as o, C as r, S as s, v as t };
 //# sourceMappingURL=mcp-tool-item-content-utils.js.map

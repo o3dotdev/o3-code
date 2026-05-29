@@ -1,28 +1,30 @@
-import { C as e, c as t, h as n, i as r } from "./chunk-S3R3BYOJ.js";
-import { t as i } from "./clone.js";
-import { t as a } from "./graphlib.js";
-import { i as o, r as s, t as c } from "./src-DXdm7MTq.js";
-import { t as l } from "./line.js";
+import { c as e, h as t, i as n } from "./chunk-S3R3BYOJ.js";
+import { t as r } from "./clone-DgntaiN2.js";
+import { t as i } from "./graphlib-BZvYK9y8.js";
+import { t as a } from "./src-BHeH9bp0.js";
+import { t as o } from "./line-DcJPiuto.js";
+import { h as s } from "./step.js";
+import { n as c, r as l } from "./chunk-AGHRB4JF-CwjJfTB_.js";
+import { s as u } from "./invert.js";
+import { t as d } from "./channel-Bg_9b54a.js";
 import {
-  E as u,
-  I as d,
-  a as f,
-  b as p,
-  c as m,
-  et as h,
-  h as g,
-  s as _,
-  y as v,
-} from "./chunk-ABZYJK2D.js";
-import { t as y } from "./channel.js";
-import "./dist-Dkaf81wL.js";
+  E as f,
+  I as p,
+  a as m,
+  b as h,
+  c as g,
+  h as _,
+  s as v,
+  y,
+} from "./chunk-ABZYJK2D-DSLQAJWr.js";
+import "./dist-OQR0lEt7.js";
+import "./marked.esm-BR-H6018.js";
 import { a as b, n as x } from "./chunk-JA3XYJ7Z.js";
-import "./marked.esm.js";
-import { t as S } from "./chunk-FMBD7UC4.js";
-import { t as C } from "./chunk-HN2XXSSU.js";
+import { t as S } from "./chunk-FMBD7UC4-CkVnjLLR.js";
+import { t as C } from "./chunk-HN2XXSSU-J1M-o__Q.js";
 import { t as w } from "./chunk-CVBHYZKI.js";
 var T = (function () {
-  var e = s(function (e, t, n, r) {
+  var e = c(function (e, t, n, r) {
       for (n ||= {}, r = e.length; r--; n[e[r]] = t);
       return n;
     }, `o`),
@@ -32,7 +34,7 @@ var T = (function () {
     i = [1, 14],
     a = [1, 19],
     o = [1, 16],
-    c = [1, 17],
+    s = [1, 17],
     l = [1, 18],
     u = [8, 30],
     d = [8, 10, 21, 28, 29, 30, 31, 39, 43, 46],
@@ -42,7 +44,7 @@ var T = (function () {
     h = [8, 10, 15, 16, 21, 27, 28, 29, 30, 31, 39, 43, 46],
     g = [1, 49],
     _ = {
-      trace: s(function () {}, `trace`),
+      trace: c(function () {}, `trace`),
       yy: {},
       symbols_: {
         error: 2,
@@ -169,7 +171,7 @@ var T = (function () {
         [24, 3],
         [25, 3],
       ],
-      performAction: s(function (e, t, n, r, i, a, o) {
+      performAction: c(function (e, t, n, r, i, a, o) {
         var s = a.length - 1;
         switch (i) {
           case 4:
@@ -406,7 +408,7 @@ var T = (function () {
           29: i,
           31: a,
           39: o,
-          43: c,
+          43: s,
           46: l,
         },
         { 8: [1, 20] },
@@ -426,7 +428,7 @@ var T = (function () {
           29: i,
           31: a,
           39: o,
-          43: c,
+          43: s,
           46: l,
         }),
         e(d, [2, 16], { 14: 22, 15: f, 16: p }),
@@ -455,7 +457,7 @@ var T = (function () {
           29: i,
           31: a,
           39: o,
-          43: c,
+          43: s,
           46: l,
         },
         { 40: [1, 28], 42: [1, 29] },
@@ -487,7 +489,7 @@ var T = (function () {
           29: i,
           31: a,
           39: o,
-          43: c,
+          43: s,
           46: l,
         },
         { 30: [1, 38] },
@@ -518,21 +520,21 @@ var T = (function () {
         { 38: [2, 32] },
       ],
       defaultActions: { 20: [2, 7], 23: [2, 14], 50: [2, 15], 52: [2, 32] },
-      parseError: s(function (e, t) {
+      parseError: c(function (e, t) {
         if (t.recoverable) this.trace(e);
         else {
           var n = Error(e);
           throw ((n.hash = t), n);
         }
       }, `parseError`),
-      parse: s(function (e) {
+      parse: c(function (e) {
         var t = this,
           n = [0],
           r = [],
           i = [null],
           a = [],
           o = this.table,
-          c = ``,
+          s = ``,
           l = 0,
           u = 0,
           d = 0,
@@ -557,7 +559,7 @@ var T = (function () {
         function b(e) {
           ((n.length -= 2 * e), (i.length -= e), (a.length -= e));
         }
-        s(b, `popStack`);
+        c(b, `popStack`);
         function x() {
           var e = r.pop() || h.lex() || p;
           return (
@@ -567,7 +569,7 @@ var T = (function () {
             e
           );
         }
-        s(x, `lex`);
+        c(x, `lex`);
         for (var S, C, w, T, E, D = {}, O, k, A, j; ; ) {
           if (
             ((w = n[n.length - 1]),
@@ -624,7 +626,7 @@ Expecting ` +
                 C
                   ? ((S = C), (C = null))
                   : ((u = h.yyleng),
-                    (c = h.yytext),
+                    (s = h.yytext),
                     (l = h.yylineno),
                     (v = h.yylloc),
                     d > 0 && d--));
@@ -646,7 +648,7 @@ Expecting ` +
                   ]),
                 (E = this.performAction.apply(
                   D,
-                  [c, u, l, g.yy, T[1], i, a].concat(m),
+                  [s, u, l, g.yy, T[1], i, a].concat(m),
                 )),
                 E !== void 0)
               )
@@ -671,11 +673,11 @@ Expecting ` +
   _.lexer = (function () {
     return {
       EOF: 1,
-      parseError: s(function (e, t) {
+      parseError: c(function (e, t) {
         if (this.yy.parser) this.yy.parser.parseError(e, t);
         else throw Error(e);
       }, `parseError`),
-      setInput: s(function (e, t) {
+      setInput: c(function (e, t) {
         return (
           (this.yy = t || this.yy || {}),
           (this._input = e),
@@ -694,7 +696,7 @@ Expecting ` +
           this
         );
       }, `setInput`),
-      input: s(function () {
+      input: c(function () {
         var e = this._input[0];
         return (
           (this.yytext += e),
@@ -710,7 +712,7 @@ Expecting ` +
           e
         );
       }, `input`),
-      unput: s(function (e) {
+      unput: c(function (e) {
         var t = e.length,
           n = e.split(/(?:\r\n?|\n)/g);
         ((this._input = e + this._input),
@@ -738,10 +740,10 @@ Expecting ` +
           this
         );
       }, `unput`),
-      more: s(function () {
+      more: c(function () {
         return ((this._more = !0), this);
       }, `more`),
-      reject: s(function () {
+      reject: c(function () {
         if (this.options.backtrack_lexer) this._backtrack = !0;
         else
           return this.parseError(
@@ -754,21 +756,21 @@ Expecting ` +
           );
         return this;
       }, `reject`),
-      less: s(function (e) {
+      less: c(function (e) {
         this.unput(this.match.slice(e));
       }, `less`),
-      pastInput: s(function () {
+      pastInput: c(function () {
         var e = this.matched.substr(0, this.matched.length - this.match.length);
         return (e.length > 20 ? `...` : ``) + e.substr(-20).replace(/\n/g, ``);
       }, `pastInput`),
-      upcomingInput: s(function () {
+      upcomingInput: c(function () {
         var e = this.match;
         return (
           e.length < 20 && (e += this._input.substr(0, 20 - e.length)),
           (e.substr(0, 20) + (e.length > 20 ? `...` : ``)).replace(/\n/g, ``)
         );
       }, `upcomingInput`),
-      showPosition: s(function () {
+      showPosition: c(function () {
         var e = this.pastInput(),
           t = Array(e.length + 1).join(`-`);
         return (
@@ -780,7 +782,7 @@ Expecting ` +
           `^`
         );
       }, `showPosition`),
-      test_match: s(function (e, t) {
+      test_match: c(function (e, t) {
         var n, r, i;
         if (
           (this.options.backtrack_lexer &&
@@ -844,7 +846,7 @@ Expecting ` +
         }
         return !1;
       }, `test_match`),
-      next: s(function () {
+      next: c(function () {
         if (this.done) return this.EOF;
         this._input || (this.done = !0);
         var e, t, n, r;
@@ -875,38 +877,38 @@ Expecting ` +
                 { text: ``, token: null, line: this.yylineno },
               );
       }, `next`),
-      lex: s(function () {
+      lex: c(function () {
         return this.next() || this.lex();
       }, `lex`),
-      begin: s(function (e) {
+      begin: c(function (e) {
         this.conditionStack.push(e);
       }, `begin`),
-      popState: s(function () {
+      popState: c(function () {
         return this.conditionStack.length - 1 > 0
           ? this.conditionStack.pop()
           : this.conditionStack[0];
       }, `popState`),
-      _currentRules: s(function () {
+      _currentRules: c(function () {
         return this.conditionStack.length &&
           this.conditionStack[this.conditionStack.length - 1]
           ? this.conditions[this.conditionStack[this.conditionStack.length - 1]]
               .rules
           : this.conditions.INITIAL.rules;
       }, `_currentRules`),
-      topState: s(function (e) {
+      topState: c(function (e) {
         return (
           (e = this.conditionStack.length - 1 - Math.abs(e || 0)),
           e >= 0 ? this.conditionStack[e] : `INITIAL`
         );
       }, `topState`),
-      pushState: s(function (e) {
+      pushState: c(function (e) {
         this.begin(e);
       }, `pushState`),
-      stateStackSize: s(function () {
+      stateStackSize: c(function () {
         return this.conditionStack.length;
       }, `stateStackSize`),
       options: {},
-      performAction: s(function (e, t, n, r) {
+      performAction: c(function (e, t, n, r) {
         switch (n) {
           case 0:
             return (e.getLogger().debug(`Found block-beta`), 10);
@@ -1456,7 +1458,7 @@ Expecting ` +
   function v() {
     this.yy = {};
   }
-  return (s(v, `Parser`), (v.prototype = _), (_.Parser = v), new v());
+  return (c(v, `Parser`), (v.prototype = _), (_.Parser = v), new v());
 })();
 T.parser = T;
 var E = T,
@@ -1467,10 +1469,10 @@ var E = T,
   j = `fill`,
   M = `bgFill`,
   ee = `,`,
-  te = p(),
+  te = h(),
   N = new Map(),
-  ne = s((e) => _.sanitizeText(e, te), `sanitizeText`),
-  re = s(function (e, t = ``) {
+  ne = c((e) => v.sanitizeText(e, te), `sanitizeText`),
+  re = c(function (e, t = ``) {
     let n = N.get(e);
     (n || ((n = { id: e, styles: [], textStyles: [] }), N.set(e, n)),
       t?.split(ee).forEach((e) => {
@@ -1482,11 +1484,11 @@ var E = T,
         n.styles.push(t);
       }));
   }, `addStyleClass`),
-  ie = s(function (e, t = ``) {
+  ie = c(function (e, t = ``) {
     let n = D.get(e);
     t != null && (n.styles = t.split(ee));
   }, `addStyle2Node`),
-  ae = s(function (e, t) {
+  ae = c(function (e, t) {
     e.split(`,`).forEach(function (e) {
       let n = D.get(e);
       if (n === void 0) {
@@ -1496,9 +1498,9 @@ var E = T,
       ((n.classes ||= []), n.classes.push(t));
     });
   }, `setCssClass`),
-  oe = s((e, t) => {
+  oe = c((e, t) => {
     let n = e.flat(),
-      r = [],
+      i = [],
       a = n.find((e) => e?.type === `column-setting`)?.columns ?? -1;
     for (let e of n) {
       if (
@@ -1507,7 +1509,7 @@ var E = T,
           e.type !== `column-setting` &&
           typeof e.widthInColumns == `number` &&
           e.widthInColumns > a &&
-          o.warn(
+          l.warn(
             `Block ${e.id} width ${e.widthInColumns} exceeds configured column width ${a}`,
           ),
         (e.label &&= ne(e.label)),
@@ -1541,19 +1543,19 @@ var E = T,
         ) {
           let t = e.width ?? 1;
           for (let n = 0; n < t; n++) {
-            let t = i(e);
-            ((t.id = t.id + `-` + n), D.set(t.id, t), r.push(t));
+            let t = r(e);
+            ((t.id = t.id + `-` + n), D.set(t.id, t), i.push(t));
           }
-        } else t === void 0 && r.push(e);
+        } else t === void 0 && i.push(e);
       }
     }
-    t.children = r;
+    t.children = i;
   }, `populateBlockDatabase`),
   P = [],
   F = { id: `root`, type: `composite`, children: [], columns: -1 },
-  se = s(() => {
-    (o.debug(`Clear called`),
-      f(),
+  se = c(() => {
+    (l.debug(`Clear called`),
+      m(),
       (F = { id: `root`, type: `composite`, children: [], columns: -1 }),
       (D = new Map([[`root`, F]])),
       (P = []),
@@ -1562,11 +1564,11 @@ var E = T,
       (k = new Map()));
   }, `clear`);
 function ce(e) {
-  switch ((o.debug(`typeStr2Type`, e), e)) {
+  switch ((l.debug(`typeStr2Type`, e), e)) {
     case `[]`:
       return `square`;
     case `()`:
-      return (o.debug(`we have a round`), `round`);
+      return (l.debug(`we have a round`), `round`);
     case `(())`:
       return `circle`;
     case `>]`:
@@ -1597,16 +1599,16 @@ function ce(e) {
       return `na`;
   }
 }
-s(ce, `typeStr2Type`);
+c(ce, `typeStr2Type`);
 function le(e) {
-  switch ((o.debug(`typeStr2Type`, e), e)) {
+  switch ((l.debug(`typeStr2Type`, e), e)) {
     case `==`:
       return `thick`;
     default:
       return `normal`;
   }
 }
-s(le, `edgeTypeStr2Type`);
+c(le, `edgeTypeStr2Type`);
 function ue(e) {
   switch (e.replace(/^[\s-]+|[\s-]+$/g, ``)) {
     case `x`:
@@ -1619,25 +1621,25 @@ function ue(e) {
       return ``;
   }
 }
-s(ue, `edgeStrToEdgeData`);
+c(ue, `edgeStrToEdgeData`);
 var de = 0,
   fe = {
-    getConfig: s(() => v().block, `getConfig`),
+    getConfig: c(() => y().block, `getConfig`),
     typeStr2Type: ce,
     edgeTypeStr2Type: le,
     edgeStrToEdgeData: ue,
-    getLogger: s(() => o, `getLogger`),
-    getBlocksFlat: s(() => [...D.values()], `getBlocksFlat`),
-    getBlocks: s(() => P || [], `getBlocks`),
-    getEdges: s(() => O, `getEdges`),
-    setHierarchy: s((e) => {
+    getLogger: c(() => l, `getLogger`),
+    getBlocksFlat: c(() => [...D.values()], `getBlocksFlat`),
+    getBlocks: c(() => P || [], `getBlocks`),
+    getEdges: c(() => O, `getEdges`),
+    setHierarchy: c((e) => {
       ((F.children = e), oe(e, F), (P = F.children));
     }, `setHierarchy`),
-    getBlock: s((e) => D.get(e), `getBlock`),
-    setBlock: s((e) => {
+    getBlock: c((e) => D.get(e), `getBlock`),
+    setBlock: c((e) => {
       D.set(e.id, e);
     }, `setBlock`),
-    getColumns: s((e) => {
+    getColumns: c((e) => {
       let t = D.get(e);
       return t
         ? t.columns
@@ -1647,20 +1649,20 @@ var de = 0,
             : -1
         : -1;
     }, `getColumns`),
-    getClasses: s(function () {
+    getClasses: c(function () {
       return N;
     }, `getClasses`),
     clear: se,
-    generateId: s(
+    generateId: c(
       () => (de++, `id-` + Math.random().toString(36).substr(2, 12) + `-` + de),
       `generateId`,
     ),
   },
-  I = s((e, t) => {
-    let n = y;
-    return h(n(e, `r`), n(e, `g`), n(e, `b`), t);
+  I = c((e, t) => {
+    let n = d;
+    return u(n(e, `r`), n(e, `g`), n(e, `b`), t);
   }, `fade`),
-  pe = s(
+  pe = c(
     (e) => `.label {
     font-family: ${e.fontFamily};
     color: ${e.nodeTextColor || e.textColor};
@@ -1777,14 +1779,14 @@ var de = 0,
 `,
     `getStyles`,
   ),
-  me = s((e, t, n, r) => {
+  me = c((e, t, n, r) => {
     t.forEach((t) => {
       he[t](e, n, r);
     });
   }, `insertMarkers`),
   he = {
-    extension: s((e, t, n) => {
-      (o.trace(`Making markers for `, n),
+    extension: c((e, t, n) => {
+      (l.trace(`Making markers for `, n),
         e
           .append(`defs`)
           .append(`marker`)
@@ -1810,7 +1812,7 @@ var de = 0,
           .append(`path`)
           .attr(`d`, `M 1,1 V 13 L18,7 Z`));
     }, `extension`),
-    composition: s((e, t, n) => {
+    composition: c((e, t, n) => {
       (e
         .append(`defs`)
         .append(`marker`)
@@ -1836,7 +1838,7 @@ var de = 0,
           .append(`path`)
           .attr(`d`, `M 18,7 L9,13 L1,7 L9,1 Z`));
     }, `composition`),
-    aggregation: s((e, t, n) => {
+    aggregation: c((e, t, n) => {
       (e
         .append(`defs`)
         .append(`marker`)
@@ -1862,7 +1864,7 @@ var de = 0,
           .append(`path`)
           .attr(`d`, `M 18,7 L9,13 L1,7 L9,1 Z`));
     }, `aggregation`),
-    dependency: s((e, t, n) => {
+    dependency: c((e, t, n) => {
       (e
         .append(`defs`)
         .append(`marker`)
@@ -1888,7 +1890,7 @@ var de = 0,
           .append(`path`)
           .attr(`d`, `M 18,7 L9,13 L14,7 L9,1 Z`));
     }, `dependency`),
-    lollipop: s((e, t, n) => {
+    lollipop: c((e, t, n) => {
       (e
         .append(`defs`)
         .append(`marker`)
@@ -1922,7 +1924,7 @@ var de = 0,
           .attr(`cy`, 7)
           .attr(`r`, 6));
     }, `lollipop`),
-    point: s((e, t, n) => {
+    point: c((e, t, n) => {
       (e
         .append(`marker`)
         .attr(`id`, n + `_` + t + `-pointEnd`)
@@ -1956,7 +1958,7 @@ var de = 0,
           .style(`stroke-width`, 1)
           .style(`stroke-dasharray`, `1,0`));
     }, `point`),
-    circle: s((e, t, n) => {
+    circle: c((e, t, n) => {
       (e
         .append(`marker`)
         .attr(`id`, n + `_` + t + `-circleEnd`)
@@ -1994,7 +1996,7 @@ var de = 0,
           .style(`stroke-width`, 1)
           .style(`stroke-dasharray`, `1,0`));
     }, `circle`),
-    cross: s((e, t, n) => {
+    cross: c((e, t, n) => {
       (e
         .append(`marker`)
         .attr(`id`, n + `_` + t + `-crossEnd`)
@@ -2028,7 +2030,7 @@ var de = 0,
           .style(`stroke-width`, 2)
           .style(`stroke-dasharray`, `1,0`));
     }, `cross`),
-    barb: s((e, t, n) => {
+    barb: c((e, t, n) => {
       e.append(`defs`)
         .append(`marker`)
         .attr(`id`, n + `_` + t + `-barbEnd`)
@@ -2043,7 +2045,7 @@ var de = 0,
     }, `barb`),
   },
   ge = me,
-  L = p()?.block?.padding ?? 8;
+  L = h()?.block?.padding ?? 8;
 function _e(e, t) {
   if (e === 0 || !Number.isInteger(e))
     throw Error(`Columns must be an integer !== 0.`);
@@ -2055,18 +2057,18 @@ function _e(e, t) {
       ? { px: 0, py: t }
       : { px: t % e, py: Math.floor(t / e) };
 }
-s(_e, `calculateBlockPosition`);
-var ve = s((e) => {
+c(_e, `calculateBlockPosition`);
+var ve = c((e) => {
   let t = 0,
     n = 0;
   for (let r of e.children) {
     let {
       width: i,
       height: a,
-      x: s,
-      y: c,
+      x: o,
+      y: s,
     } = r.size ?? { width: 0, height: 0, x: 0, y: 0 };
-    (o.debug(
+    (l.debug(
       `getMaxChildSize abc95 child:`,
       r.id,
       `width:`,
@@ -2074,9 +2076,9 @@ var ve = s((e) => {
       `height:`,
       a,
       `x:`,
-      s,
+      o,
       `y:`,
-      c,
+      s,
       r.type,
     ),
       r.type !== `space` &&
@@ -2085,7 +2087,7 @@ var ve = s((e) => {
   return { width: t, height: n };
 }, `getMaxChildSize`);
 function R(e, t, n = 0, r = 0) {
-  (o.debug(
+  (l.debug(
     `setBlockSizes abc95 (start)`,
     e.id,
     e?.size?.x,
@@ -2099,10 +2101,10 @@ function R(e, t, n = 0, r = 0) {
     a = 0;
   if (e.children?.length > 0) {
     for (let n of e.children) R(n, t);
-    let s = ve(e);
-    ((i = s.width),
-      (a = s.height),
-      o.debug(
+    let o = ve(e);
+    ((i = o.width),
+      (a = o.height),
+      l.debug(
         `setBlockSizes abc95 maxWidth of`,
         e.id,
         `:s children is `,
@@ -2111,7 +2113,7 @@ function R(e, t, n = 0, r = 0) {
       ));
     for (let t of e.children)
       t.size &&
-        (o.debug(
+        (l.debug(
           `abc95 Setting size of children of ${e.id} id=${t.id} ${i} ${a} ${JSON.stringify(t.size)}`,
         ),
         (t.size.width =
@@ -2119,53 +2121,53 @@ function R(e, t, n = 0, r = 0) {
         (t.size.height = a),
         (t.size.x = 0),
         (t.size.y = 0),
-        o.debug(
+        l.debug(
           `abc95 updating size of ${e.id} children child:${t.id} maxWidth:${i} maxHeight:${a}`,
         ));
     for (let n of e.children) R(n, t, i, a);
-    let c = e.columns ?? -1,
-      l = 0;
-    for (let t of e.children) l += t.widthInColumns ?? 1;
+    let s = e.columns ?? -1,
+      c = 0;
+    for (let t of e.children) c += t.widthInColumns ?? 1;
     let u = e.children.length;
-    c > 0 && c < l && (u = c);
-    let d = Math.ceil(l / u),
+    s > 0 && s < c && (u = s);
+    let d = Math.ceil(c / u),
       f = u * (i + L) + L,
       p = d * (a + L) + L;
     if (f < n) {
-      (o.debug(
+      (l.debug(
         `Detected to small sibling: abc95 ${e.id} siblingWidth ${n} siblingHeight ${r} width ${f}`,
       ),
         (f = n),
         (p = r));
       let t = (n - u * L - L) / u,
-        s = (r - d * L - L) / d;
-      (o.debug(`Size indata abc88`, e.id, `childWidth`, t, `maxWidth`, i),
-        o.debug(`Size indata abc88`, e.id, `childHeight`, s, `maxHeight`, a),
-        o.debug(`Size indata abc88 xSize`, u, `padding`, L));
+        o = (r - d * L - L) / d;
+      (l.debug(`Size indata abc88`, e.id, `childWidth`, t, `maxWidth`, i),
+        l.debug(`Size indata abc88`, e.id, `childHeight`, o, `maxHeight`, a),
+        l.debug(`Size indata abc88 xSize`, u, `padding`, L));
       for (let n of e.children)
         n.size &&
           ((n.size.width = t),
-          (n.size.height = s),
+          (n.size.height = o),
           (n.size.x = 0),
           (n.size.y = 0));
     }
     if (
-      (o.debug(
-        `abc95 (finale calc) ${e.id} xSize ${u} ySize ${d} columns ${c}${e.children.length} width=${Math.max(f, e.size?.width || 0)}`,
+      (l.debug(
+        `abc95 (finale calc) ${e.id} xSize ${u} ySize ${d} columns ${s}${e.children.length} width=${Math.max(f, e.size?.width || 0)}`,
       ),
       f < (e?.size?.width || 0))
     ) {
       f = e?.size?.width || 0;
-      let t = c > 0 ? Math.min(e.children.length, c) : e.children.length;
+      let t = s > 0 ? Math.min(e.children.length, s) : e.children.length;
       if (t > 0) {
         let n = (f - t * L - L) / t;
-        o.debug(`abc95 (growing to fit) width`, e.id, f, e.size?.width, n);
+        l.debug(`abc95 (growing to fit) width`, e.id, f, e.size?.width, n);
         for (let t of e.children) t.size && (t.size.width = n);
       }
     }
     e.size = { width: f, height: p, x: 0, y: 0 };
   }
-  o.debug(
+  l.debug(
     `setBlockSizes abc94 (done)`,
     e.id,
     e?.size?.x,
@@ -2174,61 +2176,61 @@ function R(e, t, n = 0, r = 0) {
     e?.size?.height,
   );
 }
-s(R, `setBlockSizes`);
+c(R, `setBlockSizes`);
 function z(e, t) {
-  o.debug(
+  l.debug(
     `abc85 layout blocks (=>layoutBlocks) ${e.id} x: ${e?.size?.x} y: ${e?.size?.y} width: ${e?.size?.width}`,
   );
   let n = e.columns ?? -1;
   if (
-    (o.debug(`layoutBlocks columns abc95`, e.id, `=>`, n, e),
+    (l.debug(`layoutBlocks columns abc95`, e.id, `=>`, n, e),
     e.children && e.children.length > 0)
   ) {
     let r = e?.children[0]?.size?.width ?? 0,
       i = e.children.length * r + (e.children.length - 1) * L;
-    o.debug(`widthOfChildren 88`, i, `posX`);
+    l.debug(`widthOfChildren 88`, i, `posX`);
     let a = 0;
-    o.debug(`abc91 block?.size?.x`, e.id, e?.size?.x);
-    let s = e?.size?.x ? e?.size?.x + (-e?.size?.width / 2 || 0) : -L,
-      c = 0;
+    l.debug(`abc91 block?.size?.x`, e.id, e?.size?.x);
+    let o = e?.size?.x ? e?.size?.x + (-e?.size?.width / 2 || 0) : -L,
+      s = 0;
     for (let r of e.children) {
       let i = e;
       if (!r.size) continue;
-      let { width: l, height: u } = r.size,
+      let { width: c, height: u } = r.size,
         { px: d, py: f } = _e(n, a);
       if (
-        (f != c &&
-          ((c = f),
-          (s = e?.size?.x ? e?.size?.x + (-e?.size?.width / 2 || 0) : -L),
-          o.debug(`New row in layout for block`, e.id, ` and child `, r.id, c)),
-        o.debug(
-          `abc89 layout blocks (child) id: ${r.id} Pos: ${a} (px, py) ${d},${f} (${i?.size?.x},${i?.size?.y}) parent: ${i.id} width: ${l}${L}`,
+        (f != s &&
+          ((s = f),
+          (o = e?.size?.x ? e?.size?.x + (-e?.size?.width / 2 || 0) : -L),
+          l.debug(`New row in layout for block`, e.id, ` and child `, r.id, s)),
+        l.debug(
+          `abc89 layout blocks (child) id: ${r.id} Pos: ${a} (px, py) ${d},${f} (${i?.size?.x},${i?.size?.y}) parent: ${i.id} width: ${c}${L}`,
         ),
         i.size)
       ) {
-        let e = l / 2;
-        ((r.size.x = s + L + e),
-          o.debug(
-            `abc91 layout blocks (calc) px, pyid:${r.id} startingPos=X${s} new startingPosX${r.size.x} ${e} padding=${L} width=${l} halfWidth=${e} => x:${r.size.x} y:${r.size.y} ${r.widthInColumns} (width * (child?.w || 1)) / 2 ${(l * (r?.widthInColumns ?? 1)) / 2}`,
+        let e = c / 2;
+        ((r.size.x = o + L + e),
+          l.debug(
+            `abc91 layout blocks (calc) px, pyid:${r.id} startingPos=X${o} new startingPosX${r.size.x} ${e} padding=${L} width=${c} halfWidth=${e} => x:${r.size.x} y:${r.size.y} ${r.widthInColumns} (width * (child?.w || 1)) / 2 ${(c * (r?.widthInColumns ?? 1)) / 2}`,
           ),
-          (s = r.size.x + e),
+          (o = r.size.x + e),
           (r.size.y = i.size.y - i.size.height / 2 + f * (u + L) + u / 2 + L),
-          o.debug(
-            `abc88 layout blocks (calc) px, pyid:${r.id}startingPosX${s}${L}${e}=>x:${r.size.x}y:${r.size.y}${r.widthInColumns}(width * (child?.w || 1)) / 2${(l * (r?.widthInColumns ?? 1)) / 2}`,
+          l.debug(
+            `abc88 layout blocks (calc) px, pyid:${r.id}startingPosX${o}${L}${e}=>x:${r.size.x}y:${r.size.y}${r.widthInColumns}(width * (child?.w || 1)) / 2${(c * (r?.widthInColumns ?? 1)) / 2}`,
           ));
       }
       r.children && z(r, t);
       let p = r?.widthInColumns ?? 1;
       (n > 0 && (p = Math.min(p, n - (a % n))),
         (a += p),
-        o.debug(`abc88 columnsPos`, r, a));
+        l.debug(`abc88 columnsPos`, r, a));
     }
   }
-  o.debug(
+  l.debug(
     `layout blocks (<==layoutBlocks) ${e.id} x: ${e?.size?.x} y: ${e?.size?.y} width: ${e?.size?.width}`,
   );
 }
-s(z, `layoutBlocks`);
+c(z, `layoutBlocks`);
 function B(
   e,
   { minX: t, minY: n, maxX: r, maxY: i } = {
@@ -2255,32 +2257,32 @@ function B(
       } = B(a, { minX: t, minY: n, maxX: r, maxY: i }));
   return { minX: t, minY: n, maxX: r, maxY: i };
 }
-s(B, `findBounds`);
+c(B, `findBounds`);
 function ye(e) {
   let t = e.getBlock(`root`);
   if (!t) return;
-  (R(t, e, 0, 0), z(t, e), o.debug(`getBlocks`, JSON.stringify(t, null, 2)));
+  (R(t, e, 0, 0), z(t, e), l.debug(`getBlocks`, JSON.stringify(t, null, 2)));
   let { minX: n, minY: r, maxX: i, maxY: a } = B(t),
-    s = a - r;
-  return { x: n, y: r, width: i - n, height: s };
+    o = a - r;
+  return { x: n, y: r, width: i - n, height: o };
 }
-s(ye, `layout`);
+c(ye, `layout`);
 function V(e, t) {
   t && e.attr(`style`, t);
 }
-s(V, `applyStyle`);
+c(V, `applyStyle`);
 function be(e, t) {
-  let n = c(
+  let n = a(
       document.createElementNS(`http://www.w3.org/2000/svg`, `foreignObject`),
     ),
     r = n.append(`xhtml:div`),
     i = e.label,
-    a = e.isNode ? `nodeLabel` : `edgeLabel`,
-    o = r.append(`span`);
+    o = e.isNode ? `nodeLabel` : `edgeLabel`,
+    s = r.append(`span`);
   return (
-    o.html(d(i, t)),
-    V(o, e.labelStyle),
-    o.attr(`class`, a),
+    s.html(p(i, t)),
+    V(s, e.labelStyle),
+    s.attr(`class`, o),
     V(r, e.labelStyle),
     r.style(`display`, `inline-block`),
     r.style(`white-space`, `nowrap`),
@@ -2288,53 +2290,53 @@ function be(e, t) {
     n.node()
   );
 }
-s(be, `addHtmlLabel`);
-var H = s(async (e, t, n, i) => {
+c(be, `addHtmlLabel`);
+var H = c(async (e, t, r, i) => {
     let a = e || ``;
     typeof a == `object` && (a = a[0]);
-    let s = p();
-    if (g(s.flowchart.htmlLabels))
+    let o = h();
+    if (_(o.flowchart.htmlLabels))
       return (
         (a = a.replace(/\\n|\n/g, `<br />`)),
-        o.debug(`vertexText` + a),
+        l.debug(`vertexText` + a),
         be(
           {
             isNode: i,
-            label: await b(r(a)),
+            label: await b(n(a)),
             labelStyle: t.replace(`fill:`, `color:`),
           },
-          s,
+          o,
         )
       );
     {
       let e = document.createElementNS(`http://www.w3.org/2000/svg`, `text`);
       e.setAttribute(`style`, t.replace(`color:`, `fill:`));
-      let r = [];
-      r =
+      let n = [];
+      n =
         typeof a == `string`
           ? a.split(/\\n|\n|<br\s*\/?>/gi)
           : Array.isArray(a)
             ? a
             : [];
-      for (let t of r) {
-        let r = document.createElementNS(`http://www.w3.org/2000/svg`, `tspan`);
-        (r.setAttributeNS(
+      for (let t of n) {
+        let n = document.createElementNS(`http://www.w3.org/2000/svg`, `tspan`);
+        (n.setAttributeNS(
           `http://www.w3.org/XML/1998/namespace`,
           `xml:space`,
           `preserve`,
         ),
-          r.setAttribute(`dy`, `1em`),
-          r.setAttribute(`x`, `0`),
-          n
-            ? r.setAttribute(`class`, `title-row`)
-            : r.setAttribute(`class`, `row`),
-          (r.textContent = t.trim()),
-          e.appendChild(r));
+          n.setAttribute(`dy`, `1em`),
+          n.setAttribute(`x`, `0`),
+          r
+            ? n.setAttribute(`class`, `title-row`)
+            : n.setAttribute(`class`, `row`),
+          (n.textContent = t.trim()),
+          e.appendChild(n));
       }
       return e;
     }
   }, `createLabel`),
-  xe = s((e, t, n, r, i) => {
+  xe = c((e, t, n, r, i) => {
     (t.arrowTypeStart && Ce(e, `start`, t.arrowTypeStart, n, r, i),
       t.arrowTypeEnd && Ce(e, `end`, t.arrowTypeEnd, n, r, i));
   }, `addEdgeMarkers`),
@@ -2349,20 +2351,20 @@ var H = s(async (e, t, n, i) => {
     dependency: `dependency`,
     lollipop: `lollipop`,
   },
-  Ce = s((e, t, n, r, i, a) => {
-    let s = Se[n];
-    if (!s) {
-      o.warn(`Unknown arrow type: ${n}`);
+  Ce = c((e, t, n, r, i, a) => {
+    let o = Se[n];
+    if (!o) {
+      l.warn(`Unknown arrow type: ${n}`);
       return;
     }
-    let c = t === `start` ? `Start` : `End`;
-    e.attr(`marker-${t}`, `url(${r}#${i}_${a}-${s}${c})`);
+    let s = t === `start` ? `Start` : `End`;
+    e.attr(`marker-${t}`, `url(${r}#${i}_${a}-${o}${s})`);
   }, `addEdgeMarker`),
   U = {},
   W = {},
-  we = s(async (e, t) => {
-    let n = p(),
-      r = g(n.flowchart.htmlLabels),
+  we = c(async (e, t) => {
+    let n = h(),
+      r = _(n.flowchart.htmlLabels),
       i =
         t.labelType === `markdown`
           ? x(
@@ -2372,24 +2374,24 @@ var H = s(async (e, t, n, i) => {
               n,
             )
           : await H(t.label, t.labelStyle),
-      a = e.insert(`g`).attr(`class`, `edgeLabel`),
-      o = a.insert(`g`).attr(`class`, `label`);
-    o.node().appendChild(i);
-    let s = i.getBBox();
+      o = e.insert(`g`).attr(`class`, `edgeLabel`),
+      s = o.insert(`g`).attr(`class`, `label`);
+    s.node().appendChild(i);
+    let c = i.getBBox();
     if (r) {
       let e = i.children[0],
-        t = c(i);
-      ((s = e.getBoundingClientRect()),
-        t.attr(`width`, s.width),
-        t.attr(`height`, s.height));
+        t = a(i);
+      ((c = e.getBoundingClientRect()),
+        t.attr(`width`, c.width),
+        t.attr(`height`, c.height));
     }
-    (o.attr(
+    (s.attr(
       `transform`,
-      `translate(` + -s.width / 2 + `, ` + -s.height / 2 + `)`,
+      `translate(` + -c.width / 2 + `, ` + -c.height / 2 + `)`,
     ),
-      (U[t.id] = a),
-      (t.width = s.width),
-      (t.height = s.height));
+      (U[t.id] = o),
+      (t.width = c.width),
+      (t.height = c.height));
     let l;
     if (t.startLabelLeft) {
       let n = await H(t.startLabelLeft, t.labelStyle),
@@ -2452,94 +2454,94 @@ var H = s(async (e, t, n, i) => {
     return i;
   }, `insertEdgeLabel`);
 function G(e, t) {
-  p().flowchart.htmlLabels &&
+  h().flowchart.htmlLabels &&
     e &&
     ((e.style.width = t.length * 9 + `px`), (e.style.height = `12px`));
 }
-s(G, `setTerminalWidth`);
-var Te = s((e, t) => {
-    o.debug(`Moving label abc88 `, e.id, e.label, U[e.id], t);
-    let r = t.updatedPath ? t.updatedPath : t.originalPath,
-      { subGraphTitleTotalMargin: i } = w(p());
+c(G, `setTerminalWidth`);
+var Te = c((e, n) => {
+    l.debug(`Moving label abc88 `, e.id, e.label, U[e.id], n);
+    let r = n.updatedPath ? n.updatedPath : n.originalPath,
+      { subGraphTitleTotalMargin: i } = w(h());
     if (e.label) {
       let a = U[e.id],
-        s = e.x,
-        c = e.y;
+        o = e.x,
+        s = e.y;
       if (r) {
-        let i = n.calcLabelPosition(r);
-        (o.debug(
+        let i = t.calcLabelPosition(r);
+        (l.debug(
           `Moving label ` + e.label + ` from (`,
-          s,
+          o,
           `,`,
-          c,
+          s,
           `) to (`,
           i.x,
           `,`,
           i.y,
           `) abc88`,
         ),
-          t.updatedPath && ((s = i.x), (c = i.y)));
+          n.updatedPath && ((o = i.x), (s = i.y)));
       }
-      a.attr(`transform`, `translate(${s}, ${c + i / 2})`);
+      a.attr(`transform`, `translate(${o}, ${s + i / 2})`);
     }
     if (e.startLabelLeft) {
-      let t = W[e.id].startLeft,
+      let n = W[e.id].startLeft,
         i = e.x,
         a = e.y;
       if (r) {
-        let t = n.calcTerminalLabelPosition(
+        let n = t.calcTerminalLabelPosition(
           e.arrowTypeStart ? 10 : 0,
           `start_left`,
           r,
         );
-        ((i = t.x), (a = t.y));
+        ((i = n.x), (a = n.y));
       }
-      t.attr(`transform`, `translate(${i}, ${a})`);
+      n.attr(`transform`, `translate(${i}, ${a})`);
     }
     if (e.startLabelRight) {
-      let t = W[e.id].startRight,
+      let n = W[e.id].startRight,
         i = e.x,
         a = e.y;
       if (r) {
-        let t = n.calcTerminalLabelPosition(
+        let n = t.calcTerminalLabelPosition(
           e.arrowTypeStart ? 10 : 0,
           `start_right`,
           r,
         );
-        ((i = t.x), (a = t.y));
+        ((i = n.x), (a = n.y));
       }
-      t.attr(`transform`, `translate(${i}, ${a})`);
+      n.attr(`transform`, `translate(${i}, ${a})`);
     }
     if (e.endLabelLeft) {
-      let t = W[e.id].endLeft,
+      let n = W[e.id].endLeft,
         i = e.x,
         a = e.y;
       if (r) {
-        let t = n.calcTerminalLabelPosition(
+        let n = t.calcTerminalLabelPosition(
           e.arrowTypeEnd ? 10 : 0,
           `end_left`,
           r,
         );
-        ((i = t.x), (a = t.y));
+        ((i = n.x), (a = n.y));
       }
-      t.attr(`transform`, `translate(${i}, ${a})`);
+      n.attr(`transform`, `translate(${i}, ${a})`);
     }
     if (e.endLabelRight) {
-      let t = W[e.id].endRight,
+      let n = W[e.id].endRight,
         i = e.x,
         a = e.y;
       if (r) {
-        let t = n.calcTerminalLabelPosition(
+        let n = t.calcTerminalLabelPosition(
           e.arrowTypeEnd ? 10 : 0,
           `end_right`,
           r,
         );
-        ((i = t.x), (a = t.y));
+        ((i = n.x), (a = n.y));
       }
-      t.attr(`transform`, `translate(${i}, ${a})`);
+      n.attr(`transform`, `translate(${i}, ${a})`);
     }
   }, `positionEdgeLabel`),
-  Ee = s((e, t) => {
+  Ee = c((e, t) => {
     let n = e.x,
       r = e.y,
       i = Math.abs(t.x - n),
@@ -2548,52 +2550,52 @@ var Te = s((e, t) => {
       s = e.height / 2;
     return i >= o || a >= s;
   }, `outsideNode`),
-  De = s((e, t, n) => {
-    o.debug(`intersection calc abc89:
+  De = c((e, t, n) => {
+    l.debug(`intersection calc abc89:
   outsidePoint: ${JSON.stringify(t)}
   insidePoint : ${JSON.stringify(n)}
   node        : x:${e.x} y:${e.y} w:${e.width} h:${e.height}`);
     let r = e.x,
       i = e.y,
       a = Math.abs(r - n.x),
-      s = e.width / 2,
-      c = n.x < t.x ? s - a : s + a,
-      l = e.height / 2,
+      o = e.width / 2,
+      s = n.x < t.x ? o - a : o + a,
+      c = e.height / 2,
       u = Math.abs(t.y - n.y),
       d = Math.abs(t.x - n.x);
-    if (Math.abs(i - t.y) * s > Math.abs(r - t.x) * l) {
-      let e = n.y < t.y ? t.y - l - i : i - l - t.y;
-      c = (d * e) / u;
+    if (Math.abs(i - t.y) * o > Math.abs(r - t.x) * c) {
+      let e = n.y < t.y ? t.y - c - i : i - c - t.y;
+      s = (d * e) / u;
       let r = {
-        x: n.x < t.x ? n.x + c : n.x - d + c,
+        x: n.x < t.x ? n.x + s : n.x - d + s,
         y: n.y < t.y ? n.y + u - e : n.y - u + e,
       };
       return (
-        c === 0 && ((r.x = t.x), (r.y = t.y)),
+        s === 0 && ((r.x = t.x), (r.y = t.y)),
         d === 0 && (r.x = t.x),
         u === 0 && (r.y = t.y),
-        o.debug(`abc89 topp/bott calc, Q ${u}, q ${e}, R ${d}, r ${c}`, r),
+        l.debug(`abc89 topp/bott calc, Q ${u}, q ${e}, R ${d}, r ${s}`, r),
         r
       );
     } else {
-      c = n.x < t.x ? t.x - s - r : r - s - t.x;
-      let e = (u * c) / d,
-        i = n.x < t.x ? n.x + d - c : n.x - d + c,
+      s = n.x < t.x ? t.x - o - r : r - o - t.x;
+      let e = (u * s) / d,
+        i = n.x < t.x ? n.x + d - s : n.x - d + s,
         a = n.y < t.y ? n.y + e : n.y - e;
       return (
-        o.debug(`sides calc abc89, Q ${u}, q ${e}, R ${d}, r ${c}`, {
+        l.debug(`sides calc abc89, Q ${u}, q ${e}, R ${d}, r ${s}`, {
           _x: i,
           _y: a,
         }),
-        c === 0 && ((i = t.x), (a = t.y)),
+        s === 0 && ((i = t.x), (a = t.y)),
         d === 0 && (i = t.x),
         u === 0 && (a = t.y),
         { x: i, y: a }
       );
     }
   }, `intersection`),
-  Oe = s((e, t) => {
-    o.debug(`abc88 cutPathAtIntersect`, e, t);
+  Oe = c((e, t) => {
+    l.debug(`abc88 cutPathAtIntersect`, e, t);
     let n = [],
       r = e[0],
       i = !1;
@@ -2612,32 +2614,32 @@ var Te = s((e, t) => {
       n
     );
   }, `cutPathAtIntersect`),
-  ke = s(function (t, n, r, i, a, s, c) {
-    let d = r.points;
-    o.debug(`abc88 InsertEdge: edge=`, r, `e=`, n);
-    let f = !1,
-      m = s.node(n.v);
-    var h = s.node(n.w);
-    (h?.intersect &&
-      m?.intersect &&
-      ((d = d.slice(1, r.points.length - 1)),
-      d.unshift(m.intersect(d[0])),
-      d.push(h.intersect(d[d.length - 1]))),
-      r.toCluster &&
-        (o.debug(`to cluster abc88`, i[r.toCluster]),
-        (d = Oe(r.points, i[r.toCluster].node)),
-        (f = !0)),
-      r.fromCluster &&
-        (o.debug(`from cluster abc88`, i[r.fromCluster]),
-        (d = Oe(d.reverse(), i[r.fromCluster].node).reverse()),
-        (f = !0)));
-    let g = d.filter((e) => !Number.isNaN(e.y)),
-      _ = e;
-    r.curve && (a === `graph` || a === `flowchart`) && (_ = r.curve);
-    let { x: v, y } = C(r),
-      b = l().x(v).y(y).curve(_),
+  ke = c(function (e, t, n, r, i, a, c) {
+    let u = n.points;
+    l.debug(`abc88 InsertEdge: edge=`, n, `e=`, t);
+    let d = !1,
+      p = a.node(t.v);
+    var m = a.node(t.w);
+    (m?.intersect &&
+      p?.intersect &&
+      ((u = u.slice(1, n.points.length - 1)),
+      u.unshift(p.intersect(u[0])),
+      u.push(m.intersect(u[u.length - 1]))),
+      n.toCluster &&
+        (l.debug(`to cluster abc88`, r[n.toCluster]),
+        (u = Oe(n.points, r[n.toCluster].node)),
+        (d = !0)),
+      n.fromCluster &&
+        (l.debug(`from cluster abc88`, r[n.fromCluster]),
+        (u = Oe(u.reverse(), r[n.fromCluster].node).reverse()),
+        (d = !0)));
+    let g = u.filter((e) => !Number.isNaN(e.y)),
+      _ = s;
+    n.curve && (i === `graph` || i === `flowchart`) && (_ = n.curve);
+    let { x: v, y } = C(n),
+      b = o().x(v).y(y).curve(_),
       x;
-    switch (r.thickness) {
+    switch (n.thickness) {
       case `normal`:
         x = `edge-thickness-normal`;
         break;
@@ -2650,7 +2652,7 @@ var Te = s((e, t) => {
       default:
         x = ``;
     }
-    switch (r.pattern) {
+    switch (n.pattern) {
       case `solid`:
         x += ` edge-pattern-solid`;
         break;
@@ -2661,20 +2663,20 @@ var Te = s((e, t) => {
         x += ` edge-pattern-dashed`;
         break;
     }
-    let S = t
+    let S = e
         .append(`path`)
         .attr(`d`, b(g))
-        .attr(`id`, r.id)
-        .attr(`class`, ` ` + x + (r.classes ? ` ` + r.classes : ``))
-        .attr(`style`, r.style),
+        .attr(`id`, n.id)
+        .attr(`class`, ` ` + x + (n.classes ? ` ` + n.classes : ``))
+        .attr(`style`, n.style),
       w = ``;
-    ((p().flowchart.arrowMarkerAbsolute || p().state.arrowMarkerAbsolute) &&
-      (w = u(!0)),
-      xe(S, r, w, c, a));
+    ((h().flowchart.arrowMarkerAbsolute || h().state.arrowMarkerAbsolute) &&
+      (w = f(!0)),
+      xe(S, n, w, c, i));
     let T = {};
-    return (f && (T.updatedPath = d), (T.originalPath = r.points), T);
+    return (d && (T.updatedPath = u), (T.originalPath = n.points), T);
   }, `insertEdge`),
-  Ae = s((e) => {
+  Ae = c((e) => {
     let t = new Set();
     for (let n of e)
       switch (n) {
@@ -2690,7 +2692,7 @@ var Te = s((e, t) => {
       }
     return t;
   }, `expandAndDeduplicateDirections`),
-  je = s((e, t, n) => {
+  je = c((e, t, n) => {
     let r = Ae(e),
       i = t.height + 2 * n.padding,
       a = i / 2,
@@ -2842,7 +2844,7 @@ var Te = s((e, t) => {
 function Me(e, t) {
   return e.intersect(t);
 }
-s(Me, `intersectNode`);
+c(Me, `intersectNode`);
 var Ne = Me;
 function Pe(e, t, n, r) {
   var i = e.x,
@@ -2855,12 +2857,12 @@ function Pe(e, t, n, r) {
   var u = Math.abs((t * n * s) / c);
   return (r.y < a && (u = -u), { x: i + l, y: a + u });
 }
-s(Pe, `intersectEllipse`);
+c(Pe, `intersectEllipse`);
 var Fe = Pe;
 function Ie(e, t, n) {
   return Fe(e, t, t, n);
 }
-s(Ie, `intersectCircle`);
+c(Ie, `intersectCircle`);
 var Le = Ie;
 function Re(e, t, n, r) {
   var i = t.y - e.y,
@@ -2896,11 +2898,11 @@ function Re(e, t, n, r) {
       { x: _, y: v }
     );
 }
-s(Re, `intersectLine`);
+c(Re, `intersectLine`);
 function ze(e, t) {
   return e * t > 0;
 }
-s(ze, `sameSign`);
+c(ze, `sameSign`);
 var Be = Re,
   Ve = He;
 function He(e, t, n) {
@@ -2938,13 +2940,13 @@ function He(e, t, n) {
       a[0])
     : e;
 }
-s(He, `intersectPolygon`);
+c(He, `intersectPolygon`);
 var K = {
     node: Ne,
     circle: Le,
     ellipse: Fe,
     polygon: Ve,
-    rect: s((e, t) => {
+    rect: c((e, t) => {
       var n = e.x,
         r = e.y,
         i = t.x - n,
@@ -2961,46 +2963,46 @@ var K = {
       );
     }, `intersectRect`),
   },
-  q = s(async (e, t, n, i) => {
-    let a = p(),
-      o,
-      l = t.useHtmlLabels || g(a.flowchart.htmlLabels);
-    o = n || `node default`;
+  q = c(async (e, t, r, i) => {
+    let o = h(),
+      s,
+      l = t.useHtmlLabels || _(o.flowchart.htmlLabels);
+    s = r || `node default`;
     let u = e
         .insert(`g`)
-        .attr(`class`, o)
+        .attr(`class`, s)
         .attr(`id`, t.domId || t.id),
-      f = u.insert(`g`).attr(`class`, `label`).attr(`style`, t.labelStyle),
-      m;
-    m =
+      d = u.insert(`g`).attr(`class`, `label`).attr(`style`, t.labelStyle),
+      f;
+    f =
       t.labelText === void 0
         ? ``
         : typeof t.labelText == `string`
           ? t.labelText
           : t.labelText[0];
-    let h = f.node(),
-      _;
-    _ =
+    let m = d.node(),
+      g;
+    g =
       t.labelType === `markdown`
         ? x(
-            f,
-            d(r(m), a),
+            d,
+            p(n(f), o),
             {
               useHtmlLabels: l,
-              width: t.width || a.flowchart.wrappingWidth,
+              width: t.width || o.flowchart.wrappingWidth,
               classes: `markdown-node-label`,
             },
-            a,
+            o,
           )
-        : h.appendChild(await H(d(r(m), a), t.labelStyle, !1, i));
-    let v = _.getBBox(),
+        : m.appendChild(await H(p(n(f), o), t.labelStyle, !1, i));
+    let v = g.getBBox(),
       y = t.padding / 2;
-    if (g(a.flowchart.htmlLabels)) {
-      let e = _.children[0],
-        t = c(_),
+    if (_(o.flowchart.htmlLabels)) {
+      let e = g.children[0],
+        t = a(g),
         n = e.getElementsByTagName(`img`);
       if (n) {
-        let e = m.replace(/<img[^>]*>/g, ``).trim() === ``;
+        let e = f.replace(/<img[^>]*>/g, ``).trim() === ``;
         await Promise.all(
           [...n].map(
             (t) =>
@@ -3011,15 +3013,15 @@ var K = {
                     (t.style.flexDirection = `column`),
                     e)
                   ) {
-                    let e = a.fontSize
-                        ? a.fontSize
+                    let e = o.fontSize
+                        ? o.fontSize
                         : window.getComputedStyle(document.body).fontSize,
                       n = parseInt(e, 10) * 5 + `px`;
                     ((t.style.minWidth = n), (t.style.maxWidth = n));
                   } else t.style.width = `100%`;
                   n(t);
                 }
-                (s(r, `setupImage`),
+                (c(r, `setupImage`),
                   setTimeout(() => {
                     t.complete && r();
                   }),
@@ -3035,21 +3037,21 @@ var K = {
     }
     return (
       l
-        ? f.attr(
+        ? d.attr(
             `transform`,
             `translate(` + -v.width / 2 + `, ` + -v.height / 2 + `)`,
           )
-        : f.attr(`transform`, `translate(0, ` + -v.height / 2 + `)`),
+        : d.attr(`transform`, `translate(0, ` + -v.height / 2 + `)`),
       t.centerLabel &&
-        f.attr(
+        d.attr(
           `transform`,
           `translate(` + -v.width / 2 + `, ` + -v.height / 2 + `)`,
         ),
-      f.insert(`rect`, `:first-child`),
-      { shapeSvg: u, bbox: v, halfPadding: y, label: f }
+      d.insert(`rect`, `:first-child`),
+      { shapeSvg: u, bbox: v, halfPadding: y, label: d }
     );
   }, `labelHelper`),
-  J = s((e, t) => {
+  J = c((e, t) => {
     let n = t.node().getBBox();
     ((e.width = n.width), (e.height = n.height));
   }, `updateNodeBounds`);
@@ -3067,15 +3069,15 @@ function Y(e, t, n, r) {
     .attr(`class`, `label-container`)
     .attr(`transform`, `translate(` + -t / 2 + `,` + n / 2 + `)`);
 }
-s(Y, `insertPolygonShape`);
-var Ue = s(async (e, t) => {
-    t.useHtmlLabels || p().flowchart.htmlLabels || (t.centerLabel = !0);
+c(Y, `insertPolygonShape`);
+var Ue = c(async (e, t) => {
+    t.useHtmlLabels || h().flowchart.htmlLabels || (t.centerLabel = !0);
     let {
       shapeSvg: n,
       bbox: r,
       halfPadding: i,
     } = await q(e, t, `node ` + t.classes, !0);
-    o.info(`Classes = `, t.classes);
+    l.info(`Classes = `, t.classes);
     let a = n.insert(`rect`, `:first-child`);
     return (
       a
@@ -3092,12 +3094,12 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `note`),
-  We = s((e) => (e ? ` ` + e : ``), `formatClass`),
-  X = s(
+  We = c((e) => (e ? ` ` + e : ``), `formatClass`),
+  X = c(
     (e, t) => `${t || `node default`}${We(e.classes)} ${We(e.class)}`,
     `getClassesFromNode`,
   ),
-  Ge = s(async (e, t) => {
+  Ge = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding + (r.height + t.padding),
       a = [
@@ -3106,18 +3108,18 @@ var Ue = s(async (e, t) => {
         { x: i / 2, y: -i },
         { x: 0, y: -i / 2 },
       ];
-    o.info(`Question main (Circle)`);
-    let s = Y(n, i, i, a);
+    l.info(`Question main (Circle)`);
+    let o = Y(n, i, i, a);
     return (
-      s.attr(`style`, t.style),
-      J(t, s),
+      o.attr(`style`, t.style),
+      J(t, o),
       (t.intersect = function (e) {
-        return (o.warn(`Intersect called`), K.polygon(t, a, e));
+        return (l.warn(`Intersect called`), K.polygon(t, a, e));
       }),
       n
     );
   }, `question`),
-  Ke = s((e, t) => {
+  Ke = c((e, t) => {
     let n = e
       .insert(`g`)
       .attr(`class`, `node default`)
@@ -3150,7 +3152,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `choice`),
-  qe = s(async (e, t) => {
+  qe = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.height + t.padding,
       a = i / 4,
@@ -3173,7 +3175,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `hexagon`),
-  Je = s(async (e, t) => {
+  Je = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, void 0, !0),
       i = r.height + 2 * t.padding,
       a = i / 2,
@@ -3189,7 +3191,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `block_arrow`),
-  Ye = s(async (e, t) => {
+  Ye = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding,
       a = r.height + t.padding,
@@ -3210,7 +3212,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `rect_left_inv_arrow`),
-  Xe = s(async (e, t) => {
+  Xe = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t), !0),
       i = r.width + t.padding,
       a = r.height + t.padding,
@@ -3230,7 +3232,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `lean_right`),
-  Ze = s(async (e, t) => {
+  Ze = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding,
       a = r.height + t.padding,
@@ -3250,7 +3252,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `lean_left`),
-  Qe = s(async (e, t) => {
+  Qe = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding,
       a = r.height + t.padding,
@@ -3270,7 +3272,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `trapezoid`),
-  $e = s(async (e, t) => {
+  $e = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding,
       a = r.height + t.padding,
@@ -3290,7 +3292,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `inv_trapezoid`),
-  et = s(async (e, t) => {
+  et = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding,
       a = r.height + t.padding,
@@ -3311,7 +3313,7 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `rect_right_inv_arrow`),
-  tt = s(async (e, t) => {
+  tt = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding,
       a = i / 2,
@@ -3372,33 +3374,33 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `cylinder`),
-  nt = s(async (e, t) => {
+  nt = c(async (e, t) => {
     let {
         shapeSvg: n,
         bbox: r,
         halfPadding: i,
       } = await q(e, t, `node ` + t.classes + ` ` + t.class, !0),
       a = n.insert(`rect`, `:first-child`),
-      s = t.positioned ? t.width : r.width + t.padding,
-      c = t.positioned ? t.height : r.height + t.padding,
-      l = t.positioned ? -s / 2 : -r.width / 2 - i,
-      u = t.positioned ? -c / 2 : -r.height / 2 - i;
+      o = t.positioned ? t.width : r.width + t.padding,
+      s = t.positioned ? t.height : r.height + t.padding,
+      c = t.positioned ? -o / 2 : -r.width / 2 - i,
+      u = t.positioned ? -s / 2 : -r.height / 2 - i;
     if (
       (a
         .attr(`class`, `basic label-container`)
         .attr(`style`, t.style)
         .attr(`rx`, t.rx)
         .attr(`ry`, t.ry)
-        .attr(`x`, l)
+        .attr(`x`, c)
         .attr(`y`, u)
-        .attr(`width`, s)
-        .attr(`height`, c),
+        .attr(`width`, o)
+        .attr(`height`, s),
       t.props)
     ) {
       let e = new Set(Object.keys(t.props));
-      (t.props.borders && (Z(a, t.props.borders, s, c), e.delete(`borders`)),
+      (t.props.borders && (Z(a, t.props.borders, o, s), e.delete(`borders`)),
         e.forEach((e) => {
-          o.warn(`Unknown node property ${e}`);
+          l.warn(`Unknown node property ${e}`);
         }));
     }
     return (
@@ -3409,33 +3411,33 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `rect`),
-  rt = s(async (e, t) => {
+  rt = c(async (e, t) => {
     let {
         shapeSvg: n,
         bbox: r,
         halfPadding: i,
       } = await q(e, t, `node ` + t.classes, !0),
       a = n.insert(`rect`, `:first-child`),
-      s = t.positioned ? t.width : r.width + t.padding,
-      c = t.positioned ? t.height : r.height + t.padding,
-      l = t.positioned ? -s / 2 : -r.width / 2 - i,
-      u = t.positioned ? -c / 2 : -r.height / 2 - i;
+      o = t.positioned ? t.width : r.width + t.padding,
+      s = t.positioned ? t.height : r.height + t.padding,
+      c = t.positioned ? -o / 2 : -r.width / 2 - i,
+      u = t.positioned ? -s / 2 : -r.height / 2 - i;
     if (
       (a
         .attr(`class`, `basic cluster composite label-container`)
         .attr(`style`, t.style)
         .attr(`rx`, t.rx)
         .attr(`ry`, t.ry)
-        .attr(`x`, l)
+        .attr(`x`, c)
         .attr(`y`, u)
-        .attr(`width`, s)
-        .attr(`height`, c),
+        .attr(`width`, o)
+        .attr(`height`, s),
       t.props)
     ) {
       let e = new Set(Object.keys(t.props));
-      (t.props.borders && (Z(a, t.props.borders, s, c), e.delete(`borders`)),
+      (t.props.borders && (Z(a, t.props.borders, o, s), e.delete(`borders`)),
         e.forEach((e) => {
-          o.warn(`Unknown node property ${e}`);
+          l.warn(`Unknown node property ${e}`);
         }));
     }
     return (
@@ -3446,9 +3448,9 @@ var Ue = s(async (e, t) => {
       n
     );
   }, `composite`),
-  it = s(async (e, t) => {
+  it = c(async (e, t) => {
     let { shapeSvg: n } = await q(e, t, `label`, !0);
-    o.trace(`Classes = `, t.class);
+    l.trace(`Classes = `, t.class);
     let r = n.insert(`rect`, `:first-child`);
     if (
       (r.attr(`width`, 0).attr(`height`, 0),
@@ -3458,7 +3460,7 @@ var Ue = s(async (e, t) => {
       let e = new Set(Object.keys(t.props));
       (t.props.borders && (Z(r, t.props.borders, 0, 0), e.delete(`borders`)),
         e.forEach((e) => {
-          o.warn(`Unknown node property ${e}`);
+          l.warn(`Unknown node property ${e}`);
         }));
     }
     return (
@@ -3471,20 +3473,20 @@ var Ue = s(async (e, t) => {
   }, `labelRect`);
 function Z(e, t, n, r) {
   let i = [],
-    a = s((e) => {
+    a = c((e) => {
       i.push(e, 0);
     }, `addBorder`),
-    c = s((e) => {
+    o = c((e) => {
       i.push(0, e);
     }, `skipBorder`);
-  (t.includes(`t`) ? (o.debug(`add top border`), a(n)) : c(n),
-    t.includes(`r`) ? (o.debug(`add right border`), a(r)) : c(r),
-    t.includes(`b`) ? (o.debug(`add bottom border`), a(n)) : c(n),
-    t.includes(`l`) ? (o.debug(`add left border`), a(r)) : c(r),
+  (t.includes(`t`) ? (l.debug(`add top border`), a(n)) : o(n),
+    t.includes(`r`) ? (l.debug(`add right border`), a(r)) : o(r),
+    t.includes(`b`) ? (l.debug(`add bottom border`), a(n)) : o(n),
+    t.includes(`l`) ? (l.debug(`add left border`), a(r)) : o(r),
     e.attr(`stroke-dasharray`, i.join(` `)));
 }
-s(Z, `applyNodePropertyBorders`);
-var at = s(async (e, t) => {
+c(Z, `applyNodePropertyBorders`);
+var at = c(async (e, t) => {
     let n;
     n = t.classes ? `node ` + t.classes : `node default`;
     let r = e
@@ -3492,50 +3494,50 @@ var at = s(async (e, t) => {
         .attr(`class`, n)
         .attr(`id`, t.domId || t.id),
       i = r.insert(`rect`, `:first-child`),
-      a = r.insert(`line`),
+      o = r.insert(`line`),
       s = r.insert(`g`).attr(`class`, `label`),
-      l = t.labelText.flat ? t.labelText.flat() : t.labelText,
+      c = t.labelText.flat ? t.labelText.flat() : t.labelText,
       u = ``;
-    ((u = typeof l == `object` ? l[0] : l),
-      o.info(`Label text abc79`, u, l, typeof l == `object`));
+    ((u = typeof c == `object` ? c[0] : c),
+      l.info(`Label text abc79`, u, c, typeof c == `object`));
     let d = s.node().appendChild(await H(u, t.labelStyle, !0, !0)),
       f = { width: 0, height: 0 };
-    if (g(p().flowchart.htmlLabels)) {
+    if (_(h().flowchart.htmlLabels)) {
       let e = d.children[0],
-        t = c(d);
+        t = a(d);
       ((f = e.getBoundingClientRect()),
         t.attr(`width`, f.width),
         t.attr(`height`, f.height));
     }
-    o.info(`Text 2`, l);
-    let m = l.slice(1, l.length),
-      h = d.getBBox(),
-      _ = s
+    l.info(`Text 2`, c);
+    let p = c.slice(1, c.length),
+      m = d.getBBox(),
+      g = s
         .node()
         .appendChild(
-          await H(m.join ? m.join(`<br/>`) : m, t.labelStyle, !0, !0),
+          await H(p.join ? p.join(`<br/>`) : p, t.labelStyle, !0, !0),
         );
-    if (g(p().flowchart.htmlLabels)) {
-      let e = _.children[0],
-        t = c(_);
+    if (_(h().flowchart.htmlLabels)) {
+      let e = g.children[0],
+        t = a(g);
       ((f = e.getBoundingClientRect()),
         t.attr(`width`, f.width),
         t.attr(`height`, f.height));
     }
     let v = t.padding / 2;
     return (
-      c(_).attr(
+      a(g).attr(
         `transform`,
         `translate( ` +
-          (f.width > h.width ? 0 : (h.width - f.width) / 2) +
+          (f.width > m.width ? 0 : (m.width - f.width) / 2) +
           `, ` +
-          (h.height + v + 5) +
+          (m.height + v + 5) +
           `)`,
       ),
-      c(d).attr(
+      a(d).attr(
         `transform`,
         `translate( ` +
-          (f.width < h.width ? 0 : -(h.width - f.width) / 2) +
+          (f.width < m.width ? 0 : -(m.width - f.width) / 2) +
           `, 0)`,
       ),
       (f = s.node().getBBox()),
@@ -3549,12 +3551,12 @@ var at = s(async (e, t) => {
         .attr(`y`, -f.height / 2 - v)
         .attr(`width`, f.width + t.padding)
         .attr(`height`, f.height + t.padding),
-      a
+      o
         .attr(`class`, `divider`)
         .attr(`x1`, -f.width / 2 - v)
         .attr(`x2`, f.width / 2 + v)
-        .attr(`y1`, -f.height / 2 - v + h.height + v)
-        .attr(`y2`, -f.height / 2 - v + h.height + v),
+        .attr(`y1`, -f.height / 2 - v + m.height + v)
+        .attr(`y2`, -f.height / 2 - v + m.height + v),
       J(t, i),
       (t.intersect = function (e) {
         return K.rect(t, e);
@@ -3562,7 +3564,7 @@ var at = s(async (e, t) => {
       r
     );
   }, `rectWithTitle`),
-  ot = s(async (e, t) => {
+  ot = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.height + t.padding,
       a = r.width + i / 4 + t.padding;
@@ -3585,7 +3587,7 @@ var at = s(async (e, t) => {
       n
     );
   }, `stadium`),
-  st = s(async (e, t) => {
+  st = c(async (e, t) => {
     let {
         shapeSvg: n,
         bbox: r,
@@ -3600,54 +3602,54 @@ var at = s(async (e, t) => {
         .attr(`r`, r.width / 2 + i)
         .attr(`width`, r.width + t.padding)
         .attr(`height`, r.height + t.padding),
-      o.info(`Circle main`),
+      l.info(`Circle main`),
       J(t, a),
       (t.intersect = function (e) {
         return (
-          o.info(`Circle intersect`, t, r.width / 2 + i, e),
+          l.info(`Circle intersect`, t, r.width / 2 + i, e),
           K.circle(t, r.width / 2 + i, e)
         );
       }),
       n
     );
   }, `circle`),
-  ct = s(async (e, t) => {
+  ct = c(async (e, t) => {
     let {
         shapeSvg: n,
         bbox: r,
         halfPadding: i,
       } = await q(e, t, X(t, void 0), !0),
       a = n.insert(`g`, `:first-child`),
-      s = a.insert(`circle`),
-      c = a.insert(`circle`);
+      o = a.insert(`circle`),
+      s = a.insert(`circle`);
     return (
       a.attr(`class`, t.class),
-      s
+      o
         .attr(`style`, t.style)
         .attr(`rx`, t.rx)
         .attr(`ry`, t.ry)
         .attr(`r`, r.width / 2 + i + 5)
         .attr(`width`, r.width + t.padding + 10)
         .attr(`height`, r.height + t.padding + 10),
-      c
+      s
         .attr(`style`, t.style)
         .attr(`rx`, t.rx)
         .attr(`ry`, t.ry)
         .attr(`r`, r.width / 2 + i)
         .attr(`width`, r.width + t.padding)
         .attr(`height`, r.height + t.padding),
-      o.info(`DoubleCircle main`),
-      J(t, s),
+      l.info(`DoubleCircle main`),
+      J(t, o),
       (t.intersect = function (e) {
         return (
-          o.info(`DoubleCircle intersect`, t, r.width / 2 + i + 5, e),
+          l.info(`DoubleCircle intersect`, t, r.width / 2 + i + 5, e),
           K.circle(t, r.width / 2 + i + 5, e)
         );
       }),
       n
     );
   }, `doublecircle`),
-  lt = s(async (e, t) => {
+  lt = c(async (e, t) => {
     let { shapeSvg: n, bbox: r } = await q(e, t, X(t, void 0), !0),
       i = r.width + t.padding,
       a = r.height + t.padding,
@@ -3673,7 +3675,7 @@ var at = s(async (e, t) => {
       n
     );
   }, `subroutine`),
-  ut = s((e, t) => {
+  ut = c((e, t) => {
     let n = e
         .insert(`g`)
         .attr(`class`, `node default`)
@@ -3692,7 +3694,7 @@ var at = s(async (e, t) => {
       n
     );
   }, `start`),
-  dt = s((e, t, n) => {
+  dt = c((e, t, n) => {
     let r = e
         .insert(`g`)
         .attr(`class`, `node default`)
@@ -3740,7 +3742,7 @@ var at = s(async (e, t) => {
     rect_right_inv_arrow: et,
     cylinder: tt,
     start: ut,
-    end: s((e, t) => {
+    end: c((e, t) => {
       let n = e
           .insert(`g`)
           .attr(`class`, `node default`)
@@ -3769,7 +3771,7 @@ var at = s(async (e, t) => {
     subroutine: lt,
     fork: dt,
     join: dt,
-    class_box: s(async (e, t) => {
+    class_box: c(async (e, t) => {
       let n = t.padding / 2,
         r;
       r = t.classes ? `node ` + t.classes : `node default`;
@@ -3777,22 +3779,22 @@ var at = s(async (e, t) => {
           .insert(`g`)
           .attr(`class`, r)
           .attr(`id`, t.domId || t.id),
-        a = i.insert(`rect`, `:first-child`),
-        o = i.insert(`line`),
+        o = i.insert(`rect`, `:first-child`),
         s = i.insert(`line`),
+        c = i.insert(`line`),
         l = 0,
         u = 4,
         d = i.insert(`g`).attr(`class`, `label`),
         f = 0,
-        m = t.classData.annotations?.[0],
-        h = t.classData.annotations[0]
+        p = t.classData.annotations?.[0],
+        m = t.classData.annotations[0]
           ? `«` + t.classData.annotations[0] + `»`
           : ``,
-        _ = d.node().appendChild(await H(h, t.labelStyle, !0, !0)),
-        v = _.getBBox();
-      if (g(p().flowchart.htmlLabels)) {
-        let e = _.children[0],
-          t = c(_);
+        g = d.node().appendChild(await H(m, t.labelStyle, !0, !0)),
+        v = g.getBBox();
+      if (_(h().flowchart.htmlLabels)) {
+        let e = g.children[0],
+          t = a(g);
         ((v = e.getBoundingClientRect()),
           t.attr(`width`, v.width),
           t.attr(`height`, v.height));
@@ -3801,15 +3803,15 @@ var at = s(async (e, t) => {
       let y = t.classData.label;
       t.classData.type !== void 0 &&
         t.classData.type !== `` &&
-        (p().flowchart.htmlLabels
+        (h().flowchart.htmlLabels
           ? (y += `&lt;` + t.classData.type + `&gt;`)
           : (y += `<` + t.classData.type + `>`));
       let b = d.node().appendChild(await H(y, t.labelStyle, !0, !0));
-      c(b).attr(`class`, `classTitle`);
+      a(b).attr(`class`, `classTitle`);
       let x = b.getBBox();
-      if (g(p().flowchart.htmlLabels)) {
+      if (_(h().flowchart.htmlLabels)) {
         let e = b.children[0],
-          t = c(b);
+          t = a(b);
         ((x = e.getBoundingClientRect()),
           t.attr(`width`, x.width),
           t.attr(`height`, x.height));
@@ -3819,22 +3821,22 @@ var at = s(async (e, t) => {
       (t.classData.members.forEach(async (e) => {
         let n = e.getDisplayDetails(),
           r = n.displayText;
-        p().flowchart.htmlLabels &&
+        h().flowchart.htmlLabels &&
           (r = r.replace(/</g, `&lt;`).replace(/>/g, `&gt;`));
         let i = d
             .node()
             .appendChild(
               await H(r, n.cssStyle ? n.cssStyle : t.labelStyle, !0, !0),
             ),
-          a = i.getBBox();
-        if (g(p().flowchart.htmlLabels)) {
+          o = i.getBBox();
+        if (_(h().flowchart.htmlLabels)) {
           let e = i.children[0],
-            t = c(i);
-          ((a = e.getBoundingClientRect()),
-            t.attr(`width`, a.width),
-            t.attr(`height`, a.height));
+            t = a(i);
+          ((o = e.getBoundingClientRect()),
+            t.attr(`width`, o.width),
+            t.attr(`height`, o.height));
         }
-        (a.width > l && (l = a.width), (u += a.height + 4), S.push(i));
+        (o.width > l && (l = o.width), (u += o.height + 4), S.push(i));
       }),
         (u += 8));
       let C = [];
@@ -3842,28 +3844,28 @@ var at = s(async (e, t) => {
         (t.classData.methods.forEach(async (e) => {
           let n = e.getDisplayDetails(),
             r = n.displayText;
-          p().flowchart.htmlLabels &&
+          h().flowchart.htmlLabels &&
             (r = r.replace(/</g, `&lt;`).replace(/>/g, `&gt;`));
           let i = d
               .node()
               .appendChild(
                 await H(r, n.cssStyle ? n.cssStyle : t.labelStyle, !0, !0),
               ),
-            a = i.getBBox();
-          if (g(p().flowchart.htmlLabels)) {
+            o = i.getBBox();
+          if (_(h().flowchart.htmlLabels)) {
             let e = i.children[0],
-              t = c(i);
-            ((a = e.getBoundingClientRect()),
-              t.attr(`width`, a.width),
-              t.attr(`height`, a.height));
+              t = a(i);
+            ((o = e.getBoundingClientRect()),
+              t.attr(`width`, o.width),
+              t.attr(`height`, o.height));
           }
-          (a.width > l && (l = a.width), (u += a.height + 4), C.push(i));
+          (o.width > l && (l = o.width), (u += o.height + 4), C.push(i));
         }),
         (u += 8),
-        m)
+        p)
       ) {
         let e = (l - v.width) / 2;
-        (c(_).attr(
+        (a(g).attr(
           `transform`,
           `translate( ` + ((-1 * l) / 2 + e) + `, ` + (-1 * u) / 2 + `)`,
         ),
@@ -3871,27 +3873,11 @@ var at = s(async (e, t) => {
       }
       let w = (l - x.width) / 2;
       return (
-        c(b).attr(
+        a(b).attr(
           `transform`,
           `translate( ` + ((-1 * l) / 2 + w) + `, ` + ((-1 * u) / 2 + f) + `)`,
         ),
         (f += x.height + 4),
-        o
-          .attr(`class`, `divider`)
-          .attr(`x1`, -l / 2 - n)
-          .attr(`x2`, l / 2 + n)
-          .attr(`y1`, -u / 2 - n + 8 + f)
-          .attr(`y2`, -u / 2 - n + 8 + f),
-        (f += 8),
-        S.forEach((e) => {
-          c(e).attr(
-            `transform`,
-            `translate( ` + -l / 2 + `, ` + ((-1 * u) / 2 + f + 8 / 2) + `)`,
-          );
-          let t = e?.getBBox();
-          f += (t?.height ?? 0) + 4;
-        }),
-        (f += 8),
         s
           .attr(`class`, `divider`)
           .attr(`x1`, -l / 2 - n)
@@ -3899,22 +3885,38 @@ var at = s(async (e, t) => {
           .attr(`y1`, -u / 2 - n + 8 + f)
           .attr(`y2`, -u / 2 - n + 8 + f),
         (f += 8),
+        S.forEach((e) => {
+          a(e).attr(
+            `transform`,
+            `translate( ` + -l / 2 + `, ` + ((-1 * u) / 2 + f + 8 / 2) + `)`,
+          );
+          let t = e?.getBBox();
+          f += (t?.height ?? 0) + 4;
+        }),
+        (f += 8),
+        c
+          .attr(`class`, `divider`)
+          .attr(`x1`, -l / 2 - n)
+          .attr(`x2`, l / 2 + n)
+          .attr(`y1`, -u / 2 - n + 8 + f)
+          .attr(`y2`, -u / 2 - n + 8 + f),
+        (f += 8),
         C.forEach((e) => {
-          c(e).attr(
+          a(e).attr(
             `transform`,
             `translate( ` + -l / 2 + `, ` + ((-1 * u) / 2 + f) + `)`,
           );
           let t = e?.getBBox();
           f += (t?.height ?? 0) + 4;
         }),
-        a
+        o
           .attr(`style`, t.style)
           .attr(`class`, `outer title-state`)
           .attr(`x`, -l / 2 - n)
           .attr(`y`, -(u / 2) - n)
           .attr(`width`, l + t.padding)
           .attr(`height`, u + t.padding),
-        J(t, a),
+        J(t, o),
         (t.intersect = function (e) {
           return K.rect(t, e);
         }),
@@ -3923,11 +3925,11 @@ var at = s(async (e, t) => {
     }, `class_box`),
   },
   Q = {},
-  pt = s(async (e, t, n) => {
+  pt = c(async (e, t, n) => {
     let r, i;
     if (t.link) {
       let a;
-      (p().securityLevel === `sandbox`
+      (h().securityLevel === `sandbox`
         ? (a = `_top`)
         : t.linkTarget && (a = t.linkTarget || `_blank`),
         (r = e.insert(`svg:a`).attr(`xlink:href`, t.link).attr(`target`, a)),
@@ -3942,9 +3944,9 @@ var at = s(async (e, t) => {
       r
     );
   }, `insertNode`),
-  mt = s((e) => {
+  mt = c((e) => {
     let t = Q[e.id];
-    o.trace(
+    l.trace(
       `Transforming node`,
       e.diff,
       e,
@@ -3965,8 +3967,8 @@ var at = s(async (e, t) => {
       n
     );
   }, `positionNode`);
-function ht(e, n, r = !1) {
-  let i = e,
+function ht(t, n, r = !1) {
+  let i = t,
     a = `default`;
   ((i?.classes?.length || 0) > 0 && (a = (i?.classes ?? []).join(` `)),
     (a += ` flowchart-label`));
@@ -4034,7 +4036,7 @@ function ht(e, n, r = !1) {
     default:
       s = `rect`;
   }
-  let l = t(i?.styles ?? []),
+  let l = e(i?.styles ?? []),
     u = i.label,
     d = i.size ?? { width: 0, height: 0, x: 0, y: 0 };
   return {
@@ -4054,42 +4056,42 @@ function ht(e, n, r = !1) {
     positioned: r,
     intersect: void 0,
     type: i.type,
-    padding: c ?? v()?.block?.padding ?? 0,
+    padding: c ?? y()?.block?.padding ?? 0,
   };
 }
-s(ht, `getNodeFromBlock`);
+c(ht, `getNodeFromBlock`);
 async function gt(e, t, n) {
   let r = ht(t, n, !1);
   if (r.type === `group`) return;
-  let i = await pt(e, r, { config: v() }),
+  let i = await pt(e, r, { config: y() }),
     a = i.node().getBBox(),
     o = n.getBlock(r.id);
   ((o.size = { width: a.width, height: a.height, x: 0, y: 0, node: i }),
     n.setBlock(o),
     i.remove());
 }
-s(gt, `calculateBlockSize`);
+c(gt, `calculateBlockSize`);
 async function _t(e, t, n) {
   let r = ht(t, n, !0);
   n.getBlock(r.id).type !== `space` &&
-    (await pt(e, r, { config: v() }), (t.intersect = r?.intersect), mt(r));
+    (await pt(e, r, { config: y() }), (t.intersect = r?.intersect), mt(r));
 }
-s(_t, `insertBlockPositioned`);
+c(_t, `insertBlockPositioned`);
 async function $(e, t, n, r) {
   for (let i of t)
     (await r(e, i, n), i.children && (await $(e, i.children, n, r)));
 }
-s($, `performOperations`);
+c($, `performOperations`);
 async function vt(e, t, n) {
   await $(e, t, n, gt);
 }
-s(vt, `calculateBlockSizes`);
+c(vt, `calculateBlockSizes`);
 async function yt(e, t, n) {
   await $(e, t, n, _t);
 }
-s(yt, `insertBlocks`);
-async function bt(e, t, n, r, i) {
-  let o = new a({ multigraph: !0, compound: !0 });
+c(yt, `insertBlocks`);
+async function bt(e, t, n, r, a) {
+  let o = new i({ multigraph: !0, compound: !0 });
   o.setGraph({
     rankdir: `TB`,
     nodesep: 10,
@@ -4107,10 +4109,10 @@ async function bt(e, t, n, r, i) {
   for (let n of t)
     if (n.start && n.end) {
       let t = r.getBlock(n.start),
-        a = r.getBlock(n.end);
-      if (t?.size && a?.size) {
+        i = r.getBlock(n.end);
+      if (t?.size && i?.size) {
         let r = t.size,
-          s = a.size,
+          s = i.size,
           c = [
             { x: r.x, y: r.y },
             { x: r.x + (s.x - r.x) / 2, y: r.y + (s.y - r.y) / 2 },
@@ -4129,7 +4131,7 @@ async function bt(e, t, n, r, i) {
           void 0,
           `block`,
           o,
-          i,
+          a,
         ),
           n.label &&
             (await we(e, {
@@ -4145,40 +4147,40 @@ async function bt(e, t, n, r, i) {
       }
     }
 }
-s(bt, `insertEdges`);
+c(bt, `insertEdges`);
 var xt = {
   parser: E,
   db: fe,
   renderer: {
-    draw: s(async function (e, t, n, r) {
-      let { securityLevel: i, block: a } = v(),
+    draw: c(async function (e, t, n, r) {
+      let { securityLevel: i, block: o } = y(),
         s = r.db,
-        l;
-      i === `sandbox` && (l = c(`#i` + t));
-      let u = c(i === `sandbox` ? l.nodes()[0].contentDocument.body : `body`),
-        d = i === `sandbox` ? u.select(`[id="${t}"]`) : c(`[id="${t}"]`);
+        c;
+      i === `sandbox` && (c = a(`#i` + t));
+      let u = a(i === `sandbox` ? c.nodes()[0].contentDocument.body : `body`),
+        d = i === `sandbox` ? u.select(`[id="${t}"]`) : a(`[id="${t}"]`);
       ge(d, [`point`, `circle`, `cross`], r.type, t);
       let f = s.getBlocks(),
         p = s.getBlocksFlat(),
-        h = s.getEdges(),
-        g = d.insert(`g`).attr(`class`, `block`);
-      await vt(g, f, s);
+        m = s.getEdges(),
+        h = d.insert(`g`).attr(`class`, `block`);
+      await vt(h, f, s);
       let _ = ye(s);
-      if ((await yt(g, f, s), await bt(g, h, p, s, t), _)) {
+      if ((await yt(h, f, s), await bt(h, m, p, s, t), _)) {
         let e = _,
           t = Math.max(1, Math.round(0.125 * (e.width / e.height))),
           n = e.height + t + 10,
           r = e.width + 10,
-          { useMaxWidth: i } = a;
-        (m(d, n, r, !!i),
-          o.debug(`Here Bounds`, _, e),
+          { useMaxWidth: i } = o;
+        (g(d, n, r, !!i),
+          l.debug(`Here Bounds`, _, e),
           d.attr(
             `viewBox`,
             `${e.x - 5} ${e.y - 5} ${e.width + 10} ${e.height + 10}`,
           ));
       }
     }, `draw`),
-    getClasses: s(function (e, t) {
+    getClasses: c(function (e, t) {
       return t.db.getClasses();
     }, `getClasses`),
   },

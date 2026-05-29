@@ -1,34 +1,42 @@
-import { Ta as e } from "./app-server-manager-signals.js";
-import { C as t, S as n, l as r, nt as i } from "./setting-storage.js";
+import { po as e } from "./app-server-manager-signals-DkRDRgNB.js";
+import { C as t, S as n, at as r } from "./setting-storage.js";
+import { n as i } from "./rpc-DqwD0euc.js";
 var a = new Map(),
   o = Promise.resolve();
 function s() {
   return a.size > 0;
 }
 function c({ hostId: e }) {
-  return r(`cancel-primary-runtime-install`, { params: { hostId: e } });
+  let t = i.primaryRuntime;
+  return t == null
+    ? Promise.reject(Error(`Primary runtime is unavailable`))
+    : Promise.resolve(t.cancelInstall({ hostId: e }));
 }
 function l({ hostId: e, request: t, release: n }) {
-  let i = JSON.stringify({ hostId: e, release: n }),
-    s = a.get(i);
+  let r = JSON.stringify({ hostId: e, release: n }),
+    s = a.get(r);
   if (s != null) return s;
-  let c = o.then(() => r(t, { params: { hostId: e, release: n } }));
+  let c = o.then(() => {
+    let r = i.primaryRuntime;
+    if (r == null) throw Error(`Primary runtime is unavailable`);
+    return r[t]({ hostId: e, release: n });
+  });
   return (
-    a.set(i, c),
+    a.set(r, c),
     (o = c.then(
       () => void 0,
       () => void 0,
     )),
     c
       .finally(() => {
-        a.delete(i);
+        a.delete(r);
       })
       .catch(() => void 0),
     c
   );
 }
-var u = i(n, null),
-  d = i(n, `latest`),
+var u = r(n, null),
+  d = r(n, `latest`),
   f = 9e4;
 function p(e) {
   switch (e?.phase) {
@@ -47,7 +55,7 @@ function p(e) {
   }
 }
 async function m({ hostId: t = e, release: n = `latest` } = {}) {
-  await l({ hostId: t, release: n, request: `finish-primary-runtime-install` });
+  await l({ hostId: t, release: n, request: `finishInstall` });
 }
 async function h({ hostId: n = e, release: r = `latest` } = {}) {
   let i = m({ hostId: n, release: r }),

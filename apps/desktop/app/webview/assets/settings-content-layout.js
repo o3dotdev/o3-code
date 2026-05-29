@@ -1,10 +1,10 @@
 import { t as e } from "./jsx-runtime.js";
-import { t } from "./clsx.js";
-import { xt as n } from "./setting-storage.js";
+import { t } from "./clsx-BcPLHiun.js";
+import { wt as n } from "./setting-storage.js";
 var r = n(),
   i = e();
 function a(e) {
-  let n = (0, r.c)(44),
+  let n = (0, r.c)(46),
     a,
     o,
     s,
@@ -16,7 +16,8 @@ function a(e) {
     p,
     m,
     h,
-    g;
+    g,
+    _;
   n[0] === e
     ? ((a = n[1]),
       (o = n[2]),
@@ -29,20 +30,22 @@ function a(e) {
       (p = n[9]),
       (m = n[10]),
       (h = n[11]),
-      (g = n[12]))
+      (g = n[12]),
+      (_ = n[13]))
     : (({
-        title: h,
+        title: g,
         backSlot: o,
-        subtitle: d,
+        subtitle: f,
         children: s,
-        fullWidth: p,
+        fullWidth: m,
         contentClassName: l,
-        subtitleClassName: f,
-        titleStackClassName: g,
+        subtitleClassName: p,
+        titleStackClassName: _,
         action: a,
-        actionPlacement: m,
+        actionPlacement: h,
+        ref: u,
         className: c,
-        ...u
+        ...d
       } = e),
       (n[0] = e),
       (n[1] = a),
@@ -56,64 +59,65 @@ function a(e) {
       (n[9] = p),
       (n[10] = m),
       (n[11] = h),
-      (n[12] = g));
-  let _ = p === void 0 ? !1 : p,
-    v = m === void 0 ? `header` : m,
-    y;
-  n[13] === h
-    ? (y = n[14])
-    : ((y = h
+      (n[12] = g),
+      (n[13] = _));
+  let v = m === void 0 ? !1 : m,
+    y = h === void 0 ? `header` : h,
+    b;
+  n[14] === g
+    ? (b = n[15])
+    : ((b = g
         ? (0, i.jsx)(`div`, {
             className: `electron:heading-lg heading-base truncate`,
-            children: h,
+            children: g,
           })
         : null),
-      (n[13] = h),
-      (n[14] = y));
-  let b = y,
-    x;
-  n[15] !== d || n[16] !== f
-    ? ((x = d
+      (n[14] = g),
+      (n[15] = b));
+  let x = b,
+    S;
+  n[16] !== f || n[17] !== p
+    ? ((S = f
         ? (0, i.jsx)(`div`, {
             className: t(
               `text-base text-token-text-secondary`,
-              f ?? `truncate`,
+              p ?? `truncate`,
             ),
-            children: d,
+            children: f,
           })
         : null),
-      (n[15] = d),
       (n[16] = f),
-      (n[17] = x))
-    : (x = n[17]);
-  let S = x,
-    C;
-  n[18] !== a ||
-  n[19] !== v ||
-  n[20] !== d ||
-  n[21] !== S ||
-  n[22] !== h ||
-  n[23] !== b ||
-  n[24] !== g
-    ? ((C =
-        !h && !d && !a
+      (n[17] = p),
+      (n[18] = S))
+    : (S = n[18]);
+  let C = S,
+    w;
+  n[19] !== a ||
+  n[20] !== y ||
+  n[21] !== f ||
+  n[22] !== C ||
+  n[23] !== g ||
+  n[24] !== x ||
+  n[25] !== _
+    ? ((w =
+        !g && !f && !a
           ? null
-          : v === `subtitle` && S
+          : y === `subtitle` && C
             ? (0, i.jsx)(`div`, {
                 className: `pb-panel`,
                 children: (0, i.jsxs)(`div`, {
                   className: t(
                     `flex min-w-0 flex-col`,
-                    g ?? `gap-1.5 pb-panel`,
+                    _ ?? `gap-1.5 pb-panel`,
                   ),
                   children: [
-                    b,
+                    x,
                     (0, i.jsxs)(`div`, {
                       className: `flex items-center justify-between gap-3`,
                       children: [
                         (0, i.jsx)(`div`, {
                           className: `min-w-0 flex-1`,
-                          children: S,
+                          children: C,
                         }),
                         a
                           ? (0, i.jsx)(`div`, {
@@ -132,81 +136,87 @@ function a(e) {
                   (0, i.jsxs)(`div`, {
                     className: t(
                       `flex min-w-0 flex-1 flex-col`,
-                      g ?? `gap-1.5 pb-panel`,
+                      _ ?? `gap-1.5 pb-panel`,
                     ),
-                    children: [b, S],
+                    children: [x, C],
                   }),
                   a
                     ? (0, i.jsx)(`div`, { className: `shrink-0`, children: a })
                     : null,
                 ],
               })),
-      (n[18] = a),
-      (n[19] = v),
-      (n[20] = d),
-      (n[21] = S),
-      (n[22] = h),
-      (n[23] = b),
-      (n[24] = g),
-      (n[25] = C))
-    : (C = n[25]);
-  let w = C,
-    T;
-  n[26] === c
-    ? (T = n[27])
-    : ((T = t(`main-surface flex h-full min-h-0 flex-col`, c)),
-      (n[26] = c),
-      (n[27] = T));
-  let E;
-  n[28] === o
-    ? (E = n[29])
-    : ((E = (0, i.jsx)(`div`, {
+      (n[19] = a),
+      (n[20] = y),
+      (n[21] = f),
+      (n[22] = C),
+      (n[23] = g),
+      (n[24] = x),
+      (n[25] = _),
+      (n[26] = w))
+    : (w = n[26]);
+  let T = w,
+    E;
+  n[27] === c
+    ? (E = n[28])
+    : ((E = t(`main-surface flex h-full min-h-0 flex-col`, c)),
+      (n[27] = c),
+      (n[28] = E));
+  let D;
+  n[29] === o
+    ? (D = n[30])
+    : ((D = (0, i.jsx)(`div`, {
         className: `draggable flex items-center px-panel electron:h-toolbar extension:h-toolbar-sm`,
         children: o,
       })),
-      (n[28] = o),
-      (n[29] = E));
-  let D = _
+      (n[29] = o),
+      (n[30] = D));
+  let O = v
       ? null
       : `max-w-2xl electron:min-w-[calc(320px*var(--codex-window-zoom))]`,
-    O;
-  n[30] !== l || n[31] !== D
-    ? ((O = t(`mx-auto flex w-full flex-col`, D, l)),
-      (n[30] = l),
-      (n[31] = D),
-      (n[32] = O))
-    : (O = n[32]);
-  let k;
-  n[33] === s
-    ? (k = n[34])
-    : ((k = (0, i.jsx)(`div`, {
+    k;
+  n[31] !== l || n[32] !== O
+    ? ((k = t(`mx-auto flex w-full flex-col`, O, l)),
+      (n[31] = l),
+      (n[32] = O),
+      (n[33] = k))
+    : (k = n[33]);
+  let A;
+  n[34] === s
+    ? (A = n[35])
+    : ((A = (0, i.jsx)(`div`, {
         className: `flex flex-col gap-[var(--padding-panel)]`,
         children: s,
       })),
-      (n[33] = s),
-      (n[34] = k));
-  let A;
-  n[35] !== k || n[36] !== O || n[37] !== w
-    ? ((A = (0, i.jsx)(`div`, {
-        className: `scrollbar-stable flex-1 overflow-y-auto p-panel`,
-        children: (0, i.jsxs)(`div`, { className: O, children: [w, k] }),
-      })),
-      (n[35] = k),
-      (n[36] = O),
-      (n[37] = w),
-      (n[38] = A))
-    : (A = n[38]);
+      (n[34] = s),
+      (n[35] = A));
   let j;
+  n[36] !== A || n[37] !== k || n[38] !== T
+    ? ((j = (0, i.jsx)(`div`, {
+        className: `scrollbar-stable flex-1 overflow-y-auto p-panel`,
+        children: (0, i.jsxs)(`div`, { className: k, children: [T, A] }),
+      })),
+      (n[36] = A),
+      (n[37] = k),
+      (n[38] = T),
+      (n[39] = j))
+    : (j = n[39]);
+  let M;
   return (
-    n[39] !== u || n[40] !== A || n[41] !== T || n[42] !== E
-      ? ((j = (0, i.jsxs)(`div`, { className: T, ...u, children: [E, A] })),
-        (n[39] = u),
-        (n[40] = A),
-        (n[41] = T),
-        (n[42] = E),
-        (n[43] = j))
-      : (j = n[43]),
-    j
+    n[40] !== u || n[41] !== d || n[42] !== j || n[43] !== E || n[44] !== D
+      ? ((M = (0, i.jsxs)(`div`, {
+          ref: u,
+          className: E,
+          ...d,
+          children: [D, j],
+        })),
+        (n[40] = u),
+        (n[41] = d),
+        (n[42] = j),
+        (n[43] = E),
+        (n[44] = D),
+        (n[45] = M))
+      : (M = n[45]),
+    M
   );
 }
 export { a as t };

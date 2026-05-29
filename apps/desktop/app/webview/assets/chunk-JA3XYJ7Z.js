@@ -1,354 +1,78 @@
 import { i as e } from "./chunk-S3R3BYOJ.js";
-import { i as t, r as n, t as r } from "./src-DXdm7MTq.js";
-import { I as i, N as a, O as o, s, y as c } from "./chunk-ABZYJK2D.js";
-import { n as l } from "./marked.esm.js";
-var u = Object.freeze({ left: 0, top: 0, width: 16, height: 16 }),
-  d = Object.freeze({ rotate: 0, vFlip: !1, hFlip: !1 }),
-  f = Object.freeze({ ...u, ...d }),
-  p = Object.freeze({ ...f, body: ``, hidden: !1 }),
-  m = Object.freeze({ width: null, height: null }),
-  h = Object.freeze({ ...m, ...d }),
-  g = (e, t, n, r = ``) => {
-    let i = e.split(`:`);
-    if (e.slice(0, 1) === `@`) {
-      if (i.length < 2 || i.length > 3) return null;
-      r = i.shift().slice(1);
-    }
-    if (i.length > 3 || !i.length) return null;
-    if (i.length > 1) {
-      let e = i.pop(),
-        n = i.pop(),
-        a = { provider: i.length > 0 ? i[0] : r, prefix: n, name: e };
-      return t && !_(a) ? null : a;
-    }
-    let a = i[0],
-      o = a.split(`-`);
-    if (o.length > 1) {
-      let e = { provider: r, prefix: o.shift(), name: o.join(`-`) };
-      return t && !_(e) ? null : e;
-    }
-    if (n && r === ``) {
-      let e = { provider: r, prefix: ``, name: a };
-      return t && !_(e, n) ? null : e;
-    }
-    return null;
-  },
-  _ = (e, t) => (e ? !!(((t && e.prefix === ``) || e.prefix) && e.name) : !1);
-function v(e, t) {
-  let n = {};
-  (!e.hFlip != !t.hFlip && (n.hFlip = !0),
-    !e.vFlip != !t.vFlip && (n.vFlip = !0));
-  let r = ((e.rotate || 0) + (t.rotate || 0)) % 4;
-  return (r && (n.rotate = r), n);
-}
-function y(e, t) {
-  let n = v(e, t);
-  for (let r in p)
-    r in d
-      ? r in e && !(r in n) && (n[r] = d[r])
-      : r in t
-        ? (n[r] = t[r])
-        : r in e && (n[r] = e[r]);
-  return n;
-}
-function ee(e, t) {
-  let n = e.icons,
-    r = e.aliases || Object.create(null),
-    i = Object.create(null);
-  function a(e) {
-    if (n[e]) return (i[e] = []);
-    if (!(e in i)) {
-      i[e] = null;
-      let t = r[e] && r[e].parent,
-        n = t && a(t);
-      n && (i[e] = [t].concat(n));
-    }
-    return i[e];
-  }
-  return ((t || Object.keys(n).concat(Object.keys(r))).forEach(a), i);
-}
-function b(e, t, n) {
-  let r = e.icons,
-    i = e.aliases || Object.create(null),
-    a = {};
-  function o(e) {
-    a = y(r[e] || i[e], a);
-  }
-  return (o(t), n.forEach(o), y(e, a));
-}
-function te(e, t) {
-  if (e.icons[t]) return b(e, t, []);
-  let n = ee(e, [t])[t];
-  return n ? b(e, t, n) : null;
-}
-var x = /(-?[0-9.]*[0-9]+[0-9.]*)/g,
-  S = /^-?[0-9.]*[0-9]+[0-9.]*$/g;
-function C(e, t, n) {
-  if (t === 1) return e;
-  if (((n ||= 100), typeof e == `number`)) return Math.ceil(e * t * n) / n;
-  if (typeof e != `string`) return e;
-  let r = e.split(x);
-  if (r === null || !r.length) return e;
-  let i = [],
-    a = r.shift(),
-    o = S.test(a);
-  for (;;) {
-    if (o) {
-      let e = parseFloat(a);
-      isNaN(e) ? i.push(a) : i.push(Math.ceil(e * t * n) / n);
-    } else i.push(a);
-    if (((a = r.shift()), a === void 0)) return i.join(``);
-    o = !o;
-  }
-}
-function ne(e, t = `defs`) {
-  let n = ``,
-    r = e.indexOf(`<` + t);
-  for (; r >= 0; ) {
-    let i = e.indexOf(`>`, r),
-      a = e.indexOf(`</` + t);
-    if (i === -1 || a === -1) break;
-    let o = e.indexOf(`>`, a);
-    if (o === -1) break;
-    ((n += e.slice(i + 1, a).trim()),
-      (e = e.slice(0, r).trim() + e.slice(o + 1)));
-  }
-  return { defs: n, content: e };
-}
-function w(e, t) {
-  return e ? `<defs>` + e + `</defs>` + t : t;
-}
-function T(e, t, n) {
-  let r = ne(e);
-  return w(r.defs, t + r.content + n);
-}
-var E = (e) => e === `unset` || e === `undefined` || e === `none`;
-function D(e, t) {
-  let n = { ...f, ...e },
-    r = { ...h, ...t },
-    i = { left: n.left, top: n.top, width: n.width, height: n.height },
-    a = n.body;
-  [n, r].forEach((e) => {
-    let t = [],
-      n = e.hFlip,
-      r = e.vFlip,
-      o = e.rotate;
-    n
-      ? r
-        ? (o += 2)
-        : (t.push(
-            `translate(` +
-              (i.width + i.left).toString() +
-              ` ` +
-              (0 - i.top).toString() +
-              `)`,
-          ),
-          t.push(`scale(-1 1)`),
-          (i.top = i.left = 0))
-      : r &&
-        (t.push(
-          `translate(` +
-            (0 - i.left).toString() +
-            ` ` +
-            (i.height + i.top).toString() +
-            `)`,
-        ),
-        t.push(`scale(1 -1)`),
-        (i.top = i.left = 0));
-    let s;
-    switch ((o < 0 && (o -= Math.floor(o / 4) * 4), (o %= 4), o)) {
-      case 1:
-        ((s = i.height / 2 + i.top),
-          t.unshift(`rotate(90 ` + s.toString() + ` ` + s.toString() + `)`));
-        break;
-      case 2:
-        t.unshift(
-          `rotate(180 ` +
-            (i.width / 2 + i.left).toString() +
-            ` ` +
-            (i.height / 2 + i.top).toString() +
-            `)`,
-        );
-        break;
-      case 3:
-        ((s = i.width / 2 + i.left),
-          t.unshift(`rotate(-90 ` + s.toString() + ` ` + s.toString() + `)`));
-        break;
-    }
-    (o % 2 == 1 &&
-      (i.left !== i.top && ((s = i.left), (i.left = i.top), (i.top = s)),
-      i.width !== i.height &&
-        ((s = i.width), (i.width = i.height), (i.height = s))),
-      t.length && (a = T(a, `<g transform="` + t.join(` `) + `">`, `</g>`)));
-  });
-  let o = r.width,
-    s = r.height,
-    c = i.width,
-    l = i.height,
-    u,
-    d;
-  o === null
-    ? ((d = s === null ? `1em` : s === `auto` ? l : s), (u = C(d, c / l)))
-    : ((u = o === `auto` ? c : o),
-      (d = s === null ? C(u, l / c) : s === `auto` ? l : s));
-  let p = {},
-    m = (e, t) => {
-      E(t) || (p[e] = t.toString());
-    };
-  (m(`width`, u), m(`height`, d));
-  let g = [i.left, i.top, c, l];
-  return ((p.viewBox = g.join(` `)), { attributes: p, viewBox: g, body: a });
-}
-var re = /\sid="(\S+)"/g,
-  ie =
-    `IconifyId` +
-    Date.now().toString(16) +
-    ((Math.random() * 16777216) | 0).toString(16),
-  ae = 0;
-function O(e, t = ie) {
-  let n = [],
-    r;
-  for (; (r = re.exec(e)); ) n.push(r[1]);
-  if (!n.length) return e;
-  let i = `suffix` + ((Math.random() * 16777216) | Date.now()).toString(16);
-  return (
-    n.forEach((n) => {
-      let r = typeof t == `function` ? t(n) : t + (ae++).toString(),
-        a = n.replace(/[.*+?^${}()|[\]\\]/g, `\\$&`);
-      e = e.replace(
-        RegExp(`([#;"])(` + a + `)([")]|\\.[a-z])`, `g`),
-        `$1` + r + i + `$3`,
-      );
-    }),
-    (e = e.replace(new RegExp(i, `g`), ``)),
-    e
-  );
-}
-function k(e, t) {
-  let n =
-    e.indexOf(`xlink:`) === -1
-      ? ``
-      : ` xmlns:xlink="http://www.w3.org/1999/xlink"`;
-  for (let e in t) n += ` ` + e + `="` + t[e] + `"`;
-  return `<svg xmlns="http://www.w3.org/2000/svg"` + n + `>` + e + `</svg>`;
-}
-function A(e) {
-  var t = [...arguments].slice(1),
-    n = Array.from(typeof e == `string` ? [e] : e);
-  n[n.length - 1] = n[n.length - 1].replace(/\r?\n([\t ]*)$/, ``);
-  var r = n.reduce(function (e, t) {
-    var n = t.match(/\n([\t ]+|(?!\s).)/g);
-    return n
-      ? e.concat(
-          n.map(function (e) {
-            return e.match(/[\t ]/g)?.length ?? 0;
-          }),
-        )
-      : e;
-  }, []);
-  if (r.length) {
-    var i = RegExp(
-      `
-[	 ]{` +
-        Math.min.apply(Math, r) +
-        `}`,
-      `g`,
-    );
-    n = n.map(function (e) {
-      return e.replace(
-        i,
-        `
-`,
-      );
-    });
-  }
-  n[0] = n[0].replace(/^\r?\n/, ``);
-  var a = n[0];
-  return (
-    t.forEach(function (e, t) {
-      var r = a.match(/(?:^|\n)( *)$/),
-        i = r ? r[1] : ``,
-        o = e;
-      (typeof e == `string` &&
-        e.includes(`
-`) &&
-        (o = String(e)
-          .split(
-            `
-`,
-          )
-          .map(function (e, t) {
-            return t === 0 ? e : `` + i + e;
-          }).join(`
-`)),
-        (a += o + n[t + 1]));
-    }),
-    a
-  );
-}
-var j = {
+import { t } from "./src-BHeH9bp0.js";
+import { n, r } from "./chunk-AGHRB4JF-CwjJfTB_.js";
+import {
+  I as i,
+  N as a,
+  O as o,
+  s,
+  y as c,
+} from "./chunk-ABZYJK2D-DSLQAJWr.js";
+import { a as l, i as u, n as d, o as f, r as p, t as m } from "./esm.js";
+import { n as h } from "./marked.esm-BR-H6018.js";
+var g = {
     body: `<g><rect width="80" height="80" style="fill: #087ebf; stroke-width: 0px;"/><text transform="translate(21.16 64.67)" style="fill: #fff; font-family: ArialMT, Arial; font-size: 67.75px;"><tspan x="0" y="0">?</tspan></text></g>`,
     height: 80,
     width: 80,
   },
-  M = new Map(),
-  N = new Map(),
-  P = n((e) => {
-    for (let n of e) {
-      if (!n.name)
+  _ = new Map(),
+  v = new Map(),
+  y = n((e) => {
+    for (let t of e) {
+      if (!t.name)
         throw Error(
           `Invalid icon loader. Must have a "name" property with non-empty string value.`,
         );
-      if ((t.debug(`Registering icon pack:`, n.name), `loader` in n))
-        N.set(n.name, n.loader);
-      else if (`icons` in n) M.set(n.name, n.icons);
+      if ((r.debug(`Registering icon pack:`, t.name), `loader` in t))
+        v.set(t.name, t.loader);
+      else if (`icons` in t) _.set(t.name, t.icons);
       else
         throw (
-          t.error(`Invalid icon loader:`, n),
+          r.error(`Invalid icon loader:`, t),
           Error(
             `Invalid icon loader. Must have either "icons" or "loader" property.`,
           )
         );
     }
   }, `registerIconPacks`),
-  F = n(async (e, n) => {
-    let r = g(e, !0, n !== void 0);
-    if (!r) throw Error(`Invalid icon name: ${e}`);
-    let i = r.prefix || n;
+  b = n(async (e, t) => {
+    let n = f(e, !0, t !== void 0);
+    if (!n) throw Error(`Invalid icon name: ${e}`);
+    let i = n.prefix || t;
     if (!i) throw Error(`Icon name must contain a prefix: ${e}`);
-    let a = M.get(i);
+    let a = _.get(i);
     if (!a) {
-      let e = N.get(i);
-      if (!e) throw Error(`Icon set not found: ${r.prefix}`);
+      let e = v.get(i);
+      if (!e) throw Error(`Icon set not found: ${n.prefix}`);
       try {
-        ((a = { ...(await e()), prefix: i }), M.set(i, a));
+        ((a = { ...(await e()), prefix: i }), _.set(i, a));
       } catch (e) {
-        throw (t.error(e), Error(`Failed to load icon set: ${r.prefix}`));
+        throw (r.error(e), Error(`Failed to load icon set: ${n.prefix}`));
       }
     }
-    let o = te(a, r.name);
+    let o = l(a, n.name);
     if (!o) throw Error(`Icon not found: ${e}`);
     return o;
   }, `getRegisteredIconData`),
-  I = n(async (e) => {
+  x = n(async (e) => {
     try {
-      return (await F(e), !0);
+      return (await b(e), !0);
     } catch {
       return !1;
     }
   }, `isIconAvailable`),
-  L = n(async (e, n, r) => {
+  S = n(async (e, t, n) => {
     let a;
     try {
-      a = await F(e, n?.fallbackPrefix);
+      a = await b(e, t?.fallbackPrefix);
     } catch (e) {
-      (t.error(e), (a = j));
+      (r.error(e), (a = g));
     }
-    let o = D(a, n);
-    return i(k(O(o.body), { ...o.attributes, ...r }), c());
+    let o = u(a, t);
+    return i(d(p(o.body), { ...o.attributes, ...n }), c());
   }, `getIconSVG`);
-function R(e, { markdownAutoWrap: t }) {
-  let n = A(
+function C(e, { markdownAutoWrap: t }) {
+  let n = m(
     e
       .replace(
         /<br\/>/g,
@@ -363,10 +87,10 @@ function R(e, { markdownAutoWrap: t }) {
   );
   return t === !1 ? n.replace(/ /g, `&nbsp;`) : n;
 }
-n(R, `preprocessMarkdown`);
-function z(e, t = {}) {
-  let r = R(e, t),
-    i = l.lexer(r),
+n(C, `preprocessMarkdown`);
+function w(e, t = {}) {
+  let r = C(e, t),
+    i = h.lexer(r),
     a = [[]],
     o = 0;
   function s(e, t = `normal`) {
@@ -403,12 +127,12 @@ function z(e, t = {}) {
     a
   );
 }
-n(z, `markdownToLines`);
-function B(e, { markdownAutoWrap: r } = {}) {
-  let i = l.lexer(e);
+n(w, `markdownToLines`);
+function T(e, { markdownAutoWrap: t } = {}) {
+  let i = h.lexer(e);
   function a(e) {
     return e.type === `text`
-      ? r === !1
+      ? t === !1
         ? e.text.replace(/\n */g, `<br/>`).replace(/ /g, `&nbsp;`)
         : e.text.replace(/\n */g, `<br/>`)
       : e.type === `strong`
@@ -423,22 +147,22 @@ function B(e, { markdownAutoWrap: r } = {}) {
                 ? `${e.text}`
                 : e.type === `escape`
                   ? e.text
-                  : (t.warn(`Unsupported markdown: ${e.type}`), e.raw);
+                  : (r.warn(`Unsupported markdown: ${e.type}`), e.raw);
   }
   return (n(a, `output`), i.map(a).join(``));
 }
-n(B, `markdownToHTML`);
-function V(e) {
+n(T, `markdownToHTML`);
+function E(e) {
   return Intl.Segmenter
     ? [...new Intl.Segmenter().segment(e)].map((e) => e.segment)
     : [...e];
 }
-n(V, `splitTextToChars`);
-function H(e, t) {
-  return U(e, [], V(t.content), t.type);
+n(E, `splitTextToChars`);
+function D(e, t) {
+  return O(e, [], E(t.content), t.type);
 }
-n(H, `splitWordToFitWidth`);
-function U(e, t, n, r) {
+n(D, `splitWordToFitWidth`);
+function O(e, t, n, r) {
   if (n.length === 0)
     return [
       { content: t.join(``), type: r },
@@ -447,15 +171,15 @@ function U(e, t, n, r) {
   let [i, ...a] = n,
     o = [...t, i];
   return e([{ content: o.join(``), type: r }])
-    ? U(e, o, a, r)
+    ? O(e, o, a, r)
     : (t.length === 0 && i && (t.push(i), n.shift()),
       [
         { content: t.join(``), type: r },
         { content: n.join(``), type: r },
       ]);
 }
-n(U, `splitWordToFitWidthRecursion`);
-function W(e, t) {
+n(O, `splitWordToFitWidthRecursion`);
+function k(e, t) {
   if (
     e.some(({ content: e }) =>
       e.includes(`
@@ -463,30 +187,30 @@ function W(e, t) {
     )
   )
     throw Error(`splitLineToFitWidth does not support newlines in the line`);
-  return G(e, t);
+  return A(e, t);
 }
-n(W, `splitLineToFitWidth`);
-function G(e, t, n = [], r = []) {
+n(k, `splitLineToFitWidth`);
+function A(e, t, n = [], r = []) {
   if (e.length === 0) return (r.length > 0 && n.push(r), n.length > 0 ? n : []);
   let i = ``;
   e[0].content === ` ` && ((i = ` `), e.shift());
   let a = e.shift() ?? { content: ` `, type: `normal` },
     o = [...r];
   if ((i !== `` && o.push({ content: i, type: `normal` }), o.push(a), t(o)))
-    return G(e, t, n, o);
+    return A(e, t, n, o);
   if (r.length > 0) (n.push(r), e.unshift(a));
   else if (a.content) {
-    let [r, i] = H(t, a);
+    let [r, i] = D(t, a);
     (n.push([r]), i.content && e.unshift(i));
   }
-  return G(e, t, n);
+  return A(e, t, n);
 }
-n(G, `splitLineToFitWidthRecursion`);
-function K(e, t) {
+n(A, `splitLineToFitWidthRecursion`);
+function j(e, t) {
   t && e.attr(`style`, t);
 }
-n(K, `applyStyle`);
-async function q(e, t, n, r, l = !1, u = c()) {
+n(j, `applyStyle`);
+async function M(e, t, n, r, l = !1, u = c()) {
   let d = e.append(`foreignObject`);
   (d.attr(`width`, `${10 * n}px`), d.attr(`height`, `${10 * n}px`));
   let f = d.append(`xhtml:div`),
@@ -503,9 +227,9 @@ async function q(e, t, n, r, l = !1, u = c()) {
     m = t.isNode ? `nodeLabel` : `edgeLabel`,
     h = f.append(`span`);
   (h.html(p),
-    K(h, t.labelStyle),
+    j(h, t.labelStyle),
     h.attr(`class`, `${m} ${r}`),
-    K(f, t.labelStyle),
+    j(f, t.labelStyle),
     f.style(`display`, `table-cell`),
     f.style(`white-space`, `nowrap`),
     f.style(`line-height`, `1.5`),
@@ -523,8 +247,8 @@ async function q(e, t, n, r, l = !1, u = c()) {
     d.node()
   );
 }
-n(q, `addHtmlSpan`);
-function J(e, t, n) {
+n(M, `addHtmlSpan`);
+function N(e, t, n) {
   return e
     .append(`tspan`)
     .attr(`class`, `text-outer-tspan`)
@@ -532,24 +256,24 @@ function J(e, t, n) {
     .attr(`y`, t * n - 0.1 + `em`)
     .attr(`dy`, n + `em`);
 }
-n(J, `createTspan`);
-function Y(e, t, n) {
+n(N, `createTspan`);
+function P(e, t, n) {
   let r = e.append(`text`),
-    i = J(r, 1, t);
-  Q(i, n);
+    i = N(r, 1, t);
+  L(i, n);
   let a = i.node().getComputedTextLength();
   return (r.remove(), a);
 }
-n(Y, `computeWidthOfText`);
-function X(e, t, n) {
+n(P, `computeWidthOfText`);
+function F(e, t, n) {
   let r = e.append(`text`),
-    i = J(r, 1, t);
-  Q(i, [{ content: n, type: `normal` }]);
+    i = N(r, 1, t);
+  L(i, [{ content: n, type: `normal` }]);
   let a = i.node()?.getBoundingClientRect();
   return (a && r.remove(), a);
 }
-n(X, `computeDimensionOfText`);
-function Z(e, t, r, i = !1) {
+n(F, `computeDimensionOfText`);
+function I(e, t, r, i = !1) {
   let a = 1.1,
     o = t.append(`g`),
     s = o
@@ -559,9 +283,9 @@ function Z(e, t, r, i = !1) {
     c = o.append(`text`).attr(`y`, `-10.1`),
     l = 0;
   for (let t of r) {
-    let r = n((t) => Y(o, a, t) <= e, `checkWidth`),
-      i = r(t) ? [t] : W(t, r);
-    for (let e of i) (Q(J(c, l, a), e), l++);
+    let r = n((t) => P(o, a, t) <= e, `checkWidth`),
+      i = r(t) ? [t] : k(t, r);
+    for (let e of i) (L(N(c, l, a), e), l++);
   }
   if (i) {
     let e = c.node().getBBox();
@@ -575,8 +299,8 @@ function Z(e, t, r, i = !1) {
     );
   } else return c.node();
 }
-n(Z, `createFormattedText`);
-function Q(e, t) {
+n(I, `createFormattedText`);
+function L(e, t) {
   (e.text(``),
     t.forEach((t, n) => {
       let r = e
@@ -587,8 +311,8 @@ function Q(e, t) {
       n === 0 ? r.text(t.content) : r.text(` ` + t.content);
     }));
 }
-n(Q, `updateTextContentAndStyles`);
-async function $(e, t = {}) {
+n(L, `updateTextContentAndStyles`);
+async function R(e, t = {}) {
   let n = [];
   e.replace(
     /(fa[bklrs]?):fa-([\w-]+)/g,
@@ -596,8 +320,8 @@ async function $(e, t = {}) {
       n.push(
         (async () => {
           let n = `${r}:${a}`;
-          return (await I(n))
-            ? await L(n, void 0, { class: `label-icon` })
+          return (await x(n))
+            ? await S(n, void 0, { class: `label-icon` })
             : `<i class='${i(e, t).replace(`:`, ` `)}'></i>`;
         })(),
       ),
@@ -607,8 +331,8 @@ async function $(e, t = {}) {
   let r = await Promise.all(n);
   return e.replace(/(fa[bklrs]?):fa-([\w-]+)/g, () => r.shift() ?? ``);
 }
-n($, `replaceIconSubstring`);
-var oe = n(
+n(R, `replaceIconSubstring`);
+var z = n(
   async (
     n,
     i = ``,
@@ -624,11 +348,11 @@ var oe = n(
     p,
   ) => {
     if (
-      (t.debug(`XYZ createText`, i, a, s, c, l, u, `addSvgBackground: `, f), l)
+      (r.debug(`XYZ createText`, i, a, s, c, l, u, `addSvgBackground: `, f), l)
     ) {
-      let t = await $(e(B(i, p)), p),
+      let t = await R(e(T(i, p)), p),
         r = i.replace(/\\\\/g, `\\`);
-      return await q(
+      return await M(
         n,
         {
           isNode: u,
@@ -641,40 +365,40 @@ var oe = n(
         p,
       );
     } else {
-      let e = Z(
+      let e = I(
         d,
         n,
-        z(i.replace(/<br\s*\/?>/g, `<br/>`).replace(`<br>`, `<br/>`), p),
+        w(i.replace(/<br\s*\/?>/g, `<br/>`).replace(`<br>`, `<br/>`), p),
         i ? f : !1,
       );
       if (u) {
         /stroke:/.exec(a) && (a = a.replace(`stroke:`, `lineColor:`));
-        let t = a
-          .replace(/stroke:[^;]+;?/g, ``)
-          .replace(/stroke-width:[^;]+;?/g, ``)
-          .replace(/fill:[^;]+;?/g, ``)
-          .replace(/color:/g, `fill:`);
-        r(e).attr(`style`, t);
-      } else {
-        let t = a
-          .replace(/stroke:[^;]+;?/g, ``)
-          .replace(/stroke-width:[^;]+;?/g, ``)
-          .replace(/fill:[^;]+;?/g, ``)
-          .replace(/background:/g, `fill:`);
-        r(e)
-          .select(`rect`)
-          .attr(`style`, t.replace(/background:/g, `fill:`));
         let n = a
           .replace(/stroke:[^;]+;?/g, ``)
           .replace(/stroke-width:[^;]+;?/g, ``)
           .replace(/fill:[^;]+;?/g, ``)
           .replace(/color:/g, `fill:`);
-        r(e).select(`text`).attr(`style`, n);
+        t(e).attr(`style`, n);
+      } else {
+        let n = a
+          .replace(/stroke:[^;]+;?/g, ``)
+          .replace(/stroke-width:[^;]+;?/g, ``)
+          .replace(/fill:[^;]+;?/g, ``)
+          .replace(/background:/g, `fill:`);
+        t(e)
+          .select(`rect`)
+          .attr(`style`, n.replace(/background:/g, `fill:`));
+        let r = a
+          .replace(/stroke:[^;]+;?/g, ``)
+          .replace(/stroke-width:[^;]+;?/g, ``)
+          .replace(/fill:[^;]+;?/g, ``)
+          .replace(/color:/g, `fill:`);
+        t(e).select(`text`).attr(`style`, r);
       }
       return e;
     }
   },
   `createText`,
 );
-export { $ as a, P as i, oe as n, j as o, L as r, A as s, X as t };
+export { R as a, y as i, z as n, g as o, S as r, F as t };
 //# sourceMappingURL=chunk-JA3XYJ7Z.js.map

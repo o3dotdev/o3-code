@@ -1,10 +1,19 @@
-import { s as e } from "./chunk.js";
-import { h as t } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { b as t } from "./src-C.js";
 import { n, t as r } from "./jsx-runtime.js";
-import { t as i } from "./clsx.js";
-import { S as a, Y as o, a as s, i as c, xt as l } from "./setting-storage.js";
-import { t as u } from "./use-reduced-motion.js";
-var d = [
+import { t as i } from "./clsx-BcPLHiun.js";
+import {
+  S as a,
+  X as o,
+  _ as s,
+  a as c,
+  i as l,
+  rt as u,
+  wt as d,
+} from "./setting-storage.js";
+import { n as f } from "./rpc-DqwD0euc.js";
+import { t as p } from "./use-reduced-motion.js";
+var m = [
   {
     assetRef: `codex`,
     description: `The original Codex companion.`,
@@ -22,6 +31,12 @@ var d = [
     description: `Hot path energy for fast iteration.`,
     displayName: `Fireball`,
     id: `fireball`,
+  },
+  {
+    assetRef: `hoots`,
+    description: `A sharp-eyed owl for polished work in a blink.`,
+    displayName: `Hoots`,
+    id: `hoots`,
   },
   {
     assetRef: `rocky`,
@@ -54,11 +69,11 @@ var d = [
     id: `null-signal`,
   },
 ];
-function f(e) {
+function h(e) {
   return e == null || e.length === 0
-    ? d
+    ? m
     : [
-        ...d,
+        ...m,
         ...e.map((e) => ({
           assetRef: `codex`,
           description: e.description,
@@ -68,56 +83,68 @@ function f(e) {
         })),
       ];
 }
-var p = l(),
-  m = `codex`;
-function h(e, t = d) {
-  return t.find((t) => t.id === e) ?? t.find((e) => e.id === m) ?? t[0] ?? d[0];
+var g = d(),
+  _ = `codex`;
+function v(e, t = m) {
+  return t.find((t) => t.id === e) ?? t.find((e) => e.id === _) ?? t[0] ?? m[0];
 }
-function g(e) {
-  let n = (0, p.c)(9),
+function y(e) {
+  let n = (0, g.c)(9),
     r = o(a),
-    i = s(t.selectedAvatarId),
-    l;
+    i = c(t.selectedAvatarId),
+    s;
   n[0] !== e || n[1] !== i
-    ? ((l = h(i, e)), (n[0] = e), (n[1] = i), (n[2] = l))
-    : (l = n[2]);
+    ? ((s = v(i, e)), (n[0] = e), (n[1] = i), (n[2] = s))
+    : (s = n[2]);
   let u;
   n[3] === r
     ? (u = n[4])
     : ((u = (e) => {
-        c(r, t.selectedAvatarId, e);
+        l(r, t.selectedAvatarId, e);
       }),
       (n[3] = r),
       (n[4] = u));
   let d;
   return (
-    n[5] !== i || n[6] !== l || n[7] !== u
+    n[5] !== i || n[6] !== s || n[7] !== u
       ? ((d = {
-          selectedAvatar: l,
+          selectedAvatar: s,
           selectedAvatarId: i,
           setSelectedAvatarId: u,
         }),
         (n[5] = i),
-        (n[6] = l),
+        (n[6] = s),
         (n[7] = u),
         (n[8] = d))
       : (d = n[8]),
     d
   );
 }
-var _ = `` + new URL(`bsod-spritesheet-v4.webp`, import.meta.url).href,
-  v = `` + new URL(`codex-spritesheet-v4.webp`, import.meta.url).href,
-  y = `` + new URL(`dewey-spritesheet-v4.webp`, import.meta.url).href,
-  b = `` + new URL(`fireball-spritesheet-v4.webp`, import.meta.url).href,
-  x = `` + new URL(`null-signal-spritesheet-v4.webp`, import.meta.url).href,
-  S = `` + new URL(`rocky-spritesheet-v4.webp`, import.meta.url).href,
-  C = `` + new URL(`seedy-spritesheet-v4.webp`, import.meta.url).href,
-  w = `` + new URL(`stacky-spritesheet-v4.webp`, import.meta.url).href,
-  T = e(n(), 1),
-  E = 8,
-  D = 9,
-  O = 6,
-  k = [
+var b = [`custom-avatars`],
+  x = u(a, () => ({
+    queryKey: b,
+    queryFn: () => f.customAvatars.load(),
+    enabled: !0,
+    refetchOnMount: !1,
+    refetchOnWindowFocus: !1,
+    staleTime: s.INFINITE,
+  })),
+  S = `` + new URL(`bsod-spritesheet-v4.webp`, import.meta.url).href,
+  C = `` + new URL(`codex-spritesheet-v4.webp`, import.meta.url).href,
+  w = `` + new URL(`dewey-spritesheet-v4.webp`, import.meta.url).href,
+  T = `` + new URL(`fireball-spritesheet-v4.webp`, import.meta.url).href,
+  E = `` + new URL(`hoots-spritesheet-v4-BYSNdvho.webp`, import.meta.url).href,
+  D =
+    `` +
+    new URL(`null-signal-spritesheet-v4-CCoTR-8t.webp`, import.meta.url).href,
+  O = `` + new URL(`rocky-spritesheet-v4.webp`, import.meta.url).href,
+  k = `` + new URL(`seedy-spritesheet-v4.webp`, import.meta.url).href,
+  A = `` + new URL(`stacky-spritesheet-v4.webp`, import.meta.url).href,
+  j = e(n(), 1),
+  M = 8,
+  N = 9,
+  P = 6,
+  F = [
     { rowIndex: 0, columnIndex: 0, frameDurationMs: 280 },
     { rowIndex: 0, columnIndex: 1, frameDurationMs: 110 },
     { rowIndex: 0, columnIndex: 2, frameDurationMs: 110 },
@@ -125,20 +152,20 @@ var _ = `` + new URL(`bsod-spritesheet-v4.webp`, import.meta.url).href,
     { rowIndex: 0, columnIndex: 4, frameDurationMs: 140 },
     { rowIndex: 0, columnIndex: 5, frameDurationMs: 320 },
   ],
-  A = k.map((e) => ({ ...e, frameDurationMs: e.frameDurationMs * O })),
-  j = {
-    failed: P(5, 8, 140, 240),
-    idle: k,
-    jumping: P(4, 5, 140, 280),
-    review: P(8, 6, 150, 280),
-    running: P(7, 6, 120, 220),
-    "running-left": P(2, 8, 120, 220),
-    "running-right": P(1, 8, 120, 220),
-    waving: P(3, 4, 140, 280),
-    waiting: P(6, 6, 150, 260),
+  I = F.map((e) => ({ ...e, frameDurationMs: e.frameDurationMs * P })),
+  L = {
+    failed: B(5, 8, 140, 240),
+    idle: F,
+    jumping: B(4, 5, 140, 280),
+    review: B(8, 6, 150, 280),
+    running: B(7, 6, 120, 220),
+    "running-left": B(2, 8, 120, 220),
+    "running-right": B(1, 8, 120, 220),
+    waving: B(3, 4, 140, 280),
+    waiting: B(6, 6, 150, 260),
   };
-function M(e) {
-  let t = (0, p.c)(6),
+function R(e) {
+  let t = (0, g.c)(6),
     {
       avatarRef: n,
       isAnimationEnabled: r,
@@ -153,25 +180,25 @@ function M(e) {
     ? ((c = () => {
         let e = n.current;
         if (e == null) return;
-        let t = N(s, i || !o),
+        let t = z(s, i || !o),
           r = t.frames,
           a = 0,
           c = null;
-        if (((e.style.backgroundPosition = F(r[a])), r.length === 1)) return;
+        if (((e.style.backgroundPosition = V(r[a])), r.length === 1)) return;
         let l = () => {
           c = window.setTimeout(() => {
             let n = a + 1;
             if (n >= r.length) {
               if (t.loopStartIndex != null) {
                 ((a = t.loopStartIndex),
-                  (e.style.backgroundPosition = F(r[a])),
+                  (e.style.backgroundPosition = V(r[a])),
                   l());
                 return;
               }
               c = null;
               return;
             }
-            ((a = n), (e.style.backgroundPosition = F(r[a])), l());
+            ((a = n), (e.style.backgroundPosition = V(r[a])), l());
           }, r[a].frameDurationMs);
         };
         return (
@@ -189,88 +216,89 @@ function M(e) {
       (t[4] = c),
       (t[5] = l))
     : ((c = t[4]), (l = t[5])),
-    (0, T.useEffect)(c, l));
+    (0, j.useEffect)(c, l));
 }
-function N(e, t) {
-  let n = j[e];
+function z(e, t) {
+  let n = L[e];
   if (t) return { frames: [n[0]], loopStartIndex: null };
-  if (e === `idle`) return { frames: A, loopStartIndex: 0 };
+  if (e === `idle`) return { frames: I, loopStartIndex: 0 };
   let r = [...n, ...n, ...n];
-  return { frames: [...r, ...A], loopStartIndex: r.length };
+  return { frames: [...r, ...I], loopStartIndex: r.length };
 }
-function P(e, t, n, r) {
+function B(e, t, n, r) {
   return Array.from({ length: t }, (i, a) => ({
     columnIndex: a,
     frameDurationMs: a === t - 1 ? r : n,
     rowIndex: e,
   }));
 }
-function F(e) {
-  return `${(e.columnIndex / (E - 1)) * 100}% ${(e.rowIndex / (D - 1)) * 100}%`;
+function V(e) {
+  return `${(e.columnIndex / (M - 1)) * 100}% ${(e.rowIndex / (N - 1)) * 100}%`;
 }
-var I = r(),
-  L = {
-    bsod: _,
-    codex: v,
-    dewey: y,
-    fireball: b,
-    "null-signal": x,
-    rocky: S,
-    seedy: C,
-    stacky: w,
+var H = r(),
+  U = {
+    bsod: S,
+    codex: C,
+    dewey: w,
+    fireball: T,
+    hoots: E,
+    "null-signal": D,
+    rocky: O,
+    seedy: k,
+    stacky: A,
   };
-function R(e) {
-  let t = (0, p.c)(14),
+function W(e) {
+  let t = (0, g.c)(14),
     { assetRef: n, className: r, spritesheetUrl: a, state: o } = e,
     s = o === void 0 ? `idle` : o,
-    c = (0, T.useRef)(null),
-    l = u(),
-    d;
-  t[0] === n ? (d = t[1]) : ((d = z(n)), (t[0] = n), (t[1] = d));
-  let f = d,
-    m;
+    c = (0, j.useRef)(null),
+    l = p(),
+    u;
+  t[0] === n ? (u = t[1]) : ((u = G(n)), (t[0] = n), (t[1] = u));
+  let d = u,
+    f;
   (t[2] !== l || t[3] !== s
-    ? ((m = { avatarRef: c, prefersReducedMotion: l, state: s }),
+    ? ((f = { avatarRef: c, prefersReducedMotion: l, state: s }),
       (t[2] = l),
       (t[3] = s),
-      (t[4] = m))
-    : (m = t[4]),
-    M(m));
-  let h;
+      (t[4] = f))
+    : (f = t[4]),
+    R(f));
+  let m;
   t[5] === r
-    ? (h = t[6])
-    : ((h = i(`codex-avatar-root`, r)), (t[5] = r), (t[6] = h));
-  let g = `url(${a ?? L[f]})`,
+    ? (m = t[6])
+    : ((m = i(`codex-avatar-root`, r)), (t[5] = r), (t[6] = m));
+  let h = `url(${a ?? U[d]})`,
     _;
-  t[7] === g
+  t[7] === h
     ? (_ = t[8])
-    : ((_ = { backgroundImage: g }), (t[7] = g), (t[8] = _));
+    : ((_ = { backgroundImage: h }), (t[7] = h), (t[8] = _));
   let v;
   return (
-    t[9] !== f || t[10] !== s || t[11] !== h || t[12] !== _
-      ? ((v = (0, I.jsx)(`div`, {
+    t[9] !== d || t[10] !== s || t[11] !== m || t[12] !== _
+      ? ((v = (0, H.jsx)(`div`, {
           ref: c,
-          className: h,
-          "data-avatar-asset-ref": f,
+          className: m,
+          "data-avatar-asset-ref": d,
           "data-avatar-state": s,
           style: _,
           "aria-hidden": `true`,
           "data-testid": `codex-avatar`,
         })),
-        (t[9] = f),
+        (t[9] = d),
         (t[10] = s),
-        (t[11] = h),
+        (t[11] = m),
         (t[12] = _),
         (t[13] = v))
       : (v = t[13]),
     v
   );
 }
-function z(e) {
-  return B(e) ? e : `codex`;
+function G(e) {
+  return K(e) ? e : `codex`;
 }
-function B(e) {
-  return e != null && Object.hasOwn(L, e);
+function K(e) {
+  return e != null && Object.hasOwn(U, e);
 }
-export { f as i, g as n, d as r, R as t };
+export { m as a, y as i, b as n, h as o, x as r, W as t };
 //# sourceMappingURL=codex-avatar.js.map

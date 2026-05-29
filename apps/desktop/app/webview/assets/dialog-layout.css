@@ -1,15 +1,15 @@
-.codex-dialog {
-  animation: codex-dialog-enter var(--transition-duration-relaxed)
+._content_pk7td_1 {
+  animation: _codex-dialog-enter_pk7td_1 var(--transition-duration-relaxed)
     var(--cubic-enter);
   transform-origin: top;
   will-change: transform, opacity;
 }
 @media (prefers-reduced-motion: reduce) {
-  .codex-dialog {
+  ._content_pk7td_1 {
     animation: none;
   }
 }
-@keyframes codex-dialog-enter {
+@keyframes _codex-dialog-enter_pk7td_1 {
   0% {
     opacity: 0;
     transform: translateY(calc(var(--spacing, 4px) * 2)) scale(0.98);
@@ -19,17 +19,17 @@
     transform: translateY(0) scale(1);
   }
 }
-.codex-dialog-overlay {
-  animation: codex-dialog-overlay var(--transition-duration-relaxed)
+._overlay_pk7td_26 {
+  animation: _codex-dialog-overlay_pk7td_1 var(--transition-duration-relaxed)
     var(--cubic-enter);
   will-change: opacity;
 }
 @media (prefers-reduced-motion: reduce) {
-  .codex-dialog-overlay {
+  ._overlay_pk7td_26 {
     animation: none;
   }
 }
-@keyframes codex-dialog-overlay {
+@keyframes _codex-dialog-overlay_pk7td_1 {
   0% {
     opacity: 0;
   }

@@ -1,13 +1,15 @@
 import "./chunk-FPAJGGOC.js";
 import { r as e } from "./chunk-S3R3BYOJ.js";
-import "./chunk-O7ZBX7Z2.js";
+import "./main.js";
+import "./chunk-O7ZBX7Z2-CDUPWEuA.js";
 import "./chunk-S6J4BHB3.js";
 import "./chunk-LBM3YZW2.js";
 import "./chunk-76Q3JFCE.js";
 import "./chunk-T53DSG4Q.js";
-import "./chunk-LHMN2FUI.js";
+import "./chunk-LHMN2FUI-VtnDVaqY.js";
 import "./chunk-FWNWRKHM.js";
-import { i as t, r as n } from "./src-DXdm7MTq.js";
+import "./src-BHeH9bp0.js";
+import { n as t, r as n } from "./chunk-AGHRB4JF-CwjJfTB_.js";
 import {
   B as r,
   C as i,
@@ -19,11 +21,11 @@ import {
   v as u,
   y as d,
   z as f,
-} from "./chunk-ABZYJK2D.js";
-import { t as p } from "./chunk-EXTU4WIE.js";
-import "./dist-Dkaf81wL.js";
-import { t as m } from "./chunk-4BX2VUAB.js";
-import { t as h } from "./mermaid-parser.core.js";
+} from "./chunk-ABZYJK2D-DSLQAJWr.js";
+import { t as p } from "./chunk-EXTU4WIE-PYLurCvb.js";
+import "./dist-OQR0lEt7.js";
+import { t as m } from "./chunk-4BX2VUAB-g.js";
+import { t as h } from "./mermaid-parser.core-p5FsnjRv.js";
 var g = l.packet,
   _ = class {
     constructor() {
@@ -36,7 +38,7 @@ var g = l.packet,
         (this.setAccDescription = f));
     }
     static {
-      n(this, `PacketDB`);
+      t(this, `PacketDB`);
     }
     getConfig() {
       let t = e({ ...g, ...d().packet });
@@ -53,12 +55,12 @@ var g = l.packet,
     }
   },
   v = 1e4,
-  y = n((e, n) => {
-    m(e, n);
+  y = t((e, t) => {
+    m(e, t);
     let r = -1,
       i = [],
       a = 1,
-      { bitsPerRow: o } = n.getConfig();
+      { bitsPerRow: o } = t.getConfig();
     for (let { start: s, end: c, bits: l, label: u } of e.blocks) {
       if (s !== void 0 && c !== void 0 && c < s)
         throw Error(
@@ -76,20 +78,20 @@ var g = l.packet,
         c ??= s + (l ?? 1) - 1,
           l ??= c - s + 1,
           r = c,
-          t.debug(`Packet block ${s} - ${r} with label ${u}`);
-        i.length <= o + 1 && n.getPacket().length < v;
+          n.debug(`Packet block ${s} - ${r} with label ${u}`);
+        i.length <= o + 1 && t.getPacket().length < v;
       ) {
-        let [e, t] = b({ start: s, end: c, bits: l, label: u }, a, o);
+        let [e, n] = b({ start: s, end: c, bits: l, label: u }, a, o);
         if (
-          (i.push(e), e.end + 1 === a * o && (n.pushWord(i), (i = []), a++), !t)
+          (i.push(e), e.end + 1 === a * o && (t.pushWord(i), (i = []), a++), !n)
         )
           break;
-        ({ start: s, end: c, bits: l, label: u } = t);
+        ({ start: s, end: c, bits: l, label: u } = n);
       }
     }
-    n.pushWord(i);
+    t.pushWord(i);
   }, `populate`),
-  b = n((e, t, n) => {
+  b = t((e, t, n) => {
     if (e.start === void 0)
       throw Error(`start should have been set during first phase`);
     if (e.end === void 0)
@@ -106,17 +108,17 @@ var g = l.packet,
   }, `getNextFittingBlock`),
   x = {
     parser: { yy: void 0 },
-    parse: n(async (e) => {
-      let n = await h(`packet`, e),
+    parse: t(async (e) => {
+      let t = await h(`packet`, e),
         r = x.parser?.yy;
       if (!(r instanceof _))
         throw Error(
           `parser.parser?.yy was not a PacketDB. This is due to a bug within Mermaid, please report this issue at https://github.com/mermaid-js/mermaid/issues.`,
         );
-      (t.debug(n), y(n, r));
+      (n.debug(t), y(t, r));
     }, `parse`),
   },
-  S = n((e, t, n, r) => {
+  S = t((e, t, n, r) => {
     let i = r.db,
       a = i.getConfig(),
       { rowHeight: o, paddingY: s, bitWidth: l, bitsPerRow: u } = a,
@@ -136,7 +138,7 @@ var g = l.packet,
       .attr(`text-anchor`, `middle`)
       .attr(`class`, `packetTitle`);
   }, `draw`),
-  C = n(
+  C = t(
     (
       e,
       t,
@@ -216,7 +218,7 @@ var g = l.packet,
       return new _();
     },
     renderer: w,
-    styles: n(({ packet: t } = {}) => {
+    styles: t(({ packet: t } = {}) => {
       let n = e(T, t);
       return `
 	.packetByte {

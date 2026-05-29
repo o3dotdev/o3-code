@@ -19,11 +19,7 @@ async function i({
       { duration: 120, hasCloseButton: !1, id: `install-primary-runtime` },
     );
   try {
-    let e = await t({
-      hostId: r,
-      release: o,
-      request: `install-primary-runtime`,
-    });
+    let e = await t({ hostId: r, release: o, request: `install` });
     if (
       (i?.(`codex_primary_runtime_install_result`, {
         bundle_version: e.bundleVersion ?? ``,

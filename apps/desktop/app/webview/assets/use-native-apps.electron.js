@@ -1,18 +1,18 @@
-import { s as e } from "./chunk.js";
-import { Hn as t, Vn as n } from "./src-BLHmAhbF.js";
-import { Qi as r, Xi as i } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Sr as t, xr as n } from "./src-C.js";
+import { Va as r, za as i } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as a, t as o } from "./jsx-runtime.js";
-import { _ as s, p as c, xt as l } from "./setting-storage.js";
-import { n as u, t as d } from "./notion.js";
-import { g as f, m as p, u as m } from "./mention-item.js";
+import { _ as s, p as c, wt as l } from "./setting-storage.js";
+import { n as u, t as d } from "./notion-hFEWPyiF.js";
+import { f, g as p, v as m } from "./mention-item.js";
 import { t as h } from "./use-platform.js";
-import { t as ee } from "./bug.js";
-import { t as g } from "./skills.js";
+import { t as ee } from "./bug-B5-GWt65.js";
+import { t as g } from "./skills-BUMAZe_D.js";
 import { r as _, t as v } from "./get-file-icon.js";
-import { t as te } from "./mcp.js";
-import { t as ne } from "./chrome.js";
-import { t as y } from "./codex.js";
-import { t as b } from "./openai-blossom.js";
+import { t as te } from "./mcp-D_m7bYb5.js";
+import { t as ne } from "./chrome-ZI-wJE1V.js";
+import { t as y } from "./codex-BjFeJtxQ.js";
+import { t as b } from "./openai-blossom-CXnPbecc.js";
 import { t as x } from "./pencil.js";
 import { n as re, t as S } from "./filesystem-media-src.js";
 var C = `com.google.Chrome`,
@@ -50,7 +50,7 @@ function se({ app: e, description: t, computerPlugin: n, iconSmall: r }) {
     kind: `plugin`,
     name: i,
     displayName: i,
-    path: f(n.plugin.id),
+    path: m(n.plugin.id),
     description: t ?? n.description ?? ``,
     iconSmall: r ?? n.logoPath ?? ``,
   };
@@ -71,7 +71,7 @@ function j(e, t) {
     : (e.find((e) => e.displayName === t || k(e) === t) ?? null);
 }
 function M(e, t) {
-  return t == null ? !1 : e === f(t.plugin.id);
+  return t == null ? !1 : e === m(t.plugin.id);
 }
 function N({ path: e, matchType: t }) {
   return t === `directory` ? v.folder : v[_(e)];
@@ -701,7 +701,7 @@ function Q(
 function ge({ label: e, path: t, plugins: n }) {
   let r = e.trim().toLowerCase();
   if (t != null && t.length > 0) {
-    let e = n.find((e) => f(e.plugin.id) === t);
+    let e = n.find((e) => m(e.plugin.id) === t);
     if (e != null) return e;
   }
   return n.find(
@@ -715,7 +715,7 @@ function _e(e) {
   return e.description ?? (e.marketplaceName || null);
 }
 function $(e, t) {
-  return m(e, t);
+  return f(e, t);
 }
 function ve(e, t) {
   let n = $(e, t);

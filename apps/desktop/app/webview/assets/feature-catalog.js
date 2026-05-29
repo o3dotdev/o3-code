@@ -1,7 +1,7 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { O as i, b as a, x as o } from "./remote-text-edit-session.js";
+import { t as r } from "./clsx-BcPLHiun.js";
+import { D as i, b as a, y as o } from "./remote-text-edit-session-CY-eW3VI.js";
 var s = e(t()),
   c = n();
 function l({
@@ -62,7 +62,7 @@ function l({
         className: `text-token-text-primary hover:bg-token-bg-secondary inline-flex size-8 items-center justify-center rounded-md disabled:cursor-default disabled:opacity-40`,
         disabled: !h,
         onClick: d,
-        children: (0, c.jsx)(o, { className: `size-3.5` }),
+        children: (0, c.jsx)(a, { className: `size-3.5` }),
       }),
       (0, c.jsx)(`button`, {
         type: `button`,
@@ -70,7 +70,7 @@ function l({
         className: `text-token-text-primary hover:bg-token-bg-secondary inline-flex size-8 items-center justify-center rounded-md disabled:cursor-default disabled:opacity-40`,
         disabled: !h,
         onClick: f,
-        children: (0, c.jsx)(a, { className: `size-3.5` }),
+        children: (0, c.jsx)(o, { className: `size-3.5` }),
       }),
       (0, c.jsx)(`button`, {
         type: `button`,

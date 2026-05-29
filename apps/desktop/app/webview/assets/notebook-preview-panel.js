@@ -1,128 +1,142 @@
 import {
-  _i as e,
-  di as t,
-  ei as n,
-  gi as r,
-  mi as i,
-  ui as a,
-  vi as o,
-} from "./src-BLHmAhbF.js";
-import "./app-server-manager-signals.js";
+  Gi as e,
+  Hi as t,
+  Ji as n,
+  Vi as r,
+  Yi as i,
+  ji as a,
+  qi as o,
+} from "./src-C.js";
+import "./app-server-manager-signals-DkRDRgNB.js";
 import { t as s } from "./jsx-runtime.js";
-import { t as c } from "./clsx.js";
-import "./react-dom.js";
+import { t as c } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import "./katex-BzX-JuVf.js";
-import "./marked.esm.js";
-import { H as l, W as u, xt as d } from "./setting-storage.js";
+import "./katex-C2KDRoso.js";
+import "./marked.esm-BR-H6018.js";
+import { G as l, U as u, wt as d } from "./setting-storage.js";
 import "./known-app-icon.js";
 import "./branch.js";
-import "./github-mark.js";
+import "./github-mark-BbpRNXQM.js";
 import "./google-drive.js";
-import "./notion.js";
-import "./product-logger.js";
-import "./statsig.js";
+import "./notion-hFEWPyiF.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./use-is-dark.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
+import "./apps-queries-CmwRqoKz.js";
+import "./startCase.js";
+import "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
 import "./connector-logo.js";
 import "./toast-signal.js";
 import "./window-zoom-context.js";
-import "./tooltip.js";
+import "./tooltip-CDzchJxN.js";
 import "./route-scope.js";
+import "./prompt-text-DuAhtLDu.js";
+import "./use-environment.js";
+import "./composer-view-state-JRNwOfub.js";
 import "./mention-item.js";
 import "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
-import "./open-workspace-file.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
+import "./remote-projects.js";
 import "./proxy.js";
-import "./apps.js";
-import "./x.js";
-import "./plugin-install-store.js";
+import "./apps-DwfMzB5Q.js";
+import "./x-C_RDKBp5.js";
+import "./projectless-thread.js";
+import "./plugin-install-store-Daxzgjai.js";
 import "./use-platform.js";
-import "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
-import "./apps-queries.js";
-import "./startCase.js";
-import "./uniq.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
 import "./check-circle-filled.js";
 import "./terminal.js";
-import "./info.js";
+import "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import "./download.js";
 import "./with-window.js";
 import "./window-app-action-helpers.js";
-import "./plugin-config-edits.js";
+import "./plugin-detail-route-utils.js";
 import "./dialog-layout.js";
+import "./plugins-availability-txQMPSuC.js";
+import "./plugin-config-edits-DUMiyKty.js";
+import "./local-projects.js";
 import "./run-command.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
 import "./use-stable-callback.js";
-import "./use-skills.js";
-import "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
+import "./use-register-command.js";
 import "./check-md.js";
 import "./chevron-right.js";
 import "./context-menu.js";
 import "./arrow-left.js";
+import "./codex-api-error-CsUcWied.js";
+import "./minus.js";
 import "./badge.js";
-import "./bug.js";
+import "./bug-B5-GWt65.js";
 import "./chat.js";
 import "./search.js";
-import "./skills.js";
-import "./dropdown.js";
-import "./globe.js";
-import { t as f } from "./chevron.js";
-import "./folder.js";
-import { n as p } from "./markdown-75WV5XlN.js";
-import "./external-markdown-link.js";
+import "./skills-BUMAZe_D.js";
+import "./dropdown-DtQxMoJw.js";
+import "./globe-CnvlclXd.js";
+import { t as f } from "./chevron-NmAOI_v1.js";
+import { n as p } from "./markdown-46SswYUq.js";
+import "./external-markdown-link-DVRKkYqo.js";
 import "./use-native-apps.electron.js";
 import "./get-file-icon.js";
-import { t as m } from "./code.js";
-import "./json-DAjHKBV7.js";
-import "./image-square.js";
-import "./notebook.js";
+import { t as m } from "./code-s3Scfd05.js";
+import "./json-CRHyc9De.js";
+import "./image-square-CGEtcnWp.js";
+import "./notebook-MImpo36y.js";
 import "./settings.cog.js";
-import "./mcp.js";
-import "./chrome.js";
-import "./codex.js";
-import "./openai-blossom.js";
+import "./mcp-D_m7bYb5.js";
+import "./chrome-ZI-wJE1V.js";
+import "./codex-BjFeJtxQ.js";
+import "./openai-blossom-CXnPbecc.js";
 import "./pencil.js";
 import "./filesystem-media-src.js";
 import "./inline-mentions.js";
-import { t as h } from "./code-snippet.js";
-import "./tailwind-styled-components.esm.js";
-import "./copy.js";
+import "./workspace-file-context-menu.js";
+import "./use-skills.js";
+import { t as h } from "./code-snippet-hioibDaj.js";
+import "./copy-Cen6nDnP.js";
 import "./copy-button.js";
-import "./minus-D.js";
 import "./plus.js";
 import "./image-preview-dialog.js";
 import "./plugin-detail-queries.js";
 import { t as g } from "./play-sm.js";
 import "./toggle.js";
-import "./bundled-plugin-auto-install-preference.js";
-import "./app-connect-oauth.js";
-import "./codex-api-error.js";
-import "./hooks-settings-queries.js";
+import "./app-connect-oauth-Cy-gX8IV.js";
+import "./hooks-settings-queries-BUP-44jb.js";
+import "./connected-apps.js";
 import { t as _ } from "./regenerate.js";
 import "./codex-analytics-attribution.js";
 import "./use-target-apps.js";
-import "./compound-button.js";
-import "./arrow-top-right.js";
-import "./open-in-google-drive-menu-item.js";
 import "./app-connect-modal.js";
-import "./plugin-detail-route-utils.js";
-import "./plugins-availability.js";
-import { i as v, r as y, t as b } from "./artifact-preview-status.js";
+import "./compound-button-BQclBs-H.js";
+import { n as v, r as y } from "./artifact-preview-header.js";
+import "./arrow-top-right.js";
+import { t as b } from "./artifact-preview-status.js";
 var x = d(),
   S = [`codex`, `codexNotebook`, `codex_notebook`, `codex-app`],
   C = [`title`, `cellTitle`, `cell_title`],
@@ -133,17 +147,17 @@ var x = d(),
     `description_markdown`,
     `description`,
   ],
-  T = i(r(), o()),
-  E = e([r(), n(r())]).optional(),
+  T = e(o(), i()),
+  E = n([o(), a(o())]).optional(),
   D = T,
   O = t({
-    cells: n(
+    cells: a(
       t({
-        cell_type: r(),
-        execution_count: a().int().nullable().optional(),
-        id: r().optional(),
+        cell_type: o(),
+        execution_count: r().int().nullable().optional(),
+        id: o().optional(),
         metadata: T.optional(),
-        outputs: n(D).optional(),
+        outputs: a(D).optional(),
         source: E,
       }).passthrough(),
     ),
@@ -323,7 +337,7 @@ function B(e) {
       path: a,
       title: o,
     } = e,
-    s = u(),
+    s = l(),
     c;
   t[0] === n ? (c = t[1]) : ((c = oe(n)), (t[0] = n), (t[1] = c));
   let d = c,
@@ -373,7 +387,7 @@ function B(e) {
                     (0, z.jsx)(g, { className: `icon-2xs` }),
                     (0, z.jsx)(`span`, {
                       className: `hidden md:inline`,
-                      children: (0, z.jsx)(l, {
+                      children: (0, z.jsx)(u, {
                         id: `notebookPreview.runAllDisabled`,
                         defaultMessage: `Run all`,
                         description: `Disabled run-all control in the read-only notebook preview`,
@@ -391,7 +405,7 @@ function B(e) {
                     (0, z.jsx)(_, { className: `icon-2xs` }),
                     (0, z.jsx)(`span`, {
                       className: `hidden lg:inline`,
-                      children: (0, z.jsx)(l, {
+                      children: (0, z.jsx)(u, {
                         id: `notebookPreview.restartKernelDisabled`,
                         defaultMessage: `Restart kernel`,
                         description: `Disabled restart-kernel control in the read-only notebook preview`,
@@ -408,7 +422,7 @@ function B(e) {
     : (C = t[12]);
   let w;
   t[13] !== i || t[14] !== a
-    ? ((w = (0, z.jsx)(v, { hostId: i, path: a })),
+    ? ((w = (0, z.jsx)(y, { hostId: i, path: a })),
       (t[13] = i),
       (t[14] = a),
       (t[15] = w))
@@ -426,7 +440,7 @@ function B(e) {
     : (T = t[19]);
   let E;
   t[20] !== p || t[21] !== S || t[22] !== T
-    ? ((E = (0, z.jsx)(y, {
+    ? ((E = (0, z.jsx)(v, {
         artifactType: S,
         centerContent: null,
         rightContent: T,
@@ -471,7 +485,7 @@ function V() {
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
       ? ((t = (0, z.jsx)(`span`, {
           className: `bg-token-main-surface-secondary/30 inline-flex h-7 shrink-0 items-center rounded-full border border-token-border-light px-2 text-xs font-medium text-token-text-tertiary`,
-          children: (0, z.jsx)(l, {
+          children: (0, z.jsx)(u, {
             id: `notebookPreview.readOnlyBadge`,
             defaultMessage: `Read only`,
             description: `Badge shown in the read-only notebook artifact preview`,
@@ -512,7 +526,7 @@ function U(e) {
       t[0] === Symbol.for(`react.memo_cache_sentinel`)
         ? ((e = (0, z.jsx)(`div`, {
             className: `flex min-h-0 flex-1 items-center justify-center px-6 text-center text-sm text-token-text-tertiary`,
-            children: (0, z.jsx)(l, {
+            children: (0, z.jsx)(u, {
               id: `notebookPreview.empty`,
               defaultMessage: `This notebook does not contain any cells`,
               description: `Empty state shown for a notebook without cells`,
@@ -592,7 +606,7 @@ function W(e) {
 function G(e) {
   let t = (0, x.c)(25),
     { cell: n, cellNumber: r, totalCellCount: i } = e,
-    a = u(),
+    a = l(),
     o;
   t[0] !== n || t[1] !== r || t[2] !== a
     ? ((o = ce(a, n, r)), (t[0] = n), (t[1] = r), (t[2] = a), (t[3] = o))
@@ -619,7 +633,7 @@ function G(e) {
   t[7] !== r || t[8] !== i
     ? ((p = (0, z.jsx)(`span`, {
         className: `shrink-0 text-xs text-token-text-tertiary`,
-        children: (0, z.jsx)(l, {
+        children: (0, z.jsx)(u, {
           id: `notebookPreview.cellPosition`,
           defaultMessage: `Cell {cellNumber} of {totalCellCount}`,
           description: `Position label for a rendered notebook cell`,
@@ -646,7 +660,7 @@ function G(e) {
         n.cellType === `code` && n.executionCount != null
           ? (0, z.jsx)(`span`, {
               className: `tabular-nums`,
-              children: (0, z.jsx)(l, {
+              children: (0, z.jsx)(u, {
                 id: `notebookPreview.executionCount`,
                 defaultMessage: `Run {executionCount}`,
                 description: `Execution count label for a rendered notebook code cell`,
@@ -711,7 +725,7 @@ function K(e) {
             children:
               n.source.trim().length === 0
                 ? (0, z.jsx)(q, {
-                    children: (0, z.jsx)(l, {
+                    children: (0, z.jsx)(u, {
                       id: `notebookPreview.emptyMarkdownCell`,
                       defaultMessage: `Empty Markdown cell`,
                       description: `Empty state shown for a Markdown notebook cell without source`,
@@ -738,7 +752,7 @@ function K(e) {
             children:
               n.source.trim().length === 0
                 ? (0, z.jsx)(q, {
-                    children: (0, z.jsx)(l, {
+                    children: (0, z.jsx)(u, {
                       id: `notebookPreview.emptyRawCell`,
                       defaultMessage: `Empty raw cell`,
                       description: `Empty state shown for a raw notebook cell without source`,
@@ -748,7 +762,7 @@ function K(e) {
                     content: n.source,
                     language: `text`,
                     shouldWrapCode: !0,
-                    title: (0, z.jsx)(l, {
+                    title: (0, z.jsx)(u, {
                       id: `notebookPreview.rawCodeTitle`,
                       defaultMessage: `Raw`,
                       description: `Code snippet title for a raw notebook cell`,
@@ -796,7 +810,7 @@ function K(e) {
                 content: n.source,
                 language: `python`,
                 shouldWrapCode: !0,
-                title: (0, z.jsx)(l, {
+                title: (0, z.jsx)(u, {
                   id: `notebookPreview.pythonCodeTitle`,
                   defaultMessage: `Python`,
                   description: `Code snippet title for a Python notebook cell`,
@@ -804,7 +818,7 @@ function K(e) {
                 wrapperClassName: `shadow-none`,
               })
           : (0, z.jsx)(q, {
-              children: (0, z.jsx)(l, {
+              children: (0, z.jsx)(u, {
                 id: `notebookPreview.emptyCodeCell`,
                 defaultMessage: `Empty code cell`,
                 description: `Empty state shown for a code notebook cell without source`,
@@ -822,10 +836,10 @@ function K(e) {
         (t[15] = s),
         (t[16] = c))
       : (c = t[16]);
-    let u;
+    let l;
     t[17] === n.outputs
-      ? (u = t[18])
-      : ((u =
+      ? (l = t[18])
+      : ((l =
           n.outputs.length > 0
             ? (0, z.jsx)(`div`, {
                 className: `bg-token-main-surface-secondary/15 border-t border-token-border-light px-4 py-3 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)]`,
@@ -836,13 +850,13 @@ function K(e) {
               })
             : null),
         (t[17] = n.outputs),
-        (t[18] = u));
+        (t[18] = l));
     let d;
     return (
-      t[19] !== c || t[20] !== u
-        ? ((d = (0, z.jsxs)(z.Fragment, { children: [c, u] })),
+      t[19] !== c || t[20] !== l
+        ? ((d = (0, z.jsxs)(z.Fragment, { children: [c, l] })),
           (t[19] = c),
-          (t[20] = u),
+          (t[20] = l),
           (t[21] = d))
         : (d = t[21]),
       d
@@ -854,7 +868,7 @@ function K(e) {
       ? ((r = (0, z.jsx)(`div`, {
           className: `px-4 py-3`,
           children: (0, z.jsx)(q, {
-            children: (0, z.jsx)(l, {
+            children: (0, z.jsx)(u, {
               id: `notebookPreview.emptyUnknownCell`,
               defaultMessage: `Empty notebook cell`,
               description: `Empty state shown for an unknown notebook cell without source`,
@@ -882,7 +896,7 @@ function ie(e) {
           }),
           (0, z.jsx)(m, { className: `icon-2xs shrink-0` }),
           (0, z.jsx)(`span`, {
-            children: (0, z.jsx)(l, {
+            children: (0, z.jsx)(u, {
               id: `notebookPreview.codeDisclosure`,
               defaultMessage: `Code`,
               description: `Disclosure label for notebook cell source code`,
@@ -894,7 +908,7 @@ function ie(e) {
     : (r = t[0]);
   let i;
   t[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((i = (0, z.jsx)(l, {
+    ? ((i = (0, z.jsx)(u, {
         id: `notebookPreview.pythonCodeTitle`,
         defaultMessage: `Python`,
         description: `Code snippet title for a Python notebook cell`,
@@ -945,7 +959,7 @@ function q(e) {
 function ae(e) {
   let t = (0, x.c)(35),
     { output: n } = e,
-    r = u();
+    r = l();
   switch (n.type) {
     case `image`: {
       let e;
@@ -1067,7 +1081,7 @@ function ae(e) {
                   className: `text-sm font-medium text-token-charts-red`,
                   children:
                     n.evalue.length > 0
-                      ? (0, z.jsx)(l, {
+                      ? (0, z.jsx)(u, {
                           id: `notebookPreview.errorOutput`,
                           defaultMessage: `{name}: {message}`,
                           description: `Notebook error output label with error name and message`,
@@ -1193,7 +1207,7 @@ function Y(e) {
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((i = (0, z.jsx)(`summary`, {
         className: `cursor-interaction text-xs font-medium text-token-text-tertiary marker:text-token-text-tertiary`,
-        children: (0, z.jsx)(l, {
+        children: (0, z.jsx)(u, {
           id: `notebookPreview.rawOutputDisclosure`,
           defaultMessage: `Raw output`,
           description: `Disclosure label for a notebook cell's raw output`,

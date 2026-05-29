@@ -1,0 +1,2 @@
+import { t as e } from "./angular-html-D0OelfoO.js";
+export { e as default };

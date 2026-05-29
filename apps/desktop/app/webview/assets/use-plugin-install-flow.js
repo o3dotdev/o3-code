@@ -1,71 +1,85 @@
-import { s as e } from "./chunk.js";
-import { Vn as t, Xr as n, di as r, gi as i } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Di as t, Hi as n, qi as r, vr as i, xr as a } from "./src-C.js";
 import {
-  Ca as a,
-  Fn as o,
-  Xi as s,
-  ts as c,
-  wa as l,
-  zt as u,
-} from "./app-server-manager-signals.js";
+  Xs as o,
+  fo as s,
+  ur as c,
+  wo as l,
+  za as u,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as d, t as f } from "./jsx-runtime.js";
 import {
-  B as p,
+  $ as p,
   C as m,
-  H as h,
-  J as g,
-  L as _,
-  S as v,
-  T as y,
-  W as b,
+  G as h,
+  L as g,
+  S as _,
+  T as v,
+  U as y,
+  V as b,
   X as x,
   Y as S,
   _ as C,
   l as w,
-  u as ee,
-  w as te,
-  xt as T,
-  y as E,
+  u as T,
+  w as ee,
+  wt as E,
+  y as D,
 } from "./setting-storage.js";
-import { u as ne } from "./chunk-LFPYN7LY.js";
-import { t as D } from "./queryOptions.js";
-import { o as O } from "./statsig.js";
-import { t as k } from "./invalidate-queries-and-broadcast.js";
-import { S as A, c as re } from "./config-queries.js";
-import { r as j } from "./remote-connection-visibility.js";
-import { t as M } from "./connector-logo.js";
-import { r as N } from "./toast-signal.js";
-import { t as ie } from "./tooltip.js";
-import { t as ae } from "./button.js";
-import { t as P } from "./apps.js";
-import { t as oe } from "./plugin-install-store.js";
-import { t as se } from "./use-platform.js";
-import { a as F, i as ce, n as I } from "./use-is-plugins-enabled.js";
-import { d as le, f as L, o as ue, p as R, s as de } from "./use-plugins.js";
-import { h as z, m as B, p as fe, s as V, v as pe } from "./apps-queries.js";
-import { n as H, r as me, t as U } from "./plugin-config-edits.js";
-import { l as he, n as ge } from "./dialog-layout.js";
-import { t as W } from "./use-skills.js";
-import { f as G } from "./links.js";
-import { t as K } from "./badge.js";
-import { t as q } from "./openai-blossom.js";
-import { n as _e, t as ve } from "./filesystem-media-src.js";
-import { r as J } from "./plugin-detail-queries.js";
-import { n as ye, t as be } from "./check-plugin-availability.js";
-import { t as xe } from "./toggle.js";
-import { o as Se, r as Ce } from "./computer-use-app-approvals-query.js";
-import { n as Y, t as we } from "./bundled-plugin-auto-install-preference.js";
-import { i as Te, n as Ee } from "./app-connect-oauth.js";
-import { t as De } from "./hooks-settings-queries.js";
-var X = T();
-function Oe() {
+import { f as te } from "./chunk-LFPYN7LY.js";
+import { t as O } from "./queryOptions-DGhYrySA.js";
+import { o as ne, p as k } from "./statsig--EYRNU53.js";
+import { t as A } from "./request-DWZTrEAr.js";
+import { t as re } from "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import { C as j, c as M } from "./config-queries-BBeTQbuo.js";
+import { r as ie } from "./remote-connection-visibility.js";
+import {
+  g as N,
+  h as ae,
+  m as P,
+  s as F,
+  y as I,
+} from "./apps-queries-CmwRqoKz.js";
+import { t as L } from "./connector-logo.js";
+import { r as R } from "./toast-signal.js";
+import { t as oe } from "./tooltip-CDzchJxN.js";
+import { t as se } from "./button.js";
+import { t as z } from "./use-codex-home.js";
+import { t as B } from "./apps-DwfMzB5Q.js";
+import { t as V } from "./plugin-install-store-Daxzgjai.js";
+import { t as ce } from "./use-platform.js";
+import { i as H, n as le, r as U } from "./use-is-plugins-enabled.js";
+import {
+  d as ue,
+  f as de,
+  n as W,
+  o as fe,
+  p as G,
+  s as pe,
+} from "./use-plugins-jIZrcuZQ.js";
+import { l as me, n as he } from "./dialog-layout.js";
+import { a as K, o as q, s as J } from "./plugins-availability-txQMPSuC.js";
+import { n as ge, r as _e } from "./plugin-config-edits-DUMiyKty.js";
+import { m as ve } from "./links.js";
+import { t as Y } from "./badge.js";
+import { t as ye } from "./openai-blossom-CXnPbecc.js";
+import { n as be, t as xe } from "./filesystem-media-src.js";
+import { t as Se } from "./use-skills.js";
+import { n as Ce, t as we } from "./check-plugin-availability.js";
+import { r as Te } from "./plugin-detail-queries.js";
+import { t as Ee } from "./toggle.js";
+import { i as De, n as Oe } from "./app-connect-oauth-Cy-gX8IV.js";
+import { o as ke, r as Ae } from "./computer-use-app-approvals-query.js";
+import { t as je } from "./hooks-settings-queries-BUP-44jb.js";
+var X = E();
+function Me() {
   let e = (0, X.c)(3),
-    [t] = l(`remote_control_connections_state`),
-    n = j(),
+    [t] = s(`remote_control_connections_state`),
+    n = ie(),
     r;
   return (
     e[0] !== t || e[1] !== n
-      ? ((r = ke({ remoteControlConnectionsState: t, slingshotEnabled: n })),
+      ? ((r = Ne({ remoteControlConnectionsState: t, slingshotEnabled: n })),
         (e[0] = t),
         (e[1] = n),
         (e[2] = r))
@@ -73,60 +87,48 @@ function Oe() {
     r
   );
 }
-function ke({ remoteControlConnectionsState: e, slingshotEnabled: t }) {
+function Ne({ remoteControlConnectionsState: e, slingshotEnabled: t }) {
   return t && (e?.available ?? !0) && e?.accessRequired !== !0;
 }
-var Z = e(d(), 1);
-function Ae(e) {
-  let { hostId: t } = e,
-    n = O(`2296472986`),
-    r = Oe(),
-    { data: i, isLoading: a } = g(re, t);
-  return (
-    n && r && !a && i?.requirements?.computerUse?.allowLockedComputerUse !== !1
-  );
+function Pe({
+  selectedConnectionsTab: e,
+  showControlOtherDevices: t,
+  showControlThisMacTab: n,
+  showRemoteControlConnectionsSection: r,
+  showRemoteSshConnections: i,
+  showTabbedSshPage: a,
+}) {
+  return r
+    ? e === `control-this-mac` && !n
+      ? t
+        ? `access-other-devices`
+        : `ssh`
+      : e === `access-other-devices` && !t
+        ? n
+          ? `control-this-mac`
+          : `ssh`
+        : e === `ssh` && !a
+          ? t
+            ? `access-other-devices`
+            : `control-this-mac`
+          : e
+    : i
+      ? `ssh`
+      : `access-other-devices`;
 }
-function je(e) {
-  let t = (0, X.c)(4),
-    { hostId: n } = e,
-    r = S(v),
-    { data: i, isLoading: a } = g(re, n),
-    o = x(Ce),
-    s =
-      !a &&
-      i?.requirements?.computerUse?.allowLockedComputerUse === !1 &&
-      o.data?.enabled === !0,
-    c,
-    l;
-  (t[0] !== r || t[1] !== s
-    ? ((c = () => {
-        s &&
-          Se(!1)
-            .then((e) => {
-              r.query.snapshot(Ce).setData((t) => ({
-                computerIconDataURL: t?.computerIconDataURL ?? null,
-                enabled: e,
-                lockIconDataURL: t?.lockIconDataURL ?? null,
-              }));
-            })
-            .catch(Me);
-      }),
-      (l = [r, s]),
-      (t[0] = r),
-      (t[1] = s),
-      (t[2] = c),
-      (t[3] = l))
-    : ((c = t[2]), (l = t[3])),
-    (0, Z.useEffect)(c, l));
-}
-function Me(e) {
-  m.error(`Failed to disable enterprise-restricted Locked Use`, {
-    safe: {},
-    sensitive: { error: e },
-  });
-}
-var Q = f(),
-  Ne = (e) =>
+var Fe = p(
+    _,
+    (e, { get: t }) =>
+      t(k, `2296472986`) &&
+      Ne({
+        remoteControlConnectionsState: l(t, `remote_control_connections_state`),
+        slingshotEnabled: t(k, `1042620455`),
+      }) &&
+      t(M, e).data?.requirements?.computerUse?.allowLockedComputerUse !== !1,
+  ),
+  Z = e(d()),
+  Q = f(),
+  Ie = (e) =>
     (0, Q.jsxs)(`svg`, {
       width: 18,
       height: 18,
@@ -153,12 +155,12 @@ var Q = f(),
         }),
       ],
     });
-function Pe({ browserExtensionId: e }) {
-  return D({
+function Le({ browserExtensionId: e }) {
+  return O({
     queryKey:
       e == null
         ? [`chrome-extension-installed-read`, `missing`]
-        : ee(`chrome-extension-installed-read`, { extensionId: e }),
+        : T(`chrome-extension-installed-read`, { extensionId: e }),
     queryFn: async () =>
       e == null
         ? { installed: !1 }
@@ -166,17 +168,17 @@ function Pe({ browserExtensionId: e }) {
     staleTime: C.FIVE_SECONDS,
   });
 }
-function Fe(e) {
+function Re(e) {
   return e?.installed === !0;
 }
-function Ie(e) {
+function ze(e) {
   let t = (0, X.c)(10),
     { browserExtensionId: n } = e,
     r = n != null,
     i;
   t[0] === n
     ? (i = t[1])
-    : ((i = Pe({ browserExtensionId: n })), (t[0] = n), (t[1] = i));
+    : ((i = Le({ browserExtensionId: n })), (t[0] = n), (t[1] = i));
   let a;
   t[2] !== r || t[3] !== i
     ? ((a = {
@@ -189,9 +191,9 @@ function Ie(e) {
       (t[3] = i),
       (t[4] = a))
     : (a = t[4]);
-  let { data: o, isLoading: s } = y(a),
+  let { data: o, isLoading: s } = v(a),
     c;
-  t[5] === o ? (c = t[6]) : ((c = Fe(o)), (t[5] = o), (t[6] = c));
+  t[5] === o ? (c = t[6]) : ((c = Re(o)), (t[5] = o), (t[6] = c));
   let l = n != null && s,
     u;
   return (
@@ -204,27 +206,28 @@ function Ie(e) {
     u
   );
 }
-var Le = `assets/google-chrome.png`,
-  Re = `scripts/extension-id.json`,
-  ze = `https://chromewebstore.google.com/detail/codex/`,
-  Be = n([`chrome`, `chrome-dev`, `chrome-internal`]),
-  Ve = r({ extensionId: i().trim().min(1) });
-async function He({ hostId: e, plugin: t, queryClient: n }) {
+var Be = `assets/google-chrome.png`,
+  Ve = `scripts/extension-id.json`,
+  He = `https://chromewebstore.google.com/detail/codex/`,
+  Ue = t([`chrome`, `chrome-dev`, `chrome-internal`]),
+  We = n({ extensionId: r().trim().min(1) });
+async function Ge({ codexHome: e, hostId: t, plugin: n, queryClient: r }) {
   try {
-    let r = Ge(t);
-    if (r == null) return [];
-    let i = { hostId: e, path: r };
-    return await n.fetchQuery({
+    let i = Ye(e, n);
+    if (i == null) return [];
+    let a = { hostId: t, path: i };
+    return await r.fetchQuery({
       queryFn: async () => {
-        let e = await w(`read-file`, { params: i });
+        let t = await w(`read-file`, { params: a });
         return [
-          qe({
-            extensionId: Ve.parse(JSON.parse(e.contents)).extensionId,
-            plugin: t,
+          Ze({
+            codexHome: e,
+            extensionId: We.parse(JSON.parse(t.contents)).extensionId,
+            plugin: n,
           }),
         ];
       },
-      queryKey: Ye(i),
+      queryKey: $e(a),
       retry: !1,
       staleTime: C.INFINITE,
     });
@@ -232,85 +235,96 @@ async function He({ hostId: e, plugin: t, queryClient: n }) {
     return (
       m.warning(`Failed to read plugin browser extension setup`, {
         safe: {},
-        sensitive: { error: e, pluginId: t.plugin.id },
+        sensitive: { error: e, pluginId: n.plugin.id },
       }),
       []
     );
   }
 }
-function Ue(e) {
-  let t = (0, X.c)(15),
+function Ke(e) {
+  let t = (0, X.c)(17),
     { enabled: n, hostId: r, plugin: i } = e,
-    a,
+    a = z(r),
     o,
     s,
-    c;
-  t[0] !== n || t[1] !== r || t[2] !== i
-    ? ((a = Ge(i)),
-      (c = y),
-      (o = n && a != null),
-      (s =
-        a == null
+    c,
+    l;
+  t[0] !== a || t[1] !== n || t[2] !== r || t[3] !== i
+    ? ((o = Ye(a, i)),
+      (l = v),
+      (s = n && o != null),
+      (c =
+        o == null
           ? [`plugins`, `browser-extension-setup`, `missing`]
-          : Ye({ hostId: r, path: a })),
-      (t[0] = n),
-      (t[1] = r),
-      (t[2] = i),
-      (t[3] = a),
+          : $e({ hostId: r, path: o })),
+      (t[0] = a),
+      (t[1] = n),
+      (t[2] = r),
+      (t[3] = i),
       (t[4] = o),
       (t[5] = s),
-      (t[6] = c))
-    : ((a = t[3]), (o = t[4]), (s = t[5]), (c = t[6]));
-  let l;
-  t[7] !== a || t[8] !== r || t[9] !== i
-    ? ((l = async () => {
-        if (a == null || i == null) return [];
-        let e = await w(`read-file`, { params: { hostId: r, path: a } });
+      (t[6] = c),
+      (t[7] = l))
+    : ((o = t[4]), (s = t[5]), (c = t[6]), (l = t[7]));
+  let u;
+  t[8] !== a || t[9] !== o || t[10] !== r || t[11] !== i
+    ? ((u = async () => {
+        if (o == null || i == null) return [];
+        let e = await w(`read-file`, { params: { hostId: r, path: o } });
         return [
-          qe({
-            extensionId: Ve.parse(JSON.parse(e.contents)).extensionId,
+          Ze({
+            codexHome: a,
+            extensionId: We.parse(JSON.parse(e.contents)).extensionId,
             plugin: i,
           }),
         ];
       }),
-      (t[7] = a),
-      (t[8] = r),
-      (t[9] = i),
-      (t[10] = l))
-    : (l = t[10]);
-  let u;
-  t[11] !== o || t[12] !== s || t[13] !== l
-    ? ((u = {
-        enabled: o,
-        queryKey: s,
-        queryFn: l,
+      (t[8] = a),
+      (t[9] = o),
+      (t[10] = r),
+      (t[11] = i),
+      (t[12] = u))
+    : (u = t[12]);
+  let d;
+  t[13] !== s || t[14] !== c || t[15] !== u
+    ? ((d = {
+        enabled: s,
+        queryKey: c,
+        queryFn: u,
         retry: !1,
         staleTime: C.INFINITE,
       }),
-      (t[11] = o),
-      (t[12] = s),
-      (t[13] = l),
-      (t[14] = u))
-    : (u = t[14]);
-  let { data: d } = c(u);
-  return d;
+      (t[13] = s),
+      (t[14] = c),
+      (t[15] = u),
+      (t[16] = d))
+    : (d = t[16]);
+  let { data: f } = l(d);
+  return f;
 }
-async function We({
+async function qe({
   authPolicy: e,
-  hostId: t,
-  plugin: n,
-  queryClient: r,
-  windowType: i,
+  codexHome: t,
+  hostId: n,
+  plugin: r,
+  queryClient: i,
+  windowType: a,
 }) {
-  if (e !== `ON_INSTALL` || i !== `electron` || Ke(n) == null) return [];
-  let a = await He({ hostId: t, plugin: n, queryClient: r });
+  if (e !== `ON_INSTALL` || a !== `electron` || Xe(r) == null) return [];
+  let o = await Ge({
+    codexHome:
+      t ?? (await w(`codex-home`, { params: { hostId: n } })).codexHome,
+    hostId: n,
+    plugin: await Je({ hostId: n, plugin: r }),
+    queryClient: i,
+  });
   return (
     await Promise.all(
-      a.map(async (e) => ({
+      o.map(async (e) => ({
         browserExtension: e,
-        needsSetup: !Fe(
-          await r.fetchQuery({
-            ...Pe({ browserExtensionId: e.id }),
+        needsSetup: !Re(
+          await i.fetchQuery({
+            ...Le({ browserExtensionId: e.id }),
             staleTime: 0,
           }),
         ),
@@ -320,58 +334,89 @@ async function We({
     .filter(({ needsSetup: e }) => e)
     .map(({ browserExtension: e }) => e);
 }
-function Ge(e) {
-  return e == null || Ke(e) == null || e.plugin.source.type !== `local`
-    ? null
-    : s(e.plugin.source.path, Re);
+async function Je({ hostId: e, plugin: t }) {
+  try {
+    return W((await o(`read-plugin`, { hostId: e, ...fe(t) })).plugin);
+  } catch (e) {
+    return (
+      m.warning(`Failed to read installed plugin browser extension setup`, {
+        safe: {},
+        sensitive: { error: e, pluginId: t.plugin.id },
+      }),
+      t
+    );
+  }
 }
-function Ke(e) {
-  let t = Be.safeParse(e.plugin.name);
+function Ye(e, t) {
+  return e == null || t?.plugin.source.type !== `local` || Xe(t) == null
+    ? null
+    : u(
+        i({
+          codexHome: e,
+          localVersion: t.plugin.localVersion,
+          marketplaceName: t.marketplaceName,
+          pluginName: t.plugin.name,
+        }),
+        Ve,
+      );
+}
+function Xe(e) {
+  let t = Ue.safeParse(e.plugin.name);
   return !t.success || !e.plugin.id.startsWith(`${t.data}@`) ? null : t.data;
 }
-function qe({ extensionId: e, plugin: t }) {
+function Ze({ codexHome: e, extensionId: t, plugin: n }) {
   return {
     iconUrl:
-      Je(
-        t.plugin.source.type === `local` ? s(t.plugin.source.path, Le) : null,
-      ) ?? Je(t.logoPath),
-    id: e,
+      Qe(
+        e == null || n.plugin.source.type !== `local`
+          ? null
+          : u(
+              i({
+                codexHome: e,
+                localVersion: n.plugin.localVersion,
+                marketplaceName: n.marketplaceName,
+                pluginName: n.plugin.name,
+              }),
+              Be,
+            ),
+      ) ?? Qe(n.logoPath),
+    id: t,
     name: `Codex Chrome Extension`,
-    url: `${ze}${e}`,
+    url: `${He}${t}`,
   };
 }
-function Je(e) {
-  let n = e?.trim();
-  if (n == null || n.length === 0) return null;
-  let r = n.toLowerCase();
-  return r.startsWith(`app:`) ||
-    r.startsWith(`data:`) ||
-    r.startsWith(`http:`) ||
-    r.startsWith(`https:`) ||
-    r.startsWith(`/@fs`)
-    ? n
-    : t(n)
+function Qe(e) {
+  let t = e?.trim();
+  if (t == null || t.length === 0) return null;
+  let n = t.toLowerCase();
+  return n.startsWith(`app:`) ||
+    n.startsWith(`data:`) ||
+    n.startsWith(`http:`) ||
+    n.startsWith(`https:`) ||
+    n.startsWith(`/@fs`)
+    ? t
+    : a(t)
       ? window.location.protocol === `http:` ||
         window.location.protocol === `https:`
-        ? _e(n)
-        : ve(n)
+        ? be(t)
+        : xe(t)
       : null;
 }
-function Ye({ hostId: e, path: t }) {
+function $e({ hostId: e, path: t }) {
   return [`plugins`, `browser-extension-setup`, e, t];
 }
-var Xe = p({
+var et = b({
     codexChromeDescription: {
       id: `plugins.installModal.browserExtension.description`,
       defaultMessage: `Install this extension in Chrome to let Codex connect to your browser`,
       description: `Description for the required Chrome browser extension in the plugin finish setup modal`,
     },
   }),
-  Ze = `OAI-Product-Sku`,
-  Qe = `CODEX`,
-  $e = /\[([^\]]+)\]\(([^)]+)\)/g;
-function et(e) {
-  let t = (0, X.c)(84),
+  tt = `OAI-Product-Sku`,
+  nt = `CODEX`,
+  rt = /\[([^\]]+)\]\(([^)]+)\)/g;
+function it(e) {
+  let t = (0, X.c)(82),
     {
       hostId: n,
       isInstalling: r,
@@ -383,175 +428,173 @@ function et(e) {
     c = r === void 0 ? !1 : r,
     [l, u] = (0, Z.useState)(null),
     [d, f] = (0, Z.useState)(null),
-    { platform: p } = se(),
-    m;
-  t[0] === n ? (m = t[1]) : ((m = { hostId: n }), (t[0] = n), (t[1] = m));
-  let g = Ae(m),
-    _ = s.kind === `closed` ? null : s.plugin,
-    v;
-  t[2] !== n || t[3] !== s.kind || t[4] !== s.plugin
-    ? ((v =
-        s.kind === `details` ? { hostId: n, ...ue(s.plugin) } : { hostId: n }),
-      (t[2] = n),
-      (t[3] = s.kind),
-      (t[4] = s.plugin),
-      (t[5] = v))
-    : (v = t[5]);
-  let { blockedReason: b, isLoading: x } = ye(v),
-    S = _ != null && be(_.plugin) ? `disabled-by-admin` : b,
-    w = S != null,
-    ee = S === `disabled-by-admin`,
-    te = _?.marketplacePath ?? null,
-    T;
-  t[6] === _
-    ? (T = t[7])
-    : ((T = _ == null ? null : de(_)), (t[6] = _), (t[7] = T));
-  let E = _?.remoteMarketplaceName ?? null,
-    ne = _ != null,
-    D;
-  t[8] !== n || t[9] !== te || t[10] !== T || t[11] !== E || t[12] !== ne
-    ? ((D = {
+    { platform: p } = ce(),
+    m = S(Fe, n),
+    h = s.kind === `closed` ? null : s.plugin,
+    g;
+  t[0] !== n || t[1] !== s.kind || t[2] !== s.plugin
+    ? ((g =
+        s.kind === `details` ? { hostId: n, ...fe(s.plugin) } : { hostId: n }),
+      (t[0] = n),
+      (t[1] = s.kind),
+      (t[2] = s.plugin),
+      (t[3] = g))
+    : (g = t[3]);
+  let { blockedReason: _, isLoading: b } = Ce(g),
+    x = h != null && we(h.plugin) ? `disabled-by-admin` : _,
+    w = x != null,
+    T = x === `disabled-by-admin`,
+    ee = h?.marketplacePath ?? null,
+    E;
+  t[4] === h
+    ? (E = t[5])
+    : ((E = h == null ? null : pe(h)), (t[4] = h), (t[5] = E));
+  let D = h?.remoteMarketplaceName ?? null,
+    te = h != null,
+    O;
+  t[6] !== n || t[7] !== ee || t[8] !== E || t[9] !== D || t[10] !== te
+    ? ((O = {
         hostId: n,
-        marketplacePath: te,
-        pluginName: T,
-        remoteMarketplaceName: E,
-        enabled: ne,
+        marketplacePath: ee,
+        pluginName: E,
+        remoteMarketplaceName: D,
+        enabled: te,
       }),
-      (t[8] = n),
-      (t[9] = te),
-      (t[10] = T),
-      (t[11] = E),
-      (t[12] = ne),
-      (t[13] = D))
-    : (D = t[13]);
-  let { plugin: O } = J(D),
-    k = O?.apps,
+      (t[6] = n),
+      (t[7] = ee),
+      (t[8] = E),
+      (t[9] = D),
+      (t[10] = te),
+      (t[11] = O))
+    : (O = t[11]);
+  let { plugin: ne } = Te(O),
+    k = ne?.apps,
     A = s.kind === `details` && s.plugin.plugin.authPolicy === `ON_INSTALL`,
     re = k != null && k.length > 0,
     j;
-  t[14] === k ? (j = t[15]) : ((j = k?.map(it)), (t[14] = k), (t[15] = j));
+  t[12] === k ? (j = t[13]) : ((j = k?.map(ct)), (t[12] = k), (t[13] = j));
   let M;
-  t[16] === j
-    ? (M = t[17])
+  t[14] === j
+    ? (M = t[15])
     : ((M = [`plugins`, `install-modal`, `disclosure`, j]),
-      (t[16] = j),
-      (t[17] = M));
-  let N = A && re,
-    P;
-  t[18] === k
-    ? (P = t[19])
-    : ((P = async () => {
+      (t[14] = j),
+      (t[15] = M));
+  let ie = A && re,
+    N;
+  t[16] === k
+    ? (N = t[17])
+    : ((N = async () => {
         if (k == null) throw Error(`plugin detail apps are required`);
-        let e = await Promise.all(k.map(rt));
+        let e = await Promise.all(k.map(st));
         return {
-          blurbs: kt(e.flatMap(nt)),
-          personalizationToggles: e.flatMap(tt),
+          blurbs: Nt(e.flatMap(ot)),
+          personalizationToggles: e.flatMap(at),
         };
       }),
-      (t[18] = k),
-      (t[19] = P));
-  let oe;
-  t[20] !== M || t[21] !== N || t[22] !== P
-    ? ((oe = {
+      (t[16] = k),
+      (t[17] = N));
+  let ae;
+  t[18] !== ie || t[19] !== N || t[20] !== M
+    ? ((ae = {
         queryKey: M,
-        enabled: N,
+        enabled: ie,
         staleTime: C.FIVE_MINUTES,
-        queryFn: P,
+        queryFn: N,
       }),
+      (t[18] = ie),
+      (t[19] = N),
       (t[20] = M),
-      (t[21] = N),
-      (t[22] = P),
-      (t[23] = oe))
-    : (oe = t[23]);
-  let { data: F, isLoading: ce } = y(oe);
+      (t[21] = ae))
+    : (ae = t[21]);
+  let { data: P, isLoading: F } = v(ae);
   if (s.kind === `closed`) return null;
   let I = s.kind === `needsApps` ? `needsApps` : `details`,
     L = s.plugin,
     R,
     z,
     B,
-    fe;
+    V;
   if (
-    t[24] !== g ||
-    t[25] !== F?.personalizationToggles ||
-    t[26] !== d ||
-    t[27] !== l ||
-    t[28] !== I ||
-    t[29] !== p ||
-    t[30] !== L.plugin.id ||
-    t[31] !== A
+    t[22] !== m ||
+    t[23] !== P?.personalizationToggles ||
+    t[24] !== d ||
+    t[25] !== l ||
+    t[26] !== I ||
+    t[27] !== p ||
+    t[28] !== L.plugin.id ||
+    t[29] !== A
   ) {
     R = l?.pluginId === L.plugin.id ? l.modes : {};
     let e;
-    (t[36] !== g || t[37] !== I || t[38] !== p || t[39] !== L.plugin.id
-      ? ((e = I === `details` && p === `macOS` && g && le(L.plugin.id)),
-        (t[36] = g),
-        (t[37] = I),
-        (t[38] = p),
-        (t[39] = L.plugin.id),
-        (t[40] = e))
-      : (e = t[40]),
+    (t[34] !== m || t[35] !== I || t[36] !== p || t[37] !== L.plugin.id
+      ? ((e = I === `details` && p === `macOS` && m && ue(L.plugin.id)),
+        (t[34] = m),
+        (t[35] = I),
+        (t[36] = p),
+        (t[37] = L.plugin.id),
+        (t[38] = e))
+      : (e = t[38]),
       (B = e),
       (z = d?.pluginId === L.plugin.id ? d.enabled : !0),
-      (fe = At({
+      (V = Pt({
         draftModes: R,
-        personalizationToggles: A ? F?.personalizationToggles : void 0,
+        personalizationToggles: A ? P?.personalizationToggles : void 0,
       })),
-      (t[24] = g),
-      (t[25] = F?.personalizationToggles),
-      (t[26] = d),
-      (t[27] = l),
-      (t[28] = I),
-      (t[29] = p),
-      (t[30] = L.plugin.id),
-      (t[31] = A),
-      (t[32] = R),
-      (t[33] = z),
-      (t[34] = B),
-      (t[35] = fe));
-  } else ((R = t[32]), (z = t[33]), (B = t[34]), (fe = t[35]));
-  let V = fe,
-    pe = A && re && ce,
-    H;
-  t[41] !== c || t[42] !== o
-    ? ((H = (e) => {
+      (t[22] = m),
+      (t[23] = P?.personalizationToggles),
+      (t[24] = d),
+      (t[25] = l),
+      (t[26] = I),
+      (t[27] = p),
+      (t[28] = L.plugin.id),
+      (t[29] = A),
+      (t[30] = R),
+      (t[31] = z),
+      (t[32] = B),
+      (t[33] = V));
+  } else ((R = t[30]), (z = t[31]), (B = t[32]), (V = t[33]));
+  let H = V,
+    le = A && re && F,
+    U;
+  t[39] !== c || t[40] !== o
+    ? ((U = (e) => {
         (!e && c) || (e || (u(null), f(null)), o(e));
       }),
-      (t[41] = c),
-      (t[42] = o),
-      (t[43] = H))
-    : (H = t[43]);
-  let me = !c,
-    U;
-  t[44] !== I || t[45] !== L
-    ? ((U = (0, Q.jsx)(at, { phase: I, plugin: L })),
-      (t[44] = I),
-      (t[45] = L),
-      (t[46] = U))
-    : (U = t[46]);
-  let W;
-  t[47] !== R ||
-  t[48] !== V ||
-  t[49] !== F ||
-  t[50] !== n ||
-  t[51] !== z ||
-  t[52] !== ce ||
-  t[53] !== i ||
-  t[54] !== I ||
-  t[55] !== L ||
-  t[56] !== O ||
-  t[57] !== s.kind ||
-  t[58] !== s.requiredApps ||
-  t[59] !== s.requiredBrowserExtensions ||
-  t[60] !== B
-    ? ((W =
+      (t[39] = c),
+      (t[40] = o),
+      (t[41] = U))
+    : (U = t[41]);
+  let de = !c,
+    W;
+  t[42] !== I || t[43] !== L
+    ? ((W = (0, Q.jsx)(lt, { phase: I, plugin: L })),
+      (t[42] = I),
+      (t[43] = L),
+      (t[44] = W))
+    : (W = t[44]);
+  let G;
+  t[45] !== R ||
+  t[46] !== H ||
+  t[47] !== P ||
+  t[48] !== n ||
+  t[49] !== z ||
+  t[50] !== F ||
+  t[51] !== i ||
+  t[52] !== I ||
+  t[53] !== L ||
+  t[54] !== ne ||
+  t[55] !== s.kind ||
+  t[56] !== s.requiredApps ||
+  t[57] !== s.requiredBrowserExtensions ||
+  t[58] !== B
+    ? ((G =
         I === `details`
-          ? (0, Q.jsx)(ot, {
-              appPersonalizationModes: V,
-              disclosureData: F,
+          ? (0, Q.jsx)(ut, {
+              appPersonalizationModes: H,
+              disclosureData: P,
               hostId: n,
               installLockedComputerUse: z,
-              isLoadingDisclosureData: ce,
+              isLoadingDisclosureData: F,
               onAppPersonalizationModeChange: (e) => {
                 let { appId: t, mode: n } = e;
                 u({ modes: { ...R, [t]: n }, pluginId: L.plugin.id });
@@ -560,150 +603,150 @@ function et(e) {
                 f({ enabled: e, pluginId: L.plugin.id });
               },
               plugin: L,
-              pluginDetail: O,
+              pluginDetail: ne,
               showLockedComputerUseInstall: B,
             })
           : (0, Q.jsxs)(`div`, {
               className: `flex flex-col gap-4`,
               children: [
-                (0, Q.jsx)(gt, { plugin: L }),
-                (0, Q.jsx)(vt, {
+                (0, Q.jsx)(bt, { plugin: L }),
+                (0, Q.jsx)(St, {
                   onConnectRequiredApp: i,
                   requiredApps: s.kind === `needsApps` ? s.requiredApps : [],
                 }),
-                (0, Q.jsx)(yt, {
+                (0, Q.jsx)(Ct, {
                   requiredBrowserExtensions:
                     s.kind === `needsApps` ? s.requiredBrowserExtensions : [],
                 }),
               ],
             })),
-      (t[47] = R),
-      (t[48] = V),
-      (t[49] = F),
-      (t[50] = n),
-      (t[51] = z),
-      (t[52] = ce),
-      (t[53] = i),
-      (t[54] = I),
-      (t[55] = L),
-      (t[56] = O),
-      (t[57] = s.kind),
-      (t[58] = s.requiredApps),
-      (t[59] = s.requiredBrowserExtensions),
-      (t[60] = B),
-      (t[61] = W))
-    : (W = t[61]);
-  let G;
-  t[62] !== V ||
-  t[63] !== S ||
-  t[64] !== z ||
-  t[65] !== x ||
-  t[66] !== ee ||
-  t[67] !== c ||
-  t[68] !== pe ||
-  t[69] !== w ||
-  t[70] !== a ||
-  t[71] !== I ||
-  t[72] !== L ||
-  t[73] !== B
-    ? ((G =
+      (t[45] = R),
+      (t[46] = H),
+      (t[47] = P),
+      (t[48] = n),
+      (t[49] = z),
+      (t[50] = F),
+      (t[51] = i),
+      (t[52] = I),
+      (t[53] = L),
+      (t[54] = ne),
+      (t[55] = s.kind),
+      (t[56] = s.requiredApps),
+      (t[57] = s.requiredBrowserExtensions),
+      (t[58] = B),
+      (t[59] = G))
+    : (G = t[59]);
+  let K;
+  t[60] !== H ||
+  t[61] !== x ||
+  t[62] !== z ||
+  t[63] !== b ||
+  t[64] !== T ||
+  t[65] !== c ||
+  t[66] !== le ||
+  t[67] !== w ||
+  t[68] !== a ||
+  t[69] !== I ||
+  t[70] !== L ||
+  t[71] !== B
+    ? ((K =
         I === `details`
-          ? (0, Q.jsx)(ie, {
+          ? (0, Q.jsx)(oe, {
               tooltipContent:
-                S === `connector-unavailable`
-                  ? (0, Q.jsx)(h, {
+                x === `connector-unavailable`
+                  ? (0, Q.jsx)(y, {
                       id: `plugins.install.connectorUnavailable`,
                       defaultMessage: `App unavailable`,
                       description: `Tooltip shown when plugin install is unavailable because the plugin's apps are not available in the current app directory`,
                     })
                   : null,
-              disabled: S !== `connector-unavailable`,
+              disabled: x !== `connector-unavailable`,
               children: (0, Q.jsx)(`div`, {
                 className: `flex w-full`,
-                children: (0, Q.jsx)(ae, {
+                children: (0, Q.jsx)(se, {
                   color: `primary`,
                   size: `large`,
                   className: `w-full justify-center`,
-                  disabled: w || x || pe,
+                  disabled: w || b || le,
                   loading: c,
                   onClick: () => {
-                    a(V, B ? z : void 0);
+                    a(H, B ? z : void 0);
                   },
                   children: c
-                    ? (0, Q.jsx)(h, {
+                    ? (0, Q.jsx)(y, {
                         id: `plugins.installModal.installing`,
                         defaultMessage: `Installing {pluginName}`,
                         description: `Button label in the plugin install modal while installation is in progress`,
-                        values: { pluginName: Y(L) },
+                        values: { pluginName: q(L) },
                       })
-                    : ee
+                    : T
                       ? (0, Q.jsxs)(Q.Fragment, {
                           children: [
-                            (0, Q.jsx)(Ne, { className: `icon-sm` }),
-                            (0, Q.jsx)(h, {
+                            (0, Q.jsx)(Ie, { className: `icon-sm` }),
+                            (0, Q.jsx)(y, {
                               id: `plugins.detail.disabledByAdminButton`,
                               defaultMessage: `Disabled by admin`,
                               description: `Install button label shown when plugin install is unavailable because all included connectors are disabled by admin`,
                             }),
                           ],
                         })
-                      : (0, Q.jsx)(h, {
+                      : (0, Q.jsx)(y, {
                           id: `plugins.installModal.install`,
                           defaultMessage: `Install {pluginName}`,
                           description: `Install button label in the plugin install modal`,
-                          values: { pluginName: Y(L) },
+                          values: { pluginName: q(L) },
                         }),
                 }),
               }),
             })
           : null),
-      (t[62] = V),
-      (t[63] = S),
-      (t[64] = z),
-      (t[65] = x),
-      (t[66] = ee),
-      (t[67] = c),
-      (t[68] = pe),
-      (t[69] = w),
-      (t[70] = a),
-      (t[71] = I),
-      (t[72] = L),
-      (t[73] = B),
-      (t[74] = G))
-    : (G = t[74]);
-  let K;
-  t[75] !== U || t[76] !== W || t[77] !== G
-    ? ((K = (0, Q.jsxs)(ge, {
+      (t[60] = H),
+      (t[61] = x),
+      (t[62] = z),
+      (t[63] = b),
+      (t[64] = T),
+      (t[65] = c),
+      (t[66] = le),
+      (t[67] = w),
+      (t[68] = a),
+      (t[69] = I),
+      (t[70] = L),
+      (t[71] = B),
+      (t[72] = K))
+    : (K = t[72]);
+  let J;
+  t[73] !== W || t[74] !== G || t[75] !== K
+    ? ((J = (0, Q.jsxs)(he, {
         className: `max-h-[calc(100vh-4rem)] gap-6 overflow-y-auto px-6 pt-8 pb-6`,
-        children: [U, W, G],
+        children: [W, G, K],
       })),
-      (t[75] = U),
-      (t[76] = W),
-      (t[77] = G),
-      (t[78] = K))
-    : (K = t[78]);
-  let q;
+      (t[73] = W),
+      (t[74] = G),
+      (t[75] = K),
+      (t[76] = J))
+    : (J = t[76]);
+  let ge;
   return (
-    t[79] !== c || t[80] !== H || t[81] !== me || t[82] !== K
-      ? ((q = (0, Q.jsx)(he, {
+    t[77] !== c || t[78] !== U || t[79] !== de || t[80] !== J
+      ? ((ge = (0, Q.jsx)(me, {
           open: !0,
-          onOpenChange: H,
+          onOpenChange: U,
           shouldIgnoreClickOutside: c,
-          showDialogClose: me,
+          showDialogClose: de,
           size: `wide`,
           contentClassName: `max-h-[calc(100vh-4rem)] overflow-hidden`,
-          children: K,
+          children: J,
         })),
-        (t[79] = c),
-        (t[80] = H),
-        (t[81] = me),
-        (t[82] = K),
-        (t[83] = q))
-      : (q = t[83]),
-    q
+        (t[77] = c),
+        (t[78] = U),
+        (t[79] = de),
+        (t[80] = J),
+        (t[81] = ge))
+      : (ge = t[81]),
+    ge
   );
 }
-function tt(e) {
+function at(e) {
   let { app: t, connectorTos: n } = e;
   return n.personalization_toggle_blurb == null
     ? []
@@ -716,23 +759,23 @@ function tt(e) {
         },
       ];
 }
-function nt(e) {
+function ot(e) {
   let { connectorTos: t } = e;
   return t.blurbs;
 }
-async function rt(e) {
+async function st(e) {
   return {
     app: e,
-    connectorTos: await u.safeGet(`/aip/connectors/{connector_id}/tos`, {
+    connectorTos: await A.safeGet(`/aip/connectors/{connector_id}/tos`, {
       parameters: { path: { connector_id: e.id } },
-      additionalHeaders: { [Ze]: Qe },
+      additionalHeaders: { [tt]: nt },
     }),
   };
 }
-function it(e) {
+function ct(e) {
   return e.id;
 }
-function at(e) {
+function lt(e) {
   let t = (0, X.c)(21),
     { phase: n, plugin: r } = e,
     i;
@@ -746,7 +789,7 @@ function at(e) {
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((o = (0, Q.jsx)(`span`, {
         className: `flex size-14 shrink-0 items-center justify-center rounded-xl bg-black text-white shadow-sm`,
-        children: (0, Q.jsx)(q, { className: `size-12` }),
+        children: (0, Q.jsx)(ye, { className: `size-12` }),
       })),
       (t[2] = o))
     : (o = t[2]);
@@ -769,10 +812,10 @@ function at(e) {
       (t[3] = s))
     : (s = t[3]);
   let c;
-  t[4] === r ? (c = t[5]) : ((c = Y(r)), (t[4] = r), (t[5] = c));
+  t[4] === r ? (c = t[5]) : ((c = q(r)), (t[4] = r), (t[5] = c));
   let l;
   t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((l = (0, Q.jsx)(P, { className: `icon-md text-token-text-secondary` })),
+    ? ((l = (0, Q.jsx)(B, { className: `icon-md text-token-text-secondary` })),
       (t[6] = l))
     : (l = t[6]);
   let u;
@@ -784,7 +827,7 @@ function at(e) {
           s,
           (0, Q.jsx)(`span`, {
             className: `bg-token-surface-tertiary flex size-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-token-border-default shadow-sm`,
-            children: (0, Q.jsx)(M, {
+            children: (0, Q.jsx)(L, {
               alt: c,
               className: `size-full object-contain`,
               logoUrl: r.logoPath,
@@ -803,17 +846,17 @@ function at(e) {
         className: `heading-dialog font-semibold`,
         children:
           n === `details`
-            ? (0, Q.jsx)(h, {
+            ? (0, Q.jsx)(y, {
                 id: `plugins.installModal.title`,
                 defaultMessage: `Install {pluginName}`,
                 description: `Title shown in the plugin install modal before installation starts`,
-                values: { pluginName: Y(r) },
+                values: { pluginName: q(r) },
               })
-            : (0, Q.jsx)(h, {
+            : (0, Q.jsx)(y, {
                 id: `plugins.installModal.finishSetup.title`,
                 defaultMessage: `Finish setting up {pluginName}`,
                 description: `Title shown in the plugin install modal when additional app connections are required`,
-                values: { pluginName: Y(r) },
+                values: { pluginName: q(r) },
               }),
       })),
       (t[10] = n),
@@ -826,7 +869,7 @@ function at(e) {
     : ((f = a
         ? (0, Q.jsx)(`div`, {
             className: `text-sm text-token-text-secondary`,
-            children: (0, Q.jsx)(h, {
+            children: (0, Q.jsx)(y, {
               id: `plugins.installModal.developedBy`,
               defaultMessage: `Developed by {developerName}`,
               description: `Developer subtitle shown in the plugin install modal`,
@@ -860,7 +903,7 @@ function at(e) {
     m
   );
 }
-function ot(e) {
+function ut(e) {
   let t = (0, X.c)(37),
     {
       appPersonalizationModes: n,
@@ -875,7 +918,7 @@ function ot(e) {
       showLockedComputerUseInstall: d,
     } = e,
     f;
-  t[0] === l ? (f = t[1]) : ((f = jt(l)), (t[0] = l), (t[1] = f));
+  t[0] === l ? (f = t[1]) : ((f = Ft(l)), (t[0] = l), (t[1] = f));
   let p = f,
     m;
   t[2] === l.plugin.interface?.capabilities
@@ -883,24 +926,24 @@ function ot(e) {
     : ((m = l.plugin.interface?.capabilities ?? []),
       (t[2] = l.plugin.interface?.capabilities),
       (t[3] = m));
-  let g = m,
-    _ = (u?.apps.length ?? 0) > 0 && u?.summary.authPolicy === `ON_INSTALL`,
-    v;
-  t[4] !== l || t[5] !== _
-    ? ((v = _ ? null : (0, Q.jsx)(Et, { plugin: l })),
+  let h = m,
+    g = (u?.apps.length ?? 0) > 0 && u?.summary.authPolicy === `ON_INSTALL`,
+    _;
+  t[4] !== l || t[5] !== g
+    ? ((_ = g ? null : (0, Q.jsx)(At, { plugin: l })),
       (t[4] = l),
-      (t[5] = _),
-      (t[6] = v))
-    : (v = t[6]);
-  let y;
-  t[7] !== p || t[8] !== _
-    ? ((y =
-        !_ && p
+      (t[5] = g),
+      (t[6] = _))
+    : (_ = t[6]);
+  let v;
+  t[7] !== p || t[8] !== g
+    ? ((v =
+        !g && p
           ? (0, Q.jsxs)($, {
               children: [
                 (0, Q.jsx)(`div`, {
                   className: `text-sm font-medium text-token-text-primary`,
-                  children: (0, Q.jsx)(h, {
+                  children: (0, Q.jsx)(y, {
                     id: `plugins.installModal.about`,
                     defaultMessage: `About`,
                     description: `Section title for the plugin description in the plugin install modal`,
@@ -914,43 +957,43 @@ function ot(e) {
             })
           : null),
       (t[7] = p),
-      (t[8] = _),
-      (t[9] = y))
-    : (y = t[9]);
+      (t[8] = g),
+      (t[9] = v))
+    : (v = t[9]);
   let b;
-  t[10] !== i || t[11] !== l || t[12] !== u || t[13] !== _
+  t[10] !== i || t[11] !== l || t[12] !== u || t[13] !== g
     ? ((b =
-        !_ && u != null
-          ? (0, Q.jsx)(ct, { hostId: i, plugin: l, pluginDetail: u })
+        !g && u != null
+          ? (0, Q.jsx)(ft, { hostId: i, plugin: l, pluginDetail: u })
           : null),
       (t[10] = i),
       (t[11] = l),
       (t[12] = u),
-      (t[13] = _),
+      (t[13] = g),
       (t[14] = b))
     : (b = t[14]);
   let x;
-  t[15] !== a || t[16] !== c || t[17] !== u || t[18] !== _ || t[19] !== d
+  t[15] !== a || t[16] !== c || t[17] !== u || t[18] !== g || t[19] !== d
     ? ((x =
-        !_ && u != null && d
-          ? (0, Q.jsx)(mt, { enabled: a, onChange: c })
+        !g && u != null && d
+          ? (0, Q.jsx)(vt, { enabled: a, onChange: c })
           : null),
       (t[15] = a),
       (t[16] = c),
       (t[17] = u),
-      (t[18] = _),
+      (t[18] = g),
       (t[19] = d),
       (t[20] = x))
     : (x = t[20]);
   let S;
-  t[21] !== g || t[22] !== _
+  t[21] !== h || t[22] !== g
     ? ((S =
-        !_ && g.length > 0
+        !g && h.length > 0
           ? (0, Q.jsxs)($, {
               children: [
                 (0, Q.jsx)(`div`, {
                   className: `text-sm font-medium text-token-text-primary`,
-                  children: (0, Q.jsx)(h, {
+                  children: (0, Q.jsx)(y, {
                     id: `plugins.installModal.capabilities`,
                     defaultMessage: `Capabilities`,
                     description: `Section title for the capability list in the plugin install modal`,
@@ -958,19 +1001,19 @@ function ot(e) {
                 }),
                 (0, Q.jsx)(`div`, {
                   className: `flex flex-wrap gap-2`,
-                  children: g.map(st),
+                  children: h.map(dt),
                 }),
               ],
             })
           : null),
-      (t[21] = g),
-      (t[22] = _),
+      (t[21] = h),
+      (t[22] = g),
       (t[23] = S))
     : (S = t[23]);
   let C;
-  t[24] !== n || t[25] !== r || t[26] !== o || t[27] !== s || t[28] !== _
-    ? ((C = _
-        ? (0, Q.jsx)(_t, {
+  t[24] !== n || t[25] !== r || t[26] !== o || t[27] !== s || t[28] !== g
+    ? ((C = g
+        ? (0, Q.jsx)(xt, {
             appPersonalizationModes: n,
             disclosureData: r,
             isLoadingDisclosureData: o,
@@ -981,23 +1024,23 @@ function ot(e) {
       (t[25] = r),
       (t[26] = o),
       (t[27] = s),
-      (t[28] = _),
+      (t[28] = g),
       (t[29] = C))
     : (C = t[29]);
   let w;
   return (
-    t[30] !== v ||
-    t[31] !== y ||
+    t[30] !== _ ||
+    t[31] !== v ||
     t[32] !== b ||
     t[33] !== x ||
     t[34] !== S ||
     t[35] !== C
       ? ((w = (0, Q.jsxs)(`div`, {
           className: `rounded-2xl border border-token-border-default px-4 py-2`,
-          children: [v, y, b, x, S, C],
+          children: [_, v, b, x, S, C],
         })),
-        (t[30] = v),
-        (t[31] = y),
+        (t[30] = _),
+        (t[31] = v),
         (t[32] = b),
         (t[33] = x),
         (t[34] = S),
@@ -1007,9 +1050,9 @@ function ot(e) {
     w
   );
 }
-function st(e) {
+function dt(e) {
   return (0, Q.jsx)(
-    K,
+    Y,
     {
       className: `border border-token-border-default bg-transparent px-1.5 py-0.5 text-xs font-medium text-token-text-secondary`,
       children: e,
@@ -1017,7 +1060,7 @@ function st(e) {
     e,
   );
 }
-function ct(e) {
+function ft(e) {
   let t = (0, X.c)(20),
     { hostId: n, plugin: r, pluginDetail: i } = e,
     a;
@@ -1027,7 +1070,7 @@ function ct(e) {
       (t[1] = r),
       (t[2] = a))
     : (a = t[2]);
-  let o = Ue(a),
+  let o = Ke(a),
     s = i.apps,
     c,
     l,
@@ -1045,8 +1088,8 @@ function ct(e) {
       let e = [
         {
           id: `apps`,
-          items: s.map(pt),
-          title: (0, Q.jsx)(h, {
+          items: s.map(_t),
+          title: (0, Q.jsx)(y, {
             id: `plugins.installModal.includes.apps`,
             defaultMessage: `Apps`,
             description: `Label for bundled apps in the plugin install modal`,
@@ -1054,8 +1097,8 @@ function ct(e) {
         },
         {
           id: `browserExtensions`,
-          items: (o ?? []).map(ft),
-          title: (0, Q.jsx)(h, {
+          items: (o ?? []).map(gt),
+          title: (0, Q.jsx)(y, {
             id: `plugins.installModal.includes.browserExtensions`,
             defaultMessage: `Browser extensions`,
             description: `Label for bundled browser extensions in the plugin install modal`,
@@ -1063,8 +1106,8 @@ function ct(e) {
         },
         {
           id: `skills`,
-          items: i.skills.map(dt),
-          title: (0, Q.jsx)(h, {
+          items: i.skills.map(ht),
+          title: (0, Q.jsx)(y, {
             id: `plugins.installModal.includes.skills`,
             defaultMessage: `Skills`,
             description: `Label for bundled skills in the plugin install modal`,
@@ -1073,13 +1116,13 @@ function ct(e) {
         {
           id: `mcpServers`,
           items: i.mcpServers,
-          title: (0, Q.jsx)(h, {
+          title: (0, Q.jsx)(y, {
             id: `plugins.installModal.includes.mcpServers`,
             defaultMessage: `MCP servers`,
             description: `Label for bundled MCP servers in the plugin install modal`,
           }),
         },
-      ].filter(ut);
+      ].filter(mt);
       if (e.length === 0) {
         f = null;
         break bb0;
@@ -1088,7 +1131,7 @@ function ct(e) {
         t[12] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((d = (0, Q.jsx)(`div`, {
               className: `text-sm font-medium text-token-text-primary`,
-              children: (0, Q.jsx)(h, {
+              children: (0, Q.jsx)(y, {
                 id: `plugins.installModal.includes`,
                 defaultMessage: `Includes`,
                 description: `Section title for bundled apps, skills, and MCP servers in the plugin install modal`,
@@ -1097,7 +1140,7 @@ function ct(e) {
             (t[12] = d))
           : (d = t[12]),
         (l = `flex flex-col gap-3`),
-        (u = e.map(lt)));
+        (u = e.map(pt)));
     }
     ((t[3] = o),
       (t[4] = i.apps),
@@ -1129,7 +1172,7 @@ function ct(e) {
     m
   );
 }
-function lt(e) {
+function pt(e) {
   return (0, Q.jsxs)(
     `div`,
     {
@@ -1143,7 +1186,7 @@ function lt(e) {
           className: `flex flex-wrap gap-2`,
           children: e.items.map((t) =>
             (0, Q.jsx)(
-              K,
+              Y,
               {
                 className: `border border-token-border-default bg-transparent px-1.5 py-0.5 text-xs font-medium text-token-text-secondary`,
                 children: t,
@@ -1157,27 +1200,27 @@ function lt(e) {
     e.id,
   );
 }
-function ut(e) {
+function mt(e) {
   return e.items.length > 0;
 }
-function dt(e) {
-  return Mt(e);
+function ht(e) {
+  return It(e);
 }
-function ft(e) {
+function gt(e) {
   return e.name;
 }
-function pt(e) {
+function _t(e) {
   return e.name;
 }
-function mt(e) {
+function vt(e) {
   let t = (0, X.c)(8),
     { enabled: n, onChange: r } = e,
-    i = b(),
+    i = h(),
     a;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((a = (0, Q.jsx)(`div`, {
         className: `text-sm font-medium text-token-text-primary`,
-        children: (0, Q.jsx)(h, {
+        children: (0, Q.jsx)(y, {
           id: `plugins.installModal.lockedComputerUse.title`,
           defaultMessage: `Locked Computer Use`,
           description: `Title for the Locked Computer Use install option in the plugin install modal`,
@@ -1193,11 +1236,11 @@ function mt(e) {
           a,
           (0, Q.jsx)(`div`, {
             className: `text-sm text-token-text-secondary`,
-            children: (0, Q.jsx)(h, {
+            children: (0, Q.jsx)(y, {
               id: `plugins.installModal.lockedComputerUse.description`,
               defaultMessage: `Let Codex use your Mac when it's locked. <a>Learn more</a>`,
               description: `Description for the Locked Computer Use install option in the plugin install modal`,
-              values: { a: ht },
+              values: { a: yt },
             }),
           }),
         ],
@@ -1222,7 +1265,7 @@ function mt(e) {
             className: `flex items-center justify-between gap-4`,
             children: [
               o,
-              (0, Q.jsx)(xe, { checked: n, ariaLabel: s, onChange: r }),
+              (0, Q.jsx)(Ee, { checked: n, ariaLabel: s, onChange: r }),
             ],
           }),
         })),
@@ -1234,16 +1277,16 @@ function mt(e) {
     c
   );
 }
-function ht(e) {
+function yt(e) {
   return (0, Q.jsx)(`a`, {
     className: `inline-flex text-token-text-link-foreground`,
-    href: G,
+    href: ve,
     target: `_blank`,
     rel: `noreferrer`,
     children: e,
   });
 }
-function gt(e) {
+function bt(e) {
   let t = (0, X.c)(2),
     { plugin: n } = e,
     r;
@@ -1252,14 +1295,14 @@ function gt(e) {
       ? (r = t[1])
       : ((r = (0, Q.jsx)(`div`, {
           className: `rounded-2xl border border-token-border-default px-4 py-2`,
-          children: (0, Q.jsx)(Et, { plugin: n }),
+          children: (0, Q.jsx)(At, { plugin: n }),
         })),
         (t[0] = n),
         (t[1] = r)),
     r
   );
 }
-function _t(e) {
+function xt(e) {
   let t = (0, X.c)(6),
     {
       appPersonalizationModes: n,
@@ -1271,7 +1314,7 @@ function _t(e) {
     let e;
     return (
       t[0] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((e = (0, Q.jsx)($, { children: (0, Q.jsx)(St, {}) })), (t[0] = e))
+        ? ((e = (0, Q.jsx)($, { children: (0, Q.jsx)(Et, {}) })), (t[0] = e))
         : (e = t[0]),
       e
     );
@@ -1288,7 +1331,7 @@ function _t(e) {
     t[3] !== r.personalizationToggles ||
     t[4] !== a
       ? ((o = (0, Q.jsx)($, {
-          children: (0, Q.jsx)(wt, {
+          children: (0, Q.jsx)(Ot, {
             appPersonalizationModes: n,
             blurbs: r.blurbs,
             onAppPersonalizationModeChange: a,
@@ -1304,7 +1347,7 @@ function _t(e) {
     o
   );
 }
-function vt(e) {
+function St(e) {
   let t = (0, X.c)(8),
     { onConnectRequiredApp: n, requiredApps: r } = e;
   if (r.length === 0) return null;
@@ -1312,7 +1355,7 @@ function vt(e) {
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((i = (0, Q.jsx)(`div`, {
         className: `text-base font-semibold text-token-text-primary`,
-        children: (0, Q.jsx)(h, {
+        children: (0, Q.jsx)(y, {
           id: `plugins.installModal.requiredApps`,
           defaultMessage: `Required apps`,
           description: `Section title for apps that need to be connected after plugin install`,
@@ -1336,11 +1379,11 @@ function vt(e) {
                   children: [
                     (0, Q.jsx)(`span`, {
                       className: `bg-token-surface-tertiary flex size-10 shrink-0 items-center justify-center overflow-hidden rounded-lg border border-token-border-default`,
-                      children: (0, Q.jsx)(M, {
+                      children: (0, Q.jsx)(L, {
                         alt: e.name,
                         className: `size-full object-contain`,
                         logoUrl: e.logoUrl,
-                        fallback: (0, Q.jsx)(P, {
+                        fallback: (0, Q.jsx)(B, {
                           className: `icon-md text-token-text-secondary`,
                         }),
                       }),
@@ -1362,7 +1405,7 @@ function vt(e) {
                     }),
                   ],
                 }),
-                (0, Q.jsx)(ae, {
+                (0, Q.jsx)(se, {
                   color: e.status === `connected` ? `outline` : `primary`,
                   size: `medium`,
                   disabled: e.status !== `pending`,
@@ -1373,7 +1416,7 @@ function vt(e) {
                   onClick: () => {
                     n(e.appId);
                   },
-                  children: Tt(e.status),
+                  children: kt(e.status),
                 }),
               ],
             },
@@ -1402,7 +1445,7 @@ function vt(e) {
     o
   );
 }
-function yt(e) {
+function Ct(e) {
   let t = (0, X.c)(5),
     { requiredBrowserExtensions: n } = e;
   if (n.length === 0) return null;
@@ -1410,7 +1453,7 @@ function yt(e) {
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((r = (0, Q.jsx)(`div`, {
         className: `text-base font-semibold text-token-text-primary`,
-        children: (0, Q.jsx)(h, {
+        children: (0, Q.jsx)(y, {
           id: `plugins.installModal.requiredBrowserExtensions`,
           defaultMessage: `Required browser extensions`,
           description: `Section title for browser extensions that need to be opened after plugin install`,
@@ -1419,7 +1462,7 @@ function yt(e) {
       (t[0] = r))
     : (r = t[0]);
   let i;
-  t[1] === n ? (i = t[2]) : ((i = n.map(bt)), (t[1] = n), (t[2] = i));
+  t[1] === n ? (i = t[2]) : ((i = n.map(wt)), (t[1] = n), (t[2] = i));
   let a;
   return (
     t[3] === i
@@ -1436,7 +1479,7 @@ function yt(e) {
     a
   );
 }
-function bt(e) {
+function wt(e) {
   return (0, Q.jsxs)(
     `div`,
     {
@@ -1445,10 +1488,10 @@ function bt(e) {
         (0, Q.jsxs)(`div`, {
           className: `flex min-w-0 flex-1 items-center gap-3`,
           children: [
-            (0, Q.jsx)(M, {
+            (0, Q.jsx)(L, {
               alt: e.name,
               className: `size-10 shrink-0`,
-              fallback: (0, Q.jsx)(P, {
+              fallback: (0, Q.jsx)(B, {
                 className: `size-10 text-token-text-secondary`,
               }),
               logoUrl: e.iconUrl,
@@ -1462,20 +1505,20 @@ function bt(e) {
                 }),
                 (0, Q.jsx)(`div`, {
                   className: `mt-1 text-sm text-token-text-secondary`,
-                  children: (0, Q.jsx)(h, { ...Xe.codexChromeDescription }),
+                  children: (0, Q.jsx)(y, { ...et.codexChromeDescription }),
                 }),
               ],
             }),
           ],
         }),
-        (0, Q.jsx)(ae, {
+        (0, Q.jsx)(se, {
           color: `primary`,
           size: `medium`,
           className: `min-w-24 shrink-0 justify-center`,
           onClick: () => {
-            E.dispatchMessage(`open-in-browser`, { url: e.url });
+            D.dispatchMessage(`open-in-browser`, { url: e.url });
           },
-          children: (0, Q.jsx)(h, {
+          children: (0, Q.jsx)(y, {
             id: `plugins.installModal.openBrowserExtension`,
             defaultMessage: `Open`,
             description: `Button label to open a browser extension setup URL`,
@@ -1486,7 +1529,7 @@ function bt(e) {
     e.id,
   );
 }
-function xt(e) {
+function Tt(e) {
   let t = (0, X.c)(10),
     { children: n, url: r } = e,
     i;
@@ -1507,7 +1550,7 @@ function xt(e) {
   t[4] === a
     ? (o = t[5])
     : ((o = (e) => {
-        (e.preventDefault(), E.dispatchMessage(`open-in-browser`, { url: a }));
+        (e.preventDefault(), D.dispatchMessage(`open-in-browser`, { url: a }));
       }),
       (t[4] = a),
       (t[5] = o));
@@ -1528,20 +1571,20 @@ function xt(e) {
     s
   );
 }
-function St() {
+function Et() {
   let e = (0, X.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
       ? ((t = (0, Q.jsx)(`div`, {
-          children: Array.from({ length: 3 }).map(Ct),
+          children: Array.from({ length: 3 }).map(Dt),
         })),
         (e[0] = t))
       : (t = e[0]),
     t
   );
 }
-function Ct(e, t) {
+function Dt(e, t) {
   return (0, Q.jsxs)(
     `div`,
     {
@@ -1561,7 +1604,7 @@ function Ct(e, t) {
     t,
   );
 }
-function wt(e) {
+function Ot(e) {
   let t = (0, X.c)(17),
     {
       appPersonalizationModes: n,
@@ -1569,7 +1612,7 @@ function wt(e) {
       onAppPersonalizationModeChange: i,
       personalizationToggles: a,
     } = e,
-    o = b(),
+    o = h(),
     s;
   if (t[0] !== n || t[1] !== o || t[2] !== i || t[3] !== a) {
     let e;
@@ -1587,10 +1630,10 @@ function wt(e) {
                       className: `font-medium text-token-text-primary`,
                       children: e.blurb.title,
                     }),
-                    (0, Q.jsx)(`div`, { children: Ot(e.blurb.description) }),
+                    (0, Q.jsx)(`div`, { children: Mt(e.blurb.description) }),
                   ],
                 }),
-                (0, Q.jsx)(xe, {
+                (0, Q.jsx)(Ee, {
                   checked: n[e.appId] === `PERSONALIZE_ALWAYS`,
                   ariaLabel: o.formatMessage(
                     {
@@ -1641,7 +1684,7 @@ function wt(e) {
                   className: `font-medium text-token-text-primary`,
                   children: e.title,
                 }),
-                (0, Q.jsx)(`div`, { children: Ot(e.description) }),
+                (0, Q.jsx)(`div`, { children: Mt(e.description) }),
               ],
             },
             `${e.title}-${t}`,
@@ -1667,34 +1710,34 @@ function wt(e) {
     l
   );
 }
-function Tt(e) {
+function kt(e) {
   switch (e) {
     case `connected`:
-      return (0, Q.jsx)(h, {
+      return (0, Q.jsx)(y, {
         id: `plugins.installModal.requiredApps.connected`,
         defaultMessage: `Connected`,
         description: `Button label shown for a required app that is already connected`,
       });
     case `launching`:
     case `waitingForCallback`:
-      return (0, Q.jsx)(h, {
+      return (0, Q.jsx)(y, {
         id: `plugins.installModal.requiredApps.connecting`,
         defaultMessage: `Opened link`,
         description: `Button label shown after the required app connection flow has been opened`,
       });
     case `pending`:
-      return (0, Q.jsx)(h, {
+      return (0, Q.jsx)(y, {
         id: `plugins.installModal.requiredApps.connect`,
         defaultMessage: `Connect`,
         description: `Button label shown for a required app that still needs to be connected`,
       });
   }
 }
-function Et(e) {
+function At(e) {
   let t = (0, X.c)(14),
     { plugin: n } = e,
     r;
-  t[0] === n ? (r = t[1]) : ((r = Y(n)), (t[0] = n), (t[1] = r));
+  t[0] === n ? (r = t[1]) : ((r = q(n)), (t[0] = n), (t[1] = r));
   let i;
   t[2] === r
     ? (i = t[3])
@@ -1709,7 +1752,7 @@ function Et(e) {
     ? (a = t[5])
     : ((a =
         n.marketplaceName.length > 0
-          ? (0, Q.jsx)(K, {
+          ? (0, Q.jsx)(Y, {
               className: `border border-token-border-default bg-transparent px-1.5 py-0.5 text-xs font-medium text-token-text-secondary`,
               children: n.marketplaceName,
             })
@@ -1729,7 +1772,7 @@ function Et(e) {
   let s;
   t[9] === n
     ? (s = t[10])
-    : ((s = (0, Q.jsx)(Dt, { plugin: n })), (t[9] = n), (t[10] = s));
+    : ((s = (0, Q.jsx)(jt, { plugin: n })), (t[9] = n), (t[10] = s));
   let c;
   return (
     t[11] !== o || t[12] !== s
@@ -1741,7 +1784,7 @@ function Et(e) {
     c
   );
 }
-function Dt(e) {
+function jt(e) {
   let t = (0, X.c)(11),
     { plugin: n } = e,
     r;
@@ -1764,7 +1807,7 @@ function Dt(e) {
     ? (s = t[5])
     : ((s = i
         ? (0, Q.jsx)(`div`, {
-            children: (0, Q.jsx)(h, {
+            children: (0, Q.jsx)(y, {
               id: `plugins.installModal.metadata.developer`,
               defaultMessage: `By {developerName}`,
               description: `Developer metadata shown in the plugin install modal`,
@@ -1779,7 +1822,7 @@ function Dt(e) {
     ? (c = t[7])
     : ((c = o
         ? (0, Q.jsx)(`div`, {
-            children: (0, Q.jsx)(h, {
+            children: (0, Q.jsx)(y, {
               id: `plugins.installModal.metadata.category`,
               defaultMessage: `Category: {category}`,
               description: `Category metadata shown in the plugin install modal`,
@@ -1819,11 +1862,11 @@ function $(e) {
     r
   );
 }
-function Ot(e) {
+function Mt(e) {
   let t = [],
     n = 0,
     r;
-  for (; (r = $e.exec(e)) != null; ) {
+  for (; (r = rt.exec(e)) != null; ) {
     r.index > n && t.push(e.slice(n, r.index));
     let [i, a, o] = r,
       s = o.trim();
@@ -1831,7 +1874,7 @@ function Ot(e) {
       (t.push(a), (n = r.index + i.length));
       continue;
     }
-    (t.push((0, Q.jsx)(xt, { url: s, children: a }, `${s}-${r.index}`)),
+    (t.push((0, Q.jsx)(Tt, { url: s, children: a }, `${s}-${r.index}`)),
       (n = r.index + i.length));
   }
   return (
@@ -1839,7 +1882,7 @@ function Ot(e) {
     t.length === 0 ? e : t.length === 1 ? t[0] : t
   );
 }
-function kt(e) {
+function Nt(e) {
   let t = new Set();
   return e.flatMap((e) => {
     let n = `${e.title}\u0000${e.description}`;
@@ -1848,13 +1891,13 @@ function kt(e) {
       : (t.add(n), [{ description: e.description, title: e.title }]);
   });
 }
-function At({ draftModes: e, personalizationToggles: t }) {
+function Pt({ draftModes: e, personalizationToggles: t }) {
   let n = { ...e };
   if (t == null) return n;
   for (let e of t) n[e.appId] ??= e.defaultMode;
   return n;
 }
-function jt(e) {
+function Ft(e) {
   return (
     e.plugin.interface?.longDescription?.trim() ||
     e.plugin.interface?.shortDescription?.trim() ||
@@ -1862,51 +1905,51 @@ function jt(e) {
     null
   );
 }
-function Mt(e) {
+function It(e) {
   return (
-    e.interface?.displayName?.trim() || o(e.name.split(`:`).pop() || e.name)
+    e.interface?.displayName?.trim() || c(e.name.split(`:`).pop() || e.name)
   );
 }
-function Nt({ forceReloadPlugins: e, hostId: t }) {
-  let n = S(v),
-    r = b(),
-    i = ne(),
-    o = _(),
-    s = n.query.snapshot(Ce),
-    u = k(),
-    [, d] = l(`composer_prefill`),
-    f = O(`2761268526`),
-    { data: p } = g(A, t),
+function Lt({ forceReloadPlugins: e, hostId: t }) {
+  let n = x(_),
+    r = h(),
+    i = te(),
+    a = g(),
+    c = z(t),
+    l = n.query.snapshot(Ae),
+    u = re(),
+    [, d] = s(`composer_prefill`),
+    f = ne(`2761268526`),
+    { data: p } = S(j, t),
     {
-      clearPendingAppConnect: h,
+      clearPendingAppConnect: v,
       isAppConnectPending: y,
-      markAppConnectOAuthPending: x,
-    } = Ee(),
+      markAppConnectOAuthPending: b,
+    } = Oe(),
     {
       closePluginInstall: C,
       markRequiredAppStatus: w,
-      openPluginInstall: ee,
-      session: T,
-      setPluginInstallNeedsApps: D,
-    } = oe(),
-    re = a(t).kind === `local`,
-    { data: j = [], hardRefetchAppsList: M } = V({
-      enabled: T.kind === `needsApps`,
+      openPluginInstall: T,
+      session: E,
+      setPluginInstallNeedsApps: O,
+    } = V(),
+    { data: k = [], hardRefetchAppsList: A } = F({
+      enabled: E.kind === `needsApps`,
       hostId: t,
     }),
-    ie = F({ hostId: t }),
-    ae = I({ hostId: t }),
-    P = ce({ hostId: t, isHostLocal: re }),
+    M = H({ hostId: t }),
+    ie = le({ hostId: t }),
+    L = U({ hostId: t }),
+    oe = M.available,
     se = ie.available,
-    de = ae.available,
-    he = P.available,
-    [ge, G] = (0, Z.useState)({}),
-    [K, q] = (0, Z.useState)(!1),
-    _e = te({
+    B = L.available,
+    [ce, W] = (0, Z.useState)({}),
+    [pe, me] = (0, Z.useState)(!1),
+    he = ee({
       mutationFn: async (e) => {
-        let n = await c(`install-plugin`, { hostId: t, ...ue(e) });
+        let n = await o(`install-plugin`, { hostId: t, ...fe(e) });
         return (
-          await me({
+          await J({
             hostId: t,
             marketplacePath: e.marketplacePath,
             pluginName: e.plugin.name,
@@ -1915,25 +1958,25 @@ function Nt({ forceReloadPlugins: e, hostId: t }) {
         );
       },
     }),
-    ve = K || _e.isPending,
-    J = Pt({ apps: j, isAppConnectPending: y, session: T }),
+    ve = pe || he.isPending,
+    Y = Rt({ apps: k, isAppConnectPending: y, session: E }),
     ye =
-      J.kind === `needsApps` &&
-      J.requiredBrowserExtensions.length === 0 &&
-      J.requiredApps.length > 0 &&
-      J.requiredApps.every((e) => e.status === `connected`),
+      Y.kind === `needsApps` &&
+      Y.requiredBrowserExtensions.length === 0 &&
+      Y.requiredApps.length > 0 &&
+      Y.requiredApps.every((e) => e.status === `connected`),
     be = (0, Z.useEffectEvent)((t) => {
       C();
       let i = t.postInstallComposerPrefill?.trim();
       (i && d({ text: i }),
-        n.get(N).success(
+        n.get(R).success(
           r.formatMessage(
             {
               id: `plugins.install.ready`,
               defaultMessage: `{pluginName} is ready.`,
               description: `Toast shown when all required apps are connected for a plugin install flow`,
             },
-            { pluginName: Y(t.plugin) },
+            { pluginName: q(t.plugin) },
           ),
         ),
         e().catch((e) => {
@@ -1944,30 +1987,30 @@ function Nt({ forceReloadPlugins: e, hostId: t }) {
         }));
     });
   (0, Z.useEffect)(() => {
-    !ye || J.kind !== `needsApps` || be(J);
-  }, [ye, J]);
-  async function xe(e, a) {
+    !ye || Y.kind !== `needsApps` || be(Y);
+  }, [ye, Y]);
+  async function xe(e, o) {
     if (e.status !== `pending`) return;
     let s = e.installUrl?.trim();
     if (!f && s) {
-      E.dispatchMessage(`open-in-browser`, { url: s });
+      D.dispatchMessage(`open-in-browser`, { url: s });
       return;
     }
-    (h({ appId: e.appId }), w({ appId: e.appId, status: `launching` }));
-    let c = await pe({
+    (v({ appId: e.appId }), w({ appId: e.appId, status: `launching` }));
+    let c = await I({
       app: { id: e.appId, installUrl: e.installUrl, name: e.name },
       openInBrowser: (e) => {
-        E.dispatchMessage(`open-in-browser`, { url: e });
+        D.dispatchMessage(`open-in-browser`, { url: e });
       },
-      personalizationMode: a?.[e.appId] ?? ge[e.appId] ?? `NO_PERSONALIZATION`,
-      queryClient: o,
+      personalizationMode: o?.[e.appId] ?? ce[e.appId] ?? `NO_PERSONALIZATION`,
+      queryClient: a,
     });
     switch (c.kind) {
       case `connected-directly`:
         (w({ appId: e.appId, status: `connected` }),
-          n.get(N).success(z({ appName: e.name, intl: r })));
+          n.get(R).success(N({ appName: e.name, intl: r })));
         try {
-          await Te({ hostId: t, queryClient: o, refreshAppsList: M });
+          await De({ hostId: t, queryClient: a, refreshAppsList: A });
         } catch (e) {
           m.error(`Failed to refresh apps after direct plugin app connect`, {
             safe: {},
@@ -1977,62 +2020,62 @@ function Nt({ forceReloadPlugins: e, hostId: t }) {
         return;
       case `oauth-started`:
         (w({ appId: e.appId, status: `waitingForCallback` }),
-          x({
+          b({
             app: { id: e.appId, name: e.name },
             hostId: t,
             redirectUrl: c.redirectUrl,
             returnTo: `${i.pathname}${i.search}${i.hash}`,
             resumeTarget: { kind: `plugin-install` },
           }),
-          n.get(N).info(B({ intl: r })));
+          n.get(R).info(ae({ intl: r })));
         return;
       case `browser-fallback`:
         w({ appId: e.appId, status: `pending` });
         return;
       case `failed`:
-        (w({ appId: e.appId, status: `pending` }), n.get(N).danger(fe(r)));
+        (w({ appId: e.appId, status: `pending` }), n.get(R).danger(P(r)));
         return;
     }
   }
   return {
     closePluginInstall: () => {
-      ve || (G({}), _e.reset(), C());
+      ve || (W({}), he.reset(), C());
     },
     connectRequiredApp: async (e) => {
-      if (J.kind !== `needsApps`) return;
-      let t = J.requiredApps.find((t) => t.appId === e);
+      if (Y.kind !== `needsApps`) return;
+      let t = Y.requiredApps.find((t) => t.appId === e);
       t == null ||
         t.status === `connected` ||
         t.status === `launching` ||
         t.status === `waitingForCallback` ||
         (await xe(t));
     },
-    installPlugin: async (i = {}, a = !1) => {
-      if (ve || T.kind !== `details`) return;
-      let l = T.plugin;
-      if (!se && le(l.plugin.id)) {
+    installPlugin: async (i = {}, s = !1) => {
+      if (ve || E.kind !== `details`) return;
+      let f = E.plugin;
+      if (!oe && ue(f.plugin.id)) {
         C();
         return;
       }
-      if (!de && R(l.plugin.id)) {
+      if (!se && G(f.plugin.id)) {
         C();
         return;
       }
-      if (!he && L(l.plugin.id)) {
+      if (!B && de(f.plugin.id)) {
         C();
         return;
       }
-      q(!0);
+      me(!0);
       try {
-        let f;
+        let h;
         try {
-          f = await _e.mutateAsync(l);
+          h = await he.mutateAsync(f);
         } catch (e) {
           (m.error(`Failed to install plugin`, {
             safe: {},
             sensitive: { error: e },
           }),
-            n.get(N).danger(
+            n.get(R).danger(
               r.formatMessage({
                 id: `plugins.install.error`,
                 defaultMessage: `Failed to install plugin`,
@@ -2041,23 +2084,23 @@ function Nt({ forceReloadPlugins: e, hostId: t }) {
             ));
           return;
         }
-        let h = H(l.plugin.id);
+        let g = _e(f.plugin.id);
         if (
-          (h != null &&
-            (await we(n, h, !1),
-            await c(`batch-write-config-value`, {
+          (g != null &&
+            (await K(n, g, !1),
+            await o(`batch-write-config-value`, {
               hostId: t,
-              edits: U({ pluginId: l.plugin.id, enabled: !0 }),
+              edits: ge({ pluginId: f.plugin.id, enabled: !0 }),
               filePath: p?.configWriteTarget?.filePath ?? null,
               expectedVersion: null,
               reloadUserConfig: !0,
             })),
-          a && le(l.plugin.id))
+          s && ue(f.plugin.id))
         ) {
           let e = !1;
           try {
-            let t = await Se(!0);
-            (s.setData((e) => ({
+            let t = await ke(!0);
+            (l.setData((e) => ({
               computerIconDataURL: e?.computerIconDataURL ?? null,
               enabled: t,
               lockIconDataURL: e?.lockIconDataURL ?? null,
@@ -2071,7 +2114,7 @@ function Nt({ forceReloadPlugins: e, hostId: t }) {
               (e = !0));
           }
           e &&
-            n.get(N).danger(
+            n.get(R).danger(
               r.formatMessage({
                 id: `plugins.install.lockedComputerUseError`,
                 defaultMessage: `Installed Computer Use, but failed to enable Locked Computer Use`,
@@ -2086,73 +2129,74 @@ function Nt({ forceReloadPlugins: e, hostId: t }) {
             safe: {},
             sensitive: { error: e },
           }),
-            n.get(N).danger(
+            n.get(R).danger(
               r.formatMessage(
                 {
                   id: `plugins.install.refreshError`,
                   defaultMessage: `Installed {pluginName}, but failed to refresh the plugin list`,
                   description: `Toast shown when a plugin installs successfully but the plugin list refresh fails`,
                 },
-                { pluginName: Y(l) },
+                { pluginName: q(f) },
               ),
             ));
         }
-        (await Promise.all([u(W), u(De)]), G(i));
-        let g = await We({
-          authPolicy: f.authPolicy,
+        (await Promise.all([u(Se), u(je)]), W(i));
+        let _ = await qe({
+          authPolicy: h.authPolicy,
+          codexHome: c,
           hostId: t,
-          plugin: l,
-          queryClient: o,
+          plugin: f,
+          queryClient: a,
           windowType: `electron`,
         });
         if (
-          f.authPolicy === `ON_USE` ||
-          (f.appsNeedingAuth.length === 0 && g.length === 0)
+          h.authPolicy === `ON_USE` ||
+          (h.appsNeedingAuth.length === 0 && _.length === 0)
         ) {
-          let e = T.postInstallComposerPrefill?.trim();
+          let e = E.postInstallComposerPrefill?.trim();
           (e && d({ text: e }),
-            n.get(N).success(
+            n.get(R).success(
               r.formatMessage(
                 {
                   id: `plugins.install.success`,
                   defaultMessage: `{pluginName} plugin installed`,
                   description: `Toast shown after a plugin is installed`,
                 },
-                { pluginName: Y(l) },
+                { pluginName: q(f) },
               ),
             ),
             C());
           return;
         }
-        (D({ apps: f.appsNeedingAuth, browserExtensions: g }),
-          f.authPolicy === `ON_INSTALL` &&
-            f.appsNeedingAuth.length === 1 &&
-            g.length === 0 &&
+        (O({ apps: h.appsNeedingAuth, browserExtensions: _ }),
+          h.authPolicy === `ON_INSTALL` &&
+            h.appsNeedingAuth.length === 1 &&
+            _.length === 0 &&
             (await xe(
               {
-                appId: f.appsNeedingAuth[0].id,
-                installUrl: f.appsNeedingAuth[0].installUrl,
-                name: f.appsNeedingAuth[0].name,
+                appId: h.appsNeedingAuth[0].id,
+                installUrl: h.appsNeedingAuth[0].installUrl,
+                name: h.appsNeedingAuth[0].name,
                 status: `pending`,
               },
               i,
             )));
       } finally {
-        q(!1);
+        me(!1);
       }
     },
     isInstalling: ve,
     openPluginInstall: (e, t = {}) => {
       ve ||
-        (!se && le(e.plugin.id)) ||
-        (!de && R(e.plugin.id)) ||
-        (!he && L(e.plugin.id)) ||
-        (G({}), _e.reset(), ee(e, t));
+        (!oe && ue(e.plugin.id)) ||
+        (!se && G(e.plugin.id)) ||
+        (!B && de(e.plugin.id)) ||
+        (W({}), he.reset(), T(e, t));
     },
-    session: J,
+    session: Y,
   };
 }
-function Pt({ apps: e, isAppConnectPending: t, session: n }) {
+function Rt({ apps: e, isAppConnectPending: t, session: n }) {
   if (n.kind !== `needsApps`) return n;
   let r = new Map();
   return (
@@ -2187,14 +2231,14 @@ function Pt({ apps: e, isAppConnectPending: t, session: n }) {
   );
 }
 export {
-  Ie as a,
-  je as c,
-  Ue as i,
-  Oe as l,
-  et as n,
-  Ne as o,
-  Xe as r,
-  Ae as s,
-  Nt as t,
+  ze as a,
+  Pe as c,
+  Ke as i,
+  Me as l,
+  it as n,
+  Ie as o,
+  et as r,
+  Fe as s,
+  Lt as t,
 };
 //# sourceMappingURL=use-plugin-install-flow.js.map

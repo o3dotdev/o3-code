@@ -1,0 +1,93 @@
+import { Xs as e, qs as t } from "./app-server-manager-signals-DkRDRgNB.js";
+import { S as n, _ as r, nt as i, tt as a, y as o } from "./setting-storage.js";
+var s = [`hooks`],
+  c = i(n, ({ hostId: t, cwd: n }) => ({
+    queryKey: [...s, t, n],
+    queryFn: () => {
+      if (n == null) throw Error(`Cannot list hooks without a project root`);
+      return e(`list-hooks-for-host`, { hostId: t, cwds: [n] });
+    },
+    staleTime: r.FIVE_MINUTES,
+    refetchOnWindowFocus: `always`,
+    enabled: n != null,
+  })),
+  l = i(n, ({ hostId: t, cwds: n }) => ({
+    queryKey: [...s, t, n],
+    queryFn: () => {
+      if (n == null || n.length === 0)
+        throw Error(`Cannot list hooks without project roots`);
+      return e(`list-hooks-for-host`, { hostId: t, cwds: n });
+    },
+    staleTime: r.FIVE_MINUTES,
+    enabled: n != null && n.length > 0,
+  }));
+async function u(e, t, n = {}) {
+  let { broadcast: r = !1, refetchType: i } = n;
+  (await e.invalidateQueries({
+    predicate: ({ queryKey: e }) => e[0] === s[0] && e[1] === t,
+    refetchType: i,
+  }),
+    r && o.dispatchMessage(`query-cache-invalidate`, { queryKey: s }));
+}
+var d = a(n, (t) => ({
+  mutationFn: (n) =>
+    e(`batch-write-config-value`, {
+      hostId: t,
+      edits: [
+        {
+          keyPath: `hooks.state`,
+          value: Object.fromEntries(
+            n.map(({ key: e, enabled: t, trustedHash: n }) => [
+              e,
+              {
+                ...(t == null ? {} : { enabled: t }),
+                ...(n == null ? {} : { trusted_hash: n }),
+              },
+            ]),
+          ),
+          mergeStrategy: `upsert`,
+        },
+      ],
+      filePath: null,
+      expectedVersion: null,
+      reloadUserConfig: !0,
+    }),
+  onMutate: async (e, { client: n }) => {
+    await n.cancelQueries({ predicate: ({ queryKey: e }) => f(e, t) });
+    let r = n.getQueriesData({ predicate: ({ queryKey: e }) => f(e, t) });
+    return (
+      n.setQueriesData({ predicate: ({ queryKey: e }) => f(e, t) }, (t) =>
+        p(t, e),
+      ),
+      { previousResponses: r }
+    );
+  },
+  onError: (e, t, n, { client: r }) => {
+    n?.previousResponses.forEach(([e, t]) => {
+      r.setQueryData(e, t);
+    });
+  },
+  onSettled: async (e, n, r, i, { client: a }) => {
+    await u(a, t, { broadcast: !0 });
+  },
+}));
+function f(e, t) {
+  return e[0] === s[0] && e[1] === t;
+}
+function p(e, n) {
+  if (e == null) return e;
+  let r = new Map(n.map((e) => [e.key, e]));
+  return t(e, (e) => {
+    for (let t of e.data)
+      for (let e of t.hooks) {
+        let t = r.get(e.key);
+        t != null &&
+          (t.enabled != null && (e.enabled = t.enabled),
+          t.trustedHash != null &&
+            t.trustedHash === e.currentHash &&
+            (e.trustStatus = `trusted`));
+      }
+  });
+}
+export { d as a, u as i, c as n, l as r, s as t };
+//# sourceMappingURL=hooks-settings-queries-BUP-44jb.js.map

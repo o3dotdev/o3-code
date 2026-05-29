@@ -1,712 +1,85 @@
-import { s as e } from "./chunk.js";
 import {
-  Ci as t,
-  Ot as n,
-  Si as r,
-  Xr as i,
-  Z as a,
-  Zn as o,
-  di as s,
-  gi as c,
-  ii as l,
-  mi as u,
-  ni as d,
-  oi as ee,
-  or as f,
-  pr as p,
-  si as m,
-  ui as te,
-  x as h,
-  xi as ne,
-} from "./src-BLHmAhbF.js";
+  D as e,
+  Di as t,
+  Fi as n,
+  Hi as r,
+  Ni as i,
+  Ri as a,
+  Vi as o,
+  Zi as s,
+  qi as c,
+  st as l,
+  zr as u,
+} from "./src-C.js";
 import {
-  $o as g,
-  K as _,
-  T as re,
-  Ta as v,
-  aa as ie,
-  ts as y,
-} from "./app-server-manager-signals.js";
+  E as ee,
+  hn as d,
+  mn as f,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import "./jsx-runtime.js";
-import "./marked.esm.js";
-import { n as b, rt as x, s as S, u as C, y as w } from "./setting-storage.js";
-import "./product-logger.js";
-import "./statsig.js";
+import "./marked.esm-BR-H6018.js";
+import { n as p, s as te, u as m, y as h } from "./setting-storage.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import "./use-global-state.js";
-import "./thread-context-inputs.js";
+import "./thread-context-inputs-DBrOekVr.js";
 import "./route-scope.js";
 import "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
-import "./use-os-info.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
 import "./use-webview-execution-target.js";
 import "./remote-projects.js";
-import {
-  P as T,
-  a as ae,
-  c as oe,
-  o as se,
-  u as ce,
-} from "./app-shell-state.js";
+import { V as g, a as _, c as v, f as y, o as b } from "./app-shell-state.js";
 import "./use-platform.js";
-import { t as E } from "./get-build-flavor.js";
-import { r as le } from "./chrome-theme.js";
-import { g as ue, v as de, x as fe } from "./parsePatchFiles.js";
-import { t as pe } from "./browser-sidebar-manager.js";
-import { a as D, n as me } from "./app-shell-tab-controller.js";
-import { t as he } from "./local-conversation-title-signals.js";
-import { L as O, jt as k, r as ge } from "./review-navigation-model.js";
-import "./parse-diff.js";
-import "./sumBy.js";
-import "./thread-context.js";
-import "./diff-view-mode.js";
-import "./git-current-branch-query.js";
+import { E as x, j as S, k as ne, w as re } from "./diff-view-mode.js";
+import { t as ie } from "./browser-sidebar-manager.js";
+import {
+  l as ae,
+  n as oe,
+  s as se,
+} from "./app-shell-tab-controller-BTWycTBb.js";
+import { t as ce } from "./local-conversation-title-signals-bVA-f9H8.js";
+import {
+  L as C,
+  Nt as w,
+  r as le,
+} from "./review-navigation-model-DMRVNxCn.js";
 import "./focus-composer.js";
+import "./sumBy-zUPwGmzt.js";
+import "./thread-context-CaET2O8s.js";
+import "./git-current-branch-query.js";
 import "./terminal.js";
 import "./app-intl-signal.js";
-import "./terminal-service.js";
-import { c as _e, o as A } from "./thread-page-bottom-panel-state-DZYvoqqn.js";
-import "./info.js";
+import { a as T, o as E } from "./thread-page-bottom-panel-state.js";
+import "./xterm-display-helpers.js";
+import "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import "./download.js";
 import "./with-window.js";
 import "./use-resolved-theme-variant.js";
 import "./thread-panel-state.js";
 import {
-  _ as j,
-  a as M,
-  c as N,
-  d as P,
-  f as F,
-  g as I,
-  i as L,
-  l as ve,
-  m as R,
-  n as z,
-  o as ye,
-  p as be,
-  r as B,
-  s as xe,
-  t as Se,
-  u as Ce,
+  _ as D,
+  a as O,
+  c as k,
+  d as A,
+  f as j,
+  g as M,
+  i as N,
+  l as P,
+  m as F,
+  n as I,
+  o as L,
+  p as R,
+  r as z,
+  s as B,
+  t as V,
+  u as H,
 } from "./window-app-action-helpers.js";
-import { r as we, t as Te } from "./plugin-config-edits.js";
-import { c as Ee, l as De } from "./sidebar-thread-keys.js";
-var V = class {
-  constructor(e) {
-    ((this.counter = 0),
-      (this.metadataRegistry = e?.metadata ?? r),
-      (this.target = e?.target ?? `draft-2020-12`),
-      (this.unrepresentable = e?.unrepresentable ?? `throw`),
-      (this.override = e?.override ?? (() => {})),
-      (this.io = e?.io ?? `output`),
-      (this.seen = new Map()));
-  }
-  process(e, n = { path: [], schemaPath: [] }) {
-    var r;
-    let i = e._zod.def,
-      a = {
-        guid: `uuid`,
-        url: `uri`,
-        datetime: `date-time`,
-        json_string: `json-string`,
-        regex: ``,
-      },
-      o = this.seen.get(e);
-    if (o)
-      return (
-        o.count++,
-        n.schemaPath.includes(e) && (o.cycle = n.path),
-        o.schema
-      );
-    let s = { schema: {}, count: 1, cycle: void 0, path: n.path };
-    this.seen.set(e, s);
-    let c = e._zod.toJSONSchema?.();
-    if (c) s.schema = c;
-    else {
-      let r = { ...n, schemaPath: [...n.schemaPath, e], path: n.path },
-        o = e._zod.parent;
-      if (o)
-        ((s.ref = o), this.process(o, r), (this.seen.get(o).isParent = !0));
-      else {
-        let n = s.schema;
-        switch (i.type) {
-          case `string`: {
-            let t = n;
-            t.type = `string`;
-            let {
-              minimum: r,
-              maximum: i,
-              format: o,
-              patterns: c,
-              contentEncoding: l,
-            } = e._zod.bag;
-            if (
-              (typeof r == `number` && (t.minLength = r),
-              typeof i == `number` && (t.maxLength = i),
-              o && ((t.format = a[o] ?? o), t.format === `` && delete t.format),
-              l && (t.contentEncoding = l),
-              c && c.size > 0)
-            ) {
-              let e = [...c];
-              e.length === 1
-                ? (t.pattern = e[0].source)
-                : e.length > 1 &&
-                  (s.schema.allOf = [
-                    ...e.map((e) => ({
-                      ...(this.target === `draft-7` ||
-                      this.target === `draft-4` ||
-                      this.target === `openapi-3.0`
-                        ? { type: `string` }
-                        : {}),
-                      pattern: e.source,
-                    })),
-                  ]);
-            }
-            break;
-          }
-          case `number`: {
-            let t = n,
-              {
-                minimum: r,
-                maximum: i,
-                format: a,
-                multipleOf: o,
-                exclusiveMaximum: s,
-                exclusiveMinimum: c,
-              } = e._zod.bag;
-            (typeof a == `string` && a.includes(`int`)
-              ? (t.type = `integer`)
-              : (t.type = `number`),
-              typeof c == `number` &&
-                (this.target === `draft-4` || this.target === `openapi-3.0`
-                  ? ((t.minimum = c), (t.exclusiveMinimum = !0))
-                  : (t.exclusiveMinimum = c)),
-              typeof r == `number` &&
-                ((t.minimum = r),
-                typeof c == `number` &&
-                  this.target !== `draft-4` &&
-                  (c >= r ? delete t.minimum : delete t.exclusiveMinimum)),
-              typeof s == `number` &&
-                (this.target === `draft-4` || this.target === `openapi-3.0`
-                  ? ((t.maximum = s), (t.exclusiveMaximum = !0))
-                  : (t.exclusiveMaximum = s)),
-              typeof i == `number` &&
-                ((t.maximum = i),
-                typeof s == `number` &&
-                  this.target !== `draft-4` &&
-                  (s <= i ? delete t.maximum : delete t.exclusiveMaximum)),
-              typeof o == `number` && (t.multipleOf = o));
-            break;
-          }
-          case `boolean`: {
-            let e = n;
-            e.type = `boolean`;
-            break;
-          }
-          case `bigint`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`BigInt cannot be represented in JSON Schema`);
-            break;
-          case `symbol`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Symbols cannot be represented in JSON Schema`);
-            break;
-          case `null`:
-            this.target === `openapi-3.0`
-              ? ((n.type = `string`), (n.nullable = !0), (n.enum = [null]))
-              : (n.type = `null`);
-            break;
-          case `any`:
-            break;
-          case `unknown`:
-            break;
-          case `undefined`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Undefined cannot be represented in JSON Schema`);
-            break;
-          case `void`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Void cannot be represented in JSON Schema`);
-            break;
-          case `never`:
-            n.not = {};
-            break;
-          case `date`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Date cannot be represented in JSON Schema`);
-            break;
-          case `array`: {
-            let t = n,
-              { minimum: a, maximum: o } = e._zod.bag;
-            (typeof a == `number` && (t.minItems = a),
-              typeof o == `number` && (t.maxItems = o),
-              (t.type = `array`),
-              (t.items = this.process(i.element, {
-                ...r,
-                path: [...r.path, `items`],
-              })));
-            break;
-          }
-          case `object`: {
-            let e = n;
-            ((e.type = `object`), (e.properties = {}));
-            let t = i.shape;
-            for (let n in t)
-              e.properties[n] = this.process(t[n], {
-                ...r,
-                path: [...r.path, `properties`, n],
-              });
-            let a = new Set(Object.keys(t)),
-              o = new Set(
-                [...a].filter((e) => {
-                  let t = i.shape[e]._zod;
-                  return this.io === `input`
-                    ? t.optin === void 0
-                    : t.optout === void 0;
-                }),
-              );
-            (o.size > 0 && (e.required = Array.from(o)),
-              i.catchall?._zod.def.type === `never`
-                ? (e.additionalProperties = !1)
-                : i.catchall
-                  ? i.catchall &&
-                    (e.additionalProperties = this.process(i.catchall, {
-                      ...r,
-                      path: [...r.path, `additionalProperties`],
-                    }))
-                  : this.io === `output` && (e.additionalProperties = !1));
-            break;
-          }
-          case `union`: {
-            let e = n,
-              t = i.discriminator !== void 0,
-              a = i.options.map((e, n) =>
-                this.process(e, {
-                  ...r,
-                  path: [...r.path, t ? `oneOf` : `anyOf`, n],
-                }),
-              );
-            t ? (e.oneOf = a) : (e.anyOf = a);
-            break;
-          }
-          case `intersection`: {
-            let e = n,
-              t = this.process(i.left, { ...r, path: [...r.path, `allOf`, 0] }),
-              a = this.process(i.right, {
-                ...r,
-                path: [...r.path, `allOf`, 1],
-              }),
-              o = (e) => `allOf` in e && Object.keys(e).length === 1;
-            e.allOf = [...(o(t) ? t.allOf : [t]), ...(o(a) ? a.allOf : [a])];
-            break;
-          }
-          case `tuple`: {
-            let t = n;
-            t.type = `array`;
-            let a = this.target === `draft-2020-12` ? `prefixItems` : `items`,
-              o =
-                this.target === `draft-2020-12` || this.target === `openapi-3.0`
-                  ? `items`
-                  : `additionalItems`,
-              s = i.items.map((e, t) =>
-                this.process(e, { ...r, path: [...r.path, a, t] }),
-              ),
-              c = i.rest
-                ? this.process(i.rest, {
-                    ...r,
-                    path: [
-                      ...r.path,
-                      o,
-                      ...(this.target === `openapi-3.0`
-                        ? [i.items.length]
-                        : []),
-                    ],
-                  })
-                : null;
-            this.target === `draft-2020-12`
-              ? ((t.prefixItems = s), c && (t.items = c))
-              : this.target === `openapi-3.0`
-                ? ((t.items = { anyOf: s }),
-                  c && t.items.anyOf.push(c),
-                  (t.minItems = s.length),
-                  c || (t.maxItems = s.length))
-                : ((t.items = s), c && (t.additionalItems = c));
-            let { minimum: l, maximum: u } = e._zod.bag;
-            (typeof l == `number` && (t.minItems = l),
-              typeof u == `number` && (t.maxItems = u));
-            break;
-          }
-          case `record`: {
-            let e = n;
-            ((e.type = `object`),
-              (this.target === `draft-7` || this.target === `draft-2020-12`) &&
-                (e.propertyNames = this.process(i.keyType, {
-                  ...r,
-                  path: [...r.path, `propertyNames`],
-                })),
-              (e.additionalProperties = this.process(i.valueType, {
-                ...r,
-                path: [...r.path, `additionalProperties`],
-              })));
-            break;
-          }
-          case `map`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Map cannot be represented in JSON Schema`);
-            break;
-          case `set`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Set cannot be represented in JSON Schema`);
-            break;
-          case `enum`: {
-            let e = n,
-              r = t(i.entries);
-            (r.every((e) => typeof e == `number`) && (e.type = `number`),
-              r.every((e) => typeof e == `string`) && (e.type = `string`),
-              (e.enum = r));
-            break;
-          }
-          case `literal`: {
-            let e = n,
-              t = [];
-            for (let e of i.values)
-              if (e === void 0) {
-                if (this.unrepresentable === `throw`)
-                  throw Error(
-                    "Literal `undefined` cannot be represented in JSON Schema",
-                  );
-              } else if (typeof e == `bigint`) {
-                if (this.unrepresentable === `throw`)
-                  throw Error(
-                    `BigInt literals cannot be represented in JSON Schema`,
-                  );
-                t.push(Number(e));
-              } else t.push(e);
-            if (t.length !== 0)
-              if (t.length === 1) {
-                let n = t[0];
-                ((e.type = n === null ? `null` : typeof n),
-                  this.target === `draft-4` || this.target === `openapi-3.0`
-                    ? (e.enum = [n])
-                    : (e.const = n));
-              } else
-                (t.every((e) => typeof e == `number`) && (e.type = `number`),
-                  t.every((e) => typeof e == `string`) && (e.type = `string`),
-                  t.every((e) => typeof e == `boolean`) && (e.type = `string`),
-                  t.every((e) => e === null) && (e.type = `null`),
-                  (e.enum = t));
-            break;
-          }
-          case `file`: {
-            let t = n,
-              r = {
-                type: `string`,
-                format: `binary`,
-                contentEncoding: `binary`,
-              },
-              { minimum: i, maximum: a, mime: o } = e._zod.bag;
-            (i !== void 0 && (r.minLength = i),
-              a !== void 0 && (r.maxLength = a),
-              o
-                ? o.length === 1
-                  ? ((r.contentMediaType = o[0]), Object.assign(t, r))
-                  : (t.anyOf = o.map((e) => ({ ...r, contentMediaType: e })))
-                : Object.assign(t, r));
-            break;
-          }
-          case `transform`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Transforms cannot be represented in JSON Schema`);
-            break;
-          case `nullable`: {
-            let e = this.process(i.innerType, r);
-            this.target === `openapi-3.0`
-              ? ((s.ref = i.innerType), (n.nullable = !0))
-              : (n.anyOf = [e, { type: `null` }]);
-            break;
-          }
-          case `nonoptional`:
-            (this.process(i.innerType, r), (s.ref = i.innerType));
-            break;
-          case `success`: {
-            let e = n;
-            e.type = `boolean`;
-            break;
-          }
-          case `default`:
-            (this.process(i.innerType, r),
-              (s.ref = i.innerType),
-              (n.default = JSON.parse(JSON.stringify(i.defaultValue))));
-            break;
-          case `prefault`:
-            (this.process(i.innerType, r),
-              (s.ref = i.innerType),
-              this.io === `input` &&
-                (n._prefault = JSON.parse(JSON.stringify(i.defaultValue))));
-            break;
-          case `catch`: {
-            (this.process(i.innerType, r), (s.ref = i.innerType));
-            let e;
-            try {
-              e = i.catchValue(void 0);
-            } catch {
-              throw Error(
-                `Dynamic catch values are not supported in JSON Schema`,
-              );
-            }
-            n.default = e;
-            break;
-          }
-          case `nan`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`NaN cannot be represented in JSON Schema`);
-            break;
-          case `template_literal`: {
-            let t = n,
-              r = e._zod.pattern;
-            if (!r) throw Error(`Pattern not found in template literal`);
-            ((t.type = `string`), (t.pattern = r.source));
-            break;
-          }
-          case `pipe`: {
-            let e =
-              this.io === `input`
-                ? i.in._zod.def.type === `transform`
-                  ? i.out
-                  : i.in
-                : i.out;
-            (this.process(e, r), (s.ref = e));
-            break;
-          }
-          case `readonly`:
-            (this.process(i.innerType, r),
-              (s.ref = i.innerType),
-              (n.readOnly = !0));
-            break;
-          case `promise`:
-            (this.process(i.innerType, r), (s.ref = i.innerType));
-            break;
-          case `optional`:
-            (this.process(i.innerType, r), (s.ref = i.innerType));
-            break;
-          case `lazy`: {
-            let t = e._zod.innerType;
-            (this.process(t, r), (s.ref = t));
-            break;
-          }
-          case `custom`:
-            if (this.unrepresentable === `throw`)
-              throw Error(`Custom types cannot be represented in JSON Schema`);
-            break;
-          case `function`:
-            if (this.unrepresentable === `throw`)
-              throw Error(
-                `Function types cannot be represented in JSON Schema`,
-              );
-            break;
-          default:
-        }
-      }
-    }
-    let l = this.metadataRegistry.get(e);
-    return (
-      l && Object.assign(s.schema, l),
-      this.io === `input` &&
-        H(e) &&
-        (delete s.schema.examples, delete s.schema.default),
-      this.io === `input` &&
-        s.schema._prefault &&
-        ((r = s.schema).default ?? (r.default = s.schema._prefault)),
-      delete s.schema._prefault,
-      this.seen.get(e).schema
-    );
-  }
-  emit(e, t) {
-    let n = {
-        cycles: t?.cycles ?? `ref`,
-        reused: t?.reused ?? `inline`,
-        external: t?.external ?? void 0,
-      },
-      r = this.seen.get(e);
-    if (!r) throw Error(`Unprocessed schema. This is a bug in Zod.`);
-    let i = (e) => {
-        let t = this.target === `draft-2020-12` ? `$defs` : `definitions`;
-        if (n.external) {
-          let r = n.external.registry.get(e[0])?.id,
-            i = n.external.uri ?? ((e) => e);
-          if (r) return { ref: i(r) };
-          let a = e[1].defId ?? e[1].schema.id ?? `schema${this.counter++}`;
-          return (
-            (e[1].defId = a),
-            { defId: a, ref: `${i(`__shared`)}#/${t}/${a}` }
-          );
-        }
-        if (e[1] === r) return { ref: `#` };
-        let i = `#/${t}/`,
-          a = e[1].schema.id ?? `__schema${this.counter++}`;
-        return { defId: a, ref: i + a };
-      },
-      a = (e) => {
-        if (e[1].schema.$ref) return;
-        let t = e[1],
-          { ref: n, defId: r } = i(e);
-        ((t.def = { ...t.schema }), r && (t.defId = r));
-        let a = t.schema;
-        for (let e in a) delete a[e];
-        a.$ref = n;
-      };
-    if (n.cycles === `throw`)
-      for (let e of this.seen.entries()) {
-        let t = e[1];
-        if (t.cycle)
-          throw Error(`Cycle detected: #/${t.cycle?.join(`/`)}/<root>
-
-Set the \`cycles\` parameter to \`"ref"\` to resolve cyclical schemas with defs.`);
-      }
-    for (let t of this.seen.entries()) {
-      let r = t[1];
-      if (e === t[0]) {
-        a(t);
-        continue;
-      }
-      if (n.external) {
-        let r = n.external.registry.get(t[0])?.id;
-        if (e !== t[0] && r) {
-          a(t);
-          continue;
-        }
-      }
-      if (this.metadataRegistry.get(t[0])?.id) {
-        a(t);
-        continue;
-      }
-      if (r.cycle) {
-        a(t);
-        continue;
-      }
-      if (r.count > 1 && n.reused === `ref`) {
-        a(t);
-        continue;
-      }
-    }
-    let o = (e, t) => {
-      let n = this.seen.get(e),
-        r = n.def ?? n.schema,
-        i = { ...r };
-      if (n.ref === null) return;
-      let a = n.ref;
-      if (((n.ref = null), a)) {
-        o(a, t);
-        let e = this.seen.get(a).schema;
-        e.$ref &&
-        (t.target === `draft-7` ||
-          t.target === `draft-4` ||
-          t.target === `openapi-3.0`)
-          ? ((r.allOf = r.allOf ?? []), r.allOf.push(e))
-          : (Object.assign(r, e), Object.assign(r, i));
-      }
-      n.isParent ||
-        this.override({ zodSchema: e, jsonSchema: r, path: n.path ?? [] });
-    };
-    for (let e of [...this.seen.entries()].reverse())
-      o(e[0], { target: this.target });
-    let s = {};
-    if (
-      (this.target === `draft-2020-12`
-        ? (s.$schema = `https://json-schema.org/draft/2020-12/schema`)
-        : this.target === `draft-7`
-          ? (s.$schema = `http://json-schema.org/draft-07/schema#`)
-          : this.target === `draft-4`
-            ? (s.$schema = `http://json-schema.org/draft-04/schema#`)
-            : this.target === `openapi-3.0` ||
-              console.warn(`Invalid target: ${this.target}`),
-      n.external?.uri)
-    ) {
-      let t = n.external.registry.get(e)?.id;
-      if (!t) throw Error("Schema is missing an `id` property");
-      s.$id = n.external.uri(t);
-    }
-    Object.assign(s, r.def);
-    let c = n.external?.defs ?? {};
-    for (let e of this.seen.entries()) {
-      let t = e[1];
-      t.def && t.defId && (c[t.defId] = t.def);
-    }
-    n.external ||
-      (Object.keys(c).length > 0 &&
-        (this.target === `draft-2020-12`
-          ? (s.$defs = c)
-          : (s.definitions = c)));
-    try {
-      return JSON.parse(JSON.stringify(s));
-    } catch {
-      throw Error(`Error converting schema to JSON.`);
-    }
-  }
-};
-function Oe(e, t) {
-  if (e instanceof ne) {
-    let n = new V(t),
-      r = {};
-    for (let t of e._idmap.entries()) {
-      let [e, r] = t;
-      n.process(r);
-    }
-    let i = {},
-      a = { registry: e, uri: t?.uri, defs: r };
-    for (let r of e._idmap.entries()) {
-      let [e, o] = r;
-      i[e] = n.emit(o, { ...t, external: a });
-    }
-    return (
-      Object.keys(r).length > 0 &&
-        (i.__shared = {
-          [n.target === `draft-2020-12` ? `$defs` : `definitions`]: r,
-        }),
-      { schemas: i }
-    );
-  }
-  let n = new V(t);
-  return (n.process(e), n.emit(e, t));
-}
-function H(e, t) {
-  let n = t ?? { seen: new Set() };
-  if (n.seen.has(e)) return !1;
-  n.seen.add(e);
-  let r = e._zod.def;
-  if (r.type === `transform`) return !0;
-  if (r.type === `array`) return H(r.element, n);
-  if (r.type === `set`) return H(r.valueType, n);
-  if (r.type === `lazy`) return H(r.getter(), n);
-  if (
-    r.type === `promise` ||
-    r.type === `optional` ||
-    r.type === `nonoptional` ||
-    r.type === `nullable` ||
-    r.type === `readonly` ||
-    r.type === `default` ||
-    r.type === `prefault`
-  )
-    return H(r.innerType, n);
-  if (r.type === `intersection`) return H(r.left, n) || H(r.right, n);
-  if (r.type === `record` || r.type === `map`)
-    return H(r.keyType, n) || H(r.valueType, n);
-  if (r.type === `pipe`) return H(r.in, n) || H(r.out, n);
-  if (r.type === `object`) {
-    for (let e in r.shape) if (H(r.shape[e], n)) return !0;
-    return !1;
-  }
-  if (r.type === `union`) {
-    for (let e of r.options) if (H(e, n)) return !0;
-    return !1;
-  }
-  if (r.type === `tuple`) {
-    for (let e of r.items) if (H(e, n)) return !0;
-    return !!(r.rest && H(r.rest, n));
-  }
-  return !1;
-}
 function U(e) {
   return {
     type: e.schema.shape.type.value,
@@ -714,36 +87,36 @@ function U(e) {
     run: (t, n) => e.run(e.schema.parse(t), n),
   };
 }
-function ke(e) {
+function W(e) {
   let t = new Map();
   for (let n of e) t.set(n.type, n.run);
   return t;
 }
-var Ae = U({
-    schema: s({ type: m(`app.appearance.get`) }),
+var ue = U({
+    schema: r({ type: a(`app.appearance.get`) }),
     run: async () => {
-      let [e, t, n, r, i] = await Promise.all([
-        b(h.theme),
-        b(h.lightCodeThemeId),
-        b(h.darkCodeThemeId),
-        b(h.lightChromeTheme),
-        b(h.darkChromeTheme),
+      let [t, n, r, i, a] = await Promise.all([
+        p(e.theme),
+        p(e.lightCodeThemeId),
+        p(e.darkCodeThemeId),
+        p(e.lightChromeTheme),
+        p(e.darkChromeTheme),
       ]);
       return {
         schemaVersion: 1,
-        mode: e,
+        mode: t,
         themes: {
-          light: { codeThemeId: t, chromeTheme: r },
-          dark: { codeThemeId: n, chromeTheme: i },
+          light: { codeThemeId: n, chromeTheme: i },
+          dark: { codeThemeId: r, chromeTheme: a },
         },
       };
     },
   }),
-  je = U({
-    schema: s({ type: m(`app.appearance.get_available_themes`) }),
+  de = U({
+    schema: r({ type: a(`app.appearance.get_available_themes`) }),
     run: () => ({
       schemaVersion: 1,
-      themes: de().map((e) => ({
+      themes: x().map((e) => ({
         id: e.id,
         label: e.label,
         supportsDark: e.registrationByVariant.dark != null,
@@ -751,13 +124,13 @@ var Ae = U({
       })),
     }),
   });
-async function W(e, t, n, r) {
-  let i = C(`get-settings`),
+async function G(e, t, n, r) {
+  let i = m(`get-settings`),
     a = e.queryClient?.getQueryData(i),
     o = r?.optimistic ?? !0;
   o && e.queryClient?.setQueryData(i, { values: { ...a?.values, [t.key]: n } });
   try {
-    (await S(t, n),
+    (await te(t, n),
       o ||
         e.queryClient?.setQueryData(i, {
           values: { ...a?.values, [t.key]: n },
@@ -766,74 +139,74 @@ async function W(e, t, n, r) {
     throw (a != null && e.queryClient?.setQueryData(i, a), t);
   } finally {
     (await e.queryClient?.invalidateQueries({ queryKey: i }),
-      w.dispatchMessage(`query-cache-invalidate`, { queryKey: [...i] }));
+      h.dispatchMessage(`query-cache-invalidate`, { queryKey: [...i] }));
   }
 }
-var Me = U({
-    schema: s({
-      type: m(`app.appearance.set_mode`),
-      mode: i([`light`, `dark`, `system`]),
+var fe = U({
+    schema: r({
+      type: a(`app.appearance.set_mode`),
+      mode: t([`light`, `dark`, `system`]),
     }),
-    run: async ({ mode: e }, t) => (
-      await W(t, h.theme, e, { optimistic: !1 }),
-      { schemaVersion: 1, mode: e }
+    run: async ({ mode: t }, n) => (
+      await G(n, e.theme, t, { optimistic: !1 }),
+      { schemaVersion: 1, mode: t }
     ),
   }),
-  G = c().regex(/^#[0-9a-fA-F]{6}$/),
-  Ne = s({ code: c().nullable().optional(), ui: c().nullable().optional() }),
-  Pe = s({ diffAdded: G, diffRemoved: G, skill: G }),
-  Fe = s({
-    accent: G.optional(),
-    contrast: te().int().min(0).max(100).optional(),
-    fonts: Ne.optional(),
-    ink: G.optional(),
-    opaqueWindows: d().optional(),
-    semanticColors: Pe.partial().optional(),
-    surface: G.optional(),
+  K = c().regex(/^#[0-9a-fA-F]{6}$/),
+  pe = r({ code: c().nullable().optional(), ui: c().nullable().optional() }),
+  me = r({ diffAdded: K, diffRemoved: K, skill: K }),
+  he = r({
+    accent: K.optional(),
+    contrast: o().int().min(0).max(100).optional(),
+    fonts: pe.optional(),
+    ink: K.optional(),
+    opaqueWindows: i().optional(),
+    semanticColors: me.partial().optional(),
+    surface: K.optional(),
   }),
-  Ie = U({
-    schema: s({
-      type: m(`app.appearance.set_theme`),
-      theme: l(`kind`, [
-        s({
-          kind: m(`preset`),
-          themeId: c().refine(fe, `Invalid code theme id`),
+  ge = U({
+    schema: r({
+      type: a(`app.appearance.set_theme`),
+      theme: n(`kind`, [
+        r({
+          kind: a(`preset`),
+          themeId: c().refine(ne, `Invalid code theme id`),
         }),
-        s({ kind: m(`custom`), patch: Fe }),
+        r({ kind: a(`custom`), patch: he }),
       ]),
-      variant: i([`light`, `dark`, `both`]).default(`both`),
+      variant: t([`light`, `dark`, `both`]).default(`both`),
     }),
     run: async ({ theme: e, variant: t }, n) => {
       let r = [],
         i = { schemaVersion: 1, theme: e, updated: r };
       if (t === `light` || t === `both`) {
-        let t = await K(n, `light`, e);
+        let t = await q(n, `light`, e);
         (r.push(`light`), (i.appearanceLightChromeTheme = t));
       }
       if (t === `dark` || t === `both`) {
-        let t = await K(n, `dark`, e);
+        let t = await q(n, `dark`, e);
         (r.push(`dark`), (i.appearanceDarkChromeTheme = t));
       }
       return ((i.updated = r), i);
     },
   });
-async function K(e, t, n) {
-  let { chromeThemeSetting: r, codeThemeSetting: i } = Re(t),
-    a = le(await b(r), t);
+async function q(e, t, n) {
+  let { chromeThemeSetting: r, codeThemeSetting: i } = ve(t),
+    a = S(await p(r), t);
   if (n.kind === `custom`) {
-    let t = Le(a, n.patch);
-    return (await W(e, r, t), t);
+    let t = _e(a, n.patch);
+    return (await G(e, r, t), t);
   }
-  let o = await ue(n.themeId, t),
+  let o = await re(n.themeId, t),
     s = {
       ...a,
       ...o,
       fonts: { ...a.fonts, ...o.fonts },
       semanticColors: { ...a.semanticColors, ...o.semanticColors },
     };
-  return (await Promise.all([W(e, i, n.themeId), W(e, r, s)]), s);
+  return (await Promise.all([G(e, i, n.themeId), G(e, r, s)]), s);
 }
-function Le(e, t) {
+function _e(e, t) {
   return {
     ...e,
     ...t,
@@ -844,58 +217,59 @@ function Le(e, t) {
         : { ...e.semanticColors, ...t.semanticColors },
   };
 }
-function Re(e) {
-  return e === `light`
+function ve(t) {
+  return t === `light`
     ? {
-        chromeThemeSetting: h.lightChromeTheme,
-        codeThemeSetting: h.lightCodeThemeId,
+        chromeThemeSetting: e.lightChromeTheme,
+        codeThemeSetting: e.lightCodeThemeId,
       }
     : {
-        chromeThemeSetting: h.darkChromeTheme,
-        codeThemeSetting: h.darkCodeThemeId,
+        chromeThemeSetting: e.darkChromeTheme,
+        codeThemeSetting: e.darkCodeThemeId,
       };
 }
-function q(e) {
-  if (e.routeScope == null) throw Error(`App action requires a route scope`);
-  return e.routeScope;
+function J(e) {
+  if (e.scope == null) throw Error(`App action requires a route scope`);
+  return e.scope;
 }
-var ze = U({
-  schema: s({ type: m(`app.get_summary`) }),
+var ye = U({
+  schema: r({ type: a(`app.get_summary`) }),
   run: (e, t) => {
-    let n = q(t),
-      r = n.get(oe),
-      i = n.get(ae),
-      a = n.get(se),
-      o = i && a ? (n.get(me.activeTab$)?.tabId ?? null) : null,
-      s = o === D.DIFF,
-      c = n.get(T),
-      l = n.get(A);
+    let n = J(t),
+      r = n.get(v),
+      i = n.get(_),
+      a = n.get(b),
+      o = i && a ? n.get(oe.activeTab$) : null,
+      s = o?.tabId ?? null,
+      c = s === ae.DIFF,
+      l = n.get(g),
+      u = n.get(T);
     return {
       schemaVersion: 1,
       window: {
-        windowId: Se,
-        route: He(n.value),
-        thread: Ve(n),
+        windowId: V,
+        route: Se(n.value),
+        thread: xe(n),
         panels: {
-          browser: Ue(We(n), o, c),
+          browser: Ce(we(n), o, l),
           sidebar: { open: r },
           review: {
-            open: s,
-            fullscreen: s && c,
-            fileTreeOpen: s && n.get(ce),
-            view: n.get(k),
+            open: c,
+            fullscreen: c && l,
+            fileTreeOpen: c && n.get(y),
+            view: n.get(w),
           },
-          terminal: { open: l },
-          rightPanel: { fullscreen: c, kind: o },
+          terminal: { open: u },
+          rightPanel: { fullscreen: l, kind: s },
         },
-        ...(r ? { sidebar: { viewport: J(I.sidebarScroll), rows: Ge() } } : {}),
-        ...(s ? { review: { viewport: J(I.reviewScroll), files: qe(n) } } : {}),
-        ...(Be(n.value) ? { timeline: J(I.timelineScroll) } : {}),
+        ...(r ? { sidebar: { viewport: Y(M.sidebarScroll), rows: Te() } } : {}),
+        ...(c ? { review: { viewport: Y(M.reviewScroll), files: De(n) } } : {}),
+        ...(be(n.value) ? { timeline: Y(M.timelineScroll) } : {}),
       },
     };
   },
 });
-function Be(e) {
+function be(e) {
   switch (e.routeKind) {
     case `local-thread`:
     case `remote-thread`:
@@ -906,14 +280,14 @@ function Be(e) {
       return !1;
   }
 }
-function Ve(e) {
+function xe(e) {
   switch (e.value.routeKind) {
     case `local-thread`:
       return {
         id: e.value.conversationId,
         kind: `local`,
-        hostId: x(e, re, e.value.conversationId) ?? `local`,
-        title: x(e, he, e.value.conversationId),
+        hostId: e.get(ee, e.value.conversationId) ?? `local`,
+        title: e.get(ce, e.value.conversationId),
       };
     case `remote-thread`:
       return { id: e.value.taskId, kind: `remote`, title: null };
@@ -923,7 +297,7 @@ function Ve(e) {
       return null;
   }
 }
-function He(e) {
+function Se(e) {
   switch (e.routeKind) {
     case `home`:
     case `new-thread-panel`:
@@ -949,20 +323,21 @@ function He(e) {
       };
   }
 }
-function Ue(e, t, n) {
-  let r = t === D.BROWSER,
-    i = e == null ? null : pe.getSnapshot(e);
+function Ce(e, t, n) {
+  let r = se(t, e),
+    i = r != null,
+    a = e == null || r == null ? null : ie.getSnapshot(e, r);
   return {
-    canGoBack: i?.canGoBack ?? !1,
-    canGoForward: i?.canGoForward ?? !1,
-    fullscreen: r && n,
-    isLoading: i?.isLoading ?? !1,
-    open: r,
-    title: i?.title ?? null,
-    url: i?.url ?? null,
+    canGoBack: a?.canGoBack ?? !1,
+    canGoForward: a?.canGoForward ?? !1,
+    fullscreen: i && n,
+    isLoading: a?.isLoading ?? !1,
+    open: i,
+    title: a?.title ?? null,
+    url: a?.url ?? null,
   };
 }
-function We(e) {
+function we(e) {
   switch (e.value.routeKind) {
     case `local-thread`:
       return e.value.conversationId;
@@ -974,7 +349,7 @@ function We(e) {
       return null;
   }
 }
-function J(e) {
+function Y(e) {
   let t = document.querySelector(e);
   return t == null
     ? { present: !1 }
@@ -985,12 +360,12 @@ function J(e) {
         clientHeight: Math.round(t.clientHeight),
       };
 }
-function Ge() {
-  return Array.from(document.querySelectorAll(j)).map((e, t) => Ke(e, t));
+function Te() {
+  return Array.from(document.querySelectorAll(D)).map((e, t) => Ee(e, t));
 }
-function Ke(e, t) {
-  let n = X(e);
-  return e.matches(I.sidebarSection)
+function Ee(e, t) {
+  let n = Z(e);
+  return e.matches(M.sidebarSection)
     ? {
         type: `section`,
         index: t,
@@ -998,7 +373,7 @@ function Ke(e, t) {
         collapsed: e.dataset.appActionSidebarSectionCollapsed === `true`,
         visibility: n,
       }
-    : e.matches(I.sidebarProjectRow)
+    : e.matches(M.sidebarProjectRow)
       ? {
           type: `project`,
           index: t,
@@ -1019,31 +394,31 @@ function Ke(e, t) {
           visibility: n,
         };
 }
-function qe(e) {
-  let t = Je(),
-    n = new Set(e.get(O).map((e) => e.path));
+function De(e) {
+  let t = Oe(),
+    n = new Set(e.get(C).map((e) => e.path));
   return [
-    ...e.get(O).map((e) => ({
+    ...e.get(C).map((e) => ({
       path: e.path,
       additions: e.summary?.additions ?? e.diff?.additions ?? 0,
       deletions: e.summary?.deletions ?? e.diff?.deletions ?? 0,
-      ...Y(t.get(e.path)),
+      ...X(t.get(e.path)),
     })),
     ...Array.from(t.entries()).flatMap(([e, t]) =>
-      n.has(e) ? [] : [{ path: e, additions: null, deletions: null, ...Y(t) }],
+      n.has(e) ? [] : [{ path: e, additions: null, deletions: null, ...X(t) }],
     ),
   ].map((e, t) => ({ index: t, ...e }));
 }
-function Y(e) {
-  let t = e?.querySelector(I.reviewFileToggle);
+function X(e) {
+  let t = e?.querySelector(M.reviewFileToggle);
   return {
     expanded:
       t == null ? null : t.dataset.appActionReviewFileExpanded === `true`,
-    visibility: e == null ? `not_mounted` : X(e),
+    visibility: e == null ? `not_mounted` : Z(e),
   };
 }
-function Je() {
-  let e = Array.from(document.querySelectorAll(I.reviewFile));
+function Oe() {
+  let e = Array.from(document.querySelectorAll(M.reviewFile));
   return new Map(
     e.flatMap((e) => {
       let t = e.dataset.reviewPath;
@@ -1051,7 +426,7 @@ function Je() {
     }),
   );
 }
-function X(e) {
+function Z(e) {
   let t = e.getBoundingClientRect();
   return t.bottom <= 0 ||
     t.right <= 0 ||
@@ -1060,11 +435,11 @@ function X(e) {
     ? `offscreen`
     : `visible`;
 }
-var Ye = s({ type: m(`app.help`), action: c().optional() });
-function Xe(e) {
-  return U({ schema: Ye, run: ({ action: t }) => Ze(e(), t) });
+var ke = r({ type: a(`app.help`), action: c().optional() });
+function Ae(e) {
+  return U({ schema: ke, run: ({ action: t }) => je(e(), t) });
 }
-function Ze(e, t, n = Qe) {
+function je(e, t, n = Me) {
   return {
     schemaVersion: 1,
     prompt: n,
@@ -1072,11 +447,11 @@ function Ze(e, t, n = Qe) {
       .filter((e) => (t == null ? !0 : e.type === t))
       .map((e) => ({
         type: e.type,
-        jsonSchema: JSON.stringify(Oe(e.schema), null, 2),
+        jsonSchema: JSON.stringify(s(e.schema), null, 2),
       })),
   };
 }
-var Qe = `You can inspect or operate the Codex desktop app itself by calling this dynamic tool with exactly one JSON action payload.
+var Me = `You can inspect or operate the Codex desktop app itself by calling this dynamic tool with exactly one JSON action payload.
 
 Use this dynamic tool only for Codex Desktop UI state and actions, such as windows, sidebars, review panels, appearance, and Codex settings. Do not use it for other desktop apps, websites, browsers, shell commands, or workspace files; use the relevant computer-use, browser, shell, or file tool instead.
 
@@ -1100,217 +475,20 @@ Common workflow examples:
 - Toggle panels: call windows.sidebar.toggle, windows.terminal.toggle, or windows.review.toggle.
 
 Prefer the smallest action that directly satisfies the user request.`,
-  $e = e(n(), 1),
-  et = s({
-    serverName: c().min(1),
-    toolParams: u(c().min(1), ee()).optional(),
-    message: c().min(1).optional(),
-  }).refine((e) => e.toolParams !== void 0 || e.message !== void 0, {
-    message: `Either toolParams or message must be provided.`,
-  }),
-  tt = U({
-    schema: s({
-      type: m(`mcp_tool_call_approvals.accept_matching`),
-      threadId: c().min(1),
-      match: et,
-    }),
-    run: async ({ match: e, threadId: t }, n) => {
-      let r = p(t),
-        i = q(n),
-        a = i.get(i.get(_, r));
-      if (a?.type !== `mcpServerElicitation`)
-        return {
-          accepted: !1,
-          reason: `no_mcp_server_elicitation`,
-          threadId: t,
-        };
-      let { elicitation: o, requestId: s } = a,
-        c = `message` in o ? o.message : null,
-        l = a.request.params.serverName;
-      if (l !== e.serverName)
-        return {
-          accepted: !1,
-          message: c,
-          reason: `server_name_not_matched`,
-          requestId: s,
-          serverName: l,
-          threadId: t,
-        };
-      if (e.message !== void 0 && c !== e.message)
-        return {
-          accepted: !1,
-          expectedMessage: e.message,
-          message: c,
-          reason: `message_not_matched`,
-          requestId: s,
-          serverName: l,
-          threadId: t,
-        };
-      if (e.toolParams !== void 0) {
-        if (o.kind !== `mcpToolCall`)
-          return {
-            accepted: !1,
-            message: c,
-            reason: `unsupported_elicitation_kind`,
-            requestId: s,
-            serverName: l,
-            threadId: t,
-          };
-        if (!(0, $e.default)(o.approval.tool_params, e.toolParams))
-          return {
-            accepted: !1,
-            message: c,
-            reason: `tool_params_not_matched`,
-            requestId: s,
-            serverName: l,
-            threadId: t,
-          };
-      } else if (o.kind !== `mcpToolCall` && o.kind !== `generic`)
-        return {
-          accepted: !1,
-          message: c,
-          reason: `unsupported_elicitation_kind`,
-          requestId: s,
-          serverName: l,
-          threadId: t,
-        };
-      return (
-        await y(`reply-with-mcp-server-elicitation-response`, {
-          conversationId: r,
-          requestId: s,
-          response: ie(`accept`),
-        }),
-        {
-          accepted: !0,
-          action: `accept`,
-          message: c,
-          requestId: s,
-          serverName: l,
-          threadId: t,
-        }
-      );
-    },
-  }),
-  nt = s({
-    type: m(`plugins.configure`),
-    pluginName: c().min(1),
-    marketplaceName: c().min(1).optional(),
-    useBundledMarketplace: d().optional(),
-    install: d().optional(),
-    enabled: d().optional(),
-  }),
-  rt = U({
-    schema: s({ type: m(`plugins.list`) }),
-    run: async () => {
-      if (E() !== f.Dev)
-        throw Error(`plugins.list is only available in dev builds`);
-      let [e, t] = await Promise.all([
-        y(`list-plugins`, { hostId: v }),
-        y(`read-config-for-host`, { hostId: v, includeLayers: !1, cwd: null }),
-      ]);
-      return { ...e, configuredPlugins: at(g(t.config)) };
-    },
-  }),
-  it = U({
-    schema: nt,
-    run: async (e) => {
-      let t = E();
-      if (t !== f.Dev)
-        throw Error(`plugins.configure is only available in dev builds`);
-      if (e.useBundledMarketplace === !0 && e.marketplaceName != null)
-        throw Error(`plugins.configure accepts one marketplace selector`);
-      if (e.useBundledMarketplace !== !0 && e.marketplaceName == null)
-        throw Error(
-          `plugins.configure requires marketplaceName or useBundledMarketplace`,
-        );
-      let n = e.marketplaceName ?? o(t),
-        { marketplace: r, plugin: i } = await Z({
-          marketplaceName: n,
-          pluginName: e.pluginName,
-        });
-      if (e.install === !0 && !i.installed) {
-        if (r.path == null)
-          throw Error(
-            `Cannot install ${e.pluginName} from marketplace ${n}: no local marketplace path`,
-          );
-        (await y(`install-plugin`, {
-          hostId: v,
-          marketplacePath: r.path,
-          pluginName: e.pluginName,
-        }),
-          await we({
-            hostId: v,
-            marketplacePath: r.path,
-            pluginName: e.pluginName,
-          }),
-          ({ marketplace: r, plugin: i } = await Z({
-            marketplaceName: n,
-            pluginName: e.pluginName,
-          })));
-      }
-      if (e.enabled != null) {
-        if (!i.installed)
-          throw Error(
-            `Cannot configure ${e.pluginName}: plugin is not installed`,
-          );
-        (await y(`batch-write-config-value`, {
-          hostId: v,
-          edits: Te({ pluginId: i.id, enabled: e.enabled }),
-          filePath: null,
-          expectedVersion: null,
-          reloadUserConfig: !0,
-        }),
-          ({ marketplace: r, plugin: i } = await Z({
-            marketplaceName: n,
-            pluginName: e.pluginName,
-          })));
-      }
-      return {
-        plugin: {
-          enabled: i.enabled,
-          id: i.id,
-          installed: i.installed,
-          marketplaceName: r.name,
-          marketplacePath: r.path ?? null,
-          name: i.name,
-        },
-      };
-    },
-  });
-async function Z({ marketplaceName: e, pluginName: t }) {
-  let { marketplaces: n } = await y(`list-plugins`, { hostId: v }),
-    r = n.find((t) => t.name === e);
-  if (r == null) throw Error(`Unknown plugin marketplace: ${e}`);
-  let i = r.plugins.find((e) => e.name === t);
-  if (i == null) throw Error(`Unknown plugin ${t} in marketplace ${e}`);
-  return { marketplace: r, plugin: i };
-}
-function at(e) {
-  let t = e.plugins;
-  return typeof t != `object` || !t || Array.isArray(t)
-    ? []
-    : Object.keys(t)
-        .sort()
-        .map((e) => ({ id: e, name: ot(e) }));
-}
-function ot(e) {
-  let t = e.indexOf(`@`);
-  return t === -1 ? e : e.slice(0, t);
-}
-var st = U({
-    schema: s({ type: m(`windows.nav.back`), windowId: z }),
+  Ne = U({
+    schema: r({ type: a(`windows.nav.back`), windowId: I }),
     run: () => {
-      w.dispatchHostMessage({ type: `navigate-back` });
+      h.dispatchHostMessage({ type: `navigate-back` });
     },
   }),
-  ct = U({
-    schema: s({ type: m(`windows.nav.forward`), windowId: z }),
+  Pe = U({
+    schema: r({ type: a(`windows.nav.forward`), windowId: I }),
     run: () => {
-      w.dispatchHostMessage({ type: `navigate-forward` });
+      h.dispatchHostMessage({ type: `navigate-forward` });
     },
   }),
-  lt = U({
-    schema: s({ type: m(`windows.review.collapse_all`), windowId: z }),
+  Fe = U({
+    schema: r({ type: a(`windows.review.collapse_all`), windowId: I }),
     run: () => {
       window.dispatchEvent(
         new CustomEvent(`wham-toggle-all-diffs`, {
@@ -1319,8 +497,8 @@ var st = U({
       );
     },
   }),
-  ut = U({
-    schema: s({ type: m(`windows.review.expand_all`), windowId: z }),
+  Q = U({
+    schema: r({ type: a(`windows.review.expand_all`), windowId: I }),
     run: () => {
       window.dispatchEvent(
         new CustomEvent(`wham-toggle-all-diffs`, {
@@ -1329,39 +507,39 @@ var st = U({
       );
     },
   }),
-  dt = U({
-    schema: s({
-      type: m(`windows.review.file_set_expanded`),
-      windowId: z,
+  Ie = U({
+    schema: r({
+      type: a(`windows.review.file_set_expanded`),
+      windowId: I,
       path: c(),
-      expanded: d(),
+      expanded: i(),
     }),
     run: ({ path: e, expanded: t }) => {
-      let n = L(e).querySelector(I.reviewFileToggle);
+      let n = N(e).querySelector(M.reviewFileToggle);
       if (n == null) throw Error(`Missing review file toggle: ${e}`);
       n.dataset.appActionReviewFileExpanded !== String(t) && n.click();
     },
   }),
-  ft = U({
-    schema: s({ type: m(`windows.review.scroll`), windowId: z, scroll: R }),
+  Le = U({
+    schema: r({ type: a(`windows.review.scroll`), windowId: I, scroll: F }),
     run: ({ scroll: e }) => {
-      N(B(I.reviewScroll), e);
+      k(z(M.reviewScroll), e);
     },
   }),
-  pt = U({
-    schema: s({
-      type: m(`windows.review.scroll_to_file`),
-      windowId: z,
+  Re = U({
+    schema: r({
+      type: a(`windows.review.scroll_to_file`),
+      windowId: I,
       path: c(),
-      align: i([`top`, `center`, `bottom`]).optional(),
+      align: t([`top`, `center`, `bottom`]).optional(),
     }),
     run: ({ path: e, align: t }, n) => {
-      let r = L(e);
-      (ge(q(n), r.dataset.reviewPath ?? e),
-        r.scrollIntoView({ block: mt(t ?? `top`), behavior: `auto` }));
+      let r = N(e);
+      (le(J(n), r.dataset.reviewPath ?? e),
+        r.scrollIntoView({ block: ze(t ?? `top`), behavior: `auto` }));
     },
   });
-function mt(e) {
+function ze(e) {
   switch (e) {
     case `top`:
       return `start`;
@@ -1371,175 +549,165 @@ function mt(e) {
       return `end`;
   }
 }
-var ht = U({
-    schema: s({
-      type: m(`windows.review.set_fullscreen`),
-      windowId: z,
-      fullscreen: d(),
+var Be = U({
+    schema: r({
+      type: a(`windows.review.set_fullscreen`),
+      windowId: I,
+      fullscreen: i(),
     }),
     run: ({ fullscreen: e }, t) => {
-      q(t).set(T, e);
+      J(t).set(g, e);
     },
   }),
-  gt = U({
-    schema: s({
-      type: m(`windows.review.set_view`),
-      windowId: z,
-      view: i([`turn`, `branch`, `unstaged`, `staged`]),
+  Ve = U({
+    schema: r({
+      type: a(`windows.review.set_view`),
+      windowId: I,
+      view: t([`turn`, `branch`, `unstaged`, `staged`]),
     }),
     run: ({ view: e }, t) => {
-      q(t).set(k, e === `turn` ? `last-turn` : e);
+      J(t).set(w, e === `turn` ? `last-turn` : e);
     },
   }),
-  _t = U({
-    schema: s({ type: m(`windows.review.toggle`), windowId: z }),
+  He = U({
+    schema: r({ type: a(`windows.review.toggle`), windowId: I }),
     run: () => {
-      w.dispatchHostMessage({ type: `toggle-diff-panel` });
+      h.dispatchHostMessage({ type: `toggle-diff-panel` });
     },
   }),
-  vt = U({
-    schema: s({ type: m(`windows.show_home`), windowId: z }),
+  Ue = U({
+    schema: r({ type: a(`windows.show_home`), windowId: I }),
     run: () => {
-      w.dispatchHostMessage({ type: `new-chat` });
+      h.dispatchHostMessage({ type: `new-chat` });
     },
   }),
-  yt = U({
-    schema: s({ type: m(`windows.show_thread`), windowId: z, threadId: c() }),
+  We = U({
+    schema: r({ type: a(`windows.show_thread`), windowId: I, threadId: c() }),
     run: ({ threadId: e }) => {
-      w.dispatchHostMessage({ type: `navigate-to-route`, path: bt(e) });
+      h.dispatchHostMessage({ type: `navigate-to-route`, path: Ge(e) });
     },
   });
-function bt(e) {
-  let t = De(e);
-  return t == null ? a(p(e)) : Ee(t.key);
+function Ge(e) {
+  let t = d(e);
+  return t == null ? l(u(e)) : f(t.key);
 }
-var Q = U({
-    schema: s({
-      type: m(`windows.sidebar.project_set_collapsed`),
-      windowId: z,
-      project: P,
-      collapsed: d(),
-    }),
-    run: ({ project: e, collapsed: t }) => {
-      let n = M(e);
-      n.dataset.appActionSidebarProjectCollapsed !== String(t) && n.click();
-    },
-  }),
-  xt = U({
-    schema: s({
-      type: m(`windows.sidebar.project_set_show_all`),
-      windowId: z,
-      project: P,
-      showAll: d(),
-    }),
-    run: ({ project: e, showAll: t }) => {
-      let n = M(e);
-      if (n.dataset.appActionSidebarProjectCollapsed === `true` && !t) return;
-      let r = n.dataset.appActionSidebarProjectId;
-      if (r == null) throw Error(`Missing sidebar project id`);
-      let i = B(ye(r));
-      if (i.dataset.appActionSidebarProjectShowAll === String(t)) return;
-      let a = i.querySelector(I.sidebarProjectShowAllToggle);
-      if (a == null)
-        throw Error(`Missing sidebar project show more toggle: ${r}`);
-      a.click();
-    },
-  }),
-  St = U({
-    schema: s({ type: m(`windows.sidebar.scroll`), windowId: z, scroll: R }),
-    run: ({ scroll: e }) => {
-      N(B(I.sidebarScroll), e);
-    },
-  }),
-  Ct = U({
-    schema: s({
-      type: m(`windows.sidebar.section_set_collapsed`),
-      windowId: z,
-      section: F,
-      collapsed: d(),
-    }),
-    run: ({ section: e, collapsed: t }) => {
-      let n = xe(e);
-      if (n.dataset.appActionSidebarSectionCollapsed === String(t)) return;
-      let r = n.querySelector(I.sidebarSectionToggle);
-      if (r == null)
-        throw Error(`Sidebar section does not have a collapse toggle`);
-      r.click();
-    },
-  }),
-  wt = U({
-    schema: s({
-      type: m(`windows.sidebar.select_project`),
-      windowId: z,
-      project: P,
-    }),
-    run: ({ project: e }) => {
-      let t = M(e).querySelector(I.sidebarProjectSelect);
-      if (t == null) throw Error(`Missing sidebar project select action`);
-      t.click();
-    },
-  }),
-  Tt = U({
-    schema: s({ type: m(`windows.sidebar.toggle`), windowId: z }),
-    run: () => {
-      w.dispatchHostMessage({ type: `toggle-sidebar` });
-    },
-  }),
-  Et = U({
-    schema: s({ type: m(`windows.terminal.toggle`), windowId: z }),
-    run: (e, t) => {
-      _e(q(t));
-    },
-  }),
-  Dt = U({
-    schema: s({ type: m(`windows.timeline.scroll`), windowId: z, scroll: R }),
-    run: ({ scroll: e }) => {
-      ve(B(I.timelineScroll), e);
-    },
-  }),
-  Ot = U({
-    schema: s({
-      type: m(`windows.timeline.scroll_to_turn`),
-      windowId: z,
-      direction: be,
-    }),
-    run: ({ direction: e }) => {
-      Ce(B(I.timelineScroll), e);
-    },
-  }),
-  kt = [
-    ze,
-    Ae,
-    je,
-    Me,
-    Ie,
-    ...(E() === f.Dev ? [tt, it, rt] : []),
-    st,
-    ct,
-    lt,
-    ut,
-    dt,
-    ft,
-    pt,
-    ht,
-    gt,
-    _t,
-    vt,
-    yt,
+var Ke = [
+    ye,
+    ue,
+    de,
+    fe,
+    ge,
+    Ne,
+    Pe,
+    Fe,
     Q,
-    xt,
-    St,
-    Ct,
-    wt,
-    Tt,
-    Et,
-    Dt,
-    Ot,
+    Ie,
+    Le,
+    Re,
+    Be,
+    Ve,
+    He,
+    Ue,
+    We,
+    U({
+      schema: r({
+        type: a(`windows.sidebar.project_set_collapsed`),
+        windowId: I,
+        project: A,
+        collapsed: i(),
+      }),
+      run: ({ project: e, collapsed: t }) => {
+        let n = O(e);
+        n.dataset.appActionSidebarProjectCollapsed !== String(t) && n.click();
+      },
+    }),
+    U({
+      schema: r({
+        type: a(`windows.sidebar.project_set_show_all`),
+        windowId: I,
+        project: A,
+        showAll: i(),
+      }),
+      run: ({ project: e, showAll: t }) => {
+        let n = O(e);
+        if (n.dataset.appActionSidebarProjectCollapsed === `true` && !t) return;
+        let r = n.dataset.appActionSidebarProjectId;
+        if (r == null) throw Error(`Missing sidebar project id`);
+        let i = z(L(r));
+        if (i.dataset.appActionSidebarProjectShowAll === String(t)) return;
+        let a = i.querySelector(M.sidebarProjectShowAllToggle);
+        if (a == null)
+          throw Error(`Missing sidebar project show more toggle: ${r}`);
+        a.click();
+      },
+    }),
+    U({
+      schema: r({ type: a(`windows.sidebar.scroll`), windowId: I, scroll: F }),
+      run: ({ scroll: e }) => {
+        k(z(M.sidebarScroll), e);
+      },
+    }),
+    U({
+      schema: r({
+        type: a(`windows.sidebar.section_set_collapsed`),
+        windowId: I,
+        section: j,
+        collapsed: i(),
+      }),
+      run: ({ section: e, collapsed: t }) => {
+        let n = B(e);
+        if (n.dataset.appActionSidebarSectionCollapsed === String(t)) return;
+        let r = n.querySelector(M.sidebarSectionToggle);
+        if (r == null)
+          throw Error(`Sidebar section does not have a collapse toggle`);
+        r.click();
+      },
+    }),
+    U({
+      schema: r({
+        type: a(`windows.sidebar.select_project`),
+        windowId: I,
+        project: A,
+      }),
+      run: ({ project: e }) => {
+        let t = O(e).querySelector(M.sidebarProjectSelect);
+        if (t == null) throw Error(`Missing sidebar project select action`);
+        t.click();
+      },
+    }),
+    U({
+      schema: r({ type: a(`windows.sidebar.toggle`), windowId: I }),
+      run: () => {
+        h.dispatchHostMessage({ type: `toggle-sidebar` });
+      },
+    }),
+    U({
+      schema: r({ type: a(`windows.terminal.toggle`), windowId: I }),
+      run: (e, t) => {
+        E(J(t));
+      },
+    }),
+    U({
+      schema: r({ type: a(`windows.timeline.scroll`), windowId: I, scroll: F }),
+      run: ({ scroll: e }) => {
+        P(z(M.timelineScroll), e);
+      },
+    }),
+    U({
+      schema: r({
+        type: a(`windows.timeline.scroll_to_turn`),
+        windowId: I,
+        direction: R,
+      }),
+      run: ({ direction: e }) => {
+        H(z(M.timelineScroll), e);
+      },
+    }),
   ],
-  $ = [Xe(jt), ...kt],
-  At = ke($);
-function jt() {
+  $ = [Ae(Je), ...Ke],
+  qe = W($);
+function Je() {
   return $;
 }
-export { At as appActionRegistry };
+export { qe as appActionRegistry };
 //# sourceMappingURL=register-app-actions.js.map

@@ -1,17 +1,17 @@
-import { i as e, r as t } from "./src-DXdm7MTq.js";
-import { c as n } from "./chunk-ABZYJK2D.js";
-var r = t((t, r, o, s) => {
-    t.attr(`class`, o);
-    let { width: c, height: l, x: u, y: d } = i(t, r);
-    n(t, l, c, s);
+import { n as e, r as t } from "./chunk-AGHRB4JF-CwjJfTB_.js";
+import { c as n } from "./chunk-ABZYJK2D-DSLQAJWr.js";
+var r = e((e, r, o, s) => {
+    e.attr(`class`, o);
+    let { width: c, height: l, x: u, y: d } = i(e, r);
+    n(e, l, c, s);
     let f = a(u, d, c, l, r);
-    (t.attr(`viewBox`, f),
-      e.debug(`viewBox configured: ${f} with padding: ${r}`));
+    (e.attr(`viewBox`, f),
+      t.debug(`viewBox configured: ${f} with padding: ${r}`));
   }, `setupViewPortForSVG`),
-  i = t((e, t) => {
+  i = e((e, t) => {
     let n = e.node()?.getBBox() || { width: 0, height: 0, x: 0, y: 0 };
     return { width: n.width + t * 2, height: n.height + t * 2, x: n.x, y: n.y };
   }, `calculateDimensionsWithPadding`),
-  a = t((e, t, n, r, i) => `${e - i} ${t - i} ${n} ${r}`, `createViewBox`);
+  a = e((e, t, n, r, i) => `${e - i} ${t - i} ${n} ${r}`, `createViewBox`);
 export { r as t };
 //# sourceMappingURL=chunk-QN33PNHL.js.map

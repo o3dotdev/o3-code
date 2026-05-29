@@ -1,137 +1,175 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import {
-  Br as t,
-  Gr as n,
-  Lr as r,
-  Ur as i,
-  Vr as a,
-  Wr as o,
-} from "./src-BLHmAhbF.js";
-import { Cr as s, Ta as c, v as l } from "./app-server-manager-signals.js";
-import { n as u, t as d } from "./jsx-runtime.js";
-import { t as f } from "./clsx.js";
+  bi as t,
+  fi as n,
+  gi as r,
+  hi as i,
+  vi as a,
+  yi as o,
+  zr as s,
+} from "./src-C.js";
 import {
-  B as p,
-  H as m,
-  J as h,
-  W as g,
-  X as _,
-  xt as v,
-  z as y,
+  ni as c,
+  po as l,
+  v as u,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { n as d, t as f } from "./jsx-runtime.js";
+import { t as p } from "./clsx-BcPLHiun.js";
+import {
+  B as m,
+  G as h,
+  U as g,
+  V as _,
+  Y as v,
+  Z as y,
+  wt as b,
 } from "./setting-storage.js";
-import { o as b } from "./statsig.js";
-import { c as x } from "./app-server-manager-hooks.js";
-import { S } from "./config-queries.js";
-import { t as C } from "./tooltip.js";
-import { t as w } from "./button.js";
-import { n as T } from "./model-queries.js";
-import { m as E } from "./use-plugins.js";
-import { u as D } from "./apps-queries.js";
-import { t as O } from "./info.js";
+import { o as x } from "./statsig--EYRNU53.js";
+import { c as S } from "./app-server-manager-hooks.js";
+import { C } from "./config-queries-BBeTQbuo.js";
+import { d as w } from "./apps-queries-CmwRqoKz.js";
+import { t as T } from "./tooltip-CDzchJxN.js";
+import { t as E } from "./button.js";
+import { n as D } from "./model-queries-CVdTsyPv.js";
+import { m as O } from "./use-plugins-jIZrcuZQ.js";
+import { t as k } from "./info-B8GAwpK6.js";
+import { i as A } from "./locale-resolver-CfTzWTiS.js";
 import {
-  a as k,
-  i as A,
-  l as j,
-  n as M,
-  r as N,
-  t as P,
+  a as j,
+  i as M,
+  l as N,
+  n as P,
+  r as F,
+  t as I,
 } from "./dialog-layout.js";
 import {
-  a as F,
-  i as I,
-  n as L,
-  o as ee,
-  r as R,
-  s as z,
-  t as B,
-  u as V,
-} from "./reasoning-minimal.js";
-import { n as te } from "./use-skills.js";
-import { t as ne } from "./check-md.js";
-import { n as re, t as H } from "./conversation-starter-card.js";
-import { h as ie } from "./links.js";
-import { t as ae } from "./pinned-threads-query.js";
+  a as L,
+  i as ee,
+  n as R,
+  o as z,
+  r as te,
+  s as B,
+  t as ne,
+  u as re,
+} from "./reasoning-minimal-DZ-l40pu.js";
+import { t as V } from "./pinned-threads-query-DYArLI-i.js";
+import { t as ie } from "./check-md.js";
+import { _ as ae } from "./links.js";
+import { n as oe, t as se } from "./conversation-starter-card.js";
+import { t as H } from "./clock-BflmlnpZ.js";
+import { r as U, t as ce } from "./dropdown-DtQxMoJw.js";
+import { i as le, n as W, t as ue } from "./popover.js";
+import { t as G } from "./chevron-NmAOI_v1.js";
+import { t as de } from "./worktree-D_6WAQVb.js";
+import { r as K } from "./format-automation-next-run-label.js";
+import { d as fe, t as pe } from "./use-native-apps.electron.js";
+import { n as me } from "./use-skills.js";
+import { t as he } from "./automation-queries-DCiNISnO.js";
+import { t as ge } from "./laptop.js";
 import {
-  a as oe,
-  d as se,
-  f as U,
-  h as ce,
-  l as le,
-  n as W,
-  s as G,
-} from "./automation-schedule.js";
-import { t as ue } from "./clock.js";
-import { r as K, t as de } from "./dropdown.js";
-import { i as fe, n as pe, t as me } from "./popover.js";
-import { t as q } from "./chevron.js";
-import { t as he } from "./worktree.js";
-import { t as ge } from "./pin.js";
+  a as _e,
+  c as ve,
+  i as ye,
+  o as be,
+  r as xe,
+} from "./prompt-editor-.js";
+import { t as Se } from "./at-mention-list-C6rdlW9Y.js";
+import { i as Ce } from "./use-composer-controller.js";
+import { t as we } from "./anchored-autocomplete-overlay.js";
+import { n as Te, t as Ee } from "./project-dropdown-options.js";
 import {
-  f as _e,
-  g as ve,
-  h as ye,
-  m as be,
-  p as xe,
-  r as Se,
-  v as Ce,
-  y as we,
-} from "./automation-shared.js";
-import { d as Te, t as Ee } from "./use-native-apps.electron.js";
-import { t as De } from "./laptop.js";
+  a as De,
+  d as Oe,
+  f as ke,
+  l as Ae,
+  n as je,
+  s as Me,
+} from "./automation-schedule-CNorTxWd.js";
 import {
-  a as Oe,
-  c as ke,
-  i as Ae,
-  o as je,
-  r as Me,
-} from "./prompt-editor.js";
-import { r as Ne, t as Pe } from "./use-at-mention-sections.js";
-import { i as Fe } from "./use-composer-controller.js";
-import { i as Ie } from "./locale-resolver.js";
-import { t as Le } from "./anchored-autocomplete-overlay.js";
-import { n as Re } from "./home-use-cases-data.js";
-import { n as ze, t as Be } from "./project-dropdown-options.js";
-function Ve(e) {
-  let n = t(e ?? []);
-  return n == null
-    ? { model: r, reasoningEffort: null, profile: null, isLoading: !0 }
+  f as Ne,
+  g as Pe,
+  h as Fe,
+  m as Ie,
+  p as Le,
+  r as Re,
+  v as ze,
+  y as Be,
+} from "./automation-shared-BaYmxTav.js";
+import { n as Ve } from "./home-use-cases-data.js";
+function He(e) {
+  let t = i(e ?? []);
+  return t == null
+    ? { model: n, reasoningEffort: null, profile: null, isLoading: !0 }
     : {
-        model: n.model,
-        reasoningEffort: i({ model: n, reasoningEffort: null }),
+        model: t.model,
+        reasoningEffort: a({ model: t, reasoningEffort: null }),
         profile: null,
         isLoading: !1,
       };
 }
-function He({ model: e, models: t }) {
-  let n = a(t ?? [], e);
-  return n?.displayName ? V(n.displayName) : (e ?? ``);
+function Ue({ model: e, models: t }) {
+  let n = r(t ?? [], e);
+  return n?.displayName ? re(n.displayName) : (e ?? ``);
 }
-function Ue({ draft: e, intl: t, action: n }) {
-  let { missingRequirements: r } = xe(e);
-  if (r.length === 0) return null;
-  let i = r.map((e, n) =>
-    We({
-      intl: t,
-      requirement: e,
-      position: n === 0 ? `initial` : `continuation`,
-    }),
-  );
-  return t.formatMessage(
-    n === `create`
-      ? {
-          id: `settings.automations.saveTooltip.combined.create`,
-          defaultMessage: `{requirements} to create`,
-          description: `Tooltip on the disabled automation create button combining all missing requirements`,
-        }
-      : {
-          id: `settings.automations.saveTooltip.combined.save`,
-          defaultMessage: `{requirements} to save`,
-          description: `Tooltip on the disabled automation save button combining all missing requirements`,
-        },
-    { requirements: t.formatList(i, { type: `conjunction` }) },
+var q = b(),
+  J = f();
+function We(e) {
+  let t = (0, q.c)(9),
+    { draft: n, action: r } = e,
+    i = h(),
+    a,
+    o;
+  if (t[0] !== n || t[1] !== i) {
+    o = Symbol.for(`react.early_return_sentinel`);
+    bb0: {
+      let { missingRequirements: e } = Le(n);
+      if (e.length === 0) {
+        o = null;
+        break bb0;
+      }
+      let r;
+      t[4] === i
+        ? (r = t[5])
+        : ((r = (e, t) =>
+            Ge({
+              intl: i,
+              requirement: e,
+              position: t === 0 ? `initial` : `continuation`,
+            })),
+          (t[4] = i),
+          (t[5] = r));
+      let s = e.map(r);
+      a = i.formatList(s, { type: `conjunction` });
+    }
+    ((t[0] = n), (t[1] = i), (t[2] = a), (t[3] = o));
+  } else ((a = t[2]), (o = t[3]));
+  if (o !== Symbol.for(`react.early_return_sentinel`)) return o;
+  let s = a,
+    c;
+  return (
+    t[6] !== r || t[7] !== s
+      ? ((c =
+          r === `create`
+            ? (0, J.jsx)(g, {
+                id: `settings.automations.saveTooltip.combined.create`,
+                defaultMessage: `{requirements} to create`,
+                description: `Tooltip on the disabled automation create button combining all missing requirements`,
+                values: { requirements: s },
+              })
+            : (0, J.jsx)(g, {
+                id: `settings.automations.saveTooltip.combined.save`,
+                defaultMessage: `{requirements} to save`,
+                description: `Tooltip on the disabled automation save button combining all missing requirements`,
+                values: { requirements: s },
+              })),
+        (t[6] = r),
+        (t[7] = s),
+        (t[8] = c))
+      : (c = t[8]),
+    c
   );
 }
-function We({ intl: e, requirement: t, position: n }) {
+function Ge({ intl: e, requirement: t, position: n }) {
   switch (t) {
     case `name`:
       return n === `initial`
@@ -219,11 +257,9 @@ function We({ intl: e, requirement: t, position: n }) {
           });
   }
 }
-var J = v(),
-  Y = d(),
-  X = [`MO`, `TU`, `WE`, `TH`, `FR`, `SA`, `SU`],
-  Ge = [`MO`, `TU`, `WE`, `TH`, `FR`];
-function Z({
+var Y = [`MO`, `TU`, `WE`, `TH`, `FR`, `SA`, `SU`],
+  Ke = [`MO`, `TU`, `WE`, `TH`, `FR`];
+function X({
   mode: e,
   weekdays: t,
   time: n,
@@ -240,7 +276,7 @@ function Z({
     customRrule: a,
   };
 }
-var Q = p({
+var Z = _({
     defaultDraftName: {
       id: `inbox.rightPanel.quickStart.home.defaultDraftName`,
       defaultMessage: `Automation`,
@@ -337,116 +373,116 @@ var Q = p({
       description: `Draft name for the changelog update automation template`,
     },
   }),
-  Ke = Z({ mode: `daily`, weekdays: X, time: `09:00` }),
-  qe = new Map([
-    [`daily-bug-scan`, Q.dailyBugScanDraftName],
-    [`weekly-release-notes`, Q.weeklyReleaseNotesDraftName],
-    [`daily-standup`, Q.dailyStandupDraftName],
-    [`nightly-ci-report`, Q.nightlyCiReportDraftName],
-    [`daily-classic-game`, Q.dailyClassicGameDraftName],
-    [`skill-progression-map`, Q.skillProgressionMapDraftName],
-    [`weekly-engineering-summary`, Q.weeklyEngineeringSummaryDraftName],
-    [`performance-regression-watch`, Q.performanceRegressionWatchDraftName],
-    [`dependency-sdk-drift`, Q.dependencySdkDriftDraftName],
-    [`test-gap-detection`, Q.testGapDetectionDraftName],
-    [`pre-release-check`, Q.preReleaseCheckDraftName],
-    [`agents-docs-sync`, Q.agentsDocsSyncDraftName],
-    [`weekly-pr-summary`, Q.weeklyPrSummaryDraftName],
-    [`issue-triage`, Q.issueTriageDraftName],
-    [`ci-monitor`, Q.ciMonitorDraftName],
-    [`dependency-sweep`, Q.dependencySweepDraftName],
-    [`performance-audit`, Q.performanceAuditDraftName],
-    [`changelog-update`, Q.changelogUpdateDraftName],
-  ]),
+  qe = X({ mode: `daily`, weekdays: Y, time: `09:00` }),
   Je = new Map([
-    [`daily-bug-scan`, Z({ mode: `daily`, weekdays: X, time: `09:00` })],
+    [`daily-bug-scan`, Z.dailyBugScanDraftName],
+    [`weekly-release-notes`, Z.weeklyReleaseNotesDraftName],
+    [`daily-standup`, Z.dailyStandupDraftName],
+    [`nightly-ci-report`, Z.nightlyCiReportDraftName],
+    [`daily-classic-game`, Z.dailyClassicGameDraftName],
+    [`skill-progression-map`, Z.skillProgressionMapDraftName],
+    [`weekly-engineering-summary`, Z.weeklyEngineeringSummaryDraftName],
+    [`performance-regression-watch`, Z.performanceRegressionWatchDraftName],
+    [`dependency-sdk-drift`, Z.dependencySdkDriftDraftName],
+    [`test-gap-detection`, Z.testGapDetectionDraftName],
+    [`pre-release-check`, Z.preReleaseCheckDraftName],
+    [`agents-docs-sync`, Z.agentsDocsSyncDraftName],
+    [`weekly-pr-summary`, Z.weeklyPrSummaryDraftName],
+    [`issue-triage`, Z.issueTriageDraftName],
+    [`ci-monitor`, Z.ciMonitorDraftName],
+    [`dependency-sweep`, Z.dependencySweepDraftName],
+    [`performance-audit`, Z.performanceAuditDraftName],
+    [`changelog-update`, Z.changelogUpdateDraftName],
+  ]),
+  Ye = new Map([
+    [`daily-bug-scan`, X({ mode: `daily`, weekdays: Y, time: `09:00` })],
     [
       `weekly-release-notes`,
-      Z({ mode: `weekly`, weekdays: [`FR`], time: `09:00` }),
+      X({ mode: `weekly`, weekdays: [`FR`], time: `09:00` }),
     ],
-    [`daily-standup`, Z({ mode: `weekdays`, weekdays: Ge, time: `09:00` })],
-    [`nightly-ci-report`, Z({ mode: `daily`, weekdays: X, time: `21:00` })],
-    [`daily-classic-game`, Z({ mode: `daily`, weekdays: X, time: `14:00` })],
+    [`daily-standup`, X({ mode: `weekdays`, weekdays: Ke, time: `09:00` })],
+    [`nightly-ci-report`, X({ mode: `daily`, weekdays: Y, time: `21:00` })],
+    [`daily-classic-game`, X({ mode: `daily`, weekdays: Y, time: `14:00` })],
     [
       `skill-progression-map`,
-      Z({ mode: `weekly`, weekdays: [`FR`], time: `10:00` }),
+      X({ mode: `weekly`, weekdays: [`FR`], time: `10:00` }),
     ],
     [
       `weekly-engineering-summary`,
-      Z({ mode: `weekly`, weekdays: [`FR`], time: `16:00` }),
+      X({ mode: `weekly`, weekdays: [`FR`], time: `16:00` }),
     ],
     [
       `performance-regression-watch`,
-      Z({ mode: `daily`, weekdays: X, time: `09:00` }),
+      X({ mode: `daily`, weekdays: Y, time: `09:00` }),
     ],
-    [`dependency-sdk-drift`, Z({ mode: `daily`, weekdays: X, time: `11:00` })],
-    [`test-gap-detection`, Z({ mode: `daily`, weekdays: X, time: `15:00` })],
+    [`dependency-sdk-drift`, X({ mode: `daily`, weekdays: Y, time: `11:00` })],
+    [`test-gap-detection`, X({ mode: `daily`, weekdays: Y, time: `15:00` })],
     [
       `pre-release-check`,
-      Z({ mode: `weekly`, weekdays: [`TH`], time: `13:00` }),
+      X({ mode: `weekly`, weekdays: [`TH`], time: `13:00` }),
     ],
     [
       `agents-docs-sync`,
-      Z({ mode: `weekly`, weekdays: [`FR`], time: `11:00` }),
+      X({ mode: `weekly`, weekdays: [`FR`], time: `11:00` }),
     ],
     [
       `weekly-pr-summary`,
-      Z({ mode: `weekly`, weekdays: [`MO`], time: `09:00` }),
+      X({ mode: `weekly`, weekdays: [`MO`], time: `09:00` }),
     ],
-    [`issue-triage`, Z({ mode: `weekdays`, weekdays: Ge, time: `09:30` })],
+    [`issue-triage`, X({ mode: `weekdays`, weekdays: Ke, time: `09:30` })],
     [
       `ci-monitor`,
-      Z({
+      X({
         mode: `custom`,
         intervalHours: 2,
-        weekdays: Ge,
+        weekdays: Ke,
         time: `09:00`,
         customRrule: `RRULE:FREQ=HOURLY;INTERVAL=2;BYMINUTE=0;BYDAY=MO,TU,WE,TH,FR`,
       }),
     ],
     [
       `dependency-sweep`,
-      Z({
+      X({
         mode: `custom`,
         intervalHours: 720,
-        weekdays: X,
+        weekdays: Y,
         time: `09:00`,
         customRrule: `RRULE:FREQ=HOURLY;INTERVAL=720;BYMINUTE=0;BYDAY=MO,TU,WE,TH,FR,SA,SU`,
       }),
     ],
     [
       `performance-audit`,
-      Z({ mode: `weekly`, weekdays: [`MO`], time: `14:00` }),
+      X({ mode: `weekly`, weekdays: [`MO`], time: `14:00` }),
     ],
     [
       `changelog-update`,
-      Z({ mode: `weekly`, weekdays: [`FR`], time: `16:00` }),
+      X({ mode: `weekly`, weekdays: [`FR`], time: `16:00` }),
     ],
   ]),
-  Ye = Re().map((e) => ({
+  Xe = Ve().map((e) => ({
     id: e.id,
     iconName: e.iconName,
-    nameMessage: qe.get(e.id) ?? Q.defaultDraftName,
+    nameMessage: Je.get(e.id) ?? Z.defaultDraftName,
     promptMessage: e.automationPromptMessage ?? e.promptMessage,
-    scheduleConfig: Je.get(e.id) ?? Ke,
+    scheduleConfig: Ye.get(e.id) ?? qe,
   }));
-function Xe(e) {
-  let t = (0, J.c)(6),
+function Ze(e) {
+  let t = (0, q.c)(6),
     { onSelectAction: n, columns: r } = e,
     i = r === void 0 ? `responsive` : r,
-    a = g(),
+    a = h(),
     o =
       i === `two`
         ? `grid w-full grid-cols-2 gap-4`
         : `grid w-full gap-4 md:grid-cols-2`,
     s;
   t[0] !== a || t[1] !== n
-    ? ((s = Ye.map((e) =>
-        (0, Y.jsx)(
-          re,
+    ? ((s = Xe.map((e) =>
+        (0, J.jsx)(
+          oe,
           {
             className: `w-full`,
-            icon: (0, Y.jsx)(H, { name: e.iconName }),
+            icon: (0, J.jsx)(se, { name: e.iconName }),
             mode: `local`,
             onSelect: (t) => {
               n({
@@ -467,7 +503,7 @@ function Xe(e) {
   let c;
   return (
     t[3] !== o || t[4] !== s
-      ? ((c = (0, Y.jsx)(`div`, { className: o, children: s })),
+      ? ((c = (0, J.jsx)(`div`, { className: o, children: s })),
         (t[3] = o),
         (t[4] = s),
         (t[5] = c))
@@ -475,97 +511,97 @@ function Xe(e) {
     c
   );
 }
-function Ze(e) {
+function Qe(e) {
   return e == null || e === `local`;
 }
-function Qe(e) {
-  let t = (0, J.c)(14),
-    { data: r } = _(ce),
-    { data: i } = _(ae),
-    { data: a } = x(),
+function $e(e) {
+  let n = (0, q.c)(14),
+    { data: r } = y(he),
+    { data: i } = y(V),
+    { data: a } = S(),
     o;
-  if (t[0] !== r?.items || t[1] !== e) {
+  if (n[0] !== r?.items || n[1] !== e) {
     let i;
-    (t[3] === e
-      ? (i = t[4])
-      : ((i = (t) =>
-          !n(t) ||
-          t.status !== `ACTIVE` ||
-          t.targetThreadId.trim().length === 0 ||
-          t.targetThreadId === e
+    (n[3] === e
+      ? (i = n[4])
+      : ((i = (n) =>
+          !t(n) ||
+          n.status !== `ACTIVE` ||
+          n.targetThreadId.trim().length === 0 ||
+          n.targetThreadId === e
             ? []
-            : [t.targetThreadId]),
-        (t[3] = e),
-        (t[4] = i)),
+            : [n.targetThreadId]),
+        (n[3] = e),
+        (n[4] = i)),
       (o = new Set((r?.items ?? []).flatMap(i))),
-      (t[0] = r?.items),
-      (t[1] = e),
-      (t[2] = o));
-  } else o = t[2];
-  let c = o,
-    l,
-    u;
-  if (t[5] !== c || t[6] !== a || t[7] !== i?.threadIds || t[8] !== e) {
-    let n = new Map((a ?? []).filter(tt).map(et)),
+      (n[0] = r?.items),
+      (n[1] = e),
+      (n[2] = o));
+  } else o = n[2];
+  let l = o,
+    u,
+    d;
+  if (n[5] !== l || n[6] !== a || n[7] !== i?.threadIds || n[8] !== e) {
+    let t = new Map((a ?? []).filter(nt).map(tt)),
       r = i?.threadIds ?? [],
       o = new Set(r),
-      d = r.flatMap((e) => {
-        let t = n.get(e);
-        return t == null
+      f = r.flatMap((e) => {
+        let n = t.get(e);
+        return n == null
           ? []
           : [
               {
-                threadId: t.id,
-                title: s(t) ?? e,
-                createdAt: t.createdAt ?? null,
+                threadId: n.id,
+                title: c(n) ?? e,
+                createdAt: n.createdAt ?? null,
                 isPinned: !0,
-                isUnavailable: c.has(e),
+                isUnavailable: l.has(e),
               },
             ];
       });
     if (e != null && e.length > 0 && !o.has(e)) {
-      let t = n.get(e);
-      d.unshift({
-        threadId: t?.id ?? e,
-        title: (t == null ? null : s(t)) ?? e,
-        createdAt: t?.createdAt ?? null,
+      let n = t.get(e);
+      f.unshift({
+        threadId: s(n?.id ?? e),
+        title: (n == null ? null : c(n)) ?? e,
+        createdAt: n?.createdAt ?? null,
         isPinned: !1,
-        isUnavailable: c.has(e),
+        isUnavailable: l.has(e),
       });
     }
-    ((l = d),
-      (u = d.some($e)),
-      (t[5] = c),
-      (t[6] = a),
-      (t[7] = i?.threadIds),
-      (t[8] = e),
-      (t[9] = l),
-      (t[10] = u));
-  } else ((l = t[9]), (u = t[10]));
-  let d;
+    ((u = f),
+      (d = f.some(et)),
+      (n[5] = l),
+      (n[6] = a),
+      (n[7] = i?.threadIds),
+      (n[8] = e),
+      (n[9] = u),
+      (n[10] = d));
+  } else ((u = n[9]), (d = n[10]));
+  let f;
   return (
-    t[11] !== l || t[12] !== u
-      ? ((d = { options: l, hasPinnedThreads: u }),
-        (t[11] = l),
-        (t[12] = u),
-        (t[13] = d))
-      : (d = t[13]),
-    d
+    n[11] !== u || n[12] !== d
+      ? ((f = { options: u, hasPinnedThreads: d }),
+        (n[11] = u),
+        (n[12] = d),
+        (n[13] = f))
+      : (f = n[13]),
+    f
   );
 }
-function $e(e) {
+function et(e) {
   return e.isPinned;
 }
-function et(e) {
+function tt(e) {
   return [String(e.id), e];
 }
-function tt(e) {
-  return Ze(e.hostId);
+function nt(e) {
+  return Qe(e.hostId);
 }
-var $ = e(u(), 1),
-  nt = 300,
-  rt = `var(--cubic-enter)`;
-function it({
+var Q = e(d(), 1),
+  rt = 300,
+  it = `var(--cubic-enter)`;
+function at({
   children: e,
   initialOverlayOpen: t = !1,
   baseContent: n,
@@ -573,21 +609,21 @@ function it({
   overlayHeader: i,
   overlayHeightOffset: a,
   minHeight: o,
-  sizeDurationMs: s = nt,
-  baseFadeDurationMs: c = nt,
+  sizeDurationMs: s = rt,
+  baseFadeDurationMs: c = rt,
   overlayFadeDurationMs: l,
   overlayHeaderFadeDurationMs: u = l,
-  sizeEasing: d = rt,
-  baseContentClassName: p,
+  sizeEasing: d = it,
+  baseContentClassName: f,
   overlayContentClassName: m,
   overlayHeaderClassName: h,
 }) {
-  let [g, _] = (0, $.useState)(t),
-    [v, y] = (0, $.useState)(t),
-    [b, x] = (0, $.useState)(!t),
-    S = (0, $.useRef)(null),
-    C = (0, $.useRef)([]),
-    [w, T] = (0, $.useState)(null),
+  let [g, _] = (0, Q.useState)(t),
+    [v, y] = (0, Q.useState)(t),
+    [b, x] = (0, Q.useState)(!t),
+    S = (0, Q.useRef)(null),
+    C = (0, Q.useRef)([]),
+    [w, T] = (0, Q.useState)(null),
     E = () => {
       (C.current.forEach((e) => {
         clearTimeout(e);
@@ -620,7 +656,7 @@ function it({
         }, c + s);
       C.current.push(e, t);
     };
-  ((0, $.useLayoutEffect)(() => {
+  ((0, Q.useLayoutEffect)(() => {
     let e = S.current;
     if (e == null) return;
     let t = () => {
@@ -637,7 +673,7 @@ function it({
       }
     );
   }, []),
-    (0, $.useEffect)(
+    (0, Q.useEffect)(
       () => () => {
         E();
       },
@@ -651,14 +687,14 @@ function it({
       closeOverlayAndThen: k,
     },
     N = typeof n == `function` ? n(M) : n;
-  return (0, Y.jsxs)(`div`, {
+  return (0, J.jsxs)(`div`, {
     className: `relative`,
     style: j == null ? void 0 : { height: j, transition: `height ${s}ms ${d}` },
     children: [
       e?.(M),
       i
-        ? (0, Y.jsx)(`div`, {
-            className: f(
+        ? (0, J.jsx)(`div`, {
+            className: p(
               `absolute inset-x-0 top-0 z-10 transition-opacity`,
               v ? `opacity-100` : `opacity-0`,
               h,
@@ -667,18 +703,18 @@ function it({
             children: i,
           })
         : null,
-      (0, Y.jsx)(`div`, {
+      (0, J.jsx)(`div`, {
         ref: S,
-        className: f(
+        className: p(
           `w-full transition-opacity`,
           b ? `opacity-100` : `pointer-events-none opacity-0`,
-          p,
+          f,
         ),
         style: { transitionDuration: `${c}ms` },
         children: N,
       }),
-      (0, Y.jsx)(`div`, {
-        className: f(
+      (0, J.jsx)(`div`, {
+        className: p(
           `absolute inset-0 transition-opacity`,
           v ? `opacity-100` : `pointer-events-none opacity-0`,
           m,
@@ -689,10 +725,10 @@ function it({
     ],
   });
 }
-var at = `flex flex-col gap-2`,
-  ot = `bg-token-input-background text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full rounded-md border border-token-input-border px-2.5 py-1.5 text-base outline-none focus:border-token-focus-border`,
+var ot = `flex flex-col gap-2`,
+  $ = `bg-token-input-background text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full rounded-md border border-token-input-border px-2.5 py-1.5 text-base outline-none focus:border-token-focus-border`,
   st = `text-token-input-foreground placeholder:text-token-input-placeholder-foreground m-0 w-full min-w-0 appearance-none bg-transparent p-0 text-lg leading-tight outline-none`,
-  ct = f(
+  ct = p(
     `text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full text-base outline-none`,
     `min-h-[16rem] max-h-[32rem]`,
     `[&_.ProseMirror]:leading-relaxed`,
@@ -700,7 +736,7 @@ var at = `flex flex-col gap-2`,
     `[&_.ProseMirror]:px-0`,
     `[&_.ProseMirror]:py-0`,
   ),
-  lt = f(
+  lt = p(
     `text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full text-base outline-none`,
     `min-h-[16rem] max-h-[32rem]`,
     `[&_.ProseMirror]:leading-relaxed`,
@@ -708,7 +744,7 @@ var at = `flex flex-col gap-2`,
     `[&_.ProseMirror]:px-0`,
     `[&_.ProseMirror]:py-0`,
   ),
-  ut = f(
+  ut = p(
     `text-token-input-foreground placeholder:text-token-input-placeholder-foreground w-full text-base outline-none`,
     `min-h-[16rem] max-h-none overflow-visible`,
     `[&_.ProseMirror]:leading-relaxed`,
@@ -722,11 +758,11 @@ var at = `flex flex-col gap-2`,
   mt = 220,
   ht = 260,
   gt = 208,
-  _t = { none: B, minimal: B, low: R, medium: L, high: I, xhigh: F },
+  _t = { none: ne, minimal: ne, low: te, medium: R, high: ee, xhigh: L },
   vt = [
     {
       id: `hourly`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.scheduleMode.hourly`,
         defaultMessage: `Hourly`,
         description: `Dropdown label for an hourly automation schedule`,
@@ -734,7 +770,7 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `daily`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.scheduleMode.daily`,
         defaultMessage: `Daily`,
         description: `Dropdown label for a daily automation schedule`,
@@ -742,7 +778,7 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `weekdays`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.scheduleMode.weekdays`,
         defaultMessage: `Weekdays`,
         description: `Dropdown label for a weekdays-only automation schedule`,
@@ -750,7 +786,7 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `weekly`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.scheduleMode.weekly`,
         defaultMessage: `Weekly`,
         description: `Dropdown label for a weekly automation schedule`,
@@ -758,7 +794,7 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `custom`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.scheduleMode.custom`,
         defaultMessage: `Custom`,
         description: `Dropdown label for a custom automation schedule`,
@@ -768,7 +804,7 @@ var at = `flex flex-col gap-2`,
   yt = [
     {
       id: `hourly`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.scheduleMode.interval`,
         defaultMessage: `Interval`,
         description: `Dropdown label for a heartbeat automation interval schedule`,
@@ -780,18 +816,18 @@ var at = `flex flex-col gap-2`,
   xt = 15,
   St = Array.from({ length: bt / xt }, (e, t) => {
     let n = t * xt;
-    return G(Math.floor(n / 60), n % 60);
+    return Me(Math.floor(n / 60), n % 60);
   }),
   Ct = [
     {
       id: `local`,
-      icon: De,
-      labelMessage: y({
+      icon: ge,
+      labelMessage: m({
         id: `settings.automations.executionEnvironment.local`,
         defaultMessage: `Local`,
         description: `Dropdown label for running automations locally in the selected project`,
       }),
-      tooltipMessage: y({
+      tooltipMessage: m({
         id: `settings.automations.executionEnvironment.local.help`,
         defaultMessage: `Runs directly in the selected project directory without creating a worktree.`,
         description: `Tooltip explaining local execution mode for automations`,
@@ -799,13 +835,13 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `worktree`,
-      icon: he,
-      labelMessage: y({
+      icon: de,
+      labelMessage: m({
         id: `settings.automations.executionEnvironment.worktree`,
         defaultMessage: `Worktree`,
         description: `Dropdown label for running automations in a worktree`,
       }),
-      tooltipMessage: y({
+      tooltipMessage: m({
         id: `settings.automations.executionEnvironment.worktree.help`,
         defaultMessage: `Runs in a dedicated Git worktree created from the selected project, keeping your current checkout untouched.`,
         description: `Tooltip explaining worktree execution mode for automations`,
@@ -813,13 +849,13 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `thread`,
-      icon: ge,
-      labelMessage: y({
+      icon: K,
+      labelMessage: m({
         id: `settings.automations.destination.thread`,
         defaultMessage: `Chat`,
         description: `Dropdown label for sending heartbeat automations into a pinned thread`,
       }),
-      tooltipMessage: y({
+      tooltipMessage: m({
         id: `settings.automations.destination.thread.help`,
         defaultMessage: `Sends messages directly into the selected chat instead of running in a project folder or worktree`,
         description: `Tooltip explaining thread destination for automations`,
@@ -829,12 +865,12 @@ var at = `flex flex-col gap-2`,
   wt = [
     {
       id: `MO`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.rrule.weekday.mon`,
         defaultMessage: `Mo`,
         description: `RRULE weekday short label`,
       }),
-      longLabelMessage: y({
+      longLabelMessage: m({
         id: `settings.automations.rrule.weekday.monday`,
         defaultMessage: `Monday`,
         description: `RRULE weekday long label`,
@@ -842,12 +878,12 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `TU`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.rrule.weekday.tue`,
         defaultMessage: `Tu`,
         description: `RRULE weekday short label`,
       }),
-      longLabelMessage: y({
+      longLabelMessage: m({
         id: `settings.automations.rrule.weekday.tuesday`,
         defaultMessage: `Tuesday`,
         description: `RRULE weekday long label`,
@@ -855,12 +891,12 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `WE`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.rrule.weekday.wed`,
         defaultMessage: `We`,
         description: `RRULE weekday short label`,
       }),
-      longLabelMessage: y({
+      longLabelMessage: m({
         id: `settings.automations.rrule.weekday.wednesday`,
         defaultMessage: `Wednesday`,
         description: `RRULE weekday long label`,
@@ -868,12 +904,12 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `TH`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.rrule.weekday.thu`,
         defaultMessage: `Th`,
         description: `RRULE weekday short label`,
       }),
-      longLabelMessage: y({
+      longLabelMessage: m({
         id: `settings.automations.rrule.weekday.thursday`,
         defaultMessage: `Thursday`,
         description: `RRULE weekday long label`,
@@ -881,12 +917,12 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `FR`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.rrule.weekday.fri`,
         defaultMessage: `Fr`,
         description: `RRULE weekday short label`,
       }),
-      longLabelMessage: y({
+      longLabelMessage: m({
         id: `settings.automations.rrule.weekday.friday`,
         defaultMessage: `Friday`,
         description: `RRULE weekday long label`,
@@ -894,12 +930,12 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `SA`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.rrule.weekday.sat`,
         defaultMessage: `Sa`,
         description: `RRULE weekday short label`,
       }),
-      longLabelMessage: y({
+      longLabelMessage: m({
         id: `settings.automations.rrule.weekday.saturday`,
         defaultMessage: `Saturday`,
         description: `RRULE weekday long label`,
@@ -907,12 +943,12 @@ var at = `flex flex-col gap-2`,
     },
     {
       id: `SU`,
-      labelMessage: y({
+      labelMessage: m({
         id: `settings.automations.rrule.weekday.sun`,
         defaultMessage: `Su`,
         description: `RRULE weekday short label`,
       }),
-      longLabelMessage: y({
+      longLabelMessage: m({
         id: `settings.automations.rrule.weekday.sunday`,
         defaultMessage: `Sunday`,
         description: `RRULE weekday long label`,
@@ -920,9 +956,9 @@ var at = `flex flex-col gap-2`,
     },
   ];
 function Tt(e) {
-  let t = (0, J.c)(13),
+  let t = (0, q.c)(13),
     { id: n, value: r, autoFocus: i, onChange: a } = e,
-    o = g(),
+    o = h(),
     s;
   t[0] === o
     ? (s = t[1])
@@ -959,7 +995,7 @@ function Tt(e) {
     t[9] !== c ||
     t[10] !== l ||
     t[11] !== r
-      ? ((u = (0, Y.jsx)(`input`, {
+      ? ((u = (0, J.jsx)(`input`, {
           id: n,
           "data-testid": `automation-title-input`,
           autoFocus: i,
@@ -981,12 +1017,12 @@ function Tt(e) {
   );
 }
 function Et(e) {
-  let t = (0, J.c)(11),
+  let t = (0, q.c)(11),
     { isReadOnlySandbox: n, isDangerFullAccess: r } = e,
-    i = g(),
+    i = h(),
     a;
   t[0] !== r || t[1] !== n
-    ? ((a = (0, Y.jsx)(Ft, { isReadOnlySandbox: n, isDangerFullAccess: r })),
+    ? ((a = (0, J.jsx)(Ft, { isReadOnlySandbox: n, isDangerFullAccess: r })),
       (t[0] = r),
       (t[1] = n),
       (t[2] = a))
@@ -1003,12 +1039,12 @@ function Et(e) {
       (t[4] = o));
   let s;
   t[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((s = (0, Y.jsx)(O, { className: `icon-sm` })), (t[5] = s))
+    ? ((s = (0, J.jsx)(k, { className: `icon-sm` })), (t[5] = s))
     : (s = t[5]);
   let c;
   t[6] === o
     ? (c = t[7])
-    : ((c = (0, Y.jsx)(`button`, {
+    : ((c = (0, J.jsx)(`button`, {
         type: `button`,
         className: `inline-flex shrink-0 items-center justify-center text-token-description-foreground hover:text-token-foreground`,
         "aria-label": o,
@@ -1019,7 +1055,7 @@ function Et(e) {
   let l;
   return (
     t[8] !== a || t[9] !== c
-      ? ((l = (0, Y.jsx)(C, {
+      ? ((l = (0, J.jsx)(T, {
           tooltipContent: a,
           side: `top`,
           align: `center`,
@@ -1035,7 +1071,7 @@ function Et(e) {
   );
 }
 function Dt(e) {
-  let t = (0, J.c)(11),
+  let t = (0, q.c)(11),
     {
       children: n,
       open: r,
@@ -1048,12 +1084,12 @@ function Dt(e) {
     } = e,
     u = a === void 0 ? !0 : a,
     d = o === void 0 ? `default` : o,
-    p;
+    f;
   t[0] === s
-    ? (p = t[1])
-    : ((p = f(`flex max-h-[95vh] flex-col overflow-hidden`, s)),
+    ? (f = t[1])
+    : ((f = p(`flex max-h-[95vh] flex-col overflow-hidden`, s)),
       (t[0] = s),
-      (t[1] = p));
+      (t[1] = f));
   let m;
   return (
     t[2] !== n ||
@@ -1063,14 +1099,14 @@ function Dt(e) {
     t[6] !== r ||
     t[7] !== u ||
     t[8] !== d ||
-    t[9] !== p
-      ? ((m = (0, Y.jsx)(j, {
+    t[9] !== f
+      ? ((m = (0, J.jsx)(N, {
           open: r,
           onOpenChange: i,
           showDialogClose: u,
           dialogCloseClassName: l,
           size: d,
-          contentClassName: p,
+          contentClassName: f,
           contentProps: c,
           children: n,
         })),
@@ -1081,27 +1117,27 @@ function Dt(e) {
         (t[6] = r),
         (t[7] = u),
         (t[8] = d),
-        (t[9] = p),
+        (t[9] = f),
         (t[10] = m))
       : (m = t[10]),
     m
   );
 }
 function Ot(e) {
-  let t = (0, J.c)(2),
+  let t = (0, q.c)(2),
     { onSelectTemplateDraft: n } = e,
     r;
   return (
     t[0] === n
       ? (r = t[1])
-      : ((r = (0, Y.jsx)(Xe, { columns: `two`, onSelectAction: n })),
+      : ((r = (0, J.jsx)(Ze, { columns: `two`, onSelectAction: n })),
         (t[0] = n),
         (t[1] = r)),
     r
   );
 }
 function kt(e) {
-  let t = (0, J.c)(16),
+  let t = (0, q.c)(16),
     {
       composer: n,
       initialTemplatePickerOpen: r,
@@ -1110,7 +1146,7 @@ function kt(e) {
     } = e,
     o = r === void 0 ? !1 : r,
     s = a === void 0 ? !1 : a,
-    c = g(),
+    c = h(),
     l;
   t[0] === c
     ? (l = t[1])
@@ -1127,7 +1163,7 @@ function kt(e) {
                 defaultMessage: `Expand automation modal`,
                 description: `Aria label for the automation modal button when entering template mode`,
               });
-        return (0, Y.jsx)(w, {
+        return (0, J.jsx)(E, {
           type: `button`,
           "data-testid": `automation-template-toggle-button`,
           "aria-label": i,
@@ -1142,12 +1178,12 @@ function kt(e) {
             n();
           },
           children: t
-            ? (0, Y.jsx)(m, {
+            ? (0, J.jsx)(g, {
                 id: `settings.automations.modal.createNew`,
                 defaultMessage: `Set up manually`,
                 description: `Label for the automation modal button when template mode is active`,
               })
-            : (0, Y.jsx)(m, {
+            : (0, J.jsx)(g, {
                 id: `settings.automations.modal.useTemplate`,
                 defaultMessage: `Use template`,
                 description: `Label for the automation modal button when composer mode is active`,
@@ -1167,16 +1203,16 @@ function kt(e) {
       (t[3] = u),
       (t[4] = d))
     : (d = t[4]);
-  let p;
+  let f;
   t[5] === i
-    ? (p = t[6])
-    : ((p = (e) => {
+    ? (f = t[6])
+    : ((f = (e) => {
         let { closeOverlayAndThen: t } = e;
-        return (0, Y.jsx)(`div`, {
+        return (0, J.jsx)(`div`, {
           className: `flex h-full flex-col px-5 pt-[4rem] pb-4`,
-          children: (0, Y.jsx)(`div`, {
+          children: (0, J.jsx)(`div`, {
             className: `vertical-scroll-fade-mask min-h-0 flex-1 overflow-y-auto`,
-            children: (0, Y.jsx)(Ot, {
+            children: (0, J.jsx)(Ot, {
               onSelectTemplateDraft: (e) => {
                 t(() => {
                   i(e);
@@ -1187,29 +1223,29 @@ function kt(e) {
         });
       }),
       (t[5] = i),
-      (t[6] = p));
-  let h;
+      (t[6] = f));
+  let m;
   t[7] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = (0, Y.jsx)(`div`, {
+    ? ((m = (0, J.jsx)(`div`, {
         className: `px-5 pt-5 pb-3`,
-        children: (0, Y.jsx)(`div`, {
+        children: (0, J.jsx)(`div`, {
           className: `min-w-0 pr-32 text-lg leading-tight whitespace-nowrap text-token-foreground`,
-          children: (0, Y.jsx)(m, {
+          children: (0, J.jsx)(g, {
             id: `settings.automations.modal.templateTitle`,
             defaultMessage: `Automation templates`,
             description: `Title shown in the automation modal when template mode is active`,
           }),
         }),
       })),
-      (t[7] = h))
-    : (h = t[7]);
+      (t[7] = m))
+    : (m = t[7]);
   let _;
   t[8] !== u || t[9] !== s
     ? ((_ = (e) => {
         let { isOverlayOpen: t, openOverlay: n, closeOverlay: r } = e;
         return t
-          ? (0, Y.jsx)(`div`, {
-              className: f(`absolute top-5 z-20`, s ? `right-14` : `right-4`),
+          ? (0, J.jsx)(`div`, {
+              className: p(`absolute top-5 z-20`, s ? `right-14` : `right-4`),
               children: u({
                 isOverlayOpen: t,
                 openOverlay: n,
@@ -1224,12 +1260,12 @@ function kt(e) {
     : (_ = t[10]);
   let v;
   return (
-    t[11] !== o || t[12] !== d || t[13] !== p || t[14] !== _
-      ? ((v = (0, Y.jsx)(it, {
+    t[11] !== o || t[12] !== d || t[13] !== f || t[14] !== _
+      ? ((v = (0, J.jsx)(at, {
           initialOverlayOpen: o,
           baseContent: d,
-          overlayContent: p,
-          overlayHeader: h,
+          overlayContent: f,
+          overlayHeader: m,
           overlayHeightOffset: ft,
           minHeight: dt,
           baseFadeDurationMs: pt,
@@ -1241,7 +1277,7 @@ function kt(e) {
         })),
         (t[11] = o),
         (t[12] = d),
-        (t[13] = p),
+        (t[13] = f),
         (t[14] = _),
         (t[15] = v))
       : (v = t[15]),
@@ -1249,302 +1285,291 @@ function kt(e) {
   );
 }
 function At(e) {
-  let t = (0, J.c)(115),
+  let t = (0, q.c)(110),
     {
       draft: n,
-      setDraft: r,
+      setDraft: i,
       canSave: o,
       isEditing: s,
-      isSaving: u,
+      isSaving: c,
       onDelete: d,
-      roots: p,
-      formatRootLabel: v,
-      workspaceGroups: y,
-      onSubmit: x,
-      onCancel: O,
-      formId: j,
-      variant: F,
-      open: I,
+      roots: f,
+      formatRootLabel: m,
+      workspaceGroups: _,
+      onSubmit: b,
+      onCancel: S,
+      formId: k,
+      variant: A,
+      open: N,
       onOpenChange: L,
       forceShowNameInput: ee,
       dialogSize: R,
       expandPrompt: z,
-      allowedKinds: B,
+      allowedKinds: te,
     } = e,
-    V = F === void 0 ? `inline` : F,
+    B = A === void 0 ? `inline` : A,
     ne = R === void 0 ? `xxwide` : R,
     re = z === void 0 ? !1 : z,
-    H = g(),
-    ie = (0, $.useRef)(null),
-    ae = (0, $.useRef)(null),
-    oe = (0, $.useId)(),
-    se = ee ?? (!s || V === `dialog`),
-    [U] = (0, $.useState)(Pt),
-    ce;
-  t[0] === n ? (ce = t[1]) : ((ce = we(n)), (t[0] = n), (t[1] = ce));
-  let le = ce,
-    W = n.cwds.length > 0 && !le ? n.cwds : p,
-    G = Oe(U),
-    ue = G.ui?.query ?? ``,
-    K;
-  t[2] !== W || t[3] !== ue
-    ? ((K = { hostId: c, pluginHostId: c, skillRoots: W, query: ue, roots: W }),
-      (t[2] = W),
-      (t[3] = ue),
-      (t[4] = K))
-    : (K = t[4]);
-  let { sections: de } = Pe(K),
-    fe = Ae(U),
-    pe;
-  t[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((pe = { hostId: c }), (t[5] = pe))
-    : (pe = t[5]);
-  let me = D(pe),
-    { availablePlugins: q } = E(c, W),
+    V = h(),
+    ie = (0, Q.useRef)(null),
+    ae = (0, Q.useRef)(null),
+    oe = (0, Q.useId)(),
+    se = ee ?? (!s || B === `dialog`),
+    [H] = (0, Q.useState)(Pt),
+    U;
+  t[0] === n ? (U = t[1]) : ((U = Be(n)), (t[0] = n), (t[1] = U));
+  let ce = U,
+    le = n.cwds.length > 0 && !ce ? n.cwds : f,
+    W = _e(H),
+    ue = ye(H),
+    G;
+  t[2] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((G = { hostId: l }), (t[2] = G))
+    : (G = t[2]);
+  let de = w(G),
+    { availablePlugins: K } = O(l, le),
     he;
-  t[6] === q ? (he = t[7]) : ((he = Te(q)), (t[6] = q), (t[7] = he));
+  t[3] === K ? (he = t[4]) : ((he = fe(K)), (t[3] = K), (t[4] = he));
   let ge = he != null,
     xe;
-  t[8] === ge
-    ? (xe = t[9])
-    : ((xe = { enabled: ge }), (t[8] = ge), (t[9] = xe));
-  let { nativeApps: De } = Ee(xe),
-    { skills: Me } = te(W),
-    Ie,
-    Re;
-  (t[10] !== me || t[11] !== q || t[12] !== Me || t[13] !== De || t[14] !== U
-    ? ((Ie = () => {
-        U.syncMentionMetadata({
-          skills: Me,
-          apps: me,
-          plugins: q,
+  t[5] === ge
+    ? (xe = t[6])
+    : ((xe = { enabled: ge }), (t[5] = ge), (t[6] = xe));
+  let { nativeApps: De } = pe(xe),
+    { skills: Oe } = me(le),
+    ke,
+    Ae;
+  (t[7] !== de || t[8] !== K || t[9] !== Oe || t[10] !== De || t[11] !== H
+    ? ((Ae = () => {
+        H.syncMentionMetadata({
+          skills: Oe,
+          apps: de,
+          plugins: K,
           nativeApps: De,
         });
       }),
-      (Re = [me, q, Me, De, U]),
-      (t[10] = me),
-      (t[11] = q),
-      (t[12] = Me),
-      (t[13] = De),
-      (t[14] = U),
-      (t[15] = Ie),
-      (t[16] = Re))
-    : ((Ie = t[15]), (Re = t[16])),
-    (0, $.useEffect)(Ie, Re));
-  let Ve, He;
-  (t[17] !== n.prompt || t[18] !== U
-    ? ((Ve = () => {
-        U.getText() !== n.prompt && U.setPromptText(n.prompt);
+      (ke = [de, K, Oe, De, H]),
+      (t[7] = de),
+      (t[8] = K),
+      (t[9] = Oe),
+      (t[10] = De),
+      (t[11] = H),
+      (t[12] = ke),
+      (t[13] = Ae))
+    : ((ke = t[12]), (Ae = t[13])),
+    (0, Q.useEffect)(Ae, ke));
+  let je, Me;
+  (t[14] !== n.prompt || t[15] !== H
+    ? ((je = () => {
+        H.getText() !== n.prompt && H.setPromptText(n.prompt);
       }),
-      (He = [n.prompt, U]),
-      (t[17] = n.prompt),
-      (t[18] = U),
-      (t[19] = Ve),
-      (t[20] = He))
-    : ((Ve = t[19]), (He = t[20])),
-    (0, $.useEffect)(Ve, He));
-  let We, X;
-  (t[21] !== U || t[22] !== r
-    ? ((We = () =>
-        Fe(U.view, () => {
-          let e = U.getText();
-          r((t) => (t.prompt === e ? t : { ...t, prompt: e }));
+      (Me = [n.prompt, H]),
+      (t[14] = n.prompt),
+      (t[15] = H),
+      (t[16] = je),
+      (t[17] = Me))
+    : ((je = t[16]), (Me = t[17])),
+    (0, Q.useEffect)(je, Me));
+  let Le, Ve;
+  (t[18] !== H || t[19] !== i
+    ? ((Le = () =>
+        Ce(H.view, () => {
+          let e = H.getText();
+          i((t) => (t.prompt === e ? t : { ...t, prompt: e }));
         })),
-      (X = [U, r]),
-      (t[21] = U),
-      (t[22] = r),
-      (t[23] = We),
-      (t[24] = X))
-    : ((We = t[23]), (X = t[24])),
-    (0, $.useEffect)(We, X));
-  let Ge;
-  t[25] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Ge = () => {
+      (Ve = [H, i]),
+      (t[18] = H),
+      (t[19] = i),
+      (t[20] = Le),
+      (t[21] = Ve))
+    : ((Le = t[20]), (Ve = t[21])),
+    (0, Q.useEffect)(Le, Ve));
+  let He;
+  t[22] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((He = () => {
         ie.current?.requestSubmit();
       }),
-      (t[25] = Ge))
-    : (Ge = t[25]);
-  let Z = Ge,
-    Q,
-    Ke;
-  if (t[26] !== v || t[27] !== H || t[28] !== p || t[29] !== y) {
+      (t[22] = He))
+    : (He = t[22]);
+  let Ue = He,
+    Ge,
+    Y;
+  if (t[23] !== m || t[24] !== V || t[25] !== f || t[26] !== _) {
     let e;
-    t[32] === v
-      ? (e = t[33])
-      : ((e = (e, t) => v(e).localeCompare(v(t))), (t[32] = v), (t[33] = e));
-    let n = [...p].sort(e),
+    t[29] === m
+      ? (e = t[30])
+      : ((e = (e, t) => m(e).localeCompare(m(t))), (t[29] = m), (t[30] = e));
+    let n = [...f].sort(e),
       r;
-    (t[34] === H
-      ? (r = t[35])
-      : ((r = H.formatMessage({
+    (t[31] === V
+      ? (r = t[32])
+      : ((r = V.formatMessage({
           id: `settings.automations.cwdPlaceholder`,
           defaultMessage: `Choose a folder`,
           description: `Placeholder for cwd select input`,
         })),
-        (t[34] = H),
-        (t[35] = r)),
-      (Ke = r),
-      (Q = Be({ workspaceGroups: y, roots: n, formatRootLabel: v })),
-      (t[26] = v),
-      (t[27] = H),
-      (t[28] = p),
-      (t[29] = y),
-      (t[30] = Q),
-      (t[31] = Ke));
-  } else ((Q = t[30]), (Ke = t[31]));
-  let qe = Q,
-    Je;
-  t[36] === H
-    ? (Je = t[37])
-    : ((Je = H.formatMessage({
+        (t[31] = V),
+        (t[32] = r)),
+      (Y = r),
+      (Ge = Ee({ workspaceGroups: _, roots: n, formatRootLabel: m })),
+      (t[23] = m),
+      (t[24] = V),
+      (t[25] = f),
+      (t[26] = _),
+      (t[27] = Ge),
+      (t[28] = Y));
+  } else ((Ge = t[27]), (Y = t[28]));
+  let Ke = Ge,
+    X;
+  t[33] === V
+    ? (X = t[34])
+    : ((X = V.formatMessage({
         id: `settings.automations.projectDropdown.localOnlyTooltip`,
         defaultMessage: `Automations can only be created for local projects`,
         description: `Tooltip explaining why automation project options only include local projects when remote connections are connected`,
       })),
-      (t[36] = H),
-      (t[37] = Je));
-  let Ye = Je,
-    { data: Xe } = T(),
-    { data: Ze } = h(S, _(l)),
-    $e = b(`1488233300`),
-    et = (B ?? ($e ? [`cron`, `heartbeat`] : [`cron`])).includes(`heartbeat`),
-    { options: tt, hasPinnedThreads: nt } = Qe(n.targetThreadId),
-    rt = Ze?.config.sandbox_mode === `read-only`,
-    it = Ze?.config.sandbox_mode === `danger-full-access`,
-    ot = n.scheduleConfig,
-    st = ot.mode,
-    dt;
-  t[38] !== o || t[39] !== n || t[40] !== H || t[41] !== s
-    ? ((dt = o
+      (t[33] = V),
+      (t[34] = X));
+  let Z = X,
+    { data: qe } = D(),
+    { data: Je } = v(C, y(u)),
+    Ye = x(`1488233300`),
+    Xe = (te ?? (Ye ? [`cron`, `heartbeat`] : [`cron`])).includes(`heartbeat`),
+    { options: Ze, hasPinnedThreads: Qe } = $e(n.targetThreadId),
+    et = Je?.config.sandbox_mode === `read-only`,
+    tt = Je?.config.sandbox_mode === `danger-full-access`,
+    nt = n.scheduleConfig,
+    rt = nt.mode,
+    it;
+  t[35] !== o || t[36] !== n || t[37] !== s
+    ? ((it = o
         ? null
-        : Ue({ draft: n, intl: H, action: s ? `save` : `create` })),
-      (t[38] = o),
-      (t[39] = n),
-      (t[40] = H),
-      (t[41] = s),
-      (t[42] = dt))
-    : (dt = t[42]);
-  let ft = dt,
-    pt = n.kind === `heartbeat`,
-    mt;
-  t[43] === n ? (mt = t[44]) : ((mt = _e(n)), (t[43] = n), (t[44] = mt));
-  let ht = mt,
-    gt = be({ allowThreadDestination: et }),
-    _t;
-  t[45] === r
-    ? (_t = t[46])
-    : ((_t = (e) => {
-        r((t) => ({
+        : (0, J.jsx)(We, { draft: n, action: s ? `save` : `create` })),
+      (t[35] = o),
+      (t[36] = n),
+      (t[37] = s),
+      (t[38] = it))
+    : (it = t[38]);
+  let at = it,
+    $ = n.kind === `heartbeat`,
+    st;
+  t[39] === n ? (st = t[40]) : ((st = Ne(n)), (t[39] = n), (t[40] = st));
+  let dt = st,
+    ft = Ie({ allowThreadDestination: Xe }),
+    pt;
+  t[41] === i
+    ? (pt = t[42])
+    : ((pt = (e) => {
+        i((t) => ({
           ...t,
           rawRrule: null,
           scheduleConfig: e,
           scheduleDirty: !0,
         }));
       }),
-      (t[45] = r),
-      (t[46] = _t));
-  let vt = _t,
-    yt = V === `dialog` ? k : `div`,
-    bt = V === `dialog` ? M : `div`,
-    xt = V === `dialog` ? void 0 : `flex flex-col gap-4`,
-    St = re ? ut : V === `dialog` ? ct : lt,
-    Ct;
-  t[47] !== oe || t[48] !== n.name || t[49] !== r
-    ? ((Ct = (e) =>
-        (0, Y.jsx)(Tt, {
+      (t[41] = i),
+      (t[42] = pt));
+  let mt = pt,
+    ht = B === `dialog` ? j : `div`,
+    gt = B === `dialog` ? P : `div`,
+    _t = B === `dialog` ? void 0 : `flex flex-col gap-4`,
+    vt = re ? ut : B === `dialog` ? ct : lt,
+    yt;
+  t[43] !== oe || t[44] !== n.name || t[45] !== i
+    ? ((yt = (e) =>
+        (0, J.jsx)(Tt, {
           id: oe,
           autoFocus: e,
           value: n.name,
           onChange: (e) => {
-            r((t) => ({ ...t, name: e }));
+            i((t) => ({ ...t, name: e }));
           },
         })),
-      (t[47] = oe),
-      (t[48] = n.name),
-      (t[49] = r),
-      (t[50] = Ct))
-    : (Ct = t[50]);
-  let wt = Ct,
-    Ot = n.name.length > 0 || n.prompt.length > 0,
-    At;
-  t[51] === r
-    ? (At = t[52])
-    : ((At = () => {
-        r(Nt);
+      (t[43] = oe),
+      (t[44] = n.name),
+      (t[45] = i),
+      (t[46] = yt))
+    : (yt = t[46]);
+  let bt = yt,
+    xt = n.name.length > 0 || n.prompt.length > 0,
+    St;
+  t[47] === i
+    ? (St = t[48])
+    : ((St = () => {
+        i(Nt);
       }),
-      (t[51] = r),
-      (t[52] = At));
-  let Ft = At,
-    It,
-    Lt;
+      (t[47] = i),
+      (t[48] = St));
+  let Ct = St,
+    wt,
+    Ot;
   if (
-    t[53] !== bt ||
-    t[54] !== yt ||
-    t[55] !== de ||
-    t[56] !== Ye ||
-    t[57] !== gt ||
-    t[58] !== xt ||
-    t[59] !== o ||
-    t[60] !== Ft ||
-    t[61] !== ne ||
-    t[62] !== n.cwds ||
-    t[63] !== n.model ||
-    t[64] !== n.reasoningEffort ||
-    t[65] !== n.targetThreadId ||
-    t[66] !== j ||
-    t[67] !== Ot ||
-    t[68] !== nt ||
-    t[69] !== tt ||
-    t[70] !== H ||
-    t[71] !== le ||
-    t[72] !== it ||
-    t[73] !== s ||
-    t[74] !== pt ||
-    t[75] !== rt ||
-    t[76] !== u ||
-    t[77] !== Xe?.models ||
-    t[78] !== G.addMention ||
-    t[79] !== G.closeAutocomplete ||
-    t[80] !== G.handleMentionEvent ||
-    t[81] !== G.setSelectedMention ||
-    t[82] !== G.ui ||
-    t[83] !== W ||
-    t[84] !== O ||
-    t[85] !== d ||
-    t[86] !== L ||
-    t[87] !== x ||
-    t[88] !== I ||
-    t[89] !== U ||
-    t[90] !== St ||
-    t[91] !== wt ||
-    t[92] !== ft ||
-    t[93] !== ot ||
-    t[94] !== st ||
-    t[95] !== ht ||
-    t[96] !== r ||
-    t[97] !== se ||
-    t[98] !== fe ||
-    t[99] !== vt ||
-    t[100] !== V ||
-    t[101] !== qe ||
-    t[102] !== Ke
+    t[49] !== gt ||
+    t[50] !== ht ||
+    t[51] !== Z ||
+    t[52] !== ft ||
+    t[53] !== _t ||
+    t[54] !== o ||
+    t[55] !== Ct ||
+    t[56] !== ne ||
+    t[57] !== n.cwds ||
+    t[58] !== n.model ||
+    t[59] !== n.reasoningEffort ||
+    t[60] !== n.targetThreadId ||
+    t[61] !== k ||
+    t[62] !== xt ||
+    t[63] !== Qe ||
+    t[64] !== Ze ||
+    t[65] !== V ||
+    t[66] !== ce ||
+    t[67] !== tt ||
+    t[68] !== s ||
+    t[69] !== $ ||
+    t[70] !== et ||
+    t[71] !== c ||
+    t[72] !== qe?.models ||
+    t[73] !== W.addMention ||
+    t[74] !== W.closeAutocomplete ||
+    t[75] !== W.handleMentionEvent ||
+    t[76] !== W.setSelectedMention ||
+    t[77] !== W.ui ||
+    t[78] !== le ||
+    t[79] !== S ||
+    t[80] !== d ||
+    t[81] !== L ||
+    t[82] !== b ||
+    t[83] !== N ||
+    t[84] !== H ||
+    t[85] !== vt ||
+    t[86] !== bt ||
+    t[87] !== at ||
+    t[88] !== nt ||
+    t[89] !== rt ||
+    t[90] !== dt ||
+    t[91] !== i ||
+    t[92] !== se ||
+    t[93] !== ue ||
+    t[94] !== mt ||
+    t[95] !== B ||
+    t[96] !== Ke ||
+    t[97] !== Y
   ) {
-    Lt = Symbol.for(`react.early_return_sentinel`);
+    Ot = Symbol.for(`react.early_return_sentinel`);
     bb0: {
       let e = (e) =>
-        (0, Y.jsx)(`form`, {
-          id: j,
+        (0, J.jsx)(`form`, {
+          id: k,
           ref: ie,
           className: `flex flex-col gap-0`,
-          onSubmit: x,
-          children: (0, Y.jsxs)(bt, {
-            className: xt,
+          onSubmit: b,
+          children: (0, J.jsxs)(gt, {
+            className: _t,
             children: [
-              V === `dialog` && s
-                ? (0, Y.jsx)(yt, {
+              B === `dialog` && s
+                ? (0, J.jsx)(ht, {
                     className: `gap-1`,
-                    children: (0, Y.jsx)(A, {
-                      title: (0, Y.jsx)(m, {
+                    children: (0, J.jsx)(M, {
+                      title: (0, J.jsx)(g, {
                         id: `settings.automations.dialog.editTitle`,
                         defaultMessage: `Edit automation`,
                         description: `Dialog title for editing an automation`,
@@ -1553,29 +1578,29 @@ function At(e) {
                     }),
                   })
                 : null,
-              V === `dialog` && !s && se
-                ? (0, Y.jsx)(yt, {
+              B === `dialog` && !s && se
+                ? (0, J.jsx)(ht, {
                     className: `gap-1`,
-                    children: (0, Y.jsxs)(`div`, {
+                    children: (0, J.jsxs)(`div`, {
                       className: `flex items-center justify-between gap-4`,
                       children: [
-                        (0, Y.jsx)(`div`, {
+                        (0, J.jsx)(`div`, {
                           className: `min-w-0 flex-1`,
-                          children: wt(!0),
+                          children: bt(!0),
                         }),
-                        (0, Y.jsxs)(`div`, {
+                        (0, J.jsxs)(`div`, {
                           className: `flex items-center gap-2 pr-10`,
                           children: [
-                            (0, Y.jsx)(Et, {
-                              isReadOnlySandbox: rt,
-                              isDangerFullAccess: it,
+                            (0, J.jsx)(Et, {
+                              isReadOnlySandbox: et,
+                              isDangerFullAccess: tt,
                             }),
-                            Ot
-                              ? (0, Y.jsx)(w, {
+                            xt
+                              ? (0, J.jsx)(E, {
                                   color: `ghost`,
                                   size: `toolbar`,
-                                  onClick: Ft,
-                                  children: (0, Y.jsx)(m, {
+                                  onClick: Ct,
+                                  children: (0, J.jsx)(g, {
                                     id: `settings.automations.clear`,
                                     defaultMessage: `Clear`,
                                     description: `Button label for clearing the automation title and prompt`,
@@ -1589,104 +1614,107 @@ function At(e) {
                     }),
                   })
                 : null,
-              se && V !== `dialog`
-                ? (0, Y.jsx)(yt, { className: at, children: wt(!s) })
+              se && B !== `dialog`
+                ? (0, J.jsx)(ht, { className: ot, children: bt(!s) })
                 : null,
-              (0, Y.jsx)(yt, {
-                className: at,
-                children: (0, Y.jsxs)(`div`, {
+              (0, J.jsx)(ht, {
+                className: ot,
+                children: (0, J.jsxs)(`div`, {
                   ref: ae,
                   className: `relative`,
                   children: [
-                    (0, Y.jsx)(Le, {
+                    (0, J.jsx)(we, {
                       anchorRef: ae,
-                      composerController: U,
-                      isActive: G.ui?.active ?? !1,
-                      mentionUiState: G.ui,
+                      composerController: H,
+                      isActive: W.ui?.active ?? !1,
+                      mentionUiState: W.ui,
                       placement: `bottom`,
                       portalRoot: `body`,
                       zIndexClassName: `z-[10000]`,
-                      children: (0, Y.jsx)(Ne, {
-                        sections: de,
-                        onUpdateSelectedMention: G.setSelectedMention,
-                        onAddContext: G.addMention,
-                        onRequestClose: G.closeAutocomplete,
-                        query: G.ui?.query ?? ``,
+                      children: (0, J.jsx)(Se, {
+                        hostId: l,
+                        onAddContext: W.addMention,
+                        onRequestClose: W.closeAutocomplete,
+                        onUpdateSelectedMention: W.setSelectedMention,
+                        query: W.ui?.query ?? ``,
+                        roots: le,
+                        skillRoots: le,
+                        source: W.ui?.source ?? null,
                       }),
                     }),
-                    (0, Y.jsx)(je, {
-                      autocomplete: fe,
-                      roots: W,
-                      composerController: U,
+                    (0, J.jsx)(be, {
+                      autocomplete: ue,
+                      roots: le,
+                      composerController: H,
                       portalRoot: `body`,
                       zIndexClassName: `z-[10000]`,
                     }),
-                    (0, Y.jsx)(ke, {
-                      className: St,
-                      composerController: U,
-                      ariaLabel: H.formatMessage({
+                    (0, J.jsx)(ve, {
+                      className: vt,
+                      composerController: H,
+                      ariaLabel: V.formatMessage({
                         id: `settings.automations.promptLabel`,
                         defaultMessage: `Prompt`,
                         description: `Label for automation prompt input`,
                       }),
                       minHeight: `14rem`,
                       disableAutoFocus: se && !s,
-                      placeholder: H.formatMessage({
+                      placeholder: V.formatMessage({
                         id: `settings.automations.promptPlaceholder`,
                         defaultMessage: `Add prompt e.g. look for crashes in $sentry`,
                         description: `Placeholder text for automations prompt input`,
                       }),
-                      onMentionHandler: G.handleMentionEvent,
-                      onSkillMentionHandler: fe.handleMentionEvent,
-                      onSubmit: Z,
+                      onMentionHandler: W.handleMentionEvent,
+                      onSkillMentionHandler: ue.handleMentionEvent,
+                      onSubmit: Ue,
                     }),
                   ],
                 }),
               }),
-              V === `dialog`
-                ? (0, Y.jsx)(yt, {
-                    children: (0, Y.jsxs)(N, {
-                      className: f(P, `min-w-0`),
+              B === `dialog`
+                ? (0, J.jsx)(ht, {
+                    children: (0, J.jsxs)(F, {
+                      className: p(I, `min-w-0`),
                       children: [
                         s && d
-                          ? (0, Y.jsx)(w, {
+                          ? (0, J.jsx)(E, {
                               color: `ghost`,
                               size: `toolbar`,
                               onClick: d,
-                              children: (0, Y.jsx)(m, {
+                              children: (0, J.jsx)(g, {
                                 id: `settings.automations.delete`,
                                 defaultMessage: `Delete`,
                                 description: `Button label for deleting an automation`,
                               }),
                             })
                           : null,
-                        (0, Y.jsxs)(`div`, {
+                        (0, J.jsxs)(`div`, {
                           className: `flex min-w-0 flex-1 items-center gap-2`,
                           children: [
-                            le
+                            ce
                               ? null
-                              : (0, Y.jsx)(Xt, {
-                                  selectedId: ht,
-                                  optionIds: gt,
+                              : (0, J.jsx)(Xt, {
+                                  selectedId: dt,
+                                  optionIds: ft,
                                   className: `shrink-0`,
                                   onSelect: (e) => {
-                                    r((t) => ve(t, e));
+                                    i((t) => Pe(t, e));
                                   },
-                                  ariaLabel: H.formatMessage({
+                                  ariaLabel: V.formatMessage({
                                     id: `settings.automations.executionEnvironment.ariaLabel`,
                                     defaultMessage: `Execution environment`,
                                     description: `Aria label for execution environment dropdown`,
                                   }),
                                 }),
-                            pt
-                              ? (0, Y.jsx)(Yt, {
+                            $
+                              ? (0, J.jsx)(Yt, {
                                   selectedThreadId: n.targetThreadId,
-                                  options: tt,
-                                  hasPinnedThreads: nt,
+                                  options: Ze,
+                                  hasPinnedThreads: Qe,
                                   className: `max-w-56 min-w-0 shrink`,
                                   onSelect: (e) => {
-                                    r((t) =>
-                                      Ce({
+                                    i((t) =>
+                                      ze({
                                         draft: t,
                                         threadId: e.threadId,
                                         title: e.title,
@@ -1694,79 +1722,79 @@ function At(e) {
                                     );
                                   },
                                 })
-                              : (0, Y.jsx)(ze, {
+                              : (0, J.jsx)(Te, {
                                   selectedRoots: n.cwds,
-                                  options: qe,
-                                  placeholder: Ke,
+                                  options: Ke,
+                                  placeholder: Y,
                                   className: `max-w-56 min-w-0 shrink`,
-                                  localOnlyTooltip: Ye,
+                                  localOnlyTooltip: Z,
                                   onChange: (e) => {
-                                    r((t) => ye(t, e));
+                                    i((t) => Fe(t, e));
                                   },
                                 }),
-                            (0, Y.jsx)(Rt, {
-                              scheduleMode: st,
-                              scheduleConfig: ot,
+                            (0, J.jsx)(Rt, {
+                              scheduleMode: rt,
+                              scheduleConfig: nt,
                               className: `max-w-52 min-w-0 shrink`,
-                              intervalStyle: pt ? `heartbeat` : `default`,
-                              onUpdateScheduleDraft: vt,
+                              intervalStyle: $ ? `heartbeat` : `default`,
+                              onUpdateScheduleDraft: mt,
                             }),
-                            pt
+                            $
                               ? null
-                              : (0, Y.jsx)(qt, {
+                              : (0, J.jsx)(qt, {
                                   selectedModel: n.model,
                                   className: `shrink-0`,
                                   showLabel: !1,
                                   showChevron: !1,
                                   onSelect: (e) => {
-                                    r((t) => ({
+                                    i((t) => ({
                                       ...t,
                                       model: e,
-                                      reasoningEffort: i({
-                                        model: a(Xe?.models ?? [], e),
+                                      reasoningEffort: a({
+                                        model: r(qe?.models ?? [], e),
                                         reasoningEffort: t.reasoningEffort,
                                       }),
                                     }));
                                   },
                                 }),
-                            pt
+                            $
                               ? null
-                              : (0, Y.jsx)(Jt, {
+                              : (0, J.jsx)(Jt, {
                                   model: n.model,
                                   reasoningEffort: n.reasoningEffort,
                                   className: `shrink-0`,
                                   showLabel: !1,
                                   showChevron: !1,
                                   onSelect: (e) => {
-                                    r((t) => ({ ...t, reasoningEffort: e }));
+                                    i((t) => ({ ...t, reasoningEffort: e }));
                                   },
                                 }),
                           ],
                         }),
-                        (0, Y.jsxs)(`div`, {
+                        (0, J.jsxs)(`div`, {
                           className: `flex shrink-0 items-center gap-2`,
                           children: [
-                            (0, Y.jsx)(w, {
+                            (0, J.jsx)(E, {
                               color: `ghost`,
-                              onClick: O,
-                              children: (0, Y.jsx)(m, {
+                              onClick: S,
+                              children: (0, J.jsx)(g, {
                                 id: `settings.automations.cancel`,
                                 defaultMessage: `Cancel`,
                                 description: `Cancel button label for automations dialog`,
                               }),
                             }),
-                            (0, Y.jsx)(C, {
-                              tooltipContent: ft,
-                              disabled: o || u || ft == null,
-                              children: (0, Y.jsx)(`span`, {
+                            (0, J.jsx)(T, {
+                              tooltipContent: at,
+                              disabled: o || c || at == null,
+                              children: (0, J.jsx)(`span`, {
                                 className: `inline-flex`,
-                                children: (0, Y.jsx)(w, {
+                                children: (0, J.jsx)(E, {
                                   color: `primary`,
                                   type: `submit`,
-                                  loading: u,
+                                  loading: c,
                                   disabled: !o,
                                   className: `disabled:cursor-default`,
-                                  children: (0, Y.jsx)(m, {
+                                  children: (0, J.jsx)(g, {
                                     id: `settings.automations.save`,
                                     defaultMessage: `Save`,
                                     description: `Save button label for automations dialog`,
@@ -1783,39 +1811,39 @@ function At(e) {
             ],
           }),
         });
-      if (V === `dialog`) {
-        let n = I ?? !1,
-          i;
-        t[105] === r
-          ? (i = t[106])
-          : ((i = (e) => {
-              r((t) => Se(t, e));
+      if (B === `dialog`) {
+        let n = N ?? !1,
+          r;
+        t[100] === i
+          ? (r = t[101])
+          : ((r = (e) => {
+              i((t) => Re(t, e));
             }),
-            (t[105] = r),
-            (t[106] = i));
-        let a = i,
+            (t[100] = i),
+            (t[101] = r));
+        let a = r,
           o;
-        t[107] === fe.ui?.active
-          ? (o = t[108])
+        t[102] === ue.ui?.active
+          ? (o = t[103])
           : ((o = (e) => {
-              fe.ui?.active && e.preventDefault();
+              ue.ui?.active && e.preventDefault();
             }),
-            (t[107] = fe.ui?.active),
-            (t[108] = o));
+            (t[102] = ue.ui?.active),
+            (t[103] = o));
         let c = s ? void 0 : jt,
           l;
-        t[109] === s
-          ? (l = t[110])
-          : ((l = s ? void 0 : { height: `auto` }), (t[109] = s), (t[110] = l));
+        t[104] === s
+          ? (l = t[105])
+          : ((l = s ? void 0 : { height: `auto` }), (t[104] = s), (t[105] = l));
         let u;
-        (t[111] !== o || t[112] !== c || t[113] !== l
+        (t[106] !== o || t[107] !== c || t[108] !== l
           ? ((u = { onEscapeKeyDown: o, onPointerDownOutside: c, style: l }),
-            (t[111] = o),
-            (t[112] = c),
-            (t[113] = l),
-            (t[114] = u))
-          : (u = t[114]),
-          (Lt = (0, Y.jsx)(Dt, {
+            (t[106] = o),
+            (t[107] = c),
+            (t[108] = l),
+            (t[109] = u))
+          : (u = t[109]),
+          (Ot = (0, J.jsx)(Dt, {
             open: n,
             onOpenChange: L ?? Mt,
             size: ne,
@@ -1823,7 +1851,7 @@ function At(e) {
             contentProps: u,
             children: s
               ? e()
-              : (0, Y.jsx)(kt, {
+              : (0, J.jsx)(kt, {
                   composer: e,
                   onSelectTemplateDraft: a,
                   reserveDialogCloseSpace: !0,
@@ -1831,62 +1859,61 @@ function At(e) {
           })));
         break bb0;
       }
-      It = e();
+      wt = e();
     }
-    ((t[53] = bt),
-      (t[54] = yt),
-      (t[55] = de),
-      (t[56] = Ye),
-      (t[57] = gt),
-      (t[58] = xt),
-      (t[59] = o),
-      (t[60] = Ft),
-      (t[61] = ne),
-      (t[62] = n.cwds),
-      (t[63] = n.model),
-      (t[64] = n.reasoningEffort),
-      (t[65] = n.targetThreadId),
-      (t[66] = j),
-      (t[67] = Ot),
-      (t[68] = nt),
-      (t[69] = tt),
-      (t[70] = H),
-      (t[71] = le),
-      (t[72] = it),
-      (t[73] = s),
-      (t[74] = pt),
-      (t[75] = rt),
-      (t[76] = u),
-      (t[77] = Xe?.models),
-      (t[78] = G.addMention),
-      (t[79] = G.closeAutocomplete),
-      (t[80] = G.handleMentionEvent),
-      (t[81] = G.setSelectedMention),
-      (t[82] = G.ui),
-      (t[83] = W),
-      (t[84] = O),
-      (t[85] = d),
-      (t[86] = L),
-      (t[87] = x),
-      (t[88] = I),
-      (t[89] = U),
-      (t[90] = St),
-      (t[91] = wt),
-      (t[92] = ft),
-      (t[93] = ot),
-      (t[94] = st),
-      (t[95] = ht),
-      (t[96] = r),
-      (t[97] = se),
-      (t[98] = fe),
-      (t[99] = vt),
-      (t[100] = V),
-      (t[101] = qe),
-      (t[102] = Ke),
-      (t[103] = It),
-      (t[104] = Lt));
-  } else ((It = t[103]), (Lt = t[104]));
-  return Lt === Symbol.for(`react.early_return_sentinel`) ? It : Lt;
+    ((t[49] = gt),
+      (t[50] = ht),
+      (t[51] = Z),
+      (t[52] = ft),
+      (t[53] = _t),
+      (t[54] = o),
+      (t[55] = Ct),
+      (t[56] = ne),
+      (t[57] = n.cwds),
+      (t[58] = n.model),
+      (t[59] = n.reasoningEffort),
+      (t[60] = n.targetThreadId),
+      (t[61] = k),
+      (t[62] = xt),
+      (t[63] = Qe),
+      (t[64] = Ze),
+      (t[65] = V),
+      (t[66] = ce),
+      (t[67] = tt),
+      (t[68] = s),
+      (t[69] = $),
+      (t[70] = et),
+      (t[71] = c),
+      (t[72] = qe?.models),
+      (t[73] = W.addMention),
+      (t[74] = W.closeAutocomplete),
+      (t[75] = W.handleMentionEvent),
+      (t[76] = W.setSelectedMention),
+      (t[77] = W.ui),
+      (t[78] = le),
+      (t[79] = S),
+      (t[80] = d),
+      (t[81] = L),
+      (t[82] = b),
+      (t[83] = N),
+      (t[84] = H),
+      (t[85] = vt),
+      (t[86] = bt),
+      (t[87] = at),
+      (t[88] = nt),
+      (t[89] = rt),
+      (t[90] = dt),
+      (t[91] = i),
+      (t[92] = se),
+      (t[93] = ue),
+      (t[94] = mt),
+      (t[95] = B),
+      (t[96] = Ke),
+      (t[97] = Y),
+      (t[98] = wt),
+      (t[99] = Ot));
+  } else ((wt = t[98]), (Ot = t[99]));
+  return Ot === Symbol.for(`react.early_return_sentinel`) ? wt : Ot;
 }
 function jt(e) {
   e.preventDefault();
@@ -1896,7 +1923,7 @@ function Nt(e) {
   return { ...e, name: ``, prompt: `` };
 }
 function Pt() {
-  return Me(``, {
+  return xe(``, {
     defaultTextKind: `prompt`,
     enableFileMentions: !0,
     enableSkillMentions: !0,
@@ -1904,17 +1931,17 @@ function Pt() {
   });
 }
 function Ft(e) {
-  let t = (0, J.c)(3),
+  let t = (0, q.c)(3),
     { isReadOnlySandbox: n, isDangerFullAccess: r } = e;
   if (r) {
     let e;
     return (
       t[0] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((e = (0, Y.jsx)(`div`, {
+        ? ((e = (0, J.jsx)(`div`, {
             className: `flex flex-col gap-1`,
-            children: (0, Y.jsx)(`p`, {
+            children: (0, J.jsx)(`p`, {
               className: `text-token-error-foreground`,
-              children: (0, Y.jsx)(m, {
+              children: (0, J.jsx)(g, {
                 id: `settings.automations.banner.danger`,
                 defaultMessage: `Automations run with your default sandbox settings, which are currently set to Full Access. Running background automations with Full Access carries elevated risk, as Codex may modify files, run commands, and access network without asking. Consider updating sandbox settings to workspace write, and using <rulesDocsLink>rules</rulesDocsLink> to selectively define which commands the agent can run with full access.`,
                 description: `Warning shown in the automation create modal when dangerous sandbox mode is enabled`,
@@ -1931,16 +1958,16 @@ function Ft(e) {
   return (
     t[1] === n
       ? (i = t[2])
-      : ((i = (0, Y.jsx)(`div`, {
+      : ((i = (0, J.jsx)(`div`, {
           className: `flex flex-col gap-1`,
-          children: (0, Y.jsx)(`p`, {
+          children: (0, J.jsx)(`p`, {
             children: n
-              ? (0, Y.jsx)(m, {
+              ? (0, J.jsx)(g, {
                   id: `settings.automations.banner.defaultHowTo.readOnly`,
                   defaultMessage: `Automations run with your default sandbox settings, which are set to read-only. Tool calls will fail if they require modifying files, accessing network, or working with apps on your computer. Consider updating sandbox settings to workspace write.`,
                   description: `Follow-up guidance shown in the automation create modal when default sandbox mode is read-only`,
                 })
-              : (0, Y.jsx)(m, {
+              : (0, J.jsx)(g, {
                   id: `settings.automations.banner.defaultHowTo.default`,
                   defaultMessage: `Automations run with your default sandbox settings. Tool calls will fail if they require modifying files outside the workspace, accessing network, or working with apps on your computer. You can selectively allowlist commands to run outside the sandbox using <rulesDocsLink>rules</rulesDocsLink>.`,
                   description: `Follow-up guidance shown in the automation create modal when default sandbox mode is workspace write`,
@@ -1954,25 +1981,25 @@ function Ft(e) {
   );
 }
 function It(e) {
-  return (0, Y.jsx)(`a`, {
+  return (0, J.jsx)(`a`, {
     className: `text-token-link underline-offset-2 hover:underline`,
-    href: ie,
+    href: ae,
     rel: `noreferrer`,
     target: `_blank`,
     children: Array.isArray(e) ? e.join(``) : e,
   });
 }
 function Lt(e) {
-  return (0, Y.jsx)(`a`, {
+  return (0, J.jsx)(`a`, {
     className: `text-token-error-foreground underline underline-offset-2 hover:underline`,
-    href: ie,
+    href: ae,
     rel: `noreferrer`,
     target: `_blank`,
     children: Array.isArray(e) ? e.join(``) : e,
   });
 }
 function Rt(e) {
-  let t = (0, J.c)(88),
+  let t = (0, q.c)(88),
     {
       scheduleMode: n,
       scheduleConfig: r,
@@ -1985,23 +2012,23 @@ function Rt(e) {
     l = i === void 0 ? `start` : i,
     u = o === void 0 ? !0 : o,
     d = s === void 0 ? `default` : s,
-    p = g(),
-    h;
-  t[0] !== p || t[1] !== r
-    ? ((h = Kt({ scheduleConfig: r, intl: p })),
-      (t[0] = p),
+    f = h(),
+    m;
+  t[0] !== f || t[1] !== r
+    ? ((m = Kt({ scheduleConfig: r, intl: f })),
+      (t[0] = f),
       (t[1] = r),
-      (t[2] = h))
-    : (h = t[2]);
-  let _ = h,
+      (t[2] = m))
+    : (m = t[2]);
+  let _ = m,
     v = r.weekdays[0] ?? wt[0].id,
     y,
     b,
     x,
     S,
     C,
+    w,
     T,
-    E,
     D,
     O,
     k,
@@ -2011,7 +2038,7 @@ function Rt(e) {
     t[3] !== l ||
     t[4] !== a ||
     t[5] !== d ||
-    t[6] !== p ||
+    t[6] !== f ||
     t[7] !== c ||
     t[8] !== r ||
     t[9] !== n ||
@@ -2032,51 +2059,51 @@ function Rt(e) {
       (j = i));
     let o = d === `heartbeat`,
       s = o ? yt : vt,
-      h = s.length > 1,
-      g = o && n === `hourly`,
+      m = s.length > 1,
+      h = o && n === `hourly`,
       M = n === `hourly` && o;
     x = n === `daily` || n === `weekdays` || n === `weekly`;
-    let N = g ? (r.intervalMinutes ?? 30) : r.intervalHours,
+    let N = h ? (r.intervalMinutes ?? 30) : r.intervalHours,
       P;
-    t[28] !== N || t[29] !== p || t[30] !== g
-      ? ((P = g
+    t[28] !== N || t[29] !== f || t[30] !== h
+      ? ((P = h
           ? N === 1
-            ? p.formatMessage({
+            ? f.formatMessage({
                 id: `settings.automations.scheduleIntervalMinuteSuffix`,
                 defaultMessage: `minute`,
                 description: `Singular suffix label for the heartbeat automation interval minutes input`,
               })
-            : p.formatMessage({
+            : f.formatMessage({
                 id: `settings.automations.scheduleIntervalMinutesSuffix`,
                 defaultMessage: `minutes`,
                 description: `Plural suffix label for the heartbeat automation interval minutes input`,
               })
-          : p.formatMessage({
+          : f.formatMessage({
               id: `settings.automations.scheduleIntervalHoursSuffix`,
               defaultMessage: `hours`,
               description: `Suffix label for the automation interval hours input`,
             })),
         (t[28] = N),
-        (t[29] = p),
-        (t[30] = g),
+        (t[29] = f),
+        (t[30] = h),
         (t[31] = P))
       : (P = t[31]);
     let F = P,
       I;
-    t[32] !== p || t[33] !== g
-      ? ((I = g
-          ? p.formatMessage({
+    t[32] !== f || t[33] !== h
+      ? ((I = h
+          ? f.formatMessage({
               id: `settings.automations.scheduleIntervalMinutes`,
               defaultMessage: `Interval minutes`,
               description: `Accessible label for the heartbeat interval minutes input`,
             })
-          : p.formatMessage({
+          : f.formatMessage({
               id: `settings.automations.scheduleIntervalHours`,
               defaultMessage: `Interval hours`,
               description: `Accessible label for the automation interval hours input`,
             })),
-        (t[32] = p),
-        (t[33] = g),
+        (t[32] = f),
+        (t[33] = h),
         (t[34] = I))
       : (I = t[34]);
     let L = I,
@@ -2086,55 +2113,55 @@ function Rt(e) {
           : o
             ? `!w-56 min-w-56`
             : `!w-40 min-w-40`;
-    b = me;
+    b = ue;
     let R;
     t[35] === a
       ? (R = t[36])
-      : ((R = f(`min-w-0`, a)), (t[35] = a), (t[36] = R));
+      : ((R = p(`min-w-0`, a)), (t[35] = a), (t[36] = R));
     let z;
     t[37] === u
       ? (z = t[38])
-      : ((z = u ? (0, Y.jsx)(ue, { className: `icon-xs shrink-0` }) : null),
+      : ((z = u ? (0, J.jsx)(H, { className: `icon-xs shrink-0` }) : null),
         (t[37] = u),
         (t[38] = z));
-    let B;
+    let te;
     t[39] === _
-      ? (B = t[40])
-      : ((B = (0, Y.jsx)(`span`, {
+      ? (te = t[40])
+      : ((te = (0, J.jsx)(`span`, {
           className: `truncate text-left text-token-foreground`,
           children: _,
         })),
         (t[39] = _),
-        (t[40] = B));
-    let V;
+        (t[40] = te));
+    let B;
     (t[41] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((V = (0, Y.jsx)(q, {
+      ? ((B = (0, J.jsx)(G, {
           className: `icon-2xs shrink-0 text-token-input-placeholder-foreground`,
         })),
-        (t[41] = V))
-      : (V = t[41]),
-      t[42] !== R || t[43] !== z || t[44] !== B
-        ? ((T = (0, Y.jsx)(fe, {
+        (t[41] = B))
+      : (B = t[41]),
+      t[42] !== R || t[43] !== z || t[44] !== te
+        ? ((w = (0, J.jsx)(le, {
             asChild: !0,
-            children: (0, Y.jsxs)(w, {
+            children: (0, J.jsxs)(E, {
               color: `ghost`,
               size: `composerSm`,
               className: R,
-              children: [z, B, V],
+              children: [z, te, B],
             }),
           })),
           (t[42] = R),
           (t[43] = z),
-          (t[44] = B),
-          (t[45] = T))
-        : (T = t[45]),
-      (y = pe),
+          (t[44] = te),
+          (t[45] = w))
+        : (w = t[45]),
+      (y = W),
       (S = l),
       (C = ee),
-      (E = `flex w-full flex-col gap-1`),
+      (T = `flex w-full flex-col gap-1`),
       t[46] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((D = (0, Y.jsx)(K.Title, {
-            children: (0, Y.jsx)(m, {
+        ? ((D = (0, J.jsx)(U.Title, {
+            children: (0, J.jsx)(g, {
               id: `settings.automations.schedulePopoverTitle`,
               defaultMessage: `Schedule`,
               description: `Header label above automation schedule controls`,
@@ -2142,15 +2169,15 @@ function Rt(e) {
           })),
           (t[46] = D))
         : (D = t[46]),
-      t[47] !== p ||
+      t[47] !== f ||
       t[48] !== c ||
       t[49] !== r ||
       t[50] !== n ||
       t[51] !== s ||
-      t[52] !== h
-        ? ((O = h
-            ? (0, Y.jsx)(Zt, {
-                ariaLabel: p.formatMessage({
+      t[52] !== m
+        ? ((O = m
+            ? (0, J.jsx)(Zt, {
+                ariaLabel: f.formatMessage({
                   id: `settings.automations.scheduleModeLabel`,
                   defaultMessage: `Schedule type`,
                   description: `Aria label for schedule type dropdown`,
@@ -2158,48 +2185,48 @@ function Rt(e) {
                 className: `w-full`,
                 options: s.map((e) => ({
                   id: e.id,
-                  label: p.formatMessage(e.labelMessage),
+                  label: f.formatMessage(e.labelMessage),
                 })),
                 selectedId: n,
-                selectedLabel: p.formatMessage(
+                selectedLabel: f.formatMessage(
                   (s.find((e) => e.id === n) ?? s[0]).labelMessage,
                 ),
                 onSelect: (e) => {
-                  c(W(r, e));
+                  c(je(r, e));
                 },
               })
             : null),
-          (t[47] = p),
+          (t[47] = f),
           (t[48] = c),
           (t[49] = r),
           (t[50] = n),
           (t[51] = s),
-          (t[52] = h),
+          (t[52] = m),
           (t[53] = O))
         : (O = t[53]),
       t[54] !== L ||
       t[55] !== F ||
       t[56] !== N ||
-      t[57] !== g ||
+      t[57] !== h ||
       t[58] !== n ||
       t[59] !== M ||
       t[60] !== j
         ? ((k =
             n === `hourly` && M
-              ? (0, Y.jsxs)(`label`, {
+              ? (0, J.jsxs)(`label`, {
                   className: `text-token-secondary flex items-center gap-2 px-[var(--padding-row-x)] text-sm`,
                   children: [
-                    (0, Y.jsx)(`span`, {
+                    (0, J.jsx)(`span`, {
                       className: `shrink-0`,
-                      children: (0, Y.jsx)(m, {
+                      children: (0, J.jsx)(g, {
                         id: `settings.automations.scheduleIntervalLabel`,
                         defaultMessage: `Every`,
                         description: `Label for the automation interval input`,
                       }),
                     }),
-                    (0, Y.jsx)(`input`, {
+                    (0, J.jsx)(`input`, {
                       "aria-label": L,
-                      className: f(ot, `w-20 text-sm`),
+                      className: p($, `w-20 text-sm`),
                       inputMode: `numeric`,
                       pattern: `[0-9]*`,
                       type: `text`,
@@ -2208,13 +2235,13 @@ function Rt(e) {
                         let t = e.currentTarget.value.replaceAll(/[^0-9]/g, ``);
                         if (((e.currentTarget.value = t), t.length === 0))
                           return;
-                        if (g) {
-                          let e = U(Number(t));
+                        if (h) {
+                          let e = ke(Number(t));
                           if (e == null) return;
                           j({ intervalMinutes: e });
                           return;
                         }
-                        let n = se(Number(t));
+                        let n = Oe(Number(t));
                         n != null && j({ intervalHours: n });
                       },
                       onBlur: (e) => {
@@ -2222,14 +2249,14 @@ function Rt(e) {
                           (e.currentTarget.value = String(N));
                       },
                     }),
-                    (0, Y.jsx)(`span`, { className: `shrink-0`, children: F }),
+                    (0, J.jsx)(`span`, { className: `shrink-0`, children: F }),
                   ],
                 })
               : null),
           (t[54] = L),
           (t[55] = F),
           (t[56] = N),
-          (t[57] = g),
+          (t[57] = h),
           (t[58] = n),
           (t[59] = M),
           (t[60] = j),
@@ -2237,8 +2264,8 @@ function Rt(e) {
         : (k = t[61]),
       (A =
         n === `weekly`
-          ? (0, Y.jsx)(Zt, {
-              ariaLabel: p.formatMessage({
+          ? (0, J.jsx)(Zt, {
+              ariaLabel: f.formatMessage({
                 id: `settings.automations.scheduleWeekday`,
                 defaultMessage: `Day`,
                 description: `Accessible label for the weekly automation day selector`,
@@ -2246,10 +2273,10 @@ function Rt(e) {
               className: `w-full`,
               options: wt.map((e) => ({
                 id: e.id,
-                label: p.formatMessage(e.longLabelMessage),
+                label: f.formatMessage(e.longLabelMessage),
               })),
               selectedId: e.id,
-              selectedLabel: p.formatMessage(e.longLabelMessage),
+              selectedLabel: f.formatMessage(e.longLabelMessage),
               onSelect: (e) => {
                 j({ weekdays: [e] });
               },
@@ -2258,7 +2285,7 @@ function Rt(e) {
       (t[3] = l),
       (t[4] = a),
       (t[5] = d),
-      (t[6] = p),
+      (t[6] = f),
       (t[7] = c),
       (t[8] = r),
       (t[9] = n),
@@ -2270,8 +2297,8 @@ function Rt(e) {
       (t[15] = x),
       (t[16] = S),
       (t[17] = C),
-      (t[18] = T),
-      (t[19] = E),
+      (t[18] = w),
+      (t[19] = T),
       (t[20] = D),
       (t[21] = O),
       (t[22] = k),
@@ -2283,8 +2310,8 @@ function Rt(e) {
       (x = t[15]),
       (S = t[16]),
       (C = t[17]),
-      (T = t[18]),
-      (E = t[19]),
+      (w = t[18]),
+      (T = t[19]),
       (D = t[20]),
       (O = t[21]),
       (k = t[22]),
@@ -2293,7 +2320,7 @@ function Rt(e) {
   let M;
   t[62] !== r.time || t[63] !== x || t[64] !== j
     ? ((M = x
-        ? (0, Y.jsx)(zt, {
+        ? (0, J.jsx)(zt, {
             value: r.time,
             onChange: (e) => {
               j({ time: e });
@@ -2306,17 +2333,17 @@ function Rt(e) {
       (t[65] = M))
     : (M = t[65]);
   let N;
-  t[66] !== p || t[67] !== r.customRrule || t[68] !== n || t[69] !== j
+  t[66] !== f || t[67] !== r.customRrule || t[68] !== n || t[69] !== j
     ? ((N =
         n === `custom`
-          ? (0, Y.jsx)(`input`, {
-              "aria-label": p.formatMessage({
+          ? (0, J.jsx)(`input`, {
+              "aria-label": f.formatMessage({
                 id: `settings.automations.scheduleCustomLabel`,
                 defaultMessage: `Custom RRULE`,
                 description: `Accessible label for the custom RRULE automation schedule editor`,
               }),
-              className: f(ot, `w-full text-sm font-mono`),
-              placeholder: p.formatMessage({
+              className: p($, `w-full text-sm font-mono`),
+              placeholder: f.formatMessage({
                 id: `settings.automations.scheduleCustomPlaceholder`,
                 defaultMessage: `RRULE:FREQ=MONTHLY;BYMONTHDAY=1;BYHOUR=9;BYMINUTE=0`,
                 description: `Placeholder text for the custom automation RRULE editor`,
@@ -2328,7 +2355,7 @@ function Rt(e) {
               },
             })
           : null),
-      (t[66] = p),
+      (t[66] = f),
       (t[67] = r.customRrule),
       (t[68] = n),
       (t[69] = j),
@@ -2337,15 +2364,15 @@ function Rt(e) {
   let P;
   t[71] !== M ||
   t[72] !== N ||
-  t[73] !== E ||
+  t[73] !== T ||
   t[74] !== D ||
   t[75] !== O ||
   t[76] !== k ||
   t[77] !== A
-    ? ((P = (0, Y.jsxs)(`div`, { className: E, children: [D, O, k, A, M, N] })),
+    ? ((P = (0, J.jsxs)(`div`, { className: T, children: [D, O, k, A, M, N] })),
       (t[71] = M),
       (t[72] = N),
-      (t[73] = E),
+      (t[73] = T),
       (t[74] = D),
       (t[75] = O),
       (t[76] = k),
@@ -2354,7 +2381,7 @@ function Rt(e) {
     : (P = t[78]);
   let F;
   t[79] !== y || t[80] !== S || t[81] !== C || t[82] !== P
-    ? ((F = (0, Y.jsx)(y, { align: S, className: C, children: P })),
+    ? ((F = (0, J.jsx)(y, { align: S, className: C, children: P })),
       (t[79] = y),
       (t[80] = S),
       (t[81] = C),
@@ -2363,10 +2390,10 @@ function Rt(e) {
     : (F = t[83]);
   let I;
   return (
-    t[84] !== b || t[85] !== T || t[86] !== F
-      ? ((I = (0, Y.jsxs)(b, { children: [T, F] })),
+    t[84] !== b || t[85] !== w || t[86] !== F
+      ? ((I = (0, J.jsxs)(b, { children: [w, F] })),
         (t[84] = b),
-        (t[85] = T),
+        (t[85] = w),
         (t[86] = F),
         (t[87] = I))
       : (I = t[87]),
@@ -2374,10 +2401,10 @@ function Rt(e) {
   );
 }
 function zt(e) {
-  let t = (0, J.c)(32),
+  let t = (0, q.c)(32),
     { value: n, onChange: r } = e,
-    i = g(),
-    [a, o] = (0, $.useState)(!1),
+    i = h(),
+    [a, o] = (0, Q.useState)(!1),
     s;
   t[0] === n ? (s = t[1]) : ((s = Wt(n)), (t[0] = n), (t[1] = s));
   let c = s,
@@ -2409,34 +2436,34 @@ function zt(e) {
       (t[5] = a),
       (t[6] = d))
     : (d = t[6]);
-  let p = d,
+  let f = d,
     m;
   t[7] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((m = f(
-        ot,
+    ? ((m = p(
+        $,
         `w-full !pr-8 text-sm [&::-webkit-calendar-picker-indicator]:hidden`,
       )),
       (t[7] = m))
     : (m = t[7]);
-  let h;
+  let g;
   t[8] === r
-    ? (h = t[9])
-    : ((h = (e) => {
+    ? (g = t[9])
+    : ((g = (e) => {
         r(e.target.value);
       }),
       (t[8] = r),
-      (t[9] = h));
+      (t[9] = g));
   let _;
-  t[10] !== u || t[11] !== h || t[12] !== n
-    ? ((_ = (0, Y.jsx)(`input`, {
+  t[10] !== u || t[11] !== g || t[12] !== n
+    ? ((_ = (0, J.jsx)(`input`, {
         "aria-label": u,
         className: m,
         type: `time`,
         value: n,
-        onChange: h,
+        onChange: g,
       })),
       (t[10] = u),
-      (t[11] = h),
+      (t[11] = g),
       (t[12] = n),
       (t[13] = _))
     : (_ = t[13]);
@@ -2447,14 +2474,14 @@ function zt(e) {
     ? ((y = () => {
         o(Ut);
       }),
-      (b = (0, Y.jsx)(ue, { className: `icon-2xs` })),
+      (b = (0, J.jsx)(H, { className: `icon-2xs` })),
       (t[14] = y),
       (t[15] = b))
     : ((y = t[14]), (b = t[15]));
   let x;
-  t[16] !== a || t[17] !== v || t[18] !== p
-    ? ((x = (0, Y.jsx)(w, {
-        "aria-label": p,
+  t[16] !== a || t[17] !== v || t[18] !== f
+    ? ((x = (0, J.jsx)(E, {
+        "aria-label": f,
         "aria-expanded": a,
         color: v,
         className: `absolute top-1/2 right-[5px] -translate-y-1/2`,
@@ -2464,12 +2491,12 @@ function zt(e) {
       })),
       (t[16] = a),
       (t[17] = v),
-      (t[18] = p),
+      (t[18] = f),
       (t[19] = x))
     : (x = t[19]);
   let S;
   t[20] !== x || t[21] !== _
-    ? ((S = (0, Y.jsxs)(`div`, {
+    ? ((S = (0, J.jsxs)(`div`, {
         className: `relative w-full`,
         children: [_, x],
       })),
@@ -2480,7 +2507,7 @@ function zt(e) {
   let C;
   t[23] !== i || t[24] !== a || t[25] !== r || t[26] !== c || t[27] !== n
     ? ((C = a
-        ? (0, Y.jsx)(`div`, {
+        ? (0, J.jsx)(`div`, {
             className: `overflow-y-scroll overscroll-contain rounded-lg border border-token-border bg-token-input-background/70 p-1`,
             style: {
               maxHeight: `min(14rem, max(3.5rem, calc(var(--radix-popover-content-available-height) - 9rem)))`,
@@ -2488,7 +2515,7 @@ function zt(e) {
             onWheel: Ht,
             children: St.map((e) => {
               let t = Gt(e, i);
-              return (0, Y.jsx)(
+              return (0, J.jsx)(
                 `button`,
                 {
                   ref: e === c ? Vt : void 0,
@@ -2502,7 +2529,7 @@ function zt(e) {
                     { time: t },
                   ),
                   "aria-pressed": e === n,
-                  className: f(
+                  className: p(
                     `cursor-interaction flex h-7 w-full items-center rounded-md px-2 text-left text-sm tabular-nums outline-none focus:bg-token-list-hover-background`,
                     e === n
                       ? `bg-token-list-hover-background text-token-foreground`
@@ -2526,18 +2553,18 @@ function zt(e) {
       (t[27] = n),
       (t[28] = C))
     : (C = t[28]);
-  let T;
+  let w;
   return (
     t[29] !== S || t[30] !== C
-      ? ((T = (0, Y.jsxs)(`div`, {
+      ? ((w = (0, J.jsxs)(`div`, {
           className: `flex w-full flex-col gap-1`,
           children: [S, C],
         })),
         (t[29] = S),
         (t[30] = C),
-        (t[31] = T))
-      : (T = t[31]),
-    T
+        (t[31] = w))
+      : (w = t[31]),
+    w
   );
 }
 function Bt(e) {
@@ -2553,14 +2580,14 @@ function Ut(e) {
   return !e;
 }
 function Wt(e) {
-  let t = le(e);
+  let t = Ae(e);
   if (!t) return null;
   let n = t.hour * 60 + t.minute,
     r = (Math.floor(n / xt) * xt) % bt;
-  return G(Math.floor(r / 60), r % 60);
+  return Me(Math.floor(r / 60), r % 60);
 }
 function Gt(e, t) {
-  let n = le(e);
+  let n = Ae(e);
   return n
     ? t.formatTime(new Date(2024, 0, 1, n.hour, n.minute), {
         hour: `numeric`,
@@ -2580,10 +2607,10 @@ function Kt({ scheduleConfig: e, intl: t }) {
     defaultMessage: `Custom schedule`,
     description: `Fallback label when RRULE summary cannot be generated`,
   });
-  return oe(e, t) ?? n;
+  return De(e, t) ?? n;
 }
 function qt(e) {
-  let t = (0, J.c)(34),
+  let t = (0, q.c)(34),
     {
       selectedModel: n,
       align: r,
@@ -2596,75 +2623,75 @@ function qt(e) {
     l = r === void 0 ? `start` : r,
     u = a === void 0 ? !0 : a,
     d = o === void 0 ? !0 : o,
-    p = s === void 0 ? !0 : s,
-    h = g(),
-    { data: _ } = T(),
+    f = s === void 0 ? !0 : s,
+    m = h(),
+    { data: _ } = D(),
     v;
-  t[0] === h.locale
+  t[0] === m.locale
     ? (v = t[1])
-    : ((v = Ie(h.locale)), (t[0] = h.locale), (t[1] = v));
+    : ((v = A(m.locale)), (t[0] = m.locale), (t[1] = v));
   let y = v,
     b = _?.models == null,
     x;
-  t[2] === h
+  t[2] === m
     ? (x = t[3])
-    : ((x = h.formatMessage({
+    : ((x = m.formatMessage({
         id: `settings.automations.model.ariaLabel`,
         defaultMessage: `Model`,
         description: `Aria label for automation model dropdown`,
       })),
-      (t[2] = h),
+      (t[2] = m),
       (t[3] = x));
   let S;
-  t[4] === i ? (S = t[5]) : ((S = f(`min-w-0`, i)), (t[4] = i), (t[5] = S));
+  t[4] === i ? (S = t[5]) : ((S = p(`min-w-0`, i)), (t[4] = i), (t[5] = S));
   let C;
   t[6] === d
     ? (C = t[7])
-    : ((C = d ? (0, Y.jsx)(z, { className: `icon-xs shrink-0` }) : null),
+    : ((C = d ? (0, J.jsx)(B, { className: `icon-xs shrink-0` }) : null),
       (t[6] = d),
       (t[7] = C));
-  let E;
-  t[8] !== h || t[9] !== _?.models || t[10] !== n || t[11] !== u
-    ? ((E = u
-        ? (0, Y.jsx)(`span`, {
+  let w;
+  t[8] !== m || t[9] !== _?.models || t[10] !== n || t[11] !== u
+    ? ((w = u
+        ? (0, J.jsx)(`span`, {
             className: `truncate text-left text-token-foreground`,
             children:
               n != null && n.trim().length > 0
-                ? He({ model: n, models: _?.models })
-                : h.formatMessage({
+                ? Ue({ model: n, models: _?.models })
+                : m.formatMessage({
                     id: `settings.automations.model.loading`,
                     defaultMessage: `Loading model`,
                     description: `Fallback label while automation model options are loading`,
                   }),
           })
         : null),
-      (t[8] = h),
+      (t[8] = m),
       (t[9] = _?.models),
       (t[10] = n),
       (t[11] = u),
-      (t[12] = E))
-    : (E = t[12]);
-  let D;
-  t[13] === p
-    ? (D = t[14])
-    : ((D = p
-        ? (0, Y.jsx)(q, {
+      (t[12] = w))
+    : (w = t[12]);
+  let T;
+  t[13] === f
+    ? (T = t[14])
+    : ((T = f
+        ? (0, J.jsx)(G, {
             className: `icon-2xs shrink-0 text-token-input-placeholder-foreground`,
           })
         : null),
-      (t[13] = p),
-      (t[14] = D));
+      (t[13] = f),
+      (t[14] = T));
   let O;
-  t[15] !== E || t[16] !== D || t[17] !== x || t[18] !== S || t[19] !== C
-    ? ((O = (0, Y.jsxs)(w, {
+  t[15] !== w || t[16] !== T || t[17] !== x || t[18] !== S || t[19] !== C
+    ? ((O = (0, J.jsxs)(E, {
         "aria-label": x,
         size: `composerSm`,
         color: `ghost`,
         className: S,
-        children: [C, E, D],
+        children: [C, w, T],
       })),
-      (t[15] = E),
-      (t[16] = D),
+      (t[15] = w),
+      (t[16] = T),
       (t[17] = x),
       (t[18] = S),
       (t[19] = C),
@@ -2672,8 +2699,8 @@ function qt(e) {
     : (O = t[20]);
   let k;
   t[21] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((k = (0, Y.jsx)(K.Title, {
-        children: (0, Y.jsx)(m, {
+    ? ((k = (0, J.jsx)(U.Title, {
+        children: (0, J.jsx)(g, {
           id: `settings.automations.model.title`,
           defaultMessage: `Model`,
           description: `Header label above automation model options`,
@@ -2681,21 +2708,21 @@ function qt(e) {
       })),
       (t[21] = k))
     : (k = t[21]);
-  let A;
+  let j;
   t[22] !== _?.models || t[23] !== c || t[24] !== n || t[25] !== y
-    ? ((A = _?.models.map((e) =>
-        (0, Y.jsx)(
-          K.Item,
+    ? ((j = _?.models.map((e) =>
+        (0, J.jsx)(
+          U.Item,
           {
-            LeftIcon: z,
-            RightIcon: e.model === n ? ne : void 0,
+            LeftIcon: B,
+            RightIcon: e.model === n ? ie : void 0,
             tooltipText: y ? (e.description ?? void 0) : void 0,
             onSelect: () => {
               c(e.model);
             },
-            children: (0, Y.jsx)(`span`, {
+            children: (0, J.jsx)(`span`, {
               className: `truncate`,
-              children: V(e.displayName || e.model),
+              children: re(e.displayName || e.model),
             }),
           },
           e.model,
@@ -2705,65 +2732,65 @@ function qt(e) {
       (t[23] = c),
       (t[24] = n),
       (t[25] = y),
-      (t[26] = A))
-    : (A = t[26]);
-  let j;
-  t[27] === A
-    ? (j = t[28])
-    : ((j = (0, Y.jsx)(K.Section, {
-        className: `flex flex-col [--edge-fade-distance:1.5rem]`,
-        children: A,
-      })),
-      (t[27] = A),
-      (t[28] = j));
+      (t[26] = j))
+    : (j = t[26]);
   let M;
+  t[27] === j
+    ? (M = t[28])
+    : ((M = (0, J.jsx)(U.Section, {
+        className: `flex flex-col [--edge-fade-distance:1.5rem]`,
+        children: j,
+      })),
+      (t[27] = j),
+      (t[28] = M));
+  let N;
   return (
-    t[29] !== l || t[30] !== O || t[31] !== j || t[32] !== b
-      ? ((M = (0, Y.jsxs)(de, {
+    t[29] !== l || t[30] !== O || t[31] !== M || t[32] !== b
+      ? ((N = (0, J.jsxs)(ce, {
           align: l,
           contentWidth: `workspace`,
           contentMaxHeight: `tall`,
           disabled: b,
           triggerButton: O,
-          children: [k, j],
+          children: [k, M],
         })),
         (t[29] = l),
         (t[30] = O),
-        (t[31] = j),
+        (t[31] = M),
         (t[32] = b),
-        (t[33] = M))
-      : (M = t[33]),
-    M
+        (t[33] = N))
+      : (N = t[33]),
+    N
   );
 }
 function Jt(e) {
-  let t = (0, J.c)(65),
+  let t = (0, q.c)(65),
     {
       model: n,
-      reasoningEffort: r,
+      reasoningEffort: i,
       align: s,
       className: c,
       showLabel: l,
       showIcon: u,
       showChevron: d,
-      onSelect: p,
+      onSelect: f,
     } = e,
-    h = s === void 0 ? `start` : s,
+    m = s === void 0 ? `start` : s,
     _ = l === void 0 ? !0 : l,
     v = u === void 0 ? !0 : u,
     y = d === void 0 ? !0 : d,
-    b = g(),
-    { data: x } = T(),
+    b = h(),
+    { data: x } = D(),
     S;
-  t[0] !== x?.models || t[1] !== n || t[2] !== r
-    ? ((S = i({ model: a(x?.models ?? [], n), reasoningEffort: r })),
+  t[0] !== x?.models || t[1] !== n || t[2] !== i
+    ? ((S = a({ model: r(x?.models ?? [], n), reasoningEffort: i })),
       (t[0] = x?.models),
       (t[1] = n),
-      (t[2] = r),
+      (t[2] = i),
       (t[3] = S))
     : (S = t[3]);
-  let E = S,
-    D = E == null ? L : _t[E],
+  let C = S,
+    w = C == null ? R : _t[C],
     O,
     k,
     A,
@@ -2774,36 +2801,36 @@ function Jt(e) {
     F,
     I;
   if (
-    t[4] !== D ||
-    t[5] !== h ||
+    t[4] !== w ||
+    t[5] !== m ||
     t[6] !== c ||
     t[7] !== b ||
     t[8] !== x?.models ||
     t[9] !== n ||
-    t[10] !== p ||
-    t[11] !== E ||
+    t[10] !== f ||
+    t[11] !== C ||
     t[12] !== y ||
     t[13] !== v ||
     t[14] !== _
   ) {
     let e = o(x?.models ?? [], n),
       r;
-    t[24] === E
+    t[24] === C
       ? (r = t[25])
       : ((r =
-          E == null
-            ? (0, Y.jsx)(m, {
+          C == null
+            ? (0, J.jsx)(g, {
                 id: `settings.automations.reasoning.loading`,
                 defaultMessage: `Loading reasoning`,
                 description: `Fallback label while automation reasoning options are loading`,
               })
-            : (0, Y.jsx)(m, {
+            : (0, J.jsx)(g, {
                 id: `settings.automations.reasoning.compactTooltip`,
                 defaultMessage: `{reasoning} reasoning`,
                 description: `Tooltip shown for the compact automation reasoning trigger`,
-                values: { reasoning: (0, Y.jsx)(ee, { effort: E }) },
+                values: { reasoning: (0, J.jsx)(z, { effort: C }) },
               })),
-        (t[24] = E),
+        (t[24] = C),
         (t[25] = r));
     let i = r,
       a;
@@ -2819,31 +2846,31 @@ function Jt(e) {
     let s;
     t[28] === c
       ? (s = t[29])
-      : ((s = f(`min-w-0`, c)), (t[28] = c), (t[29] = s));
+      : ((s = p(`min-w-0`, c)), (t[28] = c), (t[29] = s));
     let l;
-    t[30] !== D || t[31] !== v
-      ? ((l = v ? (0, Y.jsx)(D, { className: `icon-xs shrink-0` }) : null),
-        (t[30] = D),
+    t[30] !== w || t[31] !== v
+      ? ((l = v ? (0, J.jsx)(w, { className: `icon-xs shrink-0` }) : null),
+        (t[30] = w),
         (t[31] = v),
         (t[32] = l))
       : (l = t[32]);
     let u;
-    t[33] !== b || t[34] !== E || t[35] !== _
+    t[33] !== b || t[34] !== C || t[35] !== _
       ? ((u = _
-          ? (0, Y.jsx)(`span`, {
+          ? (0, J.jsx)(`span`, {
               className: `truncate text-left text-token-foreground`,
               children:
-                E == null
+                C == null
                   ? b.formatMessage({
                       id: `settings.automations.reasoning.loading`,
                       defaultMessage: `Loading reasoning`,
                       description: `Fallback label while automation reasoning options are loading`,
                     })
-                  : (0, Y.jsx)(ee, { effort: E }),
+                  : (0, J.jsx)(z, { effort: C }),
             })
           : null),
         (t[33] = b),
-        (t[34] = E),
+        (t[34] = C),
         (t[35] = _),
         (t[36] = u))
       : (u = t[36]);
@@ -2851,15 +2878,15 @@ function Jt(e) {
     t[37] === y
       ? (d = t[38])
       : ((d = y
-          ? (0, Y.jsx)(q, {
+          ? (0, J.jsx)(G, {
               className: `icon-2xs shrink-0 text-token-input-placeholder-foreground`,
             })
           : null),
         (t[37] = y),
         (t[38] = d));
-    let g;
+    let h;
     t[39] !== a || t[40] !== s || t[41] !== l || t[42] !== u || t[43] !== d
-      ? ((g = (0, Y.jsxs)(w, {
+      ? ((h = (0, J.jsxs)(E, {
           "aria-label": a,
           size: `composerSm`,
           color: `ghost`,
@@ -2871,23 +2898,23 @@ function Jt(e) {
         (t[41] = l),
         (t[42] = u),
         (t[43] = d),
-        (t[44] = g))
-      : (g = t[44]);
-    let S = g;
-    ((k = de),
-      (F = h),
+        (t[44] = h))
+      : (h = t[44]);
+    let S = h;
+    ((k = ce),
+      (F = m),
       (I = `sm`),
       (A = n == null || e.length === 0),
       t[45] !== i || t[46] !== _ || t[47] !== S
-        ? ((j = _ ? S : (0, Y.jsx)(C, { tooltipContent: i, children: S })),
+        ? ((j = _ ? S : (0, J.jsx)(T, { tooltipContent: i, children: S })),
           (t[45] = i),
           (t[46] = _),
           (t[47] = S),
           (t[48] = j))
         : (j = t[48]),
       t[49] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((M = (0, Y.jsx)(K.Title, {
-            children: (0, Y.jsx)(m, {
+        ? ((M = (0, J.jsx)(U.Title, {
+            children: (0, J.jsx)(g, {
               id: `settings.automations.reasoning.title`,
               defaultMessage: `Reasoning`,
               description: `Header label above automation reasoning options`,
@@ -2895,38 +2922,38 @@ function Jt(e) {
           })),
           (t[49] = M))
         : (M = t[49]),
-      (O = K.Section),
+      (O = U.Section),
       (N = `flex flex-col [--edge-fade-distance:1.5rem]`));
-    let T;
-    (t[50] !== p || t[51] !== E
-      ? ((T = (e) => {
+    let D;
+    (t[50] !== f || t[51] !== C
+      ? ((D = (e) => {
           let t = _t[e.reasoningEffort];
-          return (0, Y.jsx)(
-            K.Item,
+          return (0, J.jsx)(
+            U.Item,
             {
               LeftIcon: t,
-              RightIcon: e.reasoningEffort === E ? ne : void 0,
+              RightIcon: e.reasoningEffort === C ? ie : void 0,
               onSelect: () => {
-                p(e.reasoningEffort);
+                f(e.reasoningEffort);
               },
-              children: (0, Y.jsx)(ee, { effort: e.reasoningEffort }),
+              children: (0, J.jsx)(z, { effort: e.reasoningEffort }),
             },
             e.reasoningEffort,
           );
         }),
-        (t[50] = p),
-        (t[51] = E),
-        (t[52] = T))
-      : (T = t[52]),
-      (P = e.map(T)),
-      (t[4] = D),
-      (t[5] = h),
+        (t[50] = f),
+        (t[51] = C),
+        (t[52] = D))
+      : (D = t[52]),
+      (P = e.map(D)),
+      (t[4] = w),
+      (t[5] = m),
       (t[6] = c),
       (t[7] = b),
       (t[8] = x?.models),
       (t[9] = n),
-      (t[10] = p),
-      (t[11] = E),
+      (t[10] = f),
+      (t[11] = C),
       (t[12] = y),
       (t[13] = v),
       (t[14] = _),
@@ -2949,44 +2976,44 @@ function Jt(e) {
       (P = t[21]),
       (F = t[22]),
       (I = t[23]));
-  let R;
+  let L;
   t[53] !== O || t[54] !== N || t[55] !== P
-    ? ((R = (0, Y.jsx)(O, { className: N, children: P })),
+    ? ((L = (0, J.jsx)(O, { className: N, children: P })),
       (t[53] = O),
       (t[54] = N),
       (t[55] = P),
-      (t[56] = R))
-    : (R = t[56]);
-  let z;
+      (t[56] = L))
+    : (L = t[56]);
+  let ee;
   return (
     t[57] !== k ||
     t[58] !== A ||
     t[59] !== j ||
     t[60] !== M ||
-    t[61] !== R ||
+    t[61] !== L ||
     t[62] !== F ||
     t[63] !== I
-      ? ((z = (0, Y.jsxs)(k, {
+      ? ((ee = (0, J.jsxs)(k, {
           align: F,
           contentWidth: I,
           disabled: A,
           triggerButton: j,
-          children: [M, R],
+          children: [M, L],
         })),
         (t[57] = k),
         (t[58] = A),
         (t[59] = j),
         (t[60] = M),
-        (t[61] = R),
+        (t[61] = L),
         (t[62] = F),
         (t[63] = I),
-        (t[64] = z))
-      : (z = t[64]),
-    z
+        (t[64] = ee))
+      : (ee = t[64]),
+    ee
   );
 }
 function Yt(e) {
-  let t = (0, J.c)(41),
+  let t = (0, q.c)(41),
     {
       selectedThreadId: n,
       options: r,
@@ -2999,9 +3026,9 @@ function Yt(e) {
     } = e,
     u = a === void 0 ? `start` : a,
     d = s === void 0 ? !0 : s,
-    p = c === void 0 ? !1 : c,
-    h = g(),
-    _ = p || r.length === 0,
+    f = c === void 0 ? !1 : c,
+    m = h(),
+    _ = f || r.length === 0,
     v;
   t[0] !== r || t[1] !== n
     ? ((v = r.find((e) => e.threadId === n) ?? null),
@@ -3011,74 +3038,74 @@ function Yt(e) {
     : (v = t[2]);
   let y = v,
     b;
-  t[3] !== h || t[4] !== y?.title
+  t[3] !== m || t[4] !== y?.title
     ? ((b =
         y?.title ??
-        h.formatMessage({
+        m.formatMessage({
           id: `settings.automations.heartbeatThread.placeholder`,
           defaultMessage: `Choose a pinned chat`,
           description: `Placeholder for heartbeat automation thread selector`,
         })),
-      (t[3] = h),
+      (t[3] = m),
       (t[4] = y?.title),
       (t[5] = b))
     : (b = t[5]);
   let x = b,
     S;
-  t[6] === h
+  t[6] === m
     ? (S = t[7])
-    : ((S = h.formatMessage({
+    : ((S = m.formatMessage({
         id: `settings.automations.heartbeatThread.ariaLabel`,
         defaultMessage: `Target chat`,
         description: `Aria label for heartbeat automation thread selector`,
       })),
-      (t[6] = h),
+      (t[6] = m),
       (t[7] = S));
   let C;
-  t[8] === o ? (C = t[9]) : ((C = f(`min-w-0`, o)), (t[8] = o), (t[9] = C));
-  let T;
+  t[8] === o ? (C = t[9]) : ((C = p(`min-w-0`, o)), (t[8] = o), (t[9] = C));
+  let w;
   t[10] === d
-    ? (T = t[11])
-    : ((T = d ? (0, Y.jsx)(ge, { className: `icon-xs shrink-0` }) : null),
+    ? (w = t[11])
+    : ((w = d ? (0, J.jsx)(K, { className: `icon-xs shrink-0` }) : null),
       (t[10] = d),
-      (t[11] = T));
-  let E;
+      (t[11] = w));
+  let T;
   t[12] === x
-    ? (E = t[13])
-    : ((E = (0, Y.jsx)(`span`, {
+    ? (T = t[13])
+    : ((T = (0, J.jsx)(`span`, {
         className: `truncate text-left text-token-foreground`,
         children: x,
       })),
       (t[12] = x),
-      (t[13] = E));
+      (t[13] = T));
   let D;
   t[14] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((D = (0, Y.jsx)(q, {
+    ? ((D = (0, J.jsx)(G, {
         className: `icon-2xs shrink-0 text-token-input-placeholder-foreground`,
       })),
       (t[14] = D))
     : (D = t[14]);
   let O;
-  t[15] !== _ || t[16] !== S || t[17] !== C || t[18] !== T || t[19] !== E
-    ? ((O = (0, Y.jsxs)(w, {
+  t[15] !== _ || t[16] !== S || t[17] !== C || t[18] !== w || t[19] !== T
+    ? ((O = (0, J.jsxs)(E, {
         "aria-label": S,
         size: `composerSm`,
         color: `ghost`,
         className: C,
         disabled: _,
-        children: [T, E, D],
+        children: [w, T, D],
       })),
       (t[15] = _),
       (t[16] = S),
       (t[17] = C),
-      (t[18] = T),
-      (t[19] = E),
+      (t[18] = w),
+      (t[19] = T),
       (t[20] = O))
     : (O = t[20]);
   let k;
   t[21] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((k = (0, Y.jsx)(K.Title, {
-        children: (0, Y.jsx)(m, {
+    ? ((k = (0, J.jsx)(U.Title, {
+        children: (0, J.jsx)(g, {
           id: `settings.automations.heartbeatThread.title`,
           defaultMessage: `Target chat`,
           description: `Header label above heartbeat automation thread options`,
@@ -3087,31 +3114,31 @@ function Yt(e) {
       (t[21] = k))
     : (k = t[21]);
   let A;
-  if (t[22] !== h || t[23] !== l || t[24] !== r || t[25] !== n) {
+  if (t[22] !== m || t[23] !== l || t[24] !== r || t[25] !== n) {
     let e;
-    (t[27] !== h || t[28] !== l || t[29] !== n
+    (t[27] !== m || t[28] !== l || t[29] !== n
       ? ((e = (e) =>
-          (0, Y.jsx)(
-            K.Item,
+          (0, J.jsx)(
+            U.Item,
             {
-              LeftIcon: ge,
-              RightIcon: e.threadId === n ? ne : void 0,
+              LeftIcon: K,
+              RightIcon: e.threadId === n ? ie : void 0,
               disabled: e.isUnavailable,
               onSelect: () => {
                 l(e);
               },
-              children: (0, Y.jsxs)(`div`, {
+              children: (0, J.jsxs)(`div`, {
                 className: `flex min-w-0 items-center gap-1`,
                 children: [
-                  (0, Y.jsx)(`span`, {
+                  (0, J.jsx)(`span`, {
                     className: `truncate`,
                     children: e.title,
                   }),
                   e.isPinned
                     ? null
-                    : (0, Y.jsx)(`span`, {
+                    : (0, J.jsx)(`span`, {
                         className: `truncate text-sm text-token-description-foreground`,
-                        children: (0, Y.jsx)(m, {
+                        children: (0, J.jsx)(g, {
                           id: `settings.automations.heartbeatThread.unpinned`,
                           defaultMessage: `unpinned`,
                           description: `Label for a selected heartbeat thread that is no longer pinned`,
@@ -3119,9 +3146,9 @@ function Yt(e) {
                       }),
                   e.createdAt == null
                     ? null
-                    : (0, Y.jsx)(`span`, {
+                    : (0, J.jsx)(`span`, {
                         className: `truncate text-sm text-token-description-foreground`,
-                        children: h.formatDate(new Date(e.createdAt), {
+                        children: m.formatDate(new Date(e.createdAt), {
                           dateStyle: `medium`,
                         }),
                       }),
@@ -3130,13 +3157,13 @@ function Yt(e) {
             },
             e.threadId,
           )),
-        (t[27] = h),
+        (t[27] = m),
         (t[28] = l),
         (t[29] = n),
         (t[30] = e))
       : (e = t[30]),
       (A = r.map(e)),
-      (t[22] = h),
+      (t[22] = m),
       (t[23] = l),
       (t[24] = r),
       (t[25] = n),
@@ -3147,9 +3174,9 @@ function Yt(e) {
     ? (j = t[32])
     : ((j = i
         ? null
-        : (0, Y.jsx)(`div`, {
+        : (0, J.jsx)(`div`, {
             className: `text-token-muted-foreground px-3 py-2 text-sm`,
-            children: (0, Y.jsx)(m, {
+            children: (0, J.jsx)(g, {
               id: `settings.automations.heartbeatThread.empty`,
               defaultMessage: `Pin a local chat first to use heartbeat automations`,
               description: `Empty-state label when no pinned local threads are available for heartbeat automations`,
@@ -3159,7 +3186,7 @@ function Yt(e) {
       (t[32] = j));
   let M;
   t[33] !== A || t[34] !== j
-    ? ((M = (0, Y.jsxs)(K.Section, {
+    ? ((M = (0, J.jsxs)(U.Section, {
         className: `flex flex-col [--edge-fade-distance:1.5rem]`,
         children: [A, j],
       })),
@@ -3170,7 +3197,7 @@ function Yt(e) {
   let N;
   return (
     t[36] !== u || t[37] !== _ || t[38] !== O || t[39] !== M
-      ? ((N = (0, Y.jsxs)(de, {
+      ? ((N = (0, J.jsxs)(ce, {
           align: u,
           contentWidth: `workspace`,
           contentMaxHeight: `tall`,
@@ -3188,7 +3215,7 @@ function Yt(e) {
   );
 }
 function Xt(e) {
-  let t = (0, J.c)(41),
+  let t = (0, q.c)(41),
     {
       selectedId: n,
       optionIds: r,
@@ -3201,24 +3228,24 @@ function Xt(e) {
     } = e,
     u = i === void 0 ? `start` : i,
     d = o === void 0 ? !0 : o,
-    p = s === void 0 ? !0 : s,
-    h = g(),
+    f = s === void 0 ? !0 : s,
+    m = h(),
     _,
     v,
     y,
     b,
     x,
     S,
-    T;
+    C;
   if (
     t[0] !== u ||
     t[1] !== c ||
     t[2] !== a ||
-    t[3] !== h ||
+    t[3] !== m ||
     t[4] !== l ||
     t[5] !== r ||
     t[6] !== n ||
-    t[7] !== p ||
+    t[7] !== f ||
     t[8] !== d
   ) {
     let e;
@@ -3228,56 +3255,56 @@ function Xt(e) {
     let i = Ct.filter(e),
       o = i.find((e) => e.id === n) ?? Ct.find((e) => e.id === n) ?? i[0],
       s = o.icon,
-      g = h.formatMessage(
+      h = m.formatMessage(
         {
           id: `settings.automations.executionEnvironment.compactTooltip`,
           defaultMessage: `Run in {environment}`,
           description: `Tooltip shown for the compact automation execution environment trigger`,
         },
-        { environment: h.formatMessage(o.labelMessage) },
+        { environment: m.formatMessage(o.labelMessage) },
       ),
-      E;
+      w;
     t[18] === a
-      ? (E = t[19])
-      : ((E = f(`min-w-0`, a)), (t[18] = a), (t[19] = E));
-    let D = p ? (0, Y.jsx)(s, { className: `icon-xs shrink-0` }) : null,
+      ? (w = t[19])
+      : ((w = p(`min-w-0`, a)), (t[18] = a), (t[19] = w));
+    let D = f ? (0, J.jsx)(s, { className: `icon-xs shrink-0` }) : null,
       O = d
-        ? (0, Y.jsx)(`span`, {
+        ? (0, J.jsx)(`span`, {
             className: `truncate text-left text-token-foreground`,
-            children: h.formatMessage(o.labelMessage),
+            children: m.formatMessage(o.labelMessage),
           })
         : null,
       k;
     t[20] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((k = (0, Y.jsx)(q, {
+      ? ((k = (0, J.jsx)(G, {
           className: `icon-2xs shrink-0 text-token-input-placeholder-foreground`,
         })),
         (t[20] = k))
       : (k = t[20]);
     let A;
-    t[21] !== c || t[22] !== E || t[23] !== D || t[24] !== O
-      ? ((A = (0, Y.jsxs)(w, {
+    t[21] !== c || t[22] !== w || t[23] !== D || t[24] !== O
+      ? ((A = (0, J.jsxs)(E, {
           "aria-label": c,
           size: `composerSm`,
           color: `ghost`,
-          className: E,
+          className: w,
           children: [D, O, k],
         })),
         (t[21] = c),
-        (t[22] = E),
+        (t[22] = w),
         (t[23] = D),
         (t[24] = O),
         (t[25] = A))
       : (A = t[25]);
     let j = A;
-    ((_ = de),
+    ((_ = ce),
       (x = u),
       (S = `sm`),
-      (T = d ? j : (0, Y.jsx)(C, { tooltipContent: g, children: j })),
+      (C = d ? j : (0, J.jsx)(T, { tooltipContent: h, children: j })),
       (v = `flex flex-col`),
       t[26] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((y = (0, Y.jsx)(K.Title, {
-            children: (0, Y.jsx)(m, {
+        ? ((y = (0, J.jsx)(U.Title, {
+            children: (0, J.jsx)(g, {
               id: `settings.automations.executionEnvironment.menuTitle`,
               defaultMessage: `Run in`,
               description: `Header label above automation execution environment options`,
@@ -3286,24 +3313,24 @@ function Xt(e) {
           (t[26] = y))
         : (y = t[26]));
     let M;
-    (t[27] !== h || t[28] !== l || t[29] !== n
+    (t[27] !== m || t[28] !== l || t[29] !== n
       ? ((M = (e) => {
           let t = e.icon;
-          return (0, Y.jsx)(
-            K.Item,
+          return (0, J.jsx)(
+            U.Item,
             {
               onSelect: () => {
                 l(e.id);
               },
               LeftIcon: t,
-              RightIcon: e.id === n ? ne : void 0,
-              tooltipText: h.formatMessage(e.tooltipMessage),
-              children: h.formatMessage(e.labelMessage),
+              RightIcon: e.id === n ? ie : void 0,
+              tooltipText: m.formatMessage(e.tooltipMessage),
+              children: m.formatMessage(e.labelMessage),
             },
             e.id,
           );
         }),
-        (t[27] = h),
+        (t[27] = m),
         (t[28] = l),
         (t[29] = n),
         (t[30] = M))
@@ -3312,11 +3339,11 @@ function Xt(e) {
       (t[0] = u),
       (t[1] = c),
       (t[2] = a),
-      (t[3] = h),
+      (t[3] = m),
       (t[4] = l),
       (t[5] = r),
       (t[6] = n),
-      (t[7] = p),
+      (t[7] = f),
       (t[8] = d),
       (t[9] = _),
       (t[10] = v),
@@ -3324,7 +3351,7 @@ function Xt(e) {
       (t[12] = b),
       (t[13] = x),
       (t[14] = S),
-      (t[15] = T));
+      (t[15] = C));
   } else
     ((_ = t[9]),
       (v = t[10]),
@@ -3332,36 +3359,36 @@ function Xt(e) {
       (b = t[12]),
       (x = t[13]),
       (S = t[14]),
-      (T = t[15]));
-  let E;
+      (C = t[15]));
+  let w;
   t[31] !== v || t[32] !== y || t[33] !== b
-    ? ((E = (0, Y.jsxs)(`div`, { className: v, children: [y, b] })),
+    ? ((w = (0, J.jsxs)(`div`, { className: v, children: [y, b] })),
       (t[31] = v),
       (t[32] = y),
       (t[33] = b),
-      (t[34] = E))
-    : (E = t[34]);
+      (t[34] = w))
+    : (w = t[34]);
   let D;
   return (
-    t[35] !== _ || t[36] !== E || t[37] !== x || t[38] !== S || t[39] !== T
-      ? ((D = (0, Y.jsx)(_, {
+    t[35] !== _ || t[36] !== w || t[37] !== x || t[38] !== S || t[39] !== C
+      ? ((D = (0, J.jsx)(_, {
           align: x,
           contentWidth: S,
-          triggerButton: T,
-          children: E,
+          triggerButton: C,
+          children: w,
         })),
         (t[35] = _),
-        (t[36] = E),
+        (t[36] = w),
         (t[37] = x),
         (t[38] = S),
-        (t[39] = T),
+        (t[39] = C),
         (t[40] = D))
       : (D = t[40]),
     D
   );
 }
 function Zt(e) {
-  let t = (0, J.c)(19),
+  let t = (0, q.c)(19),
     {
       ariaLabel: n,
       className: r,
@@ -3373,8 +3400,8 @@ function Zt(e) {
     c;
   t[0] === r
     ? (c = t[1])
-    : ((c = f(
-        ot,
+    : ((c = p(
+        $,
         `flex items-center justify-between gap-2 text-left text-sm`,
         r,
       )),
@@ -3383,19 +3410,19 @@ function Zt(e) {
   let l;
   t[2] === o
     ? (l = t[3])
-    : ((l = (0, Y.jsx)(`span`, { className: `truncate`, children: o })),
+    : ((l = (0, J.jsx)(`span`, { className: `truncate`, children: o })),
       (t[2] = o),
       (t[3] = l));
   let u;
   t[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((u = (0, Y.jsx)(q, {
+    ? ((u = (0, J.jsx)(G, {
         className: `icon-xxs shrink-0 text-token-description-foreground`,
       })),
       (t[4] = u))
     : (u = t[4]);
   let d;
   t[5] !== n || t[6] !== c || t[7] !== l
-    ? ((d = (0, Y.jsxs)(`button`, {
+    ? ((d = (0, J.jsxs)(`button`, {
         "aria-label": n,
         className: c,
         type: `button`,
@@ -3406,18 +3433,18 @@ function Zt(e) {
       (t[7] = l),
       (t[8] = d))
     : (d = t[8]);
-  let p;
+  let f;
   if (t[9] !== s || t[10] !== i || t[11] !== a) {
     let e;
     (t[13] !== s || t[14] !== a
       ? ((e = (e) =>
-          (0, Y.jsx)(
-            K.Item,
+          (0, J.jsx)(
+            U.Item,
             {
               onSelect: () => {
                 s(e.id);
               },
-              RightIcon: e.id === a ? ne : void 0,
+              RightIcon: e.id === a ? ie : void 0,
               children: e.label,
             },
             e.id,
@@ -3426,23 +3453,23 @@ function Zt(e) {
         (t[14] = a),
         (t[15] = e))
       : (e = t[15]),
-      (p = i.map(e)),
+      (f = i.map(e)),
       (t[9] = s),
       (t[10] = i),
       (t[11] = a),
-      (t[12] = p));
-  } else p = t[12];
+      (t[12] = f));
+  } else f = t[12];
   let m;
   return (
-    t[16] !== d || t[17] !== p
-      ? ((m = (0, Y.jsx)(de, {
+    t[16] !== d || t[17] !== f
+      ? ((m = (0, J.jsx)(ce, {
           contentWidth: `sm`,
           contentClassName: `w-[var(--radix-dropdown-menu-trigger-width)] min-w-[var(--radix-dropdown-menu-trigger-width)]`,
           triggerButton: d,
-          children: p,
+          children: f,
         })),
         (t[16] = d),
-        (t[17] = p),
+        (t[17] = f),
         (t[18] = m))
       : (m = t[18]),
     m
@@ -3451,13 +3478,13 @@ function Zt(e) {
 export {
   Jt as a,
   Xt as c,
-  Qe as d,
-  Ue as f,
+  $e as d,
+  We as f,
   qt as i,
   Yt as l,
   Dt as n,
   Et as o,
-  Ve as p,
+  He as p,
   At as r,
   Tt as s,
   kt as t,

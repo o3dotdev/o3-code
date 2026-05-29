@@ -1,8 +1,11 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { t } from "./preload-helper.js";
 import { n } from "./jsx-runtime.js";
-var r = e(n(), 1);
-function i(e) {
+var r = e(n(), 1),
+  i = ((e) => ((e.Pop = `POP`), (e.Push = `PUSH`), (e.Replace = `REPLACE`), e))(
+    i || {},
+  );
+function a(e) {
   return (
     typeof e == `object` &&
     !!e &&
@@ -13,10 +16,10 @@ function i(e) {
     `key` in e
   );
 }
-function a(e = {}) {
+function o(e = {}) {
   let { initialEntries: t = [`/`], initialIndex: n, v5Compat: r = !1 } = e,
-    a;
-  a = t.map((e, t) =>
+    i;
+  i = t.map((e, t) =>
     h(
       e,
       typeof e == `string` ? null : e.state,
@@ -24,34 +27,34 @@ function a(e = {}) {
       typeof e == `string` ? void 0 : e.unstable_mask,
     ),
   );
-  let o = p(n ?? a.length - 1),
-    c = `POP`,
-    f = null;
+  let o = p(n ?? i.length - 1),
+    s = `POP`,
+    l = null;
   function p(e) {
-    return Math.min(Math.max(e, 0), a.length - 1);
+    return Math.min(Math.max(e, 0), i.length - 1);
   }
   function m() {
-    return a[o];
+    return i[o];
   }
   function h(e, t = null, n, r) {
-    let i = l(a ? m().pathname : `/`, e, t, n, r);
+    let a = u(i ? m().pathname : `/`, e, t, n, r);
     return (
-      s(
-        i.pathname.charAt(0) === `/`,
+      c(
+        a.pathname.charAt(0) === `/`,
         `relative pathnames are not supported in memory history: ${JSON.stringify(e)}`,
       ),
-      i
+      a
     );
   }
   function g(e) {
-    return typeof e == `string` ? e : u(e);
+    return typeof e == `string` ? e : d(e);
   }
   return {
     get index() {
       return o;
     },
     get action() {
-      return c;
+      return s;
     },
     get location() {
       return m();
@@ -61,7 +64,7 @@ function a(e = {}) {
       return new URL(g(e), `http://localhost`);
     },
     encodeLocation(e) {
-      let t = typeof e == `string` ? d(e) : e;
+      let t = typeof e == `string` ? f(e) : e;
       return {
         pathname: t.pathname || ``,
         search: t.search || ``,
@@ -69,37 +72,37 @@ function a(e = {}) {
       };
     },
     push(e, t) {
-      c = `PUSH`;
-      let n = i(e) ? e : h(e, t);
+      s = `PUSH`;
+      let n = a(e) ? e : h(e, t);
       ((o += 1),
-        a.splice(o, a.length, n),
-        r && f && f({ action: c, location: n, delta: 1 }));
+        i.splice(o, i.length, n),
+        r && l && l({ action: s, location: n, delta: 1 }));
     },
     replace(e, t) {
-      c = `REPLACE`;
-      let n = i(e) ? e : h(e, t);
-      ((a[o] = n), r && f && f({ action: c, location: n, delta: 0 }));
+      s = `REPLACE`;
+      let n = a(e) ? e : h(e, t);
+      ((i[o] = n), r && l && l({ action: s, location: n, delta: 0 }));
     },
     go(e) {
-      c = `POP`;
+      s = `POP`;
       let t = p(o + e),
-        n = a[t];
-      ((o = t), f && f({ action: c, location: n, delta: e }));
+        n = i[t];
+      ((o = t), l && l({ action: s, location: n, delta: e }));
     },
     listen(e) {
       return (
-        (f = e),
+        (l = e),
         () => {
-          f = null;
+          l = null;
         }
       );
     },
   };
 }
-function o(e, t) {
+function s(e, t) {
   if (e === !1 || e == null) throw Error(t);
 }
-function s(e, t) {
+function c(e, t) {
   if (!e) {
     typeof console < `u` && console.warn(t);
     try {
@@ -107,28 +110,28 @@ function s(e, t) {
     } catch {}
   }
 }
-function c() {
+function l() {
   return Math.random().toString(36).substring(2, 10);
 }
-function l(e, t, n = null, r, i) {
+function u(e, t, n = null, r, i) {
   return {
     pathname: typeof e == `string` ? e : e.pathname,
     search: ``,
     hash: ``,
-    ...(typeof t == `string` ? d(t) : t),
+    ...(typeof t == `string` ? f(t) : t),
     state: n,
-    key: (t && t.key) || r || c(),
+    key: (t && t.key) || r || l(),
     unstable_mask: i,
   };
 }
-function u({ pathname: e = `/`, search: t = ``, hash: n = `` }) {
+function d({ pathname: e = `/`, search: t = ``, hash: n = `` }) {
   return (
     t && t !== `?` && (e += t.charAt(0) === `?` ? t : `?` + t),
     n && n !== `#` && (e += n.charAt(0) === `#` ? n : `#` + n),
     e
   );
 }
-function d(e) {
+function f(e) {
   let t = {};
   if (e) {
     let n = e.indexOf(`#`);
@@ -139,22 +142,22 @@ function d(e) {
   }
   return t;
 }
-function f(e, t, n = `/`) {
-  return p(e, t, n, !1);
+function p(e, t, n = `/`) {
+  return m(e, t, n, !1);
 }
-function p(e, t, n, r) {
-  let i = A((typeof t == `string` ? d(t) : t).pathname || `/`, n);
+function m(e, t, n, r) {
+  let i = O((typeof t == `string` ? f(t) : t).pathname || `/`, n);
   if (i == null) return null;
-  let a = h(e);
-  _(a);
+  let a = g(e);
+  v(a);
   let o = null;
   for (let e = 0; o == null && e < a.length; ++e) {
-    let t = k(i);
-    o = ee(a[e], t, r);
+    let t = re(i);
+    o = ne(a[e], t, r);
   }
   return o;
 }
-function m(e, t) {
+function h(e, t) {
   let { route: n, pathname: r, params: i } = e;
   return {
     id: n.id,
@@ -165,8 +168,8 @@ function m(e, t) {
     handle: n.handle,
   };
 }
-function h(e, t = [], n = [], r = ``, i = !1) {
-  let a = (e, a, s = i, c) => {
+function g(e, t = [], n = [], r = ``, i = !1) {
+  let a = (e, a, o = i, c) => {
     let l = {
       relativePath: c === void 0 ? e.path || `` : c,
       caseSensitive: e.caseSensitive === !0,
@@ -174,41 +177,41 @@ function h(e, t = [], n = [], r = ``, i = !1) {
       route: e,
     };
     if (l.relativePath.startsWith(`/`)) {
-      if (!l.relativePath.startsWith(r) && s) return;
-      (o(
+      if (!l.relativePath.startsWith(r) && o) return;
+      (s(
         l.relativePath.startsWith(r),
         `Absolute route path "${l.relativePath}" nested under path "${r}" is not valid. An absolute child route path must start with the combined path of all its parent routes.`,
       ),
         (l.relativePath = l.relativePath.slice(r.length)));
     }
-    let u = P([r, l.relativePath]),
+    let u = A([r, l.relativePath]),
       d = n.concat(l);
     (e.children &&
       e.children.length > 0 &&
-      (o(
+      (s(
         e.index !== !0,
         `Index routes must not have child routes. Please remove all child routes from route path "${u}".`,
       ),
-      h(e.children, t, d, u, s)),
+      g(e.children, t, d, u, o)),
       !(e.path == null && !e.index) &&
-        t.push({ path: u, score: T(u, e.index), routesMeta: d }));
+        t.push({ path: u, score: ee(u, e.index), routesMeta: d }));
   };
   return (
     e.forEach((e, t) => {
       if (e.path === `` || !e.path?.includes(`?`)) a(e, t);
-      else for (let n of g(e.path)) a(e, t, !0, n);
+      else for (let n of _(e.path)) a(e, t, !0, n);
     }),
     t
   );
 }
-function g(e) {
+function _(e) {
   let t = e.split(`/`);
   if (t.length === 0) return [];
   let [n, ...r] = t,
     i = n.endsWith(`?`),
     a = n.replace(/\?$/, ``);
   if (r.length === 0) return i ? [a, ``] : [a];
-  let o = g(r.join(`/`)),
+  let o = _(r.join(`/`)),
     s = [];
   return (
     s.push(...o.map((e) => (e === `` ? a : [a, e].join(`/`)))),
@@ -216,40 +219,40 @@ function g(e) {
     s.map((t) => (e.startsWith(`/`) && t === `` ? `/` : t))
   );
 }
-function _(e) {
+function v(e) {
   e.sort((e, t) =>
     e.score === t.score
-      ? E(
+      ? te(
           e.routesMeta.map((e) => e.childrenIndex),
           t.routesMeta.map((e) => e.childrenIndex),
         )
       : t.score - e.score,
   );
 }
-var v = /^:[\w-]+$/,
-  y = 3,
-  b = 2,
-  x = 1,
-  S = 10,
-  C = -2,
-  w = (e) => e === `*`;
-function T(e, t) {
+var y = /^:[\w-]+$/,
+  b = 3,
+  x = 2,
+  S = 1,
+  C = 10,
+  w = -2,
+  T = (e) => e === `*`;
+function ee(e, t) {
   let n = e.split(`/`),
     r = n.length;
   return (
-    n.some(w) && (r += C),
-    t && (r += b),
+    n.some(T) && (r += w),
+    t && (r += x),
     n
-      .filter((e) => !w(e))
-      .reduce((e, t) => e + (v.test(t) ? y : t === `` ? x : S), r)
+      .filter((e) => !T(e))
+      .reduce((e, t) => e + (y.test(t) ? b : t === `` ? S : C), r)
   );
 }
-function E(e, t) {
+function te(e, t) {
   return e.length === t.length && e.slice(0, -1).every((e, n) => e === t[n])
     ? e[e.length - 1] - t[t.length - 1]
     : 0;
 }
-function ee(e, t, n = !1) {
+function ne(e, t, n = !1) {
   let { routesMeta: r } = e,
     i = {},
     a = `/`,
@@ -258,7 +261,7 @@ function ee(e, t, n = !1) {
     let s = r[e],
       c = e === r.length - 1,
       l = a === `/` ? t : t.slice(a.length) || `/`,
-      u = D(
+      u = E(
         { path: s.relativePath, caseSensitive: s.caseSensitive, end: c },
         l,
       ),
@@ -268,7 +271,7 @@ function ee(e, t, n = !1) {
         c &&
         n &&
         !r[r.length - 1].route.index &&
-        (u = D(
+        (u = E(
           { path: s.relativePath, caseSensitive: s.caseSensitive, end: !1 },
           l,
         )),
@@ -278,17 +281,17 @@ function ee(e, t, n = !1) {
     (Object.assign(i, u.params),
       o.push({
         params: i,
-        pathname: P([a, u.pathname]),
-        pathnameBase: ae(P([a, u.pathnameBase])),
+        pathname: A([a, u.pathname]),
+        pathnameBase: ue(A([a, u.pathnameBase])),
         route: d,
       }),
-      u.pathnameBase !== `/` && (a = P([a, u.pathnameBase])));
+      u.pathnameBase !== `/` && (a = A([a, u.pathnameBase])));
   }
   return o;
 }
-function D(e, t) {
+function E(e, t) {
   typeof e == `string` && (e = { path: e, caseSensitive: !1, end: !0 });
-  let [n, r] = O(e.path, e.caseSensitive, e.end),
+  let [n, r] = D(e.path, e.caseSensitive, e.end),
     i = t.match(n);
   if (!i) return null;
   let a = i[0],
@@ -311,8 +314,8 @@ function D(e, t) {
     pattern: e,
   };
 }
-function O(e, t = !1, n = !0) {
-  s(
+function D(e, t = !1, n = !0) {
+  c(
     e === `*` || !e.endsWith(`*`) || e.endsWith(`/*`),
     `Route path "${e}" will be treated as if it were "${e.replace(/\*$/, `/*`)}" because the \`*\` character must always follow a \`/\` in the pattern. To get rid of this warning, please change the route path to "${e.replace(/\*$/, `/*`)}".`,
   );
@@ -341,7 +344,7 @@ function O(e, t = !1, n = !0) {
     [new RegExp(i, t ? void 0 : `i`), r]
   );
 }
-function k(e) {
+function re(e) {
   try {
     return e
       .split(`/`)
@@ -349,7 +352,7 @@ function k(e) {
       .join(`/`);
   } catch (t) {
     return (
-      s(
+      c(
         !1,
         `The URL path "${e}" could not be decoded because it is a malformed URL segment. This is probably due to a bad percent encoding (${t}).`,
       ),
@@ -357,30 +360,30 @@ function k(e) {
     );
   }
 }
-function A(e, t) {
+function O(e, t) {
   if (t === `/`) return e;
   if (!e.toLowerCase().startsWith(t.toLowerCase())) return null;
   let n = t.endsWith(`/`) ? t.length - 1 : t.length,
     r = e.charAt(n);
   return r && r !== `/` ? null : e.slice(n) || `/`;
 }
-var te = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
-function ne(e, t = `/`) {
+var ie = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i;
+function ae(e, t = `/`) {
   let {
       pathname: n,
       search: r = ``,
       hash: i = ``,
-    } = typeof e == `string` ? d(e) : e,
+    } = typeof e == `string` ? f(e) : e,
     a;
   return (
     n
       ? ((n = n.replace(/\/\/+/g, `/`)),
-        (a = n.startsWith(`/`) ? re(n.substring(1), `/`) : re(n, t)))
+        (a = n.startsWith(`/`) ? oe(n.substring(1), `/`) : oe(n, t)))
       : (a = t),
-    { pathname: a, search: oe(r), hash: se(i) }
+    { pathname: a, search: de(r), hash: fe(i) }
   );
 }
-function re(e, t) {
+function oe(e, t) {
   let n = t.replace(/\/+$/, ``).split(`/`);
   return (
     e.split(`/`).forEach((e) => {
@@ -389,55 +392,55 @@ function re(e, t) {
     n.length > 1 ? n.join(`/`) : `/`
   );
 }
-function j(e, t, n, r) {
+function se(e, t, n, r) {
   return `Cannot include a '${e}' character in a manually specified \`to.${t}\` field [${JSON.stringify(r)}].  Please separate it out to the \`to.${n}\` field. Alternatively you may provide the full path as a string in <Link to="..."> and the router will parse it for you.`;
 }
-function ie(e) {
+function ce(e) {
   return e.filter(
     (e, t) => t === 0 || (e.route.path && e.route.path.length > 0),
   );
 }
-function M(e) {
-  let t = ie(e);
+function le(e) {
+  let t = ce(e);
   return t.map((e, n) => (n === t.length - 1 ? e.pathname : e.pathnameBase));
 }
-function N(e, t, n, r = !1) {
+function k(e, t, n, r = !1) {
   let i;
   typeof e == `string`
-    ? (i = d(e))
+    ? (i = f(e))
     : ((i = { ...e }),
-      o(
+      s(
         !i.pathname || !i.pathname.includes(`?`),
-        j(`?`, `pathname`, `search`, i),
+        se(`?`, `pathname`, `search`, i),
       ),
-      o(
+      s(
         !i.pathname || !i.pathname.includes(`#`),
-        j(`#`, `pathname`, `hash`, i),
+        se(`#`, `pathname`, `hash`, i),
       ),
-      o(!i.search || !i.search.includes(`#`), j(`#`, `search`, `hash`, i)));
+      s(!i.search || !i.search.includes(`#`), se(`#`, `search`, `hash`, i)));
   let a = e === `` || i.pathname === ``,
-    s = a ? `/` : i.pathname,
+    o = a ? `/` : i.pathname,
     c;
-  if (s == null) c = n;
+  if (o == null) c = n;
   else {
     let e = t.length - 1;
-    if (!r && s.startsWith(`..`)) {
-      let t = s.split(`/`);
+    if (!r && o.startsWith(`..`)) {
+      let t = o.split(`/`);
       for (; t[0] === `..`; ) (t.shift(), --e);
       i.pathname = t.join(`/`);
     }
     c = e >= 0 ? t[e] : `/`;
   }
-  let l = ne(i, c),
-    u = s && s !== `/` && s.endsWith(`/`),
-    f = (a || s === `.`) && n.endsWith(`/`);
-  return (!l.pathname.endsWith(`/`) && (u || f) && (l.pathname += `/`), l);
+  let l = ae(i, c),
+    u = o && o !== `/` && o.endsWith(`/`),
+    d = (a || o === `.`) && n.endsWith(`/`);
+  return (!l.pathname.endsWith(`/`) && (u || d) && (l.pathname += `/`), l);
 }
-var P = (e) => e.join(`/`).replace(/\/\/+/g, `/`),
-  ae = (e) => e.replace(/\/+$/, ``).replace(/^\/*/, `/`),
-  oe = (e) => (!e || e === `?` ? `` : e.startsWith(`?`) ? e : `?` + e),
-  se = (e) => (!e || e === `#` ? `` : e.startsWith(`#`) ? e : `#` + e),
-  ce = class {
+var A = (e) => e.join(`/`).replace(/\/\/+/g, `/`),
+  ue = (e) => e.replace(/\/+$/, ``).replace(/^\/*/, `/`),
+  de = (e) => (!e || e === `?` ? `` : e.startsWith(`?`) ? e : `?` + e),
+  fe = (e) => (!e || e === `#` ? `` : e.startsWith(`#`) ? e : `#` + e),
+  pe = class {
     constructor(e, t, n, r = !1) {
       ((this.status = e),
         (this.statusText = t || ``),
@@ -447,7 +450,7 @@ var P = (e) => e.join(`/`).replace(/\/\/+/g, `/`),
           : (this.data = n));
     }
   };
-function le(e) {
+function me(e) {
   return (
     e != null &&
     typeof e.status == `number` &&
@@ -456,7 +459,7 @@ function le(e) {
     `data` in e
   );
 }
-function ue(e) {
+function he(e) {
   return (
     e
       .map((e) => e.route.path)
@@ -465,26 +468,26 @@ function ue(e) {
       .replace(/\/\/*/g, `/`) || `/`
   );
 }
-var de =
+var ge =
   typeof window < `u` &&
   window.document !== void 0 &&
   window.document.createElement !== void 0;
-function fe(e, t) {
+function _e(e, t) {
   let n = e;
-  if (typeof n != `string` || !te.test(n))
+  if (typeof n != `string` || !ie.test(n))
     return { absoluteURL: void 0, isExternal: !1, to: n };
   let r = n,
     i = !1;
-  if (de)
+  if (ge)
     try {
       let e = new URL(window.location.href),
         r = n.startsWith(`//`) ? new URL(e.protocol + n) : new URL(n),
-        a = A(r.pathname, t);
+        a = O(r.pathname, t);
       r.origin === e.origin && a != null
         ? (n = a + r.search + r.hash)
         : (i = !0);
     } catch {
-      s(
+      c(
         !1,
         `<Link to="${n}"> contains an invalid URL which will probably break when clicked - please update to a valid URL path.`,
       );
@@ -492,30 +495,30 @@ function fe(e, t) {
   return { absoluteURL: r, isExternal: i, to: n };
 }
 Object.getOwnPropertyNames(Object.prototype).sort().join(`\0`);
-var F = r.createContext(null);
-F.displayName = `DataRouter`;
-var I = r.createContext(null);
-I.displayName = `DataRouterState`;
-var pe = r.createContext(!1),
-  me = r.createContext({ isTransitioning: !1 });
-me.displayName = `ViewTransition`;
-var he = r.createContext(new Map());
-he.displayName = `Fetchers`;
-var ge = r.createContext(null);
-ge.displayName = `Await`;
-var L = r.createContext(null);
-L.displayName = `Navigation`;
-var R = r.createContext(null);
-R.displayName = `Location`;
-var z = r.createContext({ outlet: null, matches: [], isDataRoute: !1 });
-z.displayName = `Route`;
-var B = r.createContext(null);
-B.displayName = `RouteError`;
-var _e = `REACT_ROUTER_ERROR`,
-  ve = `REDIRECT`,
-  ye = `ROUTE_ERROR_RESPONSE`;
-function be(e) {
-  if (e.startsWith(`${_e}:${ve}:{`))
+var j = r.createContext(null);
+j.displayName = `DataRouter`;
+var M = r.createContext(null);
+M.displayName = `DataRouterState`;
+var ve = r.createContext(!1),
+  ye = r.createContext({ isTransitioning: !1 });
+ye.displayName = `ViewTransition`;
+var be = r.createContext(new Map());
+be.displayName = `Fetchers`;
+var xe = r.createContext(null);
+xe.displayName = `Await`;
+var N = r.createContext(null);
+N.displayName = `Navigation`;
+var P = r.createContext(null);
+P.displayName = `Location`;
+var F = r.createContext({ outlet: null, matches: [], isDataRoute: !1 });
+F.displayName = `Route`;
+var Se = r.createContext(null);
+Se.displayName = `RouteError`;
+var Ce = `REACT_ROUTER_ERROR`,
+  we = `REDIRECT`,
+  Te = `ROUTE_ERROR_RESPONSE`;
+function Ee(e) {
+  if (e.startsWith(`${Ce}:${we}:{`))
     try {
       let t = JSON.parse(e.slice(28));
       if (
@@ -530,8 +533,8 @@ function be(e) {
         return t;
     } catch {}
 }
-function xe(e) {
-  if (e.startsWith(`${_e}:${ye}:{`))
+function De(e) {
+  if (e.startsWith(`${Ce}:${Te}:{`))
     try {
       let t = JSON.parse(e.slice(40));
       if (
@@ -540,116 +543,116 @@ function xe(e) {
         typeof t.status == `number` &&
         typeof t.statusText == `string`
       )
-        return new ce(t.status, t.statusText, t.data);
+        return new pe(t.status, t.statusText, t.data);
     } catch {}
 }
-function Se(e, { relative: t } = {}) {
-  o(V(), `useHref() may be used only in the context of a <Router> component.`);
-  let { basename: n, navigator: i } = r.useContext(L),
-    { hash: a, pathname: s, search: c } = W(e, { relative: t }),
-    l = s;
+function Oe(e, { relative: t } = {}) {
+  s(I(), `useHref() may be used only in the context of a <Router> component.`);
+  let { basename: n, navigator: i } = r.useContext(N),
+    { hash: a, pathname: o, search: c } = z(e, { relative: t }),
+    l = o;
   return (
-    n !== `/` && (l = s === `/` ? n : P([n, s])),
+    n !== `/` && (l = o === `/` ? n : A([n, o])),
     i.createHref({ pathname: l, search: c, hash: a })
   );
 }
-function V() {
-  return r.useContext(R) != null;
+function I() {
+  return r.useContext(P) != null;
 }
-function H() {
+function L() {
   return (
-    o(
-      V(),
+    s(
+      I(),
       `useLocation() may be used only in the context of a <Router> component.`,
     ),
-    r.useContext(R).location
+    r.useContext(P).location
   );
 }
-function Ce() {
-  return r.useContext(R).navigationType;
+function ke() {
+  return r.useContext(P).navigationType;
 }
-function we(e) {
-  o(V(), `useMatch() may be used only in the context of a <Router> component.`);
-  let { pathname: t } = H();
-  return r.useMemo(() => D(e, k(t)), [t, e]);
+function Ae(e) {
+  s(I(), `useMatch() may be used only in the context of a <Router> component.`);
+  let { pathname: t } = L();
+  return r.useMemo(() => E(e, re(t)), [t, e]);
 }
-var Te = `You should call navigate() in a React.useEffect(), not when your component is first rendered.`;
-function Ee(e) {
-  r.useContext(L).static || r.useLayoutEffect(e);
+var je = `You should call navigate() in a React.useEffect(), not when your component is first rendered.`;
+function Me(e) {
+  r.useContext(N).static || r.useLayoutEffect(e);
 }
-function U() {
-  let { isDataRoute: e } = r.useContext(z);
-  return e ? Ye() : De();
+function R() {
+  let { isDataRoute: e } = r.useContext(F);
+  return e ? Ze() : Ne();
 }
-function De() {
-  o(
-    V(),
+function Ne() {
+  s(
+    I(),
     `useNavigate() may be used only in the context of a <Router> component.`,
   );
-  let e = r.useContext(F),
-    { basename: t, navigator: n } = r.useContext(L),
-    { matches: i } = r.useContext(z),
-    { pathname: a } = H(),
-    c = JSON.stringify(M(i)),
+  let e = r.useContext(j),
+    { basename: t, navigator: n } = r.useContext(N),
+    { matches: i } = r.useContext(F),
+    { pathname: a } = L(),
+    o = JSON.stringify(le(i)),
     l = r.useRef(!1);
   return (
-    Ee(() => {
+    Me(() => {
       l.current = !0;
     }),
     r.useCallback(
       (r, i = {}) => {
-        if ((s(l.current, Te), !l.current)) return;
+        if ((c(l.current, je), !l.current)) return;
         if (typeof r == `number`) {
           n.go(r);
           return;
         }
-        let o = N(r, JSON.parse(c), a, i.relative === `path`);
+        let s = k(r, JSON.parse(o), a, i.relative === `path`);
         (e == null &&
           t !== `/` &&
-          (o.pathname = o.pathname === `/` ? t : P([t, o.pathname])),
-          (i.replace ? n.replace : n.push)(o, i.state, i));
+          (s.pathname = s.pathname === `/` ? t : A([t, s.pathname])),
+          (i.replace ? n.replace : n.push)(s, i.state, i));
       },
-      [t, n, c, a, e],
+      [t, n, o, a, e],
     )
   );
 }
-var Oe = r.createContext(null);
-function ke(e) {
-  let t = r.useContext(z).outlet;
+var Pe = r.createContext(null);
+function Fe(e) {
+  let t = r.useContext(F).outlet;
   return r.useMemo(
-    () => t && r.createElement(Oe.Provider, { value: e }, t),
+    () => t && r.createElement(Pe.Provider, { value: e }, t),
     [t, e],
   );
 }
-function Ae() {
-  let { matches: e } = r.useContext(z),
+function Ie() {
+  let { matches: e } = r.useContext(F),
     t = e[e.length - 1];
   return t ? t.params : {};
 }
-function W(e, { relative: t } = {}) {
-  let { matches: n } = r.useContext(z),
-    { pathname: i } = H(),
-    a = JSON.stringify(M(n));
-  return r.useMemo(() => N(e, JSON.parse(a), i, t === `path`), [e, a, i, t]);
+function z(e, { relative: t } = {}) {
+  let { matches: n } = r.useContext(F),
+    { pathname: i } = L(),
+    a = JSON.stringify(le(n));
+  return r.useMemo(() => k(e, JSON.parse(a), i, t === `path`), [e, a, i, t]);
 }
-function je(e, t) {
-  return Me(e, t);
+function Le(e, t) {
+  return Re(e, t);
 }
-function Me(e, t, n) {
-  o(
-    V(),
+function Re(e, t, n) {
+  s(
+    I(),
     `useRoutes() may be used only in the context of a <Router> component.`,
   );
-  let { navigator: i } = r.useContext(L),
-    { matches: a } = r.useContext(z),
-    c = a[a.length - 1],
-    l = c ? c.params : {},
-    u = c ? c.pathname : `/`,
-    p = c ? c.pathnameBase : `/`,
-    m = c && c.route;
+  let { navigator: i } = r.useContext(N),
+    { matches: a } = r.useContext(F),
+    o = a[a.length - 1],
+    l = o ? o.params : {},
+    u = o ? o.pathname : `/`,
+    d = o ? o.pathnameBase : `/`,
+    m = o && o.route;
   {
     let e = (m && m.path) || ``;
-    Ze(
+    $e(
       u,
       !m || e.endsWith(`*`) || e.endsWith(`*?`),
       `You rendered descendant <Routes> (or called \`useRoutes()\`) at "${u}" (under <Route path="${e}">) but the parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
@@ -657,41 +660,41 @@ function Me(e, t, n) {
 Please change the parent <Route path="${e}"> to <Route path="${e === `/` ? `*` : `${e}/*`}">.`,
     );
   }
-  let h = H(),
+  let h = L(),
     g;
   if (t) {
-    let e = typeof t == `string` ? d(t) : t;
-    (o(
-      p === `/` || e.pathname?.startsWith(p),
-      `When overriding the location using \`<Routes location>\` or \`useRoutes(routes, location)\`, the location pathname must begin with the portion of the URL pathname that was matched by all parent routes. The current pathname base is "${p}" but pathname "${e.pathname}" was given in the \`location\` prop.`,
+    let e = typeof t == `string` ? f(t) : t;
+    (s(
+      d === `/` || e.pathname?.startsWith(d),
+      `When overriding the location using \`<Routes location>\` or \`useRoutes(routes, location)\`, the location pathname must begin with the portion of the URL pathname that was matched by all parent routes. The current pathname base is "${d}" but pathname "${e.pathname}" was given in the \`location\` prop.`,
     ),
       (g = e));
   } else g = h;
   let _ = g.pathname || `/`,
     v = _;
-  if (p !== `/`) {
-    let e = p.replace(/^\//, ``).split(`/`);
+  if (d !== `/`) {
+    let e = d.replace(/^\//, ``).split(`/`);
     v = `/` + _.replace(/^\//, ``).split(`/`).slice(e.length).join(`/`);
   }
-  let y = f(e, { pathname: v });
-  (s(
+  let y = p(e, { pathname: v });
+  (c(
     m || y != null,
     `No routes matched location "${g.pathname}${g.search}${g.hash}" `,
   ),
-    s(
+    c(
       y == null ||
         y[y.length - 1].route.element !== void 0 ||
         y[y.length - 1].route.Component !== void 0 ||
         y[y.length - 1].route.lazy !== void 0,
       `Matched leaf route at location "${g.pathname}${g.search}${g.hash}" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.`,
     ));
-  let b = ze(
+  let b = We(
     y &&
       y.map((e) =>
         Object.assign({}, e, {
           params: Object.assign({}, l, e.params),
-          pathname: P([
-            p,
+          pathname: A([
+            d,
             i.encodeLocation
               ? i.encodeLocation(
                   e.pathname.replace(/\?/g, `%3F`).replace(/#/g, `%23`),
@@ -700,9 +703,9 @@ Please change the parent <Route path="${e}"> to <Route path="${e === `/` ? `*` :
           ]),
           pathnameBase:
             e.pathnameBase === `/`
-              ? p
-              : P([
-                  p,
+              ? d
+              : A([
+                  d,
                   i.encodeLocation
                     ? i.encodeLocation(
                         e.pathnameBase
@@ -718,7 +721,7 @@ Please change the parent <Route path="${e}"> to <Route path="${e === `/` ? `*` :
   );
   return t && b
     ? r.createElement(
-        R.Provider,
+        P.Provider,
         {
           value: {
             location: {
@@ -737,9 +740,9 @@ Please change the parent <Route path="${e}"> to <Route path="${e === `/` ? `*` :
       )
     : b;
 }
-function Ne() {
-  let e = Je(),
-    t = le(e)
+function ze() {
+  let e = Xe(),
+    t = me(e)
       ? `${e.status} ${e.statusText}`
       : e instanceof Error
         ? e.message
@@ -776,8 +779,8 @@ function Ne() {
     )
   );
 }
-var Pe = r.createElement(Ne, null),
-  Fe = class extends r.Component {
+var Be = r.createElement(ze, null),
+  Ve = class extends r.Component {
     constructor(e) {
       (super(e),
         (this.state = {
@@ -816,39 +819,39 @@ var Pe = r.createElement(Ne, null),
         `digest` in e &&
         typeof e.digest == `string`
       ) {
-        let t = xe(e.digest);
+        let t = De(e.digest);
         t && (e = t);
       }
       let t =
         e === void 0
           ? this.props.children
           : r.createElement(
-              z.Provider,
+              F.Provider,
               { value: this.props.routeContext },
-              r.createElement(B.Provider, {
+              r.createElement(Se.Provider, {
                 value: e,
                 children: this.props.component,
               }),
             );
-      return this.context ? r.createElement(Le, { error: e }, t) : t;
+      return this.context ? r.createElement(He, { error: e }, t) : t;
     }
   };
-Fe.contextType = pe;
-var Ie = new WeakMap();
-function Le({ children: e, error: t }) {
-  let { basename: n } = r.useContext(L);
+Ve.contextType = ve;
+var B = new WeakMap();
+function He({ children: e, error: t }) {
+  let { basename: n } = r.useContext(N);
   if (
     typeof t == `object` &&
     t &&
     `digest` in t &&
     typeof t.digest == `string`
   ) {
-    let e = be(t.digest);
+    let e = Ee(t.digest);
     if (e) {
-      let i = Ie.get(t);
+      let i = B.get(t);
       if (i) throw i;
-      let a = fe(e.location, n);
-      if (de && !Ie.get(t))
+      let a = _e(e.location, n);
+      if (ge && !B.get(t))
         if (a.isExternal || e.reloadDocument)
           window.location.href = a.absoluteURL || a.to;
         else {
@@ -857,7 +860,7 @@ function Le({ children: e, error: t }) {
               replace: e.replace,
             }),
           );
-          throw (Ie.set(t, n), n);
+          throw (B.set(t, n), n);
         }
       return r.createElement(`meta`, {
         httpEquiv: `refresh`,
@@ -867,18 +870,18 @@ function Le({ children: e, error: t }) {
   }
   return e;
 }
-function Re({ routeContext: e, match: t, children: n }) {
-  let i = r.useContext(F);
+function Ue({ routeContext: e, match: t, children: n }) {
+  let i = r.useContext(j);
   return (
     i &&
       i.static &&
       i.staticContext &&
       (t.route.errorElement || t.route.ErrorBoundary) &&
       (i.staticContext._deepestRenderedBoundaryId = t.route.id),
-    r.createElement(z.Provider, { value: e }, n)
+    r.createElement(F.Provider, { value: e }, n)
   );
 }
-function ze(e, t = [], n) {
+function We(e, t = [], n) {
   let i = n?.state;
   if (e == null) {
     if (!i) return null;
@@ -888,12 +891,12 @@ function ze(e, t = [], n) {
     else return null;
   }
   let a = e,
-    s = i?.errors;
-  if (s != null) {
-    let e = a.findIndex((e) => e.route.id && s?.[e.route.id] !== void 0);
-    (o(
+    o = i?.errors;
+  if (o != null) {
+    let e = a.findIndex((e) => e.route.id && o?.[e.route.id] !== void 0);
+    (s(
       e >= 0,
-      `Could not find a matching route for errors on route IDs: ${Object.keys(s).join(`,`)}`,
+      `Could not find a matching route for errors on route IDs: ${Object.keys(o).join(`,`)}`,
     ),
       (a = a.slice(0, Math.min(a.length, e + 1))));
   }
@@ -926,31 +929,31 @@ function ze(e, t = [], n) {
             u(e, {
               location: i.location,
               params: i.matches?.[0]?.params ?? {},
-              unstable_pattern: ue(i.matches),
+              unstable_pattern: he(i.matches),
               errorInfo: t,
             });
           }
         : void 0;
-  return a.reduceRight((e, n, o) => {
+  return a.reduceRight((e, n, s) => {
     let u,
       f = !1,
       p = null,
       m = null;
     i &&
-      ((u = s && n.route.id ? s[n.route.id] : void 0),
-      (p = n.route.errorElement || Pe),
+      ((u = o && n.route.id ? o[n.route.id] : void 0),
+      (p = n.route.errorElement || Be),
       c &&
-        (l < 0 && o === 0
-          ? (Ze(
+        (l < 0 && s === 0
+          ? ($e(
               `route-fallback`,
               !1,
               "No `HydrateFallback` element provided to render during initial hydration",
             ),
             (f = !0),
             (m = null))
-          : l === o &&
+          : l === s &&
             ((f = !0), (m = n.route.hydrateFallbackElement || null))));
-    let h = t.concat(a.slice(0, o + 1)),
+    let h = t.concat(a.slice(0, s + 1)),
       g = () => {
         let t;
         return (
@@ -963,15 +966,15 @@ function ze(e, t = [], n) {
                 : n.route.element
                   ? n.route.element
                   : e),
-          r.createElement(Re, {
+          r.createElement(Ue, {
             match: n,
             routeContext: { outlet: e, matches: h, isDataRoute: i != null },
             children: t,
           })
         );
       };
-    return i && (n.route.ErrorBoundary || n.route.errorElement || o === 0)
-      ? r.createElement(Fe, {
+    return i && (n.route.ErrorBoundary || n.route.errorElement || s === 0)
+      ? r.createElement(Ve, {
           location: i.location,
           revalidation: i.revalidation,
           component: p,
@@ -983,56 +986,56 @@ function ze(e, t = [], n) {
       : g();
   }, null);
 }
-function Be(e) {
+function V(e) {
   return `${e} must be used within a data router.  See https://reactrouter.com/en/main/routers/picking-a-router.`;
 }
-function Ve(e) {
+function Ge(e) {
+  let t = r.useContext(j);
+  return (s(t, V(e)), t);
+}
+function H(e) {
+  let t = r.useContext(M);
+  return (s(t, V(e)), t);
+}
+function Ke(e) {
   let t = r.useContext(F);
-  return (o(t, Be(e)), t);
+  return (s(t, V(e)), t);
 }
-function He(e) {
-  let t = r.useContext(I);
-  return (o(t, Be(e)), t);
-}
-function Ue(e) {
-  let t = r.useContext(z);
-  return (o(t, Be(e)), t);
-}
-function We(e) {
-  let t = Ue(e),
+function U(e) {
+  let t = Ke(e),
     n = t.matches[t.matches.length - 1];
   return (
-    o(n.route.id, `${e} can only be used on routes that contain a unique "id"`),
+    s(n.route.id, `${e} can only be used on routes that contain a unique "id"`),
     n.route.id
   );
 }
-function Ge() {
-  return We(`useRouteId`);
-}
-function Ke() {
-  return He(`useNavigation`).navigation;
-}
 function qe() {
-  let { matches: e, loaderData: t } = He(`useMatches`);
-  return r.useMemo(() => e.map((e) => m(e, t)), [e, t]);
+  return U(`useRouteId`);
 }
 function Je() {
-  let e = r.useContext(B),
-    t = He(`useRouteError`),
-    n = We(`useRouteError`);
-  return e === void 0 ? t.errors?.[n] : e;
+  return H(`useNavigation`).navigation;
 }
 function Ye() {
-  let { router: e } = Ve(`useNavigate`),
-    t = We(`useNavigate`),
+  let { matches: e, loaderData: t } = H(`useMatches`);
+  return r.useMemo(() => e.map((e) => h(e, t)), [e, t]);
+}
+function Xe() {
+  let e = r.useContext(Se),
+    t = H(`useRouteError`),
+    n = U(`useRouteError`);
+  return e === void 0 ? t.errors?.[n] : e;
+}
+function Ze() {
+  let { router: e } = Ge(`useNavigate`),
+    t = U(`useNavigate`),
     n = r.useRef(!1);
   return (
-    Ee(() => {
+    Me(() => {
       n.current = !0;
     }),
     r.useCallback(
       async (r, i = {}) => {
-        (s(n.current, Te),
+        (c(n.current, je),
           n.current &&
             (typeof r == `number`
               ? await e.navigate(r)
@@ -1042,54 +1045,54 @@ function Ye() {
     )
   );
 }
-var Xe = {};
-function Ze(e, t, n) {
-  !t && !Xe[e] && ((Xe[e] = !0), s(!1, n));
+var Qe = {};
+function $e(e, t, n) {
+  !t && !Qe[e] && ((Qe[e] = !0), c(!1, n));
 }
-(r.useOptimistic, r.memo(Qe));
-function Qe({ routes: e, future: t, state: n, isStatic: r, onError: i }) {
-  return Me(e, void 0, { state: n, isStatic: r, onError: i, future: t });
+(r.useOptimistic, r.memo(et));
+function et({ routes: e, future: t, state: n, isStatic: r, onError: i }) {
+  return Re(e, void 0, { state: n, isStatic: r, onError: i, future: t });
 }
-function $e({
+function tt({
   basename: e,
   children: t,
   initialEntries: n,
   initialIndex: i,
-  unstable_useTransitions: o,
+  unstable_useTransitions: a,
 }) {
   let s = r.useRef();
-  s.current ??= a({ initialEntries: n, initialIndex: i, v5Compat: !0 });
+  s.current ??= o({ initialEntries: n, initialIndex: i, v5Compat: !0 });
   let c = s.current,
     [l, u] = r.useState({ action: c.action, location: c.location }),
     d = r.useCallback(
       (e) => {
-        o === !1 ? u(e) : r.startTransition(() => u(e));
+        a === !1 ? u(e) : r.startTransition(() => u(e));
       },
-      [o],
+      [a],
     );
   return (
     r.useLayoutEffect(() => c.listen(d), [c, d]),
-    r.createElement(rt, {
+    r.createElement(at, {
       basename: e,
       children: t,
       location: l.location,
       navigationType: l.action,
       navigator: c,
-      unstable_useTransitions: o,
+      unstable_useTransitions: a,
     })
   );
 }
-function et({ to: e, replace: t, state: n, relative: i }) {
-  o(V(), `<Navigate> may be used only in the context of a <Router> component.`);
-  let { static: a } = r.useContext(L);
-  s(
+function nt({ to: e, replace: t, state: n, relative: i }) {
+  s(I(), `<Navigate> may be used only in the context of a <Router> component.`);
+  let { static: a } = r.useContext(N);
+  c(
     !a,
     `<Navigate> must not be used on the initial render in a <StaticRouter>. This is a no-op, but you should modify your code so the <Navigate> is only ever rendered in response to some user interaction or state change.`,
   );
-  let { matches: c } = r.useContext(z),
-    { pathname: l } = H(),
-    u = U(),
-    d = N(e, M(c), l, i === `path`),
+  let { matches: o } = r.useContext(F),
+    { pathname: l } = L(),
+    u = R(),
+    d = k(e, le(o), l, i === `path`),
     f = JSON.stringify(d);
   return (
     r.useEffect(() => {
@@ -1098,40 +1101,40 @@ function et({ to: e, replace: t, state: n, relative: i }) {
     null
   );
 }
-function tt(e) {
-  return ke(e.context);
+function rt(e) {
+  return Fe(e.context);
 }
-function nt(e) {
-  o(
+function it(e) {
+  s(
     !1,
     `A <Route> is only ever to be used as the child of <Routes> element, never rendered directly. Please wrap your <Route> in a <Routes>.`,
   );
 }
-function rt({
+function at({
   basename: e = `/`,
   children: t = null,
   location: n,
   navigationType: i = `POP`,
   navigator: a,
-  static: c = !1,
+  static: o = !1,
   unstable_useTransitions: l,
 }) {
-  o(
-    !V(),
+  s(
+    !I(),
     `You cannot render a <Router> inside another <Router>. You should never have more than one in your app.`,
   );
   let u = e.replace(/^\/*/, `/`),
-    f = r.useMemo(
+    d = r.useMemo(
       () => ({
         basename: u,
         navigator: a,
-        static: c,
+        static: o,
         unstable_useTransitions: l,
         future: {},
       }),
-      [u, a, c, l],
+      [u, a, o, l],
     );
-  typeof n == `string` && (n = d(n));
+  typeof n == `string` && (n = f(n));
   let {
       pathname: p = `/`,
       search: m = ``,
@@ -1141,7 +1144,7 @@ function rt({
       unstable_mask: v,
     } = n,
     y = r.useMemo(() => {
-      let e = A(p, u);
+      let e = O(p, u);
       return e == null
         ? null
         : {
@@ -1157,41 +1160,41 @@ function rt({
           };
     }, [u, p, m, h, g, _, i, v]);
   return (
-    s(
+    c(
       y != null,
       `<Router basename="${u}"> is not able to match the URL "${p}${m}${h}" because it does not start with the basename, so the <Router> won't render anything.`,
     ),
     y == null
       ? null
       : r.createElement(
-          L.Provider,
-          { value: f },
-          r.createElement(R.Provider, { children: t, value: y }),
+          N.Provider,
+          { value: d },
+          r.createElement(P.Provider, { children: t, value: y }),
         )
   );
 }
-function it({ children: e, location: t }) {
-  return je(G(e), t);
+function ot({ children: e, location: t }) {
+  return Le(W(e), t);
 }
-function G(e, t = []) {
+function W(e, t = []) {
   let n = [];
   return (
     r.Children.forEach(e, (e, i) => {
       if (!r.isValidElement(e)) return;
       let a = [...t, i];
       if (e.type === r.Fragment) {
-        n.push.apply(n, G(e.props.children, a));
+        n.push.apply(n, W(e.props.children, a));
         return;
       }
-      (o(
-        e.type === nt,
+      (s(
+        e.type === it,
         `[${typeof e.type == `string` ? e.type : e.type.name}] is not a <Route> component. All component children of <Routes> must be a <Route> or <React.Fragment>`,
       ),
-        o(
+        s(
           !e.props.index || !e.props.children,
           `An index route cannot have child routes.`,
         ));
-      let s = {
+      let o = {
         id: e.props.id || a.join(`-`),
         caseSensitive: e.props.caseSensitive,
         element: e.props.element,
@@ -1213,33 +1216,33 @@ function G(e, t = []) {
         handle: e.props.handle,
         lazy: e.props.lazy,
       };
-      (e.props.children && (s.children = G(e.props.children, a)), n.push(s));
+      (e.props.children && (o.children = W(e.props.children, a)), n.push(o));
     }),
     n
   );
 }
-var at = G,
-  K = `get`,
-  q = `application/x-www-form-urlencoded`;
-function J(e) {
+var st = W,
+  G = `get`,
+  K = `application/x-www-form-urlencoded`;
+function q(e) {
   return typeof HTMLElement < `u` && e instanceof HTMLElement;
 }
-function ot(e) {
-  return J(e) && e.tagName.toLowerCase() === `button`;
-}
-function st(e) {
-  return J(e) && e.tagName.toLowerCase() === `form`;
-}
 function ct(e) {
-  return J(e) && e.tagName.toLowerCase() === `input`;
+  return q(e) && e.tagName.toLowerCase() === `button`;
 }
 function lt(e) {
+  return q(e) && e.tagName.toLowerCase() === `form`;
+}
+function ut(e) {
+  return q(e) && e.tagName.toLowerCase() === `input`;
+}
+function dt(e) {
   return !!(e.metaKey || e.altKey || e.ctrlKey || e.shiftKey);
 }
-function ut(e, t) {
-  return e.button === 0 && (!t || t === `_self`) && !lt(e);
+function ft(e, t) {
+  return e.button === 0 && (!t || t === `_self`) && !dt(e);
 }
-function dt(e = ``) {
+function J(e = ``) {
   return new URLSearchParams(
     typeof e == `string` || Array.isArray(e) || e instanceof URLSearchParams
       ? e
@@ -1249,8 +1252,8 @@ function dt(e = ``) {
         }, []),
   );
 }
-function ft(e, t) {
-  let n = dt(e);
+function pt(e, t) {
+  let n = J(e);
   return (
     t &&
       t.forEach((e, r) => {
@@ -1263,7 +1266,7 @@ function ft(e, t) {
   );
 }
 var Y = null;
-function pt() {
+function mt() {
   if (Y === null)
     try {
       (new FormData(document.createElement(`form`), 0), (Y = !1));
@@ -1272,29 +1275,29 @@ function pt() {
     }
   return Y;
 }
-var mt = new Set([
+var ht = new Set([
   `application/x-www-form-urlencoded`,
   `multipart/form-data`,
   `text/plain`,
 ]);
-function ht(e) {
-  return e != null && !mt.has(e)
-    ? (s(
+function gt(e) {
+  return e != null && !ht.has(e)
+    ? (c(
         !1,
-        `"${e}" is not a valid \`encType\` for \`<Form>\`/\`<fetcher.Form>\` and will default to "${q}"`,
+        `"${e}" is not a valid \`encType\` for \`<Form>\`/\`<fetcher.Form>\` and will default to "${K}"`,
       ),
       null)
     : e;
 }
-function gt(e, t) {
+function _t(e, t) {
   let n, r, i, a, o;
-  if (st(e)) {
+  if (lt(e)) {
     let o = e.getAttribute(`action`);
-    ((r = o ? A(o, t) : null),
-      (n = e.getAttribute(`method`) || K),
-      (i = ht(e.getAttribute(`enctype`)) || q),
+    ((r = o ? O(o, t) : null),
+      (n = e.getAttribute(`method`) || G),
+      (i = gt(e.getAttribute(`enctype`)) || K),
       (a = new FormData(e)));
-  } else if (ot(e) || (ct(e) && (e.type === `submit` || e.type === `image`))) {
+  } else if (ct(e) || (ut(e) && (e.type === `submit` || e.type === `image`))) {
     let o = e.form;
     if (o == null)
       throw Error(
@@ -1302,14 +1305,14 @@ function gt(e, t) {
       );
     let s = e.getAttribute(`formaction`) || o.getAttribute(`action`);
     if (
-      ((r = s ? A(s, t) : null),
-      (n = e.getAttribute(`formmethod`) || o.getAttribute(`method`) || K),
+      ((r = s ? O(s, t) : null),
+      (n = e.getAttribute(`formmethod`) || o.getAttribute(`method`) || G),
       (i =
-        ht(e.getAttribute(`formenctype`)) ||
-        ht(o.getAttribute(`enctype`)) ||
-        q),
+        gt(e.getAttribute(`formenctype`)) ||
+        gt(o.getAttribute(`enctype`)) ||
+        K),
       (a = new FormData(o, e)),
-      !pt())
+      !mt())
     ) {
       let { name: t, type: n, value: r } = e;
       if (n === `image`) {
@@ -1317,32 +1320,32 @@ function gt(e, t) {
         (a.append(`${e}x`, `0`), a.append(`${e}y`, `0`));
       } else t && a.append(t, r);
     }
-  } else if (J(e))
+  } else if (q(e))
     throw Error(
       `Cannot submit element that is not <form>, <button>, or <input type="submit|image">`,
     );
-  else ((n = K), (r = null), (i = q), (o = e));
+  else ((n = G), (r = null), (i = K), (o = e));
   return (
     a && i === `text/plain` && ((o = a), (a = void 0)),
     { action: r, method: n.toLowerCase(), encType: i, formData: a, body: o }
   );
 }
 Object.getOwnPropertyNames(Object.prototype).sort().join(`\0`);
-var _t = {
+var vt = {
     "&": `\\u0026`,
     ">": `\\u003e`,
     "<": `\\u003c`,
     "\u2028": `\\u2028`,
     "\u2029": `\\u2029`,
   },
-  vt = /[&><\u2028\u2029]/g;
-function yt(e) {
-  return e.replace(vt, (e) => _t[e]);
+  yt = /[&><\u2028\u2029]/g;
+function bt(e) {
+  return e.replace(yt, (e) => vt[e]);
 }
-function bt(e, t) {
+function xt(e, t) {
   if (e === !1 || e == null) throw Error(t);
 }
-function xt(e, t, n, r) {
+function St(e, t, n, r) {
   let i =
     typeof e == `string`
       ? new URL(
@@ -1359,13 +1362,13 @@ function xt(e, t, n, r) {
         : (i.pathname = `${i.pathname}.${r}`)
       : i.pathname === `/`
         ? (i.pathname = `_root.${r}`)
-        : t && A(i.pathname, t) === `/`
+        : t && O(i.pathname, t) === `/`
           ? (i.pathname = `${t.replace(/\/$/, ``)}/_root.${r}`)
           : (i.pathname = `${i.pathname.replace(/\/$/, ``)}.${r}`),
     i
   );
 }
-async function St(e, n) {
+async function Ct(e, n) {
   if (e.id in n) return n[e.id];
   try {
     let r = await t(() => import(e.module), [], import.meta.url);
@@ -1382,10 +1385,10 @@ async function St(e, n) {
     );
   }
 }
-function Ct(e) {
+function wt(e) {
   return e != null && typeof e.page == `string`;
 }
-function wt(e) {
+function Tt(e) {
   return e == null
     ? !1
     : e.href == null
@@ -1394,14 +1397,14 @@ function wt(e) {
         typeof e.imageSizes == `string`
       : typeof e.rel == `string` && typeof e.href == `string`;
 }
-async function Tt(e, t, n) {
-  return At(
+async function Et(e, t, n) {
+  return jt(
     (
       await Promise.all(
         e.map(async (e) => {
           let r = t.routes[e.route.id];
           if (r) {
-            let e = await St(r, n);
+            let e = await Ct(r, n);
             return e.links ? e.links() : [];
           }
           return [];
@@ -1409,7 +1412,7 @@ async function Tt(e, t, n) {
       )
     )
       .flat(1)
-      .filter(wt)
+      .filter(Tt)
       .filter((e) => e.rel === `stylesheet` || e.rel === `preload`)
       .map((e) =>
         e.rel === `stylesheet`
@@ -1418,7 +1421,7 @@ async function Tt(e, t, n) {
       ),
   );
 }
-function Et(e, t, n, r, i, a) {
+function Dt(e, t, n, r, i, a) {
   let o = (e, t) => (n[t] ? e.route.id !== n[t].route.id : !0),
     s = (e, t) =>
       n[t].pathname !== e.pathname ||
@@ -1447,8 +1450,8 @@ function Et(e, t, n, r, i, a) {
         })
       : [];
 }
-function Dt(e, t, { includeHydrateFallback: n } = {}) {
-  return Ot(
+function Ot(e, t, { includeHydrateFallback: n } = {}) {
+  return kt(
     e
       .map((e) => {
         let r = t.routes[e.route.id];
@@ -1467,38 +1470,38 @@ function Dt(e, t, { includeHydrateFallback: n } = {}) {
       .flat(1),
   );
 }
-function Ot(e) {
+function kt(e) {
   return [...new Set(e)];
 }
-function kt(e) {
+function At(e) {
   let t = {},
     n = Object.keys(e).sort();
   for (let r of n) t[r] = e[r];
   return t;
 }
-function At(e, t) {
+function jt(e, t) {
   let n = new Set(),
     r = new Set(t);
   return e.reduce((e, i) => {
-    if (t && !Ct(i) && i.as === `script` && i.href && r.has(i.href)) return e;
-    let a = JSON.stringify(kt(i));
+    if (t && !wt(i) && i.as === `script` && i.href && r.has(i.href)) return e;
+    let a = JSON.stringify(At(i));
     return (n.has(a) || (n.add(a), e.push({ key: a, link: i })), e);
   }, []);
 }
-function jt() {
-  let e = r.useContext(F);
+function Mt() {
+  let e = r.useContext(j);
   return (
-    bt(
+    xt(
       e,
       `You must render this element inside a <DataRouterContext.Provider> element`,
     ),
     e
   );
 }
-function Mt() {
-  let e = r.useContext(I);
+function Nt() {
+  let e = r.useContext(M);
   return (
-    bt(
+    xt(
       e,
       `You must render this element inside a <DataRouterStateContext.Provider> element`,
     ),
@@ -1507,14 +1510,14 @@ function Mt() {
 }
 var X = r.createContext(void 0);
 X.displayName = `FrameworkContext`;
-function Nt() {
+function Pt() {
   let e = r.useContext(X);
   return (
-    bt(e, `You must render this element inside a <HydratedRouter> element`),
+    xt(e, `You must render this element inside a <HydratedRouter> element`),
     e
   );
 }
-function Pt(e, t) {
+function Ft(e, t) {
   let n = r.useContext(X),
     [i, a] = r.useState(!1),
     [o, s] = r.useState(!1),
@@ -1581,19 +1584,19 @@ function Z(e, t) {
     (e && e(n), n.defaultPrevented || t(n));
   };
 }
-function Ft({ page: e, ...t }) {
-  let { router: n } = jt(),
-    i = r.useMemo(() => f(n.routes, e, n.basename), [n.routes, e, n.basename]);
-  return i ? r.createElement(Lt, { page: e, matches: i, ...t }) : null;
+function It({ page: e, ...t }) {
+  let { router: n } = Mt(),
+    i = r.useMemo(() => p(n.routes, e, n.basename), [n.routes, e, n.basename]);
+  return i ? r.createElement(Rt, { page: e, matches: i, ...t }) : null;
 }
-function It(e) {
-  let { manifest: t, routeModules: n } = Nt(),
+function Lt(e) {
+  let { manifest: t, routeModules: n } = Pt(),
     [i, a] = r.useState([]);
   return (
     r.useEffect(() => {
       let r = !1;
       return (
-        Tt(e, t, n).then((e) => {
+        Et(e, t, n).then((e) => {
           r || a(e);
         }),
         () => {
@@ -1604,13 +1607,13 @@ function It(e) {
     i
   );
 }
-function Lt({ page: e, matches: t, ...n }) {
-  let i = H(),
-    { future: a, manifest: o, routeModules: s } = Nt(),
-    { basename: c } = jt(),
-    { loaderData: l, matches: u } = Mt(),
-    d = r.useMemo(() => Et(e, t, u, o, i, `data`), [e, t, u, o, i]),
-    f = r.useMemo(() => Et(e, t, u, o, i, `assets`), [e, t, u, o, i]),
+function Rt({ page: e, matches: t, ...n }) {
+  let i = L(),
+    { future: a, manifest: o, routeModules: s } = Pt(),
+    { basename: c } = Mt(),
+    { loaderData: l, matches: u } = Nt(),
+    d = r.useMemo(() => Dt(e, t, u, o, i, `data`), [e, t, u, o, i]),
+    f = r.useMemo(() => Dt(e, t, u, o, i, `assets`), [e, t, u, o, i]),
     p = r.useMemo(() => {
       if (e === i.pathname + i.search + i.hash) return [];
       let n = new Set(),
@@ -1630,7 +1633,7 @@ function Lt({ page: e, matches: t, ...n }) {
         n.size === 0)
       )
         return [];
-      let u = xt(e, c, a.unstable_trailingSlashAwareDataRequests, `data`);
+      let u = St(e, c, a.unstable_trailingSlashAwareDataRequests, `data`);
       return (
         r &&
           n.size > 0 &&
@@ -1644,8 +1647,8 @@ function Lt({ page: e, matches: t, ...n }) {
         [u.pathname + u.search]
       );
     }, [c, a.unstable_trailingSlashAwareDataRequests, l, i, o, d, t, e, s]),
-    m = r.useMemo(() => Dt(f, o), [f, o]),
-    h = It(f);
+    m = r.useMemo(() => Ot(f, o), [f, o]),
+    h = Lt(f);
   return r.createElement(
     r.Fragment,
     null,
@@ -1671,21 +1674,21 @@ function Lt({ page: e, matches: t, ...n }) {
     ),
   );
 }
-function Rt(...e) {
+function zt(...e) {
   return (t) => {
     e.forEach((e) => {
       typeof e == `function` ? e(t) : e != null && (e.current = t);
     });
   };
 }
-var zt =
+var Bt =
   typeof window < `u` &&
   window.document !== void 0 &&
   window.document.createElement !== void 0;
 try {
-  zt && (window.__reactRouterVersion = `7.13.1`);
+  Bt && (window.__reactRouterVersion = `7.13.1`);
 } catch {}
-function Bt({
+function Vt({
   basename: e,
   children: t,
   history: n,
@@ -1700,7 +1703,7 @@ function Bt({
     );
   return (
     r.useLayoutEffect(() => n.listen(s), [n, s]),
-    r.createElement(rt, {
+    r.createElement(at, {
       basename: e,
       children: t,
       location: a.location,
@@ -1710,9 +1713,9 @@ function Bt({
     })
   );
 }
-Bt.displayName = `unstable_HistoryRouter`;
-var Vt = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
-  Q = r.forwardRef(function (
+Vt.displayName = `unstable_HistoryRouter`;
+var Ht = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
+  Ut = r.forwardRef(function (
     {
       onClick: e,
       discover: t = `render`,
@@ -1735,20 +1738,20 @@ var Vt = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
         basename: g,
         navigator: _,
         unstable_useTransitions: v,
-      } = r.useContext(L),
-      y = typeof u == `string` && Vt.test(u),
-      b = fe(u, g);
+      } = r.useContext(N),
+      y = typeof u == `string` && Ht.test(u),
+      b = _e(u, g);
     u = b.to;
-    let x = Se(u, { relative: i }),
-      S = H(),
+    let x = Oe(u, { relative: i }),
+      S = L(),
       C = null;
     if (s) {
-      let e = N(s, [], S.unstable_mask ? S.unstable_mask.pathname : `/`, !0);
-      (g !== `/` && (e.pathname = e.pathname === `/` ? g : P([g, e.pathname])),
+      let e = k(s, [], S.unstable_mask ? S.unstable_mask.pathname : `/`, !0);
+      (g !== `/` && (e.pathname = e.pathname === `/` ? g : A([g, e.pathname])),
         (C = _.createHref(e)));
     }
-    let [w, T, E] = Pt(n, m),
-      ee = Jt(u, {
+    let [w, T, ee] = Ft(n, m),
+      te = Xt(u, {
         replace: o,
         unstable_mask: s,
         state: c,
@@ -1759,25 +1762,25 @@ var Vt = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i,
         unstable_defaultShouldRevalidate: p,
         unstable_useTransitions: v,
       });
-    function D(t) {
-      (e && e(t), t.defaultPrevented || ee(t));
+    function ne(t) {
+      (e && e(t), t.defaultPrevented || te(t));
     }
-    let O = !(b.isExternal || a),
-      k = r.createElement(`a`, {
+    let E = !(b.isExternal || a),
+      D = r.createElement(`a`, {
         ...m,
-        ...E,
-        href: (O ? C : void 0) || b.absoluteURL || x,
-        onClick: O ? D : e,
-        ref: Rt(h, T),
+        ...ee,
+        href: (E ? C : void 0) || b.absoluteURL || x,
+        onClick: E ? ne : e,
+        ref: zt(h, T),
         target: l,
         "data-discover": !y && t === `render` ? `true` : void 0,
       });
     return w && !y
-      ? r.createElement(r.Fragment, null, k, r.createElement(Ft, { page: x }))
-      : k;
+      ? r.createElement(r.Fragment, null, D, r.createElement(It, { page: x }))
+      : D;
   });
-Q.displayName = `Link`;
-var Ht = r.forwardRef(function (
+Ut.displayName = `Link`;
+var Wt = r.forwardRef(function (
   {
     "aria-current": e = `page`,
     caseSensitive: t = !1,
@@ -1791,11 +1794,11 @@ var Ht = r.forwardRef(function (
   },
   u,
 ) {
-  let d = W(o, { relative: l.relative }),
-    f = H(),
-    p = r.useContext(I),
-    { navigator: m, basename: h } = r.useContext(L),
-    g = p != null && an(d) && s === !0,
+  let d = z(o, { relative: l.relative }),
+    f = L(),
+    p = r.useContext(M),
+    { navigator: m, basename: h } = r.useContext(N),
+    g = p != null && on(d) && s === !0,
     _ = m.encodeLocation ? m.encodeLocation(d).pathname : d.pathname,
     v = f.pathname,
     y =
@@ -1806,7 +1809,7 @@ var Ht = r.forwardRef(function (
     ((v = v.toLowerCase()),
     (y = y ? y.toLowerCase() : null),
     (_ = _.toLowerCase())),
-    y && h && (y = A(y, h) || y));
+    y && h && (y = O(y, h) || y));
   let b = _ !== `/` && _.endsWith(`/`) ? _.length - 1 : _.length,
     x = v === _ || (!i && v.startsWith(_) && v.charAt(b) === `/`),
     S =
@@ -1826,23 +1829,23 @@ var Ht = r.forwardRef(function (
         ]
           .filter(Boolean)
           .join(` `);
-  let E = typeof a == `function` ? a(C) : a;
+  let ee = typeof a == `function` ? a(C) : a;
   return r.createElement(
-    Q,
+    Ut,
     {
       ...l,
       "aria-current": w,
       className: T,
       ref: u,
-      style: E,
+      style: ee,
       to: o,
       viewTransition: s,
     },
     typeof c == `function` ? c(C) : c,
   );
 });
-Ht.displayName = `NavLink`;
-var Ut = r.forwardRef(
+Wt.displayName = `NavLink`;
+var Gt = r.forwardRef(
   (
     {
       discover: e = `render`,
@@ -1851,7 +1854,7 @@ var Ut = r.forwardRef(
       reloadDocument: i,
       replace: a,
       state: o,
-      method: s = K,
+      method: s = G,
       action: c,
       onSubmit: l,
       relative: u,
@@ -1862,11 +1865,11 @@ var Ut = r.forwardRef(
     },
     h,
   ) => {
-    let { unstable_useTransitions: g } = r.useContext(L),
-      _ = Qt(),
-      v = $t(c, { relative: u }),
+    let { unstable_useTransitions: g } = r.useContext(N),
+      _ = en(),
+      v = tn(c, { relative: u }),
       y = s.toLowerCase() === `get` ? `get` : `post`,
-      b = typeof c == `string` && Vt.test(c);
+      b = typeof c == `string` && Ht.test(c);
     return r.createElement(`form`, {
       ref: h,
       method: y,
@@ -1897,16 +1900,16 @@ var Ut = r.forwardRef(
     });
   },
 );
-Ut.displayName = `Form`;
-function Wt({ getKey: e, storageKey: t, ...n }) {
+Gt.displayName = `Form`;
+function Kt({ getKey: e, storageKey: t, ...n }) {
   let i = r.useContext(X),
-    { basename: a } = r.useContext(L),
-    o = H(),
-    s = qe();
-  nn({ getKey: e, storageKey: t });
+    { basename: a } = r.useContext(N),
+    o = L(),
+    s = Ye();
+  rn({ getKey: e, storageKey: t });
   let c = r.useMemo(() => {
     if (!i || !e) return null;
-    let t = tn(o, s, a, e);
+    let t = $(o, s, a, e);
     return t === o.key ? null : t;
   }, []);
   if (!i || i.isSpaMode) return null;
@@ -1928,23 +1931,23 @@ function Wt({ getKey: e, storageKey: t, ...n }) {
     ...n,
     suppressHydrationWarning: !0,
     dangerouslySetInnerHTML: {
-      __html: `(${l})(${yt(JSON.stringify(t || en))}, ${yt(JSON.stringify(c))})`,
+      __html: `(${l})(${bt(JSON.stringify(t || nn))}, ${bt(JSON.stringify(c))})`,
     },
   });
 }
-Wt.displayName = `ScrollRestoration`;
-function Gt(e) {
+Kt.displayName = `ScrollRestoration`;
+function qt(e) {
   return `${e} must be used within a data router.  See https://reactrouter.com/en/main/routers/picking-a-router.`;
 }
-function Kt(e) {
-  let t = r.useContext(F);
-  return (o(t, Gt(e)), t);
+function Jt(e) {
+  let t = r.useContext(j);
+  return (s(t, qt(e)), t);
 }
-function qt(e) {
-  let t = r.useContext(I);
-  return (o(t, Gt(e)), t);
+function Yt(e) {
+  let t = r.useContext(M);
+  return (s(t, qt(e)), t);
 }
-function Jt(
+function Xt(
   e,
   {
     target: t,
@@ -1955,17 +1958,17 @@ function Jt(
     relative: s,
     viewTransition: c,
     unstable_defaultShouldRevalidate: l,
-    unstable_useTransitions: d,
+    unstable_useTransitions: u,
   } = {},
 ) {
-  let f = U(),
-    p = H(),
-    m = W(e, { relative: s });
+  let f = R(),
+    p = L(),
+    m = z(e, { relative: s });
   return r.useCallback(
     (h) => {
-      if (ut(h, t)) {
+      if (ft(h, t)) {
         h.preventDefault();
-        let t = n === void 0 ? u(p) === u(m) : n,
+        let t = n === void 0 ? d(p) === d(m) : n,
           g = () =>
             f(e, {
               replace: t,
@@ -1976,46 +1979,46 @@ function Jt(
               viewTransition: c,
               unstable_defaultShouldRevalidate: l,
             });
-        d ? r.startTransition(() => g()) : g();
+        u ? r.startTransition(() => g()) : g();
       }
     },
-    [p, f, m, n, i, a, t, e, o, s, c, l, d],
+    [p, f, m, n, i, a, t, e, o, s, c, l, u],
   );
 }
-function Yt(e) {
-  s(
+function Zt(e) {
+  c(
     typeof URLSearchParams < `u`,
     "You cannot use the `useSearchParams` hook in a browser that does not support the URLSearchParams API. If you need to support Internet Explorer 11, we recommend you load a polyfill such as https://github.com/ungap/url-search-params.",
   );
-  let t = r.useRef(dt(e)),
+  let t = r.useRef(J(e)),
     n = r.useRef(!1),
-    i = H(),
-    a = r.useMemo(() => ft(i.search, n.current ? null : t.current), [i.search]),
-    o = U();
+    i = L(),
+    a = r.useMemo(() => pt(i.search, n.current ? null : t.current), [i.search]),
+    o = R();
   return [
     a,
     r.useCallback(
       (e, t) => {
-        let r = dt(typeof e == `function` ? e(new URLSearchParams(a)) : e);
+        let r = J(typeof e == `function` ? e(new URLSearchParams(a)) : e);
         ((n.current = !0), o(`?` + r, t));
       },
       [o, a],
     ),
   ];
 }
-var Xt = 0,
-  Zt = () => `__${String(++Xt)}__`;
-function Qt() {
-  let { router: e } = Kt(`useSubmit`),
-    { basename: t } = r.useContext(L),
-    n = Ge(),
+var Qt = 0,
+  $t = () => `__${String(++Qt)}__`;
+function en() {
+  let { router: e } = Jt(`useSubmit`),
+    { basename: t } = r.useContext(N),
+    n = qe(),
     i = e.fetch,
     a = e.navigate;
   return r.useCallback(
     async (e, r = {}) => {
-      let { action: o, method: s, encType: c, formData: l, body: u } = gt(e, t);
+      let { action: o, method: s, encType: c, formData: l, body: u } = _t(e, t);
       r.navigate === !1
-        ? await i(r.fetcherKey || Zt(), n, r.action || o, {
+        ? await i(r.fetcherKey || $t(), n, r.action || o, {
             unstable_defaultShouldRevalidate:
               r.unstable_defaultShouldRevalidate,
             preventScrollReset: r.preventScrollReset,
@@ -2043,54 +2046,54 @@ function Qt() {
     [i, a, t, n],
   );
 }
-function $t(e, { relative: t } = {}) {
-  let { basename: n } = r.useContext(L),
-    i = r.useContext(z);
-  o(i, `useFormAction must be used inside a RouteContext`);
+function tn(e, { relative: t } = {}) {
+  let { basename: n } = r.useContext(N),
+    i = r.useContext(F);
+  s(i, `useFormAction must be used inside a RouteContext`);
   let [a] = i.matches.slice(-1),
-    s = { ...W(e || `.`, { relative: t }) },
-    c = H();
+    o = { ...z(e || `.`, { relative: t }) },
+    c = L();
   if (e == null) {
-    s.search = c.search;
-    let e = new URLSearchParams(s.search),
+    o.search = c.search;
+    let e = new URLSearchParams(o.search),
       t = e.getAll(`index`);
     if (t.some((e) => e === ``)) {
       (e.delete(`index`),
         t.filter((e) => e).forEach((t) => e.append(`index`, t)));
       let n = e.toString();
-      s.search = n ? `?${n}` : ``;
+      o.search = n ? `?${n}` : ``;
     }
   }
   return (
     (!e || e === `.`) &&
       a.route.index &&
-      (s.search = s.search ? s.search.replace(/^\?/, `?index&`) : `?index`),
-    n !== `/` && (s.pathname = s.pathname === `/` ? n : P([n, s.pathname])),
-    u(s)
+      (o.search = o.search ? o.search.replace(/^\?/, `?index&`) : `?index`),
+    n !== `/` && (o.pathname = o.pathname === `/` ? n : A([n, o.pathname])),
+    d(o)
   );
 }
-var en = `react-router-scroll-positions`,
-  $ = {};
-function tn(e, t, n, r) {
+var nn = `react-router-scroll-positions`,
+  Q = {};
+function $(e, t, n, r) {
   let i = null;
   return (
     r &&
       (i = r(
-        n === `/` ? e : { ...e, pathname: A(e.pathname, n) || e.pathname },
+        n === `/` ? e : { ...e, pathname: O(e.pathname, n) || e.pathname },
         t,
       )),
     (i ??= e.key),
     i
   );
 }
-function nn({ getKey: e, storageKey: t } = {}) {
-  let { router: n } = Kt(`useScrollRestoration`),
+function rn({ getKey: e, storageKey: t } = {}) {
+  let { router: n } = Jt(`useScrollRestoration`),
     { restoreScrollPosition: i, preventScrollReset: a } =
-      qt(`useScrollRestoration`),
-    { basename: o } = r.useContext(L),
-    c = H(),
-    l = qe(),
-    u = Ke();
+      Yt(`useScrollRestoration`),
+    { basename: o } = r.useContext(N),
+    s = L(),
+    l = Ye(),
+    u = Je();
   (r.useEffect(
     () => (
       (window.history.scrollRestoration = `manual`),
@@ -2100,35 +2103,35 @@ function nn({ getKey: e, storageKey: t } = {}) {
     ),
     [],
   ),
-    rn(
+    an(
       r.useCallback(() => {
         if (u.state === `idle`) {
-          let t = tn(c, l, o, e);
-          $[t] = window.scrollY;
+          let t = $(s, l, o, e);
+          Q[t] = window.scrollY;
         }
         try {
-          sessionStorage.setItem(t || en, JSON.stringify($));
+          sessionStorage.setItem(t || nn, JSON.stringify(Q));
         } catch (e) {
-          s(
+          c(
             !1,
             `Failed to save scroll positions in sessionStorage, <ScrollRestoration /> will not work properly (${e}).`,
           );
         }
         window.history.scrollRestoration = `auto`;
-      }, [u.state, e, o, c, l, t]),
+      }, [u.state, e, o, s, l, t]),
     ),
     typeof document < `u` &&
       (r.useLayoutEffect(() => {
         try {
-          let e = sessionStorage.getItem(t || en);
-          e && ($ = JSON.parse(e));
+          let e = sessionStorage.getItem(t || nn);
+          e && (Q = JSON.parse(e));
         } catch {}
       }, [t]),
       r.useLayoutEffect(() => {
         let t = n?.enableScrollRestoration(
-          $,
+          Q,
           () => window.scrollY,
-          e ? (t, n) => tn(t, n, o, e) : void 0,
+          e ? (t, n) => $(t, n, o, e) : void 0,
         );
         return () => t && t();
       }, [n, o, e]),
@@ -2139,9 +2142,9 @@ function nn({ getKey: e, storageKey: t } = {}) {
             return;
           }
           try {
-            if (c.hash) {
+            if (s.hash) {
               let e = document.getElementById(
-                decodeURIComponent(c.hash.slice(1)),
+                decodeURIComponent(s.hash.slice(1)),
               );
               if (e) {
                 e.scrollIntoView();
@@ -2149,16 +2152,16 @@ function nn({ getKey: e, storageKey: t } = {}) {
               }
             }
           } catch {
-            s(
+            c(
               !1,
-              `"${c.hash.slice(1)}" is not a decodable element ID. The view will not scroll to it.`,
+              `"${s.hash.slice(1)}" is not a decodable element ID. The view will not scroll to it.`,
             );
           }
           a !== !0 && window.scrollTo(0, 0);
         }
-      }, [c, i, a])));
+      }, [s, i, a])));
 }
-function rn(e, t) {
+function an(e, t) {
   let { capture: n } = t || {};
   r.useEffect(() => {
     let t = n == null ? void 0 : { capture: n };
@@ -2170,34 +2173,36 @@ function rn(e, t) {
     );
   }, [e, n]);
 }
-function an(e, { relative: t } = {}) {
-  let n = r.useContext(me);
-  o(
+function on(e, { relative: t } = {}) {
+  let n = r.useContext(ye);
+  s(
     n != null,
     "`useViewTransitionState` must be used within `react-router-dom`'s `RouterProvider`.  Did you accidentally import `RouterProvider` from `react-router`?",
   );
-  let { basename: i } = Kt(`useViewTransitionState`),
-    a = W(e, { relative: t });
+  let { basename: i } = Jt(`useViewTransitionState`),
+    a = z(e, { relative: t });
   if (!n.isTransitioning) return !1;
-  let s = A(n.currentLocation.pathname, i) || n.currentLocation.pathname,
-    c = A(n.nextLocation.pathname, i) || n.nextLocation.pathname;
-  return D(a.pathname, c) != null || D(a.pathname, s) != null;
+  let o = O(n.currentLocation.pathname, i) || n.currentLocation.pathname,
+    c = O(n.nextLocation.pathname, i) || n.nextLocation.pathname;
+  return E(a.pathname, c) != null || E(a.pathname, o) != null;
 }
 export {
+  Zt as _,
   nt as a,
-  D as c,
-  we as d,
-  U as f,
-  Yt as h,
+  ot as c,
+  p as d,
+  L as f,
+  Ie as g,
+  ke as h,
   tt as i,
-  f as l,
-  Ae as m,
-  $e as n,
-  it as o,
-  Ce as p,
-  et as r,
-  at as s,
-  Q as t,
-  H as u,
+  st as l,
+  R as m,
+  Ut as n,
+  rt as o,
+  Ae as p,
+  P as r,
+  it as s,
+  i as t,
+  E as u,
 };
 //# sourceMappingURL=chunk-LFPYN7LY.js.map

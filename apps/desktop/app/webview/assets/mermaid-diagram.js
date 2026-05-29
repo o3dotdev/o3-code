@@ -4,101 +4,115 @@ const __vite__mapDeps = (
   d = m.f ||
     (m.f = [
       "./c4Diagram-YG6GDRKO.js",
-      "./dist-Dkaf81wL.js",
-      "./chunk.js",
-      "./src-DXdm7MTq.js",
+      "./dist-OQR0lEt7.js",
+      "./chunk-Bj-mKKzh.js",
+      "./src-BHeH9bp0.js",
       "./string.js",
-      "./chunk-S3R3BYOJ.js",
-      "./monotone.js",
-      "./math.js",
-      "./chunk-ABZYJK2D.js",
+      "./chunk-AGHRB4JF-CwjJfTB_.js",
+      "./chunk-ABZYJK2D-DSLQAJWr.js",
       "./preload-helper.js",
+      "./invert.js",
+      "./chunk-S3R3BYOJ.js",
+      "./step.js",
+      "./math-CnpFeCbl.js",
+      "./monotone.js",
       "./isArrayLikeObject.js",
-      "./chunk-TZMSLE5B.js",
+      "./chunk-TZMSLE5B-DlQemXcW.js",
       "./flowDiagram-NV44I4VS.js",
-      "./chunk-JA3XYJ7Z.js",
-      "./marked.esm.js",
-      "./channel.js",
-      "./chunk-55IACEB6.js",
+      "./channel-Bg_9b54a.js",
+      "./marked.esm-BR-H6018.js",
+      "./chunk-55IACEB6-Dw4U87tB.js",
       "./chunk-ATLVNIR6.js",
       "./chunk-CVBHYZKI.js",
-      "./chunk-FMBD7UC4.js",
-      "./chunk-HN2XXSSU.js",
+      "./chunk-FMBD7UC4-CkVnjLLR.js",
+      "./chunk-HN2XXSSU-J1M-o__Q.js",
+      "./chunk-JA3XYJ7Z.js",
+      "./esm.js",
       "./chunk-JZLCHNYA.js",
+      "./rough.esm-k7zZ13IR.js",
       "./chunk-MI3HLSF2.js",
-      "./chunk-N4CR4FBY.js",
+      "./chunk-N4CR4FBY-BeIHswHY.js",
       "./chunk-QXUST7PY.js",
-      "./line.js",
-      "./path.js",
-      "./array.js",
+      "./line-DcJPiuto.js",
+      "./path-8PN3RO0R.js",
+      "./array-CPI_glx8.js",
       "./chunk-QN33PNHL.js",
-      "./erDiagram-Q2GNP2WA.js",
-      "./gitGraphDiagram-NY62KEGX.js",
+      "./erDiagram-Q2GNP2WA-nmfz36h1.js",
+      "./gitGraphDiagram-NY62KEGX-CmaMgRyS.js",
       "./chunk-FPAJGGOC.js",
-      "./isEmpty.js",
-      "./_baseUniq.js",
+      "./isEmpty-hl33V4on.js",
+      "./_baseUniq-jitSt_aK.js",
       "./_basePickBy.js",
-      "./clone.js",
+      "./clone-DgntaiN2.js",
+      "./isEmpty-D__iH1WQ.js",
+      "./_baseFor-SRtUHe7G.js",
+      "./reduce-CkcXOmmJ.js",
+      "./flatten.js",
+      "./main.js",
       "./chunk-76Q3JFCE.js",
       "./chunk-FWNWRKHM.js",
       "./chunk-LBM3YZW2.js",
-      "./chunk-LHMN2FUI.js",
-      "./chunk-O7ZBX7Z2.js",
+      "./chunk-LHMN2FUI-VtnDVaqY.js",
+      "./chunk-O7ZBX7Z2-CDUPWEuA.js",
       "./chunk-S6J4BHB3.js",
       "./chunk-T53DSG4Q.js",
-      "./mermaid-parser.core.js",
-      "./chunk-4BX2VUAB.js",
-      "./chunk-QZHKN3VN.js",
-      "./ganttDiagram-LVOFAZNH.js",
-      "./linear.js",
-      "./defaultLocale.js",
-      "./init.js",
-      "./min.js",
-      "./infoDiagram-F6ZHWCRC.js",
-      "./chunk-EXTU4WIE.js",
+      "./mermaid-parser.core-p5FsnjRv.js",
+      "./chunk-4BX2VUAB-g.js",
+      "./chunk-QZHKN3VN-Dn4wC5X9.js",
+      "./ganttDiagram-LVOFAZNH-BNknfXmX.js",
+      "./linear-DbofqmWv.js",
+      "./defaultLocale-CwOwouzm.js",
+      "./init-L_XUKIOb.js",
+      "./min-CV_SZUWE.js",
+      "./axis.js",
+      "./infoDiagram-F6ZHWCRC-BzBFXmol.js",
+      "./chunk-EXTU4WIE-PYLurCvb.js",
       "./chunk-KS23V3DP.js",
-      "./pieDiagram-ADFJNKIX.js",
-      "./ordinal.js",
+      "./pieDiagram-ADFJNKIX-BNMJkHub.js",
+      "./ordinal-KRb_VAHU.js",
       "./arc.js",
-      "./pie.js",
-      "./quadrantDiagram-AYHSOK5B-C.js",
-      "./xychartDiagram-PRI3JC2R.js",
-      "./band.js",
+      "./pie-DNQPfF5w.js",
+      "./quadrantDiagram-AYHSOK5B.js",
+      "./xychartDiagram-PRI3JC2R-VnpegIHb.js",
+      "./band-BgttIMFt.js",
       "./requirementDiagram-UZGBJVZJ.js",
-      "./sequenceDiagram-WL72ISMW.js",
+      "./sequenceDiagram-WL72ISMW--qArVVkr.js",
       "./classDiagram-2ON5EDUG.js",
-      "./chunk-B4BG7PRW.js",
+      "./chunk-B4BG7PRW--bpkRIvq.js",
       "./classDiagram-v2-WZHVMYZB.js",
       "./stateDiagram-FKZM4ZOC.js",
-      "./dagre.js",
-      "./graphlib.js",
-      "./chunk-DI55MBZ5.js",
+      "./dagre-CuOwcp8Z.js",
+      "./graphlib-BZvYK9y8.js",
+      "./chunk-DI55MBZ5-CcmymovX.js",
       "./stateDiagram-v2-4FDKWEC3.js",
       "./journeyDiagram-XKPGCS4Q.js",
-      "./timeline-definition-IT6M3QCI.js",
+      "./timeline-definition-IT6M3QCI-CQkzHxWR.js",
       "./mindmap-definition-VGOIOE7T.js",
       "./v4.js",
-      "./kanban-definition-3W4ZIXB7.js",
+      "./kanban-definition-3W4ZIXB7-CTcMrhXZ.js",
       "./sankeyDiagram-TZEHDZUN.js",
+      "./sankeyLinkHorizontal-CguDmNLE.js",
       "./Tableau10.js",
       "./diagram-S2PKOQOG.js",
-      "./diagram-QEK2KX5R.js",
+      "./diagram-QEK2KX5R-DJIA96GA.js",
       "./blockDiagram-VD42YOAC.js",
       "./architectureDiagram-VXUJARFQ.js",
-      "./cytoscape.esm.js",
-      "./diagram-PSM6KHXK.js",
-      "./treemap.js",
+      "./cytoscape-fcose-BxzdNjfC.js",
+      "./cytoscape.esm-DHOMt9bj.js",
+      "./diagram-PSM6KHXK-CRrjbnns.js",
+      "./treemap-BYFuMAdb.js",
     ]),
 ) => i.map((i) => d[i]);
-import { s as e } from "./chunk.js";
-import "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./src-C.js";
 import { t } from "./preload-helper.js";
 import { n, t as r } from "./jsx-runtime.js";
-import { t as i } from "./isEmpty.js";
+import { t as i } from "./isEmpty-hl33V4on.js";
 import { a, d as o, h as s, i as c, m as l, r as u } from "./chunk-S3R3BYOJ.js";
-import { a as d, i as f, r as p, t as m } from "./src-DXdm7MTq.js";
-import { t as h } from "./clsx.js";
-import "./react-dom.js";
+import { t as d } from "./src-BHeH9bp0.js";
+import { t as f } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
+import { i as p, n as m, r as h } from "./chunk-AGHRB4JF-CwjJfTB_.js";
 import {
   J as g,
   M as _,
@@ -107,401 +121,74 @@ import {
   S as b,
   V as x,
   W as S,
-  X as C,
-  Y as ee,
-  c as te,
-  f as ne,
-  g as re,
-  h as ie,
-  j as w,
-  l as ae,
-  n as oe,
-  p as T,
-  q as se,
-  r as ce,
-  t as le,
-  w as ue,
-  x as de,
-  y as E,
-} from "./chunk-ABZYJK2D.js";
-import { t as fe } from "./chunk-EXTU4WIE.js";
-import "./dist-Dkaf81wL.js";
-import { i as pe, s as me } from "./chunk-JA3XYJ7Z.js";
-import "./marked.esm.js";
-import "./chunk-HN2XXSSU.js";
+  X as ee,
+  Y as C,
+  c as w,
+  f as T,
+  g as E,
+  h as D,
+  j as O,
+  l as k,
+  n as A,
+  p as j,
+  q as M,
+  r as N,
+  t as P,
+  w as F,
+  x as I,
+  y as L,
+} from "./chunk-ABZYJK2D-DSLQAJWr.js";
+import { t as R } from "./chunk-EXTU4WIE-PYLurCvb.js";
+import "./dist-OQR0lEt7.js";
+import { t as z } from "./esm.js";
+import "./marked.esm-BR-H6018.js";
+import { i as B } from "./chunk-JA3XYJ7Z.js";
+import "./chunk-HN2XXSSU-J1M-o__Q.js";
 import "./chunk-CVBHYZKI.js";
 import "./chunk-ATLVNIR6.js";
 import "./chunk-JZLCHNYA.js";
 import "./chunk-QXUST7PY.js";
-import { n as he } from "./chunk-N4CR4FBY.js";
-import { n as ge, t as _e } from "./chunk-MI3HLSF2.js";
-import { t as ve } from "./chunk-KS23V3DP.js";
-import { H as ye, W as be, xt as xe } from "./setting-storage.js";
-import { t as Se } from "./use-is-dark.js";
+import { n as te } from "./chunk-N4CR4FBY-BeIHswHY.js";
+import { n as ne, t as re } from "./chunk-MI3HLSF2.js";
+import { t as ie } from "./chunk-KS23V3DP.js";
+import { n as ae, r as oe, t as se } from "./Serializer.js";
+import { G as ce, U as le, wt as ue } from "./setting-storage.js";
+import { t as de } from "./use-is-dark-BHkhnHe-.js";
 import "./window-zoom-context.js";
-import { t as Ce } from "./tooltip.js";
-import { t as we } from "./button.js";
-import "./reduced-motion-preference.js";
+import { t as fe } from "./tooltip-CDzchJxN.js";
+import { t as pe } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
 import "./check-md.js";
-import { n as Te, t as Ee } from "./expand.js";
-import { t as De } from "./copy-to-clipboard.js";
-import "./copy.js";
-import { t as Oe } from "./copy-button.js";
-var ke = `comm`,
-  Ae = `rule`,
-  je = `decl`,
-  Me = `@import`,
-  Ne = `@namespace`,
-  Pe = `@keyframes`,
-  Fe = `@layer`,
-  Ie = Math.abs,
-  D = String.fromCharCode;
-function Le(e) {
-  return e.trim();
-}
-function O(e, t, n) {
-  return e.replace(t, n);
-}
-function Re(e, t, n) {
-  return e.indexOf(t, n);
-}
-function k(e, t) {
-  return e.charCodeAt(t) | 0;
-}
-function A(e, t, n) {
-  return e.slice(t, n);
-}
-function j(e) {
-  return e.length;
-}
-function ze(e) {
-  return e.length;
-}
-function M(e, t) {
-  return (t.push(e), e);
-}
-var N = 1,
-  P = 1,
-  Be = 0,
-  F = 0,
-  I = 0,
-  L = ``;
-function Ve(e, t, n, r, i, a, o, s) {
-  return {
-    value: e,
-    root: t,
-    parent: n,
-    type: r,
-    props: i,
-    children: a,
-    line: N,
-    column: P,
-    length: o,
-    return: ``,
-    siblings: s,
-  };
-}
-function He() {
-  return I;
-}
-function Ue() {
-  return ((I = F > 0 ? k(L, --F) : 0), P--, I === 10 && ((P = 1), N--), I);
-}
-function R() {
-  return ((I = F < Be ? k(L, F++) : 0), P++, I === 10 && ((P = 1), N++), I);
-}
-function z() {
-  return k(L, F);
-}
-function B() {
-  return F;
-}
-function V(e, t) {
-  return A(L, e, t);
-}
-function H(e) {
-  switch (e) {
-    case 0:
-    case 9:
-    case 10:
-    case 13:
-    case 32:
-      return 5;
-    case 33:
-    case 43:
-    case 44:
-    case 47:
-    case 62:
-    case 64:
-    case 126:
-    case 59:
-    case 123:
-    case 125:
-      return 4;
-    case 58:
-      return 3;
-    case 34:
-    case 39:
-    case 40:
-    case 91:
-      return 2;
-    case 41:
-    case 93:
-      return 1;
-  }
-  return 0;
-}
-function We(e) {
-  return ((N = P = 1), (Be = j((L = e))), (F = 0), []);
-}
-function Ge(e) {
-  return ((L = ``), e);
-}
-function Ke(e) {
-  return Le(V(F - 1, Ye(e === 91 ? e + 2 : e === 40 ? e + 1 : e)));
-}
-function qe(e) {
-  for (; (I = z()) && I < 33; ) R();
-  return H(e) > 2 || H(I) > 3 ? `` : ` `;
-}
-function Je(e, t) {
-  for (
-    ;
-    --t &&
-    R() &&
-    !(I < 48 || I > 102 || (I > 57 && I < 65) || (I > 70 && I < 97));
-  );
-  return V(e, B() + (t < 6 && z() == 32 && R() == 32));
-}
-function Ye(e) {
-  for (; R(); )
-    switch (I) {
-      case e:
-        return F;
-      case 34:
-      case 39:
-        e !== 34 && e !== 39 && Ye(I);
-        break;
-      case 40:
-        e === 41 && Ye(e);
-        break;
-      case 92:
-        R();
-        break;
-    }
-  return F;
-}
-function Xe(e, t) {
-  for (; R() && e + I !== 57 && !(e + I === 84 && z() === 47); );
-  return `/*` + V(t, F - 1) + `*` + D(e === 47 ? e : R());
-}
-function Ze(e) {
-  for (; !H(z()); ) R();
-  return V(e, F);
-}
-function Qe(e) {
-  return Ge(U(``, null, null, null, [``], (e = We(e)), 0, [0], e));
-}
-function U(e, t, n, r, i, a, o, s, c) {
-  for (
-    var l = 0,
-      u = 0,
-      d = o,
-      f = 0,
-      p = 0,
-      m = 0,
-      h = 1,
-      g = 1,
-      _ = 1,
-      v = 0,
-      y = ``,
-      b = i,
-      x = a,
-      S = r,
-      C = y;
-    g;
-  )
-    switch (((m = v), (v = R()))) {
-      case 40:
-        if (m != 108 && k(C, d - 1) == 58) {
-          Re((C += O(Ke(v), `&`, `&\f`)), `&\f`, Ie(l ? s[l - 1] : 0)) != -1 &&
-            (_ = -1);
-          break;
-        }
-      case 34:
-      case 39:
-      case 91:
-        C += Ke(v);
-        break;
-      case 9:
-      case 10:
-      case 13:
-      case 32:
-        C += qe(m);
-        break;
-      case 92:
-        C += Je(B() - 1, 7);
-        continue;
-      case 47:
-        switch (z()) {
-          case 42:
-          case 47:
-            (M(et(Xe(R(), B()), t, n, c), c),
-              (H(m || 1) == 5 || H(z() || 1) == 5) &&
-                j(C) &&
-                A(C, -1, void 0) !== ` ` &&
-                (C += ` `));
-            break;
-          default:
-            C += `/`;
-        }
-        break;
-      case 123 * h:
-        s[l++] = j(C) * _;
-      case 125 * h:
-      case 59:
-      case 0:
-        switch (v) {
-          case 0:
-          case 125:
-            g = 0;
-          case 59 + u:
-            (_ == -1 && (C = O(C, /\f/g, ``)),
-              p > 0 &&
-                (j(C) - d || (h === 0 && m === 47)) &&
-                M(
-                  p > 32
-                    ? tt(C + `;`, r, n, d - 1, c)
-                    : tt(O(C, ` `, ``) + `;`, r, n, d - 2, c),
-                  c,
-                ));
-            break;
-          case 59:
-            C += `;`;
-          default:
-            if (
-              (M((S = $e(C, t, n, l, u, i, s, y, (b = []), (x = []), d, a)), a),
-              v === 123)
-            )
-              if (u === 0) U(C, t, S, S, b, a, d, s, x);
-              else {
-                switch (f) {
-                  case 99:
-                    if (k(C, 3) === 110) break;
-                  case 108:
-                    if (k(C, 2) === 97) break;
-                  default:
-                    u = 0;
-                  case 100:
-                  case 109:
-                  case 115:
-                }
-                u
-                  ? U(
-                      e,
-                      S,
-                      S,
-                      r && M($e(e, S, S, 0, 0, i, s, y, i, (b = []), d, x), x),
-                      i,
-                      x,
-                      d,
-                      s,
-                      r ? b : x,
-                    )
-                  : U(C, S, S, S, [``], x, 0, s, x);
-              }
-        }
-        ((l = u = p = 0), (h = _ = 1), (y = C = ``), (d = o));
-        break;
-      case 58:
-        ((d = 1 + j(C)), (p = m));
-      default:
-        if (h < 1) {
-          if (v == 123) --h;
-          else if (v == 125 && h++ == 0 && Ue() == 125) continue;
-        }
-        switch (((C += D(v)), v * h)) {
-          case 38:
-            _ = u > 0 ? 1 : ((C += `\f`), -1);
-            break;
-          case 44:
-            ((s[l++] = (j(C) - 1) * _), (_ = 1));
-            break;
-          case 64:
-            (z() === 45 && (C += Ke(R())),
-              (f = z()),
-              (u = d = j((y = C += Ze(B())))),
-              v++);
-            break;
-          case 45:
-            m === 45 && j(C) == 2 && (h = 0);
-        }
-    }
-  return a;
-}
-function $e(e, t, n, r, i, a, o, s, c, l, u, d) {
-  for (
-    var f = i - 1, p = i === 0 ? a : [``], m = ze(p), h = 0, g = 0, _ = 0;
-    h < r;
-    ++h
-  )
-    for (var v = 0, y = A(e, f + 1, (f = Ie((g = o[h])))), b = e; v < m; ++v)
-      (b = Le(g > 0 ? p[v] + ` ` + y : O(y, /&\f/g, p[v]))) && (c[_++] = b);
-  return Ve(e, t, n, i === 0 ? Ae : s, c, l, u, d);
-}
-function et(e, t, n, r) {
-  return Ve(e, t, n, ke, D(He()), A(e, 2, -2), 0, r);
-}
-function tt(e, t, n, r, i) {
-  return Ve(e, t, n, je, A(e, 0, r), A(e, r + 1, -1), r, i);
-}
-function nt(e, t) {
-  for (var n = ``, r = 0; r < e.length; r++) n += t(e[r], r, e, t) || ``;
-  return n;
-}
-function rt(e, t, n, r) {
-  switch (e.type) {
-    case Fe:
-      if (e.children.length) break;
-    case Me:
-    case Ne:
-    case je:
-      return (e.return = e.return || e.value);
-    case ke:
-      return ``;
-    case Pe:
-      return (e.return = e.value + `{` + nt(e.children, r) + `}`);
-    case Ae:
-      if (!j((e.value = e.props.join(`,`)))) return ``;
-  }
-  return j((n = nt(e.children, r))) ? (e.return = e.value + `{` + n + `}`) : ``;
-}
-var it = xe(),
-  at = `c4`,
-  ot = {
-    id: at,
-    detector: p(
+import { n as me, t as he } from "./expand.js";
+import { t as ge } from "./copy-to-clipboard-C2Mq2hN-.js";
+import "./copy-Cen6nDnP.js";
+import { t as _e } from "./copy-button.js";
+var ve = ue(),
+  ye = `c4`,
+  be = {
+    id: ye,
+    detector: m(
       (e) =>
         /^\s*C4Context|C4Container|C4Component|C4Dynamic|C4Deployment/.test(e),
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./c4Diagram-YG6GDRKO.js`);
           return { diagram: e };
         },
-        __vite__mapDeps([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]),
+        __vite__mapDeps([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]),
         import.meta.url,
       );
-      return { id: at, diagram: e };
+      return { id: ye, diagram: e };
     }, `loader`),
   },
-  st = `flowchart`,
-  ct = {
-    id: st,
-    detector: p(
+  xe = `flowchart`,
+  Se = {
+    id: xe,
+    detector: m(
       (e, t) =>
         t?.flowchart?.defaultRenderer === `dagre-wrapper` ||
         t?.flowchart?.defaultRenderer === `elk`
@@ -509,25 +196,25 @@ var it = xe(),
           : /^\s*graph/.test(e),
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./flowDiagram-NV44I4VS.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          12, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21,
-          22, 23, 24, 25, 26, 27, 28,
+          15, 1, 2, 3, 4, 5, 6, 7, 8, 16, 9, 10, 11, 12, 13, 17, 18, 19, 20, 21,
+          22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
         ]),
         import.meta.url,
       );
-      return { id: st, diagram: e };
+      return { id: xe, diagram: e };
     }, `loader`),
   },
-  lt = `flowchart-v2`,
-  ut = {
-    id: lt,
-    detector: p(
+  Ce = `flowchart-v2`,
+  we = {
+    id: Ce,
+    detector: m(
       (e, t) =>
         t?.flowchart?.defaultRenderer === `dagre-d3`
           ? !1
@@ -538,212 +225,229 @@ var it = xe(),
               : /^\s*flowchart/.test(e)),
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./flowDiagram-NV44I4VS.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          12, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21,
-          22, 23, 24, 25, 26, 27, 28,
+          15, 1, 2, 3, 4, 5, 6, 7, 8, 16, 9, 10, 11, 12, 13, 17, 18, 19, 20, 21,
+          22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
         ]),
         import.meta.url,
       );
-      return { id: lt, diagram: e };
+      return { id: Ce, diagram: e };
     }, `loader`),
   },
-  dt = `er`,
-  ft = {
-    id: dt,
-    detector: p((e) => /^\s*erDiagram/.test(e), `detector`),
-    loader: p(async () => {
+  Te = `er`,
+  Ee = {
+    id: Te,
+    detector: m((e) => /^\s*erDiagram/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./erDiagram-Q2GNP2WA.js`);
+          let { diagram: e } = await import(`./erDiagram-Q2GNP2WA-nmfz36h1.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          29, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 20, 21, 23,
-          24, 25, 26, 27, 28,
+          34, 1, 2, 3, 4, 5, 6, 7, 8, 16, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22,
+          23, 24, 25, 26, 28, 29, 30, 31, 32, 33,
         ]),
         import.meta.url,
       );
-      return { id: dt, diagram: e };
+      return { id: Te, diagram: e };
     }, `loader`),
   },
-  pt = `gitGraph`,
-  mt = {
-    id: pt,
-    detector: p((e) => /^\s*gitGraph/.test(e), `detector`),
-    loader: p(async () => {
+  De = `gitGraph`,
+  Oe = {
+    id: De,
+    detector: m((e) => /^\s*gitGraph/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./gitGraphDiagram-NY62KEGX.js`);
+          let { diagram: e } = await import(
+            `./gitGraphDiagram-NY62KEGX-CmaMgRyS.js`
+          );
           return { diagram: e };
         },
         __vite__mapDeps([
-          30, 1, 2, 31, 32, 10, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 9,
-          3, 4, 5, 6, 7, 8, 44, 45,
+          35, 1, 2, 36, 37, 13, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+          50, 51, 52, 53, 7, 3, 4, 5, 6, 8, 9, 10, 11, 12, 54, 55,
         ]),
         import.meta.url,
       );
-      return { id: pt, diagram: e };
+      return { id: De, diagram: e };
     }, `loader`),
   },
-  ht = `gantt`,
-  gt = {
-    id: ht,
-    detector: p((e) => /^\s*gantt/.test(e), `detector`),
-    loader: p(async () => {
+  ke = `gantt`,
+  Ae = {
+    id: ke,
+    detector: m((e) => /^\s*gantt/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./ganttDiagram-LVOFAZNH.js`);
-          return { diagram: e };
-        },
-        __vite__mapDeps([46, 2, 1, 47, 4, 48, 49, 50, 3, 5, 6, 7, 8, 9, 10]),
-        import.meta.url,
-      );
-      return { id: ht, diagram: e };
-    }, `loader`),
-  },
-  _t = `info`,
-  vt = {
-    id: _t,
-    detector: p((e) => /^\s*info/.test(e), `detector`),
-    loader: p(async () => {
-      let { diagram: e } = await t(
-        async () => {
-          let { diagram: e } = await import(`./infoDiagram-F6ZHWCRC.js`);
+          let { diagram: e } = await import(
+            `./ganttDiagram-LVOFAZNH-BNknfXmX.js`
+          );
           return { diagram: e };
         },
         __vite__mapDeps([
-          51, 31, 2, 32, 10, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 9, 3,
-          4, 8, 52, 53,
+          56, 2, 1, 57, 4, 58, 59, 60, 61, 3, 5, 6, 7, 8, 9, 10, 11, 12, 13,
         ]),
         import.meta.url,
       );
-      return { id: _t, diagram: e };
+      return { id: ke, diagram: e };
     }, `loader`),
   },
-  yt = `pie`,
-  bt = {
-    id: yt,
-    detector: p((e) => /^\s*pie/.test(e), `detector`),
-    loader: p(async () => {
+  je = `info`,
+  Me = {
+    id: je,
+    detector: m((e) => /^\s*info/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./pieDiagram-ADFJNKIX.js`);
+          let { diagram: e } = await import(
+            `./infoDiagram-F6ZHWCRC-BzBFXmol.js`
+          );
           return { diagram: e };
         },
         __vite__mapDeps([
-          54, 1, 2, 31, 32, 10, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 9,
-          3, 4, 55, 49, 56, 26, 7, 5, 6, 8, 57, 27, 44, 52,
+          62, 36, 2, 37, 13, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+          51, 52, 53, 7, 3, 4, 5, 6, 8, 63, 64,
         ]),
         import.meta.url,
       );
-      return { id: yt, diagram: e };
+      return { id: je, diagram: e };
     }, `loader`),
   },
-  xt = `quadrantChart`,
-  St = {
-    id: xt,
-    detector: p((e) => /^\s*quadrantChart/.test(e), `detector`),
-    loader: p(async () => {
+  Ne = `pie`,
+  Pe = {
+    id: Ne,
+    detector: m((e) => /^\s*pie/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./quadrantDiagram-AYHSOK5B-C.js`);
-          return { diagram: e };
-        },
-        __vite__mapDeps([58, 47, 4, 48, 49, 3, 2, 8, 9]),
-        import.meta.url,
-      );
-      return { id: xt, diagram: e };
-    }, `loader`),
-  },
-  Ct = `xychart`,
-  wt = {
-    id: Ct,
-    detector: p((e) => /^\s*xychart(-beta)?/.test(e), `detector`),
-    loader: p(async () => {
-      let { diagram: e } = await t(
-        async () => {
-          let { diagram: e } = await import(`./xychartDiagram-PRI3JC2R.js`);
+          let { diagram: e } = await import(
+            `./pieDiagram-ADFJNKIX-BNMJkHub.js`
+          );
           return { diagram: e };
         },
         __vite__mapDeps([
-          59, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 47, 48, 49, 60, 55, 25, 26,
-          27, 52,
+          65, 1, 2, 36, 37, 13, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+          50, 51, 52, 53, 7, 3, 4, 66, 59, 67, 31, 11, 68, 32, 5, 6, 8, 9, 10,
+          12, 54, 63,
         ]),
         import.meta.url,
       );
-      return { id: Ct, diagram: e };
+      return { id: Ne, diagram: e };
     }, `loader`),
   },
-  Tt = `requirement`,
-  Et = {
-    id: Tt,
-    detector: p((e) => /^\s*requirement(Diagram)?/.test(e), `detector`),
-    loader: p(async () => {
+  Fe = `quadrantChart`,
+  Ie = {
+    id: Fe,
+    detector: m((e) => /^\s*quadrantChart/.test(e), `detector`),
+    loader: m(async () => {
+      let { diagram: e } = await t(
+        async () => {
+          let { diagram: e } = await import(`./quadrantDiagram-AYHSOK5B.js`);
+          return { diagram: e };
+        },
+        __vite__mapDeps([69, 57, 4, 58, 59, 3, 5, 2, 6, 7, 8]),
+        import.meta.url,
+      );
+      return { id: Fe, diagram: e };
+    }, `loader`),
+  },
+  Le = `xychart`,
+  Re = {
+    id: Le,
+    detector: m((e) => /^\s*xychart(-beta)?/.test(e), `detector`),
+    loader: m(async () => {
+      let { diagram: e } = await t(
+        async () => {
+          let { diagram: e } = await import(
+            `./xychartDiagram-PRI3JC2R-VnpegIHb.js`
+          );
+          return { diagram: e };
+        },
+        __vite__mapDeps([
+          70, 1, 2, 57, 4, 58, 59, 71, 66, 3, 30, 31, 32, 12, 5, 6, 7, 8, 9, 10,
+          11, 13, 17, 63, 23, 24,
+        ]),
+        import.meta.url,
+      );
+      return { id: Le, diagram: e };
+    }, `loader`),
+  },
+  ze = `requirement`,
+  Be = {
+    id: ze,
+    detector: m((e) => /^\s*requirement(Diagram)?/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./requirementDiagram-UZGBJVZJ.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          61, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 16, 17, 18, 20, 21, 23, 24,
-          25, 26, 27, 28,
+          72, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22, 23,
+          24, 25, 26, 28, 29, 30, 31, 32, 33,
         ]),
         import.meta.url,
       );
-      return { id: Tt, diagram: e };
+      return { id: ze, diagram: e };
     }, `loader`),
   },
-  Dt = `sequence`,
-  Ot = {
-    id: Dt,
-    detector: p((e) => /^\s*sequenceDiagram/.test(e), `detector`),
-    loader: p(async () => {
+  Ve = `sequence`,
+  He = {
+    id: Ve,
+    detector: m((e) => /^\s*sequenceDiagram/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./sequenceDiagram-WL72ISMW.js`);
+          let { diagram: e } = await import(
+            `./sequenceDiagram-WL72ISMW--qArVVkr.js`
+          );
           return { diagram: e };
         },
-        __vite__mapDeps([62, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 22, 45, 11]),
+        __vite__mapDeps([
+          73, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 27, 55, 14,
+        ]),
         import.meta.url,
       );
-      return { id: Dt, diagram: e };
+      return { id: Ve, diagram: e };
     }, `loader`),
   },
-  kt = `class`,
-  At = {
-    id: kt,
-    detector: p(
+  Ue = `class`,
+  We = {
+    id: Ue,
+    detector: m(
       (e, t) =>
         t?.class?.defaultRenderer === `dagre-wrapper`
           ? !1
           : /^\s*classDiagram/.test(e),
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./classDiagram-2ON5EDUG.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          63, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 16, 17, 64, 19, 23, 21, 18,
-          24, 25, 26, 27, 20, 28,
+          74, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 75, 21, 28,
+          25, 20, 23, 24, 26, 29, 30, 31, 32, 22, 33,
         ]),
         import.meta.url,
       );
-      return { id: kt, diagram: e };
+      return { id: Ue, diagram: e };
     }, `loader`),
   },
-  jt = `classDiagram`,
-  Mt = {
-    id: jt,
-    detector: p(
+  Ge = `classDiagram`,
+  Ke = {
+    id: Ge,
+    detector: m(
       (e, t) =>
         /^\s*classDiagram/.test(e) &&
         t?.class?.defaultRenderer === `dagre-wrapper`
@@ -751,50 +455,50 @@ var it = xe(),
           : /^\s*classDiagram-v2/.test(e),
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./classDiagram-v2-WZHVMYZB.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          65, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 16, 17, 64, 19, 23, 21, 18,
-          24, 25, 26, 27, 20, 28,
+          76, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 75, 21, 28,
+          25, 20, 23, 24, 26, 29, 30, 31, 32, 22, 33,
         ]),
         import.meta.url,
       );
-      return { id: jt, diagram: e };
+      return { id: Ge, diagram: e };
     }, `loader`),
   },
-  Nt = `state`,
-  Pt = {
-    id: Nt,
-    detector: p(
+  qe = `state`,
+  Je = {
+    id: qe,
+    detector: m(
       (e, t) =>
         t?.state?.defaultRenderer === `dagre-wrapper`
           ? !1
           : /^\s*stateDiagram/.test(e),
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./stateDiagram-FKZM4ZOC.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          66, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 25, 26, 27, 67, 68, 32, 33,
-          34, 16, 17, 18, 69, 23, 21, 24, 20, 28,
+          77, 1, 2, 3, 4, 10, 11, 30, 31, 32, 12, 78, 79, 37, 13, 38, 9, 5, 6,
+          7, 8, 39, 17, 18, 19, 20, 80, 28, 25, 23, 24, 26, 29, 22, 33,
         ]),
         import.meta.url,
       );
-      return { id: Nt, diagram: e };
+      return { id: qe, diagram: e };
     }, `loader`),
   },
-  Ft = `stateDiagram`,
-  It = {
-    id: Ft,
-    detector: p(
+  Ye = `stateDiagram`,
+  Xe = {
+    id: Ye,
+    detector: m(
       (e, t) =>
         !!(
           /^\s*stateDiagram-v2/.test(e) ||
@@ -803,45 +507,45 @@ var it = xe(),
         ),
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./stateDiagram-v2-4FDKWEC3.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          70, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 16, 17, 18, 69, 23, 21, 24,
-          25, 26, 27, 20, 28,
+          81, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 80, 28,
+          25, 23, 24, 26, 29, 30, 31, 32, 22, 33,
         ]),
         import.meta.url,
       );
-      return { id: Ft, diagram: e };
+      return { id: Ye, diagram: e };
     }, `loader`),
   },
-  Lt = `journey`,
-  Rt = {
-    id: Lt,
-    detector: p((e) => /^\s*journey/.test(e), `detector`),
-    loader: p(async () => {
+  Ze = `journey`,
+  Qe = {
+    id: Ze,
+    detector: m((e) => /^\s*journey/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./journeyDiagram-XKPGCS4Q.js`);
           return { diagram: e };
         },
-        __vite__mapDeps([71, 1, 2, 3, 4, 56, 26, 7, 8, 9, 19, 11]),
+        __vite__mapDeps([82, 1, 2, 3, 4, 67, 31, 11, 5, 6, 7, 8, 21, 14]),
         import.meta.url,
       );
-      return { id: Lt, diagram: e };
+      return { id: Ze, diagram: e };
     }, `loader`),
   },
-  zt = {
-    draw: p((e, t, n) => {
-      f.debug(`rendering svg for syntax error
+  $e = {
+    draw: m((e, t, n) => {
+      h.debug(`rendering svg for syntax error
 `);
-      let r = fe(t),
+      let r = R(t),
         i = r.append(`g`);
       (r.attr(`viewBox`, `0 0 2412 512`),
-        te(r, 100, 512, !0),
+        w(r, 100, 512, !0),
         i
           .append(`path`)
           .attr(`class`, `error-icon`)
@@ -902,12 +606,12 @@ var it = xe(),
           .text(`mermaid version ${n}`));
     }, `draw`),
   },
-  Bt = zt,
-  Vt = { db: {}, renderer: zt, parser: { parse: p(() => {}, `parse`) } },
-  Ht = `flowchart-elk`,
-  Ut = {
-    id: Ht,
-    detector: p(
+  et = $e,
+  tt = { db: {}, renderer: $e, parser: { parse: m(() => {}, `parse`) } },
+  nt = `flowchart-elk`,
+  rt = {
+    id: nt,
+    detector: m(
       (e, t = {}) =>
         /^\s*flowchart-elk/.test(e) ||
         (/^\s*(flowchart|graph)/.test(e) &&
@@ -916,154 +620,157 @@ var it = xe(),
           : !1,
       `detector`,
     ),
-    loader: p(async () => {
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./flowDiagram-NV44I4VS.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          12, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 15, 16, 17, 18, 19, 20, 21,
-          22, 23, 24, 25, 26, 27, 28,
+          15, 1, 2, 3, 4, 5, 6, 7, 8, 16, 9, 10, 11, 12, 13, 17, 18, 19, 20, 21,
+          22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
         ]),
         import.meta.url,
       );
-      return { id: Ht, diagram: e };
+      return { id: nt, diagram: e };
     }, `loader`),
   },
-  Wt = `timeline`,
-  Gt = {
-    id: Wt,
-    detector: p((e) => /^\s*timeline/.test(e), `detector`),
-    loader: p(async () => {
+  it = `timeline`,
+  at = {
+    id: it,
+    detector: m((e) => /^\s*timeline/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(
-            `./timeline-definition-IT6M3QCI.js`
+            `./timeline-definition-IT6M3QCI-CQkzHxWR.js`
           );
           return { diagram: e };
         },
-        __vite__mapDeps([72, 3, 2, 4, 56, 26, 7, 8, 9]),
+        __vite__mapDeps([83, 3, 4, 67, 31, 11, 5, 2, 6, 7, 8]),
         import.meta.url,
       );
-      return { id: Wt, diagram: e };
+      return { id: it, diagram: e };
     }, `loader`),
   },
-  Kt = `mindmap`,
-  qt = {
-    id: Kt,
-    detector: p((e) => /^\s*mindmap/.test(e), `detector`),
-    loader: p(async () => {
+  ot = `mindmap`,
+  st = {
+    id: ot,
+    detector: m((e) => /^\s*mindmap/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./mindmap-definition-VGOIOE7T.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          73, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 16, 17, 18, 20, 21, 23, 24,
-          25, 26, 27, 28, 74,
+          84, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 18, 19, 20, 22, 23,
+          24, 25, 26, 28, 29, 30, 31, 32, 33, 85,
         ]),
         import.meta.url,
       );
-      return { id: Kt, diagram: e };
+      return { id: ot, diagram: e };
     }, `loader`),
   },
-  Jt = `kanban`,
-  Yt = {
-    id: Jt,
-    detector: p((e) => /^\s*kanban/.test(e), `detector`),
-    loader: p(async () => {
+  ct = `kanban`,
+  lt = {
+    id: ct,
+    detector: m((e) => /^\s*kanban/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./kanban-definition-3W4ZIXB7.js`);
+          let { diagram: e } = await import(
+            `./kanban-definition-3W4ZIXB7-CTcMrhXZ.js`
+          );
           return { diagram: e };
         },
         __vite__mapDeps([
-          75, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 17, 18, 52, 19, 21, 22,
+          86, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 19, 20, 63, 21, 23,
+          24, 25, 26, 27,
         ]),
         import.meta.url,
       );
-      return { id: Jt, diagram: e };
+      return { id: ct, diagram: e };
     }, `loader`),
   },
-  Xt = `sankey`,
-  Zt = {
-    id: Xt,
-    detector: p((e) => /^\s*sankey(-beta)?/.test(e), `detector`),
-    loader: p(async () => {
+  ut = `sankey`,
+  dt = {
+    id: ut,
+    detector: m((e) => /^\s*sankey(-beta)?/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./sankeyDiagram-TZEHDZUN.js`);
           return { diagram: e };
         },
-        __vite__mapDeps([76, 3, 2, 4, 77, 55, 49, 8, 9]),
+        __vite__mapDeps([87, 88, 3, 4, 89, 66, 59, 5, 2, 6, 7, 8]),
         import.meta.url,
       );
-      return { id: Xt, diagram: e };
+      return { id: ut, diagram: e };
     }, `loader`),
   },
-  Qt = `packet`,
-  $t = {
-    id: Qt,
-    detector: p((e) => /^\s*packet(-beta)?/.test(e), `detector`),
-    loader: p(async () => {
+  ft = `packet`,
+  pt = {
+    id: ft,
+    detector: m((e) => /^\s*packet(-beta)?/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./diagram-S2PKOQOG.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          78, 1, 2, 31, 32, 10, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 9,
-          3, 4, 5, 6, 7, 8, 44, 52,
+          90, 1, 2, 36, 37, 13, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+          50, 51, 52, 53, 7, 3, 4, 5, 6, 8, 9, 10, 11, 12, 54, 63,
         ]),
         import.meta.url,
       );
-      return { id: Qt, diagram: e };
+      return { id: ft, diagram: e };
     }, `loader`),
   },
-  en = `radar`,
-  tn = {
-    id: en,
-    detector: p((e) => /^\s*radar-beta/.test(e), `detector`),
-    loader: p(async () => {
+  mt = `radar`,
+  ht = {
+    id: mt,
+    detector: m((e) => /^\s*radar-beta/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./diagram-QEK2KX5R.js`);
+          let { diagram: e } = await import(`./diagram-QEK2KX5R-DJIA96GA.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          79, 1, 2, 31, 32, 10, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 9,
-          3, 4, 5, 6, 7, 8, 44, 52,
+          91, 1, 2, 36, 37, 13, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+          50, 51, 52, 53, 7, 3, 4, 5, 6, 8, 9, 10, 11, 12, 54, 63,
         ]),
         import.meta.url,
       );
-      return { id: en, diagram: e };
+      return { id: mt, diagram: e };
     }, `loader`),
   },
-  nn = `block`,
-  rn = {
-    id: nn,
-    detector: p((e) => /^\s*block(-beta)?/.test(e), `detector`),
-    loader: p(async () => {
+  gt = `block`,
+  _t = {
+    id: gt,
+    detector: m((e) => /^\s*block(-beta)?/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(`./blockDiagram-VD42YOAC.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          80, 1, 2, 13, 3, 4, 5, 6, 7, 8, 9, 10, 14, 25, 26, 27, 68, 32, 33, 15,
-          35, 18, 19, 20,
+          92, 1, 2, 3, 4, 10, 11, 30, 31, 32, 12, 79, 37, 13, 38, 5, 6, 7, 8,
+          16, 9, 40, 17, 20, 21, 22, 23, 24,
         ]),
         import.meta.url,
       );
-      return { id: nn, diagram: e };
+      return { id: gt, diagram: e };
     }, `loader`),
   },
-  an = `architecture`,
-  on = {
-    id: an,
-    detector: p((e) => /^\s*architecture/.test(e), `detector`),
-    loader: p(async () => {
+  vt = `architecture`,
+  yt = {
+    id: vt,
+    detector: m((e) => /^\s*architecture/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
           let { diagram: e } = await import(
@@ -1072,101 +779,103 @@ var it = xe(),
           return { diagram: e };
         },
         __vite__mapDeps([
-          81, 2, 1, 31, 32, 10, 33, 34, 35, 13, 3, 4, 5, 6, 7, 8, 9, 14, 36, 37,
-          38, 39, 40, 41, 42, 43, 82, 44, 52,
+          93, 2, 1, 36, 37, 13, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+          50, 51, 52, 53, 7, 94, 95, 3, 4, 5, 6, 8, 9, 10, 11, 12, 17, 54, 63,
+          23, 24,
         ]),
         import.meta.url,
       );
-      return { id: an, diagram: e };
+      return { id: vt, diagram: e };
     }, `loader`),
   },
-  sn = `treemap`,
-  cn = {
-    id: sn,
-    detector: p((e) => /^\s*treemap/.test(e), `detector`),
-    loader: p(async () => {
+  bt = `treemap`,
+  xt = {
+    id: bt,
+    detector: m((e) => /^\s*treemap/.test(e), `detector`),
+    loader: m(async () => {
       let { diagram: e } = await t(
         async () => {
-          let { diagram: e } = await import(`./diagram-PSM6KHXK.js`);
+          let { diagram: e } = await import(`./diagram-PSM6KHXK-CRrjbnns.js`);
           return { diagram: e };
         },
         __vite__mapDeps([
-          83, 1, 2, 31, 32, 10, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 9,
-          3, 4, 48, 84, 55, 49, 5, 6, 7, 8, 44, 17, 52, 28,
+          96, 1, 2, 36, 37, 13, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49,
+          50, 51, 52, 53, 7, 3, 4, 58, 97, 66, 59, 5, 6, 8, 9, 10, 11, 12, 54,
+          19, 63, 33,
         ]),
         import.meta.url,
       );
-      return { id: sn, diagram: e };
+      return { id: bt, diagram: e };
     }, `loader`),
   },
-  ln = !1,
-  W = p(() => {
-    ln ||
-      ((ln = !0),
-      w(`error`, Vt, (e) => e.toLowerCase().trim() === `error`),
-      w(
+  St = !1,
+  V = m(() => {
+    St ||
+      ((St = !0),
+      O(`error`, tt, (e) => e.toLowerCase().trim() === `error`),
+      O(
         `---`,
         {
-          db: { clear: p(() => {}, `clear`) },
+          db: { clear: m(() => {}, `clear`) },
           styles: {},
-          renderer: { draw: p(() => {}, `draw`) },
+          renderer: { draw: m(() => {}, `draw`) },
           parser: {
-            parse: p(() => {
+            parse: m(() => {
               throw Error(
                 "Diagrams beginning with --- are not valid. If you were trying to use a YAML front-matter, please ensure that you've correctly opened and closed the YAML front-matter with un-indented `---` blocks",
               );
             }, `parse`),
           },
-          init: p(() => null, `init`),
+          init: m(() => null, `init`),
         },
         (e) => e.toLowerCase().trimStart().startsWith(`---`),
       ),
-      _(Ut, qt, on),
+      _(rt, st, yt),
       _(
-        ot,
-        Yt,
-        Mt,
-        At,
-        ft,
-        gt,
-        vt,
-        bt,
-        Et,
-        Ot,
-        ut,
-        ct,
-        Gt,
-        mt,
-        It,
-        Pt,
-        Rt,
-        St,
-        Zt,
-        $t,
-        wt,
-        rn,
-        tn,
-        cn,
+        be,
+        lt,
+        Ke,
+        We,
+        Ee,
+        Ae,
+        Me,
+        Pe,
+        Be,
+        He,
+        we,
+        Se,
+        at,
+        Oe,
+        Xe,
+        Je,
+        Qe,
+        Ie,
+        dt,
+        pt,
+        Re,
+        _t,
+        ht,
+        xt,
       ));
   }, `addDiagrams`),
-  un = p(async () => {
-    f.debug(`Loading registered diagrams`);
+  Ct = m(async () => {
+    h.debug(`Loading registered diagrams`);
     let e = (
       await Promise.allSettled(
-        Object.entries(T).map(async ([e, { detector: t, loader: n }]) => {
+        Object.entries(j).map(async ([e, { detector: t, loader: n }]) => {
           if (n)
             try {
-              de(e);
+              I(e);
             } catch {
               try {
                 let { diagram: e, id: r } = await n();
-                w(r, e, t);
+                O(r, e, t);
               } catch (t) {
                 throw (
-                  f.error(
+                  h.error(
                     `Failed to load external diagram with key ${e}. Removing from detectors.`,
                   ),
-                  delete T[e],
+                  delete j[e],
                   t
                 );
               }
@@ -1175,17 +884,17 @@ var it = xe(),
       )
     ).filter((e) => e.status === `rejected`);
     if (e.length > 0) {
-      f.error(`Failed to load ${e.length} external diagrams`);
-      for (let t of e) f.error(t);
+      h.error(`Failed to load ${e.length} external diagrams`);
+      for (let t of e) h.error(t);
       throw Error(`Failed to load ${e.length} external diagrams`);
     }
   }, `loadRegisteredDiagrams`),
-  dn = `graphics-document document`;
-function fn(e, t) {
-  (e.attr(`role`, dn), t !== `` && e.attr(`aria-roledescription`, t));
+  wt = `graphics-document document`;
+function Tt(e, t) {
+  (e.attr(`role`, wt), t !== `` && e.attr(`aria-roledescription`, t));
 }
-p(fn, `setA11yDiagramInfo`);
-function pn(e, t, n, r) {
+m(Tt, `setA11yDiagramInfo`);
+function Et(e, t, n, r) {
   if (e.insert !== void 0) {
     if (n) {
       let t = `chart-desc-${r}`;
@@ -1199,8 +908,8 @@ function pn(e, t, n, r) {
     }
   }
 }
-p(pn, `addSVGa11yTitleDescription`);
-var mn = class e {
+m(Et, `addSVGa11yTitleDescription`);
+var H = class e {
     constructor(e, t, n, r, i) {
       ((this.type = e),
         (this.text = t),
@@ -1209,24 +918,24 @@ var mn = class e {
         (this.renderer = i));
     }
     static {
-      p(this, `Diagram`);
+      m(this, `Diagram`);
     }
     static async fromText(t, n = {}) {
-      let r = E(),
-        i = ne(t, r);
+      let r = L(),
+        i = T(t, r);
       t =
         a(t) +
         `
 `;
       try {
-        de(i);
+        I(i);
       } catch {
         let e = b(i);
-        if (!e) throw new le(`Diagram ${i} not found.`);
+        if (!e) throw new P(`Diagram ${i} not found.`);
         let { id: t, diagram: n } = await e();
-        w(t, n);
+        O(t, n);
       }
-      let { db: o, parser: s, renderer: c, init: l } = de(i);
+      let { db: o, parser: s, renderer: c, init: l } = I(i);
       return (
         s.parser && (s.parser.yy = o),
         o.clear?.(),
@@ -1246,21 +955,21 @@ var mn = class e {
       return this.type;
     }
   },
-  hn = [],
-  gn = p(() => {
-    (hn.forEach((e) => {
+  Dt = [],
+  Ot = m(() => {
+    (Dt.forEach((e) => {
       e();
     }),
-      (hn = []));
+      (Dt = []));
   }, `attachFunctions`),
-  _n = p(
+  kt = m(
     (e) => e.replace(/^\s*%%(?!{)[^\n]+\n?/gm, ``).trimStart(),
     `cleanupComments`,
   );
-function vn(e) {
-  let t = e.match(re);
+function At(e) {
+  let t = e.match(E);
   if (!t) return { text: e, metadata: {} };
-  let n = ge(t[1], { schema: _e }) ?? {};
+  let n = ne(t[1], { schema: re }) ?? {};
   n = typeof n == `object` && !Array.isArray(n) ? n : {};
   let r = {};
   return (
@@ -1270,8 +979,8 @@ function vn(e) {
     { text: e.slice(t[0].length), metadata: r }
   );
 }
-p(vn, `extractFrontMatter`);
-var yn = p(
+m(At, `extractFrontMatter`);
+var jt = m(
     (e) =>
       e
         .replace(
@@ -1285,15 +994,15 @@ var yn = p(
         ),
     `cleanupText`,
   ),
-  bn = p((e) => {
-    let { text: t, metadata: n } = vn(e),
+  Mt = m((e) => {
+    let { text: t, metadata: n } = At(e),
       { displayMode: r, title: i, config: a = {} } = n;
     return (
       r && ((a.gantt ||= {}), (a.gantt.displayMode = r)),
       { title: i, config: a, text: t }
     );
   }, `processFrontmatter`),
-  xn = p((e) => {
+  Nt = m((e) => {
     let t = s.detectInit(e) ?? {},
       n = s.detectDirective(e, `wrap`);
     return (
@@ -1303,56 +1012,56 @@ var yn = p(
       { text: l(e), directive: t }
     );
   }, `processDirectives`);
-function Sn(e) {
-  let t = bn(yn(e)),
-    n = xn(t.text),
+function U(e) {
+  let t = Mt(jt(e)),
+    n = Nt(t.text),
     r = u(t.config, n.directive);
-  return ((e = _n(n.text)), { code: e, title: t.title, config: r });
+  return ((e = kt(n.text)), { code: e, title: t.title, config: r });
 }
-p(Sn, `preprocessDiagram`);
-function Cn(e) {
+m(U, `preprocessDiagram`);
+function Pt(e) {
   let t = new TextEncoder().encode(e),
     n = Array.from(t, (e) => String.fromCodePoint(e)).join(``);
   return btoa(n);
 }
-p(Cn, `toBase64`);
-var wn = 5e4,
-  Tn = `graph TB;a[Maximum text size in diagram exceeded];style a fill:#faa`,
-  En = `sandbox`,
-  Dn = `loose`,
-  On = `http://www.w3.org/2000/svg`,
-  kn = `http://www.w3.org/1999/xlink`,
-  An = `http://www.w3.org/1999/xhtml`,
-  jn = `100%`,
-  Mn = `100%`,
-  Nn = `border:0;margin:0;`,
-  Pn = `margin:0`,
-  Fn = `allow-top-navigation-by-user-activation allow-popups`,
-  In = `The "iframe" tag is not supported by your browser.`,
-  Ln = [`foreignobject`],
-  Rn = [`dominant-baseline`];
-function zn(e) {
-  let t = Sn(e);
-  return (v(), oe(t.config ?? {}), t);
+m(Pt, `toBase64`);
+var Ft = 5e4,
+  It = `graph TB;a[Maximum text size in diagram exceeded];style a fill:#faa`,
+  Lt = `sandbox`,
+  Rt = `loose`,
+  zt = `http://www.w3.org/2000/svg`,
+  Bt = `http://www.w3.org/1999/xlink`,
+  Vt = `http://www.w3.org/1999/xhtml`,
+  Ht = `100%`,
+  Ut = `100%`,
+  Wt = `border:0;margin:0;`,
+  Gt = `margin:0`,
+  Kt = `allow-top-navigation-by-user-activation allow-popups`,
+  qt = `The "iframe" tag is not supported by your browser.`,
+  Jt = [`foreignobject`],
+  Yt = [`dominant-baseline`];
+function W(e) {
+  let t = U(e);
+  return (v(), A(t.config ?? {}), t);
 }
-p(zn, `processAndSetConfigs`);
-async function Bn(e, t) {
-  W();
+m(W, `processAndSetConfigs`);
+async function Xt(e, t) {
+  V();
   try {
-    let { code: t, config: n } = zn(e);
-    return { diagramType: (await Xn(t)).type, config: n };
+    let { code: t, config: n } = W(e);
+    return { diagramType: (await sn(t)).type, config: n };
   } catch (e) {
     if (t?.suppressErrors) return !1;
     throw e;
   }
 }
-p(Bn, `parse`);
-var Vn = p(
+m(Xt, `parse`);
+var Zt = m(
     (e, t, n = []) => `
 .${e} ${t} { ${n.join(` !important; `)} !important; }`,
     `cssImportantStyles`,
   ),
-  Hn = p((e, t = new Map()) => {
+  Qt = m((e, t = new Map()) => {
     let n = ``;
     if (
       (e.themeCSS !== void 0 &&
@@ -1373,10 +1082,10 @@ ${e.themeCSS}`),
       t.forEach((e) => {
         (i(e.styles) ||
           r.forEach((t) => {
-            n += Vn(e.id, t, e.styles);
+            n += Zt(e.id, t, e.styles);
           }),
           i(e.textStyles) ||
-            (n += Vn(
+            (n += Zt(
               e.id,
               `tspan`,
               (e?.textStyles || []).map((e) => e.replace(`color`, `fill`)),
@@ -1385,11 +1094,11 @@ ${e.themeCSS}`),
     }
     return n;
   }, `createCssStyles`),
-  Un = p(
-    (e, t, n, r) => nt(Qe(`${r}{${se(t, Hn(e, n), e.themeVariables)}}`), rt),
+  $t = m(
+    (e, t, n, r) => se(oe(`${r}{${M(t, Qt(e, n), e.themeVariables)}}`), ae),
     `createUserStyles`,
   ),
-  Wn = p((e = ``, t, n) => {
+  en = m((e = ``, t, n) => {
     let r = e;
     return (
       !n &&
@@ -1403,23 +1112,23 @@ ${e.themeCSS}`),
       r
     );
   }, `cleanUpSvgCode`),
-  Gn = p(
+  tn = m(
     (
       e = ``,
       t,
-    ) => `<iframe style="width:${jn};height:${t?.viewBox?.baseVal?.height ? t.viewBox.baseVal.height + `px` : Mn};${Nn}" src="data:text/html;charset=UTF-8;base64,${Cn(`<body style="${Pn}">${e}</body>`)}" sandbox="${Fn}">
-  ${In}
+    ) => `<iframe style="width:${Ht};height:${t?.viewBox?.baseVal?.height ? t.viewBox.baseVal.height + `px` : Ut};${Wt}" src="data:text/html;charset=UTF-8;base64,${Pt(`<body style="${Gt}">${e}</body>`)}" sandbox="${Kt}">
+  ${qt}
 </iframe>`,
     `putIntoIFrame`,
   ),
-  Kn = p((e, t, n, r, i) => {
+  nn = m((e, t, n, r, i) => {
     let a = e.append(`div`);
     (a.attr(`id`, n), r && a.attr(`style`, r));
     let o = a
       .append(`svg`)
       .attr(`id`, t)
       .attr(`width`, `100%`)
-      .attr(`xmlns`, On);
+      .attr(`xmlns`, zt);
     return (i && o.attr(`xmlns:xlink`, i), o.append(`g`), e);
   }, `appendDivSvgG`);
 function G(e, t) {
@@ -1429,89 +1138,89 @@ function G(e, t) {
     .attr(`style`, `width: 100%; height: 100%;`)
     .attr(`sandbox`, ``);
 }
-p(G, `sandboxedIframe`);
-var qn = p((e, t, n, r) => {
+m(G, `sandboxedIframe`);
+var rn = m((e, t, n, r) => {
     (e.getElementById(t)?.remove(),
       e.getElementById(n)?.remove(),
       e.getElementById(r)?.remove());
   }, `removeExistingElements`),
-  Jn = p(async function (e, t, n) {
-    W();
-    let r = zn(t);
+  an = m(async function (e, t, n) {
+    V();
+    let r = W(t);
     t = r.code;
-    let i = E();
-    (f.debug(i), t.length > (i?.maxTextSize ?? wn) && (t = Tn));
+    let i = L();
+    (h.debug(i), t.length > (i?.maxTextSize ?? Ft) && (t = It));
     let a = `#` + e,
       o = `i` + e,
       s = `#` + o,
       c = `d` + e,
       l = `#` + c,
-      u = p(() => {
-        let e = m(h ? s : l).node();
+      u = m(() => {
+        let e = d(p ? s : l).node();
         e && `remove` in e && e.remove();
       }, `removeTempElements`),
-      d = m(`body`),
-      h = i.securityLevel === En,
-      g = i.securityLevel === Dn,
+      f = d(`body`),
+      p = i.securityLevel === Lt,
+      g = i.securityLevel === Rt,
       _ = i.fontFamily;
     n === void 0
-      ? (qn(document, e, c, o),
-        h
-          ? ((d = m(G(m(`body`), o).nodes()[0].contentDocument.body)),
-            (d.node().style.margin = 0))
-          : (d = m(`body`)),
-        Kn(d, e, c))
+      ? (rn(document, e, c, o),
+        p
+          ? ((f = d(G(d(`body`), o).nodes()[0].contentDocument.body)),
+            (f.node().style.margin = 0))
+          : (f = d(`body`)),
+        nn(f, e, c))
       : (n && (n.innerHTML = ``),
-        h
-          ? ((d = m(G(m(n), o).nodes()[0].contentDocument.body)),
-            (d.node().style.margin = 0))
-          : (d = m(n)),
-        Kn(d, e, c, `font-family: ${_}`, kn));
+        p
+          ? ((f = d(G(d(n), o).nodes()[0].contentDocument.body)),
+            (f.node().style.margin = 0))
+          : (f = d(n)),
+        nn(f, e, c, `font-family: ${_}`, Bt));
     let v, y;
     try {
-      v = await mn.fromText(t, { title: r.title });
+      v = await H.fromText(t, { title: r.title });
     } catch (e) {
       if (i.suppressErrorRendering) throw (u(), e);
-      ((v = await mn.fromText(`error`)), (y = e));
+      ((v = await H.fromText(`error`)), (y = e));
     }
-    let b = d.select(l).node(),
+    let b = f.select(l).node(),
       x = v.type,
       S = b.firstChild,
-      ee = S.firstChild,
-      te = v.renderer.getClasses?.(t, v),
-      ne = Un(i, x, te, a),
-      re = document.createElement(`style`);
-    ((re.innerHTML = ne), S.insertBefore(re, ee));
+      C = S.firstChild,
+      w = v.renderer.getClasses?.(t, v),
+      T = $t(i, x, w, a),
+      E = document.createElement(`style`);
+    ((E.innerHTML = T), S.insertBefore(E, C));
     try {
-      await v.renderer.draw(t, e, ve.version, v);
+      await v.renderer.draw(t, e, ie.version, v);
     } catch (n) {
-      throw (i.suppressErrorRendering ? u() : Bt.draw(t, e, ve.version), n);
+      throw (i.suppressErrorRendering ? u() : et.draw(t, e, ie.version), n);
     }
-    let w = d.select(`${l} svg`),
-      ae = v.db.getAccTitle?.(),
-      oe = v.db.getAccDescription?.();
-    (Zn(x, w, ae, oe),
-      d.select(`[id="${e}"]`).selectAll(`foreignobject > *`).attr(`xmlns`, An));
-    let T = d.select(l).node().innerHTML;
+    let O = f.select(`${l} svg`),
+      k = v.db.getAccTitle?.(),
+      A = v.db.getAccDescription?.();
+    (cn(x, O, k, A),
+      f.select(`[id="${e}"]`).selectAll(`foreignobject > *`).attr(`xmlns`, Vt));
+    let j = f.select(l).node().innerHTML;
     if (
-      (f.debug(`config.arrowMarkerAbsolute`, i.arrowMarkerAbsolute),
-      (T = Wn(T, h, ie(i.arrowMarkerAbsolute))),
-      h)
+      (h.debug(`config.arrowMarkerAbsolute`, i.arrowMarkerAbsolute),
+      (j = en(j, p, D(i.arrowMarkerAbsolute))),
+      p)
     ) {
-      let e = d.select(l + ` svg`).node();
-      T = Gn(T, e);
+      let e = f.select(l + ` svg`).node();
+      j = tn(j, e);
     } else
       g ||
-        (T = C.sanitize(T, {
-          ADD_TAGS: Ln,
-          ADD_ATTR: Rn,
+        (j = ee.sanitize(j, {
+          ADD_TAGS: Jt,
+          ADD_ATTR: Yt,
           HTML_INTEGRATION_POINTS: { foreignobject: !0 },
         }));
-    if ((gn(), y)) throw y;
-    return (u(), { diagramType: x, svg: T, bindFunctions: v.db.bindFunctions });
+    if ((Ot(), y)) throw y;
+    return (u(), { diagramType: x, svg: j, bindFunctions: v.db.bindFunctions });
   }, `render`);
-function Yn(e = {}) {
-  let t = ce({}, e);
+function on(e = {}) {
+  let t = N({}, e);
   (t?.fontFamily &&
     !t.themeVariables?.fontFamily &&
     ((t.themeVariables ||= {}), (t.themeVariables.fontFamily = t.fontFamily)),
@@ -1519,38 +1228,38 @@ function Yn(e = {}) {
     t?.theme && t.theme in g
       ? (t.themeVariables = g[t.theme].getThemeVariables(t.themeVariables))
       : t && (t.themeVariables = g.default.getThemeVariables(t.themeVariables)),
-    d((typeof t == `object` ? S(t) : ue()).logLevel),
-    W());
+    p((typeof t == `object` ? S(t) : F()).logLevel),
+    V());
 }
-p(Yn, `initialize`);
-var Xn = p((e, t = {}) => {
-  let { code: n } = Sn(e);
-  return mn.fromText(n, t);
+m(on, `initialize`);
+var sn = m((e, t = {}) => {
+  let { code: n } = U(e);
+  return H.fromText(n, t);
 }, `getDiagramFromText`);
-function Zn(e, t, n, r) {
-  (fn(t, e), pn(t, n, r, t.attr(`id`)));
+function cn(e, t, n, r) {
+  (Tt(t, e), Et(t, n, r, t.attr(`id`)));
 }
-p(Zn, `addA11yInfo`);
+m(cn, `addA11yInfo`);
 var K = Object.freeze({
-  render: Jn,
-  parse: Bn,
-  getDiagramFromText: Xn,
-  initialize: Yn,
-  getConfig: E,
+  render: an,
+  parse: Xt,
+  getDiagramFromText: sn,
+  initialize: on,
+  getConfig: L,
   setConfig: x,
-  getSiteConfig: ue,
-  updateSiteConfig: ee,
-  reset: p(() => {
+  getSiteConfig: F,
+  updateSiteConfig: C,
+  reset: m(() => {
     v();
   }, `reset`),
-  globalReset: p(() => {
-    v(ae);
+  globalReset: m(() => {
+    v(k);
   }, `globalReset`),
-  defaultConfig: ae,
+  defaultConfig: k,
 });
-(d(E().logLevel), v(E()));
-var Qn = p((e, t, n) => {
-    (f.warn(e),
+(p(L().logLevel), v(L()));
+var ln = m((e, t, n) => {
+    (h.warn(e),
       o(e)
         ? (n && n(e.str, e.hash), t.push({ ...e, message: e.str, error: e }))
         : (n && n(e),
@@ -1562,105 +1271,105 @@ var Qn = p((e, t, n) => {
               error: e,
             })));
   }, `handleError`),
-  $n = p(async function (e = { querySelector: `.mermaid` }) {
+  un = m(async function (e = { querySelector: `.mermaid` }) {
     try {
-      await er(e);
+      await dn(e);
     } catch (t) {
       if (
-        (o(t) && f.error(t.str),
-        J.parseError && J.parseError(t),
+        (o(t) && h.error(t.str),
+        Y.parseError && Y.parseError(t),
         !e.suppressErrors)
       )
         throw (
-          f.error(`Use the suppressErrors option to suppress these errors`),
+          h.error(`Use the suppressErrors option to suppress these errors`),
           t
         );
     }
   }, `run`),
-  er = p(async function (
+  dn = m(async function (
     { postRenderCallback: e, querySelector: t, nodes: n } = {
       querySelector: `.mermaid`,
     },
   ) {
     let r = K.getConfig();
-    f.debug(`${e ? `` : `No `}Callback function found`);
+    h.debug(`${e ? `` : `No `}Callback function found`);
     let i;
     if (n) i = n;
     else if (t) i = document.querySelectorAll(t);
     else throw Error(`Nodes and querySelector are both undefined`);
-    (f.debug(`Found ${i.length} diagrams`),
+    (h.debug(`Found ${i.length} diagrams`),
       r?.startOnLoad !== void 0 &&
-        (f.debug(`Start On Load: ` + r?.startOnLoad),
+        (h.debug(`Start On Load: ` + r?.startOnLoad),
         K.updateSiteConfig({ startOnLoad: r?.startOnLoad })));
     let a = new s.InitIDGenerator(r.deterministicIds, r.deterministicIDSeed),
       o,
       c = [];
     for (let t of Array.from(i)) {
       if (
-        (f.info(`Rendering diagram: ` + t.id), t.getAttribute(`data-processed`))
+        (h.info(`Rendering diagram: ` + t.id), t.getAttribute(`data-processed`))
       )
         continue;
       t.setAttribute(`data-processed`, `true`);
       let n = `mermaid-${a.next()}`;
       ((o = t.innerHTML),
-        (o = me(s.entityDecode(o))
+        (o = z(s.entityDecode(o))
           .trim()
           .replace(/<br\s*\/?>/gi, `<br/>`)));
       let r = s.detectInit(o);
-      r && f.debug(`Detected early reinit: `, r);
+      r && h.debug(`Detected early reinit: `, r);
       try {
-        let { svg: r, bindFunctions: i } = await lr(n, o, t);
+        let { svg: r, bindFunctions: i } = await yn(n, o, t);
         ((t.innerHTML = r), e && (await e(n)), i && i(t));
       } catch (e) {
-        Qn(e, c, J.parseError);
+        ln(e, c, Y.parseError);
       }
     }
     if (c.length > 0) throw c[0];
   }, `runThrowsErrors`),
-  tr = p(function (e) {
+  fn = m(function (e) {
     K.initialize(e);
   }, `initialize`),
-  nr = p(async function (e, t, n) {
-    (f.warn(`mermaid.init is deprecated. Please use run instead.`), e && tr(e));
+  pn = m(async function (e, t, n) {
+    (h.warn(`mermaid.init is deprecated. Please use run instead.`), e && fn(e));
     let r = { postRenderCallback: n, querySelector: `.mermaid` };
     (typeof t == `string`
       ? (r.querySelector = t)
       : t && (t instanceof HTMLElement ? (r.nodes = [t]) : (r.nodes = t)),
-      await $n(r));
+      await un(r));
   }, `init`),
-  rr = p(async (e, { lazyLoad: t = !0 } = {}) => {
-    (W(), _(...e), t === !1 && (await un()));
+  mn = m(async (e, { lazyLoad: t = !0 } = {}) => {
+    (V(), _(...e), t === !1 && (await Ct()));
   }, `registerExternalDiagrams`),
-  ir = p(function () {
-    if (J.startOnLoad) {
+  hn = m(function () {
+    if (Y.startOnLoad) {
       let { startOnLoad: e } = K.getConfig();
-      e && J.run().catch((e) => f.error(`Mermaid failed to initialize`, e));
+      e && Y.run().catch((e) => h.error(`Mermaid failed to initialize`, e));
     }
   }, `contentLoaded`);
-typeof document < `u` && window.addEventListener(`load`, ir, !1);
-var ar = p(function (e) {
-    J.parseError = e;
+typeof document < `u` && window.addEventListener(`load`, hn, !1);
+var gn = m(function (e) {
+    Y.parseError = e;
   }, `setParseErrorHandler`),
   q = [],
-  or = !1,
-  sr = p(async () => {
-    if (!or) {
-      for (or = !0; q.length > 0; ) {
+  J = !1,
+  _n = m(async () => {
+    if (!J) {
+      for (J = !0; q.length > 0; ) {
         let e = q.shift();
         if (e)
           try {
             await e();
           } catch (e) {
-            f.error(`Error executing queue`, e);
+            h.error(`Error executing queue`, e);
           }
       }
-      or = !1;
+      J = !1;
     }
   }, `executeQueue`),
-  cr = p(
+  vn = m(
     async (e, t) =>
       new Promise((n, r) => {
-        let i = p(
+        let i = m(
           () =>
             new Promise((i, a) => {
               K.parse(e, t).then(
@@ -1668,20 +1377,20 @@ var ar = p(function (e) {
                   (i(e), n(e));
                 },
                 (e) => {
-                  (f.error(`Error parsing`, e), J.parseError?.(e), a(e), r(e));
+                  (h.error(`Error parsing`, e), Y.parseError?.(e), a(e), r(e));
                 },
               );
             }),
           `performCall`,
         );
-        (q.push(i), sr().catch(r));
+        (q.push(i), _n().catch(r));
       }),
     `parse`,
   ),
-  lr = p(
+  yn = m(
     (e, t, n) =>
       new Promise((r, i) => {
-        let a = p(
+        let a = m(
           () =>
             new Promise((a, o) => {
               K.render(e, t, n).then(
@@ -1689,39 +1398,39 @@ var ar = p(function (e) {
                   (a(e), r(e));
                 },
                 (e) => {
-                  (f.error(`Error parsing`, e), J.parseError?.(e), o(e), i(e));
+                  (h.error(`Error parsing`, e), Y.parseError?.(e), o(e), i(e));
                 },
               );
             }),
           `performCall`,
         );
-        (q.push(a), sr().catch(i));
+        (q.push(a), _n().catch(i));
       }),
     `render`,
   ),
-  J = {
+  Y = {
     startOnLoad: !0,
     mermaidAPI: K,
-    parse: cr,
-    render: lr,
-    init: nr,
-    run: $n,
-    registerExternalDiagrams: rr,
-    registerLayoutLoaders: he,
-    initialize: tr,
+    parse: vn,
+    render: yn,
+    init: pn,
+    run: un,
+    registerExternalDiagrams: mn,
+    registerLayoutLoaders: te,
+    initialize: fn,
     parseError: void 0,
-    contentLoaded: ir,
-    setParseErrorHandler: ar,
-    detectType: ne,
-    registerIconPacks: pe,
-    getRegisteredDiagramsMetadata: p(
-      () => Object.keys(T).map((e) => ({ id: e })),
+    contentLoaded: hn,
+    setParseErrorHandler: gn,
+    detectType: T,
+    registerIconPacks: B,
+    getRegisteredDiagramsMetadata: m(
+      () => Object.keys(j).map((e) => ({ id: e })),
       `getRegisteredDiagramsMetadata`,
     ),
   },
-  ur = J,
-  Y = e(n(), 1),
-  dr = {
+  bn = Y,
+  X = e(n(), 1),
+  xn = {
     sequencediagram: `sequence`,
     pie: `pie`,
     classdiagram: `class`,
@@ -1736,22 +1445,22 @@ var ar = p(function (e) {
     packet: `packet`,
     kanban: `kanban`,
   };
-function fr(e) {
+function Sn(e) {
   let t = e
     .split(/\r?\n/)
     .map((e) => e.trim())
     .filter((e) => e.length > 0 && !e.startsWith(`%%`));
   if (t.length === 0) return null;
   let n = t[0].split(/\s+/)[0];
-  return n ? (dr[n.replace(/[-_]/g, ``).toLowerCase()] ?? null) : null;
+  return n ? (xn[n.replace(/[-_]/g, ``).toLowerCase()] ?? null) : null;
 }
-var X = r(),
-  pr = `bg-token-text-code-block-background/10 border-token-input-background relative rounded-lg border px-4 py-3 [&>svg]:h-auto [&>svg]:text-left`,
-  mr = /%%\{[\s\S]*?\}%%/g,
-  hr = /securityLevel\s*:/i,
-  gr = /^\s*click\s+.*$/gim,
-  _r = `-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`,
-  vr = {
+var Z = r(),
+  Cn = `bg-token-text-code-block-background/10 border-token-input-background relative rounded-lg border px-4 py-3 [&>svg]:h-auto [&>svg]:text-left`,
+  wn = /%%\{[\s\S]*?\}%%/g,
+  Tn = /securityLevel\s*:/i,
+  En = /^\s*click\s+.*$/gim,
+  Dn = `-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif`,
+  On = {
     background: `rgb(255, 255, 255)`,
     clusterBkg: `rgba(0, 0, 0, 0.04)`,
     edgeLabelBackground: `rgb(255, 255, 255)`,
@@ -1769,7 +1478,7 @@ var X = r(),
     tertiaryTextColor: `rgba(17, 24, 28, 0.55)`,
     textColor: `rgb(17, 24, 28)`,
   },
-  yr = {
+  kn = {
     background: `rgb(10, 10, 10)`,
     clusterBkg: `rgba(255, 255, 255, 0.06)`,
     edgeLabelBackground: `rgb(10, 10, 10)`,
@@ -1787,16 +1496,16 @@ var X = r(),
     tertiaryTextColor: `rgba(255, 255, 255, 0.6)`,
     textColor: `rgb(255, 255, 255)`,
   };
-function br(e) {
+function An(e) {
   let t = !1,
-    n = e.replace(mr, (e) => (hr.test(e) && (t = !0), ``));
-  if (!t) return n.replace(gr, ``);
+    n = e.replace(wn, (e) => (Tn.test(e) && (t = !0), ``));
+  if (!t) return n.replace(En, ``);
 }
-function xr(e, t) {
-  let n = Tr(e, t),
-    r = Er(e);
+function jn(e, t) {
+  let n = Fn(e, t),
+    r = In(e);
   return (
-    ur.initialize({
+    bn.initialize({
       startOnLoad: !1,
       securityLevel: `strict`,
       suppressErrorRendering: !0,
@@ -1812,11 +1521,11 @@ function xr(e, t) {
     { darkMode: t, fontFamily: r, theme: `base`, themeVariables: n }
   );
 }
-function Sr(e) {
-  let t = (0, it.c)(28),
+function Mn(e) {
+  let t = (0, ve.c)(28),
     { code: n, className: r, fallback: i, wideBlockKind: a } = e,
-    o = Se(),
-    s = (0, Y.useId)(),
+    o = de(),
+    s = (0, X.useId)(),
     c;
   if (t[0] !== s) {
     let e;
@@ -1829,21 +1538,21 @@ function Sr(e) {
   } else c = t[1];
   let l = `mermaid-${c}`,
     u;
-  t[3] === n ? (u = t[4]) : ((u = br(n)), (t[3] = n), (t[4] = u));
+  t[3] === n ? (u = t[4]) : ((u = An(n)), (t[3] = n), (t[4] = u));
   let d = u,
-    f;
+    p;
   t[5] === d
-    ? (f = t[6])
-    : ((f = d == null ? null : fr(d)), (t[5] = d), (t[6] = f));
-  let p = f;
+    ? (p = t[6])
+    : ((p = d == null ? null : Sn(d)), (t[5] = d), (t[6] = p));
+  let m = p;
   if (d == null) {
     let e;
-    t[7] === r ? (e = t[8]) : ((e = h(`my-2`, r)), (t[7] = r), (t[8] = e));
+    t[7] === r ? (e = t[8]) : ((e = f(`my-2`, r)), (t[7] = r), (t[8] = e));
     let n = a == null ? void 0 : `true`,
       o;
     return (
       t[9] !== i || t[10] !== e || t[11] !== n || t[12] !== a
-        ? ((o = (0, X.jsx)(`div`, {
+        ? ((o = (0, Z.jsx)(`div`, {
             className: e,
             "data-wide-markdown-block": n,
             "data-wide-markdown-block-kind": a,
@@ -1858,28 +1567,28 @@ function Sr(e) {
       o
     );
   }
-  let m;
-  t[14] === r ? (m = t[15]) : ((m = h(`my-2`, r)), (t[14] = r), (t[15] = m));
+  let h;
+  t[14] === r ? (h = t[15]) : ((h = f(`my-2`, r)), (t[14] = r), (t[15] = h));
   let g = a == null ? void 0 : `true`,
     _ = !!o,
     v;
   t[16] !== n ||
   t[17] !== l ||
-  t[18] !== p ||
+  t[18] !== m ||
   t[19] !== i ||
   t[20] !== d ||
   t[21] !== _
-    ? ((v = (0, X.jsx)(Cr, {
+    ? ((v = (0, Z.jsx)(Nn, {
         code: n,
         diagramId: l,
-        diagramKind: p,
+        diagramKind: m,
         fallback: i,
         isDark: _,
         sanitizedCode: d,
       })),
       (t[16] = n),
       (t[17] = l),
-      (t[18] = p),
+      (t[18] = m),
       (t[19] = i),
       (t[20] = d),
       (t[21] = _),
@@ -1887,14 +1596,14 @@ function Sr(e) {
     : (v = t[22]);
   let y;
   return (
-    t[23] !== m || t[24] !== g || t[25] !== v || t[26] !== a
-      ? ((y = (0, X.jsx)(`div`, {
-          className: m,
+    t[23] !== h || t[24] !== g || t[25] !== v || t[26] !== a
+      ? ((y = (0, Z.jsx)(`div`, {
+          className: h,
           "data-wide-markdown-block": g,
           "data-wide-markdown-block-kind": a,
           children: v,
         })),
-        (t[23] = m),
+        (t[23] = h),
         (t[24] = g),
         (t[25] = v),
         (t[26] = a),
@@ -1903,160 +1612,278 @@ function Sr(e) {
     y
   );
 }
-function Cr({
-  code: e,
-  diagramId: t,
-  diagramKind: n,
-  fallback: r,
-  isDark: i,
-  sanitizedCode: a,
-}) {
-  let o = be(),
-    s = (0, Y.useRef)(null),
-    [c, l] = (0, Y.useState)(null),
-    [u, d] = (0, Y.useState)(!1),
-    f = (0, Y.useMemo)(() => `${i ? `dark` : `light`}::${a}`, [i, a]),
-    p = (0, Y.useMemo)(
-      () =>
-        ["```mermaid", e, "```"].join(`
+function Nn(e) {
+  let t = (0, ve.c)(57),
+    {
+      code: n,
+      diagramId: r,
+      diagramKind: i,
+      fallback: a,
+      isDark: o,
+      sanitizedCode: s,
+    } = e,
+    c = ce(),
+    l = (0, X.useRef)(null),
+    [u, d] = (0, X.useState)(null),
+    [p, m] = (0, X.useState)(!1),
+    h = `${o ? `dark` : `light`}::${s}`,
+    g;
+  t[0] === n
+    ? (g = t[1])
+    : ((g = ["```mermaid", n, "```"]), (t[0] = n), (t[1] = g));
+  let _ = g.join(`
 `),
-      [e],
-    ),
-    m = (0, Y.useCallback)(
-      (e) => {
-        De(p, e);
-      },
-      [p],
-    ),
-    g = u
-      ? o.formatMessage({
-          id: `mermaidDiagram.fitToWidth`,
-          defaultMessage: `Fit diagram to width`,
-          description: `Accessible label for fitting a Mermaid diagram to the available width`,
-        })
-      : o.formatMessage({
-          id: `mermaidDiagram.viewActualSize`,
-          defaultMessage: `View actual size`,
-          description: `Accessible label for showing a Mermaid diagram at its rendered size`,
-        }),
-    _ = () => {
-      d((e) => {
-        let t = !e,
-          n = s.current?.querySelector(`svg`);
-        return (n && wr(n, t), t);
-      });
-    },
-    v = (0, Y.useEffectEvent)((e) => {
-      wr(e, u);
-    });
-  return (
-    (0, Y.useEffect)(() => {
-      if (typeof window > `u`) return;
-      let r = s.current;
-      if (!r) return;
-      if (!e) {
-        r.innerHTML = ``;
-        return;
-      }
-      let o = !1;
-      return (
-        (r.innerHTML = ``),
-        (async () => {
-          try {
-            let e = xr(r, i);
-            if ((await ur.parse(a, { suppressErrors: !0 })) === !1) {
-              if (o) return;
-              ((r.innerHTML = ``), l(f));
-              return;
-            }
-            let { svg: s } = await ur.render(t, a);
-            if (o) return;
-            r.innerHTML = s;
-            let c = r.querySelector(`svg`);
-            (c && v(c),
-              r.setAttribute(`data-mermaid-theme`, e.theme ?? ``),
-              n == null
-                ? r.removeAttribute(`data-mermaid-diagram`)
-                : r.setAttribute(`data-mermaid-diagram`, n),
-              l((e) => (e === f ? null : e)));
-          } catch {
-            if (o) return;
-            ((r.innerHTML = ``), l(f));
-          }
-        })(),
-        () => {
-          o = !0;
+    v;
+  t[2] === _
+    ? (v = t[3])
+    : ((v = (e) => {
+        ge(_, e);
+      }),
+      (t[2] = _),
+      (t[3] = v));
+  let y = v,
+    b;
+  t[4] !== c || t[5] !== p
+    ? ((b = p
+        ? c.formatMessage({
+            id: `mermaidDiagram.fitToWidth`,
+            defaultMessage: `Fit diagram to width`,
+            description: `Accessible label for fitting a Mermaid diagram to the available width`,
+          })
+        : c.formatMessage({
+            id: `mermaidDiagram.viewActualSize`,
+            defaultMessage: `View actual size`,
+            description: `Accessible label for showing a Mermaid diagram at its rendered size`,
+          })),
+      (t[4] = c),
+      (t[5] = p),
+      (t[6] = b))
+    : (b = t[6]);
+  let x = b,
+    S;
+  t[7] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((S = () => {
+        m((e) => {
+          let t = !e,
+            n = l.current?.querySelector(`svg`);
+          return (n && Pn(n, t), t);
+        });
+      }),
+      (t[7] = S))
+    : (S = t[7]);
+  let ee = S,
+    C;
+  t[8] === p
+    ? (C = t[9])
+    : ((C = (e) => {
+        Pn(e, p);
+      }),
+      (t[8] = p),
+      (t[9] = C));
+  let w = (0, X.useEffectEvent)(C),
+    T;
+  t[10] !== w ||
+  t[11] !== n ||
+  t[12] !== r ||
+  t[13] !== i ||
+  t[14] !== o ||
+  t[15] !== h ||
+  t[16] !== s
+    ? ((T = () => {
+        if (typeof window > `u`) return;
+        let e = l.current;
+        if (!e) return;
+        if (!n) {
+          e.innerHTML = ``;
+          return;
         }
-      );
-    }, [e, t, n, i, f, a]),
-    c === f
-      ? (r ?? null)
-      : (0, X.jsxs)(`div`, {
-          className: `relative`,
-          children: [
-            (0, X.jsxs)(`div`, {
-              className: `absolute top-2 right-2 z-10 flex gap-1`,
-              children: [
-                (0, X.jsx)(Ce, {
-                  tooltipContent: g,
-                  delayOpen: !0,
-                  children: (0, X.jsx)(we, {
-                    "aria-label": g,
-                    "aria-pressed": u,
-                    color: u ? `secondary` : `ghost`,
-                    size: `icon`,
-                    onClick: _,
-                    children: u
-                      ? (0, X.jsx)(Te, { className: `icon-2xs` })
-                      : (0, X.jsx)(Ee, { className: `icon-2xs` }),
-                  }),
-                }),
-                (0, X.jsx)(Oe, {
-                  iconClassName: `icon-2xs`,
-                  iconOnly: !0,
-                  buttonText: o.formatMessage({
-                    id: `mermaidDiagram.copySource`,
-                    defaultMessage: `Copy mermaid`,
-                    description: `Tooltip label for the copy button on rendered mermaid diagrams`,
-                  }),
-                  onCopy: m,
-                }),
-              ],
-            }),
-            (0, X.jsxs)(`div`, {
-              ref: s,
-              className: h(
-                pr,
-                u
-                  ? `max-h-[var(--markdown-wide-block-max-height)] overflow-auto`
-                  : `overflow-x-auto`,
-              ),
-              "aria-label": o.formatMessage({
-                id: `mermaidDiagram.ariaLabel`,
-                defaultMessage: `Mermaid diagram`,
-                description: `ARIA label for rendered mermaid diagrams`,
-              }),
-              role: `img`,
-              children: [
-                (0, X.jsx)(`span`, {
-                  className: `sr-only`,
-                  children: (0, X.jsx)(ye, {
-                    id: `mermaidDiagram.originalCode`,
-                    defaultMessage: `Mermaid source code`,
-                    description: `Screen reader label for the hidden mermaid source code.`,
-                  }),
-                }),
-                (0, X.jsx)(`pre`, {
-                  className: `sr-only whitespace-pre-wrap`,
-                  children: e,
-                }),
-              ],
-            }),
-          ],
-        })
+        let t = !1;
+        return (
+          (e.innerHTML = ``),
+          (async () => {
+            try {
+              let n = jn(e, o);
+              if ((await bn.parse(s, { suppressErrors: !0 })) === !1) {
+                if (t) return;
+                ((e.innerHTML = ``), d(h));
+                return;
+              }
+              let { svg: a } = await bn.render(r, s);
+              if (t) return;
+              e.innerHTML = a;
+              let c = e.querySelector(`svg`);
+              (c && w(c),
+                e.setAttribute(`data-mermaid-theme`, n.theme ?? ``),
+                i == null
+                  ? e.removeAttribute(`data-mermaid-diagram`)
+                  : e.setAttribute(`data-mermaid-diagram`, i),
+                d((e) => (e === h ? null : e)));
+            } catch {
+              if (t) return;
+              ((e.innerHTML = ``), d(h));
+            }
+          })(),
+          () => {
+            t = !0;
+          }
+        );
+      }),
+      (t[10] = w),
+      (t[11] = n),
+      (t[12] = r),
+      (t[13] = i),
+      (t[14] = o),
+      (t[15] = h),
+      (t[16] = s),
+      (t[17] = T))
+    : (T = t[17]);
+  let E;
+  if (
+    (t[18] !== n ||
+    t[19] !== r ||
+    t[20] !== i ||
+    t[21] !== o ||
+    t[22] !== h ||
+    t[23] !== s
+      ? ((E = [n, r, i, o, h, s]),
+        (t[18] = n),
+        (t[19] = r),
+        (t[20] = i),
+        (t[21] = o),
+        (t[22] = h),
+        (t[23] = s),
+        (t[24] = E))
+      : (E = t[24]),
+    (0, X.useEffect)(T, E),
+    u === h)
+  )
+    return a ?? null;
+  let D = p ? `secondary` : `ghost`,
+    O;
+  t[25] === p
+    ? (O = t[26])
+    : ((O = p
+        ? (0, Z.jsx)(me, { className: `icon-2xs` })
+        : (0, Z.jsx)(he, { className: `icon-2xs` })),
+      (t[25] = p),
+      (t[26] = O));
+  let k;
+  t[27] !== p || t[28] !== x || t[29] !== D || t[30] !== O
+    ? ((k = (0, Z.jsx)(pe, {
+        "aria-label": x,
+        "aria-pressed": p,
+        color: D,
+        size: `icon`,
+        onClick: ee,
+        children: O,
+      })),
+      (t[27] = p),
+      (t[28] = x),
+      (t[29] = D),
+      (t[30] = O),
+      (t[31] = k))
+    : (k = t[31]);
+  let A;
+  t[32] !== x || t[33] !== k
+    ? ((A = (0, Z.jsx)(fe, { tooltipContent: x, delayOpen: !0, children: k })),
+      (t[32] = x),
+      (t[33] = k),
+      (t[34] = A))
+    : (A = t[34]);
+  let j;
+  t[35] === c
+    ? (j = t[36])
+    : ((j = c.formatMessage({
+        id: `mermaidDiagram.copySource`,
+        defaultMessage: `Copy mermaid`,
+        description: `Tooltip label for the copy button on rendered mermaid diagrams`,
+      })),
+      (t[35] = c),
+      (t[36] = j));
+  let M;
+  t[37] !== y || t[38] !== j
+    ? ((M = (0, Z.jsx)(_e, {
+        iconClassName: `icon-2xs`,
+        iconOnly: !0,
+        buttonText: j,
+        onCopy: y,
+      })),
+      (t[37] = y),
+      (t[38] = j),
+      (t[39] = M))
+    : (M = t[39]);
+  let N;
+  t[40] !== A || t[41] !== M
+    ? ((N = (0, Z.jsxs)(`div`, {
+        className: `absolute top-2 right-2 z-10 flex gap-1`,
+        children: [A, M],
+      })),
+      (t[40] = A),
+      (t[41] = M),
+      (t[42] = N))
+    : (N = t[42]);
+  let P = p
+      ? `max-h-[var(--markdown-wide-block-max-height)] overflow-auto`
+      : `overflow-x-auto`,
+    F;
+  t[43] === P ? (F = t[44]) : ((F = f(Cn, P)), (t[43] = P), (t[44] = F));
+  let I;
+  t[45] === c
+    ? (I = t[46])
+    : ((I = c.formatMessage({
+        id: `mermaidDiagram.ariaLabel`,
+        defaultMessage: `Mermaid diagram`,
+        description: `ARIA label for rendered mermaid diagrams`,
+      })),
+      (t[45] = c),
+      (t[46] = I));
+  let L;
+  t[47] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((L = (0, Z.jsx)(`span`, {
+        className: `sr-only`,
+        children: (0, Z.jsx)(le, {
+          id: `mermaidDiagram.originalCode`,
+          defaultMessage: `Mermaid source code`,
+          description: `Screen reader label for the hidden mermaid source code.`,
+        }),
+      })),
+      (t[47] = L))
+    : (L = t[47]);
+  let R;
+  t[48] === n
+    ? (R = t[49])
+    : ((R = (0, Z.jsx)(`pre`, {
+        className: `sr-only whitespace-pre-wrap`,
+        children: n,
+      })),
+      (t[48] = n),
+      (t[49] = R));
+  let z;
+  t[50] !== F || t[51] !== I || t[52] !== R
+    ? ((z = (0, Z.jsxs)(`div`, {
+        ref: l,
+        className: F,
+        "aria-label": I,
+        role: `img`,
+        children: [L, R],
+      })),
+      (t[50] = F),
+      (t[51] = I),
+      (t[52] = R),
+      (t[53] = z))
+    : (z = t[53]);
+  let B;
+  return (
+    t[54] !== N || t[55] !== z
+      ? ((B = (0, Z.jsxs)(`div`, { className: `relative`, children: [N, z] })),
+        (t[54] = N),
+        (t[55] = z),
+        (t[56] = B))
+      : (B = t[56]),
+    B
   );
 }
-function wr(e, t) {
+function Pn(e, t) {
   if (((e.style.height = `auto`), t)) {
     ((e.style.maxWidth = `none`),
       (e.style.maxHeight = `none`),
@@ -2068,18 +1895,18 @@ function wr(e, t) {
     (e.style.maxHeight = `var(--markdown-wide-block-max-height)`),
     (e.style.width = `100%`));
 }
-function Tr(e, t) {
-  let n = t ? yr : vr,
-    r = Z(e, `var(--color-background-elevated-primary)`, n.primaryColor),
-    i = Z(e, `var(--color-background-elevated-secondary)`, n.secondaryColor),
-    a = Z(e, `var(--color-token-text-code-block-background)`, n.tertiaryColor),
-    o = Z(e, `var(--color-token-main-surface-primary)`, n.background),
-    s = Z(e, `var(--color-background-editor-opaque)`, n.edgeLabelBackground),
-    c = Q(e, `var(--color-token-foreground)`, n.textColor),
-    l = Q(e, `var(--color-token-description-foreground)`, n.secondaryTextColor),
-    u = Q(e, `var(--color-text-foreground-tertiary)`, n.tertiaryTextColor),
-    d = Dr(e, `var(--color-token-input-border)`, n.primaryBorderColor),
-    f = Q(e, `var(--color-token-description-foreground)`, n.lineColor);
+function Fn(e, t) {
+  let n = t ? kn : On,
+    r = Q(e, `var(--color-background-elevated-primary)`, n.primaryColor),
+    i = Q(e, `var(--color-background-elevated-secondary)`, n.secondaryColor),
+    a = Q(e, `var(--color-token-text-code-block-background)`, n.tertiaryColor),
+    o = Q(e, `var(--color-token-main-surface-primary)`, n.background),
+    s = Q(e, `var(--color-background-editor-opaque)`, n.edgeLabelBackground),
+    c = $(e, `var(--color-token-foreground)`, n.textColor),
+    l = $(e, `var(--color-token-description-foreground)`, n.secondaryTextColor),
+    u = $(e, `var(--color-text-foreground-tertiary)`, n.tertiaryTextColor),
+    d = Ln(e, `var(--color-token-input-border)`, n.primaryBorderColor),
+    f = $(e, `var(--color-token-description-foreground)`, n.lineColor);
   return {
     actorBorder: f,
     actorBkg: r,
@@ -2122,38 +1949,38 @@ function Tr(e, t) {
     titleColor: c,
   };
 }
-function Er(e) {
+function In(e) {
   let t = e.ownerDocument.createElement(`div`);
   ((t.style.fontFamily = `var(--font-sans)`),
     t.setAttribute(`aria-hidden`, `true`),
-    Or(e, t));
+    zn(e, t));
   let n =
     e.ownerDocument.defaultView?.getComputedStyle(t).fontFamily.trim() ?? ``;
-  return (t.remove(), n.length > 0 ? n : _r);
-}
-function Z(e, t, n) {
-  let r = e.ownerDocument.createElement(`div`);
-  return ((r.style.backgroundColor = t), $(e, r, `backgroundColor`, n));
+  return (t.remove(), n.length > 0 ? n : Dn);
 }
 function Q(e, t, n) {
   let r = e.ownerDocument.createElement(`div`);
-  return ((r.style.color = t), $(e, r, `color`, n));
+  return ((r.style.backgroundColor = t), Rn(e, r, `backgroundColor`, n));
 }
-function Dr(e, t, n) {
+function $(e, t, n) {
+  let r = e.ownerDocument.createElement(`div`);
+  return ((r.style.color = t), Rn(e, r, `color`, n));
+}
+function Ln(e, t, n) {
   let r = e.ownerDocument.createElement(`div`);
   return (
     (r.style.borderTopStyle = `solid`),
     (r.style.borderTopWidth = `1px`),
     (r.style.borderTopColor = t),
-    $(e, r, `borderTopColor`, n)
+    Rn(e, r, `borderTopColor`, n)
   );
 }
-function $(e, t, n, r) {
-  Or(e, t);
+function Rn(e, t, n, r) {
+  zn(e, t);
   let i = e.ownerDocument.defaultView?.getComputedStyle(t)[n].trim() ?? ``;
   return (t.remove(), i.length > 0 ? i : r);
 }
-function Or(e, t) {
+function zn(e, t) {
   ((t.style.opacity = `0`),
     (t.style.pointerEvents = `none`),
     (t.style.position = `absolute`),
@@ -2162,5 +1989,5 @@ function Or(e, t) {
     (t.style.height = `0`),
     e.appendChild(t));
 }
-export { Sr as MermaidDiagram };
+export { Mn as MermaidDiagram };
 //# sourceMappingURL=mermaid-diagram.js.map

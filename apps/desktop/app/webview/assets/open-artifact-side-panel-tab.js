@@ -3,346 +3,394 @@ const __vite__mapDeps = (
   m = __vite__mapDeps,
   d = m.f ||
     (m.f = [
-      "./artifact-tab-content.electron.js",
-      "./chunk.js",
+      "./artifact-tab-content.electron-Ba_8-t4e.js",
+      "./chunk-Bj-mKKzh.js",
       "./preload-helper.js",
+      "./electron-menu-shortcuts.js",
       "./setting-storage.js",
-      "./src-BLHmAhbF.js",
+      "./src-C.js",
       "./jsx-runtime.js",
       "./tslib.es6.js",
-      "./app-server-manager-signals.js",
-      "./statsig.js",
-      "./lib.js",
-      "./marked.esm.js",
+      "./core.esm.js",
+      "./react-dom-CvzHKZGB.js",
+      "./sortable.esm-BRPfvPzy.js",
+      "./mcp-capability-signals-DAPblgpG.js",
+      "./app-server-manager-signals-DkRDRgNB.js",
+      "./statsig--EYRNU53.js",
+      "./rpc-DqwD0euc.js",
+      "./lib-DHgYfVJN.js",
+      "./marked.esm-BR-H6018.js",
       "./v4.js",
-      "./score-query-match.js",
-      "./product-logger.js",
+      "./product-logger-DusapRyT.js",
+      "./request-DWZTrEAr.js",
       "./review-file-source-tab.js",
-      "./codex-diff-css.js",
-      "./parsePatchFiles.js",
-      "./chrome-theme.js",
+      "./shiki-highlight-provider-gate-BIldj-yk.js",
+      "./diff-view-mode.js",
+      "./route-scope.js",
+      "./chunk-LFPYN7LY.js",
       "./ccount.js",
+      "./is-compact-window-context.js",
+      "./use-resolved-theme-variant.js",
       "./file-tree-search-input.js",
-      "./iconResolver.js",
       "./button.js",
-      "./clsx.js",
+      "./clsx-BcPLHiun.js",
       "./spinner.js",
-      "./reduced-motion-preference.js",
+      "./reduced-motion-preference-DE4zP-oH.js",
       "./context-menu.js",
-      "./dist-1yvMF-ho.js",
-      "./dist-BzssiQ2D.js",
-      "./react-dom.js",
-      "./dist-PjNkCZD1.js",
-      "./dist-Dc9hCHPN.js",
+      "./dist-dALQ7PpJ.js",
+      "./dist-B8SKCozm.js",
+      "./dist-Crlqula6.js",
+      "./dist-DXUvl421.js",
       "./floating-ui.react-dom.js",
       "./Combination.js",
-      "./dist-E04PTHvu.js",
+      "./dist-BJSWtyeU.js",
       "./window-zoom-context.js",
-      "./tooltip.js",
+      "./tooltip-CDzchJxN.js",
       "./tooltip-dismiss.js",
       "./check-md.js",
       "./chevron-right.js",
       "./use-stable-callback.js",
       "./use-platform.js",
-      "./use-os-info.js",
+      "./use-os-info-CpFtQpVC.js",
+      "./os-info-CLWbGRUe.js",
       "./search.js",
-      "./x.js",
+      "./x-C_RDKBp5.js",
+      "./open-target-context-menu-items.js",
       "./open-target-selection.js",
       "./use-target-apps.js",
       "./codex-analytics-attribution.js",
-      "./route-scope.js",
-      "./chunk-LFPYN7LY.js",
-      "./use-resolved-theme-variant.js",
-      "./copy-to-clipboard.js",
-      "./dropdown.js",
+      "./copy-to-clipboard-C2Mq2hN-.js",
+      "./dropdown-DtQxMoJw.js",
       "./proxy.js",
       "./single-value.js",
-      "./AnimatePresence.js",
+      "./AnimatePresence-Dsr-oiZk.js",
       "./animations.js",
       "./dropdown.css",
       "./use-diff-annotations.js",
       "./error-boundary.js",
       "./with-window.js",
       "./download.js",
-      "./info.js",
-      "./codex-api.js",
+      "./info-B8GAwpK6.js",
+      "./codex-api-bK--r_2t.js",
       "./useInfiniteQuery.js",
-      "./_baseOrderBy.js",
-      "./parse-owner-repo.js",
+      "./_baseOrderBy-CIbyNZRe.js",
+      "./_baseEach.js",
       "./use-auth.js",
       "./app-server-manager-hooks.js",
       "./remote-connection-visibility.js",
       "./use-global-state.js",
-      "./config-queries.js",
-      "./invalidate-queries-and-broadcast.js",
-      "./thread-context-inputs.js",
+      "./config-queries-BBeTQbuo.js",
+      "./invalidate-queries-and-broadcast-BXgBlyBv.js",
+      "./thread-context-inputs-DBrOekVr.js",
       "./device-connections.js",
       "./sidebar-signals.js",
-      "./use-debounced-value.js",
+      "./parse-owner-repo.js",
+      "./use-debounced-value-BtOJx-Vp.js",
       "./mime-types.js",
-      "./use-composer-controller.js",
-      "./pdf-DbRVTnv1.js",
-      "./prompt-editor.js",
+      "./pdf-DDdRP0ey.js",
+      "./prompt-editor-.js",
       "./sortBy.js",
       "./_defineProperty.js",
-      "./apps-queries.js",
-      "./useQueries.js",
+      "./dist-Cp6055if.js",
+      "./apps-queries-CmwRqoKz.js",
+      "./useQueries-tUeWkfvR.js",
       "./startCase.js",
-      "./uniq.js",
       "./experimental-features-queries.js",
       "./known-app-icon.js",
       "./branch.js",
-      "./github-mark.js",
+      "./github-mark-BbpRNXQM.js",
       "./google-drive.js",
-      "./notion.js",
+      "./notion-hFEWPyiF.js",
       "./use-native-apps.electron.js",
       "./mention-item.js",
       "./skill-utils.js",
       "./get-file-icon.js",
-      "./code.js",
-      "./json-DAjHKBV7.js",
+      "./code-s3Scfd05.js",
+      "./json-CRHyc9De.js",
       "./folder.js",
-      "./image-square.js",
-      "./notebook.js",
+      "./image-square-CGEtcnWp.js",
+      "./notebook-MImpo36y.js",
       "./settings.cog.js",
-      "./skills.js",
+      "./skills-BUMAZe_D.js",
       "./terminal.js",
-      "./bug.js",
-      "./chrome.js",
-      "./codex.js",
-      "./mcp.js",
-      "./openai-blossom.js",
+      "./bug-B5-GWt65.js",
+      "./chrome-ZI-wJE1V.js",
+      "./codex-BjFeJtxQ.js",
+      "./mcp-D_m7bYb5.js",
+      "./openai-blossom-CXnPbecc.js",
       "./pencil.js",
       "./filesystem-media-src.js",
-      "./use-skills.js",
-      "./run-command.js",
-      "./window-app-action-helpers.js",
-      "./open-project-setup-dialog.js",
+      "./connector-logo.js",
+      "./use-is-dark-BHkhnHe-.js",
+      "./inline-mention-style.js",
+      "./at-mention-list-C6rdlW9Y.js",
+      "./composer-top-menu-chrome.js",
+      "./dist-wT0ygyN1.js",
       "./dialog-layout.js",
       "./dialog-layout.css",
-      "./modal-controller-state-.js",
-      "./connector-logo.js",
-      "./use-is-dark.js",
-      "./inline-mention-style.js",
-      "./use-at-mention-sections.js",
-      "./use-workspace-file-search.js",
-      "./use-is-background-subagents-enabled.js",
-      "./apps.js",
-      "./use-plugins.js",
-      "./use-is-plugins-enabled.js",
+      "./composer-top-menu-chrome-EBEHrbNH.css",
+      "./score-query-match.js",
+      "./use-workspace-file-search-KLsQKyAb.js",
+      "./use-is-background-subagents-enabled-B.js",
+      "./apps-DwfMzB5Q.js",
+      "./use-plugins-jIZrcuZQ.js",
       "./use-codex-home.js",
-      "./get-build-flavor.js",
-      "./plugin-install-store.js",
-      "./list-navigation.js",
-      "./use-at-mention-sections.css",
-      "./prompt-text.js",
-      "./external-link-source.js",
+      "./use-is-plugins-enabled.js",
+      "./browser-sidebar-availability.js",
+      "./mcp-capability-client.js",
+      "./plugin-install-store-Daxzgjai.js",
+      "./use-skills.js",
+      "./use-register-command.js",
+      "./run-command.js",
+      "./window-app-action-helpers.js",
+      "./open-project-setup-dialog-cJXYMFtk.js",
+      "./modal-controller-state.js",
+      "./toast-signal.js",
+      "./local-projects.js",
+      "./projectless-thread.js",
+      "./remote-projects.js",
+      "./list-navigation-DnxNfoPi.js",
+      "./at-mention-list.css",
+      "./use-composer-controller.js",
+      "./prompt-text-DuAhtLDu.js",
+      "./external-link-source-DT57c-8r.js",
       "./send-open-file-request.js",
-      "./globe.js",
+      "./connected-apps.js",
+      "./globe-CnvlclXd.js",
       "./format-skill-scope.js",
       "./prompt-editor.css",
-      "./markdown-75WV5XlN.js",
-      "./katex-BzX-JuVf.js",
-      "./code-snippet.js",
-      "./tailwind-styled-components.esm.js",
+      "./open-workspace-file-WgoEFjrv.js",
+      "./file-kind-GUSLvXLO.js",
+      "./markdown-surface-vWOcyIeh.js",
+      "./markdown-46SswYUq.js",
+      "./katex-C2KDRoso.js",
+      "./code-snippet-hioibDaj.js",
       "./copy-button.js",
-      "./copy.js",
+      "./copy-Cen6nDnP.js",
       "./data-url-from-svg.js",
-      "./external-markdown-link.js",
+      "./external-markdown-link-DVRKkYqo.js",
       "./badge.js",
       "./image-preview-dialog.js",
       "./image-preview-shortcuts.js",
       "./arrow-left.js",
-      "./minus-D.js",
+      "./minus.js",
       "./plus.js",
       "./inline-mentions.js",
-      "./open-workspace-file.js",
-      "./artifact-tab-file-kind.js",
-      "./file-kind.js",
+      "./workspace-file-context-menu.js",
       "./inline-mentions.css",
       "./chat.js",
-      "./markdown-surface.js",
-      "./chevron.js",
+      "./chevron-NmAOI_v1.js",
+      "./pull-request-readonly-comment.js",
+      "./format-relative-date-time.js",
+      "./use-relative-now.js",
+      "./link-external-BPZREBQk.js",
+      "./format-short-local-date-time.js",
       "./anchored-autocomplete-overlay.js",
       "./focus-composer.js",
-      "./use-autocomplete-overlay-placement.js",
+      "./sumBy-zUPwGmzt.js",
+      "./use-autocomplete-overlay-placement-uVAiOuYR.js",
       "./rich-preview-primitives.js",
-      "./arrow-up.js",
-      "./link-external.js",
-      "./use-resize-observer.js",
-      "./get-resize-observer-entry-size.js",
+      "./arrow-up-fq4d26GH.js",
+      "./use-resize-observer-DCpyQHos.js",
+      "./get-resize-observer-entry-size-Bj-GuBki.js",
       "./app-shell-state.js",
-      "./use-diff-comment-sources.js",
-      "./review-file-tree-side-pane.js",
-      "./app-shell-panel-animation.js",
-      "./workspace-directory-tree.js",
-      "./review-navigation-model.js",
-      "./sumBy.js",
-      "./app-shell-tab-controller.js",
-      "./parse-diff.js",
-      "./diff-view-mode.js",
-      "./git-current-branch-query.js",
-      "./thread-context.js",
-      "./use-webview-execution-target.js",
-      "./remote-projects.js",
-      "./hash-code.js",
-      "./pull-request-code-review-comments.js",
-      "./right-panel-composer-overlay-scroll-reserve.js",
-      "./folders.js",
-      "./history.js",
-      "./three-dots.js",
-      "./app-intl-signal.js",
-      "./thread-panel-state.js",
-      "./app-connect-oauth.js",
-      "./codex-api-error.js",
+      "./app-shell-D4HBgUPf.js",
+      "./browser-sidebar-manager.js",
+      "./command-keybindings-C3NM9T-L.js",
+      "./app-shell-bottom-panel-scroll-sync.js",
+      "./app-shell-tab-controller-BTWycTBb.js",
+      "./use-window-controls-safe-area.js",
+      "./loading-page.js",
+      "./homepage-logo.js",
+      "./expand.js",
+      "./keyboard-modifier-state-BKqcycjV.js",
+      "./use-merged-ref.js",
+      "./app-shell.css",
+      "./artifact-preview-header.js",
       "./app-connect-modal.js",
-      "./toast-signal.js",
+      "./app-connect-oauth-Cy-gX8IV.js",
+      "./codex-api-error-CsUcWied.js",
       "./toggle.js",
       "./arrow-top-right.js",
       "./check-circle-filled.js",
-      "./artifact-preview-status.js",
-      "./compound-button.js",
-      "./open-in-google-drive-menu-item.js",
-      "./bundled-plugin-auto-install-preference.js",
-      "./plugin-detail-route-utils.js",
-      "./plugins-availability.js",
-      "./plugin-config-edits.js",
+      "./compound-button-BQclBs-H.js",
+      "./composer-view-state-JRNwOfub.js",
+      "./use-environment.js",
+      "./plugins-availability-txQMPSuC.js",
+      "./plugin-config-edits-DUMiyKty.js",
       "./plugin-detail-queries.js",
-      "./hooks-settings-queries.js",
-      "./base64.js",
-      "./use-diff-comments.js",
+      "./hooks-settings-queries-BUP-44jb.js",
+      "./plugin-detail-route-utils.js",
+      "./use-diff-comment-sources.js",
+      "./gh-pull-request-status-query.js",
+      "./gh-cli-status-query-DoYMwBhd.js",
+      "./workspace-directory-tree.js",
+      "./review-navigation-model-DMRVNxCn.js",
+      "./git-current-branch-query.js",
+      "./thread-context-CaET2O8s.js",
+      "./use-webview-execution-target.js",
+      "./hash-code.js",
+      "./pull-request-code-review-comments-qcxIGUtE.js",
+      "./right-panel-composer-overlay-scroll-reserve.js",
+      "./folders-DmG-RYpY.js",
+      "./history-BwxRjoaE.js",
+      "./three-dots.js",
+      "./app-intl-signal.js",
+      "./mcp-capability-file-viewer-frame-DKPiqjwC.js",
+      "./mcp-capability-view-frame-BVZUfJnz.js",
+      "./checkbox-DtuSNXXy.js",
+      "./build-worktree-label-from-input.js",
+      "./project-dropdown-options.js",
+      "./use-connected-remote-connections.js",
+      "./chats-DoviPPWc.js",
+      "./worktree-D_6WAQVb.js",
+      "./alert-CoBPbdcu.js",
+      "./permissions-mode-defaults.js",
+      "./macbook.js",
+      "./mcp-tool-item-content-utils.js",
+      "./sidebar-project-group-signals-CEQTKcIf.js",
+      "./sidebar-project-groups.js",
+      "./local-task-row-signals-BzazYVei.js",
+      "./thread-panel-state.js",
+      "./pending-worktree-store-COXB8WW0.js",
+      "./artifact-annotation-comment.js",
+      "./artifact-preview-status.js",
+      "./arrow-rotate-ccw.js",
       "./prosemirror.css",
     ]),
 ) => i.map((i) => d[i]);
-import { s as e } from "./chunk.js";
-import { Cn as t } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { zn as t } from "./src-C.js";
 import {
-  Gi as n,
-  Ni as r,
-  Qi as i,
-  Yi as a,
-  qi as o,
-  ts as s,
-} from "./app-server-manager-signals.js";
+  Ia as n,
+  Pa as r,
+  Ra as i,
+  Va as a,
+  Xs as o,
+  da as s,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { t as c } from "./preload-helper.js";
 import { n as l, t as u } from "./jsx-runtime.js";
-import { H as d, u as f, xt as p } from "./setting-storage.js";
-import { n as m } from "./artifact-tab-file-kind.js";
-import { P as h, W as g } from "./app-shell-state.js";
-import { n as _ } from "./app-shell-tab-controller.js";
-import { n as v } from "./thread-context.js";
-import { n as y } from "./get-file-icon.js";
-var b = `workspaceFile:`;
-function x() {
-  return { scrollLeft: null, scrollTop: null };
+import { S as d, U as f, ot as p, u as m, wt as h } from "./setting-storage.js";
+import { a as g } from "./open-workspace-file-WgoEFjrv.js";
+import { V as _, Z as v } from "./app-shell-state.js";
+import { n as y } from "./app-shell-tab-controller-BTWycTBb.js";
+import { n as b } from "./thread-context-CaET2O8s.js";
+import { n as x } from "./get-file-icon.js";
+import { a as S, t as C } from "./workspace-file-context-menu.js";
+function w(e, { cwd: t, hostId: n, path: r }) {
+  return C(e, { cwd: t, hostId: n, path: r });
 }
-function S(e) {
-  return e.flatMap((e) => {
-    let t = C(e);
-    return t == null ? [] : [t];
-  });
-}
-function C(e) {
-  if (!e.kind?.startsWith(`workspaceFile:`)) return null;
-  let { props: t } = e;
-  return !(`hostId` in t) ||
-    typeof t.hostId != `string` ||
-    !(`path` in t) ||
-    typeof t.path != `string`
-    ? null
-    : { hostId: t.hostId, path: t.path };
-}
-async function w({ openFiles: e, queryClient: t }) {
-  await Promise.all(
-    e.flatMap(({ hostId: e, path: n }) => [
-      t.refetchQueries({
-        exact: !0,
-        queryKey: f(`read-file-metadata`, { hostId: e, path: n }),
-        type: `all`,
-      }),
-      t.refetchQueries({
-        exact: !0,
-        queryKey: f(`read-file`, { hostId: e, path: n }),
-        type: `all`,
-      }),
-      t.refetchQueries({
-        exact: !0,
-        queryKey: f(`read-file`, { path: n, hostId: e }),
-        type: `all`,
-      }),
-      t.refetchQueries({
-        exact: !0,
-        queryKey: f(`read-file-binary`, { path: n, hostId: e }),
-        type: `all`,
-      }),
-      t.refetchQueries({
-        exact: !0,
-        queryKey: f(`read-file-binary`, { hostId: e, path: n }),
-        type: `all`,
-      }),
-      t.refetchQueries({
-        exact: !0,
-        queryKey: f(`compile-latex-artifact`, { path: n, hostId: e }),
-        type: `all`,
-      }),
-      t.refetchQueries({
-        exact: !0,
-        queryKey: f(`compile-latex-artifact`, { hostId: e, path: n }),
-        type: `all`,
-      }),
-    ]),
-  );
-}
-function T({ cwd: e, path: t }) {
-  if (e == null) return t;
-  let i = r(t, e);
-  return a(i)
-    ? i
-    : n({ root: e, relativePath: i, includeWorkspaceRootLabel: !0 });
+function T(e, { cwd: t, hostId: n, path: r }) {
+  S(e, { cwd: t, hostId: n, path: r });
 }
 function E({ cwd: e, path: t }) {
-  return i(T({ cwd: e, path: t }))
+  if (e == null) return t;
+  let n = s(t, e);
+  return i(n)
+    ? n
+    : r({ root: e, relativePath: n, includeWorkspaceRootLabel: !0 });
+}
+function D({ cwd: e, path: t }) {
+  return a(E({ cwd: e, path: t }))
     .split(`/`)
     .filter((e) => e.length > 0);
 }
-function D(e, t) {
-  return T({ cwd: k(e), path: t });
+var O = `workspaceFile:`;
+function k() {
+  return { scrollLeft: null, scrollTop: null };
 }
-function O(e, t = {}) {
+var A = p(d, (e) => !1);
+function j(e) {
+  return e.flatMap((e) => {
+    let t = M(e);
+    return t == null ? [] : [t];
+  });
+}
+function M(e) {
+  if (!e.kind?.startsWith(`workspaceFile:`)) return null;
+  let { props: t } = e;
+  if (
+    !(`hostId` in t) ||
+    typeof t.hostId != `string` ||
+    !(`path` in t) ||
+    typeof t.path != `string`
+  )
+    return null;
+  let n =
+    `artifactType` in t &&
+    (t.artifactType === `document` ||
+      t.artifactType === `slides` ||
+      t.artifactType === `spreadsheet`);
+  return { hostId: t.hostId, path: t.path, refreshMode: n ? `manual` : `auto` };
+}
+function N({ hostId: e, path: t }) {
+  return `${e}\0${t}`;
+}
+function P(e, t) {
+  e.set(A, N(t), !0);
+}
+function F(e, t) {
+  e.set(A, N(t), !1);
+}
+async function I({ cacheKey: e, openFiles: t, queryClient: n }) {
+  await Promise.all(
+    t
+      .flatMap(({ hostId: t, path: n }) => [
+        m(`read-file-metadata`, { hostId: t, path: n }, e),
+        m(`read-file`, { hostId: t, path: n }, e),
+        m(`read-file`, { path: n, hostId: t }, e),
+        m(`read-file-binary`, { path: n, hostId: t }, e),
+        m(`read-file-binary`, { hostId: t, path: n }, e),
+        m(`compile-latex-artifact`, { path: n, hostId: t }, e),
+        m(`compile-latex-artifact`, { hostId: t, path: n }, e),
+      ])
+      .map((e) =>
+        n.refetchQueries(
+          { exact: !0, queryKey: e, type: `all` },
+          { throwOnError: !0 },
+        ),
+      ),
+  );
+}
+function L(e, t) {
+  return E({ cwd: z(e), path: t });
+}
+function R(e, t = {}) {
   e.value.routeKind === `local-thread` &&
-    A(
+    B(
       e,
-      e.get(_.tabs$).filter((e) => e.tabId !== t.excludeTabId),
+      e.get(y.tabs$).filter((e) => e.tabId !== t.excludeTabId),
     );
 }
-function k(e) {
+function z(e) {
   switch (e.value.routeKind) {
     case `home`:
     case `new-thread-panel`:
     case `local-thread`:
     case `remote-thread`: {
-      let n = e.get(v);
+      let n = e.get(b);
       return n == null ? null : t(n);
     }
     case `other`:
       return null;
   }
 }
-function A(e, t) {
+function B(e, t) {
   e.value.routeKind === `local-thread` &&
-    s(`set-open-review-file-source-tabs`, {
+    o(`set-open-review-file-source-tabs`, {
       conversationId: e.value.conversationId,
-      openFiles: S(t),
+      openFiles: j(t),
     });
 }
-var j = p(),
-  M = e(l(), 1),
-  N = u(),
-  P = (0, M.lazy)(async () => {
+var V = h(),
+  H = e(l(), 1),
+  U = u(),
+  W = (0, H.lazy)(async () => {
     let { ArtifactTabContent: e } = await c(
       async () => {
         let { ArtifactTabContent: e } = await import(
-          `./artifact-tab-content.electron.js`
+          `./artifact-tab-content.electron-Ba_8-t4e.js`
         );
         return { ArtifactTabContent: e };
       },
@@ -360,39 +408,42 @@ var j = p(),
         164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177,
         178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191,
         192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205,
-        206, 207, 208,
+        206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219,
+        220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233,
+        234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247,
+        248, 249, 250, 251, 252, 253,
       ]),
       import.meta.url,
     );
     return { default: e };
   });
-function F(e) {
-  let t = (0, j.c)(3),
+function G(e) {
+  let t = (0, V.c)(3),
     n;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((n = (0, N.jsx)(I, {})), (t[0] = n))
+    ? ((n = (0, U.jsx)(K, {})), (t[0] = n))
     : (n = t[0]);
   let r;
   return (
     t[1] === e
       ? (r = t[2])
-      : ((r = (0, N.jsx)(M.Suspense, {
+      : ((r = (0, U.jsx)(H.Suspense, {
           fallback: n,
-          children: (0, N.jsx)(P, { ...e }),
+          children: (0, U.jsx)(W, { ...e }),
         })),
         (t[1] = e),
         (t[2] = r)),
     r
   );
 }
-function I() {
-  let e = (0, j.c)(1),
+function K() {
+  let e = (0, V.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, N.jsx)(`div`, {
+      ? ((t = (0, U.jsx)(`div`, {
           className: `flex h-full items-center justify-center px-6 text-center text-sm text-token-text-tertiary`,
-          children: (0, N.jsx)(d, {
+          children: (0, U.jsx)(f, {
             id: `artifactTab.loading`,
             defaultMessage: `Loading preview...`,
             description: `Loading state shown while an artifact tab preview is mounting`,
@@ -403,43 +454,52 @@ function I() {
     t
   );
 }
-function L(e, t, n) {
-  let r = m(t);
-  if (r == null) return !1;
-  let { hostId: i, icon: a, isPreview: s, tabId: c, title: l } = n,
-    u = y(t),
-    d = l ?? o(t),
-    f = c ?? `artifact:${i}:${t}`,
-    p = { ...r, hostId: i, path: t, tabId: f, title: d };
+function q(e, t, r) {
+  let i = g(t);
+  if (i == null) return !1;
+  let { hostId: a, icon: o, isPreview: s, tabId: c, title: l } = r,
+    u = x(t),
+    d = l ?? n(t),
+    f = c ?? `artifact:${a}:${t}`,
+    p = z(e),
+    m = { ...i, hostId: a, path: t, tabId: f, title: d };
   return (
-    _.openTab(e, F, {
-      icon: a ?? (0, M.createElement)(u, { className: `icon-xs shrink-0` }),
+    T(e, { cwd: p, hostId: a, path: t }),
+    y.openTab(e, G, {
+      contextMenuItems: (e) => w(e, { cwd: p, hostId: a, path: t }),
+      icon: o ?? (0, H.createElement)(u, { className: `icon-xs shrink-0` }),
       isPreview: s,
-      kind: `${b}${i}`,
-      props: p,
+      kind: `${O}${a}`,
+      props: m,
       onClose: () => {
-        (e.get(_.activeTab$)?.tabId === f &&
-          e.get(h) &&
-          (e.set(h, !1), g(e, `main`)),
-          O(e, { excludeTabId: f }));
+        (e.get(y.activeTab$)?.tabId === f &&
+          e.get(_) &&
+          (e.set(_, !1), v(e, `main`)),
+          R(e, { excludeTabId: f }));
       },
       id: f,
       title: d,
-      tooltip: D(e, t),
+      tooltip: L(e, t),
     }),
-    O(e),
+    R(e),
     !0
   );
 }
 export {
-  T as a,
-  b as c,
-  E as i,
-  x as l,
-  k as n,
-  C as o,
-  A as r,
-  w as s,
-  L as t,
+  M as a,
+  I as c,
+  k as d,
+  D as f,
+  T as h,
+  N as i,
+  A as l,
+  w as m,
+  z as n,
+  P as o,
+  E as p,
+  B as r,
+  F as s,
+  q as t,
+  O as u,
 };
 //# sourceMappingURL=open-artifact-side-panel-tab.js.map

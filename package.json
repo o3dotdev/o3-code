@@ -30,7 +30,7 @@
     "prettier": "^3.6.2"
   },
   "codexBuildFlavor": "prod",
-  "codexBuildNumber": "3178",
+  "codexBuildNumber": "3370",
   "codexSourceApp": "/Applications/Codex.app",
-  "codexSourceVersion": "26.519.81530"
+  "codexSourceVersion": "26.527.30818"
 }

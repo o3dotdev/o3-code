@@ -1,0 +1,33 @@
+import { wn as e } from "./src-C.js";
+import { Va as t, za as n } from "./app-server-manager-signals-DkRDRgNB.js";
+function r(e) {
+  return (
+    e.find(
+      (e) => o(e.configPath) === `environment.toml` && e.type === `success`,
+    ) ||
+    e.find((e) => e.type === `success`) ||
+    (e[0] ?? null)
+  );
+}
+function i(e) {
+  return r(e)?.configPath ?? null;
+}
+function a(r, i) {
+  let a = n(t(i), `.codex/environments`),
+    o = new Set(r.map((e) => t(e.configPath))),
+    s = n(a, e);
+  if (!o.has(t(s))) return s;
+  let c = 2;
+  for (;;) {
+    let e = n(a, `environment-${c}.toml`);
+    if (!o.has(t(e))) return e;
+    c += 1;
+  }
+}
+function o(e) {
+  let n = t(e),
+    r = n.split(`/`).filter(Boolean);
+  return r[r.length - 1] ?? n;
+}
+export { r as n, a as r, i as t };
+//# sourceMappingURL=local-environments-DcKJ5oGa.js.map

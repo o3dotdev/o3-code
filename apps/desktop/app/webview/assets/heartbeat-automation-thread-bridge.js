@@ -1,34 +1,34 @@
-import { s as e } from "./chunk.js";
-import { F as t, V as n } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { R as t, U as n } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as r } from "./jsx-runtime.js";
 import {
-  J as i,
-  S as a,
-  X as o,
-  Y as s,
-  xt as c,
+  S as i,
+  X as a,
+  Y as o,
+  Z as s,
+  wt as c,
   y as l,
 } from "./setting-storage.js";
-import { o as u } from "./statsig.js";
-import { t as d } from "./heartbeat-automation-eligibility.js";
+import { o as u } from "./statsig--EYRNU53.js";
+import { h as d } from "./process-manager-target.js";
 import {
   a as f,
   i as p,
   n as m,
   r as h,
   t as g,
-} from "./heartbeat-automation-permissions.js";
+} from "./heartbeat-automation-permissions-DKKzssYc.js";
 var _ = c(),
   v = e(r(), 1);
 function y(e) {
   let r = (0, _.c)(17),
     { conversationId: c } = e,
-    y = s(a),
+    y = a(i),
     b = u(`1488233300`),
-    x = i(d, c),
-    S = i(t, c),
-    C = i(f, c),
-    w = o(p)?.[c],
+    x = o(d, c),
+    S = o(t, c),
+    C = o(f, c),
+    w = s(p)?.[c],
     T;
   r[0] !== w ||
   r[1] !== c ||
@@ -38,7 +38,7 @@ function y(e) {
   r[5] !== S ||
   r[6] !== y
     ? ((T = () => {
-        let e = y.get(y.get(n, c)),
+        let e = y.get(n, c),
           t = m(e),
           r = h(e, w);
         (b && t != null && y.set(p, (e) => g(e ?? {}, c, t)),

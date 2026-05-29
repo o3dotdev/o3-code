@@ -1,24 +1,24 @@
 import { t as e } from "./jsx-runtime.js";
-import { t } from "./clsx.js";
-import { S as n, Y as r, b as i, nt as a, xt as o } from "./setting-storage.js";
-import { _ as s, c } from "./app-shell-state.js";
+import { t } from "./clsx-BcPLHiun.js";
+import { S as n, X as r, at as i, b as a, wt as o } from "./setting-storage.js";
+import { c as s, y as c } from "./app-shell-state.js";
 import { t as l } from "./badge.js";
 var u = o();
 function d() {
   let e = (0, u.c)(3),
     t = r(n),
-    a,
+    i,
     o;
   (e[0] === t
-    ? ((a = e[1]), (o = e[2]))
-    : ((a = () => {
-        s(t, !t.get(c));
+    ? ((i = e[1]), (o = e[2]))
+    : ((i = () => {
+        c(t, !t.get(s));
       }),
       (o = [t]),
       (e[0] = t),
-      (e[1] = a),
+      (e[1] = i),
       (e[2] = o)),
-    i(`toggle-sidebar`, a, o));
+    a(`toggle-sidebar`, i, o));
 }
 var f = e();
 function p(e) {
@@ -263,6 +263,6 @@ function m(e) {
     m
   );
 }
-var h = a(n, null);
+var h = i(n, null);
 export { d as i, p as n, m as r, h as t };
 //# sourceMappingURL=settings-back-route.js.map

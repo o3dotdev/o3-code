@@ -1,220 +1,143 @@
-import { s as e } from "./chunk.js";
-import { ts as t, v as n, wa as r } from "./app-server-manager-signals.js";
-import { n as i } from "./jsx-runtime.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import {
-  L as a,
-  S as o,
-  T as s,
-  X as c,
-  Y as l,
-  _ as u,
-  nt as d,
-  xt as f,
-} from "./setting-storage.js";
-import { u as p } from "./thread-context-inputs.js";
-import { n as m } from "./run-command.js";
-var h = {},
-  g = d(o, !1),
-  _ = d(o, h);
-function v(e, t) {
-  return e[t]?.length ?? 0;
-}
-var y = f(),
-  b = e(i(), 1);
-function x(e, t, n) {
-  let r = (0, y.c)(16),
-    i;
-  r[0] === n
-    ? (i = r[1])
-    : ((i = n === void 0 ? {} : n), (r[0] = n), (r[1] = i));
-  let { enabled: a, keyboardHandler: s, menuItem: c } = i,
-    u = a === void 0 ? !0 : a,
-    d = l(o),
-    f;
-  r[2] !== t || r[3] !== s
-    ? ((f = (e) => {
-        if (e != null && s?.(e) === !1) return !1;
-        t();
-      }),
-      (r[2] = t),
-      (r[3] = s),
-      (r[4] = f))
-    : (f = r[4]);
-  let p = (0, b.useEffectEvent)(f),
-    h;
-  r[5] !== u || r[6] !== p || r[7] !== e || r[8] !== c || r[9] !== d
-    ? ((h = () => {
-        if (!u) return;
-        let t = c == null ? {} : { menuItem: c },
-          n = m(e, p);
-        return (
-          d.set(_, (n) => S(n, e, t)),
-          () => {
-            (n(), d.set(_, (n) => C(n, e, t)));
-          }
-        );
-      }),
-      (r[5] = u),
-      (r[6] = p),
-      (r[7] = e),
-      (r[8] = c),
-      (r[9] = d),
-      (r[10] = h))
-    : (h = r[10]);
-  let g;
-  (r[11] !== u || r[12] !== e || r[13] !== c || r[14] !== d
-    ? ((g = [u, e, c, d]),
-      (r[11] = u),
-      (r[12] = e),
-      (r[13] = c),
-      (r[14] = d),
-      (r[15] = g))
-    : (g = r[15]),
-    (0, b.useEffect)(h, g));
-}
-function S(e, t, n) {
-  return { ...e, [t]: [...(e[t] ?? []), n] };
-}
-function C(e, t, n) {
-  let r = e[t];
-  if (r == null) return e;
-  let i = r.lastIndexOf(n);
-  if (i === -1) return e;
-  if (r.length === 1) {
-    let n = { ...e };
-    return (delete n[t], n);
-  }
-  let a = [...r];
-  return (a.splice(i, 1), { ...e, [t]: a });
-}
-var w = [`skills`];
-function T(e, i, o) {
-  let l = (0, y.c)(40),
-    d = c(n),
-    f = i ?? d,
-    m = a(),
-    [h] = r(`skills_refresh_nonce`),
-    g = c(p),
-    _ = e === void 0;
-  g.data?.roots;
-  let v;
+  Xs as t,
+  fo as n,
+  v as r,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { n as i } from "./jsx-runtime.js";
+import { L as a, T as o, Z as s, _ as c, wt as l } from "./setting-storage.js";
+import { u } from "./thread-context-inputs-DBrOekVr.js";
+import { t as d } from "./use-register-command.js";
+var f = l(),
+  p = e(i(), 1),
+  m = [`skills`];
+function h(e, i, l) {
+  let h = (0, f.c)(40),
+    _ = s(r),
+    v = i ?? _,
+    y = a(),
+    [b] = n(`skills_refresh_nonce`),
+    x = s(u),
+    S = e === void 0;
+  x.data?.roots;
+  let C;
   bb0: {
     if (Array.isArray(e)) {
-      v = e;
+      C = e;
       break bb0;
     }
     if (typeof e == `string`) {
       let t;
-      (l[0] === e ? (t = l[1]) : ((t = [e]), (l[0] = e), (l[1] = t)), (v = t));
+      (h[0] === e ? (t = h[1]) : ((t = [e]), (h[0] = e), (h[1] = t)), (C = t));
       break bb0;
     }
     let t;
-    (l[2] === g.data?.roots
-      ? (t = l[3])
-      : ((t = g.data?.roots ?? []), (l[2] = g.data?.roots), (l[3] = t)),
-      (v = t));
+    (h[2] === x.data?.roots
+      ? (t = h[3])
+      : ((t = x.data?.roots ?? []), (h[2] = x.data?.roots), (h[3] = t)),
+      (C = t));
   }
-  let S = v,
-    C = (o?.enabled ?? !0) && (e !== void 0 || g.isFetched),
-    T;
-  l[4] !== f || l[5] !== S
-    ? ((T = [...w, f, S]), (l[4] = f), (l[5] = S), (l[6] = T))
-    : (T = l[6]);
-  let D = T,
+  let w = C,
+    T = (l?.enabled ?? !0) && (e !== void 0 || x.isFetched),
+    E;
+  h[4] !== v || h[5] !== w
+    ? ((E = [...m, v, w]), (h[4] = v), (h[5] = w), (h[6] = E))
+    : (E = h[6]);
+  let D = E,
     O;
-  l[7] !== f || l[8] !== S
-    ? ((O = () => t(`list-skills-for-host`, { hostId: f, cwds: S })),
-      (l[7] = f),
-      (l[8] = S),
-      (l[9] = O))
-    : (O = l[9]);
+  h[7] !== v || h[8] !== w
+    ? ((O = () => t(`list-skills-for-host`, { hostId: v, cwds: w })),
+      (h[7] = v),
+      (h[8] = w),
+      (h[9] = O))
+    : (O = h[9]);
   let k;
-  l[10] !== C || l[11] !== D || l[12] !== O
+  h[10] !== T || h[11] !== D || h[12] !== O
     ? ((k = {
         queryKey: D,
         queryFn: O,
-        enabled: C,
-        staleTime: u.FIVE_MINUTES,
+        enabled: T,
+        staleTime: c.FIVE_MINUTES,
         gcTime: 1 / 0,
       }),
-      (l[10] = C),
-      (l[11] = D),
-      (l[12] = O),
-      (l[13] = k))
-    : (k = l[13]);
-  let A = s(k);
+      (h[10] = T),
+      (h[11] = D),
+      (h[12] = O),
+      (h[13] = k))
+    : (k = h[13]);
+  let A = o(k);
   A.data?.data;
   let j;
-  l[14] === A.data?.data
-    ? (j = l[15])
-    : ((j = A.data?.data ?? []), (l[14] = A.data?.data), (l[15] = j));
+  h[14] === A.data?.data
+    ? (j = h[15])
+    : ((j = A.data?.data ?? []), (h[14] = A.data?.data), (h[15] = j));
   let M = j,
     N;
-  l[16] === M ? (N = l[17]) : ((N = M.flatMap(E)), (l[16] = M), (l[17] = N));
+  h[16] === M ? (N = h[17]) : ((N = M.flatMap(g)), (h[16] = M), (h[17] = N));
   let P = N,
     F,
     I;
-  (l[18] !== m || l[19] !== h
+  (h[18] !== y || h[19] !== b
     ? ((F = () => {
-        h != null && m.invalidateQueries({ queryKey: w });
+        b != null && y.invalidateQueries({ queryKey: m });
       }),
-      (I = [h, m]),
-      (l[18] = m),
-      (l[19] = h),
-      (l[20] = F),
-      (l[21] = I))
-    : ((F = l[20]), (I = l[21])),
-    (0, b.useEffect)(F, I));
+      (I = [b, y]),
+      (h[18] = y),
+      (h[19] = b),
+      (h[20] = F),
+      (h[21] = I))
+    : ((F = h[20]), (I = h[21])),
+    (0, p.useEffect)(F, I));
   let L;
-  l[22] !== f || l[23] !== m || l[24] !== S || l[25] !== D
+  h[22] !== v || h[23] !== y || h[24] !== w || h[25] !== D
     ? ((L = async function () {
         let e = await t(`list-skills-for-host`, {
-          hostId: f,
-          cwds: S,
+          hostId: v,
+          cwds: w,
           forceReload: !0,
         });
-        m.setQueryData(D, e);
+        y.setQueryData(D, e);
       }),
-      (l[22] = f),
-      (l[23] = m),
-      (l[24] = S),
-      (l[25] = D),
-      (l[26] = L))
-    : (L = l[26]);
+      (h[22] = v),
+      (h[23] = y),
+      (h[24] = w),
+      (h[25] = D),
+      (h[26] = L))
+    : (L = h[26]);
   let R = L,
     z;
-  (l[27] === R
-    ? (z = l[28])
+  (h[27] === R
+    ? (z = h[28])
     : ((z = () => {
         R();
       }),
-      (l[27] = R),
-      (l[28] = z)),
-    x(`forceReloadSkills`, z));
+      (h[27] = R),
+      (h[28] = z)),
+    d(`forceReloadSkills`, z));
   let B;
-  l[29] === P
-    ? (B = l[30])
+  h[29] === P
+    ? (B = h[30])
     : ((B = (e) => {
         let t = e.toLowerCase();
         return P.find((e) => e.name.toLowerCase() === t) ?? null;
       }),
-      (l[29] = P),
-      (l[30] = B));
+      (h[29] = P),
+      (h[30] = B));
   let V = B,
-    H = (_ && g.isLoading) || A.isLoading,
-    U = (_ && g.isFetching) || A.isFetching,
+    H = (S && x.isLoading) || A.isLoading,
+    U = (S && x.isFetching) || A.isFetching,
     W;
-  l[31] === A
-    ? (W = l[32])
-    : ((W = () => A.refetch()), (l[31] = A), (l[32] = W));
+  h[31] === A
+    ? (W = h[32])
+    : ((W = () => A.refetch()), (h[31] = A), (h[32] = W));
   let G;
   return (
-    l[33] !== V ||
-    l[34] !== R ||
-    l[35] !== P ||
-    l[36] !== H ||
-    l[37] !== U ||
-    l[38] !== W
+    h[33] !== V ||
+    h[34] !== R ||
+    h[35] !== P ||
+    h[36] !== H ||
+    h[37] !== U ||
+    h[38] !== W
       ? ((G = {
           skills: P,
           isLoading: H,
@@ -223,19 +146,19 @@ function T(e, i, o) {
           forceReload: R,
           findSkillByName: V,
         }),
-        (l[33] = V),
-        (l[34] = R),
-        (l[35] = P),
-        (l[36] = H),
-        (l[37] = U),
-        (l[38] = W),
-        (l[39] = G))
-      : (G = l[39]),
+        (h[33] = V),
+        (h[34] = R),
+        (h[35] = P),
+        (h[36] = H),
+        (h[37] = U),
+        (h[38] = W),
+        (h[39] = G))
+      : (G = h[39]),
     G
   );
 }
-function E(e) {
+function g(e) {
   return e.skills;
 }
-export { g as a, v as i, T as n, _ as o, x as r, w as t };
+export { h as n, m as t };
 //# sourceMappingURL=use-skills.js.map

@@ -1,28 +1,29 @@
-import { s as e } from "./chunk.js";
-import "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./src-C.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import "./react-dom.js";
-import { B as r, H as i, W as a, xt as o, y as s } from "./setting-storage.js";
-import { i as c } from "./chunk-LFPYN7LY.js";
+import "./react-dom-CvzHKZGB.js";
+import { G as r, U as i, V as a, wt as o, y as s } from "./setting-storage.js";
+import { o as c } from "./chunk-LFPYN7LY.js";
+import { n as l } from "./rpc-DqwD0euc.js";
 import "./window-zoom-context.js";
-import { t as l } from "./tooltip.js";
-import { t as u } from "./button.js";
-import "./reduced-motion-preference.js";
+import { t as u } from "./tooltip-CDzchJxN.js";
+import { t as d } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
-import { t as d } from "./x.js";
+import { t as f } from "./x-C_RDKBp5.js";
 import "./electron-menu-shortcuts.js";
-import "./command-keybindings.js";
-import { t as f } from "./use-window-controls-safe-area.js";
-import { t as p } from "./compose.js";
-import "./use-hotkey.js";
-import { t as m } from "./use-command-hotkey.js";
-import { t as h } from "./pop-in-mac.js";
-import { t as g } from "./use-hotkey-window-detail-layout.js";
-import { t as _ } from "./use-hotkey-window-dismiss-on-escape.js";
-var v = e(t(), 1),
-  y = o(),
-  b = n(),
-  x = r({
+import "./command-keybindings-C3NM9T-L.js";
+import { t as p } from "./use-window-controls-safe-area.js";
+import { t as m } from "./compose.js";
+import "./use-hotkey-yGPn4uDB.js";
+import { t as h } from "./use-command-hotkey.js";
+import { t as g } from "./pop-in-mac.js";
+import { t as _ } from "./use-hotkey-window-detail-layout.js";
+import { t as v } from "./use-hotkey-window-dismiss-on-escape.js";
+var y = e(t(), 1),
+  b = o(),
+  x = n(),
+  S = a({
     dismiss: {
       id: `hotkeyWindow.dismiss`,
       defaultMessage: `Dismiss Popout Window`,
@@ -39,24 +40,24 @@ var v = e(t(), 1),
       description: `Tooltip label for the hotkey window header button that opens the current page in the main app window`,
     },
   });
-function S(e) {
-  let t = (0, y.c)(20),
+function C(e) {
+  let t = (0, b.c)(20),
     {
       title: n,
-      onDismiss: r,
+      onDismiss: a,
       showDismissButton: o,
       reserveWindowControlsSafeArea: s,
       rightActions: c,
     } = e,
-    p = o === void 0 ? !0 : o,
+    l = o === void 0 ? !0 : o,
     m = s === void 0 ? !1 : s,
-    h = a(),
-    g = f(),
+    h = r(),
+    g = p(),
     _ = m ? g.left : 0,
     v = m ? g.right : 0,
-    S = _ + 12,
+    y = _ + 12,
     C = v + 12,
-    w = S + (p ? 52 : 0),
+    w = y + (l ? 52 : 0),
     T = C + 84,
     E;
   t[0] !== w || t[1] !== T
@@ -64,7 +65,7 @@ function S(e) {
     : (E = t[2]);
   let D;
   t[3] !== E || t[4] !== n
-    ? ((D = (0, b.jsx)(`div`, {
+    ? ((D = (0, x.jsx)(`div`, {
         className: `absolute inset-y-0 flex items-center justify-center text-base font-medium text-token-foreground/60 select-none`,
         style: E,
         children: n,
@@ -74,35 +75,35 @@ function S(e) {
       (t[5] = D))
     : (D = t[5]);
   let O;
-  t[6] !== h || t[7] !== S || t[8] !== r || t[9] !== p
-    ? ((O = p
-        ? (0, b.jsx)(`div`, {
+  t[6] !== h || t[7] !== y || t[8] !== a || t[9] !== l
+    ? ((O = l
+        ? (0, x.jsx)(`div`, {
             className: `absolute flex items-center gap-0`,
-            style: { left: S },
-            children: (0, b.jsx)(l, {
-              tooltipContent: (0, b.jsx)(i, { ...x.dismiss }),
+            style: { left: y },
+            children: (0, x.jsx)(u, {
+              tooltipContent: (0, x.jsx)(i, { ...S.dismiss }),
               delayOpen: !0,
-              children: (0, b.jsx)(u, {
+              children: (0, x.jsx)(d, {
                 size: `toolbar`,
                 color: `ghost`,
-                "aria-label": h.formatMessage(x.dismiss),
-                onClick: r,
-                children: (0, b.jsx)(d, { className: `icon-xs` }),
+                "aria-label": h.formatMessage(S.dismiss),
+                onClick: a,
+                children: (0, x.jsx)(f, { className: `icon-xs` }),
               }),
             }),
           })
         : null),
       (t[6] = h),
-      (t[7] = S),
-      (t[8] = r),
-      (t[9] = p),
+      (t[7] = y),
+      (t[8] = a),
+      (t[9] = l),
       (t[10] = O))
     : (O = t[10]);
   let k;
   t[11] === C ? (k = t[12]) : ((k = { right: C }), (t[11] = C), (t[12] = k));
   let A;
   t[13] !== c || t[14] !== k
-    ? ((A = (0, b.jsx)(`div`, {
+    ? ((A = (0, x.jsx)(`div`, {
         className: `absolute flex items-center gap-0`,
         style: k,
         children: c,
@@ -114,7 +115,7 @@ function S(e) {
   let j;
   return (
     t[16] !== D || t[17] !== O || t[18] !== A
-      ? ((j = (0, b.jsxs)(`div`, {
+      ? ((j = (0, x.jsxs)(`div`, {
           className: `draggable relative flex h-toolbar-sm items-center justify-center px-3`,
           children: [D, O, A],
         })),
@@ -126,110 +127,110 @@ function S(e) {
     j
   );
 }
-function C(e) {
-  let t = (0, y.c)(18),
-    { title: n, mainWindowPath: r, canCollapseToHome: o } = e,
+function w(e) {
+  let t = (0, b.c)(18),
+    { title: n, mainWindowPath: a, canCollapseToHome: o } = e,
     c = o === void 0 ? !0 : o,
-    d = a(),
+    l = r(),
     f;
-  t[0] !== c || t[1] !== d
+  t[0] !== c || t[1] !== l
     ? ((f = c
-        ? (0, b.jsx)(l, {
-            tooltipContent: (0, b.jsx)(i, { ...x.newThread }),
+        ? (0, x.jsx)(u, {
+            tooltipContent: (0, x.jsx)(i, { ...S.newThread }),
             delayOpen: !0,
-            children: (0, b.jsx)(u, {
+            children: (0, x.jsx)(d, {
               size: `toolbar`,
               color: `ghost`,
-              "aria-label": d.formatMessage(x.newThread),
-              onClick: w,
-              children: (0, b.jsx)(p, { className: `icon-sm` }),
+              "aria-label": l.formatMessage(S.newThread),
+              onClick: T,
+              children: (0, x.jsx)(m, { className: `icon-sm` }),
             }),
           })
         : null),
       (t[0] = c),
-      (t[1] = d),
+      (t[1] = l),
       (t[2] = f))
     : (f = t[2]);
-  let m;
+  let p;
   t[3] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((m = (0, b.jsx)(i, { ...x.openInMainWindow })), (t[3] = m))
-    : (m = t[3]);
-  let g;
-  t[4] === d
-    ? (g = t[5])
-    : ((g = d.formatMessage(x.openInMainWindow)), (t[4] = d), (t[5] = g));
+    ? ((p = (0, x.jsx)(i, { ...S.openInMainWindow })), (t[3] = p))
+    : (p = t[3]);
+  let h;
+  t[4] === l
+    ? (h = t[5])
+    : ((h = l.formatMessage(S.openInMainWindow)), (t[4] = l), (t[5] = h));
   let _;
-  t[6] === r
+  t[6] === a
     ? (_ = t[7])
     : ((_ = () => {
-        s.dispatchMessage(`open-in-main-window`, { path: r });
+        s.dispatchMessage(`open-in-main-window`, { path: a });
       }),
-      (t[6] = r),
+      (t[6] = a),
       (t[7] = _));
   let v;
   t[8] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, b.jsx)(h, { className: `icon-sm` })), (t[8] = v))
+    ? ((v = (0, x.jsx)(g, { className: `icon-sm` })), (t[8] = v))
     : (v = t[8]);
-  let C;
-  t[9] !== g || t[10] !== _
-    ? ((C = (0, b.jsx)(l, {
-        tooltipContent: m,
+  let y;
+  t[9] !== h || t[10] !== _
+    ? ((y = (0, x.jsx)(u, {
+        tooltipContent: p,
         delayOpen: !0,
-        children: (0, b.jsx)(u, {
+        children: (0, x.jsx)(d, {
           size: `toolbar`,
           color: `ghost`,
-          "aria-label": g,
+          "aria-label": h,
           onClick: _,
           children: v,
         }),
       })),
-      (t[9] = g),
+      (t[9] = h),
       (t[10] = _),
-      (t[11] = C))
-    : (C = t[11]);
-  let E;
-  t[12] !== f || t[13] !== C
-    ? ((E = (0, b.jsxs)(b.Fragment, { children: [f, C] })),
+      (t[11] = y))
+    : (y = t[11]);
+  let w;
+  t[12] !== f || t[13] !== y
+    ? ((w = (0, x.jsxs)(x.Fragment, { children: [f, y] })),
       (t[12] = f),
-      (t[13] = C),
-      (t[14] = E))
-    : (E = t[14]);
+      (t[13] = y),
+      (t[14] = w))
+    : (w = t[14]);
   let D;
   return (
-    t[15] !== E || t[16] !== n
-      ? ((D = (0, b.jsx)(S, { title: n, onDismiss: T, rightActions: E })),
-        (t[15] = E),
+    t[15] !== w || t[16] !== n
+      ? ((D = (0, x.jsx)(C, { title: n, onDismiss: E, rightActions: w })),
+        (t[15] = w),
         (t[16] = n),
         (t[17] = D))
       : (D = t[17]),
     D
   );
 }
-function w() {
-  s.dispatchMessage(`hotkey-window-collapse-to-home`, {});
-}
 function T() {
-  s.dispatchMessage(`hotkey-window-dismiss`, {});
+  l.hotkeyWindowHotkeys?.collapseToHome();
 }
 function E() {
-  let e = (0, y.c)(7);
-  _();
-  let [t, n] = (0, v.useState)(null),
+  l.hotkeyWindowHotkeys?.dismiss();
+}
+function D() {
+  let e = (0, b.c)(7);
+  v();
+  let [t, n] = (0, y.useState)(null),
     r = t != null && t.canCollapseToHome !== !1,
     i;
   (e[0] === r
     ? (i = e[1])
-    : ((i = { commandId: `newThread`, enabled: r, onKeyDown: D }),
+    : ((i = { commandId: `newThread`, enabled: r, onKeyDown: O }),
       (e[0] = r),
       (e[1] = i)),
-    m(i));
+    h(i));
   let a;
   e[2] === t
     ? (a = e[3])
     : ((a =
         t == null
           ? null
-          : (0, b.jsx)(C, {
+          : (0, x.jsx)(w, {
               title: t.title,
               mainWindowPath: t.mainWindowPath,
               canCollapseToHome: t.canCollapseToHome !== !1,
@@ -238,9 +239,9 @@ function E() {
       (e[3] = a));
   let o;
   e[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((o = (0, b.jsx)(`div`, {
+    ? ((o = (0, x.jsx)(`div`, {
         className: `min-h-0 flex-1`,
-        children: (0, b.jsx)(c, {}),
+        children: (0, x.jsx)(c, {}),
       })),
       (e[4] = o))
     : (o = e[4]);
@@ -248,9 +249,9 @@ function E() {
   return (
     e[5] === a
       ? (s = e[6])
-      : ((s = (0, b.jsx)(g.Provider, {
+      : ((s = (0, x.jsx)(_.Provider, {
           value: n,
-          children: (0, b.jsxs)(`div`, {
+          children: (0, x.jsxs)(`div`, {
             className: `flex h-full w-full flex-col overflow-hidden rounded-2xl border border-token-border-light bg-token-main-surface-primary`,
             children: [a, o],
           }),
@@ -260,10 +261,10 @@ function E() {
     s
   );
 }
-function D(e) {
+function O(e) {
   (e.preventDefault(),
     e.stopPropagation(),
-    s.dispatchMessage(`hotkey-window-collapse-to-home`, {}));
+    l.hotkeyWindowHotkeys?.collapseToHome());
 }
-export { E as HotkeyWindowDetailLayout };
+export { D as HotkeyWindowDetailLayout };
 //# sourceMappingURL=hotkey-window-detail-layout.js.map

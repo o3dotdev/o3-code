@@ -311,6 +311,42 @@ var e = [
           },
         },
         {
+          id: `composer.submit`,
+          titleIntlId: `codex.command.composer.submit`,
+          descriptionIntlId: `codex.commandDescription.composer.submit`,
+          shortcutScope: `app`,
+        },
+        {
+          id: `composer.toggleFastMode`,
+          titleIntlId: `codex.command.composer.toggleFastMode`,
+          descriptionIntlId: `codex.commandDescription.composer.toggleFastMode`,
+          shortcutScope: `app`,
+        },
+        {
+          id: `composer.increaseReasoningEffort`,
+          titleIntlId: `codex.command.composer.increaseReasoningEffort`,
+          descriptionIntlId: `codex.commandDescription.composer.increaseReasoningEffort`,
+          shortcutScope: `app`,
+        },
+        {
+          id: `composer.decreaseReasoningEffort`,
+          titleIntlId: `codex.command.composer.decreaseReasoningEffort`,
+          descriptionIntlId: `codex.commandDescription.composer.decreaseReasoningEffort`,
+          shortcutScope: `app`,
+        },
+        {
+          id: `composer.cycleReasoningEffort`,
+          titleIntlId: `codex.command.composer.cycleReasoningEffort`,
+          descriptionIntlId: `codex.commandDescription.composer.cycleReasoningEffort`,
+          shortcutScope: `app`,
+        },
+        {
+          id: `composer.togglePlanMode`,
+          titleIntlId: `codex.command.composer.togglePlanMode`,
+          descriptionIntlId: `codex.commandDescription.composer.togglePlanMode`,
+          shortcutScope: `app`,
+        },
+        {
           id: `approval.approve`,
           titleIntlId: `codex.command.approval.approve`,
           descriptionIntlId: `codex.commandDescription.approval.approve`,
@@ -323,6 +359,28 @@ var e = [
           descriptionIntlId: `codex.commandDescription.approval.decline`,
           shortcutScope: `app`,
           electron: { defaultKeybindings: [{ key: `Escape` }] },
+        },
+        {
+          id: `git.commit`,
+          titleIntlId: `codex.command.git.commit`,
+          descriptionIntlId: `codex.commandDescription.git.commit`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+          commandMenu: !0,
+        },
+        {
+          id: `git.createPullRequest`,
+          titleIntlId: `codex.command.git.createPullRequest`,
+          descriptionIntlId: `codex.commandDescription.git.createPullRequest`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+          commandMenu: !0,
+        },
+        {
+          id: `forkThread`,
+          titleIntlId: `codex.command.forkThread`,
+          descriptionIntlId: `codex.commandDescription.forkThread`,
+          shortcutScope: `app`,
         },
         {
           id: `openAvatarOverlay`,
@@ -351,6 +409,10 @@ var e = [
           id: `previousRecentThread`,
           titleIntlId: `codex.command.previousRecentThread`,
           descriptionIntlId: `codex.commandDescription.previousRecentThread`,
+          availableIn: [`electron`],
+          shortcutScope: `app`,
+          allowsKeyRepeat: !0,
+          commandMenuGroupKey: `navigation`,
           electron: { defaultKeybindings: [{ key: `Ctrl+Shift+Tab` }] },
         },
         {
@@ -369,6 +431,10 @@ var e = [
           id: `nextRecentThread`,
           titleIntlId: `codex.command.nextRecentThread`,
           descriptionIntlId: `codex.commandDescription.nextRecentThread`,
+          availableIn: [`electron`],
+          shortcutScope: `app`,
+          allowsKeyRepeat: !0,
+          commandMenuGroupKey: `navigation`,
           electron: { defaultKeybindings: [{ key: `Ctrl+Tab` }] },
         },
         {
@@ -424,6 +490,20 @@ var e = [
           commandMenu: !0,
         },
         {
+          id: `openProcessManager`,
+          titleIntlId: `codex.command.openProcessManager`,
+          descriptionIntlId: `codex.commandDescription.openProcessManager`,
+          availableIn: [`electron`],
+          shortcutScope: `app`,
+          commandMenuGroupKey: `app`,
+          commandMenu: !0,
+          electron: {
+            menuTitle: `Process Manager`,
+            menuTitleIntlId: `codex.commandMenuTitle.openProcessManager`,
+            defaultKeybindings: [{ key: `Ctrl+Alt+M` }],
+          },
+        },
+        {
           id: `forceReloadSkills`,
           titleIntlId: `codex.command.forceReloadSkills`,
           descriptionIntlId: `codex.commandDescription.forceReloadSkills`,
@@ -469,15 +549,27 @@ var e = [
           },
         },
         {
+          id: `toggleBottomPanel`,
+          titleIntlId: `codex.command.toggleBottomPanel`,
+          descriptionIntlId: `codex.commandDescription.toggleBottomPanel`,
+          commandMenuGroupKey: `panels`,
+          commandMenu: !0,
+          electron: {
+            menuTitle: `Toggle Bottom Panel`,
+            menuTitleIntlId: `codex.commandMenuTitle.toggleBottomPanel`,
+            defaultKeybindings: [{ key: `CmdOrCtrl+J` }],
+          },
+        },
+        {
           id: `toggleTerminal`,
           titleIntlId: `codex.command.toggleTerminal`,
           descriptionIntlId: `codex.commandDescription.toggleTerminal`,
           commandMenuGroupKey: `panels`,
           commandMenu: !0,
           electron: {
-            menuTitle: `Toggle Terminal`,
+            menuTitle: `Open Terminal`,
             menuTitleIntlId: `codex.commandMenuTitle.toggleTerminal`,
-            defaultKeybindings: [{ key: `CmdOrCtrl+J` }],
+            defaultKeybindings: [{ key: "Control+`" }],
           },
         },
         {
@@ -508,9 +600,11 @@ var e = [
           id: `openReviewTab`,
           titleIntlId: `codex.command.openReviewTab`,
           descriptionIntlId: `codex.commandDescription.openReviewTab`,
+          availableIn: [`electron`, `browser`],
           shortcutScope: `app`,
           commandMenuGroupKey: `panels`,
           commandMenu: !0,
+          electron: { defaultKeybindings: [{ key: `Ctrl+Shift+G` }] },
         },
         {
           id: `toggleSidePanel`,
@@ -523,6 +617,12 @@ var e = [
             menuTitleIntlId: `codex.commandMenuTitle.toggleSidePanel`,
             defaultKeybindings: [{ key: `CmdOrCtrl+Alt+B` }],
           },
+        },
+        {
+          id: `toggleSidePanelFullWidth`,
+          titleIntlId: `codex.command.toggleSidePanelFullWidth`,
+          descriptionIntlId: `codex.commandDescription.toggleSidePanelFullWidth`,
+          shortcutScope: `app`,
         },
         {
           id: `findInThread`,
@@ -561,7 +661,7 @@ var e = [
           electron: {
             menuTitle: `Back`,
             menuTitleIntlId: `codex.commandMenuTitle.navigateBack`,
-            defaultKeybindings: [{ key: `CmdOrCtrl+[` }],
+            defaultKeybindings: [{ key: `CmdOrCtrl+[` }, { key: `MouseBack` }],
           },
         },
         {
@@ -573,7 +673,10 @@ var e = [
           electron: {
             menuTitle: `Forward`,
             menuTitleIntlId: `codex.commandMenuTitle.navigateForward`,
-            defaultKeybindings: [{ key: `CmdOrCtrl+]` }],
+            defaultKeybindings: [
+              { key: `CmdOrCtrl+]` },
+              { key: `MouseForward` },
+            ],
           },
         },
         {
@@ -589,6 +692,70 @@ var e = [
           descriptionIntlId: `codex.commandDescription.feedback`,
           commandMenuGroupKey: `app`,
           commandMenu: !0,
+        },
+        {
+          id: `environmentAction1`,
+          titleIntlId: `codex.command.environmentAction1`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+          electron: { defaultKeybindings: [{ key: `Command+Shift+D` }] },
+        },
+        {
+          id: `environmentAction2`,
+          titleIntlId: `codex.command.environmentAction2`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+        },
+        {
+          id: `environmentAction3`,
+          titleIntlId: `codex.command.environmentAction3`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+        },
+        {
+          id: `environmentAction4`,
+          titleIntlId: `codex.command.environmentAction4`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+        },
+        {
+          id: `environmentAction5`,
+          titleIntlId: `codex.command.environmentAction5`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+        },
+        {
+          id: `environmentAction6`,
+          titleIntlId: `codex.command.environmentAction6`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+        },
+        {
+          id: `environmentAction7`,
+          titleIntlId: `codex.command.environmentAction7`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+        },
+        {
+          id: `environmentAction8`,
+          titleIntlId: `codex.command.environmentAction8`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
+        },
+        {
+          id: `environmentAction9`,
+          titleIntlId: `codex.command.environmentAction9`,
+          descriptionIntlId: `codex.commandDescription.environmentActionSlot`,
+          shortcutScope: `app`,
+          commandMenuGroupKey: `workspace`,
         },
         {
           id: `thread1`,
@@ -704,10 +871,15 @@ for (let e of n) {
   a.set(e.id, e);
 }
 var o = n
-  .filter((e) => e.kind === `webview` && /^thread[1-9]$/.test(e.id))
-  .map((e) => e.id);
+    .filter((e) => e.kind === `webview` && /^thread[1-9]$/.test(e.id))
+    .map((e) => e.id),
+  s = n
+    .filter(
+      (e) => e.kind === `webview` && /^environmentAction[1-9]$/.test(e.id),
+    )
+    .map((e) => e.id);
 (n.flatMap((e) => {
-  let t = v(e);
+  let t = b(e);
   return t?.menuTitle == null || t.menuTitleIntlId == null
     ? []
     : [t.menuTitleIntlId];
@@ -717,25 +889,25 @@ var o = n
     let { commandId: t = `chatgpt.${e.id}`, ...n } = e.vscodeCommand;
     return [{ commandId: t, ...n }];
   }));
-function s(e) {
+function c(e) {
   return a.get(e) ?? null;
 }
-function c(e) {
+function l(e) {
   return a.has(e);
 }
-function l(e) {
+function u(e) {
   return e.kind === `webview` && `commandMenu` in e && e.commandMenu === !0;
 }
-function u(e, t) {
+function d(e, t) {
   return e.availableIn?.includes(t) ?? !0;
 }
-function d(e) {
-  return !y(e);
-}
 function f(e) {
-  return `descriptionIntlId` in e;
+  return !x(e);
 }
 function p(e) {
+  return `descriptionIntlId` in e;
+}
+function m(e) {
   return (
     `shortcutScope` in e &&
     e.shortcutScope === `os-global` &&
@@ -743,16 +915,19 @@ function p(e) {
     e.allowsBareModifiers === !0
   );
 }
-function m(e) {
+function h(e) {
   return `shortcutScope` in e && e.shortcutScope === `os-global`;
 }
-function h({ commandId: e, isMacOS: t }) {
-  return g({ commandId: e, isMacOS: t })[0] ?? null;
+function g(e) {
+  return e === `MouseBack` || e === `MouseForward`;
 }
-function g({ commandId: e, isMacOS: t }) {
-  let n = s(e);
-  if (n == null || !d(n)) return [];
-  let r = v(n);
+function _({ commandId: e, isMacOS: t }) {
+  return v({ commandId: e, isMacOS: t })[0] ?? null;
+}
+function v({ commandId: e, isMacOS: t }) {
+  let n = c(e);
+  if (n == null || !f(n)) return [];
+  let r = b(n);
   return r == null
     ? []
     : t === !0 && r.platformDefaultKeybindings?.macOS != null
@@ -763,9 +938,9 @@ function g({ commandId: e, isMacOS: t }) {
           ? []
           : r.defaultKeybindings.map((e) => e.key);
 }
-function _({ commandId: e, keymapState: t, isMacOS: n }) {
-  let r = s(e);
-  if (r == null || !d(r)) return [];
+function y({ commandId: e, keymapState: t, isMacOS: n }) {
+  let r = c(e);
+  if (r == null || !f(r)) return [];
   let i = t?.bindings.filter((t) => t.command === e);
   if (i != null && i.length > 0) {
     let e = [];
@@ -775,21 +950,21 @@ function _({ commandId: e, keymapState: t, isMacOS: n }) {
     }
     return e;
   }
-  return g({ commandId: e, isMacOS: n });
+  return v({ commandId: e, isMacOS: n });
 }
-function v(e) {
+function b(e) {
   return e == null || !(`electron` in e) || e.electron == null
     ? null
     : e.electron;
 }
-function y(e) {
+function x(e) {
   return e.kind === `vscode-only`;
 }
-var b = 1e3;
-function x(e) {
+var S = 1e3;
+function C(e) {
   return e.trim().split(/\s+/).filter(Boolean);
 }
-var S = new Map([
+var w = new Map([
   [`LeftOption+RightOption`, `⌥ + ⌥`],
   [`LeftAlt+RightAlt`, `⌥ + ⌥`],
   [`LeftCommand+RightCommand`, `⌘ + ⌘`],
@@ -797,23 +972,23 @@ var S = new Map([
   [`LeftMeta+RightMeta`, `⌘ + ⌘`],
   [`LeftShift+RightShift`, `⇧ + ⇧`],
 ]);
-function C() {
+function T() {
   return typeof navigator > `u`
     ? !1
     : (navigator.platform ?? ``).startsWith(`Mac`);
 }
-function w() {
+function E() {
   return typeof navigator > `u`
     ? !1
     : (navigator.platform ?? ``).startsWith(`Linux`);
 }
-function T(e, t = C(), n = !t && w()) {
-  return x(e)
-    .map((e) => E(e, t, n))
+function D(e, t = T(), n = !t && E()) {
+  return C(e)
+    .map((e) => O(e, t, n))
     .join(` `);
 }
-function E(e, t, n) {
-  let r = S.get(e);
+function O(e, t, n) {
+  let r = w.get(e);
   if (t && r != null) return r;
   let i = e.split(`+`).filter(Boolean),
     a = new Set(),
@@ -843,7 +1018,7 @@ function E(e, t, n) {
         break;
     }
   t && o === `/` && a.has(`Shift`) && (a.delete(`Shift`), (o = `?`));
-  let s = D(o, t);
+  let s = k(o, t);
   if (t) {
     let e = { Ctrl: `⌃`, Alt: `⌥`, Shift: `⇧`, Command: `⌘` };
     return `${[`Ctrl`, `Alt`, `Shift`, `Command`]
@@ -861,7 +1036,7 @@ function E(e, t, n) {
     .filter(Boolean)
     .join(`+`);
 }
-function D(e, t) {
+function k(e, t) {
   if (e == null) return ``;
   if (t && e === `Plus`) return `+`;
   switch (e) {
@@ -891,32 +1066,38 @@ function D(e, t) {
       return t ? `⇧ + ⇧` : `Double Shift`;
     case `Fn`:
       return `Fn`;
+    case `MouseBack`:
+      return `Mouse Back`;
+    case `MouseForward`:
+      return `Mouse Forward`;
     default:
       return e;
   }
 }
-function O(e, t = C()) {
-  let n = h({ commandId: e, isMacOS: t });
-  return n == null ? null : T(n, t);
+function A(e, t = T()) {
+  let n = _({ commandId: e, isMacOS: t });
+  return n == null ? null : D(n, t);
 }
 export {
-  u as _,
-  x as a,
-  p as c,
-  g as d,
-  f,
-  l as g,
-  d as h,
-  b as i,
-  s as l,
-  m,
-  T as n,
+  f as _,
+  C as a,
+  n as b,
+  o as c,
+  y as d,
+  v as f,
+  h as g,
+  g as h,
+  S as i,
+  m as l,
+  l as m,
+  D as n,
   i as o,
-  c as p,
-  O as r,
-  o as s,
-  C as t,
-  _ as u,
-  n as v,
+  p,
+  A as r,
+  s,
+  T as t,
+  c as u,
+  u as v,
+  d as y,
 };
 //# sourceMappingURL=electron-menu-shortcuts.js.map

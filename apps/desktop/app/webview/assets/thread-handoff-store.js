@@ -1,6 +1,10 @@
-import { Qo as e, as as t, is as n } from "./app-server-manager-signals.js";
+import {
+  $s as e,
+  ec as t,
+  qs as n,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { t as r } from "./v4.js";
-import { _t as i, xt as a } from "./setting-storage.js";
+import { bt as i, wt as a } from "./setting-storage.js";
 var o = a(),
   s = i({ activeOperationId: null, operations: [] });
 function c(e) {
@@ -29,7 +33,7 @@ function u(e) {
 }
 function d() {
   let t = (0, o.c)(19),
-    [, i] = n(s),
+    [, i] = e(s),
     a;
   t[0] === i
     ? (a = t[1])
@@ -99,10 +103,10 @@ function d() {
     d;
   t[4] === i
     ? (d = t[5])
-    : ((d = (t, n) => {
+    : ((d = (e, t) => {
         i((r) => ({
           ...r,
-          operations: r.operations.map((r) => (r.id === t ? e(r, n) : r)),
+          operations: r.operations.map((r) => (r.id === e ? n(r, t) : r)),
         }));
       }),
       (t[4] = i),

@@ -1,11 +1,11 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { H as i, W as a, xt as o } from "./setting-storage.js";
-import { t as s } from "./tooltip.js";
+import { t as r } from "./clsx-BcPLHiun.js";
+import { G as i, U as a, wt as o } from "./setting-storage.js";
+import { t as s } from "./tooltip-CDzchJxN.js";
 import { t as c } from "./button.js";
 import { t as l } from "./check-md.js";
-import { t as u } from "./copy.js";
+import { t as u } from "./copy-Cen6nDnP.js";
 var d = o(),
   f = e(t(), 1);
 function p() {
@@ -51,7 +51,7 @@ function h(e) {
     C = g === void 0 ? u : g,
     w = y === void 0 ? !1 : y,
     T = b === void 0 ? `right` : b,
-    E = a(),
+    E = i(),
     [D, O] = (0, f.useState)(!1),
     k = p(),
     A;
@@ -73,7 +73,7 @@ function h(e) {
   if (x && D) {
     let e;
     (t[3] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((e = (0, m.jsx)(i, {
+      ? ((e = (0, m.jsx)(a, {
           id: `copyButton.copied`,
           defaultMessage: `Copied`,
           description: `Text displayed when the content has been copied`,
@@ -84,7 +84,7 @@ function h(e) {
   } else if (n === !0) {
     let e;
     (t[4] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((e = (0, m.jsx)(i, {
+      ? ((e = (0, m.jsx)(a, {
           id: `copyButton.copy`,
           defaultMessage: `Copy`,
           description: `Text displayed when the content can be copied`,
@@ -109,7 +109,7 @@ function h(e) {
         (0, m.jsx)(s, {
           tooltipContent:
             n ??
-            (0, m.jsx)(i, {
+            (0, m.jsx)(a, {
               id: `CopyButton.copyTooltip`,
               defaultMessage: `Copy`,
               description: `Tooltip on copy message icon button`,
@@ -189,5 +189,5 @@ function h(e) {
     F
   );
 }
-export { h as t };
+export { p as n, h as t };
 //# sourceMappingURL=copy-button.js.map

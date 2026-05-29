@@ -1,29 +1,29 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { H as i, J as a, W as o, xt as s } from "./setting-storage.js";
+import { t as r } from "./clsx-BcPLHiun.js";
+import { G as i, U as a, Y as o, wt as s } from "./setting-storage.js";
 import { t as c } from "./branch.js";
-import { g as l } from "./codex-api.js";
-import { t as u } from "./use-debounced-value.js";
-import { t as d } from "./tooltip.js";
+import { S as l } from "./codex-api-bK--r_2t.js";
+import { t as u } from "./use-debounced-value-BtOJx-Vp.js";
+import { t as d } from "./tooltip-CDzchJxN.js";
 import { i as f, n as p } from "./use-environment.js";
 import { t as m } from "./button.js";
 import { t as ee } from "./spinner.js";
+import { n as te, r as ne } from "./composer-footer-C_v29uwU.js";
 import { t as h } from "./with-window.js";
 import { t as g } from "./check-md.js";
-import { r as _, t as v } from "./dropdown.js";
-import { t as y } from "./chevron.js";
-import { t as te } from "./use-git-current-branch.js";
-import { o as ne } from "./slash-command-item.js";
-import { t as b } from "./use-git-default-branch.js";
-import { t as x } from "./regenerate.js";
-import { R as re } from "./git-branch-picker-dropdown-content.js";
-import { r as S, t as C } from "./git-branch-switcher.js";
-import { t as ie } from "./use-git-recent-branches.js";
-var w = s(),
-  T = n();
-function ae(e) {
-  let t = (0, w.c)(11),
+import { r as _, t as v } from "./dropdown-DtQxMoJw.js";
+import { t as y } from "./chevron-NmAOI_v1.js";
+import { t as b } from "./use-git-current-branch.js";
+import { t as x } from "./use-git-default-branch-gyzefibF.js";
+import { o as S } from "./slash-command-item.js";
+import { t as C } from "./regenerate.js";
+import { a as re, i as ie, t as w } from "./git-branch-switcher.js";
+import { t as ae } from "./use-git-recent-branches.js";
+var T = s(),
+  E = n();
+function oe(e) {
+  let t = (0, T.c)(11),
     { children: n, color: i, borderColor: a, badgeEnabled: o } = e,
     s = i === void 0 ? `bg-token-text-link-active-foreground` : i,
     c = o === void 0 ? !0 : o;
@@ -32,7 +32,7 @@ function ae(e) {
     return (
       t[0] === n
         ? (e = t[1])
-        : ((e = (0, T.jsx)(T.Fragment, { children: n })),
+        : ((e = (0, E.jsx)(E.Fragment, { children: n })),
           (t[0] = n),
           (t[1] = e)),
       e
@@ -55,11 +55,11 @@ function ae(e) {
   let d;
   t[6] === u
     ? (d = t[7])
-    : ((d = (0, T.jsx)(`div`, { className: u })), (t[6] = u), (t[7] = d));
+    : ((d = (0, E.jsx)(`div`, { className: u })), (t[6] = u), (t[7] = d));
   let f;
   return (
     t[8] !== n || t[9] !== d
-      ? ((f = (0, T.jsxs)(`div`, { className: `relative`, children: [n, d] })),
+      ? ((f = (0, E.jsxs)(`div`, { className: `relative`, children: [n, d] })),
         (t[8] = n),
         (t[9] = d),
         (t[10] = f))
@@ -67,182 +67,180 @@ function ae(e) {
     f
   );
 }
-var oe = e(t(), 1);
-function se(e) {
-  let t = (0, w.c)(55),
+var se = e(t(), 1);
+function ce(e) {
+  let t = (0, T.c)(55),
     {
       startingState: n,
       setStartingState: s,
-      hostConfig: b,
-      className: C,
-      side: ie,
-      gitRootOverride: se,
-      branchSource: de,
-      hideLabel: fe,
+      hostConfig: x,
+      className: w,
+      side: ae,
+      gitRootOverride: ce,
+      branchSource: fe,
+      hideLabel: pe,
     } = e,
-    pe = ie === void 0 ? `top` : ie,
-    me = fe === void 0 ? !1 : fe,
-    E = o(),
-    he = f(),
-    ge = ne(),
-    D = se ?? ge,
-    _e = p(he),
-    ve = _e?.default_branch ?? `main`,
-    ye = _e?.id ?? null,
-    O = de === `worktree` || !!se,
-    [k, be] = (0, oe.useState)(!1),
-    [xe, Se] = (0, oe.useState)(!1),
-    [Ce, we] = (0, oe.useState)(``),
-    A = u(Ce, 300),
-    Te;
+    me = ae === void 0 ? `top` : ae,
+    he = pe === void 0 ? !1 : pe,
+    D = i(),
+    ge = f(),
+    _e = S(),
+    O = ce ?? _e,
+    ve = p(ge),
+    ye = ve?.default_branch ?? `main`,
+    be = ve?.id ?? null,
+    k = fe === `worktree` || !!ce,
+    [A, xe] = (0, se.useState)(!1),
+    [Se, Ce] = (0, se.useState)(!1),
+    [j, we] = (0, se.useState)(``),
+    M = u(j, 300),
+    N;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Te = (e) => {
-        (e && Se(!0), be(e), e || we(``));
+    ? ((N = (e) => {
+        (e && Ce(!0), xe(e), e || we(``));
       }),
-      (t[0] = Te))
-    : (Te = t[0]);
-  let j = Te,
-    Ee = !O && !!ye && k && !!A,
-    De;
-  t[1] === Ee
-    ? (De = t[2])
-    : ((De = { enabled: Ee }), (t[1] = Ee), (t[2] = De));
+      (t[0] = N))
+    : (N = t[0]);
+  let P = N,
+    Te = !k && !!be && A && !!M,
+    F;
+  t[1] === Te ? (F = t[2]) : ((F = { enabled: Te }), (t[1] = Te), (t[2] = F));
   let {
-      data: Oe,
-      isFetching: ke,
-      error: Ae,
-      hasNextPage: je,
-      isFetchingNextPage: Me,
-      fetchNextPage: Ne,
-      refetch: Pe,
-    } = l(ye, A, De),
+      data: Ee,
+      isFetching: De,
+      error: Oe,
+      hasNextPage: ke,
+      isFetchingNextPage: Ae,
+      fetchNextPage: je,
+      refetch: Me,
+    } = l(be, M, F),
     {
-      data: Fe,
-      isLoading: Ie,
-      refetch: Le,
-    } = te(D, b, `async_task_starting_state_dropdown`),
-    Re = O && !!D,
-    M;
-  t[3] === Re ? (M = t[4]) : ((M = { enabled: Re }), (t[3] = Re), (t[4] = M));
-  let { data: N } = re(D, b, `async_task_starting_state_dropdown`, M),
+      data: I,
+      isLoading: Ne,
+      refetch: L,
+    } = b(O, x, `async_task_starting_state_dropdown`),
+    Pe = k && !!O,
+    R;
+  t[3] === Pe ? (R = t[4]) : ((R = { enabled: Pe }), (t[3] = Pe), (t[4] = R));
+  let { data: z } = ie(O, x, `async_task_starting_state_dropdown`, R),
     {
-      branches: ze,
-      defaultBranch: Be,
-      fetching: Ve,
-      error: He,
-      refetch: P,
-    } = le({
-      gitRoot: D,
-      hostConfig: b,
-      currentBranch: Fe ?? `main`,
-      remoteDefaultBranch: ve,
-      enabled: O && xe,
+      branches: Fe,
+      defaultBranch: Ie,
+      fetching: Le,
+      error: Re,
+      refetch: B,
+    } = ue({
+      gitRoot: O,
+      hostConfig: x,
+      currentBranch: I ?? `main`,
+      remoteDefaultBranch: ye,
+      enabled: k && Se,
     }),
-    Ue = A.trim().toLowerCase(),
-    F = Ue.length > 0,
-    We = O && k && F,
-    I;
-  t[5] !== A || t[6] !== D || t[7] !== b || t[8] !== We
-    ? ((I = {
-        cwd: D,
-        hostConfig: b,
+    ze = M.trim().toLowerCase(),
+    V = ze.length > 0,
+    Be = k && A && V,
+    H;
+  t[5] !== M || t[6] !== O || t[7] !== x || t[8] !== Be
+    ? ((H = {
+        cwd: O,
+        hostConfig: x,
         operationSource: `async_task_starting_state_dropdown`,
-        query: A,
-        enabled: We,
+        query: M,
+        enabled: Be,
       }),
-      (t[5] = A),
-      (t[6] = D),
-      (t[7] = b),
-      (t[8] = We),
-      (t[9] = I))
-    : (I = t[9]);
-  let { data: Ge, isFetching: Ke, error: qe, refetch: Je } = a(S, I),
-    Ye = n.type === `branch` ? n.branchName : void 0,
-    L = O ? Be : ve,
-    Xe = O
-      ? F
-        ? Ge
-        : ze
-      : F
-        ? Oe?.filter((e) => e.toLowerCase().includes(Ue))
+      (t[5] = M),
+      (t[6] = O),
+      (t[7] = x),
+      (t[8] = Be),
+      (t[9] = H))
+    : (H = t[9]);
+  let { data: Ve, isFetching: He, error: Ue, refetch: We } = o(re, H),
+    Ge = n.type === `branch` ? n.branchName : void 0,
+    U = k ? Ie : ye,
+    Ke = k
+      ? V
+        ? Ve
+        : Fe
+      : V
+        ? Ee?.filter((e) => e.toLowerCase().includes(ze))
         : void 0,
-    Ze = !F || L.toLowerCase().includes(Ue),
-    Qe = Xe?.filter((e) => e !== L),
-    $e = O ? (F ? Ke : Ve) : ke,
-    et = O ? (F ? qe : He) : Ae,
-    tt = O ? (F ? Je : P) : Pe,
-    nt = !O && je,
-    rt = Fe ?? L,
-    R = n.type === `branch` ? n.branchName : rt,
-    z =
-      N?.type === `success`
-        ? N.stagedCount + N.unstagedCount + N.untrackedCount > 0
+    qe = !V || U.toLowerCase().includes(ze),
+    Je = Ke?.filter((e) => e !== U),
+    Ye = k ? (V ? He : Le) : De,
+    Xe = k ? (V ? Ue : Re) : Oe,
+    Ze = k ? (V ? We : B) : Me,
+    Qe = !k && ke,
+    $e = I ?? U,
+    et = n.type === `branch` ? n.branchName : $e,
+    tt =
+      z?.type === `success`
+        ? z.stagedCount + z.unstagedCount + z.untrackedCount > 0
         : !1,
-    it = O && z,
-    at = n.type === `working-tree` && z,
-    ot =
+    nt = k && tt,
+    rt = n.type === `working-tree` && tt,
+    it =
       n.type === `working-tree`
-        ? (0, T.jsx)(i, {
+        ? (0, E.jsx)(a, {
             id: `composer.remote.currentBranch`,
             defaultMessage: `{branch} (current)`,
             description: `Label for the current branch starting point in the composer`,
-            values: { branch: Fe ?? L },
+            values: { branch: I ?? U },
           })
-        : (0, T.jsx)(i, {
+        : (0, E.jsx)(a, {
             id: `composer.remote.branch`,
             defaultMessage: `{branch}`,
             description: `Label for a specific branch starting point in the composer`,
             values: { branch: n.branchName },
           }),
-    B;
-  t[10] === ot
-    ? (B = t[11])
-    : ((B = (0, T.jsx)(h, { electron: !0, children: ot })),
-      (t[10] = ot),
-      (t[11] = B));
-  let V;
-  t[12] === R
-    ? (V = t[13])
-    : ((V = (0, T.jsx)(h, { browser: !0, children: R })),
-      (t[12] = R),
-      (t[13] = V));
-  let st = (0, T.jsxs)(T.Fragment, {
+    at;
+  t[10] === it
+    ? (at = t[11])
+    : ((at = (0, E.jsx)(h, { electron: !0, children: it })),
+      (t[10] = it),
+      (t[11] = at));
+  let ot;
+  t[12] === et
+    ? (ot = t[13])
+    : ((ot = (0, E.jsx)(h, { browser: !0, children: et })),
+      (t[12] = et),
+      (t[13] = ot));
+  let st = (0, E.jsxs)(E.Fragment, {
       children: [
-        B,
-        (0, T.jsx)(h, {
+        at,
+        (0, E.jsx)(h, {
           extension: !0,
-          children: at
-            ? (0, T.jsx)(i, {
+          children: rt
+            ? (0, E.jsx)(a, {
                 id: `composer.remote.localWorkingTree`,
                 defaultMessage: `Use local changes`,
                 description: `Label for local working tree selection in remote composer`,
               })
-            : R,
+            : et,
         }),
-        V,
+        ot,
       ],
     }),
-    H,
-    U;
-  (t[14] !== k || t[15] !== Le || t[16] !== P || t[17] !== O
-    ? ((H = () => {
-        k && (Le(), O && P());
+    ct,
+    lt;
+  (t[14] !== A || t[15] !== L || t[16] !== B || t[17] !== k
+    ? ((ct = () => {
+        A && (L(), k && B());
       }),
-      (U = [k, Le, P, O]),
-      (t[14] = k),
-      (t[15] = Le),
-      (t[16] = P),
-      (t[17] = O),
-      (t[18] = H),
-      (t[19] = U))
-    : ((H = t[18]), (U = t[19])),
-    (0, oe.useEffect)(H, U));
-  let ct = v,
+      (lt = [A, L, B, k]),
+      (t[14] = A),
+      (t[15] = L),
+      (t[16] = B),
+      (t[17] = k),
+      (t[18] = ct),
+      (t[19] = lt))
+    : ((ct = t[18]), (lt = t[19])),
+    (0, se.useEffect)(ct, lt));
+  let ut = v,
     W;
   t[20] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((W = (0, T.jsx)(`div`, {
+    ? ((W = (0, E.jsx)(`div`, {
         className: `flex flex-col gap-2`,
-        children: (0, T.jsx)(i, {
+        children: (0, E.jsx)(a, {
           id: `composer.remote.branchStartingPoint`,
           defaultMessage: `What branch should this task start from?`,
           description: `Section label for branch starting point selector`,
@@ -251,110 +249,113 @@ function se(e) {
       (t[20] = W))
     : (W = t[20]);
   let G;
-  t[21] === C
+  t[21] === w
     ? (G = t[22])
-    : ((G = r(`whitespace-nowrap`, C)), (t[21] = C), (t[22] = G));
-  let lt = n?.type === `working-tree` && z,
-    ut;
+    : ((G = r(`whitespace-nowrap`, w)), (t[21] = w), (t[22] = G));
+  let dt = n?.type === `working-tree` && tt,
+    ft;
   t[23] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((ut = (0, T.jsx)(c, { className: `icon-xs` })), (t[23] = ut))
-    : (ut = t[23]);
+    ? ((ft = (0, E.jsx)(c, { className: `icon-xs` })), (t[23] = ft))
+    : (ft = t[23]);
   let K;
-  t[24] === lt
+  t[24] === dt
     ? (K = t[25])
-    : ((K = (0, T.jsx)(ae, {
+    : ((K = (0, E.jsx)(oe, {
         borderColor: `border-token-side-bar-background`,
-        badgeEnabled: lt,
-        children: ut,
+        badgeEnabled: dt,
+        children: ft,
       })),
-      (t[24] = lt),
+      (t[24] = dt),
       (t[25] = K));
-  let dt = me
+  let pt = he
       ? null
-      : (0, T.jsx)(`span`, {
-          className: `composer-footer__label--sm composer-footer__secondary-label max-w-40 truncate`,
+      : (0, E.jsx)(te, {
+          collapse: `secondary`,
+          className: `max-w-40 truncate`,
           children: st,
         }),
-    ft;
+    mt;
   t[26] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((ft = (0, T.jsx)(y, {
-        className: `composer-footer__secondary-chevron icon-2xs text-token-input-placeholder-foreground`,
+    ? ((mt = (0, E.jsx)(ne, {
+        children: (0, E.jsx)(y, {
+          className: `icon-2xs text-token-input-placeholder-foreground`,
+        }),
       })),
-      (t[26] = ft))
-    : (ft = t[26]);
+      (t[26] = mt))
+    : (mt = t[26]);
   let q;
-  t[27] !== G || t[28] !== K || t[29] !== dt
-    ? ((q = (0, T.jsx)(d, {
+  t[27] !== G || t[28] !== K || t[29] !== pt
+    ? ((q = (0, E.jsx)(d, {
         tooltipContent: W,
-        children: (0, T.jsxs)(m, {
+        children: (0, E.jsxs)(m, {
           size: `composerSm`,
           color: `ghost`,
           className: G,
-          children: [K, dt, ft],
+          children: [K, pt, mt],
         }),
       })),
       (t[27] = G),
       (t[28] = K),
-      (t[29] = dt),
+      (t[29] = pt),
       (t[30] = q))
     : (q = t[30]);
   let J;
-  t[31] === E
+  t[31] === D
     ? (J = t[32])
-    : ((J = E.formatMessage({
+    : ((J = D.formatMessage({
         id: `codex.composer.searchBranches`,
         defaultMessage: `Search branches`,
         description: `Placeholder for the branch search input`,
       })),
-      (t[31] = E),
+      (t[31] = D),
       (t[32] = J));
-  let pt;
+  let ht;
   t[33] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((pt = (e) => {
+    ? ((ht = (e) => {
         we(e.currentTarget.value);
       }),
-      (t[33] = pt))
-    : (pt = t[33]);
+      (t[33] = ht))
+    : (ht = t[33]);
   let Y;
-  t[34] === j
+  t[34] === P
     ? (Y = t[35])
     : ((Y = (e) => {
-        e.key === `Enter` && j(!1);
+        e.key === `Enter` && P(!1);
       }),
-      (t[34] = j),
+      (t[34] = P),
       (t[35] = Y));
   let X;
-  t[36] !== Ce || t[37] !== J || t[38] !== Y
-    ? ((X = (0, T.jsx)(_.SearchInput, {
+  t[36] !== j || t[37] !== J || t[38] !== Y
+    ? ((X = (0, E.jsx)(_.SearchInput, {
         autoFocus: !1,
         placeholder: J,
-        value: Ce,
-        onChange: pt,
+        value: j,
+        onChange: ht,
         onKeyDown: Y,
       })),
-      (t[36] = Ce),
+      (t[36] = j),
       (t[37] = J),
       (t[38] = Y),
       (t[39] = X))
     : (X = t[39]);
-  let mt = it
-      ? (0, T.jsxs)(`div`, {
+  let gt = nt
+      ? (0, E.jsxs)(`div`, {
           className: `flex flex-col`,
           children: [
-            (0, T.jsx)(ue, {
-              children: (0, T.jsx)(i, {
+            (0, E.jsx)(de, {
+              children: (0, E.jsx)(a, {
                 id: `composer.remote.localFileStateHeading`,
                 defaultMessage: `Local file state`,
                 description: `Section heading for local working tree selection`,
               }),
             }),
-            (0, T.jsx)(_.Item, {
-              LeftIcon: ce,
+            (0, E.jsx)(_.Item, {
+              LeftIcon: le,
               RightIcon: n.type === `working-tree` ? g : void 0,
-              SubText: z
-                ? (0, T.jsx)(`span`, {
+              SubText: tt
+                ? (0, E.jsx)(`span`, {
                     className: `text-token-description-foreground`,
-                    children: (0, T.jsx)(i, {
+                    children: (0, E.jsx)(a, {
                       id: `composer.remote.currentEditsSuffix.useLocal`,
                       defaultMessage: `with local code changes`,
                       description: `Suffix text indicating the selection includes current edits`,
@@ -362,19 +363,19 @@ function se(e) {
                   })
                 : void 0,
               onClick: () => {
-                (s({ type: `working-tree` }), j(!1));
+                (s({ type: `working-tree` }), P(!1));
               },
-              children: Ie
+              children: Ne
                 ? null
-                : (0, T.jsx)(T.Fragment, { children: Fe ?? L }),
+                : (0, E.jsx)(E.Fragment, { children: I ?? U }),
             }),
           ],
         })
       : null,
     Z;
   t[40] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Z = (0, T.jsx)(ue, {
-        children: (0, T.jsx)(i, {
+    ? ((Z = (0, E.jsx)(de, {
+        children: (0, E.jsx)(a, {
           id: `composer.remote.branchesSectionHeading`,
           defaultMessage: `Branches`,
           description: `Section heading for remote branch search results`,
@@ -382,66 +383,66 @@ function se(e) {
       })),
       (t[40] = Z))
     : (Z = t[40]);
-  let ht =
-      A && $e
-        ? (0, T.jsx)(`div`, {
+  let _t =
+      M && Ye
+        ? (0, E.jsx)(`div`, {
             className: `flex h-full items-center justify-center`,
-            children: (0, T.jsx)(ee, { className: `icon-xxs` }),
+            children: (0, E.jsx)(ee, { className: `icon-xxs` }),
           })
-        : A && et
-          ? (0, T.jsxs)(`div`, {
+        : M && Xe
+          ? (0, E.jsxs)(`div`, {
               className: `flex h-full flex-col items-center justify-center gap-1 text-sm text-token-error-foreground`,
               children: [
-                (0, T.jsx)(i, {
+                (0, E.jsx)(a, {
                   id: `composer.remote.errorLoadingBranches`,
                   defaultMessage: `Error loading branches`,
                   description: `Error message for remote starting point selector`,
                 }),
-                (0, T.jsx)(m, {
+                (0, E.jsx)(m, {
                   color: `ghost`,
                   size: `icon`,
                   className: `text-token-description-foreground`,
                   onClick: () => {
-                    tt();
+                    Ze();
                   },
-                  children: (0, T.jsx)(x, { className: `icon-xxs` }),
+                  children: (0, E.jsx)(C, { className: `icon-xxs` }),
                 }),
               ],
             })
-          : (0, T.jsxs)(`div`, {
+          : (0, E.jsxs)(`div`, {
               className: `flex flex-col`,
               children: [
-                Ze &&
-                  (0, T.jsx)(_.Item, {
+                qe &&
+                  (0, E.jsx)(_.Item, {
                     LeftIcon: c,
-                    RightIcon: Ye === L ? g : void 0,
+                    RightIcon: Ge === U ? g : void 0,
                     onClick: () => {
-                      (s({ type: `branch`, branchName: L }), j(!1));
+                      (s({ type: `branch`, branchName: U }), P(!1));
                     },
-                    children: L,
+                    children: U,
                   }),
-                Qe?.map((e) =>
-                  (0, T.jsx)(
+                Je?.map((e) =>
+                  (0, E.jsx)(
                     _.Item,
                     {
                       LeftIcon: c,
-                      RightIcon: e === Ye ? g : void 0,
+                      RightIcon: e === Ge ? g : void 0,
                       onClick: () => {
-                        (s({ type: `branch`, branchName: e }), j(!1));
+                        (s({ type: `branch`, branchName: e }), P(!1));
                       },
                       children: e,
                     },
                     e,
                   ),
                 ),
-                nt &&
-                  (0, T.jsx)(_.Item, {
+                Qe &&
+                  (0, E.jsx)(_.Item, {
                     onClick: () => {
-                      Me || Ne();
+                      Ae || je();
                     },
                     className: `w-full text-sm text-token-text-secondary`,
-                    children: Me
-                      ? (0, T.jsx)(i, {
+                    children: Ae
+                      ? (0, E.jsx)(a, {
                           id: `composer.remote.loadingMoreBranches`,
                           defaultMessage: `Loading…`,
                           description: `Loading more branches`,
@@ -451,19 +452,19 @@ function se(e) {
               ],
             }),
     Q;
-  t[41] !== mt || t[42] !== Z || t[43] !== ht
-    ? ((Q = (0, T.jsxs)(`div`, {
+  t[41] !== gt || t[42] !== Z || t[43] !== _t
+    ? ((Q = (0, E.jsxs)(`div`, {
         className: `vertical-scroll-fade-mask flex h-[200px] flex-col gap-1.5 overflow-y-auto`,
-        children: [mt, Z, ht],
+        children: [gt, Z, _t],
       })),
-      (t[41] = mt),
+      (t[41] = gt),
       (t[42] = Z),
-      (t[43] = ht),
+      (t[43] = _t),
       (t[44] = Q))
     : (Q = t[44]);
   let $;
   t[45] !== X || t[46] !== Q
-    ? (($ = (0, T.jsxs)(`div`, {
+    ? (($ = (0, E.jsxs)(`div`, {
         className: `flex w-72 flex-col gap-1.5 overflow-hidden`,
         children: [X, Q],
       })),
@@ -471,50 +472,50 @@ function se(e) {
       (t[46] = Q),
       (t[47] = $))
     : ($ = t[47]);
-  let gt;
+  let vt;
   return (
-    t[48] !== ct ||
-    t[49] !== k ||
-    t[50] !== j ||
-    t[51] !== pe ||
+    t[48] !== ut ||
+    t[49] !== A ||
+    t[50] !== P ||
+    t[51] !== me ||
     t[52] !== q ||
     t[53] !== $
-      ? ((gt = (0, T.jsx)(ct, {
-          side: pe,
-          open: k,
-          onOpenChange: j,
+      ? ((vt = (0, E.jsx)(ut, {
+          side: me,
+          open: A,
+          onOpenChange: P,
           triggerButton: q,
           children: $,
         })),
-        (t[48] = ct),
-        (t[49] = k),
-        (t[50] = j),
-        (t[51] = pe),
+        (t[48] = ut),
+        (t[49] = A),
+        (t[50] = P),
+        (t[51] = me),
         (t[52] = q),
         (t[53] = $),
-        (t[54] = gt))
-      : (gt = t[54]),
-    gt
+        (t[54] = vt))
+      : (vt = t[54]),
+    vt
   );
 }
-function ce(e) {
-  let t = (0, w.c)(2),
+function le(e) {
+  let t = (0, T.c)(2),
     { className: n } = e,
     r;
   return (
     t[0] === n
       ? (r = t[1])
-      : ((r = (0, T.jsx)(ae, {
+      : ((r = (0, E.jsx)(oe, {
           borderColor: `border-token-side-bar-background`,
-          children: (0, T.jsx)(c, { className: n }),
+          children: (0, E.jsx)(c, { className: n }),
         })),
         (t[0] = n),
         (t[1] = r)),
     r
   );
 }
-function le(e) {
-  let t = (0, w.c)(18),
+function ue(e) {
+  let t = (0, T.c)(18),
     {
       gitRoot: n,
       hostConfig: r,
@@ -530,22 +531,22 @@ function le(e) {
       isFetching: u,
       error: d,
       refetch: f,
-    } = b(n, r, `async_task_starting_state_dropdown`, s),
+    } = x(n, r, `async_task_starting_state_dropdown`, s),
     p;
   t[2] === o ? (p = t[3]) : ((p = { enabled: o }), (t[2] = o), (t[3] = p));
   let {
       data: m,
       isLoading: ee,
-      isFetching: h,
-      error: g,
-      refetch: _,
-    } = ie(n, r, `async_task_starting_state_dropdown`, p),
-    v;
+      isFetching: te,
+      error: ne,
+      refetch: h,
+    } = ae(n, r, `async_task_starting_state_dropdown`, p),
+    g;
   if (t[4] !== i || t[5] !== c || t[6] !== m || t[7] !== a) {
     let e = [
         c,
         i,
-        de({
+        fe({
           currentBranch: i,
           gitDefaultBranch: c,
           recentBranches: m,
@@ -554,51 +555,51 @@ function le(e) {
         ...(m ?? []),
       ],
       n = new Set();
-    ((v = []),
+    ((g = []),
       e.forEach((e) => {
-        fe({ branch: e, list: v, seen: n });
+        pe({ branch: e, list: g, seen: n });
       }),
       (t[4] = i),
       (t[5] = c),
       (t[6] = m),
       (t[7] = a),
-      (t[8] = v));
-  } else v = t[8];
-  let y = v[0] ?? i ?? a,
-    te = l || u || ee || h,
-    ne = d ?? g,
-    x;
-  t[9] !== f || t[10] !== _
-    ? ((x = async () => {
-        await Promise.all([f(), _()]);
+      (t[8] = g));
+  } else g = t[8];
+  let _ = g[0] ?? i ?? a,
+    v = l || u || ee || te,
+    y = d ?? ne,
+    b;
+  t[9] !== f || t[10] !== h
+    ? ((b = async () => {
+        await Promise.all([f(), h()]);
       }),
       (t[9] = f),
-      (t[10] = _),
-      (t[11] = x))
-    : (x = t[11]);
-  let re = x,
-    S;
+      (t[10] = h),
+      (t[11] = b))
+    : (b = t[11]);
+  let S = b,
+    C;
   return (
-    t[12] !== v || t[13] !== y || t[14] !== ne || t[15] !== te || t[16] !== re
-      ? ((S = {
-          branches: v,
-          defaultBranch: y,
-          fetching: te,
-          error: ne,
-          refetch: re,
+    t[12] !== g || t[13] !== _ || t[14] !== y || t[15] !== v || t[16] !== S
+      ? ((C = {
+          branches: g,
+          defaultBranch: _,
+          fetching: v,
+          error: y,
+          refetch: S,
         }),
-        (t[12] = v),
-        (t[13] = y),
-        (t[14] = ne),
-        (t[15] = te),
-        (t[16] = re),
-        (t[17] = S))
-      : (S = t[17]),
-    S
+        (t[12] = g),
+        (t[13] = _),
+        (t[14] = y),
+        (t[15] = v),
+        (t[16] = S),
+        (t[17] = C))
+      : (C = t[17]),
+    C
   );
 }
-function ue(e) {
-  let t = (0, w.c)(5),
+function de(e) {
+  let t = (0, T.c)(5),
     { className: n, children: i } = e,
     a;
   t[0] === n
@@ -612,7 +613,7 @@ function ue(e) {
   let o;
   return (
     t[2] !== i || t[3] !== a
-      ? ((o = (0, T.jsx)(`div`, { className: a, children: i })),
+      ? ((o = (0, E.jsx)(`div`, { className: a, children: i })),
         (t[2] = i),
         (t[3] = a),
         (t[4] = o))
@@ -620,7 +621,7 @@ function ue(e) {
     o
   );
 }
-function de({
+function fe({
   currentBranch: e,
   gitDefaultBranch: t,
   recentBranches: n,
@@ -628,66 +629,72 @@ function de({
 }) {
   return r && (r === e || r === t || n?.includes(r)) ? r : null;
 }
-function fe({ branch: e, list: t, seen: n }) {
+function pe({ branch: e, list: t, seen: n }) {
   !e || n.has(e) || (n.add(e), t.push(e));
 }
-function pe(e) {
-  let t = (0, w.c)(2),
+function me(e) {
+  let t = (0, T.c)(2),
     n;
   return (
     t[0] === e
       ? (n = t[1])
-      : ((n = (0, T.jsx)(C, {
+      : ((n = (0, E.jsx)(w, {
           ...e,
-          renderStaticBranch: E,
-          renderTrigger: me,
+          renderStaticBranch: D,
+          renderControl: he,
         })),
         (t[0] = e),
         (t[1] = n)),
     n
   );
 }
-function me(e) {
+function he(e) {
   let { currentBranch: t, disabled: n, isPending: r, switchTooltipText: i } = e;
-  return (0, T.jsx)(d, {
-    tooltipContent: i,
-    children: (0, T.jsxs)(m, {
-      className: `px-0`,
-      color: `ghost`,
-      size: `composerSm`,
-      disabled: n,
-      children: [
-        (0, T.jsx)(c, { className: `icon-xs` }),
-        (0, T.jsx)(`span`, {
-          className: `composer-footer__label--sm max-w-40 truncate text-sm`,
-          children: t,
-        }),
-        r
-          ? (0, T.jsx)(ee, {
-              className: `icon-xs text-token-input-placeholder-foreground`,
-            })
-          : (0, T.jsx)(y, {
-              className: `composer-footer__secondary-chevron icon-2xs text-token-input-placeholder-foreground`,
+  return t == null
+    ? null
+    : (0, E.jsx)(d, {
+        tooltipContent: i,
+        children: (0, E.jsxs)(m, {
+          className: `px-0`,
+          color: `ghost`,
+          size: `composerSm`,
+          disabled: n,
+          children: [
+            (0, E.jsx)(c, { className: `icon-xs` }),
+            (0, E.jsx)(te, {
+              collapse: `sm`,
+              className: `max-w-40 truncate text-sm`,
+              children: t,
             }),
-      ],
-    }),
-  });
+            r
+              ? (0, E.jsx)(ee, {
+                  className: `icon-xs text-token-input-placeholder-foreground`,
+                })
+              : (0, E.jsx)(ne, {
+                  children: (0, E.jsx)(y, {
+                    className: `icon-2xs text-token-input-placeholder-foreground`,
+                  }),
+                }),
+          ],
+        }),
+      });
 }
-function E(e) {
+function D(e) {
   let { currentBranch: t } = e;
-  return (0, T.jsx)(d, {
+  return (0, E.jsx)(d, {
     tooltipContent: t,
-    children: (0, T.jsxs)(`div`, {
+    children: (0, E.jsxs)(`div`, {
       className: `flex min-w-0 items-center gap-1 text-token-description-foreground`,
       children: [
-        (0, T.jsx)(c, { className: `icon-xs` }),
-        (0, T.jsx)(`span`, {
-          className: `composer-footer__label--sm max-w-40 truncate text-sm`,
+        (0, E.jsx)(c, { className: `icon-xs` }),
+        (0, E.jsx)(te, {
+          collapse: `sm`,
+          className: `max-w-40 truncate text-sm`,
           children: t,
         }),
       ],
     }),
   });
 }
-export { se as n, ae as r, pe as t };
+export { ce as n, oe as r, me as t };
 //# sourceMappingURL=composer-footer-branch-switcher.js.map

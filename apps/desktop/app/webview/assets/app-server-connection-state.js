@@ -1,11 +1,11 @@
 import { t as e } from "./jsx-runtime.js";
-import { t } from "./clsx.js";
-import { B as n, W as r, xt as i } from "./setting-storage.js";
-import { f as a } from "./chunk-LFPYN7LY.js";
-import { t as o } from "./tooltip.js";
+import { t } from "./clsx-BcPLHiun.js";
+import { G as n, V as r, wt as i } from "./setting-storage.js";
+import { m as a } from "./chunk-LFPYN7LY.js";
+import { t as o } from "./tooltip-CDzchJxN.js";
 import { n as s } from "./spinner.js";
 import { t as c } from "./use-app-server-connection-state.js";
-import { t as l } from "./alert-CbWF3t74.js";
+import { t as l } from "./alert-m4o6hR60.js";
 function u(e, t) {
   switch (t.code) {
     case `remote-codex-not-found`:
@@ -51,7 +51,7 @@ function u(e, t) {
       return t.message;
   }
 }
-var d = n({
+var d = r({
     connecting: {
       id: `threadPage.remoteConnectionStatusBadge.connecting`,
       defaultMessage: `Connecting`,
@@ -260,9 +260,9 @@ var h = i(),
     },
   };
 function y(e) {
-  let n = (0, h.c)(33),
+  let r = (0, h.c)(33),
     { hostId: i, onLoginRequiredClick: s } = e,
-    l = r(),
+    l = n(),
     u = a(),
     { error: d, state: f } = c(i);
   if (f == null) return null;
@@ -272,126 +272,126 @@ function y(e) {
       (d?.code === `login-required` && s == null),
     y = d?.code === `login-required` && s != null,
     b;
-  n[0] !== d || n[1] !== l || n[2] !== y || n[3] !== f
+  r[0] !== d || r[1] !== l || r[2] !== y || r[3] !== f
     ? ((b = p(l, {
         canLogin: y,
         error: d,
         state: f,
         surface: `connection-status-badge`,
       })),
-      (n[0] = d),
-      (n[1] = l),
-      (n[2] = y),
-      (n[3] = f),
-      (n[4] = b))
-    : (b = n[4]);
+      (r[0] = d),
+      (r[1] = l),
+      (r[2] = y),
+      (r[3] = f),
+      (r[4] = b))
+    : (b = r[4]);
   let { label: x, message: S } = b,
     C;
-  n[5] === s
-    ? (C = n[6])
+  r[5] === s
+    ? (C = r[6])
     : ((C = (e) => {
         (e.preventDefault(), e.stopPropagation(), s?.());
       }),
-      (n[5] = s),
-      (n[6] = C));
+      (r[5] = s),
+      (r[6] = C));
   let w = C,
     T;
-  n[7] === u
-    ? (T = n[8])
+  r[7] === u
+    ? (T = r[8])
     : ((T = (e) => {
         (e.preventDefault(), e.stopPropagation(), u(`/settings/connections`));
       }),
-      (n[7] = u),
-      (n[8] = T));
+      (r[7] = u),
+      (r[8] = T));
   let E = T,
     D = v[f],
     O;
-  n[9] === D.iconClassName
-    ? (O = n[10])
+  r[9] === D.iconClassName
+    ? (O = r[10])
     : ((O = t(
         `icon-2xs inline-flex shrink-0 items-center justify-center`,
         D.iconClassName,
       )),
-      (n[9] = D.iconClassName),
-      (n[10] = O));
+      (r[9] = D.iconClassName),
+      (r[10] = O));
   let k = _[f],
     A;
-  n[11] !== O || n[12] !== k
+  r[11] !== O || r[12] !== k
     ? ((A = (0, g.jsx)(`span`, { className: O, children: k })),
-      (n[11] = O),
-      (n[12] = k),
-      (n[13] = A))
-    : (A = n[13]);
+      (r[11] = O),
+      (r[12] = k),
+      (r[13] = A))
+    : (A = r[13]);
   let j = A;
   if (m || y) {
     let e = v[f],
-      r;
-    n[14] === e.dotClassName
-      ? (r = n[15])
-      : ((r = t(
+      n;
+    r[14] === e.dotClassName
+      ? (n = r[15])
+      : ((n = t(
           `no-drag icon-2xs inline-flex shrink-0 cursor-interaction items-center justify-center self-center overflow-hidden rounded-full border-0 bg-transparent p-0 text-current`,
           e.dotClassName,
         )),
-        (n[14] = e.dotClassName),
-        (n[15] = r));
+        (r[14] = e.dotClassName),
+        (r[15] = n));
     let i = y ? w : E,
       a;
-    n[16] !== x || n[17] !== j || n[18] !== i || n[19] !== r
+    r[16] !== x || r[17] !== j || r[18] !== i || r[19] !== n
       ? ((a = (0, g.jsx)(`button`, {
           type: `button`,
-          className: r,
+          className: n,
           "aria-label": x,
           onClick: i,
           children: j,
         })),
-        (n[16] = x),
-        (n[17] = j),
-        (n[18] = i),
-        (n[19] = r),
-        (n[20] = a))
-      : (a = n[20]);
+        (r[16] = x),
+        (r[17] = j),
+        (r[18] = i),
+        (r[19] = n),
+        (r[20] = a))
+      : (a = r[20]);
     let s;
     return (
-      n[21] !== a || n[22] !== S
+      r[21] !== a || r[22] !== S
         ? ((s = (0, g.jsx)(o, { tooltipContent: S, children: a })),
-          (n[21] = a),
-          (n[22] = S),
-          (n[23] = s))
-        : (s = n[23]),
+          (r[21] = a),
+          (r[22] = S),
+          (r[23] = s))
+        : (s = r[23]),
       s
     );
   }
   let M = v[f],
     N;
-  n[24] === M.dotClassName
-    ? (N = n[25])
+  r[24] === M.dotClassName
+    ? (N = r[25])
     : ((N = t(
         `no-drag icon-2xs inline-flex shrink-0 items-center justify-center self-center overflow-hidden rounded-full`,
         M.dotClassName,
       )),
-      (n[24] = M.dotClassName),
-      (n[25] = N));
+      (r[24] = M.dotClassName),
+      (r[25] = N));
   let P;
-  n[26] !== x || n[27] !== j || n[28] !== N
+  r[26] !== x || r[27] !== j || r[28] !== N
     ? ((P = (0, g.jsx)(`span`, {
         className: N,
         "aria-label": x,
         role: `img`,
         children: j,
       })),
-      (n[26] = x),
-      (n[27] = j),
-      (n[28] = N),
-      (n[29] = P))
-    : (P = n[29]);
+      (r[26] = x),
+      (r[27] = j),
+      (r[28] = N),
+      (r[29] = P))
+    : (P = r[29]);
   let F;
   return (
-    n[30] !== P || n[31] !== S
+    r[30] !== P || r[31] !== S
       ? ((F = (0, g.jsx)(o, { tooltipContent: S, children: P })),
-        (n[30] = P),
-        (n[31] = S),
-        (n[32] = F))
-      : (F = n[32]),
+        (r[30] = P),
+        (r[31] = S),
+        (r[32] = F))
+      : (F = r[32]),
     F
   );
 }

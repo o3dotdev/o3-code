@@ -1,17 +1,17 @@
-import { ir as e } from "./src-BLHmAhbF.js";
-import { v as t, wa as n } from "./app-server-manager-signals.js";
-import { J as r, X as i, xt as a } from "./setting-storage.js";
-import { o } from "./statsig.js";
+import { kr as e } from "./src-C.js";
+import { fo as t, v as n } from "./app-server-manager-signals-DkRDRgNB.js";
+import { Y as r, Z as i, wt as a } from "./setting-storage.js";
+import { o } from "./statsig--EYRNU53.js";
 import { t as s } from "./use-global-state.js";
-import { S as c } from "./config-queries.js";
+import { C as c } from "./config-queries-BBeTQbuo.js";
 import { r as l } from "./device-connections.js";
 var u = a();
 function d() {
   let e = (0, u.c)(3),
-    { data: n } = r(c, i(t)),
+    { data: t } = r(c, i(n)),
     a = o(`4114442250`);
-  if (n?.config[`features.remote_connections`] === !0) return !0;
-  let s = n?.config.features;
+  if (t?.config[`features.remote_connections`] === !0) return !0;
+  let s = t?.config.features;
   if (typeof s != `object` || !s || Array.isArray(s)) return a;
   let l;
   return (
@@ -30,13 +30,13 @@ function f() {
   return o(`1042620455`);
 }
 function p() {
-  let t = (0, u.c)(8),
-    [r] = n(`remote_connections`),
-    [i] = n(`remote_control_connections`),
+  let n = (0, u.c)(8),
+    [r] = t(`remote_connections`),
+    [i] = t(`remote_control_connections`),
     { data: a } = s(e.ADDED_REMOTE_CONTROL_ENV_IDS),
     o,
     c;
-  if (t[0] !== a || t[1] !== i || t[2] !== r) {
+  if (n[0] !== a || n[1] !== i || n[2] !== r) {
     let e = l({
       addedRemoteControlEnvIds: a,
       remoteSshConnections: r ?? [],
@@ -44,20 +44,20 @@ function p() {
     });
     ((o = e),
       (c = new Set(e.flatMap(m))),
-      (t[0] = a),
-      (t[1] = i),
-      (t[2] = r),
-      (t[3] = o),
-      (t[4] = c));
-  } else ((o = t[3]), (c = t[4]));
+      (n[0] = a),
+      (n[1] = i),
+      (n[2] = r),
+      (n[3] = o),
+      (n[4] = c));
+  } else ((o = n[3]), (c = n[4]));
   let d;
   return (
-    t[5] !== o || t[6] !== c
+    n[5] !== o || n[6] !== c
       ? ((d = { remoteConnections: o, enabledRemoteHostIdSet: c }),
-        (t[5] = o),
-        (t[6] = c),
-        (t[7] = d))
-      : (d = t[7]),
+        (n[5] = o),
+        (n[6] = c),
+        (n[7] = d))
+      : (d = n[7]),
     d
   );
 }

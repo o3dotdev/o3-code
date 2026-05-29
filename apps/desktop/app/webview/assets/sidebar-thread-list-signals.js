@@ -1,98 +1,96 @@
-import { ir as e, pr as t } from "./src-BLHmAhbF.js";
+import { kr as e, r as t, zr as n } from "./src-C.js";
 import {
-  Or as n,
-  W as r,
-  bt as i,
-  et as a,
-  pt as o,
-  qi as s,
-} from "./app-server-manager-signals.js";
-import { t as c } from "./jsx-runtime.js";
+  Ia as r,
+  K as i,
+  Pi as a,
+  dn as o,
+  hn as s,
+  ln as c,
+  mt as l,
+  nt as u,
+  sn as d,
+  un as f,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { t as p } from "./jsx-runtime.js";
 import {
-  H as l,
-  Q as u,
-  S as d,
-  Z as f,
-  _ as p,
-  f as m,
+  $ as m,
+  Q as h,
+  S as g,
+  U as _,
+  _ as v,
+  et as y,
+  f as ee,
 } from "./setting-storage.js";
-import { t as ee } from "./app-intl-signal.js";
+import { t as te } from "./app-intl-signal.js";
 import {
-  a as h,
-  i as g,
-  l as _,
-  r as v,
-  t as te,
-} from "./sidebar-thread-keys.js";
-import {
-  d as ne,
-  g as y,
-  l as b,
-  v as x,
-} from "./sidebar-project-group-signals-.js";
-import { t as S } from "./pinned-threads-query.js";
-var C = c();
-function w({
+  d as b,
+  g as x,
+  l as S,
+  v as C,
+} from "./sidebar-project-group-signals-CEQTKcIf.js";
+import { t as w } from "./pinned-threads-query-DYArLI-i.js";
+var T = p();
+function E({
   projectSidebarEnabled: e,
   organizeMode: t,
-  showRecent: n,
-  showRecentChatsSection: r,
+  showProjectsTitle: n,
+  showRecent: r,
 }) {
   return e
-    ? n
-      ? (0, C.jsx)(l, {
+    ? r
+      ? (0, T.jsx)(_, {
           id: `sidebarElectron.allChatsNavLink`,
           defaultMessage: `All chats`,
           description: `Section label above the chronological list of all chats in the sidebar`,
         })
       : t === `connection`
-        ? (0, C.jsx)(l, {
+        ? (0, T.jsx)(_, {
             id: `sidebarElectron.connectionsNavLink`,
             defaultMessage: `Connections`,
             description: `Section label above connection thread groups in the sidebar`,
           })
-        : r
-          ? (0, C.jsx)(l, {
+        : n
+          ? (0, T.jsx)(_, {
               id: `sidebarElectron.projectsNavLink`,
               defaultMessage: `Projects`,
               description: `Section label above project thread groups in the sidebar`,
             })
-          : (0, C.jsx)(l, {
+          : (0, T.jsx)(_, {
               id: `sidebarElectron.recentNavLink`,
               defaultMessage: `Chats`,
               description: `Section label above recent threads list in the sidebar`,
             })
-    : (0, C.jsx)(l, {
+    : (0, T.jsx)(_, {
         id: `sidebarElectron.cloudTasksNavLink`,
         defaultMessage: `Codex Cloud`,
         description: `Section label above cloud tasks in the browser sidebar`,
       });
 }
-function T({
+function ne({
   projectSidebarEnabled: e,
   organizeMode: t,
-  showRecent: n,
-  showRecentChatsSection: r,
+  showProjectsTitle: n,
+  showRecent: r,
 }) {
   return e
-    ? n
+    ? r
       ? `All chats`
       : t === `connection`
         ? `Connections`
-        : r
+        : n
           ? `Projects`
           : `Chats`
     : `Codex Cloud`;
 }
-function E({
+function re({
   intl: e,
   organizeMode: t,
   projectSidebarEnabled: n,
-  showRecent: r,
-  showRecentChatsSection: i,
+  showProjectsTitle: r,
+  showRecent: i,
 }) {
   return n
-    ? r
+    ? i
       ? e.formatMessage({
           id: `sidebarElectron.allChatsNavLink`,
           defaultMessage: `All chats`,
@@ -104,7 +102,7 @@ function E({
             defaultMessage: `Connections`,
             description: `Section label above connection thread groups in the sidebar`,
           })
-        : i
+        : r
           ? e.formatMessage({
               id: `sidebarElectron.projectsNavLink`,
               defaultMessage: `Projects`,
@@ -127,7 +125,7 @@ function D(e, t) {
     })
     .map(({ group: e }) => e);
 }
-function re(e, t, n) {
+function ie(e, t, n) {
   let r = new Map(t.map((e) => [e.projectId, e]));
   return D(
     e.map((e) => r.get(e.projectId) ?? e),
@@ -161,26 +159,26 @@ function j({
   chatLabel: e,
   task: t,
   projectLabelByThreadKey: n,
-  projectlessThreadIds: r,
+  projectlessThreadIds: i,
 }) {
-  let i = n.get(t.key)?.trim();
-  if (i) return i;
+  let a = n.get(t.key)?.trim();
+  if (a) return a;
   if (
     (t.kind === `local` &&
       (t.conversation.workspaceKind === `projectless` ||
-        r?.has(t.conversation.id) === !0)) ||
-    (t.kind === `remote` && r?.has(t.task.id) === !0)
+        i?.has(t.conversation.id) === !0)) ||
+    (t.kind === `remote` && i?.has(t.task.id) === !0)
   )
     return e;
   if (t.kind === `local`)
-    return (t.conversation.cwd ? s(t.conversation.cwd) : ``) || e;
+    return (t.conversation.cwd ? r(t.conversation.cwd) : ``) || e;
   if (t.kind === `remote`)
     return t.task.task_status_display?.environment_label ?? e;
-  let a =
+  let o =
     t.pendingWorktree.sourceWorkspaceRoot ??
     t.pendingWorktree.worktreeWorkspaceRoot ??
     t.pendingWorktree.worktreeGitRoot;
-  return a ? s(a) : e;
+  return o ? r(o) : e;
 }
 function M(e) {
   return e.map((e) => ({
@@ -210,94 +208,78 @@ function P(e) {
 }
 var F = [],
   I = [],
-  L = m(d, `inbox-items`, {
+  L = ee(g, `inbox-items`, {
     params: { limit: 200 },
-    refetchInterval: p.ONE_MINUTE,
-    staleTime: p.FIVE_SECONDS,
+    refetchInterval: v.ONE_MINUTE,
+    staleTime: v.FIVE_SECONDS,
   }),
-  R = f(d, ({ get: e }) => e(S).data?.threadIds ?? I),
-  z = f(d, ({ get: e }) => J(e(L).data?.items ?? F)),
-  B = f(d, ({ get: t }) => {
-    let n = i(t, e.THREAD_PROJECT_ASSIGNMENTS),
-      r = i(t, e.PROJECTLESS_THREAD_IDS);
+  R = h(g, ({ get: e }) => e(w).data?.threadIds ?? I),
+  z = h(g, ({ get: e }) => J(e(L).data?.items ?? F)),
+  B = h(g, ({ get: t }) => {
+    let n = a(t, e.THREAD_PROJECT_ASSIGNMENTS),
+      r = a(t, e.PROJECTLESS_THREAD_IDS);
     return P(
-      t(
-        t(b, {
-          threadKeys: t(y),
-          enabled: !0,
-          threadProjectAssignments: n,
-          projectlessThreadIds: r,
-        }),
-      ).groups,
+      t(S, {
+        threadKeys: t(x),
+        enabled: !0,
+        threadProjectAssignments: n,
+        projectlessThreadIds: r,
+      }).groups,
     );
   }),
-  V = u(d, (e) =>
-    f(d, ({ get: t }) => {
-      let n = _(e);
-      switch (n?.kind) {
-        case `pending-worktree`:
-          return t(t(ne, n.pendingWorktreeId))?.isPinned === !0;
-        case `local`:
-        case `remote`: {
-          let n = h(e);
-          return n != null && t(R).includes(n);
-        }
-        case void 0:
-          return !1;
+  V = m(g, (e, { get: t }) => {
+    let n = s(e);
+    switch (n?.kind) {
+      case `pending-worktree`:
+        return t(b, n.pendingWorktreeId)?.isPinned === !0;
+      case `local`:
+      case `remote`: {
+        let n = o(e);
+        return n != null && t(R).includes(n);
       }
-    }),
+      case void 0:
+        return !1;
+    }
+  }),
+  H = m(g, (e, { get: t }) => {
+    let n = f(e);
+    return n != null && t(z).automationThreadIds.has(n);
+  }),
+  U = m(g, (e, { get: t }) => {
+    let n = f(e);
+    return n == null ? null : (t(z).automationDisplayNames.get(n) ?? null);
+  }),
+  W = m(g, (t, { get: n }) => {
+    let r = n(C, t);
+    if (r == null) return null;
+    let i = a(n, e.PROJECTLESS_THREAD_IDS);
+    return j({
+      chatLabel: n(te).formatMessage({
+        id: `sidebarElectron.threadHoverCardChatProject`,
+        defaultMessage: `Chat`,
+        description: `Fallback project label for a sidebar thread hover card when it does not belong to a project or workspace`,
+      }),
+      task: r,
+      projectLabelByThreadKey: n(B),
+      projectlessThreadIds: i == null ? void 0 : new Set(i),
+    });
+  }),
+  G = m(g, (n, { get: r }) => {
+    let i = r(C, n);
+    return i?.kind === `local`
+      ? t({
+          cwd: i.conversation.cwd ?? null,
+          assignment: a(r, e.THREAD_PROJECT_ASSIGNMENTS)?.[i.conversation.id],
+        })
+      : null;
+  }),
+  K = m(g, (t, { get: n }) =>
+    t == null ? null : (a(n, e.THREAD_WORKSPACE_ROOT_HINTS)?.[t] ?? null),
   ),
-  H = u(d, (e) =>
-    f(d, ({ get: t }) => {
-      let n = g(e);
-      return n != null && t(z).automationThreadIds.has(n);
-    }),
-  ),
-  U = u(d, (e) =>
-    f(d, ({ get: t }) => {
-      let n = g(e);
-      return n == null ? null : (t(z).automationDisplayNames.get(n) ?? null);
-    }),
-  ),
-  W = u(d, (t) =>
-    f(d, ({ get: n }) => {
-      let r = n(n(x, t));
-      if (r == null) return null;
-      let a = i(n, e.PROJECTLESS_THREAD_IDS);
-      return j({
-        chatLabel: n(ee).formatMessage({
-          id: `sidebarElectron.threadHoverCardChatProject`,
-          defaultMessage: `Chat`,
-          description: `Fallback project label for a sidebar thread hover card when it does not belong to a project or workspace`,
-        }),
-        task: r,
-        projectLabelByThreadKey: n(B),
-        projectlessThreadIds: a == null ? void 0 : new Set(a),
-      });
-    }),
-  ),
-  G = u(d, (t) =>
-    f(d, ({ get: r }) => {
-      let a = r(r(x, t));
-      return a?.kind === `local`
-        ? n({
-            cwd: a.conversation.cwd ?? null,
-            assignment: i(r, e.THREAD_PROJECT_ASSIGNMENTS)?.[a.conversation.id],
-          })
-        : null;
-    }),
-  ),
-  K = u(d, (t) =>
-    f(d, ({ get: n }) =>
-      t == null ? null : (i(n, e.THREAD_WORKSPACE_ROOT_HINTS)?.[t] ?? null),
-    ),
-  ),
-  q = u(d, (t) =>
-    f(d, ({ get: n }) =>
-      t == null
-        ? null
-        : (i(n, e.SIDEBAR_THREAD_METADATA)?.[t]?.labelColor ?? null),
-    ),
+  q = m(g, (t, { get: n }) =>
+    t == null
+      ? null
+      : (a(n, e.SIDEBAR_THREAD_METADATA)?.[t]?.labelColor ?? null),
   );
 function J(e) {
   let t = new Set(),
@@ -308,29 +290,25 @@ function J(e) {
       (t.add(r.threadId), n.set(r.threadId, r.automationName ?? ``));
   return { automationThreadIds: t, automationDisplayNames: n };
 }
-function Y(e, t) {
-  let n = e(e(a, t));
+function ae(e, t) {
+  let n = e(u, t);
   if (n == null || n === `needs_resume`) return !1;
-  let i = e(e(o, t));
-  return i == null
-    ? !1
-    : i === 0
-      ? n === `resuming`
-      : e(e(r, t)) === `inProgress`;
+  let r = e(l, t);
+  return r == null ? !1 : r === 0 ? n === `resuming` : e(i, t) === `inProgress`;
 }
-var X = [],
-  Z = [],
-  Q = { allSidebarThreadKeys: Z, pinnedThreadKeys: Z, unpinnedThreadKeys: Z },
-  ie = u(d, (e) => {
-    let t = Q;
-    return f(
-      d,
+var Y = [],
+  X = [],
+  Z = { allSidebarThreadKeys: X, pinnedThreadKeys: X, unpinnedThreadKeys: X },
+  oe = y(g, (e) => {
+    let t = Z;
+    return h(
+      g,
       ({ get: n }) => (
-        (t = se(
+        (t = le(
           t,
-          ce({
+          $({
             get: n,
-            threadKeys: n(y),
+            threadKeys: n(x),
             pinnedThreadIds: n(R),
             currentConversationId: e.currentConversationId,
           }),
@@ -339,23 +317,23 @@ var X = [],
       ),
     );
   }),
-  ae = u(d, (e) => {
-    let t = X;
-    return f(d, ({ get: n }) =>
+  se = y(g, (e) => {
+    let t = Y;
+    return h(g, ({ get: n }) =>
       e.length === 0
-        ? ((t = X), X)
-        : ((t = oe(
+        ? ((t = Y), Y)
+        : ((t = ce(
             t,
             e.flatMap((e) => {
-              let t = n(n(x, e));
+              let t = n(C, e);
               return t == null
                 ? []
                 : [
                     {
                       task: t,
-                      isPinned: n(n(V, e)),
-                      isAutomationRun: n(n(H, e)),
-                      automationDisplayName: n(n(U, e)),
+                      isPinned: n(V, e),
+                      isAutomationRun: n(H, e),
+                      automationDisplayName: n(U, e),
                     },
                   ];
             }),
@@ -363,7 +341,7 @@ var X = [],
           t),
     );
   });
-function oe(e, t) {
+function ce(e, t) {
   if (e.length !== t.length) return t;
   for (let n = 0; n < t.length; n += 1) {
     let r = e[n],
@@ -380,53 +358,53 @@ function oe(e, t) {
   }
   return e;
 }
-function se(e, t) {
-  let n = $(e.allSidebarThreadKeys, t.allSidebarThreadKeys),
-    r = $(e.pinnedThreadKeys, t.pinnedThreadKeys),
-    i = $(e.unpinnedThreadKeys, t.unpinnedThreadKeys);
+function le(e, t) {
+  let n = Q(e.allSidebarThreadKeys, t.allSidebarThreadKeys),
+    r = Q(e.pinnedThreadKeys, t.pinnedThreadKeys),
+    i = Q(e.unpinnedThreadKeys, t.unpinnedThreadKeys);
   return n === e.allSidebarThreadKeys &&
     r === e.pinnedThreadKeys &&
     i === e.unpinnedThreadKeys
     ? e
     : { allSidebarThreadKeys: n, pinnedThreadKeys: r, unpinnedThreadKeys: i };
 }
-function $(e, t) {
+function Q(e, t) {
   if (e.length !== t.length) return t;
   for (let n = 0; n < t.length; n += 1) if (e[n] !== t[n]) return t;
   return e;
 }
-function ce({ get: e, threadKeys: n, pinnedThreadIds: r }) {
-  if (n.length === 0) return Q;
-  let i = new Set(n),
+function $({ get: e, threadKeys: t, pinnedThreadIds: r }) {
+  if (t.length === 0) return Z;
+  let i = new Set(t),
     a = [];
-  for (let t of n) _(t)?.kind === `pending-worktree` && e(e(V, t)) && a.push(t);
+  for (let n of t) s(n)?.kind === `pending-worktree` && e(V, n) && a.push(n);
   for (let e of r) {
-    let n = te(t(e));
-    if (i.has(n)) {
-      a.push(n);
+    let t = d(n(e));
+    if (i.has(t)) {
+      a.push(t);
       continue;
     }
-    let r = v(e);
+    let r = c(e);
     i.has(r) && a.push(r);
   }
-  let o = new Set(a),
-    s = new Set(r),
-    c = n.filter((e) => {
-      if (o.has(e)) return !1;
-      let t = h(e);
-      return t == null || !s.has(t);
+  let l = new Set(a),
+    u = new Set(r),
+    f = t.filter((e) => {
+      if (l.has(e)) return !1;
+      let t = o(e);
+      return t == null || !u.has(t);
     });
   return {
-    allSidebarThreadKeys: [...a, ...c],
+    allSidebarThreadKeys: [...a, ...f],
     pinnedThreadKeys: a,
-    unpinnedThreadKeys: c,
+    unpinnedThreadKeys: f,
   };
 }
 export {
-  re as S,
+  ie as S,
   k as _,
   U as a,
-  w as b,
+  E as b,
   H as c,
   K as d,
   M as f,
@@ -435,15 +413,15 @@ export {
   R as i,
   V as l,
   N as m,
-  ie as n,
+  oe as n,
   G as o,
   P as p,
-  Y as r,
+  ae as r,
   W as s,
-  ae as t,
+  se as t,
   q as u,
-  T as v,
+  ne as v,
   D as x,
-  E as y,
+  re as y,
 };
 //# sourceMappingURL=sidebar-thread-list-signals.js.map

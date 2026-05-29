@@ -1,224 +1,333 @@
-import { s as e } from "./chunk.js";
-import "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import "./src-C.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import "./react-dom.js";
+import "./react-dom-CvzHKZGB.js";
+import "./Combination.js";
 import {
-  H as r,
+  G as r,
   L as i,
-  W as a,
-  _ as o,
+  U as a,
+  Z as o,
   l as s,
   m as c,
-  p as l,
-  u,
-  xt as d,
+  u as l,
+  wt as u,
 } from "./setting-storage.js";
-import { o as f } from "./statsig.js";
-import { t as p } from "./score-query-match.js";
-import { t as m } from "./invalidate-queries-and-broadcast.js";
+import "./rpc-DqwD0euc.js";
+import { o as d } from "./statsig--EYRNU53.js";
+import { t as f } from "./invalidate-queries-and-broadcast-BXgBlyBv.js";
 import "./window-zoom-context.js";
-import { r as h, t as g } from "./tooltip.js";
-import { t as _ } from "./button.js";
-import "./reduced-motion-preference.js";
+import { r as p, t as m } from "./tooltip-CDzchJxN.js";
+import { t as h } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
-import "./use-os-info.js";
-import { t as v } from "./use-platform.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./x-C_RDKBp5.js";
+import { t as g } from "./use-platform.js";
+import "./with-window.js";
 import {
-  a as y,
-  c as b,
-  d as x,
-  f as S,
-  h as C,
-  i as w,
-  m as ee,
-  n as T,
-  v as E,
+  a as _,
+  d as v,
+  i as y,
+  l as b,
+  n as x,
+  r as S,
+  u as C,
+} from "./dialog-layout.js";
+import {
+  _ as w,
+  a as T,
+  b as E,
+  f as D,
+  g as O,
+  i as k,
+  l as A,
+  n as j,
+  p as M,
 } from "./electron-menu-shortcuts.js";
-import { o as D } from "./command-keybindings.js";
-import { t as O } from "./trash.js";
-import "./chevron.js";
-import { t as k } from "./pencil.js";
-import { t as A } from "./undo.js";
-import { i as te } from "./settings-shared.js";
-import { t as ne } from "./settings-content-layout.js";
+import { r as ee, s as N } from "./command-keybindings-C3NM9T-L.js";
+import "./links.js";
+import { t as P } from "./trash.js";
+import "./chevron-NmAOI_v1.js";
+import { t as F } from "./pencil.js";
+import { t as I } from "./keyboard-BdirdM4I.js";
+import { t as L } from "./undo.js";
+import { i as R } from "./settings-shared-BTHmEeQY.js";
+import { t as z } from "./score-query-match.js";
+import { t as B } from "./settings-content-layout.js";
 import {
-  a as j,
-  i as re,
-  n as M,
-  s as N,
-  t as ie,
+  a as V,
+  i as H,
+  n as U,
+  s as W,
+  t as te,
 } from "./keyboard-shortcuts-search-input.js";
-import { t as ae } from "./settings-surface.js";
-import { t as P } from "./settings-group.js";
-import { n as F, r as I, t as L } from "./keyboard-event-accelerator.js";
-var R = d(),
-  z = e(t(), 1),
-  B = n(),
-  V = E.filter(C);
-function H() {
-  let e = (0, R.c)(1),
+import { n as ne, t as re } from "./settings-group.js";
+import { t as ie } from "./hotkey-window-state-VEDcKqNF.js";
+import { n as G, r as ae, t as oe } from "./keyboard-event-accelerator.js";
+var K = u(),
+  q = e(t(), 1),
+  J = n(),
+  se = E.filter(w);
+function Y() {
+  let e = (0, K.c)(1),
     t;
   return (
     e[0] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((t = (0, B.jsx)(U, {})), (e[0] = t))
+      ? ((t = (0, J.jsx)(ce, {})), (e[0] = t))
       : (t = e[0]),
     t
   );
 }
-function U() {
-  let e = (0, R.c)(52),
-    t = a(),
-    { platform: n } = v(),
+function ce() {
+  let e = (0, K.c)(63),
+    t = r(),
+    { platform: n } = g(),
     s = i(),
-    d = m(),
-    h = f(`1244621283`),
-    g = f(`1372061905`),
-    _ = f(`4100906017`),
-    [y, x] = (0, z.useState)(``),
-    [C, w] = (0, z.useState)(null),
-    T;
+    u = f(),
+    p = d(`1244621283`),
+    _ = d(`1372061905`),
+    v = d(`3264431617`),
+    y = d(`4100906017`),
+    [b, x] = (0, q.useState)(``),
+    [S, C] = (0, q.useState)(!1),
+    [w, T] = (0, q.useState)(null),
+    E;
   e[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = {}), (e[0] = T))
-    : (T = e[0]);
-  let [E, O] = (0, z.useState)(T),
-    k;
-  e[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((k = { queryConfig: { staleTime: o.ONE_MINUTE } }), (e[1] = k))
-    : (k = e[1]);
-  let { data: A } = l(`codex-command-keymap-state`, k),
-    M;
-  e[2] !== d || e[3] !== s
-    ? ((M = {
+    ? ((E = {}), (e[0] = E))
+    : (E = e[0]);
+  let [D, k] = (0, q.useState)(E),
+    [P, F] = (0, q.useState)(!1),
+    [L, U] = (0, q.useState)(null),
+    { data: G } = o(ee),
+    ae;
+  e[1] !== u || e[2] !== s
+    ? ((ae = {
         onSuccess: (e, t) => {
           let { commandId: n } = t,
-            r = u(`codex-command-keymap-state`);
+            r = l(`codex-command-keymap-state`);
           s.setQueryData(r, e);
           let i = [r];
-          (n === `hotkeyWindow` && i.push(u(`hotkey-window-hotkey-state`)),
+          (n === `hotkeyWindow` && i.push(ie),
             (n === `globalDictationHold` || n === `globalDictationToggle`) &&
-              i.push(u(`global-dictation-hotkey-state`)),
-            Promise.all(i.map((e) => d(e))));
+              i.push(l(`global-dictation-hotkey-state`)),
+            Promise.all(i.map((e) => u(e))));
         },
       }),
-      (e[2] = d),
-      (e[3] = s),
-      (e[4] = M))
-    : (M = e[4]);
-  let F = c(`set-codex-command-keybinding`, M),
-    I,
-    L,
-    H,
-    U,
-    W,
-    K,
-    q,
-    J,
-    Y;
+      (e[1] = u),
+      (e[2] = s),
+      (e[3] = ae))
+    : (ae = e[3]);
+  let Y = c(`set-codex-command-keybinding`, ae),
+    ce;
+  e[4] !== u || e[5] !== s
+    ? ((ce = {
+        onSuccess: (e) => {
+          let t = l(`codex-command-keymap-state`);
+          (s.setQueryData(t, e),
+            Promise.all(
+              [t, ie, l(`global-dictation-hotkey-state`)].map((e) => u(e)),
+            ));
+        },
+      }),
+      (e[4] = u),
+      (e[5] = s),
+      (e[6] = ce))
+    : (ce = e[6]);
+  let X = c(`reset-codex-command-keybindings`, ce),
+    _e,
+    Z;
   if (
-    e[5] !== C ||
-    e[6] !== E ||
     e[7] !== t ||
-    e[8] !== h ||
-    e[9] !== g ||
-    e[10] !== _ ||
-    e[11] !== A ||
-    e[12] !== n ||
-    e[13] !== y ||
-    e[14] !== F
+    e[8] !== p ||
+    e[9] !== _ ||
+    e[10] !== v ||
+    e[11] !== S ||
+    e[12] !== y ||
+    e[13] !== G ||
+    e[14] !== b
   ) {
-    let i;
-    e[24] !== h || e[25] !== g || e[26] !== _
-      ? ((i = (e) => re(e.id, h, g, _)),
-        (e[24] = h),
-        (e[25] = g),
-        (e[26] = _),
-        (e[27] = i))
-      : (i = e[27]);
-    let a;
-    e[28] === t
-      ? (a = e[29])
-      : ((a = (e) => ({ command: e, title: N(e, t) })),
-        (e[28] = t),
-        (e[29] = a));
-    let o = V.filter(i).map(a).sort(oe),
-      s = y.trim(),
-      c =
-        s.length === 0
-          ? o
-          : o.filter((e) => {
-              let { command: n, title: r } = e,
-                i = S(n) ? t.formatMessage(j[n.descriptionIntlId]) : ``;
-              return [n.id, r, i].some((e) => p(e, s) > 0);
-            });
-    ((U = ne),
-      e[30] === Symbol.for(`react.memo_cache_sentinel`)
-        ? ((Y = (0, B.jsx)(te, { slug: `keyboard-shortcuts` })), (e[30] = Y))
-        : (Y = e[30]),
-      (H = P),
-      (L = P.Content),
-      e[31] !== A || e[32] !== y
-        ? ((J =
-            A == null ? null : (0, B.jsx)(ie, { value: y, onValueChange: x })),
-          (e[31] = A),
-          (e[32] = y),
-          (e[33] = J))
-        : (J = e[33]),
-      (I = ae),
-      (W = `overflow-hidden`),
-      e[34] === A
-        ? (K = e[35])
-        : ((K =
-            A == null
-              ? (0, B.jsx)(`div`, {
-                  className: `px-4 py-3 text-sm text-token-text-secondary`,
-                  children: (0, B.jsx)(r, {
-                    id: `settings.keyboardShortcuts.loading`,
-                    defaultMessage: `Loading shortcuts…`,
-                    description: `Loading label while keyboard shortcuts are being fetched`,
-                  }),
+    let n;
+    e[17] !== p || e[18] !== _ || e[19] !== v || e[20] !== y
+      ? ((n = (e) => H(e.id, p, _, y, v)),
+        (e[17] = p),
+        (e[18] = _),
+        (e[19] = v),
+        (e[20] = y),
+        (e[21] = n))
+      : (n = e[21]);
+    let r;
+    (e[22] === t
+      ? (r = e[23])
+      : ((r = (e) => ({ command: e, title: W(e, t) })),
+        (e[22] = t),
+        (e[23] = r)),
+      (Z = se.filter(n).map(r).sort(de)));
+    let i = b.trim();
+    ((_e =
+      i.length === 0
+        ? Z
+        : Z.filter((e) => {
+            let { command: n, title: r } = e,
+              a = M(n) ? t.formatMessage(V[n.descriptionIntlId]) : ``;
+            return S
+              ? N(n.id, G).some((e) => {
+                  let { label: t } = e;
+                  return me(t, i);
                 })
-              : null),
-          (e[34] = A),
-          (e[35] = K)),
-      (q =
-        A == null
+              : [n.id, r, a].some((e) => z(e, i) > 0);
+          })),
+      (e[7] = t),
+      (e[8] = p),
+      (e[9] = _),
+      (e[10] = v),
+      (e[11] = S),
+      (e[12] = y),
+      (e[13] = G),
+      (e[14] = b),
+      (e[15] = _e),
+      (e[16] = Z));
+  } else ((_e = e[15]), (Z = e[16]));
+  let Ce = _e,
+    we;
+  e[24] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((we = (0, J.jsx)(R, { slug: `keyboard-shortcuts` })), (e[24] = we))
+    : (we = e[24]);
+  let Q;
+  e[25] !== t || e[26] !== S || e[27] !== G || e[28] !== b || e[29] !== Z
+    ? ((Q =
+        G == null
           ? null
-          : (0, B.jsxs)(`table`, {
+          : (0, J.jsx)(te, {
+              autoFocus: S,
+              isSearchingByKeystrokes: S,
+              trailingContent: (0, J.jsx)(m, {
+                tooltipContent: (0, J.jsx)(a, {
+                  id: `settings.keyboardShortcuts.searchByKeystrokes.tooltip`,
+                  defaultMessage: `Search by keystrokes`,
+                  description: `Tooltip label for the keyboard shortcut search mode button`,
+                }),
+                children: (0, J.jsx)(h, {
+                  "aria-label": t.formatMessage({
+                    id: `settings.keyboardShortcuts.searchByKeystrokes.ariaLabel`,
+                    defaultMessage: `Search by keystrokes`,
+                    description: `Accessible label for the keyboard shortcut search mode button`,
+                  }),
+                  "aria-pressed": S,
+                  color: S ? `secondary` : `ghost`,
+                  size: `toolbar`,
+                  uniform: !0,
+                  onMouseDown: ue,
+                  onClick: () => {
+                    (x(``), C(le));
+                  },
+                  children: (0, J.jsx)(I, { className: `icon-sm` }),
+                }),
+              }),
+              value: b,
+              onKeyDown: S
+                ? (e) => {
+                    if (e.repeat) return;
+                    if (
+                      (e.preventDefault(),
+                      e.stopPropagation(),
+                      e.key === `Escape`)
+                    ) {
+                      (x(``), C(!1));
+                      return;
+                    }
+                    let t = oe(e.nativeEvent);
+                    if (t != null) {
+                      let e = j(t),
+                        n = b.length === 0 ? e : `${b} ${e}`;
+                      x(
+                        b.length > 0 &&
+                          Z.some((e) => {
+                            let { command: t } = e;
+                            return N(t.id, G).some((e) => {
+                              let { label: t } = e;
+                              return me(t, n);
+                            });
+                          })
+                          ? n
+                          : e,
+                      );
+                    }
+                  }
+                : void 0,
+              onValueChange: x,
+            })),
+      (e[25] = t),
+      (e[26] = S),
+      (e[27] = G),
+      (e[28] = b),
+      (e[29] = Z),
+      (e[30] = Q))
+    : (Q = e[30]);
+  let Te;
+  e[31] === G
+    ? (Te = e[32])
+    : ((Te =
+        G == null
+          ? (0, J.jsx)(`div`, {
+              className: `px-4 py-3 text-sm text-token-text-secondary`,
+              children: (0, J.jsx)(a, {
+                id: `settings.keyboardShortcuts.loading`,
+                defaultMessage: `Loading shortcuts…`,
+                description: `Loading label while keyboard shortcuts are being fetched`,
+              }),
+            })
+          : null),
+      (e[31] = G),
+      (e[32] = Te));
+  let Ee;
+  e[33] !== w ||
+  e[34] !== D ||
+  e[35] !== Ce ||
+  e[36] !== t ||
+  e[37] !== G ||
+  e[38] !== n ||
+  e[39] !== Y
+    ? ((Ee =
+        G == null
+          ? null
+          : (0, J.jsxs)(`table`, {
               className: `w-full table-fixed border-collapse text-sm`,
               children: [
-                (0, B.jsxs)(`colgroup`, {
+                (0, J.jsxs)(`colgroup`, {
                   children: [
-                    (0, B.jsx)(`col`, {}),
-                    (0, B.jsx)(`col`, { className: `w-64` }),
-                    (0, B.jsx)(`col`, { className: `w-32` }),
+                    (0, J.jsx)(`col`, {}),
+                    (0, J.jsx)(`col`, { className: `w-64` }),
+                    (0, J.jsx)(`col`, { className: `w-32` }),
                   ],
                 }),
-                (0, B.jsx)(`thead`, {
+                (0, J.jsx)(`thead`, {
                   className: `text-left text-token-text-tertiary`,
-                  children: (0, B.jsxs)(`tr`, {
+                  children: (0, J.jsxs)(`tr`, {
                     className: `border-b border-token-border`,
                     children: [
-                      (0, B.jsx)(`th`, {
+                      (0, J.jsx)(`th`, {
                         className: `px-4 py-2 font-medium`,
-                        children: (0, B.jsx)(r, {
+                        children: (0, J.jsx)(a, {
                           id: `settings.keyboardShortcuts.table.command`,
                           defaultMessage: `Command`,
                           description: `Column heading for keyboard shortcut commands`,
                         }),
                       }),
-                      (0, B.jsx)(`th`, {
+                      (0, J.jsx)(`th`, {
                         className: `px-4 py-2 font-medium`,
-                        children: (0, B.jsx)(r, {
+                        children: (0, J.jsx)(a, {
                           id: `settings.keyboardShortcuts.table.keybinding`,
                           defaultMessage: `Keybinding`,
                           description: `Column heading for keyboard shortcut keybindings`,
                         }),
                       }),
-                      (0, B.jsx)(`th`, {
+                      (0, J.jsx)(`th`, {
                         className: `px-4 py-2`,
-                        children: (0, B.jsx)(`span`, {
+                        children: (0, J.jsx)(`span`, {
                           className: `sr-only`,
-                          children: (0, B.jsx)(r, {
+                          children: (0, J.jsx)(a, {
                             id: `settings.keyboardShortcuts.table.actions`,
                             defaultMessage: `Actions`,
                             description: `Accessible heading for keyboard shortcut row actions`,
@@ -228,14 +337,14 @@ function U() {
                     ],
                   }),
                 }),
-                (0, B.jsxs)(`tbody`, {
+                (0, J.jsxs)(`tbody`, {
                   children: [
-                    c.length === 0
-                      ? (0, B.jsx)(`tr`, {
-                          children: (0, B.jsx)(`td`, {
+                    Ce.length === 0
+                      ? (0, J.jsx)(`tr`, {
+                          children: (0, J.jsx)(`td`, {
                             className: `px-4 py-3 text-token-text-secondary`,
                             colSpan: 3,
-                            children: (0, B.jsx)(r, {
+                            children: (0, J.jsx)(a, {
                               id: `settings.keyboardShortcuts.noMatches`,
                               defaultMessage: `No matching shortcuts`,
                               description: `Empty state shown when the keyboard shortcuts search has no matches`,
@@ -243,214 +352,212 @@ function U() {
                           }),
                         })
                       : null,
-                    c.map((e, r) => {
+                    Ce.map((e, r) => {
                       let { command: i, title: a } = e,
-                        o = S(i)
-                          ? t.formatMessage(j[i.descriptionIntlId])
+                        o = M(i)
+                          ? t.formatMessage(V[i.descriptionIntlId])
                           : null,
-                        s = D(i.id, A),
-                        c = A.bindings.some((e) => e.command === i.id),
-                        l = pe({
+                        s = N(i.id, G),
+                        c = G.bindings.some((e) => e.command === i.id),
+                        l = xe({
                           commandId: i.id,
                           hasCustomBinding: c,
                           shortcutEntries: s,
                         }),
-                        u = C?.commandId === i.id && C.mode === `append`,
-                        d = s.length === 0 ? [null] : s;
-                      return (0, B.jsx)(
-                        z.Fragment,
+                        u = w?.commandId === i.id && w.mode === `append`,
+                        d = s.length === 0 ? [null] : s,
+                        f = u && s.length > 0 ? [...s, null] : d;
+                      return (0, J.jsx)(
+                        q.Fragment,
                         {
-                          children: (u && s.length > 0 ? [...s, null] : d).map(
-                            (e, u) => {
-                              let d = u === 0,
-                                f = d ? `px-4 pt-2 pb-1` : `px-4 pt-1 pb-2`,
-                                p =
-                                  C?.commandId === i.id &&
-                                  (C.mode === `append`
-                                    ? e == null && u === s.length
-                                    : C.accelerator ===
-                                      (e?.accelerator ?? null));
-                              return (0, B.jsxs)(
-                                `tr`,
-                                {
-                                  className:
-                                    d && r > 0
-                                      ? `group border-t border-token-border align-middle`
-                                      : `group align-middle`,
-                                  children: [
-                                    (0, B.jsx)(`td`, {
-                                      className: f,
-                                      children: d
-                                        ? (0, B.jsxs)(B.Fragment, {
-                                            children: [
-                                              (0, B.jsx)(`span`, {
-                                                className: `block truncate text-token-text-primary`,
-                                                children: a,
-                                              }),
-                                              o == null
-                                                ? null
-                                                : (0, B.jsx)(`span`, {
-                                                    className: `mt-0.5 block truncate text-xs text-token-text-secondary`,
-                                                    children: o,
-                                                  }),
-                                              E[i.id] == null
-                                                ? null
-                                                : (0, B.jsx)(`span`, {
-                                                    className: `mt-0.5 block text-xs text-token-error-foreground`,
-                                                    children: E[i.id],
-                                                  }),
-                                            ],
-                                          })
-                                        : null,
-                                    }),
-                                    (0, B.jsx)(`td`, {
-                                      className: f,
-                                      colSpan: p ? 2 : void 0,
-                                      children: p
-                                        ? (0, B.jsx)(se, {
-                                            allowsBareModifiers: b(i),
-                                            allowsSequences:
-                                              i.kind === `webview`,
-                                            commandTitle: a,
-                                            conflictingCommandTitle:
-                                              C.conflictingCommandTitle,
-                                            onCancel: () => {
-                                              w(null);
-                                            },
-                                            onCapture: (r) => {
-                                              if (
-                                                e != null &&
-                                                le(
-                                                  e.accelerator,
-                                                  r,
-                                                  n === `macOS`,
-                                                )
-                                              ) {
-                                                w(null);
-                                                return;
-                                              }
-                                              let a = ce({
-                                                accelerator: r,
-                                                commandId: i.id,
-                                                intl: t,
-                                                isMacOS: n === `macOS`,
-                                                keymapState: A,
-                                              });
-                                              if (a != null) {
-                                                w((e) =>
-                                                  e?.commandId === i.id
-                                                    ? {
-                                                        ...e,
-                                                        conflictingCommandTitle:
-                                                          a,
-                                                      }
-                                                    : e,
-                                                );
-                                                return;
-                                              }
-                                              let o;
-                                              ((o =
-                                                C.mode === `append`
+                          children: f.map((e, u) => {
+                            let d = u === 0,
+                              p = `px-4 pt-1 pb-2`;
+                            f.length === 1
+                              ? (p = `px-4 py-2`)
+                              : d && (p = `px-4 pt-2 pb-1`);
+                            let m =
+                              w?.commandId === i.id &&
+                              (w.mode === `append`
+                                ? e == null && u === s.length
+                                : w.accelerator === (e?.accelerator ?? null));
+                            return (0, J.jsxs)(
+                              `tr`,
+                              {
+                                className:
+                                  d && r > 0
+                                    ? `group border-t border-token-border align-middle`
+                                    : `group align-middle`,
+                                children: [
+                                  (0, J.jsx)(`td`, {
+                                    className: p,
+                                    children: d
+                                      ? (0, J.jsxs)(J.Fragment, {
+                                          children: [
+                                            (0, J.jsx)(`span`, {
+                                              className: `block truncate text-token-text-primary`,
+                                              children: a,
+                                            }),
+                                            o == null
+                                              ? null
+                                              : (0, J.jsx)(`span`, {
+                                                  className: `mt-0.5 block truncate text-xs text-token-text-secondary`,
+                                                  children: o,
+                                                }),
+                                            D[i.id] == null
+                                              ? null
+                                              : (0, J.jsx)(`span`, {
+                                                  className: `mt-0.5 block text-xs text-token-error-foreground`,
+                                                  children: D[i.id],
+                                                }),
+                                          ],
+                                        })
+                                      : null,
+                                  }),
+                                  (0, J.jsx)(`td`, {
+                                    className: p,
+                                    colSpan: m ? 2 : void 0,
+                                    children: m
+                                      ? (0, J.jsx)(pe, {
+                                          allowsBareModifiers: A(i),
+                                          allowsSequences: i.kind === `webview`,
+                                          commandTitle: a,
+                                          conflictingCommandTitle:
+                                            w.conflictingCommandTitle,
+                                          onCancel: () => {
+                                            T(null);
+                                          },
+                                          onCapture: (r) => {
+                                            if (
+                                              e != null &&
+                                              ge(
+                                                e.accelerator,
+                                                r,
+                                                n === `macOS`,
+                                              )
+                                            ) {
+                                              T(null);
+                                              return;
+                                            }
+                                            let a = he({
+                                              accelerator: r,
+                                              commandId: i.id,
+                                              intl: t,
+                                              isMacOS: n === `macOS`,
+                                              keymapState: G,
+                                            });
+                                            if (a != null) {
+                                              T((e) =>
+                                                e?.commandId === i.id
                                                   ? {
-                                                      type: `append`,
+                                                      ...e,
+                                                      conflictingCommandTitle:
+                                                        a,
+                                                    }
+                                                  : e,
+                                              );
+                                              return;
+                                            }
+                                            let o;
+                                            ((o =
+                                              w.mode === `append`
+                                                ? {
+                                                    type: `append`,
+                                                    accelerator: r,
+                                                  }
+                                                : e == null
+                                                  ? {
+                                                      type: `set`,
                                                       accelerator: r,
                                                     }
-                                                  : e == null
-                                                    ? {
-                                                        type: `set`,
-                                                        accelerator: r,
-                                                      }
-                                                    : {
-                                                        type: `replace`,
-                                                        previousAccelerator:
-                                                          e.accelerator,
-                                                        accelerator: r,
-                                                      }),
-                                                G({
-                                                  commandId: i.id,
-                                                  intl: t,
-                                                  setCommandKeybinding: F,
-                                                  setErrorByCommandId: O,
-                                                  update: o,
-                                                }).finally(() => {
-                                                  w((e) =>
-                                                    e === C ? null : e,
-                                                  );
-                                                }));
-                                            },
-                                          })
-                                        : (0, B.jsxs)(`div`, {
-                                            className: `flex items-center gap-1`,
-                                            children: [
-                                              (0, B.jsx)(ue, {
-                                                shortcutLabel: e?.label ?? null,
-                                              }),
-                                              (0, B.jsx)(fe, {
-                                                canAppend: !ee(i),
-                                                commandTitle: a,
-                                                hasShortcut: e != null,
-                                                isPending: F.isPending,
-                                                onStartCapture: (t) => {
-                                                  (O((e) => ({
-                                                    ...e,
-                                                    [i.id]: void 0,
-                                                  })),
-                                                    w({
-                                                      commandId: i.id,
-                                                      accelerator:
-                                                        t === `append`
-                                                          ? null
-                                                          : (e?.accelerator ??
-                                                            null),
-                                                      conflictingCommandTitle:
-                                                        null,
-                                                      mode: t,
-                                                    }));
-                                                },
-                                              }),
-                                            ],
-                                          }),
-                                    }),
-                                    p
-                                      ? null
-                                      : (0, B.jsx)(`td`, {
-                                          className: f,
-                                          children: (0, B.jsx)(de, {
-                                            commandTitle: a,
-                                            hasCustomBinding: c,
-                                            hasShortcut: e != null,
-                                            isPending: F.isPending,
-                                            showReset: u === l,
-                                            onReset: () => {
-                                              G({
+                                                  : {
+                                                      type: `replace`,
+                                                      previousAccelerator:
+                                                        e.accelerator,
+                                                      accelerator: r,
+                                                    }),
+                                              Se({
                                                 commandId: i.id,
                                                 intl: t,
-                                                setCommandKeybinding: F,
-                                                setErrorByCommandId: O,
-                                                update: { type: `reset` },
-                                              });
-                                            },
-                                            onClear: () => {
-                                              e != null &&
-                                                G({
-                                                  commandId: i.id,
-                                                  intl: t,
-                                                  setCommandKeybinding: F,
-                                                  setErrorByCommandId: O,
-                                                  update: {
-                                                    type: `remove`,
-                                                    accelerator: e.accelerator,
-                                                  },
-                                                });
-                                            },
-                                          }),
+                                                setCommandKeybinding: Y,
+                                                setErrorByCommandId: k,
+                                                update: o,
+                                              }).finally(() => {
+                                                T((e) => (e === w ? null : e));
+                                              }));
+                                          },
+                                        })
+                                      : (0, J.jsxs)(`div`, {
+                                          className: `flex items-center gap-1`,
+                                          children: [
+                                            (0, J.jsx)(ve, {
+                                              shortcutLabel: e?.label ?? null,
+                                            }),
+                                            (0, J.jsx)(be, {
+                                              canAppend: !O(i),
+                                              commandTitle: a,
+                                              hasShortcut: e != null,
+                                              isPending: Y.isPending,
+                                              onStartCapture: (t) => {
+                                                (k((e) => ({
+                                                  ...e,
+                                                  [i.id]: void 0,
+                                                })),
+                                                  T({
+                                                    commandId: i.id,
+                                                    accelerator:
+                                                      t === `append`
+                                                        ? null
+                                                        : (e?.accelerator ??
+                                                          null),
+                                                    conflictingCommandTitle:
+                                                      null,
+                                                    mode: t,
+                                                  }));
+                                              },
+                                            }),
+                                          ],
                                         }),
-                                  ],
-                                },
-                                `${i.id}-${e?.accelerator ?? `unassigned`}`,
-                              );
-                            },
-                          ),
+                                  }),
+                                  m
+                                    ? null
+                                    : (0, J.jsx)(`td`, {
+                                        className: p,
+                                        children: (0, J.jsx)(ye, {
+                                          commandTitle: a,
+                                          hasCustomBinding: c,
+                                          hasShortcut: e != null,
+                                          isPending: Y.isPending,
+                                          showReset: u === l,
+                                          onReset: () => {
+                                            Se({
+                                              commandId: i.id,
+                                              intl: t,
+                                              setCommandKeybinding: Y,
+                                              setErrorByCommandId: k,
+                                              update: { type: `reset` },
+                                            });
+                                          },
+                                          onClear: () => {
+                                            e != null &&
+                                              Se({
+                                                commandId: i.id,
+                                                intl: t,
+                                                setCommandKeybinding: Y,
+                                                setErrorByCommandId: k,
+                                                update: {
+                                                  type: `remove`,
+                                                  accelerator: e.accelerator,
+                                                },
+                                              });
+                                          },
+                                        }),
+                                      }),
+                                ],
+                              },
+                              `${i.id}-${e?.accelerator ?? `unassigned`}`,
+                            );
+                          }),
                         },
                         i.id,
                       );
@@ -459,242 +566,544 @@ function U() {
                 }),
               ],
             })),
-      (e[5] = C),
-      (e[6] = E),
-      (e[7] = t),
-      (e[8] = h),
-      (e[9] = g),
-      (e[10] = _),
-      (e[11] = A),
-      (e[12] = n),
-      (e[13] = y),
-      (e[14] = F),
-      (e[15] = I),
-      (e[16] = L),
-      (e[17] = H),
-      (e[18] = U),
-      (e[19] = W),
-      (e[20] = K),
-      (e[21] = q),
-      (e[22] = J),
-      (e[23] = Y));
-  } else
-    ((I = e[15]),
-      (L = e[16]),
-      (H = e[17]),
-      (U = e[18]),
-      (W = e[19]),
-      (K = e[20]),
-      (q = e[21]),
-      (J = e[22]),
-      (Y = e[23]));
-  let X;
-  e[36] !== I || e[37] !== W || e[38] !== K || e[39] !== q
-    ? ((X = (0, B.jsxs)(I, { className: W, children: [K, q] })),
-      (e[36] = I),
-      (e[37] = W),
-      (e[38] = K),
-      (e[39] = q),
-      (e[40] = X))
-    : (X = e[40]);
-  let Z;
-  e[41] !== L || e[42] !== J || e[43] !== X
-    ? ((Z = (0, B.jsxs)(L, { children: [J, X] })),
-      (e[41] = L),
-      (e[42] = J),
-      (e[43] = X),
-      (e[44] = Z))
-    : (Z = e[44]);
-  let Q;
-  e[45] !== H || e[46] !== Z
-    ? ((Q = (0, B.jsx)(H, { children: Z })),
-      (e[45] = H),
-      (e[46] = Z),
-      (e[47] = Q))
-    : (Q = e[47]);
+      (e[33] = w),
+      (e[34] = D),
+      (e[35] = Ce),
+      (e[36] = t),
+      (e[37] = G),
+      (e[38] = n),
+      (e[39] = Y),
+      (e[40] = Ee))
+    : (Ee = e[40]);
+  let De;
+  e[41] !== Te || e[42] !== Ee
+    ? ((De = (0, J.jsxs)(ne, {
+        className: `overflow-hidden`,
+        children: [Te, Ee],
+      })),
+      (e[41] = Te),
+      (e[42] = Ee),
+      (e[43] = De))
+    : (De = e[43]);
+  let Oe;
+  e[44] !== G || e[45] !== X.isPending
+    ? ((Oe =
+        G != null && G.bindings.length > 0
+          ? (0, J.jsx)(`div`, {
+              className: `flex items-center justify-end gap-2`,
+              children: (0, J.jsx)(h, {
+                color: `secondary`,
+                disabled: X.isPending,
+                onClick: () => {
+                  (U(null), F(!0));
+                },
+                children: (0, J.jsx)(a, {
+                  id: `settings.keyboardShortcuts.resetAll`,
+                  defaultMessage: `Reset all to defaults`,
+                  description: `Button label to reset all customized keyboard shortcuts to their defaults`,
+                }),
+              }),
+            })
+          : null),
+      (e[44] = G),
+      (e[45] = X.isPending),
+      (e[46] = Oe))
+    : (Oe = e[46]);
+  let ke;
+  e[47] !== Q || e[48] !== De || e[49] !== Oe
+    ? ((ke = (0, J.jsx)(re, {
+        children: (0, J.jsxs)(re.Content, { children: [Q, De, Oe] }),
+      })),
+      (e[47] = Q),
+      (e[48] = De),
+      (e[49] = Oe),
+      (e[50] = ke))
+    : (ke = e[50]);
+  let Ae;
+  e[51] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((Ae = (e) => {
+        (F(e), e || U(null));
+      }),
+      (e[51] = Ae))
+    : (Ae = e[51]);
+  let je;
+  e[52] !== t || e[53] !== X
+    ? ((je = async () => {
+        U(null);
+        try {
+          (await X.mutateAsync(void 0), F(!1));
+        } catch (e) {
+          let n = e;
+          U(
+            n instanceof Error
+              ? n.message
+              : t.formatMessage({
+                  id: `settings.keyboardShortcuts.resetAllError`,
+                  defaultMessage: `Failed to reset keyboard shortcuts`,
+                  description: `Fallback error shown when resetting all customized keyboard shortcuts fails`,
+                }),
+          );
+        }
+      }),
+      (e[52] = t),
+      (e[53] = X),
+      (e[54] = je))
+    : (je = e[54]);
   let $;
+  e[55] !== P || e[56] !== L || e[57] !== X.isPending || e[58] !== je
+    ? (($ = (0, J.jsx)(fe, {
+        error: L,
+        isPending: X.isPending,
+        open: P,
+        onOpenChange: Ae,
+        onConfirm: je,
+      })),
+      (e[55] = P),
+      (e[56] = L),
+      (e[57] = X.isPending),
+      (e[58] = je),
+      (e[59] = $))
+    : ($ = e[59]);
+  let Me;
   return (
-    e[48] !== U || e[49] !== Q || e[50] !== Y
-      ? (($ = (0, B.jsx)(U, { title: Y, children: Q })),
-        (e[48] = U),
-        (e[49] = Q),
-        (e[50] = Y),
-        (e[51] = $))
-      : ($ = e[51]),
-    $
+    e[60] !== ke || e[61] !== $
+      ? ((Me = (0, J.jsxs)(B, { title: we, children: [ke, $] })),
+        (e[60] = ke),
+        (e[61] = $),
+        (e[62] = Me))
+      : (Me = e[62]),
+    Me
   );
 }
-function oe(e, t) {
-  return M(e.command, t.command);
+function le(e) {
+  return !e;
 }
-function se({
-  allowsBareModifiers: e,
-  allowsSequences: t,
-  commandTitle: n,
-  conflictingCommandTitle: i,
-  onCancel: o,
-  onCapture: c,
-}) {
-  let l = a(),
-    { platform: u } = v(),
-    d = (0, z.useRef)(0),
-    f = (0, z.useRef)(null),
-    p = (0, z.useRef)(null),
-    m = (0, z.useRef)(null),
-    [h, g] = (0, z.useState)(null),
-    y = () => {
-      (m.current != null && (clearTimeout(m.current), (m.current = null)),
-        (p.current = null),
-        g(null));
-    },
-    b = (e) => {
-      ((d.current += 1), (f.current = null), y(), c(e));
-    },
-    x = () => {
-      ((d.current += 1), (f.current = null), y(), o());
-    },
-    S = (e) => {
-      let n = p.current;
-      if (n != null) {
-        b(`${n} ${e}`);
-        return;
-      }
-      if (!t) {
-        b(e);
-        return;
-      }
-      if (e.includes(`+`)) {
-        b(e);
-        return;
-      }
-      ((p.current = e),
-        g(`${T(e)} …`),
-        (m.current = setTimeout(() => {
-          p.current === e && b(e);
-        }, w)));
-    },
-    C = (0, z.useEffectEvent)(async (e) => {
-      try {
-        let { hotkey: t } = await s(`global-dictation-capture-fn-hotkey`);
-        t != null && d.current === e && b(t);
-      } catch {}
-    });
-  return (
-    (0, z.useEffect)(() => {
-      if (!(!e || u !== `macOS`))
-        return (
-          (d.current += 1),
-          C(d.current),
-          () => {
-            ((d.current += 1), (f.current = null), y());
-          }
-        );
-    }, [e, u]),
-    (0, z.useEffect)(
-      () => () => {
-        (m.current != null && clearTimeout(m.current), (p.current = null));
-      },
-      [],
-    ),
-    (0, B.jsxs)(`div`, {
-      className: `flex w-full flex-col items-start gap-1`,
-      children: [
-        (0, B.jsxs)(`div`, {
-          className: `flex items-center gap-2`,
-          children: [
-            (0, B.jsx)(`input`, {
-              "data-codex-shortcut-capture": !0,
-              autoFocus: !0,
-              readOnly: !0,
-              value:
-                h ??
-                l.formatMessage({
-                  id: `settings.keyboardShortcuts.capturePrompt`,
-                  defaultMessage: `Press shortcut`,
-                  description: `Prompt shown while capturing a keyboard shortcut for a command`,
-                }),
-              onBlur: x,
-              onKeyDown: (t) => {
-                if (t.repeat) return;
-                if (
-                  (t.preventDefault(), t.stopPropagation(), t.key === `Escape`)
-                ) {
-                  x();
-                  return;
-                }
-                if (e) {
-                  let e = F(t.nativeEvent);
-                  if (e != null) {
-                    f.current = e;
-                    return;
-                  }
-                }
-                let n = L(t.nativeEvent);
-                n != null && S(n);
-              },
-              onKeyUp: (t) => {
-                if ((t.preventDefault(), t.stopPropagation(), !e)) return;
-                let n = I(t.nativeEvent);
-                n != null && f.current === n && b(n);
-              },
-              "aria-label": l.formatMessage(
-                {
-                  id: `settings.keyboardShortcuts.captureAriaLabel`,
-                  defaultMessage: `Shortcut capture for {commandTitle}`,
-                  description: `Aria label for the shortcut capture input for a command`,
-                },
-                { commandTitle: n },
-              ),
-              className: `h-token-button-composer w-36 rounded-lg border border-token-border bg-token-input-background px-3 py-0 text-sm text-token-text-primary shadow-sm outline-none`,
-            }),
-            (0, B.jsx)(_, {
-              color: `ghost`,
-              size: `toolbar`,
-              onMouseDown: (e) => {
-                e.preventDefault();
-              },
-              onClick: o,
-              children: (0, B.jsx)(r, {
-                id: `settings.keyboardShortcuts.captureCancel`,
-                defaultMessage: `Cancel`,
-                description: `Button label to cancel shortcut capture`,
-              }),
-            }),
-          ],
-        }),
-        i == null
+function ue(e) {
+  e.preventDefault();
+}
+function de(e, t) {
+  return U(e.command, t.command);
+}
+function fe(e) {
+  let t = (0, K.c)(28),
+    { error: n, isPending: r, onConfirm: i, onOpenChange: o, open: s } = e,
+    c;
+  t[0] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((c = (0, J.jsx)(a, {
+        id: `settings.keyboardShortcuts.resetAllConfirm.title`,
+        defaultMessage: `Reset all keyboard shortcuts?`,
+        description: `Title for the dialog confirming reset of all customized keyboard shortcuts`,
+      })),
+      (t[0] = c))
+    : (c = t[0]);
+  let l = c,
+    u;
+  t[1] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((u = (0, J.jsx)(a, {
+        id: `settings.keyboardShortcuts.resetAllConfirm.description`,
+        defaultMessage: `This will discard all custom shortcuts and restore the defaults`,
+        description: `Warning shown before resetting all customized keyboard shortcuts`,
+      })),
+      (t[1] = u))
+    : (u = t[1]);
+  let d = u,
+    f;
+  t[2] === i
+    ? (f = t[3])
+    : ((f = (e) => {
+        (e.preventDefault(), i());
+      }),
+      (t[2] = i),
+      (t[3] = f));
+  let p, m;
+  t[4] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((p = (0, J.jsx)(v, { className: `sr-only`, children: l })),
+      (m = (0, J.jsx)(C, { className: `sr-only`, children: d })),
+      (t[4] = p),
+      (t[5] = m))
+    : ((p = t[4]), (m = t[5]));
+  let g;
+  t[6] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((g = (0, J.jsx)(_, {
+        children: (0, J.jsx)(y, { title: l, subtitle: d }),
+      })),
+      (t[6] = g))
+    : (g = t[6]);
+  let w;
+  t[7] === n
+    ? (w = t[8])
+    : ((w =
+        n == null
           ? null
-          : (0, B.jsx)(`span`, {
+          : (0, J.jsx)(_, {
+              className: `text-token-error-foreground`,
+              children: n,
+            })),
+      (t[7] = n),
+      (t[8] = w));
+  let T;
+  t[9] === o
+    ? (T = t[10])
+    : ((T = () => {
+        o(!1);
+      }),
+      (t[9] = o),
+      (t[10] = T));
+  let E;
+  t[11] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((E = (0, J.jsx)(a, {
+        id: `settings.keyboardShortcuts.resetAllConfirm.cancel`,
+        defaultMessage: `Cancel`,
+        description: `Cancel button label for resetting all customized keyboard shortcuts`,
+      })),
+      (t[11] = E))
+    : (E = t[11]);
+  let D;
+  t[12] === T
+    ? (D = t[13])
+    : ((D = (0, J.jsx)(h, { color: `secondary`, onClick: T, children: E })),
+      (t[12] = T),
+      (t[13] = D));
+  let O;
+  t[14] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((O = (0, J.jsx)(a, {
+        id: `settings.keyboardShortcuts.resetAllConfirm.confirm`,
+        defaultMessage: `Reset all`,
+        description: `Confirmation button label for resetting all customized keyboard shortcuts`,
+      })),
+      (t[14] = O))
+    : (O = t[14]);
+  let k;
+  t[15] === r
+    ? (k = t[16])
+    : ((k = (0, J.jsx)(h, {
+        color: `danger`,
+        loading: r,
+        type: `submit`,
+        children: O,
+      })),
+      (t[15] = r),
+      (t[16] = k));
+  let A;
+  t[17] !== D || t[18] !== k
+    ? ((A = (0, J.jsx)(_, { children: (0, J.jsxs)(S, { children: [D, k] }) })),
+      (t[17] = D),
+      (t[18] = k),
+      (t[19] = A))
+    : (A = t[19]);
+  let j;
+  t[20] !== A || t[21] !== f || t[22] !== w
+    ? ((j = (0, J.jsxs)(x, {
+        as: `form`,
+        onSubmit: f,
+        children: [p, m, g, w, A],
+      })),
+      (t[20] = A),
+      (t[21] = f),
+      (t[22] = w),
+      (t[23] = j))
+    : (j = t[23]);
+  let M;
+  return (
+    t[24] !== o || t[25] !== s || t[26] !== j
+      ? ((M = (0, J.jsx)(b, {
+          open: s,
+          onOpenChange: o,
+          showDialogClose: !1,
+          size: `compact`,
+          children: j,
+        })),
+        (t[24] = o),
+        (t[25] = s),
+        (t[26] = j),
+        (t[27] = M))
+      : (M = t[27]),
+    M
+  );
+}
+function pe(e) {
+  let t = (0, K.c)(49),
+    {
+      allowsBareModifiers: n,
+      allowsSequences: i,
+      commandTitle: o,
+      conflictingCommandTitle: c,
+      onCancel: l,
+      onCapture: u,
+    } = e,
+    d = r(),
+    { platform: f } = g(),
+    p = (0, q.useRef)(0),
+    m = (0, q.useRef)(null),
+    _ = (0, q.useRef)(null),
+    v = (0, q.useRef)(null),
+    [y, b] = (0, q.useState)(null),
+    x;
+  t[0] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((x = () => {
+        (v.current != null && (clearTimeout(v.current), (v.current = null)),
+          (_.current = null),
+          b(null));
+      }),
+      (t[0] = x))
+    : (x = t[0]);
+  let S = x,
+    C;
+  t[1] === u
+    ? (C = t[2])
+    : ((C = (e) => {
+        ((p.current += 1), (m.current = null), S(), u(e));
+      }),
+      (t[1] = u),
+      (t[2] = C));
+  let w = C,
+    T;
+  t[3] === l
+    ? (T = t[4])
+    : ((T = () => {
+        ((p.current += 1), (m.current = null), S(), l());
+      }),
+      (t[3] = l),
+      (t[4] = T));
+  let E = T,
+    D;
+  t[5] !== i || t[6] !== w
+    ? ((D = (e) => {
+        let t = _.current;
+        if (t != null) {
+          w(`${t} ${e}`);
+          return;
+        }
+        if (!i) {
+          w(e);
+          return;
+        }
+        if (e.includes(`+`)) {
+          w(e);
+          return;
+        }
+        ((_.current = e),
+          b(`${j(e)} …`),
+          (v.current = setTimeout(() => {
+            _.current === e && w(e);
+          }, k)));
+      }),
+      (t[5] = i),
+      (t[6] = w),
+      (t[7] = D))
+    : (D = t[7]);
+  let O = D,
+    A;
+  t[8] === w
+    ? (A = t[9])
+    : ((A = async (e) => {
+        try {
+          let { hotkey: t } = await s(`global-dictation-capture-fn-hotkey`);
+          t != null && p.current === e && w(t);
+        } catch {}
+      }),
+      (t[8] = w),
+      (t[9] = A));
+  let M = (0, q.useEffectEvent)(A),
+    ee;
+  t[10] !== n || t[11] !== M || t[12] !== f
+    ? ((ee = () => {
+        if (!(!n || f !== `macOS`))
+          return (
+            (p.current += 1),
+            M(p.current),
+            () => {
+              ((p.current += 1), (m.current = null), S());
+            }
+          );
+      }),
+      (t[10] = n),
+      (t[11] = M),
+      (t[12] = f),
+      (t[13] = ee))
+    : (ee = t[13]);
+  let N;
+  (t[14] !== n || t[15] !== f
+    ? ((N = [n, f]), (t[14] = n), (t[15] = f), (t[16] = N))
+    : (N = t[16]),
+    (0, q.useEffect)(ee, N));
+  let P, F;
+  (t[17] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((P = () => () => {
+        (v.current != null && clearTimeout(v.current), (_.current = null));
+      }),
+      (F = []),
+      (t[17] = P),
+      (t[18] = F))
+    : ((P = t[17]), (F = t[18])),
+    (0, q.useEffect)(P, F));
+  let I;
+  t[19] !== d || t[20] !== y
+    ? ((I =
+        y ??
+        d.formatMessage({
+          id: `settings.keyboardShortcuts.capturePrompt`,
+          defaultMessage: `Press shortcut`,
+          description: `Prompt shown while capturing a keyboard shortcut for a command`,
+        })),
+      (t[19] = d),
+      (t[20] = y),
+      (t[21] = I))
+    : (I = t[21]);
+  let L;
+  t[22] !== n || t[23] !== E || t[24] !== O
+    ? ((L = (e) => {
+        if (e.repeat) return;
+        if ((e.preventDefault(), e.stopPropagation(), e.key === `Escape`)) {
+          E();
+          return;
+        }
+        if (n) {
+          let t = G(e.nativeEvent);
+          if (t != null) {
+            m.current = t;
+            return;
+          }
+        }
+        let t = oe(e.nativeEvent);
+        t != null && O(t);
+      }),
+      (t[22] = n),
+      (t[23] = E),
+      (t[24] = O),
+      (t[25] = L))
+    : (L = t[25]);
+  let R;
+  t[26] !== n || t[27] !== w
+    ? ((R = (e) => {
+        if ((e.preventDefault(), e.stopPropagation(), !n)) return;
+        let t = ae(e.nativeEvent);
+        t != null && m.current === t && w(t);
+      }),
+      (t[26] = n),
+      (t[27] = w),
+      (t[28] = R))
+    : (R = t[28]);
+  let z;
+  t[29] !== o || t[30] !== d
+    ? ((z = d.formatMessage(
+        {
+          id: `settings.keyboardShortcuts.captureAriaLabel`,
+          defaultMessage: `Shortcut capture for {commandTitle}`,
+          description: `Aria label for the shortcut capture input for a command`,
+        },
+        { commandTitle: o },
+      )),
+      (t[29] = o),
+      (t[30] = d),
+      (t[31] = z))
+    : (z = t[31]);
+  let B;
+  t[32] !== E || t[33] !== I || t[34] !== L || t[35] !== R || t[36] !== z
+    ? ((B = (0, J.jsx)(`input`, {
+        "data-codex-shortcut-capture": !0,
+        autoFocus: !0,
+        readOnly: !0,
+        value: I,
+        onBlur: E,
+        onKeyDown: L,
+        onKeyUp: R,
+        "aria-label": z,
+        className: `h-token-button-composer w-36 rounded-lg border border-token-border bg-token-input-background px-3 py-0 text-sm text-token-text-primary shadow-sm outline-none`,
+      })),
+      (t[32] = E),
+      (t[33] = I),
+      (t[34] = L),
+      (t[35] = R),
+      (t[36] = z),
+      (t[37] = B))
+    : (B = t[37]);
+  let V;
+  t[38] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((V = (0, J.jsx)(a, {
+        id: `settings.keyboardShortcuts.captureCancel`,
+        defaultMessage: `Cancel`,
+        description: `Button label to cancel shortcut capture`,
+      })),
+      (t[38] = V))
+    : (V = t[38]);
+  let H;
+  t[39] === l
+    ? (H = t[40])
+    : ((H = (0, J.jsx)(h, {
+        color: `ghost`,
+        size: `toolbar`,
+        onMouseDown: X,
+        onClick: l,
+        children: V,
+      })),
+      (t[39] = l),
+      (t[40] = H));
+  let U;
+  t[41] !== B || t[42] !== H
+    ? ((U = (0, J.jsxs)(`div`, {
+        className: `flex items-center gap-2`,
+        children: [B, H],
+      })),
+      (t[41] = B),
+      (t[42] = H),
+      (t[43] = U))
+    : (U = t[43]);
+  let W;
+  t[44] === c
+    ? (W = t[45])
+    : ((W =
+        c == null
+          ? null
+          : (0, J.jsx)(`span`, {
               className: `text-xs text-token-editor-warning-foreground`,
-              children: (0, B.jsx)(r, {
+              children: (0, J.jsx)(a, {
                 id: `settings.keyboardShortcuts.captureConflict`,
                 defaultMessage: `Used by {commandTitle}`,
                 description: `Warning shown while capturing a shortcut that is already used by another command`,
-                values: { commandTitle: i },
+                values: { commandTitle: c },
               }),
-            }),
-      ],
-    })
+            })),
+      (t[44] = c),
+      (t[45] = W));
+  let te;
+  return (
+    t[46] !== U || t[47] !== W
+      ? ((te = (0, J.jsxs)(`div`, {
+          className: `flex w-full flex-col items-start gap-1`,
+          children: [U, W],
+        })),
+        (t[46] = U),
+        (t[47] = W),
+        (t[48] = te))
+      : (te = t[48]),
+    te
   );
 }
-function ce({
+function X(e) {
+  e.preventDefault();
+}
+function me(e, t) {
+  return e === t || e.startsWith(`${t} `);
+}
+function he({
   accelerator: e,
   commandId: t,
   intl: n,
   isMacOS: r,
   keymapState: i,
 }) {
-  for (let a of V)
-    if (a.id !== t && D(a.id, i).some((t) => W(t.accelerator, e, r)))
-      return N(a, n);
+  for (let a of se)
+    if (a.id !== t && N(a.id, i).some((t) => _e(t.accelerator, e, r)))
+      return W(a, n);
   return null;
 }
-function le(e, t, n) {
-  return T(e, n) === T(t, n);
+function ge(e, t, n) {
+  return j(e, n) === j(t, n);
 }
-function W(e, t, n) {
-  let r = y(e).map((e) => T(e, n)),
-    i = y(t).map((e) => T(e, n)),
+function _e(e, t, n) {
+  let r = T(e).map((e) => j(e, n)),
+    i = T(t).map((e) => j(e, n)),
     a = Math.min(r.length, i.length);
   return (
     a > 0 &&
@@ -702,44 +1111,44 @@ function W(e, t, n) {
     r.slice(0, a).every((e, t) => e === i[t])
   );
 }
-function ue(e) {
-  let t = (0, R.c)(2),
+function ve(e) {
+  let t = (0, K.c)(2),
     { shortcutLabel: n } = e,
-    i;
+    r;
   return (
     t[0] === n
-      ? (i = t[1])
-      : ((i = (0, B.jsx)(`span`, {
+      ? (r = t[1])
+      : ((r = (0, J.jsx)(`span`, {
           className: `flex min-h-8 items-center gap-1 text-token-text-secondary`,
           children:
             n == null
-              ? (0, B.jsx)(r, {
+              ? (0, J.jsx)(a, {
                   id: `settings.keyboardShortcuts.unassigned`,
                   defaultMessage: `Unassigned`,
                   description: `Label shown when an action has no shortcut`,
                 })
-              : (0, B.jsx)(h, {
+              : (0, J.jsx)(p, {
                   className: `!px-2 !py-1 !text-sm`,
                   keysLabel: n,
                 }),
         })),
         (t[0] = n),
-        (t[1] = i)),
-    i
+        (t[1] = r)),
+    r
   );
 }
-function de(e) {
-  let t = (0, R.c)(20),
+function ye(e) {
+  let t = (0, K.c)(20),
     {
       commandTitle: n,
-      hasCustomBinding: r,
-      hasShortcut: i,
+      hasCustomBinding: i,
+      hasShortcut: a,
       isPending: o,
       showReset: s,
       onClear: c,
       onReset: l,
     } = e,
-    u = a(),
+    u = r(),
     d;
   t[0] !== n || t[1] !== u
     ? ((d = u.formatMessage(
@@ -769,13 +1178,13 @@ function de(e) {
       (t[4] = u),
       (t[5] = p))
     : (p = t[5]);
-  let m = p,
-    h;
-  t[6] !== f || t[7] !== i || t[8] !== o || t[9] !== c
-    ? ((h = i
-        ? (0, B.jsx)(g, {
+  let g = p,
+    _;
+  t[6] !== f || t[7] !== a || t[8] !== o || t[9] !== c
+    ? ((_ = a
+        ? (0, J.jsx)(m, {
             tooltipContent: f,
-            children: (0, B.jsx)(_, {
+            children: (0, J.jsx)(h, {
               "aria-label": f,
               className: `disabled:!opacity-100`,
               color: `ghost`,
@@ -783,154 +1192,154 @@ function de(e) {
               uniform: !0,
               disabled: o,
               onClick: c,
-              children: (0, B.jsx)(O, { className: `icon-xs` }),
+              children: (0, J.jsx)(P, { className: `icon-xs` }),
             }),
           })
         : null),
       (t[6] = f),
-      (t[7] = i),
+      (t[7] = a),
       (t[8] = o),
       (t[9] = c),
-      (t[10] = h))
-    : (h = t[10]);
+      (t[10] = _))
+    : (_ = t[10]);
   let v;
-  t[11] !== r || t[12] !== o || t[13] !== l || t[14] !== m || t[15] !== s
+  t[11] !== i || t[12] !== o || t[13] !== l || t[14] !== g || t[15] !== s
     ? ((v =
-        s && r
-          ? (0, B.jsx)(g, {
-              tooltipContent: m,
-              children: (0, B.jsx)(_, {
-                "aria-label": m,
+        s && i
+          ? (0, J.jsx)(m, {
+              tooltipContent: g,
+              children: (0, J.jsx)(h, {
+                "aria-label": g,
                 className: `disabled:!opacity-100`,
                 color: `ghost`,
                 size: `toolbar`,
                 uniform: !0,
                 disabled: o,
                 onClick: l,
-                children: (0, B.jsx)(A, { className: `icon-xs` }),
+                children: (0, J.jsx)(L, { className: `icon-xs` }),
               }),
             })
           : null),
-      (t[11] = r),
+      (t[11] = i),
       (t[12] = o),
       (t[13] = l),
-      (t[14] = m),
+      (t[14] = g),
       (t[15] = s),
       (t[16] = v))
     : (v = t[16]);
   let y;
   return (
-    t[17] !== h || t[18] !== v
-      ? ((y = (0, B.jsxs)(`div`, {
+    t[17] !== _ || t[18] !== v
+      ? ((y = (0, J.jsxs)(`div`, {
           className: `flex items-center justify-end gap-1`,
-          children: [h, v],
+          children: [_, v],
         })),
-        (t[17] = h),
+        (t[17] = _),
         (t[18] = v),
         (t[19] = y))
       : (y = t[19]),
     y
   );
 }
-function fe(e) {
-  let t = (0, R.c)(28),
+function be(e) {
+  let t = (0, K.c)(28),
     {
       canAppend: n,
-      commandTitle: r,
-      hasShortcut: i,
+      commandTitle: i,
+      hasShortcut: a,
       isPending: o,
       onStartCapture: s,
     } = e,
-    c = a(),
-    [l, u] = (0, z.useState)(!1),
+    c = r(),
+    [l, u] = (0, q.useState)(!1),
     d;
-  if (!i) {
+  if (!a) {
     let e;
-    (t[0] !== r || t[1] !== c
+    (t[0] !== i || t[1] !== c
       ? ((e = c.formatMessage(
           {
             id: `settings.keyboardShortcuts.setAriaLabel`,
             defaultMessage: `Set shortcut for {commandTitle}`,
             description: `Aria label for setting a shortcut for a command`,
           },
-          { commandTitle: r },
+          { commandTitle: i },
         )),
-        (t[0] = r),
+        (t[0] = i),
         (t[1] = c),
         (t[2] = e))
       : (e = t[2]),
       (d = e));
   } else if (l) {
     let e;
-    (t[3] !== r || t[4] !== c
+    (t[3] !== i || t[4] !== c
       ? ((e = c.formatMessage(
           {
             id: `settings.keyboardShortcuts.createAriaLabel`,
             defaultMessage: `Create new shortcut for {commandTitle}`,
             description: `Aria label for adding another shortcut for a command`,
           },
-          { commandTitle: r },
+          { commandTitle: i },
         )),
-        (t[3] = r),
+        (t[3] = i),
         (t[4] = c),
         (t[5] = e))
       : (e = t[5]),
       (d = e));
   } else {
     let e;
-    (t[6] !== r || t[7] !== c
+    (t[6] !== i || t[7] !== c
       ? ((e = c.formatMessage(
           {
             id: `settings.keyboardShortcuts.changeAriaLabel`,
             defaultMessage: `Change shortcut for {commandTitle}`,
             description: `Aria label for changing a shortcut for a command`,
           },
-          { commandTitle: r },
+          { commandTitle: i },
         )),
-        (t[6] = r),
+        (t[6] = i),
         (t[7] = c),
         (t[8] = e))
       : (e = t[8]),
       (d = e));
   }
   let f, p;
-  t[9] !== n || t[10] !== i
+  t[9] !== n || t[10] !== a
     ? ((f = (e) => {
-        u(n && i && e.shiftKey);
+        u(n && a && e.shiftKey);
       }),
       (p = (e) => {
-        u(n && i && e.shiftKey);
+        u(n && a && e.shiftKey);
       }),
       (t[9] = n),
-      (t[10] = i),
+      (t[10] = a),
       (t[11] = f),
       (t[12] = p))
     : ((f = t[11]), (p = t[12]));
-  let m;
+  let g;
   t[13] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((m = () => {
+    ? ((g = () => {
         u(!1);
       }),
-      (t[13] = m))
-    : (m = t[13]);
-  let h;
-  t[14] !== n || t[15] !== i || t[16] !== s
-    ? ((h = (e) => {
+      (t[13] = g))
+    : (g = t[13]);
+  let _;
+  t[14] !== n || t[15] !== a || t[16] !== s
+    ? ((_ = (e) => {
         let t = `set`;
-        (i && (t = n && e.shiftKey ? `append` : `replace`), s(t));
+        (a && (t = n && e.shiftKey ? `append` : `replace`), s(t));
       }),
       (t[14] = n),
-      (t[15] = i),
+      (t[15] = a),
       (t[16] = s),
-      (t[17] = h))
-    : (h = t[17]);
+      (t[17] = _))
+    : (_ = t[17]);
   let v;
   t[18] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, B.jsx)(k, { className: `icon-xs` })), (t[18] = v))
+    ? ((v = (0, J.jsx)(F, { className: `icon-xs` })), (t[18] = v))
     : (v = t[18]);
   let y;
-  t[19] !== o || t[20] !== d || t[21] !== f || t[22] !== p || t[23] !== h
-    ? ((y = (0, B.jsx)(_, {
+  t[19] !== o || t[20] !== d || t[21] !== f || t[22] !== p || t[23] !== _
+    ? ((y = (0, J.jsx)(h, {
         "aria-label": d,
         className: `opacity-0 group-focus-within:opacity-100 group-hover:opacity-100 disabled:!opacity-0 group-focus-within:disabled:!opacity-40 group-hover:disabled:!opacity-40`,
         color: `ghost`,
@@ -939,21 +1348,21 @@ function fe(e) {
         disabled: o,
         onMouseEnter: f,
         onMouseMove: p,
-        onMouseLeave: m,
-        onClick: h,
+        onMouseLeave: g,
+        onClick: _,
         children: v,
       })),
       (t[19] = o),
       (t[20] = d),
       (t[21] = f),
       (t[22] = p),
-      (t[23] = h),
+      (t[23] = _),
       (t[24] = y))
     : (y = t[24]);
   let b;
   return (
     t[25] !== d || t[26] !== y
-      ? ((b = (0, B.jsx)(g, { tooltipContent: d, children: y })),
+      ? ((b = (0, J.jsx)(m, { tooltipContent: d, children: y })),
         (t[25] = d),
         (t[26] = y),
         (t[27] = b))
@@ -961,13 +1370,13 @@ function fe(e) {
     b
   );
 }
-function pe({ commandId: e, hasCustomBinding: t, shortcutEntries: n }) {
+function xe({ commandId: e, hasCustomBinding: t, shortcutEntries: n }) {
   if (!t) return null;
-  let r = x({ commandId: e }),
+  let r = D({ commandId: e }),
     i = n.findIndex((e, t) => e.accelerator !== r[t]);
   return i === -1 ? 0 : i;
 }
-async function G({
+async function Se({
   commandId: e,
   intl: t,
   setCommandKeybinding: n,
@@ -991,5 +1400,5 @@ async function G({
     }));
   }
 }
-export { H as KeyboardShortcutsSettings };
+export { Y as KeyboardShortcutsSettings };
 //# sourceMappingURL=keyboard-shortcuts-settings.js.map

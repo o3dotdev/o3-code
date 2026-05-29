@@ -1,227 +1,312 @@
-import { s as e, t } from "./chunk.js";
+import { s as e, t } from "./chunk-Bj-mKKzh.js";
 import { n, t as r } from "./jsx-runtime.js";
-var i = e(n(), 1),
-  a = r();
-function o({
-  lines: e,
-  columns: t,
-  rows: n,
-  scale: r = 0.75,
-  foregroundColor: o = `var(--color-token-checkbox-border)`,
-  backgroundColor: s = `var(--color-token-side-bar-background)`,
-  autoCover: c = !1,
-}) {
-  let l = (0, i.useRef)(null),
-    u = (0, i.useRef)(null),
-    d = (0, i.useRef)(null),
-    f = (0, i.useRef)(``),
-    p = (0, i.useRef)(8),
-    m = (0, i.useRef)(16),
-    h = (0, i.useRef)(12),
-    g = (0, i.useRef)(`monospace`),
-    _ = (0, i.useRef)(e),
-    v = (0, i.useRef)(() => {}),
-    y = (0, i.useCallback)(() => {
-      if (!l.current) return null;
-      if (!d.current) {
-        let e = document.createElement(`canvas`);
-        ((e.style.display = `block`),
-          (e.style.borderRadius = c ? `0px` : `10px`),
-          (e.style.imageRendering = `crisp-edges`),
-          l.current.appendChild(e),
-          (d.current = e));
-      }
-      return d.current.getContext(`2d`);
-    }, [c]),
-    b = (e) => {
-      let t = h.current;
-      e.font = `${t}px ${g.current}`;
-      let n = e.measureText(`M`),
-        r = Math.max(1, Math.round(n.width)),
-        i = Math.max(
-          1,
-          Math.round(
-            (n.actualBoundingBoxAscent || t) +
-              (n.actualBoundingBoxDescent || Math.ceil(t * 0.3)),
-          ),
-        );
-      ((p.current = r), (m.current = i));
-    },
-    x = (0, i.useCallback)(
-      (e, r) => {
-        let i = d.current,
-          a = l.current;
-        if (!i) return 1;
-        let o = Number.isFinite(r) && r > 0 ? r : 1,
+import { wt as i } from "./setting-storage.js";
+var a = i(),
+  o = e(n(), 1),
+  s = r();
+function c(e) {
+  let t = (0, a.c)(39),
+    {
+      lines: n,
+      columns: r,
+      rows: i,
+      scale: c,
+      foregroundColor: u,
+      backgroundColor: d,
+      autoCover: f,
+    } = e,
+    p = c === void 0 ? 0.75 : c,
+    m = u === void 0 ? `var(--color-token-checkbox-border)` : u,
+    h = d === void 0 ? `var(--color-token-side-bar-background)` : d,
+    g = f === void 0 ? !1 : f,
+    _ = (0, o.useRef)(null),
+    v = (0, o.useRef)(null),
+    y = (0, o.useRef)(null),
+    b = (0, o.useRef)(``),
+    x = (0, o.useRef)(8),
+    S = (0, o.useRef)(16),
+    C = (0, o.useRef)(12),
+    w = (0, o.useRef)(`monospace`),
+    T = (0, o.useRef)(n),
+    E = (0, o.useRef)(l),
+    D;
+  t[0] === g
+    ? (D = t[1])
+    : ((D = () => {
+        if (!_.current) return null;
+        if (!y.current) {
+          let e = document.createElement(`canvas`);
+          ((e.style.display = `block`),
+            (e.style.borderRadius = g ? `0px` : `10px`),
+            (e.style.imageRendering = `crisp-edges`),
+            _.current.appendChild(e),
+            (y.current = e));
+        }
+        return y.current.getContext(`2d`);
+      }),
+      (t[0] = g),
+      (t[1] = D));
+  let O = D,
+    k;
+  t[2] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((k = (e) => {
+        let t = C.current;
+        e.font = `${t}px ${w.current}`;
+        let n = e.measureText(`M`),
+          r = Math.max(1, Math.round(n.width)),
+          i = Math.max(
+            1,
+            Math.round(
+              (n.actualBoundingBoxAscent || t) +
+                (n.actualBoundingBoxDescent || Math.ceil(t * 0.3)),
+            ),
+          );
+        ((x.current = r), (S.current = i));
+      }),
+      (t[2] = k))
+    : (k = t[2]);
+  let A = k,
+    j;
+  t[3] !== r || t[4] !== i
+    ? ((j = (e, t) => {
+        let n = y.current,
+          a = _.current;
+        if (!n) return 1;
+        let o = Number.isFinite(t) && t > 0 ? t : 1,
           s = Math.max(1, Math.floor(window.devicePixelRatio || 1)),
-          c = Math.max(1, t * p.current),
-          u = Math.max(1, n * m.current),
-          f = c * o,
-          h = u * o,
-          g = Math.max(1, Math.round(f * s)),
-          _ = Math.max(1, Math.round(h * s));
+          c = Math.max(1, r * x.current),
+          l = Math.max(1, i * S.current),
+          u = c * o,
+          d = l * o,
+          f = Math.max(1, Math.round(u * s)),
+          p = Math.max(1, Math.round(d * s));
         return (
-          (i.width !== g || i.height !== _) && ((i.width = g), (i.height = _)),
-          (i.style.width = `${f}px`),
-          (i.style.height = `${h}px`),
-          a && ((a.style.width = `${f}px`), (a.style.height = `${h}px`)),
+          (n.width !== f || n.height !== p) && ((n.width = f), (n.height = p)),
+          (n.style.width = `${u}px`),
+          (n.style.height = `${d}px`),
+          a && ((a.style.width = `${u}px`), (a.style.height = `${d}px`)),
           e.setTransform(s * o, 0, 0, s * o, 0, 0),
           (e.imageSmoothingEnabled = !1),
           o
         );
-      },
-      [t, n],
-    ),
-    S = (0, i.useCallback)(() => {
-      let e = y();
-      if (!e || !d.current) return;
-      d.current.style.borderRadius = c ? `0px` : `10px`;
-      try {
-        e.setTransform(1, 0, 0, 1, 0, 0);
-      } catch {}
-      b(e);
-      let r = 1;
-      if (c && u.current)
+      }),
+      (t[3] = r),
+      (t[4] = i),
+      (t[5] = j))
+    : (j = t[5]);
+  let M = j,
+    N;
+  t[6] !== g ||
+  t[7] !== h ||
+  t[8] !== r ||
+  t[9] !== O ||
+  t[10] !== m ||
+  t[11] !== M ||
+  t[12] !== i
+    ? ((N = () => {
+        let e = O();
+        if (!e || !y.current) return;
+        y.current.style.borderRadius = g ? `0px` : `10px`;
         try {
-          let e = u.current.parentElement?.getBoundingClientRect(),
-            i = Math.max(1, t * p.current),
-            a = Math.max(1, n * m.current);
-          if (e && i > 0 && a > 0) {
-            let t = e.width / i,
-              n = e.height / a;
-            ((r = Math.max(t, n)),
-              !Number.isFinite(r) || r <= 0 ? (r = 1) : (r *= 1.02));
-          }
-        } catch {
-          r = 1;
-        }
-      let i = x(e, r) || 1,
-        a = Math.max(i, 0.001),
-        f = Math.max(1, Math.floor(window.devicePixelRatio || 1)),
-        v = d.current.width / (f * a),
-        S = d.current.height / (f * a);
-      e.save();
-      let C = l.current,
-        w = (e, t) => {
-          let n = (e) => {
-            try {
-              let n = document.createElement(`div`);
-              ((n.style.display = `none`),
-                (n.style[t] = e),
-                document.body.appendChild(n));
-              let r = getComputedStyle(n)[t] || ``;
-              return (n.remove(), r);
-            } catch {
-              return ``;
-            }
-          };
-          if (e && e !== ``) {
-            if (e.trim().startsWith(`var(`)) {
-              let t = n(e);
-              if (t) return t;
-            }
-            return e;
-          }
-          if (!C) return ``;
-          let r = getComputedStyle(C),
-            i = t === `color` ? r.color : r.backgroundColor;
-          if (
-            (i === `rgba(0, 0, 0, 0)` || i === `transparent`) &&
-            C.parentElement
-          ) {
-            let e = getComputedStyle(C.parentElement);
-            i = t === `color` ? e.color : e.backgroundColor;
-          }
-          return i;
-        },
-        T = w(s, `backgroundColor`),
-        E = w(o, `color`);
-      (T && ((e.fillStyle = T), e.fillRect(0, 0, v, S)),
-        E && (e.fillStyle = E),
-        (e.textBaseline = `top`),
-        (e.font = `${h.current}px ${g.current}`));
-      let D = m.current,
-        O = Math.min(n, _.current.length);
-      for (let t = 0; t < O; t++) {
-        let n = _.current[t] ?? ``;
-        n && e.fillText(n, 0, t * D);
-      }
-      if ((e.restore(), c && u.current && l.current))
-        try {
-          if (!u.current.parentElement) return;
-          let e = u.current;
-          ((e.style.position = `absolute`),
-            (e.style.left = `50%`),
-            (e.style.top = `50%`),
-            (e.style.transform = `translate(-50%, -50%)`),
-            (e.style.transformOrigin = `center`),
-            (e.style.display = `block`),
-            (e.style.width = l.current.style.width),
-            (e.style.height = l.current.style.height));
+          e.setTransform(1, 0, 0, 1, 0, 0);
         } catch {}
-    }, [s, n, t, o, x, c, y]);
-  return (
-    (0, i.useEffect)(() => {
-      v.current = S;
-    }, [S]),
-    (0, i.useEffect)(() => {
-      let e = !1,
-        t = l.current;
-      return (
-        (async () => {
-          if (t) {
-            try {
-              let e = document;
-              if (e?.fonts?.ready?.then)
-                try {
-                  await e.fonts.ready;
-                } catch {}
-            } catch {}
-            e || v.current();
+        A(e);
+        let t = 1;
+        if (g && v.current)
+          try {
+            let e = v.current.parentElement?.getBoundingClientRect(),
+              n = Math.max(1, r * x.current),
+              a = Math.max(1, i * S.current);
+            if (e && n > 0 && a > 0) {
+              let r = e.width / n,
+                i = e.height / a;
+              ((t = Math.max(r, i)),
+                !Number.isFinite(t) || t <= 0 ? (t = 1) : (t *= 1.02));
+            }
+          } catch {
+            t = 1;
           }
-        })(),
-        () => {
-          if (((e = !0), d.current))
-            try {
-              d.current.remove();
-            } catch {}
-          if (((d.current = null), t))
-            try {
-              for (; t.firstChild; ) t.removeChild(t.firstChild);
-            } catch {}
+        let n = M(e, t) || 1,
+          a = Math.max(n, 0.001),
+          o = Math.max(1, Math.floor(window.devicePixelRatio || 1)),
+          s = y.current.width / (o * a),
+          c = y.current.height / (o * a);
+        e.save();
+        let l = _.current,
+          u = (e, t) => {
+            let n = (e) => {
+              try {
+                let n = document.createElement(`div`);
+                ((n.style.display = `none`),
+                  (n.style[t] = e),
+                  document.body.appendChild(n));
+                let r = getComputedStyle(n)[t] || ``;
+                return (n.remove(), r);
+              } catch {
+                return ``;
+              }
+            };
+            if (e && e !== ``) {
+              if (e.trim().startsWith(`var(`)) {
+                let t = n(e);
+                if (t) return t;
+              }
+              return e;
+            }
+            if (!l) return ``;
+            let r = getComputedStyle(l),
+              i = t === `color` ? r.color : r.backgroundColor;
+            if (
+              (i === `rgba(0, 0, 0, 0)` || i === `transparent`) &&
+              l.parentElement
+            ) {
+              let e = getComputedStyle(l.parentElement);
+              i = t === `color` ? e.color : e.backgroundColor;
+            }
+            return i;
+          },
+          d = u(h, `backgroundColor`),
+          f = u(m, `color`);
+        (d && ((e.fillStyle = d), e.fillRect(0, 0, s, c)),
+          f && (e.fillStyle = f),
+          (e.textBaseline = `top`),
+          (e.font = `${C.current}px ${w.current}`));
+        let p = S.current,
+          b = Math.min(i, T.current.length);
+        for (let t = 0; t < b; t++) {
+          let n = T.current[t] ?? ``;
+          n && e.fillText(n, 0, t * p);
         }
-      );
-    }, []),
-    (0, i.useEffect)(() => {
-      _.current = e;
-      let t = e.join(`
+        if ((e.restore(), g && v.current && _.current))
+          try {
+            if (!v.current.parentElement) return;
+            let e = v.current;
+            ((e.style.position = `absolute`),
+              (e.style.left = `50%`),
+              (e.style.top = `50%`),
+              (e.style.transform = `translate(-50%, -50%)`),
+              (e.style.transformOrigin = `center`),
+              (e.style.display = `block`),
+              (e.style.width = _.current.style.width),
+              (e.style.height = _.current.style.height));
+          } catch {}
+      }),
+      (t[6] = g),
+      (t[7] = h),
+      (t[8] = r),
+      (t[9] = O),
+      (t[10] = m),
+      (t[11] = M),
+      (t[12] = i),
+      (t[13] = N))
+    : (N = t[13]);
+  let P = N,
+    F,
+    I;
+  (t[14] === P
+    ? ((F = t[15]), (I = t[16]))
+    : ((I = () => {
+        E.current = P;
+      }),
+      (F = [P]),
+      (t[14] = P),
+      (t[15] = F),
+      (t[16] = I)),
+    (0, o.useEffect)(I, F));
+  let L, R;
+  (t[17] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((L = () => {
+        let e = !1,
+          t = _.current;
+        return (
+          (async () => {
+            if (t) {
+              try {
+                if (document?.fonts?.ready?.then)
+                  try {
+                    await document.fonts.ready;
+                  } catch {}
+              } catch {}
+              e || E.current();
+            }
+          })(),
+          () => {
+            if (((e = !0), y.current))
+              try {
+                y.current.remove();
+              } catch {}
+            if (((y.current = null), t))
+              try {
+                for (; t.firstChild; ) t.removeChild(t.firstChild);
+              } catch {}
+          }
+        );
+      }),
+      (R = []),
+      (t[17] = L),
+      (t[18] = R))
+    : ((L = t[17]), (R = t[18])),
+    (0, o.useEffect)(L, R));
+  let z, B;
+  (t[19] === n
+    ? ((z = t[20]), (B = t[21]))
+    : ((z = () => {
+        T.current = n;
+        let e = n.join(`
 `);
-      t !== f.current &&
-        ((f.current = t),
+        e !== b.current &&
+          ((b.current = e),
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => E.current());
+          }));
+      }),
+      (B = [n]),
+      (t[19] = n),
+      (t[20] = z),
+      (t[21] = B)),
+    (0, o.useEffect)(z, B));
+  let V;
+  t[22] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((V = () => {
         requestAnimationFrame(() => {
-          requestAnimationFrame(() => v.current());
-        }));
-    }, [e]),
-    (0, i.useEffect)(() => {
-      requestAnimationFrame(() => {
-        requestAnimationFrame(() => v.current());
-      });
-    }, [t, n, o, s]),
-    (0, i.useEffect)(() => {
-      if (!c) return;
-      let e = () => {
-        requestAnimationFrame(() => v.current());
-      };
-      return (
-        window.addEventListener(`resize`, e),
-        () => {
-          window.removeEventListener(`resize`, e);
-        }
-      );
-    }, [c]),
-    (0, a.jsx)(`div`, {
-      ref: u,
-      style: c
+          requestAnimationFrame(() => E.current());
+        });
+      }),
+      (t[22] = V))
+    : (V = t[22]);
+  let H;
+  (t[23] !== h || t[24] !== r || t[25] !== m || t[26] !== i
+    ? ((H = [r, i, m, h]),
+      (t[23] = h),
+      (t[24] = r),
+      (t[25] = m),
+      (t[26] = i),
+      (t[27] = H))
+    : (H = t[27]),
+    (0, o.useEffect)(V, H));
+  let U, W;
+  (t[28] === g
+    ? ((U = t[29]), (W = t[30]))
+    : ((U = () => {
+        if (!g) return;
+        let e = () => {
+          requestAnimationFrame(() => E.current());
+        };
+        return (
+          window.addEventListener(`resize`, e),
+          () => {
+            window.removeEventListener(`resize`, e);
+          }
+        );
+      }),
+      (W = [g]),
+      (t[28] = g),
+      (t[29] = U),
+      (t[30] = W)),
+    (0, o.useEffect)(U, W));
+  let G;
+  t[31] !== g || t[32] !== p
+    ? ((G = g
         ? {
             position: `absolute`,
             left: `50%`,
@@ -230,22 +315,37 @@ function o({
             display: `block`,
           }
         : {
-            transform: `scale(${r})`,
+            transform: `scale(${p})`,
             transformOrigin: `center`,
             display: `inline-block`,
-          },
-      children: (0, a.jsx)(`div`, {
-        ref: l,
-        style: {
-          display: `inline-block`,
-          lineHeight: 1,
-          borderRadius: c ? 0 : 10,
-        },
-      }),
-    })
+          }),
+      (t[31] = g),
+      (t[32] = p),
+      (t[33] = G))
+    : (G = t[33]);
+  let K = g ? 0 : 10,
+    q;
+  t[34] === K
+    ? (q = t[35])
+    : ((q = (0, s.jsx)(`div`, {
+        ref: _,
+        style: { display: `inline-block`, lineHeight: 1, borderRadius: K },
+      })),
+      (t[34] = K),
+      (t[35] = q));
+  let J;
+  return (
+    t[36] !== G || t[37] !== q
+      ? ((J = (0, s.jsx)(`div`, { ref: v, style: G, children: q })),
+        (t[36] = G),
+        (t[37] = q),
+        (t[38] = J))
+      : (J = t[38]),
+    J
   );
 }
-var s = t((e) => {
+function l() {}
+var u = t((e) => {
     Object.defineProperty(e, `__esModule`, { value: !0 });
     function t(e) {
       var t = new Uint32Array(1);
@@ -253,10 +353,10 @@ var s = t((e) => {
     }
     e.default = t;
   }),
-  c = t((e) => {
+  d = t((e) => {
     (Object.defineProperty(e, `__esModule`, { value: !0 }),
       (e.makeNoise2D = void 0));
-    var t = s(),
+    var t = u(),
       n = 1 / 47,
       r = (Math.sqrt(3) - 1) / 2,
       i = (1 / Math.sqrt(3) - 1) / 2;
@@ -264,45 +364,45 @@ var s = t((e) => {
       return { dx: -t - e * r, dy: -n - e * r, xsb: t, ysb: n };
     }
     function o(e) {
-      for (var o = [], s = 0; s < d.length; s += 4) {
-        for (var f = c[d[s]], p = null, m = null, h = 0; h < f.length; h += 3)
+      for (var o = [], u = 0; u < d.length; u += 4) {
+        for (var f = s[d[u]], p = null, m = null, h = 0; h < f.length; h += 3)
           ((m = a(f[h], f[h + 1], f[h + 2])),
-            p === null ? (o[s / 4] = m) : (p.next = m),
+            p === null ? (o[u / 4] = m) : (p.next = m),
             (p = m));
-        m.next = a(d[s + 1], d[s + 2], d[s + 3]);
+        m.next = a(d[u + 1], d[u + 2], d[u + 3]);
       }
-      for (var g = [], s = 0; s < u.length; s += 2) g[u[s]] = o[u[s + 1]];
+      for (var g = [], u = 0; u < l.length; u += 2) g[l[u]] = o[l[u + 1]];
       for (
         var _ = new Uint8Array(256),
           v = new Uint8Array(256),
           y = new Uint8Array(256),
-          s = 0;
-        s < 256;
-        s++
+          u = 0;
+        u < 256;
+        u++
       )
-        y[s] = s;
+        y[u] = u;
       var b = new Uint32Array(1);
       ((b[0] = e), (b = t.default(t.default(t.default(b)))));
-      for (var s = 255; s >= 0; s--) {
+      for (var u = 255; u >= 0; u--) {
         b = t.default(b);
         var x = new Uint32Array(1);
-        ((x[0] = (b[0] + 31) % (s + 1)),
-          x[0] < 0 && (x[0] += s + 1),
-          (_[s] = y[x[0]]),
-          (v[s] = _[s] & 14),
-          (y[x[0]] = y[s]));
+        ((x[0] = (b[0] + 31) % (u + 1)),
+          x[0] < 0 && (x[0] += u + 1),
+          (_[u] = y[x[0]]),
+          (v[u] = _[u] & 14),
+          (y[x[0]] = y[u]));
       }
       return function (e, t) {
         for (
           var a = (e + t) * i,
             o = e + a,
             s = t + a,
-            c = Math.floor(o),
+            l = Math.floor(o),
             u = Math.floor(s),
-            d = (c + u) * r,
-            f = e - (c + d),
+            d = (l + u) * r,
+            f = e - (l + d),
             p = t - (u + d),
-            m = o - c,
+            m = o - l,
             h = s - u,
             y = m + h,
             b = (m - h + 1) | (y << 1) | ((y + h) << 2) | ((y + m) << 4),
@@ -315,10 +415,10 @@ var s = t((e) => {
             w = p + S.dy,
             T = 2 - C * C - w * w;
           if (T > 0) {
-            var E = c + S.xsb,
+            var E = l + S.xsb,
               D = u + S.ysb,
               O = v[(_[E & 255] + D) & 255],
-              k = l[O] * C + l[O + 1] * w;
+              k = c[O] * C + c[O + 1] * w;
             x += T * T * T * T * k;
           }
         }
@@ -326,12 +426,12 @@ var s = t((e) => {
       };
     }
     e.makeNoise2D = o;
-    var c = [
+    var s = [
         [1, 1, 0, 1, 0, 1, 0, 0, 0],
         [1, 1, 0, 1, 0, 1, 2, 1, 1],
       ],
-      l = [5, 2, 2, 5, -5, 2, -2, 5, 5, -2, 2, -5, -5, -2, -2, -5],
-      u = [
+      c = [5, 2, 2, 5, -5, 2, -2, 5, 5, -2, 2, -5, -5, -2, -2, -5],
+      l = [
         0, 1, 1, 0, 4, 1, 17, 0, 20, 2, 21, 2, 22, 5, 23, 5, 26, 4, 39, 3, 42,
         4, 43, 3,
       ],
@@ -340,10 +440,10 @@ var s = t((e) => {
         0,
       ];
   }),
-  l = t((e) => {
+  f = t((e) => {
     (Object.defineProperty(e, `__esModule`, { value: !0 }),
       (e.makeNoise3D = void 0));
-    var t = s(),
+    var t = u(),
       n = 1 / 103,
       r = 1 / 3,
       i = (1 / 2 - 1) / 3;
@@ -358,50 +458,50 @@ var s = t((e) => {
       };
     }
     function o(e) {
-      for (var o = [], s = 0; s < d.length; s += 9) {
-        for (var f = c[d[s]], p = null, m = null, h = 0; h < f.length; h += 4)
+      for (var o = [], u = 0; u < d.length; u += 9) {
+        for (var f = s[d[u]], p = null, m = null, h = 0; h < f.length; h += 4)
           ((m = a(f[h], f[h + 1], f[h + 2], f[h + 3])),
-            p === null ? (o[s / 9] = m) : (p.next = m),
+            p === null ? (o[u / 9] = m) : (p.next = m),
             (p = m));
-        ((m.next = a(d[s + 1], d[s + 2], d[s + 3], d[s + 4])),
-          (m.next.next = a(d[s + 5], d[s + 6], d[s + 7], d[s + 8])));
+        ((m.next = a(d[u + 1], d[u + 2], d[u + 3], d[u + 4])),
+          (m.next.next = a(d[u + 5], d[u + 6], d[u + 7], d[u + 8])));
       }
-      for (var g = [], s = 0; s < u.length; s += 2) g[u[s]] = o[u[s + 1]];
+      for (var g = [], u = 0; u < l.length; u += 2) g[l[u]] = o[l[u + 1]];
       for (
         var _ = new Uint8Array(256),
           v = new Uint8Array(256),
           y = new Uint8Array(256),
-          s = 0;
-        s < 256;
-        s++
+          u = 0;
+        u < 256;
+        u++
       )
-        y[s] = s;
+        y[u] = u;
       var b = new Uint32Array(1);
       ((b[0] = e), (b = t.default(t.default(t.default(b)))));
-      for (var s = 255; s >= 0; s--) {
+      for (var u = 255; u >= 0; u--) {
         b = t.default(b);
         var x = new Uint32Array(1);
-        ((x[0] = (b[0] + 31) % (s + 1)),
-          x[0] < 0 && (x[0] += s + 1),
-          (_[s] = y[x[0]]),
-          (v[s] = (_[s] % 24) * 3),
-          (y[x[0]] = y[s]));
+        ((x[0] = (b[0] + 31) % (u + 1)),
+          x[0] < 0 && (x[0] += u + 1),
+          (_[u] = y[x[0]]),
+          (v[u] = (_[u] % 24) * 3),
+          (y[x[0]] = y[u]));
       }
       return function (e, t, a) {
         for (
           var o = (e + t + a) * i,
             s = e + o,
-            c = t + o,
+            l = t + o,
             u = a + o,
             d = Math.floor(s),
-            f = Math.floor(c),
+            f = Math.floor(l),
             p = Math.floor(u),
             m = (d + f + p) * r,
             h = e - (d + m),
             y = t - (f + m),
             b = a - (p + m),
             x = s - d,
-            S = c - f,
+            S = l - f,
             C = u - p,
             w = x + S + C,
             T =
@@ -426,7 +526,7 @@ var s = t((e) => {
               N = f + D.ysb,
               P = p + D.zsb,
               F = v[(_[(_[M & 255] + N) & 255] + P) & 255],
-              I = l[F] * O + l[F + 1] * k + l[F + 2] * A;
+              I = c[F] * O + c[F + 1] * k + c[F + 2] * A;
             E += j * j * j * j * I;
           }
         }
@@ -434,7 +534,7 @@ var s = t((e) => {
       };
     }
     e.makeNoise3D = o;
-    var c = [
+    var s = [
         [0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 0, 1, 0, 0, 1],
         [2, 1, 1, 0, 2, 1, 0, 1, 2, 0, 1, 1, 3, 1, 1, 1],
         [
@@ -442,13 +542,13 @@ var s = t((e) => {
           1,
         ],
       ],
-      l = [
+      c = [
         -11, 4, 4, -4, 11, 4, -4, 4, 11, 11, 4, 4, 4, 11, 4, 4, 4, 11, -11, -4,
         4, -4, -11, 4, -4, -4, 11, 11, -4, 4, 4, -11, 4, 4, -4, 11, -11, 4, -4,
         -4, 11, -4, -4, 4, -11, 11, 4, -4, 4, 11, -4, 4, 4, -11, -11, -4, -4,
         -4, -11, -4, -4, -4, -11, 11, -4, -4, 4, -11, -4, 4, -4, -11,
       ],
-      u = [
+      l = [
         0, 2, 1, 1, 2, 2, 5, 1, 6, 0, 7, 0, 32, 2, 34, 2, 129, 1, 133, 1, 160,
         5, 161, 5, 518, 0, 519, 0, 546, 4, 550, 4, 645, 3, 647, 3, 672, 5, 673,
         5, 674, 4, 677, 3, 678, 4, 679, 3, 680, 13, 681, 13, 682, 12, 685, 14,
@@ -472,10 +572,10 @@ var s = t((e) => {
         1, -1, 2, 0, 2, 0,
       ];
   }),
-  u = t((e) => {
+  p = t((e) => {
     (Object.defineProperty(e, `__esModule`, { value: !0 }),
       (e.makeNoise4D = void 0));
-    var t = s(),
+    var t = u(),
       n = 1 / 30,
       r = (Math.sqrt(5) - 1) / 4,
       i = (1 / Math.sqrt(5) - 1) / 4;
@@ -492,50 +592,50 @@ var s = t((e) => {
       };
     }
     function o(e) {
-      for (var o = [], s = 0; s < d.length; s += 16) {
-        for (var f = c[d[s]], p = null, m = null, h = 0; h < f.length; h += 5)
+      for (var o = [], u = 0; u < d.length; u += 16) {
+        for (var f = s[d[u]], p = null, m = null, h = 0; h < f.length; h += 5)
           ((m = a(f[h], f[h + 1], f[h + 2], f[h + 3], f[h + 4])),
-            p === null ? (o[s / 16] = m) : (p.next = m),
+            p === null ? (o[u / 16] = m) : (p.next = m),
             (p = m));
-        ((m.next = a(d[s + 1], d[s + 2], d[s + 3], d[s + 4], d[s + 5])),
-          (m.next.next = a(d[s + 6], d[s + 7], d[s + 8], d[s + 9], d[s + 10])),
+        ((m.next = a(d[u + 1], d[u + 2], d[u + 3], d[u + 4], d[u + 5])),
+          (m.next.next = a(d[u + 6], d[u + 7], d[u + 8], d[u + 9], d[u + 10])),
           (m.next.next.next = a(
-            d[s + 11],
-            d[s + 12],
-            d[s + 13],
-            d[s + 14],
-            d[s + 15],
+            d[u + 11],
+            d[u + 12],
+            d[u + 13],
+            d[u + 14],
+            d[u + 15],
           )));
       }
-      for (var g = [], s = 0; s < u.length; s += 2) g[u[s]] = o[u[s + 1]];
+      for (var g = [], u = 0; u < l.length; u += 2) g[l[u]] = o[l[u + 1]];
       for (
         var _ = new Uint8Array(256),
           v = new Uint8Array(256),
           y = new Uint8Array(256),
-          s = 0;
-        s < 256;
-        s++
+          u = 0;
+        u < 256;
+        u++
       )
-        y[s] = s;
+        y[u] = u;
       var b = new Uint32Array(1);
       ((b[0] = e), (b = t.default(t.default(t.default(b)))));
-      for (var s = 255; s >= 0; s--) {
+      for (var u = 255; u >= 0; u--) {
         b = t.default(b);
         var x = new Uint32Array(1);
-        ((x[0] = (b[0] + 31) % (s + 1)),
-          x[0] < 0 && (x[0] += s + 1),
-          (_[s] = y[x[0]]),
-          (v[s] = _[s] & 252),
-          (y[x[0]] = y[s]));
+        ((x[0] = (b[0] + 31) % (u + 1)),
+          x[0] < 0 && (x[0] += u + 1),
+          (_[u] = y[x[0]]),
+          (v[u] = _[u] & 252),
+          (y[x[0]] = y[u]));
       }
       return function (e, t, a, o) {
         for (
           var s = (e + t + a + o) * i,
-            c = e + s,
+            l = e + s,
             u = t + s,
             d = a + s,
             f = o + s,
-            p = Math.floor(c),
+            p = Math.floor(l),
             m = Math.floor(u),
             h = Math.floor(d),
             y = Math.floor(f),
@@ -544,7 +644,7 @@ var s = t((e) => {
             S = t - (m + b),
             C = a - (h + b),
             w = o - (y + b),
-            T = c - p,
+            T = l - p,
             E = u - m,
             D = d - h,
             O = f - y,
@@ -577,7 +677,7 @@ var s = t((e) => {
               B = h + M.zsb,
               V = y + M.wsb,
               H = v[(_[(_[(_[R & 255] + z) & 255] + B) & 255] + V) & 255],
-              U = l[H] * N + l[H + 1] * P + l[H + 2] * F + l[H + 3] * I;
+              U = c[H] * N + c[H + 1] * P + c[H + 2] * F + c[H + 3] * I;
             j += L * L * L * L * U;
           }
         }
@@ -585,7 +685,7 @@ var s = t((e) => {
       };
     }
     e.makeNoise4D = o;
-    var c = [
+    var s = [
         [
           0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0,
           0, 1,
@@ -605,7 +705,7 @@ var s = t((e) => {
           0, 0, 1, 1,
         ],
       ],
-      l = [
+      c = [
         3, 1, 1, 1, 1, 3, 1, 1, 1, 1, 3, 1, 1, 1, 1, 3, -3, 1, 1, 1, -1, 3, 1,
         1, -1, 1, 3, 1, -1, 1, 1, 3, 3, -1, 1, 1, 1, -3, 1, 1, 1, -1, 3, 1, 1,
         -1, 1, 3, -3, -1, 1, 1, -1, -3, 1, 1, -1, -1, 3, 1, -1, -1, 1, 3, 3, 1,
@@ -620,7 +720,7 @@ var s = t((e) => {
         1, -3, -1, -1, 1, -1, -3, -1, 1, -1, -1, -3, -3, -1, -1, -1, -1, -3, -1,
         -1, -1, -1, -3, -1, -1, -1, -1, -3,
       ],
-      u = [
+      l = [
         0, 3, 1, 2, 2, 3, 5, 2, 6, 1, 7, 1, 8, 3, 9, 2, 10, 3, 13, 2, 16, 3, 18,
         3, 22, 1, 23, 1, 24, 3, 26, 3, 33, 2, 37, 2, 38, 1, 39, 1, 41, 2, 45, 2,
         54, 1, 55, 1, 56, 0, 57, 0, 58, 0, 59, 0, 60, 0, 61, 0, 62, 0, 63, 0,
@@ -770,24 +870,24 @@ var s = t((e) => {
         1, 3, 3, 0, 0, 2, 1, 3, 0, 0, 1, 2, 2, -1, 1, 1, 1,
       ];
   }),
-  d = t((e) => {
+  m = t((e) => {
     (Object.defineProperty(e, `__esModule`, { value: !0 }),
       (e.makeNoise4D = e.makeNoise3D = e.makeNoise2D = void 0));
-    var t = c();
+    var t = d();
     Object.defineProperty(e, `makeNoise2D`, {
       enumerable: !0,
       get: function () {
         return t.makeNoise2D;
       },
     });
-    var n = l();
+    var n = f();
     Object.defineProperty(e, `makeNoise3D`, {
       enumerable: !0,
       get: function () {
         return n.makeNoise3D;
       },
     });
-    var r = u();
+    var r = p();
     Object.defineProperty(e, `makeNoise4D`, {
       enumerable: !0,
       get: function () {
@@ -795,15 +895,15 @@ var s = t((e) => {
       },
     });
   })();
-function f(e) {
-  let [t, n] = (0, i.useState)(e?.initialMode ?? `noise`),
-    [r, a] = (0, i.useState)(`@%#*+=-:. `),
-    [o, s] = (0, i.useState)(0),
-    [c, l] = (0, i.useState)(e?.initialColumns ?? 50),
-    [u, f] = (0, i.useState)(e?.initialRows ?? 30),
-    [p] = (0, i.useState)(20),
-    [m, h] = (0, i.useState)(!1),
-    g = (0, i.useMemo)(
+function h(e) {
+  let [t, n] = (0, o.useState)(e?.initialMode ?? `noise`),
+    [r, i] = (0, o.useState)(`@%#*+=-:. `),
+    [a, s] = (0, o.useState)(0),
+    [c, l] = (0, o.useState)(e?.initialColumns ?? 50),
+    [u, d] = (0, o.useState)(e?.initialRows ?? 30),
+    [f] = (0, o.useState)(20),
+    [p, h] = (0, o.useState)(!1),
+    g = (0, o.useMemo)(
       () => [
         `█▓▒░ `,
         `■□▲△●○◆◇`,
@@ -820,25 +920,25 @@ function f(e) {
       ],
       [],
     );
-  ((0, i.useEffect)(() => {
+  ((0, o.useEffect)(() => {
     typeof e?.initialColumns == `number` && l(e.initialColumns);
   }, [e?.initialColumns]),
-    (0, i.useEffect)(() => {
-      typeof e?.initialRows == `number` && f(e.initialRows);
+    (0, o.useEffect)(() => {
+      typeof e?.initialRows == `number` && d(e.initialRows);
     }, [e?.initialRows]));
-  let _ = (0, i.useRef)(null),
-    v = (0, i.useRef)(null),
-    y = (0, i.useRef)(null),
-    [b, x] = (0, i.useState)([]),
-    S = (0, i.useRef)(0),
-    C = (0, i.useRef)(e?.preferredVideoKeyword),
-    w = (0, i.useMemo)(() => (0, d.makeNoise3D)(Date.now()), []),
-    T = (0, i.useRef)(0),
-    E = (0, i.useRef)(null),
-    D = (0, i.useRef)(0),
-    O = (0, i.useRef)(``),
-    k = (0, i.useRef)(null),
-    A = (0, i.useCallback)(
+  let _ = (0, o.useRef)(null),
+    v = (0, o.useRef)(null),
+    y = (0, o.useRef)(null),
+    [b, x] = (0, o.useState)([]),
+    S = (0, o.useRef)(0),
+    C = (0, o.useRef)(e?.preferredVideoKeyword),
+    w = (0, o.useMemo)(() => (0, m.makeNoise3D)(Date.now()), []),
+    T = (0, o.useRef)(0),
+    E = (0, o.useRef)(null),
+    D = (0, o.useRef)(0),
+    O = (0, o.useRef)(``),
+    k = (0, o.useRef)(null),
+    A = (0, o.useCallback)(
       (e, t, n) => {
         let r = 0.15,
           i = [];
@@ -854,7 +954,7 @@ function f(e) {
       },
       [w],
     ),
-    j = (0, i.useCallback)((e, t) => {
+    j = (0, o.useCallback)((e, t) => {
       let n = e.length,
         r = n > 0 ? e[0].length : 0,
         i = e.map((e) => e.slice());
@@ -874,7 +974,7 @@ function f(e) {
           i[e][t] = Math.max(0, Math.min(255, i[e][t]));
       return i;
     }, []),
-    M = (0, i.useCallback)(() => {
+    M = (0, o.useCallback)(() => {
       let e = _.current,
         t = v.current,
         n = y.current;
@@ -903,7 +1003,7 @@ function f(e) {
         n.drawImage(e, d, f, p, m, 0, 0, a, o);
       } catch {}
     }, [c, u]),
-    N = (0, i.useCallback)(() => {
+    N = (0, o.useCallback)(() => {
       let e = v.current,
         t = y.current;
       if (!e || !t) return [];
@@ -923,7 +1023,7 @@ function f(e) {
       }
       return r;
     }, [c, u]),
-    P = (0, i.useCallback)(
+    P = (0, o.useCallback)(
       (e) => {
         let t = v.current,
           n = y.current;
@@ -960,7 +1060,7 @@ function f(e) {
       },
       [r, c, u, j],
     ),
-    F = (0, i.useCallback)(() => {
+    F = (0, o.useCallback)(() => {
       let e = _.current;
       if (!e) return !1;
       let t =
@@ -971,7 +1071,7 @@ function f(e) {
         n = (e.readyState ?? 0) >= 2;
       return t && n && !e.paused;
     }, []),
-    I = (0, i.useCallback)(() => {
+    I = (0, o.useCallback)(() => {
       (v.current ||
         ((v.current = document.createElement(`canvas`)),
         (v.current.style.display = `none`),
@@ -1042,24 +1142,24 @@ function f(e) {
         e
       );
     }, [r, c, u, M, P, A, j, t, F, N]),
-    L = (0, i.useCallback)(() => {
+    L = (0, o.useCallback)(() => {
       if (!b.length) return ``;
       let e = S.current % b.length;
       return ((S.current = (S.current + 1) % Math.max(1, b.length)), b[e]);
     }, [b]),
-    R = (0, i.useCallback)(
+    R = (0, o.useCallback)(
       async (e = !1) => {
-        if (!_.current) {
-          let e = document.createElement(`video`);
-          ((e.style.display = `none`),
-            (e.loop = !0),
-            (e.muted = !0),
-            e.setAttribute(`playsinline`, ``),
-            document.body.appendChild(e),
-            (_.current = e));
-        }
         let t = _.current;
-        ((t.muted = !0), t.setAttribute(`playsinline`, ``));
+        (t ??
+          ((t = document.createElement(`video`)),
+          (t.style.display = `none`),
+          (t.loop = !0),
+          (t.muted = !0),
+          t.setAttribute(`playsinline`, ``),
+          document.body.appendChild(t),
+          (_.current = t)),
+          (t.muted = !0),
+          t.setAttribute(`playsinline`, ``));
         let n = () => {
           if (!C.current) return ``;
           let e = C.current.toLowerCase();
@@ -1116,7 +1216,7 @@ function f(e) {
       },
       [L, b],
     ),
-    z = (0, i.useCallback)(() => {
+    z = (0, o.useCallback)(() => {
       if (!_.current) {
         let e = document.createElement(`video`);
         ((e.style.display = `none`),
@@ -1134,7 +1234,7 @@ function f(e) {
           v.current &&
           (y.current = v.current.getContext(`2d`, { willReadFrequently: !0 })));
     }, []),
-    B = (0, i.useCallback)(async () => {
+    B = (0, o.useCallback)(async () => {
       z();
       let e = _.current;
       if (!e || !b.length) return;
@@ -1159,7 +1259,7 @@ function f(e) {
         await e.play();
       } catch {}
     }, [z, b]);
-  ((0, i.useEffect)(() => {
+  ((0, o.useEffect)(() => {
     (async () => {
       try {
         let e = Object.assign({});
@@ -1167,7 +1267,7 @@ function f(e) {
       } catch {}
     })();
   }, []),
-    (0, i.useEffect)(() => {
+    (0, o.useEffect)(() => {
       let e = (e) => {
         if (
           e.metaKey &&
@@ -1180,8 +1280,8 @@ function f(e) {
         }
         if (e.metaKey && e.key === `.`) {
           if ((e.preventDefault(), e.repeat)) return;
-          let t = (o + 1) % g.length;
-          (s(t), a(g[t]));
+          let t = (a + 1) % g.length;
+          (s(t), i(g[t]));
           return;
         }
         if (
@@ -1200,9 +1300,9 @@ function f(e) {
           window.removeEventListener(`keydown`, e);
         }
       );
-    }, [o, g, B, R, t, n]),
-    (0, i.useEffect)(() => {
-      let e = 1e3 / p,
+    }, [a, g, B, R, t, n]),
+    (0, o.useEffect)(() => {
+      let e = 1e3 / f,
         t = (n) => {
           try {
             if (document.hidden) return;
@@ -1229,8 +1329,8 @@ function f(e) {
             document.removeEventListener(`visibilitychange`, n));
         }
       );
-    }, [I, p]),
-    (0, i.useEffect)(
+    }, [I, f]),
+    (0, o.useEffect)(
       () => () => {
         try {
           let e = _.current;
@@ -1258,30 +1358,30 @@ function f(e) {
       },
       [],
     ));
-  let V = (0, i.useRef)(`noise`),
-    [H, U] = (0, i.useState)([]);
+  let V = (0, o.useRef)(`noise`),
+    [H, U] = (0, o.useState)([]);
   return (
-    (0, i.useEffect)(() => {
+    (0, o.useEffect)(() => {
       let e = V.current;
       ((t === `video` || t === `composite`) && R(e !== t), (V.current = t));
     }, [t, R]),
-    (0, i.useEffect)(() => {
+    (0, o.useEffect)(() => {
       (t === `video` || t === `composite`) && b.length && R(!0);
     }, [b, t, R]),
     {
       mode: t,
       setMode: n,
       asciiChars: r,
-      setAsciiChars: a,
+      setAsciiChars: i,
       columns: c,
       setColumns: l,
       rows: u,
-      setRows: f,
+      setRows: d,
       lines: H,
-      showControls: m,
+      showControls: p,
       setShowControls: h,
     }
   );
 }
-export { o as n, f as t };
+export { c as n, h as t };
 //# sourceMappingURL=use-ascii-engine.js.map

@@ -1,21 +1,21 @@
-import { s as e } from "./chunk.js";
-import { D as t, E as n, T as r, kr as i } from "./src-BLHmAhbF.js";
-import { Aa as a, ka as o } from "./app-server-manager-signals.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { M as t, N as n, ii as r, j as i } from "./src-C.js";
+import { _o as a, vo as o } from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as s, t as c } from "./jsx-runtime.js";
 import {
   C as l,
-  H as u,
-  S as d,
-  X as f,
-  nt as p,
-  xt as m,
+  S as u,
+  U as d,
+  Z as f,
+  at as p,
+  wt as m,
   y as h,
 } from "./setting-storage.js";
-import { f as g } from "./chunk-LFPYN7LY.js";
+import { m as g } from "./chunk-LFPYN7LY.js";
 import { t as ee } from "./button.js";
 import { t as te } from "./spinner.js";
 import { t as ne } from "./use-platform.js";
-import { t as re } from "./info.js";
+import { t as re } from "./info-B8GAwpK6.js";
 import { t as ie } from "./download.js";
 import { t as ae } from "./with-window.js";
 var _ = typeof __SENTRY_DEBUG__ > `u` || __SENTRY_DEBUG__,
@@ -7585,17 +7585,17 @@ function Df() {
   Tf = !0;
   let e = window.electronBridge?.getSentryInitOptions?.();
   if (!e) return;
-  let a = n(e.buildFlavor),
-    s = i(e.appVersion),
+  let o = t(e.buildFlavor),
+    s = r(e.appVersion),
     c = e.buildFlavor !== `prod`;
   (wf({
-    beforeSend: o,
-    dsn: r,
+    beforeSend: a,
+    dsn: i,
     environment: Ef,
-    release: t(s.version),
+    release: n(s.version),
     dist: e.buildNumber ?? void 0,
     tracesSampleRate: 0,
-    integrations: (e) => (a ? [...e, af()] : e),
+    integrations: (e) => (o ? [...e, af()] : e),
   }),
     $i(`sessionId`, e.codexAppSessionId),
     $i(`buildFlavor`, e.buildFlavor),
@@ -7616,13 +7616,13 @@ function Of(e) {
 }
 function kf(e, t) {
   try {
-    let n = a(e, t);
+    let n = o(e, t);
     return Zi(n.error, n);
   } catch {
     return ``;
   }
 }
-var Af = p(d, `idle`);
+var Af = p(u, `idle`);
 function jf(e) {
   switch (e) {
     case `ready`:
@@ -7657,7 +7657,7 @@ function Nf(e) {
       let n, i;
       t[2] === Symbol.for(`react.memo_cache_sentinel`)
         ? ((n = (0, $.jsx)(ie, { className: `icon-xs` })),
-          (i = (0, $.jsx)(u, {
+          (i = (0, $.jsx)(d, {
             id: `appUpdate.recovery.updateCodex`,
             defaultMessage: `Update Codex`,
             description: `Button label shown on the full-screen error page to install a desktop app update`,
@@ -7683,7 +7683,7 @@ function Nf(e) {
               onClick: Pf,
               children: [
                 (0, $.jsx)(ie, { className: `icon-xs` }),
-                (0, $.jsx)(u, {
+                (0, $.jsx)(d, {
                   id: `appUpdate.recovery.updateCodex`,
                   defaultMessage: `Update Codex`,
                   description: `Button label shown on the full-screen error page to install a desktop app update`,
@@ -7704,7 +7704,7 @@ function Nf(e) {
               disabled: !0,
               children: [
                 (0, $.jsx)(te, { className: `icon-xs` }),
-                (0, $.jsx)(u, {
+                (0, $.jsx)(d, {
                   id: `appUpdate.recovery.checkingForUpdates`,
                   defaultMessage: `Checking for updates`,
                   description: `Disabled status shown on the full-screen error page while checking for desktop app updates`,
@@ -7725,7 +7725,7 @@ function Nf(e) {
               disabled: !0,
               children: [
                 (0, $.jsx)(te, { className: `icon-xs` }),
-                (0, $.jsx)(u, {
+                (0, $.jsx)(d, {
                   id: `appUpdate.recovery.downloadingUpdate`,
                   defaultMessage: `Downloading update`,
                   description: `Disabled status shown on the full-screen error page while downloading a desktop app update`,
@@ -7746,7 +7746,7 @@ function Nf(e) {
               disabled: !0,
               children: [
                 (0, $.jsx)(te, { className: `icon-xs` }),
-                (0, $.jsx)(u, {
+                (0, $.jsx)(d, {
                   id: `appUpdate.recovery.installingUpdate`,
                   defaultMessage: `Installing update`,
                   description: `Disabled status shown on the full-screen error page while installing a desktop app update`,
@@ -7805,7 +7805,7 @@ function Vf(e) {
     ? ((i = (0, $.jsx)(re, {
         className: `icon-lg text-token-error-foreground`,
       })),
-      (a = (0, $.jsx)(u, {
+      (a = (0, $.jsx)(d, {
         id: `codex.errorBoundary.genericError`,
         defaultMessage: `Oops, an error has occurred`,
         description: `Generic error message shown when the extension webview fails`,
@@ -7829,7 +7829,7 @@ function Vf(e) {
     : (s = t[5]);
   let c;
   t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = (0, $.jsx)(u, {
+    ? ((c = (0, $.jsx)(d, {
         id: `codex.errorBoundary.goHome`,
         defaultMessage: `Try again`,
         description: `Button label to navigate to the home page after an error`,

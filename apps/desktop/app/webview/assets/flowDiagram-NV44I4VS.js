@@ -1,38 +1,39 @@
 import { h as e, s as t } from "./chunk-S3R3BYOJ.js";
-import { i as n, r, t as i } from "./src-DXdm7MTq.js";
+import { t as n } from "./src-BHeH9bp0.js";
+import { n as r, r as i } from "./chunk-AGHRB4JF-CwjJfTB_.js";
+import { s as a } from "./invert.js";
+import { t as o } from "./channel-Bg_9b54a.js";
 import {
-  B as a,
-  C as o,
-  H as s,
-  U as c,
-  _ as l,
-  a as u,
-  b as d,
-  et as f,
-  s as p,
-  u as m,
-  v as h,
-  z as g,
-} from "./chunk-ABZYJK2D.js";
-import { t as _ } from "./channel.js";
-import "./dist-Dkaf81wL.js";
+  B as s,
+  C as c,
+  H as l,
+  U as u,
+  _ as d,
+  a as f,
+  b as p,
+  s as m,
+  u as h,
+  v as g,
+  z as _,
+} from "./chunk-ABZYJK2D-DSLQAJWr.js";
+import "./dist-OQR0lEt7.js";
+import "./marked.esm-BR-H6018.js";
 import "./chunk-JA3XYJ7Z.js";
-import "./marked.esm.js";
-import { t as v } from "./chunk-FMBD7UC4.js";
-import "./chunk-HN2XXSSU.js";
+import { t as v } from "./chunk-FMBD7UC4-CkVnjLLR.js";
+import "./chunk-HN2XXSSU-J1M-o__Q.js";
 import "./chunk-CVBHYZKI.js";
-import { t as ee } from "./chunk-55IACEB6.js";
+import { t as ee } from "./chunk-55IACEB6-Dw4U87tB.js";
 import { t as te } from "./chunk-QN33PNHL.js";
 import "./chunk-ATLVNIR6.js";
 import { o as ne } from "./chunk-JZLCHNYA.js";
 import "./chunk-QXUST7PY.js";
-import { r as y, t as b } from "./chunk-N4CR4FBY.js";
+import { r as y, t as b } from "./chunk-N4CR4FBY-BeIHswHY.js";
 import { n as x, t as S } from "./chunk-MI3HLSF2.js";
 var C = `flowchart-`,
   w = class {
     constructor() {
       ((this.vertexCounter = 0),
-        (this.config = d()),
+        (this.config = p()),
         (this.vertices = new Map()),
         (this.edges = []),
         (this.classes = new Map()),
@@ -44,12 +45,12 @@ var C = `flowchart-`,
         (this.secCount = -1),
         (this.posCrossRef = []),
         (this.funs = []),
-        (this.setAccTitle = a),
-        (this.setAccDescription = g),
-        (this.setDiagramTitle = c),
-        (this.getAccTitle = h),
-        (this.getAccDescription = l),
-        (this.getDiagramTitle = o),
+        (this.setAccTitle = s),
+        (this.setAccDescription = _),
+        (this.setDiagramTitle = u),
+        (this.getAccTitle = g),
+        (this.getAccDescription = d),
+        (this.getDiagramTitle = c),
         this.funs.push(this.setupToolTips.bind(this)),
         (this.addVertex = this.addVertex.bind(this)),
         (this.firstGraph = this.firstGraph.bind(this)),
@@ -74,7 +75,7 @@ var C = `flowchart-`,
       r(this, `FlowDB`);
     }
     sanitizeText(e) {
-      return p.sanitizeText(e, this.config);
+      return m.sanitizeText(e, this.config);
     }
     lookUpDomId(e) {
       for (let t of this.vertices.values()) if (t.id === e) return t.domId;
@@ -106,38 +107,38 @@ var C = `flowchart-`,
         return;
       }
       let u,
-        f = this.vertices.get(e);
+        d = this.vertices.get(e);
       if (
-        (f === void 0 &&
-          ((f = {
+        (d === void 0 &&
+          ((d = {
             id: e,
             labelType: `text`,
             domId: C + e + `-` + this.vertexCounter,
             styles: [],
             classes: [],
           }),
-          this.vertices.set(e, f)),
+          this.vertices.set(e, d)),
         this.vertexCounter++,
         t === void 0
-          ? f.text === void 0 && (f.text = e)
-          : ((this.config = d()),
+          ? d.text === void 0 && (d.text = e)
+          : ((this.config = p()),
             (u = this.sanitizeText(t.text.trim())),
-            (f.labelType = t.type),
+            (d.labelType = t.type),
             u.startsWith(`"`) &&
               u.endsWith(`"`) &&
               (u = u.substring(1, u.length - 1)),
-            (f.text = u)),
-        n !== void 0 && (f.type = n),
+            (d.text = u)),
+        n !== void 0 && (d.type = n),
         r?.forEach((e) => {
-          f.styles.push(e);
+          d.styles.push(e);
         }),
         i?.forEach((e) => {
-          f.classes.push(e);
+          d.classes.push(e);
         }),
-        a !== void 0 && (f.dir = a),
-        f.props === void 0
-          ? (f.props = o)
-          : o !== void 0 && Object.assign(f.props, o),
+        a !== void 0 && (d.dir = a),
+        d.props === void 0
+          ? (d.props = o)
+          : o !== void 0 && Object.assign(d.props, o),
         c !== void 0)
       ) {
         if (c.shape) {
@@ -146,26 +147,26 @@ var C = `flowchart-`,
               `No such shape: ${c.shape}. Shape names should be lowercase.`,
             );
           if (!ne(c.shape)) throw Error(`No such shape: ${c.shape}.`);
-          f.type = c?.shape;
+          d.type = c?.shape;
         }
-        (c?.label && (f.text = c?.label),
+        (c?.label && (d.text = c?.label),
           c?.icon &&
-            ((f.icon = c?.icon),
-            !c.label?.trim() && f.text === e && (f.text = ``)),
-          c?.form && (f.form = c?.form),
-          c?.pos && (f.pos = c?.pos),
+            ((d.icon = c?.icon),
+            !c.label?.trim() && d.text === e && (d.text = ``)),
+          c?.form && (d.form = c?.form),
+          c?.pos && (d.pos = c?.pos),
           c?.img &&
-            ((f.img = c?.img),
-            !c.label?.trim() && f.text === e && (f.text = ``)),
-          c?.constraint && (f.constraint = c.constraint),
-          c.w && (f.assetWidth = Number(c.w)),
-          c.h && (f.assetHeight = Number(c.h)));
+            ((d.img = c?.img),
+            !c.label?.trim() && d.text === e && (d.text = ``)),
+          c?.constraint && (d.constraint = c.constraint),
+          c.w && (d.assetWidth = Number(c.w)),
+          c.h && (d.assetHeight = Number(c.h)));
       }
     }
-    addSingleLink(e, r, i, a) {
+    addSingleLink(e, n, r, a) {
       let o = {
         start: e,
-        end: r,
+        end: n,
         type: void 0,
         text: ``,
         labelType: `text`,
@@ -173,8 +174,8 @@ var C = `flowchart-`,
         isUserDefinedId: !1,
         interpolate: this.edges.defaultInterpolate,
       };
-      n.info(`abc78 Got edge...`, o);
-      let s = i.text;
+      i.info(`abc78 Got edge...`, o);
+      let s = r.text;
       if (
         (s !== void 0 &&
           ((o.text = this.sanitizeText(s.text.trim())),
@@ -182,10 +183,10 @@ var C = `flowchart-`,
             o.text.endsWith(`"`) &&
             (o.text = o.text.substring(1, o.text.length - 1)),
           (o.labelType = s.type)),
-        i !== void 0 &&
-          ((o.type = i.type),
-          (o.stroke = i.stroke),
-          (o.length = i.length > 10 ? 10 : i.length)),
+        r !== void 0 &&
+          ((o.type = r.type),
+          (o.stroke = r.stroke),
+          (o.length = r.length > 10 ? 10 : r.length)),
         a && !this.edges.some((e) => e.id === a))
       )
         ((o.id = a), (o.isUserDefinedId = !0));
@@ -198,7 +199,7 @@ var C = `flowchart-`,
           : (o.id = t(o.start, o.end, { counter: e.length + 1, prefix: `L` }));
       }
       if (this.edges.length < (this.config.maxEdges ?? 500))
-        (n.info(`Pushing edge...`), this.edges.push(o));
+        (i.info(`Pushing edge...`), this.edges.push(o));
       else
         throw Error(`Edge limit exceeded. ${this.edges.length} edges found, but the limit is ${this.config.maxEdges}.
 
@@ -211,16 +212,16 @@ You have to call mermaid.initialize.`);
         typeof e == `object` && !!e && `id` in e && typeof e.id == `string`
       );
     }
-    addLink(e, t, r) {
-      let i = this.isLinkData(r) ? r.id.replace(`@`, ``) : void 0;
-      n.info(`addLink`, e, t, i);
-      for (let n of e)
+    addLink(e, t, n) {
+      let r = this.isLinkData(n) ? n.id.replace(`@`, ``) : void 0;
+      i.info(`addLink`, e, t, r);
+      for (let i of e)
         for (let a of t) {
-          let o = n === e[e.length - 1],
+          let o = i === e[e.length - 1],
             s = a === t[0];
           o && s
-            ? this.addSingleLink(n, a, r, i)
-            : this.addSingleLink(n, a, r, void 0);
+            ? this.addSingleLink(i, a, n, r)
+            : this.addSingleLink(i, a, n, void 0);
         }
     }
     updateLinkInterpolate(e, t) {
@@ -294,7 +295,7 @@ You have to call mermaid.initialize.`);
     }
     setClickFun(t, n, r) {
       let i = this.lookUpDomId(t);
-      if (d().securityLevel !== `loose` || n === void 0) return;
+      if (p().securityLevel !== `loose` || n === void 0) return;
       let a = [];
       if (typeof r == `string`) {
         a = r.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/);
@@ -357,33 +358,33 @@ You have to call mermaid.initialize.`);
       return this.classes;
     }
     setupToolTips(e) {
-      let t = i(`.mermaidTooltip`);
+      let t = n(`.mermaidTooltip`);
       ((t._groups || t)[0][0] === null &&
-        (t = i(`body`)
+        (t = n(`body`)
           .append(`div`)
           .attr(`class`, `mermaidTooltip`)
           .style(`opacity`, 0)),
-        i(e)
+        n(e)
           .select(`svg`)
           .selectAll(`g.node`)
           .on(`mouseover`, (e) => {
-            let n = i(e.currentTarget);
-            if (n.attr(`title`) === null) return;
-            let r = e.currentTarget?.getBoundingClientRect();
+            let r = n(e.currentTarget);
+            if (r.attr(`title`) === null) return;
+            let i = e.currentTarget?.getBoundingClientRect();
             (t.transition().duration(200).style(`opacity`, `.9`),
               t
-                .text(n.attr(`title`))
+                .text(r.attr(`title`))
                 .style(
                   `left`,
-                  window.scrollX + r.left + (r.right - r.left) / 2 + `px`,
+                  window.scrollX + i.left + (i.right - i.left) / 2 + `px`,
                 )
-                .style(`top`, window.scrollY + r.bottom + `px`),
+                .style(`top`, window.scrollY + i.bottom + `px`),
               t.html(t.html().replace(/&lt;br\/&gt;/g, `<br/>`)),
-              n.classed(`hover`, !0));
+              r.classed(`hover`, !0));
           })
           .on(`mouseout`, (e) => {
             (t.transition().duration(500).style(`opacity`, 0),
-              i(e.currentTarget).classed(`hover`, !1));
+              n(e.currentTarget).classed(`hover`, !1));
           }));
     }
     clear(e = `gen-2`) {
@@ -397,8 +398,8 @@ You have to call mermaid.initialize.`);
         (this.tooltips = new Map()),
         (this.firstGraphFlag = !0),
         (this.version = e),
-        (this.config = d()),
-        u());
+        (this.config = p()),
+        f());
     }
     setGen(e) {
       this.version = e || `gen-2`;
@@ -406,10 +407,10 @@ You have to call mermaid.initialize.`);
     defaultStyle() {
       return `fill:#ffa;stroke: #f66; stroke-width: 3px; stroke-dasharray: 5, 5;fill:#ffa;stroke: #666;`;
     }
-    addSubGraph(e, t, i) {
+    addSubGraph(e, t, n) {
       let a = e.text.trim(),
-        o = i.text;
-      e === i && /\s/.exec(i.text) && (a = void 0);
+        o = n.text;
+      e === n && /\s/.exec(n.text) && (a = void 0);
       let s = r((e) => {
           let t = { boolean: {}, number: {}, string: {} },
             n = [],
@@ -434,10 +435,10 @@ You have to call mermaid.initialize.`);
         }, `uniq`)(t.flat()),
         c = s.nodeList,
         l = s.dir,
-        u = d().flowchart ?? {};
+        u = p().flowchart ?? {};
       if (
         ((l ??= u.inheritDir
-          ? (this.getDirection() ?? d().direction ?? void 0)
+          ? (this.getDirection() ?? p().direction ?? void 0)
           : void 0),
         this.version === `gen-1`)
       )
@@ -446,19 +447,19 @@ You have to call mermaid.initialize.`);
         (o ||= ``),
         (o = this.sanitizeText(o)),
         (this.subCount += 1));
-      let f = {
+      let d = {
         id: a,
         nodes: c,
         title: o.trim(),
         classes: [],
         dir: l,
-        labelType: i.type,
+        labelType: n.type,
       };
       return (
-        n.info(`Adding`, f.id, f.nodes, f.dir),
-        (f.nodes = this.makeUniq(f, this.subGraphs).nodes),
-        this.subGraphs.push(f),
-        this.subGraphLookup.set(a, f),
+        i.info(`Adding`, d.id, d.nodes, d.dir),
+        (d.nodes = this.makeUniq(d, this.subGraphs).nodes),
+        this.subGraphs.push(d),
+        this.subGraphLookup.set(a, d),
         a
       );
     }
@@ -679,7 +680,7 @@ You have to call mermaid.initialize.`);
       return t;
     }
     getData() {
-      let e = d(),
+      let e = p(),
         n = [],
         r = [],
         i = this.getSubGraphs(),
@@ -758,7 +759,7 @@ You have to call mermaid.initialize.`);
       );
     }
     defaultConfig() {
-      return m.flowchart;
+      return h.flowchart;
     }
   },
   T = {
@@ -766,31 +767,31 @@ You have to call mermaid.initialize.`);
       return t.db.getClasses();
     }, `getClasses`),
     draw: r(async function (t, r, a, o) {
-      (n.info(`REF0:`), n.info(`Drawing state diagram (v2)`, r));
-      let { securityLevel: s, flowchart: c, layout: l } = d(),
+      (i.info(`REF0:`), i.info(`Drawing state diagram (v2)`, r));
+      let { securityLevel: s, flowchart: c, layout: l } = p(),
         u;
-      s === `sandbox` && (u = i(`#i` + r));
-      let f = s === `sandbox` ? u.nodes()[0].contentDocument : document;
-      n.debug(`Before getData: `);
-      let p = o.db.getData();
-      n.debug(`Data: `, p);
+      s === `sandbox` && (u = n(`#i` + r));
+      let d = s === `sandbox` ? u.nodes()[0].contentDocument : document;
+      i.debug(`Before getData: `);
+      let f = o.db.getData();
+      i.debug(`Data: `, f);
       let m = ee(r, s),
         h = o.db.getDirection();
-      ((p.type = o.type),
-        (p.layoutAlgorithm = b(l)),
-        p.layoutAlgorithm === `dagre` &&
+      ((f.type = o.type),
+        (f.layoutAlgorithm = b(l)),
+        f.layoutAlgorithm === `dagre` &&
           l === `elk` &&
-          n.warn(
+          i.warn(
             "flowchart-elk was moved to an external package in Mermaid v11. Please refer [release notes](https://github.com/mermaid-js/mermaid/releases/tag/v11.0.0) for more details. This diagram will be rendered using `dagre` layout as a fallback.",
           ),
-        (p.direction = h),
-        (p.nodeSpacing = c?.nodeSpacing || 50),
-        (p.rankSpacing = c?.rankSpacing || 50),
-        (p.markers = [`point`, `circle`, `cross`]),
-        (p.diagramId = r),
-        n.debug(`REF1:`, p),
-        await y(p, m));
-      let g = p.config.flowchart?.diagramPadding ?? 8;
+        (f.direction = h),
+        (f.nodeSpacing = c?.nodeSpacing || 50),
+        (f.rankSpacing = c?.rankSpacing || 50),
+        (f.markers = [`point`, `circle`, `cross`]),
+        (f.diagramId = r),
+        i.debug(`REF1:`, f),
+        await y(f, m));
+      let g = f.config.flowchart?.diagramPadding ?? 8;
       (e.insertTitle(
         m,
         `flowchartTitleText`,
@@ -798,22 +799,22 @@ You have to call mermaid.initialize.`);
         o.db.getDiagramTitle(),
       ),
         te(m, g, `flowchart`, c?.useMaxWidth || !1));
-      for (let e of p.nodes) {
-        let t = i(`#${r} [id="${e.id}"]`);
+      for (let e of f.nodes) {
+        let t = n(`#${r} [id="${e.id}"]`);
         if (!t || !e.link) continue;
-        let n = f.createElementNS(`http://www.w3.org/2000/svg`, `a`);
-        (n.setAttributeNS(`http://www.w3.org/2000/svg`, `class`, e.cssClasses),
-          n.setAttributeNS(`http://www.w3.org/2000/svg`, `rel`, `noopener`),
+        let i = d.createElementNS(`http://www.w3.org/2000/svg`, `a`);
+        (i.setAttributeNS(`http://www.w3.org/2000/svg`, `class`, e.cssClasses),
+          i.setAttributeNS(`http://www.w3.org/2000/svg`, `rel`, `noopener`),
           s === `sandbox`
-            ? n.setAttributeNS(`http://www.w3.org/2000/svg`, `target`, `_top`)
+            ? i.setAttributeNS(`http://www.w3.org/2000/svg`, `target`, `_top`)
             : e.linkTarget &&
-              n.setAttributeNS(
+              i.setAttributeNS(
                 `http://www.w3.org/2000/svg`,
                 `target`,
                 e.linkTarget,
               ));
         let a = t.insert(function () {
-            return n;
+            return i;
           }, `:first-child`),
           o = t.select(`.label-container`);
         o &&
@@ -3662,8 +3663,8 @@ O.parse = (e) => {
 };
 var re = O,
   ie = r((e, t) => {
-    let n = _;
-    return f(n(e, `r`), n(e, `g`), n(e, `b`), t);
+    let n = o;
+    return a(n(e, `r`), n(e, `g`), n(e, `b`), t);
   }, `fade`),
   ae = {
     parser: re,
@@ -3824,9 +3825,9 @@ var re = O,
     ),
     init: r((e) => {
       ((e.flowchart ||= {}),
-        e.layout && s({ layout: e.layout }),
+        e.layout && l({ layout: e.layout }),
         (e.flowchart.arrowMarkerAbsolute = e.arrowMarkerAbsolute),
-        s({ flowchart: { arrowMarkerAbsolute: e.arrowMarkerAbsolute } }));
+        l({ flowchart: { arrowMarkerAbsolute: e.arrowMarkerAbsolute } }));
     }, `init`),
   };
 export { ae as diagram };

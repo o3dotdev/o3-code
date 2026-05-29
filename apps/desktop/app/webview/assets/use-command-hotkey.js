@@ -1,53 +1,49 @@
-import { J as e, xt as t } from "./setting-storage.js";
-import { r as n } from "./command-keybindings.js";
-import { t as r } from "./use-hotkey.js";
+import { Y as e, wt as t } from "./setting-storage.js";
+import { i as n } from "./command-keybindings-C3NM9T-L.js";
+import { t as r } from "./use-hotkey-yGPn4uDB.js";
 var i = t();
 function a(t) {
-  let a = (0, i.c)(9),
+  let a = (0, i.c)(8),
     {
       commandId: o,
       enabled: s,
       onKeyDown: c,
       onKeyUp: l,
       capture: u,
-      allowRepeat: d,
-      ignoreWithin: f,
-      keyboardEventTarget: p,
+      ignoreWithin: d,
+      keyboardEventTarget: f,
     } = t,
-    m = s === void 0 ? !0 : s,
-    h = e(n, o),
-    g = h ?? ``,
-    _ = m && h != null,
-    v;
-  (a[0] !== d ||
-  a[1] !== u ||
+    p = s === void 0 ? !0 : s,
+    m = e(n, o),
+    h = m ?? ``,
+    g = p && m != null,
+    _;
+  (a[0] !== u ||
+  a[1] !== d ||
   a[2] !== f ||
-  a[3] !== p ||
-  a[4] !== c ||
-  a[5] !== l ||
-  a[6] !== g ||
-  a[7] !== _
-    ? ((v = {
-        accelerator: g,
-        enabled: _,
+  a[3] !== c ||
+  a[4] !== l ||
+  a[5] !== h ||
+  a[6] !== g
+    ? ((_ = {
+        accelerator: h,
+        enabled: g,
         onKeyDown: c,
         onKeyUp: l,
         capture: u,
-        allowRepeat: d,
-        ignoreWithin: f,
-        keyboardEventTarget: p,
+        ignoreWithin: d,
+        keyboardEventTarget: f,
       }),
-      (a[0] = d),
-      (a[1] = u),
+      (a[0] = u),
+      (a[1] = d),
       (a[2] = f),
-      (a[3] = p),
-      (a[4] = c),
-      (a[5] = l),
+      (a[3] = c),
+      (a[4] = l),
+      (a[5] = h),
       (a[6] = g),
-      (a[7] = _),
-      (a[8] = v))
-    : (v = a[8]),
-    r(v));
+      (a[7] = _))
+    : (_ = a[7]),
+    r(_));
 }
 export { a as t };
 //# sourceMappingURL=use-command-hotkey.js.map

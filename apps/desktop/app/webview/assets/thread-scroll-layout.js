@@ -1,238 +1,241 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { xt as i } from "./setting-storage.js";
-import { t as a } from "./proxy.js";
-import { h as ee, v as o, y as s } from "./window-app-action-helpers.js";
-import { t as c } from "./use-stable-callback.js";
-import { t as te } from "./get-resize-observer-entry-size.js";
-import { n as ne } from "./use-resize-observer.js";
-import { t as re } from "./app-shell-bottom-panel-scroll-sync.js";
-import { t as ie } from "./thread-layout.js";
-var l = e(t(), 1),
-  ae = (0, l.createContext)(null);
-function u() {
-  let e = (0, l.use)(ae);
+import { t as r } from "./clsx-BcPLHiun.js";
+import { wt as i } from "./setting-storage.js";
+import { t as ee } from "./proxy.js";
+import { h as te, v as a, y as o } from "./window-app-action-helpers.js";
+import { t as s } from "./use-stable-callback.js";
+import { t as ne } from "./get-resize-observer-entry-size-Bj-GuBki.js";
+import { n as re } from "./use-resize-observer-DCpyQHos.js";
+import { t as ie } from "./app-shell-bottom-panel-scroll-sync.js";
+import { t as ae } from "./thread-layout-DxVAHgCj.js";
+var c = e(t(), 1),
+  oe = (0, c.createContext)(null);
+function l() {
+  let e = (0, c.use)(oe);
   if (e == null)
     throw Error(
       `useThreadScrollController must be used within ThreadScrollLayout`,
     );
   return e;
 }
-var oe = i(),
-  d = n(),
-  se = 260,
-  ce = 1e3;
-function f(e) {
-  let t = (0, oe.c)(63),
+var se = i(),
+  u = n(),
+  ce = 260,
+  le = 1e3;
+function ue(e) {
+  let t = (0, se.c)(68),
     {
       contentX: n,
       children: i,
-      footer: u,
-      onScroll: f,
-      ref: de,
-      initialOffset: fe,
+      footer: l,
+      hasLiveMcpAppFrame: ue,
+      onScroll: pe,
+      ref: me,
+      initialOffset: he,
     } = e,
-    p = fe === void 0 ? 0 : fe,
-    m = (0, l.useRef)(null),
-    [pe, me] = (0, l.useState)(!1),
-    he = (0, l.useRef)(null),
-    ge = (0, l.useRef)(p ?? 0),
-    h;
+    ge = ue === void 0 ? !1 : ue,
+    d = he === void 0 ? 0 : he,
+    f = (0, c.useRef)(null),
+    [_e, ve] = (0, c.useState)(!1),
+    ye = (0, c.useRef)(null),
+    p = (0, c.useRef)(d ?? 0),
+    m;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = new Set()), (t[0] = h))
-    : (h = t[0]);
-  let _e = (0, l.useRef)(h),
-    g;
+    ? ((m = new Set()), (t[0] = m))
+    : (m = t[0]);
+  let be = (0, c.useRef)(m),
+    h;
   t[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((g = new Set()), (t[1] = g))
-    : (g = t[1]);
-  let ve = (0, l.useRef)(g),
-    _ = (0, l.useRef)(null),
-    v = (0, l.useRef)(!1),
-    ye = (0, l.useRef)(!1),
-    y = (0, l.useRef)(null),
-    b = (0, l.useContext)(re),
-    x;
-  t[2] === b
-    ? (x = t[3])
-    : ((x = (e) => {
-        if (((m.current = e), !(e == null || b == null)))
-          return b((t) => {
-            v.current || ue(e) || s(e, o(e) + t);
+    ? ((h = new Set()), (t[1] = h))
+    : (h = t[1]);
+  let xe = (0, c.useRef)(h),
+    g = (0, c.useRef)(null),
+    Se = (0, c.useRef)(!1),
+    Ce = (0, c.useRef)(!1),
+    _ = (0, c.useRef)(null),
+    v = (0, c.useContext)(ie),
+    y;
+  t[2] === v
+    ? (y = t[3])
+    : ((y = (e) => {
+        if (((f.current = e), !(e == null || v == null)))
+          return v((t) => {
+            Se.current || fe(e) || o(e, a(e) + t);
           });
       }),
-      (t[2] = b),
-      (t[3] = x));
-  let be = x,
-    S;
+      (t[2] = v),
+      (t[3] = y));
+  let we = y,
+    b;
   t[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((S = () => m.current), (t[4] = S))
-    : (S = t[4]);
-  let xe = c(S),
-    C;
+    ? ((b = () => f.current), (t[4] = b))
+    : (b = t[4]);
+  let Te = s(b),
+    x;
   t[5] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((C = () => ge.current), (t[5] = C))
-    : (C = t[5]);
-  let Se = C,
-    w;
+    ? ((x = () => p.current), (t[5] = x))
+    : (x = t[5]);
+  let Ee = x,
+    S;
   t[6] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((w = (e) => (
-        _e.current.add(e),
-        e(ge.current),
+    ? ((S = (e) => (
+        be.current.add(e),
+        e(p.current),
         () => {
-          _e.current.delete(e);
+          be.current.delete(e);
         }
       )),
-      (t[6] = w))
-    : (w = t[6]);
-  let Ce = c(w),
-    T;
+      (t[6] = S))
+    : (S = t[6]);
+  let De = s(S),
+    C;
   t[7] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = (e) => (
-        ve.current.add(e),
+    ? ((C = (e) => (
+        xe.current.add(e),
         () => {
-          ve.current.delete(e);
+          xe.current.delete(e);
         }
       )),
-      (t[7] = T))
-    : (T = t[7]);
-  let we = c(T),
-    E;
-  t[8] === f
-    ? (E = t[9])
-    : ((E = (e) => {
-        ge.current = e;
+      (t[7] = C))
+    : (C = t[7]);
+  let Oe = s(C),
+    w;
+  t[8] === pe
+    ? (w = t[9])
+    : ((w = (e) => {
+        p.current = e;
         let t = e <= 24;
-        f?.(e, t);
-        for (let t of _e.current) t(e);
-        me(!t);
+        pe?.(e, t);
+        for (let t of be.current) t(e);
+        ve(!t);
       }),
-      (t[8] = f),
-      (t[9] = E));
-  let D = c(E),
-    O;
+      (t[8] = pe),
+      (t[9] = w));
+  let T = s(w),
+    E;
   t[10] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((O = () => {
-        ((v.current = !1),
-          y.current != null &&
-            (window.cancelAnimationFrame(y.current), (y.current = null)));
+    ? ((E = () => {
+        ((Se.current = !1),
+          _.current != null &&
+            (window.cancelAnimationFrame(_.current), (_.current = null)));
       }),
-      (t[10] = O))
-    : (O = t[10]);
-  let k = c(O),
-    A;
+      (t[10] = E))
+    : (E = t[10]);
+  let D = s(E),
+    O;
   t[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((A = () => {
-        ((v.current = !0),
-          y.current != null &&
-            (window.cancelAnimationFrame(y.current), (y.current = null)));
+    ? ((O = () => {
+        ((Se.current = !0),
+          _.current != null &&
+            (window.cancelAnimationFrame(_.current), (_.current = null)));
       }),
-      (t[11] = A))
-    : (A = t[11]);
-  let Te = c(A),
-    j;
+      (t[11] = O))
+    : (O = t[11]);
+  let ke = s(O),
+    k;
   t[12] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((j = (e, t) => {
-        let n = m.current;
+    ? ((k = (e, t) => {
+        let n = f.current;
         if (n == null) return;
         let r = Math.max(0, t(n));
         n.scrollTo({ behavior: e, top: r === 0 ? 0 : -r });
       }),
-      (t[12] = j))
-    : (j = t[12]);
-  let M = c(j),
-    N;
-  t[13] !== k || t[14] !== M
-    ? ((N = (e, t) => {
-        (e > 24 && k(), M(t, () => e));
+      (t[12] = k))
+    : (k = t[12]);
+  let A = s(k),
+    j;
+  t[13] !== D || t[14] !== A
+    ? ((j = (e, t) => {
+        (e > 24 && D(), A(t, () => e));
       }),
-      (t[13] = k),
-      (t[14] = M),
-      (t[15] = N))
-    : (N = t[15]);
-  let Ee = c(N),
-    P;
+      (t[13] = D),
+      (t[14] = A),
+      (t[15] = j))
+    : (j = t[15]);
+  let Ae = s(j),
+    M;
   t[16] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((P = (e) => {
-        ye.current = e;
+    ? ((M = (e) => {
+        Ce.current = e;
       }),
-      (t[16] = P))
-    : (P = t[16]);
-  let De = c(P),
-    F;
-  t[17] !== k || t[18] !== M || t[19] !== Te
-    ? ((F = () => {
-        let e = m.current;
+      (t[16] = M))
+    : (M = t[16]);
+  let je = s(M),
+    N;
+  t[17] !== D || t[18] !== A || t[19] !== ke
+    ? ((N = () => {
+        let e = f.current;
         if (e == null) return;
-        let t = o(e);
+        let t = a(e);
         if (t <= 24) {
-          (M(`instant`, le), k());
+          (A(`instant`, de), D());
           return;
         }
-        Te();
+        ke();
         let n = performance.now(),
           r = (e) => {
-            let i = m.current;
+            let i = f.current;
             if (i == null) {
-              k();
+              D();
               return;
             }
-            let a = Math.min(1, (e - n) / se);
-            if ((s(i, t * (1 - (1 - (1 - a) ** 3))), a < 1 && !ue(i))) {
-              y.current = window.requestAnimationFrame(r);
+            let ee = Math.min(1, (e - n) / ce);
+            if ((o(i, t * (1 - (1 - (1 - ee) ** 3))), ee < 1 && !fe(i))) {
+              _.current = window.requestAnimationFrame(r);
               return;
             }
-            (s(i, 0), k());
+            (o(i, 0), D());
           };
-        y.current = window.requestAnimationFrame(r);
+        _.current = window.requestAnimationFrame(r);
       }),
-      (t[17] = k),
-      (t[18] = M),
-      (t[19] = Te),
-      (t[20] = F))
-    : (F = t[20]);
-  let I = c(F),
-    L,
-    R;
-  (t[21] !== p || t[22] !== D
-    ? ((L = () => {
-        let e = m.current;
+      (t[17] = D),
+      (t[18] = A),
+      (t[19] = ke),
+      (t[20] = N))
+    : (N = t[20]);
+  let P = s(N),
+    F,
+    I;
+  (t[21] !== d || t[22] !== T
+    ? ((F = () => {
+        let e = f.current;
         if (e == null) return;
-        let t = p ?? 0;
-        (s(e, t), D(t));
+        let t = d ?? 0;
+        (o(e, t), T(t));
       }),
-      (R = [p, D]),
-      (t[21] = p),
-      (t[22] = D),
-      (t[23] = L),
-      (t[24] = R))
-    : ((L = t[23]), (R = t[24])),
-    (0, l.useLayoutEffect)(L, R));
-  let z, B;
-  (t[25] !== k || t[26] !== D
-    ? ((z = () => {
-        let e = m.current;
+      (I = [d, T]),
+      (t[21] = d),
+      (t[22] = T),
+      (t[23] = F),
+      (t[24] = I))
+    : ((F = t[23]), (I = t[24])),
+    (0, c.useLayoutEffect)(F, I));
+  let L, R;
+  (t[25] !== D || t[26] !== T
+    ? ((L = () => {
+        let e = f.current;
         if (e == null) return;
         let t = () => {
-            let t = o(e);
-            (t <= 24 && k(), D(t));
+            let t = a(e);
+            (t <= 24 && D(), T(t));
           },
           n = () => {
+            let n = p.current;
             t();
-            let n = _.current;
-            if (n == null) return;
-            let r = performance.now();
-            if (r - n > ce) {
-              _.current = null;
+            let r = g.current;
+            if (r == null) return;
+            let i = performance.now();
+            if (i - r > le) {
+              g.current = null;
               return;
             }
-            _.current = r;
-            let i = o(e);
-            for (let e of ve.current) e(i);
+            g.current = i;
+            let ee = a(e);
+            for (let e of xe.current) e(ee, n);
           },
           r = () => {
-            ((_.current = performance.now()), k(), t());
+            ((g.current = performance.now()), D(), t());
           };
         return (
           e.addEventListener(`pointerdown`, r, { passive: !0 }),
@@ -245,169 +248,178 @@ function f(e) {
           }
         );
       }),
-      (B = [k, D]),
-      (t[25] = k),
-      (t[26] = D),
-      (t[27] = z),
-      (t[28] = B))
-    : ((z = t[27]), (B = t[28])),
-    (0, l.useEffect)(z, B));
-  let V, H;
-  (t[29] === k
-    ? ((V = t[30]), (H = t[31]))
-    : ((V = () => () => {
-        k();
+      (R = [D, T]),
+      (t[25] = D),
+      (t[26] = T),
+      (t[27] = L),
+      (t[28] = R))
+    : ((L = t[27]), (R = t[28])),
+    (0, c.useEffect)(L, R));
+  let z, B;
+  (t[29] === D
+    ? ((z = t[30]), (B = t[31]))
+    : ((z = () => () => {
+        D();
       }),
-      (H = [k]),
-      (t[29] = k),
-      (t[30] = V),
-      (t[31] = H)),
-    (0, l.useEffect)(V, H));
-  let U;
-  (t[32] === I
-    ? (U = t[33])
-    : ((U = () => ({ scrollToBottom: I })), (t[32] = I), (t[33] = U)),
-    (0, l.useImperativeHandle)(de, U));
-  let W;
-  t[34] !== Ce ||
-  t[35] !== we ||
-  t[36] !== xe ||
-  t[37] !== pe ||
-  t[38] !== I ||
-  t[39] !== Ee ||
-  t[40] !== De
-    ? ((W = {
-        addScrollListener: Ce,
-        addUserScrollListener: we,
-        getLastScrollDistanceFromBottomPx: Se,
-        getScrollElement: xe,
-        isScrolledFromBottom: pe,
-        scrollToBottom: I,
-        scrollToDistanceFromBottomPx: Ee,
-        setFooterResizeViewportPreserveDisabled: De,
+      (B = [D]),
+      (t[29] = D),
+      (t[30] = z),
+      (t[31] = B)),
+    (0, c.useEffect)(z, B));
+  let V;
+  (t[32] === P
+    ? (V = t[33])
+    : ((V = () => ({ scrollToBottom: P })), (t[32] = P), (t[33] = V)),
+    (0, c.useImperativeHandle)(me, V));
+  let H;
+  t[34] !== De ||
+  t[35] !== Oe ||
+  t[36] !== Te ||
+  t[37] !== _e ||
+  t[38] !== P ||
+  t[39] !== Ae ||
+  t[40] !== je
+    ? ((H = {
+        addScrollListener: De,
+        addUserScrollListener: Oe,
+        getLastScrollDistanceFromBottomPx: Ee,
+        getScrollElement: Te,
+        isScrolledFromBottom: _e,
+        scrollToBottom: P,
+        scrollToDistanceFromBottomPx: Ae,
+        setFooterResizeViewportPreserveDisabled: je,
       }),
-      (t[34] = Ce),
-      (t[35] = we),
-      (t[36] = xe),
-      (t[37] = pe),
-      (t[38] = I),
-      (t[39] = Ee),
-      (t[40] = De),
-      (t[41] = W))
-    : (W = t[41]);
-  let Oe = W,
-    G;
-  t[42] === M
-    ? (G = t[43])
-    : ((G = (e) => {
-        let { height: t } = te(e),
-          n = m.current;
+      (t[34] = De),
+      (t[35] = Oe),
+      (t[36] = Te),
+      (t[37] = _e),
+      (t[38] = P),
+      (t[39] = Ae),
+      (t[40] = je),
+      (t[41] = H))
+    : (H = t[41]);
+  let Me = H,
+    U;
+  t[42] === A
+    ? (U = t[43])
+    : ((U = (e) => {
+        let { height: t } = ne(e),
+          n = f.current;
         if (n == null) return;
-        let r = he.current;
+        let r = ye.current;
         r !== t &&
           (n.style.setProperty(`--thread-scroll-padding-bottom`, `${t + 16}px`),
-          (he.current = t),
-          !(v.current || ye.current) &&
-            (r == null || ue(n) || M(`instant`, (e) => o(e) + t - r)));
+          (ye.current = t),
+          !(Se.current || Ce.current) &&
+            (r == null || fe(n) || A(`instant`, (e) => a(e) + t - r)));
       }),
-      (t[42] = M),
-      (t[43] = G));
-  let ke = ne(G),
-    K;
-  t[44] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((K = r(
+      (t[42] = A),
+      (t[43] = U));
+  let Ne = re(U),
+    Pe = ge ? `[content-visibility:visible]` : `[content-visibility:auto]`,
+    W;
+  t[44] === Pe
+    ? (W = t[45])
+    : ((W = r(`h-full flex-1`, Pe)), (t[44] = Pe), (t[45] = W));
+  let G;
+  t[46] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((G = r(
         `thread-scroll-container relative h-full overflow-y-auto [overflow-anchor:none] [scroll-padding-bottom:var(--thread-scroll-padding-bottom,0px)] electron:[scrollbar-gutter:stable_both-edges] pt-(--thread-content-top-inset) [container-name:thread-content] [container-type:inline-size]`,
         `[&:has([data-thread-scroll-footer='true']:focus-within)]:[scroll-padding-bottom:0px]`,
         `flex flex-col-reverse`,
       )),
-      (t[44] = K))
-    : (K = t[44]);
+      (t[46] = G))
+    : (G = t[46]);
+  let K;
+  t[47] === n
+    ? (K = t[48])
+    : ((K = n == null ? void 0 : { x: n }), (t[47] = n), (t[48] = K));
   let q;
-  t[45] === n
-    ? (q = t[46])
-    : ((q = n == null ? void 0 : { x: n }), (t[45] = n), (t[46] = q));
+  t[49] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((q = r(ae, `relative flex shrink-0 flex-col pb-8`)), (t[49] = q))
+    : (q = t[49]);
   let J;
-  t[47] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((J = r(ie, `relative flex shrink-0 flex-col pb-8`)), (t[47] = J))
-    : (J = t[47]);
-  let Y;
-  t[48] === i
-    ? (Y = t[49])
-    : ((Y = (0, d.jsx)(`div`, {
+  t[50] === i
+    ? (J = t[51])
+    : ((J = (0, u.jsx)(`div`, {
         "data-mcp-app-portal-target": `true`,
-        className: J,
+        className: q,
         children: i,
       })),
-      (t[48] = i),
-      (t[49] = Y));
-  let X;
-  t[50] !== u || t[51] !== ke
-    ? ((X = u
-        ? (0, d.jsxs)(`div`, {
+      (t[50] = i),
+      (t[51] = J));
+  let Y;
+  t[52] !== l || t[53] !== Ne
+    ? ((Y = l
+        ? (0, u.jsxs)(`div`, {
             "data-thread-scroll-footer": `true`,
-            ref: ke,
+            ref: Ne,
             className: `sticky bottom-0 z-10 mt-auto w-full pb-2`,
             children: [
-              (0, d.jsx)(`div`, {
+              (0, u.jsx)(`div`, {
                 className: `pointer-events-none absolute inset-x-0 bottom-0 z-0 flex h-full w-full justify-center pt-4`,
-                children: (0, d.jsx)(`div`, {
+                children: (0, u.jsx)(`div`, {
                   className: `z-0 h-full w-full bg-gradient-to-t from-token-main-surface-primary via-token-main-surface-primary extension:from-token-bg-primary extension:via-token-bg-primary`,
                 }),
               }),
-              (0, d.jsx)(`div`, {
-                className: r(`relative z-10 flex flex-col`, ie),
-                children: u,
+              (0, u.jsx)(`div`, {
+                className: r(`relative z-10 flex flex-col`, ae),
+                children: l,
               }),
             ],
           })
         : null),
-      (t[50] = u),
-      (t[51] = ke),
-      (t[52] = X))
-    : (X = t[52]);
-  let Z;
-  t[53] !== q || t[54] !== Y || t[55] !== X
-    ? ((Z = (0, d.jsxs)(a.div, {
-        style: q,
+      (t[52] = l),
+      (t[53] = Ne),
+      (t[54] = Y))
+    : (Y = t[54]);
+  let X;
+  t[55] !== K || t[56] !== J || t[57] !== Y
+    ? ((X = (0, u.jsxs)(ee.div, {
+        style: K,
         className: `flex min-h-full shrink-0 flex-col justify-start`,
-        children: [Y, X],
+        children: [J, Y],
       })),
-      (t[53] = q),
-      (t[54] = Y),
-      (t[55] = X),
-      (t[56] = Z))
-    : (Z = t[56]);
+      (t[55] = K),
+      (t[56] = J),
+      (t[57] = Y),
+      (t[58] = X))
+    : (X = t[58]);
+  let Z;
+  t[59] !== we || t[60] !== X
+    ? ((Z = (0, u.jsx)(`div`, {
+        ref: we,
+        ...te.timelineScroll,
+        className: G,
+        children: X,
+      })),
+      (t[59] = we),
+      (t[60] = X),
+      (t[61] = Z))
+    : (Z = t[61]);
   let Q;
-  t[57] !== be || t[58] !== Z
-    ? ((Q = (0, d.jsx)(`div`, {
-        className: `h-full flex-1 [content-visibility:auto] [&:has([data-mcp-app-frame='true'])]:[content-visibility:visible]`,
-        children: (0, d.jsx)(`div`, {
-          ref: be,
-          ...ee.timelineScroll,
-          className: K,
-          children: Z,
-        }),
-      })),
-      (t[57] = be),
-      (t[58] = Z),
-      (t[59] = Q))
-    : (Q = t[59]);
+  t[62] !== W || t[63] !== Z
+    ? ((Q = (0, u.jsx)(`div`, { className: W, children: Z })),
+      (t[62] = W),
+      (t[63] = Z),
+      (t[64] = Q))
+    : (Q = t[64]);
   let $;
   return (
-    t[60] !== Oe || t[61] !== Q
-      ? (($ = (0, d.jsx)(ae, { value: Oe, children: Q })),
-        (t[60] = Oe),
-        (t[61] = Q),
-        (t[62] = $))
-      : ($ = t[62]),
+    t[65] !== Me || t[66] !== Q
+      ? (($ = (0, u.jsx)(oe, { value: Me, children: Q })),
+        (t[65] = Me),
+        (t[66] = Q),
+        (t[67] = $))
+      : ($ = t[67]),
     $
   );
 }
-function le() {
+function de() {
   return 0;
 }
-function ue(e) {
-  return o(e) <= 24;
+function fe(e) {
+  return a(e) <= 24;
 }
-export { u as n, f as t };
+export { oe as n, l as r, ue as t };
 //# sourceMappingURL=thread-scroll-layout.js.map

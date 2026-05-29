@@ -1,5 +1,5 @@
-import { pr as e } from "./src-BLHmAhbF.js";
-import { B as t } from "./setting-storage.js";
+import { zr as e } from "./src-C.js";
+import { V as t } from "./setting-storage.js";
 import { r as n } from "./skill-utils.js";
 var r = t({
   label: {
@@ -22,71 +22,95 @@ function i(e) {
 var a = `computer-use`,
   o = `app://`,
   s = `agent://`,
-  c = `plugin://`,
-  l = `subagent://`,
-  u = t({
+  c = `mcp-resource://`,
+  l = `plugin://`,
+  u = `subagent://`,
+  d = t({
     computerUse: {
       id: `composer.pluginMention.computerUse.label`,
       defaultMessage: `Computer`,
       description: `Short display label for the Computer Use plugin in mention chips and mention menus.`,
     },
   });
-function d(e) {
+function f(e) {
   let t = e
     .toLowerCase()
     .replace(/[^a-z0-9]/g, `-`)
     .replace(/^-+|-+$/g, ``);
   return t === `` ? `app` : t;
 }
-function f(e) {
+function p(e) {
   return `${o}${e}`;
 }
-function p(e) {
+function m(e) {
   return `${s}${e}`;
 }
-function m(e) {
-  return `${l}${e}`;
-}
 function h(e) {
-  return `${c}${e.trim()}`;
+  return `${u}${e}`;
 }
 function g(e) {
-  return e.startsWith(o);
+  return `${l}${e.trim()}`;
 }
-function _(e) {
-  return e.startsWith(s);
+function _({ pluginId: e, resourceUri: t, server: n }) {
+  return `${c}${encodeURIComponent(e)}/${encodeURIComponent(n)}/${encodeURIComponent(t)}`;
 }
 function v(e) {
-  return e.startsWith(l);
+  return e.startsWith(o);
 }
 function y(e) {
-  return e.startsWith(c);
+  return e.startsWith(s);
 }
-function b(t) {
-  if (!_(t)) return null;
+function b(e) {
+  return e.startsWith(u);
+}
+function x(e) {
+  return e.startsWith(l);
+}
+function S(e) {
+  if (!e.startsWith(c)) return null;
+  let t = e.slice(15),
+    n = t.indexOf(`/`);
+  if (n === -1) return null;
+  let r = t.indexOf(`/`, n + 1);
+  if (r === -1) return null;
+  try {
+    let e = decodeURIComponent(t.slice(0, n)),
+      i = decodeURIComponent(t.slice(n + 1, r)),
+      a = decodeURIComponent(t.slice(r + 1));
+    return e.length === 0 || i.length === 0 || a.length === 0
+      ? null
+      : { pluginId: e, resourceUri: a, server: i };
+  } catch {
+    return null;
+  }
+}
+function C(t) {
+  if (!y(t)) return null;
   let n = t.slice(8).trim();
   return n.length === 0 ? null : e(n);
 }
-function x(e) {
-  if (!v(e)) return null;
+function w(e) {
+  if (!b(e)) return null;
   let t = e.slice(11).trim();
   return t.length === 0 ? null : t;
 }
-function S(e) {
-  return g(e) ? `app` : y(e) ? `plugin` : `skill`;
+function T(e) {
+  return v(e) ? `app` : x(e) ? `plugin` : `skill`;
 }
-function C({ href: e, label: t }) {
-  return _(e) || v(e)
+function E({ href: e, label: t }) {
+  return y(e) || b(e)
     ? `agent`
-    : y(e)
+    : x(e)
       ? `plugin`
-      : g(e)
-        ? `app`
-        : t.trim().startsWith(`$`)
-          ? `skill`
-          : `text`;
+      : S(e) == null
+        ? v(e)
+          ? `app`
+          : t.trim().startsWith(`$`)
+            ? `skill`
+            : `text`
+        : `mcp-resource`;
 }
-function w(e) {
+function D(e) {
   let t = e.trim();
   return (t.startsWith(`$[`) || t.startsWith(`@[`)) && t.endsWith(`]`)
     ? t.slice(2, -1)
@@ -94,7 +118,7 @@ function w(e) {
       ? t.slice(1)
       : t;
 }
-function T(e) {
+function O(e) {
   return {
     name: e.name,
     displayName: n(e),
@@ -103,16 +127,16 @@ function T(e) {
     iconSmall: e.interface?.iconSmall ?? ``,
   };
 }
-function E(e) {
+function k(e) {
   return {
-    name: d(e.name),
+    name: f(e.name),
     displayName: e.name,
-    path: f(e.id),
+    path: p(e.id),
     description: e.description ?? ``,
     iconSmall: e.logoUrl ?? e.logoUrlDark ?? ``,
   };
 }
-function D(e, t = N()) {
+function A(e, t = I()) {
   let n = e.plugin.name,
     r = e.displayName ?? n,
     i = n;
@@ -123,88 +147,90 @@ function D(e, t = N()) {
     {
       name: i,
       displayName: r,
-      path: h(e.plugin.id),
+      path: g(e.plugin.id),
       description: e.description ?? ``,
-      iconSmall: O(e),
-      brandColor: P(e.plugin.interface),
+      iconSmall: j(e),
+      brandColor: L(e.plugin.interface),
     }
   );
 }
-function O(e) {
+function j(e) {
   return e.composerIconPath ?? e.logoPath ?? ``;
 }
-function k(e) {
-  return { kind: `skill`, ...T(e) };
-}
-function A(e) {
-  return { kind: `app`, ...E(e) };
-}
-function j(e, t) {
-  return { kind: `plugin`, ...D(e, t) };
-}
 function M(e) {
+  return { kind: `skill`, ...O(e) };
+}
+function N(e) {
+  return { kind: `app`, ...k(e) };
+}
+function P(e, t) {
+  return { kind: `plugin`, ...A(e, t) };
+}
+function F(e) {
   return {
     browserUse: e.formatMessage(r.label),
-    computerUse: e.formatMessage(u.computerUse),
+    computerUse: e.formatMessage(d.computerUse),
   };
 }
-function N() {
+function I() {
   return {
     browserUse: r.label.defaultMessage,
-    computerUse: u.computerUse.defaultMessage,
+    computerUse: d.computerUse.defaultMessage,
   };
 }
-function P(e) {
+function L(e) {
   let t = e?.brandColor;
   if (!(t == null || t.length === 0)) return t;
 }
-function F({ conversationId: e, displayName: t }) {
-  let n = L(t);
+function R({ conversationId: e, displayName: t }) {
+  let n = B(t);
   return {
     kind: `agent`,
     name: n.toLowerCase(),
     displayName: n,
     conversationId: e,
-    path: p(e),
+    path: m(e),
   };
 }
-function I(e) {
+function z(e) {
   return {
     kind: `agent`,
     name: e.roleName,
     displayName: e.roleName,
-    path: m(e.roleName),
+    path: h(e.roleName),
   };
 }
-function L(e) {
+function B(e) {
   let t = e.trim();
   return t.startsWith(`@`) ? t.slice(1).trim() : t;
 }
 export {
-  a as C,
-  y as S,
-  r as T,
-  C as _,
-  b as a,
-  g as b,
-  T as c,
-  k as d,
-  S as f,
-  h as g,
-  M as h,
-  I as i,
+  b as C,
+  r as D,
+  i as E,
+  v as S,
+  a as T,
+  F as _,
+  C as a,
+  w as b,
+  k as c,
+  N as d,
+  P as f,
+  j as g,
+  D as h,
+  z as i,
   A as l,
-  O as m,
-  F as n,
-  E as o,
-  w as p,
-  f as r,
-  D as s,
-  d as t,
-  j as u,
-  x as v,
-  i as w,
-  v as x,
-  _ as y,
+  T as m,
+  R as n,
+  S as o,
+  M as p,
+  p as r,
+  _ as s,
+  f as t,
+  O as u,
+  g as v,
+  x as w,
+  y as x,
+  E as y,
 };
 //# sourceMappingURL=mention-item.js.map

@@ -1,6 +1,6 @@
-import { Fn as e, hr as t } from "./app-server-manager-signals.js";
-function n(t) {
-  return t.interface?.displayName?.trim() || e(t.name);
+import { Kr as e, ur as t } from "./app-server-manager-signals-DkRDRgNB.js";
+function n(e) {
+  return e.interface?.displayName?.trim() || t(e.name);
 }
 function r(e) {
   let t = e.interface?.defaultPrompt;
@@ -8,8 +8,8 @@ function r(e) {
   let n = t.trim();
   return n.length === 0 ? null : n;
 }
-function i({ name: e, path: n }) {
-  return n ? `[$${e}](${t(n)})` : `$${e}`;
+function i({ name: t, path: n }) {
+  return n ? `[$${t}](${e(n)})` : `$${t}`;
 }
 function a(e, t) {
   let n = t.toLowerCase(),

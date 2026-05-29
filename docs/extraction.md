@@ -1,6 +1,6 @@
 # Extraction Notes
 
-The current extraction came from `/Applications/Codex.app`, version `26.519.81530`, build `3178`.
+The current extraction came from `/Applications/Codex.app`, version `26.527.30818`, build `3370`.
 
 Copied material:
 

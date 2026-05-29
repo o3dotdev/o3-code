@@ -1,5 +1,5 @@
 import { t as e } from "./jsx-runtime.js";
-import { xt as t } from "./setting-storage.js";
+import { wt as t } from "./setting-storage.js";
 import { a as n, n as r, r as i, t as a } from "./thread-env-icon.js";
 var o = t(),
   s = e();
@@ -35,7 +35,9 @@ function c(e) {
   t[3] !== u || t[4] !== p
     ? ((y =
         u === `remote`
-          ? (0, s.jsx)(i, { hostId: p.id })
+          ? p == null
+            ? null
+            : (0, s.jsx)(i, { hostId: p.id })
           : u === `worktree`
             ? (0, s.jsx)(n, {})
             : u === `cloud`

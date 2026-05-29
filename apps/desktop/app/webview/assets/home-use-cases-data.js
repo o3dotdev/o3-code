@@ -1,4 +1,4 @@
-import { z as e } from "./setting-storage.js";
+import { B as e } from "./setting-storage.js";
 var t = [
   {
     id: `snake-game`,

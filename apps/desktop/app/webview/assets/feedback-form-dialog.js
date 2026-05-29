@@ -1,7 +1,7 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { t as r } from "./clsx.js";
-import { H as i, W as a } from "./setting-storage.js";
+import { t as r } from "./clsx-BcPLHiun.js";
+import { G as i, U as a } from "./setting-storage.js";
 import { t as o } from "./button.js";
 import { a as s, i as c, l, n as u, o as d, r as f } from "./dialog-layout.js";
 import { t as p } from "./check-md.js";
@@ -15,7 +15,7 @@ function _({
   onSubmit: _,
   options: v,
 }) {
-  let y = a(),
+  let y = i(),
     [b, x] = (0, h.useState)(``),
     [S, C] = (0, h.useState)(!1),
     [w, T] = (0, h.useState)(null),
@@ -60,7 +60,7 @@ function _({
       children: [
         (0, g.jsx)(s, {
           children: (0, g.jsx)(c, {
-            title: (0, g.jsx)(i, {
+            title: (0, g.jsx)(a, {
               id: `feedbackFormDialog.title`,
               defaultMessage: `Share feedback`,
               description: `Title for feedback dialog`,
@@ -97,7 +97,7 @@ function _({
                       ),
                       children: [
                         (0, g.jsx)(n, { className: `icon-xxs` }),
-                        (0, g.jsx)(i, { ...e.label }),
+                        (0, g.jsx)(a, { ...e.label }),
                       ],
                     },
                     e.id,
@@ -130,7 +130,7 @@ function _({
               disabled: k,
               loading: S,
               type: `submit`,
-              children: (0, g.jsx)(i, {
+              children: (0, g.jsx)(a, {
                 id: `feedbackFormDialog.submit`,
                 defaultMessage: `Submit`,
                 description: `Label for the button that submits feedback`,

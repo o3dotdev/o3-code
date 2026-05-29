@@ -1,80 +1,74 @@
-import { Mt as e, zo as t } from "./app-server-manager-signals.js";
-import { S as n, Z as r, _t as i } from "./setting-storage.js";
-import { u as a } from "./thread-context-inputs.js";
-import { f as o } from "./app-shell-state.js";
+import { Ps as e, kt as t } from "./app-server-manager-signals-DkRDRgNB.js";
+import { Q as n, S as r, bt as i } from "./setting-storage.js";
+import { u as a } from "./thread-context-inputs-DBrOekVr.js";
+import { m as o } from "./app-shell-state.js";
 var s = `last_completed_onboarding`,
   c = `electron:onboarding-projectless-completed`,
   l = `welcomeV2Onboarding`,
-  u = t(`electron:onboarding-override`, `auto`),
-  d = t(`electron:onboarding-welcome-pending`, !1),
-  f = t(c, !1),
-  p = e(c, !1),
-  m = r(n, ({ get: e }) => {
+  u = e(`electron:onboarding-override`, `auto`),
+  d = e(`electron:onboarding-welcome-pending`, !1),
+  f = e(c, !1),
+  p = t(c, !1),
+  m = n(r, ({ get: e }) => {
     let t = e(p),
       n = e(a);
-    return S({
+    return C({
       projectlessOnboardingCompleted: t,
       workspaceRootsCount: n.data?.roots.length ?? 0,
       workspaceRootsIsLoading: n.data == null && n.isLoading,
     });
   }),
-  h = t(`electron:onboarding-hide-first-new-thread-promos`, !1),
-  g = t(`electron:onboarding-plugin-checklist-active`, !1),
-  _ = t(s, null),
-  v = i(
-    (e) => e(_),
+  h = e(`electron:onboarding-hide-first-new-thread-promos`, !1),
+  g = e(`electron:onboarding-plugin-checklist-active`, !1),
+  _ = e(`electron:onboarding-force-home-tiles-visible`, !1),
+  v = e(s, null),
+  y = i(
+    (e) => e(v),
     (e, t, n) => {
-      (n != null && o(), t(_, n));
+      (n != null && o(), t(v, n));
     },
   ),
-  y = t(`electron:onboarding-primary-runtime-install-requested`, !1),
-  b = t(`electron:onboarding-primary-runtime-install-ready`, !1);
-function x({ hideFirstNewThreadOnboardingPromos: e, pathname: t }) {
+  b = e(`electron:onboarding-primary-runtime-install-requested`, !1),
+  x = e(`electron:onboarding-primary-runtime-install-ready`, !1);
+function S({ hideFirstNewThreadOnboardingPromos: e, pathname: t }) {
   return e && t === `/`;
 }
-function S({
+function C({
   projectlessOnboardingCompleted: e,
   workspaceRootsCount: t,
   workspaceRootsIsLoading: n,
 }) {
   return e == null ? null : e ? !0 : n ? null : t > 0;
 }
-var C = new Date(2026, 3, 30).getTime();
-function w(e) {
-  return e == null || e * 1e3 < C;
+var w = new Date(2026, 3, 30).getTime();
+function T(e) {
+  return e == null || e * 1e3 < w;
 }
-var T = t(`electron:onboarding-workspace-experiment-assignment`, null),
-  E = t(`electron:onboarding-workspace-autolaunch-applied`, !1),
-  D = t(`electron:onboarding-welcome-v2-state`, {
-    intents: [],
-    personalizedSuggestionsEnabled: !0,
-    workMode: null,
-  }),
-  O = t(`electron:onboarding-welcome-v2-role-state`, {
+var E = e(`electron:onboarding-workspace-experiment-assignment`, null),
+  D = e(`electron:onboarding-workspace-autolaunch-applied`, !1),
+  O = e(`electron:onboarding-welcome-v2-role-state`, {
     roles: [],
     personalizedSuggestionsEnabled: !0,
     workMode: null,
-  }),
-  k = t(`electron:onboarding-welcome-v2-role-selection-debug-override`, `auto`);
+  });
 export {
-  w as _,
-  g as a,
-  y as c,
+  s as _,
+  u as a,
+  x as c,
   O as d,
-  k as f,
-  x as g,
-  m as h,
-  u as i,
-  f as l,
-  T as m,
-  h as n,
-  d as o,
+  D as f,
+  T as g,
+  S as h,
+  y as i,
+  b as l,
+  m,
+  _ as n,
+  g as o,
   E as p,
-  v as r,
-  b as s,
+  h as r,
+  d as s,
   l as t,
-  D as u,
-  s as v,
-  c as y,
+  f as u,
+  c as v,
 };
 //# sourceMappingURL=onboarding-state.js.map

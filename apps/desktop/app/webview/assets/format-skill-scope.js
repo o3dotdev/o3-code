@@ -1,4 +1,4 @@
-import { B as e } from "./setting-storage.js";
+import { V as e } from "./setting-storage.js";
 var t = e({
   system: {
     id: `skills.scope.system`,

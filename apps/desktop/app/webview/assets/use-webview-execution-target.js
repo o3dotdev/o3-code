@@ -1,26 +1,26 @@
-import { ir as e } from "./src-BLHmAhbF.js";
+import { kr as e } from "./src-C.js";
 import {
-  Ct as t,
-  Ia as n,
-  Sa as r,
-  T as i,
-  Ta as a,
-  bt as o,
-  g as s,
-  n as c,
-  wa as l,
-} from "./app-server-manager-signals.js";
+  E as t,
+  Li as n,
+  Pi as r,
+  fo as i,
+  g as a,
+  n as o,
+  po as s,
+  uo as c,
+  wo as l,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import {
   C as u,
-  J as d,
+  Q as d,
   S as f,
-  X as p,
+  Y as p,
   Z as m,
-  xt as h,
+  wt as h,
 } from "./setting-storage.js";
-import { t as g } from "./thread-context-inputs.js";
+import { t as g } from "./thread-context-inputs-DBrOekVr.js";
 import { r as _ } from "./device-connections.js";
-import { n as v } from "./remote-projects.js";
+import { r as v } from "./remote-projects.js";
 var y = {
   connected: 0,
   restarting: 1,
@@ -39,32 +39,32 @@ function b(e, t) {
     .map(({ connection: e }) => e);
 }
 var x = `[remote-connections/selection]`,
-  S = m(f, ({ get: t }) => {
-    let r = n(t, `remote_connections`),
-      i = n(t, `remote_control_connections`),
-      a = r == null || i == null,
+  S = d(f, ({ get: t }) => {
+    let n = l(t, `remote_connections`),
+      i = l(t, `remote_control_connections`),
+      a = n == null || i == null,
       s = _({
-        addedRemoteControlEnvIds: o(t, e.ADDED_REMOTE_CONTROL_ENV_IDS),
-        remoteSshConnections: r ?? [],
+        addedRemoteControlEnvIds: r(t, e.ADDED_REMOTE_CONTROL_ENV_IDS),
+        remoteSshConnections: n ?? [],
         remoteControlConnections: i ?? [],
       }),
-      l = b(s, Object.fromEntries(s.map((e) => [e.hostId, t(t(c, e.hostId))]))),
-      u = o(t, e.SELECTED_REMOTE_HOST_ID) ?? null,
+      c = b(s, Object.fromEntries(s.map((e) => [e.hostId, t(o, e.hostId)]))),
+      u = r(t, e.SELECTED_REMOTE_HOST_ID) ?? null,
       d = a
         ? u
-        : (l.find((e) => e.hostId === u)?.hostId ?? l[0]?.hostId ?? null);
+        : (c.find((e) => e.hostId === u)?.hostId ?? c[0]?.hostId ?? null);
     return {
       isRemoteConnectionsLoading: a,
       persistedSelectedRemoteHostId: u,
       remoteConnections: s,
-      selectedRemoteConnection: l.find((e) => e.hostId === d) ?? null,
+      selectedRemoteConnection: c.find((e) => e.hostId === d) ?? null,
       selectedRemoteHostId: d,
-      sortedRemoteConnections: l,
+      sortedRemoteConnections: c,
     };
   });
-function C(n) {
+function C(t) {
   let r;
-  return n.watch(({ get: i }) => {
+  return t.watch(({ get: i }) => {
     let a = i(S);
     if (
       (r === a.persistedSelectedRemoteHostId && (r = void 0),
@@ -87,7 +87,7 @@ function C(n) {
     });
     let o = a.selectedRemoteHostId;
     ((r = o),
-      t(n, e.SELECTED_REMOTE_HOST_ID, o ?? void 0).catch((e) => {
+      n(t, e.SELECTED_REMOTE_HOST_ID, o ?? void 0).catch((e) => {
         throw (r === o && (r = void 0), e);
       }));
   });
@@ -102,58 +102,58 @@ function T({
   return t
     ? { cwd: t === `~` ? null : t, hostId: n ?? `local` }
     : r == null
-      ? { cwd: e === `~` ? null : e, hostId: a }
+      ? { cwd: e === `~` ? null : e, hostId: s }
       : { cwd: r.remotePath, hostId: r.hostId };
 }
 function E(e) {
-  let t = (0, w.c)(14),
-    n = e === void 0 ? null : e,
-    a = d(s, n),
-    o = d(i, n),
-    { data: c, isLoading: u } = p(g),
-    { remoteConnections: f } = p(S),
-    { selectedRemoteProject: m } = v(),
-    [h] = l(`host_config`),
-    _ = c?.roots?.[0] ?? null,
+  let n = (0, w.c)(14),
+    r = e === void 0 ? null : e,
+    o = p(a, r),
+    s = p(t, r),
+    { data: l, isLoading: u } = m(g),
+    { remoteConnections: d } = m(S),
+    { selectedRemoteProject: f } = v(),
+    [h] = i(`host_config`),
+    _ = l?.roots?.[0] ?? null,
     y;
-  t[0] !== _ || t[1] !== a || t[2] !== o || t[3] !== m
+  n[0] !== _ || n[1] !== o || n[2] !== s || n[3] !== f
     ? ((y = T({
         activeWorkspaceRoot: _,
-        conversationCwd: a,
-        conversationHostId: o,
-        selectedRemoteProject: m,
+        conversationCwd: o,
+        conversationHostId: s,
+        selectedRemoteProject: f,
       })),
-      (t[0] = _),
-      (t[1] = a),
-      (t[2] = o),
-      (t[3] = m),
-      (t[4] = y))
-    : (y = t[4]);
+      (n[0] = _),
+      (n[1] = o),
+      (n[2] = s),
+      (n[3] = f),
+      (n[4] = y))
+    : (y = n[4]);
   let b = y,
     x;
-  t[5] !== h || t[6] !== f || t[7] !== b
-    ? ((x = h && b.hostId === h.id ? h : r(b.hostId, f)),
-      (t[5] = h),
-      (t[6] = f),
-      (t[7] = b),
-      (t[8] = x))
-    : (x = t[8]);
+  n[5] !== h || n[6] !== d || n[7] !== b
+    ? ((x = h && b.hostId === h.id ? h : c(b.hostId, d)),
+      (n[5] = h),
+      (n[6] = d),
+      (n[7] = b),
+      (n[8] = x))
+    : (x = n[8]);
   let C = x,
     E;
   return (
-    t[9] !== _ || t[10] !== C || t[11] !== u || t[12] !== b
+    n[9] !== _ || n[10] !== C || n[11] !== u || n[12] !== b
       ? ((E = {
           activeWorkspaceRoot: _,
           isActiveWorkspaceRootLoading: u,
           hostConfig: C,
           ...b,
         }),
-        (t[9] = _),
-        (t[10] = C),
-        (t[11] = u),
-        (t[12] = b),
-        (t[13] = E))
-      : (E = t[13]),
+        (n[9] = _),
+        (n[10] = C),
+        (n[11] = u),
+        (n[12] = b),
+        (n[13] = E))
+      : (E = n[13]),
     E
   );
 }

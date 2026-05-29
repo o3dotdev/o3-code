@@ -1,38 +1,12 @@
 import { t as e } from "./jsx-runtime.js";
-import { t } from "./clsx.js";
-import { xt as n } from "./setting-storage.js";
+import { t } from "./clsx-BcPLHiun.js";
+import { wt as n } from "./setting-storage.js";
 var r = n(),
   i = e();
 function a(e) {
-  let t = (0, r.c)(5),
-    { accessory: n, children: a } = e,
-    o;
-  t[0] === n
-    ? (o = t[1])
-    : ((o = (0, i.jsx)(`div`, {
-        className: `absolute inset-y-0 right-0 flex items-center opacity-0 group-focus-within/summary-panel-row-accessory:opacity-100 group-hover/summary-panel-row-accessory:opacity-100 has-[[data-state=open]]:opacity-100`,
-        children: n,
-      })),
-      (t[0] = n),
-      (t[1] = o));
-  let s;
-  return (
-    t[2] !== a || t[3] !== o
-      ? ((s = (0, i.jsxs)(`div`, {
-          className: `group/summary-panel-row-accessory relative min-w-0`,
-          children: [a, o],
-        })),
-        (t[2] = a),
-        (t[3] = o),
-        (t[4] = s))
-      : (s = t[4]),
-    s
-  );
-}
-function o(e) {
-  let n = (0, r.c)(58),
+  let n = (0, r.c)(64),
     a,
-    o,
+    c,
     l,
     u,
     d,
@@ -47,10 +21,12 @@ function o(e) {
     b,
     x,
     S,
-    C;
+    C,
+    w,
+    T;
   n[0] === e
     ? ((a = n[1]),
-      (o = n[2]),
+      (c = n[2]),
       (l = n[3]),
       (u = n[4]),
       (d = n[5]),
@@ -65,10 +41,12 @@ function o(e) {
       (b = n[14]),
       (x = n[15]),
       (S = n[16]),
-      (C = n[17]))
+      (C = n[17]),
+      (w = n[18]),
+      (T = n[19]))
     : (({
         "aria-expanded": l,
-        ariaExpanded: o,
+        ariaExpanded: c,
         className: u,
         disabled: d,
         icon: f,
@@ -77,9 +55,11 @@ function o(e) {
         labelClassName: m,
         ref: v,
         actions: a,
-        trailing: C,
-        trailingVisible: x,
-        title: S,
+        actionsAlwaysFocusable: x,
+        actionsVisible: S,
+        trailing: T,
+        trailingVisible: C,
+        title: w,
         onClick: h,
         onKeyDown: g,
         onPointerDown: _,
@@ -87,7 +67,7 @@ function o(e) {
       } = e),
       (n[0] = e),
       (n[1] = a),
-      (n[2] = o),
+      (n[2] = c),
       (n[3] = l),
       (n[4] = u),
       (n[5] = d),
@@ -102,169 +82,189 @@ function o(e) {
       (n[14] = b),
       (n[15] = x),
       (n[16] = S),
-      (n[17] = C));
-  let w = b === void 0 ? !1 : b,
-    T = x === void 0 ? !1 : x,
-    E = h != null || _ != null || g != null,
-    D = !d && E,
-    O = !d && (w || E),
-    k = O
+      (n[17] = C),
+      (n[18] = w),
+      (n[19] = T));
+  let E = b === void 0 ? !1 : b,
+    D = x === void 0 ? !1 : x,
+    O = S === void 0 ? !1 : S,
+    k = C === void 0 ? !1 : C,
+    A = h != null || _ != null || g != null,
+    j = !d && A,
+    M = !d && (E || A),
+    N = M
       ? `cursor-interaction text-token-foreground`
       : `text-token-text-secondary`,
-    A =
-      O &&
+    P =
+      M &&
       `before:absolute before:inset-y-0 before:-inset-x-2 before:-z-10 before:rounded-sm before:content-[''] hover:before:bg-token-list-hover-background`,
-    j = d && `cursor-not-allowed opacity-40`,
-    M;
-  n[18] !== u || n[19] !== k || n[20] !== A || n[21] !== j
-    ? ((M = t(
+    F = d && `cursor-not-allowed opacity-40`,
+    I;
+  n[20] !== u || n[21] !== N || n[22] !== P || n[23] !== F
+    ? ((I = t(
         `group/summary-panel-row relative isolate flex h-7 w-full min-w-0 items-center gap-2 rounded-sm border-0 bg-transparent px-0 py-1 text-left`,
-        k,
-        A,
-        j,
+        N,
+        P,
+        F,
         u,
       )),
-      (n[18] = u),
-      (n[19] = k),
-      (n[20] = A),
-      (n[21] = j),
-      (n[22] = M))
-    : (M = n[22]);
-  let N = M,
-    P;
-  n[23] === m
-    ? (P = n[24])
-    : ((P = t(`truncate text-base`, m)), (n[23] = m), (n[24] = P));
-  let F;
-  n[25] !== p || n[26] !== P
-    ? ((F = (0, i.jsx)(`span`, { className: P, children: p })),
-      (n[25] = p),
-      (n[26] = P),
-      (n[27] = F))
-    : (F = n[27]);
-  let I;
-  n[28] !== C || n[29] !== T
-    ? ((I =
-        C == null
+      (n[20] = u),
+      (n[21] = N),
+      (n[22] = P),
+      (n[23] = F),
+      (n[24] = I))
+    : (I = n[24]);
+  let L = I,
+    R = m ?? `truncate`,
+    z;
+  n[25] === R
+    ? (z = n[26])
+    : ((z = t(`text-base`, R)), (n[25] = R), (n[26] = z));
+  let B;
+  n[27] !== p || n[28] !== z
+    ? ((B = (0, i.jsx)(`span`, { className: z, children: p })),
+      (n[27] = p),
+      (n[28] = z),
+      (n[29] = B))
+    : (B = n[29]);
+  let V;
+  n[30] !== a || n[31] !== D || n[32] !== O
+    ? ((V =
+        a == null
           ? null
           : (0, i.jsx)(`span`, {
               className: t(
-                `ms-auto shrink-0 leading-none opacity-0 group-focus-visible/summary-panel-row:opacity-100 group-hover/summary-panel-row:opacity-100`,
-                T && `opacity-100`,
+                `shrink-0 items-center`,
+                (O || !D) && `ms-auto`,
+                O
+                  ? `flex`
+                  : D
+                    ? `pointer-events-none absolute inset-y-0 end-0 flex opacity-0 group-focus-within/summary-panel-row:pointer-events-auto group-focus-within/summary-panel-row:opacity-100 group-hover/summary-panel-row:pointer-events-auto group-hover/summary-panel-row:opacity-100`
+                    : `hidden group-focus-within/summary-panel-row:flex group-hover/summary-panel-row:flex`,
               ),
-              children: C,
+              onClick: s,
+              onKeyDown: o,
+              children: a,
             })),
-      (n[28] = C),
-      (n[29] = T),
-      (n[30] = I))
-    : (I = n[30]);
-  let L;
-  n[31] !== F || n[32] !== I
-    ? ((L = (0, i.jsxs)(`span`, {
+      (n[30] = a),
+      (n[31] = D),
+      (n[32] = O),
+      (n[33] = V))
+    : (V = n[33]);
+  let H;
+  n[34] !== a || n[35] !== O || n[36] !== T || n[37] !== k
+    ? ((H =
+        T == null
+          ? null
+          : (0, i.jsx)(`span`, {
+              className: t(
+                `shrink-0 leading-none opacity-0 group-focus-visible/summary-panel-row:opacity-100 group-hover/summary-panel-row:opacity-100`,
+                (a == null || !O) && `ms-auto`,
+                a != null &&
+                  !O &&
+                  `group-focus-within/summary-panel-row:ms-0 group-hover/summary-panel-row:ms-0`,
+                k && `opacity-100`,
+              ),
+              children: T,
+            })),
+      (n[34] = a),
+      (n[35] = O),
+      (n[36] = T),
+      (n[37] = k),
+      (n[38] = H))
+    : (H = n[38]);
+  let U;
+  n[39] !== B || n[40] !== V || n[41] !== H
+    ? ((U = (0, i.jsxs)(`span`, {
         className: `flex min-w-0 flex-1 items-center gap-2`,
-        children: [F, I],
+        children: [B, V, H],
       })),
-      (n[31] = F),
-      (n[32] = I),
-      (n[33] = L))
-    : (L = n[33]);
-  let R;
-  n[34] !== f || n[35] !== L
-    ? ((R = (0, i.jsxs)(i.Fragment, { children: [f, L] })),
-      (n[34] = f),
-      (n[35] = L),
-      (n[36] = R))
-    : (R = n[36]);
-  let z = R,
-    B = d || void 0,
-    V = o ?? l,
-    H = D ? h : void 0,
-    U;
-  n[37] !== d || n[38] !== D || n[39] !== h || n[40] !== g
-    ? ((U = (e) => {
+      (n[39] = B),
+      (n[40] = V),
+      (n[41] = H),
+      (n[42] = U))
+    : (U = n[42]);
+  let W;
+  n[43] !== f || n[44] !== U
+    ? ((W = (0, i.jsxs)(i.Fragment, { children: [f, U] })),
+      (n[43] = f),
+      (n[44] = U),
+      (n[45] = W))
+    : (W = n[45]);
+  let G = W,
+    K = d || void 0,
+    q = c ?? l,
+    J = j ? h : void 0,
+    Y;
+  n[46] !== d || n[47] !== j || n[48] !== h || n[49] !== g
+    ? ((Y = (e) => {
         (d || g?.(e),
           !(
-            !D ||
+            !j ||
             h == null ||
             e.defaultPrevented ||
             (e.key !== `Enter` && e.key !== ` `)
           ) && (e.preventDefault(), e.currentTarget.click()));
       }),
-      (n[37] = d),
-      (n[38] = D),
-      (n[39] = h),
-      (n[40] = g),
-      (n[41] = U))
-    : (U = n[41]);
-  let W = D ? _ : void 0,
-    G = E ? `button` : void 0,
-    K = D ? 0 : void 0,
-    q;
-  n[42] === a
-    ? (q = n[43])
-    : ((q =
-        a == null
-          ? null
-          : (0, i.jsx)(`span`, {
-              className: `ms-auto flex shrink-0 items-center opacity-0 group-focus-within/summary-panel-row:opacity-100 group-hover/summary-panel-row:opacity-100`,
-              onClick: c,
-              onKeyDown: s,
-              children: a,
-            })),
-      (n[42] = a),
-      (n[43] = q));
-  let J;
+      (n[46] = d),
+      (n[47] = j),
+      (n[48] = h),
+      (n[49] = g),
+      (n[50] = Y))
+    : (Y = n[50]);
+  let X = j ? _ : void 0,
+    Z = A ? `button` : void 0,
+    Q = j ? 0 : void 0,
+    $;
   return (
-    n[44] !== N ||
-    n[45] !== z ||
-    n[46] !== v ||
-    n[47] !== y ||
-    n[48] !== B ||
-    n[49] !== V ||
-    n[50] !== H ||
-    n[51] !== U ||
-    n[52] !== W ||
-    n[53] !== G ||
-    n[54] !== K ||
-    n[55] !== q ||
-    n[56] !== S
-      ? ((J = (0, i.jsxs)(`div`, {
+    n[51] !== L ||
+    n[52] !== G ||
+    n[53] !== v ||
+    n[54] !== y ||
+    n[55] !== K ||
+    n[56] !== q ||
+    n[57] !== J ||
+    n[58] !== Y ||
+    n[59] !== X ||
+    n[60] !== Z ||
+    n[61] !== Q ||
+    n[62] !== w
+      ? (($ = (0, i.jsx)(`div`, {
           ...y,
-          "aria-disabled": B,
-          "aria-expanded": V,
-          className: N,
-          onClick: H,
-          onKeyDown: U,
-          onPointerDown: W,
+          "aria-disabled": K,
+          "aria-expanded": q,
+          className: L,
+          onClick: J,
+          onKeyDown: Y,
+          onPointerDown: X,
           ref: v,
-          role: G,
-          tabIndex: K,
-          title: S,
-          children: [z, q],
+          role: Z,
+          tabIndex: Q,
+          title: w,
+          children: G,
         })),
-        (n[44] = N),
-        (n[45] = z),
-        (n[46] = v),
-        (n[47] = y),
-        (n[48] = B),
-        (n[49] = V),
-        (n[50] = H),
-        (n[51] = U),
-        (n[52] = W),
-        (n[53] = G),
-        (n[54] = K),
-        (n[55] = q),
-        (n[56] = S),
-        (n[57] = J))
-      : (J = n[57]),
-    J
+        (n[51] = L),
+        (n[52] = G),
+        (n[53] = v),
+        (n[54] = y),
+        (n[55] = K),
+        (n[56] = q),
+        (n[57] = J),
+        (n[58] = Y),
+        (n[59] = X),
+        (n[60] = Z),
+        (n[61] = Q),
+        (n[62] = w),
+        (n[63] = $))
+      : ($ = n[63]),
+    $
   );
+}
+function o(e) {
+  return e.stopPropagation();
 }
 function s(e) {
   return e.stopPropagation();
 }
-function c(e) {
-  return e.stopPropagation();
-}
-export { a as n, o as t };
+export { a as t };
 //# sourceMappingURL=summary-panel-row.js.map

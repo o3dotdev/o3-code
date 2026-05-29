@@ -1,28 +1,44 @@
-import "./src-BLHmAhbF.js";
+import "./src-C.js";
 import {
-  Br as e,
-  Qi as t,
-  Qn as n,
-  Yi as r,
-  Yn as i,
-  Zi as a,
-} from "./app-server-manager-signals.js";
+  Ba as e,
+  Dr as t,
+  Ra as n,
+  Va as r,
+  mi as i,
+  wr as a,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import "./jsx-runtime.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import "./setting-storage.js";
-import "./product-logger.js";
-import "./statsig.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
+import "./use-global-state.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./remote-projects.js";
 import "./thread-detail-level.js";
-import {
-  i as o,
-  l as s,
-  n as ee,
-  r as c,
-  s as te,
-  t as ne,
-  u as re,
-} from "./split-items-into-render-groups.js";
+import "./permissions-mode-defaults.js";
+import "./projectless-thread.js";
+import "./build-worktree-label-from-input.js";
+import "./local-projects.js";
+import "./pending-worktree-store-COXB8WW0.js";
+import "./app-server-dynamic-tools-BARsY_O-.js";
+import "./thinking-shimmer.js";
+import "./settings.cog.js";
+import "./codex-BjFeJtxQ.js";
+import "./workspace-dependencies-feature-DTe1S-zC.js";
 import "./mcp-tool-item-content-utils.js";
+import {
+  c as o,
+  d as s,
+  i as ee,
+  n as te,
+  r as c,
+  s as ne,
+  t as re,
+  u as ie,
+} from "./split-items-into-render-groups-TGUHLoXy.js";
 var l = /::git-[a-z-]+\{[^}\n]*\}/g,
   u = `STEPS_PROSE`,
   d = { cwd: null, homeDir: null },
@@ -34,7 +50,7 @@ var l = /::git-[a-z-]+\{[^}\n]*\}/g,
 function g({ cwd: e = null, title: t, turns: n }) {
   let r = [],
     i = W(e);
-  r.push(`# ${pe(t ?? `Codex conversation`)}`);
+  r.push(`# ${me(t ?? `Codex conversation`)}`);
   for (let e of n) {
     let t = _(e, i);
     t != null && r.push(t);
@@ -53,7 +69,7 @@ function _(e, t) {
     {
       userItems: i,
       assistantItem: a,
-      agentItems: o,
+      agentItems: ee,
       automationUpdateItems: l,
       toolOutputItems: d,
       postAssistantItems: f,
@@ -70,25 +86,27 @@ function _(e, t) {
       permissionRequestItems: T,
       approvalItem: E,
       userInputItem: D,
-    } = ne(e.items, e.status);
+    } = re(e.items, e.status);
   for (let e of _) F(n, v(e, r));
-  for (let e of i) F(n, ie(e, r));
+  for (let e of i) F(n, ae(e, r));
   for (let e of y) F(n, v(e, r));
   let O = [],
-    { renderableAgentItems: k } = ee({
-      agentItems: o,
+    { renderableAgentItems: k } = te({
+      agentItems: ee,
       isTurnInProgress: e.status === `in_progress`,
       isAnyNonAgentItemInProgress: c(a) || c(S),
     }),
-    A = s({
-      units: te({
-        units: re(k),
-        isActivitySliceClosed: a != null,
-        conversationDetailLevel: u,
+    A = ie({
+      units: o({
+        units: ne({
+          units: s(k),
+          isActivitySliceClosed: a != null,
+          conversationDetailLevel: u,
+        }),
       }),
       isActivitySliceClosed: a != null,
     });
-  for (let e of A) F(O, ae(e, r));
+  for (let e of A) F(O, oe(e, r));
   for (let e of l) F(O, v(e, r));
   p != null && F(O, v(p, r));
   for (let e of d) F(O, v(e, r));
@@ -102,8 +120,8 @@ function _(e, t) {
     D != null && F(O, v(D, r)),
     O.length > 0 &&
       n.push(
-        me(
-          Ce(O.length),
+        he(
+          we(O.length),
           O.join(`
 
 `),
@@ -222,7 +240,7 @@ function v(e, t) {
       return null;
   }
 }
-function ie(e, t) {
+function ae(e, t) {
   let n = y(e, { pathContext: t });
   return n == null ? null : L(n);
 }
@@ -276,20 +294,20 @@ function x(e, { escapeDetailsTags: t = !1, pathContext: n = d } = {}) {
   let r = z(e.content, n).trim();
   return r.length === 0 ? null : t ? K(r) : r;
 }
-function S(t) {
-  let n = [],
-    r = e(t.cmd);
-  n.push(Y(`bash`, `$ ${r}`));
-  let i = t.output?.aggregatedOutput;
-  if (i != null) {
-    let e = R(i);
-    e.trim().length > 0 && n.push(Y(`text`, e));
+function S(e) {
+  let t = [],
+    n = i(e.cmd);
+  t.push(Y(`bash`, `$ ${n}`));
+  let r = e.output?.aggregatedOutput;
+  if (r != null) {
+    let e = R(r);
+    e.trim().length > 0 && t.push(Y(`text`, e));
   }
   return (
-    n.push(Ae(t)),
+    t.push(je(e)),
     I(
-      `Ran ${J(r)}`,
-      n.join(`
+      `Ran ${J(n)}`,
+      t.join(`
 
 `),
     )
@@ -297,11 +315,11 @@ function S(t) {
 }
 function C(e) {
   let t = Object.entries(e.changes).flatMap(([e, t]) => {
-    let n = i(e, t);
+    let n = a(e, t);
     if (n == null || n.trim().length === 0) return [];
-    let r = ke(n);
+    let r = Ae(n);
     return [
-      I(`${Oe(t.type)} ${J(e)} +${r.additions} -${r.deletions}`, Y(`diff`, n)),
+      I(`${ke(t.type)} ${J(e)} +${r.additions} -${r.deletions}`, Y(`diff`, n)),
     ];
   });
   return t.length === 0
@@ -319,7 +337,7 @@ function T(e) {
       e.explanation.trim().length > 0 &&
       t.push(G(e.explanation).trim()),
     t.push(
-      e.plan.map((e) => `- [${fe(e.status)}] ${G(e.step)}`).join(`
+      e.plan.map((e) => `- [${pe(e.status)}] ${G(e.step)}`).join(`
 `),
     ),
     I(
@@ -396,10 +414,10 @@ function k(e, t) {
     ? P(`Generated image`, [`Status: ${t}`])
     : `Generated image\n\n![Generated image](${e})`;
 }
-function ae(e, t) {
+function oe(e, t) {
   if (e.kind === `collapsed-tool-activity`) {
-    let n = Te(e.summary);
-    if (!o(u, e.units)) {
+    let n = Ee(e.summary);
+    if (!ee(u, e.units)) {
       let r = e.units.flatMap((e) => j(e, t)).map((e) => `- ${e}`);
       return r.length === 0
         ? n
@@ -422,21 +440,28 @@ function ae(e, t) {
   }
   return e.kind === `pending-mcp-tool-calls`
     ? I(
-        Ee(e.items.length),
+        De(e.items.length),
         e.items.map((e) => E(e)).join(`
 
 `),
       )
-    : M(e, t);
+    : e.kind === `dynamic-tool-call-group`
+      ? I(
+          De(e.items.length),
+          e.items.map((e) => v(e, t)).join(`
+
+`),
+        )
+      : M(e, t);
 }
 function A(e, t) {
   return e.kind === `entry` &&
     e.entry.kind === `item` &&
     (e.entry.item.type === `exec` || e.entry.item.type === `patch`)
-    ? oe(e, t)
+    ? se(e, t)
     : M(e, t);
 }
-function oe(e, t) {
+function se(e, t) {
   let n = j(e, t);
   return n.length === 0
     ? null
@@ -447,25 +472,25 @@ function j(e, t) {
   return e.kind !== `entry` || e.entry.kind !== `item`
     ? []
     : e.entry.item.type === `exec`
-      ? [`Ran ${q(se(e.entry.item))}`]
+      ? [`Ran ${q(ce(e.entry.item))}`]
       : e.entry.item.type === `patch`
-        ? ce(e.entry.item, t)
+        ? le(e.entry.item, t)
         : [];
 }
-function se(t) {
-  let n = t.parsedCmd.cmd.trim();
-  return n.length === 0 ? e(t.cmd) : n;
+function ce(e) {
+  let t = e.parsedCmd.cmd.trim();
+  return t.length === 0 ? i(e.cmd) : t;
 }
-function ce(e, t) {
+function le(e, t) {
   let n = e.grantRoot == null ? t : W(e.grantRoot);
   return Object.entries(e.changes).flatMap(([e, t]) => {
-    let r = i(e, t);
+    let r = a(e, t);
     if (r == null || r.trim().length === 0) return [];
-    let a = ke(r);
-    return [`${le(t.type)} ${ye(e, n)} (+${a.additions} -${a.deletions})`];
+    let i = Ae(r);
+    return [`${ue(t.type)} ${be(e, n)} (+${i.additions} -${i.deletions})`];
   });
 }
-function le(e) {
+function ue(e) {
   switch (e) {
     case `add`:
     case `update`:
@@ -477,7 +502,7 @@ function le(e) {
 function M(e, t) {
   if (e.kind === `web-search-group`)
     return I(
-      De(e.items.length),
+      Oe(e.items.length),
       e.items.map((e) => `- Searched web for ${q(e.query)}`).join(`
 `),
     );
@@ -489,22 +514,22 @@ function M(e, t) {
       `Receiver threads: ${e.items.length}`,
     ]);
   }
-  return e.entry.kind === `exploration` ? ue(e.entry, t) : v(e.entry.item, t);
+  return e.entry.kind === `exploration` ? de(e.entry, t) : v(e.entry.item, t);
 }
-function ue(e, t) {
+function de(e, t) {
   let n = e.items
-    .map((e) => de(e, t))
+    .map((e) => fe(e, t))
     .filter((e) => e != null)
     .map((e) => `- ${e}`);
   return n.length === 0
     ? null
     : I(
-        we(e.items),
+        Te(e.items),
         n.join(`
 `),
       );
 }
-function de(e, t) {
+function fe(e, t) {
   if (e.type !== `exec`) return null;
   let n = e.parsedCmd,
     r = e.cwd == null ? t : W(e.cwd);
@@ -547,7 +572,7 @@ function P(e, t) {
 function F(e, t) {
   t != null && t.trim().length > 0 && e.push(t);
 }
-function fe(e) {
+function pe(e) {
   switch (e) {
     case `completed`:
       return `x`;
@@ -556,14 +581,14 @@ function fe(e) {
       return ` `;
   }
 }
-function pe(e) {
+function me(e) {
   let t = e.replaceAll(/\s+/g, ` `).trim();
   return t.length === 0 ? `Codex conversation` : t.replaceAll(`#`, `\\#`);
 }
 function I(e, t) {
   return `<details><summary>${e}</summary>\n\n${R(t).trim()}\n\n</details>`;
 }
-function me(e, t) {
+function he(e, t) {
   return `<details><summary>${e}</summary>\n\n${L(t)}\n</details>`;
 }
 function L(e) {
@@ -583,10 +608,10 @@ function R(e) {
 `,
   );
 }
-function z(e, t) {
-  return ge(he(R(n(e))), t);
+function z(e, n) {
+  return _e(ge(R(t(e))), n);
 }
-function he(e) {
+function ge(e) {
   return e
     .split(
       `
@@ -607,72 +632,72 @@ function he(e) {
 `,
     );
 }
-function ge(e, t) {
+function _e(e, t) {
   return e.replaceAll(f, (e, n, r) => {
     let i = n.startsWith(`<`) && n.endsWith(`>`),
       a = i ? n.slice(1, -1) : n,
-      o = _e(a, t);
-    return o === a ? e : `](${ve(o, i)}${r ?? ``})`;
+      o = ve(a, t);
+    return o === a ? e : `](${ye(o, i)}${r ?? ``})`;
   });
 }
-function _e(e, t) {
-  let { path: n } = H(e);
-  return r(n) ? V(e, t) : e;
-}
 function ve(e, t) {
+  let { path: r } = H(e);
+  return n(r) ? V(e, t) : e;
+}
+function ye(e, t) {
   return t || /[\s()]/.test(e) ? `<${e}>` : e;
 }
 function B(e, t) {
   return q(V(e, t));
 }
-function ye(e, t) {
-  return q(be(e, t));
-}
 function be(e, t) {
-  let n = V(e, t);
-  return n === `.` ||
-    n === `~` ||
-    n.startsWith(`./`) ||
-    n.startsWith(`../`) ||
-    n.startsWith(`~/`) ||
-    r(n)
-    ? n
-    : `./${n}`;
+  return q(xe(e, t));
 }
-function V(e, n) {
-  let { path: r, lineSuffix: i } = H(e),
-    a = t(r),
-    o = U(a, n.cwd, `.`);
+function xe(e, t) {
+  let r = V(e, t);
+  return r === `.` ||
+    r === `~` ||
+    r.startsWith(`./`) ||
+    r.startsWith(`../`) ||
+    r.startsWith(`~/`) ||
+    n(r)
+    ? r
+    : `./${r}`;
+}
+function V(e, t) {
+  let { path: n, lineSuffix: i } = H(e),
+    a = r(n),
+    o = U(a, t.cwd, `.`);
   if (o != null) return `${o}${i}`;
-  let s = U(a, n.homeDir, `~`);
+  let s = U(a, t.homeDir, `~`);
   return s == null ? `${a}${i}` : `${s}${i}`;
 }
 function H(e) {
   let t = h.exec(e);
-  return t?.[1] == null || t[2] == null || !r(t[1])
+  return t?.[1] == null || t[2] == null || !n(t[1])
     ? { lineSuffix: ``, path: e }
     : { lineSuffix: t[2], path: t[1] };
 }
-function U(e, t, n) {
-  if (t == null || t === `/`) return null;
-  let r = a(e),
-    i = a(t);
-  return r === i
-    ? n
-    : r.startsWith(`${i}/`)
-      ? `${n}/${e.slice(t.length + 1)}`
+function U(t, n, r) {
+  if (n == null || n === `/`) return null;
+  let i = e(t),
+    a = e(n);
+  return i === a
+    ? r
+    : i.startsWith(`${a}/`)
+      ? `${r}/${t.slice(n.length + 1)}`
       : null;
 }
 function W(e) {
   if (e == null) return d;
-  let t = xe(e);
-  return t == null ? d : { cwd: t, homeDir: Se(t) };
-}
-function xe(e) {
-  let n = t(e).replace(/\/+$/, ``);
-  return r(n) ? n : null;
+  let t = Se(e);
+  return t == null ? d : { cwd: t, homeDir: Ce(t) };
 }
 function Se(e) {
+  let t = r(e).replace(/\/+$/, ``);
+  return n(t) ? t : null;
+}
+function Ce(e) {
   let t = p.exec(e);
   if (t != null) return t[0];
   let n = m.exec(e);
@@ -682,14 +707,14 @@ function G(e) {
   return K(R(e));
 }
 function K(e) {
-  return e.replaceAll(/<\/?details(?=[\s>])[^>]*>/gi, (e) => je(e));
+  return e.replaceAll(/<\/?details(?=[\s>])[^>]*>/gi, (e) => Me(e));
 }
 function q(e) {
   let t = "`".repeat(X(e) + 1);
   return `${t}${e}${t}`;
 }
 function J(e) {
-  return `<code>${je(e)}</code>`;
+  return `<code>${Me(e)}</code>`;
 }
 function Y(e, t) {
   let n = R(t).trimEnd(),
@@ -704,10 +729,10 @@ function X(e) {
 function Z(e) {
   return JSON.stringify(e, null, 2) ?? `null`;
 }
-function Ce(e) {
+function we(e) {
   return `${e} previous ${e === 1 ? `message` : `messages`}`;
 }
-function we(e) {
+function Te(e) {
   let t = 0,
     n = 0,
     r = 0;
@@ -737,7 +762,7 @@ function we(e) {
   ].filter((e) => e != null);
   return i.length === 0 ? `Explored` : `Explored ${i.join(`, `)}`;
 }
-function Te(e) {
+function Ee(e) {
   let t = [];
   (Q(t, e.createdFileCount, `Created`, `created`, `file`, `files`),
     Q(t, e.editedFileCount, `Edited`, `edited`, `file`, `files`),
@@ -765,13 +790,13 @@ function Q(e, t, n, r, i, a) {
 function $(e, t, n) {
   return e === 0 ? null : `${e} ${e === 1 ? t : n}`;
 }
-function Ee(e) {
+function De(e) {
   return `Called ${e} ${e === 1 ? `tool` : `tools`}`;
 }
-function De(e) {
+function Oe(e) {
   return `Searched web ${e} ${e === 1 ? `time` : `times`}`;
 }
-function Oe(e) {
+function ke(e) {
   switch (e) {
     case `add`:
       return `Created`;
@@ -781,7 +806,7 @@ function Oe(e) {
       return `Edited`;
   }
 }
-function ke(e) {
+function Ae(e) {
   let t = 0,
     n = 0;
   for (let r of R(e).split(`
@@ -794,7 +819,7 @@ function ke(e) {
   }
   return { additions: t, deletions: n };
 }
-function Ae(e) {
+function je(e) {
   return e.executionStatus === `interrupted`
     ? `Stopped`
     : e.output?.exitCode == null
@@ -805,7 +830,7 @@ function Ae(e) {
         ? `Success`
         : `Failed with exit code ${e.output.exitCode}`;
 }
-function je(e) {
+function Me(e) {
   return e
     .replaceAll(`&`, `&amp;`)
     .replaceAll(`<`, `&lt;`)

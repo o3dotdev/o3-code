@@ -1,6 +1,6 @@
 import { t as e } from "./jsx-runtime.js";
-import { t } from "./clsx.js";
-import { xt as n } from "./setting-storage.js";
+import { t } from "./clsx-BcPLHiun.js";
+import { wt as n } from "./setting-storage.js";
 import { t as r } from "./spinner.js";
 var i = {
     default: `rounded-full`,
@@ -15,11 +15,12 @@ var i = {
   a = n(),
   o = e(),
   s = {
-    danger: `bg-token-charts-red/10 text-token-charts-red border-transparent`,
+    danger: `bg-token-charts-red/10 enabled:hover:bg-token-charts-red/20 text-token-charts-red border-transparent`,
     ghost: `text-token-text-tertiary enabled:hover:bg-token-list-hover-background data-[state=open]:bg-token-list-hover-background border-transparent`,
     outlineActive: `border-token-border text-token-button-tertiary-foreground bg-token-foreground/10 enabled:hover:bg-token-foreground/15 data-[state=open]:bg-token-foreground/15 border`,
     ghostActive: `text-token-foreground enabled:hover:bg-token-list-hover-background data-[state=open]:bg-token-list-hover-background border-transparent`,
     ghostMuted: `text-token-muted-foreground enabled:hover:bg-transparent data-[state=open]:bg-transparent hover:text-token-foreground border-transparent`,
+    ghostTertiary: `text-token-text-tertiary enabled:hover:bg-transparent data-[state=open]:bg-transparent enabled:hover:text-token-foreground border-transparent`,
     outline: `border-token-border text-token-button-tertiary-foreground bg-token-bg-fog enabled:hover:bg-token-list-hover-background data-[state=open]:bg-token-list-hover-background border`,
     primary: `bg-token-foreground enabled:hover:bg-token-foreground/80 data-[state=open]:bg-token-foreground/80 text-token-dropdown-background`,
     secondary: `text-token-foreground bg-token-foreground/5 enabled:hover:bg-token-foreground/10 data-[state=open]:bg-token-foreground/10 border-transparent`,

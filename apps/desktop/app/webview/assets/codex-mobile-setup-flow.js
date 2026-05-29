@@ -1,81 +1,85 @@
-import { s as e } from "./chunk.js";
-import { di as t, ir as n, ni as r } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { Hi as t, Ni as n, kr as r } from "./src-C.js";
 import {
-  Ct as i,
-  It as a,
-  Ta as o,
-  is as s,
-  zt as c,
-} from "./app-server-manager-signals.js";
-import { n as l, t as u } from "./jsx-runtime.js";
+  $s as i,
+  Li as a,
+  Pt as o,
+  po as s,
+} from "./app-server-manager-signals-DkRDRgNB.js";
+import { n as c, t as l } from "./jsx-runtime.js";
 import {
-  H as ee,
-  J as d,
-  Q as f,
-  S as p,
-  X as m,
-  Y as h,
-  et as g,
-  h as _,
-  l as v,
-  w as y,
-  xt as b,
-  y as x,
+  S as u,
+  U as d,
+  X as ee,
+  Y as f,
+  Z as p,
+  h as m,
+  l as h,
+  nt as g,
+  rt as _,
+  w as v,
+  wt as y,
+  y as b,
 } from "./setting-storage.js";
-import { f as te } from "./chunk-LFPYN7LY.js";
-import { t as ne } from "./product-logger.js";
-import { t as re } from "./app-shell.js";
+import { m as te } from "./chunk-LFPYN7LY.js";
+import { t as ne } from "./product-logger-DusapRyT.js";
+import { t as x } from "./request-DWZTrEAr.js";
+import { t as re } from "./app-shell-D4HBgUPf.js";
 import { t as S } from "./thread-page-header.js";
 import { n as C, t as w } from "./local-remote-control-enabled-sync.js";
-import { o as ie, r as T, t as ae } from "./codex-mobile-setup-dialog.js";
+import {
+  o as ie,
+  r as T,
+  t as ae,
+} from "./codex-mobile-setup-dialog-es3uf3kp.js";
 import { t as oe } from "./chatgpt-token-auth.browser.js";
 var E = 100,
-  D = t({ mfa_enabled_v2: r() }),
+  D = t({ mfa_enabled_v2: n() }),
   O = class extends Error {},
   k = class extends Error {},
   A = class extends Error {};
 async function j({ clientId: e }) {
-  await L(() =>
-    c.safeDelete(`/wham/remote/control/clients/{client_id}`, {
+  await R(() =>
+    x.safeDelete(`/wham/remote/control/clients/{client_id}`, {
       parameters: { path: { client_id: e } },
     }),
   );
 }
 async function M() {
-  return (await L(() => c.safeGet(`/wham/remote/control/mfa_requirement`)))
+  return (await R(() => x.safeGet(`/wham/remote/control/mfa_requirement`)))
     .requirement;
 }
 async function N() {
-  return D.parse(await c.safeGet(`/accounts/mfa_info`)).mfa_enabled_v2;
+  return D.parse(await x.safeGet(`/accounts/mfa_info`)).mfa_enabled_v2;
 }
-async function se(e = null) {
-  let t = await L(() =>
-    c.safeGet(`/wham/remote/control/clients`, {
+async function P(e = null) {
+  let t = await R(() =>
+    x.safeGet(`/wham/remote/control/clients`, {
       parameters: { query: { cursor: e, limit: E } },
     }),
   );
-  return t.items.some(I) ? !0 : t.cursor == null ? !1 : se(t.cursor);
+  return t.items.some(L) ? !0 : t.cursor == null ? !1 : P(t.cursor);
 }
-async function P() {
-  return F(null);
+async function F() {
+  return I(null);
 }
-async function F(e) {
-  let t = await L(() =>
-      c.safeGet(`/wham/remote/control/clients`, {
+async function I(e) {
+  let t = await R(() =>
+      x.safeGet(`/wham/remote/control/clients`, {
         parameters: { query: { cursor: e, limit: E } },
       }),
     ),
-    n = t.items.filter(I);
-  return t.cursor == null ? n : n.concat(await F(t.cursor));
+    n = t.items.filter(L);
+  return t.cursor == null ? n : n.concat(await I(t.cursor));
 }
-function I(e) {
+function L(e) {
   return e.enrollment_status !== `pending_enrollment`;
 }
-async function L(e) {
+async function R(e) {
   try {
     return await e();
   } catch (e) {
-    throw e instanceof _
+    throw e instanceof m
       ? e.status === 404
         ? new k()
         : e.status === 403
@@ -89,45 +93,42 @@ async function L(e) {
       : e;
   }
 }
-function R(e, t) {
+function z(e, t) {
   if (e != null) return t == null ? e : e.filter((e) => e.client_id !== t);
 }
-function z(e, t) {
+function B(e, t) {
   return e?.some((e) => !t.has(e.client_id)) === !0
     ? t.size === 0 && e.length === 1
       ? `connected`
       : `dismiss`
     : null;
 }
-var B = 3e4,
-  V = g(p, () => ({
+var V = 3e4,
+  H = _(u, () => ({
     queryKey: [`remote-control-clients`],
-    queryFn: P,
-    staleTime: B,
+    queryFn: F,
+    staleTime: V,
   })),
-  ce = f(p, (e) =>
-    g(p, () => ({
-      enabled: e,
+  se = g(u, (e) => ({
+    enabled: e,
+    queryKey: [`remote-control-clients`],
+    queryFn: F,
+    refetchInterval: e ? 1e3 : !1,
+    staleTime: 0,
+  })),
+  U = g(
+    u,
+    ({ existingClientIds: e, localRemoteControlClientId: t, waiting: n }) => ({
+      enabled: n,
       queryKey: [`remote-control-clients`],
-      queryFn: P,
-      refetchInterval: e ? 1e3 : !1,
+      queryFn: F,
+      refetchInterval: (r) =>
+        !n || e == null ? !1 : B(z(r.state.data, t), e) == null ? 1e3 : !1,
       staleTime: 0,
-    })),
-  ),
-  H = f(
-    p,
-    ({ existingClientIds: e, localRemoteControlClientId: t, waiting: n }) =>
-      g(p, () => ({
-        enabled: n,
-        queryKey: [`remote-control-clients`],
-        queryFn: P,
-        refetchInterval: (r) =>
-          !n || e == null ? !1 : z(R(r.state.data, t), e) == null ? 1e3 : !1,
-        staleTime: 0,
-      })),
-    { key: U },
+    }),
+    { key: W },
   );
-function U({
+function W({
   existingClientIds: e,
   localRemoteControlClientId: t,
   waiting: n,
@@ -138,18 +139,18 @@ function U({
     waiting: n,
   });
 }
-var W = b();
+var ce = y();
 function le(e) {
-  let t = (0, W.c)(3),
+  let t = (0, ce.c)(3),
     { hostId: n } = e,
-    r = h(p),
+    r = ee(u),
     i;
   return (
     t[0] !== n || t[1] !== r
       ? ((i = {
           mutationFn: async (e) =>
             n === `local`
-              ? (await v(`set-local-remote-control-enabled`, {
+              ? (await h(`set-local-remote-control-enabled`, {
                   params: { enabled: e },
                 }),
                 w(r, e, { force: !0 }))
@@ -159,27 +160,27 @@ function le(e) {
         (t[1] = r),
         (t[2] = i))
       : (i = t[2]),
-    y(i)
+    v(i)
   );
 }
 var G = 3e4,
-  ue = g(p, () => ({
+  ue = _(u, () => ({
     queryKey: [`remote-control-mfa-requirement`],
     queryFn: M,
     retry: !1,
     staleTime: G,
   })),
-  de = g(p, ({ get: e }) => ({
+  de = _(u, ({ get: e }) => ({
     enabled: e(ue).data === `required`,
     queryKey: [`remote-control-mfa-enabled`],
     queryFn: N,
     refetchOnWindowFocus: `always`,
     staleTime: 0,
   })),
-  fe = g(p, ({ get: e }) => ({
-    enabled: e(e(a, o)),
+  fe = _(u, ({ get: e }) => ({
+    enabled: e(o, s),
     queryKey: [`codex-mobile-setup-resume-client`],
-    queryFn: () => se(),
+    queryFn: () => P(),
     staleTime: 0,
   }));
 function pe({
@@ -191,22 +192,22 @@ function pe({
 function me(e) {
   return e.some((e) => e instanceof O);
 }
-var K = e(l(), 1),
-  q = u();
+var K = e(c(), 1),
+  q = l();
 function J(e) {
-  let t = (0, W.c)(75),
-    { onClose: r, variant: c } = e,
-    l = h(p),
-    u = te(),
-    ee = (0, K.useRef)(null),
-    f;
+  let t = (0, ce.c)(75),
+    { onClose: n, variant: c } = e,
+    l = ee(u),
+    d = te(),
+    m = (0, K.useRef)(null),
+    h;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((f = { hostId: o }), (t[0] = f))
-    : (f = t[0]);
-  let g = le(f),
-    _ = d(a, o),
-    [v] = s(ie),
-    b = m(fe),
+    ? ((h = { hostId: s }), (t[0] = h))
+    : (h = t[0]);
+  let g = le(h),
+    _ = f(o, s),
+    [y] = i(ie),
+    b = p(fe),
     [x, re] = (0, K.useState)(null),
     S;
   t[1] !== _ || t[2] !== x || t[3] !== b.data
@@ -222,11 +223,11 @@ function J(e) {
       (t[4] = S))
     : (S = t[4]);
   let C = S,
-    w = d(ce, C === `waiting`),
-    T = m(ue),
+    w = f(se, C === `waiting`),
+    T = p(ue),
     oe = C === `waiting` && w.data?.length ? `connected` : C,
-    E = m(de),
-    D = v === `auto` ? (C === `mfa-required` && E.data ? `allow-host` : oe) : v,
+    E = p(de),
+    D = y === `auto` ? (C === `mfa-required` && E.data ? `allow-host` : oe) : y,
     O;
   t[5] !== D || t[6] !== l || t[7] !== c
     ? ((O = (e) => {
@@ -246,8 +247,8 @@ function J(e) {
   (t[9] !== D || t[10] !== l || t[11] !== c
     ? ((A = () => {
         let e = `${c}:${D}`;
-        ee.current !== e &&
-          ((ee.current = e),
+        m.current !== e &&
+          ((m.current = e),
           ne(l, {
             eventName: `codex_remote_control_onboarding_step_viewed`,
             metadata: { step: D, surface: c },
@@ -264,7 +265,7 @@ function J(e) {
   let M, N;
   (t[14] !== D || t[15] !== l
     ? ((M = () => {
-        D === `connected` && i(l, n.CODEX_MOBILE_SETUP_COMPLETED, !0);
+        D === `connected` && a(l, r.CODEX_MOBILE_SETUP_COMPLETED, !0);
       }),
       (N = [D, l]),
       (t[14] = D),
@@ -273,141 +274,141 @@ function J(e) {
       (t[17] = N))
     : ((M = t[16]), (N = t[17])),
     (0, K.useEffect)(M, N));
-  let P;
+  let F;
   t[18] !== E || t[19] !== l
-    ? ((P = async () =>
+    ? ((F = async () =>
         (await l.query.fetch(ue)) === `required` ? E.data === !1 : !1),
       (t[18] = E),
       (t[19] = l),
-      (t[20] = P))
-    : (P = t[20]);
-  let F;
+      (t[20] = F))
+    : (F = t[20]);
+  let I;
   t[21] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((F = (e) => {
+    ? ((I = (e) => {
         re(e ? `mfa-required` : `allow-host`);
       }),
-      (t[21] = F))
-    : (F = t[21]);
-  let I;
-  t[22] === P
-    ? (I = t[23])
-    : ((I = { mutationFn: P, onSuccess: F }), (t[22] = P), (t[23] = I));
-  let L = y(I),
-    R;
+      (t[21] = I))
+    : (I = t[21]);
+  let L;
+  t[22] === F
+    ? (L = t[23])
+    : ((L = { mutationFn: F, onSuccess: I }), (t[22] = F), (t[23] = L));
+  let R = v(L),
+    z;
   t[24] === g
-    ? (R = t[25])
-    : ((R = async () => {
-        let e = await se();
+    ? (z = t[25])
+    : ((z = async () => {
+        let e = await P();
         return (await g.mutateAsync(!0), e ? `connected` : `waiting`);
       }),
       (t[24] = g),
-      (t[25] = R));
-  let z;
+      (t[25] = z));
+  let B;
   t[26] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((z = (e) => {
+    ? ((B = (e) => {
         re(e);
       }),
-      (t[26] = z))
-    : (z = t[26]);
-  let B;
-  t[27] === R
-    ? (B = t[28])
-    : ((B = { mutationFn: R, onSuccess: z }), (t[27] = R), (t[28] = B));
-  let V = y(B),
-    H;
-  t[29] !== V.error ||
-  t[30] !== L.error ||
+      (t[26] = B))
+    : (B = t[26]);
+  let V;
+  t[27] === z
+    ? (V = t[28])
+    : ((V = { mutationFn: z, onSuccess: B }), (t[27] = z), (t[28] = V));
+  let H = v(V),
+    U;
+  t[29] !== H.error ||
+  t[30] !== R.error ||
   t[31] !== T.error ||
   t[32] !== w.error ||
   t[33] !== b.error
-    ? ((H = me([b.error, w.error, T.error, L.error, V.error])),
-      (t[29] = V.error),
-      (t[30] = L.error),
+    ? ((U = me([b.error, w.error, T.error, R.error, H.error])),
+      (t[29] = H.error),
+      (t[30] = R.error),
       (t[31] = T.error),
       (t[32] = w.error),
       (t[33] = b.error),
-      (t[34] = H))
-    : (H = t[34]);
-  let U = H,
+      (t[34] = U))
+    : (U = t[34]);
+  let W = U,
     G,
     J;
-  (t[35] !== u || t[36] !== U
+  (t[35] !== d || t[36] !== W
     ? ((G = () => {
-        U && u(`/login`, { replace: !0 });
+        W && d(`/login`, { replace: !0 });
       }),
-      (J = [u, U]),
-      (t[35] = u),
-      (t[36] = U),
+      (J = [d, W]),
+      (t[35] = d),
+      (t[36] = W),
       (t[37] = G),
       (t[38] = J))
     : ((G = t[37]), (J = t[38])),
     (0, K.useEffect)(G, J));
   let Y =
-    L.isPending ||
-    V.isPending ||
+    R.isPending ||
+    H.isPending ||
     g.isPending ||
     (T.data === `required` && E.isLoading);
-  if ((v === `auto` && x == null && _ && b.isLoading) || U) return null;
+  if ((y === `auto` && x == null && _ && b.isLoading) || W) return null;
   if (c === `dialog`) {
     let e;
-    t[39] !== V || t[40] !== k
+    t[39] !== H || t[40] !== k
       ? ((e = () => {
-          (k(`allow_host`), V.mutate());
+          (k(`allow_host`), H.mutate());
         }),
-        (t[39] = V),
+        (t[39] = H),
         (t[40] = k),
         (t[41] = e))
       : (e = t[41]);
-    let n;
-    t[42] === r
-      ? (n = t[43])
-      : ((n = (e) => {
-          e || r();
+    let r;
+    t[42] === n
+      ? (r = t[43])
+      : ((r = (e) => {
+          e || n();
         }),
-        (t[42] = r),
-        (t[43] = n));
+        (t[42] = n),
+        (t[43] = r));
     let i;
-    t[44] !== r || t[45] !== k
+    t[44] !== n || t[45] !== k
       ? ((i = () => {
-          (k(`skip`), r());
+          (k(`skip`), n());
         }),
-        (t[44] = r),
+        (t[44] = n),
         (t[45] = k),
         (t[46] = i))
       : (i = t[46]);
     let a;
-    t[47] !== L || t[48] !== k
+    t[47] !== R || t[48] !== k
       ? ((a = () => {
-          (k(`start_setup`), L.mutate());
+          (k(`start_setup`), R.mutate());
         }),
-        (t[47] = L),
+        (t[47] = R),
         (t[48] = k),
         (t[49] = a))
       : (a = t[49]);
     let o;
     return (
-      t[50] !== L.isError ||
+      t[50] !== R.isError ||
       t[51] !== D ||
       t[52] !== Y ||
       t[53] !== e ||
-      t[54] !== n ||
+      t[54] !== r ||
       t[55] !== i ||
       t[56] !== a
         ? ((o = (0, q.jsx)(ae, {
             open: !0,
-            showStartSetupError: L.isError,
+            showStartSetupError: R.isError,
             setupInProgress: Y,
             step: D,
             onAllowHost: e,
-            onOpenChange: n,
+            onOpenChange: r,
             onSkip: i,
             onStartSetup: a,
           })),
-          (t[50] = L.isError),
+          (t[50] = R.isError),
           (t[51] = D),
           (t[52] = Y),
           (t[53] = e),
-          (t[54] = n),
+          (t[54] = r),
           (t[55] = i),
           (t[56] = a),
           (t[57] = o))
@@ -416,52 +417,52 @@ function J(e) {
     );
   }
   let X;
-  t[58] !== V || t[59] !== k
+  t[58] !== H || t[59] !== k
     ? ((X = () => {
-        (k(`allow_host`), V.mutate());
+        (k(`allow_host`), H.mutate());
       }),
-      (t[58] = V),
+      (t[58] = H),
       (t[59] = k),
       (t[60] = X))
     : (X = t[60]);
   let Z;
-  t[61] !== r || t[62] !== k
+  t[61] !== n || t[62] !== k
     ? ((Z = () => {
-        (k(`skip`), r());
+        (k(`skip`), n());
       }),
-      (t[61] = r),
+      (t[61] = n),
       (t[62] = k),
       (t[63] = Z))
     : (Z = t[63]);
   let Q;
-  t[64] !== L || t[65] !== k
+  t[64] !== R || t[65] !== k
     ? ((Q = () => {
-        (k(`start_setup`), L.mutate());
+        (k(`start_setup`), R.mutate());
       }),
-      (t[64] = L),
+      (t[64] = R),
       (t[65] = k),
       (t[66] = Q))
     : (Q = t[66]);
   let $;
   return (
-    t[67] !== L.isError ||
-    t[68] !== r ||
+    t[67] !== R.isError ||
+    t[68] !== n ||
     t[69] !== D ||
     t[70] !== Y ||
     t[71] !== X ||
     t[72] !== Z ||
     t[73] !== Q
       ? (($ = (0, q.jsx)(he, {
-          showStartSetupError: L.isError,
+          showStartSetupError: R.isError,
           setupInProgress: Y,
           step: D,
           onAllowHost: X,
-          onFinishSetup: r,
+          onFinishSetup: n,
           onSkip: Z,
           onStartSetup: Q,
         })),
-        (t[67] = L.isError),
-        (t[68] = r),
+        (t[67] = R.isError),
+        (t[68] = n),
         (t[69] = D),
         (t[70] = Y),
         (t[71] = X),
@@ -473,7 +474,7 @@ function J(e) {
   );
 }
 function he(e) {
-  let t = (0, W.c)(26),
+  let t = (0, ce.c)(26),
     {
       onAllowHost: n,
       onFinishSetup: r,
@@ -483,11 +484,11 @@ function he(e) {
       showStartSetupError: s,
       step: c,
     } = e,
-    l = h(p),
-    u = te(),
-    d;
+    l = ee(u),
+    f = te(),
+    p;
   t[0] !== l || t[1] !== c
-    ? ((d = (e) => {
+    ? ((p = (e) => {
         ne(l, {
           eventName: `codex_remote_control_onboarding_action_clicked`,
           metadata: { action: e, step: c, surface: `page` },
@@ -495,17 +496,17 @@ function he(e) {
       }),
       (t[0] = l),
       (t[1] = c),
-      (t[2] = d))
-    : (d = t[2]);
-  let f = d,
-    m;
+      (t[2] = p))
+    : (p = t[2]);
+  let m = p,
+    h;
   t[3] === c
-    ? (m = t[4])
-    : ((m =
+    ? (h = t[4])
+    : ((h =
         c === `allow-host` || c === `mfa-required` || c === `waiting`
           ? (0, q.jsx)(re.Header, {
               children: (0, q.jsx)(S, {
-                start: (0, q.jsx)(ee, {
+                start: (0, q.jsx)(d, {
                   id: `codexMobile.setupPage.title`,
                   defaultMessage: `Set up Codex Mobile`,
                   description: `Toolbar title shown during Codex mobile setup`,
@@ -514,34 +515,34 @@ function he(e) {
             })
           : null),
       (t[3] = c),
-      (t[4] = m));
+      (t[4] = h));
   let g;
-  t[5] === f
+  t[5] === m
     ? (g = t[6])
     : ((g = () => {
-        (f(`continue_on_chatgpt`),
-          x.dispatchMessage(`open-in-browser`, {
+        (m(`continue_on_chatgpt`),
+          b.dispatchMessage(`open-in-browser`, {
             url: `https://chatgpt.com/#settings/Security`,
           }));
       }),
-      (t[5] = f),
+      (t[5] = m),
       (t[6] = g));
   let _;
-  t[7] !== r || t[8] !== f
+  t[7] !== r || t[8] !== m
     ? ((_ = () => {
-        (f(`finish_setup`), r());
+        (m(`finish_setup`), r());
       }),
       (t[7] = r),
-      (t[8] = f),
+      (t[8] = m),
       (t[9] = _))
     : (_ = t[9]);
   let v;
-  t[10] !== u || t[11] !== f
+  t[10] !== f || t[11] !== m
     ? ((v = () => {
-        (f(`manage_connections`), u(`/settings/connections`));
+        (m(`manage_connections`), f(`/settings/connections`));
       }),
-      (t[10] = u),
-      (t[11] = f),
+      (t[10] = f),
+      (t[11] = m),
       (t[12] = v))
     : (v = t[12]);
   let y;
@@ -577,16 +578,16 @@ function he(e) {
       (t[21] = v),
       (t[22] = y))
     : (y = t[22]);
-  let b;
+  let x;
   return (
-    t[23] !== m || t[24] !== y
-      ? ((b = (0, q.jsxs)(q.Fragment, { children: [m, y] })),
-        (t[23] = m),
+    t[23] !== h || t[24] !== y
+      ? ((x = (0, q.jsxs)(q.Fragment, { children: [h, y] })),
+        (t[23] = h),
         (t[24] = y),
-        (t[25] = b))
-      : (b = t[25]),
-    b
+        (t[25] = x))
+      : (x = t[25]),
+    x
   );
 }
-export { z as a, j as c, H as i, le as n, R as o, V as r, O as s, J as t };
+export { B as a, j as c, U as i, le as n, z as o, H as r, O as s, J as t };
 //# sourceMappingURL=codex-mobile-setup-flow.js.map

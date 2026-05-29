@@ -1,227 +1,233 @@
-import { s as e } from "./chunk.js";
-import { Gr as t, Ur as n, Vr as r, pr as i, t as a } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { bi as t, gi as n, t as r, vi as i, zr as a } from "./src-C.js";
 import {
-  Cr as o,
-  F as s,
-  Ga as c,
-  La as l,
-  Ra as u,
-  Ta as d,
-  V as f,
-  Va as p,
-  as as m,
-  os as h,
-  v as g,
-  za as _,
-} from "./app-server-manager-signals.js";
+  Do as o,
+  Eo as s,
+  No as c,
+  R as l,
+  To as u,
+  U as d,
+  ec as f,
+  ko as p,
+  ni as m,
+  po as h,
+  tc as g,
+  v as _,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as v, t as y } from "./jsx-runtime.js";
-import { t as b } from "./clsx.js";
-import "./react-dom.js";
+import { t as b } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
 import "./core.esm.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import {
-  H as x,
-  J as S,
-  L as C,
-  S as w,
-  W as ee,
+  B as x,
+  G as ee,
+  L as S,
+  S as C,
+  U as w,
   X as T,
-  Y as E,
+  Y as te,
+  Z as E,
   m as D,
-  rt as O,
-  u as k,
-  xt as A,
-  z as te,
+  u as O,
+  wt as k,
 } from "./setting-storage.js";
-import { f as j, h as M, u as N } from "./chunk-LFPYN7LY.js";
+import { _ as A, f as ne, m as j } from "./chunk-LFPYN7LY.js";
 import "./known-app-icon.js";
 import "./branch.js";
-import "./github-mark.js";
+import "./github-mark-BbpRNXQM.js";
 import "./google-drive.js";
-import "./notion.js";
-import { r as ne, t as P } from "./product-logger.js";
-import { o as re } from "./statsig.js";
-import { c as F } from "./app-server-manager-hooks.js";
+import "./notion-hFEWPyiF.js";
+import { r as M, t as re } from "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import { o as N } from "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
+import { c as P } from "./app-server-manager-hooks.js";
 import "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import { u as I } from "./thread-context-inputs.js";
-import { S as L } from "./config-queries.js";
-import { t as R } from "./remote-connection-visibility.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import { u as ie } from "./thread-context-inputs-DBrOekVr.js";
+import { C as F } from "./config-queries-BBeTQbuo.js";
+import { t as I } from "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./codex-api.js";
-import "./_baseOrderBy.js";
-import "./parse-owner-repo.js";
-import { t as ie } from "./use-debounced-value.js";
-import "./use-is-dark.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import { t as ae } from "./use-debounced-value-BtOJx-Vp.js";
+import "./apps-queries-CmwRqoKz.js";
+import "./startCase.js";
+import "./experimental-features-queries.js";
+import "./use-is-dark-BHkhnHe-.js";
 import "./connector-logo.js";
-import { r as z } from "./toast-signal.js";
+import { r as L } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import { t as ae } from "./tooltip.js";
+import { t as oe } from "./tooltip-CDzchJxN.js";
 import "./route-scope.js";
-import "./prompt-text.js";
+import "./prompt-text-DuAhtLDu.js";
 import "./mention-item.js";
-import { t as B } from "./button.js";
-import "./reduced-motion-preference.js";
-import { t as V } from "./spinner.js";
+import { t as R } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
+import { t as z } from "./spinner.js";
 import "./use-codex-home.js";
-import "./use-os-info.js";
-import "./link-external.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./link-external-BPZREBQk.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
-import { n as oe } from "./model-queries.js";
+import { n as se } from "./model-queries-CVdTsyPv.js";
 import "./remote-projects.js";
 import "./thread-detail-level.js";
 import "./permissions-mode-defaults.js";
 import "./use-permissions-mode.js";
+import "./composer-footer-C_v29uwU.js";
 import "./proxy.js";
 import "./app-shell-state.js";
-import "./app-shell-panel-animation.js";
-import { t as se } from "./app-shell.js";
-import "./apps.js";
-import "./chats.js";
-import "./x.js";
-import "./plugin-install-store.js";
+import { t as ce } from "./app-shell-D4HBgUPf.js";
+import "./apps-DwfMzB5Q.js";
+import "./chats-DoviPPWc.js";
+import "./x-C_RDKBp5.js";
+import "./projectless-thread.js";
+import "./plugin-install-store-Daxzgjai.js";
 import "./use-platform.js";
-import "./experimental-features-queries.js";
 import "./use-is-plugins-enabled.js";
-import "./use-plugins.js";
-import "./apps-queries.js";
-import "./startCase.js";
-import "./uniq.js";
-import { t as H } from "./check-circle-filled.js";
+import "./browser-sidebar-availability.js";
+import "./use-plugins-jIZrcuZQ.js";
+import { t as B } from "./check-circle-filled.js";
 import "./browser-sidebar-manager.js";
-import "./app-shell-tab-controller.js";
+import "./app-shell-tab-controller-BTWycTBb.js";
 import "./terminal.js";
-import "./info.js";
+import "./info-B8GAwpK6.js";
 import "./error-boundary.js";
 import "./download.js";
 import "./with-window.js";
 import "./window-app-action-helpers.js";
-import "./sidebar-thread-keys.js";
+import "./locale-resolver-CfTzWTiS.js";
 import {
-  a as ce,
-  i as le,
-  l as ue,
-  n as de,
-  r as fe,
-  t as pe,
+  a as le,
+  i as ue,
+  l as de,
+  n as fe,
+  r as pe,
+  t as me,
 } from "./dialog-layout.js";
-import { c as me, l as he } from "./reasoning-minimal.js";
+import { c as he, l as ge } from "./reasoning-minimal-DZ-l40pu.js";
+import "./local-projects.js";
 import "./run-command.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
 import "./initial-route-atom.js";
 import "./use-stable-callback.js";
-import { t as ge } from "./use-navigate-to-local-conversation.js";
+import { t as V } from "./use-navigate-to-local-conversation.js";
 import "./electron-menu-shortcuts.js";
-import { r as _e } from "./use-skills.js";
-import "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
+import "./local-task-row-signals-BzazYVei.js";
+import { u as _e } from "./sidebar-project-group-signals-CEQTKcIf.js";
+import "./pinned-threads-query-DYArLI-i.js";
+import "./sidebar-project-groups.js";
+import "./_defineProperty.js";
+import { t as ve } from "./use-register-command.js";
 import "./homepage-logo.js";
 import "./loading-page.js";
-import "./sortable.esm.js";
-import "./use-resize-observer.js";
+import "./sortable.esm-BRPfvPzy.js";
+import "./use-resize-observer-DCpyQHos.js";
 import "./check-md.js";
-import { t as ve } from "./chevron-right.js";
-import { t as U } from "./context-menu.js";
+import { t as ye } from "./chevron-right.js";
+import { t as H } from "./context-menu.js";
+import "./command-keybindings-C3NM9T-L.js";
 import "./expand.js";
-import "./keyboard-modifier-state.js";
-import "./thread-side-panel-browser-tab-state.js";
-import "./command-keybindings.js";
+import "./keyboard-modifier-state-BKqcycjV.js";
 import "./arrow-left.js";
 import "./use-window-controls-safe-area.js";
 import "./app-shell-bottom-panel-scroll-sync.js";
-import { t as ye } from "./use-start-new-conversation-B.js";
+import "./select-project.js";
+import { n as be } from "./use-start-new-conversation.js";
+import { s as xe } from "./links.js";
 import "./conversation-starter-card.js";
-import { a as be } from "./links.js";
-import "./local-task-row-signals.js";
-import { u as xe } from "./sidebar-project-group-signals-.js";
-import "./pinned-threads-query.js";
-import "./git-origins-query.js";
-import "./sidebar-project-groups.js";
-import "./_defineProperty.js";
 import { n as Se } from "./thinking-shimmer.js";
-import { c as W, h as G, o as Ce } from "./automation-schedule.js";
-import { t as we } from "./badge.js";
-import "./bug.js";
-import { t as Te } from "./chat.js";
-import "./clock.js";
+import { t as Ce } from "./badge.js";
+import "./bug-B5-GWt65.js";
+import { t as we } from "./chat.js";
+import "./clock-BflmlnpZ.js";
 import "./search.js";
-import "./skills.js";
-import { r as K, t as q } from "./dropdown.js";
-import "./globe.js";
+import "./skills-BUMAZe_D.js";
+import "./mcp-capability-signals-DAPblgpG.js";
+import { r as U, t as W } from "./dropdown-DtQxMoJw.js";
+import "./globe-CnvlclXd.js";
 import "./popover.js";
-import { t as J } from "./archive.js";
+import { t as Te } from "./archive-DxqnmQgI.js";
 import "./three-dots.js";
-import { t as Ee } from "./trash.js";
-import "./chevron.js";
-import { t as De } from "./format-relative-date-time.js";
-import "./remote-host-globe-icon.js";
-import "./worktree.js";
-import "./folder.js";
-import "./pin.js";
-import {
-  C as Oe,
-  S as ke,
-  a as Ae,
-  b as je,
-  c as Me,
-  f as Ne,
-  g as Pe,
-  h as Fe,
-  i as Ie,
-  l as Le,
-  m as Re,
-  n as ze,
-  o as Be,
-  p as Ve,
-  r as He,
-  s as Ue,
-  t as We,
-  u as Ge,
-  v as Ke,
-  w as qe,
-  y as Je,
-} from "./automation-shared.js";
+import { t as G } from "./trash.js";
+import "./chevron-NmAOI_v1.js";
+import "./use-relative-now.js";
+import { t as Ee } from "./format-relative-date-time.js";
+import "./remote-host-globe-icon-DwUovbza.js";
+import "./worktree-D_6WAQVb.js";
+import { n as De, t as Oe } from "./format-automation-next-run-label.js";
 import "./use-native-apps.electron.js";
 import "./get-file-icon.js";
-import "./code.js";
-import "./json-DAjHKBV7.js";
-import "./image-square.js";
-import { t as Ye } from "./notebook.js";
+import "./code-s3Scfd05.js";
+import "./json-CRHyc9De.js";
+import "./image-square-CGEtcnWp.js";
+import { t as ke } from "./notebook-MImpo36y.js";
 import "./settings.cog.js";
-import "./mcp.js";
-import "./chrome.js";
-import "./codex.js";
-import "./openai-blossom.js";
-import { t as Xe } from "./pencil.js";
+import "./mcp-D_m7bYb5.js";
+import "./chrome-ZI-wJE1V.js";
+import "./codex-BjFeJtxQ.js";
+import "./openai-blossom-CXnPbecc.js";
+import { t as Ae } from "./pencil.js";
 import "./filesystem-media-src.js";
-import "./use-is-background-subagents-enabled.js";
-import "./local-environments.js";
-import { r as Ze } from "./local-environment-selection.js";
+import "./use-skills.js";
+import { t as K } from "./automation-queries-DCiNISnO.js";
+import "./use-is-background-subagents-enabled-B.js";
+import "./local-environments-DcKJ5oGa.js";
+import { r as je } from "./local-environment-selection-DyGLYKsj.js";
 import "./laptop.js";
 import "./sortBy.js";
-import "./prompt-editor.js";
-/* empty css                    */ import { t as Qe } from "./use-connected-remote-connections.js";
-import "./use-at-mention-sections.js";
+import "./prompt-editor-.js";
+/* empty css                    */ import { t as Me } from "./use-connected-remote-connections.js";
+import "./composer-top-menu-chrome.js";
+import "./at-mention-list-C6rdlW9Y.js";
+import "./connected-apps.js";
 import "./use-composer-controller.js";
-import "./locale-resolver.js";
-import "./settings-shared.js";
+import "./settings-shared-BTHmEeQY.js";
 import "./format-skill-scope.js";
-import "./list-navigation.js";
-import "./use-workspace-file-search.js";
-import { t as $e } from "./more-menu-trigger.js";
-import { t as et } from "./large-empty-state.js";
+import "./list-navigation-DnxNfoPi.js";
+import "./mcp-capability-client.js";
+import "./use-workspace-file-search-KLsQKyAb.js";
+import { t as Ne } from "./more-menu-trigger-DgGAgPrg.js";
+import { t as Pe } from "./large-empty-state-C2F-IvSK.js";
 import "./anchored-autocomplete-overlay.js";
-import { t as tt } from "./compound-button.js";
-import { t as nt } from "./document-search.js";
+import { t as Fe } from "./compound-button-BQclBs-H.js";
+import { n as Ie, t as Le } from "./project-dropdown-options.js";
+import { t as Re } from "./document-search-bccqfQcB.js";
 import {
-  a as rt,
-  c as it,
-  d as at,
-  f as ot,
-  i as st,
-  l as ct,
+  a as ze,
+  c as Be,
+  d as Ve,
+  f as He,
+  i as Ue,
+  l as We,
+  n as Ge,
+  o as Ke,
+  p as qe,
+  r as Je,
+  s as Ye,
+  t as Xe,
+  u as Ze,
+} from "./automation-dialog.js";
+import { c as q, o as Qe } from "./automation-schedule-CNorTxWd.js";
+import {
+  S as $e,
+  a as et,
+  b as tt,
+  c as nt,
+  f as rt,
+  g as it,
+  h as at,
+  i as ot,
+  l as st,
+  m as ct,
   n as lt,
   o as ut,
   p as dt,
@@ -229,24 +235,28 @@ import {
   s as pt,
   t as mt,
   u as ht,
-} from "./automation-dialog.js";
+  v as gt,
+  y as _t,
+} from "./automation-shared-BaYmxTav.js";
 import "./home-use-cases-data.js";
-import { n as gt, t as _t } from "./project-dropdown-options.js";
-import { i as vt, r as yt } from "./heartbeat-automation-permissions.js";
-import { t as Y } from "./settings-row-D.js";
+import {
+  i as vt,
+  r as yt,
+} from "./heartbeat-automation-permissions-DKKzssYc.js";
+import { t as J } from "./settings-row.js";
 import { t as bt } from "./use-automation-history-items.js";
-import { t as X } from "./animated-icon.js";
-import "./tasks.js";
+import { t as Y } from "./animated-icon.js";
+import "./tasks-DNCFvQEW.js";
 import "./star.js";
 import { t as xt } from "./worktree-environment-dropdown.js";
-import { n as St, t as Ct } from "./selectable-list-row.js";
-import { t as wt } from "./play-outline-C-zmd4eu.js";
-import { t as Tt } from "./settings-host-dropdown.js";
-import { n as Et, t as Dt } from "./sectioned-page.js";
+import { n as X, t as St } from "./selectable-list-row.js";
+import { t as Ct } from "./play-outline.js";
+import { t as wt } from "./settings-host-dropdown-CC-sJzgE.js";
+import { n as Tt, t as Et } from "./sectioned-page-CVpAhlwS.js";
 var Z = e(v()),
-  Q = A(),
+  Q = k(),
   $ = y();
-function Ot(e) {
+function Dt(e) {
   let t = (0, Q.c)(5),
     { className: n } = e,
     r;
@@ -257,7 +267,7 @@ function Ot(e) {
       (t[1] = r));
   let i;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((i = (0, $.jsx)(x, {
+    ? ((i = (0, $.jsx)(w, {
         id: `inbox.mode.automations`,
         defaultMessage: `Automations`,
         description: `Header label for the automations inbox view`,
@@ -274,7 +284,7 @@ function Ot(e) {
     a
   );
 }
-var kt = (e) =>
+var Ot = (e) =>
   (0, $.jsx)(`svg`, {
     width: 20,
     height: 20,
@@ -287,22 +297,22 @@ var kt = (e) =>
       fill: `currentColor`,
     }),
   });
-function At({
+function kt({
   automation: e,
   intl: n,
-  formatRootLabel: r,
-  threadLabelById: i,
+  formatRootLabel: i,
+  threadLabelById: a,
 }) {
   let o = n.formatMessage({
       id: `settings.automations.rruleSummaryFallback`,
       defaultMessage: `Custom schedule`,
       description: `Fallback label when RRULE summary cannot be generated`,
     }),
-    s = Ce({ rrule: e.rrule, intl: n, fallbackMessage: o }) ?? o;
+    s = Qe({ rrule: e.rrule, intl: n, fallbackMessage: o }) ?? o;
   return {
     workspaceLabel: t(e)
       ? (() => {
-          let t = i?.get(e.targetThreadId) ?? e.targetThreadId;
+          let t = a?.get(e.targetThreadId) ?? e.targetThreadId;
           return n.formatMessage(
             {
               id: `inbox.automations.rowSummary.heartbeat`,
@@ -313,13 +323,13 @@ function At({
           );
         })()
       : (() => {
-          let t = e.cwds.map((e) => (r ? r(e) : a({ root: e, labels: {} })));
+          let t = e.cwds.map((e) => (i ? i(e) : r({ root: e, labels: {} })));
           return t.length > 0 ? n.formatList(t, { type: `conjunction` }) : null;
         })(),
     scheduleLabel: s,
   };
 }
-function jt({
+function At({
   automations: e,
   intl: t,
   formatRootLabel: n,
@@ -329,11 +339,11 @@ function jt({
   for (let a of e)
     i.set(
       a.id,
-      At({ automation: a, intl: t, formatRootLabel: n, threadLabelById: r }),
+      kt({ automation: a, intl: t, formatRootLabel: n, threadLabelById: r }),
     );
   return i;
 }
-function Mt(e) {
+function jt(e) {
   let t = (0, Q.c)(87),
     {
       automation: n,
@@ -354,9 +364,9 @@ function Mt(e) {
     g = ee(),
     [_, v] = (0, Z.useState)(!1),
     y = (0, Z.useRef)(!1),
-    S;
+    x;
   t[0] !== n || t[1] !== d
-    ? ((S = () => {
+    ? ((x = () => {
         if (y.current) {
           y.current = !1;
           return;
@@ -365,84 +375,84 @@ function Mt(e) {
       }),
       (t[0] = n),
       (t[1] = d),
-      (t[2] = S))
-    : (S = t[2]);
-  let C = S,
-    w = _,
+      (t[2] = x))
+    : (x = t[2]);
+  let S = x,
+    C = _,
     T;
   t[3] !== o || t[4] !== s
     ? ((T = o
-        ? (0, $.jsx)(V, {
+        ? (0, $.jsx)(z, {
             className: `icon-sm shrink-0 text-token-description-foreground`,
           })
         : s
-          ? (0, $.jsx)(he, {
+          ? (0, $.jsx)(ge, {
               className: `icon-sm shrink-0 text-token-description-foreground`,
             })
-          : (0, $.jsx)(qe, {
+          : (0, $.jsx)(De, {
               className: `icon-sm shrink-0 text-token-description-foreground`,
             })),
       (t[3] = o),
       (t[4] = s),
       (t[5] = T))
     : (T = t[5]);
-  let E = T,
-    D;
+  let te = T,
+    E;
   t[6] === i
-    ? (D = t[7])
-    : ((D =
+    ? (E = t[7])
+    : ((E =
         i ??
-        (0, $.jsx)(x, {
+        (0, $.jsx)(w, {
           id: `inbox.automations.workspaceFallback`,
           defaultMessage: `-`,
           description: `Placeholder when an automation row has no workspace label`,
         })),
       (t[6] = i),
-      (t[7] = D));
-  let O = D,
-    k = o || s ? `gap-2` : `gap-0`,
-    A;
-  t[8] === k
-    ? (A = t[9])
-    : ((A = b(
+      (t[7] = E));
+  let D = E,
+    O = o || s ? `gap-2` : `gap-0`,
+    k;
+  t[8] === O
+    ? (k = t[9])
+    : ((k = b(
         `flex shrink-0 items-center text-base text-token-description-foreground`,
-        k,
+        O,
       )),
-      (t[8] = k),
-      (t[9] = A));
-  let te;
-  t[10] !== w || t[11] !== s || t[12] !== a
-    ? ((te =
+      (t[8] = O),
+      (t[9] = k));
+  let A;
+  t[10] !== C || t[11] !== s || t[12] !== a
+    ? ((A =
         a && !s
           ? (0, $.jsx)(`span`, {
               className: b(
                 `min-w-20 whitespace-nowrap text-right`,
-                w ? `opacity-0` : `group-hover:opacity-0`,
+                C ? `opacity-0` : `group-hover:opacity-0`,
               ),
               children: a,
             })
           : null),
-      (t[10] = w),
+      (t[10] = C),
       (t[11] = s),
       (t[12] = a),
-      (t[13] = te))
-    : (te = t[13]);
-  let j = a && !s ? null : `min-w-20`,
-    M;
-  t[14] === j
-    ? (M = t[15])
-    : ((M = b(`relative inline-flex justify-end`, j)),
-      (t[14] = j),
-      (t[15] = M));
-  let N;
-  t[16] !== w || t[17] !== o || t[18] !== s
-    ? ((N = o
+      (t[13] = A))
+    : (A = t[13]);
+  let ne = a && !s ? null : `min-w-20`,
+    j;
+  t[14] === ne
+    ? (j = t[15])
+    : ((j = b(`relative inline-flex justify-end`, ne)),
+      (t[14] = ne),
+      (t[15] = j));
+  let M;
+  t[16] !== C || t[17] !== o || t[18] !== s
+    ? ((M = o
         ? (0, $.jsx)(Se, {
             className: b(
               `text-token-description-foreground`,
-              w ? `opacity-0` : `group-hover:opacity-0`,
+              C ? `opacity-0` : `group-hover:opacity-0`,
             ),
-            message: (0, $.jsx)(x, {
+            message: (0, $.jsx)(w, {
               id: `inbox.automations.inProgress`,
               defaultMessage: `In progress`,
               description: `Label for an automation that is currently running`,
@@ -450,164 +460,164 @@ function Mt(e) {
           })
         : s
           ? (0, $.jsx)(`span`, {
-              className: b(w ? `opacity-0` : `group-hover:opacity-0`),
-              children: (0, $.jsx)(x, {
+              className: b(C ? `opacity-0` : `group-hover:opacity-0`),
+              children: (0, $.jsx)(w, {
                 id: `inbox.automations.status.paused`,
                 defaultMessage: `Paused`,
                 description: `Label for paused automation status`,
               }),
             })
           : (0, $.jsx)(`span`, {})),
-      (t[16] = w),
+      (t[16] = C),
       (t[17] = o),
       (t[18] = s),
-      (t[19] = N))
-    : (N = t[19]);
-  let ne = w ? `opacity-100` : `opacity-0 group-hover:opacity-100`,
-    P;
-  t[20] === ne
-    ? (P = t[21])
-    : ((P = b(`absolute inset-y-0 right-0 flex items-center gap-2.5`, ne)),
-      (t[20] = ne),
-      (t[21] = P));
-  let re;
+      (t[19] = M))
+    : (M = t[19]);
+  let re = C ? `opacity-100` : `opacity-0 group-hover:opacity-100`,
+    N;
+  t[20] === re
+    ? (N = t[21])
+    : ((N = b(`absolute inset-y-0 right-0 flex items-center gap-2.5`, re)),
+      (t[20] = re),
+      (t[21] = N));
+  let P;
   t[22] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((re = (0, $.jsx)(x, {
+    ? ((P = (0, $.jsx)(w, {
         id: `settings.automations.runNow`,
         defaultMessage: `Run now`,
         description: `Button label for running an automation immediately`,
       })),
-      (t[22] = re))
-    : (re = t[22]);
-  let F;
+      (t[22] = P))
+    : (P = t[22]);
+  let ie;
   t[23] === g
-    ? (F = t[24])
-    : ((F = g.formatMessage({
+    ? (ie = t[24])
+    : ((ie = g.formatMessage({
         id: `settings.automations.runNow`,
         defaultMessage: `Run now`,
         description: `Button label for running an automation immediately`,
       })),
       (t[23] = g),
-      (t[24] = F));
-  let I;
+      (t[24] = ie));
+  let F;
   t[25] !== n || t[26] !== f
-    ? ((I = (e) => {
+    ? ((F = (e) => {
         (e.preventDefault(), e.stopPropagation(), f(n));
       }),
       (t[25] = n),
       (t[26] = f),
-      (t[27] = I))
-    : (I = t[27]);
-  let L;
+      (t[27] = F))
+    : (F = t[27]);
+  let I;
   t[28] === l
-    ? (L = t[29])
-    : ((L = l
-        ? (0, $.jsx)(V, { className: `icon-sm` })
-        : (0, $.jsx)(wt, { className: `icon-sm` })),
+    ? (I = t[29])
+    : ((I = l
+        ? (0, $.jsx)(z, { className: `icon-sm` })
+        : (0, $.jsx)(Ct, { className: `icon-sm` })),
       (t[28] = l),
-      (t[29] = L));
-  let R;
-  t[30] !== c || t[31] !== F || t[32] !== I || t[33] !== L
-    ? ((R = (0, $.jsx)(ae, {
-        tooltipContent: re,
+      (t[29] = I));
+  let ae;
+  t[30] !== c || t[31] !== ie || t[32] !== F || t[33] !== I
+    ? ((ae = (0, $.jsx)(oe, {
+        tooltipContent: P,
         children: (0, $.jsx)(`button`, {
           type: `button`,
           className: `flex cursor-interaction items-center justify-center text-token-description-foreground hover:text-token-foreground disabled:cursor-default`,
           disabled: c,
-          "aria-label": F,
-          onClick: I,
-          children: L,
+          "aria-label": ie,
+          onClick: F,
+          children: I,
         }),
       })),
       (t[30] = c),
-      (t[31] = F),
-      (t[32] = I),
-      (t[33] = L),
-      (t[34] = R))
-    : (R = t[34]);
-  let ie;
+      (t[31] = ie),
+      (t[32] = F),
+      (t[33] = I),
+      (t[34] = ae))
+    : (ae = t[34]);
+  let L;
   t[35] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((ie = (0, $.jsx)(x, {
+    ? ((L = (0, $.jsx)(w, {
         id: `inbox.automations.editTooltip`,
         defaultMessage: `Edit automation`,
         description: `Tooltip label for editing an automation`,
       })),
-      (t[35] = ie))
-    : (ie = t[35]);
-  let z;
+      (t[35] = L))
+    : (L = t[35]);
+  let R;
   t[36] !== n || t[37] !== d
-    ? ((z = (e) => {
+    ? ((R = (e) => {
         (e.preventDefault(), e.stopPropagation(), d(n));
       }),
       (t[36] = n),
       (t[37] = d),
-      (t[38] = z))
-    : (z = t[38]);
-  let B;
+      (t[38] = R))
+    : (R = t[38]);
+  let se;
   t[39] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((B = (0, $.jsx)(Xe, { className: `icon-sm` })), (t[39] = B))
-    : (B = t[39]);
-  let oe;
-  t[40] === z
-    ? (oe = t[41])
-    : ((oe = (0, $.jsx)(ae, {
-        tooltipContent: ie,
+    ? ((se = (0, $.jsx)(Ae, { className: `icon-sm` })), (t[39] = se))
+    : (se = t[39]);
+  let ce;
+  t[40] === R
+    ? (ce = t[41])
+    : ((ce = (0, $.jsx)(oe, {
+        tooltipContent: L,
         children: (0, $.jsx)(`button`, {
           type: `button`,
           className: `flex items-center justify-center text-token-description-foreground hover:text-token-foreground`,
-          onClick: z,
-          children: B,
+          onClick: R,
+          children: se,
         }),
       })),
-      (t[40] = z),
-      (t[41] = oe));
-  let se;
+      (t[40] = R),
+      (t[41] = ce));
+  let B;
   t[42] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((se = (0, $.jsx)(x, {
+    ? ((B = (0, $.jsx)(w, {
         id: `inbox.automations.moreOptionsTooltip`,
         defaultMessage: `More options`,
         description: `Tooltip label for the automation row actions dropdown trigger`,
       })),
-      (t[42] = se))
-    : (se = t[42]);
-  let H;
+      (t[42] = B))
+    : (B = t[42]);
+  let le;
   t[43] === g
-    ? (H = t[44])
-    : ((H = g.formatMessage({
+    ? (le = t[44])
+    : ((le = g.formatMessage({
         id: `inbox.automations.rowActions`,
         defaultMessage: `Automation actions`,
         description: `Aria label for the automation row actions dropdown trigger`,
       })),
       (t[43] = g),
-      (t[44] = H));
-  let ce;
-  t[45] === H
-    ? (ce = t[46])
-    : ((ce = (0, $.jsx)(ae, {
-        tooltipContent: se,
+      (t[44] = le));
+  let ue;
+  t[45] === le
+    ? (ue = t[46])
+    : ((ue = (0, $.jsx)(oe, {
+        tooltipContent: B,
         children: (0, $.jsx)(`span`, {
           className: `flex`,
-          children: (0, $.jsx)($e, {
-            label: H,
+          children: (0, $.jsx)(Ne, {
+            label: le,
             className: `text-token-description-foreground hover:!bg-transparent hover:text-token-foreground active:!bg-transparent data-[state=open]:!bg-transparent`,
             iconClassName: `icon-sm`,
             size: `icon`,
           }),
         }),
       })),
-      (t[45] = H),
-      (t[46] = ce));
-  let le;
+      (t[45] = le),
+      (t[46] = ue));
+  let de;
   t[47] !== n || t[48] !== s || t[49] !== p
-    ? ((le =
+    ? ((de =
         !s && p
-          ? (0, $.jsx)(K.Item, {
-              LeftIcon: he,
+          ? (0, $.jsx)(U.Item, {
+              LeftIcon: ge,
               leftIconClassName: `icon-sm`,
               onSelect: () => {
                 ((y.current = !0), p(n));
               },
-              children: (0, $.jsx)(x, {
+              children: (0, $.jsx)(w, {
                 id: `inbox.automations.pauseMenuItem`,
                 defaultMessage: `Pause`,
                 description: `Dropdown menu item label for pausing an automation`,
@@ -617,19 +627,19 @@ function Mt(e) {
       (t[47] = n),
       (t[48] = s),
       (t[49] = p),
-      (t[50] = le))
-    : (le = t[50]);
-  let ue;
+      (t[50] = de))
+    : (de = t[50]);
+  let fe;
   t[51] !== n || t[52] !== s || t[53] !== m
-    ? ((ue =
+    ? ((fe =
         s && m
-          ? (0, $.jsx)(K.Item, {
-              LeftIcon: me,
+          ? (0, $.jsx)(U.Item, {
+              LeftIcon: he,
               leftIconClassName: `icon-sm`,
               onSelect: () => {
                 ((y.current = !0), m(n));
               },
-              children: (0, $.jsx)(x, {
+              children: (0, $.jsx)(w, {
                 id: `inbox.automations.resumeMenuItem`,
                 defaultMessage: `Resume`,
                 description: `Dropdown menu item label for resuming an automation`,
@@ -639,111 +649,111 @@ function Mt(e) {
       (t[51] = n),
       (t[52] = s),
       (t[53] = m),
-      (t[54] = ue))
-    : (ue = t[54]);
-  let de;
+      (t[54] = fe))
+    : (fe = t[54]);
+  let pe;
   t[55] !== n || t[56] !== h
-    ? ((de = () => {
+    ? ((pe = () => {
         ((y.current = !0), h?.(n));
       }),
       (t[55] = n),
       (t[56] = h),
-      (t[57] = de))
-    : (de = t[57]);
-  let fe;
+      (t[57] = pe))
+    : (pe = t[57]);
+  let me;
   t[58] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((fe = (0, $.jsx)(x, {
+    ? ((me = (0, $.jsx)(w, {
         id: `inbox.automations.deleteMenuItem`,
         defaultMessage: `Delete`,
         description: `Dropdown menu item label for deleting an automation`,
       })),
-      (t[58] = fe))
-    : (fe = t[58]);
-  let pe;
-  t[59] === de
-    ? (pe = t[60])
-    : ((pe = (0, $.jsx)(K.Item, {
-        LeftIcon: Ee,
+      (t[58] = me))
+    : (me = t[58]);
+  let V;
+  t[59] === pe
+    ? (V = t[60])
+    : ((V = (0, $.jsx)(U.Item, {
+        LeftIcon: G,
         leftIconClassName: `icon-sm`,
         className: `text-token-charts-red`,
-        onSelect: de,
-        children: fe,
+        onSelect: pe,
+        children: me,
       })),
-      (t[59] = de),
-      (t[60] = pe));
-  let ge;
-  t[61] !== _ || t[62] !== ce || t[63] !== le || t[64] !== ue || t[65] !== pe
-    ? ((ge = (0, $.jsxs)(q, {
+      (t[59] = pe),
+      (t[60] = V));
+  let _e;
+  t[61] !== _ || t[62] !== ue || t[63] !== de || t[64] !== fe || t[65] !== V
+    ? ((_e = (0, $.jsxs)(W, {
         align: `end`,
         contentWidth: `icon`,
         open: _,
         onOpenChange: v,
-        triggerButton: ce,
-        children: [le, ue, pe],
+        triggerButton: ue,
+        children: [de, fe, V],
       })),
       (t[61] = _),
-      (t[62] = ce),
-      (t[63] = le),
-      (t[64] = ue),
-      (t[65] = pe),
-      (t[66] = ge))
-    : (ge = t[66]);
-  let _e;
-  t[67] !== P || t[68] !== R || t[69] !== oe || t[70] !== ge
-    ? ((_e = (0, $.jsxs)(`span`, { className: P, children: [R, oe, ge] })),
-      (t[67] = P),
-      (t[68] = R),
-      (t[69] = oe),
-      (t[70] = ge),
-      (t[71] = _e))
-    : (_e = t[71]);
+      (t[62] = ue),
+      (t[63] = de),
+      (t[64] = fe),
+      (t[65] = V),
+      (t[66] = _e))
+    : (_e = t[66]);
   let ve;
-  t[72] !== _e || t[73] !== M || t[74] !== N
-    ? ((ve = (0, $.jsxs)(`span`, { className: M, children: [N, _e] })),
-      (t[72] = _e),
-      (t[73] = M),
-      (t[74] = N),
-      (t[75] = ve))
-    : (ve = t[75]);
-  let U;
-  t[76] !== ve || t[77] !== A || t[78] !== te
-    ? ((U = (0, $.jsxs)(`div`, { className: A, children: [te, ve] })),
-      (t[76] = ve),
-      (t[77] = A),
-      (t[78] = te),
-      (t[79] = U))
-    : (U = t[79]);
-  let ye = U,
-    be;
+  t[67] !== N || t[68] !== ae || t[69] !== ce || t[70] !== _e
+    ? ((ve = (0, $.jsxs)(`span`, { className: N, children: [ae, ce, _e] })),
+      (t[67] = N),
+      (t[68] = ae),
+      (t[69] = ce),
+      (t[70] = _e),
+      (t[71] = ve))
+    : (ve = t[71]);
+  let ye;
+  t[72] !== ve || t[73] !== j || t[74] !== M
+    ? ((ye = (0, $.jsxs)(`span`, { className: j, children: [M, ve] })),
+      (t[72] = ve),
+      (t[73] = j),
+      (t[74] = M),
+      (t[75] = ye))
+    : (ye = t[75]);
+  let H;
+  t[76] !== ye || t[77] !== k || t[78] !== A
+    ? ((H = (0, $.jsxs)(`div`, { className: k, children: [A, ye] })),
+      (t[76] = ye),
+      (t[77] = k),
+      (t[78] = A),
+      (t[79] = H))
+    : (H = t[79]);
+  let be = H,
+    xe;
   return (
     t[80] !== r ||
-    t[81] !== C ||
+    t[81] !== S ||
     t[82] !== u ||
-    t[83] !== E ||
-    t[84] !== ye ||
-    t[85] !== O
-      ? ((be = (0, $.jsx)(Ct, {
+    t[83] !== te ||
+    t[84] !== be ||
+    t[85] !== D
+      ? ((xe = (0, $.jsx)(St, {
           ariaLabel: r,
           className: `automation-row`,
-          icon: E,
+          icon: te,
           isSelected: u,
-          onSelect: C,
-          rightText: ye,
-          secondaryTitle: O,
+          onSelect: S,
+          rightText: be,
+          secondaryTitle: D,
           title: r,
         })),
         (t[80] = r),
-        (t[81] = C),
+        (t[81] = S),
         (t[82] = u),
-        (t[83] = E),
-        (t[84] = ye),
-        (t[85] = O),
-        (t[86] = be))
-      : (be = t[86]),
-    be
+        (t[83] = te),
+        (t[84] = be),
+        (t[85] = D),
+        (t[86] = xe))
+      : (xe = t[86]),
+    xe
   );
 }
-function Nt(e) {
+function Mt(e) {
   let t = (0, Q.c)(17),
     {
       automations: n,
@@ -770,8 +780,8 @@ function Nt(e) {
     t[8] !== a ||
     t[9] !== i
   ) {
-    let e = n.filter(It),
-      p = n.filter(Ft),
+    let e = n.filter(Ft),
+      p = n.filter(Pt),
       m = a != null,
       h =
         e.length > 0
@@ -797,7 +807,7 @@ function Nt(e) {
           : null,
       _;
     t[11] !== h || t[12] !== g
-      ? ((_ = [h, g].flatMap(Pt)), (t[11] = h), (t[12] = g), (t[13] = _))
+      ? ((_ = [h, g].flatMap(Nt)), (t[11] = h), (t[12] = g), (t[13] = _))
       : (_ = t[13]);
     let v = _,
       y;
@@ -812,9 +822,9 @@ function Nt(e) {
         (t[15] = y));
     let b;
     (t[16] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((b = (0, $.jsx)(Ot, {})), (t[16] = b))
+      ? ((b = (0, $.jsx)(Dt, {})), (t[16] = b))
       : (b = t[16]),
-      (f = (0, $.jsxs)(Dt, {
+      (f = (0, $.jsxs)(Et, {
         ariaLabel: y,
         className: `[--sectioned-page-leading-inset:0]`,
         contentInnerClassName: `flex flex-col gap-8 px-panel pb-panel [&>section]:gap-2`,
@@ -823,9 +833,9 @@ function Nt(e) {
         showNav: !1,
         children: [
           e.length > 0
-            ? (0, $.jsx)(Et, {
+            ? (0, $.jsx)(Tt, {
                 id: `automations-current`,
-                title: (0, $.jsx)(x, {
+                title: (0, $.jsx)(w, {
                   id: `inbox.automations.current`,
                   defaultMessage: `Current`,
                   description: `Heading shown above the current automations list`,
@@ -839,7 +849,7 @@ function Nt(e) {
                       `div`,
                       {
                         role: `listitem`,
-                        children: (0, $.jsx)(Mt, {
+                        children: (0, $.jsx)(jt, {
                           automation: e,
                           displayName: e.name,
                           workspaceLabel: t?.workspaceLabel ?? null,
@@ -862,9 +872,9 @@ function Nt(e) {
               })
             : null,
           p.length > 0
-            ? (0, $.jsx)(Et, {
+            ? (0, $.jsx)(Tt, {
                 id: `automations-paused`,
-                title: (0, $.jsx)(x, {
+                title: (0, $.jsx)(w, {
                   id: `inbox.automations.pausedSection`,
                   defaultMessage: `Paused`,
                   description: `Heading shown above paused automations`,
@@ -878,7 +888,7 @@ function Nt(e) {
                       `div`,
                       {
                         role: `listitem`,
-                        children: (0, $.jsx)(Mt, {
+                        children: (0, $.jsx)(jt, {
                           automation: e,
                           displayName: e.name,
                           workspaceLabel: t?.workspaceLabel ?? null,
@@ -916,19 +926,19 @@ function Nt(e) {
   } else f = t[10];
   return f;
 }
-function Pt(e) {
+function Nt(e) {
   return e == null ? [] : [e];
 }
-function Ft(e) {
+function Pt(e) {
   return e.status === `PAUSED`;
 }
-function It(e) {
+function Ft(e) {
   return e.status !== `PAUSED`;
 }
-var Lt = `automation-form`;
-function Rt() {
+var It = `automation-form`;
+function Lt() {
   let e = (0, Q.c)(5),
-    t = T(G),
+    t = E(K),
     n = t.data,
     r = t.isLoading,
     i;
@@ -938,7 +948,7 @@ function Rt() {
   let a;
   return (
     e[2] !== r || e[3] !== i
-      ? ((a = (0, $.jsx)(zt, { automations: i, isAutomationsLoading: r })),
+      ? ((a = (0, $.jsx)(Rt, { automations: i, isAutomationsLoading: r })),
         (e[2] = r),
         (e[3] = i),
         (e[4] = a))
@@ -946,167 +956,167 @@ function Rt() {
     a
   );
 }
-function zt({ automations: e, isAutomationsLoading: n }) {
-  let r = E(w),
-    u = ee(),
-    d = T(ne),
-    g = C(),
-    v = ye(),
-    y = N().state,
-    [b, A] = M(),
-    [te, j] = (0, Z.useState)(!1),
-    [re, L] = (0, Z.useState)(`codex`),
-    [R, ae] = (0, Z.useState)(!1),
-    V = (0, Z.useRef)(null),
-    [H, pe] = (0, Z.useState)(() => We),
-    me = b.get(`automationId`),
-    he = b.get(`automationMode`) ?? y?.automationMode,
-    ge = he === `create` || he === `create-templates`,
-    ve = he === `create-templates`,
-    U = me == null ? null : (e.find((e) => e.id === me) ?? null),
-    be = m(Be),
-    Se = h(Be),
-    G = h(Ie),
-    Ce = h(Ae),
-    { data: we } = oe(),
-    Te = dt(we?.models),
-    K =
-      be != null &&
-      ((he === `create` && U == null) || (U != null && be.id === U.id))
-        ? be
+function Rt({ automations: e, isAutomationsLoading: n }) {
+  let i = T(C),
+    s = ee(),
+    h = E(M),
+    _ = S(),
+    v = be(),
+    y = ne().state,
+    [b, x] = A(),
+    [k, j] = (0, Z.useState)(!1),
+    [N, F] = (0, Z.useState)(`codex`),
+    [I, oe] = (0, Z.useState)(!1),
+    z = (0, Z.useRef)(null),
+    [B, me] = (0, Z.useState)(() => mt),
+    he = b.get(`automationId`),
+    ge = b.get(`automationMode`) ?? y?.automationMode,
+    V = ge === `create` || ge === `create-templates`,
+    ye = ge === `create-templates`,
+    H = he == null ? null : (e.find((e) => e.id === he) ?? null),
+    xe = f(ut),
+    Se = g(ut),
+    Ce = g(ot),
+    we = g(et),
+    { data: U } = se(),
+    W = qe(U?.models),
+    Te =
+      xe != null &&
+      ((ge === `create` && H == null) || (H != null && xe.id === H.id))
+        ? xe
         : null,
-    q = ze({
+    G = lt({
       draft:
-        (K != null && je(H)
-          ? Le({ seed: K, targetAutomation: U, models: we?.models })
-          : null) ?? (U != null && H.id !== U.id ? Me(U, we?.models) : H),
-      modelSettings: Te,
+        (Te != null && tt(B)
+          ? st({ seed: Te, targetAutomation: H, models: U?.models })
+          : null) ?? (H != null && B.id !== H.id ? nt(H, U?.models) : B),
+      modelSettings: W,
     }),
-    { targetThreadId: J } = q,
-    Ee = J == null ? null : i(J),
-    De = S(s, Ee),
-    Oe = S(f, Ee),
-    Ne = T(vt),
-    Pe = (e) => {
-      pe((t) => {
-        let n = ze({
+    { targetThreadId: Ee } = G,
+    De = Ee == null ? null : a(Ee),
+    Oe = te(l, De),
+    ke = te(d, De),
+    Ae = E(vt),
+    K = (e) => {
+      me((t) => {
+        let n = lt({
           draft:
-            U != null && t.id !== U.id
-              ? Me(U, we?.models)
-              : K != null && je(t)
-                ? Le({ seed: K, targetAutomation: U, models: we?.models })
+            H != null && t.id !== H.id
+              ? nt(H, U?.models)
+              : Te != null && tt(t)
+                ? st({ seed: Te, targetAutomation: H, models: U?.models })
                 : t,
-          modelSettings: Te,
+          modelSettings: W,
         });
         return typeof e == `function` ? e(n) : e;
       });
     },
-    { data: Fe } = T(I),
-    { data: Re } = F(),
-    He = new Map((Re ?? []).map((e) => [String(e.id), o(e) ?? String(e.id)])),
-    Ke = Fe?.roots ?? [],
-    qe = T(xe),
-    Je = (e) =>
+    { data: je } = E(ie),
+    { data: Me } = P(),
+    Ne = new Map((Me ?? []).map((e) => [String(e.id), m(e) ?? String(e.id)])),
+    Pe = je?.roots ?? [],
+    Fe = E(_e),
+    Ie = (e) =>
       e === `~`
-        ? u.formatMessage({
+        ? s.formatMessage({
             id: `settings.automations.projectDropdown.projectless`,
             defaultMessage: `Chats`,
             description: `Label for selecting the chats target in the automation project dropdown`,
           })
-        : a({ root: e, labels: Fe?.labels ?? {} }),
-    Ye = jt({
+        : r({ root: e, labels: je?.labels ?? {} }),
+    Le = At({
       automations: e,
-      intl: u,
-      formatRootLabel: Je,
-      threadLabelById: He,
+      intl: s,
+      formatRootLabel: Ie,
+      threadLabelById: Ne,
     }),
-    Xe = [...e].sort((e, t) => {
+    Re = [...e].sort((e, t) => {
       let n = e.nextRunAt ?? 1 / 0,
         r = t.nextRunAt ?? 1 / 0;
       return n === r ? e.name.localeCompare(t.name) : n - r;
     }),
-    { trimmedName: Ze, trimmedPrompt: Qe, canSave: $e } = Ve(q),
-    et = $e && !(me != null && U == null && n),
-    tt = ke(q),
-    nt = me != null && U != null,
-    rt = me != null && U == null && !n,
-    it =
-      nt && $e && tt != null && q.status !== `DELETED`
-        ? Ge({ draft: q, name: Ze, prompt: Qe, status: q.status, rrule: tt })
+    { trimmedName: ze, trimmedPrompt: Be, canSave: Ve } = dt(G),
+    He = Ve && !(he != null && H == null && n),
+    Ue = $e(G),
+    We = he != null && H != null,
+    Ge = he != null && H == null && !n,
+    Ke =
+      We && Ve && Ue != null && G.status !== `DELETED`
+        ? ht({ draft: G, name: ze, prompt: Be, status: G.status, rrule: Ue })
         : null,
-    at = ie(it, 600),
-    ot = sn(V.current, it),
-    st = it != null && U != null && !un(U, it),
-    ct = () => {
-      (Se(null), G(!1));
+    Je = ae(Ke, 600),
+    Ye = on(z.current, Ke),
+    Xe = Ke != null && H != null && !ln(H, Ke),
+    Ze = () => {
+      (Se(null), Ce(!1));
     },
-    lt = ({ automationId: e, automationMode: t, replace: n = !1 }) => {
+    Qe = ({ automationId: e, automationMode: t, replace: n = !1 }) => {
       let r = new URLSearchParams(b);
       if (
         (e == null ? r.delete(`automationId`) : r.set(`automationId`, e),
         t == null ? r.delete(`automationMode`) : r.set(`automationMode`, t),
         n)
       ) {
-        A(r, { replace: !0, state: null });
+        x(r, { replace: !0, state: null });
         return;
       }
-      A(r, { state: null });
+      x(r, { state: null });
     },
-    ut = () => {
-      (pe(We), ae(!1));
+    rt = () => {
+      (me(mt), oe(!1));
     },
-    ft = () => {
-      (L(`manual`), ut(), ct(), lt({ automationMode: `create` }));
+    it = () => {
+      (F(`manual`), rt(), Ze(), Qe({ automationMode: `create` }));
     },
-    pt = () => {
-      (ut(), ct(), lt({ automationMode: `create-templates` }));
+    at = () => {
+      (rt(), Ze(), Qe({ automationMode: `create-templates` }));
     },
-    mt = () => {
-      (L(`codex`),
+    ct = () => {
+      (F(`codex`),
         v({
-          prefillPrompt: u.formatMessage({
+          prefillPrompt: s.formatMessage({
             id: `inbox.automations.createWithCodex.prompt`,
             defaultMessage: `I want to set up an automation. Briefly explain how automations work in Codex, then ask me a few questions to figure out what I'd like Codex to do and when it should run`,
             description: `Composer prefill prompt for creating an automation by chatting with Codex`,
           }),
         }));
     },
-    ht = (e) => {
-      (Pe(Me(e, we?.models)), ct(), lt({ automationId: e.id }));
+    ft = (e) => {
+      (K(nt(e, U?.models)), Ze(), Qe({ automationId: e.id }));
     },
     gt = (e) => {
-      (Pe(Me(e, we?.models)), ct(), j(!0));
+      (K(nt(e, U?.models)), Ze(), j(!0));
     },
     _t = () => {
-      (ct(), lt({ replace: !0 }), ut());
+      (Ze(), Qe({ replace: !0 }), rt());
     },
-    Y = () => {
-      g.invalidateQueries({ queryKey: k(`list-automations`) });
+    J = () => {
+      _.invalidateQueries({ queryKey: O(`list-automations`) });
     },
     bt = D(`automation-create`, {
       onSuccess: (e) => {
-        (d.trackStructuredEvent(_, {
-          action: l.CODEX_AUTOMATION_ACTION_CREATED,
+        (h.trackStructuredEvent(o, {
+          action: u.CODEX_AUTOMATION_ACTION_CREATED,
           source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
           success: !0,
-          ...W(e.item),
+          ...q(e.item),
         }),
-          Y(),
-          K != null &&
-            Ce({ directiveKey: K.directiveKey, automationId: e.item.id }),
+          J(),
+          Te != null &&
+            we({ directiveKey: Te.directiveKey, automationId: e.item.id }),
           _t(),
-          P(r, { eventName: `codex_automation_created` }));
+          re(i, { eventName: `codex_automation_created` }));
       },
       onError: (e, t) => {
-        (d.trackStructuredEvent(_, {
-          action: l.CODEX_AUTOMATION_ACTION_CREATED,
+        (h.trackStructuredEvent(o, {
+          action: u.CODEX_AUTOMATION_ACTION_CREATED,
           source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
           success: !1,
-          ...W(t),
+          ...q(t),
           failureReason: p.CODEX_AUTOMATION_FAILURE_REASON_HOST_ERROR,
         }),
-          r.get(z).danger(
-            u.formatMessage({
+          i.get(L).danger(
+            s.formatMessage({
               id: `inbox.automations.createError`,
               defaultMessage: `Could not create automation`,
               description: `Toast title when creating an automation fails`,
@@ -1115,13 +1125,13 @@ function zt({ automations: e, isAutomationsLoading: n }) {
           ));
       },
     }),
-    X = D(`automation-update`, {
+    Y = D(`automation-update`, {
       onMutate: (e) => {
-        let t = k(`list-automations`),
-          n = g.getQueryData(t),
-          r = q.id === e.id ? q.status : null;
+        let t = O(`list-automations`),
+          n = _.getQueryData(t),
+          r = G.id === e.id ? G.status : null;
         return (
-          g.setQueryData(t, (t) =>
+          _.setQueryData(t, (t) =>
             t == null
               ? t
               : {
@@ -1156,45 +1166,45 @@ function zt({ automations: e, isAutomationsLoading: n }) {
         );
       },
       onSuccess: (e) => {
-        (d.trackStructuredEvent(_, {
-          action: l.CODEX_AUTOMATION_ACTION_UPDATED,
+        (h.trackStructuredEvent(o, {
+          action: u.CODEX_AUTOMATION_ACTION_UPDATED,
           source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
           success: !0,
-          ...W(e.item),
+          ...q(e.item),
         }),
-          (V.current = null),
-          g.setQueryData(k(`list-automations`), (t) =>
+          (z.current = null),
+          _.setQueryData(O(`list-automations`), (t) =>
             t == null
               ? t
               : {
                   items: t.items.map((t) => (t.id === e.item.id ? e.item : t)),
                 },
           ),
-          Y(),
-          ae(!1),
-          P(r, { eventName: `codex_automation_updated` }));
+          J(),
+          oe(!1),
+          re(i, { eventName: `codex_automation_updated` }));
       },
       onError: (e, t, n) => {
-        d.trackStructuredEvent(_, {
-          action: l.CODEX_AUTOMATION_ACTION_UPDATED,
+        h.trackStructuredEvent(o, {
+          action: u.CODEX_AUTOMATION_ACTION_UPDATED,
           source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
           success: !1,
-          ...W(t),
+          ...q(t),
           failureReason:
             e.message ===
             `Automation does not exist in the app and could not be updated. It may have been deleted manually by the user.`
               ? p.CODEX_AUTOMATION_FAILURE_REASON_MISSING_AUTOMATION
               : p.CODEX_AUTOMATION_FAILURE_REASON_HOST_ERROR,
         });
-        let i = cn(n);
-        V.current = on(t);
-        let a = i?.previousDraftStatus;
-        (i?.previousAutomations != null &&
-          g.setQueryData(k(`list-automations`), i.previousAutomations),
-          a != null && q.id === t.id && Pe((e) => ({ ...e, status: a })),
-          ae(!1),
-          r.get(z).danger(
-            u.formatMessage({
+        let r = sn(n);
+        z.current = an(t);
+        let a = r?.previousDraftStatus;
+        (r?.previousAutomations != null &&
+          _.setQueryData(O(`list-automations`), r.previousAutomations),
+          a != null && G.id === t.id && K((e) => ({ ...e, status: a })),
+          oe(!1),
+          i.get(L).danger(
+            s.formatMessage({
               id: `inbox.automations.updateError`,
               defaultMessage: `Could not update automation`,
               description: `Toast title when updating an automation fails`,
@@ -1205,27 +1215,27 @@ function zt({ automations: e, isAutomationsLoading: n }) {
     }),
     xt = D(`automation-delete`, {
       onSuccess: (t, n) => {
-        let i = t.item ?? e.find((e) => e.id === n.id) ?? null;
+        let r = t.item ?? e.find((e) => e.id === n.id) ?? null;
         if (
-          (d.trackStructuredEvent(_, {
-            action: l.CODEX_AUTOMATION_ACTION_DELETED,
+          (h.trackStructuredEvent(o, {
+            action: u.CODEX_AUTOMATION_ACTION_DELETED,
             source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
             success: t.success,
-            ...(i == null ? {} : W(i)),
-            ...ln({ status: t.status, success: t.success }),
+            ...(r == null ? {} : q(r)),
+            ...cn({ status: t.status, success: t.success }),
           }),
           !t.success)
         ) {
-          (Y(),
+          (J(),
             j(!1),
-            r.get(z).danger(
-              u.formatMessage({
+            i.get(L).danger(
+              s.formatMessage({
                 id: `inbox.automations.deleteError`,
                 defaultMessage: `Could not delete automation`,
                 description: `Toast title when deleting an automation fails`,
               }),
               {
-                description: u.formatMessage({
+                description: s.formatMessage({
                   id: `inbox.automations.deleteFailedDescription`,
                   defaultMessage: `Try again.`,
                   description: `Toast description when deleting an automation fails without a bridge error`,
@@ -1234,25 +1244,25 @@ function zt({ automations: e, isAutomationsLoading: n }) {
             ));
           return;
         }
-        (g.setQueryData(k(`list-automations`), (e) =>
+        (_.setQueryData(O(`list-automations`), (e) =>
           e == null ? e : { items: e.items.filter((e) => e.id !== n.id) },
         ),
-          Y(),
+          J(),
           j(!1),
           _t());
       },
       onError: (t, n) => {
-        let i = e.find((e) => e.id === n.id) ?? null;
-        (d.trackStructuredEvent(_, {
-          action: l.CODEX_AUTOMATION_ACTION_DELETED,
+        let r = e.find((e) => e.id === n.id) ?? null;
+        (h.trackStructuredEvent(o, {
+          action: u.CODEX_AUTOMATION_ACTION_DELETED,
           source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
           success: !1,
-          ...(i == null ? {} : W(i)),
+          ...(r == null ? {} : q(r)),
           failureReason: p.CODEX_AUTOMATION_FAILURE_REASON_HOST_ERROR,
         }),
           j(!1),
-          r.get(z).danger(
-            u.formatMessage({
+          i.get(L).danger(
+            s.formatMessage({
               id: `inbox.automations.deleteError`,
               defaultMessage: `Could not delete automation`,
               description: `Toast title when deleting an automation fails`,
@@ -1261,17 +1271,17 @@ function zt({ automations: e, isAutomationsLoading: n }) {
           ));
       },
     }),
-    St = D(`automation-run-now`, {
+    X = D(`automation-run-now`, {
       onSuccess: (t, n) => {
-        let i = e.find((e) => e.id === n.id) ?? null;
-        (d.trackStructuredEvent(_, {
-          action: l.CODEX_AUTOMATION_ACTION_RUN_NOW,
+        let r = e.find((e) => e.id === n.id) ?? null;
+        (h.trackStructuredEvent(o, {
+          action: u.CODEX_AUTOMATION_ACTION_RUN_NOW,
           source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
           success: t.success,
-          ...(i == null ? {} : W(i)),
+          ...(r == null ? {} : q(r)),
         }),
-          r.get(z).info(
-            u.formatMessage({
+          i.get(L).info(
+            s.formatMessage({
               id: `inbox.automations.runNowSuccess`,
               defaultMessage: `Automation started`,
               description: `Toast shown when an automation is run immediately`,
@@ -1279,16 +1289,16 @@ function zt({ automations: e, isAutomationsLoading: n }) {
           ));
       },
       onError: (t, n) => {
-        let i = e.find((e) => e.id === n.id) ?? null;
-        (d.trackStructuredEvent(_, {
-          action: l.CODEX_AUTOMATION_ACTION_RUN_NOW,
+        let r = e.find((e) => e.id === n.id) ?? null;
+        (h.trackStructuredEvent(o, {
+          action: u.CODEX_AUTOMATION_ACTION_RUN_NOW,
           source: c.CODEX_AUTOMATION_SOURCE_MANUAL_PAGE,
           success: !1,
-          ...(i == null ? {} : W(i)),
+          ...(r == null ? {} : q(r)),
           failureReason: p.CODEX_AUTOMATION_FAILURE_REASON_HOST_ERROR,
         }),
-          r.get(z).danger(
-            u.formatMessage({
+          i.get(L).danger(
+            s.formatMessage({
               id: `inbox.automations.runNowError`,
               defaultMessage: `Could not start automation`,
               description: `Toast title when starting an automation immediately fails`,
@@ -1297,120 +1307,120 @@ function zt({ automations: e, isAutomationsLoading: n }) {
           ));
       },
     }),
-    Ct = (e) => {
-      if ((e.preventDefault(), et && !(q.kind === `cron` && q.model == null))) {
-        if (q.id != null) {
-          if (q.status === `DELETED`) return;
-          (ae(!0),
-            X.mutate(
-              Ge({
-                draft: q,
-                name: Ze,
-                prompt: Qe,
-                status: q.status,
-                rrule: tt,
+    St = (e) => {
+      if ((e.preventDefault(), He && !(G.kind === `cron` && G.model == null))) {
+        if (G.id != null) {
+          if (G.status === `DELETED`) return;
+          (oe(!0),
+            Y.mutate(
+              ht({
+                draft: G,
+                name: ze,
+                prompt: Be,
+                status: G.status,
+                rrule: Ue,
               }),
             ));
           return;
         }
-        bt.mutate(Ue({ draft: q, name: Ze, prompt: Qe, rrule: tt }));
+        bt.mutate(pt({ draft: G, name: ze, prompt: Be, rrule: Ue }));
       }
     },
-    wt = (e, t) => {
-      X.mutate(an(e, t));
+    Ct = (e, t) => {
+      Y.mutate(rn(e, t));
     };
   return (
-    _e(`manageTasks`, ft),
+    ve(`manageTasks`, it),
     (0, Z.useEffect)(() => {
-      !nt ||
-        it == null ||
-        !et ||
-        !st ||
-        at == null ||
-        !sn(at, it) ||
-        ot ||
-        R ||
-        X.isPending ||
+      !We ||
+        Ke == null ||
+        !He ||
+        !Xe ||
+        Je == null ||
+        !on(Je, Ke) ||
+        Ye ||
+        I ||
+        Y.isPending ||
         bt.isPending ||
         xt.isPending ||
-        (ae(!0), X.mutate(it));
-    }, [et, bt.isPending, at, xt.isPending, it, ot, st, nt, R, X, X.isPending]),
+        (oe(!0), Y.mutate(Ke));
+    }, [He, bt.isPending, Je, xt.isPending, Ke, Ye, Xe, We, I, Y, Y.isPending]),
     (0, $.jsxs)($.Fragment, {
       children: [
-        (0, $.jsx)(se.Header, {
-          children: (0, $.jsx)(Bt, {
-            automationName: nt ? q.name : null,
+        (0, $.jsx)(ce.Header, {
+          children: (0, $.jsx)(zt, {
+            automationName: We ? G.name : null,
             isDeletingAutomation: xt.isPending,
-            isPaused: q.status === `PAUSED`,
-            isRetrySavePending: R || X.isPending,
-            isRunNowPending: St.isPending,
-            isSaveRetryVisible: ot,
-            isShowingDetail: nt,
+            isPaused: G.status === `PAUSED`,
+            isRetrySavePending: I || Y.isPending,
+            isRunNowPending: X.isPending,
+            isSaveRetryVisible: Ye,
+            isShowingDetail: We,
             showTemplatesButton: e.length === 0 && !n,
-            createMenuSelection: re,
+            createMenuSelection: N,
             onBackToAutomations: _t,
-            onCreateAutomationClick: ft,
-            onCreateAutomationWithCodex: mt,
+            onCreateAutomationClick: it,
+            onCreateAutomationWithCodex: ct,
             onDeleteAutomation: () => {
               j(!0);
             },
             onPauseAutomation: () => {
-              q.id == null ||
-                tt == null ||
-                (Pe((e) => ({ ...e, status: `PAUSED` })),
-                X.mutate(
-                  Ge({
-                    draft: q,
-                    name: Ze,
-                    prompt: Qe,
+              G.id == null ||
+                Ue == null ||
+                (K((e) => ({ ...e, status: `PAUSED` })),
+                Y.mutate(
+                  ht({
+                    draft: G,
+                    name: ze,
+                    prompt: Be,
                     status: `PAUSED`,
-                    rrule: tt,
+                    rrule: Ue,
                   }),
                 ));
             },
             onRetrySave: () => {
-              it == null || X.isPending || R || (ae(!0), X.mutate(it));
+              Ke == null || Y.isPending || I || (oe(!0), Y.mutate(Ke));
             },
             onResumeAutomation: () => {
-              q.id == null ||
-                tt == null ||
-                (Pe((e) => ({ ...e, status: `ACTIVE` })),
-                X.mutate(
-                  Ge({
-                    draft: q,
-                    name: Ze,
-                    prompt: Qe,
+              G.id == null ||
+                Ue == null ||
+                (K((e) => ({ ...e, status: `ACTIVE` })),
+                Y.mutate(
+                  ht({
+                    draft: G,
+                    name: ze,
+                    prompt: Be,
                     status: `ACTIVE`,
-                    rrule: tt,
+                    rrule: Ue,
                   }),
                 ));
             },
             onRunNow: () => {
-              if (q.id == null) return;
-              let e = q.kind === `heartbeat` && J != null ? De : null;
-              St.mutate({
-                id: q.id,
+              if (G.id == null) return;
+              let e = G.kind === `heartbeat` && Ee != null ? Oe : null;
+              X.mutate({
+                id: G.id,
                 collaborationMode: e,
                 permissions:
-                  q.kind === `heartbeat` && Ee != null
-                    ? yt(Oe, Ne?.[Ee])
+                  G.kind === `heartbeat` && De != null
+                    ? yt(ke, Ae?.[De])
                     : null,
               });
             },
-            onTemplatesClick: pt,
+            onTemplatesClick: at,
           }),
         }),
         (0, $.jsxs)(`div`, {
           className: `flex h-full min-h-0 flex-col`,
           children: [
-            (0, $.jsx)(ue, {
-              open: te,
+            (0, $.jsx)(de, {
+              open: k,
               onOpenChange: j,
-              children: (0, $.jsxs)(de, {
+              children: (0, $.jsxs)(fe, {
                 children: [
-                  (0, $.jsx)(ce, {
-                    children: (0, $.jsx)(le, {
-                      title: (0, $.jsx)(x, {
+                  (0, $.jsx)(le, {
+                    children: (0, $.jsx)(ue, {
+                      title: (0, $.jsx)(w, {
                         id: `inbox.automations.deleteConfirm.title`,
                         defaultMessage: `Delete {name}?`,
                         description: `Title for the delete automation confirmation dialog`,
@@ -1418,9 +1428,9 @@ function zt({ automations: e, isAutomationsLoading: n }) {
                           name: (0, $.jsx)(`strong`, {
                             className: `font-semibold text-token-text-primary`,
                             children:
-                              Ze ||
-                              q.name ||
-                              u.formatMessage({
+                              ze ||
+                              G.name ||
+                              s.formatMessage({
                                 id: `settings.automations.dialog.newTitle`,
                                 defaultMessage: `New automation`,
                                 description: `Header title for a new automation before it is named`,
@@ -1428,38 +1438,38 @@ function zt({ automations: e, isAutomationsLoading: n }) {
                           }),
                         },
                       }),
-                      subtitle: (0, $.jsx)(x, {
+                      subtitle: (0, $.jsx)(w, {
                         id: `inbox.automations.deleteConfirm.description`,
                         defaultMessage: `This will permanently delete the automation and stop any future runs.`,
                         description: `Description for the delete automation confirmation dialog`,
                       }),
                     }),
                   }),
-                  (0, $.jsx)(ce, {
-                    children: (0, $.jsxs)(fe, {
+                  (0, $.jsx)(le, {
+                    children: (0, $.jsxs)(pe, {
                       children: [
-                        (0, $.jsx)(B, {
+                        (0, $.jsx)(R, {
                           color: `outline`,
                           onClick: () => {
                             j(!1);
                           },
-                          children: (0, $.jsx)(x, {
+                          children: (0, $.jsx)(w, {
                             id: `inbox.automations.deleteConfirm.cancel`,
                             defaultMessage: `Cancel`,
                             description: `Cancel button label for delete automation confirmation dialog`,
                           }),
                         }),
-                        (0, $.jsx)(B, {
+                        (0, $.jsx)(R, {
                           color: `danger`,
                           loading: xt.isPending,
                           onClick: () => {
-                            if (q.id == null) {
+                            if (G.id == null) {
                               j(!1);
                               return;
                             }
-                            xt.mutate({ id: q.id });
+                            xt.mutate({ id: G.id });
                           },
-                          children: (0, $.jsx)(x, {
+                          children: (0, $.jsx)(w, {
                             id: `inbox.automations.deleteConfirm.confirm`,
                             defaultMessage: `Delete automation`,
                             description: `Confirm button label for delete automation confirmation dialog`,
@@ -1473,81 +1483,81 @@ function zt({ automations: e, isAutomationsLoading: n }) {
             }),
             (0, $.jsx)(`div`, {
               className: `flex min-h-0 flex-1 flex-col overflow-hidden`,
-              children: nt
-                ? (0, $.jsx)(Gt, {
-                    draft: q,
-                    setDraft: Pe,
-                    canSave: et,
-                    isSaving: bt.isPending || X.isPending,
-                    isSavePending: R,
-                    selectedAutomation: U,
-                    roots: Ke,
-                    formatRootLabel: Je,
-                    workspaceGroups: qe,
+              children: We
+                ? (0, $.jsx)(Wt, {
+                    draft: G,
+                    setDraft: K,
+                    canSave: He,
+                    isSaving: bt.isPending || Y.isPending,
+                    isSavePending: I,
+                    selectedAutomation: H,
+                    roots: Pe,
+                    formatRootLabel: Ie,
+                    workspaceGroups: Fe,
                     onEditAutomationName: (e) => {
-                      Pe((t) => ({ ...t, name: e }));
+                      K((t) => ({ ...t, name: e }));
                     },
-                    onSubmit: Ct,
+                    onSubmit: St,
                     onCancel: _t,
                   })
-                : rt
-                  ? (0, $.jsx)(Ht, { onBackToAutomations: _t })
+                : Ge
+                  ? (0, $.jsx)(Vt, { onBackToAutomations: _t })
                   : e.length === 0
-                    ? (0, $.jsx)(Ut, {
+                    ? (0, $.jsx)(Ht, {
                         isLoading: n,
                         onSelectSuggestedAutomation: (e) => {
                           v({ prefillPrompt: e });
                         },
                       })
-                    : (0, $.jsx)(Nt, {
-                        automations: Xe,
-                        automationRowSummaries: Ye,
-                        runNowPendingAutomationId: St.isPending
-                          ? (St.variables?.id ?? null)
+                    : (0, $.jsx)(Mt, {
+                        automations: Re,
+                        automationRowSummaries: Le,
+                        runNowPendingAutomationId: X.isPending
+                          ? (X.variables?.id ?? null)
                           : null,
                         selectedAutomationId: null,
-                        onSelectAutomation: ht,
+                        onSelectAutomation: ft,
                         onRunAutomationNow: (e) => {
                           if (t(e)) {
-                            let t = i(e.targetThreadId),
-                              n = O(r, s, t);
+                            let t = a(e.targetThreadId),
+                              n = i.get(l, t);
                             if (n == null) return;
-                            St.mutate({
+                            X.mutate({
                               id: e.id,
                               collaborationMode: n,
-                              permissions: yt(O(r, f, t), Ne?.[t]),
+                              permissions: yt(i.get(d, t), Ae?.[t]),
                             });
                             return;
                           }
-                          St.mutate({
+                          X.mutate({
                             id: e.id,
                             collaborationMode: null,
                             permissions: null,
                           });
                         },
                         onPauseAutomation: (e) => {
-                          wt(e, `PAUSED`);
+                          Ct(e, `PAUSED`);
                         },
                         onResumeAutomation: (e) => {
-                          wt(e, `ACTIVE`);
+                          Ct(e, `ACTIVE`);
                         },
                         onDeleteAutomation: (e) => {
                           gt(e);
                         },
                       }),
             }),
-            (0, $.jsx)(Kt, {
-              open: ge && !te,
-              draft: q,
-              initialTemplatePickerOpen: ve,
-              setDraft: Pe,
-              canSave: et,
-              isSaving: bt.isPending || X.isPending,
-              isSavePending: R,
-              roots: Ke,
-              formatRootLabel: Je,
-              workspaceGroups: qe,
-              onSubmit: Ct,
+            (0, $.jsx)(Gt, {
+              open: V && !k,
+              draft: G,
+              initialTemplatePickerOpen: ye,
+              setDraft: K,
+              canSave: He,
+              isSaving: bt.isPending || Y.isPending,
+              isSavePending: I,
+              roots: Pe,
+              formatRootLabel: Ie,
+              workspaceGroups: Fe,
+              onSubmit: St,
               onCancel: () => {
                 _t();
               },
@@ -1558,7 +1568,7 @@ function zt({ automations: e, isAutomationsLoading: n }) {
     })
   );
 }
-function Bt(e) {
+function zt(e) {
   let t = (0, Q.c)(34),
     {
       automationName: n,
@@ -1581,10 +1591,10 @@ function Bt(e) {
       onTemplatesClick: y,
     } = e,
     b = ee(),
-    S = u === `manual` ? f : p,
-    C;
+    x = u === `manual` ? f : p,
+    S;
   t[0] !== u || t[1] !== b
-    ? ((C =
+    ? ((S =
         u === `manual`
           ? b.formatMessage({
               id: `inbox.automations.setUpManually.action`,
@@ -1598,46 +1608,46 @@ function Bt(e) {
             })),
       (t[0] = u),
       (t[1] = b),
-      (t[2] = C))
-    : (C = t[2]);
-  let w = C,
+      (t[2] = S))
+    : (S = t[2]);
+  let C = S,
     T;
   t[3] === u
     ? (T = t[4])
     : ((T =
         u === `manual`
-          ? (0, $.jsx)(x, {
+          ? (0, $.jsx)(w, {
               id: `inbox.automations.setUpManually`,
               defaultMessage: `Create manually`,
               description: `Menu item for opening the manual automation setup dialog`,
             })
-          : (0, $.jsx)(x, {
+          : (0, $.jsx)(w, {
               id: `inbox.automations.createWithCodex`,
               defaultMessage: `Create via chat`,
               description: `Menu item for creating an automation by chatting with Codex`,
             })),
       (t[3] = u),
       (t[4] = T));
-  let E = T,
-    D;
+  let te = T,
+    E;
   t[5] !== n || t[6] !== c || t[7] !== d
-    ? ((D =
+    ? ((E =
         c && n != null
           ? (0, $.jsxs)(`div`, {
               className: `flex min-w-0 items-center gap-1 text-token-description-foreground`,
               children: [
-                (0, $.jsx)(B, {
+                (0, $.jsx)(R, {
                   color: `ghost`,
                   size: `toolbar`,
                   onClick: d,
-                  children: (0, $.jsx)(x, {
+                  children: (0, $.jsx)(w, {
                     id: `inbox.automations.header.root`,
                     defaultMessage: `Automations`,
                     description: `Breadcrumb root label for the automations page`,
                   }),
                 }),
-                (0, $.jsx)(ve, { className: `icon-xs shrink-0` }),
-                (0, $.jsx)(B, {
+                (0, $.jsx)(ye, { className: `icon-xs shrink-0` }),
+                (0, $.jsx)(R, {
                   color: `ghost`,
                   size: `toolbar`,
                   className: `pointer-events-none min-w-0 bg-transparent text-token-foreground hover:bg-transparent`,
@@ -1652,18 +1662,18 @@ function Bt(e) {
       (t[5] = n),
       (t[6] = c),
       (t[7] = d),
-      (t[8] = D))
-    : (D = t[8]);
+      (t[8] = E))
+    : (E = t[8]);
+  let D;
+  t[9] === E
+    ? (D = t[10])
+    : ((D = (0, $.jsx)(`div`, { className: `min-w-0 text-base`, children: E })),
+      (t[9] = E),
+      (t[10] = D));
   let O;
-  t[9] === D
-    ? (O = t[10])
-    : ((O = (0, $.jsx)(`div`, { className: `min-w-0 text-base`, children: D })),
-      (t[9] = D),
-      (t[10] = O));
-  let k;
-  t[11] !== w ||
-  t[12] !== E ||
-  t[13] !== S ||
+  t[11] !== C ||
+  t[12] !== te ||
+  t[13] !== x ||
   t[14] !== b ||
   t[15] !== r ||
   t[16] !== i ||
@@ -1680,10 +1690,10 @@ function Bt(e) {
   t[27] !== v ||
   t[28] !== y ||
   t[29] !== l
-    ? ((k = (0, $.jsx)(`div`, {
+    ? ((O = (0, $.jsx)(`div`, {
         className: `flex items-center justify-end`,
         children: c
-          ? (0, $.jsx)(rn, {
+          ? (0, $.jsx)(nn, {
               isPaused: i,
               isDeleting: r,
               isRetrySavePending: a,
@@ -1699,44 +1709,44 @@ function Bt(e) {
               className: `flex items-center gap-2`,
               children: [
                 l
-                  ? (0, $.jsx)(B, {
+                  ? (0, $.jsx)(R, {
                       color: `outline`,
                       size: `toolbar`,
                       onClick: y,
-                      children: (0, $.jsx)(x, {
+                      children: (0, $.jsx)(w, {
                         id: `inbox.automations.viewTemplates`,
                         defaultMessage: `View templates`,
                         description: `Button label for opening automation templates from the empty automations page`,
                       }),
                     })
                   : null,
-                (0, $.jsx)(tt, {
+                (0, $.jsx)(Fe, {
                   color: `primary`,
                   size: `toolbar`,
                   primaryClassName: `gap-1`,
-                  primaryAriaLabel: w,
+                  primaryAriaLabel: C,
                   secondaryAriaLabel: b.formatMessage({
                     id: `inbox.automations.newMenu`,
                     defaultMessage: `New automation options`,
                     description: `Aria label for the new automation dropdown button`,
                   }),
-                  onClick: S,
+                  onClick: x,
                   dropdownAlign: `end`,
                   dropdownContent: (0, $.jsxs)($.Fragment, {
                     children: [
-                      (0, $.jsx)(K.Item, {
-                        LeftIcon: Te,
+                      (0, $.jsx)(U.Item, {
+                        LeftIcon: we,
                         onSelect: p,
-                        children: (0, $.jsx)(x, {
+                        children: (0, $.jsx)(w, {
                           id: `inbox.automations.createWithCodex`,
                           defaultMessage: `Create via chat`,
                           description: `Menu item for creating an automation by chatting with Codex`,
                         }),
                       }),
-                      (0, $.jsx)(K.Item, {
-                        LeftIcon: Xe,
+                      (0, $.jsx)(U.Item, {
+                        LeftIcon: Ae,
                         onSelect: f,
-                        children: (0, $.jsx)(x, {
+                        children: (0, $.jsx)(w, {
                           id: `inbox.automations.setUpManually`,
                           defaultMessage: `Create manually`,
                           description: `Menu item for opening the manual automation setup dialog`,
@@ -1744,14 +1754,14 @@ function Bt(e) {
                       }),
                     ],
                   }),
-                  children: E,
+                  children: te,
                 }),
               ],
             }),
       })),
-      (t[11] = w),
-      (t[12] = E),
-      (t[13] = S),
+      (t[11] = C),
+      (t[12] = te),
+      (t[13] = x),
       (t[14] = b),
       (t[15] = r),
       (t[16] = i),
@@ -1768,23 +1778,23 @@ function Bt(e) {
       (t[27] = v),
       (t[28] = y),
       (t[29] = l),
-      (t[30] = k))
-    : (k = t[30]);
-  let A;
+      (t[30] = O))
+    : (O = t[30]);
+  let k;
   return (
-    t[31] !== O || t[32] !== k
-      ? ((A = (0, $.jsxs)(`div`, {
+    t[31] !== D || t[32] !== O
+      ? ((k = (0, $.jsxs)(`div`, {
           className: `draggable grid w-full grid-cols-[minmax(0,1fr)_auto] items-center gap-x-4 electron:h-toolbar extension:py-row-y`,
-          children: [O, k],
+          children: [D, O],
         })),
-        (t[31] = O),
-        (t[32] = k),
-        (t[33] = A))
-      : (A = t[33]),
-    A
+        (t[31] = D),
+        (t[32] = O),
+        (t[33] = k))
+      : (k = t[33]),
+    k
   );
 }
-function Vt(e) {
+function Bt(e) {
   let t = (0, Q.c)(5),
     { name: n, onChange: r } = e,
     i;
@@ -1810,14 +1820,14 @@ function Vt(e) {
     a
   );
 }
-function Ht(e) {
+function Vt(e) {
   let t = (0, Q.c)(5),
     { onBackToAutomations: n } = e,
     r;
   t[0] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((r = (0, $.jsx)(`div`, {
         className: `text-lg text-token-foreground`,
-        children: (0, $.jsx)(x, {
+        children: (0, $.jsx)(w, {
           id: `inbox.automations.missing`,
           defaultMessage: `Automation not found`,
           description: `Title shown when an automation detail page points to a missing automation`,
@@ -1829,7 +1839,7 @@ function Ht(e) {
   t[1] === Symbol.for(`react.memo_cache_sentinel`)
     ? ((i = (0, $.jsx)(`div`, {
         className: `text-token-description-foreground`,
-        children: (0, $.jsx)(x, {
+        children: (0, $.jsx)(w, {
           id: `inbox.automations.missingSubtitle`,
           defaultMessage: `The automation may have been deleted or is no longer available on this machine.`,
           description: `Subtitle shown when an automation detail page points to a missing automation`,
@@ -1839,7 +1849,7 @@ function Ht(e) {
     : (i = t[1]);
   let a;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((a = (0, $.jsx)(x, {
+    ? ((a = (0, $.jsx)(w, {
         id: `inbox.automations.missingBack`,
         defaultMessage: `Back to automations`,
         description: `Button label to return to the automations list when an automation detail page is missing`,
@@ -1855,7 +1865,7 @@ function Ht(e) {
           children: [
             r,
             i,
-            (0, $.jsx)(B, {
+            (0, $.jsx)(R, {
               color: `outline`,
               size: `toolbar`,
               onClick: n,
@@ -1868,7 +1878,7 @@ function Ht(e) {
     o
   );
 }
-function Ut(e) {
+function Ht(e) {
   let t = (0, Q.c)(30),
     { isLoading: n, onSelectSuggestedAutomation: r } = e,
     i = ee();
@@ -1879,8 +1889,8 @@ function Ut(e) {
         ? ((e = (0, $.jsxs)(`div`, {
             className: `flex items-center gap-2 rounded-md px-2 py-2 text-sm text-token-description-foreground`,
             children: [
-              (0, $.jsx)(X, { animation: `automation`, size: `sm` }),
-              (0, $.jsx)(x, {
+              (0, $.jsx)(Y, { animation: `automation`, size: `sm` }),
+              (0, $.jsx)(w, {
                 id: `inbox.automations.loading`,
                 defaultMessage: `Loading…`,
                 description: `Loading state for automations page`,
@@ -1894,7 +1904,7 @@ function Ut(e) {
   }
   let a;
   t[1] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((a = (0, $.jsx)(Ot, {})), (t[1] = a))
+    ? ((a = (0, $.jsx)(Dt, {})), (t[1] = a))
     : (a = t[1]);
   let o;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
@@ -1904,11 +1914,11 @@ function Ut(e) {
           a,
           (0, $.jsx)(`div`, {
             className: `text-lg font-normal text-token-description-foreground`,
-            children: (0, $.jsx)(x, {
+            children: (0, $.jsx)(w, {
               id: `inbox.automations.emptySubtitle.learnMore`,
               defaultMessage: `Run chats on a schedule or whenever you need them. <link>Learn more</link>`,
               description: `Subtitle shown when no automations exist`,
-              values: { link: Wt },
+              values: { link: Ut },
             }),
           }),
         ],
@@ -1917,7 +1927,7 @@ function Ut(e) {
     : (o = t[2]);
   let s;
   t[3] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((s = (0, $.jsx)(X, {
+    ? ((s = (0, $.jsx)(Y, {
         animation: `automation`,
         showFallbackWhileLoading: !1,
         size: `fill`,
@@ -1926,7 +1936,7 @@ function Ut(e) {
     : (s = t[3]);
   let c;
   t[4] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = (0, $.jsx)(x, {
+    ? ((c = (0, $.jsx)(w, {
         id: `inbox.automations.emptyCreateFirst`,
         defaultMessage: `Create your first automation`,
         description: `Empty state title encouraging users to create their first automation`,
@@ -1950,8 +1960,8 @@ function Ut(e) {
     : (l = t[7]);
   let u, d;
   t[8] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((u = (0, $.jsx)(kt, { className: `icon-sm` })),
-      (d = (0, $.jsx)(x, {
+    ? ((u = (0, $.jsx)(Ot, { className: `icon-sm` })),
+      (d = (0, $.jsx)(w, {
         id: `inbox.automations.emptySuggestion.dailyBrief`,
         defaultMessage: `Daily brief`,
         description: `Suggested automation button label`,
@@ -1962,7 +1972,7 @@ function Ut(e) {
   let f;
   t[10] === l
     ? (f = t[11])
-    : ((f = (0, $.jsxs)(B, {
+    : ((f = (0, $.jsxs)(R, {
         color: `outline`,
         size: `medium`,
         onClick: l,
@@ -1987,8 +1997,8 @@ function Ut(e) {
     : (p = t[14]);
   let m, h;
   t[15] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((m = (0, $.jsx)(Ye, { className: `icon-sm` })),
-      (h = (0, $.jsx)(x, {
+    ? ((m = (0, $.jsx)(ke, { className: `icon-sm` })),
+      (h = (0, $.jsx)(w, {
         id: `inbox.automations.emptySuggestion.weeklyReview`,
         defaultMessage: `Weekly review`,
         description: `Suggested automation button label`,
@@ -1999,7 +2009,7 @@ function Ut(e) {
   let g;
   t[17] === p
     ? (g = t[18])
-    : ((g = (0, $.jsxs)(B, {
+    : ((g = (0, $.jsxs)(R, {
         color: `outline`,
         size: `medium`,
         onClick: p,
@@ -2024,8 +2034,8 @@ function Ut(e) {
     : (_ = t[21]);
   let v, y;
   t[22] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, $.jsx)(nt, { className: `icon-sm` })),
-      (y = (0, $.jsx)(x, {
+    ? ((v = (0, $.jsx)(Re, { className: `icon-sm` })),
+      (y = (0, $.jsx)(w, {
         id: `inbox.automations.emptySuggestion.projectMonitor`,
         defaultMessage: `Project monitor`,
         description: `Suggested automation button label`,
@@ -2036,7 +2046,7 @@ function Ut(e) {
   let b;
   t[24] === _
     ? (b = t[25])
-    : ((b = (0, $.jsxs)(B, {
+    : ((b = (0, $.jsxs)(R, {
         color: `outline`,
         size: `medium`,
         onClick: _,
@@ -2044,14 +2054,14 @@ function Ut(e) {
       })),
       (t[24] = _),
       (t[25] = b));
-  let S;
+  let x;
   return (
     t[26] !== g || t[27] !== b || t[28] !== f
-      ? ((S = (0, $.jsxs)(`div`, {
+      ? ((x = (0, $.jsxs)(`div`, {
           className: `flex h-full min-h-0 flex-col overflow-hidden`,
           children: [
             o,
-            (0, $.jsx)(et, {
+            (0, $.jsx)(Pe, {
               className: `min-h-0 flex-1 text-token-foreground`,
               illustration: s,
               illustrationSize: `hero`,
@@ -2064,21 +2074,21 @@ function Ut(e) {
         (t[26] = g),
         (t[27] = b),
         (t[28] = f),
-        (t[29] = S))
-      : (S = t[29]),
-    S
+        (t[29] = x))
+      : (x = t[29]),
+    x
   );
 }
-function Wt(e) {
+function Ut(e) {
   return (0, $.jsx)(`a`, {
     className: `text-token-link`,
-    href: be,
+    href: xe,
     rel: `noreferrer`,
     target: `_blank`,
     children: e,
   });
 }
-function Gt(e) {
+function Wt(e) {
   let t = (0, Q.c)(13),
     {
       draft: n,
@@ -2110,7 +2120,7 @@ function Gt(e) {
     t[11] !== u
       ? ((m = (0, $.jsx)(`div`, {
           className: `flex h-full min-h-0 flex-1 flex-col self-stretch`,
-          children: (0, $.jsx)(Jt, {
+          children: (0, $.jsx)(qt, {
             layout: `detail`,
             draft: n,
             setDraft: r,
@@ -2143,7 +2153,7 @@ function Gt(e) {
     m
   );
 }
-function Kt(e) {
+function Gt(e) {
   let t = (0, Q.c)(24),
     {
       open: n,
@@ -2169,7 +2179,7 @@ function Kt(e) {
       (t[1] = m));
   let h;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = { onPointerDownOutside: qt }), (t[2] = h))
+    ? ((h = { onPointerDownOutside: Kt }), (t[2] = h))
     : (h = t[2]);
   let g;
   t[3] !== o ||
@@ -2183,7 +2193,7 @@ function Kt(e) {
   t[11] !== a ||
   t[12] !== d
     ? ((g = (e) =>
-        (0, $.jsx)(Jt, {
+        (0, $.jsx)(qt, {
           layout: `create`,
           draft: r,
           setDraft: a,
@@ -2213,13 +2223,13 @@ function Kt(e) {
   t[14] === a
     ? (_ = t[15])
     : ((_ = (e) => {
-        a((t) => He(t, e));
+        a((t) => ft(t, e));
       }),
       (t[14] = a),
       (t[15] = _));
   let v;
   t[16] !== i || t[17] !== g || t[18] !== _
-    ? ((v = (0, $.jsx)(mt, {
+    ? ((v = (0, $.jsx)(Xe, {
         composer: g,
         onSelectTemplateDraft: _,
         initialTemplatePickerOpen: i,
@@ -2233,7 +2243,7 @@ function Kt(e) {
   let y;
   return (
     t[20] !== n || t[21] !== m || t[22] !== v
-      ? ((y = (0, $.jsx)(lt, {
+      ? ((y = (0, $.jsx)(Ge, {
           open: n,
           onOpenChange: m,
           dialogCloseClassName: `top-[22px]`,
@@ -2250,11 +2260,11 @@ function Kt(e) {
     y
   );
 }
-function qt(e) {
+function Kt(e) {
   e.preventDefault();
 }
-function Jt(e) {
-  let i = (0, Q.c)(178),
+function qt(e) {
+  let r = (0, Q.c)(177),
     {
       layout: a,
       draft: o,
@@ -2262,183 +2272,183 @@ function Jt(e) {
       canSave: c,
       isSaving: l,
       isSavePending: u,
-      selectedAutomation: f,
-      roots: p,
-      formatRootLabel: m,
-      workspaceGroups: h,
-      onEditAutomationName: _,
+      selectedAutomation: d,
+      roots: f,
+      formatRootLabel: p,
+      workspaceGroups: m,
+      onEditAutomationName: g,
       onSubmit: v,
       onCancel: y,
-      templateToggleButton: C,
+      templateToggleButton: x,
     } = e,
-    w = f === void 0 ? null : f,
-    E = C === void 0 ? null : C,
-    D = ee(),
-    O = j(),
-    { data: k } = oe(),
-    A = a === `detail`,
-    te = A,
-    M = A ? `div` : de,
-    N = A ? `div` : ce,
-    { data: ne } = S(L, T(g)),
-    P = re(`1488233300`),
-    { remoteConnections: F } = R(),
-    I = Qe(F).length > 0,
-    { options: ie, hasPinnedThreads: z } = at(o.targetThreadId),
-    V = ne?.config.sandbox_mode === `read-only`,
-    se = ne?.config.sandbox_mode === `danger-full-access`,
+    S = d === void 0 ? null : d,
+    C = x === void 0 ? null : x,
+    T = ee(),
+    D = j(),
+    { data: O } = se(),
+    k = a === `detail`,
+    A = k,
+    ne = k ? `div` : fe,
+    M = k ? `div` : le,
+    { data: re } = te(F, E(_)),
+    P = N(`1488233300`),
+    { remoteConnections: ie } = I(),
+    ae = Me(ie).length > 0,
+    { options: L, hasPinnedThreads: z } = Ve(o.targetThreadId),
+    ce = re?.config.sandbox_mode === `read-only`,
+    B = re?.config.sandbox_mode === `danger-full-access`,
+    ue;
+  r[0] !== c || r[1] !== o || r[2] !== u
+    ? ((ue = c || u ? null : (0, $.jsx)(He, { draft: o, action: `create` })),
+      (r[0] = c),
+      (r[1] = o),
+      (r[2] = u),
+      (r[3] = ue))
+    : (ue = r[3]);
+  let de = ue,
+    he = o.name.length > 0 || o.prompt.length > 0,
+    ge;
+  r[4] !== p || r[5] !== f || r[6] !== m
+    ? ((ge = Le({ workspaceGroups: m, roots: f, formatRootLabel: p })),
+      (r[4] = p),
+      (r[5] = f),
+      (r[6] = m),
+      (r[7] = ge))
+    : (ge = r[7]);
+  let V = ge,
+    _e = S?.nextRunAt ?? null,
+    ve;
+  r[8] !== o.status || r[9] !== T || r[10] !== _e
+    ? ((ve = Oe({ intl: T, nextRunAt: _e, status: o.status })),
+      (r[8] = o.status),
+      (r[9] = T),
+      (r[10] = _e),
+      (r[11] = ve))
+    : (ve = r[11]);
+  let ye = ve,
     H;
-  i[0] !== c || i[1] !== o || i[2] !== D || i[3] !== u
-    ? ((H = c || u ? null : ot({ draft: o, intl: D, action: `create` })),
-      (i[0] = c),
-      (i[1] = o),
-      (i[2] = D),
-      (i[3] = u),
-      (i[4] = H))
-    : (H = i[4]);
-  let le = H,
-    ue = o.name.length > 0 || o.prompt.length > 0,
-    me;
-  i[5] !== m || i[6] !== p || i[7] !== h
-    ? ((me = _t({ workspaceGroups: h, roots: p, formatRootLabel: m })),
-      (i[5] = m),
-      (i[6] = p),
-      (i[7] = h),
-      (i[8] = me))
-    : (me = i[8]);
-  let he = me,
-    ge = w?.nextRunAt ?? null,
-    _e;
-  i[9] !== o.status || i[10] !== D || i[11] !== ge
-    ? ((_e = Oe({ intl: D, nextRunAt: ge, status: o.status })),
-      (i[9] = o.status),
-      (i[10] = D),
-      (i[11] = ge),
-      (i[12] = _e))
-    : (_e = i[12]);
-  let ve = _e,
-    U;
-  i[13] !== D || i[14] !== w
-    ? ((U =
-        w?.lastRunAt == null
-          ? D.formatMessage({
+  r[12] !== T || r[13] !== S
+    ? ((H =
+        S?.lastRunAt == null
+          ? T.formatMessage({
               id: `inbox.automations.lastRun.none`,
               defaultMessage: `-`,
               description: `Fallback label when an automation has not run yet`,
             })
-          : dn({ timestamp: w.lastRunAt, intl: D })),
-      (i[13] = D),
-      (i[14] = w),
-      (i[15] = U))
-    : (U = i[15]);
-  let ye = U,
-    be;
-  i[16] === D
-    ? (be = i[17])
-    : ((be = D.formatMessage({
+          : un({ timestamp: S.lastRunAt, intl: T })),
+      (r[12] = T),
+      (r[13] = S),
+      (r[14] = H))
+    : (H = r[14]);
+  let be = H,
+    xe;
+  r[15] === T
+    ? (xe = r[16])
+    : ((xe = T.formatMessage({
         id: `settings.automations.projectDropdown.placeholder`,
         defaultMessage: `Select project`,
         description: `Placeholder text for automation project dropdown`,
       })),
-      (i[16] = D),
-      (i[17] = be));
-  let xe = be,
-    Se;
-  i[18] === D
-    ? (Se = i[19])
-    : ((Se = D.formatMessage({
+      (r[15] = T),
+      (r[16] = xe));
+  let Se = xe,
+    we;
+  r[17] === T
+    ? (we = r[18])
+    : ((we = T.formatMessage({
         id: `settings.automations.projectDropdown.localOnlyTooltip`,
         defaultMessage: `Automations can only be created for local projects`,
         description: `Tooltip explaining why automation project options only include local projects when remote connections are connected`,
       })),
-      (i[18] = D),
-      (i[19] = Se));
-  let W = Se,
-    G = o.kind === `heartbeat`,
-    Ce;
-  i[20] === o ? (Ce = i[21]) : ((Ce = Je(o)), (i[20] = o), (i[21] = Ce));
-  let Te = Ce,
-    K;
-  i[22] === o ? (K = i[23]) : ((K = Ne(o)), (i[22] = o), (i[23] = K));
-  let q = K,
-    J = !G && !Te && q === `worktree` && o.cwds.length === 1 ? o.cwds[0] : null,
+      (r[17] = T),
+      (r[18] = we));
+  let U = we,
+    W = o.kind === `heartbeat`,
+    Te;
+  r[19] === o ? (Te = r[20]) : ((Te = _t(o)), (r[19] = o), (r[20] = Te));
+  let G = Te,
     Ee;
-  i[24] !== P || i[25] !== w
-    ? ((Ee =
-        w == null
-          ? Re({ allowThreadDestination: P })
-          : t(w)
+  r[21] === o ? (Ee = r[22]) : ((Ee = rt(o)), (r[21] = o), (r[22] = Ee));
+  let De = Ee,
+    ke =
+      !W && !G && De === `worktree` && o.cwds.length === 1 ? o.cwds[0] : null,
+    Ae;
+  r[23] !== P || r[24] !== S
+    ? ((Ae =
+        S == null
+          ? ct({ allowThreadDestination: P })
+          : t(S)
             ? [`thread`]
             : [`local`, `worktree`]),
-      (i[24] = P),
-      (i[25] = w),
-      (i[26] = Ee))
-    : (Ee = i[26]);
-  let De = Ee,
-    ke;
-  i[27] === J
-    ? (ke = i[28])
-    : ((ke = { hostId: d, workspaceRoot: J }), (i[27] = J), (i[28] = ke));
-  let { environments: Ae, isLoading: je, error: Me } = Ze(ke),
-    Ie;
-  i[29] !== w || i[30] !== s
-    ? ((Ie = (e) => {
-        (w != null && t(w) !== (e === `thread`)) || s((t) => Pe(t, e));
+      (r[23] = P),
+      (r[24] = S),
+      (r[25] = Ae))
+    : (Ae = r[25]);
+  let K = Ae,
+    Ne;
+  r[26] === ke
+    ? (Ne = r[27])
+    : ((Ne = { hostId: h, workspaceRoot: ke }), (r[26] = ke), (r[27] = Ne));
+  let { environments: Pe, isLoading: Fe, error: Re } = je(Ne),
+    Ge;
+  r[28] !== S || r[29] !== s
+    ? ((Ge = (e) => {
+        (S != null && t(S) !== (e === `thread`)) || s((t) => it(t, e));
       }),
-      (i[29] = w),
-      (i[30] = s),
-      (i[31] = Ie))
-    : (Ie = i[31]);
-  let Le = Ie,
-    ze;
-  i[32] === s
-    ? (ze = i[33])
-    : ((ze = (e) => {
-        s((t) => Fe(t, e));
+      (r[28] = S),
+      (r[29] = s),
+      (r[30] = Ge))
+    : (Ge = r[30]);
+  let qe = Ge,
+    Xe;
+  r[31] === s
+    ? (Xe = r[32])
+    : ((Xe = (e) => {
+        s((t) => at(t, e));
       }),
-      (i[32] = s),
-      (i[33] = ze));
-  let Be = ze,
-    Ve;
-  i[34] === s
-    ? (Ve = i[35])
-    : ((Ve = (e) => {
+      (r[31] = s),
+      (r[32] = Xe));
+  let q = Xe,
+    Qe;
+  r[33] === s
+    ? (Qe = r[34])
+    : ((Qe = (e) => {
         s((t) => ({ ...t, localEnvironmentConfigPath: e }));
       }),
-      (i[34] = s),
-      (i[35] = Ve));
-  let He = Ve,
-    Ue;
-  i[36] !== o.localEnvironmentConfigPath || i[37] !== J || i[38] !== O
-    ? ((Ue = () => {
-        if (J == null) {
-          O(`/settings/local-environments`);
+      (r[33] = s),
+      (r[34] = Qe));
+  let $e = Qe,
+    et;
+  r[35] !== o.localEnvironmentConfigPath || r[36] !== ke || r[37] !== D
+    ? ((et = () => {
+        if (ke == null) {
+          D(`/settings/local-environments`);
           return;
         }
-        let e = new URLSearchParams({ workspaceRoot: J });
+        let e = new URLSearchParams({ workspaceRoot: ke });
         (o.localEnvironmentConfigPath != null &&
           e.set(`configPath`, o.localEnvironmentConfigPath),
-          O(`/settings/local-environments?${e.toString()}`));
+          D(`/settings/local-environments?${e.toString()}`));
       }),
-      (i[36] = o.localEnvironmentConfigPath),
-      (i[37] = J),
-      (i[38] = O),
-      (i[39] = Ue))
-    : (Ue = i[39]);
-  let We = Ue,
-    Ge;
-  i[40] === s
-    ? (Ge = i[41])
-    : ((Ge = (e) => {
-        s((t) => Ke({ draft: t, threadId: e.threadId, title: e.title }));
+      (r[35] = o.localEnvironmentConfigPath),
+      (r[36] = ke),
+      (r[37] = D),
+      (r[38] = et))
+    : (et = r[38]);
+  let tt = et,
+    nt;
+  r[39] === s
+    ? (nt = r[40])
+    : ((nt = (e) => {
+        s((t) => gt({ draft: t, threadId: e.threadId, title: e.title }));
       }),
-      (i[40] = s),
-      (i[41] = Ge));
-  let qe = Ge,
-    Ye;
-  i[42] === s
-    ? (Ye = i[43])
-    : ((Ye = (e) => {
+      (r[39] = s),
+      (r[40] = nt));
+  let ot = nt,
+    st;
+  r[41] === s
+    ? (st = r[42])
+    : ((st = (e) => {
         s((t) => ({
           ...t,
           rawRrule: null,
@@ -2446,61 +2456,61 @@ function Jt(e) {
           scheduleDirty: !0,
         }));
       }),
-      (i[42] = s),
-      (i[43] = Ye));
-  let Xe = Ye,
-    $e;
-  i[44] !== k?.models || i[45] !== s
-    ? (($e = (e) => {
+      (r[41] = s),
+      (r[42] = st));
+  let lt = st,
+    ut;
+  r[43] !== O?.models || r[44] !== s
+    ? ((ut = (e) => {
         s((t) => ({
           ...t,
           model: e,
-          reasoningEffort: n({
-            model: r(k?.models ?? [], e),
+          reasoningEffort: i({
+            model: n(O?.models ?? [], e),
             reasoningEffort: t.reasoningEffort,
           }),
         }));
       }),
-      (i[44] = k?.models),
-      (i[45] = s),
-      (i[46] = $e))
-    : ($e = i[46]);
-  let et = $e,
-    tt;
-  i[47] === s
-    ? (tt = i[48])
-    : ((tt = (e) => {
+      (r[43] = O?.models),
+      (r[44] = s),
+      (r[45] = ut))
+    : (ut = r[45]);
+  let dt = ut,
+    ft;
+  r[46] === s
+    ? (ft = r[47])
+    : ((ft = (e) => {
         s((t) => ({ ...t, reasoningEffort: e }));
       }),
-      (i[47] = s),
-      (i[48] = tt));
-  let nt = tt,
-    lt = A ? `px-0 py-0` : `pt-0`,
-    dt;
-  i[49] === lt
-    ? (dt = i[50])
-    : ((dt = b(`min-h-0 flex-1 overflow-hidden`, lt)),
-      (i[49] = lt),
-      (i[50] = dt));
-  let mt;
-  i[51] !== N ||
-  i[52] !== o.name ||
-  i[53] !== ue ||
-  i[54] !== se ||
-  i[55] !== A ||
-  i[56] !== V ||
-  i[57] !== s ||
-  i[58] !== E
-    ? ((mt = A
+      (r[46] = s),
+      (r[47] = ft));
+  let pt = ft,
+    mt = k ? `px-0 py-0` : `pt-0`,
+    ht;
+  r[48] === mt
+    ? (ht = r[49])
+    : ((ht = b(`min-h-0 flex-1 overflow-hidden`, mt)),
+      (r[48] = mt),
+      (r[49] = ht));
+  let vt;
+  r[50] !== M ||
+  r[51] !== o.name ||
+  r[52] !== he ||
+  r[53] !== B ||
+  r[54] !== k ||
+  r[55] !== ce ||
+  r[56] !== s ||
+  r[57] !== C
+    ? ((vt = k
         ? null
-        : (0, $.jsx)(N, {
+        : (0, $.jsx)(M, {
             className: `gap-3`,
             children: (0, $.jsxs)(`div`, {
               className: `flex min-w-0 items-center justify-between gap-4 pt-5`,
               children: [
                 (0, $.jsx)(`div`, {
                   className: `min-w-0 flex-1`,
-                  children: (0, $.jsx)(pt, {
+                  children: (0, $.jsx)(Ye, {
                     id: `inbox-automation-title`,
                     autoFocus: !0,
                     value: o.name,
@@ -2512,249 +2522,249 @@ function Jt(e) {
                 (0, $.jsxs)(`div`, {
                   className: `flex items-center gap-2 pr-10`,
                   children: [
-                    ue
-                      ? (0, $.jsx)(B, {
+                    he
+                      ? (0, $.jsx)(R, {
                           size: `toolbar`,
                           color: `ghost`,
                           onClick: () => {
-                            s(Xt);
+                            s(Yt);
                           },
-                          children: (0, $.jsx)(x, {
+                          children: (0, $.jsx)(w, {
                             id: `settings.automations.clear`,
                             defaultMessage: `Clear`,
                             description: `Button label for clearing the automation title and prompt`,
                           }),
                         })
                       : null,
-                    (0, $.jsx)(ut, {
-                      isReadOnlySandbox: V,
-                      isDangerFullAccess: se,
+                    (0, $.jsx)(Ke, {
+                      isReadOnlySandbox: ce,
+                      isDangerFullAccess: B,
                     }),
-                    E,
+                    C,
                   ],
                 }),
               ],
             }),
           })),
-      (i[51] = N),
-      (i[52] = o.name),
-      (i[53] = ue),
-      (i[54] = se),
-      (i[55] = A),
-      (i[56] = V),
-      (i[57] = s),
-      (i[58] = E),
-      (i[59] = mt))
-    : (mt = i[59]);
-  let vt = A ? `!pt-0 h-full overflow-hidden` : `overflow-y-auto`,
-    yt;
-  i[60] === vt
-    ? (yt = i[61])
-    : ((yt = b(`min-h-0 flex-1`, vt)), (i[60] = vt), (i[61] = yt));
-  let bt = A && `h-full flex-1 flex-row items-stretch gap-0`,
+      (r[50] = M),
+      (r[51] = o.name),
+      (r[52] = he),
+      (r[53] = B),
+      (r[54] = k),
+      (r[55] = ce),
+      (r[56] = s),
+      (r[57] = C),
+      (r[58] = vt))
+    : (vt = r[58]);
+  let yt = k ? `!pt-0 h-full overflow-hidden` : `overflow-y-auto`,
+    bt;
+  r[59] === yt
+    ? (bt = r[60])
+    : ((bt = b(`min-h-0 flex-1`, yt)), (r[59] = yt), (r[60] = bt));
+  let Y = k && `h-full flex-1 flex-row items-stretch gap-0`,
     X;
-  i[62] === bt
-    ? (X = i[63])
-    : ((X = b(`flex min-h-0 flex-col gap-6`, bt)), (i[62] = bt), (i[63] = X));
-  let St = A && `overflow-y-auto p-panel pb-8`,
+  r[61] === Y
+    ? (X = r[62])
+    : ((X = b(`flex min-h-0 flex-col gap-6`, Y)), (r[61] = Y), (r[62] = X));
+  let St = k && `overflow-y-auto p-panel pb-8`,
     Ct;
-  i[64] === St
-    ? (Ct = i[65])
+  r[63] === St
+    ? (Ct = r[64])
     : ((Ct = b(`min-h-0 min-w-0 flex flex-1 justify-center`, St)),
-      (i[64] = St),
-      (i[65] = Ct));
-  let wt;
-  i[66] !== o.name || i[67] !== A || i[68] !== _
-    ? ((wt = A
+      (r[63] = St),
+      (r[64] = Ct));
+  let Tt;
+  r[65] !== o.name || r[66] !== k || r[67] !== g
+    ? ((Tt = k
         ? (0, $.jsx)(`div`, {
             className: `px-3`,
             children: (0, $.jsx)(`div`, {
               className: `group heading-xl flex w-full min-w-0 items-center gap-1 font-normal text-token-foreground`,
-              children: (0, $.jsx)(Vt, {
+              children: (0, $.jsx)(Bt, {
                 name: o.name,
                 onChange: (e) => {
-                  _?.(e);
+                  g?.(e);
                 },
               }),
             }),
           })
         : null),
-      (i[66] = o.name),
-      (i[67] = A),
-      (i[68] = _),
-      (i[69] = wt))
-    : (wt = i[69]);
-  let Et = A && `pl-3 pb-8`,
-    Dt;
-  i[70] === Et ? (Dt = i[71]) : ((Dt = b(Et)), (i[70] = Et), (i[71] = Dt));
-  let Z;
-  i[72] === P
-    ? (Z = i[73])
-    : ((Z = P ? [`cron`, `heartbeat`] : [`cron`]), (i[72] = P), (i[73] = Z));
+      (r[65] = o.name),
+      (r[66] = k),
+      (r[67] = g),
+      (r[68] = Tt))
+    : (Tt = r[68]);
+  let Et = k && `pl-3 pb-8`,
+    Z;
+  r[69] === Et ? (Z = r[70]) : ((Z = b(Et)), (r[69] = Et), (r[70] = Z));
+  let Dt;
+  r[71] === P
+    ? (Dt = r[72])
+    : ((Dt = P ? [`cron`, `heartbeat`] : [`cron`]), (r[71] = P), (r[72] = Dt));
   let Ot;
-  i[74] !== c ||
-  i[75] !== o ||
-  i[76] !== m ||
-  i[77] !== A ||
-  i[78] !== te ||
-  i[79] !== l ||
-  i[80] !== y ||
-  i[81] !== v ||
-  i[82] !== p ||
-  i[83] !== s ||
-  i[84] !== Z ||
-  i[85] !== h
-    ? ((Ot = (0, $.jsx)(ft, {
+  r[73] !== c ||
+  r[74] !== o ||
+  r[75] !== p ||
+  r[76] !== k ||
+  r[77] !== A ||
+  r[78] !== l ||
+  r[79] !== y ||
+  r[80] !== v ||
+  r[81] !== f ||
+  r[82] !== s ||
+  r[83] !== Dt ||
+  r[84] !== m
+    ? ((Ot = (0, $.jsx)(Je, {
         draft: o,
         setDraft: s,
         canSave: c,
-        isEditing: te,
+        isEditing: A,
         isSaving: l,
-        roots: p,
-        formatRootLabel: m,
-        workspaceGroups: h,
+        roots: f,
+        formatRootLabel: p,
+        workspaceGroups: m,
         onSubmit: v,
         onCancel: y,
-        formId: Lt,
+        formId: It,
         forceShowNameInput: !1,
-        expandPrompt: A,
-        allowedKinds: Z,
+        expandPrompt: k,
+        allowedKinds: Dt,
       })),
-      (i[74] = c),
-      (i[75] = o),
-      (i[76] = m),
-      (i[77] = A),
-      (i[78] = te),
-      (i[79] = l),
-      (i[80] = y),
-      (i[81] = v),
-      (i[82] = p),
-      (i[83] = s),
-      (i[84] = Z),
-      (i[85] = h),
-      (i[86] = Ot))
-    : (Ot = i[86]);
+      (r[73] = c),
+      (r[74] = o),
+      (r[75] = p),
+      (r[76] = k),
+      (r[77] = A),
+      (r[78] = l),
+      (r[79] = y),
+      (r[80] = v),
+      (r[81] = f),
+      (r[82] = s),
+      (r[83] = Dt),
+      (r[84] = m),
+      (r[85] = Ot))
+    : (Ot = r[85]);
   let kt;
-  i[87] !== Dt || i[88] !== Ot
-    ? ((kt = (0, $.jsx)(`div`, { className: Dt, children: Ot })),
-      (i[87] = Dt),
-      (i[88] = Ot),
-      (i[89] = kt))
-    : (kt = i[89]);
+  r[86] !== Z || r[87] !== Ot
+    ? ((kt = (0, $.jsx)(`div`, { className: Z, children: Ot })),
+      (r[86] = Z),
+      (r[87] = Ot),
+      (r[88] = kt))
+    : (kt = r[88]);
   let At;
-  i[90] !== wt || i[91] !== kt
+  r[89] !== Tt || r[90] !== kt
     ? ((At = (0, $.jsxs)(`div`, {
         className: `flex w-full max-w-[var(--thread-content-max-width)] flex-col gap-8`,
-        children: [wt, kt],
+        children: [Tt, kt],
       })),
-      (i[90] = wt),
-      (i[91] = kt),
-      (i[92] = At))
-    : (At = i[92]);
+      (r[89] = Tt),
+      (r[90] = kt),
+      (r[91] = At))
+    : (At = r[91]);
   let jt;
-  i[93] !== Ct || i[94] !== At
+  r[92] !== Ct || r[93] !== At
     ? ((jt = (0, $.jsx)(`div`, { className: Ct, children: At })),
-      (i[93] = Ct),
-      (i[94] = At),
-      (i[95] = jt))
-    : (jt = i[95]);
+      (r[92] = Ct),
+      (r[93] = At),
+      (r[94] = jt))
+    : (jt = r[94]);
   let Mt;
-  i[96] !== W ||
-  i[97] !== De ||
-  i[98] !== o.cwds ||
-  i[99] !== o.localEnvironmentConfigPath ||
-  i[100] !== o.model ||
-  i[101] !== o.reasoningEffort ||
-  i[102] !== o.scheduleConfig ||
-  i[103] !== o.status ||
-  i[104] !== o.targetThreadId ||
-  i[105] !== m ||
-  i[106] !== Le ||
-  i[107] !== He ||
-  i[108] !== et ||
-  i[109] !== Be ||
-  i[110] !== nt ||
-  i[111] !== Xe ||
-  i[112] !== qe ||
-  i[113] !== I ||
-  i[114] !== z ||
-  i[115] !== ie ||
-  i[116] !== D ||
-  i[117] !== se ||
-  i[118] !== A ||
-  i[119] !== Te ||
-  i[120] !== G ||
-  i[121] !== V ||
-  i[122] !== ye ||
-  i[123] !== J ||
-  i[124] !== Ae ||
-  i[125] !== Me ||
-  i[126] !== je ||
-  i[127] !== ve ||
-  i[128] !== We ||
-  i[129] !== xe ||
-  i[130] !== w ||
-  i[131] !== q ||
-  i[132] !== he
+  r[95] !== U ||
+  r[96] !== K ||
+  r[97] !== o.cwds ||
+  r[98] !== o.localEnvironmentConfigPath ||
+  r[99] !== o.model ||
+  r[100] !== o.reasoningEffort ||
+  r[101] !== o.scheduleConfig ||
+  r[102] !== o.status ||
+  r[103] !== o.targetThreadId ||
+  r[104] !== p ||
+  r[105] !== qe ||
+  r[106] !== $e ||
+  r[107] !== dt ||
+  r[108] !== q ||
+  r[109] !== pt ||
+  r[110] !== lt ||
+  r[111] !== ot ||
+  r[112] !== ae ||
+  r[113] !== z ||
+  r[114] !== L ||
+  r[115] !== T ||
+  r[116] !== B ||
+  r[117] !== k ||
+  r[118] !== G ||
+  r[119] !== W ||
+  r[120] !== ce ||
+  r[121] !== be ||
+  r[122] !== ke ||
+  r[123] !== Pe ||
+  r[124] !== Re ||
+  r[125] !== Fe ||
+  r[126] !== ye ||
+  r[127] !== tt ||
+  r[128] !== Se ||
+  r[129] !== S ||
+  r[130] !== De ||
+  r[131] !== V
     ? ((Mt =
-        A && w != null
-          ? (0, $.jsxs)(Zt, {
+        k && S != null
+          ? (0, $.jsxs)(Xt, {
               className: `flex border-l`,
               children: [
                 (0, $.jsx)(`div`, {
                   className: `px-1 py-2 text-base text-token-input-placeholder-foreground opacity-75`,
-                  children: (0, $.jsx)(x, {
+                  children: (0, $.jsx)(w, {
                     id: `inbox.automations.statusSection`,
                     defaultMessage: `Status`,
                     description: `Section label above the automation status section in the right rail`,
                   }),
                 }),
-                (0, $.jsx)(Y, {
-                  label: D.formatMessage({
+                (0, $.jsx)(J, {
+                  label: T.formatMessage({
                     id: `inbox.automations.status.label`,
                     defaultMessage: `Status`,
                     description: `Label for the automation status row in the settings rail`,
                   }),
                   variant: `compact`,
-                  children: (0, $.jsx)(nn, { status: o.status }),
+                  children: (0, $.jsx)(tn, { status: o.status }),
                 }),
-                (0, $.jsx)(Y, {
-                  label: D.formatMessage({
+                (0, $.jsx)(J, {
+                  label: T.formatMessage({
                     id: `inbox.automations.nextRun.label`,
                     defaultMessage: `Next run`,
                     description: `Label for the automation next run time row in the settings rail`,
                   }),
                   variant: `compact`,
-                  children: (0, $.jsx)(we, {
+                  children: (0, $.jsx)(Ce, {
                     className: `rounded-full px-2.5 py-1 text-base`,
-                    children: ve,
+                    children: ye,
                   }),
                 }),
-                (0, $.jsx)(Y, {
-                  label: D.formatMessage({
+                (0, $.jsx)(J, {
+                  label: T.formatMessage({
                     id: `inbox.automations.lastRun.label`,
                     defaultMessage: `Last ran`,
                     description: `Label for the automation last run time row in the settings rail`,
                   }),
                   variant: `compact`,
-                  children: (0, $.jsx)(we, {
+                  children: (0, $.jsx)(Ce, {
                     className: `rounded-full px-2.5 py-1 text-base`,
-                    children: ye,
+                    children: be,
                   }),
                 }),
                 (0, $.jsx)(`div`, {
                   className: `px-1 pt-6 pb-2 text-base text-token-input-placeholder-foreground opacity-75`,
-                  children: (0, $.jsx)(x, {
+                  children: (0, $.jsx)(w, {
                     id: `inbox.automations.details`,
                     defaultMessage: `Details`,
                     description: `Section label above the automation details rail`,
                   }),
                 }),
-                Te
+                G
                   ? null
-                  : (0, $.jsx)(Y, {
-                      label: G
-                        ? D.formatMessage({
+                  : (0, $.jsx)(J, {
+                      label: W
+                        ? T.formatMessage({
                             id: `inbox.automations.executionEnvironment.label`,
                             defaultMessage: `Runs in`,
                             description: `Label for the automation execution environment row in the details rail`,
@@ -2763,75 +2773,75 @@ function Jt(e) {
                             className: `flex min-w-0 items-center gap-2`,
                             children: [
                               (0, $.jsx)(`span`, {
-                                children: D.formatMessage({
+                                children: T.formatMessage({
                                   id: `inbox.automations.executionEnvironment.label`,
                                   defaultMessage: `Runs in`,
                                   description: `Label for the automation execution environment row in the details rail`,
                                 }),
                               }),
-                              (0, $.jsx)(ut, {
-                                isReadOnlySandbox: V,
-                                isDangerFullAccess: se,
+                              (0, $.jsx)(Ke, {
+                                isReadOnlySandbox: ce,
+                                isDangerFullAccess: B,
                               }),
                             ],
                           }),
                       variant: `compact`,
-                      children: (0, $.jsx)(it, {
-                        selectedId: q,
-                        optionIds: De,
+                      children: (0, $.jsx)(Be, {
+                        selectedId: De,
+                        optionIds: K,
                         align: `end`,
                         className: `!text-base`,
                         showIcon: !1,
-                        ariaLabel: D.formatMessage({
+                        ariaLabel: T.formatMessage({
                           id: `settings.automations.executionEnvironment.ariaLabel`,
                           defaultMessage: `Execution environment`,
                           description: `Aria label for execution environment dropdown`,
                         }),
-                        onSelect: Le,
+                        onSelect: qe,
                       }),
                     }),
-                I
-                  ? (0, $.jsx)(Y, {
-                      label: D.formatMessage({
+                ae
+                  ? (0, $.jsx)(J, {
+                      label: T.formatMessage({
                         id: `inbox.automations.host.label`,
                         defaultMessage: `Host`,
                         description: `Label for the automation execution host row in the details rail`,
                       }),
                       variant: `compact`,
-                      children: (0, $.jsx)(Tt, {
+                      children: (0, $.jsx)(wt, {
                         align: `end`,
                         connectedRemoteConnections: [],
-                        onSelectHost: Yt,
+                        onSelectHost: Jt,
                         remoteConnectionHostIds: [],
-                        selectedHostId: d,
+                        selectedHostId: h,
                         triggerClassName: b(`!text-base`, `!w-auto max-w-full`),
                         triggerColor: `ghost`,
                       }),
                     })
                   : null,
-                G
-                  ? (0, $.jsx)(Y, {
-                      label: D.formatMessage({
+                W
+                  ? (0, $.jsx)(J, {
+                      label: T.formatMessage({
                         id: `inbox.automations.targetThread.label`,
                         defaultMessage: `Chat`,
                         description: `Label for the heartbeat automation target thread row in the details rail`,
                       }),
                       variant: `compact`,
-                      children: (0, $.jsx)(ct, {
+                      children: (0, $.jsx)(We, {
                         selectedThreadId: o.targetThreadId,
-                        options: ie,
+                        options: L,
                         hasPinnedThreads: z,
                         align: `end`,
                         className: `!text-base`,
                         showIcon: !1,
-                        onSelect: qe,
+                        onSelect: ot,
                       }),
                     })
                   : (0, $.jsxs)($.Fragment, {
                       children: [
-                        q === `worktree` && J != null
-                          ? (0, $.jsx)(Y, {
-                              label: D.formatMessage({
+                        De === `worktree` && ke != null
+                          ? (0, $.jsx)(J, {
+                              label: T.formatMessage({
                                 id: `inbox.automations.localEnvironment.label`,
                                 defaultMessage: `Environment`,
                                 description: `Label for the automation local environment row in the details rail`,
@@ -2843,103 +2853,103 @@ function Jt(e) {
                                 align: `end`,
                                 side: `bottom`,
                                 showIcon: !1,
-                                environments: Ae,
-                                isLoading: je,
-                                hasError: Me != null,
+                                environments: Pe,
+                                isLoading: Fe,
+                                hasError: Re != null,
                                 selectedConfigPath:
                                   o.localEnvironmentConfigPath,
-                                onSelectConfigPath: He,
-                                onOpenSettings: We,
+                                onSelectConfigPath: $e,
+                                onOpenSettings: tt,
                               }),
                             })
                           : null,
-                        (0, $.jsx)(Y, {
-                          label: D.formatMessage({
+                        (0, $.jsx)(J, {
+                          label: T.formatMessage({
                             id: `inbox.automations.folder.label`,
                             defaultMessage: `Project`,
                             description: `Label for the automation folder row in the details rail`,
                           }),
                           variant: `compact`,
-                          children: (0, $.jsx)(gt, {
+                          children: (0, $.jsx)(Ie, {
                             selectedRoots: o.cwds,
-                            options: he,
-                            placeholder: xe,
+                            options: V,
+                            placeholder: Se,
                             align: `end`,
                             className: `!text-base`,
                             showIcon: !1,
-                            localOnlyTooltip: W,
-                            onChange: Be,
+                            localOnlyTooltip: U,
+                            onChange: q,
                           }),
                         }),
                       ],
                     }),
-                (0, $.jsx)(Y, {
-                  label: G
-                    ? D.formatMessage({
+                (0, $.jsx)(J, {
+                  label: W
+                    ? T.formatMessage({
                         id: `inbox.automations.interval.label`,
                         defaultMessage: `Interval`,
                         description: `Label for the heartbeat automation interval control`,
                       })
-                    : D.formatMessage({
+                    : T.formatMessage({
                         id: `inbox.automations.repeats.label`,
                         defaultMessage: `Repeats`,
                         description: `Label for the automation repeats control`,
                       }),
                   variant: `compact`,
-                  children: (0, $.jsx)(ht, {
+                  children: (0, $.jsx)(Ze, {
                     scheduleMode: o.scheduleConfig.mode,
                     scheduleConfig: o.scheduleConfig,
                     align: `end`,
                     className: `!text-base`,
                     showIcon: !1,
-                    intervalStyle: G ? `heartbeat` : `default`,
-                    onUpdateScheduleDraft: Xe,
+                    intervalStyle: W ? `heartbeat` : `default`,
+                    onUpdateScheduleDraft: lt,
                   }),
                 }),
-                G
+                W
                   ? null
                   : (0, $.jsxs)($.Fragment, {
                       children: [
-                        (0, $.jsx)(Y, {
-                          label: D.formatMessage({
+                        (0, $.jsx)(J, {
+                          label: T.formatMessage({
                             id: `inbox.automations.model.label`,
                             defaultMessage: `Model`,
                             description: `Label for the automation model row in the details rail`,
                           }),
                           variant: `compact`,
-                          children: (0, $.jsx)(st, {
+                          children: (0, $.jsx)(Ue, {
                             selectedModel: o.model,
                             align: `end`,
                             className: `!text-base`,
                             showIcon: !1,
-                            onSelect: et,
+                            onSelect: dt,
                           }),
                         }),
-                        (0, $.jsx)(Y, {
-                          label: D.formatMessage({
+                        (0, $.jsx)(J, {
+                          label: T.formatMessage({
                             id: `inbox.automations.reasoning.label`,
                             defaultMessage: `Reasoning`,
                             description: `Label for the automation reasoning row in the details rail`,
                           }),
                           variant: `compact`,
-                          children: (0, $.jsx)(rt, {
+                          children: (0, $.jsx)(ze, {
                             model: o.model,
                             reasoningEffort: o.reasoningEffort,
                             align: `end`,
                             className: `!text-base`,
                             showIcon: !1,
-                            onSelect: nt,
+                            onSelect: pt,
                           }),
                         }),
                       ],
                     }),
-                G
+                W
                   ? null
                   : (0, $.jsxs)($.Fragment, {
                       children: [
                         (0, $.jsx)(`div`, {
                           className: `px-1 pt-6 pb-2 text-base text-token-input-placeholder-foreground opacity-75`,
-                          children: (0, $.jsx)(x, {
+                          children: (0, $.jsx)(w, {
                             id: `inbox.automations.history`,
                             defaultMessage: `Previous runs`,
                             description: `Section label above the automation history rail section`,
@@ -2947,9 +2957,9 @@ function Jt(e) {
                         }),
                         (0, $.jsx)(`div`, {
                           className: `min-h-0 flex-1`,
-                          children: (0, $.jsx)(Qt, {
-                            automationId: w.id,
-                            formatRootLabel: m,
+                          children: (0, $.jsx)(Zt, {
+                            automationId: S.id,
+                            formatRootLabel: p,
                           }),
                         }),
                       ],
@@ -2957,186 +2967,186 @@ function Jt(e) {
               ],
             })
           : null),
-      (i[96] = W),
-      (i[97] = De),
-      (i[98] = o.cwds),
-      (i[99] = o.localEnvironmentConfigPath),
-      (i[100] = o.model),
-      (i[101] = o.reasoningEffort),
-      (i[102] = o.scheduleConfig),
-      (i[103] = o.status),
-      (i[104] = o.targetThreadId),
-      (i[105] = m),
-      (i[106] = Le),
-      (i[107] = He),
-      (i[108] = et),
-      (i[109] = Be),
-      (i[110] = nt),
-      (i[111] = Xe),
-      (i[112] = qe),
-      (i[113] = I),
-      (i[114] = z),
-      (i[115] = ie),
-      (i[116] = D),
-      (i[117] = se),
-      (i[118] = A),
-      (i[119] = Te),
-      (i[120] = G),
-      (i[121] = V),
-      (i[122] = ye),
-      (i[123] = J),
-      (i[124] = Ae),
-      (i[125] = Me),
-      (i[126] = je),
-      (i[127] = ve),
-      (i[128] = We),
-      (i[129] = xe),
-      (i[130] = w),
-      (i[131] = q),
-      (i[132] = he),
-      (i[133] = Mt))
-    : (Mt = i[133]);
+      (r[95] = U),
+      (r[96] = K),
+      (r[97] = o.cwds),
+      (r[98] = o.localEnvironmentConfigPath),
+      (r[99] = o.model),
+      (r[100] = o.reasoningEffort),
+      (r[101] = o.scheduleConfig),
+      (r[102] = o.status),
+      (r[103] = o.targetThreadId),
+      (r[104] = p),
+      (r[105] = qe),
+      (r[106] = $e),
+      (r[107] = dt),
+      (r[108] = q),
+      (r[109] = pt),
+      (r[110] = lt),
+      (r[111] = ot),
+      (r[112] = ae),
+      (r[113] = z),
+      (r[114] = L),
+      (r[115] = T),
+      (r[116] = B),
+      (r[117] = k),
+      (r[118] = G),
+      (r[119] = W),
+      (r[120] = ce),
+      (r[121] = be),
+      (r[122] = ke),
+      (r[123] = Pe),
+      (r[124] = Re),
+      (r[125] = Fe),
+      (r[126] = ye),
+      (r[127] = tt),
+      (r[128] = Se),
+      (r[129] = S),
+      (r[130] = De),
+      (r[131] = V),
+      (r[132] = Mt))
+    : (Mt = r[132]);
   let Nt;
-  i[134] !== X || i[135] !== jt || i[136] !== Mt
+  r[133] !== X || r[134] !== jt || r[135] !== Mt
     ? ((Nt = (0, $.jsxs)(`div`, { className: X, children: [jt, Mt] })),
-      (i[134] = X),
-      (i[135] = jt),
-      (i[136] = Mt),
-      (i[137] = Nt))
-    : (Nt = i[137]);
+      (r[133] = X),
+      (r[134] = jt),
+      (r[135] = Mt),
+      (r[136] = Nt))
+    : (Nt = r[136]);
   let Pt;
-  i[138] !== N || i[139] !== yt || i[140] !== Nt
-    ? ((Pt = (0, $.jsx)(N, { className: yt, children: Nt })),
-      (i[138] = N),
-      (i[139] = yt),
-      (i[140] = Nt),
-      (i[141] = Pt))
-    : (Pt = i[141]);
+  r[137] !== M || r[138] !== bt || r[139] !== Nt
+    ? ((Pt = (0, $.jsx)(M, { className: bt, children: Nt })),
+      (r[137] = M),
+      (r[138] = bt),
+      (r[139] = Nt),
+      (r[140] = Pt))
+    : (Pt = r[140]);
   let Ft;
-  i[142] !== N ||
-  i[143] !== W ||
-  i[144] !== De ||
-  i[145] !== c ||
-  i[146] !== le ||
-  i[147] !== o.cwds ||
-  i[148] !== o.model ||
-  i[149] !== o.reasoningEffort ||
-  i[150] !== o.scheduleConfig ||
-  i[151] !== o.targetThreadId ||
-  i[152] !== Le ||
-  i[153] !== et ||
-  i[154] !== Be ||
-  i[155] !== nt ||
-  i[156] !== Xe ||
-  i[157] !== qe ||
-  i[158] !== z ||
-  i[159] !== ie ||
-  i[160] !== D ||
-  i[161] !== A ||
-  i[162] !== Te ||
-  i[163] !== G ||
-  i[164] !== u ||
-  i[165] !== l ||
-  i[166] !== y ||
-  i[167] !== xe ||
-  i[168] !== w ||
-  i[169] !== q ||
-  i[170] !== he
-    ? ((Ft = A
+  r[141] !== M ||
+  r[142] !== U ||
+  r[143] !== K ||
+  r[144] !== c ||
+  r[145] !== de ||
+  r[146] !== o.cwds ||
+  r[147] !== o.model ||
+  r[148] !== o.reasoningEffort ||
+  r[149] !== o.scheduleConfig ||
+  r[150] !== o.targetThreadId ||
+  r[151] !== qe ||
+  r[152] !== dt ||
+  r[153] !== q ||
+  r[154] !== pt ||
+  r[155] !== lt ||
+  r[156] !== ot ||
+  r[157] !== z ||
+  r[158] !== L ||
+  r[159] !== T ||
+  r[160] !== k ||
+  r[161] !== G ||
+  r[162] !== W ||
+  r[163] !== u ||
+  r[164] !== l ||
+  r[165] !== y ||
+  r[166] !== Se ||
+  r[167] !== S ||
+  r[168] !== De ||
+  r[169] !== V
+    ? ((Ft = k
         ? null
-        : (0, $.jsx)(N, {
+        : (0, $.jsx)(M, {
             className: `shrink-0`,
-            children: (0, $.jsxs)(fe, {
-              className: b(pe, `w-full`),
+            children: (0, $.jsxs)(pe, {
+              className: b(me, `w-full`),
               children: [
                 (0, $.jsxs)(`div`, {
                   className: `flex min-w-0 flex-1 items-center gap-1`,
                   children: [
-                    Te
+                    G
                       ? null
-                      : (0, $.jsx)(it, {
-                          selectedId: q,
-                          optionIds: De,
+                      : (0, $.jsx)(Be, {
+                          selectedId: De,
+                          optionIds: K,
                           className: `shrink-0`,
-                          onSelect: Le,
-                          ariaLabel: D.formatMessage({
+                          onSelect: qe,
+                          ariaLabel: T.formatMessage({
                             id: `settings.automations.executionEnvironment.ariaLabel`,
                             defaultMessage: `Execution environment`,
                             description: `Aria label for execution environment dropdown`,
                           }),
                         }),
-                    G
-                      ? (0, $.jsx)(ct, {
+                    W
+                      ? (0, $.jsx)(We, {
                           selectedThreadId: o.targetThreadId,
-                          options: ie,
+                          options: L,
                           hasPinnedThreads: z,
                           className: `max-w-56 min-w-0 shrink`,
-                          disabled: w != null,
-                          onSelect: qe,
+                          disabled: S != null,
+                          onSelect: ot,
                         })
-                      : (0, $.jsx)(gt, {
+                      : (0, $.jsx)(Ie, {
                           selectedRoots: o.cwds,
-                          options: he,
-                          placeholder: xe,
+                          options: V,
+                          placeholder: Se,
                           className: `max-w-56 min-w-0 shrink`,
-                          localOnlyTooltip: W,
-                          onChange: Be,
+                          localOnlyTooltip: U,
+                          onChange: q,
                         }),
-                    (0, $.jsx)(ht, {
+                    (0, $.jsx)(Ze, {
                       scheduleMode: o.scheduleConfig.mode,
                       scheduleConfig: o.scheduleConfig,
                       className: `max-w-52 min-w-0 shrink`,
-                      intervalStyle: G ? `heartbeat` : `default`,
-                      onUpdateScheduleDraft: Xe,
+                      intervalStyle: W ? `heartbeat` : `default`,
+                      onUpdateScheduleDraft: lt,
                     }),
-                    G
+                    W
                       ? null
-                      : (0, $.jsx)(st, {
+                      : (0, $.jsx)(Ue, {
                           selectedModel: o.model,
                           className: `shrink-0`,
                           showLabel: !1,
                           showChevron: !1,
-                          onSelect: et,
+                          onSelect: dt,
                         }),
-                    G
+                    W
                       ? null
-                      : (0, $.jsx)(rt, {
+                      : (0, $.jsx)(ze, {
                           model: o.model,
                           reasoningEffort: o.reasoningEffort,
                           className: `shrink-0`,
                           showLabel: !1,
                           showChevron: !1,
-                          onSelect: nt,
+                          onSelect: pt,
                         }),
                   ],
                 }),
                 (0, $.jsxs)(`div`, {
                   className: `flex shrink-0 items-center gap-2`,
                   children: [
-                    (0, $.jsx)(B, {
+                    (0, $.jsx)(R, {
                       size: `toolbar`,
                       color: `ghost`,
                       onClick: y,
-                      children: (0, $.jsx)(x, {
+                      children: (0, $.jsx)(w, {
                         id: `settings.automations.cancel`,
                         defaultMessage: `Cancel`,
                         description: `Cancel button label for automations dialog`,
                       }),
                     }),
-                    (0, $.jsx)(ae, {
-                      tooltipContent: le,
-                      disabled: le == null,
+                    (0, $.jsx)(oe, {
+                      tooltipContent: de,
+                      disabled: de == null,
                       children: (0, $.jsx)(`span`, {
                         className: `inline-flex`,
-                        children: (0, $.jsx)(B, {
+                        children: (0, $.jsx)(R, {
                           size: `toolbar`,
                           color: `primary`,
                           type: `submit`,
-                          form: Lt,
+                          form: It,
                           disabled: !c || u,
                           loading: u || l,
                           className: `disabled:cursor-default`,
-                          children: (0, $.jsx)(x, {
+                          children: (0, $.jsx)(w, {
                             id: `settings.automations.create`,
                             defaultMessage: `Create`,
                             description: `Button label for creating a new automation`,
@@ -3149,60 +3159,60 @@ function Jt(e) {
               ],
             }),
           })),
-      (i[142] = N),
-      (i[143] = W),
-      (i[144] = De),
-      (i[145] = c),
-      (i[146] = le),
-      (i[147] = o.cwds),
-      (i[148] = o.model),
-      (i[149] = o.reasoningEffort),
-      (i[150] = o.scheduleConfig),
-      (i[151] = o.targetThreadId),
-      (i[152] = Le),
-      (i[153] = et),
-      (i[154] = Be),
-      (i[155] = nt),
-      (i[156] = Xe),
-      (i[157] = qe),
-      (i[158] = z),
-      (i[159] = ie),
-      (i[160] = D),
-      (i[161] = A),
-      (i[162] = Te),
-      (i[163] = G),
-      (i[164] = u),
-      (i[165] = l),
-      (i[166] = y),
-      (i[167] = xe),
-      (i[168] = w),
-      (i[169] = q),
-      (i[170] = he),
-      (i[171] = Ft))
-    : (Ft = i[171]);
-  let It;
+      (r[141] = M),
+      (r[142] = U),
+      (r[143] = K),
+      (r[144] = c),
+      (r[145] = de),
+      (r[146] = o.cwds),
+      (r[147] = o.model),
+      (r[148] = o.reasoningEffort),
+      (r[149] = o.scheduleConfig),
+      (r[150] = o.targetThreadId),
+      (r[151] = qe),
+      (r[152] = dt),
+      (r[153] = q),
+      (r[154] = pt),
+      (r[155] = lt),
+      (r[156] = ot),
+      (r[157] = z),
+      (r[158] = L),
+      (r[159] = T),
+      (r[160] = k),
+      (r[161] = G),
+      (r[162] = W),
+      (r[163] = u),
+      (r[164] = l),
+      (r[165] = y),
+      (r[166] = Se),
+      (r[167] = S),
+      (r[168] = De),
+      (r[169] = V),
+      (r[170] = Ft))
+    : (Ft = r[170]);
+  let Lt;
   return (
-    i[172] !== M ||
-    i[173] !== dt ||
-    i[174] !== mt ||
-    i[175] !== Pt ||
-    i[176] !== Ft
-      ? ((It = (0, $.jsxs)(M, { className: dt, children: [mt, Pt, Ft] })),
-        (i[172] = M),
-        (i[173] = dt),
-        (i[174] = mt),
-        (i[175] = Pt),
-        (i[176] = Ft),
-        (i[177] = It))
-      : (It = i[177]),
-    It
+    r[171] !== ne ||
+    r[172] !== ht ||
+    r[173] !== vt ||
+    r[174] !== Pt ||
+    r[175] !== Ft
+      ? ((Lt = (0, $.jsxs)(ne, { className: ht, children: [vt, Pt, Ft] })),
+        (r[171] = ne),
+        (r[172] = ht),
+        (r[173] = vt),
+        (r[174] = Pt),
+        (r[175] = Ft),
+        (r[176] = Lt))
+      : (Lt = r[176]),
+    Lt
   );
 }
-function Yt() {}
-function Xt(e) {
+function Jt() {}
+function Yt(e) {
   return { ...e, name: ``, prompt: `` };
 }
-function Zt(e) {
+function Xt(e) {
   let t = (0, Q.c)(7),
     { className: n, children: r } = e,
     i;
@@ -3237,16 +3247,16 @@ function Zt(e) {
     o
   );
 }
-function Qt(e) {
+function Zt(e) {
   let t = (0, Q.c)(26),
     { automationId: n, formatRootLabel: r } = e,
-    i = ge(),
-    { data: a } = F(),
+    i = V(),
+    { data: a } = P(),
     { items: o, isLoading: s, markRead: c, markUnread: l } = bt(),
     u;
   t[0] === a
     ? (u = t[1])
-    : ((u = new Map((a ?? []).map(en))), (t[0] = a), (t[1] = u));
+    : ((u = new Map((a ?? []).map($t))), (t[0] = a), (t[1] = u));
   let d = u,
     f,
     p,
@@ -3267,13 +3277,13 @@ function Qt(e) {
       t[13] === n
         ? (e = t[14])
         : ((e = (e) => e.automationId === n), (t[13] = n), (t[14] = e));
-      let a = o.filter(e).sort($t);
+      let a = o.filter(e).sort(Qt);
       if (s && a.length === 0) {
         let e;
         (t[15] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((e = (0, $.jsx)(`div`, {
               className: `flex h-full min-h-0 items-start px-1`,
-              children: (0, $.jsx)(V, {
+              children: (0, $.jsx)(z, {
                 className: `icon-sm text-token-description-foreground`,
               }),
             })),
@@ -3287,7 +3297,7 @@ function Qt(e) {
         (t[16] === Symbol.for(`react.memo_cache_sentinel`)
           ? ((e = (0, $.jsx)(`div`, {
               className: `px-1 py-1 text-base text-token-description-foreground opacity-50`,
-              children: (0, $.jsx)(x, {
+              children: (0, $.jsx)(w, {
                 id: `sidebarElectron.noTasks`,
                 defaultMessage: `No chats`,
                 description: `Shown when a folder group has no threads`,
@@ -3303,7 +3313,7 @@ function Qt(e) {
       (t[17] !== d || t[18] !== r || t[19] !== c || t[20] !== l || t[21] !== i
         ? ((u = (e) =>
             (0, $.jsx)(
-              tn,
+              en,
               {
                 item: e,
                 conversationTitle:
@@ -3350,13 +3360,13 @@ function Qt(e) {
     h
   );
 }
-function $t(e, t) {
+function Qt(e, t) {
   return t.createdAt - e.createdAt;
 }
-function en(e) {
-  return [String(e.id), o(e)];
+function $t(e) {
+  return [String(e.id), m(e)];
 }
-function tn(e) {
+function en(e) {
   let t = (0, Q.c)(52),
     {
       item: n,
@@ -3390,11 +3400,11 @@ function tn(e) {
   t[4] !== m || t[5] !== h
     ? ((g = { onSelect: m, isDisabled: h }), (t[4] = m), (t[5] = h), (t[6] = g))
     : (g = t[6]);
-  let _ = St(g),
+  let _ = X(g),
     v;
   t[7] !== u || t[8] !== f || t[9] !== d
     ? ((v = f
-        ? (0, $.jsx)(V, { className: `icon-xs shrink-0` })
+        ? (0, $.jsx)(z, { className: `icon-xs shrink-0` })
         : d
           ? (0, $.jsx)(`span`, {
               className: b(
@@ -3405,10 +3415,10 @@ function tn(e) {
               ),
             })
           : u
-            ? (0, $.jsx)(J, {
+            ? (0, $.jsx)(Te, {
                 className: `icon-xs shrink-0 text-token-disabled-foreground`,
               })
-            : (0, $.jsx)(H, {
+            : (0, $.jsx)(B, {
                 className: `icon-xs shrink-0 text-token-disabled-foreground`,
               })),
       (t[7] = u),
@@ -3423,7 +3433,7 @@ function tn(e) {
         ? [
             {
               id: `mark-read`,
-              message: te({
+              message: x({
                 id: `inbox.contextMenu.markRead`,
                 defaultMessage: `Mark as read`,
                 description: `Context menu item to mark an automation history row as read`,
@@ -3436,7 +3446,7 @@ function tn(e) {
         : [
             {
               id: `mark-unread`,
-              message: te({
+              message: x({
                 id: `inbox.contextMenu.markUnread`,
                 defaultMessage: `Mark as unread`,
                 description: `Context menu item to mark an automation history row as unread`,
@@ -3453,17 +3463,17 @@ function tn(e) {
       (t[15] = S))
     : (S = t[15]);
   let C = S,
-    w = h ? `cursor-default opacity-50` : `cursor-interaction`,
-    T = !h && `hover:bg-token-list-hover-background`,
+    T = h ? `cursor-default opacity-50` : `cursor-interaction`,
+    te = !h && `hover:bg-token-list-hover-background`,
     E;
-  t[16] !== w || t[17] !== T
+  t[16] !== T || t[17] !== te
     ? ((E = b(
         `group flex items-center gap-2 rounded-md pl-1 pr-3 py-2 text-base [content-visibility:auto] [contain-intrinsic-size:auto_64px]`,
-        w,
         T,
+        te,
       )),
-      (t[16] = w),
-      (t[17] = T),
+      (t[16] = T),
+      (t[17] = te),
       (t[18] = E))
     : (E = t[18]);
   let D;
@@ -3514,9 +3524,9 @@ function tn(e) {
       (t[29] = n.sourceCwd),
       (t[30] = A))
     : (A = t[30]);
-  let j;
+  let ne;
   t[31] !== k || t[32] !== A
-    ? ((j = (0, $.jsx)(`div`, {
+    ? ((ne = (0, $.jsx)(`div`, {
         className: `flex min-w-0 flex-1 flex-col gap-0.5 leading-tight`,
         children: (0, $.jsxs)(`div`, {
           className: `flex min-w-0 items-center gap-2`,
@@ -3525,80 +3535,80 @@ function tn(e) {
       })),
       (t[31] = k),
       (t[32] = A),
-      (t[33] = j))
-    : (j = t[33]);
-  let M;
+      (t[33] = ne))
+    : (ne = t[33]);
+  let j;
   t[34] === n.createdAt
-    ? (M = t[35])
-    : ((M = new Date(n.createdAt).toISOString()),
+    ? (j = t[35])
+    : ((j = new Date(n.createdAt).toISOString()),
       (t[34] = n.createdAt),
-      (t[35] = M));
-  let N;
-  t[36] === M
-    ? (N = t[37])
-    : ((N = (0, $.jsx)(`div`, {
+      (t[35] = j));
+  let M;
+  t[36] === j
+    ? (M = t[37])
+    : ((M = (0, $.jsx)(`div`, {
         className: `flex min-w-[4.5rem] items-center justify-end self-center`,
         children: (0, $.jsx)(`span`, {
           className: `text-sm whitespace-nowrap text-token-description-foreground tabular-nums`,
-          children: (0, $.jsx)(De, { dateString: M }),
+          children: (0, $.jsx)(Ee, { dateString: j }),
         }),
       })),
-      (t[36] = M),
-      (t[37] = N));
-  let ne;
-  t[38] !== j || t[39] !== N
-    ? ((ne = (0, $.jsxs)(`div`, {
+      (t[36] = j),
+      (t[37] = M));
+  let re;
+  t[38] !== ne || t[39] !== M
+    ? ((re = (0, $.jsxs)(`div`, {
         className: `flex min-w-0 flex-1 items-center gap-2`,
-        children: [j, N],
+        children: [ne, M],
       })),
-      (t[38] = j),
-      (t[39] = N),
-      (t[40] = ne))
-    : (ne = t[40]);
-  let P;
-  t[41] !== _ || t[42] !== ne || t[43] !== E || t[44] !== D
-    ? ((P = (0, $.jsx)(`div`, {
+      (t[38] = ne),
+      (t[39] = M),
+      (t[40] = re))
+    : (re = t[40]);
+  let N;
+  t[41] !== _ || t[42] !== re || t[43] !== E || t[44] !== D
+    ? ((N = (0, $.jsx)(`div`, {
         role: `listitem`,
-        children: (0, $.jsxs)(`div`, { className: E, ..._, children: [D, ne] }),
+        children: (0, $.jsxs)(`div`, { className: E, ..._, children: [D, re] }),
       })),
       (t[41] = _),
-      (t[42] = ne),
+      (t[42] = re),
       (t[43] = E),
       (t[44] = D),
-      (t[45] = P))
-    : (P = t[45]);
-  let re;
-  t[46] !== C || t[47] !== P
-    ? ((re = (0, $.jsx)(U, { items: C, children: P })),
+      (t[45] = N))
+    : (N = t[45]);
+  let P;
+  t[46] !== C || t[47] !== N
+    ? ((P = (0, $.jsx)(H, { items: C, children: N })),
       (t[46] = C),
-      (t[47] = P),
-      (t[48] = re))
-    : (re = t[48]);
-  let F = re;
-  if (!u) return F;
-  let I;
+      (t[47] = N),
+      (t[48] = P))
+    : (P = t[48]);
+  let ie = P;
+  if (!u) return ie;
+  let F;
   t[49] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((I = (0, $.jsx)(x, {
+    ? ((F = (0, $.jsx)(w, {
         id: `inbox.automations.history.archivedTooltip`,
         defaultMessage: `Run was archived`,
         description: `Tooltip shown for archived automation runs in the previous runs list`,
       })),
-      (t[49] = I))
-    : (I = t[49]);
-  let L;
+      (t[49] = F))
+    : (F = t[49]);
+  let I;
   return (
-    t[50] === F
-      ? (L = t[51])
-      : ((L = (0, $.jsx)(ae, {
-          tooltipContent: I,
-          children: (0, $.jsx)(`div`, { children: F }),
+    t[50] === ie
+      ? (I = t[51])
+      : ((I = (0, $.jsx)(oe, {
+          tooltipContent: F,
+          children: (0, $.jsx)(`div`, { children: ie }),
         })),
-        (t[50] = F),
-        (t[51] = L)),
-    L
+        (t[50] = ie),
+        (t[51] = I)),
+    I
   );
 }
-function nn(e) {
+function tn(e) {
   let t = (0, Q.c)(12),
     { status: n } = e,
     r = ee(),
@@ -3647,7 +3657,7 @@ function nn(e) {
   let l;
   return (
     t[9] !== o || t[10] !== c
-      ? ((l = (0, $.jsxs)(we, {
+      ? ((l = (0, $.jsxs)(Ce, {
           className: `gap-2 rounded-full px-2.5 py-1 text-base`,
           children: [o, c],
         })),
@@ -3658,7 +3668,7 @@ function nn(e) {
     l
   );
 }
-function rn(e) {
+function nn(e) {
   let t = (0, Q.c)(28),
     {
       isPaused: n,
@@ -3676,13 +3686,13 @@ function rn(e) {
     p;
   t[0] !== i || t[1] !== o || t[2] !== l
     ? ((p = o
-        ? (0, $.jsx)(B, {
+        ? (0, $.jsx)(R, {
             size: `toolbar`,
             color: `primary`,
             disabled: i,
             loading: i,
             onClick: l,
-            children: (0, $.jsx)(x, {
+            children: (0, $.jsx)(w, {
               id: `settings.automations.saveRetry`,
               defaultMessage: `Save`,
               description: `Button label for retrying a failed automation save`,
@@ -3697,7 +3707,7 @@ function rn(e) {
   let m;
   t[4] !== f || t[5] !== n || t[6] !== c || t[7] !== u
     ? ((m = n
-        ? (0, $.jsx)(B, {
+        ? (0, $.jsx)(R, {
             size: `toolbar`,
             color: `ghost`,
             uniform: !0,
@@ -3707,9 +3717,9 @@ function rn(e) {
               defaultMessage: `Resume automation`,
               description: `Aria label for resuming an automation`,
             }),
-            children: (0, $.jsx)(me, { className: `icon-sm` }),
+            children: (0, $.jsx)(he, { className: `icon-sm` }),
           })
-        : (0, $.jsx)(B, {
+        : (0, $.jsx)(R, {
             size: `toolbar`,
             color: `ghost`,
             uniform: !0,
@@ -3719,7 +3729,7 @@ function rn(e) {
               defaultMessage: `Pause automation`,
               description: `Aria label for pausing an automation`,
             }),
-            children: (0, $.jsx)(he, { className: `icon-sm` }),
+            children: (0, $.jsx)(ge, { className: `icon-sm` }),
           })),
       (t[4] = f),
       (t[5] = n),
@@ -3739,11 +3749,11 @@ function rn(e) {
       (t[10] = h));
   let g;
   t[11] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((g = (0, $.jsx)(Ee, { className: `icon-sm` })), (t[11] = g))
+    ? ((g = (0, $.jsx)(G, { className: `icon-sm` })), (t[11] = g))
     : (g = t[11]);
   let _;
   t[12] !== r || t[13] !== s || t[14] !== h
-    ? ((_ = (0, $.jsx)(B, {
+    ? ((_ = (0, $.jsx)(R, {
         size: `toolbar`,
         color: `ghost`,
         uniform: !0,
@@ -3761,13 +3771,13 @@ function rn(e) {
   t[16] === a
     ? (v = t[17])
     : ((v = a
-        ? (0, $.jsx)(V, { className: `icon-xs` })
-        : (0, $.jsx)(wt, { className: `icon-xs` })),
+        ? (0, $.jsx)(z, { className: `icon-xs` })
+        : (0, $.jsx)(Ct, { className: `icon-xs` })),
       (t[16] = a),
       (t[17] = v));
   let y;
   t[18] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((y = (0, $.jsx)(x, {
+    ? ((y = (0, $.jsx)(w, {
         id: `settings.automations.runNow`,
         defaultMessage: `Run now`,
         description: `Button label for running an automation immediately`,
@@ -3776,7 +3786,7 @@ function rn(e) {
     : (y = t[18]);
   let b;
   t[19] !== a || t[20] !== d || t[21] !== v
-    ? ((b = (0, $.jsxs)(B, {
+    ? ((b = (0, $.jsxs)(R, {
         size: `toolbar`,
         color: `primary`,
         disabled: a,
@@ -3788,10 +3798,10 @@ function rn(e) {
       (t[21] = v),
       (t[22] = b))
     : (b = t[22]);
-  let S;
+  let x;
   return (
     t[23] !== p || t[24] !== m || t[25] !== _ || t[26] !== b
-      ? ((S = (0, $.jsxs)(`div`, {
+      ? ((x = (0, $.jsxs)(`div`, {
           className: `flex items-center gap-2`,
           children: [p, m, _, b],
         })),
@@ -3799,12 +3809,12 @@ function rn(e) {
         (t[24] = m),
         (t[25] = _),
         (t[26] = b),
-        (t[27] = S))
-      : (S = t[27]),
-    S
+        (t[27] = x))
+      : (x = t[27]),
+    x
   );
 }
-function an(e, n) {
+function rn(e, n) {
   return t(e)
     ? {
         id: e.id,
@@ -3831,10 +3841,10 @@ function an(e, n) {
         rrule: e.rrule,
       };
 }
-function on(e) {
+function an(e) {
   return e.status === `DELETED` ? null : e;
 }
-function sn(e, t) {
+function on(e, t) {
   return e == null || t == null
     ? e === t
     : e.id === t.id &&
@@ -3853,7 +3863,7 @@ function sn(e, t) {
             e.cwds.length === t.cwds.length &&
             e.cwds.every((e, n) => e === t.cwds[n]));
 }
-function cn(e) {
+function sn(e) {
   if (typeof e != `object` || !e) return null;
   let t,
     n = null;
@@ -3875,12 +3885,12 @@ function cn(e) {
     ? null
     : { previousAutomations: t, previousDraftStatus: n };
 }
-function ln({ status: e, success: t }) {
+function cn({ status: e, success: t }) {
   let n;
   if (
     (e === `deleted`
-      ? (n = u.CODEX_AUTOMATION_DELETE_STATUS_DELETED)
-      : e === `not_found` && (n = u.CODEX_AUTOMATION_DELETE_STATUS_NOT_FOUND),
+      ? (n = s.CODEX_AUTOMATION_DELETE_STATUS_DELETED)
+      : e === `not_found` && (n = s.CODEX_AUTOMATION_DELETE_STATUS_NOT_FOUND),
     t || e === `deleted`)
   )
     return n == null ? {} : { deleteStatus: n };
@@ -3904,12 +3914,12 @@ function ln({ status: e, success: t }) {
       return { failureReason: p.CODEX_AUTOMATION_FAILURE_REASON_REMOVE_FAILED };
   }
 }
-function un(e, t) {
-  return t.status === `DELETED` ? !1 : sn(an(e, t.status), t);
+function ln(e, t) {
+  return t.status === `DELETED` ? !1 : on(rn(e, t.status), t);
 }
-function dn({ timestamp: e, intl: t }) {
+function un({ timestamp: e, intl: t }) {
   let n = new Date(e),
-    r = fn(n, new Date()),
+    r = dn(n, new Date()),
     i = t.formatDate(n, { timeStyle: `short` });
   return r === 0
     ? t.formatMessage(
@@ -3940,10 +3950,10 @@ function dn({ timestamp: e, intl: t }) {
           )
         : t.formatDate(n, { dateStyle: `medium`, timeStyle: `short` });
 }
-function fn(e, t) {
+function dn(e, t) {
   let n = new Date(e.getFullYear(), e.getMonth(), e.getDate()),
     r = new Date(t.getFullYear(), t.getMonth(), t.getDate());
   return Math.round((n.getTime() - r.getTime()) / (1440 * 60 * 1e3));
 }
-export { Rt as AutomationsLayoutPage };
+export { Lt as AutomationsLayoutPage };
 //# sourceMappingURL=automations-page.js.map

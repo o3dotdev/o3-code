@@ -1,31 +1,20 @@
-import { p as e, xt as t } from "./setting-storage.js";
-import { i as n } from "./codex-avatar.js";
-var r = t();
-function i() {
-  let t = (0, r.c)(9),
-    i;
-  t[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((i = {
-        queryConfig: {
-          enabled: !0,
-          refetchOnMount: !1,
-          refetchOnWindowFocus: !1,
-        },
-      }),
-      (t[0] = i))
-    : (i = t[0]);
-  let a = e(`custom-avatars`, i),
+import { Z as e, wt as t } from "./setting-storage.js";
+import { o as n, r } from "./codex-avatar.js";
+var i = t();
+function a() {
+  let t = (0, i.c)(8),
+    a = e(r),
     o = a.data?.avatarDirectory ?? null,
     s = a.data?.avatars,
     c;
-  t[1] === s ? (c = t[2]) : ((c = n(s)), (t[1] = s), (t[2] = c));
+  t[0] === s ? (c = t[1]) : ((c = n(s)), (t[0] = s), (t[1] = c));
   let l;
   return (
-    t[3] !== a.isError ||
-    t[4] !== a.isLoading ||
-    t[5] !== a.refetch ||
-    t[6] !== o ||
-    t[7] !== c
+    t[2] !== a.isError ||
+    t[3] !== a.isLoading ||
+    t[4] !== a.refetch ||
+    t[5] !== o ||
+    t[6] !== c
       ? ((l = {
           avatarDirectory: o,
           avatarOptions: c,
@@ -33,15 +22,15 @@ function i() {
           isLoading: a.isLoading,
           refetch: a.refetch,
         }),
-        (t[3] = a.isError),
-        (t[4] = a.isLoading),
-        (t[5] = a.refetch),
-        (t[6] = o),
-        (t[7] = c),
-        (t[8] = l))
-      : (l = t[8]),
+        (t[2] = a.isError),
+        (t[3] = a.isLoading),
+        (t[4] = a.refetch),
+        (t[5] = o),
+        (t[6] = c),
+        (t[7] = l))
+      : (l = t[7]),
     l
   );
 }
-export { i as t };
+export { a as t };
 //# sourceMappingURL=use-avatar-options.js.map

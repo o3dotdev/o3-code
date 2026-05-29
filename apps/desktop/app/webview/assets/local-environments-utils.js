@@ -1,9 +1,9 @@
-import { s as e } from "./chunk.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
 import { n as t, t as n } from "./jsx-runtime.js";
-import { xt as r, z as i } from "./setting-storage.js";
-import { t as a } from "./bug.js";
+import { B as r, wt as i } from "./setting-storage.js";
+import { t as a } from "./bug-B5-GWt65.js";
 import { t as o } from "./settings.cog.js";
-import { t as s } from "./play-outline-C-zmd4eu.js";
+import { t as s } from "./play-outline.js";
 e(t());
 var c = n(),
   l = (e) =>
@@ -19,7 +19,7 @@ var c = n(),
         fill: `currentColor`,
       }),
     }),
-  u = r(),
+  u = i(),
   d = { tool: o, run: s, debug: a, test: l };
 function f(e) {
   let t = (0, u.c)(3),
@@ -40,7 +40,7 @@ function f(e) {
 var p = [
     {
       value: `tool`,
-      message: i({
+      message: r({
         id: `settings.localEnvironments.actions.icon.tool`,
         defaultMessage: `Tool`,
         description: `Tool icon label for local environment actions`,
@@ -48,7 +48,7 @@ var p = [
     },
     {
       value: `run`,
-      message: i({
+      message: r({
         id: `settings.localEnvironments.actions.icon.run`,
         defaultMessage: `Run`,
         description: `Run icon label for local environment actions`,
@@ -56,7 +56,7 @@ var p = [
     },
     {
       value: `debug`,
-      message: i({
+      message: r({
         id: `settings.localEnvironments.actions.icon.debug`,
         defaultMessage: `Debug`,
         description: `Debug icon label for local environment actions`,
@@ -64,7 +64,7 @@ var p = [
     },
     {
       value: `test`,
-      message: i({
+      message: r({
         id: `settings.localEnvironments.actions.icon.test`,
         defaultMessage: `Test`,
         description: `Test icon label for local environment actions`,

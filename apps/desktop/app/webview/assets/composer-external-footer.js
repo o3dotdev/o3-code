@@ -1,263 +1,272 @@
-import { s as e } from "./chunk.js";
-import { Cn as t, N as n, ir as r } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { U as t, kr as n, r, zn as i } from "./src-C.js";
 import {
-  $ as i,
-  C as a,
-  O as o,
-  Or as s,
-  Sn as c,
-  Ta as l,
-  Z as u,
+  $ as a,
+  Un as o,
+  Xn as s,
+  Yn as c,
+  ct as l,
+  fo as u,
   g as d,
-  hn as f,
-  os as p,
-  ot as m,
-  pt as h,
-  wa as g,
-  xn as _,
-} from "./app-server-manager-signals.js";
+  j as f,
+  mt as p,
+  po as m,
+  tc as h,
+  tt as g,
+  w as _,
+} from "./app-server-manager-signals-DkRDRgNB.js";
 import { n as v, t as y } from "./jsx-runtime.js";
-import { t as b } from "./clsx.js";
-import "./react-dom.js";
+import { t as b } from "./clsx-BcPLHiun.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
-import "./marked.esm.js";
+import "./marked.esm-BR-H6018.js";
 import {
-  B as x,
-  H as S,
-  J as C,
-  Q as w,
-  S as T,
-  X as E,
-  Z as D,
-  p as O,
-  xt as k,
+  $ as x,
+  S,
+  U as C,
+  V as w,
+  Y as T,
+  Z as E,
+  _ as D,
+  f as O,
+  wt as k,
 } from "./setting-storage.js";
-import { f as A } from "./chunk-LFPYN7LY.js";
+import { m as A } from "./chunk-LFPYN7LY.js";
 import { t as j } from "./branch.js";
-import "./github-mark.js";
 import "./google-drive.js";
-import "./product-logger.js";
-import { o as ee } from "./statsig.js";
+import "./product-logger-DusapRyT.js";
+import "./rpc-DqwD0euc.js";
+import { o as M } from "./statsig--EYRNU53.js";
+import "./request-DWZTrEAr.js";
 import "./app-server-manager-hooks.js";
-import { t as te } from "./use-global-state.js";
-import "./invalidate-queries-and-broadcast.js";
-import "./thread-context-inputs.js";
-import "./config-queries.js";
+import { t as N } from "./use-global-state.js";
+import "./invalidate-queries-and-broadcast-BXgBlyBv.js";
+import "./thread-context-inputs-DBrOekVr.js";
+import "./config-queries-BBeTQbuo.js";
 import "./remote-connection-visibility.js";
 import "./sidebar-signals.js";
 import "./use-auth.js";
-import "./codex-api.js";
-import "./_baseOrderBy.js";
-import "./parse-owner-repo.js";
-import "./use-debounced-value.js";
-import "./use-is-dark.js";
+import "./codex-api-bK--r_2t.js";
+import "./_baseEach.js";
+import "./_baseOrderBy-CIbyNZRe.js";
+import "./use-debounced-value-BtOJx-Vp.js";
+import "./use-is-dark-BHkhnHe-.js";
 import "./toast-signal.js";
 import "./window-zoom-context.js";
-import { t as ne } from "./tooltip.js";
+import { t as ee } from "./tooltip-CDzchJxN.js";
 import "./route-scope.js";
-import "./prompt-text.js";
+import "./prompt-text-DuAhtLDu.js";
 import "./use-environment.js";
-import { t as re, w as ie } from "./composer-view-state.js";
+import { E as te, t as ne } from "./composer-view-state-JRNwOfub.js";
 import "./mention-item.js";
-import "./use-collaboration-mode.js";
-import "./use-model-settings.js";
-import { t as ae } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./use-collaboration-mode-CQFe-Ilp.js";
+import "./use-model-settings-BGTYyORt.js";
+import { t as re } from "./button.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
-import { t as M } from "./use-codex-home.js";
-import "./use-os-info.js";
-import "./link-external.js";
+import { t as P } from "./use-codex-home.js";
+import "./os-info-CLWbGRUe.js";
+import "./use-os-info-CpFtQpVC.js";
+import "./link-external-BPZREBQk.js";
 import "./open-config-toml-button.js";
-import "./open-workspace-file.js";
+import "./open-workspace-file-WgoEFjrv.js";
 import "./send-open-file-request.js";
 import "./mime-types.js";
-import "./model-queries.js";
-import { n as oe } from "./use-webview-execution-target.js";
+import "./model-queries-CVdTsyPv.js";
+import { n as ie } from "./use-webview-execution-target.js";
 import "./remote-projects.js";
 import "./collaboration-mode-queries.js";
-import { s as se } from "./thread-detail-level.js";
+import { n as ae, t as oe } from "./composer-footer-C_v29uwU.js";
+import "./home-row-layout-DTvEYEfe.js";
 import "./proxy.js";
-import "./x.js";
-import "./uniq.js";
-import { t as ce } from "./local-conversation-title-signals.js";
-import "./sumBy.js";
+import "./x-C_RDKBp5.js";
+import "./projectless-thread.js";
+import { t as se } from "./local-conversation-title-signals-bVA-f9H8.js";
+import "./sumBy-zUPwGmzt.js";
 import "./git-current-branch-query.js";
 import "./app-intl-signal.js";
-import { t as le } from "./with-window.js";
-import "./sidebar-thread-keys.js";
-import { f as ue, n as de } from "./local-remote-selection.js";
-import "./use-is-remote-host.js";
+import { t as ce } from "./with-window.js";
+import { n as le } from "./is-compact-window-context.js";
+import "./use-is-remote-host-DScyzh-e.js";
 import "./dialog-layout.js";
 import "./lightning-bolt.js";
-import "./modal-controller-state-.js";
-import "./open-project-setup-dialog.js";
-import { t as fe } from "./check-md.js";
-import "./chevron-right.js";
-import "./arrow-left.js";
-import "./compose.js";
-import "./use-rate-limit.js";
-import "./conversation-starter-card.js";
-import "./local-task-row-signals.js";
-import { u as pe } from "./sidebar-project-group-signals-.js";
-import "./pinned-threads-query.js";
+import "./local-projects.js";
+import "./modal-controller-state.js";
+import "./open-project-setup-dialog-cJXYMFtk.js";
+import "./folder.js";
+import "./electron-menu-shortcuts.js";
+import "./local-task-row-signals-BzazYVei.js";
+import "./sidebar-project-group-signals-CEQTKcIf.js";
+import "./pinned-threads-query-DYArLI-i.js";
 import "./sidebar-thread-list-signals.js";
-import "./git-origins-query.js";
 import "./sidebar-project-groups.js";
 import "./_defineProperty.js";
+import { t as ue } from "./check-md.js";
+import "./chevron-right.js";
+import "./arrow-left.js";
+import "./select-project.js";
+import "./compose.js";
+import "./codex-api-error-CsUcWied.js";
+import "./use-rate-limit.js";
+import "./checkbox-DtuSNXXy.js";
+import "./minus.js";
+import "./links.js";
+import "./conversation-starter-card.js";
 import "./x-circle.js";
 import "./search.js";
 import "./add-project-menu-items.js";
-import { r as N, t as me } from "./dropdown.js";
-import "./globe.js";
-import { t as he } from "./chevron.js";
+import { t as de } from "./local-active-workspace-root-dropdown-C4n-MGra.js";
+import { r as F, t as fe } from "./dropdown-DtQxMoJw.js";
+import "./globe-CnvlclXd.js";
+import { t as pe } from "./chevron-NmAOI_v1.js";
 import "./use-app-server-connection-state.js";
-import { t as P } from "./cloud.js";
-import { t as F } from "./macbook.js";
-import "./worktree.js";
+import { t as I } from "./cloud-BOSNAJnX.js";
+import { t as L } from "./macbook.js";
+import "./worktree-D_6WAQVb.js";
 import "./workspace-root-icon.js";
-import "./folder.js";
-import "./notebook.js";
+import "./notebook-MImpo36y.js";
 import "./settings.cog.js";
-import { t as I } from "./codex.js";
-import "./copy.js";
+import { t as R } from "./codex-BjFeJtxQ.js";
+import "./copy-Cen6nDnP.js";
 import "./plus.js";
+import "./gh-cli-status-query-DoYMwBhd.js";
 import "./use-git-current-branch.js";
-import "./local-environments.js";
-import { r as ge } from "./local-environment-selection.js";
-import { t as _e } from "./app-server-connection-state.js";
-import "./alert-CbWF3t74.js";
-import "./arrow-up.js";
-import "./bullet-separator.js";
+import "./local-environments-DcKJ5oGa.js";
+import { r as me } from "./local-environment-selection-DyGLYKsj.js";
+import { t as he } from "./app-server-connection-state.js";
+import "./alert-m4o6hR60.js";
+import "./bullet-separator-DZkwhKzs.js";
 import "./speedometer.js";
-import "./rate-limit-summary.js";
-import "./slash-command-item.js";
+import "./rate-limit-summary-BDTPCTJm.js";
 import "./sortBy.js";
 /* empty css                    */ import "./use-connected-remote-connections.js";
-import "./banner.js";
-import "./use-git-default-branch.js";
-import "./toggle.js";
-import "./diff-stats-.js";
+import { n as ge } from "./local-remote-selection-DqDRxu-D.js";
+import "./use-git-default-branch-gyzefibF.js";
+import "./slash-command-item.js";
+import "./diff-stats.js";
+import "./send-to-cloud.js";
 import "./regenerate.js";
-import { V as ve } from "./git-branch-picker-dropdown-content.js";
+import { Y as _e } from "./git-branch-picker-dropdown-content-116YOJSU.js";
 import "./codex-analytics-attribution.js";
+import "./gh-pull-request-status-query.js";
 import "./summary-panel-row.js";
-import { t as ye } from "./local-active-workspace-root-dropdown.js";
 import "./thread-handoff-store.js";
 import "./git-submodule-paths-query.js";
 import "./star.js";
-import { t as be } from "./worktree-environment-dropdown.js";
+import { t as ve } from "./worktree-environment-dropdown.js";
 import {
-  n as xe,
-  r as Se,
-  t as Ce,
+  n as ye,
+  r as be,
+  t as xe,
 } from "./composer-footer-branch-switcher.js";
 import "./git-branch-switcher.js";
 import "./use-git-recent-branches.js";
-import { n as we, t as Te } from "./local-remote-dropdown.js";
-import "./dock.js";
+import { n as Se, t as Ce } from "./local-remote-dropdown.js";
+import "./dock-CDRDKrMD.js";
 import "./use-codex-worktrees.js";
-var Ee = k(),
-  L = e(v(), 1),
-  R = y();
-function De(e) {
-  let t = (0, Ee.c)(41),
+var we = k(),
+  z = e(v(), 1),
+  B = y();
+function Te(e) {
+  let t = (0, we.c)(41),
     { composerMode: n, setComposerMode: r } = e,
-    i = E(ie),
-    [a, o] = (0, L.useState)(!1),
-    s = p(re),
-    c = oe(),
-    { data: l, isLoading: u } = f(
-      c.cwd,
-      c.hostConfig,
+    i = E(te),
+    [a, s] = (0, z.useState)(!1),
+    c = h(ne),
+    l = ie(),
+    { data: u, isLoading: d } = o(
+      l.cwd,
+      l.hostConfig,
       `cloud_follow_up_local_remote_dropdown`,
     ),
-    d = l?.root != null,
-    m = i?.type === `cloud` && i.hasAppliedCodeLocally,
-    h,
+    f = u?.root != null,
+    p = i?.type === `cloud` && i.hasAppliedCodeLocally,
+    m,
     g;
-  (t[0] !== m || t[1] !== r
-    ? ((h = () => {
-        m && r(`local`);
+  (t[0] !== p || t[1] !== r
+    ? ((m = () => {
+        p && r(`local`);
       }),
-      (g = [m, r]),
-      (t[0] = m),
+      (g = [p, r]),
+      (t[0] = p),
       (t[1] = r),
-      (t[2] = h),
+      (t[2] = m),
       (t[3] = g))
-    : ((h = t[2]), (g = t[3])),
-    (0, L.useEffect)(h, g));
+    : ((m = t[2]), (g = t[3])),
+    (0, z.useEffect)(m, g));
   let _, v;
-  (t[4] !== n || t[5] !== d || t[6] !== u || t[7] !== r
+  (t[4] !== n || t[5] !== f || t[6] !== d || t[7] !== r
     ? ((_ = () => {
-        u || d || (n !== `local` && r(`local`));
+        d || f || (n !== `local` && r(`local`));
       }),
-      (v = [n, d, u, r]),
+      (v = [n, f, d, r]),
       (t[4] = n),
-      (t[5] = d),
-      (t[6] = u),
+      (t[5] = f),
+      (t[6] = d),
       (t[7] = r),
       (t[8] = _),
       (t[9] = v))
     : ((_ = t[8]), (v = t[9])),
-    (0, L.useEffect)(_, v));
+    (0, z.useEffect)(_, v));
   let y;
   t[10] === n
     ? (y = t[11])
     : ((y =
         n === `local`
-          ? (0, R.jsx)(S, { ...z.local })
-          : (0, R.jsx)(S, { ...z.cloud })),
+          ? (0, B.jsx)(C, { ...V.local })
+          : (0, B.jsx)(C, { ...V.cloud })),
       (t[10] = n),
       (t[11] = y));
   let b = y,
     x;
   t[12] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((x = (0, R.jsx)(S, { ...z.tooltip })), (t[12] = x))
+    ? ((x = (0, B.jsx)(C, { ...V.tooltip })), (t[12] = x))
     : (x = t[12]);
-  let C;
+  let S;
   t[13] === n
-    ? (C = t[14])
-    : ((C =
+    ? (S = t[14])
+    : ((S =
         n === `cloud`
-          ? (0, R.jsx)(P, { className: `icon-xs` })
-          : (0, R.jsx)(F, { className: `icon-xs` })),
+          ? (0, B.jsx)(I, { className: `icon-xs` })
+          : (0, B.jsx)(L, { className: `icon-xs` })),
       (t[13] = n),
-      (t[14] = C));
+      (t[14] = S));
   let w;
   t[15] === b
     ? (w = t[16])
-    : ((w = (0, R.jsx)(`span`, {
-        className: `composer-footer__label--xs max-w-40 truncate`,
+    : ((w = (0, B.jsx)(ae, {
+        collapse: `xs`,
+        className: `max-w-40 truncate`,
         children: b,
       })),
       (t[15] = b),
       (t[16] = w));
   let T;
   t[17] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((T = (0, R.jsx)(he, {
+    ? ((T = (0, B.jsx)(pe, {
         className: `icon-2xs text-token-input-placeholder-foreground`,
       })),
       (t[17] = T))
     : (T = t[17]);
   let D;
-  t[18] !== C || t[19] !== w
-    ? ((D = (0, R.jsx)(ne, {
+  t[18] !== S || t[19] !== w
+    ? ((D = (0, B.jsx)(ee, {
         tooltipContent: x,
-        children: (0, R.jsxs)(ae, {
+        children: (0, B.jsxs)(re, {
           size: `composerSm`,
           color: `ghost`,
           className: `min-w-0`,
-          children: [C, w, T],
+          children: [S, w, T],
         }),
       })),
-      (t[18] = C),
+      (t[18] = S),
       (t[19] = w),
       (t[20] = D))
     : (D = t[20]);
   let O;
   t[21] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((O = (0, R.jsx)(N.Title, {
-        children: (0, R.jsx)(S, {
+    ? ((O = (0, B.jsx)(F.Title, {
+        children: (0, B.jsx)(C, {
           id: `composer.mode.newTask.header`,
           defaultMessage: `Continue in`,
           description: `Header label above agent mode options`,
@@ -265,79 +274,79 @@ function De(e) {
       })),
       (t[21] = O))
     : (O = t[21]);
-  let k = n === `local` ? fe : void 0,
+  let k = n === `local` ? ue : void 0,
     A;
-  t[22] !== r || t[23] !== s
+  t[22] !== r || t[23] !== c
     ? ((A = () => {
-        (s(`local`), r(`local`), o(!1));
+        (c(`local`), r(`local`), s(!1));
       }),
       (t[22] = r),
-      (t[23] = s),
+      (t[23] = c),
       (t[24] = A))
     : (A = t[24]);
   let j;
   t[25] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((j = (0, R.jsx)(S, { ...z.local })), (t[25] = j))
+    ? ((j = (0, B.jsx)(C, { ...V.local })), (t[25] = j))
     : (j = t[25]);
-  let ee;
+  let M;
   t[26] !== k || t[27] !== A
-    ? ((ee = (0, R.jsx)(N.Item, {
-        LeftIcon: F,
+    ? ((M = (0, B.jsx)(F.Item, {
+        LeftIcon: L,
         RightIcon: k,
         onClick: A,
         children: j,
       })),
       (t[26] = k),
       (t[27] = A),
-      (t[28] = ee))
-    : (ee = t[28]);
-  let te;
-  t[29] !== n || t[30] !== d || t[31] !== r || t[32] !== s
-    ? ((te = d
-        ? (0, R.jsx)(N.Item, {
-            LeftIcon: P,
-            RightIcon: n === `cloud` ? fe : void 0,
+      (t[28] = M))
+    : (M = t[28]);
+  let N;
+  t[29] !== n || t[30] !== f || t[31] !== r || t[32] !== c
+    ? ((N = f
+        ? (0, B.jsx)(F.Item, {
+            LeftIcon: I,
+            RightIcon: n === `cloud` ? ue : void 0,
             onClick: () => {
-              (s(`cloud`), r(`cloud`), o(!1));
+              (c(`cloud`), r(`cloud`), s(!1));
             },
-            children: (0, R.jsx)(S, { ...z.cloud }),
+            children: (0, B.jsx)(C, { ...V.cloud }),
           })
         : null),
       (t[29] = n),
-      (t[30] = d),
+      (t[30] = f),
       (t[31] = r),
-      (t[32] = s),
-      (t[33] = te))
-    : (te = t[33]);
-  let M;
-  t[34] !== ee || t[35] !== te
-    ? ((M = (0, R.jsxs)(`div`, {
+      (t[32] = c),
+      (t[33] = N))
+    : (N = t[33]);
+  let P;
+  t[34] !== M || t[35] !== N
+    ? ((P = (0, B.jsxs)(`div`, {
         className: `flex w-44 flex-col`,
-        children: [O, ee, te],
+        children: [O, M, N],
       })),
-      (t[34] = ee),
-      (t[35] = te),
-      (t[36] = M))
-    : (M = t[36]);
-  let se;
+      (t[34] = M),
+      (t[35] = N),
+      (t[36] = P))
+    : (P = t[36]);
+  let oe;
   return (
-    t[37] !== a || t[38] !== D || t[39] !== M
-      ? ((se = (0, R.jsx)(me, {
+    t[37] !== a || t[38] !== D || t[39] !== P
+      ? ((oe = (0, B.jsx)(fe, {
           side: `top`,
           open: a,
-          onOpenChange: o,
+          onOpenChange: s,
           triggerButton: D,
-          children: M,
+          children: P,
         })),
         (t[37] = a),
         (t[38] = D),
-        (t[39] = M),
-        (t[40] = se))
-      : (se = t[40]),
-    se
+        (t[39] = P),
+        (t[40] = oe))
+      : (oe = t[40]),
+    oe
   );
 }
-var z = x({
+var V = w({
   local: {
     id: `composer.cloudFollowUp.local`,
     defaultMessage: `Local`,
@@ -354,25 +363,25 @@ var z = x({
     description: `Tooltip for choosing between local and cloud follow-ups`,
   },
 });
-function Oe(e) {
-  let t = (0, Ee.c)(32),
+function Ee(e) {
+  let t = (0, we.c)(32),
     { startingState: n, setStartingState: r } = e,
-    [i, a] = (0, L.useState)(!1),
+    [i, a] = (0, z.useState)(!1),
     o;
   t[0] === n
     ? (o = t[1])
     : ((o =
         n === `working-tree`
-          ? (0, R.jsx)(S, { ...B.workingTree })
-          : (0, R.jsx)(S, { ...B.directFollowUp })),
+          ? (0, B.jsx)(C, { ...H.workingTree })
+          : (0, B.jsx)(C, { ...H.directFollowUp })),
       (t[0] = n),
       (t[1] = o));
   let s = o,
     c;
   t[2] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((c = (0, R.jsx)(`div`, {
+    ? ((c = (0, B.jsx)(`div`, {
         className: `flex flex-col gap-2`,
-        children: (0, R.jsx)(S, {
+        children: (0, B.jsx)(C, {
           id: `composer.remote.startingPoint`,
           defaultMessage: `What code should this task start from?`,
           description: `Section label for remote starting point selector`,
@@ -383,12 +392,12 @@ function Oe(e) {
   let l = n === `working-tree`,
     u;
   t[3] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((u = (0, R.jsx)(j, { className: `icon-xs` })), (t[3] = u))
+    ? ((u = (0, B.jsx)(j, { className: `icon-xs` })), (t[3] = u))
     : (u = t[3]);
   let d;
   t[4] === l
     ? (d = t[5])
-    : ((d = (0, R.jsx)(Se, {
+    : ((d = (0, B.jsx)(be, {
         borderColor: `border-token-side-bar-background`,
         badgeEnabled: l,
         children: u,
@@ -398,7 +407,7 @@ function Oe(e) {
   let f;
   t[6] === s
     ? (f = t[7])
-    : ((f = (0, R.jsx)(`span`, {
+    : ((f = (0, B.jsx)(`span`, {
         className: `truncate max-[440px]:hidden`,
         children: s,
       })),
@@ -406,16 +415,16 @@ function Oe(e) {
       (t[7] = f));
   let p;
   t[8] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((p = (0, R.jsx)(he, {
+    ? ((p = (0, B.jsx)(pe, {
         className: `icon-2xs text-token-input-placeholder-foreground`,
       })),
       (t[8] = p))
     : (p = t[8]);
   let m;
   t[9] !== d || t[10] !== f
-    ? ((m = (0, R.jsx)(ne, {
+    ? ((m = (0, B.jsx)(ee, {
         tooltipContent: c,
-        children: (0, R.jsxs)(ae, {
+        children: (0, B.jsxs)(re, {
           size: `composerSm`,
           color: `ghost`,
           children: [d, f, p],
@@ -427,14 +436,14 @@ function Oe(e) {
     : (m = t[11]);
   let h;
   t[12] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((h = (0, R.jsx)(S, {
+    ? ((h = (0, B.jsx)(C, {
         id: `composer.remote.currentEditsSuffix.followUp`,
         defaultMessage: `Create a new task that references this cloud task.`,
         description: `Suffix text indicating the selection includes current edits`,
       })),
       (t[12] = h))
     : (h = t[12]);
-  let g = n === `working-tree` ? fe : void 0,
+  let g = n === `working-tree` ? ue : void 0,
     _;
   t[13] === r
     ? (_ = t[14])
@@ -445,14 +454,14 @@ function Oe(e) {
       (t[14] = _));
   let v;
   t[15] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((v = (0, R.jsx)(S, { ...B.workingTree })), (t[15] = v))
+    ? ((v = (0, B.jsx)(C, { ...H.workingTree })), (t[15] = v))
     : (v = t[15]);
   let y;
   t[16] !== g || t[17] !== _
-    ? ((y = (0, R.jsx)(ne, {
+    ? ((y = (0, B.jsx)(ee, {
         tooltipContent: h,
-        children: (0, R.jsx)(N.Item, {
-          LeftIcon: ke,
+        children: (0, B.jsx)(F.Item, {
+          LeftIcon: De,
           RightIcon: g,
           onClick: _,
           children: v,
@@ -462,7 +471,7 @@ function Oe(e) {
       (t[17] = _),
       (t[18] = y))
     : (y = t[18]);
-  let b = n === `direct-follow-up` ? fe : void 0,
+  let b = n === `direct-follow-up` ? ue : void 0,
     x;
   t[19] === r
     ? (x = t[20])
@@ -471,17 +480,17 @@ function Oe(e) {
       }),
       (t[19] = r),
       (t[20] = x));
-  let C;
+  let S;
   t[21] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((C = (0, R.jsx)(S, { ...B.directFollowUp })), (t[21] = C))
-    : (C = t[21]);
+    ? ((S = (0, B.jsx)(C, { ...H.directFollowUp })), (t[21] = S))
+    : (S = t[21]);
   let w;
   t[22] !== b || t[23] !== x
-    ? ((w = (0, R.jsx)(N.Item, {
+    ? ((w = (0, B.jsx)(F.Item, {
         LeftIcon: j,
         RightIcon: b,
         onClick: x,
-        children: C,
+        children: S,
       })),
       (t[22] = b),
       (t[23] = x),
@@ -489,7 +498,7 @@ function Oe(e) {
     : (w = t[24]);
   let T;
   t[25] !== y || t[26] !== w
-    ? ((T = (0, R.jsxs)(`div`, {
+    ? ((T = (0, B.jsxs)(`div`, {
         className: `flex flex-col gap-1 pt-1`,
         children: [y, w],
       })),
@@ -500,7 +509,7 @@ function Oe(e) {
   let E;
   return (
     t[28] !== i || t[29] !== T || t[30] !== m
-      ? ((E = (0, R.jsx)(me, {
+      ? ((E = (0, B.jsx)(fe, {
           side: `top`,
           open: i,
           onOpenChange: a,
@@ -515,23 +524,23 @@ function Oe(e) {
     E
   );
 }
-function ke(e) {
-  let t = (0, Ee.c)(2),
+function De(e) {
+  let t = (0, we.c)(2),
     { className: n } = e,
     r;
   return (
     t[0] === n
       ? (r = t[1])
-      : ((r = (0, R.jsx)(Se, {
+      : ((r = (0, B.jsx)(be, {
           borderColor: `border-token-dropdown-background`,
-          children: (0, R.jsx)(j, { className: n }),
+          children: (0, B.jsx)(j, { className: n }),
         })),
         (t[0] = n),
         (t[1] = r)),
     r
   );
 }
-var B = x({
+var H = w({
   workingTree: {
     id: `composer.remote.localWorkingTree`,
     defaultMessage: `Use local changes`,
@@ -543,16 +552,17 @@ var B = x({
     description: `Label for direct follow-up selection in remote composer`,
   },
 });
-function Ae(e) {
+function Oe(e) {
   return e !== `cloud`;
 }
-function je() {
-  let e = (0, Ee.c)(2),
-    { data: t } = O(`has-custom-cli-executable`);
+var U = O(S, `has-custom-cli-executable`, { staleTime: D.FIVE_SECONDS });
+function ke() {
+  let e = (0, we.c)(2),
+    { data: t } = E(U);
   if (!(t?.hasCustomCliExecutable ?? !1)) return null;
   let n;
   e[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((n = (0, R.jsx)(S, {
+    ? ((n = (0, B.jsx)(C, {
         id: `composer.customCliTooltip`,
         defaultMessage: `Using a custom CLI executable`,
         description: `Tooltip text shown when the user has set a custom Codex CLI executable in their VS Code settings.`,
@@ -562,14 +572,14 @@ function je() {
   let r;
   return (
     e[1] === Symbol.for(`react.memo_cache_sentinel`)
-      ? ((r = (0, R.jsx)(ne, {
+      ? ((r = (0, B.jsx)(ee, {
           tooltipContent: n,
-          children: (0, R.jsx)(ae, {
+          children: (0, B.jsx)(re, {
             color: `ghost`,
             size: `composerSm`,
             uniform: !0,
             className: `-mx-2`,
-            children: (0, R.jsx)(I, {
+            children: (0, B.jsx)(R, {
               className: `icon-xs text-token-editor-warning-foreground`,
             }),
           }),
@@ -579,714 +589,688 @@ function je() {
     r
   );
 }
-var Me = w(T, (e) =>
-  D(T, ({ get: t }) => {
-    let n = t(t(h, e)) ?? 0,
-      r = t(t(u, e)) ?? 0;
-    return n > 0 || r > 0;
-  }),
-);
-function V(e) {
-  let u = (0, Ee.c)(193),
+var Ae = x(S, (e, { get: t }) => {
+  let n = t(p, e) ?? 0,
+    r = t(a, e) ?? 0;
+  return n > 0 || r > 0;
+});
+function je(e) {
+  let a = (0, we.c)(185),
     {
-      variant: f,
+      variant: o,
       composerMode: p,
       setComposerMode: h,
       conversationId: v,
       isResponseInProgress: y,
       asyncThreadStartingState: x,
-      setStartingState: w,
-      cloudFollowUpStartingState: T,
+      setStartingState: S,
+      cloudFollowUpStartingState: w,
       setCloudFollowUpStartingState: D,
       worktreeEnvironmentHostId: O,
       worktreeEnvironmentWorkspaceRoot: k,
-      codexHome: ne,
-      hideRunLocationDropdown: re,
-      showWorkspaceDropdown: fe,
-      gitRootForStartingState: N,
-      showFooterBranchWhen: me,
-      freeUpsellButton: he,
-      remoteConfig: P,
-      activeProjectIdOverride: F,
+      codexHome: ee,
+      hideRunLocationDropdown: ne,
+      showWorkspaceDropdown: ue,
+      gitRootForStartingState: F,
+      showFooterBranchWhen: fe,
+      freeUpsellButton: pe,
+      remoteConfig: I,
+      activeProjectIdOverride: L,
     } = e,
-    I = f === void 0 ? `default` : f,
-    _e = O === void 0 ? l : O,
-    Se = k === void 0 ? null : k,
-    L = re === void 0 ? !1 : re,
-    z = fe === void 0 ? !0 : fe,
-    ke = me === void 0 ? `local` : me,
-    B = A(),
-    V = E(ie),
-    Pe = E(pe),
-    Fe;
-  u[0] === Symbol.for(`react.memo_cache_sentinel`)
-    ? ((Fe = ue()), (u[0] = Fe))
-    : (Fe = u[0]);
-  let Ie = Fe,
-    Le = p !== `cloud` && V?.type !== `cloud`,
-    H = V?.type === `local` ? V.localConversationId : null,
-    U = H ?? v,
-    Re = C(a, U),
-    ze = U != null && !Re,
-    W = oe(U),
-    Be = C(i, U),
-    Ve = C(m, U),
-    He = C(Me, U),
-    Ue = V != null || He,
-    We = P?.currentHostId ?? `local`,
-    Ge = V?.type,
-    Ke;
-  u[1] !== p || u[2] !== We || u[3] !== He || u[4] !== Ge
-    ? ((Ke = de({
+    R = o === void 0 ? `default` : o,
+    he = O === void 0 ? m : O,
+    be = k === void 0 ? null : k,
+    z = ne === void 0 ? !1 : ne,
+    V = ue === void 0 ? !0 : ue,
+    De = fe === void 0 ? `local` : fe,
+    H = A(),
+    U = E(te),
+    je;
+  a[0] === Symbol.for(`react.memo_cache_sentinel`)
+    ? ((je = le()), (a[0] = je))
+    : (je = a[0]);
+  let Ne = je,
+    Pe = p !== `cloud` && U?.type !== `cloud`,
+    W = U?.type === `local` ? U.localConversationId : null,
+    G = W ?? v,
+    Fe = T(_, G),
+    Ie = G != null && !Fe,
+    K = ie(G),
+    Le = T(g, G),
+    Re = T(l, G),
+    ze = T(Ae, G),
+    Be = U != null || ze,
+    Ve = I?.currentHostId ?? `local`,
+    He = U?.type,
+    Ue;
+  a[1] !== p || a[2] !== Ve || a[3] !== ze || a[4] !== He
+    ? ((Ue = ge({
         composerMode: p,
-        draftRemoteHostId: We,
-        followUpType: Ge,
-        hasStartedBranchConversation: He,
+        draftRemoteHostId: Ve,
+        followUpType: He,
+        hasStartedBranchConversation: ze,
       })),
-      (u[1] = p),
-      (u[2] = We),
-      (u[3] = He),
-      (u[4] = Ge),
-      (u[5] = Ke))
-    : (Ke = u[5]);
-  let qe = Ke,
-    G = qe ? We : Be,
-    Je = !qe && G !== `local`,
-    Ye = C(d, H),
-    { data: Xe } = te(r.THREAD_PROJECT_ASSIGNMENTS),
-    Ze = s({ cwd: Ye, assignment: H == null ? void 0 : Xe?.[H] }),
-    Qe = M(W.hostId) ?? ne,
-    K = H ?? v,
-    $e;
-  u[6] === K
-    ? ($e = u[7])
-    : (($e = { conversationId: K }), (u[6] = K), (u[7] = $e));
-  let et = se($e),
-    tt = n(Ze, Qe),
-    nt = ee(`1115442235`),
-    rt = tt,
-    it = C(o, U) ?? !1,
-    at = C(ce, U),
-    [ot] = g(`remote_connections`),
-    [st] = g(`remote_control_connections`),
+      (a[1] = p),
+      (a[2] = Ve),
+      (a[3] = ze),
+      (a[4] = He),
+      (a[5] = Ue))
+    : (Ue = a[5]);
+  let We = Ue,
+    q = We ? Ve : Le,
+    Ge = !We && q !== `local`,
+    Ke = T(d, W),
+    { data: qe } = N(n.THREAD_PROJECT_ASSIGNMENTS),
+    Je = r({ cwd: Ke, assignment: W == null ? void 0 : qe?.[W] }),
+    Ye = P(K.hostId) ?? ee,
+    Xe = W ?? v,
+    Ze = t(Je, Ye),
+    Qe = M(`1115442235`),
+    $e = Ze,
+    et = T(f, G) ?? !1,
+    tt = T(se, G),
+    [nt] = u(`remote_connections`),
+    [rt] = u(`remote_control_connections`),
+    it;
+  a[6] === nt ? (it = a[7]) : ((it = nt ?? []), (a[6] = nt), (a[7] = it));
+  let at;
+  a[8] === rt ? (at = a[9]) : ((at = rt ?? []), (a[8] = rt), (a[9] = at));
+  let ot;
+  a[10] !== it || a[11] !== at
+    ? ((ot = [...it, ...at]), (a[10] = it), (a[11] = at), (a[12] = ot))
+    : (ot = a[12]);
+  let st = ot,
     ct;
-  u[8] === ot ? (ct = u[9]) : ((ct = ot ?? []), (u[8] = ot), (u[9] = ct));
-  let lt;
-  u[10] === st ? (lt = u[11]) : ((lt = st ?? []), (u[10] = st), (u[11] = lt));
-  let ut;
-  u[12] !== ct || u[13] !== lt
-    ? ((ut = [...ct, ...lt]), (u[12] = ct), (u[13] = lt), (u[14] = ut))
-    : (ut = u[14]);
+  a[13] !== st || a[14] !== q
+    ? ((ct = st.find((e) => e.hostId === q) ?? null),
+      (a[13] = st),
+      (a[14] = q),
+      (a[15] = ct))
+    : (ct = a[15]);
+  let lt = ct,
+    ut;
+  a[16] !== K.cwd || a[17] !== Ge || a[18] !== I || a[19] !== q
+    ? ((ut =
+        q === `local`
+          ? null
+          : Ge
+            ? K.cwd
+            : (I?.getProjectPathForHostId(q) ?? null)),
+      (a[16] = K.cwd),
+      (a[17] = Ge),
+      (a[18] = I),
+      (a[19] = q),
+      (a[20] = ut))
+    : (ut = a[20]);
   let dt = ut,
     ft;
-  u[15] !== dt || u[16] !== G
-    ? ((ft = dt.find((e) => e.hostId === G) ?? null),
-      (u[15] = dt),
-      (u[16] = G),
-      (u[17] = ft))
-    : (ft = u[17]);
+  a[21] !== I?.currentHostId || a[22] !== st
+    ? ((ft = st.find((e) => e.hostId === I?.currentHostId) ?? null),
+      (a[21] = I?.currentHostId),
+      (a[22] = st),
+      (a[23] = ft))
+    : (ft = a[23]);
   let pt = ft,
     mt;
-  u[18] !== W.cwd || u[19] !== Je || u[20] !== P || u[21] !== G
-    ? ((mt =
-        G === `local`
-          ? null
-          : Je
-            ? W.cwd
-            : (P?.getProjectPathForHostId(G) ?? null)),
-      (u[18] = W.cwd),
-      (u[19] = Je),
-      (u[20] = P),
-      (u[21] = G),
-      (u[22] = mt))
-    : (mt = u[22]);
-  let ht = mt,
-    gt;
-  u[23] !== P?.currentHostId || u[24] !== dt
-    ? ((gt = dt.find((e) => e.hostId === P?.currentHostId) ?? null),
-      (u[23] = P?.currentHostId),
-      (u[24] = dt),
-      (u[25] = gt))
-    : (gt = u[25]);
-  let _t = gt,
-    vt;
-  u[26] === P
-    ? (vt = u[27])
-    : ((vt = P?.getProjectPathForHostId(P?.currentHostId ?? null) ?? null),
-      (u[26] = P),
-      (u[27] = vt));
-  let yt = vt;
-  (pt?.displayName, P?.currentHostId, _t?.displayName);
-  let bt = G === `local` ? null : (pt?.displayName ?? null),
-    xt;
-  u[28] !== ht || u[29] !== G || u[30] !== bt
-    ? ((xt = { hostId: G, connectionDisplayName: bt, projectPath: ht }),
-      (u[28] = ht),
-      (u[29] = G),
-      (u[30] = bt),
-      (u[31] = xt))
-    : (xt = u[31]);
-  let St = P?.currentHostId ?? null,
-    Ct = _t?.displayName ?? null,
-    wt;
-  u[32] !== yt || u[33] !== St || u[34] !== Ct
-    ? ((wt = { hostId: St, connectionDisplayName: Ct, projectPath: yt }),
-      (u[32] = yt),
-      (u[33] = St),
-      (u[34] = Ct),
-      (u[35] = wt))
-    : (wt = u[35]);
-  let Tt;
-  u[36] !== Ue || u[37] !== xt || u[38] !== wt
-    ? ((Tt = {
-        isAttachedToStartedTask: Ue,
-        existingRemoteThreadState: xt,
-        draftNewThreadRemoteSelectionState: wt,
+  a[24] === I
+    ? (mt = a[25])
+    : ((mt = I?.getProjectPathForHostId(I?.currentHostId ?? null) ?? null),
+      (a[24] = I),
+      (a[25] = mt));
+  let ht = mt;
+  (lt?.displayName, I?.currentHostId, pt?.displayName);
+  let gt = q === `local` ? null : (lt?.displayName ?? null),
+    _t;
+  a[26] !== dt || a[27] !== q || a[28] !== gt
+    ? ((_t = { hostId: q, connectionDisplayName: gt, projectPath: dt }),
+      (a[26] = dt),
+      (a[27] = q),
+      (a[28] = gt),
+      (a[29] = _t))
+    : (_t = a[29]);
+  let vt = I?.currentHostId ?? null,
+    yt = pt?.displayName ?? null,
+    bt;
+  a[30] !== ht || a[31] !== vt || a[32] !== yt
+    ? ((bt = { hostId: vt, connectionDisplayName: yt, projectPath: ht }),
+      (a[30] = ht),
+      (a[31] = vt),
+      (a[32] = yt),
+      (a[33] = bt))
+    : (bt = a[33]);
+  let xt;
+  a[34] !== Be || a[35] !== _t || a[36] !== bt
+    ? ((xt = {
+        isAttachedToStartedTask: Be,
+        existingRemoteThreadState: _t,
+        draftNewThreadRemoteSelectionState: bt,
       }),
-      (u[36] = Ue),
-      (u[37] = xt),
-      (u[38] = wt),
-      (u[39] = Tt))
-    : (Tt = u[39]);
-  let q = Tt,
-    J = Le && !ze ? W.cwd : null,
-    Y = W.hostConfig,
-    Et;
-  u[40] !== J || u[41] !== Y
-    ? ((Et = {
-        cwd: J,
+      (a[34] = Be),
+      (a[35] = _t),
+      (a[36] = bt),
+      (a[37] = xt))
+    : (xt = a[37]);
+  let J = xt,
+    Y = Pe && !Ie ? K.cwd : null,
+    X = K.hostConfig,
+    St;
+  a[38] !== Y || a[39] !== X
+    ? ((St = {
+        cwd: Y,
         enabled: !0,
-        hostConfig: Y,
+        hostConfig: X,
         operationSource: `composer_content`,
         watchForGitInit: !1,
       }),
-      (u[40] = J),
-      (u[41] = Y),
-      (u[42] = Et))
-    : (Et = u[42]);
-  let X = C(_, Et),
-    Dt;
-  u[43] !== J || u[44] !== Y
-    ? ((Dt = {
-        cwd: J,
+      (a[38] = Y),
+      (a[39] = X),
+      (a[40] = St))
+    : (St = a[40]);
+  let Z = T(c, St),
+    Ct;
+  a[41] !== Y || a[42] !== X
+    ? ((Ct = {
+        cwd: Y,
         enabled: !0,
-        hostConfig: Y,
+        hostConfig: X,
         operationSource: `composer_content`,
         watchForGitInit: !1,
       }),
-      (u[43] = J),
-      (u[44] = Y),
-      (u[45] = Dt))
-    : (Dt = u[45]);
-  let Ot = C(c, Dt),
-    kt;
-  u[46] !== J || u[47] !== Y
-    ? ((kt = { cwd: J, hostConfig: Y, showErrorToast: !0 }),
-      (u[46] = J),
-      (u[47] = Y),
-      (u[48] = kt))
-    : (kt = u[48]);
+      (a[41] = Y),
+      (a[42] = X),
+      (a[43] = Ct))
+    : (Ct = a[43]);
+  let wt = T(s, Ct),
+    Tt;
+  a[44] !== Y || a[45] !== X
+    ? ((Tt = { cwd: Y, hostConfig: X, showErrorToast: !0 }),
+      (a[44] = Y),
+      (a[45] = X),
+      (a[46] = Tt))
+    : (Tt = a[46]);
   let {
-      canCreateGitRepository: At,
-      createGitRepository: jt,
-      isCreatingGitRepository: Mt,
-    } = ve(kt),
-    Nt = J != null && X != null,
-    Z = Le && Nt && X?.root == null,
-    Pt = !At || Mt || !Nt || Ot,
-    Q = Z ? null : he,
-    $ = I === `home` ? `bottom` : `top`,
-    Ft = p === `worktree`,
-    It = Ft ? Se : null,
-    Lt;
-  u[49] !== It || u[50] !== _e
-    ? ((Lt = { hostId: _e, workspaceRoot: It }),
-      (u[49] = It),
-      (u[50] = _e),
-      (u[51] = Lt))
-    : (Lt = u[51]);
+      canCreateGitRepository: Et,
+      createGitRepository: Dt,
+      isCreatingGitRepository: Ot,
+    } = _e(Tt),
+    kt = Y != null && Z != null,
+    Q = Pe && kt && Z?.root == null,
+    At = !Et || Ot || !kt || wt,
+    $ = Q ? null : pe,
+    jt = p === `worktree`,
+    Mt = jt ? be : null,
+    Nt;
+  a[47] !== Mt || a[48] !== he
+    ? ((Nt = { hostId: he, workspaceRoot: Mt }),
+      (a[47] = Mt),
+      (a[48] = he),
+      (a[49] = Nt))
+    : (Nt = a[49]);
   let {
-      environments: Rt,
-      isLoading: zt,
-      error: Bt,
-      resolvedConfigPath: Vt,
-      updateSelection: Ht,
-    } = ge(Lt),
-    Ut;
-  u[52] !== V ||
-  u[53] !== $ ||
-  u[54] !== Ft ||
-  u[55] !== Bt ||
-  u[56] !== zt ||
-  u[57] !== B ||
-  u[58] !== Vt ||
-  u[59] !== Ht ||
-  u[60] !== Rt
-    ? ((Ut =
-        !V && Ft
-          ? (0, R.jsx)(be, {
-              environments: Rt,
-              isLoading: zt,
-              hasError: Bt != null,
-              side: $,
-              selectedConfigPath: Vt,
-              onSelectConfigPath: Ht,
+      environments: Pt,
+      isLoading: Ft,
+      error: It,
+      resolvedConfigPath: Lt,
+      updateSelection: Rt,
+    } = me(Nt),
+    zt;
+  a[50] !== U ||
+  a[51] !== jt ||
+  a[52] !== It ||
+  a[53] !== Ft ||
+  a[54] !== H ||
+  a[55] !== Lt ||
+  a[56] !== Rt ||
+  a[57] !== Pt
+    ? ((zt =
+        !U && jt
+          ? (0, B.jsx)(ve, {
+              environments: Pt,
+              isLoading: Ft,
+              hasError: It != null,
+              selectedConfigPath: Lt,
+              onSelectConfigPath: Rt,
               onOpenSettings: () => {
-                B(`/settings/local-environments`);
+                H(`/settings/local-environments`);
               },
             })
           : null),
-      (u[52] = V),
-      (u[53] = $),
-      (u[54] = Ft),
-      (u[55] = Bt),
-      (u[56] = zt),
-      (u[57] = B),
-      (u[58] = Vt),
-      (u[59] = Ht),
-      (u[60] = Rt),
-      (u[61] = Ut))
-    : (Ut = u[61]);
-  let Wt = Ut,
+      (a[50] = U),
+      (a[51] = jt),
+      (a[52] = It),
+      (a[53] = Ft),
+      (a[54] = H),
+      (a[55] = Lt),
+      (a[56] = Rt),
+      (a[57] = Pt),
+      (a[58] = zt))
+    : (zt = a[58]);
+  let Bt = zt,
+    Vt,
+    Ht,
+    Ut,
+    Wt,
     Gt,
     Kt,
     qt,
     Jt,
-    Yt,
-    Xt,
-    Zt,
-    Qt,
-    $t;
+    Yt;
   if (
-    u[62] !== F ||
-    u[63] !== x ||
-    u[64] !== U ||
-    u[65] !== Ve?.role ||
-    u[66] !== at ||
-    u[67] !== T ||
-    u[68] !== p ||
-    u[69] !== jt ||
-    u[70] !== W ||
-    u[71] !== V ||
-    u[72] !== H ||
-    u[73] !== $ ||
-    u[74] !== q ||
-    u[75] !== X ||
-    u[76] !== N ||
-    u[77] !== L ||
-    u[78] !== Y ||
-    u[79] !== ze ||
-    u[80] !== it ||
-    u[81] !== Pt ||
-    u[82] !== Mt ||
-    u[83] !== Ot ||
-    u[84] !== y ||
-    u[85] !== tt ||
-    u[86] !== nt ||
-    u[87] !== K ||
-    u[88] !== G ||
-    u[89] !== D ||
-    u[90] !== h ||
-    u[91] !== w ||
-    u[92] !== Z ||
-    u[93] !== rt ||
-    u[94] !== ke ||
-    u[95] !== z ||
-    u[96] !== et ||
-    u[97] !== Q ||
-    u[98] !== qe ||
-    u[99] !== I ||
-    u[100] !== Pe ||
-    u[101] !== Wt
+    a[59] !== L ||
+    a[60] !== x ||
+    a[61] !== G ||
+    a[62] !== Re?.role ||
+    a[63] !== tt ||
+    a[64] !== w ||
+    a[65] !== p ||
+    a[66] !== Dt ||
+    a[67] !== K ||
+    a[68] !== U ||
+    a[69] !== W ||
+    a[70] !== J ||
+    a[71] !== Z ||
+    a[72] !== F ||
+    a[73] !== z ||
+    a[74] !== X ||
+    a[75] !== Ie ||
+    a[76] !== et ||
+    a[77] !== At ||
+    a[78] !== Ot ||
+    a[79] !== wt ||
+    a[80] !== y ||
+    a[81] !== Ze ||
+    a[82] !== Qe ||
+    a[83] !== Xe ||
+    a[84] !== q ||
+    a[85] !== D ||
+    a[86] !== h ||
+    a[87] !== S ||
+    a[88] !== Q ||
+    a[89] !== $e ||
+    a[90] !== De ||
+    a[91] !== V ||
+    a[92] !== $ ||
+    a[93] !== We ||
+    a[94] !== R ||
+    a[95] !== Bt
   ) {
-    Zt = Symbol.for(`react.early_return_sentinel`);
-    bb0: {
-      let e = b(
-          `composer-footer flex flex-nowrap items-center gap-1 overflow-hidden`,
-          I === `home`
-            ? `-mx-px -mt-4.5 rounded-b-2xl bg-token-side-bar-background dark:bg-token-bg-fog px-2 pt-[25px] pb-2`
-            : `pr-2`,
-        ),
-        n;
-      u[111] !== x ||
-      u[112] !== p ||
-      u[113] !== V ||
-      u[114] !== $ ||
-      u[115] !== N ||
-      u[116] !== Y ||
-      u[117] !== w
-        ? ((n =
-            !V && (p === `cloud` || p === `worktree`)
-              ? (0, R.jsx)(xe, {
-                  startingState: x,
-                  setStartingState: w,
-                  hostConfig: Y,
-                  side: $,
-                  gitRootOverride: N,
-                  branchSource: p === `worktree` ? `worktree` : `cloud`,
-                })
-              : null),
-          (u[111] = x),
-          (u[112] = p),
-          (u[113] = V),
-          (u[114] = $),
-          (u[115] = N),
-          (u[116] = Y),
-          (u[117] = w),
-          (u[118] = n))
-        : (n = u[118]);
-      let r = n,
-        i;
-      u[119] !== p || u[120] !== r || u[121] !== Wt
-        ? ((i =
-            p === `worktree` && Wt
-              ? (0, R.jsxs)(`div`, {
-                  className: `flex flex-nowrap items-center gap-1`,
-                  children: [Wt, r],
-                })
-              : r),
-          (u[119] = p),
-          (u[120] = r),
-          (u[121] = Wt),
-          (u[122] = i))
-        : (i = u[122]);
-      let a = i,
-        o;
-      u[123] !== U ||
-      u[124] !== at ||
-      u[125] !== W.cwd ||
-      u[126] !== it ||
-      u[127] !== tt ||
-      u[128] !== nt
-        ? ((o =
-            nt && we({ isCompactWindow: Ie }) && U != null && W.cwd != null
-              ? {
-                  conversationTitle: at,
-                  cwd: t(W.cwd),
-                  disabled: it,
-                  isWorktreeConversation: tt,
-                }
-              : null),
-          (u[123] = U),
-          (u[124] = at),
-          (u[125] = W.cwd),
-          (u[126] = it),
-          (u[127] = tt),
-          (u[128] = nt),
-          (u[129] = o))
-        : (o = u[129]);
-      let s = o,
-        c = U != null && G !== `local` && Ve?.role === `follower`,
-        l = (ke === `always` || p === `local`) && !c && !ze && !Ot;
-      X?.root;
-      let d;
-      (u[130] !== H ||
-      u[131] !== $ ||
-      u[132] !== X?.root ||
-      u[133] !== Y ||
-      u[134] !== Z ||
-      u[135] !== l
-        ? ((d =
-            l && !Z
-              ? (0, R.jsx)(Ce, {
-                  gitRoot: X?.root ?? null,
-                  hostConfig: Y,
-                  localConversationId: H,
-                  shouldShow: !0,
-                  side: $,
-                  align: `start`,
-                })
-              : null),
-          (u[130] = H),
-          (u[131] = $),
-          (u[132] = X?.root),
-          (u[133] = Y),
-          (u[134] = Z),
-          (u[135] = l),
-          (u[136] = d))
-        : (d = u[136]),
-        (qt = d));
-      let f;
-      (u[137] !== p ||
-      u[138] !== V ||
-      u[139] !== qt ||
-      u[140] !== $ ||
-      u[141] !== q ||
-      u[142] !== s ||
-      u[143] !== L ||
-      u[144] !== y ||
-      u[145] !== K ||
-      u[146] !== h ||
-      u[147] !== rt ||
-      u[148] !== a
-        ? ((f =
-            V?.type === `cloud`
-              ? (0, R.jsx)(De, { composerMode: p, setComposerMode: h })
-              : (0, R.jsx)(Te, {
-                  composerMode: p,
-                  setComposerMode: h,
-                  conversationId: K,
-                  footerRemoteState: q,
-                  side: $,
-                  disabled: rt,
-                  hideModeDropdown: L,
-                  allowWorktree: !V && !y,
-                  threadHandoff: s,
-                  worktreeLabelOnly: rt,
-                  secondaryControls: a,
-                  modeAdjacentControl: qt,
-                })),
-          (u[137] = p),
-          (u[138] = V),
-          (u[139] = qt),
-          (u[140] = $),
-          (u[141] = q),
-          (u[142] = s),
-          (u[143] = L),
-          (u[144] = y),
-          (u[145] = K),
-          (u[146] = h),
-          (u[147] = rt),
-          (u[148] = a),
-          (u[149] = f))
-        : (f = u[149]),
-        (Kt = f));
-      let m;
-      (u[150] !== F ||
-      u[151] !== p ||
-      u[152] !== V ||
-      u[153] !== z ||
-      u[154] !== I
-        ? ((m =
-            z && Ae(p) && !V
-              ? (0, R.jsx)(le, {
-                  electron: !0,
-                  children: (0, R.jsx)(ye, {
-                    activeProjectIdOverride: F,
-                    variant: I === `home` ? `home` : `default`,
+    let e = b(
+        `flex flex-nowrap items-center gap-1 overflow-hidden`,
+        R === `home`
+          ? `-mx-px -mt-4.5 rounded-b-2xl bg-token-side-bar-background dark:bg-token-bg-fog px-2 pt-[25px] pb-2`
+          : `pr-2`,
+      ),
+      t;
+    a[105] !== x ||
+    a[106] !== p ||
+    a[107] !== U ||
+    a[108] !== F ||
+    a[109] !== X ||
+    a[110] !== S
+      ? ((t =
+          !U && (p === `cloud` || p === `worktree`)
+            ? (0, B.jsx)(ye, {
+                startingState: x,
+                setStartingState: S,
+                hostConfig: X,
+                gitRootOverride: F,
+                branchSource: p === `worktree` ? `worktree` : `cloud`,
+              })
+            : null),
+        (a[105] = x),
+        (a[106] = p),
+        (a[107] = U),
+        (a[108] = F),
+        (a[109] = X),
+        (a[110] = S),
+        (a[111] = t))
+      : (t = a[111]);
+    let n = t,
+      r;
+    a[112] !== p || a[113] !== n || a[114] !== Bt
+      ? ((r =
+          p === `worktree` && Bt
+            ? (0, B.jsxs)(`div`, {
+                className: `flex flex-nowrap items-center gap-1`,
+                children: [Bt, n],
+              })
+            : n),
+        (a[112] = p),
+        (a[113] = n),
+        (a[114] = Bt),
+        (a[115] = r))
+      : (r = a[115]);
+    let o = r,
+      s;
+    a[116] !== G ||
+    a[117] !== tt ||
+    a[118] !== K.cwd ||
+    a[119] !== et ||
+    a[120] !== Ze ||
+    a[121] !== Qe
+      ? ((s =
+          Qe && Se({ isCompactWindow: Ne }) && G != null && K.cwd != null
+            ? {
+                conversationTitle: tt,
+                cwd: i(K.cwd),
+                disabled: et,
+                isWorktreeConversation: Ze,
+              }
+            : null),
+        (a[116] = G),
+        (a[117] = tt),
+        (a[118] = K.cwd),
+        (a[119] = et),
+        (a[120] = Ze),
+        (a[121] = Qe),
+        (a[122] = s))
+      : (s = a[122]);
+    let c = s,
+      l = G != null && q !== `local` && Re?.role === `follower`,
+      u = (De === `always` || p === `local`) && !l && !Ie && !wt;
+    Z?.root;
+    let d;
+    (a[123] !== W ||
+    a[124] !== Z?.root ||
+    a[125] !== X ||
+    a[126] !== Q ||
+    a[127] !== u
+      ? ((d =
+          u && !Q
+            ? (0, B.jsx)(xe, {
+                gitRoot: Z?.root ?? null,
+                hostConfig: X,
+                localConversationId: W,
+                shouldShow: !0,
+                align: `start`,
+              })
+            : null),
+        (a[123] = W),
+        (a[124] = Z?.root),
+        (a[125] = X),
+        (a[126] = Q),
+        (a[127] = u),
+        (a[128] = d))
+      : (d = a[128]),
+      (Wt = d));
+    let f;
+    (a[129] !== p ||
+    a[130] !== U ||
+    a[131] !== Wt ||
+    a[132] !== J ||
+    a[133] !== c ||
+    a[134] !== z ||
+    a[135] !== y ||
+    a[136] !== Xe ||
+    a[137] !== h ||
+    a[138] !== $e ||
+    a[139] !== o
+      ? ((f =
+          U?.type === `cloud`
+            ? (0, B.jsx)(Te, { composerMode: p, setComposerMode: h })
+            : (0, B.jsx)(Ce, {
+                composerMode: p,
+                setComposerMode: h,
+                conversationId: Xe,
+                footerRemoteState: J,
+                disabled: $e,
+                hideModeDropdown: z,
+                allowWorktree: !U && !y,
+                threadHandoff: c,
+                worktreeLabelOnly: $e,
+                secondaryControls: o,
+                modeAdjacentControl: Wt,
+              })),
+        (a[129] = p),
+        (a[130] = U),
+        (a[131] = Wt),
+        (a[132] = J),
+        (a[133] = c),
+        (a[134] = z),
+        (a[135] = y),
+        (a[136] = Xe),
+        (a[137] = h),
+        (a[138] = $e),
+        (a[139] = o),
+        (a[140] = f))
+      : (f = a[140]),
+      (Ut = f));
+    let m;
+    (a[141] !== L ||
+    a[142] !== p ||
+    a[143] !== U ||
+    a[144] !== V ||
+    a[145] !== R
+      ? ((m =
+          V && Oe(p) && !U
+            ? (0, B.jsx)(ce, {
+                electron: !0,
+                children: (0, B.jsx)(de, {
+                  activeProjectIdOverride: L,
+                  variant: R === `home` ? `home` : `default`,
+                }),
+              })
+            : null),
+        (a[141] = L),
+        (a[142] = p),
+        (a[143] = U),
+        (a[144] = V),
+        (a[145] = R),
+        (a[146] = m))
+      : (m = a[146]),
+      (Yt = m));
+    let g;
+    a[147] !== p || a[148] !== U || a[149] !== $
+      ? ((g = !1), (a[147] = p), (a[148] = U), (a[149] = $), (a[150] = g))
+      : (g = a[150]);
+    let _ = !!U || g,
+      v;
+    (a[151] === _
+      ? (v = a[152])
+      : ((v = _ ? (0, B.jsx)(ke, {}) : null), (a[151] = _), (a[152] = v)),
+      (Jt = v));
+    let T;
+    (a[153] !== w || a[154] !== p || a[155] !== U || a[156] !== D
+      ? ((T =
+          p === `cloud` && U?.type === `cloud` && U.hasAppliedCodeLocally
+            ? (0, B.jsx)(Ee, { startingState: w, setStartingState: D })
+            : null),
+        (a[153] = w),
+        (a[154] = p),
+        (a[155] = U),
+        (a[156] = D),
+        (a[157] = T))
+      : (T = a[157]),
+      (Gt = T));
+    let E = We
+        ? J.draftNewThreadRemoteSelectionState
+        : J.existingRemoteThreadState,
+      O;
+    (a[158] !== Dt ||
+    a[159] !== At ||
+    a[160] !== Ot ||
+    a[161] !== Q ||
+    a[162] !== u
+      ? ((O =
+          u && Q
+            ? (0, B.jsxs)(re, {
+                className: `px-0`,
+                color: `ghost`,
+                size: `composerSm`,
+                disabled: At,
+                onClick: () => {
+                  At || Dt();
+                },
+                children: [
+                  (0, B.jsx)(j, { className: `icon-xs` }),
+                  (0, B.jsx)(ae, {
+                    collapse: `sm`,
+                    className: `max-w-40 truncate text-sm`,
+                    children: Ot
+                      ? (0, B.jsx)(C, {
+                          id: `codex.review.noDiff.gitInit.creating`,
+                          defaultMessage: `Creating…`,
+                          description: `Button label shown while git init is running from the diff empty state`,
+                        })
+                      : (0, B.jsx)(C, {
+                          id: `codex.review.noDiff.gitInit.createRepository`,
+                          defaultMessage: `Create git repository`,
+                          description: `Button label to create a git repository from the diff empty state`,
+                        }),
                   }),
-                })
-              : null),
-          (u[150] = F),
-          (u[151] = p),
-          (u[152] = V),
-          (u[153] = z),
-          (u[154] = I),
-          (u[155] = m))
-        : (m = u[155]),
-        ($t = m));
-      let g;
-      u[156] !== p || u[157] !== V || u[158] !== Q
-        ? ((g = !1), (u[156] = p), (u[157] = V), (u[158] = Q), (u[159] = g))
-        : (g = u[159]);
-      let _ = !!V || g,
-        v;
-      (u[160] === _
-        ? (v = u[161])
-        : ((v = _ ? (0, R.jsx)(je, {}) : null), (u[160] = _), (u[161] = v)),
-        (Qt = v));
-      let C;
-      (u[162] !== T || u[163] !== p || u[164] !== V || u[165] !== D
-        ? ((C =
-            p === `cloud` && V?.type === `cloud` && V.hasAppliedCodeLocally
-              ? (0, R.jsx)(Oe, { startingState: T, setStartingState: D })
-              : null),
-          (u[162] = T),
-          (u[163] = p),
-          (u[164] = V),
-          (u[165] = D),
-          (u[166] = C))
-        : (C = u[166]),
-        (Jt = C));
-      let E = qe
-          ? q.draftNewThreadRemoteSelectionState
-          : q.existingRemoteThreadState,
-        O;
-      (u[167] !== jt ||
-      u[168] !== Pt ||
-      u[169] !== Mt ||
-      u[170] !== Z ||
-      u[171] !== l
-        ? ((O =
-            l && Z
-              ? (0, R.jsxs)(ae, {
-                  className: `px-0`,
-                  color: `ghost`,
-                  size: `composerSm`,
-                  disabled: Pt,
-                  onClick: () => {
-                    Pt || jt();
-                  },
-                  children: [
-                    (0, R.jsx)(j, { className: `icon-xs` }),
-                    (0, R.jsx)(`span`, {
-                      className: `composer-footer__label--sm max-w-40 truncate text-sm`,
-                      children: Mt
-                        ? (0, R.jsx)(S, {
-                            id: `codex.review.noDiff.gitInit.creating`,
-                            defaultMessage: `Creating…`,
-                            description: `Button label shown while git init is running from the diff empty state`,
-                          })
-                        : (0, R.jsx)(S, {
-                            id: `codex.review.noDiff.gitInit.createRepository`,
-                            defaultMessage: `Create git repository`,
-                            description: `Button label to create a git repository from the diff empty state`,
-                          }),
-                    }),
-                  ],
-                })
-              : null),
-          (u[167] = jt),
-          (u[168] = Pt),
-          (u[169] = Mt),
-          (u[170] = Z),
-          (u[171] = l),
-          (u[172] = O))
-        : (O = u[172]),
-        (Gt = O));
-      let k = p === `local` && E.hostId != null && E.hostId !== `local`,
-        A;
-      if (
-        (u[173] !== E || u[174] !== k
-          ? ((A = k
-              ? (0, R.jsx)(`div`, {
-                  className: `flex min-w-0 items-center gap-1`,
-                  children: (0, R.jsx)(Ne, {
-                    hostId: E.hostId,
-                    connectionDisplayName: E.connectionDisplayName,
-                    projectPath: E.projectPath,
-                  }),
-                })
-              : null),
-            (u[173] = E),
-            (u[174] = k),
-            (u[175] = A))
-          : (A = u[175]),
-        (Yt = A),
-        I === `home` && et === `STEPS_PROSE` && Pe.length === 0)
-      ) {
-        Zt = null;
-        break bb0;
-      }
-      Xt = b(e, `flex-wrap gap-2 overflow-visible`, I === `default` && `pl-2`);
-    }
-    ((u[62] = F),
-      (u[63] = x),
-      (u[64] = U),
-      (u[65] = Ve?.role),
-      (u[66] = at),
-      (u[67] = T),
-      (u[68] = p),
-      (u[69] = jt),
-      (u[70] = W),
-      (u[71] = V),
-      (u[72] = H),
-      (u[73] = $),
-      (u[74] = q),
-      (u[75] = X),
-      (u[76] = N),
-      (u[77] = L),
-      (u[78] = Y),
-      (u[79] = ze),
-      (u[80] = it),
-      (u[81] = Pt),
-      (u[82] = Mt),
-      (u[83] = Ot),
-      (u[84] = y),
-      (u[85] = tt),
-      (u[86] = nt),
-      (u[87] = K),
-      (u[88] = G),
-      (u[89] = D),
-      (u[90] = h),
-      (u[91] = w),
-      (u[92] = Z),
-      (u[93] = rt),
-      (u[94] = ke),
-      (u[95] = z),
-      (u[96] = et),
-      (u[97] = Q),
-      (u[98] = qe),
-      (u[99] = I),
-      (u[100] = Pe),
-      (u[101] = Wt),
-      (u[102] = Gt),
-      (u[103] = Kt),
-      (u[104] = qt),
-      (u[105] = Jt),
-      (u[106] = Yt),
-      (u[107] = Xt),
-      (u[108] = Zt),
-      (u[109] = Qt),
-      (u[110] = $t));
-  } else
-    ((Gt = u[102]),
-      (Kt = u[103]),
-      (qt = u[104]),
-      (Jt = u[105]),
-      (Yt = u[106]),
-      (Xt = u[107]),
-      (Zt = u[108]),
-      (Qt = u[109]),
-      ($t = u[110]));
-  if (Zt !== Symbol.for(`react.early_return_sentinel`)) return Zt;
-  let en = I === `home` ? $t : Kt,
-    tn = V?.type === `cloud` ? qt : null,
-    nn = I === `home` ? Kt : $t,
-    rn;
-  u[176] !== en || u[177] !== tn || u[178] !== nn
-    ? ((rn = (0, R.jsxs)(`div`, {
-        className: `flex min-w-0 flex-1 flex-nowrap items-center gap-1`,
-        children: [en, tn, nn],
-      })),
-      (u[176] = en),
-      (u[177] = tn),
-      (u[178] = nn),
-      (u[179] = rn))
-    : (rn = u[179]);
-  let an;
-  u[180] !== p || u[181] !== Jt
-    ? ((an =
-        p === `cloud`
-          ? (0, R.jsx)(`div`, {
+                ],
+              })
+            : null),
+        (a[158] = Dt),
+        (a[159] = At),
+        (a[160] = Ot),
+        (a[161] = Q),
+        (a[162] = u),
+        (a[163] = O))
+      : (O = a[163]),
+      (Ht = O));
+    let k = p === `local` && E.hostId != null && E.hostId !== `local`,
+      A;
+    (a[164] !== E || a[165] !== k
+      ? ((A = k
+          ? (0, B.jsx)(`div`, {
               className: `flex min-w-0 items-center gap-1`,
-              children: Jt,
+              children: (0, B.jsx)(Me, {
+                hostId: E.hostId,
+                connectionDisplayName: E.connectionDisplayName,
+                projectPath: E.projectPath,
+              }),
             })
           : null),
-      (u[180] = p),
-      (u[181] = Jt),
-      (u[182] = an))
-    : (an = u[182]);
-  let on;
-  u[183] !== Gt || u[184] !== Yt || u[185] !== Q || u[186] !== Qt
-    ? ((on =
-        Yt || Gt || Q || Qt
-          ? (0, R.jsxs)(`div`, {
+        (a[164] = E),
+        (a[165] = k),
+        (a[166] = A))
+      : (A = a[166]),
+      (Kt = A),
+      (Vt = oe),
+      (qt = b(
+        e,
+        `flex-wrap gap-2 overflow-visible`,
+        R === `default` && `pl-2`,
+      )),
+      (a[59] = L),
+      (a[60] = x),
+      (a[61] = G),
+      (a[62] = Re?.role),
+      (a[63] = tt),
+      (a[64] = w),
+      (a[65] = p),
+      (a[66] = Dt),
+      (a[67] = K),
+      (a[68] = U),
+      (a[69] = W),
+      (a[70] = J),
+      (a[71] = Z),
+      (a[72] = F),
+      (a[73] = z),
+      (a[74] = X),
+      (a[75] = Ie),
+      (a[76] = et),
+      (a[77] = At),
+      (a[78] = Ot),
+      (a[79] = wt),
+      (a[80] = y),
+      (a[81] = Ze),
+      (a[82] = Qe),
+      (a[83] = Xe),
+      (a[84] = q),
+      (a[85] = D),
+      (a[86] = h),
+      (a[87] = S),
+      (a[88] = Q),
+      (a[89] = $e),
+      (a[90] = De),
+      (a[91] = V),
+      (a[92] = $),
+      (a[93] = We),
+      (a[94] = R),
+      (a[95] = Bt),
+      (a[96] = Vt),
+      (a[97] = Ht),
+      (a[98] = Ut),
+      (a[99] = Wt),
+      (a[100] = Gt),
+      (a[101] = Kt),
+      (a[102] = qt),
+      (a[103] = Jt),
+      (a[104] = Yt));
+  } else
+    ((Vt = a[96]),
+      (Ht = a[97]),
+      (Ut = a[98]),
+      (Wt = a[99]),
+      (Gt = a[100]),
+      (Kt = a[101]),
+      (qt = a[102]),
+      (Jt = a[103]),
+      (Yt = a[104]));
+  let Xt = R === `home` ? Yt : Ut,
+    Zt = U?.type === `cloud` ? Wt : null,
+    Qt = R === `home` ? Ut : Yt,
+    $t;
+  a[167] !== Xt || a[168] !== Zt || a[169] !== Qt
+    ? (($t = (0, B.jsxs)(`div`, {
+        className: `flex min-w-0 flex-1 flex-nowrap items-center gap-1`,
+        children: [Xt, Zt, Qt],
+      })),
+      (a[167] = Xt),
+      (a[168] = Zt),
+      (a[169] = Qt),
+      (a[170] = $t))
+    : ($t = a[170]);
+  let en;
+  a[171] !== p || a[172] !== Gt
+    ? ((en =
+        p === `cloud`
+          ? (0, B.jsx)(`div`, {
+              className: `flex min-w-0 items-center gap-1`,
+              children: Gt,
+            })
+          : null),
+      (a[171] = p),
+      (a[172] = Gt),
+      (a[173] = en))
+    : (en = a[173]);
+  let tn;
+  a[174] !== Ht || a[175] !== Kt || a[176] !== $ || a[177] !== Jt
+    ? ((tn =
+        Kt || Ht || $ || Jt
+          ? (0, B.jsxs)(`div`, {
               className: `flex min-w-0 items-center gap-3`,
-              children: [Yt, Gt, Q, Qt],
+              children: [Kt, Ht, $, Jt],
             })
           : null),
-      (u[183] = Gt),
-      (u[184] = Yt),
-      (u[185] = Q),
-      (u[186] = Qt),
-      (u[187] = on))
-    : (on = u[187]);
-  let sn;
+      (a[174] = Ht),
+      (a[175] = Kt),
+      (a[176] = $),
+      (a[177] = Jt),
+      (a[178] = tn))
+    : (tn = a[178]);
+  let nn;
   return (
-    u[188] !== Xt || u[189] !== rn || u[190] !== an || u[191] !== on
-      ? ((sn = (0, R.jsxs)(`div`, { className: Xt, children: [rn, an, on] })),
-        (u[188] = Xt),
-        (u[189] = rn),
-        (u[190] = an),
-        (u[191] = on),
-        (u[192] = sn))
-      : (sn = u[192]),
-    sn
+    a[179] !== Vt ||
+    a[180] !== qt ||
+    a[181] !== $t ||
+    a[182] !== en ||
+    a[183] !== tn
+      ? ((nn = (0, B.jsxs)(Vt, { className: qt, children: [$t, en, tn] })),
+        (a[179] = Vt),
+        (a[180] = qt),
+        (a[181] = $t),
+        (a[182] = en),
+        (a[183] = tn),
+        (a[184] = nn))
+      : (nn = a[184]),
+    nn
   );
 }
-function Ne(e) {
-  let t = (0, Ee.c)(11),
+function Me(e) {
+  let t = (0, we.c)(11),
     { hostId: n, connectionDisplayName: r, projectPath: i } = e;
   if (n == null) return null;
   let a = i == null,
@@ -1294,7 +1278,7 @@ function Ne(e) {
     s;
   t[0] === o
     ? (s = t[1])
-    : ((s = (0, R.jsx)(`span`, {
+    : ((s = (0, B.jsx)(`span`, {
         className: `max-w-40 min-w-0 truncate`,
         children: o,
       })),
@@ -1303,11 +1287,12 @@ function Ne(e) {
   let c;
   t[2] === n
     ? (c = t[3])
-    : ((c = (0, R.jsx)(_e, { hostId: n })), (t[2] = n), (t[3] = c));
+    : ((c = (0, B.jsx)(he, { hostId: n })), (t[2] = n), (t[3] = c));
   let l;
   t[4] !== s || t[5] !== c
-    ? ((l = (0, R.jsxs)(`span`, {
-        className: `composer-footer__label--sm flex min-w-0 items-center gap-1 text-sm`,
+    ? ((l = (0, B.jsxs)(ae, {
+        collapse: `sm`,
+        className: `flex min-w-0 items-center gap-1 text-sm`,
         children: [s, c],
       })),
       (t[4] = s),
@@ -1317,7 +1302,7 @@ function Ne(e) {
   let u;
   return (
     t[7] !== i || t[8] !== a || t[9] !== l
-      ? ((u = (0, R.jsx)(ne, { tooltipContent: i, disabled: a, children: l })),
+      ? ((u = (0, B.jsx)(ee, { tooltipContent: i, disabled: a, children: l })),
         (t[7] = i),
         (t[8] = a),
         (t[9] = l),
@@ -1326,5 +1311,5 @@ function Ne(e) {
     u
   );
 }
-export { V as ComposerExternalFooter };
+export { je as ComposerExternalFooter };
 //# sourceMappingURL=composer-external-footer.js.map

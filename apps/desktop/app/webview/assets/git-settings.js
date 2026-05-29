@@ -1,45 +1,45 @@
-import { s as e } from "./chunk.js";
-import { _ as t, p as n } from "./src-BLHmAhbF.js";
+import { s as e } from "./chunk-Bj-mKKzh.js";
+import { S as t, v as n } from "./src-C.js";
 import { n as r, t as i } from "./jsx-runtime.js";
-import "./react-dom.js";
+import "./react-dom-CvzHKZGB.js";
 import "./Combination.js";
 import {
-  H as a,
-  S as ee,
-  W as te,
-  Y as o,
+  G as ee,
+  S as te,
+  U as a,
+  X as o,
   a as s,
   i as c,
   w as l,
-  xt as u,
+  wt as u,
 } from "./setting-storage.js";
-import { o as d } from "./statsig.js";
+import { o as d } from "./statsig--EYRNU53.js";
 import { r as f } from "./toast-signal.js";
 import "./window-zoom-context.js";
-import "./tooltip.js";
+import "./tooltip-CDzchJxN.js";
 import { t as p } from "./button.js";
-import "./reduced-motion-preference.js";
+import "./reduced-motion-preference-DE4zP-oH.js";
 import "./spinner.js";
-import "./x.js";
+import "./x-C_RDKBp5.js";
 import { t as m } from "./with-window.js";
 import { a as h, i as g, l as _, n as v, r as y } from "./dialog-layout.js";
 import "./electron-menu-shortcuts.js";
-import "./chevron.js";
+import "./links.js";
+import "./chevron-NmAOI_v1.js";
 import { t as ne } from "./toggle.js";
-import { i as b } from "./settings-shared.js";
-import { t as x } from "./use-hotkey.js";
+import { i as b } from "./settings-shared-BTHmEeQY.js";
+import { t as x } from "./use-hotkey-yGPn4uDB.js";
 import { t as S } from "./settings-content-layout.js";
-import { n as C } from "./settings-row-D.js";
-import { t as w } from "./settings-surface.js";
-import { t as T } from "./settings-group.js";
+import { n as C } from "./settings-row.js";
+import { n as w, t as T } from "./settings-group.js";
 import { t as re } from "./segmented-toggle.js";
 var ie = u(),
   ae = e(r(), 1),
   E = i();
 function oe() {
   let e = (0, ie.c)(66),
-    t = o(ee),
-    r = te(),
+    t = o(te),
+    r = ee(),
     [i, u] = (0, ae.useState)(!1),
     [d, p] = (0, ae.useState)(null),
     m = s(n.autoCleanupEnabled),
@@ -447,8 +447,8 @@ function se(e) {
 }
 function ce() {
   let e = (0, ie.c)(218),
-    n = o(ee),
-    r = te(),
+    n = o(te),
+    r = ee(),
     i = d(`2764989143`),
     u = d(`2553306736`),
     [h, g] = (0, ae.useState)(null),

@@ -1,85 +1,104 @@
-import { _ as e, p as t, xt as n } from "./setting-storage.js";
-import { d as r, u as i } from "./statsig.js";
-import { t as a } from "./use-auth.js";
-import { l as o } from "./codex-api.js";
-import { t as s } from "./skus.js";
-var c = n(),
-  l = `1636924626`,
-  u = `enable_free_go_usage_settings`;
-function d() {
-  let n = (0, c.c)(19),
-    { authMethod: s, isLoading: d } = a(),
-    p = s === `chatgpt`,
-    h = i(l),
-    g = r(),
-    { data: _, isLoading: v, hasEverErrored: y } = o(),
-    b;
-  n[0] === p
-    ? (b = n[1])
-    : ((b = { queryConfig: { enabled: p, staleTime: e.ONE_MINUTE } }),
-      (n[0] = p),
-      (n[1] = b));
-  let { data: x, isLoading: S } = t(`account-info`, b),
-    C = _?.plan_type ?? (!v || y ? x?.plan : void 0),
-    w;
-  n[2] === C ? (w = n[3]) : ((w = m(C)), (n[2] = C), (n[3] = w));
-  let T = w,
-    E,
-    D,
-    O;
+import { _ as e, p as t, wt as n } from "./setting-storage.js";
+import { d as r, o as i, u as a } from "./statsig--EYRNU53.js";
+import { t as o } from "./use-auth.js";
+import { p as s } from "./codex-api-bK--r_2t.js";
+import { n as c, t as l } from "./skus-JiYadAsS.js";
+var u = n(),
+  d = `1636924626`,
+  f = `enable_free_go_usage_settings`;
+function p() {
+  let n = (0, u.c)(21),
+    { authMethod: l, isLoading: p } = o(),
+    h = l === `chatgpt`,
+    _ = a(d),
+    v = i(`3909937021`),
+    y = r(),
+    { data: b, isLoading: x, hasEverErrored: S } = s(),
+    C;
+  n[0] === h
+    ? (C = n[1])
+    : ((C = { queryConfig: { enabled: h, staleTime: e.ONE_MINUTE } }),
+      (n[0] = h),
+      (n[1] = C));
+  let { data: w, isLoading: T } = t(`account-info`, C),
+    E = b?.plan_type ?? (!x || S ? w?.plan : void 0),
+    D;
+  n[2] === E ? (D = n[3]) : ((D = g(E)), (n[2] = E), (n[3] = D));
+  let O = D,
+    k,
+    A,
+    j,
+    M;
   if (
-    n[4] !== s ||
-    n[5] !== y ||
-    n[6] !== p ||
-    n[7] !== v ||
-    n[8] !== T ||
-    n[9] !== g ||
-    n[10] !== C ||
-    n[11] !== h
+    n[4] !== l ||
+    n[5] !== S ||
+    n[6] !== h ||
+    n[7] !== x ||
+    n[8] !== O ||
+    n[9] !== v ||
+    n[10] !== y ||
+    n[11] !== E ||
+    n[12] !== _
   ) {
-    let e = p && T && !g ? h.get(u, !1) : !1;
-    ((E = p && v && !y),
-      (D = p && T && g),
-      (O = f({ authMethod: s, plan: C, isFreeGoUsageSettingsEnabled: e })),
-      (n[4] = s),
-      (n[5] = y),
-      (n[6] = p),
-      (n[7] = v),
-      (n[8] = T),
-      (n[9] = g),
-      (n[10] = C),
-      (n[11] = h),
-      (n[12] = E),
-      (n[13] = D),
-      (n[14] = O));
-  } else ((E = n[12]), (D = n[13]), (O = n[14]));
-  let k = d || (p && S) || E || D,
-    A;
+    let e = c(E),
+      t = h && O && !y ? _.get(f, !1) : !1,
+      r = h && e && !y && v;
+    ((k = h && x && !S),
+      (j = h && O && y),
+      (A = h && e && y),
+      (M = m({
+        authMethod: l,
+        plan: E,
+        isFreeGoUsageSettingsEnabled: t,
+        isEnterpriseUsageSettingsEnabled: r,
+      })),
+      (n[4] = l),
+      (n[5] = S),
+      (n[6] = h),
+      (n[7] = x),
+      (n[8] = O),
+      (n[9] = v),
+      (n[10] = y),
+      (n[11] = E),
+      (n[12] = _),
+      (n[13] = k),
+      (n[14] = A),
+      (n[15] = j),
+      (n[16] = M));
+  } else ((k = n[13]), (A = n[14]), (j = n[15]), (M = n[16]));
+  let N = p || (h && T) || k || j || A,
+    P;
   return (
-    n[15] !== C || n[16] !== O || n[17] !== k
-      ? ((A = { ...O, isUsageSettingsAccessLoading: k, plan: C }),
-        (n[15] = C),
-        (n[16] = O),
-        (n[17] = k),
-        (n[18] = A))
-      : (A = n[18]),
-    A
+    n[17] !== E || n[18] !== M || n[19] !== N
+      ? ((P = { ...M, isUsageSettingsAccessLoading: N, plan: E }),
+        (n[17] = E),
+        (n[18] = M),
+        (n[19] = N),
+        (n[20] = P))
+      : (P = n[20]),
+    P
   );
 }
-function f({ authMethod: e, plan: t, isFreeGoUsageSettingsEnabled: n }) {
-  let r = e === `chatgpt`,
-    i = r && p(t),
-    a = m(t);
+function m({
+  authMethod: e,
+  plan: t,
+  isFreeGoUsageSettingsEnabled: n,
+  isEnterpriseUsageSettingsEnabled: r = !1,
+}) {
+  let i = e === `chatgpt`,
+    a = i && h(t),
+    o = g(t),
+    s = c(t);
   return {
-    canManageCreditSettings: i,
-    isUsageSettingsVisible: i || (r && a && n),
+    canManageCreditSettings: a,
+    isUsageSettingsVisible: a || (i && o && n) || (i && s && r),
   };
 }
-function p(e) {
-  return e === s.PLUS || e === s.PRO || e === s.PROLITE;
+function h(e) {
+  return e === l.PLUS || e === l.PRO || e === l.PROLITE;
 }
-function m(e) {
-  return e === s.FREE || e === s.GO;
+function g(e) {
+  return e === l.FREE || e === l.GO;
 }
-export { d as t };
+export { p as t };
 //# sourceMappingURL=use-usage-settings-access.js.map

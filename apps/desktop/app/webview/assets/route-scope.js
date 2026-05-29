@@ -1,24 +1,20 @@
-import {
-  B as e,
-  H as t,
-  U as n,
-  V as r,
-  pr as i,
-  q as a,
-} from "./src-BLHmAhbF.js";
-import { S as o, tt as s } from "./setting-storage.js";
-import { c } from "./chunk-LFPYN7LY.js";
+import { Q as e, X as t, Y as n, Z as r, rt as i, zr as a } from "./src-C.js";
+import { S as o, it as s } from "./setting-storage.js";
+import { u as c } from "./chunk-LFPYN7LY.js";
 var l = s(`RouteScope`, {
   key: (e) => `${e.pathname}${e.search ?? ``}`,
   parent: o,
   retain: { max: 20 },
 });
 function u(e) {
+  return e.routeKind === `local-thread` ? e.conversationId : null;
+}
+function d(e) {
   switch (e.routeKind) {
     case `home`:
-      return i(`new-conversation`);
+      return a(`new-conversation`);
     case `new-thread-panel`:
-      return i(`panel-new-conversation`);
+      return a(`panel-new-conversation`);
     case `local-thread`:
       return e.conversationId;
     case `remote-thread`:
@@ -27,14 +23,14 @@ function u(e) {
       return null;
   }
 }
-function d({ pathname: o, routeTemplate: s, search: l = `` }) {
-  let u = c(n, o)?.params.conversationId ?? c(t, o)?.params.conversationId;
+function f({ pathname: o, routeTemplate: s, search: l = `` }) {
+  let u = c(e, o)?.params.conversationId ?? c(r, o)?.params.conversationId;
   if (u != null) {
     let e = new URLSearchParams(l),
       t = e.get(`projectId`),
       n = e.get(`hostId`);
     return {
-      conversationId: i(u),
+      conversationId: a(u),
       pathname: o,
       projectContext: t == null ? null : { hostId: n, projectId: t },
       routeKind: `local-thread`,
@@ -42,11 +38,11 @@ function d({ pathname: o, routeTemplate: s, search: l = `` }) {
       search: l,
     };
   }
-  let d = c(a, o)?.params.taskId ?? c(r, o)?.params.taskId;
+  let d = c(i, o)?.params.taskId ?? c(t, o)?.params.taskId;
   return d == null
     ? o === `/` || o === `/hotkey-window`
       ? { pathname: o, routeKind: `home`, routeTemplate: s, search: l }
-      : o === `/extension/panel/new` || o === e
+      : o === `/extension/panel/new` || o === n
         ? {
             pathname: o,
             routeKind: `new-thread-panel`,
@@ -62,5 +58,5 @@ function d({ pathname: o, routeTemplate: s, search: l = `` }) {
         taskId: d,
       };
 }
-export { d as n, u as r, l as t };
+export { d as i, f as n, u as r, l as t };
 //# sourceMappingURL=route-scope.js.map
