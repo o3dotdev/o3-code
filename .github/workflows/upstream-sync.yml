@@ -1,0 +1,73 @@
+name: Upstream sync
+
+# Keeps the read-only `upstream` mirror branch fast-forwarded to superset-sh/superset
+# and opens a PR to merge those changes into `main`. This is the "fork without forking"
+# sync: `upstream` is a pure mirror, `main` = upstream + our changes.
+#
+# Manual equivalent:
+#   git fetch superset
+#   git switch upstream && git merge --ff-only superset/main && git push
+#   gh pr create --base main --head upstream
+
+on:
+  schedule:
+    - cron: "0 6 * * *" # daily 06:00 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: upstream-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Sync upstream mirror and open PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git remote add superset https://github.com/superset-sh/superset.git 2>/dev/null || \
+            git remote set-url superset https://github.com/superset-sh/superset.git
+          git fetch --no-tags superset main
+          git fetch origin upstream main
+
+          # Fast-forward the read-only mirror branch to Superset's main.
+          git checkout -B upstream origin/upstream
+          if ! git merge --ff-only superset/main; then
+            echo "::error::upstream branch is not fast-forwardable from superset/main." \
+                 "Someone may have committed to the mirror branch — it must stay pure."
+            exit 1
+          fi
+          git push origin upstream
+
+          # Open a sync PR only when main is behind the mirror and none is already open.
+          behind="$(git rev-list --count origin/main..upstream)"
+          if [ "$behind" -eq 0 ]; then
+            echo "main is up to date with upstream — nothing to sync."
+            exit 0
+          fi
+          echo "main is $behind commit(s) behind upstream."
+
+          existing="$(gh pr list --base main --head upstream --state open \
+                        --json number --jq '.[0].number' || true)"
+          if [ -n "$existing" ]; then
+            echo "Sync PR #$existing already open — leaving it for review."
+            exit 0
+          fi
+
+          gh pr create --base main --head upstream \
+            --title "Sync upstream (Superset) → main" \
+            --body "Automated upstream sync: fast-forwards \`upstream\` to superset-sh/superset \`main\` and proposes merging it into \`main\`. Review and merge to pull in Superset changes. Do not commit to \`upstream\`."
