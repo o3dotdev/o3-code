@@ -29,11 +29,13 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          token: ${{ secrets.GITHUB_TOKEN }}
+          # Prefer a PAT (UPSTREAM_SYNC_TOKEN) when present; the org blocks the
+          # default GITHUB_TOKEN from creating PRs, so auto-PR needs a PAT.
+          token: ${{ secrets.UPSTREAM_SYNC_TOKEN || secrets.GITHUB_TOKEN }}
 
       - name: Sync upstream mirror and open PR
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.UPSTREAM_SYNC_TOKEN || secrets.GITHUB_TOKEN }}
         run: |
           set -euo pipefail
           git config user.name  "github-actions[bot]"
@@ -68,6 +70,12 @@ jobs:
             exit 0
           fi
 
-          gh pr create --base main --head upstream \
-            --title "Sync upstream (Superset) → main" \
-            --body "Automated upstream sync: fast-forwards \`upstream\` to superset-sh/superset \`main\` and proposes merging it into \`main\`. Review and merge to pull in Superset changes. Do not commit to \`upstream\`."
+          if gh pr create --base main --head upstream \
+               --title "Sync upstream (Superset) → main" \
+               --body "Automated upstream sync: fast-forwards \`upstream\` to superset-sh/superset \`main\` and proposes merging it into \`main\`. Review and merge to pull in Superset changes. Do not commit to \`upstream\`."; then
+            echo "Opened sync PR."
+          else
+            echo "::warning::Could not open the sync PR automatically (the org blocks the default GITHUB_TOKEN from creating PRs)."
+            echo "::warning::The mirror branch IS synced. Add a fine-grained PAT as the 'UPSTREAM_SYNC_TOKEN' secret (Contents + Pull requests: read/write) to enable auto-PRs, or open it manually:"
+            echo "  https://github.com/${GITHUB_REPOSITORY}/compare/main...upstream?expand=1"
+          fi
